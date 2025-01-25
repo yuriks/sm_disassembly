@@ -439,6 +439,7 @@ Write_supermetroid_ToSRAM:
 %anchor($808261)
 CheckForNonCorruptSRAM:
     PHX                                                                  ;808261;
+%smart_patch_addr($808262)
     LDA.W #$0003                                                         ;808262;
     STA.W $1F59                                                          ;808265; Number of demo sets = 3
     LDA.W #$0000                                                         ;808268;
@@ -472,6 +473,7 @@ CheckForNonCorruptSRAM:
     DEX                                                                  ;8082A1;
     DEX                                                                  ;8082A2;
     BPL .nonCorruptLoop                                                  ;8082A3;
+%smart_patch_addr($8082A5)
     LDA.W #$0004                                                         ;8082A5;
     STA.W $1F59                                                          ;8082A8; Number of demo sets = 4
 
@@ -797,6 +799,7 @@ Boot:
     BPL .loop                                                            ;808453;
     JSL.L Initialise_IO_Registers_and_Display_Nintendo_Logo              ;808455; Initialise IO registers and display Nintendo logo
     JSL.L UploadToAPU_Hardcoded                                          ;808459;
+%smart_patch_addr($80845D)
     dl SPC_Engine                                                        ;80845D; Upload SPC engine to APU
     BRA CommonBootSection                                                ;808460; Go to common boot section
 
@@ -2194,8 +2197,10 @@ HandleMusicQueue:
     LDA.B #$FF                                                           ;808F6B;
     STA.W $064C                                                          ;808F6D;
     REP #$20                                                             ;808F70;
+%smart_patch_addr($808F72)
     LDA.L Music_Pointers,X                                               ;808F72;
     STA.B $00                                                            ;808F76;
+%smart_patch_addr($808F78)
     LDA.L Music_Pointers+1,X                                             ;808F78;
     STA.B $01                                                            ;808F7C;
     JSL.L UploadToAPU_long                                               ;808F7E;
@@ -7587,9 +7592,15 @@ LoadFromLoadStation:
     PLP                                                                  ;80C4B3;
     RTL                                                                  ;80C4B4;
 
+if !INCLUDE_GENERATED_DATA
+incsrc "converted/load_stations.asm"
+endif
+
+if !INCLUDE_BUILTIN_DATA
 
 %anchor($80C4B5)
 LoadStationListPointers:
+%smart_patch_addr($80C4B5)
     dw LoadStations_Crateria                                             ;80C4B5;
     dw LoadStations_Brinstar                                             ;80C4B7;
     dw LoadStations_Norfair                                              ;80C4B9;
@@ -8226,6 +8237,7 @@ LoadStations_Debug:
     dw UNUSED_Door_Debug_0_83ABC4                                        ;80CCFB;
     dw $0000,$0000,$0000,$00B0,$0000                                     ;80CCFD;
 
+endif ; INCLUDE_BUILTIN_DATA
 
 %anchor($80CD07)
 SetDebugElevatorAsUsed:

@@ -21,6 +21,10 @@ endif
 ; or break pointers in SMART for example.
 !ANCHOR_LABELS ?= 1
 
+!ENFORCE_SMART_PATCH_ADDRS ?= 1
+!INCLUDE_BUILTIN_DATA ?= 1
+!INCLUDE_GENERATED_DATA ?= 0
+
 incsrc "macros.asm"
 incsrc "bank_80.asm"
 incsrc "bank_81.asm"

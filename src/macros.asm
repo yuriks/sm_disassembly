@@ -6,6 +6,13 @@ macro anchor(desired)
     endif
 endmacro
 
+macro smart_patch_addr(desired)
+    if !ENFORCE_SMART_PATCH_ADDRS
+    ?here:
+        assert ?here == <desired>
+    endif
+endmacro
+
 macro spritemapEntry(Size, XOffset, YOffset, YFlip, XFlip, Priority, Palette, Tile)
 ; Spritemap entry format is:
 ;     s000000xxxxxxxxx yyyyyyyy YXppPPPttttttttt

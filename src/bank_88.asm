@@ -364,7 +364,11 @@ Handle_LayerBlending_Xray_CantShowBlocks:
     STA.B $71                                                            ;8881C8;
     REP #$20                                                             ;8881CA;
     LDA.W $079B                                                          ;8881CC;
+if !INCLUDE_GENERATED_DATA
+    CMP.W #RoomHeader_GlassTube
+else
     CMP.W #RoomHeader_GlassTunnel                                        ;8881CF;
+endif
     SEP #$20                                                             ;8881D2;
     BNE .return                                                          ;8881D4;
     LDA.B #$11                                                           ;8881D6;
@@ -400,7 +404,11 @@ Handle_LayerBlending_Xray_FirefleaRoom:
 Handle_LayerBlending_PowerBomb:
     REP #$30                                                             ;8881FE;
     LDA.W $079B                                                          ;888200;
+if !INCLUDE_GENERATED_DATA
+    CMP.W #RoomHeader_StatueRoom
+else
     CMP.W #RoomHeader_Statues                                            ;888203;
+endif
     SEP #$30                                                             ;888206;
     BNE +                                                                ;888208;
     LDY.B #$06                                                           ;88820A;
@@ -540,6 +548,19 @@ Initialise_Special_Effects_for_New_Room:
     STZ.W $0607                                                          ;8882C4;
     STZ.W $0609                                                          ;8882C7;
     LDA.W $079B                                                          ;8882CA;
+if !INCLUDE_GENERATED_DATA
+    CMP.W #RoomHeader_SilverTorizoBossRoom
+    BEQ .noEarthquakeSFX                                                 ;8882D0;
+    CMP.W #RoomHeader_OldTourianShaft
+    BEQ .noEarthquakeSFX                                                 ;8882D5;
+    CMP.W #RoomHeader_RidleyBossRoom
+    BEQ .noEarthquakeSFX                                                 ;8882DA;
+    CMP.W #RoomHeader_PillarRoom
+    BEQ .noEarthquakeSFX                                                 ;8882DF;
+    CMP.W #RoomHeader_MotherBrainBossRoom
+    BEQ .noEarthquakeSFX                                                 ;8882E4;
+    CMP.W #RoomHeader_TourianVerticalEscape
+else
     CMP.W #RoomHeader_BombTorizo                                         ;8882CD;
     BEQ .noEarthquakeSFX                                                 ;8882D0;
     CMP.W #RoomHeader_Climb                                              ;8882D2;
@@ -551,6 +572,7 @@ Initialise_Special_Effects_for_New_Room:
     CMP.W #RoomHeader_MotherBrain                                        ;8882E1;
     BEQ .noEarthquakeSFX                                                 ;8882E4;
     CMP.W #RoomHeader_TourianEscape4                                     ;8882E6;
+endif
     BEQ .noEarthquakeSFX                                                 ;8882E9;
     BRA .earthquakeSFX                                                   ;8882EB;
 

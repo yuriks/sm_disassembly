@@ -1,6 +1,12 @@
 
 org $838000
 
+if !INCLUDE_GENERATED_DATA
+incsrc "converted/fx_headers.asm"
+incsrc "converted/door_headers.asm"
+endif
+
+if !INCLUDE_BUILTIN_DATA
 ; FX format
 ;        _____________________________ 0: Door pointer
 ;       |      _______________________ 2: Base Y position
@@ -5188,6 +5194,7 @@ UNUSED_Door_Debug_3_83ABE5:
     dw RoomHeader_Debug                                                  ;83ABE5;
     db $04,$00,$00,$00,$01,$00,$01                                       ;83ABE7;
     dw $0000                                                             ;83ABEE;
+endif ; INCLUDE_BUILTIN_DATA
 
 %anchor($83ABF0)
 FXType_Tilemap_Pointers:

@@ -9696,9 +9696,15 @@ REP30_91D141:
 %anchor($91D143)
 CheckIfXrayShouldShowAnyBlocks:
     LDA.W $079B                                                          ;91D143;
+if !INCLUDE_GENERATED_DATA
+    CMP.W #RoomHeader_StatueRoom
+    BEQ .return                                                          ;91D149;
+    CMP.W #RoomHeader_GlassTube
+else
     CMP.W #RoomHeader_Statues                                            ;91D146;
     BEQ .return                                                          ;91D149;
     CMP.W #RoomHeader_GlassTunnel                                        ;91D14B;
+endif
     BEQ .return                                                          ;91D14E;
     LDA.W $196E                                                          ;91D150;
     CMP.W #$0024                                                         ;91D153;

@@ -946,6 +946,15 @@ DemoRoomData_pointers:
     dw DemoRoomData_set2                                                 ;828770;
     dw DemoRoomData_set3                                                 ;828772;
 
+if !INCLUDE_GENERATED_DATA
+DemoRoomData_set0:
+DemoRoomData_set1:
+DemoRoomData_set2:
+DemoRoomData_set3:
+    dw $FFFF
+endif
+
+if !INCLUDE_BUILTIN_DATA
 %anchor($828774)
 DemoRoomData_set0:
     dw RoomHeader_LandingSite                                            ;828774;
@@ -1076,6 +1085,7 @@ DemoRoomData_set3:
     dw DemoRoomCode_LandingSite_BG2Tilemap                               ;828916;
 
     dw $FFFF                                                             ;828918;
+endif ; INCLUDE_BUILTIN_DATA
 
 %anchor($82891A)
 DemoRoomCode_ChargeBeamRoom_Scroll21hRed:
@@ -11467,7 +11477,11 @@ DoorTransitionFunction_PlaceSamus_LoadTiles:
     BIT.W #$0002                                                         ;82E406;
     BEQ .decompress                                                      ;82E409;
     LDA.W $078D                                                          ;82E40B;
+if !INCLUDE_GENERATED_DATA
+    CMP.W #Door_PostCrocomireShaft_0                                     ;82E40E;
+else
     CMP.W #Door_PostCrocShaft_0                                          ;82E40E;
+endif
     BEQ .decompress                                                      ;82E411;
     LDA.W #CRE_Tiles_Compressed>>8&$FF00                                 ;82E413;
     STA.B $48                                                            ;82E416;
@@ -11502,7 +11516,11 @@ DoorTransitionFunction_PlaceSamus_LoadTiles:
     BIT.W #$0006                                                         ;82E467;
     BEQ .checkUp                                                         ;82E46A;
     LDA.W $078D                                                          ;82E46C;
+if !INCLUDE_GENERATED_DATA
+    CMP.W #Door_PostCrocomireShaft_0                                     ;82E46F;
+else
     CMP.W #Door_PostCrocShaft_0                                          ;82E46F;
+endif
     BEQ .checkUp                                                         ;82E472;
     JSR.W Perform_Door_Transition_VRAM_Update                            ;82E474;
     dl $7E7000                                                           ;82E477;
@@ -12118,6 +12136,7 @@ LoadLevelData_CRE_TileTable_ScrollData_PLMs_DoorASM_RoomASM:
 
 .scrollsEnd:
     REP #$30                                                             ;82E8B9;
+%smart_patch_addr($82E8BB)
     LDX.W $07BB                                                          ;82E8BB;
     LDA.W $0014,X                                                        ;82E8BE;
     BEQ +                                                                ;82E8C1;
@@ -12131,6 +12150,7 @@ LoadLevelData_CRE_TileTable_ScrollData_PLMs_DoorASM_RoomASM:
     CLC                                                                  ;82E8CE;
     ADC.W #$0006                                                         ;82E8CF;
     TAX                                                                  ;82E8D2;
+%smart_patch_addr($82E8D3)
     BRA .loopF                                                           ;82E8D3;
 
 
@@ -12541,6 +12561,7 @@ CreatePLMs_ExecuteDoorASM_RoomSetupASM_SetElevatorStatus:
     PEA.W $8F00                                                          ;82EB6C;
     PLB                                                                  ;82EB6F;
     PLB                                                                  ;82EB70;
+%smart_patch_addr($82EB71)
     LDX.W $07BB                                                          ;82EB71;
     LDA.W $0014,X                                                        ;82EB74;
     BEQ .noPLMs                                                          ;82EB77;
@@ -12554,6 +12575,7 @@ CreatePLMs_ExecuteDoorASM_RoomSetupASM_SetElevatorStatus:
     CLC                                                                  ;82EB84;
     ADC.W #$0006                                                         ;82EB85;
     TAX                                                                  ;82EB88;
+%smart_patch_addr($82EB89)
     BRA .loop                                                            ;82EB89;
 
 

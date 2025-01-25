@@ -458,10 +458,12 @@ Spawn_Room_PLM:
 
 .found:
     SEP #$20                                                             ;848482;
+%smart_patch_addr($848484)
     LDA.L $8F0003,X                                                      ;848484;
     STA.W $4202                                                          ;848488;
     LDA.W $07A5                                                          ;84848B;
     STA.W $4203                                                          ;84848E;
+%smart_patch_addr($848491)
     LDA.L $8F0002,X                                                      ;848491;
     REP #$20                                                             ;848495;
     AND.W #$00FF                                                         ;848497;
@@ -469,8 +471,10 @@ Spawn_Room_PLM:
     ADC.W $4216                                                          ;84849B;
     ASL A                                                                ;84849E;
     STA.W $1C87,Y                                                        ;84849F;
+%smart_patch_addr($8484A2)
     LDA.L $8F0004,X                                                      ;8484A2;
     STA.W $1DC7,Y                                                        ;8484A6;
+%smart_patch_addr($8484A9)
     LDA.L $8F0000,X                                                      ;8484A9;
     STA.W $1C37,Y                                                        ;8484AD;
     TYX                                                                  ;8484B0;

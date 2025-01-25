@@ -1,6 +1,17 @@
 
 org $8F8000
 
+if !INCLUDE_GENERATED_DATA
+incsrc "converted/plm_populations.asm"
+incsrc "converted/plm_param_scrolldata.asm"
+incsrc "converted/room_headers.asm"
+incsrc "converted/room_scroll_data.asm"
+incsrc "converted/doorcode_scroll_updates.asm"
+incsrc "doorasm_extracted.asm"
+incsrc "converted/bgdata_commands.asm"
+endif
+
+if !INCLUDE_BUILTIN_DATA
 
 %anchor($8F8000)
 PLMPopulation_LandingSite_State0_1_2:                                    ;8F8000;
@@ -1392,6 +1403,7 @@ PLMPopulation_LNSave:                                                    ;8F918C
     %PLMPopEntry(PLMEntries_saveStation, $07, $0B, $0005)
     dw $0000
 
+endif ; INCLUDE_BUILTIN_DATA
 
 %anchor($8F9194)
 SetupASM_ClearBlocksAfterSavingAnimalsAndShakeScreen:
@@ -1505,6 +1517,7 @@ RTS_8F91F6:
 RTS_8F91F7:
     RTS                                                                  ;8F91F7;
 
+if !INCLUDE_BUILTIN_DATA
 
 %anchor($8F91F8)
 RoomHeader_LandingSite:
@@ -8380,6 +8393,7 @@ DoorASM_Scroll_E_Red:
     STA.L $7ECD2E                                                        ;8FC110;
     PLP                                                                  ;8FC114;
     RTS                                                                  ;8FC115;
+endif ; INCLUDE_BUILTIN_DATA
 
 
 %anchor($8FC116)
@@ -8539,6 +8553,8 @@ UNUSED_8FC209:                                                           ;8FC209
     dw $0005 ; Number of save stations in Brinstar
     dw $0006 ; Number of save stations in Norfair
 endif ; !FEATURE_KEEP_UNREFERENCED
+
+if !INCLUDE_BUILTIN_DATA
 
 %anchor($8FC215)
 PLMPopulation_BowlingAlley_State0:                                       ;8FC215;
@@ -9228,6 +9244,7 @@ PLMPopulation_58Escape_State0_1:
 %anchor($8FC8C5)
 PLMPopulation_CeresRidley_State0_1:
     dw $0000                                                             ;8FC8C5;
+endif ; INCLUDE_BUILTIN_DATA
 
 %anchor($8FC8C7)
 RTS_8FC8C7:
@@ -9386,6 +9403,8 @@ SetupASM_SetBG1_2_TilesBaseAddress_SpawnCeresHaze:
     STA.W $07EB                                                          ;8FC98A;
     RTS                                                                  ;8FC98D;
 
+
+if !INCLUDE_BUILTIN_DATA
 
 %anchor($8FC98E)
 RoomHeader_BowlingAlley:
@@ -13235,6 +13254,7 @@ DoorASM_SetupElevatubeFromNorth:
     db $01,$00                                                           ;8FE2B1;
     dw PLMEntries_maridiaElevatube                                       ;8FE2B3;
     RTS                                                                  ;8FE2B5;
+endif ; INCLUDE_BUILTIN_DATA
 
 
 %anchor($8FE2B6)
@@ -13275,6 +13295,7 @@ MainASM_Elevatube:
 .return:
     RTS                                                                  ;8FE300;
 
+if !INCLUDE_BUILTIN_DATA
 
 %anchor($8FE301)
 DoorASM_ResetElevatubeOnNorthExit:
@@ -13565,6 +13586,7 @@ DoorASM_FromCeresElevatorShaft:
     REP #$20                                                             ;8FE519;
     STZ.W $0783                                                          ;8FE51B;
     RTS                                                                  ;8FE51E;
+endif ; INCLUDE_BUILTIN_DATA
 
 
 %anchor($8FE51F)
@@ -14074,6 +14096,8 @@ Music_Pointers:
     dl Music_BabyMetroid_BossFight2                                      ;8FE826;
     dl Music_SamusTheme_UpperCrateria                                    ;8FE829;
 
+if !INCLUDE_BUILTIN_DATA
+
 %anchor($8FE82C)
 RoomHeader_Debug:
     db $00,$07,$00,$00,$06,$02,$70,$A0,$00                               ;8FE82C;
@@ -14119,6 +14143,7 @@ endif ; !FEATURE_KEEP_UNREFERENCED
 %anchor($8FE87F)
 RoomPLM_Debug:
     db $00,$00                                                           ;8FE87F;
+endif ; INCLUDE_BUILTIN_DATA
 
 if !FEATURE_KEEP_UNREFERENCED
 %anchor($8FE881)
