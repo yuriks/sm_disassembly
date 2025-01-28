@@ -2,12 +2,15 @@
 org $B68000
 
 
+%anchor($B68000)
 Tiles_PauseScreen_BG1_BG2:
 incbin "../data/Tiles_PauseScreen_BG1_BG2.bin" ; $4000 bytes
 
+%anchor($B6C000)
 Tiles_Menu_PauseScreen_Sprites:
 incbin "../data/Tiles_Menu_PauseScreen_Sprites.bin" ; $2000 bytes
 
+%anchor($B6E000)
 Tilemap_BG2PauseScreen_BG2RoomSelectMap_0:
     dw $2801,$2801,$2801,$2801,$2801,$2801,$2801,$2801                   ;B6E000;
     dw $2801,$2801,$2801,$2801,$2801,$2801,$2801,$2801                   ;B6E010;
@@ -74,6 +77,7 @@ Tilemap_BG2PauseScreen_BG2RoomSelectMap_0:
     dw $0812,$0812,$0812,$0812,$0812,$0812,$0812,$0812                   ;B6E3E0;
     dw $0812,$0812,$0812,$0812,$0812,$0812,$0812,$28CF                   ;B6E3F0;
 
+%anchor($B6E400)
 Tilemap_BG2PauseScreen_BG2RoomSelectMap_1:
     dw $68CF,$0812,$0812,$0812,$0812,$0812,$0812,$0812                   ;B6E400;
     dw $0812,$0812,$0812,$0812,$0812,$0812,$0812,$0812                   ;B6E410;
@@ -140,6 +144,7 @@ Tilemap_BG2PauseScreen_BG2RoomSelectMap_1:
     dw $2801,$2801,$2801,$2801,$2801,$2801,$2801,$2801                   ;B6E7E0;
     dw $2801,$2801,$2801,$2801,$2801,$2801,$2801,$2801                   ;B6E7F0;
 
+%anchor($B6E800)
 Tilemap_EquipmentScreen:
     dw $0000,$0000,$0000,$0000,$0000,$0000,$0000,$0000                   ;B6E800;
     dw $0000,$0000,$0000,$0000,$0000,$0000,$0000,$0000                   ;B6E810;
@@ -270,6 +275,7 @@ Tilemap_EquipmentScreen:
     dw $0000,$0000,$0000,$0000,$0000,$0000,$0000,$0000                   ;B6EFE0;
     dw $0000,$0000,$0000,$0000,$0000,$0000,$0000,$0000                   ;B6EFF0;
 
+%anchor($B6F000)
 Palettes_PauseScreen:
     dw $0000,$02DF,$01D7,$00AC,$5EBB,$3DB3,$292E,$1486                   ;B6F000;
     dw $6318,$48FB,$7FFF,$0000,$6318,$44E5,$7FFF,$0000                   ;B6F010;
@@ -304,5 +310,6 @@ Palettes_PauseScreen:
     dw $3800,$2FE0,$1A80,$0120,$6B37,$4588,$2D05,$1062                   ;B6F1E0;
     dw $37FF,$1E3F,$047F,$0456,$004C,$0023,$7FFF,$0000                   ;B6F1F0;
 
+%anchor($B6F200)
 Freespace_BankB6_F200:                                                   ;B6F200;
 ; $E00 bytes

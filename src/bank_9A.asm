@@ -4,118 +4,151 @@ org $9A8000
 
 ; Palette loaded when loading a save or demo. (although nothing is displayed during this time)
 ; Palettes for common sprites, beams and flashing enemies are loaded from here during door transition
+%anchor($9A8000)
 Initial_Palette_BGPalette0:
     dw $14E0,$7FFF,$6B5A,$6B5A,$6B5A,$6B5A,$6B5A,$6B5A                   ;9A8000;
     dw $6B5A,$6B5A,$6B5A,$6B5A,$6B5A,$6B5A,$6B5A,$6B5A                   ;9A8010;
 
+%anchor($9A8020)
 Initial_Palette_BGPalette1:
     dw $2003,$6F7B,$4E12,$2884,$0000,$6F7B,$209F,$2884                   ;9A8020;
     dw $0000,$4E31,$354C,$2884,$0000,$023F,$0198,$006F                   ;9A8030;
 
+%anchor($9A8040)
 Initial_Palette_BGPalette2:
     dw $2003,$7FFF,$0000,$2FEF,$030D,$0209,$0145,$5EBB                   ;9A8040;
     dw $3DB3,$292E,$1486,$03BF,$025D,$0179,$0099,$6B5A                   ;9A8050;
 
+%anchor($9A8060)
 Initial_Palette_BGPalette3:
     dw $0000,$7FFF,$0000,$031F,$01DA,$00F5,$0067,$0000                   ;9A8060;
     dw $0000,$0000,$0000,$0000,$0000,$0000,$0000,$6B5A                   ;9A8070;
 
+%anchor($9A8080)
 Initial_Palette_BGPalette4:
     dw $0000,$7FFF,$0000,$5C17,$380E,$1C07,$0C03,$26FA                   ;9A8080;
     dw $0E1A,$6B5A,$6B5A,$6B5A,$6B5A,$6B5A,$6B5A,$6B5A                   ;9A8090;
 
+%anchor($9A80A0)
 Initial_Palette_BGPalette5:
     dw $0000,$7FFF,$0000,$7290,$4D8B,$38E6,$1C62,$3F33                   ;9A80A0;
     dw $2E6D,$1D8A,$0D06,$0ED7,$01DD,$141F,$201F,$6B5A                   ;9A80B0;
 
+%anchor($9A80C0)
 Initial_Palette_BGPalette6:
     dw $0000,$7FFF,$0000,$02A0,$0940,$08E0,$0860,$0213                   ;9A80C0;
     dw $0150,$00A9,$0022,$0000,$0000,$0000,$0000,$6B5A                   ;9A80D0;
 
+%anchor($9A80E0)
 Initial_Palette_BGPalette7:
     dw $0000,$7FFF,$0000,$6B5A,$6B5A,$6B5A,$6B5A,$6B5A                   ;9A80E0;
     dw $6B5A,$6B5A,$6B5A,$6B5A,$6B5A,$6B5A,$6B5A,$6B5A                   ;9A80F0;
 
+%anchor($9A8100)
 Initial_Palette_spritePalette0:
     dw $3800,$00CE,$00BB,$0C21,$3BE0,$318C,$263E,$5AD6                   ;9A8100;
     dw $4A52,$3BE0,$0074,$000D,$0173,$2108,$7E94,$7D08                   ;9A8110;
 
+%anchor($9A8120)
 Initial_Palette_spritePalette1:
     dw $3800,$0000,$0000,$0000,$0000,$0000,$0000,$0000                   ;9A8120;
     dw $0000,$0000,$0000,$0000,$0000,$0000,$0000,$0000                   ;9A8130;
 
+%anchor($9A8140)
 Initial_Palette_spritePalette2:
     dw $3800,$00CE,$421F,$1405,$3BE0,$21A8,$579F,$4AD2                   ;9A8140;
     dw $3A4E,$00BB,$5914,$30AA,$0216,$1104,$0074,$000D                   ;9A8150;
 
+%anchor($9A8160)
 Initial_Palette_spritePalette3:
     dw $3800,$0000,$0000,$0000,$0000,$0000,$0000,$0000                   ;9A8160;
     dw $0000,$0000,$0000,$0000,$0000,$0000,$0000,$0000                   ;9A8170;
 
+%anchor($9A8180)
 Initial_Palette_spritePalette4:
     dw $3800,$00CE,$033F,$1405,$3BE0,$21A8,$579F,$4AD2                   ;9A8180;
     dw $3A4E,$00BB,$021B,$010E,$0216,$1104,$0074,$000D                   ;9A8190;
 
+%anchor($9A81A0)
 Initial_Palette_spritePalette5:
     dw $3800,$7F5A,$033B,$0216,$0113,$7C1D,$5814,$300A                   ;9A81A0;
     dw $3BE0,$2680,$1580,$5294,$39CE,$2108,$2484,$7D08                   ;9A81B0;
 
+%anchor($9A81C0)
 Initial_Palette_spritePalette6:
     dw $3800,$7F5A,$7EC0,$6DE0,$54E0,$7F6E,$730A,$6665                   ;9A81C0;
     dw $5E22,$7FA0,$7B60,$7720,$72A0,$6E60,$7F91,$0000                   ;9A81D0;
 
+%anchor($9A81E0)
 Initial_Palette_spritePalette7:
     dw $3800,$0000,$0000,$0000,$0000,$0000,$0000,$0000                   ;9A81E0;
     dw $0000,$0000,$0000,$0000,$0000,$0000,$0000,$0000                   ;9A81F0;
 
+%anchor($9A8200)
 Tiles_GrappleBeam_Horizontal_Beam:
 incbin "../data/Tiles_GrappleBeam_Horizontal_Beam.bin" ; $800 bytes
 
+%anchor($9A8A00)
 Tiles_GrappleBeam_Diagonal_Beam:
 incbin "../data/Tiles_GrappleBeam_Diagonal_Beam.bin" ; $800 bytes
 
+%anchor($9A9200)
 Tiles_GrappleBeam_Vertical_Beam:
 incbin "../data/Tiles_GrappleBeam_Vertical_Beam.bin" ; $800 bytes
 
+%anchor($9A9A00)
 Tiles_NonClosed_ArmCannon_Vertical_0:
 incbin "../data/Tiles_NonClosed_ArmCannon_Vertical_0.bin" ; $200 bytes
 
+%anchor($9A9C00)
 Tiles_NonClosed_ArmCannon_Vertical_1:
 incbin "../data/Tiles_NonClosed_ArmCannon_Vertical_1.bin" ; $200 bytes
 
+%anchor($9A9E00)
 Tiles_NonClosed_ArmCannon_Vertical_2:
 incbin "../data/Tiles_NonClosed_ArmCannon_Vertical_2.bin" ; $200 bytes
 
+%anchor($9AA000)
 Tiles_NonClosed_ArmCannon_Horizontal_0:
 incbin "../data/Tiles_NonClosed_ArmCannon_Horizontal_0.bin" ; $200 bytes
 
+%anchor($9AA200)
 Tiles_NonClosed_ArmCannon_Horizontal_1:
 incbin "../data/Tiles_NonClosed_ArmCannon_Horizontal_1.bin" ; $200 bytes
 
+%anchor($9AA400)
 Tiles_NonClosed_ArmCannon_Horizontal_2:
 incbin "../data/Tiles_NonClosed_ArmCannon_Horizontal_2.bin" ; $200 bytes
 
+%anchor($9AA600)
 Tiles_NonClosed_ArmCannon_DownwardsDiagonal_0:
 incbin "../data/Tiles_NonClosed_ArmCannon_DownwardsDiagonal_0.bin" ; $200 bytes
 
+%anchor($9AA800)
 Tiles_NonClosed_ArmCannon_DownwardsDiagonal_1:
 incbin "../data/Tiles_NonClosed_ArmCannon_DownwardsDiagonal_1.bin" ; $200 bytes
 
+%anchor($9AAA00)
 Tiles_NonClosed_ArmCannon_DownwardsDiagonal_2:
 incbin "../data/Tiles_NonClosed_ArmCannon_DownwardsDiagonal_2.bin" ; $200 bytes
 
+%anchor($9AAC00)
 Tiles_NonClosed_ArmCannon_UpwardsDiagonal_0:
 incbin "../data/Tiles_NonClosed_ArmCannon_UpwardsDiagonal_0.bin" ; $200 bytes
 
+%anchor($9AAE00)
 Tiles_NonClosed_ArmCannon_UpwardsDiagonal_1:
 incbin "../data/Tiles_NonClosed_ArmCannon_UpwardsDiagonal_1.bin" ; $200 bytes
 
+%anchor($9AB000)
 Tiles_NonClosed_ArmCannon_UpwardsDiagonal_2:
 incbin "../data/Tiles_NonClosed_ArmCannon_UpwardsDiagonal_2.bin" ; $200 bytes
 
+%anchor($9AB200)
 Tiles_Standard_BG3:
 incbin "../data/Tiles_Standard_BG3.bin" ; $1000 bytes
 
+%anchor($9AC200)
 Clear_BG2Tilemap:
     dw $0000,$0000,$0000,$0000,$0000,$0000,$0000,$0000                   ;9AC200;
     dw $0000,$0000,$0000,$0000,$0000,$0000,$0000,$0000                   ;9AC210;
@@ -374,30 +407,39 @@ Clear_BG2Tilemap:
     dw $0000,$0000,$0000,$0000,$0000,$0000,$0000,$0000                   ;9AD1E0;
     dw $0000,$0000,$0000,$0000,$0000,$0000,$0000,$0000                   ;9AD1F0;
 
+%anchor($9AD200)
 Tiles_Standard_Sprite_0:
 incbin "../data/Tiles_Standard_Sprite_0.bin" ; $1800 bytes
 
+%anchor($9AEA00)
 Tiles_Standard_Sprite_1:
 incbin "../data/Tiles_Standard_Sprite_1.bin" ; $800 bytes
 
+%anchor($9AF200)
 Tiles_PowerBeam:
 incbin "../data/Tiles_PowerBeam.bin" ; $200 bytes
 
+%anchor($9AF400)
 Tiles_IceBeam:
 incbin "../data/Tiles_IceBeam.bin" ; $200 bytes
 
+%anchor($9AF600)
 Tiles_WaveBeam:
 incbin "../data/Tiles_WaveBeam.bin" ; $200 bytes
 
+%anchor($9AF800)
 Tiles_PlasmaBeam:
 incbin "../data/Tiles_PlasmaBeam.bin" ; $200 bytes
 
+%anchor($9AFA00)
 Tiles_Spazer:
 incbin "../data/Tiles_Spazer.bin" ; $200 bytes
 
+%anchor($9AFC00)
 Standard_Target_Sprite_Palette_Line0:
     dw $0000,$7FFF,$77BD,$6B5A,$6318,$7FFF,$77BD,$6B5A                   ;9AFC00;
     dw $6318,$7FFF,$77BD,$6B5A,$6318,$7FFF,$77BD,$6B5A                   ;9AFC10;
 
+%anchor($9AFC20)
 Freespace_Bank9A_FC20:                                                   ;9AFC20;
 ; $3E0 bytes

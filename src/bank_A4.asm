@@ -2,111 +2,134 @@
 org $A48000
 
 
+%anchor($A48000)
 CommonA4_GrappleAI_NoInteraction:
     JSL.L GrappleAI_SwitchEnemyAIToMainAI                                ;A48000;
     RTL                                                                  ;A48004;
 
 
+%anchor($A48005)
 CommonA4_GrappleAI_SamusLatchesOn:
     JSL.L GrappleAI_SamusLatchesOnWithGrapple                            ;A48005;
     RTL                                                                  ;A48009;
 
 
+%anchor($A4800A)
 CommonA4_GrappleAI_KillEnemy:
     JSL.L GrappleAI_EnemyGrappleDeath                                    ;A4800A;
     RTL                                                                  ;A4800E;
 
 
+%anchor($A4800F)
 CommonA4_GrappleAI_CancelGrappleBeam:
     JSL.L GrappleAI_SwitchToFrozenAI                                     ;A4800F;
     RTL                                                                  ;A48013;
 
 
+%anchor($A48014)
 CommonA4_GrappleAI_SamusLatchesOn_NoInvincibility:
     JSL.L GrappleAI_SamusLatchesOnWithGrapple_NoInvincibility            ;A48014;
     RTL                                                                  ;A48018;
 
 
+%anchor($A48019)
 UNUSED_CommonA4_GrappleAI_SamusLatchesOn_ParalyzeEnemy_A48019:
     JSL.L GrappleAI_SamusLatchesOnWithGrapple_ParalyzeEnemy              ;A48019;
     RTL                                                                  ;A4801D;
 
 
+%anchor($A4801E)
 CommonA4_GrappleAI_HurtSamus:
     JSL.L GrappleAI_SwitchToFrozenAI_duplicate                           ;A4801E;
     RTL                                                                  ;A48022;
 
 
+%anchor($A48023)
 CommonA4_NormalEnemyTouchAI:
     JSL.L NormalEnemyTouchAI                                             ;A48023;
     RTL                                                                  ;A48027;
 
 
+%anchor($A48028)
 CommonA4_NormalTouchAI_NoDeathCheck:
     JSL.L NormalEnemyTouchAI_NoDeathCheck_External                       ;A48028;
     RTL                                                                  ;A4802C;
 
 
+%anchor($A4802D)
 CommonA4_NormalEnemyShotAI:
     JSL.L NormalEnemyShotAI                                              ;A4802D;
     RTL                                                                  ;A48031;
 
 
+%anchor($A48032)
 CommonA4_NormalEnemyShotAI_NoDeathCheck_NoEnemyShotGraphic:
     JSL.L NormalEnemyShotAI_NoDeathCheck_NoEnemyShotGraphic_External     ;A48032;
     RTL                                                                  ;A48036;
 
 
+%anchor($A48037)
 CommonA4_NormalEnemyPowerBombAI:
     JSL.L NormalEnemyPowerBombAI                                         ;A48037;
     RTL                                                                  ;A4803B;
 
 
+%anchor($A4803C)
 CommonA4_NormalEnemyPowerBombAI_NoDeathCheck:
     JSL.L NormalEnemyPowerBombAI_NoDeathCheck_External                   ;A4803C;
     RTL                                                                  ;A48040;
 
 
+%anchor($A48041)
 CommonA4_NormalEnemyFrozenAI:
     JSL.L NormalEnemyFrozenAI                                            ;A48041;
     RTL                                                                  ;A48045;
 
 
+%anchor($A48046)
 CommonA4_CreateADudShot:
     JSL.L CreateADudShot                                                 ;A48046;
     RTL                                                                  ;A4804A;
 
 
+%anchor($A4804B)
 RTS_A4804B:
     RTS                                                                  ;A4804B;
 
 
+%anchor($A4804C)
 RTL_A4804C:
     RTL                                                                  ;A4804C;
 
 
+%anchor($A4804D)
 Spritemap_CommonA4_Nothing:
     dw $0000                                                             ;A4804D;
 
+%anchor($A4804F)
 ExtendedSpritemap_CommonA4_Nothing:
     dw $0001                                                             ;A4804F;
     dw $0000,$0000
     dw Spritemap_CommonA4_Nothing                                        ;A48055;
     dw Hitbox_CommonA4_Nothing                                           ;A48057;
 
+%anchor($A48059)
 Hitbox_CommonA4_Nothing:
     dw $0001                                                             ;A48059;
     dw $0000,$0000,$0000,$0000
     dw CommonA4_NormalEnemyTouchAI                                       ;A48063;
     dw CommonA4_NormalEnemyShotAI                                        ;A48065;
 
+%anchor($A48067)
 InstList_CommonA4_DeleteEnemy:
     dw Instruction_CommonA4_DeleteEnemy                                  ;A48067;
 
+%anchor($A48069)
 NOPNOP_A48069:
     NOP                                                                  ;A48069;
     NOP                                                                  ;A4806A;
 
+%anchor($A4806B)
 Instruction_CommonA4_Enemy0FB2_InY:
     LDA.W $0000,Y                                                        ;A4806B;
     STA.W $0FB2,X                                                        ;A4806E;
@@ -115,16 +138,19 @@ Instruction_CommonA4_Enemy0FB2_InY:
     RTL                                                                  ;A48073;
 
 
+%anchor($A48074)
 Instruction_CommonA4_SetEnemy0FB2ToRTS:
     LDA.W #RTS_A4807B                                                    ;A48074;
     STA.W $0FB2,X                                                        ;A48077;
     RTL                                                                  ;A4807A;
 
 
+%anchor($A4807B)
 RTS_A4807B:
     RTS                                                                  ;A4807B;
 
 
+%anchor($A4807C)
 Instruction_CommonA4_DeleteEnemy:
     LDA.W $0F86,X                                                        ;A4807C;
     ORA.W #$0200                                                         ;A4807F;
@@ -134,6 +160,7 @@ Instruction_CommonA4_DeleteEnemy:
     RTL                                                                  ;A48089;
 
 
+%anchor($A4808A)
 Instruction_CommonA4_CallFunctionInY:
     LDA.W $0000,Y                                                        ;A4808A;
     STA.B $12                                                            ;A4808D;
@@ -151,6 +178,7 @@ Instruction_CommonA4_CallFunctionInY:
     RTL                                                                  ;A4809B;
 
 
+%anchor($A4809C)
 Instruction_CommonA4_CallFunctionInY_WithA:
     LDA.W $0000,Y                                                        ;A4809C;
     STA.B $12                                                            ;A4809F;
@@ -172,6 +200,7 @@ Instruction_CommonA4_CallFunctionInY_WithA:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A480B5)
 UNUSED_Instruction_CommonA4_CallExternalFunctionInY_A480B5:
     LDA.W $0000,Y                                                        ;A480B5;
     STA.B $12                                                            ;A480B8;
@@ -192,6 +221,7 @@ UNUSED_Instruction_CommonA4_CallExternalFunctionInY_A480B5:
     JML.W [$0012]                                                        ;A480CB;
 
 
+%anchor($A480CE)
 UNUSED_Inst_CommonA4_CallExternalFunctionInY_WithA_A480CE:
     LDA.W $0000,Y                                                        ;A480CE;
     STA.B $12                                                            ;A480D1;
@@ -215,12 +245,14 @@ UNUSED_Inst_CommonA4_CallExternalFunctionInY_WithA_A480CE:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($A480ED)
 Instruction_CommonA4_GotoY:
     LDA.W $0000,Y                                                        ;A480ED;
     TAY                                                                  ;A480F0;
     RTL                                                                  ;A480F1;
 
 
+%anchor($A480F2)
 Instruction_CommonA4_GotoY_PlusY:
     STY.B $12                                                            ;A480F2;
     DEY                                                                  ;A480F4;
@@ -240,6 +272,7 @@ Instruction_CommonA4_GotoY_PlusY:
     RTL                                                                  ;A48107;
 
 
+%anchor($A48108)
 Instruction_CommonA4_DecrementTimer_GotoYIfNonZero:
     DEC.W $0F90,X                                                        ;A48108;
     BNE Instruction_CommonA4_GotoY                                       ;A4810B;
@@ -248,6 +281,7 @@ Instruction_CommonA4_DecrementTimer_GotoYIfNonZero:
     RTL                                                                  ;A4810F;
 
 
+%anchor($A48110)
 Instruction_CommonA4_DecrementTimer_GotoYIfNonZero_duplicate:
     DEC.W $0F90,X                                                        ;A48110;
     BNE Instruction_CommonA4_GotoY                                       ;A48113;
@@ -256,6 +290,7 @@ Instruction_CommonA4_DecrementTimer_GotoYIfNonZero_duplicate:
     RTL                                                                  ;A48117;
 
 
+%anchor($A48118)
 Instruction_CommonA4_DecrementTimer_GotoY_PlusY_IfNonZero:
     SEP #$20                                                             ;A48118;
     DEC.W $0F90,X                                                        ;A4811A;
@@ -265,6 +300,7 @@ Instruction_CommonA4_DecrementTimer_GotoY_PlusY_IfNonZero:
     RTL                                                                  ;A48122;
 
 
+%anchor($A48123)
 Instruction_CommonA4_TimerInY:
     LDA.W $0000,Y                                                        ;A48123;
     STA.W $0F90,X                                                        ;A48126;
@@ -273,12 +309,14 @@ Instruction_CommonA4_TimerInY:
     RTL                                                                  ;A4812B;
 
 
+%anchor($A4812C)
 Instruction_CommonA4_SkipNextInstruction:
     INY                                                                  ;A4812C;
     INY                                                                  ;A4812D;
     RTL                                                                  ;A4812E;
 
 
+%anchor($A4812F)
 Instruction_CommonA4_Sleep:
     DEY                                                                  ;A4812F;
     DEY                                                                  ;A48130;
@@ -289,6 +327,7 @@ Instruction_CommonA4_Sleep:
     RTL                                                                  ;A48139;
 
 
+%anchor($A4813A)
 Instruction_CommonA4_WaitYFrames:
     LDA.W $0000,Y                                                        ;A4813A;
     STA.W $0F94,X                                                        ;A4813D;
@@ -301,6 +340,7 @@ Instruction_CommonA4_WaitYFrames:
     RTL                                                                  ;A4814A;
 
 
+%anchor($A4814B)
 Instruction_CommonA4_TransferYBytesInYToVRAM:
     PHX                                                                  ;A4814B;
     LDX.W $0330                                                          ;A4814C;
@@ -324,6 +364,7 @@ Instruction_CommonA4_TransferYBytesInYToVRAM:
     RTL                                                                  ;A48172;
 
 
+%anchor($A48173)
 Instruction_CommonA4_EnableOffScreenProcessing:
     LDA.W $0F86,X                                                        ;A48173;
     ORA.W #$0800                                                         ;A48176;
@@ -331,6 +372,7 @@ Instruction_CommonA4_EnableOffScreenProcessing:
     RTL                                                                  ;A4817C;
 
 
+%anchor($A4817D)
 Instruction_CommonA4_DisableOffScreenProcessing:
     LDA.W $0F86,X                                                        ;A4817D;
     AND.W #$F7FF                                                         ;A48180;
@@ -343,6 +385,7 @@ Instruction_CommonA4_DisableOffScreenProcessing:
 ;       |     |      _________ Negated speed
 ;       |     |     |      ___ Negated subspeed
 ;       |     |     |     |
+%anchor($A48187)
 CommonA4EnemySpeeds_LinearlyIncreasing:
   .speed:
     dw $0000                                                             ;A48187;
@@ -423,6 +466,7 @@ CommonA4EnemySpeeds_LinearlyIncreasing:
 ;       |     |      _________ Negated subspeed
 ;       |     |     |      ___ Negated speed
 ;       |     |     |     |
+%anchor($A4838F)
 CommonA4EnemySpeeds_QuadraticallyIncreasing:
 ; I.e. gravity
 ; Used by e.g. Botwoon when dying and falling to the floor
@@ -530,6 +574,7 @@ CommonA4EnemySpeeds_QuadraticallyIncreasing:
     dw $74F9,$0011,$8B07,$FFEE
 
 
+%anchor($A48687)
 HurtAI_Crocomire:
 ; No call to Crocomire_vs_Samus_CollisionHandling, I guess that's why charged plasma lets you roll over past Crocomire
     LDX.W $0E54                                                          ;A48687;
@@ -538,6 +583,7 @@ HurtAI_Crocomire:
     RTL                                                                  ;A48691;
 
 
+%anchor($A48692)
 CrocomireConstants:
   .mouthCloseDelayWhenDamaged_NotProjAttack:
 ; Mouth close delay when damaged not during projectile attack
@@ -579,6 +625,7 @@ CrocomireConstants:
 ; Crocomire X position threshold for bridge to collapse
     dw $0640                                                             ;A486A4;
 
+%anchor($A486A6)
 Instruction_Crocomire_FightAI:
     PHX                                                                  ;A486A6;
     LDX.W $0E54                                                          ;A486A7;
@@ -612,10 +659,12 @@ Instruction_Crocomire_FightAI:
     dw UNUSED_FightAI_Crocomire_26_StepForward_A489DE                    ;A486D9;
     dw UNUSED_FightAI_Crocomire_28_MovingClaws_A489F9                    ;A486DB;
 
+%anchor($A486DD)
 RTS_A486DD:
     RTS                                                                  ;A486DD;
 
 
+%anchor($A486DE)
 FightAI_Crocomire_0_LockUp_SetInitialInstList:
     LDY.W #InstList_Crocomire_Initial                                    ;A486DE;
     LDA.W #$0001                                                         ;A486E1;
@@ -623,6 +672,7 @@ FightAI_Crocomire_0_LockUp_SetInitialInstList:
     RTS                                                                  ;A486E7;
 
 
+%anchor($A486E8)
 FightAI_Crocomire_2_StepForwardUntilOnScreen_StepForward:
     LDA.W #$0004                                                         ;A486E8;
     STA.W $0FAC                                                          ;A486EB;
@@ -630,6 +680,7 @@ FightAI_Crocomire_2_StepForwardUntilOnScreen_StepForward:
     RTS                                                                  ;A486F1;
 
 
+%anchor($A486F2)
 FightAI_Crocomire_4_Asleep:
     LDA.W $0F7A                                                          ;A486F2;
     SEC                                                                  ;A486F5;
@@ -651,6 +702,7 @@ FightAI_Crocomire_4_Asleep:
     RTS                                                                  ;A48716;
 
 
+%anchor($A48717)
 FightAI_Crocomire_6_SteppingForward:
     LDA.W $0FAA                                                          ;A48717;
     BIT.W #$0800                                                         ;A4871A;
@@ -685,6 +737,7 @@ FightAI_Crocomire_6_SteppingForward:
     RTS                                                                  ;A48751;
 
 
+%anchor($A48752)
 Instruction_Crocomire_MaybeStartProjectileAttack:
     PHX                                                                  ;A48752;
     LDA.W $05E5                                                          ;A48753;
@@ -701,6 +754,7 @@ Instruction_Crocomire_MaybeStartProjectileAttack:
     RTL                                                                  ;A4876B;
 
 
+%anchor($A4876C)
 FightAI_Crocomire_8_ProjectileAttack:
     LDA.W $0FAA                                                          ;A4876C;
     BIT.W #$0800                                                         ;A4876F;
@@ -738,6 +792,7 @@ FightAI_Crocomire_8_ProjectileAttack:
     RTS                                                                  ;A487B1;
 
 
+%anchor($A487B2)
 FightAI_Crocomire_A_NearSpikeWallCharge:
     LDA.W $0FAA                                                          ;A487B2;
     BIT.W #$0800                                                         ;A487B5;
@@ -752,6 +807,7 @@ FightAI_Crocomire_A_NearSpikeWallCharge:
     RTS                                                                  ;A487C9;
 
 
+%anchor($A487CA)
 FightAI_Crocomire_C_SteppingBack:
     LDA.W $0FAE                                                          ;A487CA;
     BEQ .stepForward                                                     ;A487CD;
@@ -771,6 +827,7 @@ FightAI_Crocomire_C_SteppingBack:
     RTS                                                                  ;A487E8;
 
 
+%anchor($A487E9)
 FightAI_Crocomire_E_BackOffFromSpikeWall:
     LDA.W $0F7A                                                          ;A487E9;
     CMP.W CrocomireConstants_XThresholdSpikeWall                         ;A487EC;
@@ -783,6 +840,7 @@ FightAI_Crocomire_E_BackOffFromSpikeWall:
     RTS                                                                  ;A487FA;
 
 
+%anchor($A487FB)
 UNUSED_FightAI_Crocomire_10_RoarAndStepForwards_A487FB:
     LDA.W #$0006                                                         ;A487FB;
     STA.W $0FAC                                                          ;A487FE;
@@ -790,6 +848,7 @@ UNUSED_FightAI_Crocomire_10_RoarAndStepForwards_A487FB:
     RTS                                                                  ;A48804;
 
 
+%anchor($A48805)
 UNUSED_SetFightIntroMovingClawsInstList_A48805:
     LDY.W #InstList_Crocomire_WaitForFirstSecondDamage_MovingClaws       ;A48805;
     LDA.W $0FAA                                                          ;A48808;
@@ -798,6 +857,7 @@ UNUSED_SetFightIntroMovingClawsInstList_A48805:
     RTS                                                                  ;A48811;
 
 
+%anchor($A48812)
 FightAI_Crocomire_12_WaitForFirstDamage:
     LDA.W $0FAA                                                          ;A48812;
     BIT.W #$0800                                                         ;A48815;
@@ -820,6 +880,7 @@ FightAI_Crocomire_12_WaitForFirstDamage:
     RTS                                                                  ;A48835;
 
 
+%anchor($A48836)
 FightAI_Crocomire_14_WaitForSecondDamage:
     LDA.W $0FAA                                                          ;A48836;
     BIT.W #$0800                                                         ;A48839;
@@ -842,6 +903,7 @@ FightAI_Crocomire_14_WaitForSecondDamage:
     RTS                                                                  ;A48859;
 
 
+%anchor($A4885A)
 UNUSED_FightAI_Crocomire_16_WaitForSecondDamage_A4885A:
     LDA.W $0FAA                                                          ;A4885A;
     BIT.W #$0800                                                         ;A4885D;
@@ -864,6 +926,7 @@ UNUSED_FightAI_Crocomire_16_WaitForSecondDamage_A4885A:
     RTS                                                                  ;A4887D;
 
 
+%anchor($A4887E)
 FightAI_Crocomire_18_PowerBombedCharge:
     LDX.W $0E54                                                          ;A4887E;
     LDA.W $0FAE                                                          ;A48881;
@@ -880,6 +943,7 @@ FightAI_Crocomire_18_PowerBombedCharge:
     RTS                                                                  ;A48899;
 
 
+%anchor($A4889A)
 UNUSED_FightAI_Crocomire_1A_DoNearSpikeWallCharge_A4889A:
     LDX.W $0E54                                                          ;A4889A;
     LDA.W $0FAA                                                          ;A4889D;
@@ -906,6 +970,7 @@ UNUSED_FightAI_Crocomire_1A_DoNearSpikeWallCharge_A4889A:
     RTS                                                                  ;A488D1;
 
 
+%anchor($A488D2)
 FightAI_Crocomire_1C_UnusedSequence_SetInitialInstList:
     LDX.W $0E54                                                          ;A488D2;
     JSR.W FightAI_Crocomire_0_LockUp_SetInitialInstList                  ;A488D5;
@@ -920,6 +985,7 @@ FightAI_Crocomire_1C_UnusedSequence_SetInitialInstList:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A488EE)
 UNUSED_ChargeCrocomireForwardOneStepAfterDelay_A488EE:
     LDX.W $0E54                                                          ;A488EE;
     JSR.W FightAI_Crocomire_0_LockUp_SetInitialInstList                  ;A488F1;
@@ -939,6 +1005,7 @@ UNUSED_ChargeCrocomireForwardOneStepAfterDelay_A488EE:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($A4890B)
 ChargeCrocomireForwardOneStep:
     LDA.W #$0014                                                         ;A4890B;
     STA.W $0FAC,X                                                        ;A4890E;
@@ -948,6 +1015,7 @@ ChargeCrocomireForwardOneStep:
     RTS                                                                  ;A4891A;
 
 
+%anchor($A4891B)
 UNUSED_FightAI_Crocomire_1E_ChooseForwardMovingAttack_A4891B:
     LDX.W $0E54                                                          ;A4891B;
     LDA.W $0FAA                                                          ;A4891E;
@@ -968,6 +1036,7 @@ UNUSED_FightAI_Crocomire_1E_ChooseForwardMovingAttack_A4891B:
     RTS                                                                  ;A4893F;
 
 
+%anchor($A48940)
 UNUSED_FightAI_Crocomire_20_DoNothingAndStepForward_A48940:
     LDX.W $0E54                                                          ;A48940;
     JSR.W FightAI_Crocomire_0_LockUp_SetInitialInstList                  ;A48943;
@@ -984,6 +1053,7 @@ UNUSED_FightAI_Crocomire_20_DoNothingAndStepForward_A48940:
     RTS                                                                  ;A4895D;
 
 
+%anchor($A4895E)
 UNUSED_FightAI_Crocomire_22_MoveForwardUntilHitSamus_A4895E:
     LDA.W $0F7A                                                          ;A4895E;
     CMP.W #$02A0                                                         ;A48961;
@@ -1021,6 +1091,7 @@ UNUSED_FightAI_Crocomire_22_MoveForwardUntilHitSamus_A4895E:
     RTS                                                                  ;A489A7;
 
 
+%anchor($A489A8)
 UNUSED_FightAI_Crocomire_24_MoveClaws_StepForward_A489A8:
     LDX.W $0E54                                                          ;A489A8;
     LDA.W $0FAE                                                          ;A489AB;
@@ -1047,6 +1118,7 @@ UNUSED_FightAI_Crocomire_24_MoveClaws_StepForward_A489A8:
     RTS                                                                  ;A489DD;
 
 
+%anchor($A489DE)
 UNUSED_FightAI_Crocomire_26_StepForward_A489DE:
     LDA.W $0FAA                                                          ;A489DE;
     BIT.W #$2000                                                         ;A489E1;
@@ -1062,6 +1134,7 @@ UNUSED_FightAI_Crocomire_26_StepForward_A489DE:
     RTS                                                                  ;A489F8;
 
 
+%anchor($A489F9)
 UNUSED_FightAI_Crocomire_28_MovingClaws_A489F9:
     LDA.W $0FAE                                                          ;A489F9;
     BNE .timerNotExpired                                                 ;A489FC;
@@ -1096,11 +1169,13 @@ UNUSED_FightAI_Crocomire_28_MovingClaws_A489F9:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A48A3A)
 UNUSED_Palette_Crocomire_A48A3A:
     dw $3800,$7FFF,$6B40,$6A80,$6980,$68E0,$6800,$5294                   ;A48A3A;
     dw $39CE,$2108,$08BF,$0895,$039F,$023A,$0176,$0000                   ;A48A4A;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A48A5A)
 InitAI_Crocomire:
     REP #$30                                                             ;A48A5A;
     LDA.W #$0006                                                         ;A48A5C;
@@ -1204,6 +1279,7 @@ InitAI_Crocomire:
     RTL                                                                  ;A48B5A;
 
 
+%anchor($A48B5B)
 UpdateCrocomireBG2Scroll:
     LDA.W $0F7E,X                                                        ;A48B5B;
     SEC                                                                  ;A48B5E;
@@ -1249,6 +1325,7 @@ UpdateCrocomireBG2Scroll:
     ADC.B $B7                                                            ;A48BA0;
     STA.B $B7                                                            ;A48BA2; fallthrough to UpdateCrocomireBG2XScroll
 
+%anchor($A48BA4)
 UpdateCrocomireBG2XScroll:
     LDX.W $0E54                                                          ;A48BA4;
     LDA.W $0F7A,X                                                        ;A48BA7;
@@ -1306,6 +1383,7 @@ UpdateCrocomireBG2XScroll:
     BRA .onScreen                                                        ;A48C02;
 
 
+%anchor($A48C04)
 MainAI_Crocomire:
     PHB                                                                  ;A48C04;
     LDA.W $0FA8                                                          ;A48C05;
@@ -1364,6 +1442,7 @@ MainAI_Crocomire:
     dw MainAI_Crocomire_DeathSequence_56_DeadDueToRoomEntry              ;A48C6A;
     dw MainAI_Crocomire_DeathSequence_58_FlowingDownTheRiver             ;A48C6C;
 
+%anchor($A48C6E)
 MainAI_Crocomire_DeathSequence_0_NotStarted:
     JSL.L HandleCrocomiresBridge                                         ;A48C6E;
     LDA.W #$0101                                                         ;A48C72;
@@ -1378,16 +1457,19 @@ MainAI_Crocomire_DeathSequence_0_NotStarted:
     LDX.W $0E54                                                          ;A48C88;
     JSL.L UpdateCrocomireBG2Scroll                                       ;A48C8B; fallthrough to RTS_A48C8F
 
+%anchor($A48C8F)
 RTS_A48C8F:
     RTS                                                                  ;A48C8F;
 
 
+%anchor($A48C90)
 MainAI_Crocomire_DeathSequence_56_DeadDueToRoomEntry:
     STZ.B $B5                                                            ;A48C90;
     STZ.B $B7                                                            ;A48C92;
     RTS                                                                  ;A48C94;
 
 
+%anchor($A48C95)
 Crocomire_vs_Samus_CollisionHandling:
     LDA.W $0FA8                                                          ;A48C95;
     BNE .return                                                          ;A48C98;
@@ -1414,6 +1496,7 @@ Crocomire_vs_Samus_CollisionHandling:
     RTS                                                                  ;A48CCA;
 
 
+%anchor($A48CCB)
 CrocomireHurtFlashHandling:
     LDA.W $0797                                                          ;A48CCB;
     BNE .return                                                          ;A48CCE;
@@ -1447,6 +1530,7 @@ CrocomireHurtFlashHandling:
     RTS                                                                  ;A48CFA;
 
 
+%anchor($A48CFB)
 Instruction_Crocomire_QueueCrySFX:
     PHX                                                                  ;A48CFB;
     PHY                                                                  ;A48CFC;
@@ -1457,6 +1541,7 @@ Instruction_Crocomire_QueueCrySFX:
     RTL                                                                  ;A48D06;
 
 
+%anchor($A48D07)
 Instruction_Crocomire_QueueBigExplosionSFX:
     PHX                                                                  ;A48D07;
     PHY                                                                  ;A48D08;
@@ -1467,6 +1552,7 @@ Instruction_Crocomire_QueueBigExplosionSFX:
     RTL                                                                  ;A48D12;
 
 
+%anchor($A48D13)
 Instruction_Crocomire_QueueSkeletonCollapseSFX:
     PHX                                                                  ;A48D13;
     PHY                                                                  ;A48D14;
@@ -1477,6 +1563,7 @@ Instruction_Crocomire_QueueSkeletonCollapseSFX:
     RTL                                                                  ;A48D1E;
 
 
+%anchor($A48D1F)
 HandlePlayingCrocomireAcidDamageSFX:
     PHX                                                                  ;A48D1F;
     PHY                                                                  ;A48D20;
@@ -1496,10 +1583,12 @@ HandlePlayingCrocomireAcidDamageSFX:
     RTL                                                                  ;A48D3E;
 
 
+%anchor($A48D3F)
 MainAI_Crocomire_DeathSequence_4_A_Hop_1_2_Resting:
     JSL.L HandlePlayingCrocomireAcidDamageSFX                            ;A48D3F;
     JSL.L UpdateCrocomireBG2XScroll                                      ;A48D43;
 
+%anchor($A48D47)
 MainAI_Crocomire_DeathSequence_20_26_Hop_4_5_Resting:
     LDA.W $0FAE                                                          ;A48D47;
     BEQ .timerExpired                                                    ;A48D4A;
@@ -1516,6 +1605,7 @@ MainAI_Crocomire_DeathSequence_20_26_Hop_4_5_Resting:
     RTS                                                                  ;A48D5D;
 
 
+%anchor($A48D5E)
 HandleCrocomiresBridge:
     PHY                                                                  ;A48D5E;
     LDA.W $0F7A                                                          ;A48D5F;
@@ -1683,6 +1773,7 @@ HandleCrocomiresBridge:
     RTL                                                                  ;A48EE4;
 
 
+%anchor($A48EE5)
 CollapseCrocomiresBridge:
     JSL.L Spawn_Hardcoded_PLM                                            ;A48EE5;
     db $61,$0B                                                           ;A48EE9;
@@ -1767,12 +1858,14 @@ CollapseCrocomiresBridge:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A48FC2)
 UNUSED_MoveEnemyDownBy14_12_A48FC2:
     JSL.L MoveEnemyDownBy_14_12                                          ;A48FC2;
     RTL                                                                  ;A48FC6;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($A48FC7)
 Instruction_Crocomire_ShakeScreen:
     PHX                                                                  ;A48FC7;
     PHY                                                                  ;A48FC8;
@@ -1787,6 +1880,7 @@ Instruction_Crocomire_ShakeScreen:
     RTL                                                                  ;A48FDE;
 
 
+%anchor($A48FDF)
 Instruction_Crocomire_MoveLeft4Pixels:
     PHX                                                                  ;A48FDF;
     PHY                                                                  ;A48FE0;
@@ -1805,16 +1899,19 @@ Instruction_Crocomire_MoveLeft4Pixels:
     RTL                                                                  ;A48FF9;
 
 
+%anchor($A48FFA)
 Instruction_Crocomire_MoveLeft4Pixels_SpawnBigDustCloud:
     JSR.W SpawnBigDustCloudProjectileWithRandomXOffset                   ;A48FFA;
     BRA Instruction_Crocomire_MoveLeft4Pixels                            ;A48FFD;
 
 
+%anchor($A48FFF)
 Instruction_Crocomire_MoveLeft4Pixels_SpawnBigDustCloud_dup:
     JSR.W SpawnBigDustCloudProjectileWithRandomXOffset                   ;A48FFF;
     BRA Instruction_Crocomire_MoveLeft4Pixels                            ;A49002;
 
 
+%anchor($A49004)
 SpawnBigDustCloudProjectileWithRandomXOffset:
     PHX                                                                  ;A49004;
     LDA.W $05E5                                                          ;A49005;
@@ -1831,6 +1928,7 @@ SpawnBigDustCloudProjectileWithRandomXOffset:
     RTS                                                                  ;A4901C;
 
 
+%anchor($A4901D)
 Instruction_Crocomire_MoveLeft_SpawnCloud_HandleSpikeWall:
     PHX                                                                  ;A4901D;
     PHY                                                                  ;A4901E;
@@ -1867,6 +1965,7 @@ Instruction_Crocomire_MoveLeft_SpawnCloud_HandleSpikeWall:
     RTL                                                                  ;A4905A;
 
 
+%anchor($A4905B)
 Instruction_Crocomire_MoveRight4PixelsIfOnScreen:
     PHX                                                                  ;A4905B;
     PHY                                                                  ;A4905C;
@@ -1889,6 +1988,7 @@ Instruction_Crocomire_MoveRight4PixelsIfOnScreen:
     RTL                                                                  ;A4907E;
 
 
+%anchor($A4907F)
 Instruction_Crocomire_MoveRight4Pixels:
     PHX                                                                  ;A4907F;
     PHY                                                                  ;A49080;
@@ -1901,16 +2001,19 @@ Instruction_Crocomire_MoveRight4Pixels:
     RTL                                                                  ;A4908E;
 
 
+%anchor($A4908F)
 Instruction_Crocomire_MoveRight4PixelsIfOnScreen_SpawnCloud:
     JSR.W SpawnBigDustCloudProjectileWithRandomXOffset                   ;A4908F;
     BRA Instruction_Crocomire_MoveRight4PixelsIfOnScreen                 ;A49092;
 
 
+%anchor($A49094)
 Instruction_Crocomire_MoveRight4Pixels_SpawnBigDustCloud:
     JSR.W SpawnBigDustCloudProjectileWithRandomXOffset                   ;A49094;
     BRA Instruction_Crocomire_MoveRight4Pixels                           ;A49097;
 
 
+%anchor($A49099)
 MainAI_Crocomire_DeathSequence_3C_Hop_6_Sinking:
     JSR.W SetMelting2InstListPointer                                     ;A49099;
     JSR.W HandleCrocomireAcidDamageSmoke                                 ;A4909C;
@@ -1940,6 +2043,7 @@ MainAI_Crocomire_DeathSequence_3C_Hop_6_Sinking:
     RTS                                                                  ;A490DE;
 
 
+%anchor($A490DF)
 SetMelting2InstListPointer:
     LDA.W $0F7E                                                          ;A490DF;
     LDY.W #InstList_Crocomire_Melting2_TopRow                            ;A490E2;
@@ -1961,6 +2065,7 @@ SetMelting2InstListPointer:
     RTS                                                                  ;A49107;
 
 
+%anchor($A49108)
 MainAI_Crocomire_DeathSequence_1E_24_2A_Hop_3_4_5_Sinking:
     JSR.W HandleCrocomireAcidDamageSmoke                                 ;A49108;
     LDA.W $0F7E                                                          ;A4910B;
@@ -1983,6 +2088,7 @@ MainAI_Crocomire_DeathSequence_1E_24_2A_Hop_3_4_5_Sinking:
     JMP.W SinkCrocomireDown                                              ;A49133;
 
 
+%anchor($A49136)
 MainAI_Crocomire_DeathSequence_2_Falling:
     LDA.L $7E9016                                                        ;A49136;
     CMP.W #$0016                                                         ;A4913A;
@@ -2009,6 +2115,7 @@ MainAI_Crocomire_DeathSequence_2_Falling:
     dw $0780,$0730,$0790,$0740,$07B0,$0760,$07A0,$0770                   ;A49156;
     dw $0710,$0750,$0720                                                 ;A49166;
 
+%anchor($A4916C)
 HandleCrocomireAcidDamageSmoke:
     LDA.L $7E9018                                                        ;A4916C;
     DEC A                                                                ;A49170;
@@ -2049,10 +2156,12 @@ HandleCrocomireAcidDamageSmoke:
     RTS                                                                  ;A491B9;
 
 
+%anchor($A491BA)
 MainAI_Crocomire_DeathSequence_8_E_Hop_1_2_Sinking:
     JSL.L HandlePlayingCrocomireAcidDamageSFX                            ;A491BA;
     JSR.W HandleCrocomireAcidDamageSmoke                                 ;A491BE; fallthrough to SinkCrocomireDown
 
+%anchor($A491C1)
 SinkCrocomireDown:
     JSR.W ResetCrocomireBG2YScrollHDMADataTable                          ;A491C1;
     LDA.W $0FAA                                                          ;A491C4;
@@ -2135,6 +2244,7 @@ SinkCrocomireDown:
     RTS                                                                  ;A4926D;
 
 
+%anchor($A4926E)
 MainAI_Crocomire_DeathSequence_34_Hop_6_Rising:
     LDX.W $0E54                                                          ;A4926E;
     LDA.W $0F7E,X                                                        ;A49271;
@@ -2158,6 +2268,7 @@ MainAI_Crocomire_DeathSequence_34_Hop_6_Rising:
     BRA RaiseCrocomireUp                                                 ;A4929C;
 
 
+%anchor($A4929E)
 MainAI_Crocomire_DeathSequence_16_22_28_Hop_3_4_5_Rising:
     JSR.W HandleCrocomireAcidDamageSmoke                                 ;A4929E;
     LDX.W $0E54                                                          ;A492A1;
@@ -2181,11 +2292,13 @@ MainAI_Crocomire_DeathSequence_16_22_28_Hop_3_4_5_Rising:
     BRA RaiseCrocomireUp                                                 ;A492CC;
 
 
+%anchor($A492CE)
 MainAI_Crocomire_DeathSequence_6_C_Hop_1_2_Rising:
     JSL.L HandlePlayingCrocomireAcidDamageSFX                            ;A492CE;
     JSR.W HandleCrocomireAcidDamageSmoke                                 ;A492D2;
     LDX.W $0E54                                                          ;A492D5; fallthrough to RaiseCrocomireUp
 
+%anchor($A492D8)
 RaiseCrocomireUp:
     JSR.W ResetCrocomireBG2YScrollHDMADataTable                          ;A492D8;
     LDX.W $0E54                                                          ;A492DB;
@@ -2236,6 +2349,7 @@ RaiseCrocomireUp:
     RTS                                                                  ;A49340;
 
 
+%anchor($A49341)
 MainAI_Crocomire_DeathSequence_10_Hop_3_LoadMeltingTilemap:
     LDA.W #$0030                                                         ;A49341;
     STA.W $068C                                                          ;A49344;
@@ -2293,6 +2407,7 @@ MainAI_Crocomire_DeathSequence_10_Hop_3_LoadMeltingTilemap:
     ADC.W #$0400                                                         ;A493BA; fallthrough to WriteCrocomireBG2Tilemap
     TAX                                                                  ;A493BD;
 
+%anchor($A493BE)
 WriteCrocomireBG2Tilemap:
     TXY                                                                  ;A493BE;
     LDX.W $0330                                                          ;A493BF;
@@ -2312,6 +2427,7 @@ WriteCrocomireBG2Tilemap:
     RTS                                                                  ;A493DE;
 
 
+%anchor($A493DF)
 ResetCrocomireBG2YScrollHDMADataTable:
     LDA.B $B7                                                            ;A493DF;
     LDX.W #$01FE                                                         ;A493E1;
@@ -2324,6 +2440,7 @@ ResetCrocomireBG2YScrollHDMADataTable:
     RTS                                                                  ;A493EC;
 
 
+%anchor($A493ED)
 MainAI_Crocomire_DeathSequence_2C_Hop_6_LoadMeltingTilemap:
     JSR.W ResetCrocomireBG2YScrollHDMADataTable                          ;A493ED;
     LDX.W $0E54                                                          ;A493F0;
@@ -2365,10 +2482,12 @@ MainAI_Crocomire_DeathSequence_2C_Hop_6_LoadMeltingTilemap:
     JMP.W WriteCrocomireBG2Tilemap                                       ;A49439;
 
 
+%anchor($A4943C)
 RTL_A4943C:
     RTL                                                                  ;A4943C;
 
 
+%anchor($A4943D)
 MainAI_Crocomire_DeathSequence_12_2E_Hop_3_4_LoadMeltTiles:
     REP #$30                                                             ;A4943D;
     PHB                                                                  ;A4943F;
@@ -2438,12 +2557,14 @@ MainAI_Crocomire_DeathSequence_12_2E_Hop_3_4_LoadMeltTiles:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A494B2)
 UNUSED_UploadCrocomireMeltingTilesToVRAM_A494B2:
     JSR.W MainAI_Crocomire_DeathSequence_14_30_Hop_3_6_UploadingToVRAM   ;A494B2;
     RTS                                                                  ;A494B5;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($A494B6)
 MainAI_Crocomire_DeathSequence_14_30_Hop_3_6_UploadingToVRAM:
     LDX.W $068A                                                          ;A494B6;
     LDY.W $0330                                                          ;A494B9;
@@ -2478,6 +2599,7 @@ MainAI_Crocomire_DeathSequence_14_30_Hop_3_6_UploadingToVRAM:
     RTS                                                                  ;A494FA;
 
 
+%anchor($A494FB)
 MainAI_Crocomire_DeathSequence_18_Hop_3_QueueCry_HDMAObject:
     REP #$30                                                             ;A494FB;
     LDA.W #$0077                                                         ;A494FD;
@@ -2485,11 +2607,13 @@ MainAI_Crocomire_DeathSequence_18_Hop_3_QueueCry_HDMAObject:
     BRA CreateCrocomireMeltingHDMAObject                                 ;A49504;
 
 
+%anchor($A49506)
 MainAI_Crocomire_DeathSequence_36_Hop_6_QueueCry_HDMAObject:
     REP #$30                                                             ;A49506;
     LDA.W #$002D                                                         ;A49508;
     JSL.L QueueSound_Lib2_Max6                                           ;A4950B;
 
+%anchor($A4950F)
 CreateCrocomireMeltingHDMAObject:
     LDA.W $0FBE                                                          ;A4950F;
     SEC                                                                  ;A49512;
@@ -2527,17 +2651,20 @@ CreateCrocomireMeltingHDMAObject:
     RTS                                                                  ;A49562;
 
 
+%anchor($A49563)
 InstList_HDMAObject_CrocomireMelting_0:
     dw Instruction_HDMAObject_HDMATableBank : db $7E                     ;A49563;
     dw Instruction_HDMAObject_IndirectHDMATableBank : db $7E             ;A49566;
     dw Instruction_HDMAObject_PreInstructionInY                          ;A49569;
     dl RTL_A4943C                                                        ;A4956B;
 
+%anchor($A4956E)
 InstList_HDMAObject_CrocomireMelting_1:
     dw $7777,$CAE0                                                       ;A4956E; $7E
     dw Instruction_HDMAObject_GotoY                                      ;A49572;
     dw InstList_HDMAObject_CrocomireMelting_1                            ;A49574;
 
+%anchor($A49576)
 MainAI_Crocomire_DeathSequence_32_SetIndex34:
     LDX.W $0E54                                                          ;A49576;
     INC.W $0FA8,X                                                        ;A49579;
@@ -2545,6 +2672,7 @@ MainAI_Crocomire_DeathSequence_32_SetIndex34:
     RTS                                                                  ;A4957F;
 
 
+%anchor($A49580)
 MainAI_Crocomire_DeathSequence_1A_38_Hop_3_6_Melting:
     REP #$30                                                             ;A49580;
     JSR.W HandleCrocomireAcidDamageSmoke                                 ;A49582;
@@ -2663,6 +2791,7 @@ MainAI_Crocomire_DeathSequence_1A_38_Hop_3_6_Melting:
     RTS                                                                  ;A49652;
 
 
+%anchor($A49653)
 MainAI_Crocomire_DeathSequence_1C_3A_Hop_3_6_ClearTilemap:
     REP #$30                                                             ;A49653;
     LDX.W $0E54                                                          ;A49655;
@@ -2696,6 +2825,7 @@ MainAI_Crocomire_DeathSequence_1C_3A_Hop_3_6_ClearTilemap:
     JMP.W NextCrocomireDeathSequenceIndex                                ;A49694;
 
 
+%anchor($A49697)
 CrocomireMeltingXOffsetTable:                                            ;A49697;
 ; Indexed by $0690
 ; Provides the pixel X offsets of melting Crocomire to erase in chronological order
@@ -2710,6 +2840,7 @@ CrocomireMeltingXOffsetTable:                                            ;A49697
     db $11,$0A,$04,$0D,$2F,$0E,$20,$26
     db $27
 
+%anchor($A496C8)
 EraseMeltingCrocomirePixelColumn:
     PHP                                                                  ;A496C8;
     SEP #$20                                                             ;A496C9;
@@ -2841,6 +2972,7 @@ EraseMeltingCrocomirePixelColumn:
     RTL                                                                  ;A497D2;
 
 
+%anchor($A497D3)
 MainAI_Crocomire_DeathSequence_3E_BehindWall_WaitForSamus:
     REP #$20                                                             ;A497D3;
     LDA.W $0AF6                                                          ;A497D5;
@@ -2879,6 +3011,7 @@ MainAI_Crocomire_DeathSequence_3E_BehindWall_WaitForSamus:
     RTS                                                                  ;A4982F;
 
 
+%anchor($A49830)
 MainAI_Crocomire_DeathSequence_58_FlowingDownTheRiver:
     LDA.W $0F7A                                                          ;A49830;
     SEC                                                                  ;A49833;
@@ -2901,6 +3034,7 @@ MainAI_Crocomire_DeathSequence_58_FlowingDownTheRiver:
     RTS                                                                  ;A49858;
 
 
+%anchor($A49859)
 MainAI_Crocomire_DeathSequence_40_BehindWall_Rumbling:
     LDX.W $0FAE                                                          ;A49859;
     LDA.W .targetYOffset,X                                               ;A4985C;
@@ -2994,6 +3128,7 @@ MainAI_Crocomire_DeathSequence_40_BehindWall_Rumbling:
     dw $FFFF,$8080,$8080
     dw $8080,$8080
 
+%anchor($A4990A)
 MainAI_Crocomire_DeathSequence_42_BehindWall_NoMoreRumbling:
     LDA.W $0FAE                                                          ;A4990A;
     BEQ .zero                                                            ;A4990D;
@@ -3101,6 +3236,7 @@ MainAI_Crocomire_DeathSequence_42_BehindWall_NoMoreRumbling:
     dw Tiles_CrocomireSkeleton_4                                         ;A499E1;
     dw Tiles_CrocomireSkeleton_5                                         ;A499E3;
 
+%anchor($A499E5)
 MainAI_Crocomire_DeathSequence_44_BreaksDownWall:
     LDA.W $0F7A                                                          ;A499E5;
     CMP.W #$00E0                                                         ;A499E8;
@@ -3141,6 +3277,7 @@ MainAI_Crocomire_DeathSequence_44_BreaksDownWall:
     RTS                                                                  ;A49A37;
 
 
+%anchor($A49A38)
 MainAI_Crocomire_DeathSequence_46_SkeletonFalls:
     LDA.W $0FB0                                                          ;A49A38;
     CLC                                                                  ;A49A3B;
@@ -3184,69 +3321,83 @@ MainAI_Crocomire_DeathSequence_46_SkeletonFalls:
     RTS                                                                  ;A49A9A;
 
 
+%anchor($A49A9B)
 Instruction_Crocomire_SpawnBigDustCloudProjectile_Negative20:
     LDA.W #$FFE0                                                         ;A49A9B;
     BRA SpawnBigDustCloudProjectile                                      ;A49A9E;
 
 
+%anchor($A49AA0)
 Instruction_Crocomire_SpawnBigDustCloudProjectile_0:
     LDA.W #$0000                                                         ;A49AA0;
     BRA SpawnBigDustCloudProjectile                                      ;A49AA3;
 
 
+%anchor($A49AA5)
 Instruction_Crocomire_SpawnBigDustCloudProjectile_Negative10:
     LDA.W #$FFF0                                                         ;A49AA5;
     BRA SpawnBigDustCloudProjectile                                      ;A49AA8;
 
 
+%anchor($A49AAA)
 Instruction_Crocomire_SpawnBigDustCloudProjectile_10:
     LDA.W #$0010                                                         ;A49AAA;
     BRA SpawnBigDustCloudProjectile                                      ;A49AAD;
 
 
+%anchor($A49AAF)
 Instruction_Crocomire_SpawnBigDustCloudProjectile_0_dup:
     LDA.W #$0000                                                         ;A49AAF;
     BRA SpawnBigDustCloudProjectile                                      ;A49AB2;
 
 
+%anchor($A49AB4)
 Instruction_Crocomire_SpawnBigDustCloudProjectile_8:
     LDA.W #$0008                                                         ;A49AB4;
     BRA SpawnBigDustCloudProjectile                                      ;A49AB7;
 
 
+%anchor($A49AB9)
 Instruction_Crocomire_SpawnBigDustCloudProjectile_10_dup:
     LDA.W #$0010                                                         ;A49AB9;
     BRA SpawnBigDustCloudProjectile                                      ;A49ABC;
 
 
+%anchor($A49ABE)
 Instruction_Crocomire_SpawnBigDustCloudProjectile_18:
     LDA.W #$0018                                                         ;A49ABE;
     BRA SpawnBigDustCloudProjectile                                      ;A49AC1;
 
 
+%anchor($A49AC3)
 Instruction_Crocomire_SpawnBigDustCloudProjectile_20:
     LDA.W #$0020                                                         ;A49AC3;
     BRA SpawnBigDustCloudProjectile                                      ;A49AC6;
 
 
+%anchor($A49AC8)
 Instruction_Crocomire_SpawnBigDustCloudProjectile_28:
     LDA.W #$0028                                                         ;A49AC8;
     BRA SpawnBigDustCloudProjectile                                      ;A49ACB;
 
 
+%anchor($A49ACD)
 Instruction_Crocomire_SpawnBigDustCloudProjectile_30:
     LDA.W #$0030                                                         ;A49ACD;
     BRA SpawnBigDustCloudProjectile                                      ;A49AD0;
 
 
+%anchor($A49AD2)
 Instruction_Crocomire_SpawnBigDustCloudProjectile_38:
     LDA.W #$0038                                                         ;A49AD2;
     BRA SpawnBigDustCloudProjectile                                      ;A49AD5;
 
 
+%anchor($A49AD7)
 Instruction_Crocomire_SpawnBigDustCloudProjectile_40:
     LDA.W #$0040                                                         ;A49AD7;
 
+%anchor($A49ADA)
 SpawnBigDustCloudProjectile:
     PHX                                                                  ;A49ADA;
     PHY                                                                  ;A49ADB;
@@ -3271,6 +3422,7 @@ SpawnBigDustCloudProjectile:
     RTL                                                                  ;A49B05;
 
 
+%anchor($A49B06)
 MainAI_Crocomire_DeathSequence_48_SkeletonFallsApart:
     LDA.W $0F92                                                          ;A49B06;
     CMP.W #InstList_CrocomireCorpse_Skeleton_1                           ;A49B09;
@@ -3313,6 +3465,7 @@ MainAI_Crocomire_DeathSequence_48_SkeletonFallsApart:
     RTS                                                                  ;A49B64;
 
 
+%anchor($A49B65)
 MainAI_Crocomire_DeathSequence_4A_UnlockCamera:
     LDA.W #$0101                                                         ;A49B65;
     STA.L $7ECD20                                                        ;A49B68;
@@ -3323,10 +3476,12 @@ MainAI_Crocomire_DeathSequence_4A_UnlockCamera:
     JMP.W NextCrocomireDeathSequenceIndex                                ;A49B78;
 
 
+%anchor($A49B7B)
 MainAI_Crocomire_DeathSequence_4E_SetIndex50:
     BRA NextCrocomireDeathSequenceIndex                                  ;A49B7B;
 
 
+%anchor($A49B7D)
 MainAI_Crocomire_DeathSequence_4C_SetIndex4E:
     LDA.W $0F92                                                          ;A49B7D;
     CMP.W #InstList_CrocomireCorpse_Skeleton_1                           ;A49B80;
@@ -3334,6 +3489,7 @@ MainAI_Crocomire_DeathSequence_4C_SetIndex4E:
     RTS                                                                  ;A49B85;
 
 
+%anchor($A49B86)
 MainAI_Crocomire_DeathSequence_50_MarkEvent_PostDeathMusic:
     LDA.W #$0006                                                         ;A49B86;
     JSL.L QueueMusicDataOrTrack_8FrameDelay                              ;A49B89;
@@ -3349,16 +3505,19 @@ MainAI_Crocomire_DeathSequence_50_MarkEvent_PostDeathMusic:
     LDA.W #$0010                                                         ;A49BAC;
     JSL.L SpawnBigDustCloudProjectile                                    ;A49BAF;
 
+%anchor($A49BB3)
 NextCrocomireDeathSequenceIndex:
     INC.W $0FA8                                                          ;A49BB3;
     INC.W $0FA8                                                          ;A49BB6;
     RTS                                                                  ;A49BB9;
 
 
+%anchor($A49BBA)
 MainAI_Crocomire_DeathSequence_54_SetIndex56:
     JMP.W NextCrocomireDeathSequenceIndex                                ;A49BBA;
 
 
+%anchor($A49BBD)
 TilePixelColumnBitmasks:                                                 ;A49BBD;
 ; ~(1 << x)
     db $7F ; ~80h. Pixel column 0
@@ -3396,6 +3555,7 @@ TilePixelColumnBitmasks:                                                 ;A49BBD
 ;     d: VRAM destination address
 
 ; Melting 1
+%anchor($A49BC5)
 MeltingCrocomireTilesLoadingTable_Melting1_0:
     dw $0058,$0030,$0200,$00A4                                           ;A49BC5;
     dw Tiles_Crocomire_Melting1_0,$4000                                  ;A49BCD;
@@ -3406,6 +3566,7 @@ MeltingCrocomireTilesLoadingTable_Melting1_0:
     dw Tiles_Crocomire_Melting1_5,$4A00                                  ;A49BE1;
     dw $FFFF                                                             ;A49BE3;
 
+%anchor($A49BE7)
 MeltingCrocomireTilesLoadingTable_Melting1_1:                            ;A49BE7;
     dw $0160,$0000,$007E,$4000
     dw $0160,$0100,$007E,$4200
@@ -3415,6 +3576,7 @@ MeltingCrocomireTilesLoadingTable_Melting1_1:                            ;A49BE7
     dw $0160,$0500,$007E,$4A00
     dw $FFFF
 
+%anchor($A49C19)
 MeltingCrocomireTilesLoadingTable_Melting2_0:
     dw $0058,$0030,$0200,$00A4                                           ;A49C19;
     dw Tiles_Crocomire_Melting2_0,$4000                                  ;A49C21;
@@ -3426,6 +3588,7 @@ MeltingCrocomireTilesLoadingTable_Melting2_0:
     dw Palette_Crocomire,$4C00                                           ;A49C39;
     dw $FFFF                                                             ;A49C3B;
 
+%anchor($A49C3F)
 MeltingCrocomireTilesLoadingTable_Melting2_1:                            ;A49C3F;
     dw $0160,$0000,$007E,$4000
     dw $0160,$0100,$007E,$4200
@@ -3436,6 +3599,7 @@ MeltingCrocomireTilesLoadingTable_Melting2_1:                            ;A49C3F
     dw $0160,$0600,$007E,$4C00
     dw $FFFF
 
+%anchor($A49C79)
 MeltingCrocomireTilesLoadingTable_Tilemap_Melting1:
     dw $3C00,$3C20,$3C30,$3C40,$3C50,$3C01,$0338,$0338                   ;A49C79;
     dw $0338,$0338,$0338,$0338,$0338,$0338,$0338,$0338                   ;A49C89;
@@ -3471,6 +3635,7 @@ MeltingCrocomireTilesLoadingTable_Tilemap_Melting1:
     dw $0338,$0338,$0338,$0338,$0338,$0338,$0338,$0338                   ;A49E69;
     dw $FFFF                                                             ;A49E79;
 
+%anchor($A49E7B)
 MeltingCrocomireTilesLoadingTable_Tilemap_Melting2:
     dw $3C00,$3C10,$3C20,$3C30,$0338,$0338,$0338,$0338                   ;A49E7B;
     dw $0338,$3C00,$0338,$0338,$0338,$0338,$0338,$0338                   ;A49E8B;
@@ -3506,6 +3671,7 @@ MeltingCrocomireTilesLoadingTable_Tilemap_Melting2:
     dw $0338,$0338,$0338,$0338,$0338,$0338,$0338,$0338                   ;A4A06B;
     dw $FFFF                                                             ;A4A07B;
 
+%anchor($A4A07D)
 Tiles_Crocomire_Melting1_0:
     db $00,$03,$00,$07,$02,$0D,$19,$1E,$32,$3C,$26,$38,$36,$39,$6F,$71   ;A4A07D;
     db $03,$00,$07,$00,$0F,$00,$1F,$18,$3F,$30,$3F,$20,$3F,$30,$7F,$61   ;A4A08D;
@@ -3540,6 +3706,7 @@ Tiles_Crocomire_Melting1_0:
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00   ;A4A25D;
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00   ;A4A26D;
 
+%anchor($A4A27D)
 Tiles_Crocomire_Melting1_1:
     db $1C,$63,$4C,$73,$49,$76,$42,$7C,$50,$6E,$50,$6F,$5F,$7F,$79,$79   ;A4A27D;
     db $7F,$00,$7F,$40,$7F,$40,$7F,$40,$7F,$40,$7F,$40,$7F,$5F,$79,$79   ;A4A28D;
@@ -3574,6 +3741,7 @@ Tiles_Crocomire_Melting1_1:
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00   ;A4A45D;
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00   ;A4A46D;
 
+%anchor($A4A47D)
 Tiles_Crocomire_Melting1_2:
     db $00,$FF,$00,$C1,$05,$00,$FF,$00,$A8,$70,$F1,$C1,$80,$80,$B6,$00   ;A4A47D;
     db $FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$20,$FE,$C0,$FF,$80,$FF,$00   ;A4A48D;
@@ -3608,6 +3776,7 @@ Tiles_Crocomire_Melting1_2:
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00   ;A4A65D;
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00   ;A4A66D;
 
+%anchor($A4A67D)
 Tiles_Crocomire_Melting1_3:
     db $20,$E0,$0C,$BC,$A0,$0F,$B0,$30,$BB,$FF,$01,$FF,$6A,$60,$52,$0D   ;A4A67D;
     db $E0,$20,$FC,$0C,$FF,$00,$CF,$00,$00,$00,$00,$00,$9F,$00,$FF,$00   ;A4A68D;
@@ -3642,6 +3811,7 @@ Tiles_Crocomire_Melting1_3:
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00   ;A4A85D;
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00   ;A4A86D;
 
+%anchor($A4A87D)
 Tiles_Crocomire_Melting1_4:
     db $00,$00,$00,$00,$60,$60,$0E,$EE,$3E,$9A,$24,$E0,$F1,$55,$BA,$07   ;A4A87D;
     db $00,$00,$00,$00,$60,$60,$FE,$0E,$67,$02,$1F,$00,$AA,$00,$F8,$00   ;A4A88D;
@@ -3676,6 +3846,7 @@ Tiles_Crocomire_Melting1_4:
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00   ;A4AA5D;
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00   ;A4AA6D;
 
+%anchor($A4AA7D)
 Tiles_Crocomire_Melting1_5:
     db $00,$00,$00,$00,$00,$00,$00,$00,$B0,$B0,$07,$7F,$C0,$C7,$54,$F5   ;A4AA7D;
     db $00,$00,$00,$00,$00,$00,$00,$00,$B0,$B0,$FF,$07,$3F,$00,$0B,$00   ;A4AA8D;
@@ -3710,6 +3881,7 @@ Tiles_Crocomire_Melting1_5:
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00   ;A4AC5D;
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00   ;A4AC6D;
 
+%anchor($A4AC7D)
 Tiles_Crocomire_Melting2_0:
     db $00,$00,$00,$00,$00,$01,$03,$03,$06,$07,$04,$07,$06,$07,$0D,$0E   ;A4AC7D;
     db $00,$00,$00,$00,$01,$00,$03,$03,$07,$06,$07,$04,$07,$06,$0F,$0C   ;A4AC8D;
@@ -3744,6 +3916,7 @@ Tiles_Crocomire_Melting2_0:
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00   ;A4AE5D;
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00   ;A4AE6D;
 
+%anchor($A4AE7D)
 Tiles_Crocomire_Melting2_1:
     db $00,$7F,$00,$F8,$40,$A0,$3F,$C0,$55,$8E,$DE,$18,$D0,$30,$F6,$20   ;A4AE7D;
     db $7F,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$04,$FF,$18,$FF,$10,$FF,$20   ;A4AE8D;
@@ -3778,6 +3951,7 @@ Tiles_Crocomire_Melting2_1:
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00   ;A4B05D;
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00   ;A4B06D;
 
+%anchor($A4B07D)
 Tiles_Crocomire_Melting2_2:
     db $04,$FC,$00,$34,$B0,$00,$F0,$00,$10,$18,$20,$3F,$0D,$0C,$CA,$01   ;A4B07D;
     db $FC,$04,$FC,$00,$F8,$00,$F8,$00,$E0,$00,$C0,$00,$F3,$00,$FF,$00   ;A4B08D;
@@ -3812,6 +3986,7 @@ Tiles_Crocomire_Melting2_2:
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00   ;A4B25D;
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00   ;A4B26D;
 
+%anchor($A4B27D)
 Tiles_Crocomire_Melting2_3:
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$C0,$00,$00,$02,$00   ;A4B27D;
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$80,$00,$02,$00   ;A4B28D;
@@ -3846,6 +4021,7 @@ Tiles_Crocomire_Melting2_3:
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00   ;A4B45D;
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00   ;A4B46D;
 
+%anchor($A4B47D)
 Tiles_Crocomire_Melting2_4:
     db $03,$0C,$09,$0E,$09,$0E,$08,$0F,$0A,$0D,$0A,$0D,$0B,$0F,$0F,$0F   ;A4B47D;
     db $0F,$00,$0F,$08,$0F,$08,$0F,$08,$0F,$08,$0F,$08,$0F,$0B,$0F,$0F   ;A4B48D;
@@ -3880,6 +4056,7 @@ Tiles_Crocomire_Melting2_4:
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00   ;A4B65D;
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00   ;A4B66D;
 
+%anchor($A4B67D)
 Tiles_Crocomire_Melting2_5:
     db $0E,$04,$0F,$08,$F0,$FC,$BF,$18,$F8,$3F,$70,$1E,$3A,$7E,$66,$7E   ;A4B67D;
     db $0A,$00,$0F,$08,$0F,$F0,$0F,$F8,$0F,$F8,$1E,$F0,$1C,$FA,$3C,$E6   ;A4B68D;
@@ -3914,42 +4091,49 @@ Tiles_Crocomire_Melting2_5:
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00   ;A4B85D;
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00   ;A4B86D;
 
+%anchor($A4B87D)
 Palette_Crocomire:
 ; Tongue, arms, legs, skeleton (except arm)
 ; Initial. (Sprite palette 7)
     dw $3800,$7FFF,$0DFF,$08BF,$0895,$086C,$0447,$6B7E                   ;A4B87D;
     dw $571E,$3A58,$2171,$0CCB,$039F,$023A,$0176,$0000                   ;A4B88D;
 
+%anchor($A4B89D)
 Palette_Crocomire_BG12:
 ; Body/head
 ; BG1/2 palette 7
     dw $0000,$7FFF,$0DFF,$08BF,$0895,$086C,$0447,$6B7E                   ;A4B89D;
     dw $571E,$3A58,$2171,$0CCB,$039F,$023A,$0176,$0000                   ;A4B8AD;
 
+%anchor($A4B8BD)
 Palette_Crocomire_Sprite2:
 ; Breakable wall
 ; Sprite palette 2
     dw $3800,$571E,$6318,$6318,$6318,$6318,$6318,$4A7B                   ;A4B8BD;
     dw $1C90,$1469,$1424,$0008,$24BF,$2495,$1C6C,$1045                   ;A4B8CD;
 
+%anchor($A4B8DD)
 Palette_Crocomire_Sprite5:
 ; Projectile
 ; Sprite palette 5. Changes colour Fh from 7D08h to 3E0h, no observable difference
     dw $3800,$7F5A,$033B,$0216,$0113,$7C1D,$5814,$300A                   ;A4B8DD;
     dw $3BE0,$2680,$1580,$5294,$39CE,$2108,$2484,$03E0                   ;A4B8ED;
 
+%anchor($A4B8FD)
 Palette_Crocomire_Sprite1:
 ; Skeleton arm
 ; Sprite palette 1
     dw $3800,$7FFF,$6B7E,$571E,$3A58,$2171,$0CCB,$6B7E                   ;A4B8FD;
     dw $571E,$3A58,$2171,$0CCB,$039F,$023A,$0176,$0000                   ;A4B90D;
 
+%anchor($A4B91D)
 Palette_Crocomire_Sprite3:
 ; Breakable wall spikes
 ; Sprite palette 3
     dw $3800,$02DF,$01D7,$00AC,$5A73,$41AD,$2D08,$1863                   ;A4B91D;
     dw $0BB1,$48FB,$7FFF,$0000,$7FFF,$44E5,$7FFF,$0000                   ;A4B92D;
 
+%anchor($A4B93D)
 EnemyTouch_Crocomire_Claws:
     JSL.L NormalEnemyTouchAI                                             ;A4B93D;
     LDA.W $0FAA                                                          ;A4B941;
@@ -3958,10 +4142,12 @@ EnemyTouch_Crocomire_Claws:
     LDA.W #$FFFC                                                         ;A4B94A;
     STA.W $0B58                                                          ;A4B94D; fallthrough to RTL_A4B950
 
+%anchor($A4B950)
 RTL_A4B950:
     RTL                                                                  ;A4B950;
 
 
+%anchor($A4B951)
 EnemyShot_Crocomire_Nothing:
     LDA.W $0FAA                                                          ;A4B951;
     AND.W #$000F                                                         ;A4B954;
@@ -3976,6 +4162,7 @@ EnemyShot_Crocomire_Nothing:
     RTL                                                                  ;A4B967;
 
 
+%anchor($A4B968)
 EnemyShot_Crocomire_SpawnShotExplosion:
     PHX                                                                  ;A4B968;
     PHY                                                                  ;A4B969;
@@ -4001,6 +4188,7 @@ EnemyShot_Crocomire_SpawnShotExplosion:
     RTL                                                                  ;A4B991;
 
 
+%anchor($A4B992)
 PowerBombReaction_Crocomire:
     LDA.W $0FA8                                                          ;A4B992;
     BNE .return                                                          ;A4B995;
@@ -4055,6 +4243,7 @@ PowerBombReaction_Crocomire:
     RTL                                                                  ;A4BA04;
 
 
+%anchor($A4BA05)
 EnemyShot_Crocomire_OpenMouth:
     LDA.W #$0000                                                         ;A4BA05;
     STA.W $0FA0                                                          ;A4BA08;
@@ -4141,6 +4330,7 @@ EnemyShot_Crocomire_OpenMouth:
     RTL                                                                  ;A4BAB3;
 
 
+%anchor($A4BAB4)
 EnemyShot_Crocomire_SpawnShotExplosion_duplicate:
     PHX                                                                  ;A4BAB4;
     PHY                                                                  ;A4BAB5;
@@ -4166,6 +4356,7 @@ EnemyShot_Crocomire_SpawnShotExplosion_duplicate:
     RTL                                                                  ;A4BADD;
 
 
+%anchor($A4BADE)
 InstList_Crocomire_Initial:
     dw $0001,ExtendedSpritemap_Crocomire_0                               ;A4BADE;
     dw Instruction_Crocomire_FightAI                                     ;A4BAE2;
@@ -4173,6 +4364,7 @@ InstList_Crocomire_Initial:
     dw InstList_Crocomire_Initial                                        ;A4BAE6;
     dw Instruction_Common_Sleep                                          ;A4BAE8;
 
+%anchor($A4BAEA)
 UNUSED_InstList_Crocomire_ChargeForwardOneStep_A4BAEA:
     dw $0008,ExtendedSpritemap_Crocomire_ChargeForward_StepBack_0        ;A4BAEA;
     dw Instruction_Crocomire_ShakeScreen                                 ;A4BAEE;
@@ -4201,6 +4393,7 @@ UNUSED_InstList_Crocomire_ChargeForwardOneStep_A4BAEA:
     dw $0008,ExtendedSpritemap_Crocomire_ChargeForward_StepBack_B        ;A4BB30;
     dw Instruction_Crocomire_FightAI                                     ;A4BB34;
 
+%anchor($A4BB36)
 InstList_Crocomire_ProjectileAttack_0:
     dw Instruction_Crocomire_SpawnBigDustCloudProjectile_10              ;A4BB36;
     dw $0005,ExtendedSpritemap_Crocomire_MovingClaws_0                   ;A4BB38;
@@ -4232,6 +4425,7 @@ InstList_Crocomire_ProjectileAttack_0:
     dw $0005,ExtendedSpritemap_Crocomire_8                               ;A4BB8C;
     dw $0005,ExtendedSpritemap_Crocomire_9                               ;A4BB90;
 
+%anchor($A4BB94)
 InstList_Crocomire_ProjectileAttack_1:
     dw Instruction_Crocomire_FightAI                                     ;A4BB94;
     dw $0008,ExtendedSpritemap_Crocomire_20                              ;A4BB96;
@@ -4243,6 +4437,7 @@ InstList_Crocomire_ProjectileAttack_1:
     dw InstList_Crocomire_ProjectileAttack_1                             ;A4BBAC;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A4BBAE)
 UNUSED_InstList_Crocomire_A4BBAE:
     dw $0004,ExtendedSpritemap_Crocomire_14                              ;A4BBAE;
     dw Instruction_Crocomire_ShakeScreen                                 ;A4BBB2;
@@ -4257,9 +4452,11 @@ UNUSED_InstList_Crocomire_A4BBAE:
     dw Instruction_Crocomire_FightAI                                     ;A4BBC8;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A4BBCA)
 InstList_Crocomire_StepForwardAfterDelay:
     dw $00B4,ExtendedSpritemap_Crocomire_14                              ;A4BBCA;
 
+%anchor($A4BBCE)
 InstList_Crocomire_StepForward:
     dw Instruction_Crocomire_MaybeStartProjectileAttack                  ;A4BBCE;
     dw $0005,ExtendedSpritemap_Crocomire_7                               ;A4BBD0;
@@ -4299,9 +4496,11 @@ InstList_Crocomire_StepForward:
     dw Instruction_Common_GotoY                                          ;A4BC2C;
     dw InstList_Crocomire_StepForward                                    ;A4BC2E;
 
+%anchor($A4BC30)
 InstList_Crocomire_StepBack:
     dw $0002,ExtendedSpritemap_Crocomire_8                               ;A4BC30;
 
+%anchor($A4BC34)
 InstList_Crocomire_SteppingBack:
     dw $0008,ExtendedSpritemap_Crocomire_ChargeForward_StepBack_B        ;A4BC34;
     dw Instruction_Crocomire_MoveRight4PixelsIfOnScreen_SpawnCloud       ;A4BC38;
@@ -4316,6 +4515,7 @@ InstList_Crocomire_SteppingBack:
     dw Instruction_Crocomire_MoveRight4PixelsIfOnScreen                  ;A4BC52;
     dw Instruction_Crocomire_FightAI                                     ;A4BC54;
 
+%anchor($A4BC56)
 InstList_Crocomire_WaitForFirstSecondDamage:
     dw $0022,ExtendedSpritemap_Crocomire_6                               ;A4BC56;
     dw $0002,ExtendedSpritemap_Crocomire_5                               ;A4BC5A;
@@ -4351,6 +4551,7 @@ InstList_Crocomire_WaitForFirstSecondDamage:
     dw $0001,ExtendedSpritemap_Crocomire_0                               ;A4BCD2;
     dw Instruction_Crocomire_FightAI                                     ;A4BCD6;
 
+%anchor($A4BCD8)
 InstList_Crocomire_WaitForFirstSecondDamage_MovingClaws:
     dw Instruction_Crocomire_SpawnBigDustCloudProjectile_10              ;A4BCD8;
     dw $0005,ExtendedSpritemap_Crocomire_MovingClaws_0                   ;A4BCDA;
@@ -4379,6 +4580,7 @@ InstList_Crocomire_WaitForFirstSecondDamage_MovingClaws:
     dw Instruction_Crocomire_SpawnBigDustCloudProjectile_Negative10      ;A4BD26;
     dw Instruction_Crocomire_FightAI                                     ;A4BD28;
 
+%anchor($A4BD2A)
 InstList_Crocomire_WaitForFirstSecondDamage_Roar:
     dw $0030,ExtendedSpritemap_Crocomire_7                               ;A4BD2A;
     dw Instruction_Crocomire_QueueCrySFX                                 ;A4BD2E;
@@ -4414,6 +4616,7 @@ InstList_Crocomire_WaitForFirstSecondDamage_Roar:
     dw $0001,ExtendedSpritemap_Crocomire_9                               ;A4BD88;
     dw Instruction_Crocomire_FightAI                                     ;A4BD8C;
 
+%anchor($A4BD8E)
 InstList_Crocomire_WaitForFirstSecondDamage_RoarCloseMouth_0:
     dw $0020,ExtendedSpritemap_Crocomire_9                               ;A4BD8E;
     dw Instruction_Crocomire_FightAI                                     ;A4BD92;
@@ -4422,18 +4625,22 @@ InstList_Crocomire_WaitForFirstSecondDamage_RoarCloseMouth_0:
     dw $0008,ExtendedSpritemap_Crocomire_8                               ;A4BD9A;
     dw $0002,ExtendedSpritemap_Crocomire_7                               ;A4BD9E;
 
+%anchor($A4BDA2)
 InstList_Crocomire_WaitForFirstSecondDamage_RoarCloseMouth_1:
     dw $0001,ExtendedSpritemap_Crocomire_7                               ;A4BDA2;
     dw Instruction_Crocomire_FightAI                                     ;A4BDA6;
     dw $0001,ExtendedSpritemap_Crocomire_7                               ;A4BDA8;
     dw Instruction_Crocomire_FightAI                                     ;A4BDAC;
 
+%anchor($A4BDAE)
 InstList_Crocomire_PowerBombReaction_MouthFullyOpen:
     dw $0002,ExtendedSpritemap_Crocomire_8                               ;A4BDAE;
 
+%anchor($A4BDB2)
 InstList_Crocomire_PowerBombReaction_MouthPartiallyOpen:
     dw $0002,ExtendedSpritemap_Crocomire_7                               ;A4BDB2;
 
+%anchor($A4BDB6)
 InstList_Crocomire_PowerBombReaction_MouthNotOpen_0:
     dw Instruction_Crocomire_SpawnBigDustCloudProjectile_10              ;A4BDB6;
     dw $0005,ExtendedSpritemap_Crocomire_MovingClaws_0                   ;A4BDB8;
@@ -4461,6 +4668,7 @@ InstList_Crocomire_PowerBombReaction_MouthNotOpen_0:
     dw Instruction_Crocomire_QueueBigExplosionSFX                        ;A4BE02;
     dw Instruction_Crocomire_SpawnBigDustCloudProjectile_Negative10      ;A4BE04;
 
+%anchor($A4BE06)
 InstList_Crocomire_PowerBombReaction_MouthNotOpen_1:
     dw $0004,ExtendedSpritemap_Crocomire_ChargeForward_StepBack_0        ;A4BE06;
     dw Instruction_Crocomire_ShakeScreen                                 ;A4BE0A;
@@ -4491,6 +4699,7 @@ InstList_Crocomire_PowerBombReaction_MouthNotOpen_1:
     dw Instruction_Common_GotoY                                          ;A4BE52;
     dw InstList_Crocomire_PowerBombReaction_MouthNotOpen_1               ;A4BE54;
 
+%anchor($A4BE56)
 InstList_CrocomireTongue_Fight:
     dw $0005,ExtendedSpritemap_Crocomire_10                              ;A4BE56;
     dw $0005,ExtendedSpritemap_Crocomire_11                              ;A4BE5A;
@@ -4500,6 +4709,7 @@ InstList_CrocomireTongue_Fight:
     dw InstList_CrocomireTongue_Fight                                    ;A4BE68;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A4BE6A)
 UNUSED_InstList_CrocomireTongue_ReverseVersionOfFight_A4BE6A:
     dw $0005,ExtendedSpritemap_Crocomire_13                              ;A4BE6A;
     dw $0005,ExtendedSpritemap_Crocomire_12                              ;A4BE6E;
@@ -4509,6 +4719,7 @@ UNUSED_InstList_CrocomireTongue_ReverseVersionOfFight_A4BE6A:
     dw InstList_CrocomireTongue_Fight                                    ;A4BE7C;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A4BE7E)
 InstList_CrocomireTongue_NearSpikeWallCharge_0:
     dw $0005,ExtendedSpritemap_Crocomire_7                               ;A4BE7E;
     dw Instruction_Crocomire_QueueCrySFX                                 ;A4BE82;
@@ -4548,6 +4759,7 @@ InstList_CrocomireTongue_NearSpikeWallCharge_0:
     dw $0002,ExtendedSpritemap_Crocomire_7                               ;A4BEE6;
     dw Instruction_Crocomire_FightAI                                     ;A4BEEA;
 
+%anchor($A4BEEC)
 InstList_CrocomireTongue_NearSpikeWallCharge_1:
     dw $0003,ExtendedSpritemap_Crocomire_ChargeForward_StepBack_0        ;A4BEEC;
     dw Instruction_Crocomire_ShakeScreen                                 ;A4BEF0;
@@ -4578,6 +4790,7 @@ InstList_CrocomireTongue_NearSpikeWallCharge_1:
     dw Instruction_Common_GotoY                                          ;A4BF38;
     dw InstList_CrocomireTongue_NearSpikeWallCharge_1                    ;A4BF3A;
 
+%anchor($A4BF3C)
 InstList_Crocomire_BackOffFromSpikeWall:
     dw $0008,ExtendedSpritemap_Crocomire_ChargeForward_StepBack_B        ;A4BF3C;
     dw Instruction_Crocomire_MoveRight4Pixels_SpawnBigDustCloud          ;A4BF40;
@@ -4594,43 +4807,53 @@ InstList_Crocomire_BackOffFromSpikeWall:
     dw Instruction_Common_GotoY                                          ;A4BF5E;
     dw InstList_Crocomire_BackOffFromSpikeWall                           ;A4BF60;
 
+%anchor($A4BF62)
 InstList_Crocomire_Sleep:
     dw Instruction_Common_Sleep                                          ;A4BF62;
 
+%anchor($A4BF64)
 InstList_Crocomire_Melting1_TopRow:
     dw $7FFF,ExtendedSpritemap_Crocomire_25                              ;A4BF64;
     dw Instruction_Common_GotoY                                          ;A4BF68;
     dw InstList_Crocomire_Melting1_TopRow                                ;A4BF6A;
 
+%anchor($A4BF6C)
 InstList_Crocomire_Melting1_Top2Rows:
     dw $7FFF,ExtendedSpritemap_Crocomire_26                              ;A4BF6C;
     dw Instruction_Common_Sleep                                          ;A4BF70;
 
+%anchor($A4BF72)
 InstList_Crocomire_Melting1_Top3Rows:
     dw $7FFF,ExtendedSpritemap_Crocomire_27                              ;A4BF72;
     dw Instruction_CommonA4_Sleep                                        ;A4BF76;
 
+%anchor($A4BF78)
 InstList_Crocomire_Melting1_Top4Rows:
     dw $7FFF,ExtendedSpritemap_Crocomire_28                              ;A4BF78;
     dw Instruction_CommonA4_Sleep                                        ;A4BF7C;
 
+%anchor($A4BF7E)
 InstList_Crocomire_Melting2_TopRow:
     dw $7FFF,ExtendedSpritemap_Crocomire_29                              ;A4BF7E;
     dw Instruction_Common_GotoY                                          ;A4BF82;
     dw InstList_Crocomire_Melting2_TopRow                                ;A4BF84;
 
+%anchor($A4BF86)
 InstList_Crocomire_Melting2_Top2Rows:
     dw $7FFF,ExtendedSpritemap_Crocomire_2A                              ;A4BF86;
     dw Instruction_Common_Sleep                                          ;A4BF8A;
 
+%anchor($A4BF8C)
 InstList_Crocomire_Melting2_Top3Rows:
     dw $7FFF,ExtendedSpritemap_Crocomire_2B                              ;A4BF8C;
     dw Instruction_Common_Sleep                                          ;A4BF90;
 
+%anchor($A4BF92)
 InstList_Crocomire_Melting2_Top4Rows:
     dw $7FFF,ExtendedSpritemap_Crocomire_2C                              ;A4BF92;
     dw Instruction_CommonA4_Sleep                                        ;A4BF96;
 
+%anchor($A4BF98)
 InstList_CrocomireTongue_Melting:
     dw $0005,ExtendedSpritemap_Crocomire_2D                              ;A4BF98;
     dw $0005,ExtendedSpritemap_Crocomire_2E                              ;A4BF9C;
@@ -4640,6 +4863,7 @@ InstList_CrocomireTongue_Melting:
     dw Instruction_Common_GotoY                                          ;A4BFAC;
     dw InstList_CrocomireTongue_Melting                                  ;A4BFAE;
 
+%anchor($A4BFB0)
 InstList_CrocomireTongue_BridgeCollapsed:
     dw $0005,ExtendedSpritemap_Crocomire_8                               ;A4BFB0;
     dw $0005,ExtendedSpritemap_Crocomire_7                               ;A4BFB4;
@@ -4648,6 +4872,7 @@ InstList_CrocomireTongue_BridgeCollapsed:
     dw $0005,ExtendedSpritemap_Crocomire_9                               ;A4BFBE;
     dw Instruction_Common_Sleep                                          ;A4BFC2;
 
+%anchor($A4BFC4)
 ExtendedSpritemap_Crocomire_ChargeForward_StepBack_0:
     dw $0006                                                             ;A4BFC4;
     dw $0003,$000B
@@ -4669,6 +4894,7 @@ ExtendedSpritemap_Crocomire_ChargeForward_StepBack_0:
     dw ExtendedTilemap_Crocomire_6                                       ;A4BFF2;
     dw Hitbox_Crocomire_F                                                ;A4BFF4;
 
+%anchor($A4BFF6)
 ExtendedSpritemap_Crocomire_ChargeForward_StepBack_1:
     dw $0006                                                             ;A4BFF6;
     dw $0001,$000B
@@ -4690,6 +4916,7 @@ ExtendedSpritemap_Crocomire_ChargeForward_StepBack_1:
     dw ExtendedTilemap_Crocomire_7                                       ;A4C024;
     dw Hitbox_Crocomire_F                                                ;A4C026;
 
+%anchor($A4C028)
 ExtendedSpritemap_Crocomire_ChargeForward_StepBack_2:
     dw $0006                                                             ;A4C028;
     dw $0000,$0008
@@ -4711,6 +4938,7 @@ ExtendedSpritemap_Crocomire_ChargeForward_StepBack_2:
     dw ExtendedTilemap_Crocomire_8                                       ;A4C056;
     dw Hitbox_Crocomire_F                                                ;A4C058;
 
+%anchor($A4C05A)
 ExtendedSpritemap_Crocomire_ChargeForward_StepBack_3:
     dw $0006                                                             ;A4C05A;
     dw $0001,$000B
@@ -4732,6 +4960,7 @@ ExtendedSpritemap_Crocomire_ChargeForward_StepBack_3:
     dw ExtendedTilemap_Crocomire_7                                       ;A4C088;
     dw Hitbox_Crocomire_F                                                ;A4C08A;
 
+%anchor($A4C08C)
 ExtendedSpritemap_Crocomire_ChargeForward_StepBack_4:
     dw $0006                                                             ;A4C08C;
     dw $0001,$000A
@@ -4753,6 +4982,7 @@ ExtendedSpritemap_Crocomire_ChargeForward_StepBack_4:
     dw ExtendedTilemap_Crocomire_6                                       ;A4C0BA;
     dw Hitbox_Crocomire_F                                                ;A4C0BC;
 
+%anchor($A4C0BE)
 ExtendedSpritemap_Crocomire_ChargeForward_StepBack_5:
     dw $0006                                                             ;A4C0BE;
     dw $0001,$000A
@@ -4774,6 +5004,7 @@ ExtendedSpritemap_Crocomire_ChargeForward_StepBack_5:
     dw ExtendedTilemap_Crocomire_7                                       ;A4C0EC;
     dw Hitbox_Crocomire_F                                                ;A4C0EE;
 
+%anchor($A4C0F0)
 ExtendedSpritemap_Crocomire_ChargeForward_StepBack_6:
     dw $0006                                                             ;A4C0F0;
     dw $0001,$000A
@@ -4795,6 +5026,7 @@ ExtendedSpritemap_Crocomire_ChargeForward_StepBack_6:
     dw ExtendedTilemap_Crocomire_8                                       ;A4C11E;
     dw Hitbox_Crocomire_F                                                ;A4C120;
 
+%anchor($A4C122)
 ExtendedSpritemap_Crocomire_ChargeForward_StepBack_7:
     dw $0006                                                             ;A4C122;
     dw $0001,$000A
@@ -4816,6 +5048,7 @@ ExtendedSpritemap_Crocomire_ChargeForward_StepBack_7:
     dw ExtendedTilemap_Crocomire_7                                       ;A4C150;
     dw Hitbox_Crocomire_F                                                ;A4C152;
 
+%anchor($A4C154)
 ExtendedSpritemap_Crocomire_ChargeForward_StepBack_8:
     dw $0006                                                             ;A4C154;
     dw $0001,$000A
@@ -4837,6 +5070,7 @@ ExtendedSpritemap_Crocomire_ChargeForward_StepBack_8:
     dw ExtendedTilemap_Crocomire_6                                       ;A4C182;
     dw Hitbox_Crocomire_F                                                ;A4C184;
 
+%anchor($A4C186)
 ExtendedSpritemap_Crocomire_ChargeForward_StepBack_9:
     dw $0006                                                             ;A4C186;
     dw $0001,$000C
@@ -4858,6 +5092,7 @@ ExtendedSpritemap_Crocomire_ChargeForward_StepBack_9:
     dw ExtendedTilemap_Crocomire_7                                       ;A4C1B4;
     dw Hitbox_Crocomire_F                                                ;A4C1B6;
 
+%anchor($A4C1B8)
 ExtendedSpritemap_Crocomire_ChargeForward_StepBack_A:
     dw $0006                                                             ;A4C1B8;
     dw $0001,$000D
@@ -4879,6 +5114,7 @@ ExtendedSpritemap_Crocomire_ChargeForward_StepBack_A:
     dw ExtendedTilemap_Crocomire_8                                       ;A4C1E6;
     dw Hitbox_Crocomire_F                                                ;A4C1E8;
 
+%anchor($A4C1EA)
 ExtendedSpritemap_Crocomire_ChargeForward_StepBack_B:
     dw $0006                                                             ;A4C1EA;
     dw $0001,$000B
@@ -4901,6 +5137,7 @@ ExtendedSpritemap_Crocomire_ChargeForward_StepBack_B:
     dw Hitbox_Crocomire_F                                                ;A4C21A;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A4C21C)
 UNUSED_ExtendedSpritemap_Crocomire_A4C21C:
     dw $0006                                                             ;A4C21C;
     dw $0001,$000A
@@ -4922,6 +5159,7 @@ UNUSED_ExtendedSpritemap_Crocomire_A4C21C:
     dw ExtendedTilemap_Crocomire_6                                       ;A4C24A;
     dw Hitbox_Crocomire_F                                                ;A4C24C;
 
+%anchor($A4C24E)
 UNUSED_ExtendedSpritemap_Crocomire_A4C24E:
     dw $0006                                                             ;A4C24E;
     dw $0001,$0008
@@ -4943,6 +5181,7 @@ UNUSED_ExtendedSpritemap_Crocomire_A4C24E:
     dw ExtendedTilemap_Crocomire_7                                       ;A4C27C;
     dw Hitbox_Crocomire_F                                                ;A4C27E;
 
+%anchor($A4C280)
 UNUSED_ExtendedSpritemap_Crocomire_A4C280:
     dw $0006                                                             ;A4C280;
     dw $0001,$0006
@@ -4964,6 +5203,7 @@ UNUSED_ExtendedSpritemap_Crocomire_A4C280:
     dw ExtendedTilemap_Crocomire_8                                       ;A4C2AE;
     dw Hitbox_Crocomire_F                                                ;A4C2B0;
 
+%anchor($A4C2B2)
 UNUSED_ExtendedSpritemap_Crocomire_A4C2B2:
     dw $0007                                                             ;A4C2B2;
     dw $0000,$000B
@@ -4989,6 +5229,7 @@ UNUSED_ExtendedSpritemap_Crocomire_A4C2B2:
     dw Hitbox_Crocomire_F                                                ;A4C2EA;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A4C2EC)
 ExtendedSpritemap_Crocomire_0:
     dw $0007                                                             ;A4C2EC;
     dw $0000,$000B
@@ -5013,6 +5254,7 @@ ExtendedSpritemap_Crocomire_0:
     dw ExtendedTilemap_Crocomire_6                                       ;A4C322;
     dw Hitbox_Crocomire_F                                                ;A4C324;
 
+%anchor($A4C326)
 ExtendedSpritemap_Crocomire_1:
     dw $0007                                                             ;A4C326;
     dw $0000,$000B
@@ -5037,6 +5279,7 @@ ExtendedSpritemap_Crocomire_1:
     dw ExtendedTilemap_Crocomire_6                                       ;A4C35C;
     dw Hitbox_Crocomire_F                                                ;A4C35E;
 
+%anchor($A4C360)
 ExtendedSpritemap_Crocomire_2:
     dw $0007                                                             ;A4C360;
     dw $0000,$000B
@@ -5061,6 +5304,7 @@ ExtendedSpritemap_Crocomire_2:
     dw ExtendedTilemap_Crocomire_6                                       ;A4C396;
     dw Hitbox_Crocomire_F                                                ;A4C398;
 
+%anchor($A4C39A)
 ExtendedSpritemap_Crocomire_3:
     dw $0007                                                             ;A4C39A;
     dw $0000,$000B
@@ -5085,6 +5329,7 @@ ExtendedSpritemap_Crocomire_3:
     dw ExtendedTilemap_Crocomire_6                                       ;A4C3D0;
     dw Hitbox_Crocomire_F                                                ;A4C3D2;
 
+%anchor($A4C3D4)
 ExtendedSpritemap_Crocomire_4:
     dw $0007                                                             ;A4C3D4;
     dw $0000,$000B
@@ -5109,6 +5354,7 @@ ExtendedSpritemap_Crocomire_4:
     dw ExtendedTilemap_Crocomire_6                                       ;A4C40A;
     dw Hitbox_Crocomire_F                                                ;A4C40C;
 
+%anchor($A4C40E)
 ExtendedSpritemap_Crocomire_5:
     dw $0007                                                             ;A4C40E;
     dw $0000,$000B
@@ -5133,6 +5379,7 @@ ExtendedSpritemap_Crocomire_5:
     dw ExtendedTilemap_Crocomire_6                                       ;A4C444;
     dw Hitbox_Crocomire_F                                                ;A4C446;
 
+%anchor($A4C448)
 ExtendedSpritemap_Crocomire_6:
     dw $0006                                                             ;A4C448;
     dw $0000,$000B
@@ -5154,6 +5401,7 @@ ExtendedSpritemap_Crocomire_6:
     dw ExtendedTilemap_Crocomire_6                                       ;A4C476;
     dw Hitbox_Crocomire_F                                                ;A4C478;
 
+%anchor($A4C47A)
 ExtendedSpritemap_Crocomire_MovingClaws_0:
     dw $0006                                                             ;A4C47A;
     dw $0001,$000B
@@ -5175,6 +5423,7 @@ ExtendedSpritemap_Crocomire_MovingClaws_0:
     dw ExtendedTilemap_Crocomire_6                                       ;A4C4A8;
     dw Hitbox_Crocomire_F                                                ;A4C4AA;
 
+%anchor($A4C4AC)
 ExtendedSpritemap_Crocomire_MovingClaws_1:
     dw $0006                                                             ;A4C4AC;
     dw $0000,$0008
@@ -5196,6 +5445,7 @@ ExtendedSpritemap_Crocomire_MovingClaws_1:
     dw ExtendedTilemap_Crocomire_7                                       ;A4C4DA;
     dw Hitbox_Crocomire_F                                                ;A4C4DC;
 
+%anchor($A4C4DE)
 ExtendedSpritemap_Crocomire_MovingClaws_2:
     dw $0006                                                             ;A4C4DE;
     dw $0001,$0008
@@ -5217,6 +5467,7 @@ ExtendedSpritemap_Crocomire_MovingClaws_2:
     dw ExtendedTilemap_Crocomire_8                                       ;A4C50C;
     dw Hitbox_Crocomire_F                                                ;A4C50E;
 
+%anchor($A4C510)
 ExtendedSpritemap_Crocomire_MovingClaws_3:
     dw $0006                                                             ;A4C510;
     dw $0000,$000A
@@ -5238,6 +5489,7 @@ ExtendedSpritemap_Crocomire_MovingClaws_3:
     dw ExtendedTilemap_Crocomire_7                                       ;A4C53E;
     dw Hitbox_Crocomire_F                                                ;A4C540;
 
+%anchor($A4C542)
 ExtendedSpritemap_Crocomire_MovingClaws_4:
     dw $0006                                                             ;A4C542;
     dw $0001,$000C
@@ -5259,6 +5511,7 @@ ExtendedSpritemap_Crocomire_MovingClaws_4:
     dw ExtendedTilemap_Crocomire_6                                       ;A4C570;
     dw Hitbox_Crocomire_F                                                ;A4C572;
 
+%anchor($A4C574)
 ExtendedSpritemap_Crocomire_7:
     dw $0007                                                             ;A4C574;
     dw $0001,$000B
@@ -5283,6 +5536,7 @@ ExtendedSpritemap_Crocomire_7:
     dw ExtendedTilemap_Crocomire_7                                       ;A4C5AA;
     dw Hitbox_Crocomire_F                                                ;A4C5AC;
 
+%anchor($A4C5AE)
 ExtendedSpritemap_Crocomire_8:
     dw $0007                                                             ;A4C5AE;
     dw $0001,$000B
@@ -5307,6 +5561,7 @@ ExtendedSpritemap_Crocomire_8:
     dw ExtendedTilemap_Crocomire_7                                       ;A4C5E4;
     dw Hitbox_Crocomire_F                                                ;A4C5E6;
 
+%anchor($A4C5E8)
 ExtendedSpritemap_Crocomire_9:
     dw $0007                                                             ;A4C5E8;
     dw $0001,$000B
@@ -5332,36 +5587,42 @@ ExtendedSpritemap_Crocomire_9:
     dw Hitbox_Crocomire_F                                                ;A4C620;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A4C622)
 UNUSED_ExtendedSpritemap_Crocomire_A4C622:
     dw $0001                                                             ;A4C622;
     dw $0000,$0000
     dw ExtendedTilemap_Crocomire_3                                       ;A4C628;
     dw Hitbox_Crocomire_F                                                ;A4C62A;
 
+%anchor($A4C62C)
 UNUSED_ExtendedSpritemap_Crocomire_A4C62C:
     dw $0001                                                             ;A4C62C;
     dw $0000,$0000
     dw ExtendedTilemap_Crocomire_4                                       ;A4C632;
     dw Hitbox_Crocomire_F                                                ;A4C634;
 
+%anchor($A4C636)
 UNUSED_ExtendedSpritemap_Crocomire_A4C636:
     dw $0001                                                             ;A4C636;
     dw $0000,$0000
     dw ExtendedTilemap_Crocomire_5                                       ;A4C63C;
     dw Hitbox_Crocomire_F                                                ;A4C63E;
 
+%anchor($A4C640)
 UNUSED_ExtendedSpritemap_Crocomire_A4C640:
     dw $0001                                                             ;A4C640;
     dw $0000,$0000
     dw ExtendedTilemap_Crocomire_6                                       ;A4C646;
     dw Hitbox_Crocomire_F                                                ;A4C648;
 
+%anchor($A4C64A)
 UNUSED_ExtendedSpritemap_Crocomire_A4C64A:
     dw $0001                                                             ;A4C64A;
     dw $0000,$0000
     dw ExtendedTilemap_Crocomire_7                                       ;A4C650;
     dw Hitbox_Crocomire_F                                                ;A4C652;
 
+%anchor($A4C654)
 UNUSED_ExtendedSpritemap_Crocomire_A4C654:
     dw $0001                                                             ;A4C654;
     dw $0000,$0000
@@ -5369,24 +5630,28 @@ UNUSED_ExtendedSpritemap_Crocomire_A4C654:
     dw Hitbox_Crocomire_F                                                ;A4C65C;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A4C65E)
 ExtendedSpritemap_Crocomire_10:
     dw $0001                                                             ;A4C65E;
     dw $FFE0,$FFE8
     dw Spritemap_Crocomire_17                                            ;A4C664;
     dw Hitbox_Crocomire_9                                                ;A4C666;
 
+%anchor($A4C668)
 ExtendedSpritemap_Crocomire_11:
     dw $0001                                                             ;A4C668;
     dw $FFE0,$FFE8
     dw Spritemap_Crocomire_18                                            ;A4C66E;
     dw Hitbox_Crocomire_9                                                ;A4C670;
 
+%anchor($A4C672)
 ExtendedSpritemap_Crocomire_12:
     dw $0001                                                             ;A4C672;
     dw $FFE0,$FFE8
     dw Spritemap_Crocomire_19                                            ;A4C678;
     dw Hitbox_Crocomire_9                                                ;A4C67A;
 
+%anchor($A4C67C)
 ExtendedSpritemap_Crocomire_13:
     dw $0001                                                             ;A4C67C;
     dw $FFE0,$FFE8
@@ -5394,18 +5659,21 @@ ExtendedSpritemap_Crocomire_13:
     dw Hitbox_Crocomire_9                                                ;A4C684;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A4C686)
 UNUSED_ExtendedSpritemap_Crocomire_A4C686:
     dw $0001                                                             ;A4C686;
     dw $0000,$0000
     dw Spritemap_Crocomire_1B                                            ;A4C68C;
     dw Hitbox_Crocomire_A                                                ;A4C68E;
 
+%anchor($A4C690)
 UNUSED_ExtendedSpritemap_Crocomire_A4C690:
     dw $0001                                                             ;A4C690;
     dw $0000,$0000
     dw ExtendedTilemap_Crocomire_9                                       ;A4C696;
     dw Hitbox_Crocomire_F                                                ;A4C698;
 
+%anchor($A4C69A)
 UNUSED_ExtendedSpritemap_Crocomire_A4C69A:
     dw $0001                                                             ;A4C69A;
     dw $0000,$0000
@@ -5413,6 +5681,7 @@ UNUSED_ExtendedSpritemap_Crocomire_A4C69A:
     dw Hitbox_Crocomire_10                                               ;A4C6A2;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A4C6A4)
 ExtendedSpritemap_Crocomire_14:
     dw $0007                                                             ;A4C6A4;
     dw $0003,$000B
@@ -5437,6 +5706,7 @@ ExtendedSpritemap_Crocomire_14:
     dw ExtendedTilemap_Crocomire_6                                       ;A4C6DA;
     dw Hitbox_Crocomire_F                                                ;A4C6DC;
 
+%anchor($A4C6DE)
 ExtendedSpritemap_Crocomire_15:
     dw $0007                                                             ;A4C6DE;
     dw $0001,$000B
@@ -5461,6 +5731,7 @@ ExtendedSpritemap_Crocomire_15:
     dw ExtendedTilemap_Crocomire_7                                       ;A4C714;
     dw Hitbox_Crocomire_F                                                ;A4C716;
 
+%anchor($A4C718)
 ExtendedSpritemap_Crocomire_16:
     dw $0007                                                             ;A4C718;
     dw $0000,$0008
@@ -5485,6 +5756,7 @@ ExtendedSpritemap_Crocomire_16:
     dw ExtendedTilemap_Crocomire_8                                       ;A4C74E;
     dw Hitbox_Crocomire_F                                                ;A4C750;
 
+%anchor($A4C752)
 ExtendedSpritemap_Crocomire_17:
     dw $0007                                                             ;A4C752;
     dw $0001,$000B
@@ -5509,6 +5781,7 @@ ExtendedSpritemap_Crocomire_17:
     dw ExtendedTilemap_Crocomire_7                                       ;A4C788;
     dw Hitbox_Crocomire_F                                                ;A4C78A;
 
+%anchor($A4C78C)
 ExtendedSpritemap_Crocomire_18:
     dw $0007                                                             ;A4C78C;
     dw $0001,$000A
@@ -5533,6 +5806,7 @@ ExtendedSpritemap_Crocomire_18:
     dw ExtendedTilemap_Crocomire_6                                       ;A4C7C2;
     dw Hitbox_Crocomire_F                                                ;A4C7C4;
 
+%anchor($A4C7C6)
 ExtendedSpritemap_Crocomire_19:
     dw $0007                                                             ;A4C7C6;
     dw $0001,$000A
@@ -5557,6 +5831,7 @@ ExtendedSpritemap_Crocomire_19:
     dw ExtendedTilemap_Crocomire_7                                       ;A4C7FC;
     dw Hitbox_Crocomire_F                                                ;A4C7FE;
 
+%anchor($A4C800)
 ExtendedSpritemap_Crocomire_1A:
     dw $0007                                                             ;A4C800;
     dw $0001,$000A
@@ -5581,6 +5856,7 @@ ExtendedSpritemap_Crocomire_1A:
     dw ExtendedTilemap_Crocomire_8                                       ;A4C836;
     dw Hitbox_Crocomire_F                                                ;A4C838;
 
+%anchor($A4C83A)
 ExtendedSpritemap_Crocomire_1B:
     dw $0007                                                             ;A4C83A;
     dw $0001,$000A
@@ -5605,6 +5881,7 @@ ExtendedSpritemap_Crocomire_1B:
     dw ExtendedTilemap_Crocomire_7                                       ;A4C870;
     dw Hitbox_Crocomire_F                                                ;A4C872;
 
+%anchor($A4C874)
 ExtendedSpritemap_Crocomire_1C:
     dw $0007                                                             ;A4C874;
     dw $0001,$000A
@@ -5629,6 +5906,7 @@ ExtendedSpritemap_Crocomire_1C:
     dw ExtendedTilemap_Crocomire_6                                       ;A4C8AA;
     dw Hitbox_Crocomire_F                                                ;A4C8AC;
 
+%anchor($A4C8AE)
 ExtendedSpritemap_Crocomire_1D:
     dw $0007                                                             ;A4C8AE;
     dw $0001,$000C
@@ -5653,6 +5931,7 @@ ExtendedSpritemap_Crocomire_1D:
     dw ExtendedTilemap_Crocomire_7                                       ;A4C8E4;
     dw Hitbox_Crocomire_F                                                ;A4C8E6;
 
+%anchor($A4C8E8)
 ExtendedSpritemap_Crocomire_1E:
     dw $0007                                                             ;A4C8E8;
     dw $0001,$000D
@@ -5677,6 +5956,7 @@ ExtendedSpritemap_Crocomire_1E:
     dw ExtendedTilemap_Crocomire_8                                       ;A4C91E;
     dw Hitbox_Crocomire_F                                                ;A4C920;
 
+%anchor($A4C922)
 ExtendedSpritemap_Crocomire_1F:
     dw $0007                                                             ;A4C922;
     dw $0001,$000B
@@ -5701,6 +5981,7 @@ ExtendedSpritemap_Crocomire_1F:
     dw ExtendedTilemap_Crocomire_8                                       ;A4C958;
     dw Hitbox_Crocomire_F                                                ;A4C95A;
 
+%anchor($A4C95C)
 ExtendedSpritemap_Crocomire_20:
     dw $0007                                                             ;A4C95C;
     dw $0001,$000B
@@ -5725,6 +6006,7 @@ ExtendedSpritemap_Crocomire_20:
     dw ExtendedTilemap_Crocomire_7                                       ;A4C992;
     dw Hitbox_Crocomire_F                                                ;A4C994;
 
+%anchor($A4C996)
 ExtendedSpritemap_Crocomire_21:
     dw $0007                                                             ;A4C996;
     dw $0000,$0006
@@ -5749,6 +6031,7 @@ ExtendedSpritemap_Crocomire_21:
     dw ExtendedTilemap_Crocomire_7                                       ;A4C9CC;
     dw Hitbox_Crocomire_F                                                ;A4C9CE;
 
+%anchor($A4C9D0)
 ExtendedSpritemap_Crocomire_22:
     dw $0007                                                             ;A4C9D0;
     dw $0001,$0004
@@ -5773,6 +6056,7 @@ ExtendedSpritemap_Crocomire_22:
     dw ExtendedTilemap_Crocomire_7                                       ;A4CA06;
     dw Hitbox_Crocomire_F                                                ;A4CA08;
 
+%anchor($A4CA0A)
 ExtendedSpritemap_Crocomire_23:
     dw $0007                                                             ;A4CA0A;
     dw $0000,$0008
@@ -5797,6 +6081,7 @@ ExtendedSpritemap_Crocomire_23:
     dw ExtendedTilemap_Crocomire_7                                       ;A4CA40;
     dw Hitbox_Crocomire_F                                                ;A4CA42;
 
+%anchor($A4CA44)
 ExtendedSpritemap_Crocomire_24:
     dw $0007                                                             ;A4CA44;
     dw $0001,$000B
@@ -5821,131 +6106,154 @@ ExtendedSpritemap_Crocomire_24:
     dw ExtendedTilemap_Crocomire_7                                       ;A4CA7A;
     dw Hitbox_Crocomire_F                                                ;A4CA7C;
 
+%anchor($A4CA7E)
 ExtendedSpritemap_Crocomire_25:
     dw $0001                                                             ;A4CA7E;
     dw $0000,$0000
     dw Spritemap_Crocomire_22                                            ;A4CA84;
     dw Hitbox_Crocomire_1                                                ;A4CA86;
 
+%anchor($A4CA88)
 ExtendedSpritemap_Crocomire_26:
     dw $0001                                                             ;A4CA88;
     dw $0000,$0000
     dw Spritemap_Crocomire_23                                            ;A4CA8E;
     dw Hitbox_Crocomire_1                                                ;A4CA90;
 
+%anchor($A4CA92)
 ExtendedSpritemap_Crocomire_27:
     dw $0001                                                             ;A4CA92;
     dw $0000,$0000
     dw Spritemap_Crocomire_24                                            ;A4CA98;
     dw Hitbox_Crocomire_1                                                ;A4CA9A;
 
+%anchor($A4CA9C)
 ExtendedSpritemap_Crocomire_28:
     dw $0001                                                             ;A4CA9C;
     dw $0000,$0000
     dw Spritemap_Crocomire_25                                            ;A4CAA2;
     dw Hitbox_Crocomire_1                                                ;A4CAA4;
 
+%anchor($A4CAA6)
 ExtendedSpritemap_Crocomire_29:
     dw $0001                                                             ;A4CAA6;
     dw $0000,$0000
     dw Spritemap_Crocomire_26                                            ;A4CAAC;
     dw Hitbox_Crocomire_1                                                ;A4CAAE;
 
+%anchor($A4CAB0)
 ExtendedSpritemap_Crocomire_2A:
     dw $0001                                                             ;A4CAB0;
     dw $0000,$0000
     dw Spritemap_Crocomire_27                                            ;A4CAB6;
     dw Hitbox_Crocomire_1                                                ;A4CAB8;
 
+%anchor($A4CABA)
 ExtendedSpritemap_Crocomire_2B:
     dw $0001                                                             ;A4CABA;
     dw $0000,$0000
     dw Spritemap_Crocomire_28                                            ;A4CAC0;
     dw Hitbox_Crocomire_1                                                ;A4CAC2;
 
+%anchor($A4CAC4)
 ExtendedSpritemap_Crocomire_2C:
     dw $0001                                                             ;A4CAC4;
     dw $0000,$0000
     dw Spritemap_Crocomire_29                                            ;A4CACA;
     dw Hitbox_Crocomire_1                                                ;A4CACC;
 
+%anchor($A4CACE)
 ExtendedSpritemap_Crocomire_2D:
     dw $0001                                                             ;A4CACE;
     dw $0001,$000B
     dw Spritemap_Crocomire_15                                            ;A4CAD4;
     dw Hitbox_Crocomire_11                                               ;A4CAD6;
 
+%anchor($A4CAD8)
 ExtendedSpritemap_Crocomire_2E:
     dw $0001                                                             ;A4CAD8;
     dw $0000,$0008
     dw Spritemap_Crocomire_16                                            ;A4CADE;
     dw Hitbox_Crocomire_11                                               ;A4CAE0;
 
+%anchor($A4CAE2)
 ExtendedSpritemap_Crocomire_2F:
     dw $0001                                                             ;A4CAE2;
     dw $0001,$0008
     dw Spritemap_Crocomire_14                                            ;A4CAE8;
     dw Hitbox_Crocomire_11                                               ;A4CAEA;
 
+%anchor($A4CAEC)
 ExtendedSpritemap_Crocomire_30:
     dw $0001                                                             ;A4CAEC;
     dw $0000,$000A
     dw Spritemap_Crocomire_1                                             ;A4CAF2;
     dw Hitbox_Crocomire_11                                               ;A4CAF4;
 
+%anchor($A4CAF6)
 ExtendedSpritemap_Crocomire_31:
     dw $0001                                                             ;A4CAF6;
     dw $0001,$000C
     dw Spritemap_Crocomire_0                                             ;A4CAFC;
     dw Hitbox_Crocomire_11                                               ;A4CAFE;
 
+%anchor($A4CB00)
 RTL_A4CB00:
     RTL                                                                  ;A4CB00;
 
 
+%anchor($A4CB01)
 LoadEnemyIndexAndRTL:
     LDX.W $0E54                                                          ;A4CB01;
     RTL                                                                  ;A4CB04;
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A4CB05)
 UNUSED_Hitbox_Crocomire_A4CB05:
     dw $0000                                                             ;A4CB05;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A4CB07)
 Hitbox_Crocomire_0:
     dw $0001                                                             ;A4CB07;
     dw $FFB2,$0020,$FFF0,$002B
     dw EnemyTouch_Crocomire_Claws                                        ;A4CB11;
     dw EnemyShot_Crocomire_SpawnShotExplosion_duplicate                  ;A4CB13;
 
+%anchor($A4CB15)
 Hitbox_Crocomire_1:
     dw $0001                                                             ;A4CB15;
     dw $FFA1,$000B,$FFF0,$000B
     dw EnemyTouch_Crocomire_Claws                                        ;A4CB1F;
     dw EnemyShot_Crocomire_SpawnShotExplosion_duplicate                  ;A4CB21;
 
+%anchor($A4CB23)
 Hitbox_Crocomire_2:
     dw $0001                                                             ;A4CB23;
     dw $FFBB,$001F,$FFF0,$002C
     dw EnemyTouch_Crocomire_Claws                                        ;A4CB2D;
     dw EnemyShot_Crocomire_SpawnShotExplosion_duplicate                  ;A4CB2F;
 
+%anchor($A4CB31)
 Hitbox_Crocomire_3:
     dw $0001                                                             ;A4CB31;
     dw $FFC4,$0012,$FFF0,$0020
     dw EnemyTouch_Crocomire_Claws                                        ;A4CB3B;
     dw EnemyShot_Crocomire_SpawnShotExplosion_duplicate                  ;A4CB3D;
 
+%anchor($A4CB3F)
 Hitbox_Crocomire_4:
     dw $0001                                                             ;A4CB3F;
     dw $FFB0,$000D,$FFF0,$001B
     dw EnemyTouch_Crocomire_Claws                                        ;A4CB49;
     dw EnemyShot_Crocomire_SpawnShotExplosion_duplicate                  ;A4CB4B;
 
+%anchor($A4CB4D)
 Hitbox_Crocomire_5:
     dw $0000                                                             ;A4CB4D;
 
+%anchor($A4CB4F)
 Hitbox_Crocomire_6:
     dw $0001                                                             ;A4CB4F;
     dw $FFA1,$FFFA,$FFF0,$001B
@@ -5953,16 +6261,19 @@ Hitbox_Crocomire_6:
     dw EnemyShot_Crocomire_Nothing                                       ;A4CB5B;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A4CB5D)
 UNUSED_Hitbox_Crocomire_A4CB5D:
     dw $0000                                                             ;A4CB5D;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A4CB5F)
 Hitbox_Crocomire_7:
     dw $0001                                                             ;A4CB5F;
     dw $FFC5,$FFF7,$FFF0,$0005
     dw EnemyTouch_Crocomire_Claws                                        ;A4CB69;
     dw EnemyShot_Crocomire_Nothing                                       ;A4CB6B;
 
+%anchor($A4CB6D)
 Hitbox_Crocomire_8:
     dw $0001                                                             ;A4CB6D;
     dw $FFA3,$FFDC,$FFE2,$FFF3
@@ -5970,24 +6281,28 @@ Hitbox_Crocomire_8:
     dw EnemyShot_Crocomire_Nothing                                       ;A4CB79;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A4CB7B)
 UNUSED_Hitbox_Crocomire_A4CB7B:
     dw $0001                                                             ;A4CB7B;
     dw $FFFB,$FFFB,$0004,$0004
     dw EnemyTouch_Crocomire_Claws                                        ;A4CB85;
     dw EnemyShot_Crocomire_Nothing                                       ;A4CB87;
 
+%anchor($A4CB89)
 UNUSED_Hitbox_Crocomire_A4CB89:
     dw $0001                                                             ;A4CB89;
     dw $FFFA,$FFF9,$0005,$0006
     dw EnemyTouch_Crocomire_Claws                                        ;A4CB93;
     dw EnemyShot_Crocomire_Nothing                                       ;A4CB95;
 
+%anchor($A4CB97)
 UNUSED_Hitbox_Crocomire_A4CB97:
     dw $0001                                                             ;A4CB97;
     dw $FFF8,$FFF8,$0007,$0007
     dw EnemyTouch_Crocomire_Claws                                        ;A4CBA1;
     dw EnemyShot_Crocomire_Nothing                                       ;A4CBA3;
 
+%anchor($A4CBA5)
 UNUSED_Hitbox_Crocomire_A4CBA5:
     dw $0001                                                             ;A4CBA5;
     dw $FFF7,$FFF8,$0008,$0007
@@ -5995,18 +6310,22 @@ UNUSED_Hitbox_Crocomire_A4CBA5:
     dw EnemyShot_Crocomire_Nothing                                       ;A4CBB1;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A4CBB3)
 Hitbox_Crocomire_9:
     dw $0000                                                             ;A4CBB3;
 
+%anchor($A4CBB5)
 Hitbox_Crocomire_A:
     dw $0001                                                             ;A4CBB5;
     dw $FFF7,$FFF7,$0008,$0007
     dw EnemyTouch_Crocomire_Claws                                        ;A4CBBF;
     dw EnemyShot_Crocomire_Nothing                                       ;A4CBC1;
 
+%anchor($A4CBC3)
 Hitbox_Crocomire_B:
     dw $0000                                                             ;A4CBC3;
 
+%anchor($A4CBC5)
 Hitbox_Crocomire_C:
     dw $0003                                                             ;A4CBC5;
     dw $FFCE,$FFDB,$0028,$FFF0
@@ -6019,6 +6338,7 @@ Hitbox_Crocomire_C:
     dw CommonA4_NormalEnemyTouchAI                                       ;A4CBE7;
     dw CommonA4_NormalEnemyShotAI                                        ;A4CBE9;
 
+%anchor($A4CBEB)
 Hitbox_Crocomire_D:
     dw $0003                                                             ;A4CBEB;
     dw $FFD2,$FFCB,$000D,$FFF0
@@ -6031,28 +6351,33 @@ Hitbox_Crocomire_D:
     dw CommonA4_NormalEnemyTouchAI                                       ;A4CC0D;
     dw CommonA4_NormalEnemyShotAI                                        ;A4CC0F;
 
+%anchor($A4CC11)
 Hitbox_Crocomire_E:
     dw $0001                                                             ;A4CC11;
     dw $FFDB,$FFCE,$0026,$FFFC
     dw EnemyTouch_Crocomire_Claws                                        ;A4CC1B;
     dw CommonA4_NormalEnemyShotAI                                        ;A4CC1D;
 
+%anchor($A4CC1F)
 Hitbox_Crocomire_F:
     dw $0001                                                             ;A4CC1F;
     dw $FFDA,$FFD0,$0025,$0034
     dw EnemyTouch_Crocomire_Claws                                        ;A4CC29;
     dw EnemyShot_Crocomire_SpawnShotExplosion                            ;A4CC2B;
 
+%anchor($A4CC2D)
 Hitbox_Crocomire_10:
     dw $0001                                                             ;A4CC2D;
     dw $FFDA,$FFFC,$002A,$0034
     dw EnemyTouch_Crocomire_Claws                                        ;A4CC37;
     dw EnemyShot_Crocomire_Nothing                                       ;A4CC39;
 
+%anchor($A4CC3B)
 Hitbox_Crocomire_11:
     dw $0000                                                             ;A4CC3B;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A4CC3D)
 UNUSED_Spritemap_Crocomire_A4CC3D:
     dw $0011                                                             ;A4CC3D;
     %spritemapEntry(0, $1E4, $18, 0, 0, 3, 0, $1A6)
@@ -6073,6 +6398,7 @@ UNUSED_Spritemap_Crocomire_A4CC3D:
     %spritemapEntry(1, $1EC, $E0, 0, 0, 3, 0, $1A2)
     %spritemapEntry(1, $1DC, $E0, 0, 0, 3, 0, $1A0)
 
+%anchor($A4CC94)
 UNUSED_Spritemap_Crocomire_A4CC94:
     dw $0011                                                             ;A4CC94;
     %spritemapEntry(0, $14, $18, 0, 1, 3, 0, $1A6)
@@ -6093,6 +6419,7 @@ UNUSED_Spritemap_Crocomire_A4CC94:
     %spritemapEntry(1, $04, $E0, 0, 1, 3, 0, $1A2)
     %spritemapEntry(1, $14, $E0, 0, 1, 3, 0, $1A0)
 
+%anchor($A4CCEB)
 UNUSED_Spritemap_Crocomire_A4CCEB:
     dw $000A                                                             ;A4CCEB;
     %spritemapEntry(0, $18, $0C, 0, 0, 3, 0, $16B)
@@ -6106,6 +6433,7 @@ UNUSED_Spritemap_Crocomire_A4CCEB:
     %spritemapEntry(1, $1E0, $FC, 0, 0, 3, 0, $180)
     %spritemapEntry(1, $1E0, $EC, 0, 0, 3, 0, $160)
 
+%anchor($A4CD1F)
 UNUSED_Spritemap_Crocomire_A4CD1F:
     dw $000A                                                             ;A4CD1F;
     %spritemapEntry(0, $1E0, $0C, 0, 1, 3, 0, $16B)
@@ -6119,6 +6447,7 @@ UNUSED_Spritemap_Crocomire_A4CD1F:
     %spritemapEntry(1, $10, $FC, 0, 1, 3, 0, $180)
     %spritemapEntry(1, $10, $EC, 0, 1, 3, 0, $160)
 
+%anchor($A4CD53)
 UNUSED_Spritemap_Crocomire_A4CD53:
     dw $000F                                                             ;A4CD53;
     %spritemapEntry(1, $20, $10, 0, 0, 3, 0, $18E)
@@ -6137,6 +6466,7 @@ UNUSED_Spritemap_Crocomire_A4CD53:
     %spritemapEntry(1, $1E0, $00, 0, 0, 3, 0, $184)
     %spritemapEntry(1, $1D0, $00, 0, 0, 3, 0, $182)
 
+%anchor($A4CDA0)
 UNUSED_Spritemap_Crocomire_A4CDA0:
     dw $000F                                                             ;A4CDA0;
     %spritemapEntry(1, $1D0, $10, 0, 1, 3, 0, $18E)
@@ -6155,51 +6485,62 @@ UNUSED_Spritemap_Crocomire_A4CDA0:
     %spritemapEntry(1, $10, $00, 0, 1, 3, 0, $184)
     %spritemapEntry(1, $20, $00, 0, 1, 3, 0, $182)
 
+%anchor($A4CDED)
 UNUSED_Spritemap_Crocomire_A4CDED:
     dw $0002                                                             ;A4CDED;
     %spritemapEntry(1, $00, $F8, 0, 0, 3, 0, $16E)
     %spritemapEntry(1, $1F0, $F8, 0, 0, 3, 0, $16C)
 
+%anchor($A4CDF9)
 UNUSED_Spritemap_Crocomire_A4CDF9:
     dw $0002                                                             ;A4CDF9;
     %spritemapEntry(1, $1F0, $F8, 0, 1, 3, 0, $16E)
     %spritemapEntry(1, $00, $F8, 0, 1, 3, 0, $16C)
 
+%anchor($A4CE05)
 UNUSED_Spritemap_Crocomire_A4CE05:
     dw $0001                                                             ;A4CE05;
     %spritemapEntry(1, $1F8, $F8, 0, 1, 3, 0, $160)
 
+%anchor($A4CE0C)
 UNUSED_Spritemap_Crocomire_A4CE0C:
     dw $0001                                                             ;A4CE0C;
     %spritemapEntry(1, $1F8, $F8, 0, 1, 3, 0, $180)
 
+%anchor($A4CE13)
 UNUSED_Spritemap_Crocomire_A4CE13:
     dw $0001                                                             ;A4CE13;
     %spritemapEntry(1, $1F8, $F8, 0, 1, 3, 0, $162)
 
+%anchor($A4CE1A)
 UNUSED_Spritemap_Crocomire_A4CE1A:
     dw $0001                                                             ;A4CE1A;
     %spritemapEntry(1, $1F8, $F8, 0, 1, 3, 0, $164)
 
+%anchor($A4CE21)
 UNUSED_Spritemap_Crocomire_A4CE21:
     dw $0001                                                             ;A4CE21;
     %spritemapEntry(1, $1F8, $F8, 0, 1, 3, 0, $166)
 
+%anchor($A4CE28)
 UNUSED_Spritemap_Crocomire_A4CE28:
     dw $0001                                                             ;A4CE28;
     %spritemapEntry(1, $1F8, $F8, 0, 1, 3, 0, $168)
 
+%anchor($A4CE2F)
 UNUSED_Spritemap_Crocomire_A4CE2F:
     dw $0002                                                             ;A4CE2F;
     %spritemapEntry(0, $1F8, $FC, 0, 1, 3, 0, $16B)
     %spritemapEntry(0, $00, $FC, 0, 1, 3, 0, $16A)
 
+%anchor($A4CE3B)
 UNUSED_Spritemap_Crocomire_A4CE3B:
     dw $0003                                                             ;A4CE3B;
     %spritemapEntry(0, $00, $04, 0, 1, 3, 0, $188)
     %spritemapEntry(0, $1F8, $04, 0, 1, 3, 0, $189)
     %spritemapEntry(1, $1F8, $F4, 0, 1, 3, 0, $182)
 
+%anchor($A4CE4C)
 UNUSED_Spritemap_Crocomire_A4CE4C:
     dw $0005                                                             ;A4CE4C;
     %spritemapEntry(0, $1F9, $08, 0, 0, 3, 0, $17A)
@@ -6208,6 +6549,7 @@ UNUSED_Spritemap_Crocomire_A4CE4C:
     %spritemapEntry(0, $1F8, $00, 0, 1, 3, 0, $199)
     %spritemapEntry(1, $1F8, $F0, 0, 1, 3, 0, $184)
 
+%anchor($A4CE67)
 UNUSED_Spritemap_Crocomire_A4CE67:
     dw $0004                                                             ;A4CE67;
     %spritemapEntry(0, $00, $05, 0, 1, 3, 0, $10F)
@@ -6215,19 +6557,23 @@ UNUSED_Spritemap_Crocomire_A4CE67:
     %spritemapEntry(0, $1F8, $05, 0, 1, 3, 0, $11F)
     %spritemapEntry(1, $1F8, $F5, 0, 1, 3, 0, $186)
 
+%anchor($A4CE7D)
 UNUSED_Spritemap_Crocomire_A4CE7D:
     dw $0001                                                             ;A4CE7D;
     %spritemapEntry(1, $1F8, $F8, 0, 1, 3, 0, $18A)
 
+%anchor($A4CE84)
 UNUSED_Spritemap_Crocomire_A4CE84:
     dw $0001                                                             ;A4CE84;
     %spritemapEntry(1, $1F8, $F8, 0, 1, 3, 0, $18C)
 
+%anchor($A4CE8B)
 UNUSED_Spritemap_Crocomire_A4CE8B:
     dw $0001                                                             ;A4CE8B;
     %spritemapEntry(1, $1F8, $F8, 0, 1, 3, 0, $18E)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A4CE92)
 Spritemap_Crocomire_0:
     dw $0009                                                             ;A4CE92;
     %spritemapEntry(1, $1C3, $1A, 0, 0, 3, 0, $E4)
@@ -6240,6 +6586,7 @@ Spritemap_Crocomire_0:
     %spritemapEntry(1, $1DE, $12, 0, 0, 3, 0, $E0)
     %spritemapEntry(1, $1D0, $19, 0, 0, 3, 0, $E0)
 
+%anchor($A4CEC1)
 Spritemap_Crocomire_1:
     dw $0009                                                             ;A4CEC1;
     %spritemapEntry(1, $1B1, $13, 0, 0, 3, 0, $E4)
@@ -6252,6 +6599,7 @@ Spritemap_Crocomire_1:
     %spritemapEntry(1, $1CE, $0F, 0, 0, 3, 0, $104)
     %spritemapEntry(1, $1C0, $0F, 0, 0, 3, 0, $102)
 
+%anchor($A4CEF0)
 Spritemap_Crocomire_2:
     dw $0007                                                             ;A4CEF0;
     %spritemapEntry(1, $1CC, $1C, 0, 0, 3, 0, $E4)
@@ -6262,6 +6610,7 @@ Spritemap_Crocomire_2:
     %spritemapEntry(1, $1E8, $14, 0, 0, 3, 0, $E0)
     %spritemapEntry(1, $1DA, $1B, 0, 0, 3, 0, $E0)
 
+%anchor($A4CF15)
 Spritemap_Crocomire_3:
     dw $0009                                                             ;A4CF15;
     %spritemapEntry(0, $00, $08, 0, 1, 3, 0, $FF)
@@ -6274,6 +6623,7 @@ Spritemap_Crocomire_3:
     %spritemapEntry(1, $1F2, $0D, 0, 0, 3, 0, $104)
     %spritemapEntry(1, $1E4, $0D, 0, 0, 3, 0, $102)
 
+%anchor($A4CF44)
 Spritemap_Crocomire_4:
     dw $0007                                                             ;A4CF44;
     %spritemapEntry(1, $1C0, $0C, 0, 0, 3, 0, $E4)
@@ -6284,6 +6634,7 @@ Spritemap_Crocomire_4:
     %spritemapEntry(1, $1E0, $0C, 0, 0, 3, 0, $E2)
     %spritemapEntry(1, $1D0, $0C, 0, 0, 3, 0, $E2)
 
+%anchor($A4CF69)
 Spritemap_Crocomire_5:
     dw $0008                                                             ;A4CF69;
     %spritemapEntry(0, $02, $09, 0, 0, 3, 0, $DF)
@@ -6295,6 +6646,7 @@ Spritemap_Crocomire_5:
     %spritemapEntry(1, $1F6, $F9, 0, 0, 3, 0, $14B)
     %spritemapEntry(1, $01, $F9, 0, 0, 3, 0, $12B)
 
+%anchor($A4CF93)
 Spritemap_Crocomire_6:
     dw $0008                                                             ;A4CF93;
     %spritemapEntry(0, $05, $09, 0, 0, 3, 0, $DF)
@@ -6306,6 +6658,7 @@ Spritemap_Crocomire_6:
     %spritemapEntry(1, $1F7, $F9, 0, 0, 3, 0, $14B)
     %spritemapEntry(1, $01, $F9, 0, 0, 3, 0, $12B)
 
+%anchor($A4CFBD)
 Spritemap_Crocomire_7:
     dw $0008                                                             ;A4CFBD;
     %spritemapEntry(0, $08, $09, 0, 0, 3, 0, $DF)
@@ -6317,6 +6670,7 @@ Spritemap_Crocomire_7:
     %spritemapEntry(1, $1F9, $F9, 0, 0, 3, 0, $14B)
     %spritemapEntry(1, $00, $F9, 0, 0, 3, 0, $12B)
 
+%anchor($A4CFE7)
 Spritemap_Crocomire_8:
     dw $0008                                                             ;A4CFE7;
     %spritemapEntry(0, $0C, $09, 0, 0, 3, 0, $DF)
@@ -6328,6 +6682,7 @@ Spritemap_Crocomire_8:
     %spritemapEntry(1, $1FC, $F9, 0, 0, 3, 0, $14B)
     %spritemapEntry(1, $00, $F9, 0, 0, 3, 0, $12B)
 
+%anchor($A4D011)
 Spritemap_Crocomire_9:
     dw $0008                                                             ;A4D011;
     %spritemapEntry(1, $03, $F9, 0, 0, 3, 0, $12D)
@@ -6339,6 +6694,7 @@ Spritemap_Crocomire_9:
     %spritemapEntry(0, $1F1, $09, 0, 0, 3, 0, $DB)
     %spritemapEntry(1, $01, $F9, 0, 1, 3, 0, $12B)
 
+%anchor($A4D03B)
 Spritemap_Crocomire_A:
     dw $0008                                                             ;A4D03B;
     %spritemapEntry(1, $09, $F9, 0, 0, 3, 0, $12D)
@@ -6350,6 +6706,7 @@ Spritemap_Crocomire_A:
     %spritemapEntry(0, $1F8, $09, 0, 0, 3, 0, $DB)
     %spritemapEntry(1, $01, $F9, 0, 1, 3, 0, $12B)
 
+%anchor($A4D065)
 Spritemap_Crocomire_B:
     dw $0008                                                             ;A4D065;
     %spritemapEntry(1, $10, $F9, 0, 0, 3, 0, $12D)
@@ -6361,6 +6718,7 @@ Spritemap_Crocomire_B:
     %spritemapEntry(0, $00, $09, 0, 0, 3, 0, $DB)
     %spritemapEntry(1, $03, $F9, 0, 1, 3, 0, $12B)
 
+%anchor($A4D08F)
 Spritemap_Crocomire_C:
     dw $0008                                                             ;A4D08F;
     %spritemapEntry(1, $09, $F8, 0, 0, 3, 0, $12D)
@@ -6372,6 +6730,7 @@ Spritemap_Crocomire_C:
     %spritemapEntry(0, $1F8, $09, 0, 0, 3, 0, $DB)
     %spritemapEntry(1, $01, $F9, 0, 1, 3, 0, $12B)
 
+%anchor($A4D0B9)
 Spritemap_Crocomire_D:
     dw $0008                                                             ;A4D0B9;
     %spritemapEntry(1, $03, $F5, 0, 0, 3, 0, $12D)
@@ -6383,6 +6742,7 @@ Spritemap_Crocomire_D:
     %spritemapEntry(0, $1F1, $07, 0, 0, 3, 0, $DB)
     %spritemapEntry(1, $01, $F9, 0, 1, 3, 0, $12B)
 
+%anchor($A4D0E3)
 Spritemap_Crocomire_E:
     dw $0008                                                             ;A4D0E3;
     %spritemapEntry(0, $0C, $06, 0, 0, 3, 0, $DF)
@@ -6394,6 +6754,7 @@ Spritemap_Crocomire_E:
     %spritemapEntry(1, $1FC, $F5, 0, 0, 3, 0, $14B)
     %spritemapEntry(1, $00, $F9, 0, 0, 3, 0, $12B)
 
+%anchor($A4D10D)
 Spritemap_Crocomire_F:
     dw $0008                                                             ;A4D10D;
     %spritemapEntry(0, $08, $06, 0, 0, 3, 0, $DF)
@@ -6405,6 +6766,7 @@ Spritemap_Crocomire_F:
     %spritemapEntry(1, $1F9, $F5, 0, 0, 3, 0, $14B)
     %spritemapEntry(1, $00, $F9, 0, 0, 3, 0, $12B)
 
+%anchor($A4D137)
 Spritemap_Crocomire_10:
     dw $0008                                                             ;A4D137;
     %spritemapEntry(0, $05, $07, 0, 0, 3, 0, $DF)
@@ -6417,6 +6779,7 @@ Spritemap_Crocomire_10:
     %spritemapEntry(1, $01, $F9, 0, 0, 3, 0, $12B)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A4D161)
 UNUSED_Spritemap_Crocomire_A4D161:
     dw $0008                                                             ;A4D161;
     %spritemapEntry(0, $02, $08, 0, 0, 3, 0, $DF)
@@ -6429,6 +6792,7 @@ UNUSED_Spritemap_Crocomire_A4D161:
     %spritemapEntry(1, $01, $F9, 0, 0, 3, 0, $12B)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A4D18B)
 Spritemap_Crocomire_11:
     dw $0008                                                             ;A4D18B;
     %spritemapEntry(0, $0C, $04, 0, 0, 3, 0, $DF)
@@ -6440,6 +6804,7 @@ Spritemap_Crocomire_11:
     %spritemapEntry(1, $1FC, $F5, 0, 0, 3, 0, $14B)
     %spritemapEntry(1, $00, $F9, 0, 0, 3, 0, $12B)
 
+%anchor($A4D1B5)
 Spritemap_Crocomire_12:
     dw $0008                                                             ;A4D1B5;
     %spritemapEntry(0, $0C, $04, 0, 0, 3, 0, $DF)
@@ -6451,6 +6816,7 @@ Spritemap_Crocomire_12:
     %spritemapEntry(1, $1FC, $F3, 0, 0, 3, 0, $14B)
     %spritemapEntry(1, $00, $F5, 0, 0, 3, 0, $12B)
 
+%anchor($A4D1DF)
 Spritemap_Crocomire_13:
     dw $0008                                                             ;A4D1DF;
     %spritemapEntry(0, $0C, $04, 0, 0, 3, 0, $DF)
@@ -6463,6 +6829,7 @@ Spritemap_Crocomire_13:
     %spritemapEntry(1, $00, $F1, 0, 0, 3, 0, $12B)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A4D209)
 UNUSED_Spritemap_Crocomire_A4D209:
     dw $0009                                                             ;A4D209;
     %spritemapEntry(1, $2D, $1A, 0, 1, 3, 0, $E4)
@@ -6475,6 +6842,7 @@ UNUSED_Spritemap_Crocomire_A4D209:
     %spritemapEntry(1, $12, $12, 0, 1, 3, 0, $E0)
     %spritemapEntry(1, $20, $19, 0, 1, 3, 0, $E0)
 
+%anchor($A4D238)
 UNUSED_Spritemap_Crocomire_A4D238:
     dw $0009                                                             ;A4D238;
     %spritemapEntry(1, $3F, $13, 0, 1, 3, 0, $E4)
@@ -6487,6 +6855,7 @@ UNUSED_Spritemap_Crocomire_A4D238:
     %spritemapEntry(1, $22, $0F, 0, 1, 3, 0, $104)
     %spritemapEntry(1, $30, $0F, 0, 1, 3, 0, $102)
 
+%anchor($A4D267)
 UNUSED_Spritemap_Crocomire_A4D267:
     dw $0007                                                             ;A4D267;
     %spritemapEntry(1, $24, $1C, 0, 1, 3, 0, $E4)
@@ -6497,6 +6866,7 @@ UNUSED_Spritemap_Crocomire_A4D267:
     %spritemapEntry(1, $08, $14, 0, 1, 3, 0, $E0)
     %spritemapEntry(1, $16, $1B, 0, 1, 3, 0, $E0)
 
+%anchor($A4D28C)
 UNUSED_Spritemap_Crocomire_A4D28C:
     dw $0009                                                             ;A4D28C;
     %spritemapEntry(0, $1F8, $08, 0, 0, 3, 0, $FF)
@@ -6510,6 +6880,7 @@ UNUSED_Spritemap_Crocomire_A4D28C:
     %spritemapEntry(1, $0C, $0D, 0, 1, 3, 0, $102)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A4D2BB)
 Spritemap_Crocomire_14:
     dw $0007                                                             ;A4D2BB;
     %spritemapEntry(1, $1E6, $FA, 0, 0, 3, 0, $EB)
@@ -6521,6 +6892,7 @@ Spritemap_Crocomire_14:
     %spritemapEntry(1, $1BD, $FA, 0, 0, 3, 0, $E2)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A4D2E0)
 UNUSED_Spritemap_Crocomire_A4D2E0:
     dw $0009                                                             ;A4D2E0;
     %spritemapEntry(0, $00, $F0, 1, 1, 3, 0, $FF)
@@ -6533,6 +6905,7 @@ UNUSED_Spritemap_Crocomire_A4D2E0:
     %spritemapEntry(1, $20, $E2, 1, 1, 3, 0, $104)
     %spritemapEntry(1, $2E, $E2, 1, 1, 3, 0, $102)
 
+%anchor($A4D30F)
 UNUSED_Spritemap_Crocomire_A4D30F:
     dw $0007                                                             ;A4D30F;
     %spritemapEntry(1, $0A, $FA, 0, 1, 3, 0, $EB)
@@ -6543,6 +6916,7 @@ UNUSED_Spritemap_Crocomire_A4D30F:
     %spritemapEntry(1, $23, $FA, 0, 1, 3, 0, $E2)
     %spritemapEntry(1, $33, $FA, 0, 1, 3, 0, $E2)
 
+%anchor($A4D334)
 UNUSED_Spritemap_Crocomire_A4D334:
     dw $0009                                                             ;A4D334;
     %spritemapEntry(0, $1F8, $08, 0, 0, 3, 0, $FF)
@@ -6555,6 +6929,7 @@ UNUSED_Spritemap_Crocomire_A4D334:
     %spritemapEntry(1, $1FE, $FD, 1, 1, 3, 0, $104)
     %spritemapEntry(1, $0C, $FD, 1, 1, 3, 0, $102)
 
+%anchor($A4D363)
 UNUSED_Spritemap_Crocomire_A4D363:
     dw $0007                                                             ;A4D363;
     %spritemapEntry(1, $1F8, $08, 0, 1, 3, 0, $109)
@@ -6566,6 +6941,7 @@ UNUSED_Spritemap_Crocomire_A4D363:
     %spritemapEntry(1, $1B, $01, 1, 1, 3, 0, $102)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A4D388)
 Spritemap_Crocomire_15:
     dw $0009                                                             ;A4D388;
     %spritemapEntry(0, $00, $08, 0, 1, 3, 0, $FF)
@@ -6578,6 +6954,7 @@ Spritemap_Crocomire_15:
     %spritemapEntry(1, $1F2, $FD, 1, 0, 3, 0, $104)
     %spritemapEntry(1, $1E4, $FD, 1, 0, 3, 0, $102)
 
+%anchor($A4D3B7)
 Spritemap_Crocomire_16:
     dw $0009                                                             ;A4D3B7;
     %spritemapEntry(0, $1F8, $F0, 1, 0, 3, 0, $FF)
@@ -6591,6 +6968,7 @@ Spritemap_Crocomire_16:
     %spritemapEntry(1, $1C2, $E2, 1, 0, 3, 0, $102)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A4D3E6)
 UNUSED_Spritemap_Crocomire_A4D3E6:
     dw $0004                                                             ;A4D3E6;
     %spritemapEntry(0, $00, $F8, 0, 1, 3, 0, $D0)
@@ -6598,6 +6976,7 @@ UNUSED_Spritemap_Crocomire_A4D3E6:
     %spritemapEntry(0, $1F8, $00, 1, 0, 3, 0, $D0)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 0, $D0)
 
+%anchor($A4D3FC)
 UNUSED_Spritemap_Crocomire_A4D3FC:
     dw $0004                                                             ;A4D3FC;
     %spritemapEntry(0, $00, $F8, 0, 1, 3, 0, $D1)
@@ -6605,6 +6984,7 @@ UNUSED_Spritemap_Crocomire_A4D3FC:
     %spritemapEntry(0, $1F8, $00, 1, 0, 3, 0, $D1)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 0, $D1)
 
+%anchor($A4D412)
 UNUSED_Spritemap_Crocomire_A4D412:
     dw $0004                                                             ;A4D412;
     %spritemapEntry(0, $00, $00, 1, 1, 3, 0, $D2)
@@ -6612,6 +6992,7 @@ UNUSED_Spritemap_Crocomire_A4D412:
     %spritemapEntry(0, $1F8, $00, 1, 0, 3, 0, $D2)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 0, $D2)
 
+%anchor($A4D428)
 UNUSED_Spritemap_Crocomire_A4D428:
     dw $0004                                                             ;A4D428;
     %spritemapEntry(0, $00, $00, 1, 1, 3, 0, $D3)
@@ -6620,6 +7001,7 @@ UNUSED_Spritemap_Crocomire_A4D428:
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 0, $D3)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A4D43E)
 Spritemap_Crocomire_17:
     dw $0004                                                             ;A4D43E;
     %spritemapEntry(0, $08, $00, 0, 0, 2, 0, $D7)
@@ -6627,12 +7009,14 @@ Spritemap_Crocomire_17:
     %spritemapEntry(0, $1F8, $00, 0, 0, 2, 0, $D5)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 0, $D4)
 
+%anchor($A4D454)
 Spritemap_Crocomire_18:
     dw $0003                                                             ;A4D454;
     %spritemapEntry(0, $08, $00, 0, 0, 2, 0, $DA)
     %spritemapEntry(0, $00, $00, 0, 0, 2, 0, $D9)
     %spritemapEntry(0, $1F8, $00, 0, 0, 2, 0, $D8)
 
+%anchor($A4D465)
 Spritemap_Crocomire_19:
     dw $0004                                                             ;A4D465;
     %spritemapEntry(0, $08, $F8, 1, 0, 2, 0, $D7)
@@ -6640,16 +7024,19 @@ Spritemap_Crocomire_19:
     %spritemapEntry(0, $1F8, $F8, 1, 0, 2, 0, $D5)
     %spritemapEntry(0, $1F8, $00, 1, 0, 2, 0, $D4)
 
+%anchor($A4D47B)
 Spritemap_Crocomire_1A:
     dw $0003                                                             ;A4D47B;
     %spritemapEntry(0, $08, $F8, 1, 0, 2, 0, $DA)
     %spritemapEntry(0, $00, $F8, 1, 0, 2, 0, $D9)
     %spritemapEntry(0, $1F8, $F8, 1, 0, 2, 0, $D8)
 
+%anchor($A4D48C)
 Spritemap_Crocomire_1B:
     dw $0001                                                             ;A4D48C;
     %spritemapEntry(1, $1F8, $F8, 0, 0, 3, 0, $1CC)
 
+%anchor($A4D493)
 Spritemap_Crocomire_1C:
     dw $0006                                                             ;A4D493;
     %spritemapEntry(0, $1E0, $00, 0, 0, 3, 0, $1DE)
@@ -6659,6 +7046,7 @@ Spritemap_Crocomire_1C:
     %spritemapEntry(1, $1F0, $F0, 0, 0, 3, 0, $1E6)
     %spritemapEntry(1, $00, $F0, 0, 0, 3, 0, $1E0)
 
+%anchor($A4D4B3)
 Spritemap_Crocomire_1D:
     dw $0006                                                             ;A4D4B3;
     %spritemapEntry(0, $1E0, $00, 0, 0, 3, 0, $1DF)
@@ -6668,6 +7056,7 @@ Spritemap_Crocomire_1D:
     %spritemapEntry(1, $1F0, $F0, 0, 0, 3, 0, $1E6)
     %spritemapEntry(1, $00, $F0, 0, 0, 3, 0, $1E0)
 
+%anchor($A4D4D3)
 Spritemap_Crocomire_1E:
     dw $0006                                                             ;A4D4D3;
     %spritemapEntry(0, $1E8, $00, 0, 0, 3, 0, $15E)
@@ -6677,6 +7066,7 @@ Spritemap_Crocomire_1E:
     %spritemapEntry(1, $1F0, $F0, 0, 0, 3, 0, $1E6)
     %spritemapEntry(1, $00, $F0, 0, 0, 3, 0, $1E0)
 
+%anchor($A4D4F3)
 Spritemap_Crocomire_1F:
     dw $0004                                                             ;A4D4F3;
     %spritemapEntry(1, $00, $F0, 0, 0, 3, 0, $1E0)
@@ -6684,15 +7074,18 @@ Spritemap_Crocomire_1F:
     %spritemapEntry(0, $1E8, $00, 0, 0, 3, 0, $15F)
     %spritemapEntry(0, $1E8, $F8, 0, 0, 3, 0, $14F)
 
+%anchor($A4D509)
 Spritemap_Crocomire_20:
     dw $0002                                                             ;A4D509;
     %spritemapEntry(1, $00, $F0, 0, 0, 3, 0, $1E2)
     %spritemapEntry(1, $1F0, $F0, 0, 0, 3, 0, $1EA)
 
+%anchor($A4D515)
 Spritemap_Crocomire_21:
     dw $0001                                                             ;A4D515;
     %spritemapEntry(1, $00, $F0, 0, 0, 3, 0, $1E4)
 
+%anchor($A4D51C)
 ExtendedTilemap_Crocomire_0:                                             ;A4D51C;
     dw $FFFE
     dw $2000,$000C, $0338,$0338,$0338,$0338,$0338,$0338,$0338,$0338,$0338,$0338,$0338,$0338
@@ -6705,6 +7098,7 @@ ExtendedTilemap_Crocomire_0:                                             ;A4D51C
     dw $21C0,$000C, $0338,$0338,$3C43,$3C44,$3C45,$3C46,$3C8D,$3C8E,$3C8F,$3C9D,$3C9E,$3C9F
     dw $FFFF
 
+%anchor($A4D600)
 ExtendedTilemap_Crocomire_1:                                             ;A4D600;
     dw $FFFE
     dw $2000,$0008, $0338,$3CE0,$3CE1,$3CE2,$3CE3,$3CE4,$3CE5,$3CE6
@@ -6717,6 +7111,7 @@ ExtendedTilemap_Crocomire_1:                                             ;A4D600
     dw $21C0,$000C, $0338,$0338,$3D1C,$3D1D,$3D1E,$3D1F,$3D30,$3D31,$3D32,$3D33,$3D34,$3D35
     dw $FFFF
 
+%anchor($A4D6DA)
 ExtendedTilemap_Crocomire_2:                                             ;A4D6DA;
     dw $FFFE
     dw $2000,$0008, $0338,$0338,$0338,$0338,$0338,$0338,$0338,$0338
@@ -6730,6 +7125,7 @@ ExtendedTilemap_Crocomire_2:                                             ;A4D6DA
     dw $21C4,$000A, $3C43,$3C44,$3C45,$3C46,$3C47,$3C48,$3C49,$3C4A,$3C4B,$3C4C
     dw $FFFF
 
+%anchor($A4D7B6)
 ExtendedTilemap_Crocomire_3:                                             ;A4D7B6;
     dw $FFFE
     dw $2246,$0004, $3C4F,$3C60,$3C61,$3C62
@@ -6738,21 +7134,27 @@ ExtendedTilemap_Crocomire_3:                                             ;A4D7B6
     dw $2306,$0004, $3C7A,$3C7B,$3C7C,$3C7D
     dw $FFFF
 
+%anchor($A4D7EA)
 ExtendedTilemap_Crocomire_4:                                             ;A4D7EA;
     dw $FFFE,$2246,$0004,$3D46,$3D47,$3D48,$3D49,$2286,$0004,$3D56,$3D57,$3D58,$3D59,$22C6,$0004,$3D4A,$3D4B,$3D4C,$3D4D,$2306,$0004,$3D5A,$3D5B,$3D5C,$3D5D,$FFFF
 
+%anchor($A4D81E)
 ExtendedTilemap_Crocomire_5:                                             ;A4D81E;
     dw $FFFE,$2246,$0004,$3D4E,$3D4F,$3D02,$3D0B,$2286,$0004,$3D13,$3D1B,$3C42,$3C51,$22C6,$0004,$3CA0,$3CA1,$3CAB,$3CF9,$2306,$0004,$3C01,$3C08,$3C09,$3C41,$FFFF
 
+%anchor($A4D852)
 ExtendedTilemap_Crocomire_6:                                             ;A4D852;
     dw $FFFE,$2354,$0006,$3D40,$3D41,$3D42,$3D43,$3D44,$3D45,$2394,$0006,$3D50,$3D51,$3D52,$3D53,$3D54,$3D55,$FFFF
 
+%anchor($A4D876)
 ExtendedTilemap_Crocomire_7:                                             ;A4D876;
     dw $FFFE,$2354,$0006,$3D26,$3D27,$3D28,$3D29,$3D2A,$3D2B,$2394,$0006,$3D36,$3D37,$3D38,$3D39,$3D3A,$3D3B,$FFFF
 
+%anchor($A4D89A)
 ExtendedTilemap_Crocomire_8:                                             ;A4D89A;
     dw $FFFE,$2354,$0006,$3D2C,$3D2D,$3D2E,$3D2F,$3CC8,$3CC9,$2394,$0006,$3D3C,$3D3D,$3D3E,$3D3F,$3CE7,$3CE8,$FFFF
 
+%anchor($A4D8BE)
 ExtendedTilemap_Crocomire_9:                                             ;A4D8BE;
     dw $FFFE
     dw $2040,$000C, $0338,$0338,$0338,$0338,$0338,$3C02,$3C03,$3C04,$3C05,$3C06,$3C07,$0338
@@ -6771,6 +7173,7 @@ ExtendedTilemap_Crocomire_9:                                             ;A4D8BE
     dw $2380,$000C, $0338,$0338,$3C93,$3C94,$3C95,$3C96,$3C97,$3C98,$3C99,$3C9A,$3D50,$3D51
     dw $FFFF
 
+%anchor($A4DA4A)
 ExtendedTilemap_Crocomire_A:                                             ;A4DA4A;
     dw $FFFE
     dw $2202,$000B, $0338,$3C53,$3C54,$3C55,$3C56,$3C57,$3C58,$3C59,$3C5A,$3C5B,$3C5C
@@ -6782,6 +7185,7 @@ ExtendedTilemap_Crocomire_A:                                             ;A4DA4A
     dw $2382,$000B, $0338,$3C93,$3C94,$3C95,$3C96,$3C97,$3C98,$3C99,$3C9A,$3D50,$3D51
     dw $FFFF
 
+%anchor($A4DB04)
 Spritemap_Crocomire_22:
     dw $0017                                                             ;A4DB04;
     %spritemapEntry(0, $1D8, $D8, 0, 0, 2, 7, $177)
@@ -6808,6 +7212,7 @@ Spritemap_Crocomire_22:
     %spritemapEntry(1, $43E8, $F8, 0, 0, 2, 7, $188)
     %spritemapEntry(1, $43D8, $F8, 0, 0, 2, 7, $186)
 
+%anchor($A4DB79)
 Spritemap_Crocomire_23:
     dw $0022                                                             ;A4DB79;
     %spritemapEntry(0, $1D8, $D8, 0, 0, 2, 7, $177)
@@ -6845,6 +7250,7 @@ Spritemap_Crocomire_23:
     %spritemapEntry(0, $1D8, $08, 0, 0, 2, 7, $131)
     %spritemapEntry(0, $1D0, $08, 0, 0, 2, 7, $130)
 
+%anchor($A4DC25)
 Spritemap_Crocomire_24:
     dw $002D                                                             ;A4DC25;
     %spritemapEntry(0, $1D8, $D8, 0, 0, 2, 7, $177)
@@ -6893,6 +7299,7 @@ Spritemap_Crocomire_24:
     %spritemapEntry(0, $1D8, $08, 0, 0, 2, 7, $131)
     %spritemapEntry(0, $1D0, $08, 0, 0, 2, 7, $130)
 
+%anchor($A4DD08)
 Spritemap_Crocomire_25:
     dw $0037                                                             ;A4DD08;
     %spritemapEntry(0, $1D8, $D8, 0, 0, 2, 7, $177)
@@ -6951,6 +7358,7 @@ Spritemap_Crocomire_25:
     %spritemapEntry(0, $1D8, $08, 0, 0, 2, 7, $131)
     %spritemapEntry(0, $1D0, $08, 0, 0, 2, 7, $130)
 
+%anchor($A4DE1D)
 Spritemap_Crocomire_26:
     dw $0018                                                             ;A4DE1D;
     %spritemapEntry(0, $10, $F0, 0, 0, 2, 7, $1ED)
@@ -6978,6 +7386,7 @@ Spritemap_Crocomire_26:
     %spritemapEntry(1, $43E1, $C8, 0, 0, 2, 7, $1A2)
     %spritemapEntry(1, $43D1, $C8, 0, 0, 2, 7, $1A0)
 
+%anchor($A4DE97)
 Spritemap_Crocomire_27:
     dw $0023                                                             ;A4DE97;
     %spritemapEntry(0, $10, $F0, 0, 0, 2, 7, $1ED)
@@ -7016,6 +7425,7 @@ Spritemap_Crocomire_27:
     %spritemapEntry(0, $1D8, $08, 0, 0, 2, 7, $131)
     %spritemapEntry(0, $1D0, $08, 0, 0, 2, 7, $130)
 
+%anchor($A4DF48)
 Spritemap_Crocomire_28:
     dw $002E                                                             ;A4DF48;
     %spritemapEntry(0, $10, $F0, 0, 0, 2, 7, $1ED)
@@ -7065,6 +7475,7 @@ Spritemap_Crocomire_28:
     %spritemapEntry(0, $1D8, $08, 0, 0, 2, 7, $131)
     %spritemapEntry(0, $1D0, $08, 0, 0, 2, 7, $130)
 
+%anchor($A4E030)
 Spritemap_Crocomire_29:
     dw $0038                                                             ;A4E030;
     %spritemapEntry(0, $10, $F0, 0, 0, 2, 7, $1ED)
@@ -7125,12 +7536,14 @@ Spritemap_Crocomire_29:
     %spritemapEntry(0, $1D0, $08, 0, 0, 2, 7, $130)
 
 
+%anchor($A4E14A)
 InstList_CrocomireCorpse_Skeleton_Falling:
     dw $000A,ExtendedSpritemap_CrocomireCorpse_0                         ;A4E14A;
     dw $000A,ExtendedSpritemap_CrocomireCorpse_1                         ;A4E14E;
     dw $000A,ExtendedSpritemap_CrocomireCorpse_2                         ;A4E152;
     dw Instruction_Common_Sleep                                          ;A4E156;
 
+%anchor($A4E158)
 InstList_CrocomireCorpse_Skeleton_FallsApart_0:
     dw $000A,ExtendedSpritemap_CrocomireCorpse_3                         ;A4E158;
     dw Instruction_Crocomire_SpawnBigDustCloudProjectile_Negative20      ;A4E15C;
@@ -7168,14 +7581,17 @@ InstList_CrocomireCorpse_Skeleton_FallsApart_0:
     dw Instruction_Crocomire_QueueBigExplosionSFX                        ;A4E1C0;
     dw $0005,ExtendedSpritemap_CrocomireCorpse_14                        ;A4E1C2;
 
+%anchor($A4E1C6)
 InstList_CrocomireCorpse_Skeleton_1:
     dw $7FFF,ExtendedSpritemap_CrocomireCorpse_15                        ;A4E1C6;
     dw Instruction_Common_Sleep                                          ;A4E1CA;
 
+%anchor($A4E1CC)
 InstList_CrocomireCorpse_Skeleton_Dead:
     dw $7FFF,ExtendedSpritemap_CrocomireCorpse_16                        ;A4E1CC;
     dw Instruction_CommonA4_Sleep                                        ;A4E1D0;
 
+%anchor($A4E1D2)
 InstList_CrocomireCorpse_Skeleton_FlowingDownTheRiver:
     dw $0004,ExtendedSpritemap_CrocomireCorpse_17                        ;A4E1D2;
     dw $0004,ExtendedSpritemap_CrocomireCorpse_18                        ;A4E1D6;
@@ -7190,6 +7606,7 @@ InstList_CrocomireCorpse_Skeleton_FlowingDownTheRiver:
     dw Instruction_Common_GotoY                                          ;A4E1FA;
     dw InstList_CrocomireCorpse_Skeleton_FlowingDownTheRiver             ;A4E1FC;
 
+%anchor($A4E1FE)
 ExtendedSpritemap_CrocomireCorpse_0:
     dw $0005                                                             ;A4E1FE;
     dw $FFF0,$0007
@@ -7208,6 +7625,7 @@ ExtendedSpritemap_CrocomireCorpse_0:
     dw Spritemap_CrocomireCorpse_2                                       ;A4E224;
     dw Hitbox_CrocomireCorspe_Empty                                      ;A4E226;
 
+%anchor($A4E228)
 ExtendedSpritemap_CrocomireCorpse_1:
     dw $0005                                                             ;A4E228;
     dw $FFF0,$0004
@@ -7226,6 +7644,7 @@ ExtendedSpritemap_CrocomireCorpse_1:
     dw Spritemap_CrocomireCorpse_2                                       ;A4E24E;
     dw Hitbox_CrocomireCorspe_Empty                                      ;A4E250;
 
+%anchor($A4E252)
 ExtendedSpritemap_CrocomireCorpse_2:
     dw $0005                                                             ;A4E252;
     dw $FFF5,$FFFF
@@ -7244,6 +7663,7 @@ ExtendedSpritemap_CrocomireCorpse_2:
     dw Spritemap_CrocomireCorpse_2                                       ;A4E278;
     dw Hitbox_CrocomireCorspe_Empty                                      ;A4E27A;
 
+%anchor($A4E27C)
 ExtendedSpritemap_CrocomireCorpse_3:
     dw $0005                                                             ;A4E27C;
     dw $FFF0,$0003
@@ -7262,6 +7682,7 @@ ExtendedSpritemap_CrocomireCorpse_3:
     dw Spritemap_CrocomireCorpse_2                                       ;A4E2A2;
     dw Hitbox_CrocomireCorspe_Empty                                      ;A4E2A4;
 
+%anchor($A4E2A6)
 ExtendedSpritemap_CrocomireCorpse_4:
     dw $0005                                                             ;A4E2A6;
     dw $FFF4,$0007
@@ -7280,6 +7701,7 @@ ExtendedSpritemap_CrocomireCorpse_4:
     dw Spritemap_CrocomireCorpse_2                                       ;A4E2CC;
     dw Hitbox_CrocomireCorspe_Empty                                      ;A4E2CE;
 
+%anchor($A4E2D0)
 ExtendedSpritemap_CrocomireCorpse_5:
     dw $0005                                                             ;A4E2D0;
     dw $FFF4,$0006
@@ -7298,6 +7720,7 @@ ExtendedSpritemap_CrocomireCorpse_5:
     dw Spritemap_CrocomireCorpse_2                                       ;A4E2F6;
     dw Hitbox_CrocomireCorspe_Empty                                      ;A4E2F8;
 
+%anchor($A4E2FA)
 ExtendedSpritemap_CrocomireCorpse_6:
     dw $0005                                                             ;A4E2FA;
     dw $FFF5,$0004
@@ -7316,6 +7739,7 @@ ExtendedSpritemap_CrocomireCorpse_6:
     dw Spritemap_CrocomireCorpse_2                                       ;A4E320;
     dw Hitbox_CrocomireCorspe_Empty                                      ;A4E322;
 
+%anchor($A4E324)
 ExtendedSpritemap_CrocomireCorpse_7:
     dw $0005                                                             ;A4E324;
     dw $FFF4,$0005
@@ -7334,6 +7758,7 @@ ExtendedSpritemap_CrocomireCorpse_7:
     dw Spritemap_CrocomireCorpse_2                                       ;A4E34A;
     dw Hitbox_CrocomireCorspe_Empty                                      ;A4E34C;
 
+%anchor($A4E34E)
 ExtendedSpritemap_CrocomireCorpse_8:
     dw $0005                                                             ;A4E34E;
     dw $FFF0,$000E
@@ -7352,6 +7777,7 @@ ExtendedSpritemap_CrocomireCorpse_8:
     dw Spritemap_CrocomireCorpse_2                                       ;A4E374;
     dw Hitbox_CrocomireCorspe_Empty                                      ;A4E376;
 
+%anchor($A4E378)
 ExtendedSpritemap_CrocomireCorpse_9:
     dw $0005                                                             ;A4E378;
     dw $FFEB,$001A
@@ -7370,6 +7796,7 @@ ExtendedSpritemap_CrocomireCorpse_9:
     dw Spritemap_CrocomireCorpse_2                                       ;A4E39E;
     dw Hitbox_CrocomireCorspe_Empty                                      ;A4E3A0;
 
+%anchor($A4E3A2)
 ExtendedSpritemap_CrocomireCorpse_A:
     dw $0005                                                             ;A4E3A2;
     dw $FFEA,$0023
@@ -7388,6 +7815,7 @@ ExtendedSpritemap_CrocomireCorpse_A:
     dw Spritemap_CrocomireCorpse_2                                       ;A4E3C8;
     dw Hitbox_CrocomireCorspe_Empty                                      ;A4E3CA;
 
+%anchor($A4E3CC)
 ExtendedSpritemap_CrocomireCorpse_B:
     dw $0005                                                             ;A4E3CC;
     dw $FFEA,$002F
@@ -7406,6 +7834,7 @@ ExtendedSpritemap_CrocomireCorpse_B:
     dw Spritemap_CrocomireCorpse_2                                       ;A4E3F2;
     dw Hitbox_CrocomireCorspe_Empty                                      ;A4E3F4;
 
+%anchor($A4E3F6)
 ExtendedSpritemap_CrocomireCorpse_C:
     dw $0005                                                             ;A4E3F6;
     dw $FFEA,$0036
@@ -7424,6 +7853,7 @@ ExtendedSpritemap_CrocomireCorpse_C:
     dw Spritemap_CrocomireCorpse_2                                       ;A4E41C;
     dw Hitbox_CrocomireCorspe_Empty                                      ;A4E41E;
 
+%anchor($A4E420)
 ExtendedSpritemap_CrocomireCorpse_D:
     dw $0009                                                             ;A4E420;
     dw $002E,$FFFC
@@ -7454,6 +7884,7 @@ ExtendedSpritemap_CrocomireCorpse_D:
     dw Spritemap_CrocomireCorpse_F                                       ;A4E466;
     dw Hitbox_CrocomireCorspe_Empty                                      ;A4E468;
 
+%anchor($A4E46A)
 ExtendedSpritemap_CrocomireCorpse_E:
     dw $000D                                                             ;A4E46A;
     dw $0037,$0007
@@ -7496,6 +7927,7 @@ ExtendedSpritemap_CrocomireCorpse_E:
     dw Spritemap_CrocomireCorpse_E                                       ;A4E4D0;
     dw Hitbox_CrocomireCorspe_Empty                                      ;A4E4D2;
 
+%anchor($A4E4D4)
 ExtendedSpritemap_CrocomireCorpse_F:
     dw $000D                                                             ;A4E4D4;
     dw $003C,$000C
@@ -7538,6 +7970,7 @@ ExtendedSpritemap_CrocomireCorpse_F:
     dw Spritemap_CrocomireCorpse_E                                       ;A4E53A;
     dw Hitbox_CrocomireCorspe_Empty                                      ;A4E53C;
 
+%anchor($A4E53E)
 ExtendedSpritemap_CrocomireCorpse_10:
     dw $000D                                                             ;A4E53E;
     dw $003E,$0011
@@ -7580,6 +8013,7 @@ ExtendedSpritemap_CrocomireCorpse_10:
     dw Spritemap_CrocomireCorpse_E                                       ;A4E5A4;
     dw Hitbox_CrocomireCorspe_Empty                                      ;A4E5A6;
 
+%anchor($A4E5A8)
 ExtendedSpritemap_CrocomireCorpse_11:
     dw $000C                                                             ;A4E5A8;
     dw $0040,$0016
@@ -7619,6 +8053,7 @@ ExtendedSpritemap_CrocomireCorpse_11:
     dw Spritemap_CrocomireCorpse_D                                       ;A4E606;
     dw Hitbox_CrocomireCorspe_Empty                                      ;A4E608;
 
+%anchor($A4E60A)
 ExtendedSpritemap_CrocomireCorpse_12:
     dw $000A                                                             ;A4E60A;
     dw $0040,$0014
@@ -7652,6 +8087,7 @@ ExtendedSpritemap_CrocomireCorpse_12:
     dw Spritemap_CrocomireCorpse_C                                       ;A4E658;
     dw Hitbox_CrocomireCorspe_Empty                                      ;A4E65A;
 
+%anchor($A4E65C)
 ExtendedSpritemap_CrocomireCorpse_13:
     dw $0006                                                             ;A4E65C;
     dw $0040,$0013
@@ -7673,6 +8109,7 @@ ExtendedSpritemap_CrocomireCorpse_13:
     dw Spritemap_CrocomireCorpse_6                                       ;A4E68A;
     dw Hitbox_CrocomireCorspe_Empty                                      ;A4E68C;
 
+%anchor($A4E68E)
 ExtendedSpritemap_CrocomireCorpse_14:
     dw $0003                                                             ;A4E68E;
     dw $0040,$0014
@@ -7685,72 +8122,84 @@ ExtendedSpritemap_CrocomireCorpse_14:
     dw Spritemap_CrocomireCorpse_6                                       ;A4E6A4;
     dw Hitbox_CrocomireCorspe_Empty                                      ;A4E6A6;
 
+%anchor($A4E6A8)
 ExtendedSpritemap_CrocomireCorpse_15:
     dw $0001                                                             ;A4E6A8;
     dw $0040,$0015
     dw Spritemap_CrocomireCorpse_0                                       ;A4E6AE;
     dw Hitbox_CrocomireCorspe                                            ;A4E6B0;
 
+%anchor($A4E6B2)
 ExtendedSpritemap_CrocomireCorpse_16:
     dw $0001                                                             ;A4E6B2;
     dw $0000,$0000
     dw Spritemap_CrocomireCorpse_0                                       ;A4E6B8;
     dw Hitbox_CrocomireCorspe                                            ;A4E6BA;
 
+%anchor($A4E6BC)
 ExtendedSpritemap_CrocomireCorpse_17:
     dw $0001                                                             ;A4E6BC;
     dw $0000,$0000
     dw Spritemap_CrocomireCorpse_16                                      ;A4E6C2;
     dw Hitbox_CrocomireCorspe_Empty                                      ;A4E6C4;
 
+%anchor($A4E6C6)
 ExtendedSpritemap_CrocomireCorpse_18:
     dw $0001                                                             ;A4E6C6;
     dw $0000,$0000
     dw Spritemap_CrocomireCorpse_17                                      ;A4E6CC;
     dw Hitbox_CrocomireCorspe_Empty                                      ;A4E6CE;
 
+%anchor($A4E6D0)
 ExtendedSpritemap_CrocomireCorpse_19:
     dw $0001                                                             ;A4E6D0;
     dw $0000,$0000
     dw Spritemap_CrocomireCorpse_18                                      ;A4E6D6;
     dw Hitbox_CrocomireCorspe_Empty                                      ;A4E6D8;
 
+%anchor($A4E6DA)
 ExtendedSpritemap_CrocomireCorpse_1A:
     dw $0001                                                             ;A4E6DA;
     dw $0000,$0000
     dw Spritemap_CrocomireCorpse_19                                      ;A4E6E0;
     dw Hitbox_CrocomireCorspe_Empty                                      ;A4E6E2;
 
+%anchor($A4E6E4)
 ExtendedSpritemap_CrocomireCorpse_1B:
     dw $0001                                                             ;A4E6E4;
     dw $0000,$0000
     dw Spritemap_CrocomireCorpse_1A                                      ;A4E6EA;
     dw Hitbox_CrocomireCorspe_Empty                                      ;A4E6EC;
 
+%anchor($A4E6EE)
 ExtendedSpritemap_CrocomireCorpse_1C:
     dw $0001                                                             ;A4E6EE;
     dw $0000,$0000
     dw Spritemap_CrocomireCorpse_1B                                      ;A4E6F4;
     dw Hitbox_CrocomireCorspe_Empty                                      ;A4E6F6;
 
+%anchor($A4E6F8)
 ExtendedSpritemap_CrocomireCorpse_1D:
     dw $0001                                                             ;A4E6F8;
     dw $0000,$0000
     dw Spritemap_CrocomireCorpse_1C                                      ;A4E6FE;
     dw Hitbox_CrocomireCorspe_Empty                                      ;A4E700;
 
+%anchor($A4E702)
 ExtendedSpritemap_CrocomireCorpse_1E:
     dw $0001                                                             ;A4E702;
     dw $0000,$0000
     dw Spritemap_CrocomireCorpse_1D                                      ;A4E708;
     dw Hitbox_CrocomireCorspe_Empty                                      ;A4E70A;
 
+%anchor($A4E70C)
 ExtendedSpritemap_CrocomireCorpse_1F:
     dw $0001                                                             ;A4E70C;
     dw $0000,$0000
     dw Spritemap_CrocomireCorpse_1E                                      ;A4E712;
     dw Hitbox_CrocomireCorspe_Empty                                      ;A4E714;
 
+%anchor($A4E716)
 ExtendedSpritemap_CrocomireCorpse_20:
     dw $0001                                                             ;A4E716;
     dw $0020,$0020
@@ -7758,6 +8207,7 @@ ExtendedSpritemap_CrocomireCorpse_20:
     dw Hitbox_CrocomireCorspe_Empty                                      ;A4E71E;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A4E720)
 UNUSED_Hitbox_CrocomireCorspe_A4E720:
     dw $0001                                                             ;A4E720;
     dw $FFE6,$FFE2,$0026,$001D
@@ -7765,6 +8215,7 @@ UNUSED_Hitbox_CrocomireCorspe_A4E720:
     dw EnemyShot_Crocomire_SpawnShotExplosion                            ;A4E72C;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A4E72E)
 Hitbox_CrocomireCorspe:
     dw $0002                                                             ;A4E72E;
     dw $FFDA,$FFF0,$0000,$001F
@@ -7774,10 +8225,12 @@ Hitbox_CrocomireCorspe:
     dw RTL_A4B950                                                        ;A4E744;
     dw EnemyShot_Crocomire_SpawnShotExplosion                            ;A4E746;
 
+%anchor($A4E748)
 Hitbox_CrocomireCorspe_Empty:
     dw $0000                                                             ;A4E748;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A4E74A)
 UNUSED_Spritemap_CrocomireCorpse_A4E74A:
     dw $0011                                                             ;A4E74A;
     %spritemapEntry(0, $1E4, $18, 0, 0, 2, 7, $1A6)
@@ -7799,6 +8252,7 @@ UNUSED_Spritemap_CrocomireCorpse_A4E74A:
     %spritemapEntry(1, $1DC, $E0, 0, 0, 2, 7, $1A0)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A4E7A1)
 Spritemap_CrocomireCorpse_0:
     dw $0011                                                             ;A4E7A1;
     %spritemapEntry(0, $14, $18, 0, 1, 2, 7, $1A6)
@@ -7820,6 +8274,7 @@ Spritemap_CrocomireCorpse_0:
     %spritemapEntry(1, $14, $E0, 0, 1, 2, 7, $1A0)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A4E7F8)
 UNUSED_Spritemap_CrocomireCorpse_A4E7F8:
     dw $000A                                                             ;A4E7F8;
     %spritemapEntry(0, $18, $0C, 0, 0, 2, 7, $16B)
@@ -7834,6 +8289,7 @@ UNUSED_Spritemap_CrocomireCorpse_A4E7F8:
     %spritemapEntry(1, $1E0, $EC, 0, 0, 2, 7, $160)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A4E82C)
 Spritemap_CrocomireCorpse_1:
     dw $000A                                                             ;A4E82C;
     %spritemapEntry(0, $1E0, $0C, 0, 1, 2, 7, $16B)
@@ -7848,6 +8304,7 @@ Spritemap_CrocomireCorpse_1:
     %spritemapEntry(1, $10, $EC, 0, 1, 2, 7, $160)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A4E860)
 UNUSED_Spritemap_CrocomireCorpse_A4E860:
     dw $000F                                                             ;A4E860;
     %spritemapEntry(1, $20, $10, 0, 0, 2, 7, $18E)
@@ -7867,6 +8324,7 @@ UNUSED_Spritemap_CrocomireCorpse_A4E860:
     %spritemapEntry(1, $1D0, $00, 0, 0, 2, 7, $182)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A4E8AD)
 Spritemap_CrocomireCorpse_2:
     dw $000F                                                             ;A4E8AD;
     %spritemapEntry(1, $1D0, $10, 0, 1, 2, 7, $18E)
@@ -7885,53 +8343,64 @@ Spritemap_CrocomireCorpse_2:
     %spritemapEntry(1, $10, $00, 0, 1, 2, 7, $184)
     %spritemapEntry(1, $20, $00, 0, 1, 2, 7, $182)
 
+%anchor($A4E8FA)
 Spritemap_CrocomireCorpse_3:
     dw $0002                                                             ;A4E8FA;
     %spritemapEntry(1, $00, $F8, 0, 0, 2, 7, $16E)
     %spritemapEntry(1, $1F0, $F8, 0, 0, 2, 7, $16C)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A4E906)
 UNUSED_Spritemap_CrocomireCorpse_A4E906:
     dw $0002                                                             ;A4E906;
     %spritemapEntry(1, $1F0, $F8, 0, 1, 2, 7, $16E)
     %spritemapEntry(1, $00, $F8, 0, 1, 2, 7, $16C)
 
+%anchor($A4E912)
 UNUSED_Spritemap_CrocomireCorpse_A4E912:
     dw $0001                                                             ;A4E912;
     %spritemapEntry(1, $1F8, $F8, 0, 1, 2, 7, $160)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A4E919)
 Spritemap_CrocomireCorpse_4:
     dw $0001                                                             ;A4E919;
     %spritemapEntry(1, $1F8, $F8, 0, 1, 2, 7, $180)
 
+%anchor($A4E920)
 Spritemap_CrocomireCorpse_5:
     dw $0001                                                             ;A4E920;
     %spritemapEntry(1, $1F8, $F8, 0, 1, 2, 7, $162)
 
+%anchor($A4E927)
 Spritemap_CrocomireCorpse_6:
     dw $0001                                                             ;A4E927;
     %spritemapEntry(1, $1F8, $F8, 0, 1, 2, 7, $164)
 
+%anchor($A4E92E)
 Spritemap_CrocomireCorpse_7:
     dw $0001                                                             ;A4E92E;
     %spritemapEntry(1, $1F8, $F8, 0, 1, 2, 7, $166)
 
+%anchor($A4E935)
 Spritemap_CrocomireCorpse_8:
     dw $0001                                                             ;A4E935;
     %spritemapEntry(1, $1F8, $F8, 0, 1, 2, 7, $168)
 
+%anchor($A4E93C)
 Spritemap_CrocomireCorpse_9:
     dw $0002                                                             ;A4E93C;
     %spritemapEntry(0, $1F8, $FC, 0, 1, 2, 7, $16B)
     %spritemapEntry(0, $00, $FC, 0, 1, 2, 7, $16A)
 
+%anchor($A4E948)
 Spritemap_CrocomireCorpse_A:
     dw $0003                                                             ;A4E948;
     %spritemapEntry(0, $00, $04, 0, 1, 2, 7, $188)
     %spritemapEntry(0, $1F8, $04, 0, 1, 2, 7, $189)
     %spritemapEntry(1, $1F8, $F4, 0, 1, 2, 7, $182)
 
+%anchor($A4E959)
 Spritemap_CrocomireCorpse_B:
     dw $0005                                                             ;A4E959;
     %spritemapEntry(0, $1F9, $08, 0, 0, 2, 7, $17A)
@@ -7940,6 +8409,7 @@ Spritemap_CrocomireCorpse_B:
     %spritemapEntry(0, $1F8, $00, 0, 1, 2, 7, $199)
     %spritemapEntry(1, $1F8, $F0, 0, 1, 2, 7, $184)
 
+%anchor($A4E974)
 Spritemap_CrocomireCorpse_C:
     dw $0004                                                             ;A4E974;
     %spritemapEntry(0, $00, $05, 0, 1, 2, 7, $10F)
@@ -7947,19 +8417,23 @@ Spritemap_CrocomireCorpse_C:
     %spritemapEntry(0, $1F8, $05, 0, 1, 2, 7, $11F)
     %spritemapEntry(1, $1F8, $F5, 0, 1, 2, 7, $186)
 
+%anchor($A4E98A)
 Spritemap_CrocomireCorpse_D:
     dw $0001                                                             ;A4E98A;
     %spritemapEntry(1, $1F8, $F8, 0, 1, 2, 7, $18A)
 
+%anchor($A4E991)
 Spritemap_CrocomireCorpse_E:
     dw $0001                                                             ;A4E991;
     %spritemapEntry(1, $1F8, $F8, 0, 1, 2, 7, $18C)
 
+%anchor($A4E998)
 Spritemap_CrocomireCorpse_F:
     dw $0001                                                             ;A4E998;
     %spritemapEntry(1, $1F8, $F8, 0, 1, 2, 7, $18E)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A4E99F)
 UNUSED_Spritemap_CrocomireCorpse_A4E99F:
     dw $0009                                                             ;A4E99F;
     %spritemapEntry(1, $1C3, $1A, 0, 0, 2, 0, $E4)
@@ -7972,6 +8446,7 @@ UNUSED_Spritemap_CrocomireCorpse_A4E99F:
     %spritemapEntry(1, $1DE, $12, 0, 0, 2, 0, $E0)
     %spritemapEntry(1, $1D0, $19, 0, 0, 2, 0, $E0)
 
+%anchor($A4E9CE)
 UNUSED_Spritemap_CrocomireCorpse_A4E9CE:
     dw $0009                                                             ;A4E9CE;
     %spritemapEntry(1, $1B1, $13, 0, 0, 2, 0, $E4)
@@ -7984,6 +8459,7 @@ UNUSED_Spritemap_CrocomireCorpse_A4E9CE:
     %spritemapEntry(1, $1CE, $0F, 0, 0, 2, 0, $104)
     %spritemapEntry(1, $1C0, $0F, 0, 0, 2, 0, $102)
 
+%anchor($A4E9FD)
 UNUSED_Spritemap_CrocomireCorpse_A4E9FD:
     dw $0007                                                             ;A4E9FD;
     %spritemapEntry(1, $1CC, $1C, 0, 0, 2, 0, $E4)
@@ -7994,6 +8470,7 @@ UNUSED_Spritemap_CrocomireCorpse_A4E9FD:
     %spritemapEntry(1, $1E8, $14, 0, 0, 2, 0, $E0)
     %spritemapEntry(1, $1DA, $1B, 0, 0, 2, 0, $E0)
 
+%anchor($A4EA22)
 UNUSED_Spritemap_CrocomireCorpse_A4EA22:
     dw $0009                                                             ;A4EA22;
     %spritemapEntry(0, $00, $08, 0, 1, 2, 0, $FF)
@@ -8006,6 +8483,7 @@ UNUSED_Spritemap_CrocomireCorpse_A4EA22:
     %spritemapEntry(1, $1F2, $0D, 0, 0, 2, 0, $104)
     %spritemapEntry(1, $1E4, $0D, 0, 0, 2, 0, $102)
 
+%anchor($A4EA51)
 UNUSED_Spritemap_CrocomireCorpse_A4EA51:
     dw $0007                                                             ;A4EA51;
     %spritemapEntry(1, $1C0, $0C, 0, 0, 2, 0, $E4)
@@ -8016,6 +8494,7 @@ UNUSED_Spritemap_CrocomireCorpse_A4EA51:
     %spritemapEntry(1, $1E0, $0C, 0, 0, 2, 0, $E2)
     %spritemapEntry(1, $1D0, $0C, 0, 0, 2, 0, $E2)
 
+%anchor($A4EA76)
 UNUSED_Spritemap_CrocomireCorpse_A4EA76:
     dw $0008                                                             ;A4EA76;
     %spritemapEntry(0, $02, $09, 0, 0, 2, 0, $DF)
@@ -8027,6 +8506,7 @@ UNUSED_Spritemap_CrocomireCorpse_A4EA76:
     %spritemapEntry(1, $1F6, $F9, 0, 0, 2, 0, $14B)
     %spritemapEntry(1, $01, $F9, 0, 0, 2, 0, $12B)
 
+%anchor($A4EAA0)
 UNUSED_Spritemap_CrocomireCorpse_A4EAA0:
     dw $0008                                                             ;A4EAA0;
     %spritemapEntry(0, $05, $09, 0, 0, 2, 0, $DF)
@@ -8038,6 +8518,7 @@ UNUSED_Spritemap_CrocomireCorpse_A4EAA0:
     %spritemapEntry(1, $1F7, $F9, 0, 0, 2, 0, $14B)
     %spritemapEntry(1, $01, $F9, 0, 0, 2, 0, $12B)
 
+%anchor($A4EACA)
 UNUSED_Spritemap_CrocomireCorpse_A4EACA:
     dw $0008                                                             ;A4EACA;
     %spritemapEntry(0, $08, $09, 0, 0, 2, 0, $DF)
@@ -8049,6 +8530,7 @@ UNUSED_Spritemap_CrocomireCorpse_A4EACA:
     %spritemapEntry(1, $1F9, $F9, 0, 0, 2, 0, $14B)
     %spritemapEntry(1, $00, $F9, 0, 0, 2, 0, $12B)
 
+%anchor($A4EAF4)
 UNUSED_Spritemap_CrocomireCorpse_A4EAF4:
     dw $0008                                                             ;A4EAF4;
     %spritemapEntry(0, $0C, $09, 0, 0, 2, 0, $DF)
@@ -8060,6 +8542,7 @@ UNUSED_Spritemap_CrocomireCorpse_A4EAF4:
     %spritemapEntry(1, $1FC, $F9, 0, 0, 2, 0, $14B)
     %spritemapEntry(1, $00, $F9, 0, 0, 2, 0, $12B)
 
+%anchor($A4EB1E)
 UNUSED_Spritemap_CrocomireCorpse_A4EB1E:
     dw $0008                                                             ;A4EB1E;
     %spritemapEntry(1, $03, $F9, 0, 0, 2, 0, $12D)
@@ -8071,6 +8554,7 @@ UNUSED_Spritemap_CrocomireCorpse_A4EB1E:
     %spritemapEntry(0, $1F1, $09, 0, 0, 2, 0, $DB)
     %spritemapEntry(1, $01, $F9, 0, 1, 2, 0, $12B)
 
+%anchor($A4EB48)
 UNUSED_Spritemap_CrocomireCorpse_A4EB48:
     dw $0008                                                             ;A4EB48;
     %spritemapEntry(1, $09, $F9, 0, 0, 2, 0, $12D)
@@ -8082,6 +8566,7 @@ UNUSED_Spritemap_CrocomireCorpse_A4EB48:
     %spritemapEntry(0, $1F8, $09, 0, 0, 2, 0, $DB)
     %spritemapEntry(1, $01, $F9, 0, 1, 2, 0, $12B)
 
+%anchor($A4EB72)
 UNUSED_Spritemap_CrocomireCorpse_A4EB72:
     dw $0008                                                             ;A4EB72;
     %spritemapEntry(1, $10, $F9, 0, 0, 2, 0, $12D)
@@ -8093,6 +8578,7 @@ UNUSED_Spritemap_CrocomireCorpse_A4EB72:
     %spritemapEntry(0, $00, $09, 0, 0, 2, 0, $DB)
     %spritemapEntry(1, $03, $F9, 0, 1, 2, 0, $12B)
 
+%anchor($A4EB9C)
 UNUSED_Spritemap_CrocomireCorpse_A4EB9C:
     dw $0008                                                             ;A4EB9C;
     %spritemapEntry(1, $09, $F8, 0, 0, 2, 0, $12D)
@@ -8104,6 +8590,7 @@ UNUSED_Spritemap_CrocomireCorpse_A4EB9C:
     %spritemapEntry(0, $1F8, $09, 0, 0, 2, 0, $DB)
     %spritemapEntry(1, $01, $F9, 0, 1, 2, 0, $12B)
 
+%anchor($A4EBC6)
 UNUSED_Spritemap_CrocomireCorpse_A4EBC6:
     dw $0008                                                             ;A4EBC6;
     %spritemapEntry(1, $03, $F5, 0, 0, 2, 0, $12D)
@@ -8115,6 +8602,7 @@ UNUSED_Spritemap_CrocomireCorpse_A4EBC6:
     %spritemapEntry(0, $1F1, $07, 0, 0, 2, 0, $DB)
     %spritemapEntry(1, $01, $F9, 0, 1, 2, 0, $12B)
 
+%anchor($A4EBF0)
 UNUSED_Spritemap_CrocomireCorpse_A4EBF0:
     dw $0008                                                             ;A4EBF0;
     %spritemapEntry(0, $0C, $06, 0, 0, 2, 0, $DF)
@@ -8126,6 +8614,7 @@ UNUSED_Spritemap_CrocomireCorpse_A4EBF0:
     %spritemapEntry(1, $1FC, $F5, 0, 0, 2, 0, $14B)
     %spritemapEntry(1, $00, $F9, 0, 0, 2, 0, $12B)
 
+%anchor($A4EC1A)
 UNUSED_Spritemap_CrocomireCorpse_A4EC1A:
     dw $0008                                                             ;A4EC1A;
     %spritemapEntry(0, $08, $06, 0, 0, 2, 0, $DF)
@@ -8137,6 +8626,7 @@ UNUSED_Spritemap_CrocomireCorpse_A4EC1A:
     %spritemapEntry(1, $1F9, $F5, 0, 0, 2, 0, $14B)
     %spritemapEntry(1, $00, $F9, 0, 0, 2, 0, $12B)
 
+%anchor($A4EC44)
 UNUSED_Spritemap_CrocomireCorpse_A4EC44:
     dw $0008                                                             ;A4EC44;
     %spritemapEntry(0, $05, $07, 0, 0, 2, 0, $DF)
@@ -8148,6 +8638,7 @@ UNUSED_Spritemap_CrocomireCorpse_A4EC44:
     %spritemapEntry(1, $1F7, $F6, 0, 0, 2, 0, $14B)
     %spritemapEntry(1, $01, $F9, 0, 0, 2, 0, $12B)
 
+%anchor($A4EC6E)
 UNUSED_Spritemap_CrocomireCorpse_A4EC6E:
     dw $0008                                                             ;A4EC6E;
     %spritemapEntry(0, $02, $08, 0, 0, 2, 0, $DF)
@@ -8159,6 +8650,7 @@ UNUSED_Spritemap_CrocomireCorpse_A4EC6E:
     %spritemapEntry(1, $1F6, $F7, 0, 0, 2, 0, $14B)
     %spritemapEntry(1, $01, $F9, 0, 0, 2, 0, $12B)
 
+%anchor($A4EC98)
 UNUSED_Spritemap_CrocomireCorpse_A4EC98:
     dw $0008                                                             ;A4EC98;
     %spritemapEntry(0, $0C, $04, 0, 0, 2, 0, $DF)
@@ -8170,6 +8662,7 @@ UNUSED_Spritemap_CrocomireCorpse_A4EC98:
     %spritemapEntry(1, $1FC, $F5, 0, 0, 2, 0, $14B)
     %spritemapEntry(1, $00, $F9, 0, 0, 2, 0, $12B)
 
+%anchor($A4ECC2)
 UNUSED_Spritemap_CrocomireCorpse_A4ECC2:
     dw $0008                                                             ;A4ECC2;
     %spritemapEntry(0, $0C, $04, 0, 0, 2, 0, $DF)
@@ -8181,6 +8674,7 @@ UNUSED_Spritemap_CrocomireCorpse_A4ECC2:
     %spritemapEntry(1, $1FC, $F3, 0, 0, 2, 0, $14B)
     %spritemapEntry(1, $00, $F5, 0, 0, 2, 0, $12B)
 
+%anchor($A4ECEC)
 UNUSED_Spritemap_CrocomireCorpse_A4ECEC:
     dw $0008                                                             ;A4ECEC;
     %spritemapEntry(0, $0C, $04, 0, 0, 2, 0, $DF)
@@ -8193,6 +8687,7 @@ UNUSED_Spritemap_CrocomireCorpse_A4ECEC:
     %spritemapEntry(1, $00, $F1, 0, 0, 2, 0, $12B)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A4ED16)
 Spritemap_CrocomireCorpse_10:
     dw $0009                                                             ;A4ED16;
     %spritemapEntry(1, $2D, $1A, 0, 1, 2, 1, $E4)
@@ -8205,6 +8700,7 @@ Spritemap_CrocomireCorpse_10:
     %spritemapEntry(1, $12, $12, 0, 1, 2, 1, $E0)
     %spritemapEntry(1, $20, $19, 0, 1, 2, 1, $E0)
 
+%anchor($A4ED45)
 Spritemap_CrocomireCorpse_11:
     dw $0009                                                             ;A4ED45;
     %spritemapEntry(1, $3F, $13, 0, 1, 2, 1, $E4)
@@ -8218,6 +8714,7 @@ Spritemap_CrocomireCorpse_11:
     %spritemapEntry(1, $30, $0F, 0, 1, 2, 1, $102)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A4ED74)
 UNUSED_Spritemap_CrocomireCorpse_A4ED74:
     dw $0007                                                             ;A4ED74;
     %spritemapEntry(1, $24, $1C, 0, 1, 2, 1, $E4)
@@ -8228,6 +8725,7 @@ UNUSED_Spritemap_CrocomireCorpse_A4ED74:
     %spritemapEntry(1, $08, $14, 0, 1, 2, 1, $E0)
     %spritemapEntry(1, $16, $1B, 0, 1, 2, 1, $E0)
 
+%anchor($A4ED99)
 UNUSED_Spritemap_CrocomireCorpse_A4ED99:
     dw $0009                                                             ;A4ED99;
     %spritemapEntry(0, $1F8, $08, 0, 0, 2, 1, $FF)
@@ -8240,6 +8738,7 @@ UNUSED_Spritemap_CrocomireCorpse_A4ED99:
     %spritemapEntry(1, $1FE, $0D, 0, 1, 2, 1, $104)
     %spritemapEntry(1, $0C, $0D, 0, 1, 2, 1, $102)
 
+%anchor($A4EDC8)
 UNUSED_Spritemap_CrocomireCorpse_A4EDC8:
     dw $0007                                                             ;A4EDC8;
     %spritemapEntry(1, $1E6, $FA, 0, 0, 2, 0, $EB)
@@ -8251,6 +8750,7 @@ UNUSED_Spritemap_CrocomireCorpse_A4EDC8:
     %spritemapEntry(1, $1BD, $FA, 0, 0, 2, 0, $E2)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A4EDED)
 Spritemap_CrocomireCorpse_12:
     dw $0009                                                             ;A4EDED;
     %spritemapEntry(0, $00, $F0, 1, 1, 2, 1, $FF)
@@ -8263,6 +8763,7 @@ Spritemap_CrocomireCorpse_12:
     %spritemapEntry(1, $20, $E2, 1, 1, 2, 1, $104)
     %spritemapEntry(1, $2E, $E2, 1, 1, 2, 1, $102)
 
+%anchor($A4EE1C)
 Spritemap_CrocomireCorpse_13:
     dw $0007                                                             ;A4EE1C;
     %spritemapEntry(1, $0A, $FA, 0, 1, 2, 1, $EB)
@@ -8273,6 +8774,7 @@ Spritemap_CrocomireCorpse_13:
     %spritemapEntry(1, $23, $FA, 0, 1, 2, 1, $E2)
     %spritemapEntry(1, $33, $FA, 0, 1, 2, 1, $E2)
 
+%anchor($A4EE41)
 Spritemap_CrocomireCorpse_14:
     dw $0009                                                             ;A4EE41;
     %spritemapEntry(0, $1F8, $08, 0, 0, 2, 1, $FF)
@@ -8285,6 +8787,7 @@ Spritemap_CrocomireCorpse_14:
     %spritemapEntry(1, $1FE, $FD, 1, 1, 2, 1, $104)
     %spritemapEntry(1, $0C, $FD, 1, 1, 2, 1, $102)
 
+%anchor($A4EE70)
 Spritemap_CrocomireCorpse_15:
     dw $0007                                                             ;A4EE70;
     %spritemapEntry(1, $1F8, $08, 0, 1, 2, 1, $109)
@@ -8296,6 +8799,7 @@ Spritemap_CrocomireCorpse_15:
     %spritemapEntry(1, $1B, $01, 1, 1, 2, 1, $102)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A4EE95)
 UNUSED_Spritemap_CrocomireCorpse_A4EE95:
     dw $0009                                                             ;A4EE95;
     %spritemapEntry(0, $00, $08, 0, 1, 2, 0, $FF)
@@ -8308,6 +8812,7 @@ UNUSED_Spritemap_CrocomireCorpse_A4EE95:
     %spritemapEntry(1, $1F2, $FD, 1, 0, 2, 0, $104)
     %spritemapEntry(1, $1E4, $FD, 1, 0, 2, 0, $102)
 
+%anchor($A4EEC4)
 UNUSED_Spritemap_CrocomireCorpse_A4EEC4:
     dw $0009                                                             ;A4EEC4;
     %spritemapEntry(0, $1F8, $F0, 1, 0, 2, 0, $FF)
@@ -8320,6 +8825,7 @@ UNUSED_Spritemap_CrocomireCorpse_A4EEC4:
     %spritemapEntry(1, $1D0, $E2, 1, 0, 2, 0, $104)
     %spritemapEntry(1, $1C2, $E2, 1, 0, 2, 0, $102)
 
+%anchor($A4EEF3)
 UNUSED_Spritemap_CrocomireCorpse_A4EEF3:
     dw $0004                                                             ;A4EEF3;
     %spritemapEntry(0, $00, $F8, 0, 1, 2, 0, $D0)
@@ -8327,6 +8833,7 @@ UNUSED_Spritemap_CrocomireCorpse_A4EEF3:
     %spritemapEntry(0, $1F8, $00, 1, 0, 2, 0, $D0)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 0, $D0)
 
+%anchor($A4EF09)
 UNUSED_Spritemap_CrocomireCorpse_A4EF09:
     dw $0004                                                             ;A4EF09;
     %spritemapEntry(0, $00, $F8, 0, 1, 2, 0, $D1)
@@ -8334,6 +8841,7 @@ UNUSED_Spritemap_CrocomireCorpse_A4EF09:
     %spritemapEntry(0, $1F8, $00, 1, 0, 2, 0, $D1)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 0, $D1)
 
+%anchor($A4EF1F)
 UNUSED_Spritemap_CrocomireCorpse_A4EF1F:
     dw $0004                                                             ;A4EF1F;
     %spritemapEntry(0, $00, $00, 1, 1, 2, 0, $D2)
@@ -8341,6 +8849,7 @@ UNUSED_Spritemap_CrocomireCorpse_A4EF1F:
     %spritemapEntry(0, $1F8, $00, 1, 0, 2, 0, $D2)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 0, $D2)
 
+%anchor($A4EF35)
 UNUSED_Spritemap_CrocomireCorpse_A4EF35:
     dw $0004                                                             ;A4EF35;
     %spritemapEntry(0, $00, $00, 1, 1, 2, 0, $D3)
@@ -8348,6 +8857,7 @@ UNUSED_Spritemap_CrocomireCorpse_A4EF35:
     %spritemapEntry(0, $1F8, $00, 1, 0, 2, 0, $D3)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 0, $D3)
 
+%anchor($A4EF4B)
 UNUSED_Spritemap_CrocomireCorpse_A4EF4B:
     dw $0004                                                             ;A4EF4B;
     %spritemapEntry(0, $08, $00, 0, 0, 2, 0, $D7)
@@ -8355,12 +8865,14 @@ UNUSED_Spritemap_CrocomireCorpse_A4EF4B:
     %spritemapEntry(0, $1F8, $00, 0, 0, 2, 0, $D5)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 0, $D4)
 
+%anchor($A4EF61)
 UNUSED_Spritemap_CrocomireCorpse_A4EF61:
     dw $0003                                                             ;A4EF61;
     %spritemapEntry(0, $08, $00, 0, 0, 2, 0, $DA)
     %spritemapEntry(0, $00, $00, 0, 0, 2, 0, $D9)
     %spritemapEntry(0, $1F8, $00, 0, 0, 2, 0, $D8)
 
+%anchor($A4EF72)
 UNUSED_Spritemap_CrocomireCorpse_A4EF72:
     dw $0004                                                             ;A4EF72;
     %spritemapEntry(0, $08, $F8, 1, 0, 2, 0, $D7)
@@ -8368,16 +8880,19 @@ UNUSED_Spritemap_CrocomireCorpse_A4EF72:
     %spritemapEntry(0, $1F8, $F8, 1, 0, 2, 0, $D5)
     %spritemapEntry(0, $1F8, $00, 1, 0, 2, 0, $D4)
 
+%anchor($A4EF88)
 UNUSED_Spritemap_CrocomireCorpse_A4EF88:
     dw $0003                                                             ;A4EF88;
     %spritemapEntry(0, $08, $F8, 1, 0, 2, 0, $DA)
     %spritemapEntry(0, $00, $F8, 1, 0, 2, 0, $D9)
     %spritemapEntry(0, $1F8, $F8, 1, 0, 2, 0, $D8)
 
+%anchor($A4EF99)
 UNUSED_Spritemap_CrocomireCorpse_A4EF99:
     dw $0001                                                             ;A4EF99;
     %spritemapEntry(1, $1F8, $F8, 0, 0, 2, 0, $1CC)
 
+%anchor($A4EFA0)
 UNUSED_Spritemap_CrocomireCorpse_A4EFA0:
     dw $0006                                                             ;A4EFA0;
     %spritemapEntry(0, $1E0, $00, 0, 0, 2, 0, $1DE)
@@ -8387,6 +8902,7 @@ UNUSED_Spritemap_CrocomireCorpse_A4EFA0:
     %spritemapEntry(1, $1F0, $F0, 0, 0, 2, 0, $1E6)
     %spritemapEntry(1, $00, $F0, 0, 0, 2, 0, $1E0)
 
+%anchor($A4EFC0)
 UNUSED_Spritemap_CrocomireCorpse_A4EFC0:
     dw $0006                                                             ;A4EFC0;
     %spritemapEntry(0, $1E0, $00, 0, 0, 2, 0, $1DF)
@@ -8396,6 +8912,7 @@ UNUSED_Spritemap_CrocomireCorpse_A4EFC0:
     %spritemapEntry(1, $1F0, $F0, 0, 0, 2, 0, $1E6)
     %spritemapEntry(1, $00, $F0, 0, 0, 2, 0, $1E0)
 
+%anchor($A4EFE0)
 UNUSED_Spritemap_CrocomireCorpse_A4EFE0:
     dw $0006                                                             ;A4EFE0;
     %spritemapEntry(0, $1E8, $00, 0, 0, 2, 0, $15E)
@@ -8405,6 +8922,7 @@ UNUSED_Spritemap_CrocomireCorpse_A4EFE0:
     %spritemapEntry(1, $1F0, $F0, 0, 0, 2, 0, $1E6)
     %spritemapEntry(1, $00, $F0, 0, 0, 2, 0, $1E0)
 
+%anchor($A4F000)
 UNUSED_Spritemap_CrocomireCorpse_A4F000:
     dw $0004                                                             ;A4F000;
     %spritemapEntry(1, $00, $F0, 0, 0, 2, 0, $1E0)
@@ -8412,15 +8930,18 @@ UNUSED_Spritemap_CrocomireCorpse_A4F000:
     %spritemapEntry(0, $1E8, $00, 0, 0, 2, 0, $15F)
     %spritemapEntry(0, $1E8, $F8, 0, 0, 2, 0, $14F)
 
+%anchor($A4F016)
 UNUSED_Spritemap_CrocomireCorpse_A4F016:
     dw $0002                                                             ;A4F016;
     %spritemapEntry(1, $00, $F0, 0, 0, 2, 0, $1E2)
     %spritemapEntry(1, $1F0, $F0, 0, 0, 2, 0, $1EA)
 
+%anchor($A4F022)
 UNUSED_Spritemap_CrocomireCorpse_A4F022:
     dw $0001                                                             ;A4F022;
     %spritemapEntry(1, $00, $F0, 0, 0, 2, 0, $1E4)
 
+%anchor($A4F029)
 UNUSED_ExtendedTilemap_CrocomireCorpse_A4F029:
     dw $FFFE,$2000,$000C,$01FF,$01FF,$01FF,$01FF,$01FF                   ;A4F029;
     dw $01FF,$01FF,$01FF,$01FF,$01FF,$01FF,$01FF,$2040                   ;A4F039;
@@ -8438,6 +8959,7 @@ UNUSED_ExtendedTilemap_CrocomireCorpse_A4F029:
     dw $1C44,$1C45,$1C46,$1C8D,$1C8E,$1C8F,$1C9D,$1C9E                   ;A4F0F9;
     dw $1C9F,$FFFF                                                       ;A4F109;
 
+%anchor($A4F10D)
 UNUSED_ExtendedTilemap_CrocomireCorpse_A4F10D:
     dw $FFFE,$2002,$0007,$1CE0,$1CE1,$1CE2,$1CE3,$1CE4                   ;A4F10D;
     dw $1CE5,$1CE6,$2042,$000A,$1CF0,$1CF1,$1CF2,$1CF3                   ;A4F11D;
@@ -8453,6 +8975,7 @@ UNUSED_ExtendedTilemap_CrocomireCorpse_A4F10D:
     dw $1D1C,$1D1D,$1D1E,$1D1F,$1D30,$1D31,$1D32,$1D33                   ;A4F1BD;
     dw $1D34,$1D35,$FFFF                                                 ;A4F1CD;
 
+%anchor($A4F1D3)
 UNUSED_ExtendedTilemap_CrocomireCorpse_A4F1D3:
     dw $FFFE,$2002,$0007,$01FF,$01FF,$01FF,$01FF,$01FF                   ;A4F1D3;
     dw $01FF,$01FF,$2042,$000A,$01FF,$01FF,$01FF,$01FF                   ;A4F1E3;
@@ -8469,39 +8992,46 @@ UNUSED_ExtendedTilemap_CrocomireCorpse_A4F1D3:
     dw $1C45,$1C46,$1C47,$1C48,$1C49,$1C4A,$1C4B,$1C4C                   ;A4F293;
     dw $FFFF                                                             ;A4F2A3;
 
+%anchor($A4F2A5)
 UNUSED_ExtendedTilemap_CrocomireCorpse_A4F2A5:
     dw $FFFE,$2246,$0004,$1C4F,$1C60,$1C61,$1C62,$2286                   ;A4F2A5;
     dw $0004,$1C5F,$1C70,$1C71,$1C72,$22C6,$0004,$1C6A                   ;A4F2B5;
     dw $1C6B,$1C6C,$1C6D,$2306,$0004,$1C7A,$1C7B,$1C7C                   ;A4F2C5;
     dw $1C7D,$FFFF                                                       ;A4F2D5;
 
+%anchor($A4F2D9)
 UNUSED_ExtendedTilemap_CrocomireCorpse_A4F2D9:
     dw $FFFE,$2246,$0004,$1D46,$1D47,$1D48,$1D49,$2286                   ;A4F2D9;
     dw $0004,$1D56,$1D57,$1D58,$1D59,$22C6,$0004,$1D4A                   ;A4F2E9;
     dw $1D4B,$1D4C,$1D4D,$2306,$0004,$1D5A,$1D5B,$1D5C                   ;A4F2F9;
     dw $1D5D,$FFFF                                                       ;A4F309;
 
+%anchor($A4F30D)
 UNUSED_ExtendedTilemap_CrocomireCorpse_A4F30D:
     dw $FFFE,$2246,$0004,$1D4E,$1D4F,$1D02,$1D0B,$2286                   ;A4F30D;
     dw $0004,$1D13,$1D1B,$1C42,$1C51,$22C6,$0004,$1CA0                   ;A4F31D;
     dw $1CA1,$1CAB,$1CF9,$2306,$0004,$1C01,$1C08,$1C09                   ;A4F32D;
     dw $1C41,$FFFF                                                       ;A4F33D;
 
+%anchor($A4F341)
 UNUSED_ExtendedTilemap_CrocomireCorpse_A4F341:
     dw $FFFE,$2354,$0006,$1D40,$1D41,$1D42,$1D43,$1D44                   ;A4F341;
     dw $1D45,$2394,$0006,$1D50,$1D51,$1D52,$1D53,$1D54                   ;A4F351;
     dw $1D55,$FFFF                                                       ;A4F361;
 
+%anchor($A4F365)
 UNUSED_ExtendedTilemap_CrocomireCorpse_A4F365:
     dw $FFFE,$2354,$0006,$1D26,$1D27,$1D28,$1D29,$1D2A                   ;A4F365;
     dw $1D2B,$2394,$0006,$1D36,$1D37,$1D38,$1D39,$1D3A                   ;A4F375;
     dw $1D3B,$FFFF                                                       ;A4F385;
 
+%anchor($A4F389)
 UNUSED_ExtendedTilemap_CrocomireCorpse_A4F389:
     dw $FFFE,$2354,$0006,$1D2C,$1D2D,$1D2E,$1D2F,$1CC8                   ;A4F389;
     dw $1CC9,$2394,$0006,$1D3C,$1D3D,$1D3E,$1D3F,$1CE7                   ;A4F399;
     dw $1CE8,$FFFF                                                       ;A4F3A9;
 
+%anchor($A4F3AD)
 UNUSED_ExtendedTilemap_CrocomireCorpse_A4F3AD:
     dw $FFFE,$2040,$000C,$01FF,$01FF,$01FF,$01FF,$01FF                   ;A4F3AD;
     dw $1C02,$1C03,$1C04,$1C05,$1C06,$1C07,$01FF,$2080                   ;A4F3BD;
@@ -8529,6 +9059,7 @@ UNUSED_ExtendedTilemap_CrocomireCorpse_A4F3AD:
     dw $000C,$01FF,$01FF,$1C93,$1C94,$1C95,$1C96,$1C97                   ;A4F51D;
     dw $1C98,$1C99,$1C9A,$0150,$0151,$FFFF                               ;A4F52D;
 
+%anchor($A4F539)
 UNUSED_ExtendedTilemap_CrocomireCorpse_A4F539:
     dw $FFFE,$2202,$000B,$01FF,$1C53,$1C54,$1C55,$1C56                   ;A4F539;
     dw $1C57,$1C58,$1C59,$1C5A,$1C5B,$1C5C,$2242,$000B                   ;A4F549;
@@ -8544,60 +9075,71 @@ UNUSED_ExtendedTilemap_CrocomireCorpse_A4F539:
     dw $1C99,$1C9A,$0150,$0151,$FFFF                                     ;A4F5E9;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A4F5F3)
 Spritemap_CrocomireCorpse_16:
     dw $0001                                                             ;A4F5F3;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 5, $25)
 
+%anchor($A4F5FA)
 Spritemap_CrocomireCorpse_17:
     dw $0003                                                             ;A4F5FA;
     %spritemapEntry(0, $00, $F8, 0, 0, 3, 5, $25)
     %spritemapEntry(0, $1FA, $F6, 0, 0, 3, 5, $25)
     %spritemapEntry(0, $1FC, $FB, 0, 0, 3, 5, $25)
 
+%anchor($A4F60B)
 Spritemap_CrocomireCorpse_18:
     dw $0003                                                             ;A4F60B;
     %spritemapEntry(0, $01, $F7, 0, 0, 3, 5, $25)
     %spritemapEntry(0, $1F9, $F4, 0, 0, 3, 5, $25)
     %spritemapEntry(0, $1FB, $FA, 0, 0, 3, 5, $25)
 
+%anchor($A4F61C)
 Spritemap_CrocomireCorpse_19:
     dw $0003                                                             ;A4F61C;
     %spritemapEntry(0, $01, $F5, 0, 0, 3, 5, $43)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 3, 5, $43)
     %spritemapEntry(0, $1FA, $F1, 0, 0, 3, 5, $43)
 
+%anchor($A4F62D)
 Spritemap_CrocomireCorpse_1A:
     dw $0003                                                             ;A4F62D;
     %spritemapEntry(0, $01, $F3, 0, 0, 3, 5, $43)
     %spritemapEntry(0, $1FC, $F5, 0, 0, 3, 5, $43)
     %spritemapEntry(0, $1FA, $EE, 0, 0, 3, 5, $43)
 
+%anchor($A4F63E)
 Spritemap_CrocomireCorpse_1B:
     dw $0003                                                             ;A4F63E;
     %spritemapEntry(0, $00, $F0, 0, 0, 3, 5, $40)
     %spritemapEntry(0, $1FC, $F4, 0, 0, 3, 5, $40)
     %spritemapEntry(0, $1FA, $ED, 0, 0, 3, 5, $40)
 
+%anchor($A4F64F)
 Spritemap_CrocomireCorpse_1C:
     dw $0003                                                             ;A4F64F;
     %spritemapEntry(0, $00, $EE, 0, 0, 3, 5, $40)
     %spritemapEntry(0, $1FC, $F2, 0, 0, 3, 5, $40)
     %spritemapEntry(0, $1FA, $EC, 0, 0, 3, 5, $40)
 
+%anchor($A4F660)
 Spritemap_CrocomireCorpse_1D:
     dw $0002                                                             ;A4F660;
     %spritemapEntry(0, $00, $EC, 0, 0, 3, 5, $40)
     %spritemapEntry(0, $1FC, $F0, 0, 0, 3, 5, $40)
 
+%anchor($A4F66C)
 Spritemap_CrocomireCorpse_1E:
     dw $0001                                                             ;A4F66C;
     %spritemapEntry(0, $1FC, $EE, 0, 0, 3, 5, $40)
 
+%anchor($A4F673)
 Spritemap_CrocomireCorpse_1F:
     dw $0001                                                             ;A4F673;
     %spritemapEntry(0, $1FC, $EE, 0, 0, 0, 5, $40)
 
 
+%anchor($A4F67A)
 InitAI_CrocomireTongue:
     LDX.W $079F                                                          ;A4F67A;
     LDA.L $7ED828,X                                                      ;A4F67D;
@@ -8627,14 +9169,17 @@ InitAI_CrocomireTongue:
     RTL                                                                  ;A4F6BA;
 
 
+%anchor($A4F6BB)
 MainAI_CrocomireTongue:
     LDX.W $0E54                                                          ;A4F6BB;
     RTL                                                                  ;A4F6BE;
 
 
+%anchor($A4F6BF)
 RTL_A4F6BF:
     RTL                                                                  ;A4F6BF;
 
 
+%anchor($A4F6C0)
 Freespace_BankA4_F6C0:                                                   ;A4F6C0;
 ; $940 bytes

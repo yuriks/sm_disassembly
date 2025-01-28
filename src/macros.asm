@@ -1,4 +1,11 @@
 
+macro anchor(desired)
+    if !ANCHOR_LABELS
+        warnpc <desired>
+        org <desired>
+    endif
+endmacro
+
 macro spritemapEntry(Size, XOffset, YOffset, YFlip, XFlip, Priority, Palette, Tile)
 ; Spritemap entry format is:
 ;     s000000xxxxxxxxx yyyyyyyy YXppPPPttttttttt

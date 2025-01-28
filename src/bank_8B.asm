@@ -2,6 +2,7 @@
 org $8B8000
 
 
+%anchor($8B8000)
 Setup_PPU_TitleSequence:
     PHP                                                                  ;8B8000;
     SEP #$30                                                             ;8B8001;
@@ -88,6 +89,7 @@ Setup_PPU_TitleSequence:
     RTS                                                                  ;8B80D9;
 
 
+%anchor($8B80DA)
 Setup_PPU_Intro:
     PHP                                                                  ;8B80DA;
     SEP #$30                                                             ;8B80DB;
@@ -171,6 +173,7 @@ Setup_PPU_Intro:
     RTS                                                                  ;8B819A;
 
 
+%anchor($8B819B)
 Setup_PPU_CeresCutscene:
     PHP                                                                  ;8B819B;
     SEP #$30                                                             ;8B819C;
@@ -237,6 +240,7 @@ Setup_PPU_CeresCutscene:
     RTS                                                                  ;8B822F;
 
 
+%anchor($8B8230)
 Setup_PPU_SamusGoesToZebesCutscene:
     PHP                                                                  ;8B8230;
     SEP #$30                                                             ;8B8231;
@@ -285,6 +289,7 @@ Setup_PPU_SamusGoesToZebesCutscene:
     RTS                                                                  ;8B8292;
 
 
+%anchor($8B8293)
 Setup_PPU_ZebesDestruction:
     PHP                                                                  ;8B8293;
     SEP #$30                                                             ;8B8294;
@@ -358,6 +363,7 @@ Setup_PPU_ZebesDestruction:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($8B833A)
 UNUSED_Setup_PPU_ZebesDestructionSpaceView_8B833A:
     PHP                                                                  ;8B833A;
     SEP #$30                                                             ;8B833B;
@@ -427,6 +433,7 @@ UNUSED_Setup_PPU_ZebesDestructionSpaceView_8B833A:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($8B83D3)
 Setup_PPU_Credits:
     PHP                                                                  ;8B83D3;
     SEP #$30                                                             ;8B83D4;
@@ -509,6 +516,7 @@ Setup_PPU_Credits:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($8B8488)
 UNUSED_ModifyMode7TransformAndBG1PosWithController_8B8488:
     PHP                                                                  ;8B8488;
     REP #$30                                                             ;8B8489;
@@ -597,6 +605,7 @@ UNUSED_ModifyMode7TransformAndBG1PosWithController_8B8488:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($8B8518)
 HandleMode7TransformMatrixAndBG1Position_NoRotation:
     PHP                                                                  ;8B8518;
     REP #$30                                                             ;8B8519;
@@ -613,6 +622,7 @@ HandleMode7TransformMatrixAndBG1Position_NoRotation:
     RTS                                                                  ;8B8531;
 
 
+%anchor($8B8532)
 HandleMode7TransformMatrixAndBG1Position:
     PHP                                                                  ;8B8532;
     REP #$30                                                             ;8B8533;
@@ -660,6 +670,7 @@ HandleMode7TransformMatrixAndBG1Position:
     RTS                                                                  ;8B858E;
 
 
+%anchor($8B858F)
 Multiplication_16bitSigned_8B858F:
     PHP                                                                  ;8B858F;
     REP #$30                                                             ;8B8590;
@@ -718,6 +729,7 @@ Multiplication_16bitSigned_8B858F:
     RTS                                                                  ;8B85ED;
 
 
+%anchor($8B85EE)
 Multiplication_16bitUnsigned_8B85EE:
     PHP                                                                  ;8B85EE;
     SEP #$30                                                             ;8B85EF;
@@ -784,11 +796,13 @@ Multiplication_16bitUnsigned_8B85EE:
     RTS                                                                  ;8B8665;
 
 
+%anchor($8B8666)
 Handle_Fading_In_from_Bank8B:
     JSL.L HandleFadingIn                                                 ;8B8666;
     RTS                                                                  ;8B866A;
 
 
+%anchor($8B866B)
 Activate_TileSequence_BlueLight:
     PHP                                                                  ;8B866B;
     SEP #$20                                                             ;8B866C;
@@ -805,6 +819,7 @@ Activate_TileSequence_BlueLight:
     RTS                                                                  ;8B8681;
 
 
+%anchor($8B8682)
 Deactivate_TileSequence_BlueLight:
     PHP                                                                  ;8B8682;
     SEP #$20                                                             ;8B8683;
@@ -820,6 +835,7 @@ Deactivate_TileSequence_BlueLight:
     RTS                                                                  ;8B8696;
 
 
+%anchor($8B8697)
 Debug_DisplayVersionInfo:
     RTS                                                                  ;8B8697;
 
@@ -944,6 +960,7 @@ Debug_DisplayVersionInfo:
     dw $39F4,$39F5,$39F6,$39F7,$39F8,$39F9,$39FA,$39FB                   ;8B8780;
     dw $39FC,$39FD,$39D0,$39D1,$39D2,$39D3,$39D4,$39D5                   ;8B8790;
 
+%anchor($8B87A0)
 CinematicBGObjects_Update32x30CinematicBGTilemap:
     PHP                                                                  ;8B87A0;
     REP #$30                                                             ;8B87A1;
@@ -976,6 +993,7 @@ CinematicBGObjects_Update32x30CinematicBGTilemap:
     RTS                                                                  ;8B87D2;
 
 
+%anchor($8B87D3)
 CinematicBGObjects_UpdateSamusEyesTilemap:
     PHP                                                                  ;8B87D3;
     REP #$30                                                             ;8B87D4;
@@ -1008,6 +1026,7 @@ CinematicBGObjects_UpdateSamusEyesTilemap:
     RTS                                                                  ;8B8805;
 
 
+%anchor($8B8806)
 CinematicBGObjects_Update32x32CinematicBGTilemap:
     PHP                                                                  ;8B8806;
     REP #$30                                                             ;8B8807;
@@ -1040,6 +1059,7 @@ CinematicBGObjects_Update32x32CinematicBGTilemap:
     RTS                                                                  ;8B8838;
 
 
+%anchor($8B8839)
 CinematicBGObjects_ProcessIndirectInstruction:
     PHP                                                                  ;8B8839;
     REP #$30                                                             ;8B883A;
@@ -1051,6 +1071,7 @@ CinematicBGObjects_ProcessIndirectInstruction:
     JMP.W ($001C)                                                        ;8B8846;
 
 
+%anchor($8B8849)
 IndirectInstructionFunction_Nothing:
     PLY                                                                  ;8B8849;
     PLX                                                                  ;8B884A;
@@ -1058,6 +1079,7 @@ IndirectInstructionFunction_Nothing:
     RTS                                                                  ;8B884C;
 
 
+%anchor($8B884D)
 IndirectInstructionFunction_DrawTextCharacter:
     LDA.W $1BA1                                                          ;8B884D;
     BNE .toggleFlag                                                      ;8B8850;
@@ -1119,6 +1141,7 @@ IndirectInstructionFunction_DrawTextCharacter:
 .fallthrough:
     PLY                                                                  ;8B88B6;
 
+%anchor($8B88B7)
 IndirectInstructionFunction_DrawTextToTilemap:
     JSR.W CinematicBGObjects_X_16_TilemapOffsetForTile_12_13             ;8B88B7;
     LDA.W $0002,Y                                                        ;8B88BA;
@@ -1160,6 +1183,7 @@ IndirectInstructionFunction_DrawTextToTilemap:
     RTS                                                                  ;8B88FC;
 
 
+%anchor($8B88FD)
 IndirectInstructionFunction_DrawSamusEyesToTilemap:
     JSR.W CinematicBGObjects_X_16_TilemapOffsetForTile_12_13             ;8B88FD;
     LDA.W $0002,Y                                                        ;8B8900;
@@ -1201,6 +1225,7 @@ IndirectInstructionFunction_DrawSamusEyesToTilemap:
     RTS                                                                  ;8B8942;
 
 
+%anchor($8B8943)
 CinematicBGObjects_X_16_TilemapOffsetForTile_12_13:
     LDA.W $0012                                                          ;8B8943;
     AND.W #$00FF                                                         ;8B8946;
@@ -1224,6 +1249,7 @@ CinematicBGObjects_X_16_TilemapOffsetForTile_12_13:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($8B896B)
 UNUSED_CinematicBGObjects_IndirectInstructionFunction_8B896B:
     JSR.W UNUSED_CinematicBGObjects_Mode7TilemapOffsetForTile_8B8A2C     ;8B896B;
     LDA.W $0002,Y                                                        ;8B896E;
@@ -1276,6 +1302,7 @@ UNUSED_CinematicBGObjects_IndirectInstructionFunction_8B896B:
     RTS                                                                  ;8B89CE;
 
 
+%anchor($8B89CF)
 UNUSED_CinematicBGObjects_IndirectInstructionFunction_8B89CF:
     JSR.W UNUSED_CinematicBGObjects_Mode7TilemapOffsetForTile_8B8A2C     ;8B89CF;
     LDA.W $0002,Y                                                        ;8B89D2;
@@ -1325,6 +1352,7 @@ UNUSED_CinematicBGObjects_IndirectInstructionFunction_8B89CF:
     RTS                                                                  ;8B8A2B;
 
 
+%anchor($8B8A2C)
 UNUSED_CinematicBGObjects_Mode7TilemapOffsetForTile_8B8A2C:
     LDA.W $0012                                                          ;8B8A2C;
     AND.W #$00FF                                                         ;8B8A2F;
@@ -1346,6 +1374,7 @@ UNUSED_CinematicBGObjects_Mode7TilemapOffsetForTile_8B8A2C:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($8B8A52)
 Calculate_SamusPosition_InRotatingElevatorRoom:
     PHP                                                                  ;8B8A52;
     PHB                                                                  ;8B8A53;
@@ -1421,6 +1450,7 @@ Calculate_SamusPosition_InRotatingElevatorRoom:
     RTL                                                                  ;8B8AD8;
 
 
+%anchor($8B8AD9)
 Calculate_ProjectilePosition_InRotatingElevatorRoom:
     PHP                                                                  ;8B8AD9;
     PHB                                                                  ;8B8ADA;
@@ -1500,6 +1530,7 @@ Calculate_ProjectilePosition_InRotatingElevatorRoom:
     RTL                                                                  ;8B8B65;
 
 
+%anchor($8B8B66)
 Calculate_CeresSteamPosition_InRotatingElevatorRoom:
     PHP                                                                  ;8B8B66;
     PHB                                                                  ;8B8B67;
@@ -1575,6 +1606,7 @@ Calculate_CeresSteamPosition_InRotatingElevatorRoom:
     RTL                                                                  ;8B8BE8;
 
 
+%anchor($8B8BE9)
 PaletteCrossFading_CopyCurrentPalettesToFadingPalettes:
     PHP                                                                  ;8B8BE9;
     PHB                                                                  ;8B8BEA;
@@ -1598,6 +1630,7 @@ PaletteCrossFading_CopyCurrentPalettesToFadingPalettes:
     RTS                                                                  ;8B8C08;
 
 
+%anchor($8B8C09)
 PaletteCrossFading_DecomposePaletteDataForFading:
     PHP                                                                  ;8B8C09;
     PHB                                                                  ;8B8C0A;
@@ -1650,6 +1683,7 @@ PaletteCrossFading_DecomposePaletteDataForFading:
     RTS                                                                  ;8B8C5D;
 
 
+%anchor($8B8C5E)
 PaletteCrossFading_ClearYColorsStartingFromColorIndexX:
     PHP                                                                  ;8B8C5E;
     PHB                                                                  ;8B8C5F;
@@ -1674,6 +1708,7 @@ PaletteCrossFading_ClearYColorsStartingFromColorIndexX:
     RTS                                                                  ;8B8C82;
 
 
+%anchor($8B8C83)
 PaletteCrossFading_FadeOutYColorsStartingFromColorIndexX:
     PHP                                                                  ;8B8C83;
 
@@ -1698,6 +1733,7 @@ PaletteCrossFading_FadeOutYColorsStartingFromColorIndexX:
     RTS                                                                  ;8B8CB1;
 
 
+%anchor($8B8CB2)
 PaletteCrossFading_FadeInYColorsStartingFromColorIndexX:
     PHP                                                                  ;8B8CB2;
 
@@ -1725,6 +1761,7 @@ PaletteCrossFading_FadeInYColorsStartingFromColorIndexX:
     RTS                                                                  ;8B8CE9;
 
 
+%anchor($8B8CEA)
 PaletteCrossFading_ComposeFadingPalettes:
     PHP                                                                  ;8B8CEA;
     LDX.W #$0000                                                         ;8B8CEB;
@@ -1757,6 +1794,7 @@ PaletteCrossFading_ComposeFadingPalettes:
     RTS                                                                  ;8B8D22;
 
 
+%anchor($8B8D23)
 LoadJapanTextIntroTiles:
     PHP                                                                  ;8B8D23;
     REP #$30                                                             ;8B8D24;
@@ -1848,6 +1886,7 @@ LoadJapanTextIntroTiles:
     RTS                                                                  ;8B8DE5;
 
 
+%anchor($8B8DE6)
 TransferJapanTextTilesToVRAM:
     PHX                                                                  ;8B8DE6;
     LDX.W $0330                                                          ;8B8DE7;
@@ -1873,6 +1912,7 @@ TransferJapanTextTilesToVRAM:
     RTS                                                                  ;8B8E0C;
 
 
+%anchor($8B8E0D)
 HandleSamusDuringIntro:
     LDA.W $1A57                                                          ;8B8E0D;
     BEQ .return                                                          ;8B8E10;
@@ -1893,6 +1933,7 @@ HandleSamusDuringIntro:
     RTS                                                                  ;8B8E2C;
 
 
+%anchor($8B8E2D)
 DrawIntroSprites:
     LDA.W $1A57                                                          ;8B8E2D;
     BEQ .noSamus                                                         ;8B8E30;
@@ -1918,6 +1959,7 @@ DrawIntroSprites:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($8B8E52)
 UNUSED_CalculateXYComponentsOfRadiusAAngleY_8B8E52:
     PHP                                                                  ;8B8E52;
     REP #$30                                                             ;8B8E53;
@@ -1972,6 +2014,7 @@ UNUSED_CalculateXYComponentsOfRadiusAAngleY_8B8E52:
     RTS                                                                  ;8B8EA2;
 
 
+%anchor($8B8EA3)
 UNUSED_Math_8B8EA3:
     SEP #$20                                                             ;8B8EA3;
     LDA.L SineCosineTables_8bitSine_SignExtended,X                       ;8B8EA5;
@@ -2002,6 +2045,7 @@ UNUSED_Math_8B8EA3:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($8B8ED9)
 MoveUnusedSpritesOffScreen:
     PHP                                                                  ;8B8ED9;
     REP #$30                                                             ;8B8EDA;
@@ -2196,6 +2240,7 @@ MoveUnusedSpritesOffScreen:
     RTS                                                                  ;8B90B7;
 
 
+%anchor($8B90B8)
 AdvanceFastScreenFadeOut:
     PHP                                                                  ;8B90B8;
     SEP #$30                                                             ;8B90B9;
@@ -2222,6 +2267,7 @@ AdvanceFastScreenFadeOut:
     RTS                                                                  ;8B90D4;
 
 
+%anchor($8B90D5)
 AdvanceSlowScreenFadeOut:
     PHP                                                                  ;8B90D5;
     SEP #$30                                                             ;8B90D6;
@@ -2257,6 +2303,7 @@ AdvanceSlowScreenFadeOut:
     RTS                                                                  ;8B90FF;
 
 
+%anchor($8B9100)
 AdvanceFastScreenFadeIn:
     PHP                                                                  ;8B9100;
     SEP #$30                                                             ;8B9101;
@@ -2280,6 +2327,7 @@ AdvanceFastScreenFadeIn:
     RTS                                                                  ;8B911A;
 
 
+%anchor($8B911B)
 AdvanceSlowScreenFadeIn:
     PHP                                                                  ;8B911B;
     SEP #$30                                                             ;8B911C;
@@ -2313,6 +2361,7 @@ AdvanceSlowScreenFadeIn:
     RTS                                                                  ;8B9145;
 
 
+%anchor($8B9146)
 Initialise_IO_Registers_and_Display_Nintendo_Logo:
     PHP                                                                  ;8B9146;
     PHB                                                                  ;8B9147;
@@ -2539,6 +2588,7 @@ Initialise_IO_Registers_and_Display_Nintendo_Logo:
     RTL                                                                  ;8B936A;
 
 
+%anchor($8B936B)
 AddNintendoBootLogoSpritemapToOAM:
     PHP                                                                  ;8B936B;
     REP #$30                                                             ;8B936C;
@@ -2558,6 +2608,7 @@ AddNintendoBootLogoSpritemapToOAM:
     RTS                                                                  ;8B9389;
 
 
+%anchor($8B938A)
 Spawn_CinematicSpriteObject_Y:
     PHP                                                                  ;8B938A;
     REP #$30                                                             ;8B938B;
@@ -2578,6 +2629,7 @@ Spawn_CinematicSpriteObject_Y:
     RTS                                                                  ;8B93A1;
 
 
+%anchor($8B93A2)
 Spawn_CinematicSpriteObject_YToIndex12:
     PHP                                                                  ;8B93A2;
     REP #$30                                                             ;8B93A3;
@@ -2586,6 +2638,7 @@ Spawn_CinematicSpriteObject_YToIndex12:
     TYX                                                                  ;8B93A9;
     LDY.B $12                                                            ;8B93AA;
 
+%anchor($8B93AC)
 SpawnCinematicSpriteObject_XToIndexY:
     REP #$30                                                             ;8B93AC;
     LDA.W $0002,X                                                        ;8B93AE;
@@ -2607,10 +2660,12 @@ SpawnCinematicSpriteObject_XToIndexY:
     RTS                                                                  ;8B93D8;
 
 
+%anchor($8B93D9)
 RTS_8B93D9:
     RTS                                                                  ;8B93D9;
 
 
+%anchor($8B93DA)
 Clear_CinematicSpriteObjects:
     PHP                                                                  ;8B93DA;
     REP #$30                                                             ;8B93DB;
@@ -2627,6 +2682,7 @@ Clear_CinematicSpriteObjects:
     RTS                                                                  ;8B93EE;
 
 
+%anchor($8B93EF)
 Handle_CinematicSpriteObjects:
     PHP                                                                  ;8B93EF;
     REP #$30                                                             ;8B93F0;
@@ -2647,6 +2703,7 @@ Handle_CinematicSpriteObjects:
     RTS                                                                  ;8B9408;
 
 
+%anchor($8B9409)
 Process_CinematicSpriteObjects_InstList:
     JSR.W ($1B3D,X)                                                      ;8B9409;
     LDX.W $1A59                                                          ;8B940C;
@@ -2676,6 +2733,7 @@ Process_CinematicSpriteObjects_InstList:
     RTS                                                                  ;8B9437;
 
 
+%anchor($8B9438)
 CinematicSpriteObject_Instruction_Delete:
     REP #$30                                                             ;8B9438;
     STZ.W $1A5D,X                                                        ;8B943A;
@@ -2685,6 +2743,7 @@ CinematicSpriteObject_Instruction_Delete:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($8B9442)
 UNUSED_CinematicSpriteObject_Instruction_Sleep_8B9442:
     REP #$30                                                             ;8B9442;
     DEY                                                                  ;8B9444;
@@ -2696,6 +2755,7 @@ UNUSED_CinematicSpriteObject_Instruction_Sleep_8B9442:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($8B944C)
 CinematicSpriteObject_Instruction_PreInstructionY:
     REP #$30                                                             ;8B944C;
     LDA.W $0000,Y                                                        ;8B944E;
@@ -2706,6 +2766,7 @@ CinematicSpriteObject_Instruction_PreInstructionY:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($8B9457)
 UNUSED_CinematicSpriteObject_Inst_ClearPreInstruction_8B9457:
     REP #$30                                                             ;8B9457;
     LDA.W #.return                                                       ;8B9459;
@@ -2716,6 +2777,7 @@ UNUSED_CinematicSpriteObject_Inst_ClearPreInstruction_8B9457:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($8B9460)
 CinematicSpriteObject_Inst_CallExternalFunctionY_8B9460:
     REP #$30                                                             ;8B9460;
     LDA.W $0000,Y                                                        ;8B9462;
@@ -2736,6 +2798,7 @@ CinematicSpriteObject_Inst_CallExternalFunctionY_8B9460:
     JML.W [$0012]                                                        ;8B947B;
 
 
+%anchor($8B947E)
 CinematicSpriteObject_Inst_CallExternalFunctionYWithA_8B947E:
     REP #$30                                                             ;8B947E;
     LDA.W $0000,Y                                                        ;8B9480;
@@ -2759,6 +2822,7 @@ CinematicSpriteObject_Inst_CallExternalFunctionYWithA_8B947E:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($8B94A2)
 UNUSED_CinematicSpriteObject_Inst_GotoY_8B94A2:
     REP #$30                                                             ;8B94A2;
     STY.W $0012                                                          ;8B94A4;
@@ -2780,6 +2844,7 @@ UNUSED_CinematicSpriteObject_Inst_GotoY_8B94A2:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($8B94BC)
 CinematicSpriteObject_Instruction_GotoY:
     REP #$30                                                             ;8B94BC;
     LDA.W $0000,Y                                                        ;8B94BE;
@@ -2787,6 +2852,7 @@ CinematicSpriteObject_Instruction_GotoY:
     RTS                                                                  ;8B94C2;
 
 
+%anchor($8B94C3)
 CinematicSpriteObject_Inst_DecrementTimer_GotoYIfNonZero:
     REP #$30                                                             ;8B94C3;
     DEC.W $1B7D,X                                                        ;8B94C5;
@@ -2797,6 +2863,7 @@ CinematicSpriteObject_Inst_DecrementTimer_GotoYIfNonZero:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($8B94CD)
 UNUSED_CinematicSpriteObject_Inst_DecTimer_GotoY_8B94CD:
     REP #$30                                                             ;8B94CD;
     DEC.W $1B7D,X                                                        ;8B94CF;
@@ -2806,6 +2873,7 @@ UNUSED_CinematicSpriteObject_Inst_DecTimer_GotoY_8B94CD:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($8B94D6)
 CinematicSpriteObject_Instruction_TimerInY:
     REP #$30                                                             ;8B94D6;
     LDA.W $0000,Y                                                        ;8B94D8;
@@ -2816,12 +2884,14 @@ CinematicSpriteObject_Instruction_TimerInY:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($8B94E1)
 UNUSED_REP30RTS_8B94E1:
     REP #$30                                                             ;8B94E1;
     RTS                                                                  ;8B94E3;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($8B94E4)
 Spawn_Mode7Objects:
     PHP                                                                  ;8B94E4;
     REP #$30                                                             ;8B94E5;
@@ -2859,6 +2929,7 @@ Spawn_Mode7Objects:
     RTS                                                                  ;8B951C;
 
 
+%anchor($8B951D)
 Handle_Mode7Objects:
     PHP                                                                  ;8B951D;
     REP #$30                                                             ;8B951E;
@@ -2879,6 +2950,7 @@ Handle_Mode7Objects:
     RTS                                                                  ;8B9536;
 
 
+%anchor($8B9537)
 Process_Mode7Objects_InstList:
     JSR.W ($19A5,X)                                                      ;8B9537;
     LDX.W $19B1                                                          ;8B953A;
@@ -2913,6 +2985,7 @@ Process_Mode7Objects_InstList:
     RTS                                                                  ;8B956A;
 
 
+%anchor($8B956B)
 Mode7Objects_Instruction_Delete:
     REP #$30                                                             ;8B956B;
     STZ.W $19A1,X                                                        ;8B956D;
@@ -2921,6 +2994,7 @@ Mode7Objects_Instruction_Delete:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($8B9572)
 UNUSED_Mode7Objects_Instruction_PreInstructionY_8B9572:
     REP #$30                                                             ;8B9572;
     LDA.W $0000,Y                                                        ;8B9574;
@@ -2930,6 +3004,7 @@ UNUSED_Mode7Objects_Instruction_PreInstructionY_8B9572:
     RTS                                                                  ;8B957C;
 
 
+%anchor($8B957D)
 UNUSED_Mode7Objects_Instruction_ClearPreInstruction_8B957D:
     REP #$30                                                             ;8B957D;
     LDA.W #.return                                                       ;8B957F;
@@ -2940,6 +3015,7 @@ UNUSED_Mode7Objects_Instruction_ClearPreInstruction_8B957D:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($8B9586)
 Mode7Objects_Instruction_GotoY:
     REP #$30                                                             ;8B9586;
     LDA.W $0000,Y                                                        ;8B9588;
@@ -2947,6 +3023,7 @@ Mode7Objects_Instruction_GotoY:
     RTS                                                                  ;8B958C;
 
 
+%anchor($8B958D)
 Mode7Objects_Instruction_DecrementTimer_GotoYIfNonZero:
     REP #$30                                                             ;8B958D;
     DEC.W $19AD,X                                                        ;8B958F;
@@ -2956,6 +3033,7 @@ Mode7Objects_Instruction_DecrementTimer_GotoYIfNonZero:
     RTS                                                                  ;8B9596;
 
 
+%anchor($8B9597)
 Mode7Objects_Instruction_TimerInY:
     REP #$30                                                             ;8B9597;
     LDA.W $0000,Y                                                        ;8B9599;
@@ -2965,6 +3043,7 @@ Mode7Objects_Instruction_TimerInY:
     RTS                                                                  ;8B95A1;
 
 
+%anchor($8B95A2)
 Enable_CinematicBGObjects:
     PHP                                                                  ;8B95A2;
     REP #$30                                                             ;8B95A3;
@@ -2974,6 +3053,7 @@ Enable_CinematicBGObjects:
     RTL                                                                  ;8B95AC;
 
 
+%anchor($8B95AD)
 Disable_CinematicBGObjects:
     PHP                                                                  ;8B95AD;
     REP #$30                                                             ;8B95AE;
@@ -2983,6 +3063,7 @@ Disable_CinematicBGObjects:
     RTL                                                                  ;8B95B7;
 
 
+%anchor($8B95B8)
 Enable_CinematicBGTilemap_Updates:
     PHP                                                                  ;8B95B8;
     REP #$30                                                             ;8B95B9;
@@ -2992,6 +3073,7 @@ Enable_CinematicBGTilemap_Updates:
     RTL                                                                  ;8B95C2;
 
 
+%anchor($8B95C3)
 Disable_CinematicBGTilemap_Updates:
     PHP                                                                  ;8B95C3;
     REP #$30                                                             ;8B95C4;
@@ -3001,6 +3083,7 @@ Disable_CinematicBGTilemap_Updates:
     RTL                                                                  ;8B95CD;
 
 
+%anchor($8B95CE)
 Clear_CinematicBGObjects_CinematicBGTilemap:
     PHP                                                                  ;8B95CE;
     REP #$30                                                             ;8B95CF;
@@ -3026,6 +3109,7 @@ Clear_CinematicBGObjects_CinematicBGTilemap:
     RTL                                                                  ;8B95EF;
 
 
+%anchor($8B95F0)
 Spawn_CinematicBGObject:
     PHP                                                                  ;8B95F0;
     REP #$30                                                             ;8B95F1;
@@ -3065,6 +3149,7 @@ Spawn_CinematicBGObject:
     RTS                                                                  ;8B962E;
 
 
+%anchor($8B962F)
 Handle_CinematicBGObjects:
     PHP                                                                  ;8B962F;
     REP #$30                                                             ;8B9630;
@@ -3095,6 +3180,7 @@ Handle_CinematicBGObjects:
     RTS                                                                  ;8B9658;
 
 
+%anchor($8B9659)
 Process_CinematicBGObject_InstList:
     JSR.W ($19D5,X)                                                      ;8B9659;
     PHB                                                                  ;8B965C;
@@ -3133,6 +3219,7 @@ Process_CinematicBGObject_InstList:
     RTS                                                                  ;8B9697;
 
 
+%anchor($8B9698)
 CinematicBGObject_Instruction_Delete:
     REP #$30                                                             ;8B9698;
     STZ.W $19B5,X                                                        ;8B969A;
@@ -3143,6 +3230,7 @@ CinematicBGObject_Instruction_Delete:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($8B96A3)
 UNUSED_CinematicBGObject_Instruction_Sleep_8B96A3:
     REP #$30                                                             ;8B96A3;
     DEY                                                                  ;8B96A5;
@@ -3154,6 +3242,7 @@ UNUSED_CinematicBGObject_Instruction_Sleep_8B96A3:
     RTS                                                                  ;8B96AD;
 
 
+%anchor($8B96AE)
 UNUSED_CinematicBGObject_Instruction_PreInstructionY_8B96AE:
     REP #$30                                                             ;8B96AE;
     LDA.W $0000,Y                                                        ;8B96B0;
@@ -3163,6 +3252,7 @@ UNUSED_CinematicBGObject_Instruction_PreInstructionY_8B96AE:
     RTS                                                                  ;8B96B8;
 
 
+%anchor($8B96B9)
 UNUSED_CinematicBGObject_Inst_ClearPreInstruction_8B96B9:
     REP #$30                                                             ;8B96B9;
     LDA.W #.return                                                       ;8B96BB;
@@ -3172,6 +3262,7 @@ UNUSED_CinematicBGObject_Inst_ClearPreInstruction_8B96B9:
     RTS                                                                  ;8B96C1;
 
 
+%anchor($8B96C2)
 UNUSED_CinematicBGObjects_Inst_CallExternalFunction_8B96C2:
     REP #$30                                                             ;8B96C2;
     LDA.W $0000,Y                                                        ;8B96C4;
@@ -3192,6 +3283,7 @@ UNUSED_CinematicBGObjects_Inst_CallExternalFunction_8B96C2:
     JML.W [$0012]                                                        ;8B96DD;
 
 
+%anchor($8B96E0)
 UNUSED_CinematicBGObjects_Inst_CallExternalFunction_8B96E0:
     REP #$30                                                             ;8B96E0;
     LDA.W $0000,Y                                                        ;8B96E2;
@@ -3214,6 +3306,7 @@ UNUSED_CinematicBGObjects_Inst_CallExternalFunction_8B96E0:
     JML.W [$0012]                                                        ;8B9701;
 
 
+%anchor($8B9704)
 UNUSED_CinematicBGObjects_Inst_GotoY_8B9704:
     REP #$30                                                             ;8B9704;
     STY.W $0012                                                          ;8B9706;
@@ -3235,6 +3328,7 @@ UNUSED_CinematicBGObjects_Inst_GotoY_8B9704:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($8B971E)
 CinematicBGObject_Instruction_GotoY:
     REP #$30                                                             ;8B971E;
     LDA.W $0000,Y                                                        ;8B9720;
@@ -3243,6 +3337,7 @@ CinematicBGObject_Instruction_GotoY:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($8B9725)
 UNUSED_CinematicBGObjects_Inst_DecrementTimer_GotoY_8B9724:
     REP #$30                                                             ;8B9725;
     DEC.W $19E5,X                                                        ;8B9727;
@@ -3252,6 +3347,7 @@ UNUSED_CinematicBGObjects_Inst_DecrementTimer_GotoY_8B9724:
     RTS                                                                  ;8B972E;
 
 
+%anchor($8B972F)
 UNUSED_CinematicBGObjects_Inst_DecrementTimer_GotoY_8B972F:
     REP #$30                                                             ;8B972F;
     DEC.W $19E5,X                                                        ;8B9731;
@@ -3260,6 +3356,7 @@ UNUSED_CinematicBGObjects_Inst_DecrementTimer_GotoY_8B972F:
     RTS                                                                  ;8B9737;
 
 
+%anchor($8B9738)
 UNUSED_CinematicBGObjects_Inst_TimerInY_8B9738:
     REP #$30                                                             ;8B9738;
     LDA.W $0000,Y                                                        ;8B973A;
@@ -3269,12 +3366,14 @@ UNUSED_CinematicBGObjects_Inst_TimerInY_8B9738:
     RTS                                                                  ;8B9742;
 
 
+%anchor($8B9743)
 UNUSED_REP30RTS_8B9743:
     REP #$30                                                             ;8B9743;
     RTS                                                                  ;8B9745;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($8B9746)
 Draw_CinematicSpriteObjects_IntroTitleSequence:
     PHP                                                                  ;8B9746;
     REP #$30                                                             ;8B9747;
@@ -3323,6 +3422,7 @@ Draw_CinematicSpriteObjects_IntroTitleSequence:
     RTS                                                                  ;8B9798;
 
 
+%anchor($8B9799)
 Draw_CinematicSpriteObjects_EndingCredits:
     PHP                                                                  ;8B9799;
     REP #$30                                                             ;8B979A;
@@ -3377,6 +3477,7 @@ Draw_CinematicSpriteObjects_EndingCredits:
     RTS                                                                  ;8B97F6;
 
 
+%anchor($8B97F7)
 Spawn_TextGlowObject:
     PHX                                                                  ;8B97F7;
     LDX.W #$000E                                                         ;8B97F8;
@@ -3408,6 +3509,7 @@ Spawn_TextGlowObject:
     RTS                                                                  ;8B9827;
 
 
+%anchor($8B9828)
 Handle_TextGlowObject:
     PHP                                                                  ;8B9828;
     REP #$30                                                             ;8B9829;
@@ -3433,6 +3535,7 @@ Handle_TextGlowObject:
     RTS                                                                  ;8B9848;
 
 
+%anchor($8B9849)
 Process_TextGlowObject:
     LDX.W $1A47                                                          ;8B9849;
     DEC.W $1A07,X                                                        ;8B984C;
@@ -3512,6 +3615,7 @@ Process_TextGlowObject:
     RTS                                                                  ;8B98E2;
 
 
+%anchor($8B98E3)
 Enable_CreditsObject:
     PHP                                                                  ;8B98E3;
     REP #$30                                                             ;8B98E4;
@@ -3521,6 +3625,7 @@ Enable_CreditsObject:
     RTS                                                                  ;8B98ED;
 
 
+%anchor($8B98EE)
 Disable_CreditsObject:
     PHP                                                                  ;8B98EE;
     REP #$30                                                             ;8B98EF;
@@ -3530,6 +3635,7 @@ Disable_CreditsObject:
     RTS                                                                  ;8B98F8;
 
 
+%anchor($8B98F9)
 Clear_CreditsObject_CinematicBGTilemapInA:
     PHP                                                                  ;8B98F9;
     REP #$30                                                             ;8B98FA;
@@ -3559,6 +3665,7 @@ Clear_CreditsObject_CinematicBGTilemapInA:
     RTS                                                                  ;8B9931;
 
 
+%anchor($8B9932)
 Spawn_CreditsObject:
     PHP                                                                  ;8B9932;
     REP #$30                                                             ;8B9933;
@@ -3578,6 +3685,7 @@ Spawn_CreditsObject:
     RTS                                                                  ;8B9954;
 
 
+%anchor($8B9955)
 Handle_CreditsObject:
     PHP                                                                  ;8B9955;
     REP #$30                                                             ;8B9956;
@@ -3595,6 +3703,7 @@ Handle_CreditsObject:
     RTS                                                                  ;8B9969;
 
 
+%anchor($8B996A)
 Process_CreditsObject_InstList:
     LDX.W #$0000                                                         ;8B996A;
     JSR.W ($19FD,X)                                                      ;8B996D;
@@ -3643,6 +3752,7 @@ Process_CreditsObject_InstList:
     RTS                                                                  ;8B99C0;
 
 
+%anchor($8B99C1)
 Copy_CreditsRow_ToCinematicBGTilemap:
     PHP                                                                  ;8B99C1;
     REP #$30                                                             ;8B99C2;
@@ -3680,6 +3790,7 @@ Copy_CreditsRow_ToCinematicBGTilemap:
     RTS                                                                  ;8B99FD;
 
 
+%anchor($8B99FE)
 Instruction_CreditsObject_Delete:
     REP #$30                                                             ;8B99FE;
     STZ.W $19F7                                                          ;8B9A00;
@@ -3688,6 +3799,7 @@ Instruction_CreditsObject_Delete:
     RTS                                                                  ;8B9A05;
 
 
+%anchor($8B9A06)
 Instruction_CreditsObject_GotoY:
     REP #$30                                                             ;8B9A06;
     LDA.W $0000,Y                                                        ;8B9A08;
@@ -3695,6 +3807,7 @@ Instruction_CreditsObject_GotoY:
     RTS                                                                  ;8B9A0C;
 
 
+%anchor($8B9A0D)
 Instruction_CreditsObject_DecrementTimer_GotoYIfNonZero:
     REP #$30                                                             ;8B9A0D;
     DEC.W $19FB                                                          ;8B9A0F;
@@ -3704,6 +3817,7 @@ Instruction_CreditsObject_DecrementTimer_GotoYIfNonZero:
     RTS                                                                  ;8B9A16;
 
 
+%anchor($8B9A17)
 Instruction_CreditsObject_TimerInY:
     REP #$30                                                             ;8B9A17;
     LDA.W $0000,Y                                                        ;8B9A19;
@@ -3713,6 +3827,7 @@ Instruction_CreditsObject_TimerInY:
     RTS                                                                  ;8B9A21;
 
 
+%anchor($8B9A22)
 GameState1_TitleSequence:
     PHP                                                                  ;8B9A22;
     PHB                                                                  ;8B9A23;
@@ -3736,10 +3851,12 @@ GameState1_TitleSequence:
     RTL                                                                  ;8B9A46;
 
 
+%anchor($8B9A47)
 RTS_8B9A47:
     RTS                                                                  ;8B9A47;
 
 
+%anchor($8B9A48)
 SkipToTitleScreenCheck:
     LDA.W $1F51                                                          ;8B9A48;
     CMP.W #RTS_8B9F28                                                    ;8B9A4B;
@@ -3759,6 +3876,7 @@ SkipToTitleScreenCheck:
     RTS                                                                  ;8B9A6B;
 
 
+%anchor($8B9A6C)
 SkipToTitleScreenHandler:
     PHP                                                                  ;8B9A6C;
     REP #$30                                                             ;8B9A6D;
@@ -3779,6 +3897,7 @@ SkipToTitleScreenHandler:
     dw SkipToTitleScreenHandler_2_PrepareTitleScreen                     ;8B9A7F;
     dw SkipToTitleScreenHandler_3_FadeIn                                 ;8B9A81;
 
+%anchor($8B9A83)
 SkipToTitleScreenHandler_1_FadeOut:
     JSR.W AdvanceFastScreenFadeOut                                       ;8B9A83;
     BCC .return                                                          ;8B9A86;
@@ -3793,6 +3912,7 @@ SkipToTitleScreenHandler_1_FadeOut:
     RTS                                                                  ;8B9A9B;
 
 
+%anchor($8B9A9C)
 SkipToTitleScreenHandler_2_PrepareTitleScreen:
     JSR.W Clear_CinematicSpriteObjects                                   ;8B9A9C;
     LDY.W #CinematicSpriteObjectDefinitions_TitleSequence_SuperMetroidLogoImmediate ;8B9A9F;
@@ -3841,6 +3961,7 @@ SkipToTitleScreenHandler_2_PrepareTitleScreen:
     RTS                                                                  ;8B9B19;
 
 
+%anchor($8B9B1A)
 InitFunction_CinematicSpriteObject_SuperMetroidLogoImmediate:
     LDA.W #$0080                                                         ;8B9B1A;
     STA.W $1A7D,Y                                                        ;8B9B1D;
@@ -3852,6 +3973,7 @@ InitFunction_CinematicSpriteObject_SuperMetroidLogoImmediate:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($8B9B2D)
 InitFunction_CinematicSpriteObject_UnusedNintendoBootLogoImm:
     LDA.W #$0080                                                         ;8B9B2D;
     STA.W $1A7D,Y                                                        ;8B9B30;
@@ -3863,6 +3985,7 @@ InitFunction_CinematicSpriteObject_UnusedNintendoBootLogoImm:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($8B9B40)
 InitFunc_CinematicSpriteObject_NintendoCopyrightImmediate:
     LDA.W #$0080                                                         ;8B9B40;
     STA.W $1A7D,Y                                                        ;8B9B43;
@@ -3873,6 +3996,7 @@ InitFunc_CinematicSpriteObject_NintendoCopyrightImmediate:
     RTS                                                                  ;8B9B52;
 
 
+%anchor($8B9B53)
 SkipToTitleScreenHandler_3_FadeIn:
     JSR.W AdvanceFastScreenFadeIn                                        ;8B9B53;
     BCC .return                                                          ;8B9B56;
@@ -3886,6 +4010,7 @@ SkipToTitleScreenHandler_3_FadeIn:
     RTS                                                                  ;8B9B67;
 
 
+%anchor($8B9B68)
 CinematicFunction_LoadTitleSequence:
     JSL.L Load_Title_Sequence_Graphics                                   ;8B9B68;
     LDA.W #$FF03                                                         ;8B9B6C;
@@ -3899,6 +4024,7 @@ CinematicFunction_LoadTitleSequence:
     RTS                                                                  ;8B9B86;
 
 
+%anchor($8B9B87)
 Load_Title_Sequence_Graphics:
     PHP                                                                  ;8B9B87;
     PHB                                                                  ;8B9B88;
@@ -4024,6 +4150,7 @@ Load_Title_Sequence_Graphics:
     RTL                                                                  ;8B9CBB;
 
 
+%anchor($8B9CBC)
 InitFunc_CinematicSpriteObject_1994ScrollingText:
     LDA.W #$0081                                                         ;8B9CBC;
     STA.W $1A7D,Y                                                        ;8B9CBF;
@@ -4034,6 +4161,7 @@ InitFunc_CinematicSpriteObject_1994ScrollingText:
     RTS                                                                  ;8B9CCE;
 
 
+%anchor($8B9CCF)
 PreInstruction_CinematicSpriteObject_1994ScrollingText:
     SEP #$20                                                             ;8B9CCF;
     LDA.B #$0F                                                           ;8B9CD1;
@@ -4045,12 +4173,14 @@ PreInstruction_CinematicSpriteObject_1994ScrollingText:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($8B9CDE)
 UNUSED_REP20RTS_8B9CDE:
     REP #$20                                                             ;8B9CDE;
     RTS                                                                  ;8B9CE0;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($8B9CE1)
 Instruction_TriggerTitleSequenceScene0:
     SEP #$20                                                             ;8B9CE1;
     LDA.B #$11                                                           ;8B9CE3;
@@ -4074,6 +4204,7 @@ Instruction_TriggerTitleSequenceScene0:
     RTS                                                                  ;8B9D16;
 
 
+%anchor($8B9D17)
 CinematicFunction_TitleSequenceScene0_PanningLeft_Lower:
     LDA.W $1991                                                          ;8B9D17;
     CLC                                                                  ;8B9D1A;
@@ -4099,6 +4230,7 @@ CinematicFunction_TitleSequenceScene0_PanningLeft_Lower:
     RTS                                                                  ;8B9D49;
 
 
+%anchor($8B9D4A)
 InitFunc_CinematicSpriteObject_NintendoScrollingText:
     LDA.W #$0081                                                         ;8B9D4A;
     STA.W $1A7D,Y                                                        ;8B9D4D;
@@ -4109,6 +4241,7 @@ InitFunc_CinematicSpriteObject_NintendoScrollingText:
     RTS                                                                  ;8B9D5C;
 
 
+%anchor($8B9D5D)
 Instruction_TriggerTitleSequenceScene1:
     SEP #$20                                                             ;8B9D5D;
     LDA.B #$11                                                           ;8B9D5F;
@@ -4131,6 +4264,7 @@ Instruction_TriggerTitleSequenceScene1:
     RTS                                                                  ;8B9D8F;
 
 
+%anchor($8B9D90)
 CinematicFunction_TitleSequenceScene1_PanningLeft_Upper:
     LDA.W $1991                                                          ;8B9D90;
     CLC                                                                  ;8B9D93;
@@ -4156,6 +4290,7 @@ CinematicFunction_TitleSequenceScene1_PanningLeft_Upper:
     RTS                                                                  ;8B9DC2;
 
 
+%anchor($8B9DC3)
 InitFunc_CinematicSpriteObject_PresentsScrollingText:
     LDA.W #$0081                                                         ;8B9DC3;
     STA.W $1A7D,Y                                                        ;8B9DC6;
@@ -4166,6 +4301,7 @@ InitFunc_CinematicSpriteObject_PresentsScrollingText:
     RTS                                                                  ;8B9DD5;
 
 
+%anchor($8B9DD6)
 Instruction_TriggerTitleSequenceScene2:
     SEP #$20                                                             ;8B9DD6;
     LDA.B #$11                                                           ;8B9DD8;
@@ -4191,6 +4327,7 @@ Instruction_TriggerTitleSequenceScene2:
     RTS                                                                  ;8B9E11;
 
 
+%anchor($8B9E12)
 CinematicFunction_TitleSequenceScene2_PanningDown:
     LDA.W $1995                                                          ;8B9E12;
     CLC                                                                  ;8B9E15;
@@ -4216,6 +4353,7 @@ CinematicFunction_TitleSequenceScene2_PanningDown:
     RTS                                                                  ;8B9E44;
 
 
+%anchor($8B9E45)
 InitFunc_CinematicSpriteObject_Metroid3ScrollingText:
     LDA.W #$0081                                                         ;8B9E45;
     STA.W $1A7D,Y                                                        ;8B9E48;
@@ -4226,6 +4364,7 @@ InitFunc_CinematicSpriteObject_Metroid3ScrollingText:
     RTS                                                                  ;8B9E57;
 
 
+%anchor($8B9E58)
 Instruction_TriggerTitleSequenceScene3:
     SEP #$20                                                             ;8B9E58;
     LDA.B #$11                                                           ;8B9E5A;
@@ -4249,6 +4388,7 @@ Instruction_TriggerTitleSequenceScene3:
     RTS                                                                  ;8B9E8A;
 
 
+%anchor($8B9E8B)
 CinematicFunction_TitleSequenceScene3_ZoomingOut:
     LDA.W $05B6                                                          ;8B9E8B;
     BIT.W #$0001                                                         ;8B9E8E;
@@ -4273,6 +4413,7 @@ CinematicFunction_TitleSequenceScene3_ZoomingOut:
     RTS                                                                  ;8B9EB2;
 
 
+%anchor($8B9EB3)
 InitFunc_CinematicSpriteObject_SuperMetroidTitleLogo_FadeIn:
     LDA.W #$0080                                                         ;8B9EB3;
     STA.W $1A7D,Y                                                        ;8B9EB6;
@@ -4285,6 +4426,7 @@ InitFunc_CinematicSpriteObject_SuperMetroidTitleLogo_FadeIn:
     RTS                                                                  ;8B9ECC;
 
 
+%anchor($8B9ECD)
 Instruction_FadeInNintendoCopyright:
     PHY                                                                  ;8B9ECD;
     LDY.W #CinematicSpriteObjectDefinitions_TitleSequence_NintendoCopyright_FadeIn ;8B9ECE;
@@ -4294,6 +4436,7 @@ Instruction_FadeInNintendoCopyright:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($8B9ED6)
 InitFunc_CinematicSpriteObject_UnusedNintendoBootLogo_FadeIn:
     LDA.W #$0080                                                         ;8B9ED6;
     STA.W $1A7D,Y                                                        ;8B9ED9;
@@ -4307,6 +4450,7 @@ InitFunc_CinematicSpriteObject_UnusedNintendoBootLogo_FadeIn:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($8B9EF0)
 Instruction_UsePalette0_FadeInNintendoCopyright:
     LDA.W #$0000                                                         ;8B9EF0;
     STA.W $1ABD,X                                                        ;8B9EF3;
@@ -4317,6 +4461,7 @@ Instruction_UsePalette0_FadeInNintendoCopyright:
     RTS                                                                  ;8B9EFE;
 
 
+%anchor($8B9EFF)
 InitFunc_CinematicSpriteObject_NintendoCopyright_FadeIn:
     LDA.W #$0080                                                         ;8B9EFF;
     STA.W $1A7D,Y                                                        ;8B9F02;
@@ -4329,6 +4474,7 @@ InitFunc_CinematicSpriteObject_NintendoCopyright_FadeIn:
     RTS                                                                  ;8B9F18;
 
 
+%anchor($8B9F19)
 Instruction_StartDemoCountdown:
     PHY                                                                  ;8B9F19;
     LDA.W #$0384                                                         ;8B9F1A;
@@ -4339,10 +4485,12 @@ Instruction_StartDemoCountdown:
     RTS                                                                  ;8B9F27;
 
 
+%anchor($8B9F28)
 RTS_8B9F28:
     RTS                                                                  ;8B9F28;
 
 
+%anchor($8B9F29)
 CinematicFunction_TitleScreen:
     DEC.W $1F53                                                          ;8B9F29;
     BEQ .demo                                                            ;8B9F2C;
@@ -4371,6 +4519,7 @@ CinematicFunction_TitleScreen:
     RTS                                                                  ;8B9F51;
 
 
+%anchor($8B9F52)
 CinematicFunction_TransitionToFileSelectMenu:
     JSR.W Debug_DisplayVersionInfo                                       ;8B9F52;
     JSR.W AdvanceSlowScreenFadeOut                                       ;8B9F55;
@@ -4419,6 +4568,7 @@ CinematicFunction_TransitionToFileSelectMenu:
     RTS                                                                  ;8B9FAD;
 
 
+%anchor($8B9FAE)
 CinematicFunction_TransitionToDemos:
     JSR.W Debug_DisplayVersionInfo                                       ;8B9FAE;
     JSR.W AdvanceSlowScreenFadeOut                                       ;8B9FB1;
@@ -4467,6 +4617,7 @@ CinematicFunction_TransitionToDemos:
     RTS                                                                  ;8BA009;
 
 
+%anchor($8BA00A)
 Configure_TitleScreen_GradientHDMATable:
     PHP                                                                  ;8BA00A;
     PHB                                                                  ;8BA00B;
@@ -4505,14 +4656,17 @@ Configure_TitleScreen_GradientHDMATable:
     RTL                                                                  ;8BA03A;
 
 
+%anchor($8BA03B)
 RTL_8BA03B:
     RTL                                                                  ;8BA03B;
 
 
+%anchor($8BA03C)
 RTL_8BA03C:
     RTL                                                                  ;8BA03C;
 
 
+%anchor($8BA03D)
 InstList_CinematicSpriteObject_1994ScrollingText:
     dw $003C,$0000                                                       ;8BA03D;
     dw $0008,TitleSequenceSpritemaps_1                                   ;8BA041;
@@ -4522,6 +4676,7 @@ InstList_CinematicSpriteObject_1994ScrollingText:
     dw Instruction_TriggerTitleSequenceScene0                            ;8BA051;
     dw CinematicSpriteObject_Instruction_Delete                          ;8BA053;
 
+%anchor($8BA055)
 InstList_CinematicSpriteObject_NintendoScrollingText:
     dw $0008,TitleSequenceSpritemaps_N                                   ;8BA055;
     dw $0008,TitleSequenceSpritemaps_NI                                  ;8BA059;
@@ -4534,6 +4689,7 @@ InstList_CinematicSpriteObject_NintendoScrollingText:
     dw Instruction_TriggerTitleSequenceScene1                            ;8BA075;
     dw CinematicSpriteObject_Instruction_Delete                          ;8BA077;
 
+%anchor($8BA079)
 InstList_CinematicSpriteObject_PresentsScrollingText:
     dw $0008,TitleSequenceSpritemaps_P                                   ;8BA079;
     dw $0008,TitleSequenceSpritemaps_PR                                  ;8BA07D;
@@ -4546,6 +4702,7 @@ InstList_CinematicSpriteObject_PresentsScrollingText:
     dw Instruction_TriggerTitleSequenceScene2                            ;8BA099;
     dw CinematicSpriteObject_Instruction_Delete                          ;8BA09B;
 
+%anchor($8BA09D)
 InstList_CinematicSpriteObject_Metroid3ScrollingText:
     dw $0008,TitleSequenceSpritemaps_M                                   ;8BA09D;
     dw $0008,TitleSequenceSpritemaps_ME                                  ;8BA0A1;
@@ -4559,35 +4716,42 @@ InstList_CinematicSpriteObject_Metroid3ScrollingText:
     dw Instruction_TriggerTitleSequenceScene3                            ;8BA0C1;
     dw CinematicSpriteObject_Instruction_Delete                          ;8BA0C3;
 
+%anchor($8BA0C5)
 InstList_CinematicSpriteObject_SuperMetroidTitleLogo_FadeIn:
     dw $0020,TitleSequenceSpritemaps_SuperMetroidTitleLogo               ;8BA0C5;
     dw Instruction_FadeInNintendoCopyright                               ;8BA0C9;
 
+%anchor($8BA0CB)
 InstList_CinematicSpriteObject_SuperMetroidTitleLogo_Immediate:
     dw $0001,TitleSequenceSpritemaps_SuperMetroidTitleLogo               ;8BA0CB;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BA0CF;
     dw InstList_CinematicSpriteObject_SuperMetroidTitleLogo_Immediate    ;8BA0D1;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($8BA0D3)
 InstList_CinematicSpriteObject_UnusedNintendoBootLogo_FadeIn:
     dw $0020,TitleSequenceSpritemaps_NintendoBootLogo                    ;8BA0D3;
     dw Instruction_UsePalette0_FadeInNintendoCopyright                   ;8BA0D7;
 
+%anchor($8BA0D9)
 InstList_CinematicSpriteObject_UnusedNintendoBootLogo_Immediate:
     dw $0001,TitleSequenceSpritemaps_NintendoBootLogo                    ;8BA0D9;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BA0DD;
     dw InstList_CinematicSpriteObject_UnusedNintendoBootLogo_Immediate   ;8BA0DF;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($8BA0E1)
 InstList_CinematicSpriteObject_NintendoCopyright_FadeIn:
     dw $0020,TitleSequenceSpritemaps_NintendoCopyright                   ;8BA0E1;
     dw Instruction_StartDemoCountdown                                    ;8BA0E5;
 
+%anchor($8BA0E7)
 InstList_CinematicSpriteObject_NintendoCopyright_Immediate:
     dw $0001,TitleSequenceSpritemaps_NintendoCopyright                   ;8BA0E7;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BA0EB;
     dw InstList_CinematicSpriteObject_NintendoCopyright_Immediate        ;8BA0ED;
 
+%anchor($8BA0EF)
 CinematicSpriteObjectDefinitions_TitleSequence:
   .1994ScrollingText:
     dw InitFunc_CinematicSpriteObject_1994ScrollingText                  ;8BA0EF;
@@ -4634,10 +4798,12 @@ endif ; !FEATURE_KEEP_UNREFERENCED
     dw RTS_8B93D9                                                        ;8BA127;
     dw InstList_CinematicSpriteObject_NintendoCopyright_Immediate        ;8BA129;
 
+%anchor($8BA12B)
 Mode7Object_InstList_TitleSequenceBabyMetroid_0:
     dw Instruction_LoadBabyMetroid_Colors0                               ;8BA12B;
     dw Mode7Objects_Instruction_TimerInY,$0002                           ;8BA12D;
 
+%anchor($8BA131)
 Mode7Object_InstList_TitleSequenceBabyMetroid_1:
     dw $000A,Mode7TransferData_TitleSequenceBabyMetroid_0                ;8BA131;
     dw $000A,Mode7TransferData_TitleSequenceBabyMetroid_1                ;8BA135;
@@ -4673,6 +4839,7 @@ Mode7Object_InstList_TitleSequenceBabyMetroid_1:
     dw Instruction_LoadBabyMetroid_Colors0                               ;8BA18F;
     dw Mode7Objects_Instruction_TimerInY,$0004                           ;8BA191;
 
+%anchor($8BA195)
 Mode7Object_InstList_TitleSequenceBabyMetroid_2:
     dw $000A,Mode7TransferData_TitleSequenceBabyMetroid_0                ;8BA195;
     dw $000A,Mode7TransferData_TitleSequenceBabyMetroid_1                ;8BA199;
@@ -4709,6 +4876,7 @@ Mode7Object_InstList_TitleSequenceBabyMetroid_2:
     dw Mode7Objects_Instruction_TimerInY                                 ;8BA1F5;
     dw $0003                                                             ;8BA1F7;
 
+%anchor($8BA1F9)
 Mode7Object_InstList_TitleSequenceBabyMetroid_3:
     dw $000A,Mode7TransferData_TitleSequenceBabyMetroid_0                ;8BA1F9;
     dw $000A,Mode7TransferData_TitleSequenceBabyMetroid_1                ;8BA1FD;
@@ -4744,24 +4912,28 @@ Mode7Object_InstList_TitleSequenceBabyMetroid_3:
     dw Mode7Objects_Instruction_GotoY                                    ;8BA257;
     dw Mode7Object_InstList_TitleSequenceBabyMetroid_0                   ;8BA259;
 
+%anchor($8BA25B)
 Instruction_PlayBabyMetroid_Cry1:
     LDA.W #$0023                                                         ;8BA25B;
     JSL.L QueueSound_Lib3_Max6                                           ;8BA25E;
     RTS                                                                  ;8BA262;
 
 
+%anchor($8BA263)
 Instruction_PlayBabyMetroid_Cry2:
     LDA.W #$0026                                                         ;8BA263;
     JSL.L QueueSound_Lib3_Max6                                           ;8BA266;
     RTS                                                                  ;8BA26A;
 
 
+%anchor($8BA26B)
 Instruction_PlayBabyMetroid_Cry3:
     LDA.W #$0027                                                         ;8BA26B;
     JSL.L QueueSound_Lib3_Max6                                           ;8BA26E;
     RTS                                                                  ;8BA272;
 
 
+%anchor($8BA273)
 Instruction_LoadBabyMetroid_Colors0:
     PHX                                                                  ;8BA273;
     LDX.W #$001E                                                         ;8BA274;
@@ -4776,6 +4948,7 @@ Instruction_LoadBabyMetroid_Colors0:
     RTS                                                                  ;8BA283;
 
 
+%anchor($8BA284)
 Instruction_LoadBabyMetroid_Colors1:
     PHX                                                                  ;8BA284;
     LDX.W #$001E                                                         ;8BA285;
@@ -4790,6 +4963,7 @@ Instruction_LoadBabyMetroid_Colors1:
     RTS                                                                  ;8BA294;
 
 
+%anchor($8BA295)
 Instruction_LoadBabyMetroid_Colors2:
     PHX                                                                  ;8BA295;
     LDX.W #$001E                                                         ;8BA296;
@@ -4804,6 +4978,7 @@ Instruction_LoadBabyMetroid_Colors2:
     RTS                                                                  ;8BA2A5;
 
 
+%anchor($8BA2A6)
 Instruction_LoadBabyMetroid_Colors3:
     PHX                                                                  ;8BA2A6;
     LDX.W #$001E                                                         ;8BA2A7;
@@ -4819,45 +4994,54 @@ Instruction_LoadBabyMetroid_Colors3:
 
 
 ; Game over baby metroid palettes are in bank $82
+%anchor($8BA2B7)
 TitleSequenceBabyMetroid_Colors_0:
     db $00,$10,$F5,$6B,$41,$2E,$A1,$2D,$01,$2D,$5F,$5E,$3F,$18,$14,$10   ;8BA2B7;
     db $0A,$08,$04,$04,$9F,$4F,$D8,$3E,$12,$2E,$70,$6F,$FF,$7F,$E0,$5E   ;8BA2C7;
 
+%anchor($8BA2D7)
 TitleSequenceBabyMetroid_Colors_1:
     db $00,$38,$F5,$6B,$E1,$06,$41,$06,$A1,$05,$5F,$5E,$3F,$18,$14,$10   ;8BA2D7;
     db $0A,$08,$04,$04,$9F,$4F,$D8,$3E,$12,$2E,$70,$6F,$FF,$7F,$E0,$5E   ;8BA2E7;
 
+%anchor($8BA2F7)
 TitleSequenceBabyMetroid_Colors_2:
     db $00,$38,$F8,$77,$44,$13,$A4,$12,$04,$12,$BF,$6A,$9F,$24,$77,$1C   ;8BA2F7;
     db $6D,$14,$67,$10,$FF,$5B,$38,$4B,$72,$3A,$D3,$7B,$FF,$7F,$43,$6B   ;8BA307;
 
+%anchor($8BA317)
 TitleSequenceBabyMetroid_Colors_3:
     db $00,$38,$FB,$7F,$A7,$1F,$07,$1F,$67,$1E,$1F,$77,$FF,$30,$DA,$28   ;8BA317;
     db $D0,$20,$CA,$1C,$FF,$67,$9B,$57,$D5,$46,$D6,$7B,$FF,$7F,$A6,$77   ;8BA327;
 
+%anchor($8BA337)
 Mode7TransferData_TitleSequenceBabyMetroid_0:
     db $C0                                                               ;8BA337; Control. C0h = write to VRAM tiles
     dl $7F9000                                                           ;8BA338; Source address
     dw $0100,$3800                                                       ;8BA33B; Size, Destination address (VRAM)
     db $80,$00                                                           ;8BA33F; VRAM address increment mode
 
+%anchor($8BA341)
 Mode7TransferData_TitleSequenceBabyMetroid_1:
     db $C0                                                               ;8BA341; Control. C0h = write to VRAM tiles
     dl $7F9100                                                           ;8BA342; Source address
     dw $0100,$3800                                                       ;8BA345; Size, Destination address (VRAM)
     db $80,$00                                                           ;8BA349; VRAM address increment mode
 
+%anchor($8BA34B)
 Mode7TransferData_TitleSequenceBabyMetroid_2:
     db $C0                                                               ;8BA34B; Control. C0h = write to VRAM tiles
     dl $7F9200                                                           ;8BA34C; Source address
     dw $0100,$3800                                                       ;8BA34F; Size, Destination address (VRAM)
     db $80,$00                                                           ;8BA353; VRAM address increment mode
 
+%anchor($8BA355)
 Mode7Object_TitleSequenceBabyMetroid:
     dw RTS_8B93D9                                                        ;8BA355;
     dw RTS_8B93D9                                                        ;8BA357;
     dw Mode7Object_InstList_TitleSequenceBabyMetroid_0                   ;8BA359;
 
+%anchor($8BA35B)
 GameState_1E_22_25_Intro_CeresGoesBoom_SamusGoesToZebes_8B:
     PHP                                                                  ;8BA35B;
     PHB                                                                  ;8BA35C;
@@ -4888,19 +5072,23 @@ GameState_1E_22_25_Intro_CeresGoesBoom_SamusGoesToZebes_8B:
     RTL                                                                  ;8BA38E;
 
 
+%anchor($8BA38F)
 RTS_8BA38F:
     RTS                                                                  ;8BA38F;
 
 
+%anchor($8BA390)
 RTS_8BA390:
     RTS                                                                  ;8BA390;
 
 
+%anchor($8BA391)
 CinematicFunction_Nothing:
     JSR.W RTS_BackgroundFLickeringEffect                                 ;8BA391;
     RTS                                                                  ;8BA394;
 
 
+%anchor($8BA395)
 CinematicFunction_Intro_Initial:
     JSR.W Setup_PPU_Intro                                                ;8BA395;
     STZ.B $AB                                                            ;8BA398;
@@ -5107,6 +5295,7 @@ CinematicFunction_Intro_Initial:
     RTS                                                                  ;8BA5A6;
 
 
+%anchor($8BA5A7)
 CinematicFunction_Intro_WaitForMusicQueue_FadeIn:
     JSL.L CheckIfMusicIsQueued                                           ;8BA5A7;
     BCS .return                                                          ;8BA5AB;
@@ -5120,6 +5309,7 @@ CinematicFunction_Intro_WaitForMusicQueue_FadeIn:
     RTS                                                                  ;8BA5BC;
 
 
+%anchor($8BA5BD)
 CinematicFunction_Intro_HandleDrawingInitialJapanText_Wait60f:
     JSR.W AdvanceSlowScreenFadeIn                                        ;8BA5BD;
     BCC .return                                                          ;8BA5C0;
@@ -5153,6 +5343,7 @@ CinematicFunction_Intro_HandleDrawingInitialJapanText_Wait60f:
     RTS                                                                  ;8BA5F7;
 
 
+%anchor($8BA5F8)
 CinematicFunction_Intro_PlayTheLastMetroidMusicFor200Frames:
     DEC.W $1A49                                                          ;8BA5F8;
     BEQ .timerExpired                                                    ;8BA5FB;
@@ -5170,6 +5361,7 @@ CinematicFunction_Intro_PlayTheLastMetroidMusicFor200Frames:
     RTS                                                                  ;8BA612;
 
 
+%anchor($8BA613)
 CinematicFunction_Intro_PlayGalaxyIsAtPeaceMusic:
     DEC.W $1A49                                                          ;8BA613;
     BEQ .timerExpired                                                    ;8BA616;
@@ -5190,6 +5382,7 @@ CinematicFunction_Intro_PlayGalaxyIsAtPeaceMusic:
     RTS                                                                  ;8BA638;
 
 
+%anchor($8BA639)
 CinematicFunction_Intro_WaitForMusicQueue_WaitFor240Frames:
     JSL.L CheckIfMusicIsQueued                                           ;8BA639;
     BCS .return                                                          ;8BA63D;
@@ -5202,6 +5395,7 @@ CinematicFunction_Intro_WaitForMusicQueue_WaitFor240Frames:
     RTS                                                                  ;8BA64B;
 
 
+%anchor($8BA64C)
 CinematicFunction_Intro_FadeOut:
     DEC.W $1A49                                                          ;8BA64C;
     BEQ .timerExpired                                                    ;8BA64F;
@@ -5218,6 +5412,7 @@ CinematicFunction_Intro_FadeOut:
     RTS                                                                  ;8BA662;
 
 
+%anchor($8BA663)
 CinematicFunction_Intro_WaitForFadeOut:
     JSR.W AdvanceSlowScreenFadeOut                                       ;8BA663;
     BCC .return                                                          ;8BA666;
@@ -5228,6 +5423,7 @@ CinematicFunction_Intro_WaitForFadeOut:
     RTS                                                                  ;8BA66E;
 
 
+%anchor($8BA66F)
 CinematicFunction_Intro_SetupIntroTextPage1:
     REP #$30                                                             ;8BA66F;
     JSR.W BlankOut_JapanText_Tiles                                       ;8BA671;
@@ -5321,6 +5517,7 @@ CinematicFunction_Intro_SetupIntroTextPage1:
     dw $3084,$3085,$3086,$3087,$3088,$3089,$308A,$308B                   ;8BA80B;
     dw $308C,$308D,$308E,$308F,$3C29,$3C29,$3C29,$3C29                   ;8BA81B;
 
+%anchor($8BA82B)
 CineFunc_Intro_WaitForMusicQueue_FadeIn_SpawnIntroTextPage1:
     JSL.L CheckIfMusicIsQueued                                           ;8BA82B;
     BCS .return                                                          ;8BA82F;
@@ -5337,6 +5534,7 @@ CineFunc_Intro_WaitForMusicQueue_FadeIn_SpawnIntroTextPage1:
     RTS                                                                  ;8BA849;
 
 
+%anchor($8BA84A)
 CinematicFunction_Intro_WaitForFadeIn:
     JSR.W AdvanceSlowScreenFadeIn                                        ;8BA84A;
     BCC .return                                                          ;8BA84D;
@@ -5347,6 +5545,7 @@ CinematicFunction_Intro_WaitForFadeIn:
     RTS                                                                  ;8BA855;
 
 
+%anchor($8BA856)
 Clear_EnglishText_Tilemap:
     PHX                                                                  ;8BA856;
     LDX.W #$0100                                                         ;8BA857;
@@ -5362,6 +5561,7 @@ Clear_EnglishText_Tilemap:
     RTS                                                                  ;8BA869;
 
 
+%anchor($8BA86A)
 BlankOut_JapanText_Tiles:
     PHP                                                                  ;8BA86A;
     REP #$30                                                             ;8BA86B;
@@ -5398,6 +5598,7 @@ BlankOut_JapanText_Tiles:
     RTS                                                                  ;8BA8C0;
 
 
+%anchor($8BA8C1)
 InitFunction_CinematicSpriteObject_IntroTextCaret:
     LDA.W #$0008                                                         ;8BA8C1;
     STA.W $1A7D,Y                                                        ;8BA8C4;
@@ -5408,10 +5609,12 @@ InitFunction_CinematicSpriteObject_IntroTextCaret:
     RTS                                                                  ;8BA8D3;
 
 
+%anchor($8BA8D4)
 RTS_8BA8D4:
     RTS                                                                  ;8BA8D4;
 
 
+%anchor($8BA8D5)
 InitFunction_CinematicSpriteObject_MetroidEgg:
     LDA.W #$0070                                                         ;8BA8D5;
     STA.W $1A7D,Y                                                        ;8BA8D8;
@@ -5422,6 +5625,7 @@ InitFunction_CinematicSpriteObject_MetroidEgg:
     RTS                                                                  ;8BA8E7;
 
 
+%anchor($8BA8E8)
 PreInstruction_CinematicSpriteObject_MetroidEgg:
     LDA.W $0AF6                                                          ;8BA8E8;
     CMP.W #$00A9                                                         ;8BA8EB;
@@ -5437,6 +5641,7 @@ PreInstruction_CinematicSpriteObject_MetroidEgg:
     RTS                                                                  ;8BA902;
 
 
+%anchor($8BA903)
 PreInstruction_MetroidEgg_DeleteAfterCrossFade:
     LDA.W $1A4B                                                          ;8BA903;
     BNE .return                                                          ;8BA906;
@@ -5450,6 +5655,7 @@ PreInstruction_MetroidEgg_DeleteAfterCrossFade:
     RTS                                                                  ;8BA917;
 
 
+%anchor($8BA918)
 Instruction_SpawnMetroidEggParticles:
     PHY                                                                  ;8BA918;
     LDA.W #$0000                                                         ;8BA919;
@@ -5476,6 +5682,7 @@ Instruction_SpawnMetroidEggParticles:
     RTS                                                                  ;8BA957;
 
 
+%anchor($8BA958)
 InitFunction_CinematicSpriteObject_MetroidEggParticles:
     LDA.W $1B9D                                                          ;8BA958;
     STA.W $1B7D,Y                                                        ;8BA95B;
@@ -5508,6 +5715,7 @@ InitFunction_CinematicSpriteObject_MetroidEggParticles:
     dw $0063,$0060
 
 
+%anchor($8BA994)
 PreInstruction_CinematicSpriteObject_MetroidEggParticle:
     LDA.W $1B7D,X                                                        ;8BA994;
     AND.W #$00FF                                                         ;8BA997;
@@ -5570,6 +5778,7 @@ PreInstruction_CinematicSpriteObject_MetroidEggParticle:
     dw $0002,$C000, $0002,$E000                                           ;8BAA92;
 
 
+%anchor($8BAA9A)
 InitFunction_CinematicSpriteObject_MetroidEggSlimeDrops:
     LDA.W $1B9D                                                          ;8BAA9A;
     STA.W $1B7D,Y                                                        ;8BAA9D;
@@ -5582,6 +5791,7 @@ InitFunction_CinematicSpriteObject_MetroidEggSlimeDrops:
     RTS                                                                  ;8BAAB2;
 
 
+%anchor($8BAAB3)
 PreInstruction_CinematicSpriteObject_MetroidEggSlimeDrops:
     LDA.W $1B7D,X                                                        ;8BAAB3;
     AND.W #$00FF                                                         ;8BAAB6;
@@ -5693,6 +5903,7 @@ PreInstruction_CinematicSpriteObject_MetroidEggSlimeDrops:
     dw $0005,$6000, $0005,$8000, $0005,$A000, $0005,$C000                ;8BAD41;
     dw $0005,$E000                                                       ;8BAD51;
 
+%anchor($8BAD55)
 InitFunction_CinematicSpriteObject_BabyMetroidBeingDelivered:
     LDA.W #$0054                                                         ;8BAD55;
     STA.W $1A7D,Y                                                        ;8BAD58;
@@ -5703,6 +5914,7 @@ InitFunction_CinematicSpriteObject_BabyMetroidBeingDelivered:
     RTS                                                                  ;8BAD67;
 
 
+%anchor($8BAD68)
 PreInst_CinematicSpriteObject_BabyMetroidBeingDelivered:
     LDA.W $1A4B                                                          ;8BAD68;
     BNE .crossFading                                                     ;8BAD6B;
@@ -5729,6 +5941,7 @@ PreInst_CinematicSpriteObject_BabyMetroidBeingDelivered:
     RTS                                                                  ;8BAD92;
 
 
+%anchor($8BAD93)
 InitFunction_CinematicSpriteObject_BabyMetroidBeingExamined:
     LDA.W #$0070                                                         ;8BAD93;
     STA.W $1A7D,Y                                                        ;8BAD96;
@@ -5739,6 +5952,7 @@ InitFunction_CinematicSpriteObject_BabyMetroidBeingExamined:
     RTS                                                                  ;8BADA5;
 
 
+%anchor($8BADA6)
 PreInst_CinematicSpriteObject_BabyMetroidBeingExamined:
     LDA.W $1A4B                                                          ;8BADA6;
     BNE .crossFading                                                     ;8BADA9;
@@ -5766,6 +5980,7 @@ PreInst_CinematicSpriteObject_BabyMetroidBeingExamined:
     RTS                                                                  ;8BADD3;
 
 
+%anchor($8BADD4)
 Instruction_SetCaretToBlink:
     LDA.W #InstList_IntroTextCaret_Blink                                 ;8BADD4;
     STA.W $1B3B                                                          ;8BADD7;
@@ -5774,6 +5989,7 @@ Instruction_SetCaretToBlink:
     RTS                                                                  ;8BADE0;
 
 
+%anchor($8BADE1)
 PlaceIntroTextCaretOffScreen:
     LDA.W #$0008                                                         ;8BADE1;
     STA.W $1A9B                                                          ;8BADE4;
@@ -5782,6 +5998,7 @@ PlaceIntroTextCaretOffScreen:
     RTS                                                                  ;8BADED;
 
 
+%anchor($8BADEE)
 RestIntroTextCaret:
     LDA.W #$0008                                                         ;8BADEE;
     STA.W $1A9B                                                          ;8BADF1;
@@ -5794,6 +6011,7 @@ RestIntroTextCaret:
     RTS                                                                  ;8BAE06;
 
 
+%anchor($8BAE07)
 InitFunc_CinematicSpriteObject_IntroJapanTextNextPageArrow:
     LDA.W #$0080                                                         ;8BAE07;
     STA.W $1A7D,Y                                                        ;8BAE0A;
@@ -5804,6 +6022,7 @@ InitFunc_CinematicSpriteObject_IntroJapanTextNextPageArrow:
     RTS                                                                  ;8BAE19;
 
 
+%anchor($8BAE1A)
 PreInst_CinematicSpriteObject_IntroJapanTextNextPageArrow:
     LDA.W $1BA3                                                          ;8BAE1A;
     CMP.W #$003B                                                         ;8BAE1D;
@@ -5825,6 +6044,7 @@ PreInst_CinematicSpriteObject_IntroJapanTextNextPageArrow:
     RTS                                                                  ;8BAE42;
 
 
+%anchor($8BAE43)
 Instruction_HandleCreatingJapanText_Page1:
     STZ.W $1BA1                                                          ;8BAE43;
     LDA.W $09E2                                                          ;8BAE46;
@@ -5843,6 +6063,7 @@ Instruction_HandleCreatingJapanText_Page1:
     RTS                                                                  ;8BAE5A;
 
 
+%anchor($8BAE5B)
 Instruction_SpawnBlinkingMarkers_WaitForInput_Page1:
     JSR.W Instruction_SetCaretToBlink                                    ;8BAE5B;
     LDA.W $09E2                                                          ;8BAE5E;
@@ -5863,6 +6084,7 @@ Instruction_SpawnBlinkingMarkers_WaitForInput_Page1:
     RTS                                                                  ;8BAE78;
 
 
+%anchor($8BAE79)
 Instruction_HandleCreatingJapanText_Page2:
     STZ.W $1BA1                                                          ;8BAE79;
     LDA.W $09E2                                                          ;8BAE7C;
@@ -5881,6 +6103,7 @@ Instruction_HandleCreatingJapanText_Page2:
     RTS                                                                  ;8BAE90;
 
 
+%anchor($8BAE91)
 Instruction_SpawnBlinkingMarkers_WaitForInput_Page2:
     JSR.W Instruction_SetCaretToBlink                                    ;8BAE91;
     LDA.W $09E2                                                          ;8BAE94;
@@ -5907,6 +6130,7 @@ Instruction_SpawnBlinkingMarkers_WaitForInput_Page2:
     RTS                                                                  ;8BAEB7;
 
 
+%anchor($8BAEB8)
 CinematicFunction_Intro_WaitForInput_SetupMotherBrainFight:
     LDA.W $1BA3                                                          ;8BAEB8;
     BEQ .timerExpired                                                    ;8BAEBB;
@@ -5987,6 +6211,7 @@ CinematicFunction_Intro_WaitForInput_SetupMotherBrainFight:
     RTS                                                                  ;8BAF6B;
 
 
+%anchor($8BAF6C)
 CinematicFunc_Intro_WaitForInput_SetupBabyMetroidDiscovery:
     LDA.W $1BA3                                                          ;8BAF6C;
     BEQ .timerExpired                                                    ;8BAF6F;
@@ -6061,6 +6286,7 @@ CinematicFunc_Intro_WaitForInput_SetupBabyMetroidDiscovery:
     RTS                                                                  ;8BB017;
 
 
+%anchor($8BB018)
 Setup_Intro_CrossFade_Into_SamusGameplay:
     SEP #$20                                                             ;8BB018;
     LDA.B #$06                                                           ;8BB01A;
@@ -6101,6 +6327,7 @@ Setup_Intro_CrossFade_Into_SamusGameplay:
     RTS                                                                  ;8BB073;
 
 
+%anchor($8BB074)
 Instruction_HandleCreatingJapanText_Page3:
     STZ.W $1BA1                                                          ;8BB074;
     LDA.W $09E2                                                          ;8BB077;
@@ -6119,6 +6346,7 @@ Instruction_HandleCreatingJapanText_Page3:
     RTS                                                                  ;8BB08B;
 
 
+%anchor($8BB08C)
 Instruction_SpawnBlinkingMarkers_WaitForInput_Page3:
     JSR.W Instruction_SetCaretToBlink                                    ;8BB08C;
     LDA.W $09E2                                                          ;8BB08F;
@@ -6145,6 +6373,7 @@ Instruction_SpawnBlinkingMarkers_WaitForInput_Page3:
     RTS                                                                  ;8BB0B2;
 
 
+%anchor($8BB0B3)
 Instruction_HandleCreatingJapanText_Page4:
     STZ.W $1BA1                                                          ;8BB0B3;
     LDA.W $09E2                                                          ;8BB0B6;
@@ -6163,6 +6392,7 @@ Instruction_HandleCreatingJapanText_Page4:
     RTS                                                                  ;8BB0CA;
 
 
+%anchor($8BB0CB)
 Instruction_SpawnBlinkingMarkers_WaitForInput_Page4:
     JSR.W Instruction_SetCaretToBlink                                    ;8BB0CB;
     LDA.W $09E2                                                          ;8BB0CE;
@@ -6189,6 +6419,7 @@ Instruction_SpawnBlinkingMarkers_WaitForInput_Page4:
     RTS                                                                  ;8BB0F1;
 
 
+%anchor($8BB0F2)
 CinematicFunc_Intro_WaitForInput_SetupBabyMetroidDelivery:
     LDA.W $1BA3                                                          ;8BB0F2;
     BEQ .timerExpired                                                    ;8BB0F5;
@@ -6219,6 +6450,7 @@ CinematicFunc_Intro_WaitForInput_SetupBabyMetroidDelivery:
     RTS                                                                  ;8BB122;
 
 
+%anchor($8BB123)
 CinematicFunc_Intro_WaitForInput_SetupBabyMetroidExamined:
     LDA.W $1BA3                                                          ;8BB123;
     BEQ .timerExpired                                                    ;8BB126;
@@ -6248,6 +6480,7 @@ CinematicFunc_Intro_WaitForInput_SetupBabyMetroidExamined:
     RTS                                                                  ;8BB150;
 
 
+%anchor($8BB151)
 SetupIntroCrossFadeIntoScientistCutscene:
     SEP #$20                                                             ;8BB151;
     LDA.B #$06                                                           ;8BB153;
@@ -6282,6 +6515,7 @@ SetupIntroCrossFadeIntoScientistCutscene:
     RTS                                                                  ;8BB19A;
 
 
+%anchor($8BB19B)
 Instruction_HandleCreatingJapanText_Page5:
     STZ.W $1BA1                                                          ;8BB19B;
     LDA.W $09E2                                                          ;8BB19E;
@@ -6300,6 +6534,7 @@ Instruction_HandleCreatingJapanText_Page5:
     RTS                                                                  ;8BB1B2;
 
 
+%anchor($8BB1B3)
 Instruction_SpawnBlinkingMarkers_WaitForInput_Page5:
     JSR.W Instruction_SetCaretToBlink                                    ;8BB1B3;
     LDA.W $09E2                                                          ;8BB1B6;
@@ -6326,6 +6561,7 @@ Instruction_SpawnBlinkingMarkers_WaitForInput_Page5:
     RTS                                                                  ;8BB1D9;
 
 
+%anchor($8BB1DA)
 CinematicFunction_Intro_WaitForInput_ClearText:
     JSR.W RTS_BackgroundFLickeringEffect                                 ;8BB1DA;
     LDA.W $1BA3                                                          ;8BB1DD;
@@ -6352,6 +6588,7 @@ CinematicFunction_Intro_WaitForInput_ClearText:
     RTS                                                                  ;8BB206;
 
 
+%anchor($8BB207)
 CinematicFunction_Intro_Page6:
     JSL.L Enable_CinematicBGTilemap_Updates                              ;8BB207;
     JSR.W Clear_EnglishText_Tilemap                                      ;8BB20B;
@@ -6366,6 +6603,7 @@ CinematicFunction_Intro_Page6:
     RTS                                                                  ;8BB227;
 
 
+%anchor($8BB228)
 Instruction_HandleCreatingJapanText_Page6:
     STZ.W $1BA1                                                          ;8BB228;
     LDA.W $09E2                                                          ;8BB22B;
@@ -6384,6 +6622,7 @@ Instruction_HandleCreatingJapanText_Page6:
     RTS                                                                  ;8BB23F;
 
 
+%anchor($8BB240)
 Instruction_FinishIntro:
     LDA.W #CinematicFunction_Intro_Finish                                ;8BB240;
     STA.W $1F51                                                          ;8BB243;
@@ -6393,6 +6632,7 @@ Instruction_FinishIntro:
     RTS                                                                  ;8BB24F;
 
 
+%anchor($8BB250)
 CinematicFunction_Intro_CrossFadeToSamusGameplay:
     LDA.W $1A49                                                          ;8BB250;
     BIT.W #$0003                                                         ;8BB253;
@@ -6450,6 +6690,7 @@ CinematicFunction_Intro_CrossFadeToSamusGameplay:
     RTS                                                                  ;8BB2D1;
 
 
+%anchor($8BB2D2)
 CinematicFunction_Intro_CrossFadeToScientistCutscene:
     LDA.W $1A49                                                          ;8BB2D2;
     BIT.W #$0003                                                         ;8BB2D5;
@@ -6497,28 +6738,33 @@ CinematicFunction_Intro_CrossFadeToScientistCutscene:
     RTS                                                                  ;8BB335;
 
 
+%anchor($8BB336)
 Instruction_StartIntroPage2:
     LDA.W #CinematicFunction_Intro_Page2                                 ;8BB336;
     STA.W $1F51                                                          ;8BB339;
     BRA ClearJapanTextTiles_DisableCinematicBGTilemapUpdates             ;8BB33C;
 
 
+%anchor($8BB33E)
 Instruction_StartIntroPage3:
     LDA.W #CinematicFunction_Intro_Page3                                 ;8BB33E;
     STA.W $1F51                                                          ;8BB341;
     BRA ClearJapanTextTiles_DisableCinematicBGTilemapUpdates             ;8BB344;
 
 
+%anchor($8BB346)
 Instruction_StartIntroPage4:
     LDA.W #CinematicFunction_Intro_Page4                                 ;8BB346;
     STA.W $1F51                                                          ;8BB349;
     BRA ClearJapanTextTiles_DisableCinematicBGTilemapUpdates             ;8BB34C;
 
 
+%anchor($8BB34E)
 Instruction_StartIntroPage5:
     LDA.W #CinematicFunction_Intro_Page5                                 ;8BB34E;
     STA.W $1F51                                                          ;8BB351;
 
+%anchor($8BB354)
 ClearJapanTextTiles_DisableCinematicBGTilemapUpdates:
     JSL.L Disable_CinematicBGTilemap_Updates                             ;8BB354;
     JSR.W BlankOut_JapanText_Tiles                                       ;8BB358;
@@ -6526,6 +6772,7 @@ ClearJapanTextTiles_DisableCinematicBGTilemapUpdates:
     RTS                                                                  ;8BB35E;
 
 
+%anchor($8BB35F)
 CinematicFunction_Intro_Page2:
     LDY.W #CinematicSpriteObjectDefinitions_IntroTextPage2               ;8BB35F;
     LDA.W #$4C00                                                         ;8BB362;
@@ -6535,6 +6782,7 @@ CinematicFunction_Intro_Page2:
     BRA Setup_Intro_CrossFade_Into_Text                                  ;8BB36E;
 
 
+%anchor($8BB370)
 CinematicFunction_Intro_Page3:
     LDY.W #CinematicSpriteObjectDefinitions_IntroTextPage3               ;8BB370;
     LDA.W #$4C00                                                         ;8BB373;
@@ -6544,6 +6792,7 @@ CinematicFunction_Intro_Page3:
     BRA Setup_Intro_CrossFade_Into_Text                                  ;8BB37F;
 
 
+%anchor($8BB381)
 CinematicFunction_Intro_Page4:
     LDY.W #CinematicSpriteObjectDefinitions_IntroTextPage4               ;8BB381;
     LDA.W #$4C00                                                         ;8BB384;
@@ -6553,6 +6802,7 @@ CinematicFunction_Intro_Page4:
     BRA Setup_Intro_CrossFade_Into_Text                                  ;8BB390;
 
 
+%anchor($8BB392)
 CinematicFunction_Intro_Page5:
     LDY.W #CinematicSpriteObjectDefinitions_IntroTextPage5               ;8BB392;
     LDA.W #$4C00                                                         ;8BB395;
@@ -6560,6 +6810,7 @@ CinematicFunction_Intro_Page5:
     LDA.W #CinematicFunction_Intro_CrossFadeFromScientistCutscene        ;8BB39B;
     STA.W $1F51                                                          ;8BB39E;
 
+%anchor($8BB3A1)
 Setup_Intro_CrossFade_Into_Text:
     SEP #$20                                                             ;8BB3A1;
     LDA.B #$06                                                           ;8BB3A3;
@@ -6597,6 +6848,7 @@ Setup_Intro_CrossFade_Into_Text:
     RTS                                                                  ;8BB3F3;
 
 
+%anchor($8BB3F4)
 CinematicFunction_Intro_CrossFadeFromSamusGameplay:
     LDA.W $1A4B                                                          ;8BB3F4;
     BIT.W #$0003                                                         ;8BB3F7;
@@ -6641,6 +6893,7 @@ CinematicFunction_Intro_CrossFadeFromSamusGameplay:
     RTS                                                                  ;8BB457;
 
 
+%anchor($8BB458)
 CinematicFunction_Intro_CrossFadeFromScientistCutscene:
     LDA.W $1A4B                                                          ;8BB458;
     BIT.W #$0003                                                         ;8BB45B;
@@ -6688,6 +6941,7 @@ CinematicFunction_Intro_CrossFadeFromScientistCutscene:
     RTS                                                                  ;8BB4BB;
 
 
+%anchor($8BB4BC)
 PreInstruction_CinematicBGObject_SamusBlinking:
     LDA.W $1F51                                                          ;8BB4BC;
     CMP.W #CinematicFunction_Intro_Page6                                 ;8BB4BF;
@@ -6708,6 +6962,7 @@ PreInstruction_CinematicBGObject_SamusBlinking:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($8BB4DC)
 UNUSED_CinematicBGObject_8BB4DC:
     LDA.W $1B3B                                                          ;8BB4DC;
     CMP.W #InstList_IntroTextCaret_Blink                                 ;8BB4DF;
@@ -6719,6 +6974,7 @@ UNUSED_CinematicBGObject_8BB4DC:
     RTS                                                                  ;8BB4EA;
 
 
+%anchor($8BB4EB)
 UNUSED_Instruction_LoadIntroJapanText_NonExistent:
     PHY                                                                  ;8BB4EB;
     JSL.L Disable_CinematicBGTilemap_Updates                             ;8BB4EC;
@@ -6738,11 +6994,13 @@ UNUSED_Instruction_LoadIntroJapanText_NonExistent:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($8BB519)
 Instruction_EnableCinematicBGTilemapUpdates:
     JSL.L Enable_CinematicBGTilemap_Updates                              ;8BB519;
     RTS                                                                  ;8BB51D;
 
 
+%anchor($8BB51E)
 Instruction_LoadIntroJapanTextPage1:
     PHY                                                                  ;8BB51E;
     JSL.L Disable_CinematicBGTilemap_Updates                             ;8BB51F;
@@ -6762,11 +7020,13 @@ Instruction_LoadIntroJapanTextPage1:
     RTS                                                                  ;8BB54E;
 
 
+%anchor($8BB54F)
 Instruction_EnableCinematicBGTilemapUpdates_duplicate:
     JSL.L Enable_CinematicBGTilemap_Updates                              ;8BB54F;
     RTS                                                                  ;8BB553;
 
 
+%anchor($8BB554)
 Instruction_LoadIntroJapanTextPage2_Subpage1:
     PHY                                                                  ;8BB554;
     JSL.L Disable_CinematicBGTilemap_Updates                             ;8BB555;
@@ -6786,6 +7046,7 @@ Instruction_LoadIntroJapanTextPage2_Subpage1:
     RTS                                                                  ;8BB584;
 
 
+%anchor($8BB585)
 Instruction_LoadIntroJapanTextPage2_Subpage2:
     LDA.B $8F                                                            ;8BB585;
     BEQ .return                                                          ;8BB587;
@@ -6809,6 +7070,7 @@ Instruction_LoadIntroJapanTextPage2_Subpage2:
     RTS                                                                  ;8BB5B7;
 
 
+%anchor($8BB5B8)
 Instruction_EnableCinematicBGTilemapUpdates_Page2DoneInput:
     JSL.L Enable_CinematicBGTilemap_Updates                              ;8BB5B8;
     LDA.W #CinematicFunc_Intro_WaitForInput_SetupBabyMetroidDiscovery    ;8BB5BC;
@@ -6816,6 +7078,7 @@ Instruction_EnableCinematicBGTilemapUpdates_Page2DoneInput:
     RTS                                                                  ;8BB5C2;
 
 
+%anchor($8BB5C3)
 Instruction_LoadIntroJapanTextPage3_Subpage1:
     PHY                                                                  ;8BB5C3;
     JSL.L Disable_CinematicBGTilemap_Updates                             ;8BB5C4;
@@ -6833,6 +7096,7 @@ Instruction_LoadIntroJapanTextPage3_Subpage1:
     RTS                                                                  ;8BB5ED;
 
 
+%anchor($8BB5EE)
 PreInstruction_LoadIntroJapanTextPage3_Subpage2:
     LDA.B $8F                                                            ;8BB5EE;
     BEQ .return                                                          ;8BB5F0;
@@ -6854,6 +7118,7 @@ PreInstruction_LoadIntroJapanTextPage3_Subpage2:
     RTS                                                                  ;8BB61A;
 
 
+%anchor($8BB61B)
 Instruction_EnableCinematicBGTilemapUpdates_Page3DoneInput:
     JSL.L Enable_CinematicBGTilemap_Updates                              ;8BB61B;
     LDA.W #CinematicFunc_Intro_WaitForInput_SetupBabyMetroidDelivery     ;8BB61F;
@@ -6861,6 +7126,7 @@ Instruction_EnableCinematicBGTilemapUpdates_Page3DoneInput:
     RTS                                                                  ;8BB625;
 
 
+%anchor($8BB626)
 Instruction_LoadIntroJapanTextPage4_Subpage1:
     PHY                                                                  ;8BB626;
     JSL.L Disable_CinematicBGTilemap_Updates                             ;8BB627;
@@ -6880,6 +7146,7 @@ Instruction_LoadIntroJapanTextPage4_Subpage1:
     RTS                                                                  ;8BB656;
 
 
+%anchor($8BB657)
 PreInstruction_LoadIntroJapanTextPage4_Subpage2:
     LDA.B $8F                                                            ;8BB657;
     BEQ .return                                                          ;8BB659;
@@ -6903,6 +7170,7 @@ PreInstruction_LoadIntroJapanTextPage4_Subpage2:
     RTS                                                                  ;8BB689;
 
 
+%anchor($8BB68A)
 Instruction_EnableCinematicBGTilemapUpdates_Page4DoneInput:
     JSL.L Enable_CinematicBGTilemap_Updates                              ;8BB68A;
     LDA.W #CinematicFunc_Intro_WaitForInput_SetupBabyMetroidExamined     ;8BB68E;
@@ -6910,6 +7178,7 @@ Instruction_EnableCinematicBGTilemapUpdates_Page4DoneInput:
     RTS                                                                  ;8BB694;
 
 
+%anchor($8BB695)
 Instruction_LoadIntroJapanTextPage5_Subpage1:
     PHY                                                                  ;8BB695;
     JSL.L Disable_CinematicBGTilemap_Updates                             ;8BB696;
@@ -6927,6 +7196,7 @@ Instruction_LoadIntroJapanTextPage5_Subpage1:
     RTS                                                                  ;8BB6BF;
 
 
+%anchor($8BB6C0)
 PreInstruction_LoadIntroJapanTextPage5_Subpage2:
     LDA.B $8F                                                            ;8BB6C0;
     BEQ .return                                                          ;8BB6C2;
@@ -6948,6 +7218,7 @@ PreInstruction_LoadIntroJapanTextPage5_Subpage2:
     RTS                                                                  ;8BB6EC;
 
 
+%anchor($8BB6ED)
 Instruction_EnableCinematicBGTilemapUpdates_Page5DoneInput:
     JSL.L Enable_CinematicBGTilemap_Updates                              ;8BB6ED;
     LDA.W #CinematicFunction_Intro_WaitForInput_ClearText                ;8BB6F1;
@@ -6955,6 +7226,7 @@ Instruction_EnableCinematicBGTilemapUpdates_Page5DoneInput:
     RTS                                                                  ;8BB6F7;
 
 
+%anchor($8BB6F8)
 Instruction_LoadIntroJapanTextPage6:
     PHY                                                                  ;8BB6F8;
     JSL.L Disable_CinematicBGTilemap_Updates                             ;8BB6F9;
@@ -6966,11 +7238,13 @@ Instruction_LoadIntroJapanTextPage6:
     RTS                                                                  ;8BB70A;
 
 
+%anchor($8BB70B)
 Instruction_EnableCinematicBGTilemapUpdates_duplicate_again:
     JSL.L Enable_CinematicBGTilemap_Updates                              ;8BB70B;
     RTS                                                                  ;8BB70F;
 
 
+%anchor($8BB710)
 RTS_BackgroundFLickeringEffect:
     RTS                                                                  ;8BB710;
 
@@ -6994,6 +7268,7 @@ RTS_BackgroundFLickeringEffect:
     RTS                                                                  ;8BB72E;
 
 
+%anchor($8BB72F)
 CinematicFunction_Intro_Finish:
     JSL.L HandleFadingOut                                                ;8BB72F;
     SEP #$20                                                             ;8BB733;
@@ -7031,6 +7306,7 @@ CinematicFunction_Intro_Finish:
     RTS                                                                  ;8BB772;
 
 
+%anchor($8BB773)
 InitFunction_CinematicSpriteObject_IntroMotherBrain:
     LDA.W #$0038                                                         ;8BB773;
     STA.W $1A7D,Y                                                        ;8BB776;
@@ -7041,6 +7317,7 @@ InitFunction_CinematicSpriteObject_IntroMotherBrain:
     RTS                                                                  ;8BB785;
 
 
+%anchor($8BB786)
 PreInstruction_CinematicSpriteObject_IntroMotherBrain:
     JSR.W IntroMotherBrain_HurtFlashHandling                             ;8BB786;
     LDY.W #$0008                                                         ;8BB789;
@@ -7103,6 +7380,7 @@ PreInstruction_CinematicSpriteObject_IntroMotherBrain:
     RTS                                                                  ;8BB80E;
 
 
+%anchor($8BB80F)
 PreInstruction_IntroMotherBrain_Exploding:
     JSR.W IntroMotherBrain_HurtFlashHandling                             ;8BB80F;
     JSR.W IntroMotherBrain_ScreenShaking                                 ;8BB812;
@@ -7120,6 +7398,7 @@ PreInstruction_IntroMotherBrain_Exploding:
     RTS                                                                  ;8BB82D;
 
 
+%anchor($8BB82E)
 PreInstruction_IntroMotherBrain_CrossFading:
     JSR.W IntroMotherBrain_ScreenShaking                                 ;8BB82E;
     LDA.W $1A4B                                                          ;8BB831;
@@ -7134,6 +7413,7 @@ PreInstruction_IntroMotherBrain_CrossFading:
     RTS                                                                  ;8BB845;
 
 
+%anchor($8BB846)
 IntroMotherBrain_HurtFlashHandling:
     LDA.W $1ADD,X                                                        ;8BB846;
     BEQ .return                                                          ;8BB849;
@@ -7170,6 +7450,7 @@ IntroMotherBrain_HurtFlashHandling:
     RTS                                                                  ;8BB876;
 
 
+%anchor($8BB877)
 IntroMotherBrain_ScreenShaking:
     LDA.W $1A51                                                          ;8BB877;
     BIT.W #$0001                                                         ;8BB87A;
@@ -7191,6 +7472,7 @@ IntroMotherBrain_ScreenShaking:
     RTS                                                                  ;8BB895;
 
 
+%anchor($8BB896)
 InitFunction_CinematicSpriteObject_IntroRinka:
     LDA.W $1B9D                                                          ;8BB896;
     STA.W $1B7D,Y                                                        ;8BB899;
@@ -7213,6 +7495,7 @@ InitFunction_CinematicSpriteObject_IntroRinka:
 .Yposition:
     dw $0050,$0040,$0038,$0058                                           ;8BB8BD;
 
+%anchor($8BB8C5)
 Instruction_StartMoving_IntroRinka:
     LDA.W $1B7D,X                                                        ;8BB8C5;
     BNE .missesSamus                                                     ;8BB8C8;
@@ -7227,6 +7510,7 @@ Instruction_StartMoving_IntroRinka:
     RTS                                                                  ;8BB8D7;
 
 
+%anchor($8BB8D8)
 PreInstruction_IntroRinka_Moving_HitsSamus:
     LDA.W $1ADD,X                                                        ;8BB8D8;
     CLC                                                                  ;8BB8DB;
@@ -7275,6 +7559,7 @@ PreInstruction_IntroRinka_Moving_HitsSamus:
     RTS                                                                  ;8BB93A;
 
 
+%anchor($8BB93B)
 PreInstruction_IntroRinka_Moving_MissesSamus:
     LDA.W $1B7D,X                                                        ;8BB93B;
     ASL A                                                                ;8BB93E;
@@ -7314,6 +7599,7 @@ PreInstruction_IntroRinka_Moving_MissesSamus:
 .Xvelocities:
     dw $0000,$FFFF,$0000,$FFFF                                           ;8BB985;
 
+%anchor($8BB98D)
 InitFunc_CinematicSpriteObject_IntroMotherBrainExplosion_Big:
     LDA.W $1B9D                                                          ;8BB98D;
     STA.W $1B7D,Y                                                        ;8BB990;
@@ -7343,6 +7629,7 @@ InitFunc_CinematicSpriteObject_IntroMotherBrainExplosion_Big:
 .instructionTimer:
     dw $0001,$0010,$0020,$0030,$0040                                     ;8BB9CA;
 
+%anchor($8BB9D4)
 InitFunc_CineSpriteObject_IntroMotherBrainExplosion_Small:
     LDA.W $1B9D                                                          ;8BB9D4;
     STA.W $1B7D,Y                                                        ;8BB9D7;
@@ -7372,6 +7659,7 @@ InitFunc_CineSpriteObject_IntroMotherBrainExplosion_Small:
     dw $0001,$0008,$0010                                                 ;8BBA09;
 
 
+%anchor($8BBA0F)
 PreInst_CinematicSpriteObject_IntroMotherBrainExplosion:
     LDA.W $1A4B                                                          ;8BBA0F;
     BNE .return                                                          ;8BBA12;
@@ -7384,6 +7672,7 @@ PreInst_CinematicSpriteObject_IntroMotherBrainExplosion:
     RTS                                                                  ;8BBA20;
 
 
+%anchor($8BBA21)
 Instruction_Spawn_IntroRinkas_0_1:
     PHY                                                                  ;8BBA21;
     LDA.W #$0000                                                         ;8BBA22;
@@ -7396,6 +7685,7 @@ Instruction_Spawn_IntroRinkas_0_1:
     RTS                                                                  ;8BBA35;
 
 
+%anchor($8BBA36)
 Instruction_Spawn_IntroRinkas_2_3:
     PHY                                                                  ;8BBA36;
     LDA.W #$0002                                                         ;8BBA37;
@@ -7408,6 +7698,7 @@ Instruction_Spawn_IntroRinkas_2_3:
     RTS                                                                  ;8BBA4A;
 
 
+%anchor($8BBA4B)
 InitFunction_CinematicSpriteObject_ConfusedBabyMetroid:
     LDA.W #$0070                                                         ;8BBA4B;
     STA.W $1A7D,Y                                                        ;8BBA4E;
@@ -7418,6 +7709,7 @@ InitFunction_CinematicSpriteObject_ConfusedBabyMetroid:
     RTS                                                                  ;8BBA5D;
 
 
+%anchor($8BBA5E)
 PreInstruction_CinematicSpriteObject_ConfusedBabyMetroid:
     LDA.W $1B1F,X                                                        ;8BBA5E;
     CMP.W #InstList_MetroidEggHatching_2                                 ;8BBA61;
@@ -7431,6 +7723,7 @@ PreInstruction_CinematicSpriteObject_ConfusedBabyMetroid:
     RTS                                                                  ;8BBA72;
 
 
+%anchor($8BBA73)
 PreInstruction_ConfusedBabyMetroid_Hatched:
     LDA.W $1A9D,X                                                        ;8BBA73;
     CMP.W #$0091                                                         ;8BBA76;
@@ -7502,6 +7795,7 @@ PreInstruction_ConfusedBabyMetroid_Hatched:
     RTS                                                                  ;8BBB0C;
 
 
+%anchor($8BBB0D)
 PreInstruction_ConfusedBabyMetroid_Idling:
     DEC.W $1A4D                                                          ;8BBB0D;
     BEQ .timerExpired                                                    ;8BBB10;
@@ -7518,6 +7812,7 @@ PreInstruction_ConfusedBabyMetroid_Idling:
     RTS                                                                  ;8BBB23;
 
 
+%anchor($8BBB24)
 PreInstruction_ConfusedBabyMetroid_Dancing:
     LDA.W $1A4B                                                          ;8BBB24;
     BNE .timerExpired                                                    ;8BBB27;
@@ -7636,6 +7931,7 @@ PreInstruction_ConfusedBabyMetroid_Dancing:
     RTS                                                                  ;8BBC07;
 
 
+%anchor($8BBC08)
 Reset_Button_Assignments_to_Default:
     LDA.W #$0800                                                         ;8BBC08;
     STA.W $09AA                                                          ;8BBC0B;
@@ -7676,6 +7972,7 @@ Reset_Button_Assignments_to_Default:
     RTS                                                                  ;8BBC74;
 
 
+%anchor($8BBC75)
 Recover_Previous_Button_Assignments:
     LDA.W $0D82                                                          ;8BBC75;
     STA.W $09B2                                                          ;8BBC78;
@@ -7694,6 +7991,7 @@ Recover_Previous_Button_Assignments:
     RTS                                                                  ;8BBC9F;
 
 
+%anchor($8BBCA0)
 CinematicFunction_FlyToCeres_Initial:
     JSR.W Setup_PPU_CeresCutscene                                        ;8BBCA0;
     JSR.W Clear_CinematicSpriteObjects                                   ;8BBCA3;
@@ -7819,6 +8117,7 @@ CinematicFunction_FlyToCeres_Initial:
     RTS                                                                  ;8BBDE3;
 
 
+%anchor($8BBDE4)
 CinematicFunction_FlyToCeres_WaitForMusicQueue_EnableDisplay:
     JSL.L CheckIfMusicIsQueued                                           ;8BBDE4;
     BCS .return                                                          ;8BBDE8;
@@ -7833,6 +8132,7 @@ CinematicFunction_FlyToCeres_WaitForMusicQueue_EnableDisplay:
     RTS                                                                  ;8BBDF8;
 
 
+%anchor($8BBDF9)
 CinematicFunction_FlyToCeres_FlyingIntoCamera:
     LDA.W $198F                                                          ;8BBDF9;
     CMP.W #$0020                                                         ;8BBDFC;
@@ -7891,6 +8191,7 @@ CinematicFunction_FlyToCeres_FlyingIntoCamera:
     dw $0300,$0000                                                       ;8BBE78; Size, Destination address (VRAM)
     db $00, $00                                                          ;8BBE7C; VRAM address increment mode
 
+%anchor($8BBE7E)
 InitFunction_CinematicSpriteObject_CeresStars:
     LDA.W $1B9D                                                          ;8BBE7E;
     BNE .nonZero                                                         ;8BBE81;
@@ -7917,6 +8218,7 @@ InitFunction_CinematicSpriteObject_CeresStars:
     RTS                                                                  ;8BBEB4;
 
 
+%anchor($8BBEB5)
 PreInstruction_CinematicSpriteObject_CeresStars:
     LDA.W $1F51                                                          ;8BBEB5;
     CMP.W #CinematicFunction_FlyToCeres_FlyingIntoCamera                 ;8BBEB8;
@@ -7971,6 +8273,7 @@ PreInstruction_CinematicSpriteObject_CeresStars:
     RTS                                                                  ;8BBF21;
 
 
+%anchor($8BBF22)
 InitFunc_CinematicSpriteObject_CeresExplosionLargeAsteroids:
     LDA.W #$0050                                                         ;8BBF22;
     STA.W $1A7D,Y                                                        ;8BBF25;
@@ -7981,6 +8284,7 @@ InitFunc_CinematicSpriteObject_CeresExplosionLargeAsteroids:
     RTS                                                                  ;8BBF34;
 
 
+%anchor($8BBF35)
 PreInst_CinematicSpriteObject_CeresExplosionLargeAsteroids:
     LDA.W $1ADD,X                                                        ;8BBF35;
     CLC                                                                  ;8BBF38;
@@ -7993,6 +8297,7 @@ PreInst_CinematicSpriteObject_CeresExplosionLargeAsteroids:
     RTS                                                                  ;8BBF4B;
 
 
+%anchor($8BBF4C)
 InitFunction_CinematicSpriteObject_CeresUnderAttack:
     LDA.W #$0074                                                         ;8BBF4C;
     STA.W $1A7D,Y                                                        ;8BBF4F;
@@ -8003,6 +8308,7 @@ InitFunction_CinematicSpriteObject_CeresUnderAttack:
     RTS                                                                  ;8BBF5E;
 
 
+%anchor($8BBF5F)
 PreInstruction_CinematicSpriteObject_CeresUnderAttack:
     LDA.W $1ADD,X                                                        ;8BBF5F;
     CLC                                                                  ;8BBF62;
@@ -8015,6 +8321,7 @@ PreInstruction_CinematicSpriteObject_CeresUnderAttack:
     RTS                                                                  ;8BBF75;
 
 
+%anchor($8BBF76)
 InitFunction_CinematicSpriteObject_CeresSmallAsteroid:
     LDA.W #$0080                                                         ;8BBF76;
     STA.W $1A7D,Y                                                        ;8BBF79;
@@ -8025,6 +8332,7 @@ InitFunction_CinematicSpriteObject_CeresSmallAsteroid:
     RTS                                                                  ;8BBF88;
 
 
+%anchor($8BBF89)
 PreInstruction_CinematicSpriteObject_CeresSmallAsteroid:
     LDA.W $1ADD,X                                                        ;8BBF89;
     CLC                                                                  ;8BBF8C;
@@ -8037,6 +8345,7 @@ PreInstruction_CinematicSpriteObject_CeresSmallAsteroid:
     RTS                                                                  ;8BBF9F;
 
 
+%anchor($8BBFA0)
 InitFunction_CinematicSpriteObject_CeresPurpleSpaceVortex:
     LDA.W $1B9D                                                          ;8BBFA0;
     BNE .nonZero                                                         ;8BBFA3;
@@ -8058,6 +8367,7 @@ InitFunction_CinematicSpriteObject_CeresPurpleSpaceVortex:
     RTS                                                                  ;8BBFC5;
 
 
+%anchor($8BBFC6)
 PreInstruction_CinematicSpriteObject_CeresPurpleSpaceVortex:
     LDA.W $1ADD,X                                                        ;8BBFC6;
     SEC                                                                  ;8BBFC9;
@@ -8067,10 +8377,12 @@ PreInstruction_CinematicSpriteObject_CeresPurpleSpaceVortex:
     SBC.W #$0000                                                         ;8BBFD3;
     STA.W $1A7D,X                                                        ;8BBFD6;
 
+%anchor($8BBFD9)
 RTS_8BBFD9:
     RTS                                                                  ;8BBFD9;
 
 
+%anchor($8BBFDA)
 CinematicFunction_FlyToCeres_FlyingIntoCeres:
     SEP #$20                                                             ;8BBFDA;
     LDA.B $74                                                            ;8BBFDC;
@@ -8160,6 +8472,7 @@ CinematicFunction_FlyToCeres_FlyingIntoCeres:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($8BC083)
 UNUSED_InitFunc_CinematicSpriteObject_SpaceColonyText_8BC083:
     LDA.W #$007C                                                         ;8BC083;
     STA.W $1A7D,Y                                                        ;8BC086;
@@ -8171,6 +8484,7 @@ UNUSED_InitFunc_CinematicSpriteObject_SpaceColonyText_8BC083:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($8BC096)
 Instruction_SkipNextInstructionIfEnglishText:
     LDA.W $09E2                                                          ;8BC096;
     BNE .return                                                          ;8BC099;
@@ -8183,6 +8497,7 @@ Instruction_SkipNextInstructionIfEnglishText:
     RTS                                                                  ;8BC0A1;
 
 
+%anchor($8BC0A2)
 Instruction_FinishFlyToCeres:
     LDA.W #CinematicFunction_FlyToCeres_Finish                           ;8BC0A2;
     STA.W $1F51                                                          ;8BC0A5;
@@ -8193,6 +8508,7 @@ Instruction_FinishFlyToCeres:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($8BC0B2)
 UNUSED_InitFunc_CineSpriteObject_SpaceColonyJapanText_8BC0B2:
     LDA.W #$007C                                                         ;8BC0B2;
     STA.W $1A7D,Y                                                        ;8BC0B5;
@@ -8204,6 +8520,7 @@ UNUSED_InitFunc_CineSpriteObject_SpaceColonyJapanText_8BC0B2:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($8BC0C5)
 CinematicFunction_FlyToCeres_Finish:
     JSL.L HandleFadingOut                                                ;8BC0C5;
     SEP #$20                                                             ;8BC0C9;
@@ -8238,6 +8555,7 @@ CinematicFunction_FlyToCeres_Finish:
     RTS                                                                  ;8BC0FF;
 
 
+%anchor($8BC100)
 CinematicFunction_FlyToCeres_StartGameAtCeres:
     LDA.W #$001F                                                         ;8BC100;
     STA.L $7ED914                                                        ;8BC103;
@@ -8250,6 +8568,7 @@ CinematicFunction_FlyToCeres_StartGameAtCeres:
     RTS                                                                  ;8BC11A;
 
 
+%anchor($8BC11B)
 CinematicFunction_CeresGoesBoom_Initial:
     LDX.W #$0008                                                         ;8BC11B;
 
@@ -8432,6 +8751,7 @@ CinematicFunction_CeresGoesBoom_Initial:
     RTS                                                                  ;8BC2E3;
 
 
+%anchor($8BC2E4)
 CinematicFunction_CeresGoesBoom_WaitForMusicQueue:
     JSL.L CheckIfMusicIsQueued                                           ;8BC2E4;
     BCS .return                                                          ;8BC2E8;
@@ -8442,6 +8762,7 @@ CinematicFunction_CeresGoesBoom_WaitForMusicQueue:
     RTS                                                                  ;8BC2F0;
 
 
+%anchor($8BC2F1)
 CinematicFunction_CeresGoesBoom_SmallCeresExplosion_FadingIn:
     LDA.W $1995                                                          ;8BC2F1;
     CLC                                                                  ;8BC2F4;
@@ -8479,6 +8800,7 @@ CinematicFunction_CeresGoesBoom_SmallCeresExplosion_FadingIn:
     RTS                                                                  ;8BC344;
 
 
+%anchor($8BC345)
 CinematicFunction_CeresGoesBoom_CeresExplosions:
     LDA.W $1995                                                          ;8BC345;
     CLC                                                                  ;8BC348;
@@ -8574,6 +8896,7 @@ CinematicFunction_CeresGoesBoom_CeresExplosions:
     dw $0300,$0000                                                       ;8BC3FE; Size, Destination address (VRAM)
     db $00, $00                                                          ;8BC402; VRAM address increment mode
 
+%anchor($8BC404)
 Instruction_SpawnCeresExplosions1:
     PHY                                                                  ;8BC404;
     LDA.W #$0000                                                         ;8BC405;
@@ -8595,6 +8918,7 @@ Instruction_SpawnCeresExplosions1:
     RTS                                                                  ;8BC433;
 
 
+%anchor($8BC434)
 InitFunction_CinematicSpriteObject_CeresExplosion1:
     LDA.W $1B9D                                                          ;8BC434;
     STA.W $1B7D,Y                                                        ;8BC437;
@@ -8630,6 +8954,7 @@ InitFunction_CinematicSpriteObject_CeresExplosion1:
     dw $FFF0,$0010,$0010,$FFF0,$0000                                     ;8BC47F;
 
 
+%anchor($8BC489)
 PreInst_CeresExplosionSpawner_SpawnExplosion2EveryCFrames:
     LDA.W $1F51                                                          ;8BC489;
     CMP.W #CinematicFunction_CeresGoesBoom_GunshipFlyingAway             ;8BC48C;
@@ -8659,6 +8984,7 @@ PreInst_CeresExplosionSpawner_SpawnExplosion2EveryCFrames:
     RTS                                                                  ;8BC4B8;
 
 
+%anchor($8BC4B9)
 InitFunction_CinematicSpriteObject_CeresExplosion2:
     LDA.W $1B9D                                                          ;8BC4B9;
     STA.W $1B7D,Y                                                        ;8BC4BC;
@@ -8698,10 +9024,12 @@ InitFunction_CinematicSpriteObject_CeresExplosion2:
     dw $FFF8,$FFF0
 
 
+%anchor($8BC50B)
 RTS_8BC50B:
     RTS                                                                  ;8BC50B;
 
 
+%anchor($8BC50C)
 Instruction_SpawnCeresExplosions3:
     PHY                                                                  ;8BC50C;
     LDA.W #$0000                                                         ;8BC50D;
@@ -8720,6 +9048,7 @@ Instruction_SpawnCeresExplosions3:
     RTS                                                                  ;8BC532;
 
 
+%anchor($8BC533)
 InitFunction_CinematicSpriteObject_CeresExplosion3:
     LDA.W $1B9D                                                          ;8BC533;
     STA.W $1B7D,Y                                                        ;8BC536;
@@ -8755,6 +9084,7 @@ InitFunction_CinematicSpriteObject_CeresExplosion3:
     dw $FFFC,$0008,$FFF6,$000C                                           ;8BC57A;
 
 
+%anchor($8BC582)
 PreInstruction_CinematicSpriteObject_CeresExplosion:
     LDA.W $1AFD,X                                                        ;8BC582;
     SEC                                                                  ;8BC585;
@@ -8773,6 +9103,7 @@ PreInstruction_CinematicSpriteObject_CeresExplosion:
     RTS                                                                  ;8BC5A8;
 
 
+%anchor($8BC5A9)
 InitFunction_CinematicSpriteObject_CeresFinalExplosion:
     LDA.W $1993                                                          ;8BC5A9;
     EOR.W #$FFFF                                                         ;8BC5AC;
@@ -8791,6 +9122,7 @@ InitFunction_CinematicSpriteObject_CeresFinalExplosion:
     RTS                                                                  ;8BC5C9;
 
 
+%anchor($8BC5CA)
 CinematicFunction_CeresGoesBoom_GunshipFlyingAway:
     SEP #$20                                                             ;8BC5CA;
     LDA.B #$10                                                           ;8BC5CC;
@@ -8826,6 +9158,7 @@ CinematicFunction_CeresGoesBoom_GunshipFlyingAway:
     RTS                                                                  ;8BC60F;
 
 
+%anchor($8BC610)
 CinematicFunction_CeresGoesBoom_WaitC0Frames:
     DEC.W $1A49                                                          ;8BC610;
     BEQ .timerExpired                                                    ;8BC613;
@@ -8842,6 +9175,7 @@ CinematicFunction_CeresGoesBoom_WaitC0Frames:
     RTS                                                                  ;8BC626;
 
 
+%anchor($8BC627)
 CinematicFunction_CeresGoesBoom_FadeOut:
     JSL.L HandleFadingOut                                                ;8BC627;
     SEP #$20                                                             ;8BC62B;
@@ -8897,6 +9231,7 @@ CinematicFunction_CeresGoesBoom_FadeOut:
     RTS                                                                  ;8BC698;
 
 
+%anchor($8BC699)
 CinematicFunction_FlyToZebes_Initial:
     JSR.W Setup_PPU_SamusGoesToZebesCutscene                             ;8BC699;
     LDA.W #$1C1F                                                         ;8BC69C;
@@ -9000,6 +9335,7 @@ CinematicFunction_FlyToZebes_Initial:
     RTS                                                                  ;8BC79B;
 
 
+%anchor($8BC79C)
 CinematicFunction_FlyToZebes_FadingIn:
     LDA.W $1A51                                                          ;8BC79C;
     BIT.W #$0003                                                         ;8BC79F;
@@ -9027,6 +9363,7 @@ CinematicFunction_FlyToZebes_FadingIn:
     RTS                                                                  ;8BC7C9;
 
 
+%anchor($8BC7CA)
 CinematicFunction_FlyToZebes_MosaicTransition:
     LDA.W $1A51                                                          ;8BC7CA;
     BIT.W #$0003                                                         ;8BC7CD;
@@ -9081,6 +9418,7 @@ CinematicFunction_FlyToZebes_MosaicTransition:
     RTS                                                                  ;8BC83A;
 
 
+%anchor($8BC83B)
 InitFunction_CinematicSpriteObject_Zebes:
     LDA.W #$0088                                                         ;8BC83B;
     STA.W $1A7D,Y                                                        ;8BC83E;
@@ -9091,6 +9429,7 @@ InitFunction_CinematicSpriteObject_Zebes:
     RTS                                                                  ;8BC84D;
 
 
+%anchor($8BC84E)
 PreInstruction_CinematicSpriteObject_Zebes:
     LDA.W $1F51                                                          ;8BC84E;
     CMP.W #RTS_8BCADE                                                    ;8BC851;
@@ -9102,6 +9441,7 @@ PreInstruction_CinematicSpriteObject_Zebes:
     RTS                                                                  ;8BC85C;
 
 
+%anchor($8BC85D)
 PreInstruction_Zebes_SlideSceneAway:
     LDA.W $1B7D,X                                                        ;8BC85D;
     CLC                                                                  ;8BC860;
@@ -9133,6 +9473,7 @@ PreInstruction_Zebes_SlideSceneAway:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($8BC897)
 UNUSED_InitFunction_CinematicSpriteObject_ZebesStars1_8BC897:
     LDA.W #$0080                                                         ;8BC897;
     STA.W $1A7D,Y                                                        ;8BC89A;
@@ -9144,6 +9485,7 @@ UNUSED_InitFunction_CinematicSpriteObject_ZebesStars1_8BC897:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($8BC8AA)
 PreInstruction_CinematicSpriteObject_ZebesStars5:
     LDA.W $1F51                                                          ;8BC8AA;
     CMP.W #RTS_8BCADE                                                    ;8BC8AD;
@@ -9155,6 +9497,7 @@ PreInstruction_CinematicSpriteObject_ZebesStars5:
     RTS                                                                  ;8BC8B8;
 
 
+%anchor($8BC8B9)
 PreInstruction_ZebesStars5_SlideSceneAway:
     LDA.W $1B7D,X                                                        ;8BC8B9;
     CLC                                                                  ;8BC8BC;
@@ -9187,6 +9530,7 @@ PreInstruction_ZebesStars5_SlideSceneAway:
     RTS                                                                  ;8BC8F8;
 
 
+%anchor($8BC8F9)
 PreInstruction_CinematicSpriteObject_ZebesStars_2_3_4:
     LDA.W $1F51                                                          ;8BC8F9;
     CMP.W #RTS_8BCADE                                                    ;8BC8FC;
@@ -9198,6 +9542,7 @@ PreInstruction_CinematicSpriteObject_ZebesStars_2_3_4:
     RTS                                                                  ;8BC907;
 
 
+%anchor($8BC908)
 PreInstruction_ZebesStars_2_3_4_SlideSceneAway:
     LDA.W $1B7D,X                                                        ;8BC908;
     CLC                                                                  ;8BC90B;
@@ -9228,6 +9573,7 @@ PreInstruction_ZebesStars_2_3_4_SlideSceneAway:
     RTS                                                                  ;8BC941;
 
 
+%anchor($8BC942)
 InitFunction_CinematicSpriteObject_ZebesStars2:
     NOP                                                                  ;8BC942; >_<
     LDA.W #$0030                                                         ;8BC943;
@@ -9239,6 +9585,7 @@ InitFunction_CinematicSpriteObject_ZebesStars2:
     RTS                                                                  ;8BC955;
 
 
+%anchor($8BC956)
 InitFunction_CinematicSpriteObject_ZebesStars3:
     NOP                                                                  ;8BC956; >_<
     LDA.W #$00D0                                                         ;8BC957;
@@ -9250,6 +9597,7 @@ InitFunction_CinematicSpriteObject_ZebesStars3:
     RTS                                                                  ;8BC969;
 
 
+%anchor($8BC96A)
 InitFunction_CinematicSpriteObject_ZebesStars4:
     NOP                                                                  ;8BC96A; >_<
     LDA.W #$0030                                                         ;8BC96B;
@@ -9261,6 +9609,7 @@ InitFunction_CinematicSpriteObject_ZebesStars4:
     RTS                                                                  ;8BC97D;
 
 
+%anchor($8BC97E)
 InitFunction_CinematicSpriteObject_ZebesStars5:
     NOP                                                                  ;8BC97E; >_<
     LDA.W #$00D0                                                         ;8BC97F;
@@ -9272,6 +9621,7 @@ InitFunction_CinematicSpriteObject_ZebesStars5:
     RTS                                                                  ;8BC991;
 
 
+%anchor($8BC992)
 InitFunction_CinematicSpriteObject_PlanetZebesText:
     LDA.W #$0080                                                         ;8BC992;
     STA.W $1A7D,Y                                                        ;8BC995;
@@ -9282,6 +9632,7 @@ InitFunction_CinematicSpriteObject_PlanetZebesText:
     RTS                                                                  ;8BC9A4;
 
 
+%anchor($8BC9A5)
 Instruction_FadeInPlanetZebesText:
     PHY                                                                  ;8BC9A5;
     LDY.W #PaletteFXObjects_FadeInPlanetZebesText                        ;8BC9A6;
@@ -9290,6 +9641,7 @@ Instruction_FadeInPlanetZebesText:
     RTS                                                                  ;8BC9AE;
 
 
+%anchor($8BC9AF)
 Instruction_SpawnPlanetZebesJapanTextIfNeeded:
     LDA.W $09E2                                                          ;8BC9AF;
     BEQ .return                                                          ;8BC9B2;
@@ -9302,6 +9654,7 @@ Instruction_SpawnPlanetZebesJapanTextIfNeeded:
     RTS                                                                  ;8BC9BC;
 
 
+%anchor($8BC9BD)
 Instruction_FadeOutPlanetZebesText:
     PHY                                                                  ;8BC9BD;
     LDY.W #PaletteFXObjects_FadeOutPlanetZebesText                       ;8BC9BE;
@@ -9310,6 +9663,7 @@ Instruction_FadeOutPlanetZebesText:
     RTS                                                                  ;8BC9C6;
 
 
+%anchor($8BC9C7)
 Instruction_StartFlyingToZebes:
     LDA.W #$003E                                                         ;8BC9C7;
     STA.W $1993                                                          ;8BC9CA;
@@ -9324,6 +9678,7 @@ Instruction_StartFlyingToZebes:
     RTS                                                                  ;8BC9E5;
 
 
+%anchor($8BC9E6)
 InitFunction_CinematicSpriteObject_PlanetZebesJapanText:
     LDA.W #$0080                                                         ;8BC9E6;
     STA.W $1A7D,Y                                                        ;8BC9E9;
@@ -9334,6 +9689,7 @@ InitFunction_CinematicSpriteObject_PlanetZebesJapanText:
     RTS                                                                  ;8BC9F8;
 
 
+%anchor($8BC9F9)
 CinematicFunction_FlyToZebes_FlyingToZebes_DriftingRight:
     LDA.W $1995                                                          ;8BC9F9;
     CLC                                                                  ;8BC9FC;
@@ -9364,6 +9720,7 @@ CinematicFunction_FlyToZebes_FlyingToZebes_DriftingRight:
     RTS                                                                  ;8BCA35;
 
 
+%anchor($8BCA36)
 CinematicFunction_FlyToZebes_FlyingToZebes_TurningLeft:
     LDA.W $1995                                                          ;8BCA36;
     CLC                                                                  ;8BCA39;
@@ -9403,6 +9760,7 @@ CinematicFunction_FlyToZebes_FlyingToZebes_TurningLeft:
     RTS                                                                  ;8BCA84;
 
 
+%anchor($8BCA85)
 CinematicFunction_FlyToZebes_FlyingToZebes_DriftingLeft:
     LDA.W $1995                                                          ;8BCA85;
     CLC                                                                  ;8BCA88;
@@ -9439,6 +9797,7 @@ CinematicFunction_FlyToZebes_FlyingToZebes_DriftingLeft:
     RTS                                                                  ;8BCACF;
 
 
+%anchor($8BCAD0)
 CinematicFunction_FlyToZebes_HoldOnSceneFor40Frames:
     DEC.W $1A49                                                          ;8BCAD0;
     BEQ .timerExpired                                                    ;8BCAD3;
@@ -9452,10 +9811,12 @@ CinematicFunction_FlyToZebes_HoldOnSceneFor40Frames:
     RTS                                                                  ;8BCADD;
 
 
+%anchor($8BCADE)
 RTS_8BCADE:
     RTS                                                                  ;8BCADE;
 
 
+%anchor($8BCADF)
 CinematicFunction_FlyToZebes_LoadGameData:
     SEP #$20                                                             ;8BCADF;
     LDA.B #$80                                                           ;8BCAE1;
@@ -9480,6 +9841,7 @@ CinematicFunction_FlyToZebes_LoadGameData:
     RTS                                                                  ;8BCB04;
 
 
+%anchor($8BCB05)
 InstList_CinematicSpriteObject_IntroMotherBrain:
     dw $0010,IntroCeresExplosionSpritemaps_MotherBrainFrame1             ;8BCB05;
     dw $0010,IntroCeresExplosionSpritemaps_MotherBrainFrame2             ;8BCB09;
@@ -9488,11 +9850,13 @@ InstList_CinematicSpriteObject_IntroMotherBrain:
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BCB15;
     dw InstList_CinematicSpriteObject_IntroMotherBrain                   ;8BCB17;
 
+%anchor($8BCB19)
 InstList_IntroMotherBrain_StartPage2_0:
     dw Instruction_StartIntroPage2                                       ;8BCB19;
     dw CinematicSpriteObject_Instruction_PreInstructionY                 ;8BCB1B;
     dw PreInstruction_IntroMotherBrain_CrossFading                       ;8BCB1D;
 
+%anchor($8BCB1F)
 InstList_IntroMotherBrain_StartPage2_1:
     dw $0010,IntroCeresExplosionSpritemaps_MotherBrainFrame1             ;8BCB1F;
     dw $0010,IntroCeresExplosionSpritemaps_MotherBrainFrame2             ;8BCB23;
@@ -9501,15 +9865,18 @@ InstList_IntroMotherBrain_StartPage2_1:
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BCB2F;
     dw InstList_IntroMotherBrain_StartPage2_1                            ;8BCB31;
 
+%anchor($8BCB33)
 InstList_CinematicSpriteObject_MetroidEgg:
     dw $0005,IntroCeresExplosionSpritemaps_MetroidEggHatchingFrame1      ;8BCB33;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BCB37;
     dw InstList_CinematicSpriteObject_MetroidEgg                         ;8BCB39;
 
+%anchor($8BCB3B)
 InstList_MetroidEggHatching_0:
     dw $0020,IntroCeresExplosionSpritemaps_MetroidEggHatchingFrame1      ;8BCB3B;
     dw CinematicSpriteObject_Instruction_TimerInY,$0004                  ;8BCB3F;
 
+%anchor($8BCB43)
 InstList_MetroidEggHatching_1:
     dw $0005,IntroCeresExplosionSpritemaps_MetroidEggHatchingFrame1      ;8BCB43;
     dw $0005,IntroCeresExplosionSpritemaps_MetroidEggHatchingFrame2      ;8BCB47;
@@ -9527,6 +9894,7 @@ InstList_MetroidEggHatching_1:
     dw Instruction_SpawnMetroidEggParticles                              ;8BCB73;
     dw $000A,IntroCeresExplosionSpritemaps_MetroidEggHatchedFrame1       ;8BCB75;
 
+%anchor($8BCB79)
 InstList_MetroidEggHatching_2:
     dw $000A,IntroCeresExplosionSpritemaps_MetroidEggHatchedFrame2       ;8BCB79;
     dw $000A,IntroCeresExplosionSpritemaps_MetroidEggHatchedFrame3       ;8BCB7D;
@@ -9538,14 +9906,17 @@ InstList_MetroidEggHatching_2:
     dw CinematicSpriteObject_Instruction_PreInstructionY                 ;8BCB93;
     dw PreInstruction_MetroidEgg_DeleteAfterCrossFade                    ;8BCB95;
 
+%anchor($8BCB97)
 InstList_MetroidEggHatching_3:
     dw $0050,IntroCeresExplosionSpritemaps_MetroidEggHatchedFrame7       ;8BCB97;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BCB9B;
     dw InstList_MetroidEggHatching_3                                     ;8BCB9D;
 
+%anchor($8BCB9F)
 InstList_CinematicSpriteObject_BabyMetroidBeingDelivered_0:
     dw CinematicSpriteObject_Instruction_TimerInY,$000A                  ;8BCB9F;
 
+%anchor($8BCBA3)
 InstList_CinematicSpriteObject_BabyMetroidBeingDelivered_1:
     dw $000A,IntroCeresExplosionSpritemaps_BabyMetroidDeliveredFrame1    ;8BCBA3;
     dw $000A,IntroCeresExplosionSpritemaps_BabyMetroidDeliveredFrame2    ;8BCBA7;
@@ -9555,6 +9926,7 @@ InstList_CinematicSpriteObject_BabyMetroidBeingDelivered_1:
     dw InstList_CinematicSpriteObject_BabyMetroidBeingDelivered_1        ;8BCBB5;
     dw Instruction_StartIntroPage4                                       ;8BCBB7;
 
+%anchor($8BCBB9)
 InstList_CinematicSpriteObject_BabyMetroidBeingDelivered_2:
     dw $000A,IntroCeresExplosionSpritemaps_BabyMetroidDeliveredFrame1    ;8BCBB9;
     dw $000A,IntroCeresExplosionSpritemaps_BabyMetroidDeliveredFrame2    ;8BCBBD;
@@ -9563,9 +9935,11 @@ InstList_CinematicSpriteObject_BabyMetroidBeingDelivered_2:
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BCBC9;
     dw InstList_CinematicSpriteObject_BabyMetroidBeingDelivered_2        ;8BCBCB;
 
+%anchor($8BCBCD)
 InstList_CinematicSpriteObject_BabyMetroidBeingExamined_0:
     dw CinematicSpriteObject_Instruction_TimerInY,$000A                  ;8BCBCD;
 
+%anchor($8BCBD1)
 InstList_CinematicSpriteObject_BabyMetroidBeingExamined_1:
     dw $000A,IntroCeresExplosionSpritemaps_BabyMetroidExaminedFrame1     ;8BCBD1;
     dw $000A,IntroCeresExplosionSpritemaps_BabyMetroidExaminedFrame2     ;8BCBD5;
@@ -9575,6 +9949,7 @@ InstList_CinematicSpriteObject_BabyMetroidBeingExamined_1:
     dw InstList_CinematicSpriteObject_BabyMetroidBeingExamined_1         ;8BCBE3;
     dw Instruction_StartIntroPage5                                       ;8BCBE5;
 
+%anchor($8BCBE7)
 InstList_CinematicSpriteObject_BabyMetroidBeingExamined_2:
     dw $000A,IntroCeresExplosionSpritemaps_BabyMetroidExaminedFrame1     ;8BCBE7;
     dw $000A,IntroCeresExplosionSpritemaps_BabyMetroidExaminedFrame2     ;8BCBEB;
@@ -9583,17 +9958,20 @@ InstList_CinematicSpriteObject_BabyMetroidBeingExamined_2:
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BCBF7;
     dw InstList_CinematicSpriteObject_BabyMetroidBeingExamined_2         ;8BCBF9;
 
+%anchor($8BCBFB)
 InstList_CinematicSpriteObject_IntroTextCaret:
     dw $0005,IntroCeresExplosionSpritemaps_BlinkingTypewriterBlock       ;8BCBFB;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BCBFF;
     dw InstList_CinematicSpriteObject_IntroTextCaret                     ;8BCC01;
 
+%anchor($8BCC03)
 InstList_IntroTextCaret_Blink:
     dw $0005,IntroCeresExplosionSpritemaps_BlinkingTypewriterBlock       ;8BCC03;
     dw $0005,$0000                                                       ;8BCC07;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BCC0B;
     dw InstList_IntroTextCaret_Blink                                     ;8BCC0D;
 
+%anchor($8BCC0F)
 InstList_CinematicSpriteObject_IntroJapanTextNextPageArrow:
     dw $000A,IntroCeresExplosionSpritemaps_JapanTextNextPageArrowFrame1  ;8BCC0F;
     dw $000A,IntroCeresExplosionSpritemaps_JapanTextNextPageArrowFrame2  ;8BCC13;
@@ -9602,11 +9980,13 @@ InstList_CinematicSpriteObject_IntroJapanTextNextPageArrow:
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BCC1F;
     dw InstList_CinematicSpriteObject_IntroJapanTextNextPageArrow        ;8BCC21;
 
+%anchor($8BCC23)
 InstList_IntroJapanTextNextPageArrow_Blink:
     dw $003C,$0000                                                       ;8BCC23;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BCC27;
     dw InstList_CinematicSpriteObject_IntroJapanTextNextPageArrow        ;8BCC29;
 
+%anchor($8BCC2B)
 InstList_CinematicSpriteObject_ConfusedBabyMetroid:
     dw $000A,IntroCeresExplosionSpritemaps_ConfusedBabyMetroidFrame1     ;8BCC2B;
     dw $000A,IntroCeresExplosionSpritemaps_ConfusedBabyMetroidFrame2     ;8BCC2F;
@@ -9615,21 +9995,25 @@ InstList_CinematicSpriteObject_ConfusedBabyMetroid:
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BCC3B;
     dw InstList_CinematicSpriteObject_ConfusedBabyMetroid                ;8BCC3D;
 
+%anchor($8BCC3F)
 InstList_CinematicSpriteObject_CeresUnderAttackLargeAsteroid:
     dw $000A,SpaceSpritemaps_CeresUnderAttackLargeAsteroids              ;8BCC3F;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BCC43;
     dw InstList_CinematicSpriteObject_CeresUnderAttackLargeAsteroid      ;8BCC45;
 
+%anchor($8BCC47)
 InstList_CinematicSpriteObject_CeresUnderAttack:
     dw $000A,SpaceSpritemaps_CeresUnderAttack                            ;8BCC47;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BCC4B;
     dw InstList_CinematicSpriteObject_CeresUnderAttack                   ;8BCC4D;
 
+%anchor($8BCC4F)
 InstList_CinematicSpriteObject_CeresSmallAsteroids:
     dw $000A,SpaceSpritemaps_CeresSmallAsteroids                         ;8BCC4F;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BCC53;
     dw InstList_CinematicSpriteObject_CeresSmallAsteroids                ;8BCC55;
 
+%anchor($8BCC57)
 InstList_CinematicSpriteObject_CeresPurpleSpaceVortext:
     dw $0001,SpaceSpritemaps_CeresPurpleVortexFrame1                     ;8BCC57;
     dw $0001,SpaceSpritemaps_CeresPurpleVortexFrame2                     ;8BCC5B;
@@ -9637,6 +10021,7 @@ InstList_CinematicSpriteObject_CeresPurpleSpaceVortext:
     dw InstList_CinematicSpriteObject_CeresPurpleSpaceVortext            ;8BCC61;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($8BCC63)
 UNUSED_InstList_CinematicSpriteObject_SpaceColonyText_8BCC63:
 ; CinematicSpriteObjectDefinitions_SpaceColony is used instead
     dw $0100,$0000                                                       ;8BCC63;
@@ -9655,29 +10040,34 @@ UNUSED_InstList_CinematicSpriteObject_SpaceColonyText_8BCC63:
     dw $0080,UNUSED_SpaceSpritemaps_SPACECOLONY_8C921F                   ;8BCC95;
     dw Instruction_FinishFlyToCeres                                      ;8BCC99;
 
+%anchor($8BCC9B)
 UNUSED_InstList_CinematicSpriteObject_SpaceColonyText_8BCC9B:
     dw $0001,UNUSED_SpaceSpritemaps_SPACECOLONY_8C921F                   ;8BCC9B;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BCC9F;
     dw UNUSED_InstList_CinematicSpriteObject_SpaceColonyText_8BCC9B      ;8BCCA1;
 
+%anchor($8BCCA3)
 UNUSED_InstList_CineSpriteObject_SpaceColonyJapanText_8BCCA3:
     dw $000A,UNUSED_SpaceSpritemaps_JapanText_SPACECOLONY_8C9258         ;8BCCA3;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BCCA7;
     dw UNUSED_InstList_CineSpriteObject_SpaceColonyJapanText_8BCCA3      ;8BCCA9;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($8BCCAB)
 InstList_CinematicSpriteObject_Zebes:
     dw $000A,SpaceSpritemaps_Zebes                                       ;8BCCAB;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BCCAF;
     dw InstList_CinematicSpriteObject_Zebes                              ;8BCCB1;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($8BCCB3)
 InstList_CinematicSpriteObject_ZebesStars1:
     dw $000A,UNUSED_SpaceSpritemaps_ZebesStars1_8C96CB                   ;8BCCB3;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BCCB7;
     dw InstList_CinematicSpriteObject_ZebesStars1                        ;8BCCB9;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($8BCCBB)
 InstList_CinematicSpriteObject_PlanetZebesText:
     dw $0040,$0000                                                       ;8BCCBB;
     dw Instruction_FadeInPlanetZebesText                                 ;8BCCBF;
@@ -9689,10 +10079,12 @@ InstList_CinematicSpriteObject_PlanetZebesText:
     dw Instruction_StartFlyingToZebes                                    ;8BCCD1;
     dw CinematicSpriteObject_Instruction_Delete                          ;8BCCD3;
 
+%anchor($8BCCD5)
 InstList_CinematicSpriteObject_PlanetZebesJapanText:
     dw $00C0,SpaceSpritemaps_JapanText_PlanetZebes                       ;8BCCD5;
     dw CinematicSpriteObject_Instruction_Delete                          ;8BCCD9;
 
+%anchor($8BCCDB)
 InstList_CinematicSpriteObject_CeresExplosion1:
     dw $0003,SpaceSpritemaps_IntroMotherBrainExplosionSmallFrame1        ;8BCCDB;
     dw $0003,SpaceSpritemaps_IntroMotherBrainExplosionSmallFrame2        ;8BCCDF;
@@ -9702,9 +10094,11 @@ InstList_CinematicSpriteObject_CeresExplosion1:
     dw $0003,SpaceSpritemaps_IntroMotherBrainExplosionSmallFrame6        ;8BCCEF;
     dw CinematicSpriteObject_Instruction_Delete                          ;8BCCF3;
 
+%anchor($8BCCF5)
 InstList_CinematicSpriteObject_CeresExplosion2_0:
     dw CinematicSpriteObject_Instruction_TimerInY,$0006                  ;8BCCF5;
 
+%anchor($8BCCF9)
 InstList_CinematicSpriteObject_CeresExplosion2_1:
     dw $0003,SpaceSpritemaps_IntroMotherBrainExplosionSmallFrame1        ;8BCCF9;
     dw $0003,SpaceSpritemaps_IntroMotherBrainExplosionSmallFrame2        ;8BCCFD;
@@ -9717,9 +10111,11 @@ InstList_CinematicSpriteObject_CeresExplosion2_1:
     dw InstList_CinematicSpriteObject_CeresExplosion2_1                  ;8BCD17;
     dw CinematicSpriteObject_Instruction_Delete                          ;8BCD19;
 
+%anchor($8BCD1B)
 InstList_CinematicSpriteObject_CeresExplosion3_0:
     dw CinematicSpriteObject_Instruction_TimerInY,$0007                  ;8BCD1B;
 
+%anchor($8BCD1F)
 InstList_CinematicSpriteObject_CeresExplosion3_1:
     dw $0005,SpaceSpritemaps_CeresExplosionFrame1                        ;8BCD1F;
     dw $0005,SpaceSpritemaps_CeresExplosionFrame2                        ;8BCD23;
@@ -9730,41 +10126,49 @@ InstList_CinematicSpriteObject_CeresExplosion3_1:
     dw InstList_CinematicSpriteObject_CeresExplosion3_1                  ;8BCD35;
     dw CinematicSpriteObject_Instruction_Delete                          ;8BCD37;
 
+%anchor($8BCD39)
 InstList_CinematicSpriteObject_MetroidEggParticle1:
     dw $0001,IntroCeresExplosionSpritemaps_MetroidEggsParticle1          ;8BCD39;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BCD3D;
     dw InstList_CinematicSpriteObject_MetroidEggParticle1                ;8BCD3F;
 
+%anchor($8BCD41)
 InstList_CinematicSpriteObject_MetroidEggParticle2:
     dw $0001,IntroCeresExplosionSpritemaps_MetroidEggsParticle2          ;8BCD41;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BCD45;
     dw InstList_CinematicSpriteObject_MetroidEggParticle2                ;8BCD47;
 
+%anchor($8BCD49)
 InstList_CinematicSpriteObject_MetroidEggParticle3:
     dw $0001,IntroCeresExplosionSpritemaps_MetroidEggsParticle3          ;8BCD49;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BCD4D;
     dw InstList_CinematicSpriteObject_MetroidEggParticle3                ;8BCD4F;
 
+%anchor($8BCD51)
 InstList_CinematicSpriteObject_MetroidEggParticle4:
     dw $0001,IntroCeresExplosionSpritemaps_MetroidEggsParticle4          ;8BCD51;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BCD55;
     dw InstList_CinematicSpriteObject_MetroidEggParticle4                ;8BCD57;
 
+%anchor($8BCD59)
 InstList_CinematicSpriteObject_MetroidEggParticle5:
     dw $0001,IntroCeresExplosionSpritemaps_MetroidEggsParticle5          ;8BCD59;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BCD5D;
     dw InstList_CinematicSpriteObject_MetroidEggParticle5                ;8BCD5F;
 
+%anchor($8BCD61)
 InstList_CinematicSpriteObject_MetroidEggParticle6:
     dw $0001,IntroCeresExplosionSpritemaps_MetroidEggsParticle6          ;8BCD61;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BCD65;
     dw InstList_CinematicSpriteObject_MetroidEggParticle6                ;8BCD67;
 
+%anchor($8BCD69)
 InstList_CinematicSpriteObject_MetroidEggSlimeDrops:
     dw $0001,IntroCeresExplosionSpritemaps_MetroidEggsSlimeDropsFrame1   ;8BCD69;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BCD6D;
     dw InstList_CinematicSpriteObject_MetroidEggSlimeDrops               ;8BCD6F;
 
+%anchor($8BCD71)
 InstList_MetroidEggParticle_HitGround:
     dw $000A,IntroCeresExplosionSpritemaps_MetroidEggsSlimeDropsFrame2   ;8BCD71;
     dw $000A,IntroCeresExplosionSpritemaps_MetroidEggsSlimeDropsFrame3   ;8BCD75;
@@ -9772,31 +10176,37 @@ InstList_MetroidEggParticle_HitGround:
     dw $000A,IntroCeresExplosionSpritemaps_MetroidEggsSlimeDropsFrame5   ;8BCD7D;
     dw CinematicSpriteObject_Instruction_Delete                          ;8BCD81;
 
+%anchor($8BCD83)
 InstList_CinematicSpriteObject_ZebesStars2:
     dw $000A,SpaceSpritemaps_ZebesStars2                                 ;8BCD83;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BCD87;
     dw InstList_CinematicSpriteObject_ZebesStars2                        ;8BCD89;
 
+%anchor($8BCD8B)
 InstList_CinematicSpriteObject_ZebesStars3:
     dw $000A,SpaceSpritemaps_ZebesStars3                                 ;8BCD8B;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BCD8F;
     dw InstList_CinematicSpriteObject_ZebesStars3                        ;8BCD91;
 
+%anchor($8BCD93)
 InstList_CinematicSpriteObject_ZebesStars4:
     dw $000A,SpaceSpritemaps_ZebesStars4                                 ;8BCD93;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BCD97;
     dw InstList_CinematicSpriteObject_ZebesStars4                        ;8BCD99;
 
+%anchor($8BCD9B)
 InstList_CinematicSpriteObject_ZebesStars5:
     dw $000A,SpaceSpritemaps_ZebesStars5                                 ;8BCD9B;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BCD9F;
     dw InstList_CinematicSpriteObject_ZebesStars5                        ;8BCDA1;
 
+%anchor($8BCDA3)
 InstList_CinematicSpriteObject_CeresStars:
     dw $000A,SpaceSpritemaps_CeresStars                                  ;8BCDA3;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BCDA7;
     dw InstList_CinematicSpriteObject_CeresStars                         ;8BCDA9;
 
+%anchor($8BCDAB)
 InstList_CinematicSpriteObject_IntroMotherBrainExplosion_Big:
     dw $0006,SpaceSpritemaps_IntroMotherBrainExplosionBigFrame1          ;8BCDAB;
     dw $0006,SpaceSpritemaps_IntroMotherBrainExplosionBigFrame2          ;8BCDAF;
@@ -9808,6 +10218,7 @@ InstList_CinematicSpriteObject_IntroMotherBrainExplosion_Big:
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BCDC7;
     dw InstList_CinematicSpriteObject_IntroMotherBrainExplosion_Big      ;8BCDC9;
 
+%anchor($8BCDCB)
 InstList_CineSpriteObject_IntroMotherBrainExplosion_Small:
     dw $0003,SpaceSpritemaps_IntroMotherBrainExplosionSmallFrame1        ;8BCDCB;
     dw $0003,SpaceSpritemaps_IntroMotherBrainExplosionSmallFrame2        ;8BCDCF;
@@ -9819,12 +10230,14 @@ InstList_CineSpriteObject_IntroMotherBrainExplosion_Small:
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BCDE7;
     dw InstList_CineSpriteObject_IntroMotherBrainExplosion_Small         ;8BCDE9;
 
+%anchor($8BCDEB)
 InstList_CinematicSpriteObject_IntroRinka_0:
     dw $000A,IntroCeresExplosionSpritemaps_RinkaFrame1                   ;8BCDEB;
     dw $000A,IntroCeresExplosionSpritemaps_RinkaFrame2                   ;8BCDEF;
     dw $000A,IntroCeresExplosionSpritemaps_RinkaFrame3                   ;8BCDF3;
     dw Instruction_StartMoving_IntroRinka                                ;8BCDF7;
 
+%anchor($8BCDF9)
 InstList_CinematicSpriteObject_IntroRinka_1:
     dw $000A,IntroCeresExplosionSpritemaps_RinkaFrame2                   ;8BCDF9;
     dw $000A,IntroCeresExplosionSpritemaps_RinkaFrame1                   ;8BCDFD;
@@ -9833,6 +10246,7 @@ InstList_CinematicSpriteObject_IntroRinka_1:
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BCE09;
     dw InstList_CinematicSpriteObject_IntroRinka_1                       ;8BCE0B;
 
+%anchor($8BCE0D)
 InstList_CinematicSpriteObject_RinkaSpawner:
     dw $004A,$0000                                                       ;8BCE0D;
     dw Instruction_Spawn_IntroRinkas_0_1                                 ;8BCE11;
@@ -9840,6 +10254,7 @@ InstList_CinematicSpriteObject_RinkaSpawner:
     dw Instruction_Spawn_IntroRinkas_2_3                                 ;8BCE17;
     dw CinematicSpriteObject_Instruction_Delete                          ;8BCE19;
 
+%anchor($8BCE1B)
 InstList_CinematicSpriteObject_CeresFinalExplosion:
     dw $0005,SpaceSpritemaps_CeresFinalExplosionFrame1                   ;8BCE1B;
     dw $0005,SpaceSpritemaps_CeresFinalExplosionFrame2                   ;8BCE1F;
@@ -9849,6 +10264,7 @@ InstList_CinematicSpriteObject_CeresFinalExplosion:
     dw $0005,SpaceSpritemaps_CeresFinalExplosionFrame6                   ;8BCE2F;
     dw CinematicSpriteObject_Instruction_Delete                          ;8BCE33;
 
+%anchor($8BCE35)
 InstList_CinematicSpriteObject_CeresExplosionSpawner:
     dw $0080,$0000                                                       ;8BCE35;
     dw Instruction_SpawnCeresExplosions1                                 ;8BCE39;
@@ -9859,254 +10275,304 @@ InstList_CinematicSpriteObject_CeresExplosionSpawner:
     dw Instruction_SpawnCeresExplosions3                                 ;8BCE47;
     dw CinematicSpriteObject_Instruction_Delete                          ;8BCE49;
 
+%anchor($8BCE4B)
 InstList_CinematicSpriteObject_CeresExplosionLargeAsteroids:
     dw $000A,SpaceSpritemaps_CeresExplosionLargeAsteroids                ;8BCE4B;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BCE4F;
     dw InstList_CinematicSpriteObject_CeresExplosionLargeAsteroids       ;8BCE51;
 
+%anchor($8BCE53)
 InstList_CinematicSpriteObject_Delete:
     dw CinematicSpriteObject_Instruction_Delete                          ;8BCE53;
 
+%anchor($8BCE55)
 CinematicSpriteObjectDefinitions_IntroMotherBrain:
     dw InitFunction_CinematicSpriteObject_IntroMotherBrain               ;8BCE55;
     dw PreInstruction_CinematicSpriteObject_IntroMotherBrain             ;8BCE57;
     dw InstList_CinematicSpriteObject_IntroMotherBrain                   ;8BCE59;
 
+%anchor($8BCE5B)
 CinematicSpriteObjectDefinitions_MetroidEgg:
     dw InitFunction_CinematicSpriteObject_MetroidEgg                     ;8BCE5B;
     dw PreInstruction_CinematicSpriteObject_MetroidEgg                   ;8BCE5D;
     dw InstList_CinematicSpriteObject_MetroidEgg                         ;8BCE5F;
 
+%anchor($8BCE61)
 CinematicSpriteObjectDefinitions_BabyMetroidBeingDelivered:
     dw InitFunction_CinematicSpriteObject_BabyMetroidBeingDelivered      ;8BCE61;
     dw PreInst_CinematicSpriteObject_BabyMetroidBeingDelivered           ;8BCE63;
     dw InstList_CinematicSpriteObject_BabyMetroidBeingDelivered_0        ;8BCE65;
 
+%anchor($8BCE67)
 CinematicSpriteObjectDefinitions_BabyMetroidBeingExamined:
     dw InitFunction_CinematicSpriteObject_BabyMetroidBeingExamined       ;8BCE67;
     dw PreInst_CinematicSpriteObject_BabyMetroidBeingExamined            ;8BCE69;
     dw InstList_CinematicSpriteObject_BabyMetroidBeingExamined_0         ;8BCE6B;
 
+%anchor($8BCE6D)
 CinematicSpriteObjectDefinitions_IntroTextCaret:
     dw InitFunction_CinematicSpriteObject_IntroTextCaret                 ;8BCE6D;
     dw RTS_8BA8D4                                                        ;8BCE6F;
     dw InstList_CinematicSpriteObject_IntroTextCaret                     ;8BCE71;
 
+%anchor($8BCE73)
 CinematicSpriteObjectDefinitions_IntroJapanTextNextPageArrow:
     dw InitFunc_CinematicSpriteObject_IntroJapanTextNextPageArrow        ;8BCE73;
     dw PreInst_CinematicSpriteObject_IntroJapanTextNextPageArrow         ;8BCE75;
     dw InstList_CinematicSpriteObject_IntroJapanTextNextPageArrow        ;8BCE77;
 
+%anchor($8BCE79)
 CinematicSpriteObjectDefinitions_ConfusedBabyMetroid:
     dw InitFunction_CinematicSpriteObject_ConfusedBabyMetroid            ;8BCE79;
     dw PreInstruction_CinematicSpriteObject_ConfusedBabyMetroid          ;8BCE7B;
     dw InstList_CinematicSpriteObject_ConfusedBabyMetroid                ;8BCE7D;
 
+%anchor($8BCE7F)
 CinematicSpriteObjectDefs_CeresUnderAttackLargeAsteroids:
     dw InitFunc_CinematicSpriteObject_CeresExplosionLargeAsteroids       ;8BCE7F;
     dw PreInst_CinematicSpriteObject_CeresExplosionLargeAsteroids        ;8BCE81;
     dw InstList_CinematicSpriteObject_CeresUnderAttackLargeAsteroid      ;8BCE83;
 
+%anchor($8BCE85)
 CinematicSpriteObjectDefinitions_CeresUnderAttack:
     dw InitFunction_CinematicSpriteObject_CeresUnderAttack               ;8BCE85;
     dw PreInstruction_CinematicSpriteObject_CeresUnderAttack             ;8BCE87;
     dw InstList_CinematicSpriteObject_CeresUnderAttack                   ;8BCE89;
 
+%anchor($8BCE8B)
 CinematicSpriteObjectDefinitions_CeresSmallAsteroids:
     dw InitFunction_CinematicSpriteObject_CeresSmallAsteroid             ;8BCE8B;
     dw PreInstruction_CinematicSpriteObject_CeresSmallAsteroid           ;8BCE8D;
     dw InstList_CinematicSpriteObject_CeresSmallAsteroids                ;8BCE8F;
 
+%anchor($8BCE91)
 CinematicSpriteObjectDefinitions_CeresPurpleSpaceVortex:
     dw InitFunction_CinematicSpriteObject_CeresPurpleSpaceVortex         ;8BCE91;
     dw PreInstruction_CinematicSpriteObject_CeresPurpleSpaceVortex       ;8BCE93;
     dw InstList_CinematicSpriteObject_CeresPurpleSpaceVortext            ;8BCE95;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($8BCE97)
 UNUSED_CinematicSpriteObjectDefs_SpaceColonyText_8BCE97:
     dw UNUSED_InitFunc_CinematicSpriteObject_SpaceColonyText_8BC083      ;8BCE97;
     dw RTS_8B93D9                                                        ;8BCE99;
     dw UNUSED_InstList_CinematicSpriteObject_SpaceColonyText_8BCC63      ;8BCE9B;
 
+%anchor($8BCE9D)
 UNUSED_CinematicSpriteObjectDefs_SpaceColonyJapanText_8BCE9D:
     dw UNUSED_InitFunc_CineSpriteObject_SpaceColonyJapanText_8BC0B2      ;8BCE9D;
     dw RTS_8B93D9                                                        ;8BCE9F;
     dw UNUSED_InstList_CineSpriteObject_SpaceColonyJapanText_8BCCA3      ;8BCEA1;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($8BCEA3)
 CinematicSpriteObjectDefinitions_Zebes:
     dw InitFunction_CinematicSpriteObject_Zebes                          ;8BCEA3;
     dw PreInstruction_CinematicSpriteObject_Zebes                        ;8BCEA5;
     dw InstList_CinematicSpriteObject_Zebes                              ;8BCEA7;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($8BCEA9)
 UNUSED_CinematicSpriteObjectDefinitions_ZebesStars1_8BCEA9:
     dw UNUSED_InitFunction_CinematicSpriteObject_ZebesStars1_8BC897      ;8BCEA9;
     dw PreInstruction_CinematicSpriteObject_ZebesStars5                  ;8BCEAB;
     dw InstList_CinematicSpriteObject_ZebesStars1                        ;8BCEAD;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($8BCEAF)
 CinematicSpriteObjectDefinitions_PlanetZebesText:
     dw InitFunction_CinematicSpriteObject_PlanetZebesText                ;8BCEAF;
     dw RTS_8B93D9                                                        ;8BCEB1;
     dw InstList_CinematicSpriteObject_PlanetZebesText                    ;8BCEB3;
 
+%anchor($8BCEB5)
 CinematicSpriteObjectDefinitions_PlanetZebesJapanText:
     dw InitFunction_CinematicSpriteObject_PlanetZebesJapanText           ;8BCEB5;
     dw RTS_8B93D9                                                        ;8BCEB7;
     dw InstList_CinematicSpriteObject_PlanetZebesJapanText               ;8BCEB9;
 
+%anchor($8BCEBB)
 CinematicSpriteObjectDefinitions_CeresExplosion1:
     dw InitFunction_CinematicSpriteObject_CeresExplosion1                ;8BCEBB;
     dw PreInstruction_CinematicSpriteObject_CeresExplosion               ;8BCEBD;
     dw InstList_CinematicSpriteObject_CeresExplosion1                    ;8BCEBF;
 
+%anchor($8BCEC1)
 CinematicSpriteObjectDefinitions_CeresExplosion2:
     dw InitFunction_CinematicSpriteObject_CeresExplosion2                ;8BCEC1;
     dw PreInstruction_CinematicSpriteObject_CeresExplosion               ;8BCEC3;
     dw InstList_CinematicSpriteObject_CeresExplosion2_0                  ;8BCEC5;
 
+%anchor($8BCEC7)
 CinematicSpriteObjectDefinitions_CeresExplosion3:
     dw InitFunction_CinematicSpriteObject_CeresExplosion3                ;8BCEC7;
     dw PreInstruction_CinematicSpriteObject_CeresExplosion               ;8BCEC9;
     dw InstList_CinematicSpriteObject_CeresExplosion3_0                  ;8BCECB;
 
+%anchor($8BCECD)
 CinematicSpriteObjectDefinitions_MetroidEggParticle1:
     dw InitFunction_CinematicSpriteObject_MetroidEggParticles            ;8BCECD;
     dw PreInstruction_CinematicSpriteObject_MetroidEggParticle           ;8BCECF;
     dw InstList_CinematicSpriteObject_MetroidEggParticle1                ;8BCED1;
 
+%anchor($8BCED3)
 CinematicSpriteObjectDefinitions_MetroidEggParticle2:
     dw InitFunction_CinematicSpriteObject_MetroidEggParticles            ;8BCED3;
     dw PreInstruction_CinematicSpriteObject_MetroidEggParticle           ;8BCED5;
     dw InstList_CinematicSpriteObject_MetroidEggParticle2                ;8BCED7;
 
+%anchor($8BCED9)
 CinematicSpriteObjectDefinitions_MetroidEggParticle3:
     dw InitFunction_CinematicSpriteObject_MetroidEggParticles            ;8BCED9;
     dw PreInstruction_CinematicSpriteObject_MetroidEggParticle           ;8BCEDB;
     dw InstList_CinematicSpriteObject_MetroidEggParticle3                ;8BCEDD;
 
+%anchor($8BCEDF)
 CinematicSpriteObjectDefinitions_MetroidEggParticle4:
     dw InitFunction_CinematicSpriteObject_MetroidEggParticles            ;8BCEDF;
     dw PreInstruction_CinematicSpriteObject_MetroidEggParticle           ;8BCEE1;
     dw InstList_CinematicSpriteObject_MetroidEggParticle4                ;8BCEE3;
 
+%anchor($8BCEE5)
 CinematicSpriteObjectDefinitions_MetroidEggParticle5:
     dw InitFunction_CinematicSpriteObject_MetroidEggParticles            ;8BCEE5;
     dw PreInstruction_CinematicSpriteObject_MetroidEggParticle           ;8BCEE7;
     dw InstList_CinematicSpriteObject_MetroidEggParticle5                ;8BCEE9;
 
+%anchor($8BCEEB)
 CinematicSpriteObjectDefinitions_MetroidEggParticle6:
     dw InitFunction_CinematicSpriteObject_MetroidEggParticles            ;8BCEEB;
     dw PreInstruction_CinematicSpriteObject_MetroidEggParticle           ;8BCEED;
     dw InstList_CinematicSpriteObject_MetroidEggParticle6                ;8BCEEF;
 
+%anchor($8BCEF1)
 CinematicSpriteObjectDefinitions_MetroidEggSlimeDrops:
     dw InitFunction_CinematicSpriteObject_MetroidEggSlimeDrops           ;8BCEF1;
     dw PreInstruction_CinematicSpriteObject_MetroidEggSlimeDrops         ;8BCEF3;
     dw InstList_CinematicSpriteObject_MetroidEggSlimeDrops               ;8BCEF5;
 
+%anchor($8BCEF7)
 CinematicSpriteObjectDefinitions_ZebesStars2:
     dw InitFunction_CinematicSpriteObject_ZebesStars2                    ;8BCEF7;
     dw PreInstruction_CinematicSpriteObject_ZebesStars_2_3_4             ;8BCEF9;
     dw InstList_CinematicSpriteObject_ZebesStars2                        ;8BCEFB;
 
+%anchor($8BCEFD)
 CinematicSpriteObjectDefinitions_ZebesStars3:
     dw InitFunction_CinematicSpriteObject_ZebesStars3                    ;8BCEFD;
     dw PreInstruction_CinematicSpriteObject_ZebesStars_2_3_4             ;8BCEFF;
     dw InstList_CinematicSpriteObject_ZebesStars3                        ;8BCF01;
 
+%anchor($8BCF03)
 CinematicSpriteObjectDefinitions_ZebesStars4:
     dw InitFunction_CinematicSpriteObject_ZebesStars4                    ;8BCF03;
     dw PreInstruction_CinematicSpriteObject_ZebesStars_2_3_4             ;8BCF05;
     dw InstList_CinematicSpriteObject_ZebesStars4                        ;8BCF07;
 
+%anchor($8BCF09)
 CinematicSpriteObjectDefinitions_ZebesStars5:
     dw InitFunction_CinematicSpriteObject_ZebesStars5                    ;8BCF09;
     dw PreInstruction_CinematicSpriteObject_ZebesStars5                  ;8BCF0B;
     dw InstList_CinematicSpriteObject_ZebesStars5                        ;8BCF0D;
 
+%anchor($8BCF0F)
 CinematicSpriteObjectDefinitions_CeresStars:
     dw InitFunction_CinematicSpriteObject_CeresStars                     ;8BCF0F;
     dw PreInstruction_CinematicSpriteObject_CeresStars                   ;8BCF11;
     dw InstList_CinematicSpriteObject_CeresStars                         ;8BCF13;
 
+%anchor($8BCF15)
 CinematicSpriteObjectDefs_IntroMotherBrainExplosion_Big:
     dw InitFunc_CinematicSpriteObject_IntroMotherBrainExplosion_Big      ;8BCF15;
     dw PreInst_CinematicSpriteObject_IntroMotherBrainExplosion           ;8BCF17;
     dw InstList_CinematicSpriteObject_IntroMotherBrainExplosion_Big      ;8BCF19;
 
+%anchor($8BCF1B)
 CinematicSpriteObjectDefs_IntroMotherBrainExplosion_Small:
     dw InitFunc_CineSpriteObject_IntroMotherBrainExplosion_Small         ;8BCF1B;
     dw PreInst_CinematicSpriteObject_IntroMotherBrainExplosion           ;8BCF1D;
     dw InstList_CineSpriteObject_IntroMotherBrainExplosion_Small         ;8BCF1F;
 
+%anchor($8BCF21)
 CinematicSpriteObjectDefinitions_IntroRinka:
     dw InitFunction_CinematicSpriteObject_IntroRinka                     ;8BCF21;
     dw RTS_8B93D9                                                        ;8BCF23;
     dw InstList_CinematicSpriteObject_IntroRinka_0                       ;8BCF25;
 
+%anchor($8BCF27)
 CinematicSpriteObjectDefinitions_RinkaSpawner:
     dw RTS_8B93D9                                                        ;8BCF27;
     dw RTS_8B93D9                                                        ;8BCF29;
     dw InstList_CinematicSpriteObject_RinkaSpawner                       ;8BCF2B;
 
+%anchor($8BCF2D)
 CinematicSpriteObjectDefinitions_CeresFinalExplosion:
     dw InitFunction_CinematicSpriteObject_CeresFinalExplosion            ;8BCF2D;
     dw PreInstruction_CinematicSpriteObject_CeresExplosion               ;8BCF2F;
     dw InstList_CinematicSpriteObject_CeresFinalExplosion                ;8BCF31;
 
+%anchor($8BCF33)
 CinematicSpriteObjectDefinitions_CeresExplosionSpawner:
     dw RTS_8B93D9                                                        ;8BCF33;
     dw RTS_8B93D9                                                        ;8BCF35;
     dw InstList_CinematicSpriteObject_CeresExplosionSpawner              ;8BCF37;
 
+%anchor($8BCF39)
 CinematicSpriteObjectDefs_CeresExplosionLargeAsteroids:
     dw InitFunc_CinematicSpriteObject_CeresExplosionLargeAsteroids       ;8BCF39;
     dw PreInst_CinematicSpriteObject_CeresExplosionLargeAsteroids        ;8BCF3B;
     dw InstList_CinematicSpriteObject_CeresExplosionLargeAsteroids       ;8BCF3D;
 
+%anchor($8BCF3F)
 CinematicSpriteObjectDefinitions_IntroTextPage1:
     dw RTS_8B93D9                                                        ;8BCF3F;
     dw RTS_8B93D9                                                        ;8BCF41;
     dw CinematicBGObjectInstLists_IntroTextPage1                         ;8BCF43;
 
+%anchor($8BCF45)
 CinematicSpriteObjectDefinitions_IntroTextPage2:
     dw RTS_8B93D9                                                        ;8BCF45;
     dw RTS_8B93D9                                                        ;8BCF47;
     dw CinematicBGObjectInstLists_IntroTextPage2                         ;8BCF49;
 
+%anchor($8BCF4B)
 CinematicSpriteObjectDefinitions_IntroTextPage3:
     dw RTS_8B93D9                                                        ;8BCF4B;
     dw RTS_8B93D9                                                        ;8BCF4D;
     dw CinematicBGObjectInstLists_IntroTextPage3                         ;8BCF4F;
 
+%anchor($8BCF51)
 CinematicSpriteObjectDefinitions_IntroTextPage4:
     dw RTS_8B93D9                                                        ;8BCF51;
     dw RTS_8B93D9                                                        ;8BCF53;
     dw CinematicBGObjectInstLists_IntroTextPage4                         ;8BCF55;
 
+%anchor($8BCF57)
 CinematicSpriteObjectDefinitions_IntroTextPage5:
     dw RTS_8B93D9                                                        ;8BCF57;
     dw RTS_8B93D9                                                        ;8BCF59;
     dw CinematicBGObjectInstLists_IntroTextPage5                         ;8BCF5B;
 
+%anchor($8BCF5D)
 CinematicSpriteObjectDefinitions_IntroTextPage6:
     dw RTS_8B93D9                                                        ;8BCF5D;
     dw RTS_8B93D9                                                        ;8BCF5F;
     dw CinematicBGObjectInstLists_IntroTextPage6                         ;8BCF61;
 
+%anchor($8BCF63)
 CinematicSpriteObjectDefinitions_SamusBlinking:
     dw RTS_8B93D9                                                        ;8BCF63;
     dw PreInstruction_CinematicBGObject_SamusBlinking                    ;8BCF65;
     dw CinematicBGObjectInstLists_SamusBlinking                          ;8BCF67;
 
+%anchor($8BCF69)
 CinematicSpriteObjectDefinitions_SpaceColony:
     dw RTS_8B93D9                                                        ;8BCF69;
     dw RTS_8B93D9                                                        ;8BCF6B;
     dw CinematicBGObjectInstLists_SpaceColony                            ;8BCF6D;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($8BCF6F)
 UNUSED_CinematicSpriteObjectDefs_IntroTextPage1_8BCF6F:
     dw RTS_8B93D9                                                        ;8BCF6F;
     dw RTS_8B93D9                                                        ;8BCF71;
@@ -10124,6 +10590,7 @@ endif ; !FEATURE_KEEP_UNREFERENCED
 ;     n: Number of characters
 ;     t: Top Japanese text tiles source offset ($7F:A000 + t)
 ;     b: Bottom Japanese text tiles source offset ($7F:A000 + b)
+%anchor($8BCF75)
 IntroJapanTextData_Page1_TopLine:                                        ;8BCF75;
 ; 私が メトロイドの存在を知ったのは (I learnt of the metroids' existence)
     dw $0040,$0011
@@ -10145,6 +10612,7 @@ IntroJapanTextData_Page1_TopLine:                                        ;8BCF75
     dw $0280,$0380
     dw $0290,$0390
 
+%anchor($8BCFBD)
 IntroJapanTextData_Page1_BottomLine:                                     ;8BCFBD;
 ; 惑星ゼーベスでの戦いの時だった (it was during the battle on planet Zebes)
     dw $01C0,$000F
@@ -10164,6 +10632,7 @@ IntroJapanTextData_Page1_BottomLine:                                     ;8BCFBD
     dw $0EF0,$0760
     dw $00F0,$01F0
 
+%anchor($8BCFFD)
 IntroJapanTextData_Page2_Subpage1_TopLine:                               ;8BCFFD;
 ; その後 私は惑星ＳＲ３８８へ メトロイドを (after that, I, to planet SR388, with the metroid)
     dw $0020,$0015
@@ -10189,6 +10658,7 @@ IntroJapanTextData_Page2_Subpage1_TopLine:                               ;8BCFFD
     dw $0F70,$0F10
     dw $04C0,$05C0
 
+%anchor($8BD055)
 IntroJapanTextData_Page2_Subpage1_BottomLine:                            ;8BD055;
 ; 壊滅させるために向った (headed there to destroy it)
     dw $01A0,$000B
@@ -10204,6 +10674,7 @@ IntroJapanTextData_Page2_Subpage1_BottomLine:                            ;8BD055
     dw $0EF0,$0760
     dw $00F0,$01F0
 
+%anchor($8BD085)
 IntroJapanTextData_Page2_Subpage2_TopLine:                               ;8BD085;
 ; そこで 唯一の生き残りであるベビーメトロイド (there, the only baby metroid left alive)
     dw $0010,$0016
@@ -10230,6 +10701,7 @@ IntroJapanTextData_Page2_Subpage2_TopLine:                               ;8BD085
     dw $0E30,$0F30
     dw $0F70,$0F10
 
+%anchor($8BD0E1)
 IntroJapanTextData_Page2_Subpage2_BottomLine:                            ;8BD0E1;
 ; を捕獲した (I captured)
     dw $0190,$0005
@@ -10239,6 +10711,7 @@ IntroJapanTextData_Page2_Subpage2_BottomLine:                            ;8BD0E1
     dw $00B0,$01B0
     dw $00F0,$01F0
 
+%anchor($8BD0F9)
 IntroJapanTextData_Page3_Subpage1:                                       ;8BD0F9;
 ; 正確にはベビーメトロイドがついて来たと言うべきだ (rather, I should say the metroid followed me)
     dw $0000,$0018
@@ -10267,6 +10740,7 @@ IntroJapanTextData_Page3_Subpage1:                                       ;8BD0F9
     dw $0060,$0160
     dw $05E0,$01F0
 
+%anchor($8BD15D)
 IntroJapanTextData_Page3_Subpage2:                                       ;8BD15D;
 ; 生まれてすぐ目に入った私を母親だと思った様だ (when it was born, it seemed to think that I, whom it immediately noticed, was its mother)
     dw $0010,$0016
@@ -10293,6 +10767,7 @@ IntroJapanTextData_Page3_Subpage2:                                       ;8BD15D
     dw $0C50,$0D50
     dw $05E0,$01F0
 
+%anchor($8BD1B9)
 IntroJapanTextData_Page4_Subpage1_TopLine:                               ;8BD1B9;
 ; そのベビーメトロイドを私はスペースコロニーの (I went to a space colony with this baby metroid)
     dw $0010,$0016
@@ -10319,6 +10794,7 @@ IntroJapanTextData_Page4_Subpage1_TopLine:                               ;8BD1B9
     dw $0650,$0750
     dw $0280,$0380
 
+%anchor($8BD215)
 IntroJapanTextData_Page4_Subpage1_BottomLine:                            ;8BD215;
 ; 宇宙科学アカデミーへと持ち込んだ (the Space Science Academy)
     dw $0190,$0010
@@ -10339,6 +10815,7 @@ IntroJapanTextData_Page4_Subpage1_BottomLine:                            ;8BD215
     dw $04D0,$05D0
     dw $05E0,$01F0
 
+%anchor($8BD259)
 IntroJapanTextData_Page4_Subpage2_TopLine:                               ;8BD259;
 ; メトロイドの優れた特性を宇宙の未来に (with the metroid's amazing special powers, for the future of space)
     dw $0030,$0012
@@ -10361,6 +10838,7 @@ IntroJapanTextData_Page4_Subpage2_TopLine:                               ;8BD259
     dw $0A00,$0B00
     dw $0250,$0350
 
+%anchor($8BD2A5)
 IntroJapanTextData_Page4_Subpage2_BottomLine:                            ;8BD2A5;
 ; 役立たせるために・・・ (in order to harness it...)
     dw $01B0,$000B
@@ -10376,6 +10854,7 @@ IntroJapanTextData_Page4_Subpage2_BottomLine:                            ;8BD2A5
     dw $0EF0,$0600
     dw $0EF0,$0600
 
+%anchor($8BD2D5)
 IntroJapanTextData_Page5_Subpage1:                                       ;8BD2D5;
 ; 研究は順調に進みつつあった (research was continuing smoothly)
     dw $0050,$000D
@@ -10393,6 +10872,7 @@ IntroJapanTextData_Page5_Subpage1:                                       ;8BD2D5
     dw $0EF0,$0760
     dw $00F0,$01F0
 
+%anchor($8BD30D)
 IntroJapanTextData_Page5_Subpage2:                                       ;8BD30D;
 ; そんなある日スペースコロニーから突然連絡が入った (one day I got a sudden transmission from the space colony)
     dw $0000,$0018
@@ -10421,6 +10901,7 @@ IntroJapanTextData_Page5_Subpage2:                                       ;8BD30D
     dw $0EF0,$0760
     dw $00F0,$01F0
 
+%anchor($8BD371)
 IntroJapanTextData_Page6:                                                ;8BD371;
 ; 非常事態だ (it's an emergency)
     dw $0090,$0005
@@ -10430,72 +10911,86 @@ IntroJapanTextData_Page6:                                                ;8BD371
     dw $0C10,$0D10
     dw $05E0,$01F0
 
+%anchor($8BD389)
 InstList_Mode7Object_Page1:
     dw Instruction_LoadIntroJapanTextPage1                               ;8BD389;
     dw $0001,Mode7_Transfer_Data                                         ;8BD38B;
     dw Instruction_EnableCinematicBGTilemapUpdates_duplicate             ;8BD38F;
     dw Mode7Objects_Instruction_Delete                                   ;8BD391;
 
+%anchor($8BD393)
 InstList_Mode7Object_Page2_Subpage1:
     dw Instruction_LoadIntroJapanTextPage2_Subpage1                      ;8BD393;
     dw $0001,Mode7_Transfer_Data                                         ;8BD395;
     dw Instruction_EnableCinematicBGTilemapUpdates_duplicate             ;8BD399;
     dw Mode7Objects_Instruction_Delete                                   ;8BD39B;
 
+%anchor($8BD39D)
 InstList_Mode7Object_Page2_Subpage2:
     dw $0001,Mode7_Transfer_Data                                         ;8BD39D;
     dw Mode7Objects_Instruction_GotoY                                    ;8BD3A1;
     dw InstList_Mode7Object_Page2_Subpage2                               ;8BD3A3;
 
+%anchor($8BD3A5)
 InstList_EnableCinematicBGTilemapUpdates_Page2DoneInput:
     dw Instruction_EnableCinematicBGTilemapUpdates_Page2DoneInput        ;8BD3A5;
     dw Mode7Objects_Instruction_Delete                                   ;8BD3A7;
 
+%anchor($8BD3A9)
 InstList_Mode7Object_Page3_Subpage1:
     dw Instruction_LoadIntroJapanTextPage3_Subpage1                      ;8BD3A9;
     dw $0001,Mode7_Transfer_Data                                         ;8BD3AB;
     dw Instruction_EnableCinematicBGTilemapUpdates_duplicate             ;8BD3AF;
     dw Mode7Objects_Instruction_Delete                                   ;8BD3B1;
 
+%anchor($8BD3B3)
 InstList_Mode7Object_Page3_Subpage2:
     dw $0001,Mode7_Transfer_Data                                         ;8BD3B3;
     dw Mode7Objects_Instruction_GotoY                                    ;8BD3B7;
     dw InstList_Mode7Object_Page3_Subpage2                               ;8BD3B9;
 
+%anchor($8BD3BB)
 InstList_EnableCinematicBGTilemapUpdates_Page3DoneInput:
     dw Instruction_EnableCinematicBGTilemapUpdates_Page3DoneInput        ;8BD3BB;
     dw Mode7Objects_Instruction_Delete                                   ;8BD3BD;
 
+%anchor($8BD3BF)
 InstList_Mode7Object_Page4_Subpage1:
     dw Instruction_LoadIntroJapanTextPage4_Subpage1                      ;8BD3BF;
     dw $0001,Mode7_Transfer_Data                                         ;8BD3C1;
     dw Instruction_EnableCinematicBGTilemapUpdates_duplicate             ;8BD3C5;
     dw Mode7Objects_Instruction_Delete                                   ;8BD3C7;
 
+%anchor($8BD3C9)
 InstList_Mode7Object_Page4_Subpage2:
     dw $0001,Mode7_Transfer_Data                                         ;8BD3C9;
     dw Mode7Objects_Instruction_GotoY                                    ;8BD3CD;
     dw InstList_Mode7Object_Page4_Subpage2                               ;8BD3CF;
 
+%anchor($8BD3D1)
 InstList_EnableCinematicBGTilemapUpdates_Page4DoneInput:
     dw Instruction_EnableCinematicBGTilemapUpdates_Page4DoneInput        ;8BD3D1;
     dw Mode7Objects_Instruction_Delete                                   ;8BD3D3;
 
+%anchor($8BD3D5)
 InstList_Mode7Object_Page5_Subpage1:
     dw Instruction_LoadIntroJapanTextPage5_Subpage1                      ;8BD3D5;
     dw $0001,Mode7_Transfer_Data                                         ;8BD3D7;
     dw Instruction_EnableCinematicBGTilemapUpdates_duplicate             ;8BD3DB;
     dw Mode7Objects_Instruction_Delete                                   ;8BD3DD;
 
+%anchor($8BD3DF)
 InstList_Mode7Object_Page5_Subpage2:
     dw $0001,Mode7_Transfer_Data                                         ;8BD3DF;
     dw Mode7Objects_Instruction_GotoY                                    ;8BD3E3;
     dw InstList_Mode7Object_Page5_Subpage2                               ;8BD3E5;
 
+%anchor($8BD3E7)
 InstList_EnableCinematicBGTilemapUpdates_Page5DoneInput:
     dw Instruction_EnableCinematicBGTilemapUpdates_Page5DoneInput        ;8BD3E7;
     dw Mode7Objects_Instruction_Delete                                   ;8BD3E9;
 
+%anchor($8BD3EB)
 InstList_Mode7Object_Page6:
     dw Instruction_LoadIntroJapanTextPage6                               ;8BD3EB;
     dw $0001,Mode7_Transfer_Data                                         ;8BD3ED;
@@ -10503,6 +10998,7 @@ InstList_Mode7Object_Page6:
     dw Mode7Objects_Instruction_Delete                                   ;8BD3F3;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($8BD3F5)
 UNUSED_InstList_Mode7Object_D43D_8BD3F5:
     dw UNUSED_Instruction_LoadIntroJapanText_NonExistent                 ;8BD3F5;
     dw $0001,Mode7_Transfer_Data                                         ;8BD3F7;
@@ -10510,66 +11006,79 @@ UNUSED_InstList_Mode7Object_D43D_8BD3F5:
     dw Mode7Objects_Instruction_Delete                                   ;8BD3FD;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($8BD3FF)
 Mode7_Transfer_Data:
     db $00,$00                                                           ;8BD3FF;
 
+%anchor($8BD401)
 Mode7Objects_IntroJapanText_Page1:
     dw RTS_8B93D9                                                        ;8BD401;
     dw RTS_8B93D9                                                        ;8BD403;
     dw InstList_Mode7Object_Page1                                        ;8BD405;
 
+%anchor($8BD407)
 Mode7Objects_IntroJapanText_Page2_Subpage1:
     dw RTS_8B93D9                                                        ;8BD407;
     dw RTS_8B93D9                                                        ;8BD409;
     dw InstList_Mode7Object_Page2_Subpage1                               ;8BD40B;
 
+%anchor($8BD40D)
 Mode7Objects_IntroJapanText_Page2_Subpage2:
     dw RTS_8B93D9                                                        ;8BD40D;
     dw Instruction_LoadIntroJapanTextPage2_Subpage2                      ;8BD40F;
     dw InstList_Mode7Object_Page2_Subpage2                               ;8BD411;
 
+%anchor($8BD413)
 Mode7Objects_IntroJapanText_Page3_Subpage1:
     dw RTS_8B93D9                                                        ;8BD413;
     dw RTS_8B93D9                                                        ;8BD415;
     dw InstList_Mode7Object_Page3_Subpage1                               ;8BD417;
 
+%anchor($8BD419)
 Mode7Objects_IntroJapanText_Page3_Subpage2:
     dw RTS_8B93D9                                                        ;8BD419;
     dw PreInstruction_LoadIntroJapanTextPage3_Subpage2                   ;8BD41B;
     dw InstList_Mode7Object_Page3_Subpage2                               ;8BD41D;
 
+%anchor($8BD41F)
 Mode7Objects_IntroJapanText_Page4_Subpage1:
     dw RTS_8B93D9                                                        ;8BD41F;
     dw RTS_8B93D9                                                        ;8BD421;
     dw InstList_Mode7Object_Page4_Subpage1                               ;8BD423;
 
+%anchor($8BD425)
 Mode7Objects_IntroJapanText_Page4_Subpage2:
     dw RTS_8B93D9                                                        ;8BD425;
     dw PreInstruction_LoadIntroJapanTextPage4_Subpage2                   ;8BD427;
     dw InstList_Mode7Object_Page4_Subpage2                               ;8BD429;
 
+%anchor($8BD42B)
 Mode7Objects_IntroJaanText_Page5_Subpage1:
     dw RTS_8B93D9                                                        ;8BD42B;
     dw RTS_8B93D9                                                        ;8BD42D;
     dw InstList_Mode7Object_Page5_Subpage1                               ;8BD42F;
 
+%anchor($8BD431)
 Mode7Objects_IntroJapanText_Page5_Subpage2:
     dw RTS_8B93D9                                                        ;8BD431;
     dw PreInstruction_LoadIntroJapanTextPage5_Subpage2                   ;8BD433;
     dw InstList_Mode7Object_Page5_Subpage2                               ;8BD435;
 
+%anchor($8BD437)
 Mode7Objects_IntroJapanText_Page6:
     dw RTS_8B93D9                                                        ;8BD437;
     dw RTS_8B93D9                                                        ;8BD439;
     dw InstList_Mode7Object_Page6                                        ;8BD43B;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($8BD43D)
 UNUSED_Mode7Objects_8BD43D:
     dw RTS_8B93D9                                                        ;8BD43D;
     dw RTS_8B93D9                                                        ;8BD43F;
     dw UNUSED_InstList_Mode7Object_D43D_8BD3F5                           ;8BD441;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($8BD443)
 GameState27_EndingAndCredits:
     PHP                                                                  ;8BD443;
     PHB                                                                  ;8BD444;
@@ -10600,6 +11109,7 @@ GameState27_EndingAndCredits:
     RTL                                                                  ;8BD473;
 
 
+%anchor($8BD474)
 HandleFinalScreen_CinematicBGObjects:
     LDA.W $1F51                                                          ;8BD474;
     CMP.W #CinematicFunction_PostCredits_FadeFromWhite                   ;8BD477;
@@ -10610,6 +11120,7 @@ HandleFinalScreen_CinematicBGObjects:
     RTS                                                                  ;8BD47F;
 
 
+%anchor($8BD480)
 CinematicFunction_Ending_Setup:
     STZ.B $AB                                                            ;8BD480;
     STZ.B $A7                                                            ;8BD482;
@@ -10843,6 +11354,7 @@ CinematicFunction_Ending_Setup:
     RTS                                                                  ;8BD6D6;
 
 
+%anchor($8BD6D7)
 CinematicFunction_Ending_WaitForMusicToChange:
     JSL.L CheckIfMusicIsQueued                                           ;8BD6D7;
     BCS .return                                                          ;8BD6DB;
@@ -10857,6 +11369,7 @@ CinematicFunction_Ending_WaitForMusicToChange:
     RTS                                                                  ;8BD6F1;
 
 
+%anchor($8BD6F2)
 CinematicFunc_Ending_ZebesDestruction0_CloudsOnSide_FadingIn:
     JSR.W CinematicFunction_Ending_ZebesDestruction0_CloudsOnSide        ;8BD6F2;
     JSR.W AdvanceFastScreenFadeIn                                        ;8BD6F5;
@@ -10868,6 +11381,7 @@ CinematicFunc_Ending_ZebesDestruction0_CloudsOnSide_FadingIn:
     RTS                                                                  ;8BD700;
 
 
+%anchor($8BD701)
 CinematicFunction_Ending_ZebesDestruction0_CloudsOnSide:
     LDA.W $1A51                                                          ;8BD701;
     BIT.W #$0001                                                         ;8BD704;
@@ -10894,6 +11408,7 @@ CinematicFunction_Ending_ZebesDestruction0_CloudsOnSide:
     RTS                                                                  ;8BD730;
 
 
+%anchor($8BD731)
 CineFunc_Ending_ZebesDestruction1_CloudsOnTopBottom_Setup:
     SEP #$30                                                             ;8BD731;
     LDA.B #$00                                                           ;8BD733;
@@ -10969,6 +11484,7 @@ CineFunc_Ending_ZebesDestruction1_CloudsOnTopBottom_Setup:
     RTS                                                                  ;8BD7F7;
 
 
+%anchor($8BD7F8)
 CineFunc_Ending_ZebesDestruction1_CloudsOnTopBottom_FadingIn:
     JSR.W CinematicFunction_Ending_ZebesDestruction1_CloudsOnTopBottom   ;8BD7F8;
     JSR.W AdvanceFastScreenFadeIn                                        ;8BD7FB;
@@ -10980,6 +11496,7 @@ CineFunc_Ending_ZebesDestruction1_CloudsOnTopBottom_FadingIn:
     RTS                                                                  ;8BD806;
 
 
+%anchor($8BD807)
 CinematicFunction_Ending_ZebesDestruction1_CloudsOnTopBottom:
     LDA.W $1A51                                                          ;8BD807;
     BIT.W #$0001                                                         ;8BD80A;
@@ -11005,6 +11522,7 @@ CinematicFunction_Ending_ZebesDestruction1_CloudsOnTopBottom:
     RTS                                                                  ;8BD836;
 
 
+%anchor($8BD837)
 CinematicFunc_Ending_ZebesDestruction2_CrossFade_Setup:
     SEP #$30                                                             ;8BD837;
     LDA.B #$00                                                           ;8BD839;
@@ -11184,6 +11702,7 @@ CinematicFunc_Ending_ZebesDestruction2_CrossFade_Setup:
     RTS                                                                  ;8BDA01;
 
 
+%anchor($8BDA02)
 CinematicFunc_Ending_ZebesDestruction2_CrossFade_FadingIn:
     JSR.W CinematicFunction_Ending_ZebesDestruction2_CrossFade           ;8BDA02;
     JSR.W AdvanceFastScreenFadeIn                                        ;8BDA05;
@@ -11198,6 +11717,7 @@ CinematicFunc_Ending_ZebesDestruction2_CrossFade_FadingIn:
     RTS                                                                  ;8BDA19;
 
 
+%anchor($8BDA1A)
 CinematicFunction_Ending_ZebesDestruction2_CrossFade:
     LDA.W $198F                                                          ;8BDA1A;
     CLC                                                                  ;8BDA1D;
@@ -11285,6 +11805,7 @@ CinematicFunction_Ending_ZebesDestruction2_CrossFade:
     RTS                                                                  ;8BDAD2;
 
 
+%anchor($8BDAD3)
 CinematicFunc_Ending_SpaceView_LoadGunshipBG:
     LDA.W $1A49                                                          ;8BDAD3;
     CMP.W #$0008                                                         ;8BDAD6;
@@ -11356,10 +11877,12 @@ CinematicFunc_Ending_SpaceView_LoadGunshipBG:
     dw $0000,$0800,$1000,$1800,$2000,$2800,$3000,$3800                   ;8BDB8D; Tilemap destination addresses (VRAM)
 
 
+%anchor($8BDB9D)
 RTS_8BDB9D:
     RTS                                                                  ;8BDB9D;
 
 
+%anchor($8BDB9E)
 CinematicFunc_Ending_SpaceView_ChangeMusic:
     DEC.W $1A49                                                          ;8BDB9E;
     BEQ .changeMusic                                                     ;8BDBA1;
@@ -11380,6 +11903,7 @@ CinematicFunc_Ending_SpaceView_ChangeMusic:
     RTS                                                                  ;8BDBC3;
 
 
+%anchor($8BDBC4)
 CinematicFunc_Ending_SpaceView_GunshipEmergence_Setup:
     JSL.L CheckIfMusicIsQueued                                           ;8BDBC4;
     BCC .noMusicQueued                                                   ;8BDBC8;
@@ -11439,6 +11963,7 @@ CinematicFunc_Ending_SpaceView_GunshipEmergence_Setup:
     RTS                                                                  ;8BDC4B;
 
 
+%anchor($8BDC4C)
 FadeOut_ZebesExplosion_AfterGlow:
     PHP                                                                  ;8BDC4C;
     REP #$30                                                             ;8BDC4D;
@@ -11498,6 +12023,7 @@ FadeOut_ZebesExplosion_AfterGlow:
     RTS                                                                  ;8BDCA4;
 
 
+%anchor($8BDCA5)
 CinematicFunc_Ending_SpaceView_GunshipEmergence_SpinningFast:
     LDA.W $1A4B                                                          ;8BDCA5;
     BEQ .fadeOutAfterGlow                                                ;8BDCA8;
@@ -11552,6 +12078,7 @@ CinematicFunc_Ending_SpaceView_GunshipEmergence_SpinningFast:
     dw $0000,$8000, $0000,$8000, $FFFF,$8000, $FFFF,$8000                ;8BDD22;
     dw $0000,$8000, $0000,$8000, $FFFF,$8000, $FFFF,$8000                ;8BDD32;
 
+%anchor($8BDD42)
 CinematicFunc_Ending_SpaceView_GunshipEmergence_SpinningSlow:
     JSR.W FadeOut_ZebesExplosion_AfterGlow                               ;8BDD42;
     LDA.W $198D                                                          ;8BDD45;
@@ -11605,6 +12132,7 @@ CinematicFunc_Ending_SpaceView_GunshipEmergence_SpinningSlow:
     dw $FFFF,$0000,$0001,$0000,$0001,$0000,$FFFF,$0000                   ;8BDDBD;
 
 
+%anchor($8BDDCD)
 CinematicFunc_Ending_SpaceView_GunshipEmergence_FlyToCamera:
     JSR.W FadeOut_ZebesExplosion_AfterGlow                               ;8BDDCD;
     LDA.W $1A4D                                                          ;8BDDD0;
@@ -11664,10 +12192,12 @@ CinematicFunc_Ending_SpaceView_GunshipEmergence_FlyToCamera:
     dw $2529,$7FFF,$56B5,$294A,$4210,$2D6B,$18C6,$7FFF                   ;8BDE53;
 
 
+%anchor($8BDE63)
 RTS_8BDE63:
     RTS                                                                  ;8BDE63;
 
 
+%anchor($8BDE64)
 CinematicFunction_Ending_SpaceView_GunshipEmergence_Credits:
     LDA.W #$0001                                                         ;8BDE64;
     STA.W $0725                                                          ;8BDE67;
@@ -11683,6 +12213,7 @@ CinematicFunction_Ending_SpaceView_GunshipEmergence_Credits:
     RTS                                                                  ;8BDE7F;
 
 
+%anchor($8BDE80)
 CinematicFunction_Credits_Setup:
     JSR.W Setup_PPU_Credits                                              ;8BDE80;
     JSR.W Clear_CinematicSpriteObjects                                   ;8BDE83;
@@ -11925,6 +12456,7 @@ CinematicFunction_Credits_Setup:
     RTS                                                                  ;8BE0F3;
 
 
+%anchor($8BE0F4)
 CinematicFunction_PostCredits_BlankScreen:
     DEC.W $1A49                                                          ;8BE0F4;
     BEQ .timerExpired                                                    ;8BE0F7;
@@ -11944,6 +12476,7 @@ CinematicFunction_PostCredits_BlankScreen:
     RTS                                                                  ;8BE10F;
 
 
+%anchor($8BE110)
 CinematicFunction_PostCredits_FadeInShootingStars:
     JSL.L HandleFadingIn                                                 ;8BE110;
     SEP #$20                                                             ;8BE114;
@@ -11980,6 +12513,7 @@ CinematicFunction_PostCredits_FadeInShootingStars:
     RTS                                                                  ;8BE157;
 
 
+%anchor($8BE158)
 CinematicFunction_PostCredits_FadeInSamus:
     LDX.W #$0040                                                         ;8BE158;
     LDY.W #$0010                                                         ;8BE15B;
@@ -12010,6 +12544,7 @@ CinematicFunction_PostCredits_FadeInSamus:
     RTS                                                                  ;8BE18F;
 
 
+%anchor($8BE190)
 CinematicFunction_PostCredits_WavySamus:
     LDA.B $BB                                                            ;8BE190;
     CLC                                                                  ;8BE192;
@@ -12047,6 +12582,7 @@ CinematicFunction_PostCredits_WavySamus:
     RTS                                                                  ;8BE1D1;
 
 
+%anchor($8BE1D2)
 CinematicFunction_PostCredits_DeerForce:
     DEC.W $1A49                                                          ;8BE1D2;
     BEQ .decTimer                                                        ;8BE1D5;
@@ -12120,6 +12656,7 @@ CinematicFunction_PostCredits_DeerForce:
     RTS                                                                  ;8BE264;
 
 
+%anchor($8BE265)
 CinematicFunc_PostCredits_IdleSamus_1_CrossFadeOutSamusSuit:
     LDA.W $1A49                                                          ;8BE265;
     BIT.W #$0003                                                         ;8BE268;
@@ -12140,6 +12677,7 @@ CinematicFunc_PostCredits_IdleSamus_1_CrossFadeOutSamusSuit:
     JSR.W PaletteCrossFading_FadeInYColorsStartingFromColorIndexX        ;8BE28D;
     JSR.W PaletteCrossFading_ComposeFadingPalettes                       ;8BE290; fallthrough to CinematicFunction_PostCredits_IdleSamus1
 
+%anchor($8BE293)
 CinematicFunction_PostCredits_IdleSamus1:
     LDA.W $1A49                                                          ;8BE293;
     DEC A                                                                ;8BE296;
@@ -12180,6 +12718,7 @@ CinematicFunction_PostCredits_IdleSamus1:
     RTS                                                                  ;8BE2DC;
 
 
+%anchor($8BE2DD)
 CinematicFunction_PostCredits_1994Nintendo:
     DEC.W $1A4B                                                          ;8BE2DD;
     BEQ .timerExpired                                                    ;8BE2E0;
@@ -12214,6 +12753,7 @@ CinematicFunction_PostCredits_1994Nintendo:
     RTS                                                                  ;8BE313;
 
 
+%anchor($8BE314)
 CinematicFunc_PostCredits_IdleSamus2_CrossFadeOutSamusSuit:
     LDA.W $1A49                                                          ;8BE314;
     BIT.W #$0003                                                         ;8BE317;
@@ -12234,6 +12774,7 @@ CinematicFunc_PostCredits_IdleSamus2_CrossFadeOutSamusSuit:
     JSR.W PaletteCrossFading_FadeInYColorsStartingFromColorIndexX        ;8BE33C;
     JSR.W PaletteCrossFading_ComposeFadingPalettes                       ;8BE33F;
 
+%anchor($8BE342)
 CinematicFunction_PostCredits_IdleSamus2:
     DEC.W $1A49                                                          ;8BE342;
     BPL .return                                                          ;8BE345;
@@ -12288,6 +12829,7 @@ CinematicFunction_PostCredits_IdleSamus2:
     RTS                                                                  ;8BE3AD;
 
 
+%anchor($8BE3AE)
 CinematicFunction_PostCredits_SamusShootsScreen:
     LDA.W $1A4D                                                          ;8BE3AE;
     BEQ .timerExpired                                                    ;8BE3B1;
@@ -12336,6 +12878,7 @@ CinematicFunction_PostCredits_SamusShootsScreen:
     RTS                                                                  ;8BE408;
 
 
+%anchor($8BE409)
 TransitionSamusPaletteToBlack:
     LDA.W $1A4F                                                          ;8BE409;
     BEQ .return                                                          ;8BE40C;
@@ -12350,6 +12893,7 @@ TransitionSamusPaletteToBlack:
     RTS                                                                  ;8BE41E;
 
 
+%anchor($8BE41F)
 TransferPostCreditsSuperMetroidIconToVRAM:
     LDA.W $1A4F                                                          ;8BE41F;
     BNE .return                                                          ;8BE422;
@@ -12417,6 +12961,7 @@ TransferPostCreditsSuperMetroidIconToVRAM:
     db $00                                                               ;8BE487;
     dw $5400                                                             ;8BE488;
 
+%anchor($8BE48A)
 CinematicFunction_PostCredits_FadeToWhite:
     JSR.W TransitionSamusPaletteToBlack                                  ;8BE48A;
     JSR.W TransferPostCreditsSuperMetroidIconToVRAM                      ;8BE48D;
@@ -12478,6 +13023,7 @@ CinematicFunction_PostCredits_FadeToWhite:
     RTS                                                                  ;8BE503;
 
 
+%anchor($8BE504)
 CinematicFunction_PostCredits_FadeFromWhite:
     SEP #$20                                                             ;8BE504;
     LDA.B $74                                                            ;8BE506;
@@ -12550,6 +13096,7 @@ CinematicFunction_PostCredits_FadeFromWhite:
     RTS                                                                  ;8BE589;
 
 
+%anchor($8BE58A)
 CinematicFunction_PostCredits_GreyOutSuperMetroidIcon:
     PHX                                                                  ;8BE58A;
     PHY                                                                  ;8BE58B;
@@ -12645,6 +13192,7 @@ CinematicFunction_PostCredits_GreyOutSuperMetroidIcon:
     dw Palettes_EndingSuperMetroidIconFadingToGrey_BG_1                  ;8BE623;
     dw Palettes_EndingSuperMetroidIconFadingToGrey_Sprite_10             ;8BE625;
 
+%anchor($8BE627)
 Instruction_DrawItemPercentageCount:
     PHP                                                                  ;8BE627;
     PHB                                                                  ;8BE628;
@@ -12809,6 +13357,7 @@ Instruction_DrawItemPercentageCount:
     dw $0001,$0002,$0004,$0008,$1000                                     ;8BE737;
 
 
+%anchor($8BE741)
 TilemapValuesForDecimalDigits:
   .topHalf:
     dw $3860                                                             ;8BE741;
@@ -12824,6 +13373,7 @@ TilemapValuesForDecimalDigits:
     dw $3868,$3878 ; 8
     dw $3869,$3879 ; 9
 
+%anchor($8BE769)
 Instruction_DrawItemPercentageJapanText:
     PHX                                                                  ;8BE769;
     LDA.W $09E2                                                          ;8BE76A;
@@ -12842,6 +13392,7 @@ Instruction_DrawItemPercentageJapanText:
     RTS                                                                  ;8BE77F;
 
 
+%anchor($8BE780)
 Instruction_ClearItemPercentageJapanText:
     PHX                                                                  ;8BE780;
     LDX.W #$007E                                                         ;8BE781;
@@ -12858,6 +13409,7 @@ Instruction_ClearItemPercentageJapanText:
     RTS                                                                  ;8BE796;
 
 
+%anchor($8BE797)
 CinematicFunction_PostCredits_ScrollItemPercentageDown:
     LDA.W $1997                                                          ;8BE797;
     SEC                                                                  ;8BE79A;
@@ -12876,10 +13428,12 @@ CinematicFunction_PostCredits_ScrollItemPercentageDown:
     RTS                                                                  ;8BE7B9;
 
 
+%anchor($8BE7BA)
 RTS_8BE7BA:
     RTS                                                                  ;8BE7BA;
 
 
+%anchor($8BE7BB)
 Initialize_ShootingStars:
     PHP                                                                  ;8BE7BB;
     REP #$30                                                             ;8BE7BC;
@@ -12929,6 +13483,7 @@ Initialize_ShootingStars:
     RTS                                                                  ;8BE811;
 
 
+%anchor($8BE812)
 Handle_ShootingStars:
     PHP                                                                  ;8BE812;
     REP #$30                                                             ;8BE813;
@@ -13158,15 +13713,19 @@ Handle_ShootingStars:
     dw $09F3,$09F3,$09F3,$09F3,$09F3,$09F3,$09F3,$09F3                   ;8BE9B7;
     dw $09F3,$09F3,$09F3,$09F3                                           ;8BE9C7;
 
+%anchor($8BE9CF)
 ShootingStar_Table_Xaccel:
     dw $0010                                                             ;8BE9CF;
 
+%anchor($8BE9D1)
 ShootingStar_Table_Yaccel:
     dw       $FFF0                                                       ;8BE9D1;
 
+%anchor($8BE9D3)
 ShootingStar_Table_timer:
     dw             $0006                                                 ;8BE9D3;
 
+%anchor($8BE9D5)
 ShootingStar_Table_delay:
     dw                   $0008,$000C,$FFFF,$0006,$0000                   ;8BE9D5;
     dw $000D,$FFF6,$0006,$0006,$0008,$FFF0,$0006,$0000
@@ -13189,9 +13748,11 @@ ShootingStar_Table_delay:
     dw $FFFE,$FFFD,$0F00,$0000,$FFFC,$FFFC,$0F00,$0000
     dw $FFF8,$FFFE,$0F00,$0000,$FFF8,$FFFC,$0F00,$0000
 
+%anchor($8BEB0F)
 InstList_CinematicSpriteObjects_ExplodingZebes_Zebes_0:
     dw CinematicSpriteObject_Instruction_TimerInY,$0005                  ;8BEB0F;
 
+%anchor($8BEB13)
 InstList_CinematicSpriteObjects_ExplodingZebes_Zebes_1:
     dw $000D,EndingSequenceSpritemaps_ExplodingPlanetZebesFrame1         ;8BEB13;
     dw $000D,EndingSequenceSpritemaps_ExplodingPlanetZebesFrame2         ;8BEB17;
@@ -13207,6 +13768,7 @@ InstList_CinematicSpriteObjects_ExplodingZebes_Zebes_1:
     dw Instruction_CineSpriteObjectSpawnZebesExplosionSilhouette         ;8BEB39;
     dw CinematicSpriteObject_Instruction_Delete                          ;8BEB3B;
 
+%anchor($8BEB3D)
 InstList_CinematicSpriteObjects_ExplodingZebes_PurpleGlow:
     dw $0010,EndingSequenceSpritemaps_ExplodingPlanetZebesGlow           ;8BEB3D;
     dw $0010,EndingSequenceSpritemaps_ZebesSupernovaPart1                ;8BEB41;
@@ -13215,25 +13777,30 @@ InstList_CinematicSpriteObjects_ExplodingZebes_PurpleGlow:
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BEB4D;
     dw InstList_CinematicSpriteObjects_ExplodingZebes_PurpleGlow         ;8BEB4F;
 
+%anchor($8BEB51)
 InstList_CinematicSpriteObjects_ExplodingZebes_Stars:
     dw $0010,EndingSequenceSpritemaps_ZebesBoomStarryBackground          ;8BEB51;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BEB55;
     dw InstList_CinematicSpriteObjects_ExplodingZebes_Stars              ;8BEB57;
 
+%anchor($8BEB59)
 InstList_CinematicSpriteObjects_ExplodingZebes_Lava_0:
     dw $009C,$0000                                                       ;8BEB59;
 
+%anchor($8BEB5D)
 InstList_CinematicSpriteObjects_ExplodingZebes_Lava_1:
     dw $000A,EndingSequenceSpritemaps_ExplodingPlanetZebesCoreFrame1     ;8BEB5D;
     dw $000A,EndingSequenceSpritemaps_ExplodingPlanetZebesCoreFrame2     ;8BEB61;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BEB65;
     dw InstList_CinematicSpriteObjects_ExplodingZebes_Lava_1             ;8BEB67;
 
+%anchor($8BEB69)
 InstList_CinematicSpriteObjects_ExplodingZebes_Silhouette:
     dw $0008,EndingSequenceSpritemaps_ZebesSupernovaPart3                ;8BEB69;
     dw Instruction_CinematicSpriteObject_StartZebesExplosion             ;8BEB6D;
     dw CinematicSpriteObject_Instruction_Delete                          ;8BEB6F;
 
+%anchor($8BEB71)
 InstList_CinematicSpriteObjects_ExplodingZebes_Stars_Right:
     dw $0090,EndingSequenceSpritemaps_ZebesBoomStarryBackground          ;8BEB71;
     dw Instruction_ZebesExplosionFinale                                  ;8BEB75;
@@ -13242,16 +13809,19 @@ InstList_CinematicSpriteObjects_ExplodingZebes_Stars_Right:
     dw CinematicSpriteObject_Instruction_PreInstructionY                 ;8BEB7D;
     dw Instruction_CinematicSpriteObject_ZebesExplosion_Stars_Left       ;8BEB7F;
 
+%anchor($8BEB81)
 InstList_CinematicSpriteObjects_ExplodingZebes_Stars_Left:
     dw $0010,EndingSequenceSpritemaps_ZebesBoomStarryBackground          ;8BEB81;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BEB85;
     dw InstList_CinematicSpriteObjects_ExplodingZebes_Stars_Left         ;8BEB87;
 
+%anchor($8BEB89)
 InstList_CinematicSpriteObjects_ExplodingZebes_AfterGlow:
     dw $0010,EndingSequenceSpritemaps_ZebesSupernovaPart4                ;8BEB89;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BEB8D;
     dw InstList_CinematicSpriteObjects_ExplodingZebes_AfterGlow          ;8BEB8F;
 
+%anchor($8BEB91)
 InstList_CinematicSpriteObjects_TheOperationWas_0:
     dw $0008,EndingSequenceSpritemaps_T                                  ;8BEB91;
     dw $0008,EndingSequenceSpritemaps_TH                                 ;8BEB95;
@@ -13270,11 +13840,13 @@ InstList_CinematicSpriteObjects_TheOperationWas_0:
     dw $000F,EndingSequenceSpritemaps_THEOPERATIONWAS                    ;8BEBC9;
     dw Instruction_CinematicSpriteObject_SpawnCompletedSuccessfully      ;8BEBCD;
 
+%anchor($8BEBCF)
 InstList_CinematicSpriteObjects_TheOperationWas_1:
     dw $000F,EndingSequenceSpritemaps_THEOPERATIONWAS                    ;8BEBCF;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BEBD3;
     dw InstList_CinematicSpriteObjects_TheOperationWas_1                 ;8BEBD5;
 
+%anchor($8BEBD7)
 InstList_CinematicSpriteObjects_CompletedSuccessfully_0:
     dw $0008,EndingSequenceSpritemaps_C_ompleted                         ;8BEBD7;
     dw $0008,EndingSequenceSpritemaps_CO                                 ;8BEBDB;
@@ -13299,11 +13871,13 @@ InstList_CinematicSpriteObjects_CompletedSuccessfully_0:
     dw $000F,EndingSequenceSpritemaps_COMPLETEDSUCCESSFULLY              ;8BEC27;
     dw Instruction_CinematicSpriteObject_SpawnClearTime                  ;8BEC2B;
 
+%anchor($8BEC2D)
 InstList_CinematicSpriteObjects_CompletedSuccessfully_1:
     dw $0008,EndingSequenceSpritemaps_COMPLETEDSUCCESSFULLY              ;8BEC2D;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BEC31;
     dw InstList_CinematicSpriteObjects_CompletedSuccessfully_1           ;8BEC33;
 
+%anchor($8BEC35)
 InstList_CinematicSpriteObjects_ClearTime_0:
     dw $0008,EndingSequenceSpritemaps_C_lear                             ;8BEC35;
     dw $0008,EndingSequenceSpritemaps_CL                                 ;8BEC39;
@@ -13326,66 +13900,79 @@ InstList_CinematicSpriteObjects_ClearTime_0:
     dw $0080,EndingSequenceSpritemaps_CLEARTIME                          ;8BEC73;
     dw Instruction_CinematicSpriteObject_TransitionToCredits             ;8BEC77;
 
+%anchor($8BEC79)
 InstList_CinematicSpriteObjects_ClearTime_1:
     dw $000F,EndingSequenceSpritemaps_CLEARTIME                          ;8BEC79;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BEC7D;
     dw InstList_CinematicSpriteObjects_ClearTime_1                       ;8BEC7F;
 
+%anchor($8BEC81)
 InstList_ClearTimeDigit_0:
     dw $0008,EndingSequenceSpritemaps_0                                  ;8BEC81;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BEC85;
     dw InstList_ClearTimeDigit_0                                         ;8BEC87;
 
+%anchor($8BEC89)
 InstList_ClearTimeDigit_1:
     dw $0008,EndingSequenceSpritemaps_1                                  ;8BEC89;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BEC8D;
     dw InstList_ClearTimeDigit_1                                         ;8BEC8F;
 
+%anchor($8BEC91)
 InstList_ClearTimeDigit_2:
     dw $0008,EndingSequenceSpritemaps_2                                  ;8BEC91;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BEC95;
     dw InstList_ClearTimeDigit_2                                         ;8BEC97;
 
+%anchor($8BEC99)
 InstList_ClearTimeDigit_3:
     dw $0008,EndingSequenceSpritemaps_3                                  ;8BEC99;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BEC9D;
     dw InstList_ClearTimeDigit_3                                         ;8BEC9F;
 
+%anchor($8BECA1)
 InstList_ClearTimeDigit_4:
     dw $0008,EndingSequenceSpritemaps_4                                  ;8BECA1;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BECA5;
     dw InstList_ClearTimeDigit_4                                         ;8BECA7;
 
+%anchor($8BECA9)
 InstList_ClearTimeDigit_5:
     dw $0008,EndingSequenceSpritemaps_5                                  ;8BECA9;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BECAD;
     dw InstList_ClearTimeDigit_5                                         ;8BECAF;
 
+%anchor($8BECB1)
 InstList_ClearTimeDigit_6:
     dw $0008,EndingSequenceSpritemaps_6                                  ;8BECB1;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BECB5;
     dw InstList_ClearTimeDigit_6                                         ;8BECB7;
 
+%anchor($8BECB9)
 InstList_ClearTimeDigit_7:
     dw $0008,EndingSequenceSpritemaps_7                                  ;8BECB9;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BECBD;
     dw InstList_ClearTimeDigit_7                                         ;8BECBF;
 
+%anchor($8BECC1)
 InstList_ClearTimeDigit_8:
     dw $0008,EndingSequenceSpritemaps_8                                  ;8BECC1;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BECC5;
     dw InstList_ClearTimeDigit_8                                         ;8BECC7;
 
+%anchor($8BECC9)
 InstList_ClearTimeDigit_9:
     dw $0008,EndingSequenceSpritemaps_9                                  ;8BECC9;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BECCD;
     dw InstList_ClearTimeDigit_9                                         ;8BECCF;
 
+%anchor($8BECD1)
 InstList_CinematicSpriteObject_ClearTime_Colon:
     dw $0008,EndingSequenceSpritemaps_Colon                              ;8BECD1;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BECD5;
     dw InstList_CinematicSpriteObject_ClearTime_Colon                    ;8BECD7;
 
+%anchor($8BECD9)
 InstList_CinematicSpriteObject_CrittersEscape:
     dw $0001,EndingSequenceSpritemaps_CrittersEscapePodFrame1            ;8BECD9;
     dw $0001,EndingSequenceSpritemaps_CrittersEscapePodFrame2            ;8BECDD;
@@ -13394,46 +13981,55 @@ InstList_CinematicSpriteObject_CrittersEscape:
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BECE9;
     dw InstList_CinematicSpriteObject_CrittersEscape                     ;8BECEB;
 
+%anchor($8BECED)
 InstList_CinematicSpriteObject_YellowClouds_Top_TopHalf:
     dw $0001,EndingSequenceSpritemaps_EndingCutsceneTopCloudsPattern     ;8BECED;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BECF1;
     dw InstList_CinematicSpriteObject_YellowClouds_Top_TopHalf           ;8BECF3;
 
+%anchor($8BECF5)
 InstList_CinematicSpriteObject_YellowClouds_Top_BottomHalf:
     dw $0001,EndingSequenceSpritemaps_EndingCutsceneTopCloudsEdge        ;8BECF5;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BECF9;
     dw InstList_CinematicSpriteObject_YellowClouds_Top_BottomHalf        ;8BECFB;
 
+%anchor($8BECFD)
 InstList_CinematicSpriteObject_YellowClouds_Bottom_TopHalf:
     dw $0001,EndingSequenceSpritemaps_EndingCutsceneBottomCloudsEdge     ;8BECFD;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BED01;
     dw InstList_CinematicSpriteObject_YellowClouds_Bottom_TopHalf        ;8BED03;
 
+%anchor($8BED05)
 InstList_CineSpriteObject_YellowClouds_Bottom_BottomHalf:
     dw $0001,EndingSequenceSpritemaps_EndingCutsceneBottomCloudsPattern  ;8BED05;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BED09;
     dw InstList_CineSpriteObject_YellowClouds_Bottom_BottomHalf          ;8BED0B;
 
+%anchor($8BED0D)
 InstList_CinematicSpriteObject_YellowClouds_Right:
     dw $0001,EndingSequenceSpritemaps_EndingCutsceneRightClouds          ;8BED0D;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BED11;
     dw InstList_CinematicSpriteObject_YellowClouds_Right                 ;8BED13;
 
+%anchor($8BED15)
 InstList_CinematicSpriteObject_YellowClouds_Left:
     dw $0001,EndingSequenceSpritemaps_EndingCutsceneLeftClouds           ;8BED15;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BED19;
     dw InstList_CinematicSpriteObject_YellowClouds_Left                  ;8BED1B;
 
+%anchor($8BED1D)
 InstList_CinematicSpriteObject_SuitlessSamus_Idle:
     dw $0080,EndingSequenceSpritemaps_SuitlessSamusStandingArmsStraight  ;8BED1D;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BED21;
     dw InstList_CinematicSpriteObject_SuitlessSamus_Idle                 ;8BED23;
 
+%anchor($8BED25)
 InstList_CinematicSpriteObject_SuitlessSamus_Idle_Legs:
     dw $0080,EndingSequenceSpritemaps_SuitlessSamusLowerBody             ;8BED25;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BED29;
     dw InstList_CinematicSpriteObject_SuitlessSamus_Idle_Legs            ;8BED2B;
 
+%anchor($8BED2D)
 InstList_CinematicSpriteObject_SuitlessSamus_LettingHairDown:
     dw $005A,EndingSequenceSpritemaps_SuitlessSamusStandingArmsStraight  ;8BED2D;
     dw $0008,EndingSequenceSpritemaps_SuitlessSamusOpeningHairFrame1     ;8BED31;
@@ -13448,6 +14044,7 @@ InstList_CinematicSpriteObject_SuitlessSamus_LettingHairDown:
     dw Instruction_CinematicSpriteObject_SpawnSuitlessSamusJump          ;8BED55;
     dw CinematicSpriteObject_Instruction_Delete                          ;8BED57;
 
+%anchor($8BED59)
 InstList_CineSpriteObject_SuitlessSamus_LettingHairDown_Legs:
     dw $005A,EndingSequenceSpritemaps_SuitlessSamusLowerBody             ;8BED59;
     dw $0008,EndingSequenceSpritemaps_SuitlessSamusLowerBody             ;8BED5D;
@@ -13460,6 +14057,7 @@ InstList_CineSpriteObject_SuitlessSamus_LettingHairDown_Legs:
     dw $000A,EndingSequenceSpritemaps_SuitlessSamusLowerBody             ;8BED79;
     dw CinematicSpriteObject_Instruction_Delete                          ;8BED7D;
 
+%anchor($8BED7F)
 InstList_CinematicSpriteObject_SuitlessSamus_Jump_0:
     dw $0030,EndingSequenceSpritemaps_SuitlessSamusStanding              ;8BED7F;
     dw $000A,EndingSequenceSpritemaps_SuitlessSamusPreparingToJump       ;8BED83;
@@ -13467,16 +14065,19 @@ InstList_CinematicSpriteObject_SuitlessSamus_Jump_0:
     dw CinematicSpriteObject_Instruction_PreInstructionY                 ;8BED89;
     dw Inst_CineSpriteObject_SpawnSuitlessSamus_LettingHairDown          ;8BED8B;
 
+%anchor($8BED8D)
 InstList_CinematicSpriteObject_SuitlessSamus_Jump_1:
     dw $0030,EndingSequenceSpritemaps_SuitlessSamusJumping               ;8BED8D;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BED91;
     dw InstList_CinematicSpriteObject_SuitlessSamus_Jump_1               ;8BED93;
 
+%anchor($8BED95)
 InstList_Samus_Jump_Falling:
     dw $000A,EndingSequenceSpritemaps_SamusFalling                       ;8BED95;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BED99;
     dw InstList_Samus_Jump_Falling                                       ;8BED9B;
 
+%anchor($8BED9D)
 InstList_Samus_Jump_Landed:
     dw $000A,EndingSequenceSpritemaps_SamusLanding                       ;8BED9D;
     dw $0010,EndingSequenceSpritemaps_SamusLanded                        ;8BEDA1;
@@ -13485,26 +14086,31 @@ InstList_Samus_Jump_Landed:
     dw $0080,EndingSequenceSpritemaps_SamusShooting                      ;8BEDAB;
     dw CinematicSpriteObject_Instruction_Delete                          ;8BEDAF;
 
+%anchor($8BEDB1)
 InstList_CinematicSpriteObject_SuitedSamus_Idle_Body:
     dw $000A,EndingSequenceSpritemaps_LargeSamusFromEndingStanding       ;8BEDB1;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BEDB5;
     dw InstList_CinematicSpriteObject_SuitedSamus_Idle_Body              ;8BEDB7;
 
+%anchor($8BEDB9)
 InstList_CinematicSpriteObject_SuitedSamus_Idle_Head_Helmet:
     dw $000A,EndingSequenceSpritemaps_SamusHeadWithHelmetFromEnding      ;8BEDB9;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BEDBD;
     dw InstList_CinematicSpriteObject_SuitedSamus_Idle_Head_Helmet       ;8BEDBF;
 
+%anchor($8BEDC1)
 InstList_CinematicSpriteObject_SuitedSamus_Head:
     dw $000A,EndingSequenceSpritemaps_SamusHeadFromEndingFrame1          ;8BEDC1;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BEDC5;
     dw InstList_CinematicSpriteObject_SuitedSamus_Head                   ;8BEDC7;
 
+%anchor($8BEDC9)
 InstList_CinematicSpriteObject_SuitedSamus_ThumbsUp_Body:
     dw $0040,EndingSequenceSpritemaps_LargeSamusFromEndingStanding       ;8BEDC9;
     dw $0108,EndingSequenceSpritemaps_HeadlessArmlessSuitedSamus         ;8BEDCD;
     dw CinematicSpriteObject_Instruction_Delete                          ;8BEDD1;
 
+%anchor($8BEDD3)
 InstList_CinematicSpriteObject_SuitedSamus_ThumbsUp_Arm:
     dw $0040,$0000                                                       ;8BEDD3;
     dw $0008,EndingSequenceSpritemaps_SamusArmFromEndingFrame1           ;8BEDD7;
@@ -13523,10 +14129,12 @@ InstList_CinematicSpriteObject_SuitedSamus_ThumbsUp_Arm:
     dw Instruction_CinematicSpriteObject_SpawnSuitedSamusJump            ;8BEE0B;
     dw CinematicSpriteObject_Instruction_Delete                          ;8BEE0D;
 
+%anchor($8BEE0F)
 InstList_CineSpriteObject_SuitedSamus_ThumbsUp_Head_Helmet:
     dw $0148,EndingSequenceSpritemaps_SamusHeadWithHelmetFromEnding      ;8BEE0F;
     dw CinematicSpriteObject_Instruction_Delete                          ;8BEE13;
 
+%anchor($8BEE15)
 InstList_CinematicSpriteObject_SuitedSamus_ThumbsUp_Head:
     dw $0080,EndingSequenceSpritemaps_SamusHeadFromEndingFrame1          ;8BEE15;
     dw $0005,EndingSequenceSpritemaps_SamusHeadFromEndingFrame2          ;8BEE19;
@@ -13534,6 +14142,7 @@ InstList_CinematicSpriteObject_SuitedSamus_ThumbsUp_Head:
     dw $00BE,EndingSequenceSpritemaps_SamusHeadFromEndingFrame4          ;8BEE21;
     dw CinematicSpriteObject_Instruction_Delete                          ;8BEE25;
 
+%anchor($8BEE27)
 InstList_CinematicSpriteObject_SuitedSamus_Jump_Body_0:
     dw Instruction_CineSpriteObject_PositionSuitedHeadToPrepareJump      ;8BEE27;
     dw $000A,EndingSequenceSpritemaps_LargeSamusFromEndingPreparingToJump ;8BEE29;
@@ -13542,41 +14151,49 @@ InstList_CinematicSpriteObject_SuitedSamus_Jump_Body_0:
     dw CinematicSpriteObject_Instruction_PreInstructionY                 ;8BEE31;
     dw Inst_CineSpriteObject_SpawnSuitlessSamus_LettingHairDown          ;8BEE33;
 
+%anchor($8BEE35)
 InstList_CinematicSpriteObject_SuitedSamus_Jump_Body_1:
     dw $0005,EndingSequenceSpritemaps_LargeSamusFromEndingJumping        ;8BEE35;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BEE39;
     dw InstList_CinematicSpriteObject_SuitedSamus_Jump_Body_1            ;8BEE3B;
 
+%anchor($8BEE3D)
 InstList_CineSpriteObject_SuitedSamus_Jump_Head_Helmet_0:
     dw $000A,EndingSequenceSpritemaps_LargeSamusHelmetFromEndingFrame1   ;8BEE3D;
     dw CinematicSpriteObject_Instruction_PreInstructionY                 ;8BEE41;
     dw PreInst_CinematicSpriteObject_SuitedSamus_Jump_Head_Jumping       ;8BEE43;
 
+%anchor($8BEE45)
 InstList_CineSpriteObject_SuitedSamus_Jump_Head_Helmet_1:
     dw $0005,EndingSequenceSpritemaps_LargeSamusHelmetFromEndingFrame2   ;8BEE45;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BEE49;
     dw InstList_CineSpriteObject_SuitedSamus_Jump_Head_Helmet_1          ;8BEE4B;
 
+%anchor($8BEE4D)
 InstList_CinematicSpriteObject_SuitedSamus_Jump_Head_0:
     dw $000A,EndingSequenceSpritemaps_JumpingSamusHeadFromEnding         ;8BEE4D;
     dw CinematicSpriteObject_Instruction_PreInstructionY                 ;8BEE51;
     dw PreInst_CinematicSpriteObject_SuitedSamus_Jump_Head_Jumping       ;8BEE53;
 
+%anchor($8BEE55)
 InstList_CinematicSpriteObject_SuitedSamus_Jump_Head_1:
     dw $0005,EndingSequenceSpritemaps_JumpingSamusHeadFromEnding         ;8BEE55;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BEE59;
     dw InstList_CinematicSpriteObject_SuitedSamus_Jump_Head_1            ;8BEE5B;
 
+%anchor($8BEE5D)
 InstList_CinematicSpriteObject_SuperMetroidIcon_S_TopHalf:
     dw $000A,EndingSequenceSpritemaps_ScrewAttackSymbolUpperPart         ;8BEE5D;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BEE61;
     dw InstList_CinematicSpriteObject_SuperMetroidIcon_S_TopHalf         ;8BEE63;
 
+%anchor($8BEE65)
 InstList_CinematicSpriteObject_SuperMetroidIcon_S_BottomHalf:
     dw $000A,EndingSequenceSpritemaps_ScrewAttackSymbolLowerPart         ;8BEE65;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BEE69;
     dw InstList_CinematicSpriteObject_SuperMetroidIcon_S_BottomHalf      ;8BEE6B;
 
+%anchor($8BEE6D)
 InstList_CineSpriteObject_SuperMetroidIcon_Circle_TopHalf_0:
     dw $0060,$0000                                                       ;8BEE6D;
     dw $0005,EndingSequenceSpritemaps_ScrewAttackSymbolRightWrapFrame1   ;8BEE71;
@@ -13584,234 +14201,281 @@ InstList_CineSpriteObject_SuperMetroidIcon_Circle_TopHalf_0:
     dw $0040,EndingSequenceSpritemaps_ScrewAttackSymbolRightWrapFrame3   ;8BEE79;
     dw Instruction_GreyOutSuperMetroidIcon                               ;8BEE7D;
 
+%anchor($8BEE7F)
 InstList_CineSpriteObject_SuperMetroidIcon_Circle_TopHalf_1:
     dw $0005,EndingSequenceSpritemaps_ScrewAttackSymbolRightWrapFrame3   ;8BEE7F;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BEE83;
     dw InstList_CineSpriteObject_SuperMetroidIcon_Circle_TopHalf_1       ;8BEE85;
 
+%anchor($8BEE87)
 InstList_CineSpriteObject_SuperMetroidIcon_Circle_BotHalf_0:
     dw $0060,$0000                                                       ;8BEE87;
     dw $0005,EndingSequenceSpritemaps_ScrewAttackSymbolLeftWrapFrame1    ;8BEE8B;
     dw $0005,EndingSequenceSpritemaps_ScrewAttackSymbolLeftWrapFrame2    ;8BEE8F;
 
+%anchor($8BEE93)
 InstList_CineSpriteObject_SuperMetroidIcon_Circle_BotHalf_1:
     dw $0005,EndingSequenceSpritemaps_ScrewAttackSymbolLeftWrapFrame3    ;8BEE93;
     dw CinematicSpriteObject_Instruction_GotoY                           ;8BEE97;
     dw InstList_CineSpriteObject_SuperMetroidIcon_Circle_BotHalf_1       ;8BEE99;
 
+%anchor($8BEE9B)
 InstList_CinematicSpriteObject_Delete_duplicate:
     dw CinematicSpriteObject_Instruction_Delete                          ;8BEE9B;
 
+%anchor($8BEE9D)
 CinematicSpriteObjectDefinitions_ExplodingZebes_Zebes:
     dw InitFunction_CinematicSpriteObject_ExplodingZebes_Palette7        ;8BEE9D;
     dw RTS_8B93D9                                                        ;8BEE9F;
     dw InstList_CinematicSpriteObjects_ExplodingZebes_Zebes_0            ;8BEEA1;
 
+%anchor($8BEEA3)
 CinematicSpriteObjectDefinitions_ExplodingZebes_PurpleGlow:
     dw InitFunction_CinematicSpriteObject_ExplodingZebes_Palette7        ;8BEEA3;
     dw PreInst_CineSpriteObj_ExplodingZebes_PurpleGlow_Stars_Lava        ;8BEEA5;
     dw InstList_CinematicSpriteObjects_ExplodingZebes_PurpleGlow         ;8BEEA7;
 
+%anchor($8BEEA9)
 CinematicSpriteObjectDefinitions_ExplodingZebes_Stars:
     dw InitFunction_CinematicSpriteObject_ExplodingZebes_Palette7        ;8BEEA9;
     dw PreInst_CineSpriteObj_ExplodingZebes_PurpleGlow_Stars_Lava        ;8BEEAB;
     dw InstList_CinematicSpriteObjects_ExplodingZebes_Stars              ;8BEEAD;
 
+%anchor($8BEEAF)
 CinematicSpriteObjectDefinitions_ExplodingZebes_Lava:
     dw InitFunction_CinematicSpriteObject_ExplodingZebes_Palette5        ;8BEEAF;
     dw PreInst_CineSpriteObj_ExplodingZebes_PurpleGlow_Stars_Lava        ;8BEEB1;
     dw InstList_CinematicSpriteObjects_ExplodingZebes_Lava_0             ;8BEEB3;
 
+%anchor($8BEEB5)
 CinematicSpriteObjectDefinitions_ZebesExplosion_Silhouette:
     dw InitFunction_CinematicSpriteObject_ExplodingZebes_Palette5        ;8BEEB5;
     dw RTS_8B93D9                                                        ;8BEEB7;
     dw InstList_CinematicSpriteObjects_ExplodingZebes_Silhouette         ;8BEEB9;
 
+%anchor($8BEEBB)
 CinematicSpriteObjectDefinitions_ZebesExplosion_Stars_Right:
     dw InitFunction_CinematicSpriteObject_ExplodingZebes_Palette7        ;8BEEBB;
     dw RTS_8B93D9                                                        ;8BEEBD;
     dw InstList_CinematicSpriteObjects_ExplodingZebes_Stars_Right        ;8BEEBF;
 
+%anchor($8BEEC1)
 CinematicSpriteObjectDefinitions_ZebesExplosion_AfterGlow:
     dw InitFunction_CinematicSpriteObject_ZebesExplosion_AfterGlow       ;8BEEC1;
     dw PreInstruction_CineSpriteObject_ZebesExplosion_AfterGlow          ;8BEEC3;
     dw InstList_CinematicSpriteObjects_ExplodingZebes_AfterGlow          ;8BEEC5;
 
+%anchor($8BEEC7)
 CinematicSpriteObjectDefinitions_TheOperationWas:
     dw InitFunc_CineSpriteObj_TheOperationWasCompletedSuccessfully       ;8BEEC7;
     dw PreInstruction_CinematicSpriteObject_Text                         ;8BEEC9;
     dw InstList_CinematicSpriteObjects_TheOperationWas_0                 ;8BEECB;
 
+%anchor($8BEECD)
 CinematicSpriteObjectDefinitions_CompletedSuccessfully:
     dw InitFunc_CineSpriteObj_TheOperationWasCompletedSuccessfully       ;8BEECD;
     dw PreInstruction_CinematicSpriteObject_Text                         ;8BEECF;
     dw InstList_CinematicSpriteObjects_CompletedSuccessfully_0           ;8BEED1;
 
+%anchor($8BEED3)
 CinematicSpriteObjectDefinitions_YellowClouds_Top_TopHalf:
     dw InitFunction_CinematicSpriteObject_YellowClouds_Top_TopHalf       ;8BEED3;
     dw PreInstruction_CinematicSpriteObject_YellowClouds_Top             ;8BEED5;
     dw InstList_CinematicSpriteObject_YellowClouds_Top_TopHalf           ;8BEED7;
 
+%anchor($8BEED9)
 CinematicSpriteObjectDefinitions_Top_BottomHalf:
     dw InitFunction_CineSpriteObject_YellowClouds_Top_BottomHalf         ;8BEED9;
     dw PreInstruction_CinematicSpriteObject_YellowClouds_Top             ;8BEEDB;
     dw InstList_CinematicSpriteObject_YellowClouds_Top_BottomHalf        ;8BEEDD;
 
+%anchor($8BEEDF)
 CinematicSpriteObjectDefinitions_Bottom_TopHalf:
     dw InitFunction_CineSpriteObject_YellowClouds_Bottom_TopHalf         ;8BEEDF;
     dw PreInstruction_CinematicSpriteObject_YellowClouds_Bottom          ;8BEEE1;
     dw InstList_CinematicSpriteObject_YellowClouds_Bottom_TopHalf        ;8BEEE3;
 
+%anchor($8BEEE5)
 CinematicSpriteObjectDefinitions_Bottom_BottomHalf:
     dw InitFunction_CineSpriteObject_YellowClouds_Bottom_BottomHalf      ;8BEEE5;
     dw PreInstruction_CinematicSpriteObject_YellowClouds_Bottom          ;8BEEE7;
     dw InstList_CineSpriteObject_YellowClouds_Bottom_BottomHalf          ;8BEEE9;
 
+%anchor($8BEEEB)
 CinematicSpriteObjectDefinitions_Right:
     dw InitFunction_CinematicSpriteObject_YellowClouds_Right             ;8BEEEB;
     dw PreInstruction_CinematicSpriteObject_YellowClouds_Right           ;8BEEED;
     dw InstList_CinematicSpriteObject_YellowClouds_Right                 ;8BEEEF;
 
+%anchor($8BEEF1)
 CinematicSpriteObjectDefinitions_Left:
     dw InitFunction_CinematicSpriteObject_YellowClouds_Left              ;8BEEF1;
     dw PreInstruction_CinematicSpriteObject_YellowClouds_Left            ;8BEEF3;
     dw InstList_CinematicSpriteObject_YellowClouds_Left                  ;8BEEF5;
 
+%anchor($8BEEF7)
 CinematicSpriteObjectDefinitions_ZebesExplosion_Stars_Left:
     dw InitFunction_CinematicSpriteObject_ZebesExplosion_Stars_Left      ;8BEEF7;
     dw Instruction_CinematicSpriteObject_ZebesExplosion_Stars_Left       ;8BEEF9;
     dw InstList_CinematicSpriteObjects_ExplodingZebes_Stars_Left         ;8BEEFB;
 
+%anchor($8BEEFD)
 CinematicSpriteObjectDefinitions_ClearTime:
     dw InitFunction_CinematicSpriteObject_ClearTime                      ;8BEEFD;
     dw PreInstruction_CinematicSpriteObject_Text                         ;8BEEFF;
     dw InstList_CinematicSpriteObjects_ClearTime_0                       ;8BEF01;
 
+%anchor($8BEF03)
 CinematicSpriteObjectDefinitions_ClearTime_Hours_TensDigit:
     dw InitFunction_CinematicSpriteObject_ClearTime_Hours_TensDigit      ;8BEF03;
     dw PreInstruction_CinematicSpriteObject_Text                         ;8BEF05;
     dw InstList_ClearTimeDigit_0                                         ;8BEF07;
 
+%anchor($8BEF09)
 CinematicSpriteObjectDefinitions_ClearTime_Hours_OnesDigit:
     dw InitFunction_CinematicSpriteObject_ClearTime_Hours_OnesDigit      ;8BEF09;
     dw PreInstruction_CinematicSpriteObject_Text                         ;8BEF0B;
     dw InstList_ClearTimeDigit_0                                         ;8BEF0D;
 
+%anchor($8BEF0F)
 CinematicSpriteObjectDefinitions_ClearTime_Colon:
     dw InitFunction_CinematicSpriteObject_ClearTime_Colon                ;8BEF0F;
     dw PreInstruction_CinematicSpriteObject_Text                         ;8BEF11;
     dw InstList_CinematicSpriteObject_ClearTime_Colon                    ;8BEF13;
 
+%anchor($8BEF15)
 CinematicSpriteObjectDefinitions_ClearTime_Minutes_TensDigit:
     dw InitFunction_CineSpriteObject_ClearTime_Minutes_TensDigit         ;8BEF15;
     dw PreInstruction_CinematicSpriteObject_Text                         ;8BEF17;
     dw InstList_ClearTimeDigit_0                                         ;8BEF19;
 
+%anchor($8BEF1B)
 CinematicSpriteObjectDefinitions_ClearTime_Minutes_OnesDigit:
     dw InitFunction_CineSpriteObject_ClearTime_Minutes_OnesDigit         ;8BEF1B;
     dw PreInstruction_CinematicSpriteObject_Text                         ;8BEF1D;
     dw InstList_ClearTimeDigit_0                                         ;8BEF1F;
 
+%anchor($8BEF21)
 CinematicSpriteObjectDefinitions_CrittersEscape:
     dw InitFunction_CinematicSpriteObject_CrittersEscape                 ;8BEF21;
     dw PreInstruction_CinematicSpriteObject_CrittersEscape               ;8BEF23;
     dw InstList_CinematicSpriteObject_CrittersEscape                     ;8BEF25;
 
+%anchor($8BEF27)
 CinematicSpriteObjectDefinitions_SuitlessSamus_Idle:
     dw InitFunction_CinematicSpriteObject_SuitlessSamus                  ;8BEF27;
     dw PreInstruction_CinematicSpriteObject_Samus_Idle                   ;8BEF29;
     dw InstList_CinematicSpriteObject_SuitlessSamus_Idle                 ;8BEF2B;
 
+%anchor($8BEF2D)
 CinematicSpriteObjectDefinitions_SuitlessSamus_Idle_Legs:
     dw InitFunction_CinematicSpriteObject_SuitlessSamus                  ;8BEF2D;
     dw PreInstruction_CinematicSpriteObject_Samus_Idle                   ;8BEF2F;
     dw InstList_CinematicSpriteObject_SuitlessSamus_Idle_Legs            ;8BEF31;
 
+%anchor($8BEF33)
 CinematicSpriteObjectDefs_SuitlessSamus_LettingHairDown:
     dw InitFunction_CinematicSpriteObject_SuitlessSamus                  ;8BEF33;
     dw RTS_8BF51C                                                        ;8BEF35;
     dw InstList_CinematicSpriteObject_SuitlessSamus_LettingHairDown      ;8BEF37;
 
+%anchor($8BEF39)
 CinematicSpriteObjectDefs_SuitlessSamus_LettingHairDown_Legs:
     dw InitFunction_CinematicSpriteObject_SuitlessSamus                  ;8BEF39;
     dw RTS_8B93D9                                                        ;8BEF3B;
     dw InstList_CineSpriteObject_SuitlessSamus_LettingHairDown_Legs      ;8BEF3D;
 
+%anchor($8BEF3F)
 CinematicSpriteObjectDefinitions_SuitlessSamus_Jump:
     dw InitFunction_CinematicSpriteObject_SuitlessSamus                  ;8BEF3F;
     dw RTS_8B93D9                                                        ;8BEF41;
     dw InstList_CinematicSpriteObject_SuitlessSamus_Jump_0               ;8BEF43;
 
+%anchor($8BEF45)
 CinematicSpriteObjectDefinitions_SuitedSamus_Idle_Body:
     dw InitFunction_CinematicSpriteObject_SuitedSamus_Body_Arm           ;8BEF45;
     dw PreInstruction_CinematicSpriteObject_Samus_Idle                   ;8BEF47;
     dw InstList_CinematicSpriteObject_SuitedSamus_Idle_Body              ;8BEF49;
 
+%anchor($8BEF4B)
 CinematicSpriteObjectDefs_SuitedSamus_Idle_Head_Helmet:
     dw InitFunction_CinematicSpriteObject_SuitedSamus_Head_Helmet        ;8BEF4B;
     dw PreInstruction_CinematicSpriteObject_Samus_Idle                   ;8BEF4D;
     dw InstList_CinematicSpriteObject_SuitedSamus_Idle_Head_Helmet       ;8BEF4F;
 
+%anchor($8BEF51)
 CinematicSpriteObjectDefinitions_SuitedSamus_Idle_Head:
     dw InitFunction_CinematicSpriteObject_SuitedSamus_Head               ;8BEF51;
     dw PreInstruction_CinematicSpriteObject_Samus_Idle                   ;8BEF53;
     dw InstList_CinematicSpriteObject_SuitedSamus_Head                   ;8BEF55;
 
+%anchor($8BEF57)
 CinematicSpriteObjectDefinitions_ThumbsUp_Body:
     dw InitFunction_CinematicSpriteObject_SuitedSamus_Body_Arm           ;8BEF57;
     dw RTS_8B93D9                                                        ;8BEF59;
     dw InstList_CinematicSpriteObject_SuitedSamus_ThumbsUp_Body          ;8BEF5B;
 
+%anchor($8BEF5D)
 CinematicSpriteObjectDefinitions_ThumbsUp_Arm:
     dw InitFunction_CinematicSpriteObject_SuitedSamus_Body_Arm           ;8BEF5D;
     dw RTS_8B93D9                                                        ;8BEF5F;
     dw InstList_CinematicSpriteObject_SuitedSamus_ThumbsUp_Arm           ;8BEF61;
 
+%anchor($8BEF63)
 CinematicSpriteObjectDefinitions_ThumbsUp_Head_Helmet:
     dw InitFunction_CinematicSpriteObject_SuitedSamus_Head_Helmet        ;8BEF63;
     dw RTS_8B93D9                                                        ;8BEF65;
     dw InstList_CineSpriteObject_SuitedSamus_ThumbsUp_Head_Helmet        ;8BEF67;
 
+%anchor($8BEF69)
 CinematicSpriteObjectDefinitions_ThumbsUp_Head:
     dw InitFunction_CinematicSpriteObject_SuitedSamus_Head               ;8BEF69;
     dw RTS_8B93D9                                                        ;8BEF6B;
     dw InstList_CinematicSpriteObject_SuitedSamus_ThumbsUp_Head          ;8BEF6D;
 
+%anchor($8BEF6F)
 CinematicSpriteObjectDefinitions_Jump_Body:
     dw InitFunction_CinematicSpriteObject_SuitedSamus_Body_Arm           ;8BEF6F;
     dw RTS_8B93D9                                                        ;8BEF71;
     dw InstList_CinematicSpriteObject_SuitedSamus_Jump_Body_0            ;8BEF73;
 
+%anchor($8BEF75)
 CinematicSpriteObjectDefinitions_Jump_Head_Helmet:
     dw InitFunction_CinematicSpriteObject_SuitedSamus_Head_Helmet        ;8BEF75;
     dw RTS_8B93D9                                                        ;8BEF77;
     dw InstList_CineSpriteObject_SuitedSamus_Jump_Head_Helmet_0          ;8BEF79;
 
+%anchor($8BEF7B)
 CinematicSpriteObjectDefinitions_Jump_Head:
     dw InitFunction_CinematicSpriteObject_SuitedSamus_Head               ;8BEF7B;
     dw RTS_8B93D9                                                        ;8BEF7D;
     dw InstList_CinematicSpriteObject_SuitedSamus_Jump_Head_0            ;8BEF7F;
 
+%anchor($8BEF81)
 CinematicSpriteObjectDefinitions_SuperMetroidIcon_S_TopHalf:
     dw InitFunction_CineSpriteObject_SuperMetroidIcon_S_TopHalf          ;8BEF81;
     dw PreInstruction_CineSpriteObject_SuperMetroidIcon_S_TopHalf        ;8BEF83;
     dw InstList_CinematicSpriteObject_SuperMetroidIcon_S_TopHalf         ;8BEF85;
 
+%anchor($8BEF87)
 CinematicSpriteObjectDefs_SuperMetroidIcon_S_BottomHalf:
     dw InitFunction_CineSpriteObject_SuperMetroidIcon_S_BottomHalf       ;8BEF87;
     dw Instruction_CineSpriteObject_SuperMetroidIcon_S_BottomHalf        ;8BEF89;
     dw InstList_CinematicSpriteObject_SuperMetroidIcon_S_BottomHalf      ;8BEF8B;
 
+%anchor($8BEF8D)
 CinematicSpriteObjectDefs_SuperMetroidIcon_Circle_TopHalf:
     dw InitFunc_CineSpriteObject_SuperMetroidIcon_Circle_TopHalf         ;8BEF8D;
     dw RTS_8B93D9                                                        ;8BEF8F;
     dw InstList_CineSpriteObject_SuperMetroidIcon_Circle_TopHalf_0       ;8BEF91;
 
+%anchor($8BEF93)
 CinematicSpriteObjectDefs_SuperMetroidIcon_Circle_BottomHalf:
     dw InitFunc_CineSpriteObject_SuperMetroidIcon_Circle_BottomHalf      ;8BEF93;
     dw RTS_8B93D9                                                        ;8BEF95;
     dw InstList_CineSpriteObject_SuperMetroidIcon_Circle_BotHalf_0       ;8BEF97;
 
+%anchor($8BEF99)
 InitFunction_CinematicSpriteObject_CrittersEscape:
     LDA.W #$0080                                                         ;8BEF99;
     STA.W $1A9D,Y                                                        ;8BEF9C;
@@ -13824,6 +14488,7 @@ InitFunction_CinematicSpriteObject_CrittersEscape:
     RTS                                                                  ;8BEFB1;
 
 
+%anchor($8BEFB2)
 PreInstruction_CinematicSpriteObject_CrittersEscape:
     LDA.W $1AFD,X                                                        ;8BEFB2;
     CLC                                                                  ;8BEFB5;
@@ -13850,10 +14515,12 @@ PreInstruction_CinematicSpriteObject_CrittersEscape:
     RTS                                                                  ;8BEFE9;
 
 
+%anchor($8BEFEA)
 InitFunction_CinematicSpriteObject_ExplodingZebes_Palette7:
     LDA.W #$0080                                                         ;8BEFEA;
     STA.W $1A7D,Y                                                        ;8BEFED;
 
+%anchor($8BEFF0)
 CommonInit_ExplodingZebes_Palette7:
     LDA.W #$0080                                                         ;8BEFF0;
     STA.W $1A9D,Y                                                        ;8BEFF3;
@@ -13862,12 +14529,14 @@ CommonInit_ExplodingZebes_Palette7:
     RTS                                                                  ;8BEFFC;
 
 
+%anchor($8BEFFD)
 InitFunction_CinematicSpriteObject_ZebesExplosion_Stars_Left:
     LDA.W #$FF80                                                         ;8BEFFD;
     STA.W $1A7D,Y                                                        ;8BF000;
     BRA CommonInit_ExplodingZebes_Palette7                               ;8BF003;
 
 
+%anchor($8BF005)
 InitFunction_CinematicSpriteObject_ExplodingZebes_Palette5:
     LDA.W #$0080                                                         ;8BF005;
     STA.W $1A7D,Y                                                        ;8BF008;
@@ -13878,6 +14547,7 @@ InitFunction_CinematicSpriteObject_ExplodingZebes_Palette5:
     RTS                                                                  ;8BF017;
 
 
+%anchor($8BF018)
 InitFunction_CinematicSpriteObject_ZebesExplosion_AfterGlow:
     LDA.W #$0080                                                         ;8BF018;
     STA.W $1A7D,Y                                                        ;8BF01B;
@@ -13888,6 +14558,7 @@ InitFunction_CinematicSpriteObject_ZebesExplosion_AfterGlow:
     RTS                                                                  ;8BF02A;
 
 
+%anchor($8BF02B)
 InitFunc_CineSpriteObj_TheOperationWasCompletedSuccessfully:
     LDA.W #$0080                                                         ;8BF02B;
     STA.W $1A7D,Y                                                        ;8BF02E;
@@ -13898,6 +14569,7 @@ InitFunc_CineSpriteObj_TheOperationWasCompletedSuccessfully:
     RTS                                                                  ;8BF03D;
 
 
+%anchor($8BF03E)
 InitFunction_CinematicSpriteObject_ClearTime:
     LDA.W #$0080                                                         ;8BF03E;
     STA.W $1A7D,Y                                                        ;8BF041;
@@ -13908,6 +14580,7 @@ InitFunction_CinematicSpriteObject_ClearTime:
     RTS                                                                  ;8BF050;
 
 
+%anchor($8BF051)
 CommonInit_ClearTime:
     LDA.W #$00A0                                                         ;8BF051;
     STA.W $1A9D,Y                                                        ;8BF054;
@@ -13916,6 +14589,7 @@ CommonInit_ClearTime:
     RTS                                                                  ;8BF05D;
 
 
+%anchor($8BF05E)
 InitFunction_CinematicSpriteObject_ClearTime_Hours_TensDigit:
     LDA.W $0DEC                                                          ;8BF05E;
     JSR.W CinematicSpriteObject_InstListPointer_PlusA_Times8             ;8BF061;
@@ -13924,6 +14598,7 @@ InitFunction_CinematicSpriteObject_ClearTime_Hours_TensDigit:
     JMP.W CommonInit_ClearTime                                           ;8BF06A;
 
 
+%anchor($8BF06D)
 InitFunction_CinematicSpriteObject_ClearTime_Hours_OnesDigit:
     LDA.W $0DEE                                                          ;8BF06D;
     JSR.W CinematicSpriteObject_InstListPointer_PlusA_Times8             ;8BF070;
@@ -13932,12 +14607,14 @@ InitFunction_CinematicSpriteObject_ClearTime_Hours_OnesDigit:
     JMP.W CommonInit_ClearTime                                           ;8BF079;
 
 
+%anchor($8BF07C)
 InitFunction_CinematicSpriteObject_ClearTime_Colon:
     LDA.W #$00AC                                                         ;8BF07C;
     STA.W $1A7D,Y                                                        ;8BF07F;
     JMP.W CommonInit_ClearTime                                           ;8BF082;
 
 
+%anchor($8BF085)
 InitFunction_CineSpriteObject_ClearTime_Minutes_TensDigit:
     LDA.W $0DF0                                                          ;8BF085;
     JSR.W CinematicSpriteObject_InstListPointer_PlusA_Times8             ;8BF088;
@@ -13946,6 +14623,7 @@ InitFunction_CineSpriteObject_ClearTime_Minutes_TensDigit:
     JMP.W CommonInit_ClearTime                                           ;8BF091;
 
 
+%anchor($8BF094)
 InitFunction_CineSpriteObject_ClearTime_Minutes_OnesDigit:
     LDA.W $0DF2                                                          ;8BF094;
     JSR.W CinematicSpriteObject_InstListPointer_PlusA_Times8             ;8BF097;
@@ -13954,6 +14632,7 @@ InitFunction_CineSpriteObject_ClearTime_Minutes_OnesDigit:
     JMP.W CommonInit_ClearTime                                           ;8BF0A0;
 
 
+%anchor($8BF0A3)
 CinematicSpriteObject_InstListPointer_PlusA_Times8:
     ASL A                                                                ;8BF0A3;
     ASL A                                                                ;8BF0A4;
@@ -13966,10 +14645,12 @@ CinematicSpriteObject_InstListPointer_PlusA_Times8:
     RTS                                                                  ;8BF0B1;
 
 
+%anchor($8BF0B2)
 InitFunction_CinematicSpriteObject_YellowClouds_Top_TopHalf:
     LDA.W #$FFA0                                                         ;8BF0B2;
     STA.W $1A9D,Y                                                        ;8BF0B5;
 
+%anchor($8BF0B8)
 CommonInit_YellowClouds_TopBottom:
     LDA.W $1B9D                                                          ;8BF0B8;
     BEQ .noInitParam                                                     ;8BF0BB;
@@ -13992,24 +14673,28 @@ CommonInit_YellowClouds_TopBottom:
     RTS                                                                  ;8BF0E0;
 
 
+%anchor($8BF0E1)
 InitFunction_CineSpriteObject_YellowClouds_Top_BottomHalf:
     LDA.W #$FFE0                                                         ;8BF0E1;
     STA.W $1A9D,Y                                                        ;8BF0E4;
     BRA CommonInit_YellowClouds_TopBottom                                ;8BF0E7;
 
 
+%anchor($8BF0E9)
 InitFunction_CineSpriteObject_YellowClouds_Bottom_TopHalf:
     LDA.W #$0120                                                         ;8BF0E9;
     STA.W $1A9D,Y                                                        ;8BF0EC;
     BRA CommonInit_YellowClouds_TopBottom                                ;8BF0EF;
 
 
+%anchor($8BF0F1)
 InitFunction_CineSpriteObject_YellowClouds_Bottom_BottomHalf:
     LDA.W #$0160                                                         ;8BF0F1;
     STA.W $1A9D,Y                                                        ;8BF0F4;
     BRA CommonInit_YellowClouds_TopBottom                                ;8BF0F7;
 
 
+%anchor($8BF0F9)
 InitFunction_CinematicSpriteObject_YellowClouds_Right:
     LDA.W #$0140                                                         ;8BF0F9;
     STA.W $1A7D,Y                                                        ;8BF0FC;
@@ -14030,6 +14715,7 @@ InitFunction_CinematicSpriteObject_YellowClouds_Right:
     RTS                                                                  ;8BF11D;
 
 
+%anchor($8BF11E)
 InitFunction_CinematicSpriteObject_YellowClouds_Left:
     LDA.W #$FFC0                                                         ;8BF11E;
     STA.W $1A7D,Y                                                        ;8BF121;
@@ -14050,6 +14736,7 @@ InitFunction_CinematicSpriteObject_YellowClouds_Left:
     RTS                                                                  ;8BF142;
 
 
+%anchor($8BF143)
 InitFunction_CinematicSpriteObject_SuitlessSamus:
     LDA.W #$0078                                                         ;8BF143;
     STA.W $1A7D,Y                                                        ;8BF146;
@@ -14060,6 +14747,7 @@ InitFunction_CinematicSpriteObject_SuitlessSamus:
     RTS                                                                  ;8BF155;
 
 
+%anchor($8BF156)
 InitFunction_CinematicSpriteObject_SuitedSamus_Body_Arm:
     LDA.W #$0078                                                         ;8BF156;
     STA.W $1A7D,Y                                                        ;8BF159;
@@ -14070,6 +14758,7 @@ InitFunction_CinematicSpriteObject_SuitedSamus_Body_Arm:
     RTS                                                                  ;8BF168;
 
 
+%anchor($8BF169)
 InitFunction_CinematicSpriteObject_SuitedSamus_Head_Helmet:
     LDA.W #$007C                                                         ;8BF169;
     STA.W $1A7D,Y                                                        ;8BF16C;
@@ -14080,6 +14769,7 @@ InitFunction_CinematicSpriteObject_SuitedSamus_Head_Helmet:
     RTS                                                                  ;8BF17B;
 
 
+%anchor($8BF17C)
 InitFunction_CinematicSpriteObject_SuitedSamus_Head:
     LDA.W #$0079                                                         ;8BF17C;
     STA.W $1A7D,Y                                                        ;8BF17F;
@@ -14090,6 +14780,7 @@ InitFunction_CinematicSpriteObject_SuitedSamus_Head:
     RTS                                                                  ;8BF18E;
 
 
+%anchor($8BF18F)
 InitFunction_CineSpriteObject_SuperMetroidIcon_S_TopHalf:
     LDA.W #$0212                                                         ;8BF18F;
     STA.W $1A7D,Y                                                        ;8BF192;
@@ -14102,6 +14793,7 @@ InitFunction_CineSpriteObject_SuperMetroidIcon_S_TopHalf:
     RTS                                                                  ;8BF1A7;
 
 
+%anchor($8BF1A8)
 InitFunction_CineSpriteObject_SuperMetroidIcon_S_BottomHalf:
     LDA.W #$00F6                                                         ;8BF1A8;
     STA.W $1A7D,Y                                                        ;8BF1AB;
@@ -14114,6 +14806,7 @@ InitFunction_CineSpriteObject_SuperMetroidIcon_S_BottomHalf:
     RTS                                                                  ;8BF1C0;
 
 
+%anchor($8BF1C1)
 InitFunc_CineSpriteObject_SuperMetroidIcon_Circle_TopHalf:
     LDA.W #$0181                                                         ;8BF1C1;
     STA.W $1A7D,Y                                                        ;8BF1C4;
@@ -14124,6 +14817,7 @@ InitFunc_CineSpriteObject_SuperMetroidIcon_Circle_TopHalf:
     RTS                                                                  ;8BF1D3;
 
 
+%anchor($8BF1D4)
 InitFunc_CineSpriteObject_SuperMetroidIcon_Circle_BottomHalf:
     LDA.W #$0187                                                         ;8BF1D4;
     STA.W $1A7D,Y                                                        ;8BF1D7;
@@ -14134,6 +14828,7 @@ InitFunc_CineSpriteObject_SuperMetroidIcon_Circle_BottomHalf:
     RTS                                                                  ;8BF1E6;
 
 
+%anchor($8BF1E7)
 PreInstruction_CineSpriteObject_SuperMetroidIcon_S_TopHalf:
     LDA.W $1A9D,X                                                        ;8BF1E7;
     CLC                                                                  ;8BF1EA;
@@ -14165,6 +14860,7 @@ PreInstruction_CineSpriteObject_SuperMetroidIcon_S_TopHalf:
     RTS                                                                  ;8BF226;
 
 
+%anchor($8BF227)
 Instruction_CineSpriteObject_SuperMetroidIcon_S_BottomHalf:
     LDA.W $1A9D,X                                                        ;8BF227;
     SEC                                                                  ;8BF22A;
@@ -14192,6 +14888,7 @@ Instruction_CineSpriteObject_SuperMetroidIcon_S_BottomHalf:
     RTS                                                                  ;8BF25D;
 
 
+%anchor($8BF25E)
 Instruction_GreyOutSuperMetroidIcon:
     SEP #$20                                                             ;8BF25E;
     LDA.B #$03                                                           ;8BF260;
@@ -14213,6 +14910,7 @@ Instruction_GreyOutSuperMetroidIcon:
     RTS                                                                  ;8BF283;
 
 
+%anchor($8BF284)
 Instruction_FadeOutZoomedOutExplodingZebes:
     PHY                                                                  ;8BF284;
     LDY.W #PaletteFXObjects_FadeOutZoomedOutExplodingZebes               ;8BF285;
@@ -14223,6 +14921,7 @@ Instruction_FadeOutZoomedOutExplodingZebes:
     RTS                                                                  ;8BF294;
 
 
+%anchor($8BF295)
 Instruction_CineSpriteObjectSpawnZebesExplosionSilhouette:
     PHY                                                                  ;8BF295;
     LDY.W #CinematicSpriteObjectDefinitions_ZebesExplosion_Silhouette    ;8BF296;
@@ -14233,6 +14932,7 @@ Instruction_CineSpriteObjectSpawnZebesExplosionSilhouette:
     RTS                                                                  ;8BF2A4;
 
 
+%anchor($8BF2A5)
 PreInst_CineSpriteObj_ExplodingZebes_PurpleGlow_Stars_Lava:
     LDA.W $1B3B                                                          ;8BF2A5;
     BNE .return                                                          ;8BF2A8;
@@ -14245,6 +14945,7 @@ PreInst_CineSpriteObj_ExplodingZebes_PurpleGlow_Stars_Lava:
     RTS                                                                  ;8BF2B6;
 
 
+%anchor($8BF2B7)
 Instruction_CinematicSpriteObject_StartZebesExplosion:
     PHY                                                                  ;8BF2B7;
     SEP #$20                                                             ;8BF2B8;
@@ -14276,6 +14977,7 @@ Instruction_CinematicSpriteObject_StartZebesExplosion:
     RTS                                                                  ;8BF2F9;
 
 
+%anchor($8BF2FA)
 Instruction_ZebesExplosionFinale:
     PHY                                                                  ;8BF2FA;
     SEP #$20                                                             ;8BF2FB;
@@ -14302,6 +15004,7 @@ Instruction_ZebesExplosionFinale:
     RTS                                                                  ;8BF32A;
 
 
+%anchor($8BF32B)
 Instruction_EndZebesExplosion:
     PHY                                                                  ;8BF32B;
     SEP #$20                                                             ;8BF32C;
@@ -14328,6 +15031,7 @@ Instruction_EndZebesExplosion:
     RTS                                                                  ;8BF359;
 
 
+%anchor($8BF35A)
 Instruction_CinematicSpriteObject_ZebesExplosion_Stars_Left:
     LDA.W $1F51                                                          ;8BF35A;
     CMP.W #CinematicFunc_Ending_SpaceView_GunshipEmergence_SpinningFast  ;8BF35D;
@@ -14343,6 +15047,7 @@ Instruction_CinematicSpriteObject_ZebesExplosion_Stars_Left:
     RTS                                                                  ;8BF374;
 
 
+%anchor($8BF375)
 PreInst_CineSpriteObject_ZebesExplosion_Stars_Left_Moving:
     LDA.W $1AFD,X                                                        ;8BF375;
     CLC                                                                  ;8BF378;
@@ -14359,6 +15064,7 @@ PreInst_CineSpriteObject_ZebesExplosion_Stars_Left_Moving:
     ADC.W $1B7D,X                                                        ;8BF395;
     STA.W $1A7D,X                                                        ;8BF398; fallthrough to PreInstruction_CineSpriteObject_ZebesExplosion_AfterGlow
 
+%anchor($8BF39B)
 PreInstruction_CineSpriteObject_ZebesExplosion_AfterGlow:
     LDA.W $1F51                                                          ;8BF39B;
     CMP.W #RTS_8BDE63                                                    ;8BF39E;
@@ -14372,6 +15078,7 @@ PreInstruction_CineSpriteObject_ZebesExplosion_AfterGlow:
     RTS                                                                  ;8BF3AF;
 
 
+%anchor($8BF3B0)
 Instruction_CinematicSpriteObject_SpawnCompletedSuccessfully:
     PHY                                                                  ;8BF3B0;
     LDY.W #CinematicSpriteObjectDefinitions_CompletedSuccessfully        ;8BF3B1;
@@ -14380,6 +15087,7 @@ Instruction_CinematicSpriteObject_SpawnCompletedSuccessfully:
     RTS                                                                  ;8BF3B8;
 
 
+%anchor($8BF3B9)
 PreInstruction_CinematicSpriteObject_Text:
     LDA.W $1F51                                                          ;8BF3B9;
     CMP.W #CinematicFunction_Credits_Setup                               ;8BF3BC;
@@ -14393,6 +15101,7 @@ PreInstruction_CinematicSpriteObject_Text:
     RTS                                                                  ;8BF3CD;
 
 
+%anchor($8BF3CE)
 Instruction_CinematicSpriteObject_SpawnClearTime:
     PHY                                                                  ;8BF3CE;
     LDY.W #CinematicSpriteObjectDefinitions_ClearTime                    ;8BF3CF;
@@ -14435,6 +15144,7 @@ Instruction_CinematicSpriteObject_SpawnClearTime:
     RTS                                                                  ;8BF41A;
 
 
+%anchor($8BF41B)
 Instruction_CineSpriteObject_SpawnClearTime_Hours_TensDigit:
     PHY                                                                  ;8BF41B;
     LDY.W #CinematicSpriteObjectDefinitions_ClearTime_Hours_TensDigit    ;8BF41C;
@@ -14443,6 +15153,7 @@ Instruction_CineSpriteObject_SpawnClearTime_Hours_TensDigit:
     RTS                                                                  ;8BF423;
 
 
+%anchor($8BF424)
 Instruction_CineSpriteObject_SpawnClearTime_Hours_OnesDigit:
     PHY                                                                  ;8BF424;
     LDY.W #CinematicSpriteObjectDefinitions_ClearTime_Hours_OnesDigit    ;8BF425;
@@ -14451,6 +15162,7 @@ Instruction_CineSpriteObject_SpawnClearTime_Hours_OnesDigit:
     RTS                                                                  ;8BF42C;
 
 
+%anchor($8BF42D)
 Instruction_CinematicSpriteObject_SpawnClearTime_Colon:
     PHY                                                                  ;8BF42D;
     LDY.W #CinematicSpriteObjectDefinitions_ClearTime_Colon              ;8BF42E;
@@ -14459,6 +15171,7 @@ Instruction_CinematicSpriteObject_SpawnClearTime_Colon:
     RTS                                                                  ;8BF435;
 
 
+%anchor($8BF436)
 Inst_CineSpriteObject_SpawnClearTime_Minutes_TensDigit:
     PHY                                                                  ;8BF436;
     LDY.W #CinematicSpriteObjectDefinitions_ClearTime_Minutes_TensDigit  ;8BF437;
@@ -14467,6 +15180,7 @@ Inst_CineSpriteObject_SpawnClearTime_Minutes_TensDigit:
     RTS                                                                  ;8BF43E;
 
 
+%anchor($8BF43F)
 Inst_CineSpriteObject_SpawnClearTime_Minutes_OnesDigit:
     PHY                                                                  ;8BF43F;
     LDY.W #CinematicSpriteObjectDefinitions_ClearTime_Minutes_OnesDigit  ;8BF440;
@@ -14475,6 +15189,7 @@ Inst_CineSpriteObject_SpawnClearTime_Minutes_OnesDigit:
     RTS                                                                  ;8BF447;
 
 
+%anchor($8BF448)
 Instruction_CinematicSpriteObject_TransitionToCredits:
     STZ.W $0723                                                          ;8BF448;
     STZ.W $0725                                                          ;8BF44B;
@@ -14483,6 +15198,7 @@ Instruction_CinematicSpriteObject_TransitionToCredits:
     RTS                                                                  ;8BF454;
 
 
+%anchor($8BF455)
 PreInstruction_CinematicSpriteObject_YellowClouds_Top:
     LDA.W $198F                                                          ;8BF455;
     CMP.W #$00B0                                                         ;8BF458;
@@ -14494,6 +15210,7 @@ PreInstruction_CinematicSpriteObject_YellowClouds_Top:
     RTS                                                                  ;8BF463;
 
 
+%anchor($8BF464)
 PreInstruction_CinematicSpriteObject_YellowClouds_Top_Moving:
     LDA.W $1AFD,X                                                        ;8BF464;
     CLC                                                                  ;8BF467;
@@ -14505,6 +15222,7 @@ PreInstruction_CinematicSpriteObject_YellowClouds_Top_Moving:
     RTS                                                                  ;8BF477;
 
 
+%anchor($8BF478)
 PreInstruction_CinematicSpriteObject_YellowClouds_Bottom:
     LDA.W $198F                                                          ;8BF478;
     CMP.W #$00B0                                                         ;8BF47B;
@@ -14516,6 +15234,7 @@ PreInstruction_CinematicSpriteObject_YellowClouds_Bottom:
     RTS                                                                  ;8BF486;
 
 
+%anchor($8BF487)
 PreInstruction_CineSpriteObject_YellowClouds_Bottom_Moving:
     LDA.W $1AFD,X                                                        ;8BF487;
     SEC                                                                  ;8BF48A;
@@ -14527,6 +15246,7 @@ PreInstruction_CineSpriteObject_YellowClouds_Bottom_Moving:
     RTS                                                                  ;8BF49A;
 
 
+%anchor($8BF49B)
 PreInstruction_CinematicSpriteObject_YellowClouds_Right:
     LDA.W $198F                                                          ;8BF49B;
     CMP.W #$0060                                                         ;8BF49E;
@@ -14538,6 +15258,7 @@ PreInstruction_CinematicSpriteObject_YellowClouds_Right:
     RTS                                                                  ;8BF4A9;
 
 
+%anchor($8BF4AA)
 PreInstruction_CineSpriteObject_YellowClouds_Right_Moving:
     LDA.W $1AFD,X                                                        ;8BF4AA;
     SEC                                                                  ;8BF4AD;
@@ -14556,6 +15277,7 @@ PreInstruction_CineSpriteObject_YellowClouds_Right_Moving:
     RTS                                                                  ;8BF4D0;
 
 
+%anchor($8BF4D1)
 PreInstruction_CinematicSpriteObject_YellowClouds_Left:
     LDA.W $198F                                                          ;8BF4D1;
     CMP.W #$0060                                                         ;8BF4D4;
@@ -14567,6 +15289,7 @@ PreInstruction_CinematicSpriteObject_YellowClouds_Left:
     RTS                                                                  ;8BF4DF;
 
 
+%anchor($8BF4E0)
 PreInstruction_CineSpriteObject_YellowClouds_Left_Moving:
     LDA.W $1AFD,X                                                        ;8BF4E0;
     CLC                                                                  ;8BF4E3;
@@ -14585,6 +15308,7 @@ PreInstruction_CineSpriteObject_YellowClouds_Left_Moving:
     RTS                                                                  ;8BF506;
 
 
+%anchor($8BF507)
 PreInstruction_CinematicSpriteObject_Samus_Idle:
     LDA.W $1F51                                                          ;8BF507;
     CMP.W #RTS_8BDB9D                                                    ;8BF50A;
@@ -14598,10 +15322,12 @@ PreInstruction_CinematicSpriteObject_Samus_Idle:
     RTS                                                                  ;8BF51B;
 
 
+%anchor($8BF51C)
 RTS_8BF51C:
     RTS                                                                  ;8BF51C;
 
 
+%anchor($8BF51D)
 Instruction_CinematicSpriteObject_SpawnSuitlessSamusJump:
     PHY                                                                  ;8BF51D;
     LDY.W #CinematicSpriteObjectDefinitions_SuitlessSamus_Jump           ;8BF51E;
@@ -14611,6 +15337,7 @@ Instruction_CinematicSpriteObject_SpawnSuitlessSamusJump:
     RTS                                                                  ;8BF527;
 
 
+%anchor($8BF528)
 Inst_CineSpriteObject_SpawnSuitlessSamus_LettingHairDown:
     JSR.W MoveJumpingEndingSamus                                         ;8BF528;
     LDA.W $1A9D,X                                                        ;8BF52B;
@@ -14633,6 +15360,7 @@ Inst_CineSpriteObject_SpawnSuitlessSamus_LettingHairDown:
     RTS                                                                  ;8BF553;
 
 
+%anchor($8BF554)
 Instruction_CinematicSpriteObject_SpawnSuitedSamusJump:
     PHY                                                                  ;8BF554;
     LDA.W $09E0                                                          ;8BF555;
@@ -14658,6 +15386,7 @@ Instruction_CinematicSpriteObject_SpawnSuitedSamusJump:
     RTS                                                                  ;8BF57E;
 
 
+%anchor($8BF57F)
 PreInst_CinematicSpriteObject_SuitedSamus_Jump_Head_Jumping:
     JSR.W MoveJumpingEndingSamus                                         ;8BF57F;
     LDA.W $1A9D,X                                                        ;8BF582;
@@ -14672,6 +15401,7 @@ PreInst_CinematicSpriteObject_SuitedSamus_Jump_Head_Jumping:
     RTS                                                                  ;8BF596;
 
 
+%anchor($8BF597)
 Instruction_CineSpriteObject_PositionSuitedHeadToPrepareJump:
     LDA.W $09E0                                                          ;8BF597;
     CMP.W #$000A                                                         ;8BF59A;
@@ -14693,6 +15423,7 @@ Instruction_CineSpriteObject_PositionSuitedHeadToPrepareJump:
     RTS                                                                  ;8BF5B9;
 
 
+%anchor($8BF5BA)
 Instruction_CinematicSpriteObject_PositionSamusHeadToJump:
     LDA.W $09E0                                                          ;8BF5BA;
     CMP.W #$000A                                                         ;8BF5BD;
@@ -14714,6 +15445,7 @@ Instruction_CinematicSpriteObject_PositionSamusHeadToJump:
     RTS                                                                  ;8BF5DC;
 
 
+%anchor($8BF5DD)
 PreInstruction_CinematicSpriteObject_Samus_Jump_Falling:
     JSR.W TransferPostCreditsSamusBeamToVRAM                             ;8BF5DD;
     JSR.W MoveJumpingEndingSamus                                         ;8BF5E0;
@@ -14733,6 +15465,7 @@ PreInstruction_CinematicSpriteObject_Samus_Jump_Falling:
     RTS                                                                  ;8BF603;
 
 
+%anchor($8BF604)
 Instruction_CinematicSpriteObject_SamusShootsScreen:
     PHX                                                                  ;8BF604;
     PHY                                                                  ;8BF605;
@@ -14768,6 +15501,7 @@ Instruction_CinematicSpriteObject_SamusShootsScreen:
     RTS                                                                  ;8BF650;
 
 
+%anchor($8BF651)
 Instruction_CinematicSpriteObject_MakeEndingSamusJump:
     STZ.W $0B2C                                                          ;8BF651;
     LDA.W #$FFF0                                                         ;8BF654;
@@ -14775,6 +15509,7 @@ Instruction_CinematicSpriteObject_MakeEndingSamusJump:
     RTS                                                                  ;8BF65A;
 
 
+%anchor($8BF65B)
 MoveJumpingEndingSamus:
     LDA.W $0B2C                                                          ;8BF65B;
     CLC                                                                  ;8BF65E;
@@ -14793,6 +15528,7 @@ MoveJumpingEndingSamus:
     RTS                                                                  ;8BF681;
 
 
+%anchor($8BF682)
 TransferPostCreditsSamusBeamToVRAM:
     PHX                                                                  ;8BF682;
     PHY                                                                  ;8BF683;
@@ -14836,11 +15572,13 @@ TransferPostCreditsSamusBeamToVRAM:
     db $00,$00,$00,$04,$00,$08,$00,$0C,$00,$10,$00,$14,$00,$18,$00,$1C   ;8BF6D8;
     db $00,$20,$00,$24,$00,$28,$00,$2C,$00,$30,$00,$34,$00,$38,$00,$3C   ;8BF6E8;
 
+%anchor($8BF6F8)
 CreditsObjectDefinition:
     dw RTS_8B93D9                                                        ;8BF6F8;
     dw RTS_8B93D9                                                        ;8BF6FA;
     dw InstList_Credits_Start                                            ;8BF6FC;
 
+%anchor($8BF6FE)
 Instruction_EndCredits:
     PHP                                                                  ;8BF6FE;
     PHB                                                                  ;8BF6FF;
@@ -14881,19 +15619,23 @@ Instruction_EndCredits:
     RTS                                                                  ;8BF747;
 
 
+%anchor($8BF748)
 CinematicBGObjectDefinitions_PostCredits_SeeYouNextMission:
     dw RTS_8B93D9                                                        ;8BF748;
     dw RTS_8B93D9                                                        ;8BF74A;
     dw CinematicBGObjectInstLists_Ending_SeeYouNextMission               ;8BF74C;
 
+%anchor($8BF74E)
 CinematicBGObjectDefinitions_PostCredits_ItemPercentage:
     dw RTS_8B93D9                                                        ;8BF74E;
     dw RTS_8B93D9                                                        ;8BF750;
     dw CinematicBGObjectInstLists_Ending_ItemPercentage                  ;8BF752;
 
+%anchor($8BF754)
 Debug_VersionString:
 ; '02.02.21.30'
     db $30,$32,$2E,$30,$32,$2E,$32,$31,$2E,$33,$30,$00                   ;8BF754;
 
+%anchor($8BF760)
 Freespace_Bank8B_F760:                                                   ;8BF760;
 ; $8A0 bytes

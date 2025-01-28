@@ -2,6 +2,7 @@
 org $828000
 
 
+%anchor($828000)
 GameState_6_1F_28_LoadingGameData_SetupNewGame_LoadDemoData:
     PHP                                                                  ;828000;
     REP #$30                                                             ;828001;
@@ -205,6 +206,7 @@ GameState_6_1F_28_LoadingGameData_SetupNewGame_LoadDemoData:
     RTS                                                                  ;82819A;
 
 
+%anchor($82819B)
 InialiseIORegistersForGameplay:
     PHP                                                                  ;82819B;
     JSR.W InitialiseCPURegistersForGameplay                              ;82819C;
@@ -213,6 +215,7 @@ InialiseIORegistersForGameplay:
     RTS                                                                  ;8281A3;
 
 
+%anchor($8281A4)
 InitialiseCPURegistersForGameplay:
     PHP                                                                  ;8281A4;
     SEP #$30                                                             ;8281A5;
@@ -239,6 +242,7 @@ InitialiseCPURegistersForGameplay:
     RTS                                                                  ;8281DC;
 
 
+%anchor($8281DD)
 SetupPPUForGameplay:
     PHP                                                                  ;8281DD;
     SEP #$30                                                             ;8281DE;
@@ -335,6 +339,7 @@ SetupPPUForGameplay:
     RTS                                                                  ;8282C4;
 
 
+%anchor($8282C5)
 LoadInitialPalette:
     PHP                                                                  ;8282C5;
     SEP #$30                                                             ;8282C6;
@@ -356,6 +361,7 @@ LoadInitialPalette:
     RTS                                                                  ;8282E1;
 
 
+%anchor($8282E2)
 Load_StandardBG3Tiles_SpriteTiles_ClearTilemaps:
     PHP                                                                  ;8282E2;
     SEP #$30                                                             ;8282E3;
@@ -411,6 +417,7 @@ Load_StandardBG3Tiles_SpriteTiles_ClearTilemaps:
     RTS                                                                  ;828366;
 
 
+%anchor($828367)
 GameState_20_MadeItToCeresElevator:
     PHP                                                                  ;828367;
     REP #$30                                                             ;828368;
@@ -432,6 +439,7 @@ GameState_20_MadeItToCeresElevator:
     RTS                                                                  ;828387;
 
 
+%anchor($828388)
 GameState_21_BlackoutFromCeres:
     PHP                                                                  ;828388;
     REP #$30                                                             ;828389;
@@ -490,6 +498,7 @@ GameState_21_BlackoutFromCeres:
     RTS                                                                  ;828410;
 
 
+%anchor($828411)
 GameState_23_TimeUp:
     PHP                                                                  ;828411;
     REP #$30                                                             ;828412;
@@ -508,6 +517,7 @@ GameState_23_TimeUp:
     RTS                                                                  ;828430;
 
 
+%anchor($828431)
 GameState_24_WhitingOutFromTimeUp:
     PHP                                                                  ;828431;
     REP #$30                                                             ;828432;
@@ -575,6 +585,7 @@ GameState_24_WhitingOutFromTimeUp:
     RTS                                                                  ;8284BC;
 
 
+%anchor($8284BD)
 GameState_26_SamusEscapesFromZebes:
     PHP                                                                  ;8284BD;
     REP #$30                                                             ;8284BE;
@@ -624,6 +635,7 @@ GameState_26_SamusEscapesFromZebes:
     RTS                                                                  ;82852C;
 
 
+%anchor($82852D)
 GameState_29_TransitionToDemo:
     PHP                                                                  ;82852D;
     REP #$30                                                             ;82852E;
@@ -639,6 +651,7 @@ GameState_29_TransitionToDemo:
     RTS                                                                  ;828547;
 
 
+%anchor($828548)
 GameState_2A_PlayingDemo:
     PHP                                                                  ;828548;
     REP #$30                                                             ;828549;
@@ -687,6 +700,7 @@ GameState_2A_PlayingDemo:
     RTS                                                                  ;828592;
 
 
+%anchor($828593)
 GameState_2B_UnloadGameData:
     PHP                                                                  ;828593;
     REP #$30                                                             ;828594;
@@ -743,6 +757,7 @@ GameState_2B_UnloadGameData:
     RTS                                                                  ;8285FA;
 
 
+%anchor($8285FB)
 GameState_2C_TransitionFromDemo:
     PHP                                                                  ;8285FB;
     REP #$30                                                             ;8285FC;
@@ -777,6 +792,7 @@ GameState_2C_TransitionFromDemo:
     RTS                                                                  ;828636;
 
 
+%anchor($828637)
 CheckForNextDemo:
     PHP                                                                  ;828637;
     REP #$30                                                             ;828638;
@@ -817,6 +833,7 @@ CheckForNextDemo:
     RTS                                                                  ;828678;
 
 
+%anchor($828679)
 LoadDemoRoomData:
     PHP                                                                  ;828679;
     REP #$30                                                             ;82867A;
@@ -922,12 +939,14 @@ LoadDemoRoomData:
     RTS                                                                  ;82876B;
 
 
+%anchor($82876C)
 DemoRoomData_pointers:
     dw DemoRoomData_set0                                                 ;82876C;
     dw DemoRoomData_set1                                                 ;82876E;
     dw DemoRoomData_set2                                                 ;828770;
     dw DemoRoomData_set3                                                 ;828772;
 
+%anchor($828774)
 DemoRoomData_set0:
     dw RoomHeader_LandingSite                                            ;828774;
     dw Door_Parlor_1                                                     ;828776;
@@ -961,6 +980,7 @@ DemoRoomData_set0:
 
     dw $FFFF                                                             ;8287E0;
 
+%anchor($8287E2)
 DemoRoomData_set1:
     dw RoomHeader_BelowSpazer                                            ;8287E2;
     dw Door_WestTunnel_1                                                 ;8287E4;
@@ -994,6 +1014,7 @@ DemoRoomData_set1:
 
     dw $FFFF                                                             ;82884E;
 
+%anchor($828850)
 DemoRoomData_set2:
     dw RoomHeader_Basement                                               ;828850;
     dw Door_WreckedShipMainShaft_3                                       ;828852;
@@ -1027,6 +1048,7 @@ DemoRoomData_set2:
 
     dw $FFFF                                                             ;8288BC;
 
+%anchor($8288BE)
 DemoRoomData_set3:
     dw RoomHeader_LandingSite                                            ;8288BE;
     dw Door_DemoSet3_0_2_4                                               ;8288C0;
@@ -1055,28 +1077,33 @@ DemoRoomData_set3:
 
     dw $FFFF                                                             ;828918;
 
+%anchor($82891A)
 DemoRoomCode_ChargeBeamRoom_Scroll21hRed:
     SEP #$20                                                             ;82891A;
     LDA.B #$00                                                           ;82891C;
     STA.L $7ECD41                                                        ;82891E;
     REP #$20                                                             ;828922;
 
+%anchor($828924)
 RTS_828924:
     RTS                                                                  ;828924;
 
 
+%anchor($828925)
 DemoRoomCode_LandingSite_BG2Tilemap:
     LDA.W #$004A                                                         ;828925;
     STA.B $59                                                            ;828928;
     RTS                                                                  ;82892A;
 
 
+%anchor($82892B)
 DemoRoomCode_Kraid_KraidFunctionTimer:
     LDA.W #$003C                                                         ;82892B;
     STA.W $0FB2                                                          ;82892E;
     RTS                                                                  ;828931;
 
 
+%anchor($828932)
 DemoRoomCode_TourianEntrance_KraidIsDead:
     SEP #$20                                                             ;828932;
     LDA.B #$01                                                           ;828934;
@@ -1085,6 +1112,7 @@ DemoRoomCode_TourianEntrance_KraidIsDead:
     RTS                                                                  ;82893C;
 
 
+%anchor($82893D)
 MainGameLoop:
     PHK                                                                  ;82893D;
     PLB                                                                  ;82893E;
@@ -1163,26 +1191,31 @@ MainGameLoop:
     dw GameState_2B_UnloadGameData                                       ;8289D7;
     dw GameState_2C_TransitionFromDemo                                   ;8289D9;
 
+%anchor($8289DB)
 GameState_1D_DebugGameOverMenu:
     JSL.L Debug_GameOverMenu                                             ;8289DB;
     RTS                                                                  ;8289DF;
 
 
+%anchor($8289E0)
 GameState_1A_GameOverScreen:
     JSL.L GameOverMenu                                                   ;8289E0;
     RTS                                                                  ;8289E4;
 
 
+%anchor($8289E5)
 GameState_4_FileSelectMenus:
     JSL.L FileSelectMenu                                                 ;8289E5;
     RTS                                                                  ;8289E9;
 
 
+%anchor($8289EA)
 GameState_5_FileSelectMap:
     JSL.L FileSelectMap                                                  ;8289EA;
     RTS                                                                  ;8289EE;
 
 
+%anchor($8289EF)
 HandleSounds:
     PHP                                                                  ;8289EF;
     SEP #$30                                                             ;8289F0;
@@ -1224,6 +1257,7 @@ HandleSounds:
     dw SoudnState_3_WaitForAPUClearRequestAcknowledgement                ;828A28;
     dw SoundState_4_ResetSoundState                                      ;828A2A;
 
+%anchor($828A2C)
 SoundState_0_SendAPUSoundRequestFromQueue:
     TYX                                                                  ;828A2C;
     LDA.W $0643,X                                                        ;828A2D;
@@ -1249,6 +1283,7 @@ SoundState_0_SendAPUSoundRequestFromQueue:
 .data:
     db $00,$10,$20                                                       ;828A52;
 
+%anchor($828A55)
 SoundState_1_WaitForAPUSoundRequestAcknowledgement:
     TYX                                                                  ;828A55;
     LDA.W $064D,X                                                        ;828A56;
@@ -1267,6 +1302,7 @@ SoundState_1_WaitForAPUSoundRequestAcknowledgement:
     RTS                                                                  ;828A6B;
 
 
+%anchor($828A6C)
 SoundState_2_ClearSoundRequest:
     TYX                                                                  ;828A6C;
     DEC.W $0650,X                                                        ;828A6D;
@@ -1279,6 +1315,7 @@ SoundState_2_ClearSoundRequest:
     RTS                                                                  ;828A7B;
 
 
+%anchor($828A7C)
 SoudnState_3_WaitForAPUClearRequestAcknowledgement:
     TYX                                                                  ;828A7C;
     LDA.W $064D,X                                                        ;828A7D;
@@ -1297,6 +1334,7 @@ SoudnState_3_WaitForAPUClearRequestAcknowledgement:
     RTS                                                                  ;828A8F;
 
 
+%anchor($828A90)
 SoundState_4_ResetSoundState:
     TYX                                                                  ;828A90;
     DEC.W $0650,X                                                        ;828A91;
@@ -1307,6 +1345,7 @@ SoundState_4_ResetSoundState:
     RTS                                                                  ;828A99;
 
 
+%anchor($828A9A)
 ResetSoundQueues:
     PHP                                                                  ;828A9A;
     REP #$20                                                             ;828A9B;
@@ -1320,6 +1359,7 @@ ResetSoundQueues:
     RTL                                                                  ;828AAF;
 
 
+%anchor($828AB0)
 ShowSpareCPUDebug_UpdatePrevCtrl1Input:
     PHP                                                                  ;828AB0;
     REP #$30                                                             ;828AB1;
@@ -1352,6 +1392,7 @@ ShowSpareCPUDebug_UpdatePrevCtrl1Input:
     RTL                                                                  ;828AE3;
 
 
+%anchor($828AE4)
 GameState_0_ResetStart:
     STZ.W $0DF8                                                          ;828AE4;
     STZ.W $0DFA                                                          ;828AE7;
@@ -1370,26 +1411,31 @@ GameState_0_ResetStart:
     RTS                                                                  ;828B07;
 
 
+%anchor($828B08)
 GameState_1_TitleSequence:
     JSL.L GameState1_TitleSequence                                       ;828B08;
     RTS                                                                  ;828B0C;
 
 
+%anchor($828B0D)
 GameState_3_Nothing:
     RTS                                                                  ;828B0D;
 
 
+%anchor($828B0E)
 GameState_1E_22_25_Intro_CeresGoesBoom_SamusGoesToZebes:
     JSL.L GameState_1E_22_25_Intro_CeresGoesBoom_SamusGoesToZebes_8B     ;828B0E;
     RTS                                                                  ;828B12;
 
 
+%anchor($828B13)
 GameState_27_EndingAndCredits:
     JSL.L GameState27_EndingAndCredits                                   ;828B13;
     RTS                                                                  ;828B17;
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($828B18)
 UNUSED_IncrementGameState_828B18:
     PHP                                                                  ;828B18;
     REP #$30                                                             ;828B19;
@@ -1399,6 +1445,7 @@ UNUSED_IncrementGameState_828B18:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($828B20)
 GameState_7_MainGameplayFadingIn:
     PHP                                                                  ;828B20;
     REP #$30                                                             ;828B21;
@@ -1418,11 +1465,13 @@ GameState_7_MainGameplayFadingIn:
     RTS                                                                  ;828B3E;
 
 
+%anchor($828B3F)
 UNUSED_GameState_1C_828B3F:
     JSL.L UNUSED_GameState1C_91D4DA                                      ;828B3F;
     RTS                                                                  ;828B43;
 
 
+%anchor($828B44)
 GameState_8_MainGameplay:
     PHP                                                                  ;828B44;
     REP #$30                                                             ;828B45;
@@ -1466,6 +1515,7 @@ GameState_8_MainGameplay:
     RTS                                                                  ;828BB8;
 
 
+%anchor($828BB9)
 Delete_GameOptionsMenu_Objects:
     PHP                                                                  ;828BB9;
     REP #$30                                                             ;828BBA;
@@ -1481,6 +1531,7 @@ Delete_GameOptionsMenu_Objects:
     RTS                                                                  ;828BCA;
 
 
+%anchor($828BCB)
 Spawn_GameOptionsMenu_Object:
     PHP                                                                  ;828BCB;
     REP #$30                                                             ;828BCC;
@@ -1522,10 +1573,12 @@ Spawn_GameOptionsMenu_Object:
     RTS                                                                  ;828C0F;
 
 
+%anchor($828C10)
 RTS_828C10:
     RTS                                                                  ;828C10;
 
 
+%anchor($828C11)
 GameOptionsMenu_ObjectHandler:
     PHP                                                                  ;828C11;
     REP #$30                                                             ;828C12;
@@ -1546,6 +1599,7 @@ GameOptionsMenu_ObjectHandler:
     RTS                                                                  ;828C2A;
 
 
+%anchor($828C2B)
 Process_GameOptionsMenu_Object:
     JSR.W ($1B0D,X)                                                      ;828C2B;
     LDX.W $1A8F                                                          ;828C2E;
@@ -1576,6 +1630,7 @@ Process_GameOptionsMenu_Object:
     RTS                                                                  ;828C59;
 
 
+%anchor($828C5A)
 Instruction_GameOptionsMenu_Delete:
     REP #$30                                                             ;828C5A;
     STZ.W $1A9D,X                                                        ;828C5C;
@@ -1584,6 +1639,7 @@ Instruction_GameOptionsMenu_Delete:
     RTS                                                                  ;828C63;
 
 
+%anchor($828C64)
 Instruction_GameOptionsMenu_Sleep:
     REP #$30                                                             ;828C64;
     DEY                                                                  ;828C66;
@@ -1594,6 +1650,7 @@ Instruction_GameOptionsMenu_Sleep:
     RTS                                                                  ;828C6D;
 
 
+%anchor($828C6E)
 Instruction_GameOptionsMenu_PreInstruction_inY:
     REP #$30                                                             ;828C6E;
     LDA.W $0000,Y                                                        ;828C70;
@@ -1603,6 +1660,7 @@ Instruction_GameOptionsMenu_PreInstruction_inY:
     RTS                                                                  ;828C78;
 
 
+%anchor($828C79)
 Instruction_GameOptionsMenu_ClearPreInstruction:
     REP #$30                                                             ;828C79;
     LDA.W #.RTS                                                          ;828C7B;
@@ -1612,6 +1670,7 @@ Instruction_GameOptionsMenu_ClearPreInstruction:
     RTS                                                                  ;828C81;
 
 
+%anchor($828C82)
 Instruction_GameOptionsMenu_GotoY:
     REP #$30                                                             ;828C82;
     LDA.W $0000,Y                                                        ;828C84;
@@ -1619,6 +1678,7 @@ Instruction_GameOptionsMenu_GotoY:
     RTS                                                                  ;828C88;
 
 
+%anchor($828C89)
 Instruction_GameOptionsMenu_DecTimer_and_GotoY_if_NonZero:
     REP #$30                                                             ;828C89;
     DEC.W $1B2D,X                                                        ;828C8B;
@@ -1628,6 +1688,7 @@ Instruction_GameOptionsMenu_DecTimer_and_GotoY_if_NonZero:
     RTS                                                                  ;828C92;
 
 
+%anchor($828C93)
 Instruction_GameOptionsMenu_TimerInY:
     REP #$30                                                             ;828C93;
     LDA.W $0000,Y                                                        ;828C95;
@@ -1637,11 +1698,13 @@ Instruction_GameOptionsMenu_TimerInY:
     RTS                                                                  ;828C9D;
 
 
+%anchor($828C9E)
 REP30RTS_828C9E:
     REP #$30                                                             ;828C9E;
     RTS                                                                  ;828CA0;
 
 
+%anchor($828CA1)
 Draw_GameOptionsMenu_Spritemaps:
     PHP                                                                  ;828CA1;
     REP #$30                                                             ;828CA2;
@@ -1672,6 +1735,7 @@ Draw_GameOptionsMenu_Spritemaps:
     RTS                                                                  ;828CCE;
 
 
+%anchor($828CCF)
 GameState_C_Pausing_NormalGameplayDarkening:
     PHP                                                                  ;828CCF;
     REP #$30                                                             ;828CD0;
@@ -1690,6 +1754,7 @@ GameState_C_Pausing_NormalGameplayDarkening:
     RTS                                                                  ;828CEE;
 
 
+%anchor($828CEF)
 GameState_D_Pausing_LoadingPauseScreen:
     PHP                                                                  ;828CEF;
     REP #$30                                                             ;828CF0;
@@ -1736,6 +1801,7 @@ GameState_D_Pausing_LoadingPauseScreen:
     RTS                                                                  ;828D50;
 
 
+%anchor($828D51)
 Backup_BG2Tilemap_for_PauseMenu:
     PHP                                                                  ;828D51;
     SEP #$20                                                             ;828D52;
@@ -1768,6 +1834,7 @@ Backup_BG2Tilemap_for_PauseMenu:
     RTS                                                                  ;828D95;
 
 
+%anchor($828D96)
 Restore_BG2Tilemap_from_PauseMenu:
     PHP                                                                  ;828D96;
     SEP #$20                                                             ;828D97;
@@ -1788,6 +1855,7 @@ Restore_BG2Tilemap_from_PauseMenu:
     RTS                                                                  ;828DBC;
 
 
+%anchor($828DBD)
 Backup_SomeGraphicsState_for_PauseScreen:
     PHP                                                                  ;828DBD;
     SEP #$20                                                             ;828DBE;
@@ -1829,6 +1897,7 @@ Backup_SomeGraphicsState_for_PauseScreen:
     RTS                                                                  ;828E18;
 
 
+%anchor($828E19)
 Restore_SomeGraphicsState_from_PauseScreen:
     PHP                                                                  ;828E19;
     SEP #$20                                                             ;828E1A;
@@ -1870,6 +1939,7 @@ Restore_SomeGraphicsState_from_PauseScreen:
     RTS                                                                  ;828E74;
 
 
+%anchor($828E75)
 LoadPauseMenuTiles_ClearBG2Tilemap:
     PHP                                                                  ;828E75;
     SEP #$30                                                             ;828E76;
@@ -1913,6 +1983,7 @@ LoadPauseMenuTiles_ClearBG2Tilemap:
     RTL                                                                  ;828ED9;
 
 
+%anchor($828EDA)
 LoadPauseScreen_BaseTilemaps:
     PHP                                                                  ;828EDA;
     SEP #$30                                                             ;828EDB;
@@ -1983,6 +2054,7 @@ LoadPauseScreen_BaseTilemaps:
     RTL                                                                  ;828F6F;
 
 
+%anchor($828F70)
 Load_EquipmentScreen_ReserveHealth_Tilemap:
     PHP                                                                  ;828F70;
     REP #$30                                                             ;828F71;
@@ -2038,6 +2110,7 @@ Load_EquipmentScreen_ReserveHealth_Tilemap:
     RTS                                                                  ;828FD3;
 
 
+%anchor($828FD4)
 BackupGameplayPalettes_LoadPauseScreenPalettes:
     PHP                                                                  ;828FD4;
     SEP #$30                                                             ;828FD5;
@@ -2073,6 +2146,7 @@ BackupGameplayPalettes_LoadPauseScreenPalettes:
     RTS                                                                  ;829008;
 
 
+%anchor($829009)
 ContinueInitializingPauseMenu:
     PHP                                                                  ;829009;
     PHB                                                                  ;82900A;
@@ -2091,6 +2165,7 @@ ContinueInitializingPauseMenu:
     RTS                                                                  ;829027;
 
 
+%anchor($829028)
 Setup_MapScrolling_for_FileSelectMap:
     JSR.W ResetPauseMenuAnimations                                       ;829028;
     JSR.W DetermineMapScrollLimits                                       ;82902B;
@@ -2184,6 +2259,7 @@ Setup_MapScrolling_for_FileSelectMap:
     RTL                                                                  ;8290C7;
 
 
+%anchor($8290C8)
 GameState_E_Paused_LoadingPauseScreen:
     PHP                                                                  ;8290C8;
     REP #$30                                                             ;8290C9;
@@ -2203,6 +2279,7 @@ GameState_E_Paused_LoadingPauseScreen:
     RTS                                                                  ;8290E7;
 
 
+%anchor($8290E8)
 GameState_F_Paused_MapAndItemScreens:
     PHB                                                                  ;8290E8;
     PHK                                                                  ;8290E9;
@@ -2216,6 +2293,7 @@ GameState_F_Paused_MapAndItemScreens:
     RTS                                                                  ;8290FE;
 
 
+%anchor($8290FF)
 MainPauseRoutine:
     PHP                                                                  ;8290FF;
     PHB                                                                  ;829100;
@@ -2241,6 +2319,7 @@ MainPauseRoutine:
     dw PauseMenu_6_EquipmentScreenToMapScreen_LoadMapScreen              ;82911C;
     dw PauseMenu_7_EquipmentScreenToMapScreen_FadingIn                   ;82911E;
 
+%anchor($829120)
 PauseMenu_0_MapScreen:
     REP #$30                                                             ;829120;
     JSR.W Handle_PauseScreen_L_R                                         ;829122;
@@ -2255,6 +2334,7 @@ PauseMenu_0_MapScreen:
     RTS                                                                  ;829141;
 
 
+%anchor($829142)
 PauseScreen_1_EquipmentScreen:
     STZ.B $B1                                                            ;829142;
     STZ.B $B3                                                            ;829144;
@@ -2266,6 +2346,7 @@ PauseScreen_1_EquipmentScreen:
     RTS                                                                  ;829155;
 
 
+%anchor($829156)
 PauseMenu_2_MapScreenToEquipmentScreen_FadingOut:
     JSL.L Display_Map_Elevator_Destinations                              ;829156;
     JSR.W MapScreen_DrawSamusPositionIndicator                           ;82915A;
@@ -2288,6 +2369,7 @@ PauseMenu_2_MapScreenToEquipmentScreen_FadingOut:
     RTS                                                                  ;829185;
 
 
+%anchor($829186)
 PauseMenu_5_EquipmentScreenToMapScreen_FadingOut:
     JSR.W EquipmentScreen_DrawItemSelector                               ;829186;
     JSR.W EquipmentScreen_DisplayReserveTankAmount_shell                 ;829189;
@@ -2307,6 +2389,7 @@ PauseMenu_5_EquipmentScreenToMapScreen_FadingOut:
     RTS                                                                  ;8291AA;
 
 
+%anchor($8291AB)
 PauseMenu_3_MapScreenToEquipmentScreen_LoadEquipmentScreen:
     REP #$30                                                             ;8291AB;
     JSL.L Display_Map_Elevator_Destinations                              ;8291AD;
@@ -2325,6 +2408,7 @@ PauseMenu_3_MapScreenToEquipmentScreen_LoadEquipmentScreen:
     RTS                                                                  ;8291D6;
 
 
+%anchor($8291D7)
 PauseMenu_6_EquipmentScreenToMapScreen_LoadMapScreen:
     REP #$30                                                             ;8291D7;
     JSL.L Display_Map_Elevator_Destinations                              ;8291D9;
@@ -2342,6 +2426,7 @@ PauseMenu_6_EquipmentScreenToMapScreen_LoadMapScreen:
     RTS                                                                  ;8291FF;
 
 
+%anchor($829200)
 PauseMenu_7_EquipmentScreenToMapScreen_FadingIn:
     JSR.W MapScreen_DrawSamusPositionIndicator                           ;829200;
     JSL.L Draw_Map_Icons                                                 ;829203;
@@ -2366,6 +2451,7 @@ PauseMenu_7_EquipmentScreenToMapScreen_FadingIn:
     RTS                                                                  ;829230;
 
 
+%anchor($829231)
 PauseMenu_4_MapScreenToEquipmentScreen_FadingIn:
     JSR.W EquipmentScreen_DrawItemSelector                               ;829231;
     JSR.W EquipmentScreen_DisplayReserveTankAmount_shell                 ;829234;
@@ -2389,6 +2475,7 @@ PauseMenu_4_MapScreenToEquipmentScreen_FadingIn:
     RTS                                                                  ;82925C;
 
 
+%anchor($82925D)
 MapScrolling:
     PHP                                                                  ;82925D;
     PHB                                                                  ;82925E;
@@ -2411,12 +2498,14 @@ MapScrolling:
     dw MapScrolling_Up                                                   ;829274;
     dw MapScrolling_Down                                                 ;829276;
 
+%anchor($829278)
 MapScrolling_None:
     LDA.W #$0004                                                         ;829278;
     STA.W $05FB                                                          ;82927B;
     RTS                                                                  ;82927E;
 
 
+%anchor($82927F)
 GetMapScrollSpeedIndexInX:
     LDX.W $05FF                                                          ;82927F;
     LDA.W $05FB                                                          ;829282;
@@ -2430,6 +2519,7 @@ GetMapScrollSpeedIndexInX:
     RTS                                                                  ;82928D;
 
 
+%anchor($82928E)
 MapScrolling_Left:
     JSR.W GetMapScrollSpeedIndexInX                                      ;82928E;
     LDA.B $B1                                                            ;829291;
@@ -2437,6 +2527,7 @@ MapScrolling_Left:
     SBC.W MapScrolling_SpeedTable,X                                      ;829294;
     STA.B $B1                                                            ;829297;
 
+%anchor($829299)
 MapScrolling_Common:
     INC.W $05FF                                                          ;829299;
     INC.W $05FF                                                          ;82929C;
@@ -2455,6 +2546,7 @@ MapScrolling_Common:
     RTS                                                                  ;8292BC;
 
 
+%anchor($8292BD)
 MapScrolling_Right:
     JSR.W GetMapScrollSpeedIndexInX                                      ;8292BD;
     LDA.W MapScrolling_SpeedTable,X                                      ;8292C0;
@@ -2464,6 +2556,7 @@ MapScrolling_Right:
     BRA MapScrolling_Common                                              ;8292C8;
 
 
+%anchor($8292CA)
 MapScrolling_Up:
     JSR.W GetMapScrollSpeedIndexInX                                      ;8292CA;
     LDA.B $B3                                                            ;8292CD;
@@ -2473,6 +2566,7 @@ MapScrolling_Up:
     BRA MapScrolling_Common                                              ;8292D5;
 
 
+%anchor($8292D7)
 MapScrolling_Down:
     JSR.W GetMapScrollSpeedIndexInX                                      ;8292D7;
     LDA.W MapScrolling_SpeedTable,X                                      ;8292DA;
@@ -2482,12 +2576,14 @@ MapScrolling_Down:
     BRA MapScrolling_Common                                              ;8292E2;
 
 
+%anchor($8292E4)
 MapScrolling_SpeedTable:
     dw $0000,$0000,$0000,$0008,$0000,$0000,$0000,$0000                   ;8292E4;
     dw $0000,$0000,$0000,$0000,$0000,$0000,$0000,$0000                   ;8292F4;
     dw $0000,$0000,$0000,$0008,$0000,$0000,$0000,$0000                   ;829304;
     dw $0000,$0000,$0000,$0000,$0000,$0000,$0000,$0000                   ;829314;
 
+%anchor($829324)
 GameState_10_Unpausing_LoadingNormalGameplay:
     PHP                                                                  ;829324;
     REP #$30                                                             ;829325;
@@ -2509,6 +2605,7 @@ GameState_10_Unpausing_LoadingNormalGameplay:
     RTS                                                                  ;82934A;
 
 
+%anchor($82934B)
 Draw_PauseMenu_During_FadeOut:
     LDA.W $0763                                                          ;82934B;
     CMP.W #$0001                                                         ;82934E;
@@ -2524,6 +2621,7 @@ Draw_PauseMenu_During_FadeOut:
     JMP.W Handle_PauseMenu_L_R_PressedHighlight                          ;829364;
 
 
+%anchor($829367)
 GameState_11_Unpausing_LoadingNormalGameplay:
     PHP                                                                  ;829367;
     REP #$30                                                             ;829368;
@@ -2554,6 +2652,7 @@ GameState_11_Unpausing_LoadingNormalGameplay:
     RTS                                                                  ;8293A0;
 
 
+%anchor($8293A1)
 GameState_12_Unpausing_NormalGameplayBrightening:
     PHP                                                                  ;8293A1;
     REP #$30                                                             ;8293A2;
@@ -2574,6 +2673,7 @@ GameState_12_Unpausing_NormalGameplayBrightening:
     RTS                                                                  ;8293C2;
 
 
+%anchor($8293C3)
 Load_PauseMenuMapTilemap_and_AreaLabel:
     PHP                                                                  ;8293C3;
     PHB                                                                  ;8293C4;
@@ -2632,6 +2732,7 @@ Load_PauseMenuMapTilemap_and_AreaLabel:
     RTL                                                                  ;82943C;
 
 
+%anchor($82943D)
 LoadPauseMenuMapTilemap:
     PHP                                                                  ;82943D;
     REP #$30                                                             ;82943E;
@@ -2759,6 +2860,7 @@ LoadPauseMenuMapTilemap:
     RTS                                                                  ;829516;
 
 
+%anchor($829517)
 DrawRoomSelectMap:
     SEP #$30                                                             ;829517;
     LDA.B #$33                                                           ;829519;
@@ -2912,6 +3014,7 @@ DrawRoomSelectMap:
     RTL                                                                  ;829627;
 
 
+%anchor($829628)
 DrawRoomSelectMap_AreaLabel:
     PHB                                                                  ;829628;
     PHK                                                                  ;829629;
@@ -2937,6 +3040,7 @@ DrawRoomSelectMap_AreaLabel:
     RTL                                                                  ;829649;
 
 
+%anchor($82964A)
 AreaMapPointers:
     dl MapTilemaps_crateria                                              ;82964A;
     dl MapTilemaps_brinstar                                              ;82964D;
@@ -2946,6 +3050,7 @@ AreaMapPointers:
     dl MapTilemaps_tourian                                               ;829659;
     dl UNUSED_MapTilemaps_ceres_B5E000                                   ;82965C;
 
+%anchor($82965F)
 AreaLabelTilemaps_pointers:
     dw AreaLabelTilemaps_crateria                                        ;82965F;
     dw AreaLabelTilemaps_brinstar                                        ;829661;
@@ -2956,27 +3061,35 @@ AreaLabelTilemaps_pointers:
     dw AreaLabelTilemaps_ceres                                           ;82966B;
     dw AreaLabelTilemaps_tourianDebug                                    ;82966D;
 
+%anchor($82966F)
 AreaLabelTilemaps_crateria:
     dw $2801,$2801,$3832,$3841,$3830,$3843,$3834,$3841,$3838,$2830,$2801,$2801 ;82966F;
 
+%anchor($829687)
 AreaLabelTilemaps_brinstar:
     dw $2801,$2801,$3831,$3841,$3838,$383D,$3842,$3843,$3830,$3841,$2801,$2801 ;829687;
 
+%anchor($82969F)
 AreaLabelTilemaps_norfair:
     dw $2801,$2801,$383D,$383E,$3841,$3835,$3830,$3838,$3841,$2801,$2801,$2801 ;82969F;
 
+%anchor($8296B7)
 AreaLabelTilemaps_wreckedShip:
     dw $3846,$3841,$3834,$3832,$383A,$3834,$3833,$2801,$3842,$3837,$3838,$383F ;8296B7;
 
+%anchor($8296CF)
 AreaLabelTilemaps_maridia:
     dw $2801,$2801,$383C,$3830,$3841,$3838,$3833,$3838,$3830,$2801,$2801,$2801 ;8296CF;
 
+%anchor($8296E7)
 AreaLabelTilemaps_tourianDebug:
     dw $2801,$2801,$3843,$383E,$3844,$3841,$3838,$3830,$383D,$2801,$2801,$2801 ;8296E7;
 
+%anchor($8296FF)
 AreaLabelTilemaps_ceres:
     dw $2801,$2801,$2801,$3832,$383E,$383B,$383E,$383D,$3848,$2801,$2801,$2801 ;8296FF;
 
+%anchor($829717)
 MapData_pointers:
     dw MapData_crateria                                                  ;829717;
     dw MapData_brinstar                                                  ;829719;
@@ -2987,6 +3100,7 @@ MapData_pointers:
     dw MapData_ceres                                                     ;829723;
     dw MapData_tourianDebug                                              ;829725;
 
+%anchor($829727)
 MapData_crateria:
     db $00,$00,$00,$00                                                   ;829727;
     db $00,$00,$00,$7F
@@ -3053,6 +3167,7 @@ MapData_crateria:
     db                 $00,$00,$00,$00
     db                 $00,$00,$00,$00
 
+%anchor($829827)
 MapData_brinstar:
     db $00,$00,$00,$00                                                  ;829827;
     db $00,$40,$00,$00
@@ -3119,6 +3234,7 @@ MapData_brinstar:
     db                 $00,$00,$00,$00
     db                 $00,$00,$00,$00
 
+%anchor($829927)
 MapData_norfair:
     db $00,$00,$00,$00                                                   ;829927;
     db $00,$20,$00,$00
@@ -3185,6 +3301,7 @@ MapData_norfair:
     db                 $00,$00,$00,$00
     db                 $00,$00,$00,$00
 
+%anchor($829A27)
 MapData_wreckedShip:
     db $00,$00,$00,$00                                                   ;829A27;
     db $00,$00,$00,$00
@@ -3251,6 +3368,7 @@ MapData_wreckedShip:
     db                 $00,$00,$00,$00
     db                 $00,$00,$00,$00
 
+%anchor($829B27)
 MapData_maridia:
     db $00,$00,$00,$00                                                   ;829B27;
     db $00,$00,$00,$78
@@ -3317,6 +3435,7 @@ MapData_maridia:
     db                 $00,$00,$00,$00
     db                 $00,$00,$00,$00
 
+%anchor($829C27)
 MapData_tourianDebug:
     db $00,$00,$00,$00                                                   ;829C27;
     db $00,$00,$00,$00
@@ -3383,6 +3502,7 @@ MapData_tourianDebug:
     db                 $00,$00,$00,$00
     db                 $00,$00,$00,$00
 
+%anchor($829D27)
 MapData_ceres:
     db $00,$00,$00,$00                                                   ;829D27;
     db $00,$00,$00,$00
@@ -3449,6 +3569,7 @@ MapData_ceres:
     db                 $00,$00,$00,$00
     db                 $00,$00,$00,$00
 
+%anchor($829E27)
 SetupMapScrollingForPauseMenu:
     REP #$30                                                             ;829E27;
     STA.B $14                                                            ;829E29;
@@ -3542,6 +3663,7 @@ SetupMapScrollingForPauseMenu:
     RTS                                                                  ;829EC3;
 
 
+%anchor($829EC4)
 DetermineMapScrollLimits:
     PHP                                                                  ;829EC4;
     PHB                                                                  ;829EC5;
@@ -3608,6 +3730,7 @@ DetermineMapScrollLimits:
     RTS                                                                  ;829F44;
 
 
+%anchor($829F45)
 A_equals_X_times_8:
     TXA                                                                  ;829F45;
     ASL A                                                                ;829F46;
@@ -3616,6 +3739,7 @@ A_equals_X_times_8:
     RTS                                                                  ;829F49;
 
 
+%anchor($829F4A)
 DetermineLeftmostMapColumn:
     PHP                                                                  ;829F4A;
     SEP #$20                                                             ;829F4B;
@@ -3679,6 +3803,7 @@ DetermineLeftmostMapColumn:
 .bits:
     db $80,$40,$20,$10,$08,$04,$02,$01                                   ;829FA1;
 
+%anchor($829FA9)
 DetermineRightmostMapColumn:
     PHP                                                                  ;829FA9;
     SEP #$20                                                             ;829FAA;
@@ -3742,6 +3867,7 @@ DetermineRightmostMapColumn:
 .bits:
     db $80,$40,$20,$10,$08,$04,$02,$01                                   ;82A001;
 
+%anchor($82A009)
 DetermineTopmostMapRow:
     PHP                                                                  ;82A009;
     REP #$20                                                             ;82A00A;
@@ -3785,6 +3911,7 @@ DetermineTopmostMapRow:
     RTS                                                                  ;82A052;
 
 
+%anchor($82A053)
 DetermineLeftmostMapRow:
     PHP                                                                  ;82A053;
     REP #$20                                                             ;82A054;
@@ -3827,6 +3954,7 @@ DetermineLeftmostMapRow:
     RTS                                                                  ;82A099;
 
 
+%anchor($82A09A)
 SetupPPUForPauseMenu:
     SEP #$30                                                             ;82A09A;
     LDA.B #$01                                                           ;82A09C;
@@ -3872,6 +4000,7 @@ SetupPPUForPauseMenu:
     RTS                                                                  ;82A0F6;
 
 
+%anchor($82A0F7)
 ResetPauseMenuAnimations:
     REP #$30                                                             ;82A0F7;
     STZ.W $0757                                                          ;82A0F9;
@@ -3895,6 +4024,7 @@ ResetPauseMenuAnimations:
     RTS                                                                  ;82A12A;
 
 
+%anchor($82A12B)
 Load_EquipmentScreen_EquipmentTilemaps:
     REP #$30                                                             ;82A12B;
     LDA.W $09D4                                                          ;82A12D;
@@ -4063,6 +4193,7 @@ Load_EquipmentScreen_EquipmentTilemaps:
     RTS                                                                  ;82A27D;
 
 
+%anchor($82A27E)
 Copy_Bytes_from_X_to_7ERAM:
     PHP                                                                  ;82A27E;
     PHY                                                                  ;82A27F;
@@ -4087,6 +4218,7 @@ Copy_Bytes_from_X_to_7ERAM:
     RTS                                                                  ;82A29C;
 
 
+%anchor($82A29D)
 Copy_Bytes_of_Palette_from_7E_to_12:
     PHP                                                                  ;82A29D;
     PHY                                                                  ;82A29E;
@@ -4111,6 +4243,7 @@ Copy_Bytes_of_Palette_from_7E_to_12:
     RTS                                                                  ;82A2BD;
 
 
+%anchor($82A2BE)
 Clear_Samus_Beam_Tiles:
     PHP                                                                  ;82A2BE;
     SEP #$30                                                             ;82A2BF;
@@ -4130,6 +4263,7 @@ Clear_Samus_Beam_Tiles:
     RTS                                                                  ;82A2E2;
 
 
+%anchor($82A2E3)
 ContinueInitialising_GameplayResume:
     SEP #$30                                                             ;82A2E3;
     PHP                                                                  ;82A2E5;
@@ -4156,6 +4290,7 @@ ContinueInitialising_GameplayResume:
     RTS                                                                  ;82A312;
 
 
+%anchor($82A313)
 Setup_PPU_for_GameplayResume:
     PHP                                                                  ;82A313;
     SEP #$30                                                             ;82A314;
@@ -4186,6 +4321,7 @@ Setup_PPU_for_GameplayResume:
     RTS                                                                  ;82A34D;
 
 
+%anchor($82A34E)
 Calculate_BG_Scrolls_bank82:
     PHP                                                                  ;82A34E;
     REP #$30                                                             ;82A34F;
@@ -4209,6 +4345,7 @@ Calculate_BG_Scrolls_bank82:
     RTS                                                                  ;82A376;
 
 
+%anchor($82A377)
 JSL_to_Update_BeamTiles_and_Palette:
     PHP                                                                  ;82A377;
     REP #$30                                                             ;82A378;
@@ -4217,6 +4354,7 @@ JSL_to_Update_BeamTiles_and_Palette:
     RTS                                                                  ;82A37F;
 
 
+%anchor($82A380)
 Clear_PauseMenu_Data:
     PHP                                                                  ;82A380;
     REP #$30                                                             ;82A381;
@@ -4253,6 +4391,7 @@ Clear_PauseMenu_Data:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($82A3D9)
 UNUSED_Change_Pose_Due_to_Equipment_Change:
     PHP                                                                  ;82A3D9;
     REP #$30                                                             ;82A3DA;
@@ -4297,6 +4436,7 @@ endif ; !FEATURE_KEEP_UNREFERENCED
     dw RTS_82A425                                                        ;82A421;
     dw RTS_82A425                                                        ;82A423;
 
+%anchor($82A425)
 RTS_82A425:
     PHP                                                                  ;82A425;
     REP #$30                                                             ;82A426;
@@ -4304,6 +4444,7 @@ RTS_82A425:
     RTS                                                                  ;82A429;
 
 
+%anchor($82A42A)
 ChangePose_DueTo_EquipmentChange_SpinJumping:
     PHP                                                                  ;82A42A;
     REP #$30                                                             ;82A42B;
@@ -4354,6 +4495,7 @@ ChangePose_DueTo_EquipmentChange_SpinJumping:
     RTS                                                                  ;82A47A;
 
 
+%anchor($82A47B)
 Change_Pose_due_to_Equipment_Change_MovementTypes_7_9:
     PHP                                                                  ;82A47B;
     REP #$30                                                             ;82A47C;
@@ -4382,6 +4524,7 @@ Change_Pose_due_to_Equipment_Change_MovementTypes_7_9:
     RTS                                                                  ;82A4A8;
 
 
+%anchor($82A4A9)
 ChangePose_DueTo_EquipmentChange_MorphBall:
     PHP                                                                  ;82A4A9;
     REP #$30                                                             ;82A4AA;
@@ -4410,6 +4553,7 @@ ChangePose_DueTo_EquipmentChange_MorphBall:
     RTS                                                                  ;82A4D6;
 
 
+%anchor($82A4D7)
 ChangePose_DueTo_EquipmentChange_SpringBall:
     PHP                                                                  ;82A4D7;
     REP #$30                                                             ;82A4D8;
@@ -4438,12 +4582,14 @@ ChangePose_DueTo_EquipmentChange_SpringBall:
     RTS                                                                  ;82A504;
 
 
+%anchor($82A505)
 Handle_PauseScreen_L_R:
     JSR.W Handle_PauseScreen_L_R_Input                                   ;82A505;
     JSR.W EquipmentScreen_Draw_L_R_Highlight                             ;82A508;
     RTS                                                                  ;82A50B;
 
 
+%anchor($82A50C)
 Handle_PauseScreen_L_R_Input:
     PHP                                                                  ;82A50C;
     REP #$30                                                             ;82A50D;
@@ -4499,6 +4645,7 @@ Handle_PauseScreen_L_R_Input:
     RTS                                                                  ;82A56C;
 
 
+%anchor($82A56D)
 Handle_PauseMenu_L_R_PressedHighlight:
     PHP                                                                  ;82A56D;
     REP #$30                                                             ;82A56E;
@@ -4528,6 +4675,7 @@ Handle_PauseMenu_L_R_PressedHighlight:
     RTS                                                                  ;82A599;
 
 
+%anchor($82A59A)
 EquipmentScreen_Draw_L_R_Highlight:
     PHP                                                                  ;82A59A;
     REP #$30                                                             ;82A59B;
@@ -4543,6 +4691,7 @@ EquipmentScreen_Draw_L_R_Highlight:
     RTS                                                                  ;82A5B6;
 
 
+%anchor($82A5B7)
 Handle_PauseScreen_StartButton:
     PHP                                                                  ;82A5B7;
     REP #$30                                                             ;82A5B8;
@@ -4570,6 +4719,7 @@ Handle_PauseScreen_StartButton:
     RTS                                                                  ;82A5F0;
 
 
+%anchor($82A5F1)
 Handle_PauseMenu_StartPressedHighlight:
     PHP                                                                  ;82A5F1;
     PHB                                                                  ;82A5F2;
@@ -4593,6 +4743,7 @@ Handle_PauseMenu_StartPressedHighlight:
     RTL                                                                  ;82A614;
 
 
+%anchor($82A615)
 Set_PauseScreen_ButtonLabelPalettes:
     PHP                                                                  ;82A615;
     REP #$30                                                             ;82A616;
@@ -4609,6 +4760,7 @@ Set_PauseScreen_ButtonLabelPalettes:
     dw Set_PauseScreen_ButtonLabelPalettes_Unpausing                     ;82A624;
     dw Set_PauseScreen_ButtonLabelPalettes_EquipmentScreen               ;82A626;
 
+%anchor($82A628)
 Set_PauseScreen_ButtonLabelPalettes_EquipmentScreen:
     REP #$30                                                             ;82A628;
     PHP                                                                  ;82A62A;
@@ -4710,6 +4862,7 @@ Set_PauseScreen_ButtonLabelPalettes_EquipmentScreen:
     RTS                                                                  ;82A6DE;
 
 
+%anchor($82A6DF)
 Set_PauseScreen_ButtonLabelPalettes_Unpausing:
     REP #$30                                                             ;82A6DF;
     PHP                                                                  ;82A6E1;
@@ -4811,6 +4964,7 @@ Set_PauseScreen_ButtonLabelPalettes_Unpausing:
     RTS                                                                  ;82A795;
 
 
+%anchor($82A796)
 Set_PauseScreen_ButtonLabelPalettes_MapScreen:
     REP #$30                                                             ;82A796;
     PHP                                                                  ;82A798;
@@ -4912,6 +5066,7 @@ Set_PauseScreen_ButtonLabelPalettes_MapScreen:
     RTS                                                                  ;82A84C;
 
 
+%anchor($82A84D)
 Update_PauseMenu_L_R_Start_VRAMTilemap:
     PHP                                                                  ;82A84D;
     REP #$30                                                             ;82A84E;
@@ -4943,12 +5098,14 @@ Update_PauseMenu_L_R_Start_VRAMTilemap:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($82A87D)
 UNUSED_Draw_PauseScreen_SpriteAnimation_long:
     JSR.W Draw_PauseScreen_SpriteAnimation                               ;82A87D;
     RTL                                                                  ;82A880;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($82A881)
 Draw_PauseScreen_SpriteAnimation:
     PHP                                                                  ;82A881;
     PHX                                                                  ;82A882;
@@ -5042,6 +5199,7 @@ Draw_PauseScreen_SpriteAnimation:
     RTS                                                                  ;82A92A;
 
 
+%anchor($82A92B)
 Handle_PauseScreen_PaletteAnimation:
     PHP                                                                  ;82A92B;
     SEP #$20                                                             ;82A92C;
@@ -5117,6 +5275,7 @@ Handle_PauseScreen_PaletteAnimation:
     dw $0000,$61BA,$00F9,$6810,$6B5A,$56B5,$012A,$2530,$004C,$34B4,$294B,$012A,$18C6,$2108,$0000,$25B0
     dw $0000,$6E1C,$011B,$7412,$739C,$5294,$00A6,$294D,$004E,$3092,$294B,$00A6,$1084,$294A,$0000,$298E
 
+%anchor($82AB47)
 EquipmentScreen_SetupReserveMode_and_DetermineInitialSelect:
     PHP                                                                  ;82AB47;
     REP #$30                                                             ;82AB48;
@@ -5244,6 +5403,7 @@ EquipmentScreen_SetupReserveMode_and_DetermineInitialSelect:
     RTS                                                                  ;82AC21;
 
 
+%anchor($82AC22)
 EquipmentScreen_TransferBG1Tilemap:
     PHP                                                                  ;82AC22;
     PHB                                                                  ;82AC23;
@@ -5269,6 +5429,7 @@ EquipmentScreen_TransferBG1Tilemap:
     RTL                                                                  ;82AC4E;
 
 
+%anchor($82AC4F)
 EquipmentScreen_Main:
     PHP                                                                  ;82AC4F;
     REP #$30                                                             ;82AC50;
@@ -5290,6 +5451,7 @@ EquipmentScreen_Main:
     dw EquipmentScreen_Main_SuitsMisc                                    ;82AC6C;
     dw EquipmentScreen_Main_Boots                                        ;82AC6E;
 
+%anchor($82AC70)
 EquipmentScreen_Main_Tanks:
     PHP                                                                  ;82AC70;
     REP #$30                                                             ;82AC71;
@@ -5309,6 +5471,7 @@ EquipmentScreen_Main_Tanks:
     dw EquipmentScreen_Main_Tanks_Mode                                   ;82AC87;
     dw EquipmentScreen_Main_Tanks_ReserveTank                            ;82AC89;
 
+%anchor($82AC8B)
 EquipmentScreen_Main_Tanks_DPadResponse:
     PHP                                                                  ;82AC8B;
     REP #$30                                                             ;82AC8C;
@@ -5378,6 +5541,7 @@ EquipmentScreen_Main_Tanks_DPadResponse:
     RTS                                                                  ;82AD09;
 
 
+%anchor($82AD0A)
 EquipmentScreen_Main_Tanks_GlowingArrow:
     PHP                                                                  ;82AD0A;
     REP #$30                                                             ;82AD0B;
@@ -5403,6 +5567,7 @@ EquipmentScreen_Main_Tanks_GlowingArrow:
     dw EquipmentScreen_GlowingArrow_Animated                             ;82AD25;
     dw EquipmentScreen_GlowingArrow_Solid_On                             ;82AD27;
 
+%anchor($82AD29)
 EquipmentScreen_GlowingArrow_Animated:
     LDA.W $09C0                                                          ;82AD29;
     CMP.W #$0001                                                         ;82AD2C;
@@ -5436,6 +5601,7 @@ EquipmentScreen_GlowingArrow_Animated:
     dw $0156,$0155,$0554,$0954,$0D53,$0D52,$1152,$1551,$1970,$1D70,$1D6F,$216E,$256E,$296D,$296C,$318C
     dw $318C,$296C,$296D,$256E,$216E,$1D6F,$1D70,$1970,$1551,$1152,$0D52,$0D53,$0954,$0554,$0155,$0156
 
+%anchor($82ADDD)
 EquipmentScreen_GlowingArrow_Solid_On:
     LDA.W #$039E                                                         ;82ADDD;
     STA.L $7EC0D6                                                        ;82ADE0;
@@ -5445,6 +5611,7 @@ EquipmentScreen_GlowingArrow_Solid_On:
     RTS                                                                  ;82ADEE;
 
 
+%anchor($82ADEF)
 EquipmentScreen_GlowingArrow_Solid_Off:
     LDA.W #$039E                                                         ;82ADEF;
     STA.L $7EC0D6                                                        ;82ADF2;
@@ -5454,6 +5621,7 @@ EquipmentScreen_GlowingArrow_Solid_Off:
     RTS                                                                  ;82AE00;
 
 
+%anchor($82AE01)
 EquipmentScreen_Enable_EnergyArrowGlow:
     PHP                                                                  ;82AE01;
     REP #$30                                                             ;82AE02;
@@ -5495,6 +5663,7 @@ EquipmentScreen_Enable_EnergyArrowGlow:
     RTS                                                                  ;82AE45;
 
 
+%anchor($82AE46)
 EquipmentScreen_Disable_EnergyArrowGlow:
     PHP                                                                  ;82AE46;
     REP #$30                                                             ;82AE47;
@@ -5536,6 +5705,7 @@ EquipmentScreen_Disable_EnergyArrowGlow:
     RTS                                                                  ;82AE8A;
 
 
+%anchor($82AE8B)
 EquipmentScreen_Main_Tanks_Mode:
     PHP                                                                  ;82AE8B;
     REP #$30                                                             ;82AE8C;
@@ -5597,6 +5767,7 @@ EquipmentScreen_Main_Tanks_Mode:
     RTS                                                                  ;82AEFC;
 
 
+%anchor($82AEFD)
 EquipmentScreen_SetHUDReserveAUTOTilemap:
     LDY.W #Tilemap_HUD_autoReserve                                       ;82AEFD;
     LDA.W $09D6                                                          ;82AF00;
@@ -5618,6 +5789,7 @@ EquipmentScreen_SetHUDReserveAUTOTilemap:
     RTS                                                                  ;82AF32;
 
 
+%anchor($82AF33)
 EquipmentScreen_ClearHUDReserveAUTOTilemap:
     LDA.W #$2C0F                                                         ;82AF33;
     STA.L $7EC618                                                        ;82AF36;
@@ -5629,6 +5801,7 @@ EquipmentScreen_ClearHUDReserveAUTOTilemap:
     RTS                                                                  ;82AF4E;
 
 
+%anchor($82AF4F)
 EquipmentScreen_Main_Tanks_ReserveTank:
     PHP                                                                  ;82AF4F;
     REP #$30                                                             ;82AF50;
@@ -5688,6 +5861,7 @@ EquipmentScreen_Main_Tanks_ReserveTank:
     RTS                                                                  ;82AFBD;
 
 
+%anchor($82AFBE)
 EquipmentScreen_Main_Weapons:
     PHP                                                                  ;82AFBE;
     REP #$30                                                             ;82AFBF;
@@ -5706,6 +5880,7 @@ EquipmentScreen_Main_Weapons:
     RTS                                                                  ;82AFDA;
 
 
+%anchor($82AFDB)
 EquipmentScreen_Main_Weapons_MoveResponse:
     PHP                                                                  ;82AFDB;
     REP #$30                                                             ;82AFDC;
@@ -5782,6 +5957,7 @@ EquipmentScreen_Main_Weapons_MoveResponse:
     RTS                                                                  ;82B067;
 
 
+%anchor($82B068)
 EquipmentScreen_Main_Weapons_PlasmaSpazerCheck:
     PHP                                                                  ;82B068;
     REP #$30                                                             ;82B069;
@@ -5829,6 +6005,7 @@ EquipmentScreen_Main_Weapons_PlasmaSpazerCheck:
     RTS                                                                  ;82B0C1;
 
 
+%anchor($82B0C2)
 EquipmentScreen_Main_SuitsMisc:
     PHP                                                                  ;82B0C2;
     REP #$30                                                             ;82B0C3;
@@ -5840,6 +6017,7 @@ EquipmentScreen_Main_SuitsMisc:
     RTS                                                                  ;82B0D1;
 
 
+%anchor($82B0D2)
 EquipmentScreen_SuitsMisc_MoveResponse:
     PHP                                                                  ;82B0D2;
     REP #$30                                                             ;82B0D3;
@@ -5909,6 +6087,7 @@ EquipmentScreen_SuitsMisc_MoveResponse:
     RTS                                                                  ;82B14F;
 
 
+%anchor($82B150)
 EquipmentScreen_Main_Boots:
     PHP                                                                  ;82B150;
     REP #$30                                                             ;82B151;
@@ -5920,6 +6099,7 @@ EquipmentScreen_Main_Boots:
     RTS                                                                  ;82B15F;
 
 
+%anchor($82B160)
 EquipmentScreen_Main_Boots_MoveResponse:
     PHP                                                                  ;82B160;
     REP #$30                                                             ;82B161;
@@ -5990,6 +6170,7 @@ EquipmentScreen_Main_Boots_MoveResponse:
     RTS                                                                  ;82B1DF;
 
 
+%anchor($82B1E0)
 EquipmentScreen_WriteSamusWireframeTilemap_and_BG1ToVRAM:
     PHP                                                                  ;82B1E0;
     REP #$30                                                             ;82B1E1;
@@ -6017,6 +6198,7 @@ EquipmentScreen_WriteSamusWireframeTilemap_and_BG1ToVRAM:
     RTS                                                                  ;82B20B;
 
 
+%anchor($82B20C)
 EquipmentScreen_WriteSamusWireframeTilemap:
     PHP                                                                  ;82B20C;
     REP #$30                                                             ;82B20D;
@@ -6075,6 +6257,7 @@ EquipmentScreen_WriteSamusWireframeTilemap:
     dw Samus_Wireframe_Tilemaps_variaSuit                                ;82B263;
     dw Samus_Wireframe_Tilemaps_hiJumpBootsVariaSuit                     ;82B265;
 
+%anchor($82B267)
 EquipmentScreen_DrawItemSelector:
     PHP                                                                  ;82B267;
     REP #$30                                                             ;82B268;
@@ -6111,6 +6294,7 @@ EquipmentScreen_DrawItemSelector:
     RTS                                                                  ;82B2A1;
 
 
+%anchor($82B2A2)
 EquipmentScreen_DisplayReserveTankAmount_shell:
     PHP                                                                  ;82B2A2;
     REP #$30                                                             ;82B2A3;
@@ -6119,6 +6303,7 @@ EquipmentScreen_DisplayReserveTankAmount_shell:
     RTS                                                                  ;82B2A9;
 
 
+%anchor($82B2AA)
 EquipmentScreen_DisplayReserveTankAmount:
     PHP                                                                  ;82B2AA;
     REP #$30                                                             ;82B2AB;
@@ -6291,6 +6476,7 @@ EquipmentScreen_DisplayReserveTankAmount:
     dw $0020,$0021,$0022,$0023,$0024,$0025,$0026,$0027 ; [Samus reserve health] < 100
     dw $0020,$0021,$0022,$0023,$0024,$0025,$0026,$0027 ; [Samus reserve health] >= 100
 
+%anchor($82B3F9)
 EquipmentScreen_Main_DisplayReserves_PaletteSetup:
     PHP                                                                  ;82B3F9;
     REP #$30                                                             ;82B3FA;
@@ -6335,6 +6521,7 @@ EquipmentScreen_Main_DisplayReserves_PaletteSetup:
     RTS                                                                  ;82B43E;
 
 
+%anchor($82B43F)
 EquipmentScreen_MoveToReserveTanks:
     PHP                                                                  ;82B43F;
     REP #$30                                                             ;82B440;
@@ -6350,6 +6537,7 @@ EquipmentScreen_MoveToReserveTanks:
     RTS                                                                  ;82B455;
 
 
+%anchor($82B456)
 EquipmentScreen_MoveLowerOnBeams:
     PHP                                                                  ;82B456;
     REP #$30                                                             ;82B457;
@@ -6386,6 +6574,7 @@ EquipmentScreen_MoveLowerOnBeams:
     RTS                                                                  ;82B488;
 
 
+%anchor($82B489)
 EquipmentScreen_MoveHigherOnBeams:
     PHP                                                                  ;82B489;
     REP #$30                                                             ;82B48A;
@@ -6420,6 +6609,7 @@ EquipmentScreen_MoveHigherOnBeams:
     RTS                                                                  ;82B4B6;
 
 
+%anchor($82B4B7)
 EquipmentScreen_MoveLowerOnSuitsMisc:
     PHP                                                                  ;82B4B7;
     REP #$30                                                             ;82B4B8;
@@ -6451,6 +6641,7 @@ EquipmentScreen_MoveLowerOnSuitsMisc:
     RTS                                                                  ;82B4E5;
 
 
+%anchor($82B4E6)
 EquipmentScreen_MoveHigherOnSuitsMisc:
     PHP                                                                  ;82B4E6;
     REP #$30                                                             ;82B4E7;
@@ -6481,6 +6672,7 @@ EquipmentScreen_MoveHigherOnSuitsMisc:
     RTS                                                                  ;82B510;
 
 
+%anchor($82B511)
 EquipmentScreen_MoveLowerOnBoots:
     PHP                                                                  ;82B511;
     REP #$30                                                             ;82B512;
@@ -6512,6 +6704,7 @@ EquipmentScreen_MoveLowerOnBoots:
     RTS                                                                  ;82B53E;
 
 
+%anchor($82B53F)
 EquipmentScreen_MoveHigherOnBoots:
     PHP                                                                  ;82B53F;
     REP #$30                                                             ;82B540;
@@ -6541,6 +6734,7 @@ EquipmentScreen_MoveHigherOnBoots:
     RTS                                                                  ;82B567;
 
 
+%anchor($82B568)
 EquipmentScreen_Main_ButtonResponse:
     PHP                                                                  ;82B568;
     REP #$30                                                             ;82B569;
@@ -6611,6 +6805,7 @@ EquipmentScreen_Main_ButtonResponse:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($82B5E8)
 UNUSED_ConvertAToThreeDecimalDigits:
     PHP                                                                  ;82B5E8;
     REP #$30                                                             ;82B5E9;
@@ -6660,6 +6855,7 @@ UNUSED_ConvertAToThreeDecimalDigits:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($82B62B)
 Draw_PauseMenu_during_FadeIn:
     PHP                                                                  ;82B62B;
     PHB                                                                  ;82B62C;
@@ -6686,6 +6882,7 @@ Draw_PauseMenu_during_FadeIn:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($82B650)
 UNUSED_82B650:
     PHP                                                                  ;82B650;
     PHB                                                                  ;82B651;
@@ -6710,6 +6907,7 @@ UNUSED_82B650:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($82B672)
 Draw_Map_Icons:
     PHB                                                                  ;82B672;
     REP #$30                                                             ;82B673;
@@ -6760,6 +6958,7 @@ Draw_Map_Icons:
     RTL                                                                  ;82B6DC;
 
 
+%anchor($82B6DD)
 Draw_FileSelectMap_Icons:
     PHB                                                                  ;82B6DD;
     REP #$30                                                             ;82B6DE;
@@ -6851,6 +7050,7 @@ Draw_FileSelectMap_Icons:
     RTL                                                                  ;82B797;
 
 
+%anchor($82B798)
 Draw_SaveStation_MapIcons:
     STX.B $20                                                            ;82B798;
     STA.B $22                                                            ;82B79A;
@@ -6882,6 +7082,7 @@ Draw_SaveStation_MapIcons:
 .bits:
     db $01,$02,$04,$08,$10,$20,$40,$80                                   ;82B7C9;
 
+%anchor($82B7D1)
 Draw_Debug_Save_MapIcons:
     STX.B $20                                                            ;82B7D1;
     STA.B $22                                                            ;82B7D3;
@@ -6899,6 +7100,7 @@ Draw_Debug_Save_MapIcons:
     RTS                                                                  ;82B7EA;
 
 
+%anchor($82B7EB)
 Draw_Debug_Elevator_Map_Icons:
     STX.B $20                                                            ;82B7EB;
     STA.B $22                                                            ;82B7ED;
@@ -6916,6 +7118,7 @@ Draw_Debug_Elevator_Map_Icons:
     RTS                                                                  ;82B804;
 
 
+%anchor($82B805)
 Draw_Simple_MapIcons:
     STX.B $20                                                            ;82B805;
     STA.B $22                                                            ;82B807;
@@ -6931,6 +7134,7 @@ Draw_Simple_MapIcons:
     RTS                                                                  ;82B81B;
 
 
+%anchor($82B81C)
 Draw_MapIcons_ofGivenType:
     TAX                                                                  ;82B81C;
 
@@ -6975,6 +7179,7 @@ Draw_MapIcons_ofGivenType:
     RTS                                                                  ;82B854;
 
 
+%anchor($82B855)
 Check_if_MapPosition_isExplored:
     TXA                                                                  ;82B855;
     AND.W #$FF00                                                         ;82B856;
@@ -7014,6 +7219,7 @@ Check_if_MapPosition_isExplored:
 .bits:
     db $80,$40,$20,$10,$08,$04,$02,$01                                   ;82B88A;
 
+%anchor($82B892)
 Display_Map_Boss_Icons:
     STX.B $20                                                            ;82B892;
     STA.B $22                                                            ;82B894;
@@ -7092,6 +7298,7 @@ Display_Map_Boss_Icons:
     BRA .drawBossIcon                                                    ;82B908;
 
 
+%anchor($82B90A)
 Draw_MapScrollArrow_and_Check_Scroll_in_that_Direction:
     PHX                                                                  ;82B90A;
     LDA.W $0000,X                                                        ;82B90B;
@@ -7119,10 +7326,12 @@ Draw_MapScrollArrow_and_Check_Scroll_in_that_Direction:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($82B932)
 UNUSED_REP30_82B932:
     REP #$30                                                             ;82B932;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($82B934)
 Handle_MapScrollArrows:
     PHP                                                                  ;82B934;
     PHB                                                                  ;82B935;
@@ -7181,6 +7390,7 @@ Handle_MapScrollArrows:
     BRA .return                                                          ;82B99E;
 
 
+%anchor($82B9A0)
 MapScrollArrows:
   .left:
     dw $0010,$0078,$0009,$0200,$0001                                     ;82B9A0;
@@ -7193,6 +7403,7 @@ MapScrollArrows:
   .downDirection:
     dw $0004                                                             ;82B9C6;
 
+%anchor($82B9C8)
 MapScreen_DrawSamusPositionIndicator:
     LDA.W #$0E00                                                         ;82B9C8;
     STA.B $03                                                            ;82B9CB;
@@ -7226,6 +7437,7 @@ MapScreen_DrawSamusPositionIndicator:
     RTS                                                                  ;82B9FB;
 
 
+%anchor($82B9FC)
 Update_Samus_Position_Indicator_Animation:
     LDA.W $0778                                                          ;82B9FC;
     BNE .nonZero                                                         ;82B9FF;
@@ -7255,6 +7467,7 @@ Update_Samus_Position_Indicator_Animation:
 .spritemapIDs:
     db $5F,$00,$60,$00,$61,$00,$60,$00                                   ;82BA2D; (into $82:C569 table)
 
+%anchor($82BA35)
 Draw_Border_Around_SAMUS_DATA:
     LDA.W #$0E00                                                         ;82BA35;
     STA.B $03                                                            ;82BA38;
@@ -7265,6 +7478,7 @@ Draw_Border_Around_SAMUS_DATA:
     RTL                                                                  ;82BA47;
 
 
+%anchor($82BA48)
 Draw_Border_Around_DATA_COPY_MODE:
     LDA.W #$0E00                                                         ;82BA48;
     STA.B $03                                                            ;82BA4B;
@@ -7275,6 +7489,7 @@ Draw_Border_Around_DATA_COPY_MODE:
     RTL                                                                  ;82BA5A;
 
 
+%anchor($82BA5B)
 Draw_Border_Around_DATA_CLEAR_MODE:
     LDA.W #$0E00                                                         ;82BA5B;
     STA.B $03                                                            ;82BA5E;
@@ -7285,6 +7500,7 @@ Draw_Border_Around_DATA_CLEAR_MODE:
     RTL                                                                  ;82BA6D;
 
 
+%anchor($82BA6E)
 Draw_Menu_Selection_Missile:
     PHB                                                                  ;82BA6E;
     PHK                                                                  ;82BA6F;
@@ -7325,6 +7541,7 @@ Draw_Menu_Selection_Missile:
 .animFrame:
     dw $0037,$0036,$0035,$0034                                           ;82BAB2;
 
+%anchor($82BABA)
 Draw_FileCopy_Arrow:
     PHB                                                                  ;82BABA;
     PHK                                                                  ;82BABB;
@@ -7386,6 +7603,7 @@ Draw_FileCopy_Arrow:
     dw $0041,$0014,$0058 ; 18h: A <- B
     dw $0041,$0014,$0078 ; 1Eh:      B <- C
 
+%anchor($82BB30)
 Display_Map_Elevator_Destinations:
     REP #$30                                                             ;82BB30;
     PHB                                                                  ;82BB32;
@@ -7430,6 +7648,7 @@ Display_Map_Elevator_Destinations:
     RTL                                                                  ;82BB74;
 
 
+%anchor($82BB75)
 Handle_GameOver_BabyMetroid:
     PHB                                                                  ;82BB75;
     REP #$30                                                             ;82BB76;
@@ -7438,6 +7657,7 @@ Handle_GameOver_BabyMetroid:
     LDA.W $0F94                                                          ;82BB7A;
     BEQ Restart_GameOver_BabyMetroid_InstructionList                     ;82BB7D;
 
+%anchor($82BB7F)
 Process_GameOver_BabyMetroid_InstructionList:
     LDX.W $0F92                                                          ;82BB7F;
     DEC A                                                                ;82BB82;
@@ -7454,6 +7674,7 @@ Process_GameOver_BabyMetroid_InstructionList:
     STA.W $0F92                                                          ;82BB9A;
     TAX                                                                  ;82BB9D;
 
+%anchor($82BB9E)
 Draw_GameOver_BabyMetroid:
     PHX                                                                  ;82BB9E;
     LDA.W $0004,X                                                        ;82BB9F;
@@ -7486,6 +7707,7 @@ Draw_GameOver_BabyMetroid:
     RTL                                                                  ;82BBDC;
 
 
+%anchor($82BBDD)
 Restart_GameOver_BabyMetroid_InstructionList:
     LDA.W #GameOver_BabyMetroid_InstructionList                          ;82BBDD;
     STA.W $0F92                                                          ;82BBE0;
@@ -7494,11 +7716,13 @@ Restart_GameOver_BabyMetroid_InstructionList:
     BRA Process_GameOver_BabyMetroid_InstructionList                     ;82BBE9;
 
 
+%anchor($82BBEB)
 Goto_A_82BBEB:
     STA.B $12                                                            ;82BBEB;
     JMP.W ($0012)                                                        ;82BBED;
 
 
+%anchor($82BBF0)
 FinishProcessing_GameOver_BabyMetroid_ASMInstruction:
     LDX.W $0F92                                                          ;82BBF0;
     LDA.W $0008,X                                                        ;82BBF3;
@@ -7514,24 +7738,28 @@ FinishProcessing_GameOver_BabyMetroid_ASMInstruction:
     BRA Draw_GameOver_BabyMetroid                                        ;82BC0A;
 
 
+%anchor($82BC0C)
 Instruction_Queue_BabyMetroid_Cry1_SoundEffect:
     LDA.W #$0023                                                         ;82BC0C;
     JSL.L QueueSound_Lib3_Max6                                           ;82BC0F;
     BRA FinishProcessing_GameOver_BabyMetroid_ASMInstruction             ;82BC13;
 
 
+%anchor($82BC15)
 Instruction_Queue_BabyMetroid_Cry2_SoundEffect:
     LDA.W #$0026                                                         ;82BC15;
     JSL.L QueueSound_Lib3_Max6                                           ;82BC18;
     BRA FinishProcessing_GameOver_BabyMetroid_ASMInstruction             ;82BC1C;
 
 
+%anchor($82BC1E)
 Instruction_Queue_BabyMetroid_Cry3_SoundEffect:
     LDA.W #$0027                                                         ;82BC1E;
     JSL.L QueueSound_Lib3_Max6                                           ;82BC21;
     BRA FinishProcessing_GameOver_BabyMetroid_ASMInstruction             ;82BC25;
 
 
+%anchor($82BC27)
 GameOver_BabyMetroid_InstructionList:
 ; Positive instruction format: timer, spritemap index for $82:C569 table, palette pointer
     dw $000A,$0065,GameOver_BabyMetroid_Palettes_0                       ;82BC27;
@@ -7599,18 +7827,23 @@ GameOver_BabyMetroid_InstructionList:
     dw $0005,$0066,GameOver_BabyMetroid_Palettes_2                       ;82BD8F;
     dw $FFFF                                                             ;82BD95;
 
+%anchor($82BD97)
 GameOver_BabyMetroid_Palettes_0:                                         ;82BDA7;
     dw $3800,$7F50,$2E40,$2DA0,$2D00,$725A,$2C3A,$240F,$1C05,$1800,$639A,$52D3,$420D,$7F66,$7FFA,$7240
 
+%anchor($82BDB7)
 GameOver_BabyMetroid_Palettes_1:                                         ;82BDC7;
     dw $3800,$6BF5,$06E1,$0641,$05A1,$5E5F,$183F,$1014,$080A,$0404,$4F9F,$3ED8,$2E12,$6F70,$7FFF,$5EE0
 
+%anchor($82BDD7)
 GameOver_BabyMetroid_Palettes_2:                                         ;82BDE7;
     dw $3800,$77F8,$1344,$12A4,$1204,$6ABF,$249F,$1C77,$146D,$1067,$5BFF,$4B38,$3A72,$7BD3,$7FFF,$6B43
 
+%anchor($82BDF7)
 GameOver_BabyMetroid_Palettes_3:                                         ;82BE07;
     dw $3800,$7FFB,$1FA7,$1F07,$1E67,$771F,$30FF,$28DA,$20D0,$1CCA,$67FF,$579B,$46D5,$7BD6,$7FFF,$77A6
 
+%anchor($82BE17)
 Cancel_Sound_Effects:
     REP #$30                                                             ;82BE17;
     LDA.W #$0002                                                         ;82BE19;
@@ -7622,6 +7855,7 @@ Cancel_Sound_Effects:
     RTL                                                                  ;82BE2E;
 
 
+%anchor($82BE2F)
 Queue_Samus_Movement_SoundEffects:
     REP #$30                                                             ;82BE2F;
     LDA.W $0B3E                                                          ;82BE31;
@@ -7643,6 +7877,7 @@ Queue_Samus_Movement_SoundEffects:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($82BE5A)
 UNUSED_82BE5A:
     REP #$30                                                             ;82BE5A;
     LDA.W $079F                                                          ;82BE5C;
@@ -7695,6 +7930,7 @@ UNUSED_82BE5A:
     BRA .clear12                                                         ;82BEA1;
 
 
+%anchor($82BEA3)
 UNUSED_82BEA3:
     REP #$30                                                             ;82BEA3;
     LDX.W #$0600                                                         ;82BEA5;
@@ -7751,9 +7987,11 @@ UNUSED_82BEA3:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($82BF04)
 ReserveTank_TransferEnergyPerFrame:
     dw $0001                                                             ;82BF04;
 
+%anchor($82BF06)
 EquipmentScreenTilemaps:
   .modeManual:
 ; MODE[MANUAL]
@@ -7839,6 +8077,7 @@ endif ; !FEATURE_KEEP_UNREFERENCED
   .blankPlaceholder:
     dw $0000,$0000,$0000,$0000,$0000,$0000,$0000,$0000,$0000             ;82C01A;
 
+%anchor($82C02C)
 EquipmentScreenDataPointers:
   .tilemapOffsets:
     dw EquipmentScreenData_RAMTilemapOffsets_tanks                       ;82C02C;
@@ -7869,6 +8108,7 @@ EquipmentScreenDataPointers:
     dw EquipmentScreenData_PointersEquipmentTIlemaps_suitsMisc           ;82C048;
     dw EquipmentScreenData_PointersEquipmentTIlemaps_boots               ;82C04A;
 
+%anchor($82C04C)
 EquipmentScreenData:
   .EquipmentBitmasks:
   ..weapons:                                                             ;82C04C;
@@ -7918,12 +8158,15 @@ EquipmentScreenData:
     dw $3D2A ; Boots - space jump
     dw $3D6A ; Boots - speed booster
 
+%anchor($82C088)
 EquipmentScreenData_PointersEquipmentTIlemaps_tanks:
     dw EquipmentScreenTilemaps_modeManual                                ;82C088;
 
+%anchor($82C08A)
 EquipmentScreenData_PointersEquipmentTIlemaps_tanksReserve:
     dw EquipmentScreenTilemaps_reserveTank                               ;82C08A;
 
+%anchor($82C08C)
 EquipmentScreenData_PointersEquipmentTIlemaps_weapons:
     dw EquipmentScreenTilemaps_charge                                    ;82C08C;
     dw EquipmentScreenTilemaps_ice                                       ;82C08E;
@@ -7931,6 +8174,7 @@ EquipmentScreenData_PointersEquipmentTIlemaps_weapons:
     dw EquipmentScreenTilemaps_spazer                                    ;82C092;
     dw EquipmentScreenTilemaps_plasma                                    ;82C094;
 
+%anchor($82C096)
 EquipmentScreenData_PointersEquipmentTIlemaps_suitsMisc:
     dw EquipmentScreenTilemaps_variaSuit                                 ;82C096;
     dw EquipmentScreenTilemaps_gravitySuit                               ;82C098;
@@ -7939,11 +8183,13 @@ EquipmentScreenData_PointersEquipmentTIlemaps_suitsMisc:
     dw EquipmentScreenTilemaps_springBall                                ;82C09E;
     dw EquipmentScreenTilemaps_screwAttack                               ;82C0A0;
 
+%anchor($82C0A2)
 EquipmentScreenData_PointersEquipmentTIlemaps_boots:
     dw EquipmentScreenTilemaps_hiJumpBoots                               ;82C0A2;
     dw EquipmentScreenTilemaps_spaceJump                                 ;82C0A4;
     dw EquipmentScreenTilemaps_speedBooster                              ;82C0A6;
 
+%anchor($82C0A8)
 HyperBeamTilemaps:
     dw EquipmentScreenTilemaps_blankPlaceholder                          ;82C0A8;
     dw EquipmentScreenTilemaps_blankPlaceholder                          ;82C0AA;
@@ -7952,6 +8198,7 @@ HyperBeamTilemaps:
     dw EquipmentScreenTilemaps_blankPlaceholder                          ;82C0B0;
 
 ;;; $C0B2: Pause screen sprite animation data ;;;
+%anchor($82C0B2)
 PauseScreen_SpriteAnimationData:
 ;        ___________________________________________________ 1: Unused (used for start / L/R button pressed highlight elsewhere)
 ;       |      _____________________________________________ 2: L/R highlight
@@ -7984,14 +8231,17 @@ PauseScreen_SpriteAnimationData:
     dw ItemSelector_and_MapScrollArrows                                  ;82C0F6;
     dw ItemSelector_and_MapScrollArrows                                  ;82C0F8;
 
+%anchor($82C0FA)
 SpritePalette_IndexValues:
 ; Sprite palette index values
     dw $0000,$0200,$0400,$0600,$0800,$0A00,$0C00,$0E00                   ;82C0FA;
 
+%anchor($82C10A)
 Duration_Of_L_R_Button_Pressed_Highlight:
 ; Duration of L/R button pressed highlight
     dw $0005                                                             ;82C10A;
 
+%anchor($82C10C)
 L_R_HighlightAnimationData_PauseScreenPaletteAnimationDelays:            ;82C10C;
 ; FF = loop to start, else timer (1 byte), unknown (1 byte), spritemap ID (1 byte)
 ; L/R highlight animation data / pause screen palette animation delays
@@ -7999,15 +8249,18 @@ L_R_HighlightAnimationData_PauseScreenPaletteAnimationDelays:            ;82C10C
     db $03,$05,$00, $03,$06,$00, $03,$07,$00, $03,$06,$00, $03,$05,$00
     db $03,$04,$00, $03,$03,$00, $03,$02,$00, $03,$01,$00, $FF
 
+%anchor($82C137)
 ItemSelector_and_MapScrollArrows:                                        ;82C137;
 ; Item selector and map scroll arrows
     db $0F,$00,$00, $02,$01,$00, $02,$02,$00, $02,$03,$00, $02,$04,$00
     db $02,$05,$00, $02,$06,$00, $02,$07,$00, $02,$06,$00, $02,$05,$00
     db $02,$04,$00, $02,$03,$00, $02,$02,$00, $02,$01,$00, $FF
 
+%anchor($82C162)
 UNUSED_Animation_4_82C162:
     db $02,$07,$FF                                                       ;82C162;
 
+%anchor($82C165)
 ReserveTank_AnimationData:                                               ;82C165;
 ; Reserve tank animation data
 ; FF = loop to start, else timer (1 byte), unknown (1 byte)
@@ -8015,6 +8268,7 @@ ReserveTank_AnimationData:                                               ;82C165
     db $02,$07, $02,$06, $02,$05, $02,$04, $02,$03, $02,$02, $02,$01
     db $FF
 
+%anchor($82C182)
 L_R_ButtonPressed_HighlightTable:
   .spritemapID:
 ; L/R button pressed highlight table
@@ -8027,6 +8281,7 @@ L_R_ButtonPressed_HighlightTable:
   .YposPlus1:
     dw $00D0,$00D0                                                       ;82C18A;
 
+%anchor($82C18E)
 EquipmentScreen_ItemSelectorPositions:
   .pointers:
 ; Pointers to lists of equipment screen item selector positions
@@ -8062,6 +8317,7 @@ EquipmentScreen_ItemSelectorPositions:
     dw $00CC,$00A4 ; Boots - space jump
     dw $00CC,$00AC ; Boots - speed booster
 
+%anchor($82C1D6)
 EquipmentScreen_ReserveTank:
   .Xpositions:
 ; Equipment screen reserve tank X positions
@@ -8071,6 +8327,7 @@ EquipmentScreen_ReserveTank:
 ; Equipment screen reserve tank Y position + 1
     dw $0060                                                             ;82C1E2;
 
+%anchor($82C1E4)
 AnimationSpritemapBaseIDPointers:
 ; Pointers to animation spritemap base IDs (into $82:C569 table)
     dw UNUSED_Animation_0_82C1F6                                         ;82C1E4;
@@ -8083,15 +8340,18 @@ AnimationSpritemapBaseIDPointers:
     dw ItemSelector_EquipmentScreenCategoryIndex_rightScrollArrow        ;82C1F2;
     dw ItemSelector_EquipmentScreenCategoryIndex_leftScrollArrow         ;82C1F4;
 
+%anchor($82C1F6)
 UNUSED_Animation_0_82C1F6:
     dw $0000,$0028,$0029                                                 ;82C1F6;
 
+%anchor($82C1FC)
 L_R_Highlight_PauseScreenButtonLabelMode:                                ;82C1FC;
 ; L/R highlight (pause screen button label mode)
     dw $002A ; 0: Map screen (SAMUS on the right)
     dw $002A ; 1: Unpausing (nothing)
     dw $002A ; 2: Equipment screen (MAP on the left)
 
+%anchor($82C202)
 ItemSelector_EquipmentScreenCategoryIndex:                               ;82C202;
 ; Item selector (equipment screen category index)
     dw $0014 ; 0: Tanks
@@ -8117,42 +8377,51 @@ ItemSelector_EquipmentScreenCategoryIndex:                               ;82C202
   .leftScrollArrow:
     dw $0005                                                             ;82C214;
 
+%anchor($82C216)
 MenuSpritemap_2:
     dw $0001                                                             ;82C216;
     %spritemapEntry(0, $00, $00, 0, 0, 3, 0, $95)
 
+%anchor($82C21D)
 MenuSpritemap_3:
     dw $0001                                                             ;82C21D;
     %spritemapEntry(0, $00, $00, 1, 0, 3, 0, $95)
 
+%anchor($82C224)
 MenuSpritemap_1:
     dw $0001                                                             ;82C224;
     %spritemapEntry(0, $00, $00, 0, 0, 3, 0, $94)
 
+%anchor($82C22B)
 MenuSpritemap_0:
     dw $0001                                                             ;82C22B;
     %spritemapEntry(0, $00, $00, 0, 1, 3, 0, $94)
 
+%anchor($82C232)
 MenuSpritemap_6_MapScrollingArrow_Up:
     dw $0002                                                             ;82C232;
     %spritemapEntry(0, $1FF, $FC, 1, 1, 3, 2, $9D)
     %spritemapEntry(0, $1F8, $FC, 1, 0, 3, 2, $9D)
 
+%anchor($82C23E)
 MenuSpritemap_7_MapScrollingArrow_Down:
     dw $0002                                                             ;82C23E;
     %spritemapEntry(0, $1FF, $FC, 0, 1, 3, 2, $9D)
     %spritemapEntry(0, $1F8, $FC, 0, 0, 3, 2, $9D)
 
+%anchor($82C24A)
 MenuSpritemap_5_MapScrollingArrow_Left:
     dw $0002                                                             ;82C24A;
     %spritemapEntry(0, $1FC, $00, 1, 1, 3, 2, $9E)
     %spritemapEntry(0, $1FC, $F9, 0, 1, 3, 2, $9E)
 
+%anchor($82C256)
 MenuSpritemap_4_MapScrollingArrow_Right:
     dw $0002                                                             ;82C256;
     %spritemapEntry(0, $1FC, $00, 1, 0, 3, 2, $9E)
     %spritemapEntry(0, $1FC, $F9, 0, 0, 3, 2, $9E)
 
+%anchor($82C262)
 MenuSpritemap_10:
     dw $0005                                                             ;82C262;
     %spritemapEntry(0, $1FC, $04, 0, 0, 3, 0, $97)
@@ -8161,6 +8430,7 @@ MenuSpritemap_10:
     %spritemapEntry(0, $1FC, $F4, 0, 0, 3, 0, $77)
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 0, $87)
 
+%anchor($82C27D)
 MenuSpritemap_11:
     dw $0005                                                             ;82C27D;
     %spritemapEntry(0, $04, $FC, 0, 0, 3, 0, $8B)
@@ -8169,20 +8439,24 @@ MenuSpritemap_11:
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 0, $8A)
     %spritemapEntry(0, $1FC, $F4, 0, 0, 3, 0, $7A)
 
+%anchor($82C298)
 MenuSpritemap_12_FileSelectMapSamusIcon:
     dw $0001                                                             ;82C298;
     %spritemapEntry(0, $01, $00, 0, 0, 2, 7, $89)
 
+%anchor($82C29F)
 MenuSpritemap_14_EquipmentScreenItemSelector_Tanks:
     dw $0001                                                             ;82C29F;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 3, $46)
 
+%anchor($82C2A6)
 MenuSpritemap_19:
     dw $0003                                                             ;82C2A6;
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 0, $63)
     %spritemapEntry(0, $1E8, $F8, 0, 0, 3, 0, $B9)
     %spritemapEntry(0, $1E0, $F8, 0, 0, 3, 0, $B8)
 
+%anchor($82C2B7)
 MenuSpritemap_15_EquipmentScreenItemSelector_Weapons:
     dw $000C                                                             ;82C2B7;
     %spritemapEntry(0, $10, $04, 0, 0, 3, 2, $5C)
@@ -8198,6 +8472,7 @@ MenuSpritemap_15_EquipmentScreenItemSelector_Weapons:
     %spritemapEntry(0, $1F8, $FC, 0, 0, 3, 2, $5C)
     %spritemapEntry(0, $1F0, $FC, 0, 0, 3, 2, $5B)
 
+%anchor($82C2F5)
 MenuSpritemap_16_EquipmentScreenItemSelector_SuitMiscBoots:
     dw $0014                                                             ;82C2F5;
     %spritemapEntry(0, $1C, $04, 0, 0, 3, 2, $5C)
@@ -8221,158 +8496,197 @@ MenuSpritemap_16_EquipmentScreenItemSelector_SuitMiscBoots:
     %spritemapEntry(0, $1E4, $FC, 0, 0, 3, 2, $5C)
     %spritemapEntry(0, $1DC, $FC, 0, 0, 3, 2, $5B)
 
+%anchor($82C35B)
 MenuSpritemap_1B_FullEquipmentScreenReserveTank:
     dw $0001                                                             ;82C35B;
     %spritemapEntry(0, $00, $00, 0, 0, 3, 2, $4E)
 
+%anchor($82C362)
 MenuSpritemap_1C:
     dw $0001                                                             ;82C362;
     %spritemapEntry(0, $00, $00, 0, 0, 3, 2, $4D)
 
+%anchor($82C369)
 MenuSpritemap_1A:
     dw $0001                                                             ;82C369;
     %spritemapEntry(0, $00, $00, 0, 0, 3, 2, $4F)
 
+%anchor($82C370)
 MenuSpritemap_1F_EndOfEquipmentScreenReserveHealthBar:
     dw $0001                                                             ;82C370;
     %spritemapEntry(0, $00, $00, 0, 0, 3, 2, $4E)
 
+%anchor($82C377)
 MenuSpritemap_1D:
     dw $0001                                                             ;82C377;
     %spritemapEntry(0, $00, $00, 0, 0, 3, 0, $4D)
 
+%anchor($82C37E)
 MenuSpritemap_1E:
     dw $0001                                                             ;82C37E;
     %spritemapEntry(0, $1FD, $FC, 0, 0, 3, 7, $1F0)
 
+%anchor($82C385)
 MenuSpritemap_8_SaveIcon:
     dw $0001                                                             ;82C385;
     %spritemapEntry(0, $01, $00, 0, 0, 2, 0, $8D)
 
+%anchor($82C38C)
 MenuSpritemap_9_BossIcon:
     dw $0001                                                             ;82C38C;
     %spritemapEntry(0, $01, $00, 0, 0, 2, 0, $8A)
 
+%anchor($82C393)
 MenuSpritemap_A_EnergyStationIcon:
     dw $0001                                                             ;82C393;
     %spritemapEntry(0, $01, $00, 0, 0, 2, 0, $8C)
 
+%anchor($82C39A)
 MenuSpritemap_B_MissileStationIcon:
     dw $0001                                                             ;82C39A;
     %spritemapEntry(0, $01, $00, 0, 0, 2, 0, $8B)
 
+%anchor($82C3A1)
 MenuSpritemap_4E_MapStationIcon:
     dw $0001                                                             ;82C3A1;
     %spritemapEntry(0, $01, $00, 0, 0, 2, 0, $8E)
 
+%anchor($82C3A8)
 MenuSpritemap_17_DebugElevatorIcon:
     dw $0001                                                             ;82C3A8;
     %spritemapEntry(0, $01, $00, 0, 0, 2, 0, $8F)
 
+%anchor($82C3AF)
 MenuSpritemap_C_DebugSaveIcon:
     dw $0001                                                             ;82C3AF;
     %spritemapEntry(0, $01, $00, 0, 0, 2, 0, $1F4)
 
+%anchor($82C3B6)
 MenuSpritemap_D:
     dw $0001                                                             ;82C3B6;
     %spritemapEntry(0, $01, $00, 0, 0, 2, 0, $1F1)
 
+%anchor($82C3BD)
 MenuSpritemap_E:
     dw $0001                                                             ;82C3BD;
     %spritemapEntry(0, $01, $00, 0, 0, 2, 0, $1F3)
 
+%anchor($82C3C4)
 MenuSpritemap_F:
     dw $0001                                                             ;82C3C4;
     %spritemapEntry(0, $01, $00, 0, 0, 2, 0, $1F2)
 
+%anchor($82C3CB)
 MenuSpritemap_18:
     dw $0001                                                             ;82C3CB;
     %spritemapEntry(0, $01, $00, 0, 0, 2, 0, $1F6)
 
+%anchor($82C3D2)
 MenuSpritemap_Unknown_82C3D2:
     dw $0001                                                             ;82C3D2;
     %spritemapEntry(0, $01, $00, 0, 0, 2, 0, $1F5)
 
+%anchor($82C3D9)
 MenuSpritemap_20_EmptyEquipmentScreenReserveTank:
     dw $0001                                                             ;82C3D9;
     %spritemapEntry(0, $00, $00, 0, 0, 3, 2, $4D)
 
+%anchor($82C3E0)
 MenuSpritemap_21_EquipmentScreen_1_7_ReserveTank:
     dw $0001                                                             ;82C3E0;
     %spritemapEntry(0, $00, $00, 0, 0, 3, 2, $47)
 
+%anchor($82C3E7)
 MenuSpritemap_22_EquipmentScreen_2_7_ReserveTank:
     dw $0001                                                             ;82C3E7;
     %spritemapEntry(0, $00, $00, 0, 0, 3, 2, $48)
 
+%anchor($82C3EE)
 MenuSpritemap_23_EquipmentScreen_3_7_ReserveTank:
     dw $0001                                                             ;82C3EE;
     %spritemapEntry(0, $00, $00, 0, 0, 3, 2, $49)
 
+%anchor($82C3F5)
 MenuSpritemap_24_EquipmentScreen_4_7_ReserveTank:
     dw $0001                                                             ;82C3F5;
     %spritemapEntry(0, $00, $00, 0, 0, 3, 2, $4A)
 
+%anchor($82C3FC)
 MenuSpritemap_25_EquipmentScreen_5_7_ReserveTank:
     dw $0001                                                             ;82C3FC;
     %spritemapEntry(0, $00, $00, 0, 0, 3, 2, $4B)
 
+%anchor($82C403)
 MenuSpritemap_26_EquipmentScreen_6_7_ReserveTank:
     dw $0001                                                             ;82C403;
     %spritemapEntry(0, $00, $00, 0, 0, 3, 2, $4C)
 
+%anchor($82C40A)
 MenuSpritemap_27_EquipmentScreen_7_7_ReserveTank:
     dw $0001                                                             ;82C40A;
     %spritemapEntry(0, $00, $00, 0, 0, 3, 2, $4E)
 
+%anchor($82C411)
 MenuSpritemap_4F:
     dw $0001                                                             ;82C411;
     %spritemapEntry(0, $00, $00, 0, 0, 3, 0, $64)
 
+%anchor($82C418)
 MenuSpritemap_50:
     dw $0001                                                             ;82C418;
     %spritemapEntry(0, $00, $00, 0, 0, 3, 0, $65)
 
+%anchor($82C41F)
 MenuSpritemap_51:
     dw $0001                                                             ;82C41F;
     %spritemapEntry(0, $00, $00, 0, 0, 3, 0, $66)
 
+%anchor($82C426)
 MenuSpritemap_52:
     dw $0001                                                             ;82C426;
     %spritemapEntry(0, $00, $00, 0, 0, 3, 0, $67)
 
+%anchor($82C42D)
 MenuSpritemap_53:
     dw $0001                                                             ;82C42D;
     %spritemapEntry(0, $00, $00, 0, 0, 3, 0, $68)
 
+%anchor($82C434)
 MenuSpritemap_54:
     dw $0001                                                             ;82C434;
     %spritemapEntry(0, $00, $00, 0, 0, 3, 0, $69)
 
+%anchor($82C43B)
 MenuSpritemap_55:
     dw $0001                                                             ;82C43B;
     %spritemapEntry(0, $00, $00, 0, 0, 3, 0, $6A)
 
+%anchor($82C442)
 MenuSpritemap_56:
     dw $0001                                                             ;82C442;
     %spritemapEntry(0, $00, $00, 0, 0, 3, 0, $6B)
 
+%anchor($82C449)
 MenuSpritemap_57:
     dw $0001                                                             ;82C449;
     %spritemapEntry(0, $00, $00, 0, 0, 3, 0, $6C)
 
+%anchor($82C450)
 MenuSpritemap_58:
     dw $0001                                                             ;82C450;
     %spritemapEntry(0, $00, $00, 0, 0, 3, 0, $6D)
 
+%anchor($82C457)
 MenuSpritemap_Unknown_82C457:
     dw $0001                                                             ;82C457;
     %spritemapEntry(0, $00, $00, 0, 0, 3, 0, $6E)
 
+%anchor($82C45E)
 MenuSpritemap_Unknown_82C45E:
     dw $0001                                                             ;82C45E;
     %spritemapEntry(0, $00, $00, 0, 0, 3, 0, $6F)
 
+%anchor($82C465)
 MenuSpritemap_2A_L_R_Highlight:
     dw $0008                                                             ;82C465;
     %spritemapEntry(0, $08, $00, 0, 1, 3, 2, $51)
@@ -8384,18 +8698,21 @@ MenuSpritemap_2A_L_R_Highlight:
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 2, $3D)
     %spritemapEntry(0, $1F0, $F8, 0, 0, 3, 2, $3C)
 
+%anchor($82C48F)
 MenuSpritemap_28_LButtonPressedHighlight:
     dw $0003                                                             ;82C48F;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 2, $29)
     %spritemapEntry(0, $04, $FC, 0, 0, 3, 2, $2A)
     %spritemapEntry(0, $1F4, $FC, 0, 0, 3, 2, $28)
 
+%anchor($82C4A0)
 MenuSpritemap_29_RButtonPressedHighlight:
     dw $0003                                                             ;82C4A0;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 2, $2E)
     %spritemapEntry(0, $04, $FC, 0, 0, 3, 2, $2A)
     %spritemapEntry(0, $1F4, $FC, 0, 0, 3, 2, $28)
 
+%anchor($82C4B1)
 MenuSpritemap_2B_StartButtonPressedHighlight:
     dw $0008                                                             ;82C4B1;
     %spritemapEntry(0, $08, $00, 0, 0, 3, 2, $C7)
@@ -8407,6 +8724,7 @@ MenuSpritemap_2B_StartButtonPressedHighlight:
     %spritemapEntry(0, $08, $F8, 0, 1, 3, 2, $B4)
     %spritemapEntry(0, $1F0, $F8, 0, 0, 3, 2, $B4)
 
+%anchor($82C4DB)
 MenuSpritemap_59_ElevatorDestination_Crateria:
     dw $0004                                                             ;82C4DB;
     %spritemapEntry(0, $10, $F8, 0, 0, 2, 0, $03)
@@ -8414,6 +8732,7 @@ MenuSpritemap_59_ElevatorDestination_Crateria:
     %spritemapEntry(0, $00, $F8, 0, 0, 2, 0, $01)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 0, $00)
 
+%anchor($82C4F1)
 MenuSpritemap_5A_ElevatorDestination_Brinstar:
     dw $0004                                                             ;82C4F1;
     %spritemapEntry(0, $10, $F8, 0, 0, 2, 0, $07)
@@ -8421,6 +8740,7 @@ MenuSpritemap_5A_ElevatorDestination_Brinstar:
     %spritemapEntry(0, $00, $F8, 0, 0, 2, 0, $05)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 0, $04)
 
+%anchor($82C507)
 MenuSpritemap_5B_ElevatorDestination_Norfair:
     dw $0004                                                             ;82C507;
     %spritemapEntry(0, $10, $F8, 0, 0, 2, 0, $14)
@@ -8428,6 +8748,7 @@ MenuSpritemap_5B_ElevatorDestination_Norfair:
     %spritemapEntry(0, $00, $F8, 0, 0, 2, 0, $12)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 0, $10)
 
+%anchor($82C51D)
 MenuSpritemap_5E_ElevatorDestination_Tourian:
     dw $0004                                                             ;82C51D;
     %spritemapEntry(0, $10, $F8, 0, 0, 2, 0, $32)
@@ -8435,6 +8756,7 @@ MenuSpritemap_5E_ElevatorDestination_Tourian:
     %spritemapEntry(0, $00, $F8, 0, 0, 2, 0, $09)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 0, $08)
 
+%anchor($82C533)
 MenuSpritemap_5D_ElevatorDestination_Maridia:
     dw $0004                                                             ;82C533;
     %spritemapEntry(0, $10, $F8, 0, 0, 2, 0, $19)
@@ -8442,6 +8764,7 @@ MenuSpritemap_5D_ElevatorDestination_Maridia:
     %spritemapEntry(0, $00, $F8, 0, 0, 2, 0, $16)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 0, $15)
 
+%anchor($82C549)
 MenuSpritemap_5C_ElevatorDestination_WreckedShip:
     dw $0006                                                             ;82C549;
     %spritemapEntry(0, $04, $00, 0, 0, 2, 0, $45)
@@ -8451,6 +8774,7 @@ MenuSpritemap_5C_ElevatorDestination_WreckedShip:
     %spritemapEntry(0, $1FC, $F8, 0, 0, 2, 0, $54)
     %spritemapEntry(0, $1F4, $F8, 0, 0, 2, 0, $53)
 
+%anchor($82C569)
 MenuSpritemap_Pointers:
 ; Spawned by $81:891F
     dw MenuSpritemap_0                                                   ;82C569;
@@ -8558,6 +8882,7 @@ MenuSpritemap_Pointers:
     dw TitleMenuSpritemaps_66_GameOverBabyMetroid_1                      ;82C635;
     dw TitleMenuSpritemaps_67_GameOverBabyMetroid_2                      ;82C637;
 
+%anchor($82C639)
 Dummy_Samus_Wireframe_Tilemap:
     dw $0000,$0000,$0000,$25B3,$65B3,$0000,$0000,$0000                   ;82C639;
     dw $25C0,$25C1,$25C2,$25C3,$65C3,$65C2,$65C1,$65C0                   ;82C649;
@@ -8577,14 +8902,17 @@ Dummy_Samus_Wireframe_Tilemap:
     dw $2628,$2629,$262A,$062B,$462B,$662A,$262C,$262D                   ;82C729;
     dw $2638,$2639,$263A,$0000,$0000,$663A,$263C,$6638                   ;82C739;
 
+%anchor($82C749)
 AreaSelect_SpritemapBaseIndex:
     dw $0038                                                             ;82C749;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($82C74B)
 UNUSED_DPadIcon_SpritemapIndex:
     dw $0044                                                             ;82C74B;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($82C74D)
 Map_Elevator_Destinations:
     dw SpritemapIndices_crateria                                         ;82C74D;
     dw SpritemapIndices_brinstar                                         ;82C74F;
@@ -8593,6 +8921,7 @@ Map_Elevator_Destinations:
     dw SpritemapIndices_maridia                                          ;82C755;
     dw SpritemapIndices_tourian                                          ;82C757;
 
+%anchor($82C759)
 SpritemapIndices:
 ;        _______________ X position
 ;       |      _________ Y position
@@ -8628,6 +8957,7 @@ SpritemapIndices:
     dw $0098,$0048,$0059
     dw $FFFF
 
+%anchor($82C7CB)
 MapIcon_PositionTablePointers:
   .bossIcons:
     dw Crateria_MapIconPositions_bossIcons                               ;82C7CB; Crateria
@@ -8699,6 +9029,7 @@ MapIcon_PositionTablePointers:
     dw $0000                                                             ;82C837; Ceres
     dw $0000                                                             ;82C839; Debug
 
+%anchor($82C83B)
 Crateria_MapIconPositions:
   .bossIcons:
     dw $FFFE,$FFFE, $FFFE,$FFFE, $FFFE,$FFFE, $FFFF                      ;82C83B;
@@ -8719,6 +9050,7 @@ Crateria_MapIconPositions:
   .debugSavePoints:
     dw $00D8,$0028, $0188,$0028, $FFFF                                   ;82C893;
 
+%anchor($82C89D)
 Brinstar_MapIconPositions:
   .bossIcons:
     dw $01BC,$009C, $FFFF                                                ;82C89D;
@@ -8737,6 +9069,7 @@ Brinstar_MapIconPositions:
   .debugSaveStations:
     dw $0048,$0018, $01B8,$00A0, $0090,$0020, $FFFF                      ;82C8FD;
 
+%anchor($82C90B)
 Norfair_MapIconPositions:
   .bossIcons:
     dw $00B8,$0090, $FFFF                                                ;82C90B;
@@ -8756,6 +9089,7 @@ Norfair_MapIconPositions:
     dw $0050,$0010, $0078,$0050, $00B0,$0088, $0050,$0058                ;82C963;
     dw $00A8,$0070, $00A0,$0080, $0010,$0008, $FFFF                      ;82C973;
 
+%anchor($82C981)
 WreckedShip_MapIconPositions:
   .bossIcons:
     dw $0098,$00A0, $FFFF                                                ;82C981;
@@ -8774,6 +9108,7 @@ WreckedShip_MapIconPositions:
   .debugSavePoints:
     dw $0050,$0078, $0090,$00A0, $FFFF                                   ;82C9D1;
 
+%anchor($82C9DB)
 Maridia_MapIconPositions:
   .bossIcons:
     dw $013C,$0054, $FFFF                                                ;82C9DB;
@@ -8793,6 +9128,7 @@ Maridia_MapIconPositions:
     dw $0090,$0028, $0148,$0050, $00B8,$0048, $00B0,$0088                ;82CA33;
     dw $FFFF                                                             ;82CA43;
 
+%anchor($82CA45)
 Tourian_MapIconPositions:
   .bossIcons:
     dw $FFFF                                                             ;82CA45;
@@ -8811,6 +9147,7 @@ Tourian_MapIconPositions:
   .debugSavePoints:
     dw $0088,$0050, $0068,$00C0, $FFFF                                   ;82CA91;
 
+%anchor($82CA9B)
 Ceres_MapIconPositions:
   .bossIcons:
     dw $00A0,$0088, $FFFF                                                ;82CA9B;
@@ -8832,6 +9169,7 @@ Ceres_MapIconPositions:
 
 ; Some of these spritemap entries have extra bits set,
 ; making them incompatible with the spritemapEntry macro
+%anchor($82CAE9)
 TitleMenuSpritemaps_2C_FileSelectMenu_SamusHelmet_0:
     dw $0004                                                             ;82CAE9;
     dw $C3FC : db $F4 : dw $3ED1
@@ -8839,6 +9177,7 @@ TitleMenuSpritemaps_2C_FileSelectMenu_SamusHelmet_0:
     dw $C3F4 : db $FC : dw $3EE0
     dw $C3F4 : db $F4 : dw $3ED0
 
+%anchor($82CAFF)
 TitleMenuSpritemaps_2D_FileSelectMenu_SamusHelmet_1:
     dw $0004                                                             ;82CAFF;
     dw $C3F4 : db $FC : dw $3EE3
@@ -8846,6 +9185,7 @@ TitleMenuSpritemaps_2D_FileSelectMenu_SamusHelmet_1:
     dw $C3FC : db $F4 : dw $3ED4
     dw $C3FC : db $FC : dw $3EE4
 
+%anchor($82CB15)
 TitleMenuSpritemaps_2E_FileSelectMenu_SamusHelmet_2:
     dw $0004                                                             ;82CB15;
     dw $C3FC : db $F4 : dw $3ED7
@@ -8853,6 +9193,7 @@ TitleMenuSpritemaps_2E_FileSelectMenu_SamusHelmet_2:
     dw $C3F4 : db $FC : dw $3EE6
     dw $C3FC : db $FC : dw $3EE7
 
+%anchor($82CB2B)
 TitleMenuSpritemaps_2F_FileSelectMenu_SamusHelmet_3:
     dw $0006                                                             ;82CB2B;
     %spritemapEntry(0, $00, $FE, 0, 0, 3, 7, $DA)
@@ -8862,6 +9203,7 @@ TitleMenuSpritemaps_2F_FileSelectMenu_SamusHelmet_3:
     dw $C3F4 : db $FC : dw $3EE6
     dw $C3FC : db $FC : dw $3EE7
 
+%anchor($82CB4B)
 TitleMenuSpritemaps_30_FileSelectMenu_SamusHelmet_4:
     dw $0006                                                             ;82CB4B;
     %spritemapEntry(0, $00, $FE, 0, 0, 3, 7, $DC)
@@ -8871,6 +9213,7 @@ TitleMenuSpritemaps_30_FileSelectMenu_SamusHelmet_4:
     dw $C3F4 : db $FC : dw $3EE6
     dw $C3FC : db $FC : dw $3EE7
 
+%anchor($82CB6B)
 TitleMenuSpritemaps_31_FileSelectMenu_SamusHelmet_5:
     dw $0006                                                             ;82CB6B;
     %spritemapEntry(0, $00, $FE, 0, 0, 3, 7, $DE)
@@ -8880,6 +9223,7 @@ TitleMenuSpritemaps_31_FileSelectMenu_SamusHelmet_5:
     dw $C3F4 : db $FC : dw $3EE6
     dw $C3FC : db $FC : dw $3EE7
 
+%anchor($82CB8B)
 TitleMenuSpritemaps_32_FileSelectMenu_SamusHelmet_6:
     dw $0006                                                             ;82CB8B;
     %spritemapEntry(0, $00, $FE, 0, 0, 3, 7, $EA)
@@ -8889,6 +9233,7 @@ TitleMenuSpritemaps_32_FileSelectMenu_SamusHelmet_6:
     dw $C3F4 : db $FC : dw $3EE6
     dw $C3FC : db $FC : dw $3EE7
 
+%anchor($82CBAB)
 TitleMenuSpritemaps_33_FileSelectMenu_SamusHelmet_7:
     dw $0006                                                             ;82CBAB;
     %spritemapEntry(0, $00, $FE, 0, 0, 3, 7, $EC)
@@ -8898,26 +9243,31 @@ TitleMenuSpritemaps_33_FileSelectMenu_SamusHelmet_7:
     dw $C3F4 : db $FC : dw $3EE6
     dw $C3FC : db $FC : dw $3EE7
 
+%anchor($82CBCB)
 TitleMenuSpritemaps_34_MenuSelectionMissile_0:
     dw $0002                                                             ;82CBCB;
     %spritemapEntry(0, $00, $FC, 0, 0, 3, 7, $EF)
     %spritemapEntry(0, $1F8, $FC, 0, 0, 3, 7, $DF)
 
+%anchor($82CBD7)
 TitleMenuSpritemaps_35_MenuSelectionMissile_1:
     dw $0002                                                             ;82CBD7;
     %spritemapEntry(0, $00, $FC, 0, 0, 3, 7, $FF)
     %spritemapEntry(0, $1F8, $FC, 0, 0, 3, 7, $EE)
 
+%anchor($82CBE3)
 TitleMenuSpritemaps_36_MenuSelectionMissile_2:
     dw $0002                                                             ;82CBE3;
     %spritemapEntry(0, $00, $FC, 0, 0, 3, 7, $CC)
     %spritemapEntry(0, $1F8, $FC, 0, 0, 3, 7, $FE)
 
+%anchor($82CBEF)
 TitleMenuSpritemaps_37_MenuSelectionMissile_3:
     dw $0002                                                             ;82CBEF;
     %spritemapEntry(0, $1F8, $FC, 0, 0, 3, 7, $C8)
     %spritemapEntry(0, $00, $FC, 0, 0, 3, 7, $FF)
 
+%anchor($82CBFB)
 TitleMenuSpritemaps_38_AreaSelect_PlanetZebes:
     dw $0016                                                             ;82CBFB;
     %spritemapEntry(0, $28, $00, 0, 0, 3, 0, $3B)
@@ -8943,6 +9293,7 @@ TitleMenuSpritemaps_38_AreaSelect_PlanetZebes:
     %spritemapEntry(0, $1D0, $F8, 0, 0, 3, 0, $0D)
     %spritemapEntry(0, $1D0, $00, 0, 0, 3, 0, $38)
 
+%anchor($82CC6B)
 TitleMenuSpritemaps_39_AreaSelect_Crateria:
     dw $0008                                                             ;82CC6B;
     %spritemapEntry(0, $17, $FC, 0, 0, 3, 0, $6A)
@@ -8954,6 +9305,7 @@ TitleMenuSpritemaps_39_AreaSelect_Crateria:
     %spritemapEntry(0, $1EA, $FC, 0, 0, 3, 0, $7B)
     %spritemapEntry(0, $1E2, $FC, 0, 0, 3, 0, $6C)
 
+%anchor($82CC95)
 TitleMenuSpritemaps_3A_AreaSelect_Brinstar:
     dw $0008                                                             ;82CC95;
     %spritemapEntry(0, $17, $FC, 0, 0, 3, 0, $7B)
@@ -8965,6 +9317,7 @@ TitleMenuSpritemaps_3A_AreaSelect_Brinstar:
     %spritemapEntry(0, $1E9, $FC, 0, 0, 3, 0, $7B)
     %spritemapEntry(0, $1E1, $FC, 0, 0, 3, 0, $6B)
 
+%anchor($82CCBF)
 TitleMenuSpritemaps_3B_AreaSelect_Norfair:
     dw $0007                                                             ;82CCBF;
     %spritemapEntry(0, $14, $FC, 0, 0, 3, 0, $7B)
@@ -8975,6 +9328,7 @@ TitleMenuSpritemaps_3B_AreaSelect_Norfair:
     %spritemapEntry(0, $1ED, $FC, 0, 0, 3, 0, $78)
     %spritemapEntry(0, $1E5, $FC, 0, 0, 3, 0, $77)
 
+%anchor($82CCE4)
 TitleMenuSpritemaps_3E_AreaSelect_Tourian:
     dw $0007                                                             ;82CCE4;
     %spritemapEntry(0, $13, $FC, 0, 0, 3, 0, $77)
@@ -8985,6 +9339,7 @@ TitleMenuSpritemaps_3E_AreaSelect_Tourian:
     %spritemapEntry(0, $1ED, $FC, 0, 0, 3, 0, $78)
     %spritemapEntry(0, $1E6, $FC, 0, 0, 3, 0, $7D)
 
+%anchor($82CD09)
 TitleMenuSpritemaps_3D_AreaSelect_Maridia:
     dw $0007                                                             ;82CD09;
     %spritemapEntry(0, $13, $FC, 0, 0, 3, 0, $6A)
@@ -8995,6 +9350,7 @@ TitleMenuSpritemaps_3D_AreaSelect_Maridia:
     %spritemapEntry(0, $1EE, $FC, 0, 0, 3, 0, $6A)
     %spritemapEntry(0, $1E6, $FC, 0, 0, 3, 0, $76)
 
+%anchor($82CD2E)
 TitleMenuSpritemaps_3C_AreaSelect_WreckedShip:
     dw $000B                                                             ;82CD2E;
     %spritemapEntry(0, $18, $00, 0, 0, 3, 0, $79)
@@ -9009,6 +9365,7 @@ TitleMenuSpritemaps_3C_AreaSelect_WreckedShip:
     %spritemapEntry(0, $1E8, $F8, 0, 0, 3, 0, $7B)
     %spritemapEntry(0, $1E0, $F8, 0, 0, 3, 0, $80)
 
+%anchor($82CD67)
 TitleMenuSpritemaps_3F_82CD67:
     dw $0014                                                             ;82CD67;
     %spritemapEntry(0, $10, $08, 0, 0, 3, 7, $FA)
@@ -9032,6 +9389,7 @@ TitleMenuSpritemaps_3F_82CD67:
     %spritemapEntry(0, $18, $F0, 0, 0, 3, 7, $FB)
     %spritemapEntry(0, $1E0, $F0, 0, 0, 3, 7, $F9)
 
+%anchor($82CDCD)
 TitleMenuSpritemaps_40_FileCopyArrow_OneSlotDown:
     dw $000E                                                             ;82CDCD;
     %spritemapEntry(0, $02, $F0, 0, 0, 3, 1, $CF)
@@ -9049,6 +9407,7 @@ TitleMenuSpritemaps_40_FileCopyArrow_OneSlotDown:
     %spritemapEntry(0, $1FA, $F8, 0, 0, 3, 1, $BD)
     %spritemapEntry(0, $1F2, $F8, 0, 0, 3, 1, $BC)
 
+%anchor($82CE15)
 TitleMenuSpritemaps_41_FileCopyArrow_OneSlotUp:
     dw $000E                                                             ;82CE15;
     %spritemapEntry(0, $1F2, $F0, 1, 0, 3, 1, $B8)
@@ -9066,6 +9425,7 @@ TitleMenuSpritemaps_41_FileCopyArrow_OneSlotUp:
     %spritemapEntry(0, $02, $E8, 1, 0, 3, 1, $CB)
     %spritemapEntry(0, $02, $F0, 1, 0, 3, 1, $BB)
 
+%anchor($82CE5D)
 TitleMenuSpritemaps_42_FileCopyArrow_TwoSlotsDown:
     dw $0016                                                             ;82CE5D;
     %spritemapEntry(0, $1FA, $08, 0, 0, 3, 1, $BD)
@@ -9091,6 +9451,7 @@ TitleMenuSpritemaps_42_FileCopyArrow_TwoSlotsDown:
     %spritemapEntry(0, $02, $20, 0, 0, 3, 1, $CB)
     %spritemapEntry(0, $02, $18, 0, 0, 3, 1, $BB)
 
+%anchor($82CECD)
 TitleMenuSpritemaps_43_FileCopyArrow_TwoSlotsUp:
     dw $0016                                                             ;82CECD;
     %spritemapEntry(0, $1FA, $F0, 1, 0, 3, 1, $BD)
@@ -9116,6 +9477,7 @@ TitleMenuSpritemaps_43_FileCopyArrow_TwoSlotsUp:
     %spritemapEntry(0, $02, $D8, 1, 0, 3, 1, $CB)
     %spritemapEntry(0, $02, $E0, 1, 0, 3, 1, $BB)
 
+%anchor($82CF3D)
 TitleMenuSpritemaps_44_82CF3D:
     dw $0004                                                             ;82CF3D;
     %spritemapEntry(0, $1FF, $FF, 1, 1, 3, 0, $B3)
@@ -9123,15 +9485,18 @@ TitleMenuSpritemaps_44_82CF3D:
     %spritemapEntry(0, $1FF, $F8, 0, 1, 3, 0, $B3)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 0, $B3)
 
+%anchor($82CF53)
 TitleMenuSpritemaps_45:
     dw $0002                                                             ;82CF53;
     dw $C3F4 : db $F8 : dw $3095
     dw $C3FC : db $F8 : dw $3096
 
+%anchor($82CF5F)
 TitleMenuSpritemaps_46:
     dw $0001                                                             ;82CF5F;
     dw $C3F8 : db $F8 : dw $3091
 
+%anchor($82CF66)
 TitleMenuSpritemaps_47:
     dw $0004                                                             ;82CF66;
     %spritemapEntry(0, $00, $00, 0, 1, 3, 0, $A0)
@@ -9139,6 +9504,7 @@ TitleMenuSpritemaps_47:
     %spritemapEntry(0, $1F8, $00, 0, 0, 3, 0, $A0)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 0, $90)
 
+%anchor($82CF7C)
 TitleMenuSpritemaps_5F_SamusPositionIndicator_0:
     dw $0004                                                             ;82CF7C;
     %spritemapEntry(0, $04, $04, 1, 1, 2, 7, $AF)
@@ -9146,6 +9512,7 @@ TitleMenuSpritemaps_5F_SamusPositionIndicator_0:
     %spritemapEntry(0, $04, $FC, 0, 1, 2, 7, $AF)
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 7, $AF)
 
+%anchor($82CF92)
 TitleMenuSpritemaps_5F_SamusPositionIndicator_1:
     dw $0004                                                             ;82CF92;
     %spritemapEntry(0, $05, $05, 1, 1, 2, 7, $AF)
@@ -9153,6 +9520,7 @@ TitleMenuSpritemaps_5F_SamusPositionIndicator_1:
     %spritemapEntry(0, $05, $FB, 0, 1, 2, 7, $AF)
     %spritemapEntry(0, $1FB, $FB, 0, 0, 2, 7, $AF)
 
+%anchor($82CFA8)
 TitleMenuSpritemaps_5F_SamusPositionIndicator_2:
     dw $0004                                                             ;82CFA8;
     %spritemapEntry(0, $06, $06, 1, 1, 2, 7, $AF)
@@ -9160,6 +9528,7 @@ TitleMenuSpritemaps_5F_SamusPositionIndicator_2:
     %spritemapEntry(0, $06, $FA, 0, 1, 2, 7, $AF)
     %spritemapEntry(0, $1FA, $FA, 0, 0, 2, 7, $AF)
 
+%anchor($82CFBE)
 TitleMenuSpritemaps_62_BossCrossOutIcon:
     dw $0004                                                             ;82CFBE;
     %spritemapEntry(0, $03, $04, 1, 1, 2, 7, $9F)
@@ -9167,11 +9536,13 @@ TitleMenuSpritemaps_62_BossCrossOutIcon:
     %spritemapEntry(0, $1FC, $04, 1, 0, 2, 7, $9F)
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 7, $9F)
 
+%anchor($82CFD4)
 TitleMenuSpritemaps_63_GunshipIcon:
     dw $0002                                                             ;82CFD4;
     %spritemapEntry(0, $04, $FE, 0, 1, 2, 7, $8F)
     %spritemapEntry(0, $1FC, $FE, 0, 0, 2, 7, $8F)
 
+%anchor($82CFE0)
 TitleMenuSpritemaps_64_GameOverBabyMetroidContainer:
     dw $0004                                                             ;82CFE0;
     %spritemapEntry(0, $00, $08, 1, 1, 3, 5, $9A)
@@ -9179,18 +9550,22 @@ TitleMenuSpritemaps_64_GameOverBabyMetroidContainer:
     %spritemapEntry(0, $00, $F0, 0, 1, 3, 5, $9A)
     %spritemapEntry(0, $1F8, $F0, 0, 0, 3, 5, $9A)
 
+%anchor($82CFF6)
 TitleMenuSpritemaps_65_GameOverBabyMetroid_0:
     dw $0001                                                             ;82CFF6;
     dw $C3F8 : db $F8 : dw $3890
 
+%anchor($82CFFD)
 TitleMenuSpritemaps_66_GameOverBabyMetroid_1:
     dw $0001                                                             ;82CFFD;
     dw $C3F8 : db $F8 : dw $3892
 
+%anchor($82D004)
 TitleMenuSpritemaps_67_GameOverBabyMetroid_2:
     dw $0001                                                             ;82D004;
     dw $C3F8 : db $F8 : dw $389B
 
+%anchor($82D00B)
 TitleMenuSpritemaps_48_BorderAround_SAMUS_DATA:
     dw $0020                                                             ;82D00B;
     %spritemapEntry(0, $1C8, $00, 0, 0, 3, 7, $ED)
@@ -9226,6 +9601,7 @@ TitleMenuSpritemaps_48_BorderAround_SAMUS_DATA:
     %spritemapEntry(0, $1D8, $F0, 0, 0, 3, 7, $FA)
     %spritemapEntry(0, $1D0, $F0, 0, 0, 3, 7, $FA)
 
+%anchor($82D0AD)
 TitleMenuSpritemaps_49_BorderAround_DATA_COPY_MODE:
     dw $0028                                                             ;82D0AD;
     %spritemapEntry(0, $00, $08, 0, 0, 3, 7, $FA)
@@ -9269,6 +9645,7 @@ TitleMenuSpritemaps_49_BorderAround_DATA_COPY_MODE:
     %spritemapEntry(0, $1C8, $F0, 0, 0, 3, 7, $FA)
     %spritemapEntry(0, $1C0, $F0, 0, 0, 3, 7, $FA)
 
+%anchor($82D177)
 TitleMenuSpritemaps_4A_BorderAround_DATA_CLEAR_MODE:
     dw $002A                                                             ;82D177;
     %spritemapEntry(0, $1EC, $F0, 0, 0, 3, 7, $FA)
@@ -9314,6 +9691,7 @@ TitleMenuSpritemaps_4A_BorderAround_DATA_CLEAR_MODE:
     %spritemapEntry(0, $1C4, $F0, 0, 0, 3, 7, $FA)
     %spritemapEntry(0, $1BC, $F0, 0, 0, 3, 7, $FA)
 
+%anchor($82D24B)
 TitleMenuSpritemaps_4B_BorderAround_OPTIONS_MODE:
     dw $0022                                                             ;82D24B;
     %spritemapEntry(0, $1FC, $08, 0, 0, 3, 7, $FA)
@@ -9351,6 +9729,7 @@ TitleMenuSpritemaps_4B_BorderAround_OPTIONS_MODE:
     %spritemapEntry(0, $1D4, $F0, 0, 0, 3, 7, $FA)
     %spritemapEntry(0, $1CC, $F0, 0, 0, 3, 7, $FA)
 
+%anchor($82D2F7)
 TitleMenuSpritemaps_49_BorderAround_CONTROLLER_SETTING_MODE:
     dw $003A                                                             ;82D2F7;
     %spritemapEntry(0, $1DC, $08, 0, 0, 3, 7, $FA)
@@ -9412,6 +9791,7 @@ TitleMenuSpritemaps_49_BorderAround_CONTROLLER_SETTING_MODE:
     %spritemapEntry(0, $1A4, $F0, 0, 0, 3, 7, $FA)
     %spritemapEntry(0, $19C, $F0, 0, 0, 3, 7, $FA)
 
+%anchor($82D41B)
 TitleMenuSpritemaps_4D_BorderAround_SPECIAL_SETTING_MODE:
     dw $0034                                                             ;82D41B;
     %spritemapEntry(0, $1E8, $08, 0, 0, 3, 7, $FA)
@@ -9467,6 +9847,7 @@ TitleMenuSpritemaps_4D_BorderAround_SPECIAL_SETTING_MODE:
     %spritemapEntry(0, $1B0, $F0, 0, 0, 3, 7, $FA)
     %spritemapEntry(0, $1A8, $F0, 0, 0, 3, 7, $FA)
 
+%anchor($82D521)
 Samus_Wireframe_Tilemaps_powerSuit:
     dw $0000,$0000,$0000,$25B3,$65B3,$0000,$0000,$0000                   ;82D521;
     dw $25BC,$25BD,$25BE,$25C3,$65C3,$65BE,$65BD,$65BC                   ;82D531;
@@ -9486,6 +9867,7 @@ Samus_Wireframe_Tilemaps_powerSuit:
     dw $258E,$259E,$259F,$0000,$0000,$659F,$25EE,$259D                   ;82D611;
     dw $25AD,$25AE,$25AF,$0000,$0000,$65AF,$25FE,$65AD                   ;82D621;
 
+%anchor($82D631)
 Samus_Wireframe_Tilemaps_hiJumpBoots:
     dw $0000,$0000,$0000,$25B3,$65B3,$0000,$0000,$0000                   ;82D631;
     dw $25BC,$25BD,$25BE,$25C3,$65C3,$65BE,$65BD,$65BC                   ;82D641;
@@ -9505,6 +9887,7 @@ Samus_Wireframe_Tilemaps_hiJumpBoots:
     dw $2598,$2599,$259A,$059B,$459B,$659A,$259C,$259D                   ;82D721;
     dw $25A8,$25A9,$25AA,$0000,$0000,$65AA,$25AC,$65A8                   ;82D731;
 
+%anchor($82D741)
 Samus_Wireframe_Tilemaps_variaSuit:
     dw $0000,$0000,$0000,$25B3,$65B3,$0000,$0000,$0000                   ;82D741;
     dw $25C0,$25C1,$25C2,$25C3,$65C3,$65C2,$65C1,$65C0                   ;82D751;
@@ -9524,6 +9907,7 @@ Samus_Wireframe_Tilemaps_variaSuit:
     dw $258E,$259E,$259F,$0000,$0000,$659F,$25EE,$259D                   ;82D831;
     dw $25AD,$25AE,$25AF,$0000,$0000,$65AF,$25FE,$25FF                   ;82D841;
 
+%anchor($82D851)
 Samus_Wireframe_Tilemaps_hiJumpBootsVariaSuit:
     dw $0000,$0000,$0000,$25B3,$65B3,$0000,$0000,$0000                   ;82D851;
     dw $25C0,$25C1,$25C2,$25C3,$65C3,$65C2,$65C1,$65C0                   ;82D861;
@@ -9543,6 +9927,7 @@ Samus_Wireframe_Tilemaps_hiJumpBootsVariaSuit:
     dw $2598,$2599,$259A,$059B,$459B,$659A,$259C,$259D                   ;82D941;
     dw $25A8,$25A9,$25AA,$0000,$0000,$65AA,$25AC,$65A8                   ;82D951;
 
+%anchor($82D961)
 Advance_GradualColorChange_ofAllPalettes_Denominator_C:
     LDA.W #$000C                                                         ;82D961;
     STA.L $7EC402                                                        ;82D964;
@@ -9550,6 +9935,7 @@ Advance_GradualColorChange_ofAllPalettes_Denominator_C:
     RTS                                                                  ;82D96B;
 
 
+%anchor($82D96C)
 Advance_GradualColorChange_ofBGPalette6:
     REP #$30                                                             ;82D96C;
     LDA.W #$000C                                                         ;82D96E;
@@ -9592,6 +9978,7 @@ Advance_GradualColorChange_ofBGPalette6:
     RTL                                                                  ;82D9B7;
 
 
+%anchor($82D9B8)
 Advance_GradualColorChange_ofPaletteRAM:
     REP #$30                                                             ;82D9B8;
     LDA.W #$000F                                                         ;82D9BA;
@@ -9634,6 +10021,7 @@ Advance_GradualColorChange_ofPaletteRAM:
     RTL                                                                  ;82DA01;
 
 
+%anchor($82DA02)
 Advance_GradualColorChange_ofAllPalettes:
     REP #$30                                                             ;82DA02;
     LDA.L $7EC402                                                        ;82DA04;
@@ -9677,6 +10065,7 @@ Advance_GradualColorChange_ofAllPalettes:
     RTS                                                                  ;82DA49;
 
 
+%anchor($82DA4A)
 CalculateTheAth_TransitionalColor_fromXtoY:
     PHA                                                                  ;82DA4A;
     PHA                                                                  ;82DA4B;
@@ -9740,6 +10129,7 @@ CalculateTheAth_TransitionalColor_fromXtoY:
     RTS                                                                  ;82DAA5;
 
 
+%anchor($82DAA6)
 CalculateTheAth_TransitionalColorComponent_fromXtoY:
     CMP.W #$0000                                                         ;82DAA6;
     BNE .AisNonZero                                                      ;82DAA9;
@@ -9795,6 +10185,7 @@ CalculateTheAth_TransitionalColorComponent_fromXtoY:
     RTS                                                                  ;82DAF6;
 
 
+%anchor($82DAF7)
 Advance_GradualColorChange_ofPalettesInA_Denominator_C:
     PHX                                                                  ;82DAF7;
     PHY                                                                  ;82DAF8;
@@ -9811,6 +10202,7 @@ Advance_GradualColorChange_ofPalettesInA_Denominator_C:
     RTL                                                                  ;82DB0B;
 
 
+%anchor($82DB0C)
 Advance_GradualColorChange_ofPalettesInA:
     REP #$30                                                             ;82DB0C;
     PHA                                                                  ;82DB0E;
@@ -9850,6 +10242,7 @@ Advance_GradualColorChange_ofPalettesInA:
     RTS                                                                  ;82DB40;
 
 
+%anchor($82DB41)
 Advance_GradualColorChange_ofPaletteX_DividedBy_20:
     LDX.W $C404                                                          ;82DB41;
 
@@ -9875,6 +10268,7 @@ Advance_GradualColorChange_ofPaletteX_DividedBy_20:
     RTS                                                                  ;82DB68;
 
 
+%anchor($82DB69)
 HandleSamusRunningOutOfEnergy_and_IncrementGameTime:
     PHP                                                                  ;82DB69;
     REP #$30                                                             ;82DB6A;
@@ -9959,6 +10353,7 @@ HandleSamusRunningOutOfEnergy_and_IncrementGameTime:
     RTS                                                                  ;82DC0F;
 
 
+%anchor($82DC10)
 GameState_1B_ReserveTankAuto:
     PHP                                                                  ;82DC10;
     REP #$30                                                             ;82DC11;
@@ -9976,6 +10371,7 @@ GameState_1B_ReserveTankAuto:
     RTS                                                                  ;82DC30;
 
 
+%anchor($82DC31)
 Reserve_Tank_Auto_Refill:
     LDA.W $09D6                                                          ;82DC31;
     BEQ .return                                                          ;82DC34;
@@ -10022,6 +10418,7 @@ Reserve_Tank_Auto_Refill:
     RTS                                                                  ;82DC7F;
 
 
+%anchor($82DC80)
 GameState_13_DeathSequence_Start:
     PHP                                                                  ;82DC80;
     REP #$30                                                             ;82DC81;
@@ -10068,6 +10465,7 @@ GameState_13_DeathSequence_Start:
     RTS                                                                  ;82DCDF;
 
 
+%anchor($82DCE0)
 GameState_14_DeathSequence_BlackOutSurroundings:
     PHP                                                                  ;82DCE0;
     REP #$30                                                             ;82DCE1;
@@ -10129,6 +10527,7 @@ GameState_14_DeathSequence_BlackOutSurroundings:
     RTS                                                                  ;82DD70;
 
 
+%anchor($82DD71)
 GameState_15_DeathSequence_WaitForMusic:
     PHP                                                                  ;82DD71;
     REP #$30                                                             ;82DD72;
@@ -10143,6 +10542,7 @@ GameState_15_DeathSequence_WaitForMusic:
     RTS                                                                  ;82DD86;
 
 
+%anchor($82DD87)
 GameState_16_DeathSequence_PreFlashing:
     PHP                                                                  ;82DD87;
     REP #$30                                                             ;82DD88;
@@ -10158,6 +10558,7 @@ GameState_16_DeathSequence_PreFlashing:
     RTS                                                                  ;82DD99;
 
 
+%anchor($82DD9A)
 GameState_17_DeathSequence_Flashing:
     PHP                                                                  ;82DD9A;
     REP #$30                                                             ;82DD9B;
@@ -10176,6 +10577,7 @@ GameState_17_DeathSequence_Flashing:
     RTS                                                                  ;82DDAE;
 
 
+%anchor($82DDAF)
 GameState_18_DeathSequence_ExplosionWhiteOut:
     PHP                                                                  ;82DDAF;
     REP #$30                                                             ;82DDB0;
@@ -10192,6 +10594,7 @@ GameState_18_DeathSequence_ExplosionWhiteOut:
     RTS                                                                  ;82DDC6;
 
 
+%anchor($82DDC7)
 GameState_19_DeathSequence_BlackOut:
     PHP                                                                  ;82DDC7;
     REP #$30                                                             ;82DDC8;
@@ -10217,6 +10620,7 @@ GameState_19_DeathSequence_BlackOut:
     RTS                                                                  ;82DDF0;
 
 
+%anchor($82DDF1)
 Load_Destination_RoomCRE_Bitset:
     PHB                                                                  ;82DDF1;
     PHX                                                                  ;82DDF2;
@@ -10236,6 +10640,7 @@ Load_Destination_RoomCRE_Bitset:
     RTS                                                                  ;82DE11;
 
 
+%anchor($82DE12)
 Load_Door_Header:
     PEA.W $8300                                                          ;82DE12;
     PLB                                                                  ;82DE15;
@@ -10281,6 +10686,7 @@ Load_Door_Header:
     RTS                                                                  ;82DE6E;
 
 
+%anchor($82DE6F)
 Load_Room_Header:
     PEA.W $8F00                                                          ;82DE6F;
     PLB                                                                  ;82DE72;
@@ -10338,6 +10744,7 @@ Load_Room_Header:
     RTS                                                                  ;82DEF1;
 
 
+%anchor($82DEF2)
 Load_State_Header:
     PEA.W $8F00                                                          ;82DEF2;
     PLB                                                                  ;82DEF5;
@@ -10384,6 +10791,7 @@ Load_State_Header:
     RTS                                                                  ;82DF68;
 
 
+%anchor($82DF69)
 WaitUntilTheEndOfAVBlank_and_Enable_H_V_CounterInterrupts:
     PHP                                                                  ;82DF69;
     SEP #$20                                                             ;82DF6A;
@@ -10400,6 +10808,7 @@ WaitUntilTheEndOfAVBlank_and_Enable_H_V_CounterInterrupts:
     RTS                                                                  ;82DF7F;
 
 
+%anchor($82DF80)
 Much_ado_about_nothing:
     PHP                                                                  ;82DF80;
     SEP #$20                                                             ;82DF81;
@@ -10415,6 +10824,7 @@ Much_ado_about_nothing:
     RTS                                                                  ;82DF98;
 
 
+%anchor($82DF99)
 Save_Map_Explored_If_Elevator:
     LDA.W $0793                                                          ;82DF99;
     AND.W #$000F                                                         ;82DF9C;
@@ -10431,6 +10841,7 @@ Save_Map_Explored_If_Elevator:
     RTS                                                                  ;82DFB5;
 
 
+%anchor($82DFB6)
 Load_Map_Explored_If_Elevator:
     LDX.W $078D                                                          ;82DFB6;
     LDA.L $830002,X                                                      ;82DFB9;
@@ -10442,6 +10853,7 @@ Load_Map_Explored_If_Elevator:
     RTS                                                                  ;82DFC6;
 
 
+%anchor($82DFC7)
 Draw_Inanimate_Samus_Bank82:
     LDA.W $0E16                                                          ;82DFC7;
     BNE .return                                                          ;82DFCA;
@@ -10451,6 +10863,7 @@ Draw_Inanimate_Samus_Bank82:
     RTS                                                                  ;82DFD0;
 
 
+%anchor($82DFD1)
 Load_EnemyGFX_to_VRAM:
     LDA.W #$7000                                                         ;82DFD1;
     STA.B $12                                                            ;82DFD4;
@@ -10511,6 +10924,7 @@ Load_EnemyGFX_to_VRAM:
     RTS                                                                  ;82E038;
 
 
+%anchor($82E039)
 Perform_Door_Transition_VRAM_Update:
     LDA.B $01,S                                                          ;82E039;
     INC A                                                                ;82E03B;
@@ -10544,6 +10958,7 @@ Perform_Door_Transition_VRAM_Update:
     RTS                                                                  ;82E070;
 
 
+%anchor($82E071)
 Queue_Room_Music_Data:
     PHP                                                                  ;82E071;
     PHB                                                                  ;82E072;
@@ -10567,6 +10982,7 @@ Queue_Room_Music_Data:
     RTL                                                                  ;82E09A;
 
 
+%anchor($82E09B)
 Update_Music_Track_Index:
     PHP                                                                  ;82E09B;
     PHB                                                                  ;82E09C;
@@ -10598,6 +11014,7 @@ Update_Music_Track_Index:
     RTL                                                                  ;82E0D4;
 
 
+%anchor($82E0D5)
 Load_New_Music_Track_If_Changed:
     PHP                                                                  ;82E0D5;
     PHB                                                                  ;82E0D6;
@@ -10630,6 +11047,7 @@ Load_New_Music_Track_If_Changed:
     RTL                                                                  ;82E112;
 
 
+%anchor($82E113)
 RTL_82E113:
     PHP                                                                  ;82E113;
     REP #$20                                                             ;82E114;
@@ -10637,6 +11055,7 @@ RTL_82E113:
     RTL                                                                  ;82E117;
 
 
+%anchor($82E118)
 Play_Room_Music_Track_After_A_Frames:
     PHP                                                                  ;82E118;
     PHB                                                                  ;82E119;
@@ -10658,10 +11077,12 @@ Play_Room_Music_Track_After_A_Frames:
     RTL                                                                  ;82E137;
 
 
+%anchor($82E138)
 RTL_82E138:
     RTL                                                                  ;82E138;
 
 
+%anchor($82E139)
 Load_Target_Colors_for_Common_SpritesBeamsFlashingEnemies:
     REP #$30                                                             ;82E139;
     LDX.W #$001E                                                         ;82E13B;
@@ -10688,6 +11109,7 @@ Load_Target_Colors_for_Common_SpritesBeamsFlashingEnemies:
     RTL                                                                  ;82E168;
 
 
+%anchor($82E169)
 GameState_9_HitADoorBlock:
     PHP                                                                  ;82E169;
     REP #$30                                                             ;82E16A;
@@ -10707,6 +11129,7 @@ GameState_9_HitADoorBlock:
     JMP.W GameState_A_LoadingNextRoom                                    ;82E17A;
 
 
+%anchor($82E17D)
 DoorTransitionFunction_HandleElevator:
     LDA.W $0E16                                                          ;82E17D;
     BEQ .return                                                          ;82E180;
@@ -10726,6 +11149,7 @@ DoorTransitionFunction_HandleElevator:
     RTS                                                                  ;82E19E;
 
 
+%anchor($82E19F)
 DoorTransitionFunction_Wait48FramesForDownElevator:
     DEC.W $092F                                                          ;82E19F;
     BMI .return                                                          ;82E1A2;
@@ -10742,6 +11166,7 @@ DoorTransitionFunction_Wait48FramesForDownElevator:
     RTS                                                                  ;82E1B6;
 
 
+%anchor($82E1B7)
 GameState_A_LoadingNextRoom:
     PHP                                                                  ;82E1B7;
     PHB                                                                  ;82E1B8;
@@ -10823,6 +11248,7 @@ GameState_A_LoadingNextRoom:
     RTS                                                                  ;82E287;
 
 
+%anchor($82E288)
 GameState_B_LoadingNextRoom:
     PHP                                                                  ;82E288;
     PHB                                                                  ;82E289;
@@ -10842,6 +11268,7 @@ GameState_B_LoadingNextRoom:
     RTS                                                                  ;82E29D;
 
 
+%anchor($82E29E)
 DoorTransitionFunction_WaitForSoundsToFinish:
     PHP                                                                  ;82E29E;
     JSL.L Determine_Which_Enemies_to_Process                             ;82E29F;
@@ -10873,6 +11300,7 @@ DoorTransitionFunction_WaitForSoundsToFinish:
     RTS                                                                  ;82E2DA;
 
 
+%anchor($82E2DB)
 DoorTransitionFunction_FadeOutTheScreen:
     JSR.W Advance_GradualColorChange_ofAllPalettes_Denominator_C         ;82E2DB;
     BCS +                                                                ;82E2DE;
@@ -10888,6 +11316,7 @@ DoorTransitionFunction_FadeOutTheScreen:
     RTS                                                                  ;82E2F6;
 
 
+%anchor($82E2F7)
 DoorTransitionFunction_LoadDoorHeader_DeleteHDMAObjects_IRQ:
     JSR.W Load_Door_Header                                               ;82E2F7;
     JSL.L Delete_HDMAObjects                                             ;82E2FA;
@@ -10900,6 +11329,7 @@ DoorTransitionFunction_LoadDoorHeader_DeleteHDMAObjects_IRQ:
     RTS                                                                  ;82E30F;
 
 
+%anchor($82E310)
 DoorTransitionFunction_ScrollScreenToAlignment:
     PEA.W $8F00                                                          ;82E310;
     PLB                                                                  ;82E313;
@@ -10942,6 +11372,7 @@ DoorTransitionFunction_ScrollScreenToAlignment:
     RTS                                                                  ;82E352;
 
 
+%anchor($82E353)
 DoorTransitionFunction_FixDoorsMovingUp:
     PEA.W $8F00                                                          ;82E353;
     PLB                                                                  ;82E356;
@@ -10957,6 +11388,7 @@ DoorTransitionFunction_FixDoorsMovingUp:
     RTS                                                                  ;82E36D;
 
 
+%anchor($82E36E)
 DoorTransitionFunction_LoadRoomHeader_SetupMap_Decompress:
     PEA.W $8F00                                                          ;82E36E;
     PLB                                                                  ;82E371;
@@ -10972,6 +11404,7 @@ DoorTransitionFunction_LoadRoomHeader_SetupMap_Decompress:
     RTS                                                                  ;82E38D;
 
 
+%anchor($82E38E)
 DoorTransitionFunction_SetupScrolling:
     PEA.W $8F00                                                          ;82E38E;
     PLB                                                                  ;82E391;
@@ -10997,6 +11430,7 @@ DoorTransitionFunction_SetupScrolling:
     RTS                                                                  ;82E3BF;
 
 
+%anchor($82E3C0)
 DoorTransitionFunction_PlaceSamus_LoadTiles:
     PEA.W $8F00                                                          ;82E3C0;
     PLB                                                                  ;82E3C3;
@@ -11093,6 +11527,7 @@ DoorTransitionFunction_PlaceSamus_LoadTiles:
     RTS                                                                  ;82E4A8;
 
 
+%anchor($82E4A9)
 DoorTransitionFunction_LoadSpritesBGPLMsAudio_RunDoorRoomASM:
     PHP                                                                  ;82E4A9;
     JSR.W Load_EnemyGFX_to_VRAM                                          ;82E4AA;
@@ -11175,6 +11610,7 @@ DoorTransitionFunction_LoadSpritesBGPLMsAudio_RunDoorRoomASM:
     RTS                                                                  ;82E565;
 
 
+%anchor($82E566)
 Clear_FX_Tilemap_bank82:
     LDX.W #$077E                                                         ;82E566;
     LDA.W #$184E                                                         ;82E569;
@@ -11191,6 +11627,7 @@ Clear_FX_Tilemap_bank82:
     RTS                                                                  ;82E582;
 
 
+%anchor($82E583)
 Clear_BG2_Tilemap_bank82:
     LDX.W #$07FE                                                         ;82E583;
     LDA.W #$0338                                                         ;82E586;
@@ -11207,6 +11644,7 @@ Clear_BG2_Tilemap_bank82:
     RTS                                                                  ;82E59F;
 
 
+%anchor($82E5A0)
 Clear_Kraids_BG2_Tilemap:
     LDX.W #$07FE                                                         ;82E5A0;
     LDA.W #$0338                                                         ;82E5A3;
@@ -11226,6 +11664,7 @@ Clear_Kraids_BG2_Tilemap:
     RTS                                                                  ;82E5C6;
 
 
+%anchor($82E5C7)
 Library_Background_Function_Pointers:
     dw LoadLibraryBackground_0_Terminator                                ;82E5C7;
     dw LoadLibraryBackground_2_TransferToVRAM                            ;82E5C9;
@@ -11236,11 +11675,13 @@ Library_Background_Function_Pointers:
     dw LoadLibraryBackground_C_ClearKraidsLayer2                         ;82E5D3;
     dw LoadLibraryBackground_E_DoorDependentTransferToVRAM               ;82E5D5;
 
+%anchor($82E5D7)
 LoadLibraryBackground_0_Terminator:
     SEC                                                                  ;82E5D7;
     RTS                                                                  ;82E5D8;
 
 
+%anchor($82E5D9)
 LoadLibraryBackground_E_DoorDependentTransferToVRAM:
     LDA.W $078D                                                          ;82E5D9;
     CMP.W $0000,Y                                                        ;82E5DC;
@@ -11256,6 +11697,7 @@ LoadLibraryBackground_E_DoorDependentTransferToVRAM:
   + INY                                                                  ;82E5E9;
     INY                                                                  ;82E5EA;
 
+%anchor($82E5EB)
 LoadLibraryBackground_2_TransferToVRAM:
     LDA.W $0003,Y                                                        ;82E5EB;
     STA.W $05BE                                                          ;82E5EE;
@@ -11279,6 +11721,7 @@ LoadLibraryBackground_2_TransferToVRAM:
     RTS                                                                  ;82E615;
 
 
+%anchor($82E616)
 LoadLibraryBackground_4_Decompression:
     PHY                                                                  ;82E616;
     LDA.W $0000,Y                                                        ;82E617;
@@ -11298,6 +11741,7 @@ LoadLibraryBackground_4_Decompression:
     RTS                                                                  ;82E636;
 
 
+%anchor($82E637)
 LoadLibraryBackground_6_ClearFXTilemap:
     PHY                                                                  ;82E637;
     JSR.W Clear_FX_Tilemap_bank82                                        ;82E638;
@@ -11306,6 +11750,7 @@ LoadLibraryBackground_6_ClearFXTilemap:
     RTS                                                                  ;82E63D;
 
 
+%anchor($82E63E)
 LoadLibraryBackground_8_TransferToVRAM_SetBG3TilesBaseAddr:
     JSR.W LoadLibraryBackground_2_TransferToVRAM                         ;82E63E;
     SEP #$20                                                             ;82E641;
@@ -11316,6 +11761,7 @@ LoadLibraryBackground_8_TransferToVRAM_SetBG3TilesBaseAddr:
     RTS                                                                  ;82E64A;
 
 
+%anchor($82E64B)
 LoadLibraryBackground_A_ClearBG2Tilemap:
     PHY                                                                  ;82E64B;
     JSR.W Clear_BG2_Tilemap_bank82                                       ;82E64C;
@@ -11324,6 +11770,7 @@ LoadLibraryBackground_A_ClearBG2Tilemap:
     RTS                                                                  ;82E651;
 
 
+%anchor($82E652)
 LoadLibraryBackground_C_ClearKraidsLayer2:
     PHY                                                                  ;82E652;
     JSR.W Clear_Kraids_BG2_Tilemap                                       ;82E653;
@@ -11332,6 +11779,7 @@ LoadLibraryBackground_C_ClearKraidsLayer2:
     RTS                                                                  ;82E658;
 
 
+%anchor($82E659)
 DoorTransitionFunction_HandleAnimatedTiles:
     JSL.L AnimatedTilesObject_Handler                                    ;82E659;
     LDA.W #DoorTransitionFunction_WaitForMusicQueueClear_and_LoadMusic   ;82E65D;
@@ -11339,6 +11787,7 @@ DoorTransitionFunction_HandleAnimatedTiles:
     RTS                                                                  ;82E663;
 
 
+%anchor($82E664)
 DoorTransitionFunction_WaitForMusicQueueClear_and_LoadMusic:
     JSL.L CheckIfMusicIsQueued                                           ;82E664;
     BCS .return                                                          ;82E668;
@@ -11351,6 +11800,7 @@ DoorTransitionFunction_WaitForMusicQueueClear_and_LoadMusic:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($82E675)
 UNUSED_DoorTransitionFunction:
     JSL.L HandleMusicQueue                                               ;82E675;
     JSL.L Determine_Which_Enemies_to_Process                             ;82E679;
@@ -11371,6 +11821,7 @@ UNUSED_DoorTransitionFunction:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($82E6A2)
 DoorTransitionFunction_NudgeSamusIfInterceptingTheDoor:
     LDA.W $0AF6                                                          ;82E6A2;
     AND.W #$00F0                                                         ;82E6A5;
@@ -11451,6 +11902,7 @@ DoorTransitionFunction_NudgeSamusIfInterceptingTheDoor:
     RTS                                                                  ;82E736;
 
 
+%anchor($82E737)
 DoorTransitionFunction_FadeInTheScreen_and_RunEnemies_Finish:
     JSL.L AnimatedTilesObject_Handler                                    ;82E737;
     JSL.L Determine_Which_Enemies_to_Process                             ;82E73B;
@@ -11472,6 +11924,7 @@ DoorTransitionFunction_FadeInTheScreen_and_RunEnemies_Finish:
     RTS                                                                  ;82E76A;
 
 
+%anchor($82E76B)
 Load_Destination_Room:
     PHP                                                                  ;82E76B;
     PHB                                                                  ;82E76C;
@@ -11486,6 +11939,7 @@ Load_Destination_Room:
     JMP.W Load_CRETiles_TilesetTiles_and_TilesetPalette                  ;82E780;
 
 
+%anchor($82E783)
 Load_CRETiles_TilesetTiles_and_TilesetPalette_DB_8F:
     PHP                                                                  ;82E783;
     PHB                                                                  ;82E784;
@@ -11494,6 +11948,7 @@ Load_CRETiles_TilesetTiles_and_TilesetPalette_DB_8F:
     PLB                                                                  ;82E78A;
     PLB                                                                  ;82E78B;
 
+%anchor($82E78C)
 Load_CRETiles_TilesetTiles_and_TilesetPalette:
     STZ.W $0E16                                                          ;82E78C;
     LDA.W #$0080                                                         ;82E78F;
@@ -11525,6 +11980,7 @@ Load_CRETiles_TilesetTiles_and_TilesetPalette:
     RTL                                                                  ;82E7D2;
 
 
+%anchor($82E7D3)
 LoadLevelData_CRE_TileTable_ScrollData_PLMs_DoorASM_RoomASM:
     PHP                                                                  ;82E7D3;
     PHB                                                                  ;82E7D4;
@@ -11691,6 +12147,7 @@ LoadLevelData_CRE_TileTable_ScrollData_PLMs_DoorASM_RoomASM:
     RTL                                                                  ;82E8EA;
 
 
+%anchor($82E8EB)
 Spawn_Door_Closing_PLM:
     PHP                                                                  ;82E8EB;
     PHB                                                                  ;82E8EC;
@@ -11720,6 +12177,7 @@ Spawn_Door_Closing_PLM:
     RTS                                                                  ;82E91B;
 
 
+%anchor($82E91C)
 CheckIfColoredDoorcapWasSpawned_SwitchDoorPLMInstruction:
     LDX.W $078D                                                          ;82E91C;
     SEI                                                                  ;82E91F;
@@ -11773,6 +12231,7 @@ CheckIfColoredDoorcapWasSpawned_SwitchDoorPLMInstruction:
     RTS                                                                  ;82E97B;
 
 
+%anchor($82E97C)
 LoadLibraryBackground_LoadingPausing:
     PHP                                                                  ;82E97C;
     PHB                                                                  ;82E97D;
@@ -11832,11 +12291,13 @@ LoadLibraryBackground_LoadingPausing:
     dw LoadLibraryBackgroundLP_C_ClearKraidsLayer2                       ;82E9E1;
     dw LoadLibraryBackgroundLP_E_DoorDependentTransferToVRAM             ;82E9E3;
 
+%anchor($82E9E5)
 LoadLibraryBackgroundLP_0_Terminator:
     SEC                                                                  ;82E9E5;
     RTS                                                                  ;82E9E6;
 
 
+%anchor($82E9E7)
 LoadLibraryBackgroundLP_E_DoorDependentTransferToVRAM:
     LDA.W $078D                                                          ;82E9E7;
     CMP.W $0000,Y                                                        ;82E9EA;
@@ -11852,6 +12313,7 @@ LoadLibraryBackgroundLP_E_DoorDependentTransferToVRAM:
   + INY                                                                  ;82E9F7;
     INY                                                                  ;82E9F8;
 
+%anchor($82E9F9)
 LoadLibraryBackgroundLP_2_TransferToVRAM:
     LDA.W $0003,Y                                                        ;82E9F9;
     STA.W $2116                                                          ;82E9FC;
@@ -11877,6 +12339,7 @@ LoadLibraryBackgroundLP_2_TransferToVRAM:
     RTS                                                                  ;82EA2C;
 
 
+%anchor($82EA2D)
 LoadLibraryBackgroundLP_4_Decompression:
     PHY                                                                  ;82EA2D;
     LDA.W $0000,Y                                                        ;82EA2E;
@@ -11896,6 +12359,7 @@ LoadLibraryBackgroundLP_4_Decompression:
     RTS                                                                  ;82EA4D;
 
 
+%anchor($82EA4E)
 LoadLibraryBackgroundLP_6_ClearFXTilemap:
     PHY                                                                  ;82EA4E;
     JSL.L ClearFXTilemap                                                 ;82EA4F;
@@ -11904,6 +12368,7 @@ LoadLibraryBackgroundLP_6_ClearFXTilemap:
     RTS                                                                  ;82EA55;
 
 
+%anchor($82EA56)
 LoadLibraryBackgroundLP_A_ClearBG2Tilemap:
     PHY                                                                  ;82EA56;
     JSL.L ClearBG2Tilemap                                                ;82EA57;
@@ -11912,6 +12377,7 @@ LoadLibraryBackgroundLP_A_ClearBG2Tilemap:
     RTS                                                                  ;82EA5D;
 
 
+%anchor($82EA5E)
 LoadLibraryBackgroundLP_C_ClearKraidsLayer2:
     PHY                                                                  ;82EA5E;
     JSL.L ClearBG2Tilemap                                                ;82EA5F;
@@ -11920,6 +12386,7 @@ LoadLibraryBackgroundLP_C_ClearKraidsLayer2:
     RTS                                                                  ;82EA65;
 
 
+%anchor($82EA66)
 LoadLibraryBackgroundLP_8_TransferVRAM_and_SetBG3TilesAddr:
     JSR.W LoadLibraryBackgroundLP_2_TransferToVRAM                       ;82EA66;
     SEP #$20                                                             ;82EA69;
@@ -11930,6 +12397,7 @@ LoadLibraryBackgroundLP_8_TransferVRAM_and_SetBG3TilesAddr:
     RTS                                                                  ;82EA72;
 
 
+%anchor($82EA73)
 Load_Level_Scroll_and_CRE_Data:
     PEA.W $8F00                                                          ;82EA73;
     PLB                                                                  ;82EA76;
@@ -12068,6 +12536,7 @@ Load_Level_Scroll_and_CRE_Data:
     RTL                                                                  ;82EB6B;
 
 
+%anchor($82EB6C)
 CreatePLMs_ExecuteDoorASM_RoomSetupASM_SetElevatorStatus:
     PEA.W $8F00                                                          ;82EB6C;
     PLB                                                                  ;82EB6F;
@@ -12100,6 +12569,7 @@ CreatePLMs_ExecuteDoorASM_RoomSetupASM_SetElevatorStatus:
     RTL                                                                  ;82EB9E;
 
 
+%anchor($82EB9F)
 GameState_2_GameOptionsMenu:
     PHP                                                                  ;82EB9F;
     PHB                                                                  ;82EBA0;
@@ -12138,6 +12608,7 @@ GameState_2_GameOptionsMenu:
     dw GameOptionsMenu_B_TransitionBackToFileSelect                      ;82EBD7;
     dw GameOptionsMenu_C_FadingOutOptionsMenuToStartGame                 ;82EBD9;
 
+%anchor($82EBDB)
 GameOptionsMenu_0_FinishFadingOut:
     JSL.L HandleFadingOut                                                ;82EBDB;
     SEP #$20                                                             ;82EBDF;
@@ -12170,6 +12641,7 @@ GameOptionsMenu_0_FinishFadingOut:
     RTS                                                                  ;82EC10;
 
 
+%anchor($82EC11)
 GameOptionsMenu_1_LoadingOptionsMenu:
     PHP                                                                  ;82EC11;
     SEP #$30                                                             ;82EC12;
@@ -12258,6 +12730,7 @@ GameOptionsMenu_1_LoadingOptionsMenu:
     RTS                                                                  ;82ECE3;
 
 
+%anchor($82ECE4)
 GameOptionsMenu_2_FadingInOptionsMenu:
     JSL.L HandleFadingIn                                                 ;82ECE4;
     SEP #$20                                                             ;82ECE8;
@@ -12276,6 +12749,7 @@ GameOptionsMenu_2_FadingInOptionsMenu:
     RTS                                                                  ;82ECFE;
 
 
+%anchor($82ECFF)
 Draw_GameOptionsMenu_BG1:
     PHP                                                                  ;82ECFF;
     REP #$30                                                             ;82ED00;
@@ -12302,6 +12776,7 @@ Draw_GameOptionsMenu_BG1:
     RTS                                                                  ;82ED27;
 
 
+%anchor($82ED28)
 Set_GameOptionsMenu_TilePalettes:
     PHP                                                                  ;82ED28;
     REP #$30                                                             ;82ED29;
@@ -12321,6 +12796,7 @@ Set_GameOptionsMenu_TilePalettes:
     RTS                                                                  ;82ED41;
 
 
+%anchor($82ED42)
 GameOptionsMenu_3_OptionsMenu:
     PHP                                                                  ;82ED42;
     REP #$30                                                             ;82ED43;
@@ -12385,6 +12861,7 @@ GameOptionsMenu_3_OptionsMenu:
     dw Start_GameOptionsMenu_DissolveTransition                          ;82EDAD; Controller setting mode
     dw Start_GameOptionsMenu_DissolveTransition                          ;82EDAF; Special setting mode
 
+%anchor($82EDB1)
 GameOptionsMenu_StartGame:
     LDA.W $05D1                                                          ;82EDB1;
     BEQ .debug                                                           ;82EDB4;
@@ -12411,6 +12888,7 @@ GameOptionsMenu_StartGame:
     RTS                                                                  ;82EDD9;
 
 
+%anchor($82EDDA)
 GameOptionsMenu_OptionsMenu_ToggleLanguageText:
     STZ.W $099E                                                          ;82EDDA;
     LDA.W $09E2                                                          ;82EDDD;
@@ -12423,6 +12901,7 @@ GameOptionsMenu_OptionsMenu_ToggleLanguageText:
     LDA.W #$0001                                                         ;82EDE7;
     STA.W $09E2                                                          ;82EDEA;
 
+%anchor($82EDED)
 Set_Language_Text_Option_Highlight:
     LDA.W $09E2                                                          ;82EDED;
     BNE .japaneseText                                                    ;82EDF0;
@@ -12467,6 +12946,7 @@ Set_Language_Text_Option_Highlight:
     RTS                                                                  ;82EE54;
 
 
+%anchor($82EE55)
 Start_GameOptionsMenu_DissolveTransition:
     SEP #$20                                                             ;82EE55;
     LDA.B #$03                                                           ;82EE57;
@@ -12479,6 +12959,7 @@ Start_GameOptionsMenu_DissolveTransition:
     RTS                                                                  ;82EE69;
 
 
+%anchor($82EE6A)
 GameOptionsMenu_B_TransitionBackToFileSelect:
     JSL.L HandleFadingOut                                                ;82EE6A;
     SEP #$20                                                             ;82EE6E;
@@ -12501,6 +12982,7 @@ GameOptionsMenu_B_TransitionBackToFileSelect:
     RTS                                                                  ;82EE91;
 
 
+%anchor($82EE92)
 GameOptionsMenu_C_FadingOutOptionsMenuToStartGame:
     JSL.L HandleFadingOut                                                ;82EE92;
     SEP #$20                                                             ;82EE96;
@@ -12521,6 +13003,7 @@ GameOptionsMenu_C_FadingOutOptionsMenuToStartGame:
     RTS                                                                  ;82EEB3;
 
 
+%anchor($82EEB4)
 GameOptionsMenu_4_StartGame:
     STZ.W $0DE2                                                          ;82EEB4;
     LDA.W $05D1                                                          ;82EEB7;
@@ -12575,6 +13058,7 @@ GameOptionsMenu_4_StartGame:
     RTS                                                                  ;82EF17;
 
 
+%anchor($82EF18)
 GameOptionsMenu_5_DissolveOutScreen:
     JSL.L HandleFadingOut                                                ;82EF18;
     SEP #$20                                                             ;82EF1C;
@@ -12691,6 +13175,7 @@ GameOptionsMenu_5_DissolveOutScreen:
     RTS                                                                  ;82EFDA;
 
 
+%anchor($82EFDB)
 GameOptionsMenu_6_DissolveInScreen:
     JSL.L HandleFadingIn                                                 ;82EFDB;
     SEP #$20                                                             ;82EFDF;
@@ -12737,6 +13222,7 @@ GameOptionsMenu_6_DissolveInScreen:
     RTS                                                                  ;82F023;
 
 
+%anchor($82F024)
 GameOptionsMenu_8_SpecialSettings:
     LDA.B $8F                                                            ;82F024;
     AND.W #$0800                                                         ;82F026;
@@ -12794,6 +13280,7 @@ GameOptionsMenu_8_SpecialSettings:
     dw GameOptions_SpecialSettings_ToggleSetting                         ;82F08A;
     dw GameOptions_SpecialSettings_End                                   ;82F08C;
 
+%anchor($82F08E)
 GameOptions_SpecialSettings_ToggleSetting:
     LDA.W $099E                                                          ;82F08E;
     ASL A                                                                ;82F091;
@@ -12816,16 +13303,19 @@ GameOptions_SpecialSettings_ToggleSetting:
     RTS                                                                  ;82F0AD;
 
 
+%anchor($82F0AE)
 SpecialSettingRAMAddresses:                                              ;82F0AE;
     dw $09EA ; Icon cancel flag
     dw $09E4 ; Moonwalk flag
 
+%anchor($82F0B2)
 GameOptions_SpecialSettings_End:
     STZ.W $099E                                                          ;82F0B2;
     JSR.W Start_GameOptionsMenu_DissolveTransition                       ;82F0B5;
     RTS                                                                  ;82F0B8;
 
 
+%anchor($82F0B9)
 Set_SpecialSetting_Highlights:
     LDA.W $099E                                                          ;82F0B9;
     ASL A                                                                ;82F0BC;
@@ -12918,6 +13408,7 @@ Set_SpecialSetting_Highlights:
 .moonwalkOffRow1:
     dw $03AE                                                             ;82F157;
 
+%anchor($82F159)
 GameOptionsMenu_7_ControllerSettings:
     LDA.B $8F                                                            ;82F159;
     AND.W #$0800                                                         ;82F15B;
@@ -13034,6 +13525,7 @@ GameOptionsMenu_7_ControllerSettings:
     dw $0040,$0040 ; X
     dw $0080,$0080,$0080 ; A
 
+%anchor($82F224)
 GameOptions_ControllerSettings_ResetToDefault:
     LDA.B $8F                                                            ;82F224;
     BIT.W #$1080                                                         ;82F226;
@@ -13061,6 +13553,7 @@ GameOptions_ControllerSettings_ResetToDefault:
     RTS                                                                  ;82F25C;
 
 
+%anchor($82F25D)
 GameOptions_ControllerSettings_End:
     LDA.B $8F                                                            ;82F25D;
     BIT.W #$1080                                                         ;82F25F;
@@ -13078,6 +13571,7 @@ GameOptions_ControllerSettings_End:
     RTS                                                                  ;82F270;
 
 
+%anchor($82F271)
 GameOptionsMenu_9_ScrollControllerSettingsDown:
     LDA.B $B3                                                            ;82F271;
     CLC                                                                  ;82F273;
@@ -13092,6 +13586,7 @@ GameOptionsMenu_9_ScrollControllerSettingsDown:
     RTS                                                                  ;82F284;
 
 
+%anchor($82F285)
 GameOptionsMenu_A_ScrollControllerSettingsUp:
     LDA.B $B3                                                            ;82F285;
     SEC                                                                  ;82F287;
@@ -13101,10 +13596,12 @@ GameOptionsMenu_A_ScrollControllerSettingsUp:
     LDA.W #$0007                                                         ;82F28F;
     STA.W $0DE2                                                          ;82F292;
 
+%anchor($82F295)
 RTS_82F295:
     RTS                                                                  ;82F295;
 
 
+%anchor($82F296)
 Setup_MenuSelectionMissile:
     LDA.W #$0018                                                         ;82F296;
     STA.W $1AAD,Y                                                        ;82F299;
@@ -13115,6 +13612,7 @@ Setup_MenuSelectionMissile:
     RTS                                                                  ;82F2A8;
 
 
+%anchor($82F2A9)
 PreInstruction_MenuSelectionMissile:
     LDA.W $0998                                                          ;82F2A9;
     CMP.W #$0002                                                         ;82F2AC;
@@ -13192,28 +13690,33 @@ PreInstruction_MenuSelectionMissile:
     dw $0010,$0070
     dw $0010,$00A0                                     
 
+%anchor($82F34B)
 Setup_BorderAround_OPTION_MODE:
     LDA.W #$007C                                                         ;82F34B;
     STA.W $1AAD,Y                                                        ;82F34E;
     BRA Common_Border_Setup                                              ;82F351;
 
 
+%anchor($82F353)
 Setup_BorderAround_CONTRLLER_SETTING_MODE:
     LDA.W #$0084                                                         ;82F353;
     STA.W $1AAD,Y                                                        ;82F356;
     BRA Common_Border_Setup                                              ;82F359;
 
 
+%anchor($82F35B)
 Setup_BorderAround_SPECIAL_SETTING_MODE:
     LDA.W #$0080                                                         ;82F35B;
     STA.W $1AAD,Y                                                        ;82F35E;
     BRA Common_Border_Setup                                              ;82F361;
 
 
+%anchor($82F363)
 Setup_BorderAround_SAMUS_DATA:
     LDA.W #$0080                                                         ;82F363;
     STA.W $1AAD,Y                                                        ;82F366;
 
+%anchor($82F369)
 Common_Border_Setup:
     LDA.W #$0010                                                         ;82F369;
     STA.W $1ABD,Y                                                        ;82F36C;
@@ -13222,6 +13725,7 @@ Common_Border_Setup:
     RTS                                                                  ;82F375;
 
 
+%anchor($82F376)
 PreInstruction_BorderAround_OPTIONS_MODE:
     LDA.W $0998                                                          ;82F376;
     CMP.W #$0002                                                         ;82F379;
@@ -13248,6 +13752,7 @@ PreInstruction_BorderAround_OPTIONS_MODE:
     RTS                                                                  ;82F39F;
 
 
+%anchor($82F3A0)
 PreInstruction_BorderAround_CONTRLLER_SETTING_MODE:
     LDA.W $0DE2                                                          ;82F3A0;
     CMP.W #$0006                                                         ;82F3A3;
@@ -13291,6 +13796,7 @@ PreInstruction_BorderAround_CONTRLLER_SETTING_MODE:
     RTS                                                                  ;82F3E1;
 
 
+%anchor($82F3E2)
 PreInstruction_BorderAround_SPECIAL_SETTING_MODE:
     LDA.W $0DE2                                                          ;82F3E2;
     CMP.W #$0006                                                         ;82F3E5;
@@ -13315,6 +13821,7 @@ PreInstruction_BorderAround_SPECIAL_SETTING_MODE:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($82F404)
 UNUSED_PreInstruction_82F404:
     LDA.W $0DE2                                                          ;82F404;
     CMP.W #$0001                                                         ;82F407;
@@ -13329,6 +13836,7 @@ UNUSED_PreInstruction_82F404:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($82F419)
 Setup_FileSelectMenu_SamusHelmet:
     LDA.W #$00D8                                                         ;82F419;
     STA.W $1AAD,Y                                                        ;82F41C;
@@ -13339,6 +13847,7 @@ Setup_FileSelectMenu_SamusHelmet:
     RTS                                                                  ;82F42B;
 
 
+%anchor($82F42C)
 PreInstruction_FileSelectMenu_SamusHelmet:
     LDA.W $0998                                                          ;82F42C;
     CMP.W #$0002                                                         ;82F42F;
@@ -13354,6 +13863,7 @@ PreInstruction_FileSelectMenu_SamusHelmet:
     RTS                                                                  ;82F441;
 
 
+%anchor($82F442)
 InstList_GameOptionsMenu_MenuSelectionMissile:
     dw $0008,TitleMenuSpritemaps_34_MenuSelectionMissile_0               ;82F442;
     dw $0008,TitleMenuSpritemaps_35_MenuSelectionMissile_1               ;82F446;
@@ -13362,6 +13872,7 @@ InstList_GameOptionsMenu_MenuSelectionMissile:
     dw Instruction_GameOptionsMenu_GotoY                                 ;82F452;
     dw InstList_GameOptionsMenu_MenuSelectionMissile                     ;82F454;
 
+%anchor($82F456)
 InstList_GameOptionsMenu_FileSelectMenu_SamusHelmet:
     dw $0090,TitleMenuSpritemaps_2C_FileSelectMenu_SamusHelmet_0         ;82F456;
     dw $0006,TitleMenuSpritemaps_2D_FileSelectMenu_SamusHelmet_1         ;82F45A;
@@ -13375,80 +13886,97 @@ InstList_GameOptionsMenu_FileSelectMenu_SamusHelmet:
     dw Instruction_GameOptionsMenu_GotoY                                 ;82F47A;
     dw InstList_GameOptionsMenu_FileSelectMenu_SamusHelmet               ;82F47C;
 
+%anchor($82F47E)
 InstList_GameOptionsMenu_BorderAround_OPTIONS_MODE_0:
     dw $0002,TitleMenuSpritemaps_4B_BorderAround_OPTIONS_MODE            ;82F47E;
     dw Instruction_GameOptionsMenu_PreInstruction_inY                    ;82F482;
     dw PreInstruction_BorderAround_OPTIONS_MODE                          ;82F484;
 
+%anchor($82F486)
 InstList_GameOptionsMenu_BorderAround_OPTIONS_MODE_1:
     dw $0090,TitleMenuSpritemaps_4B_BorderAround_OPTIONS_MODE            ;82F486;
     dw Instruction_GameOptionsMenu_GotoY                                 ;82F48A;
     dw InstList_GameOptionsMenu_BorderAround_OPTIONS_MODE_1              ;82F48C;
 
+%anchor($82F48E)
 InstList_GameOptionsMenu_BorderAround_CTRL_SETTING_MODE_0:
     dw $0002,TitleMenuSpritemaps_49_BorderAround_CONTROLLER_SETTING_MODE ;82F48E;
     dw Instruction_GameOptionsMenu_PreInstruction_inY                    ;82F492;
     dw PreInstruction_BorderAround_CONTRLLER_SETTING_MODE                ;82F494;
 
+%anchor($82F496)
 InstList_GameOptionsMenu_BorderAround_CTRL_SETTING_MODE_1:
     dw $0090,TitleMenuSpritemaps_49_BorderAround_CONTROLLER_SETTING_MODE ;82F496;
     dw Instruction_GameOptionsMenu_GotoY                                 ;82F49A;
     dw InstList_GameOptionsMenu_BorderAround_CTRL_SETTING_MODE_1         ;82F49C;
 
+%anchor($82F49E)
 InstList_GameOptionsMenu_BorderAround_SPECIAL_SETTING_MODE_0:
     dw $0002,TitleMenuSpritemaps_4D_BorderAround_SPECIAL_SETTING_MODE    ;82F49E;
     dw Instruction_GameOptionsMenu_PreInstruction_inY                    ;82F4A2;
     dw PreInstruction_BorderAround_SPECIAL_SETTING_MODE                  ;82F4A4;
 
+%anchor($82F4A6)
 InstList_GameOptionsMenu_BorderAround_SPECIAL_SETTING_MODE_1:
     dw $0090,TitleMenuSpritemaps_4D_BorderAround_SPECIAL_SETTING_MODE    ;82F4A6;
     dw Instruction_GameOptionsMenu_GotoY                                 ;82F4AA;
     dw InstList_GameOptionsMenu_BorderAround_SPECIAL_SETTING_MODE_1      ;82F4AC;
 
+%anchor($82F4AE)
 InstList_GameOptionsMenu_BorderAround_SAMUS_DATA:
     dw $0090,TitleMenuSpritemaps_48_BorderAround_SAMUS_DATA              ;82F4AE;
     dw Instruction_GameOptionsMenu_GotoY                                 ;82F4B2;
     dw InstList_GameOptionsMenu_BorderAround_SAMUS_DATA                  ;82F4B4;
 
+%anchor($82F4B6)
 InstList_GameOptionsMenu_Delete:
     dw Instruction_GameOptionsMenu_Delete                                ;82F4B6;
 
+%anchor($82F4B8)
 GameOptionsMenu_Objects_MenuSelectionMissile_setup:
     dw Setup_MenuSelectionMissile                                        ;82F4B8;
 
+%anchor($82F4BA)
 GameOptionsMenu_Objects_MenuSelectionMissile_preInstruction:
     dw PreInstruction_MenuSelectionMissile                               ;82F4BA;
 
+%anchor($82F4BC)
 GameOptionsMenu_Objects_MenuSelectionMissile_instructionList:
     dw InstList_GameOptionsMenu_MenuSelectionMissile                     ;82F4BC;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($82F4BE)
 UNUSED_GameOptionsMenu_Objects_FileSelectMenuSamusHelmet_82F4BE:
     dw Setup_FileSelectMenu_SamusHelmet                                  ;82F4BE;
     dw PreInstruction_FileSelectMenu_SamusHelmet                         ;82F4C0;
     dw InstList_GameOptionsMenu_FileSelectMenu_SamusHelmet               ;82F4C2;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($82F4C4)
 GameOptionsMenu_Objects_OPTION_MODE_Border:
     dw Setup_BorderAround_OPTION_MODE                                    ;82F4C4;
     dw RTS_828C10                                                        ;82F4C6;
     dw InstList_GameOptionsMenu_BorderAround_OPTIONS_MODE_0              ;82F4C8;
 
+%anchor($82F4CA)
 GameOptionsMenu_Objects_CONTROLLER_SETTING_MODE_Border:
     dw Setup_BorderAround_CONTRLLER_SETTING_MODE                         ;82F4CA;
     dw RTS_828C10                                                        ;82F4CC;
     dw InstList_GameOptionsMenu_BorderAround_CTRL_SETTING_MODE_0         ;82F4CE;
 
+%anchor($82F4D0)
 GameOptionsMenu_Objects_SPECIAL_SETTING_MODE_Border:
     dw Setup_BorderAround_SPECIAL_SETTING_MODE                           ;82F4D0;
     dw RTS_828C10                                                        ;82F4D2;
     dw InstList_GameOptionsMenu_BorderAround_SPECIAL_SETTING_MODE_0      ;82F4D4;
 
+%anchor($82F4D6)
 GameOptionsMenu_Objects_SAMUS_DATA_Border:
     dw Setup_BorderAround_SAMUS_DATA                                     ;82F4D6;
     dw RTS_828C10                                                        ;82F4D8;
     dw InstList_GameOptionsMenu_BorderAround_SAMUS_DATA                  ;82F4DA;
 
+%anchor($82F4DC)
 GameOptionsMenu_ControllerBindings:
     LDX.W #$0000                                                         ;82F4DC;
 
@@ -13523,6 +14051,7 @@ GameOptionsMenu_ControllerBindings:
     RTS                                                                  ;82F549;
 
 
+%anchor($82F54A)
 Configurable_Controller_Binding_RAM_Addresses:                           ;82F54A;
     dw $09B2 ; Shot
     dw $09B4 ; Jump
@@ -13532,6 +14061,7 @@ Configurable_Controller_Binding_RAM_Addresses:                           ;82F54A
     dw $09BE ; Angle Up
     dw $09BC ; Angle Down
 
+%anchor($82F558)
 Save_GameOptionsMenu_ControllerBindings:
     LDX.W #$0000                                                         ;82F558;
 
@@ -13555,6 +14085,7 @@ Save_GameOptionsMenu_ControllerBindings:
     RTS                                                                  ;82F574;
 
 
+%anchor($82F575)
 Controller_Input_Bitmasks:
     dw $0040 ; X
     dw $0080 ; A
@@ -13566,6 +14097,7 @@ Controller_Input_Bitmasks:
     dw $0200 ; Left
     dw $0100 ; Right
 
+%anchor($82F587)
 Draw_GameOptionsMenu_ControllerBindings:
     LDX.W #$0000                                                         ;82F587;
 
@@ -13636,9 +14168,11 @@ Draw_GameOptionsMenu_ControllerBindings:
     RTS                                                                  ;82F638;
 
 
+%anchor($82F639)
 GameOptionsMenu_TilemapOffsets:
     dw $016E,$022E,$02EE,$03AE,$046E,$052E,$05EE                         ;82F639;
 
+%anchor($82F647)
 ControllerButton_TilemapPointers:
     dw ButtonTilemaps_X                                                  ;82F647;
     dw ButtonTilemaps_A                                                  ;82F649;
@@ -13650,38 +14184,47 @@ ControllerButton_TilemapPointers:
     dw ButtonTilemaps_OFF                                                ;82F655;
     dw ButtonTilemaps_OFF                                                ;82F657;
 
+%anchor($82F659)
 ButtonTilemaps_X:                                                        ;82F659;
     dw $0093,$C0A3,$000F
     dw $00A3,$C093,$000F                               
 
+%anchor($82F665)
 ButtonTilemaps_A:                                                        ;82F665;
     dw $0090,$4090,$000F
     dw $00A0,$40A0,$000F                               
 
+%anchor($82F671)
 ButtonTilemaps_B:                                                        ;82F671;
     dw $0091,$0092,$000F
     dw $00A1,$00A2,$000F                               
 
+%anchor($82F67D)
 ButtonTilemaps_Select:                                                   ;82F67D;
     dw $0095,$0096,$0097
     dw $00A5,$00A6,$00A7                               
 
+%anchor($82F689)
 ButtonTilemaps_Y:                                                        ;82F689;
     dw $0094,$4094,$000F
     dw $00A4,$40A4,$000F                               
 
+%anchor($82F695)
 ButtonTilemaps_L:                                                        ;82F695;
     dw $009A,$009B,$409A
     dw $809A,$00AB,$C09A                               
 
+%anchor($82F6A1)
 ButtonTilemaps_R:                                                        ;82F6A1;
     dw $009A,$009C,$409A
     dw $809A,$00AC,$C09A                               
 
+%anchor($82F6AD)
 ButtonTilemaps_OFF:                                                      ;82F6AD;
     dw $0000,$000E,$000E
     dw $0010,$001F,$001F
 
+%anchor($82F6B9)
 GameOptions_ControllerSettings_SetBinding:
     LDX.W #$000C                                                         ;82F6B9;
     LDA.B $8F                                                            ;82F6BC;
@@ -13739,9 +14282,11 @@ GameOptions_ControllerSettings_SetBinding:
     RTS                                                                  ;82F70D;
 
 
+%anchor($82F70E)
 RTL_82F70E:
     RTL                                                                  ;82F70E;
 
 
+%anchor($82F70F)
 Freespace_Bank82_F70F:                                                   ;82F70F;
 ; $8F1 bytes

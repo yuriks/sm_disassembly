@@ -2,6 +2,7 @@
 org $868000
 
 
+%anchor($868000)
 Enable_Enemy_Projectiles:
     PHP                                                                  ;868000;
     REP #$20                                                             ;868001;
@@ -11,6 +12,7 @@ Enable_Enemy_Projectiles:
     RTL                                                                  ;86800A;
 
 
+%anchor($86800B)
 Disable_Enemy_Projectiles:
     PHP                                                                  ;86800B;
     REP #$20                                                             ;86800C;
@@ -20,6 +22,7 @@ Disable_Enemy_Projectiles:
     RTL                                                                  ;868015;
 
 
+%anchor($868016)
 Clear_Enemy_Projectiles:
     PHP                                                                  ;868016;
     REP #$30                                                             ;868017;
@@ -36,6 +39,7 @@ Clear_Enemy_Projectiles:
     RTL                                                                  ;868026;
 
 
+%anchor($868027)
 SpawnEnemyProjectileY_ParameterA_XGraphics:
     PHP                                                                  ;868027;
     PHB                                                                  ;868028;
@@ -100,6 +104,7 @@ SpawnEnemyProjectileY_ParameterA_XGraphics:
     RTL                                                                  ;868096;
 
 
+%anchor($868097)
 SpawnEnemyProjectileY_ParameterA_RoomGraphics:
     PHP                                                                  ;868097;
     PHB                                                                  ;868098;
@@ -161,6 +166,7 @@ SpawnEnemyProjectileY_ParameterA_RoomGraphics:
     RTL                                                                  ;868103;
 
 
+%anchor($868104)
 Enemy_Projectile_Handler:
     PHP                                                                  ;868104;
     PHB                                                                  ;868105;
@@ -188,6 +194,7 @@ Enemy_Projectile_Handler:
     RTL                                                                  ;868124;
 
 
+%anchor($868125)
 Process_Enemy_Projectile:
     JSR.W ($1A03,X)                                                      ;868125;
     LDX.W $1991                                                          ;868128;
@@ -218,12 +225,14 @@ Process_Enemy_Projectile:
     RTS                                                                  ;868153;
 
 
+%anchor($868154)
 Instruction_EnemyProjectile_Delete:
     STZ.W $1997,X                                                        ;868154;
     PLA                                                                  ;868157;
     RTS                                                                  ;868158;
 
 
+%anchor($868159)
 Instruction_EnemyProjectile_Sleep:
     DEY                                                                  ;868159;
     DEY                                                                  ;86815A;
@@ -233,6 +242,7 @@ Instruction_EnemyProjectile_Sleep:
     RTS                                                                  ;868160;
 
 
+%anchor($868161)
 Instruction_EnemyProjectile_PreInstructionInY:
     LDA.W $0000,Y                                                        ;868161;
     STA.W $1A03,X                                                        ;868164;
@@ -241,14 +251,17 @@ Instruction_EnemyProjectile_PreInstructionInY:
     RTS                                                                  ;868169;
 
 
+%anchor($86816A)
 Instruction_EnemyProjectile_ClearPreInstruction:
     LDA.W #RTS_868170                                                    ;86816A;
     STA.W $1A03,X                                                        ;86816D;
 
+%anchor($868170)
 RTS_868170:
     RTS                                                                  ;868170;
 
 
+%anchor($868171)
 Instruction_EnemyProjectile_CallExternalFunctionInY:
     LDA.W $0000,Y                                                        ;868171;
     STA.B $12                                                            ;868174;
@@ -269,6 +282,7 @@ Instruction_EnemyProjectile_CallExternalFunctionInY:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($86818B)
 UNUSED_Inst_EnemyProjectile_CallExternalFuncWith2ByteParam:
     LDA.W $0000,Y                                                        ;86818B;
     STA.B $12                                                            ;86818E;
@@ -291,12 +305,14 @@ UNUSED_Inst_EnemyProjectile_CallExternalFuncWith2ByteParam:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($8681AB)
 Instruction_EnemyProjectile_GotoY:
     LDA.W $0000,Y                                                        ;8681AB;
     TAY                                                                  ;8681AE;
     RTS                                                                  ;8681AF;
 
 
+%anchor($8681B0)
 Instruction_EnemyProjectile_GotoY_Y:
     STY.B $12                                                            ;8681B0;
     DEY                                                                  ;8681B2;
@@ -316,6 +332,7 @@ Instruction_EnemyProjectile_GotoY_Y:
     RTS                                                                  ;8681C5;
 
 
+%anchor($8681C6)
 Instruction_EnemyProjectile_DecrementTimer_GotoYIfNonZero:
     DEC.W $19DF,X                                                        ;8681C6;
     BNE Instruction_EnemyProjectile_GotoY                                ;8681C9;
@@ -325,6 +342,7 @@ Instruction_EnemyProjectile_DecrementTimer_GotoYIfNonZero:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($8681CE)
 UNUSED_Inst_EnemyProj_DecrementTimer_GotoY_YIfNonZero_8681CE:
     DEC.W $19DF,X                                                        ;8681CE;
     BNE Instruction_EnemyProjectile_GotoY_Y                              ;8681D1;
@@ -333,6 +351,7 @@ UNUSED_Inst_EnemyProj_DecrementTimer_GotoY_YIfNonZero_8681CE:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($8681D5)
 Instruction_EnemyProjectile_TimerInY:
     LDA.W $0000,Y                                                        ;8681D5;
     STA.W $19DF,X                                                        ;8681D8;
@@ -341,10 +360,12 @@ Instruction_EnemyProjectile_TimerInY:
     RTS                                                                  ;8681DD;
 
 
+%anchor($8681DE)
 RTS_8681DE:
     RTS                                                                  ;8681DE;
 
 
+%anchor($8681DF)
 Instruction_MoveRandomlyWithinXRadius_YRadius:
     JSL.L GenerateRandomNumber                                           ;8681DF;
     STA.B $12                                                            ;8681E3;
@@ -393,6 +414,7 @@ Instruction_MoveRandomlyWithinXRadius_YRadius:
     RTS                                                                  ;86822F;
 
 
+%anchor($868230)
 Instruction_EnemyProjectile_Properties_OrY:
     LDA.W $1BD7,X                                                        ;868230;
     ORA.W $0000,Y                                                        ;868233;
@@ -402,6 +424,7 @@ Instruction_EnemyProjectile_Properties_OrY:
     RTS                                                                  ;86823B;
 
 
+%anchor($86823C)
 Instruction_EnemyProjectile_Properties_AndY:
     LDA.W $1BD7,X                                                        ;86823C;
     AND.W $0000,Y                                                        ;86823F;
@@ -412,6 +435,7 @@ Instruction_EnemyProjectile_Properties_AndY:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($868248)
 UNUSED_Inst_EnemyProj_EnableCollisionWithSamusProj_868248:
     LDA.W $1BD7,X                                                        ;868248;
     ORA.W #$8000                                                         ;86824B;
@@ -420,6 +444,7 @@ UNUSED_Inst_EnemyProj_EnableCollisionWithSamusProj_868248:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($868252)
 Instruction_EnemyProjectile_DisableCollisionWIthSamusProj:
     LDA.W $1BD7,X                                                        ;868252;
     AND.W #$7FFF                                                         ;868255;
@@ -427,6 +452,7 @@ Instruction_EnemyProjectile_DisableCollisionWIthSamusProj:
     RTS                                                                  ;86825B;
 
 
+%anchor($86825C)
 Instruction_EnemyProjectile_DisableCollisionWithSamus:
     LDA.W $1BD7,X                                                        ;86825C;
     ORA.W #$2000                                                         ;86825F;
@@ -435,6 +461,7 @@ Instruction_EnemyProjectile_DisableCollisionWithSamus:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($868266)
 UNUSED_Inst_EnemyProjectile_EnableCollisionWithSamus_868266:
     LDA.W $1BD7,X                                                        ;868266;
     AND.W #$DFFF                                                         ;868269;
@@ -442,6 +469,7 @@ UNUSED_Inst_EnemyProjectile_EnableCollisionWithSamus_868266:
     RTS                                                                  ;86826F;
 
 
+%anchor($868270)
 UNUSED_Inst_EnemyProjectile_SetToNotDieOnContact_868270:
     LDA.W $1BD7,X                                                        ;868270;
     ORA.W #$4000                                                         ;868273;
@@ -449,6 +477,7 @@ UNUSED_Inst_EnemyProjectile_SetToNotDieOnContact_868270:
     RTS                                                                  ;868279;
 
 
+%anchor($86827A)
 UNUSED_Instruction_EnemyProjectile_SetToDieOnContact_86827A:
     LDA.W $1BD7,X                                                        ;86827A;
     AND.W #$BFFF                                                         ;86827D;
@@ -457,6 +486,7 @@ UNUSED_Instruction_EnemyProjectile_SetToDieOnContact_86827A:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($868284)
 Instruction_EnemyProjectile_SetHighPriority:
     LDA.W $1BD7,X                                                        ;868284;
     ORA.W #$1000                                                         ;868287;
@@ -465,6 +495,7 @@ Instruction_EnemyProjectile_SetHighPriority:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($86828E)
 UNUSED_Instruction_EnemyProjectile_SetLowPriority_86828E:
     LDA.W $1BD7,X                                                        ;86828E;
     AND.W #$EFFF                                                         ;868291;
@@ -473,6 +504,7 @@ UNUSED_Instruction_EnemyProjectile_SetLowPriority_86828E:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($868298)
 Instruction_EnemyProjectile_XYRadiusInY:
     LDA.W $0000,Y                                                        ;868298;
     STA.W $1BB3,X                                                        ;86829B;
@@ -482,12 +514,14 @@ Instruction_EnemyProjectile_XYRadiusInY:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($8682A1)
 UNUSED_Instruction_EnemyProjectile_XYRadius_0:
     STZ.W $1BB3,X                                                        ;8682A1;
     RTS                                                                  ;8682A4;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($8682A5)
 Instruction_EnemyProjectile_CalculateDirectionTowardsSamus:
     PHY                                                                  ;8682A5;
     LDA.W $0AF6                                                          ;8682A6;
@@ -513,6 +547,7 @@ Instruction_EnemyProjectile_CalculateDirectionTowardsSamus:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($8682D5)
 UNUSED_Inst_EnemyProj_WriteColorsFromYToColorIndex_8682D5:
     PHY                                                                  ;8682D5;
     PHX                                                                  ;8682D6;
@@ -540,6 +575,7 @@ UNUSED_Inst_EnemyProj_WriteColorsFromYToColorIndex_8682D5:
     RTS                                                                  ;8682FC;
 
 
+%anchor($8682FD)
 UNUSED_Instruction_EnemyProjectile_QueueMusicTrackInY:
     LDA.W $0000,Y                                                        ;8682FD;
     AND.W #$00FF                                                         ;868300;
@@ -548,6 +584,7 @@ UNUSED_Instruction_EnemyProjectile_QueueMusicTrackInY:
     RTS                                                                  ;868308;
 
 
+%anchor($868309)
 UNUSED_Inst_EnemyProjectile_QueueSoundInY_Lib1_Max6_868309:
     LDA.W $0000,Y                                                        ;868309;
     JSL.L QueueSound_Lib1_Max6                                           ;86830C;
@@ -556,6 +593,7 @@ UNUSED_Inst_EnemyProjectile_QueueSoundInY_Lib1_Max6_868309:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($868312)
 Instruction_EnemyProjectile_QueueSoundInY_Lib2_Max6:
     LDA.W $0000,Y                                                        ;868312;
     JSL.L QueueSound_Lib2_Max6                                           ;868315;
@@ -563,6 +601,7 @@ Instruction_EnemyProjectile_QueueSoundInY_Lib2_Max6:
     RTS                                                                  ;86831A;
 
 
+%anchor($86831B)
 Instruction_EnemyProjectile_QueueSoundInY_Lib3_Max6:
     LDA.W $0000,Y                                                        ;86831B;
     JSL.L QueueSound_Lib3_Max6                                           ;86831E;
@@ -570,6 +609,7 @@ Instruction_EnemyProjectile_QueueSoundInY_Lib3_Max6:
     RTS                                                                  ;868323;
 
 
+%anchor($868324)
 Instruction_EnemyProjectile_QueueSoundInY_Lib1_Max15:
     LDA.W $0000,Y                                                        ;868324;
     JSL.L QueueSound                                                     ;868327;
@@ -578,6 +618,7 @@ Instruction_EnemyProjectile_QueueSoundInY_Lib1_Max15:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($86832D)
 UNUSED_Inst_EnemyProjectile_QueueSoundInY_Lib2_Max15_86832D:
     LDA.W $0000,Y                                                        ;86832D;
     JSL.L QueueSound_Lib2_Max15                                          ;868330;
@@ -585,6 +626,7 @@ UNUSED_Inst_EnemyProjectile_QueueSoundInY_Lib2_Max15_86832D:
     RTS                                                                  ;868335;
 
 
+%anchor($868336)
 UNUSED_Inst_EnemyProjectile_QueueSoundInY_Lib3_Max15_868336:
     LDA.W $0000,Y                                                        ;868336;
     JSL.L QueueSound_Lib3_Max15                                          ;868339;
@@ -592,6 +634,7 @@ UNUSED_Inst_EnemyProjectile_QueueSoundInY_Lib3_Max15_868336:
     RTS                                                                  ;86833E;
 
 
+%anchor($86833F)
 UNUSED_Inst_EnemyProjectile_QueueSoundInY_Lib1_Max3_86833F:
     LDA.W $0000,Y                                                        ;86833F;
     JSL.L QueueSound_Lib1_Max3                                           ;868342;
@@ -599,6 +642,7 @@ UNUSED_Inst_EnemyProjectile_QueueSoundInY_Lib1_Max3_86833F:
     RTS                                                                  ;868347;
 
 
+%anchor($868348)
 UNUSED_Inst_EnemyProjectile_QueueSoundInY_Lib2_Max3_868348:
     LDA.W $0000,Y                                                        ;868348;
     JSL.L QueueSound_Lib2_Max3                                           ;86834B;
@@ -606,6 +650,7 @@ UNUSED_Inst_EnemyProjectile_QueueSoundInY_Lib2_Max3_868348:
     RTS                                                                  ;868350;
 
 
+%anchor($868351)
 UNUSED_Inst_EnemyProjectile_QueueSoundInY_Lib3_Max3_868351:
     LDA.W $0000,Y                                                        ;868351;
     JSL.L QueueSound_Lib3_Max3                                           ;868354;
@@ -613,6 +658,7 @@ UNUSED_Inst_EnemyProjectile_QueueSoundInY_Lib3_Max3_868351:
     RTS                                                                  ;868359;
 
 
+%anchor($86835A)
 UNUSED_Inst_EnemyProjectile_QueueSoundInY_Lib1_Max9_86835A:
     LDA.W $0000,Y                                                        ;86835A;
     JSL.L QueueSound_Lib1_Max9                                           ;86835D;
@@ -620,6 +666,7 @@ UNUSED_Inst_EnemyProjectile_QueueSoundInY_Lib1_Max9_86835A:
     RTS                                                                  ;868362;
 
 
+%anchor($868363)
 UNUSED_Inst_EnemyProjectile_QueueSoundInY_Lib2_Max9_868363:
     LDA.W $0000,Y                                                        ;868363;
     JSL.L QueueSound_Lib2_Max9                                           ;868366;
@@ -627,6 +674,7 @@ UNUSED_Inst_EnemyProjectile_QueueSoundInY_Lib2_Max9_868363:
     RTS                                                                  ;86836B;
 
 
+%anchor($86836C)
 UNUSED_Inst_EnemyProjectile_QueueSoundInY_Lib1_Max9_86836C:
     LDA.W $0000,Y                                                        ;86836C;
     JSL.L QueueSound_Lib3_Max9                                           ;86836F;
@@ -634,6 +682,7 @@ UNUSED_Inst_EnemyProjectile_QueueSoundInY_Lib1_Max9_86836C:
     RTS                                                                  ;868374;
 
 
+%anchor($868375)
 UNUSED_Inst_EnemyProjectile_QueueSoundInY_Lib1_Max1_868375:
     LDA.W $0000,Y                                                        ;868375;
     JSL.L QueueSound_Lib1_Max1                                           ;868378;
@@ -642,6 +691,7 @@ UNUSED_Inst_EnemyProjectile_QueueSoundInY_Lib1_Max1_868375:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($86837E)
 Instruction_EnemyProjectile_QueueSoundInY_Lib2_Max1:
     LDA.W $0000,Y                                                        ;86837E;
     JSL.L QueueSound_Lib2_Max1                                           ;868381;
@@ -649,6 +699,7 @@ Instruction_EnemyProjectile_QueueSoundInY_Lib2_Max1:
     RTS                                                                  ;868386;
 
 
+%anchor($868387)
 Instruction_EnemyProjectile_QueueSoundInY_Lib3_Max1:
     LDA.W $0000,Y                                                        ;868387;
     JSL.L QueueSound_Lib3_Max1                                           ;86838A;
@@ -656,6 +707,7 @@ Instruction_EnemyProjectile_QueueSoundInY_Lib3_Max1:
     RTS                                                                  ;86838F;
 
 
+%anchor($868390)
 Draw_HighPriority_EnemyProjectile:
     PHB                                                                  ;868390;
     PEA.W EnemyProjSpritemaps>>8&$FF00                                   ;868391;
@@ -680,6 +732,7 @@ Draw_HighPriority_EnemyProjectile:
     RTL                                                                  ;8683B1;
 
 
+%anchor($8683B2)
 Draw_LowPriority_EnemyProjectile:
     PHB                                                                  ;8683B2;
     REP #$30                                                             ;8683B3;
@@ -705,6 +758,7 @@ Draw_LowPriority_EnemyProjectile:
     RTL                                                                  ;8683D5;
 
 
+%anchor($8683D6)
 Draw_EnemyProjectile:
     LDY.W $1B6B,X                                                        ;8683D6;
     LDA.W $19BB,X                                                        ;8683D9;
@@ -749,6 +803,7 @@ Draw_EnemyProjectile:
     RTS                                                                  ;868426;
 
 
+%anchor($868427)
 Get_Values_for_Screen_Shaking:
     LDA.W $1840                                                          ;868427;
     BEQ .returnZero                                                      ;86842A;
@@ -814,20 +869,24 @@ Get_Values_for_Screen_Shaking:
     dw $0002,$0000, $0000,$0002, $0002,$0002 ;} BG2 only and enemies
     dw $0003,$0000, $0000,$0003, $0003,$0003 ;/
 
+%anchor($8684FB)
 RTS_8684FB:
     RTS                                                                  ;8684FB;
 
 
+%anchor($8684FC)
 InstList_EnemyProjectile_Delete:
     dw Instruction_EnemyProjectile_Delete                                ;8684FC;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($8684FE)
 UNUSED_InstList_EnemyProjectile_BlankSpritemap:
     dw $1000,EnemyProjSpritemaps_Blank_Default                           ;8684FE;
     dw Instruction_EnemyProjectile_GotoY                                 ;868502;
     dw UNUSED_InstList_EnemyProjectile_BlankSpritemap                    ;868504;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($868506)
 EnemyProjectile_BlockCollision_HorizontalExtension:
     LDX.W $0DC4                                                          ;868506;
     LDA.L $7F6402,X                                                      ;868509;
@@ -864,6 +923,7 @@ EnemyProjectile_BlockCollision_HorizontalExtension:
     RTS                                                                  ;86853B;
 
 
+%anchor($86853C)
 EnemyProjectile_BlockCollision_VerticalExtension:
     LDX.W $0DC4                                                          ;86853C;
     LDA.L $7F6402,X                                                      ;86853F;
@@ -914,16 +974,19 @@ EnemyProjectile_BlockCollision_VerticalExtension:
     RTS                                                                  ;868589;
 
 
+%anchor($86858A)
 CLCRTS_86858A:
     CLC                                                                  ;86858A;
     RTS                                                                  ;86858B;
 
 
+%anchor($86858C)
 SECRTS_86858C:
     SEC                                                                  ;86858C;
     RTS                                                                  ;86858D;
 
 
+%anchor($86858E)
 EnemyProjectile_BlockCollision_HorizontalSlope:
     LDX.W $0DC4                                                          ;86858E;
     LDA.L $7F6402,X                                                      ;868591;
@@ -940,6 +1003,7 @@ EnemyProjectile_BlockCollision_HorizontalSlope:
     JMP.W EnemyProjectile_BlockCollision_HorizontalSlopeNonSquare        ;8685AA;
 
 
+%anchor($8685AD)
 EnemyProjectile_BlockCollision_VerticalSlope:
     LDX.W $0DC4                                                          ;8685AD;
     LDA.L $7F6402,X                                                      ;8685B0;
@@ -953,6 +1017,7 @@ EnemyProjectile_BlockCollision_VerticalSlope:
     JMP.W EnemyProjectile_BlockCollision_VerticalSlopeNonSquare          ;8685BF;
 
 
+%anchor($8685C2)
 EnemyProjectile_BlockCollision_HorizontalSlopeSquare:
     ASL A                                                                ;8685C2;
     ASL A                                                                ;8685C3;
@@ -1067,6 +1132,7 @@ EnemyProjectile_BlockCollision_HorizontalSlopeSquare:
     RTS                                                                  ;868675;
 
 
+%anchor($868676)
 EnemyProjectile_BlockCollision_VerticalSlopeSquare:
     ASL A                                                                ;868676;
     ASL A                                                                ;868677;
@@ -1180,6 +1246,7 @@ EnemyProjectile_BlockCollision_VerticalSlopeSquare:
     RTS                                                                  ;868728;
 
 
+%anchor($868729)
 SquareSlopeDefinitions_Bank86:                                           ;868729;
 ;        _____________ Top-left
 ;       |    _________ Top-right
@@ -1199,6 +1266,7 @@ SquareSlopeDefinitions_Bank86:                                           ;868729
     db $00,$81,$82,$83 ; 3: Three-quarters
     db $80,$81,$82,$83 ; 4: Whole
 
+%anchor($86873D)
 EnemyProjectile_BlockCollision_HorizontalSlopeNonSquare:
     LDA.W $1E77                                                          ;86873D;
     AND.W #$001F                                                         ;868740;
@@ -1216,6 +1284,7 @@ EnemyProjectile_BlockCollision_HorizontalSlopeNonSquare:
     RTS                                                                  ;86874D;
 
 
+%anchor($86874E)
 EnemyProjectile_BlockCollision_VerticalSlopeNonSquare:
     LDY.W $1991                                                          ;86874E;
     LDA.B $14                                                            ;868751;
@@ -1364,6 +1433,7 @@ EnemyProjectile_BlockCollision_VerticalSlopeNonSquare:
     RTS                                                                  ;868845;
 
 
+%anchor($868846)
 EnemyProjectile_BlockCollision_Horizontal_Pointers:
     dw CLCRTS_86858A                                                     ;868846;
     dw EnemyProjectile_BlockCollision_HorizontalSlope                    ;868848; 1: Slope
@@ -1382,6 +1452,7 @@ EnemyProjectile_BlockCollision_Horizontal_Pointers:
     dw CLCRTS_86858A                                                     ;868862;
     dw SECRTS_86858C                                                     ;868864;
 
+%anchor($868866)
 EnemyProjectile_BlockCollision_Vertical_Pointers:
     dw CLCRTS_86858A                                                     ;868866;
     dw EnemyProjectile_BlockCollision_VerticalSlope                      ;868868; 1: Slope
@@ -1400,6 +1471,7 @@ EnemyProjectile_BlockCollision_Vertical_Pointers:
     dw CLCRTS_86858A                                                     ;868882;
     dw SECRTS_86858C                                                     ;868884;
 
+%anchor($868886)
 EnemyProjectile_BlockReaction_Horizontal:
     PHX                                                                  ;868886;
     STX.W $0DC4                                                          ;868887;
@@ -1416,6 +1488,7 @@ EnemyProjectile_BlockReaction_Horizontal:
     RTS                                                                  ;86889D;
 
 
+%anchor($86889E)
 EnemyProjectile_BlockReaction_Vertical:
     PHX                                                                  ;86889E;
     STX.W $0DC4                                                          ;86889F;
@@ -1432,6 +1505,7 @@ EnemyProjectile_BlockReaction_Vertical:
     RTS                                                                  ;8688B5;
 
 
+%anchor($8688B6)
 Move_EnemyProjectile_Horizontally:
     PHX                                                                  ;8688B6;
     STZ.B $12                                                            ;8688B7;
@@ -1557,6 +1631,7 @@ Move_EnemyProjectile_Horizontally:
     RTS                                                                  ;86897A;
 
 
+%anchor($86897B)
 Move_EnemyProjectile_Vertically:
     PHX                                                                  ;86897B;
     STZ.B $12                                                            ;86897C;
@@ -1680,6 +1755,7 @@ Move_EnemyProjectile_Vertically:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($868A39)
 UNUSED_EnemyProjectile_868A39:
     JSL.L GenerateRandomNumber                                           ;868A39;
     LDX.W $0E54                                                          ;868A3D;
@@ -1712,6 +1788,7 @@ UNUSED_EnemyProjectile_868A39:
     dw UNUSED_EnemyProjectile_868A39                                     ;868A79;
     dw UNUSED_EnemyProjectile_868A39                                     ;868A7B;
 
+%anchor($868A7D)
 UNUSED_PreInstruction_EnemyProjectile_868A7D:
     LDA.W $1ADA,X                                                        ;868A7D;
     AND.W #$FF00                                                         ;868A80;
@@ -1742,6 +1819,7 @@ UNUSED_PreInstruction_EnemyProjectile_868A7D:
     RTS                                                                  ;868AAE;
 
 
+%anchor($868AAF)
 UNUSED_EnemyProjectile_868AAF:
 ; Initial instruction list ignored
     dw UNUSED_EnemyProjectile_868A39                                     ;868AAF; Initialisation AI
@@ -1752,16 +1830,19 @@ UNUSED_EnemyProjectile_868AAF:
     dw InstList_EnemyProjectile_Delete                                   ;868ABB; Shot instruction list
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($868ABD)
 InstList_SkreeParticle:
     dw $0010,EnemyProjSpritemaps_SkreeParticle                           ;868ABD;
     dw Instruction_EnemyProjectile_GotoY                                 ;868AC1;
     dw InstList_SkreeParticle                                            ;868AC3;
 
+%anchor($868AC5)
 InstList_MetalSkreeParticle:
     dw $0010,EnemyProjSpritemaps_MetareeParticle                         ;868AC5;
     dw Instruction_EnemyProjectile_GotoY                                 ;868AC9;
     dw InstList_MetalSkreeParticle                                       ;868ACB;
 
+%anchor($868ACD)
 InitAI_EnemyProjectile_MetalSkreeParticle_DownRight:
     LDX.W $0E54                                                          ;868ACD;
     LDA.W $0F7E,X                                                        ;868AD0;
@@ -1779,6 +1860,7 @@ InitAI_EnemyProjectile_MetalSkreeParticle_DownRight:
     RTS                                                                  ;868AF0;
 
 
+%anchor($868AF1)
 InitAI_EnemyProjectile_MetalSkreeParticle_UpRight:
     LDX.W $0E54                                                          ;868AF1;
     LDA.W $0F7E,X                                                        ;868AF4;
@@ -1796,6 +1878,7 @@ InitAI_EnemyProjectile_MetalSkreeParticle_UpRight:
     RTS                                                                  ;868B14;
 
 
+%anchor($868B15)
 InitAI_EnemyProjectile_MetalSkreeParticle_DownLeft:
     LDX.W $0E54                                                          ;868B15;
     LDA.W $0F7E,X                                                        ;868B18;
@@ -1813,6 +1896,7 @@ InitAI_EnemyProjectile_MetalSkreeParticle_DownLeft:
     RTS                                                                  ;868B38;
 
 
+%anchor($868B39)
 InitAI_EnemyProjectile_MetalSkreeParticle_UpLeft:
     LDX.W $0E54                                                          ;868B39;
     LDA.W $0F7E,X                                                        ;868B3C;
@@ -1830,6 +1914,7 @@ InitAI_EnemyProjectile_MetalSkreeParticle_UpLeft:
     RTS                                                                  ;868B5C;
 
 
+%anchor($868B5D)
 PreInstruction_EnemyProjectile_MetalSkreeParticle:
     LDA.W $1AB6,X                                                        ;868B5D;
     AND.W #$FF00                                                         ;868B60;
@@ -1885,6 +1970,7 @@ PreInstruction_EnemyProjectile_MetalSkreeParticle:
     RTS                                                                  ;868BC1;
 
 
+%anchor($868BC2)
 EnemyProjectile_SkreeParticles_DownRight:
     dw InitAI_EnemyProjectile_MetalSkreeParticle_DownRight               ;868BC2; Initialisation AI
     dw PreInstruction_EnemyProjectile_MetalSkreeParticle                 ;868BC4; Initial pre-instruction
@@ -1893,6 +1979,7 @@ EnemyProjectile_SkreeParticles_DownRight:
     dw $0004,$0000                                                       ;868BCA; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;868BCE; Shot instruction list
 
+%anchor($868BD0)
 EnemyProjectile_SkreeParticles_UpRight:
     dw InitAI_EnemyProjectile_MetalSkreeParticle_UpRight                 ;868BD0; Initialisation AI
     dw PreInstruction_EnemyProjectile_MetalSkreeParticle                 ;868BD2; Initial pre-instruction
@@ -1901,6 +1988,7 @@ EnemyProjectile_SkreeParticles_UpRight:
     dw $0004,$0000                                                       ;868BD8; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;868BDC; Shot instruction list
 
+%anchor($868BDE)
 EnemyProjectile_SkreeParticles_DownLeft:
     dw InitAI_EnemyProjectile_MetalSkreeParticle_DownLeft                ;868BDE; Initialisation AI
     dw PreInstruction_EnemyProjectile_MetalSkreeParticle                 ;868BE0; Initial pre-instruction
@@ -1909,6 +1997,7 @@ EnemyProjectile_SkreeParticles_DownLeft:
     dw $0004,$0000                                                       ;868BE6; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;868BEA; Shot instruction list
 
+%anchor($868BEC)
 EnemyProjectile_SkreeParticles_UpLeft:
     dw InitAI_EnemyProjectile_MetalSkreeParticle_UpLeft                  ;868BEC; Initialisation AI
     dw PreInstruction_EnemyProjectile_MetalSkreeParticle                 ;868BEE; Initial pre-instruction
@@ -1917,6 +2006,7 @@ EnemyProjectile_SkreeParticles_UpLeft:
     dw $0004,$0000                                                       ;868BF4; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;868BF8; Shot instruction list
 
+%anchor($868BFA)
 EnemyProjectile_MetalSkreeParticles_DownRight:
     dw InitAI_EnemyProjectile_MetalSkreeParticle_DownRight               ;868BFA; Initialisation AI
     dw PreInstruction_EnemyProjectile_MetalSkreeParticle                 ;868BFC; Initial pre-instruction
@@ -1925,6 +2015,7 @@ EnemyProjectile_MetalSkreeParticles_DownRight:
     dw $0004,$0000                                                       ;868C02; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;868C06; Shot instruction list
 
+%anchor($868C08)
 EnemyProjectile_MetalSkreeParticles_UpRight:
     dw InitAI_EnemyProjectile_MetalSkreeParticle_UpRight                 ;868C08; Initialisation AI
     dw PreInstruction_EnemyProjectile_MetalSkreeParticle                 ;868C0A; Initial pre-instruction
@@ -1933,6 +2024,7 @@ EnemyProjectile_MetalSkreeParticles_UpRight:
     dw $0004,$0000                                                       ;868C10; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;868C14; Shot instruction list
 
+%anchor($868C16)
 EnemyProjectile_MetalSkreeParticles_DownLeft:
     dw InitAI_EnemyProjectile_MetalSkreeParticle_DownLeft                ;868C16; Initialisation AI
     dw PreInstruction_EnemyProjectile_MetalSkreeParticle                 ;868C18; Initial pre-instruction
@@ -1941,6 +2033,7 @@ EnemyProjectile_MetalSkreeParticles_DownLeft:
     dw $0004,$0000                                                       ;868C1E; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;868C22; Shot instruction list
 
+%anchor($868C24)
 EnemyProjectile_MetalSkreeParticles_UpLeft:
     dw InitAI_EnemyProjectile_MetalSkreeParticle_UpLeft                  ;868C24; Initialisation AI
     dw PreInstruction_EnemyProjectile_MetalSkreeParticle                 ;868C26; Initial pre-instruction
@@ -1950,14 +2043,17 @@ EnemyProjectile_MetalSkreeParticles_UpLeft:
     dw InstList_EnemyProjectile_Delete                                   ;868C30; Shot instruction list
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($868C32)
 UNUSED_InstList_Draygon_868C32:
     dw $0010,UNUSED_EnemyProjSpritemaps_Draygon_8D8A0F                   ;868C32;
     dw Instruction_EnemyProjectile_Sleep                                 ;868C36;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($868C38)
 InstList_EnemyProjectile_DraygonGoop_Touch:
     dw Instruction_DraygonGoop_SamusCollision                            ;868C38;
 
+%anchor($868C3A)
 InstList_EnemyProjectile_DraygonGoop:
     dw $000A,EnemyProjSpritemaps_DraygonGoop_0                           ;868C3A;
     dw $000A,EnemyProjSpritemaps_DraygonGoop_1                           ;868C3E;
@@ -1969,6 +2065,7 @@ InstList_EnemyProjectile_DraygonGoop:
     dw InstList_EnemyProjectile_DraygonGoop                              ;868C54;
     dw Instruction_EnemyProjectile_Sleep                                 ;868C56;
 
+%anchor($868C58)
 InstList_EnemyProjectile_DraygonGoop_Shot:
     dw $0008,EnemyProjSpritemaps_DraygonGoop_4                           ;868C58;
     dw $0008,EnemyProjSpritemaps_DraygonGoop_5                           ;868C5C;
@@ -1977,6 +2074,7 @@ InstList_EnemyProjectile_DraygonGoop_Shot:
     dw InstList_EnemyProjectile_Delete                                   ;868C64;
     dw Instruction_EnemyProjectile_Delete                                ;868C66;
 
+%anchor($868C68)
 Instruction_SpawnEnemyDropsWIthDraygonEyeDropChances:
     PHY                                                                  ;868C68;
     PHX                                                                  ;868C69;
@@ -1992,6 +2090,7 @@ Instruction_SpawnEnemyDropsWIthDraygonEyeDropChances:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($868C7E)
 UNUSED_InstList_Draygon_868C7E:
     dw $0004,UNUSED_EnemyProjSpritemaps_Draygon_0_8D8A32                 ;868C7E;
     dw $0006,UNUSED_EnemyProjSpritemaps_Draygon_1_8D8A39                 ;868C82;
@@ -2006,6 +2105,7 @@ UNUSED_InstList_Draygon_868C7E:
     dw Instruction_EnemyProjectile_Sleep                                 ;868CA2;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($868CA4)
 InstList_EnemyProjectile_DraygonsWallTurretProjectile_0:
     dw $0005,EnemyProjSpritemaps_DrayTurretProj_DustCloud_Explosion_0    ;868CA4;
     dw $0004,EnemyProjSpritemaps_DrayTurretProj_DustCloud_Explosion_1    ;868CA8;
@@ -2025,6 +2125,7 @@ InstList_EnemyProjectile_DraygonsWallTurretProjectile_0:
     dw $000A,EnemyProjSpritemaps_DraygonsWallTurretProjectile_3          ;868CE0;
     dw Instruction_SetPreInst_DraygonsWallTurretProjectile_Fired         ;868CE4;
 
+%anchor($868CE6)
 InstList_EnemyProjectile_DraygonsWallTurretProjectile_1:
     dw $0008,EnemyProjSpritemaps_DraygonsWallTurretProjectile_4          ;868CE6;
     dw $0008,EnemyProjSpritemaps_DraygonsWallTurretProjectile_5          ;868CEA;
@@ -2032,6 +2133,7 @@ InstList_EnemyProjectile_DraygonsWallTurretProjectile_1:
     dw Instruction_EnemyProjectile_GotoY                                 ;868CF2;
     dw InstList_EnemyProjectile_DraygonsWallTurretProjectile_1           ;868CF4;
 
+%anchor($868CF6)
 Instruction_SetPreInst_DraygonsWallTurretProjectile_Fired:
     LDA.W #PreInstruction_EnemyProj_DraygonsWallTurretProjectile_Fired   ;868CF6;
     STA.W $1A03,X                                                        ;868CF9;
@@ -2039,6 +2141,7 @@ Instruction_SetPreInst_DraygonsWallTurretProjectile_Fired:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($868CFD)
 UNUSED_Inst_PreInstruction_DraygonGoop_StuckToSamus_868CFD:
     LDA.W #PreInstruction_DraygonGoop_StuckToSamus                       ;868CFD;
     STA.W $1A03,X                                                        ;868D00;
@@ -2046,6 +2149,7 @@ UNUSED_Inst_PreInstruction_DraygonGoop_StuckToSamus_868CFD:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($868D04)
 InitAI_EnemyProjectile_DraygonGoop:
     PHY                                                                  ;868D04;
     PHX                                                                  ;868D05;
@@ -2075,6 +2179,7 @@ InitAI_EnemyProjectile_DraygonGoop:
     RTS                                                                  ;868D3F;
 
 
+%anchor($868D40)
 InitAI_EnemyProjectile_DraygonsWallTurretProjectile:
     PHY                                                                  ;868D40;
     PHX                                                                  ;868D41;
@@ -2088,11 +2193,13 @@ InitAI_EnemyProjectile_DraygonsWallTurretProjectile:
     RTS                                                                  ;868D53;
 
 
+%anchor($868D54)
 RTS_868D54:
     RTS                                                                  ;868D54;
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($868D55)
 UNUSED_Delete_EnemyProjectile_Y_868D55:
     LDA.W #$0000                                                         ;868D55;
     STA.W $1997,Y                                                        ;868D58;
@@ -2100,6 +2207,7 @@ UNUSED_Delete_EnemyProjectile_Y_868D55:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($868D5C)
 Delete_EnemyProjectile_IfPowerBombed:
     PHY                                                                  ;868D5C;
     PHX                                                                  ;868D5D;
@@ -2138,6 +2246,7 @@ Delete_EnemyProjectile_IfPowerBombed:
     RTS                                                                  ;868D98;
 
 
+%anchor($868D99)
 Instruction_DraygonGoop_SamusCollision:
     JSR.W Delete_EnemyProjectile_IfPowerBombed                           ;868D99;
     LDA.W $0A66                                                          ;868D9C;
@@ -2161,6 +2270,7 @@ Instruction_DraygonGoop_SamusCollision:
     RTS                                                                  ;868DC9;
 
 
+%anchor($868DCA)
 PreInstruction_DraygonGoop_StuckToSamus:
     JSR.W Delete_EnemyProjectile_IfPowerBombed                           ;868DCA;
     LDA.W $0A6E                                                          ;868DCD;
@@ -2189,6 +2299,7 @@ PreInstruction_DraygonGoop_StuckToSamus:
     RTS                                                                  ;868DFE;
 
 
+%anchor($868DFF)
 PreInstruction_EnemyProj_DraygonsWallTurretProjectile_Fired:
     JSR.W Delete_EnemyProjectile_IfPowerBombed                           ;868DFF;
     JSR.W Move_EnemyProjectile_AccordingToAngleAndSpeed                  ;868E02;
@@ -2202,6 +2313,7 @@ PreInstruction_EnemyProj_DraygonsWallTurretProjectile_Fired:
     RTS                                                                  ;868E0E;
 
 
+%anchor($868E0F)
 PreInstruction_EnemyProjectile_DraygonGoop:
     JSR.W Delete_EnemyProjectile_IfPowerBombed                           ;868E0F;
     JSR.W Move_EnemyProjectile_AccordingToAngleAndSpeed                  ;868E12;
@@ -2241,6 +2353,7 @@ PreInstruction_EnemyProjectile_DraygonGoop:
     RTS                                                                  ;868E4F;
 
 
+%anchor($868E50)
 EnemyProjectile_DraygonGoop:
     dw InitAI_EnemyProjectile_DraygonGoop                                ;868E50; Initialisation AI
     dw PreInstruction_EnemyProjectile_DraygonGoop                        ;868E52; Initial pre-instruction
@@ -2250,6 +2363,7 @@ EnemyProjectile_DraygonGoop:
     dw InstList_EnemyProjectile_DraygonGoop_Touch                        ;868E5A; Hit instruction list
     dw InstList_EnemyProjectile_DraygonGoop_Shot                         ;868E5C; Shot instruction list
 
+%anchor($868E5E)
 EnemyProjectile_DraygonWallTurret:
     dw InitAI_EnemyProjectile_DraygonsWallTurretProjectile               ;868E5E; Initialisation AI
     dw PreInstruction_EnemyProj_DraygonsWallTurretProjectile_Fired       ;868E60; Initial pre-instruction
@@ -2260,6 +2374,7 @@ EnemyProjectile_DraygonWallTurret:
     dw InstList_EnemyProj_MiscDust_3_SmallExplosion                      ;868E6A; Shot instruction list
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($868E6C)
 UNUSED_EnemyProjectile_Draygon_868E6C:
     dw UNUSED_InitAI_EnemyProjectile_Draygon_868E7A                      ;868E6C; Initialisation AI
     dw UNUSED_PreInstruction_EnemyProjectile_Draygon_868E99              ;868E6E; Initial pre-instruction
@@ -2269,6 +2384,7 @@ UNUSED_EnemyProjectile_Draygon_868E6C:
     dw $0000                                                             ;868E76; Hit instruction list
     dw InstList_EnemyProj_MiscDust_3_SmallExplosion                      ;868E78; Shot instruction list
 
+%anchor($868E7A)
 UNUSED_InitAI_EnemyProjectile_Draygon_868E7A:
     PHX                                                                  ;868E7A;
     LDA.W #$03F0                                                         ;868E7B;
@@ -2285,6 +2401,7 @@ UNUSED_InitAI_EnemyProjectile_Draygon_868E7A:
     RTS                                                                  ;868E98;
 
 
+%anchor($868E99)
 UNUSED_PreInstruction_EnemyProjectile_Draygon_868E99:
     LDA.W $0F7A                                                          ;868E99;
     SEC                                                                  ;868E9C;
@@ -2317,6 +2434,7 @@ UNUSED_PreInstruction_EnemyProjectile_Draygon_868E99:
     RTS                                                                  ;868EDE;
 
 
+%anchor($868EDF)
 UNUSED_InstList_EnemyProjectile_Draygon_868EDF:
     dw $0005,UNUSED_EnemyProjSpritemaps_Draygon_0_8D8967                 ;868EDF;
     dw $0005,UNUSED_EnemyProjSpritemaps_Draygon_1_8D896E                 ;868EE3;
@@ -2325,6 +2443,7 @@ UNUSED_InstList_EnemyProjectile_Draygon_868EDF:
     dw Instruction_EnemyProjectile_GotoY                                 ;868EEF;
     dw UNUSED_InstList_EnemyProjectile_Draygon_868EDF                    ;868EF1;
 
+%anchor($868EF3)
 UNUSED_InstList_EnemyProjectile_868EF3:
     dw $0005,UNUSED_EnemyProjSpritemaps_0_8D897C                         ;868EF3;
     dw $0005,UNUSED_EnemyProjSpritemaps_1_8D8983                         ;868EF7;
@@ -2333,6 +2452,7 @@ UNUSED_InstList_EnemyProjectile_868EF3:
     dw Instruction_EnemyProjectile_GotoY                                 ;868F03;
     dw UNUSED_InstList_EnemyProjectile_868EF3                            ;868F05;
 
+%anchor($868F07)
 UNUSED_InstList_EnemyProjectile_868F07:
     dw $0005,UNUSED_EnemyProjSpritemaps_0_8D8991                         ;868F07;
     dw $0005,UNUSED_EnemyProjSpritemaps_1_8D8998                         ;868F0B;
@@ -2341,6 +2461,7 @@ UNUSED_InstList_EnemyProjectile_868F07:
     dw Instruction_EnemyProjectile_GotoY                                 ;868F17;
     dw UNUSED_InstList_EnemyProjectile_868F07                            ;868F19;
 
+%anchor($868F1B)
 UNUSED_InstList_EnemyProjectile_868F1B:
     dw $0005,UNUSED_EnemyProjSpritemaps_0_8D89A6                         ;868F1B;
     dw $0005,UNUSED_EnemyProjSpritemaps_1_8D89AD                         ;868F1F;
@@ -2349,6 +2470,7 @@ UNUSED_InstList_EnemyProjectile_868F1B:
     dw Instruction_EnemyProjectile_GotoY                                 ;868F2B;
     dw UNUSED_InstList_EnemyProjectile_868F1B                            ;868F2D;
 
+%anchor($868F2F)
 UNUSED_InstList_EnemyProjectile_868F2F:
     dw $0005,UNUSED_EnemyProjSpritemaps_0_8D89BB                         ;868F2F;
     dw $0005,UNUSED_EnemyProjSpritemaps_1_8D89C2                         ;868F33;
@@ -2357,6 +2479,7 @@ UNUSED_InstList_EnemyProjectile_868F2F:
     dw Instruction_EnemyProjectile_GotoY                                 ;868F3F;
     dw UNUSED_InstList_EnemyProjectile_868F2F                            ;868F41;
 
+%anchor($868F43)
 UNUSED_InstList_EnemyProjectile_868F43:
     dw $0005,UNUSED_EnemyProjSpritemaps_0_8D89D0                         ;868F43;
     dw $0005,UNUSED_EnemyProjSpritemaps_1_8D89D7                         ;868F47;
@@ -2365,6 +2488,7 @@ UNUSED_InstList_EnemyProjectile_868F43:
     dw Instruction_EnemyProjectile_GotoY                                 ;868F53;
     dw UNUSED_InstList_EnemyProjectile_868F43                            ;868F55;
 
+%anchor($868F57)
 UNUSED_InstList_EnemyProjectile_868F57:
     dw $0005,UNUSED_EnemyProjSpritemaps_0_8D89E5                         ;868F57;
     dw $0005,UNUSED_EnemyProjSpritemaps_1_8D89EC                         ;868F5B;
@@ -2373,6 +2497,7 @@ UNUSED_InstList_EnemyProjectile_868F57:
     dw Instruction_EnemyProjectile_GotoY                                 ;868F67;
     dw UNUSED_InstList_EnemyProjectile_868F57                            ;868F69;
 
+%anchor($868F6B)
 UNUSED_InstList_EnemyProjectile_868F6B:
     dw $0005,UNUSED_EnemyProjSpritemaps_0_8D89FA                         ;868F6B;
     dw $0005,UNUSED_EnemyProjSpritemaps_1_8D8A01                         ;868F6F;
@@ -2381,6 +2506,7 @@ UNUSED_InstList_EnemyProjectile_868F6B:
     dw Instruction_EnemyProjectile_GotoY                                 ;868F7B;
     dw UNUSED_InstList_EnemyProjectile_868F6B                            ;868F7D;
 
+%anchor($868F7F)
 UNUSED_EnemyProjectile_InstListPointers_868F7F:
     dw UNUSED_InstList_EnemyProjectile_Draygon_868EDF                    ;868F7F;
     dw UNUSED_InstList_EnemyProjectile_868EF3                            ;868F81;
@@ -2392,6 +2518,7 @@ UNUSED_EnemyProjectile_InstListPointers_868F7F:
     dw UNUSED_InstList_EnemyProjectile_868F6B                            ;868F8D;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($868F8F)
 EnemyProjectile_CrocomiresProjectile:
     dw InitAI_EnemyProjectile_CrocomiresProjectile                       ;868F8F; Initialisation AI
     dw PreInstruction_EnemyProjectile_CrocomiresProjectile_Setup         ;868F91; Initial pre-instruction
@@ -2401,6 +2528,7 @@ EnemyProjectile_CrocomiresProjectile:
     dw $0000                                                             ;868F99; Hit instruction list
     dw InstList_EnemyProjectile_Shot_CrocomiresProjectile                ;868F9B; Shot instruction list
 
+%anchor($868F9D)
 EnemyProjectile_CrocomireBridgeCrumbling:
     dw InitAI_EnemyProjectile_CrocomireBridgeCrumbling                   ;868F9D; Initialisation AI
     dw PreInstruction_EnemyProjectile_CrocomireBridgeCrumbling           ;868F9F; Initial pre-instruction
@@ -2411,18 +2539,21 @@ EnemyProjectile_CrocomireBridgeCrumbling:
     dw InstList_EnemyProjectile_Delete                                   ;868FA9; Shot instruction list
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($868FAB)
 UNUSED_InstList_EnemyProj_CrocomiresProjectile_Part1_868FAB:
     dw $0005,EnemyProjSpritemaps_CrocomiresProjectile_0                  ;868FAB;
     dw $0005,EnemyProjSpritemaps_CrocomiresProjectile_1                  ;868FAF;
     dw Instruction_EnemyProjectile_GotoY                                 ;868FB3;
     dw UNUSED_InstList_EnemyProj_CrocomiresProjectile_Part1_868FAB       ;868FB5;
 
+%anchor($868FB7)
 UNUSED_InstList_EnemyProj_CrocomiresProjectile_Part2_868FB7:
     dw $0005,EnemyProjSpritemaps_CrocomiresProjectile_2                  ;868FB7;
     dw $0005,EnemyProjSpritemaps_CrocomiresProjectile_3                  ;868FBB;
     dw Instruction_EnemyProjectile_GotoY                                 ;868FBF;
     dw UNUSED_InstList_EnemyProj_CrocomiresProjectile_Part2_868FB7       ;868FC1;
 
+%anchor($868FC3)
 UNUSED_InstList_EnemyProj_OldCrocomiresProjectile_868FC3:
     dw $0005,UNUSED_EnemyProjSpritemaps_OldCrocomiresProjectile_0_8D8082 ;868FC3;
     dw $0005,UNUSED_EnemyProjSpritemaps_OldCrocomiresProjectile_1_8D8098 ;868FC7;
@@ -2430,6 +2561,7 @@ UNUSED_InstList_EnemyProj_OldCrocomiresProjectile_868FC3:
     dw UNUSED_InstList_EnemyProj_OldCrocomiresProjectile_868FC3          ;868FCD;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($868FCF)
 InstList_EnemyProjectile_CrocomiresProjectile:
     dw $0003,EnemyProjSpritemaps_CrocomiresProjectile_0                  ;868FCF;
     dw $0003,EnemyProjSpritemaps_CrocomiresProjectile_1                  ;868FD3;
@@ -2440,23 +2572,27 @@ InstList_EnemyProjectile_CrocomiresProjectile:
     dw Instruction_EnemyProjectile_GotoY                                 ;868FE7;
     dw InstList_EnemyProjectile_CrocomiresProjectile                     ;868FE9;
 
+%anchor($868FEB)
 InstList_EnemyProjectile_CrocomireBridgeCrumbling:
     dw $7FFF,EnemyProjSpritemaps_CrocomiresBridgeCrumbling               ;868FEB;
     dw Instruction_EnemyProjectile_GotoY                                 ;868FEF;
     dw InstList_EnemyProjectile_CrocomireBridgeCrumbling                 ;868FF1;
 
+%anchor($868FF3)
 InstList_EnemyProjectile_CrocomireSpikeWallPieces:
     dw $7FFF,EnemyProjSpritemaps_CrocomiresSpikeWallPieces               ;868FF3;
     dw Instruction_EnemyProjectile_GotoY                                 ;868FF7;
     dw InstList_EnemyProjectile_CrocomireSpikeWallPieces                 ;868FF9;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($868FFB)
 UNUSED_InstList_EnemyProj_CrocomireBridgeCrumbling_868FFB:
     dw $0002,UNUSED_EnemyProjSpritemaps_CrocomireBridgeCrumbling_0_8D8132 ;868FFB;
     dw $0002,UNUSED_EnemyProjSpritemaps_CrocomireBridgeCrumbling_1_8D813E ;868FFF;
     dw $7FFF,UNUSED_EnemyProjSpritemaps_CrocomireBridgeCrumbling_2_8D815E ;869003;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($869007)
 InstList_EnemyProjectile_Shot_CrocomiresProjectile:
     dw $0004,EnemyProjSpritemaps_Common_0                                ;869007;
     dw $0004,EnemyProjSpritemaps_Common_1                                ;86900B;
@@ -2468,6 +2604,7 @@ InstList_EnemyProjectile_Shot_CrocomiresProjectile:
     dw InstList_EnemyProjectile_Delete                                   ;86901F;
     dw Instruction_EnemyProjectile_Delete                                ;869021;
 
+%anchor($869023)
 InitAI_EnemyProjectile_CrocomiresProjectile:
     LDX.W $0E54                                                          ;869023;
     LDA.W #$FE00                                                         ;869026;
@@ -2491,6 +2628,7 @@ InitAI_EnemyProjectile_CrocomiresProjectile:
     RTS                                                                  ;869058;
 
 
+%anchor($869059)
 CrocomiresProjectile_Gradients:                                          ;869059;
 ; Signed values v such that v / -40h is the actual gradient
 ; (so v = 40h is the down-left diagonal, v = 0 is straight left, v = FFC0h is the up-left diagonal)
@@ -2499,6 +2637,7 @@ CrocomiresProjectile_Gradients:                                          ;869059
     dw $FFF0,$0000,$0020
     dw $FFF0,$0000,$0020                                                             ;869069;
 
+%anchor($86906B)
 PreInstruction_EnemyProjectile_CrocomiresProjectile_Setup:
     JSR.W Move_EnemyProjectile_Horizontally                              ;86906B;
     LDA.W #$0A00                                                         ;86906E;
@@ -2535,6 +2674,7 @@ PreInstruction_EnemyProjectile_CrocomiresProjectile_Setup:
     RTS                                                                  ;8690B2;
 
 
+%anchor($8690B3)
 PreInstruction_EnemyProjectile_CrocomiresProjectile_Fired:
     JSR.W Move_EnemyProjectile_Horizontally                              ;8690B3;
     BCS .delete                                                          ;8690B6;
@@ -2548,6 +2688,7 @@ PreInstruction_EnemyProjectile_CrocomiresProjectile_Fired:
     RTS                                                                  ;8690C0;
 
 
+%anchor($8690C1)
 EnemyProjectile_CrocomireSpikeWallPieces:
     dw InitAI_EnemyProjectile_CrocomireSpikeWallPieces                   ;8690C1; Initialisation AI
     dw PreInstruction_EnemyProjectile_CrocomireSpikeWallPieces           ;8690C3; Initial pre-instruction
@@ -2557,6 +2698,7 @@ EnemyProjectile_CrocomireSpikeWallPieces:
     dw $0000                                                             ;8690CB; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;8690CD; Shot instruction list
 
+%anchor($8690CF)
 InitAI_EnemyProjectile_CrocomireSpikeWallPieces:
     REP #$20                                                             ;8690CF;
     TYA                                                                  ;8690D1;
@@ -2585,6 +2727,7 @@ InitAI_EnemyProjectile_CrocomireSpikeWallPieces:
 ; Y positions, indexed by [enemy projectile index] - 14h
     dw $0038,$0048,$0058,$0068,$0078,$0088,$0098,$00A8                   ;869105;
 
+%anchor($869115)
 PreInstruction_EnemyProjectile_CrocomireSpikeWallPieces:
     REP #$20                                                             ;869115;
     LDA.W $1AFF,X                                                        ;869117;
@@ -2681,6 +2824,7 @@ PreInstruction_EnemyProjectile_CrocomireSpikeWallPieces:
     dw $0001,$0001                                                       ;86922B;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($86922F)
 UNUSED_MoveEnemyProjectileUpFor6FramesThenDelete_86922F:
     LDA.W $0B64,X                                                        ;86922F;
     LDA.W #$0001                                                         ;869232;
@@ -2697,6 +2841,7 @@ UNUSED_MoveEnemyProjectileUpFor6FramesThenDelete_86922F:
     STA.W $1AFF,X                                                        ;869253;
     STA.W $1B23,X                                                        ;869256;
 
+%anchor($869259)
 UNUSED_PreInstruction_EnemyProjectile_MovingUp_869259:
     LDA.W $1A93,X                                                        ;869259;
     SEC                                                                  ;86925C;
@@ -2713,6 +2858,7 @@ UNUSED_PreInstruction_EnemyProjectile_MovingUp_869259:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($869270)
 Instruction_SpawnEnemyDropsWithCrocomiresDropChances:
     PHY                                                                  ;869270;
     PHX                                                                  ;869271;
@@ -2727,6 +2873,7 @@ Instruction_SpawnEnemyDropsWithCrocomiresDropChances:
     RTS                                                                  ;869285;
 
 
+%anchor($869286)
 InitAI_EnemyProjectile_CrocomireBridgeCrumbling:
     PHX                                                                  ;869286;
     LDX.W $0E54                                                          ;869287;
@@ -2750,6 +2897,7 @@ InitAI_EnemyProjectile_CrocomireBridgeCrumbling:
     RTS                                                                  ;8692B9;
 
 
+%anchor($8692BA)
 PreInstruction_EnemyProjectile_CrocomireBridgeCrumbling:
     PHP                                                                  ;8692BA;
     REP #$20                                                             ;8692BB;
@@ -2770,6 +2918,7 @@ PreInstruction_EnemyProjectile_CrocomireBridgeCrumbling:
     RTS                                                                  ;8692D5;
 
 
+%anchor($8692D6)
 Move_EnemyProjectile_AccordingToVelocity:
     LDA.W $1AB7,X                                                        ;8692D6;
     SEP #$20                                                             ;8692D9;
@@ -2785,6 +2934,7 @@ Move_EnemyProjectile_AccordingToVelocity:
   + ADC.W $1A4B,X                                                        ;8692ED;
     STA.W $1A4B,X                                                        ;8692F0;
 
+%anchor($8692F3)
 Move_EnemyProjectile_Vertically_AccordingToVelocity:
     LDA.W $1ADB,X                                                        ;8692F3;
     SEP #$20                                                             ;8692F6;
@@ -2802,6 +2952,7 @@ Move_EnemyProjectile_Vertically_AccordingToVelocity:
     RTS                                                                  ;869310;
 
 
+%anchor($869311)
 Move_EnemyProjectile_Horizontally_AccordingToVelocity:
     LDA.W $1AB7,X                                                        ;869311;
     SEP #$20                                                             ;869314;
@@ -2819,6 +2970,7 @@ Move_EnemyProjectile_Horizontally_AccordingToVelocity:
     RTS                                                                  ;86932E;
 
 
+%anchor($86932F)
 Set_RidleysFireball_Afterburn_Damage:
     LDA.W $079F                                                          ;86932F;
     CMP.W #$0002                                                         ;869332;
@@ -2843,6 +2995,7 @@ Set_RidleysFireball_Afterburn_Damage:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($86934D)
 UNUSED_InitAI_EnemyProj_RidleysFireball_Afterburn_86934D:
     LDA.W #$0000                                                         ;86934D;
     STA.W $1AFF,Y                                                        ;869350;
@@ -2873,6 +3026,7 @@ UNUSED_InitAI_EnemyProj_RidleysFireball_Afterburn_86934D:
     dw $0000,$0088,$00FC,$016A                                           ;86938A;
 
 
+%anchor($869392)
 UNUSED_PreInst_EnemyProj_RidleyFireball_Afterburn_869392:
     LDA.W $1AFF,X                                                        ;869392;
     CMP.W #$0008                                                         ;869395;
@@ -2904,6 +3058,7 @@ UNUSED_PreInst_EnemyProj_RidleyFireball_Afterburn_869392:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($8693CA)
 InitAI_EnemyProjectile_RidleyFireball:
     LDA.W $1995                                                          ;8693CA;
     STA.W $1B23,Y                                                        ;8693CD;
@@ -2930,11 +3085,13 @@ InitAI_EnemyProjectile_RidleyFireball:
     LDA.L $7E7834                                                        ;8693FB;
     STA.W $1ADB,Y                                                        ;8693FF;
 
+%anchor($869402)
 Set_RidleyFireball_Afterburn_Properties:
     LDX.W #EnemyProjectile_PropertyValues_default                        ;869402;
     JMP.W Set_RidleysFireball_Afterburn_Damage                           ;869405;
 
 
+%anchor($869408)
 EnemyProjectile_PropertyValues:
   .default:
     dw $5003                                                             ;869408;
@@ -2943,6 +3100,7 @@ EnemyProjectile_PropertyValues:
   .tourian:
     dw $5050                                                             ;86940C;
 
+%anchor($86940E)
 PreInstruction_EnemyProjectile_RidleyFireball:
     JSR.W Move_EnemyProjectile_Horizontally                              ;86940E;
     BCS .hitWall                                                         ;869411;
@@ -2977,6 +3135,7 @@ PreInstruction_EnemyProjectile_RidleyFireball:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($869442)
 UNUSED_DoFireballDamageToSamus_TurnIntoSmoke_869442:
     LDA.W #UNUSED_InstList_Smoke_86945F                                  ;869442;
     STA.W $1B47,X                                                        ;869445;
@@ -2992,6 +3151,7 @@ UNUSED_DoFireballDamageToSamus_TurnIntoSmoke_869442:
     JMP.W Hurt_Samus                                                     ;86945C;
 
 
+%anchor($86945F)
 UNUSED_InstList_Smoke_86945F:
     dw UNUSED_Instruction_DisableCollisionsWithSamus_869475              ;86945F;
     dw Instruction_EnemyProjectile_ClearPreInstruction                   ;869461;
@@ -3001,6 +3161,7 @@ UNUSED_InstList_Smoke_86945F:
     dw $0008,EnemyProjSpritemaps_Common_Smoke_3                          ;86946F;
     dw Instruction_EnemyProjectile_Delete                                ;869473;
 
+%anchor($869475)
 UNUSED_Instruction_DisableCollisionsWithSamus_869475:
     LDA.W $1BD7,X                                                        ;869475;
     ORA.W #$2000                                                         ;869478;
@@ -3009,6 +3170,7 @@ UNUSED_Instruction_DisableCollisionsWithSamus_869475:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($86947F)
 InitAI_EnemyProjectile_Afterburn_Center:
     TYX                                                                  ;86947F;
     LDA.W #$0A00                                                         ;869480;
@@ -3025,6 +3187,7 @@ InitAI_EnemyProjectile_Afterburn_Center:
     RTS                                                                  ;86949F;
 
 
+%anchor($8694A0)
 InitAI_EnemyProjectile_VerticalAfterburn_Up:
     LDX.W $1993                                                          ;8694A0;
     LDA.W #$0000                                                         ;8694A3;
@@ -3035,6 +3198,7 @@ InitAI_EnemyProjectile_VerticalAfterburn_Up:
     BRA InitAI_EnemyProjectile_Afterburn_Common                          ;8694B2;
 
 
+%anchor($8694B4)
 InitAI_EnemyProjectile_VerticalAfterburn_Down:
     LDX.W $1993                                                          ;8694B4;
     LDA.W #$0000                                                         ;8694B7;
@@ -3045,6 +3209,7 @@ InitAI_EnemyProjectile_VerticalAfterburn_Down:
     BRA InitAI_EnemyProjectile_Afterburn_Common                          ;8694C6;
 
 
+%anchor($8694C8)
 InitAI_EnemyProjectile_HorizontalAfterburn_Right:
     LDX.W $1993                                                          ;8694C8;
     LDA.W #$0E00                                                         ;8694CB;
@@ -3055,6 +3220,7 @@ InitAI_EnemyProjectile_HorizontalAfterburn_Right:
     BRA InitAI_EnemyProjectile_Afterburn_Common                          ;8694DA;
 
 
+%anchor($8694DC)
 InitAI_EnemyProjectile_HorizontalAfterburn_Left:
     LDX.W $1993                                                          ;8694DC;
     LDA.W #$F200                                                         ;8694DF;
@@ -3063,6 +3229,7 @@ InitAI_EnemyProjectile_HorizontalAfterburn_Left:
     STA.W $1ADB,Y                                                        ;8694E8;
     LDA.W #EnemyProjectile_RidleyHorizontalAfterburn_Left                ;8694EB;
 
+%anchor($8694EE)
 InitAI_EnemyProjectile_Afterburn_Common:
     STA.W $1B23,Y                                                        ;8694EE;
     LDA.W $1A4B,X                                                        ;8694F1;
@@ -3076,10 +3243,12 @@ InitAI_EnemyProjectile_Afterburn_Common:
     JMP.W Set_RidleyFireball_Afterburn_Properties                        ;869509;
 
 
+%anchor($86950C)
 RTS_86950C:
     RTS                                                                  ;86950C;
 
 
+%anchor($86950D)
 PreInstruction_EnemyProjectile_HorizontalAfterburn:
     JSR.W Move_EnemyProjectile_Horizontally_AccordingToVelocity          ;86950D;
     JSR.W Move_EnemyProjectile_Vertically                                ;869510;
@@ -3093,6 +3262,7 @@ PreInstruction_EnemyProjectile_HorizontalAfterburn:
     RTS                                                                  ;869521;
 
 
+%anchor($869522)
 PreInstruction_EnemyProjectile_VerticalAfterburn:
     JSR.W Move_EnemyProjectile_Vertically_AccordingToVelocity            ;869522;
     JSR.W Move_EnemyProjectile_Horizontally                              ;869525;
@@ -3107,6 +3277,7 @@ PreInstruction_EnemyProjectile_VerticalAfterburn:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($869537)
 UNUSED_PreInstruction_ProtoHorizontalAfterburn_869537:
     JSR.W Move_EnemyProjectile_Horizontally                              ;869537;
     BCC .return                                                          ;86953A;
@@ -3116,6 +3287,7 @@ UNUSED_PreInstruction_ProtoHorizontalAfterburn_869537:
     RTS                                                                  ;86953F;
 
 
+%anchor($869540)
 UNUSED_PreInstruction_ProtoVerticalAfterburn_Up_869540:
     JSR.W Move_EnemyProjectile_Vertically                                ;869540;
     BCC .return                                                          ;869543;
@@ -3125,6 +3297,7 @@ UNUSED_PreInstruction_ProtoVerticalAfterburn_Up_869540:
     RTS                                                                  ;869548;
 
 
+%anchor($869549)
 UNUSED_PreInstruction_ProtoVerticalAfterburn_Down_869549:
     JSR.W Move_EnemyProjectile_Vertically                                ;869549;
     BCC .return                                                          ;86954C;
@@ -3135,6 +3308,7 @@ UNUSED_PreInstruction_ProtoVerticalAfterburn_Down_869549:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($869552)
 InstList_EnemyProjectile_RidleysFireball_0:
     dw Instruction_EnemyProjectile_ClearPreInstruction                   ;869552;
     dw $0004,EnemyProjSpritemaps_RidleysFireball_0                       ;869554;
@@ -3142,6 +3316,7 @@ InstList_EnemyProjectile_RidleysFireball_0:
     dw PreInstruction_EnemyProjectile_RidleyFireball                     ;86955A;
     dw $0004,EnemyProjSpritemaps_RidleysFireball_0                       ;86955C;
 
+%anchor($869560)
 InstList_EnemyProjectile_RidleysFireball_1:
     dw $0002,EnemyProjSpritemaps_RidleysFireball_0                       ;869560;
     dw $0002,EnemyProjSpritemaps_RidleysFireball_1                       ;869564;
@@ -3150,6 +3325,7 @@ InstList_EnemyProjectile_RidleysFireball_1:
     dw Instruction_EnemyProjectile_GotoY                                 ;869570;
     dw InstList_EnemyProjectile_RidleysFireball_1                        ;869572;
 
+%anchor($869574)
 InstList_EnemyProjectile_Afterburn_Final:
     dw Instruction_EnemyProjectile_ClearPreInstruction                   ;869574;
     dw $0005,EnemyProjSpritemaps_RidleysFireball_MBBombExplosion_0       ;869576;
@@ -3160,6 +3336,7 @@ InstList_EnemyProjectile_Afterburn_Final:
     dw Instruction_EnemyProjectile_Delete                                ;86958A;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($86958C)
 UNUSED_InstList_EnemyProjectile_86958C:
     dw $0002,UNUSED_EnemyProjSpritemaps_0_8D80AE                         ;86958C;
     dw $0002,UNUSED_EnemyProjSpritemaps_1_8D80B5                         ;869590;
@@ -3169,6 +3346,7 @@ UNUSED_InstList_EnemyProjectile_86958C:
     dw UNUSED_InstList_EnemyProjectile_86958C                            ;86959E;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($8695A0)
 InstList_EnemyProjectile_HorizontalAfterburn_Center:
     dw Instruction_EnemyProjectile_ClearPreInstruction                   ;8695A0;
     dw $0005,EnemyProjSpritemaps_RidleysFireball_MBBombExplosion_0       ;8695A2;
@@ -3179,6 +3357,7 @@ InstList_EnemyProjectile_HorizontalAfterburn_Center:
     dw $0005,EnemyProjSpritemaps_RidleysFireball_MBBombExplosion_4       ;8695B4;
     dw Instruction_EnemyProjectile_Delete                                ;8695B8;
 
+%anchor($8695BA)
 Instruction_Spawn_HorizontalAfterburn_EnemyProjectiles:
     PHY                                                                  ;8695BA;
     STZ.W $1995                                                          ;8695BB;
@@ -3193,6 +3372,7 @@ Instruction_Spawn_HorizontalAfterburn_EnemyProjectiles:
     RTS                                                                  ;8695D2;
 
 
+%anchor($8695D3)
 InstList_EnemyProjectile_VerticalAfterburn_Center:
     dw Instruction_EnemyProjectile_ClearPreInstruction                   ;8695D3;
     dw $0005,EnemyProjSpritemaps_RidleysFireball_MBBombExplosion_0       ;8695D5;
@@ -3203,6 +3383,7 @@ InstList_EnemyProjectile_VerticalAfterburn_Center:
     dw $0005,EnemyProjSpritemaps_RidleysFireball_MBBombExplosion_4       ;8695E7;
     dw Instruction_EnemyProjectile_Delete                                ;8695EB;
 
+%anchor($8695ED)
 Instruction_Spawn_VerticalAfterburn_EnemyProjectiles:
     PHY                                                                  ;8695ED;
     STZ.W $1995                                                          ;8695EE;
@@ -3217,6 +3398,7 @@ Instruction_Spawn_VerticalAfterburn_EnemyProjectiles:
     RTS                                                                  ;869605;
 
 
+%anchor($869606)
 InstList_EnemyProjectile_Afterburn:
     dw Instruction_EnemyProjectile_ClearPreInstruction                   ;869606;
     dw $0005,EnemyProjSpritemaps_RidleysFireball_MBBombExplosion_0       ;869608;
@@ -3227,6 +3409,7 @@ InstList_EnemyProjectile_Afterburn:
     dw $0005,EnemyProjSpritemaps_RidleysFireball_MBBombExplosion_4       ;86961A;
     dw Instruction_EnemyProjectile_Delete                                ;86961E;
 
+%anchor($869620)
 Instruction_SpawnNext_Afterburn_EnemyProjectile:
     SEP #$20                                                             ;869620;
     DEC.W $1AFF,X                                                        ;869622;
@@ -3243,6 +3426,7 @@ Instruction_SpawnNext_Afterburn_EnemyProjectile:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($869634)
 UNUSED_EnemyProjectile_Ridley_869634:
     dw UNUSED_InitAI_EnemyProj_RidleysFireball_Afterburn_86934D          ;869634; Initialisation AI
     dw UNUSED_PreInst_EnemyProj_RidleyFireball_Afterburn_869392          ;869636; Initial pre-instruction
@@ -3253,6 +3437,7 @@ UNUSED_EnemyProjectile_Ridley_869634:
     dw InstList_EnemyProjectile_Delete                                   ;869640; Shot instruction list
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($869642)
 EnemyProjectile_RidleysFireball:
     dw InitAI_EnemyProjectile_RidleyFireball                             ;869642; Initialisation AI
     dw PreInstruction_EnemyProjectile_RidleyFireball                     ;869644; Initial pre-instruction
@@ -3262,6 +3447,7 @@ EnemyProjectile_RidleysFireball:
     dw $0000                                                             ;86964C; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86964E; Shot instruction list
 
+%anchor($869650)
 EnemyProjectile_RidleyHorizontalAfterburn_Center:
     dw InitAI_EnemyProjectile_Afterburn_Center                           ;869650; Initialisation AI
     dw RTS_86950C                                                        ;869652; Initial pre-instruction
@@ -3271,6 +3457,7 @@ EnemyProjectile_RidleyHorizontalAfterburn_Center:
     dw $0000                                                             ;86965A; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86965C; Shot instruction list
 
+%anchor($86965E)
 EnemyProjectile_RidleyVerticalAfterburn_Center:
     dw InitAI_EnemyProjectile_Afterburn_Center                           ;86965E; Initialisation AI
     dw RTS_86950C                                                        ;869660; Initial pre-instruction
@@ -3280,6 +3467,7 @@ EnemyProjectile_RidleyVerticalAfterburn_Center:
     dw $0000                                                             ;869668; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86966A; Shot instruction list
 
+%anchor($86966C)
 EnemyProjectile_RidleyHorizontalAfterburn_Right:
     dw InitAI_EnemyProjectile_HorizontalAfterburn_Right                  ;86966C; Initialisation AI
     dw PreInstruction_EnemyProjectile_HorizontalAfterburn                ;86966E; Initial pre-instruction
@@ -3289,6 +3477,7 @@ EnemyProjectile_RidleyHorizontalAfterburn_Right:
     dw $0000                                                             ;869676; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;869678; Shot instruction list
 
+%anchor($86967A)
 EnemyProjectile_RidleyHorizontalAfterburn_Left:
     dw InitAI_EnemyProjectile_HorizontalAfterburn_Left                   ;86967A; Initialisation AI
     dw PreInstruction_EnemyProjectile_HorizontalAfterburn                ;86967C; Initial pre-instruction
@@ -3298,6 +3487,7 @@ EnemyProjectile_RidleyHorizontalAfterburn_Left:
     dw $0000                                                             ;869684; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;869686; Shot instruction list
 
+%anchor($869688)
 EnemyProjectile_RidleyVerticalAfterburn_Up:
     dw InitAI_EnemyProjectile_VerticalAfterburn_Up                       ;869688; Initialisation AI
     dw PreInstruction_EnemyProjectile_VerticalAfterburn                  ;86968A; Initial pre-instruction
@@ -3307,6 +3497,7 @@ EnemyProjectile_RidleyVerticalAfterburn_Up:
     dw $0000                                                             ;869692; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;869694; Shot instruction list
 
+%anchor($869696)
 EnemyProjectile_RidleyVerticalAfterburn_Down:
     dw InitAI_EnemyProjectile_VerticalAfterburn_Down                     ;869696; Initialisation AI
     dw PreInstruction_EnemyProjectile_VerticalAfterburn                  ;869698; Initial pre-instruction
@@ -3317,6 +3508,7 @@ EnemyProjectile_RidleyVerticalAfterburn_Down:
     dw InstList_EnemyProjectile_Delete                                   ;8696A2; Shot instruction list
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($8696A4)
 UNUSED_EnemyProjectile_RidleyProtoHorizontalAfterburn_8696A4:
     dw InitAI_EnemyProjectile_HorizontalAfterburn_Right                  ;8696A4; Initialisation AI
     dw UNUSED_PreInstruction_ProtoHorizontalAfterburn_869537             ;8696A6; Initial pre-instruction
@@ -3326,6 +3518,7 @@ UNUSED_EnemyProjectile_RidleyProtoHorizontalAfterburn_8696A4:
     dw $0000                                                             ;8696AE; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;8696B0; Shot instruction list
 
+%anchor($8696B2)
 UNUSED_EnemyProjectile_RidleyProtoHorizontalAfterburn_8696B2:
     dw InitAI_EnemyProjectile_HorizontalAfterburn_Left                   ;8696B2; Initialisation AI
     dw UNUSED_PreInstruction_ProtoHorizontalAfterburn_869537             ;8696B4; Initial pre-instruction
@@ -3335,6 +3528,7 @@ UNUSED_EnemyProjectile_RidleyProtoHorizontalAfterburn_8696B2:
     dw $0000                                                             ;8696BC; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;8696BE; Shot instruction list
 
+%anchor($8696C0)
 UNUSED_EnemyProjectile_RidleyProtoVerticalAfterburn_8696C0:
     dw InitAI_EnemyProjectile_VerticalAfterburn_Up                       ;8696C0; Initialisation AI
     dw UNUSED_PreInstruction_ProtoVerticalAfterburn_Up_869540            ;8696C2; Initial pre-instruction
@@ -3344,6 +3538,7 @@ UNUSED_EnemyProjectile_RidleyProtoVerticalAfterburn_8696C0:
     dw $0000                                                             ;8696CA; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;8696CC; Shot instruction list
 
+%anchor($8696CE)
 UNUSED_EnemyProjectile_RidleyProtoVerticalAfterburn_8696CE:
     dw InitAI_EnemyProjectile_VerticalAfterburn_Down                     ;8696CE; Initialisation AI
     dw UNUSED_PreInstruction_ProtoVerticalAfterburn_Down_869549          ;8696D0; Initial pre-instruction
@@ -3354,6 +3549,7 @@ UNUSED_EnemyProjectile_RidleyProtoVerticalAfterburn_8696CE:
     dw InstList_EnemyProjectile_Delete                                   ;8696DA; Shot instruction list
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($8696DC)
 InitAI_EnemyProjectile_CeresFallingTile:
     LDA.W #$0000                                                         ;8696DC;
     STA.W $1AFF,Y                                                        ;8696DF;
@@ -3370,6 +3566,7 @@ InitAI_EnemyProjectile_CeresFallingTile:
     RTS                                                                  ;869700;
 
 
+%anchor($869701)
 PreInstruction_EnemyProjectile_CeresFallingTile:
     LDA.W #$0010                                                         ;869701;
     CLC                                                                  ;869704;
@@ -3396,6 +3593,7 @@ PreInstruction_EnemyProjectile_CeresFallingTile:
     RTS                                                                  ;869733;
 
 
+%anchor($869734)
 EnemyProjectile_CeresFallingTile_Light:
     dw InitAI_EnemyProjectile_CeresFallingTile                           ;869734; Initialisation AI
     dw PreInstruction_EnemyProjectile_CeresFallingTile                   ;869736; Initial pre-instruction
@@ -3405,6 +3603,7 @@ EnemyProjectile_CeresFallingTile_Light:
     dw $0000                                                             ;86973E; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;869740; Shot instruction list
 
+%anchor($869742)
 EnemyProjectile_CeresFallingTile_Dark:
     dw InitAI_EnemyProjectile_CeresFallingTile                           ;869742; Initialisation AI
     dw PreInstruction_EnemyProjectile_CeresFallingTile                   ;869744; Initial pre-instruction
@@ -3414,14 +3613,17 @@ EnemyProjectile_CeresFallingTile_Dark:
     dw $0000                                                             ;86974C; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86974E; Shot instruction list
 
+%anchor($869750)
 InstList_EnemyProjectile_CeresFallingTile_Light:
     dw $0001,EnemyProjSpritemaps_CeresFallingTile_Light                  ;869750;
     dw Instruction_EnemyProjectile_Sleep                                 ;869754;
 
+%anchor($869756)
 InstList_EnemyProjectile_CeresFallingTile_Dark:
     dw $0001,EnemyProjSpritemaps_CeresFallingTile_Dark                   ;869756;
     dw Instruction_EnemyProjectile_Sleep                                 ;86975A;
 
+%anchor($86975C)
 InstList_EnemyProjectile_PhantoonDestroyableFlame_Idle:
     dw $0005,EnemyProjSpritemaps_PhantoonFlames_0                        ;86975C;
     dw $0005,EnemyProjSpritemaps_PhantoonFlames_1                        ;869760;
@@ -3429,10 +3631,12 @@ InstList_EnemyProjectile_PhantoonDestroyableFlame_Idle:
     dw Instruction_EnemyProjectile_GotoY                                 ;869768;
     dw InstList_EnemyProjectile_PhantoonDestroyableFlame_Idle            ;86976A;
 
+%anchor($86976C)
 InstList_EnemyProj_PhantoonDestroyableFlame_Casual_HitGround:
     dw $0001,EnemyProjSpritemaps_PhantoonFlames_3                        ;86976C;
     dw Instruction_EnemyProjectile_Sleep                                 ;869770;
 
+%anchor($869772)
 InstList_EnemyProj_PhantoonDestroyableFlame_Casual_Bouncing:
     dw $0005,EnemyProjSpritemaps_PhantoonFlames_0                        ;869772;
     dw $0005,EnemyProjSpritemaps_PhantoonFlames_1                        ;869776;
@@ -3440,6 +3644,7 @@ InstList_EnemyProj_PhantoonDestroyableFlame_Casual_Bouncing:
     dw Instruction_EnemyProjectile_GotoY                                 ;86977E;
     dw InstList_EnemyProj_PhantoonDestroyableFlame_Casual_Bouncing       ;869780;
 
+%anchor($869782)
 InstList_EnemyProj_PhantoonDestroyableFlame_Casual_Resetting:
     dw $0005,EnemyProjSpritemaps_PhantoonStartingFlames_0                ;869782;
     dw $0005,EnemyProjSpritemaps_PhantoonStartingFlames_1                ;869786;
@@ -3448,6 +3653,7 @@ InstList_EnemyProj_PhantoonDestroyableFlame_Casual_Resetting:
     dw $0005,EnemyProjSpritemaps_PhantoonStartingFlames_4                ;869792;
     dw $0005,EnemyProjSpritemaps_PhantoonStartingFlames_5                ;869796;
 
+%anchor($86979A)
 InstList_EnemyProj_PhantoonDestroyableFlame_Dying:
     dw $0005,EnemyProjSpritemaps_PhantoonFlames_4                        ;86979A;
     dw $0005,EnemyProjSpritemaps_PhantoonFlames_5                        ;86979E;
@@ -3455,14 +3661,17 @@ InstList_EnemyProj_PhantoonDestroyableFlame_Dying:
     dw $0005,EnemyProjSpritemaps_PhantoonFlames_7                        ;8697A6;
     dw Instruction_EnemyProjectile_Delete                                ;8697AA;
 
+%anchor($8697AC)
 InstList_EnemyProj_PhantoonDestroyableFlame_Rain_Falling:
     dw $0008,EnemyProjSpritemaps_PhantoonFlames_3                        ;8697AC;
     dw Instruction_EnemyProjectile_GotoY                                 ;8697B0;
     dw InstList_EnemyProj_PhantoonDestroyableFlame_Dying                 ;8697B2;
 
+%anchor($8697B4)
 InstList_EnemyProj_PhantoonDestroyableFlame_Casual_Falling_0:
     dw Instruction_EnemyProjectile_TimerInY,$0004                        ;8697B4;
 
+%anchor($8697B8)
 InstList_EnemyProj_PhantoonDestroyableFlame_Casual_Falling_1:
     dw $0001,EnemyProjSpritemaps_PhantoonFlames_8                        ;8697B8;
     dw $0001,EnemyProjSpritemaps_Blank_Default                           ;8697BC;
@@ -3470,6 +3679,7 @@ InstList_EnemyProj_PhantoonDestroyableFlame_Casual_Falling_1:
     dw InstList_EnemyProj_PhantoonDestroyableFlame_Casual_Falling_1      ;8697C2;
     dw Instruction_EnemyProjectile_TimerInY,$0004                        ;8697C4;
 
+%anchor($8697C8)
 InstList_EnemyProj_PhantoonDestroyableFlame_Casual_Falling_2:
     dw $0001,EnemyProjSpritemaps_PhantoonFlames_9                        ;8697C8;
     dw $0001,EnemyProjSpritemaps_Blank_Default                           ;8697CC;
@@ -3477,6 +3687,7 @@ InstList_EnemyProj_PhantoonDestroyableFlame_Casual_Falling_2:
     dw InstList_EnemyProj_PhantoonDestroyableFlame_Casual_Falling_2      ;8697D2;
     dw Instruction_EnemyProjectile_TimerInY,$0004                        ;8697D4;
 
+%anchor($8697D8)
 InstList_EnemyProj_PhantoonDestroyableFlame_Casual_Falling_3:
     dw $0001,EnemyProjSpritemaps_PhantoonFlames_A                        ;8697D8;
     dw $0001,EnemyProjSpritemaps_Blank_Default                           ;8697DC;
@@ -3485,6 +3696,7 @@ InstList_EnemyProj_PhantoonDestroyableFlame_Casual_Falling_3:
     dw Instruction_EnemyProjectile_GotoY                                 ;8697E4;
     dw InstList_EnemyProj_PhantoonDestroyableFlame_Casual_Falling_0      ;8697E6;
 
+%anchor($8697E8)
 InstList_EnemyProjectile_PhantoonStartingFlames:
     dw $0005,EnemyProjSpritemaps_PhantoonFlames_8                        ;8697E8;
     dw $0005,EnemyProjSpritemaps_PhantoonFlames_9                        ;8697EC;
@@ -3492,9 +3704,11 @@ InstList_EnemyProjectile_PhantoonStartingFlames:
     dw Instruction_EnemyProjectile_GotoY                                 ;8697F4;
     dw InstList_EnemyProjectile_PhantoonStartingFlames                   ;8697F6;
 
+%anchor($8697F8)
 InstList_EnemyProjectile_PhantoonDestroyableFlame_Delete:
     dw Instruction_EnemyProjectile_Delete                                ;8697F8;
 
+%anchor($8697FA)
 InstList_EnemyProjectile_Shot_PhantoonDestroyableFlames:
     dw $0005,EnemyProjSpritemaps_PhantoonFlames_4                        ;8697FA;
     dw $0005,EnemyProjSpritemaps_PhantoonFlames_5                        ;8697FE;
@@ -3503,6 +3717,7 @@ InstList_EnemyProjectile_Shot_PhantoonDestroyableFlames:
     dw Instruction_SpawnPhantoonDrop                                     ;86980A;
     dw Instruction_EnemyProjectile_Delete                                ;86980C;
 
+%anchor($86980E)
 Instruction_SpawnPhantoonDrop:
     PHY                                                                  ;86980E;
     PHX                                                                  ;86980F;
@@ -3517,6 +3732,7 @@ Instruction_SpawnPhantoonDrop:
     RTS                                                                  ;869823;
 
 
+%anchor($869824)
 InitAI_EnemyProjectile_PhantoonDestroyableFlames:
     PHP                                                                  ;869824;
     REP #$30                                                             ;869825;
@@ -3533,6 +3749,7 @@ InitAI_EnemyProjectile_PhantoonDestroyableFlames:
     dw PhantoonDestroyableFlameInit_Type4_Rain                           ;869836;
     dw PhantoonDestroyableFlameInit_Type6_Spiral                         ;869838;
 
+%anchor($86983A)
 PhantoonDestroyableFlameInit_Type0_Casual:
     LDA.W #$0000                                                         ;86983A;
     STA.W $1A27,Y                                                        ;86983D;
@@ -3555,6 +3772,7 @@ PhantoonDestroyableFlameInit_Type0_Casual:
     RTS                                                                  ;86986C;
 
 
+%anchor($86986D)
 PhantoonDestroyableFlameInit_Type2_Enraged:
     LDA.W #$0000                                                         ;86986D;
     STA.W $1A27,Y                                                        ;869870;
@@ -3593,6 +3811,7 @@ PhantoonDestroyableFlameInit_Type2_Enraged:
     db $10,$20,$30,$40,$50,$60,$70,$80
     db $F0,$E0,$D0,$C0,$B0,$A0,$90,$80
 
+%anchor($8698C4)
 PhantoonDestroyableFlameInit_Type4_Rain:
     LDA.W #$0000                                                         ;8698C4;
     STA.W $1A27,Y                                                        ;8698C7;
@@ -3620,6 +3839,7 @@ PhantoonDestroyableFlameInit_Type4_Rain:
 .XPositions:
     db $30,$44,$58,$6C,$80,$94,$A8,$BC,$D0                               ;8698F7;
 
+%anchor($869900)
 PhantoonDestroyableFlameInit_Type6_Spiral:
     LDA.W #$0000                                                         ;869900;
     STA.W $1A27,Y                                                        ;869903;
@@ -3645,6 +3865,7 @@ PhantoonDestroyableFlameInit_Type6_Spiral:
     RTS                                                                  ;869939;
 
 
+%anchor($86993A)
 InitAI_EnemyProjectile_PhantoonStartingFlames:
     PHP                                                                  ;86993A;
     REP #$30                                                             ;86993B;
@@ -3676,9 +3897,11 @@ InitAI_EnemyProjectile_PhantoonStartingFlames:
     RTS                                                                  ;869978;
 
 
+%anchor($869979)
 PhantoonFlameAngles:
     db $00,$20,$40,$60,$80,$A0,$C0,$E0                                   ;869979;
 
+%anchor($869981)
 PreInst_EnemyProj_PhantoonDestroyableFlame_Casual_Falling:
     LDA.W $1ADB,X                                                        ;869981;
     CLC                                                                  ;869984;
@@ -3707,6 +3930,7 @@ PreInst_EnemyProj_PhantoonDestroyableFlame_Casual_Falling:
     RTS                                                                  ;8699BE;
 
 
+%anchor($8699BF)
 PreInst_EnemyProj_PhantoonDestroyableFlame_Casual_HitGround:
     DEC.W $1AFF,X                                                        ;8699BF;
     BEQ .timerExpired                                                    ;8699C2;
@@ -3742,6 +3966,7 @@ PreInst_EnemyProj_PhantoonDestroyableFlame_Casual_HitGround:
     RTS                                                                  ;869A00;
 
 
+%anchor($869A01)
 PreInst_EnemyProj_PhantoonDestroyableFlame_Casual_Bouncing:
     LDA.W $1ADB,X                                                        ;869A01;
     CLC                                                                  ;869A04;
@@ -3780,10 +4005,12 @@ PreInst_EnemyProj_PhantoonDestroyableFlame_Casual_Bouncing:
 .Yvelocity:
     dw $FD00,$FE00,$FF00                                                 ;869A3E;
 
+%anchor($869A44)
 RTS_869A44:
     RTS                                                                  ;869A44;
 
 
+%anchor($869A45)
 PreInst_EnemyProj_PhantoonDestroyableFlame_Enraged:
     LDA.W $1ADB,X                                                        ;869A45;
     CLC                                                                  ;869A48;
@@ -3823,6 +4050,7 @@ PreInst_EnemyProj_PhantoonDestroyableFlame_Enraged:
     RTS                                                                  ;869A93;
 
 
+%anchor($869A94)
 PreInst_EnemyProj_PhantoonDestroyableFlame_Rain:
     LDA.W $1AB7,X                                                        ;869A94;
     BEQ .falling                                                         ;869A97;
@@ -3858,6 +4086,7 @@ PreInst_EnemyProj_PhantoonDestroyableFlame_Rain:
     RTS                                                                  ;869AD9;
 
 
+%anchor($869ADA)
 PreInst_EnemyProj_PhantoonDestroyableFlame_Spiral:
     LDA.W $1ADB,X                                                        ;869ADA;
     CLC                                                                  ;869ADD;
@@ -3897,6 +4126,7 @@ PreInst_EnemyProj_PhantoonDestroyableFlame_Spiral:
     RTS                                                                  ;869B28;
 
 
+%anchor($869B29)
 PreInstruction_EnemyProjectile_PhantoonStartingFlames:
     LDA.W $0FAA                                                          ;869B29;
     BEQ .return                                                          ;869B2C;
@@ -3911,6 +4141,7 @@ PreInstruction_EnemyProjectile_PhantoonStartingFlames:
     RTS                                                                  ;869B40;
 
 
+%anchor($869B41)
 PreInst_EnemyProjectile_PhantoonStartingFlames_Activated:
     LDA.W $1AB7,X                                                        ;869B41;
     BEQ .timerExpired                                                    ;869B44;
@@ -3962,6 +4193,7 @@ PreInst_EnemyProjectile_PhantoonStartingFlames_Activated:
     RTS                                                                  ;869BA1;
 
 
+%anchor($869BA2)
 Calculate_XY_ComponentsOf_RadiusA_AngleY:
     PHP                                                                  ;869BA2;
     REP #$30                                                             ;869BA3;
@@ -4016,6 +4248,7 @@ Calculate_XY_ComponentsOf_RadiusA_AngleY:
     RTS                                                                  ;869BF2;
 
 
+%anchor($869BF3)
 DoSomeMathWithSineAndPi_869BF3:
     SEP #$20                                                             ;869BF3;
     LDA.L SineCosineTables_8bitSine_SignExtended,X                       ;869BF5;
@@ -4045,6 +4278,7 @@ DoSomeMathWithSineAndPi_869BF3:
     RTS                                                                  ;869C28;
 
 
+%anchor($869C29)
 EnemyProjectile_PhantoonDestroyableFlames:
     dw InitAI_EnemyProjectile_PhantoonDestroyableFlames                  ;869C29; Initialisation AI
     dw PreInst_EnemyProj_PhantoonDestroyableFlame_Casual_Falling         ;869C2B; Initial pre-instruction
@@ -4053,6 +4287,7 @@ EnemyProjectile_PhantoonDestroyableFlames:
     dw $8028,$0000                                                       ;869C31; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Shot_PhantoonDestroyableFlames           ;869C35; Shot instruction list
 
+%anchor($869C37)
 EnemyProjectile_PhantoonStartingFlames:
     dw InitAI_EnemyProjectile_PhantoonStartingFlames                     ;869C37; Initialisation AI
     dw PreInstruction_EnemyProjectile_PhantoonStartingFlames             ;869C39; Initial pre-instruction
@@ -4061,6 +4296,7 @@ EnemyProjectile_PhantoonStartingFlames:
     dw $4028,$0000                                                       ;869C3F; Properties, Hit instruction list
     dw InstList_EnemyProjectile_PhantoonDestroyableFlame_Idle            ;869C43; Shot instruction list
 
+%anchor($869C45)
 EnemyProjectile_KraidRockSpit:
     dw InitAI_EnemyProjectile_KraidRockSpit                              ;869C45; Initialisation AI
     dw PreInstruction_EnemyProjectile_KraidRocks                         ;869C47; Initial pre-instruction
@@ -4069,6 +4305,7 @@ EnemyProjectile_KraidRockSpit:
     dw $8002,$0000                                                       ;869C4D; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Shot_KraidRockSpit                       ;869C51; Shot instruction list
 
+%anchor($869C53)
 EnemyProjectile_KraidCeilingRocks:
     dw Instruction_EnemyProjectile_KraidCeilingRocks                     ;869C53; Initialisation AI
     dw PreInstruction_EnemyProjectile_KraidCeilingRocks                  ;869C55; Initial pre-instruction
@@ -4077,6 +4314,7 @@ EnemyProjectile_KraidCeilingRocks:
     dw $A000,$0000                                                       ;869C5B; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;869C5F; Shot instruction list
 
+%anchor($869C61)
 EnemyProjectile_KraidFloorRocks_Left:
     dw Instruction_EnemyProjectile_KraidRisingRocks                      ;869C61; Initialisation AI
     dw PreInstruction_EnemyProjectile_KraidRocks                         ;869C63; Initial pre-instruction
@@ -4085,6 +4323,7 @@ EnemyProjectile_KraidFloorRocks_Left:
     dw $A000,$0000                                                       ;869C69; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;869C6D; Shot instruction list
 
+%anchor($869C6F)
 EnemyProjectile_KraidFloorRocks_Right:
     dw Instruction_EnemyProjectile_KraidRisingRocks                      ;869C6F; Initialisation AI
     dw PreInstruction_EnemyProjectile_KraidRocks                         ;869C71; Initial pre-instruction
@@ -4093,14 +4332,17 @@ EnemyProjectile_KraidFloorRocks_Right:
     dw $A000,$0000                                                       ;869C77; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;869C7B; Shot instruction list
 
+%anchor($869C7D)
 InstList_EnemyProjectile_KraidRocks_KagoBug:
     dw $7FFF,EnemyProjSpritemaps_KraidRocks_KagoBugs                     ;869C7D;
     dw Instruction_EnemyProjectile_Sleep                                 ;869C81;
 
+%anchor($869C83)
 InstList_EnemyProjectile_KraidFloorRocks_Right:
     dw $7FFF,EnemyProjSpritemaps_KraidRisingRocks_Right                  ;869C83;
     dw Instruction_EnemyProjectile_Sleep                                 ;869C87;
 
+%anchor($869C89)
 InstList_EnemyProjectile_Shot_KraidRockSpit:
     dw Instruction_EnemyProjectile_PreInstructionInY                     ;869C89;
     dw PreInstruction_EnemyProjectile_KraidRockSpit_UsePalette0          ;869C8B;
@@ -4111,6 +4353,7 @@ InstList_EnemyProjectile_Shot_KraidRockSpit:
     dw $0004,EnemyProjSpritemaps_Common_4                                ;869C9D;
     dw Instruction_EnemyProjectile_Delete                                ;869CA1;
 
+%anchor($869CA3)
 InitAI_EnemyProjectile_KraidRockSpit:
     PHX                                                                  ;869CA3;
     LDX.W $0E54                                                          ;869CA4;
@@ -4135,6 +4378,7 @@ InitAI_EnemyProjectile_KraidRockSpit:
     RTS                                                                  ;869CD7;
 
 
+%anchor($869CD8)
 Instruction_EnemyProjectile_KraidCeilingRocks:
     PHX                                                                  ;869CD8;
     LDX.W $0E54                                                          ;869CD9;
@@ -4158,6 +4402,7 @@ Instruction_EnemyProjectile_KraidCeilingRocks:
     RTS                                                                  ;869D0B;
 
 
+%anchor($869D0C)
 Instruction_EnemyProjectile_KraidRisingRocks:
     PHX                                                                  ;869D0C;
     LDA.W $05E5                                                          ;869D0D;
@@ -4192,6 +4437,7 @@ Instruction_EnemyProjectile_KraidRisingRocks:
     RTS                                                                  ;869D55;
 
 
+%anchor($869D56)
 PreInstruction_EnemyProjectile_KraidRocks:
     PHP                                                                  ;869D56;
     REP #$20                                                             ;869D57;
@@ -4222,6 +4468,7 @@ PreInstruction_EnemyProjectile_KraidRocks:
     RTS                                                                  ;869D88;
 
 
+%anchor($869D89)
 PreInstruction_EnemyProjectile_KraidCeilingRocks:
     PHP                                                                  ;869D89;
     REP #$20                                                             ;869D8A;
@@ -4242,6 +4489,7 @@ PreInstruction_EnemyProjectile_KraidCeilingRocks:
     RTS                                                                  ;869DA4;
 
 
+%anchor($869DA5)
 PreInstruction_EnemyProjectile_KraidRockSpit_UsePalette0:
     PHP                                                                  ;869DA5;
     REP #$30                                                             ;869DA6;
@@ -4251,6 +4499,7 @@ PreInstruction_EnemyProjectile_KraidRockSpit_UsePalette0:
     RTS                                                                  ;869DAF;
 
 
+%anchor($869DB0)
 EnemyProjectile_MiniKraidSpit:
     dw InitAI_EnemyProjectile_MiniKraidSpit                              ;869DB0; Initialisation AI
     dw PreInstruction_EnemyProjectile_MiniKraidSpit                      ;869DB2; Initial pre-instruction
@@ -4260,6 +4509,7 @@ EnemyProjectile_MiniKraidSpit:
     dw $0000                                                             ;869DBA; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;869DBC; Shot instruction list
 
+%anchor($869DBE)
 EnemyProjectile_MiniKraidSpikes_Left:
     dw InitAI_EnemyProjectile_MiniKraidSpikes_Left                       ;869DBE; Initialisation AI
     dw PreInstruction_EnemyProjectile_MiniKraidSpikes                    ;869DC0; Initial pre-instruction
@@ -4269,6 +4519,7 @@ EnemyProjectile_MiniKraidSpikes_Left:
     dw $0000                                                             ;869DC8; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;869DCA; Shot instruction list
 
+%anchor($869DCC)
 EnemyProjectile_MiniKraidSpikes_Right:
     dw InitAI_EnemyProjectile_MiniKraidSpikes_Right                      ;869DCC; Initialisation AI
     dw PreInstruction_EnemyProjectile_MiniKraidSpikes                    ;869DCE; Initial pre-instruction
@@ -4277,18 +4528,22 @@ EnemyProjectile_MiniKraidSpikes_Right:
     dw $0006,$0000                                                       ;869DD4; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;869DD8; Shot instruction list
 
+%anchor($869DDA)
 InstList_EnemyProjectile_MiniKraidSpit:
     dw $7FFF,EnemyProjSpritemaps_MiniKraidSpit                           ;869DDA;
     dw Instruction_EnemyProjectile_Sleep                                 ;869DDE;
 
+%anchor($869DE0)
 InstList_EnemyProjectile_MiniKraidSpikes_Left:
     dw $7FFF,EnemyProjSpritemaps_MiniKraidSpikes_Left                    ;869DE0;
     dw Instruction_EnemyProjectile_Sleep                                 ;869DE4;
 
+%anchor($869DE6)
 InstList_EnemyProjectile_MiniKraidSpikes_Right:
     dw $7FFF,EnemyProjSpritemaps_MiniKraidSpikes_Right                   ;869DE6;
     dw Instruction_EnemyProjectile_Sleep                                 ;869DEA;
 
+%anchor($869DEC)
 InitAI_EnemyProjectile_MiniKraidSpit:
     PHX                                                                  ;869DEC;
     LDX.W $0E54                                                          ;869DED;
@@ -4311,6 +4566,7 @@ InitAI_EnemyProjectile_MiniKraidSpit:
     RTS                                                                  ;869E1D;
 
 
+%anchor($869E1E)
 PreInstruction_EnemyProjectile_MiniKraidSpit:
     PHP                                                                  ;869E1E;
     REP #$20                                                             ;869E1F;
@@ -4338,14 +4594,17 @@ PreInstruction_EnemyProjectile_MiniKraidSpit:
     RTS                                                                  ;869E45;
 
 
+%anchor($869E46)
 InitAI_EnemyProjectile_MiniKraidSpikes_Left:
     LDA.W #$FE00                                                         ;869E46;
     BRA InitAI_EnemyProjectile_MiniKraidSpikes_Common                    ;869E49;
 
 
+%anchor($869E4B)
 InitAI_EnemyProjectile_MiniKraidSpikes_Right:
     LDA.W #$0200                                                         ;869E4B;
 
+%anchor($869E4E)
 InitAI_EnemyProjectile_MiniKraidSpikes_Common:
     STA.W $1AB7,Y                                                        ;869E4E;
     LDX.W $0E54                                                          ;869E51;
@@ -4370,6 +4629,7 @@ InitAI_EnemyProjectile_MiniKraidSpikes_Common:
 .data:
     dw $FFFE,$000C,$0018                                                 ;869E7D;
 
+%anchor($869E83)
 PreInstruction_EnemyProjectile_MiniKraidSpikes:
     PHP                                                                  ;869E83;
     REP #$20                                                             ;869E84;
@@ -4382,6 +4642,7 @@ PreInstruction_EnemyProjectile_MiniKraidSpikes:
     RTS                                                                  ;869E8F;
 
 
+%anchor($869E90)
 EnemyProjectile_AlcoonFireball:
     dw InitAI_EnemyProjectile_AlcoonFireball                             ;869E90; Initialisation AI
     dw PreInstruction_EnemyProjectile_AlcoonFireball                     ;869E92; Initial pre-instruction
@@ -4390,6 +4651,7 @@ EnemyProjectile_AlcoonFireball:
     dw $0014,$0000                                                       ;869E98; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;869E9C; Shot instruction list
 
+%anchor($869E9E)
 InstList_EnemyProjectile_AlcoonFireball:
     dw $0003,EnemyProjSpritemaps_AlcoonFireball_0                        ;869E9E;
     dw $0003,EnemyProjSpritemaps_AlcoonFireball_1                        ;869EA2;
@@ -4398,6 +4660,7 @@ InstList_EnemyProjectile_AlcoonFireball:
     dw Instruction_EnemyProjectile_GotoY                                 ;869EAE;
     dw InstList_EnemyProjectile_AlcoonFireball                           ;869EB0;
 
+%anchor($869EB2)
 InitAI_EnemyProjectile_AlcoonFireball:
     PHX                                                                  ;869EB2;
     LDX.W $0E54                                                          ;869EB3;
@@ -4433,6 +4696,7 @@ InitAI_EnemyProjectile_AlcoonFireball:
 .Yvelocity:
     dw $FF00,$0000,$0100                                                 ;869EF9;
 
+%anchor($869EFF)
 PreInstruction_EnemyProjectile_AlcoonFireball:
     REP #$30                                                             ;869EFF;
     JSR.W Move_EnemyProjectile_Vertically                                ;869F01;
@@ -4471,6 +4735,7 @@ PreInstruction_EnemyProjectile_AlcoonFireball:
     RTS                                                                  ;869F40;
 
 
+%anchor($869F41)
 InstList_EnemyProjectile_Pirate_MotherBrain_Laser_Left_0:
     dw $0002,EnemyProjSpritemaps_Pirate_MotherBrain_Laser_8              ;869F41;
     dw $0002,EnemyProjSpritemaps_Pirate_MotherBrain_Laser_9              ;869F45;
@@ -4486,12 +4751,14 @@ InstList_EnemyProjectile_Pirate_MotherBrain_Laser_Left_0:
     dw $0001,EnemyProjSpritemaps_Pirate_MotherBrain_Laser_6              ;869F69;
     dw $0001,EnemyProjSpritemaps_Pirate_MotherBrain_Laser_7              ;869F6D;
 
+%anchor($869F71)
 InstList_EnemyProjectile_Pirate_MotherBrain_Laser_Left_1:
     dw $0001,EnemyProjSpritemaps_Pirate_MotherBrain_Laser_6              ;869F71;
     dw $0001,EnemyProjSpritemaps_Pirate_MotherBrain_Laser_7              ;869F75;
     dw Instruction_EnemyProjectile_GotoY                                 ;869F79;
     dw InstList_EnemyProjectile_Pirate_MotherBrain_Laser_Left_1          ;869F7B;
 
+%anchor($869F7D)
 InstList_EnemyProjectile_Pirate_MotherBrain_Laser_Right_0:
     dw $0002,EnemyProjSpritemaps_Pirate_MotherBrain_Laser_8              ;869F7D;
     dw $0002,EnemyProjSpritemaps_Pirate_MotherBrain_Laser_9              ;869F81;
@@ -4507,16 +4774,19 @@ InstList_EnemyProjectile_Pirate_MotherBrain_Laser_Right_0:
     dw $0001,EnemyProjSpritemaps_Pirate_MotherBrain_Laser_6              ;869FA5;
     dw $0001,EnemyProjSpritemaps_Pirate_MotherBrain_Laser_7              ;869FA9;
 
+%anchor($869FAD)
 InstList_EnemyProjectile_Pirate_MotherBrain_Laser_Right_1:
     dw $0001,EnemyProjSpritemaps_Pirate_MotherBrain_Laser_6              ;869FAD;
     dw $0001,EnemyProjSpritemaps_Pirate_MotherBrain_Laser_7              ;869FB1;
     dw Instruction_EnemyProjectile_GotoY                                 ;869FB5;
     dw InstList_EnemyProjectile_Pirate_MotherBrain_Laser_Right_1         ;869FB7;
 
+%anchor($869FB9)
 InstList_EnemyProjectile_PirateClaw_Left_0:
     dw Instruction_EnemyProjectile_PreInstructionInY                     ;869FB9;
     dw PreInstruction_EnemyProjectile_PirateClaw_Left                    ;869FBB;
 
+%anchor($869FBD)
 InstList_EnemyProjectile_PirateClaw_Left_1:
     dw $0001,EnemyProjSpritemaps_PirateClaw_0                            ;869FBD;
     dw $0001,EnemyProjSpritemaps_PirateClaw_1                            ;869FC1;
@@ -4529,10 +4799,12 @@ InstList_EnemyProjectile_PirateClaw_Left_1:
     dw Instruction_EnemyProjectile_GotoY                                 ;869FDD;
     dw InstList_EnemyProjectile_PirateClaw_Left_1                        ;869FDF;
 
+%anchor($869FE1)
 InstList_EnemyProjectile_PirateClaw_Right_0:
     dw Instruction_EnemyProjectile_PreInstructionInY                     ;869FE1;
     dw PreInstruction_EnemyProjectile_PirateClaw_Right                   ;869FE3;
 
+%anchor($869FE5)
 InstList_EnemyProjectile_PirateClaw_Right_1:
     dw $0001,EnemyProjSpritemaps_PirateClaw_8                            ;869FE5;
     dw $0001,EnemyProjSpritemaps_PirateClaw_9                            ;869FE9;
@@ -4545,6 +4817,7 @@ InstList_EnemyProjectile_PirateClaw_Right_1:
     dw Instruction_EnemyProjectile_GotoY                                 ;86A005;
     dw InstList_EnemyProjectile_PirateClaw_Right_1                       ;86A007;
 
+%anchor($86A009)
 InitAI_EnemyProjectile_Pirate_MotherBrain_Laser:
     PHY                                                                  ;86A009;
     PHX                                                                  ;86A00A;
@@ -4578,6 +4851,7 @@ InitAI_EnemyProjectile_Pirate_MotherBrain_Laser:
     RTS                                                                  ;86A04F;
 
 
+%anchor($86A050)
 Instruction_PreInstructionInY_ExecuteY:
     PHX                                                                  ;86A050;
     PHY                                                                  ;86A051;
@@ -4588,10 +4862,12 @@ Instruction_PreInstructionInY_ExecuteY:
     RTS                                                                  ;86A05A;
 
 
+%anchor($86A05B)
 RTS_86A05B:
     RTS                                                                  ;86A05B;
 
 
+%anchor($86A05C)
 PreInstruction_EnemyProjectile_Pirate_MotherBrain_Laser_Left:
     DEC.W $1A4B,X                                                        ;86A05C;
     DEC.W $1A4B,X                                                        ;86A05F;
@@ -4611,6 +4887,7 @@ PreInstruction_EnemyProjectile_Pirate_MotherBrain_Laser_Left:
     RTS                                                                  ;86A079;
 
 
+%anchor($86A07A)
 PreInst_EnemyProjectile_Pirate_MotherBrain_Laser_Right:
     INC.W $1A4B,X                                                        ;86A07A;
     INC.W $1A4B,X                                                        ;86A07D;
@@ -4630,6 +4907,7 @@ PreInst_EnemyProjectile_Pirate_MotherBrain_Laser_Right:
     RTS                                                                  ;86A097;
 
 
+%anchor($86A098)
 PreInstruction_EnemyProjectile_PirateClaw:
     PHY                                                                  ;86A098;
     PHX                                                                  ;86A099;
@@ -4660,6 +4938,7 @@ PreInstruction_EnemyProjectile_PirateClaw:
     RTS                                                                  ;86A0D0;
 
 
+%anchor($86A0D1)
 PreInstruction_EnemyProjectile_PirateClaw_Left:
     LDA.W $1B23,X                                                        ;86A0D1;
     BEQ +                                                                ;86A0D4;
@@ -4704,6 +4983,7 @@ PreInstruction_EnemyProjectile_PirateClaw_Left:
     RTS                                                                  ;86A123;
 
 
+%anchor($86A124)
 PreInstruction_EnemyProjectile_PirateClaw_Right:
     LDA.W $1B23,X                                                        ;86A124;
     BEQ +                                                                ;86A127;
@@ -4750,6 +5030,7 @@ PreInstruction_EnemyProjectile_PirateClaw_Right:
     RTS                                                                  ;86A17A;
 
 
+%anchor($86A17B)
 EnemyProjectile_PirateMotherBrainLaser:
     dw InitAI_EnemyProjectile_Pirate_MotherBrain_Laser                   ;86A17B; Initialisation AI
     dw PreInstruction_EnemyProjectile_Pirate_MotherBrain_Laser_Left      ;86A17D; Initial pre-instruction
@@ -4759,6 +5040,7 @@ EnemyProjectile_PirateMotherBrainLaser:
     dw $0000                                                             ;86A185; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86A187; Shot instruction list
 
+%anchor($86A189)
 EnemyProjectile_PirateClaw:
     dw PreInstruction_EnemyProjectile_PirateClaw                         ;86A189; Initialisation AI
     dw RTS_86A05B                                                        ;86A18B; Initial pre-instruction
@@ -4767,9 +5049,11 @@ EnemyProjectile_PirateClaw:
     dw $1014,$0000                                                       ;86A191; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86A195; Shot instruction list
 
+%anchor($86A197)
 InstList_EnemyProjectile_GunshipLiftoffDustClouds_Index0_0:
     dw Instruction_EnemyProjectile_TimerInY,$0001                        ;86A197;
 
+%anchor($86A19B)
 InstList_EnemyProjectile_GunshipLiftoffDustClouds_Index0_1:
     dw $0008,EnemyProjSpritemaps_GunshipLiftoffDustClouds_0              ;86A19B;
     dw $0008,EnemyProjSpritemaps_GunshipLiftoffDustClouds_1              ;86A19F;
@@ -4783,9 +5067,11 @@ InstList_EnemyProjectile_GunshipLiftoffDustClouds_Index0_1:
     dw InstList_EnemyProjectile_GunshipLiftoffDustClouds_Index0_1        ;86A1BD;
     dw Instruction_EnemyProjectile_Delete                                ;86A1BF;
 
+%anchor($86A1C1)
 InstList_EnemyProjectile_GunshipLiftoffDustClouds_Index2_0:
     dw Instruction_EnemyProjectile_TimerInY,$0001                        ;86A1C1;
 
+%anchor($86A1C5)
 InstList_EnemyProjectile_GunshipLiftoffDustClouds_Index2_1:
     dw $0006,EnemyProjSpritemaps_GunshipLiftoffDustClouds_8              ;86A1C5;
     dw $0006,EnemyProjSpritemaps_GunshipLiftoffDustClouds_9              ;86A1C9;
@@ -4799,9 +5085,11 @@ InstList_EnemyProjectile_GunshipLiftoffDustClouds_Index2_1:
     dw InstList_EnemyProjectile_GunshipLiftoffDustClouds_Index2_1        ;86A1E7;
     dw Instruction_EnemyProjectile_Delete                                ;86A1E9;
 
+%anchor($86A1EB)
 InstList_EnemyProjectile_GunshipLiftoffDustClouds_Index4_0:
     dw Instruction_EnemyProjectile_TimerInY,$0001                        ;86A1EB;
 
+%anchor($86A1EF)
 InstList_EnemyProjectile_GunshipLiftoffDustClouds_Index4_1:
     dw $000B,EnemyProjSpritemaps_GunshipLiftoffDustClouds_10             ;86A1EF;
     dw $000B,EnemyProjSpritemaps_GunshipLiftoffDustClouds_11             ;86A1F3;
@@ -4814,9 +5102,11 @@ InstList_EnemyProjectile_GunshipLiftoffDustClouds_Index4_1:
     dw InstList_EnemyProjectile_GunshipLiftoffDustClouds_Index4_1        ;86A20D;
     dw Instruction_EnemyProjectile_Delete                                ;86A20F;
 
+%anchor($86A211)
 InstList_EnemyProjectile_GunshipLiftoffDustClouds_Index6_0:
     dw Instruction_EnemyProjectile_TimerInY,$0001                        ;86A211;
 
+%anchor($86A215)
 InstList_EnemyProjectile_GunshipLiftoffDustClouds_Index6_1:
     dw $0008,EnemyProjSpritemaps_GunshipLiftoffDustClouds_17             ;86A215;
     dw $0008,EnemyProjSpritemaps_GunshipLiftoffDustClouds_18             ;86A219;
@@ -4830,9 +5120,11 @@ InstList_EnemyProjectile_GunshipLiftoffDustClouds_Index6_1:
     dw InstList_EnemyProjectile_GunshipLiftoffDustClouds_Index6_1        ;86A237;
     dw Instruction_EnemyProjectile_Delete                                ;86A239;
 
+%anchor($86A23B)
 InstList_EnemyProjectile_GunshipLiftoffDustClouds_Index8_0:
     dw Instruction_EnemyProjectile_TimerInY,$0001                        ;86A23B;
 
+%anchor($86A23F)
 InstList_EnemyProjectile_GunshipLiftoffDustClouds_Index8_1:
     dw $0006,EnemyProjSpritemaps_GunshipLiftoffDustClouds_1F             ;86A23F;
     dw $0006,EnemyProjSpritemaps_GunshipLiftoffDustClouds_20             ;86A243;
@@ -4846,9 +5138,11 @@ InstList_EnemyProjectile_GunshipLiftoffDustClouds_Index8_1:
     dw InstList_EnemyProjectile_GunshipLiftoffDustClouds_Index8_1        ;86A261;
     dw Instruction_EnemyProjectile_Delete                                ;86A263;
 
+%anchor($86A265)
 InstList_EnemyProjectile_GunshipLiftoffDustClouds_IndexA_0:
     dw Instruction_EnemyProjectile_TimerInY,$0001                        ;86A265;
 
+%anchor($86A269)
 InstList_EnemyProjectile_GunshipLiftoffDustClouds_IndexA_1:
     dw $000B,EnemyProjSpritemaps_GunshipLiftoffDustClouds_27             ;86A269;
     dw $000B,EnemyProjSpritemaps_GunshipLiftoffDustClouds_28             ;86A26D;
@@ -4861,20 +5155,24 @@ InstList_EnemyProjectile_GunshipLiftoffDustClouds_IndexA_1:
     dw InstList_EnemyProjectile_GunshipLiftoffDustClouds_IndexA_1        ;86A287;
     dw Instruction_EnemyProjectile_Delete                                ;86A289;
 
+%anchor($86A28B)
 InstList_EnemyProjectile_Delete_A28B:
     dw Instruction_EnemyProjectile_Delete                                ;86A28B;
 
+%anchor($86A28D)
 InstList_EnemyProjectile_Shot_CeresElevatorPad:
     dw $0001,EnemyProjSpritemaps_CeresElevatorPad_DustCloud_Explosion_0  ;86A28D;
     dw $0001,EnemyProjSpritemaps_CeresElevatorPad_DustCloud_Explosion_1  ;86A291;
     dw Instruction_EnemyProjectile_GotoY                                 ;86A295;
     dw InstList_EnemyProjectile_Shot_CeresElevatorPad                    ;86A297;
 
+%anchor($86A299)
 InstList_EnemyProj_Shot_CeresElevatorPadLevelDataConcealer:
     dw $0001,EnemyProjSpritemaps_CeresElevatorPadLevelDataConcealer      ;86A299;
     dw Instruction_EnemyProjectile_GotoY                                 ;86A29D;
     dw InstList_EnemyProj_Shot_CeresElevatorPadLevelDataConcealer        ;86A29F;
 
+%anchor($86A2A1)
 InitAI_EnemyProjectile_GunshipLiftoffDustClouds:
     PHP                                                                  ;86A2A1;
     REP #$30                                                             ;86A2A2;
@@ -4911,6 +5209,7 @@ InitAI_EnemyProjectile_GunshipLiftoffDustClouds:
     dw InstList_EnemyProjectile_GunshipLiftoffDustClouds_Index8_0        ;86A2EA;
     dw InstList_EnemyProjectile_GunshipLiftoffDustClouds_IndexA_0        ;86A2EC;
 
+%anchor($86A2EE)
 InitAI_EnemyProjectile_CeresElevatorPad:
     PHP                                                                  ;86A2EE;
     REP #$30                                                             ;86A2EF;
@@ -4921,6 +5220,7 @@ InitAI_EnemyProjectile_CeresElevatorPad:
     LDA.W #$003C                                                         ;86A2FB;
     STA.W $1AFF,Y                                                        ;86A2FE;
 
+%anchor($86A301)
 InitAI_EnemyProjectile_CeresElevatorPad_Common:
     LDA.W #$0000                                                         ;86A301;
     STA.W $1A27,Y                                                        ;86A304;
@@ -4934,6 +5234,7 @@ InitAI_EnemyProjectile_CeresElevatorPad_Common:
     RTS                                                                  ;86A31A;
 
 
+%anchor($86A31B)
 InitAI_EnemyProjectile_CeresElevatorPadLevelDataConcealer:
     PHP                                                                  ;86A31B;
     REP #$30                                                             ;86A31C;
@@ -4942,10 +5243,12 @@ InitAI_EnemyProjectile_CeresElevatorPadLevelDataConcealer:
     JMP.W InitAI_EnemyProjectile_CeresElevatorPad_Common                 ;86A324;
 
 
+%anchor($86A327)
 RTS_86A327:
     RTS                                                                  ;86A327;
 
 
+%anchor($86A328)
 PreInstruction_EnemyProjectile_CeresElevatorPad:
     LDA.W $1AFF,X                                                        ;86A328;
     BEQ .timerExpired                                                    ;86A32B;
@@ -4976,6 +5279,7 @@ PreInstruction_EnemyProjectile_CeresElevatorPad:
     RTS                                                                  ;86A363;
 
 
+%anchor($86A364)
 PreInst_EnemyProjectile_CeresElevatorPadLevelDataConcealer:
     LDA.W $0AFA                                                          ;86A364;
     CMP.W #$0048                                                         ;86A367;
@@ -4989,6 +5293,7 @@ PreInst_EnemyProjectile_CeresElevatorPadLevelDataConcealer:
     RTS                                                                  ;86A378;
 
 
+%anchor($86A379)
 EnemyProjectile_GunShipLiftoffDustClouds:
     dw InitAI_EnemyProjectile_GunshipLiftoffDustClouds                   ;86A379; Initialisation AI
     dw RTS_86A327                                                        ;86A37B; Initial pre-instruction
@@ -4998,6 +5303,7 @@ EnemyProjectile_GunShipLiftoffDustClouds:
     dw $0000                                                             ;86A383; Hit instruction list
     dw InstList_EnemyProjectile_GunshipLiftoffDustClouds_Index0_0        ;86A385; Shot instruction list
 
+%anchor($86A387)
 EnemyProjectile_CeresElevatorPad:
     dw InitAI_EnemyProjectile_CeresElevatorPad                           ;86A387; Initialisation AI
     dw PreInstruction_EnemyProjectile_CeresElevatorPad                   ;86A389; Initial pre-instruction
@@ -5007,6 +5313,7 @@ EnemyProjectile_CeresElevatorPad:
     dw $0000                                                             ;86A391; Hit instruction list
     dw InstList_EnemyProjectile_Shot_CeresElevatorPad                    ;86A393; Shot instruction list
 
+%anchor($86A395)
 EnemyProjectile_CeresElevatorPadLevelDataConcealer:
     dw InitAI_EnemyProjectile_CeresElevatorPadLevelDataConcealer         ;86A395; Initialisation AI
     dw PreInst_EnemyProjectile_CeresElevatorPadLevelDataConcealer        ;86A397; Initial pre-instruction
@@ -5016,16 +5323,19 @@ EnemyProjectile_CeresElevatorPadLevelDataConcealer:
     dw $0000                                                             ;86A39F; Hit instruction list
     dw InstList_EnemyProj_Shot_CeresElevatorPadLevelDataConcealer        ;86A3A1; Shot instruction list
 
+%anchor($86A3A3)
 InitAI_PreInstruction_EnemyProjectile_PrePhantoonRoom:
     LDA.W #$0000                                                         ;86A3A3;
     STA.W $0923                                                          ;86A3A6;
     RTS                                                                  ;86A3A9;
 
 
+%anchor($86A3AA)
 InstList_EnemyProjectile_PrePhantoonRoom:
     dw $0020,EnemyProjSpritemaps_Blank_Default                           ;86A3AA;
     dw Instruction_EnemyProjectile_Delete                                ;86A3AE;
 
+%anchor($86A3B0)
 EnemyProjectile_PrePhantoonRoom:
     dw InitAI_PreInstruction_EnemyProjectile_PrePhantoonRoom             ;86A3B0; Initialisation AI
     dw InitAI_PreInstruction_EnemyProjectile_PrePhantoonRoom             ;86A3B2; Initial pre-instruction
@@ -5034,6 +5344,7 @@ EnemyProjectile_PrePhantoonRoom:
     dw $3000,$0000                                                       ;86A3B8; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86A3BC; Shot instruction list
 
+%anchor($86A3BE)
 Instruction_EnemyProjectile_Torizo_ResetPosition:
     LDA.W $1AFF,X                                                        ;86A3BE;
     STA.W $1A4B,X                                                        ;86A3C1;
@@ -5042,11 +5353,13 @@ Instruction_EnemyProjectile_Torizo_ResetPosition:
     RTS                                                                  ;86A3CA;
 
 
+%anchor($86A3CB)
 InstList_EnemyProjectile_BombTorizoLowHealthExplosion_0:
     dw Instruction_EnemyProjectile_ClearPreInstruction                   ;86A3CB;
     dw Instruction_EnemyProjectile_Properties_OrY,$3000                  ;86A3CD;
     dw Instruction_EnemyProjectile_TimerInY,$0003                        ;86A3D1;
 
+%anchor($86A3D5)
 InstList_EnemyProjectile_BombTorizoLowHealthExplosion_1:
     dw Instruction_EnemyProjectile_Torizo_ResetPosition                  ;86A3D5;
     dw Instruction_MoveRandomlyWithinXRadius_YRadius                     ;86A3D7;
@@ -5061,6 +5374,7 @@ InstList_EnemyProjectile_BombTorizoLowHealthExplosion_1:
     dw InstList_EnemyProjectile_BombTorizoLowHealthExplosion_1           ;86A3F6;
     dw Instruction_EnemyProjectile_Delete                                ;86A3F8;
 
+%anchor($86A3FA)
 InstList_EnemyProjectile_TorizoDeathExplosion_0:
     dw Instruction_EnemyProjectile_ClearPreInstruction                   ;86A3FA;
     dw Instruction_EnemyProjectile_Properties_OrY,$3000                  ;86A3FC;
@@ -5068,6 +5382,7 @@ InstList_EnemyProjectile_TorizoDeathExplosion_0:
     dw InstList_EnemyProjectile_TorizoDeathExplosion_2                   ;86A402;
     dw Instruction_EnemyProjectile_TimerInY,$0002                        ;86A404;
 
+%anchor($86A408)
 InstList_EnemyProjectile_TorizoDeathExplosion_1:
     dw Instruction_EnemyProjectile_Torizo_ResetPosition                  ;86A408;
     dw Instruction_MoveRandomlyWithinXRadius_YRadius                     ;86A40A;
@@ -5083,9 +5398,11 @@ InstList_EnemyProjectile_TorizoDeathExplosion_1:
     dw InstList_EnemyProjectile_TorizoDeathExplosion_1                   ;86A42D;
     dw Instruction_EnemyProjectile_Delete                                ;86A42F;
 
+%anchor($86A431)
 InstList_EnemyProjectile_TorizoDeathExplosion_2:
     dw Instruction_EnemyProjectile_TimerInY,$0002                        ;86A431;
 
+%anchor($86A435)
 InstList_EnemyProjectile_TorizoDeathExplosion_3:
     dw Instruction_EnemyProjectile_Torizo_ResetPosition                  ;86A435;
     dw Instruction_MoveRandomlyWithinXRadius_YRadius                     ;86A437;
@@ -5099,6 +5416,7 @@ InstList_EnemyProjectile_TorizoDeathExplosion_3:
     dw InstList_EnemyProjectile_TorizoDeathExplosion_3                   ;86A452;
     dw Instruction_EnemyProjectile_Delete                                ;86A454;
 
+%anchor($86A456)
 Instruction_EnemyProjectile_GotoY_Probability_1_4:
     JSL.L GenerateRandomNumber                                           ;86A456;
     AND.W #$C000                                                         ;86A45A;
@@ -5115,12 +5433,15 @@ Instruction_EnemyProjectile_GotoY_Probability_1_4:
     RTS                                                                  ;86A469;
 
 
+%anchor($86A46A)
 InstList_EnemyProj_BombTorizoLowHealthDrool_4FrameDelay:
     dw $0002,EnemyProjSpritemaps_Blank_Default                           ;86A46A;
 
+%anchor($86A46E)
 InstList_EnemyProj_BombTorizoLowHealthDrool_2FrameDelay:
     dw $0002,EnemyProjSpritemaps_Blank_Default                           ;86A46E;
 
+%anchor($86A472)
 InstList_EnemyProj_BombTorizoLowHealthDrool_NoDelay_0:
     dw Instruction_EnemyProjectile_PreInstructionInY                     ;86A472;
     dw PreInst_EnemyProjectile_BombTorizoLowHealthDrool_Falling          ;86A474;
@@ -5128,15 +5449,18 @@ InstList_EnemyProj_BombTorizoLowHealthDrool_NoDelay_0:
     dw $0005,UNUSED_EnemyProjSpritemaps_BombTorizoLowHealthDrool_0_8D8C54 ;86A478;
     dw Instruction_EnemyProjectile_Properties_AndY,$EFFF                 ;86A47E;
 
+%anchor($86A482)
 InstList_EnemyProj_BombTorizoLowHealthDrool_NoDelay_1:
     dw $0040,UNUSED_EnemyProjSpritemaps_BombTorizoLowHealthDrool_0_8D8C54 ;86A482;
     dw Instruction_EnemyProjectile_GotoY                                 ;86A486;
     dw InstList_EnemyProj_BombTorizoLowHealthDrool_NoDelay_1             ;86A488;
 
+%anchor($86A48A)
 InstList_EnemyProj_BombTorizoLowHealthDrool_HitWall:
     dw Instruction_EnemyProjectile_ClearPreInstruction                   ;86A48A;
     dw Instruction_EnemyProjectile_Delete                                ;86A48C;
 
+%anchor($86A48E)
 InstList_EnemyProj_BombTorizoLowHealthDrool_HitFloor:
     dw Instruction_EnemyProjectile_ClearPreInstruction                   ;86A48E;
     dw $0008,UNUSED_EnemyProjSpritemaps_BombTorizoLowHealthDrool_1_8D8C5B ;86A490;
@@ -5145,6 +5469,7 @@ InstList_EnemyProj_BombTorizoLowHealthDrool_HitFloor:
     dw Instruction_EnemyProjectile_Delete                                ;86A49C;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($86A49E)
 UNUSED_InstList_EnemyProjectile_BombTorizo_86A49E:
     dw Instruction_EnemyProjectile_Properties_OrY,$3000                  ;86A49E;
     dw $0024,UNUSED_EnemyProjSpritemaps_BombTorizoLowHealthDrool_0_8D8C54 ;86A4A0;
@@ -5152,6 +5477,7 @@ UNUSED_InstList_EnemyProjectile_BombTorizo_86A49E:
     dw InstList_EnemyProj_BombTorizoLowHealthDrool_HitFloor              ;86A4A8;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($86A4AA)
 InstList_EnemyProjectile_BombTorizoExplosionSwipe:
     dw Instruction_EnemyProjectile_QueueSoundInY_Lib2_Max1 : db $26      ;86A4AA;
     dw $0005,EnemyProjSpritemaps_Common_0                                ;86A4AD;
@@ -5161,6 +5487,7 @@ InstList_EnemyProjectile_BombTorizoExplosionSwipe:
     dw $0005,EnemyProjSpritemaps_Common_4                                ;86A4BD;
     dw Instruction_EnemyProjectile_Delete                                ;86A4C1;
 
+%anchor($86A4C3)
 InstList_EnemyProjectile_BombTorizoChozoBreaking_Index0:
     dw $0080,EnemyProjSpritemaps_BombTorizoChozoBreaking_0               ;86A4C3;
     dw Instruction_EnemyProjectile_QueueSoundInY_Lib2_Max6 : db $0C      ;86A4C7;
@@ -5169,6 +5496,7 @@ InstList_EnemyProjectile_BombTorizoChozoBreaking_Index0:
     dw $0070,EnemyProjSpritemaps_BombTorizoChozoBreaking_0               ;86A4CE;
     dw Instruction_EnemyProjectile_Delete                                ;86A4D2;
 
+%anchor($86A4D4)
 InstList_EnemyProjectile_BombTorizoChozoBreaking_Index2:
     dw $0078,EnemyProjSpritemaps_BombTorizoChozoBreaking_1               ;86A4D4;
     dw Instruction_EnemyProjectile_QueueSoundInY_Lib2_Max6 : db $0C      ;86A4D8;
@@ -5177,6 +5505,7 @@ InstList_EnemyProjectile_BombTorizoChozoBreaking_Index2:
     dw $0070,EnemyProjSpritemaps_BombTorizoChozoBreaking_1               ;86A4DF;
     dw Instruction_EnemyProjectile_Delete                                ;86A4E3;
 
+%anchor($86A4E5)
 InstList_EnemyProjectile_BombTorizoChozoBreaking_Index4:
     dw $0070,EnemyProjSpritemaps_BombTorizoChozoBreaking_2               ;86A4E5;
     dw Instruction_EnemyProjectile_QueueSoundInY_Lib2_Max6 : db $0C      ;86A4E9;
@@ -5185,6 +5514,7 @@ InstList_EnemyProjectile_BombTorizoChozoBreaking_Index4:
     dw $0070,EnemyProjSpritemaps_BombTorizoChozoBreaking_2               ;86A4F0;
     dw Instruction_EnemyProjectile_Delete                                ;86A4F4;
 
+%anchor($86A4F6)
 InstList_EnemyProjectile_BombTorizoChozoBreaking_Index6:
     dw $0068,EnemyProjSpritemaps_BombTorizoChozoBreaking_3               ;86A4F6;
     dw Instruction_EnemyProjectile_QueueSoundInY_Lib2_Max6 : db $0C      ;86A4FA;
@@ -5193,6 +5523,7 @@ InstList_EnemyProjectile_BombTorizoChozoBreaking_Index6:
     dw $0070,EnemyProjSpritemaps_BombTorizoChozoBreaking_3               ;86A501;
     dw Instruction_EnemyProjectile_Delete                                ;86A505;
 
+%anchor($86A507)
 InstList_EnemyProjectile_BombTorizoChozoBreaking_Index8:
     dw $0060,EnemyProjSpritemaps_BombTorizoChozoBreaking_4               ;86A507;
     dw Instruction_EnemyProjectile_QueueSoundInY_Lib2_Max6 : db $0C      ;86A50B;
@@ -5201,6 +5532,7 @@ InstList_EnemyProjectile_BombTorizoChozoBreaking_Index8:
     dw $0070,EnemyProjSpritemaps_BombTorizoChozoBreaking_4               ;86A512;
     dw Instruction_EnemyProjectile_Delete                                ;86A516;
 
+%anchor($86A518)
 InstList_EnemyProjectile_BombTorizoChozoBreaking_IndexA:
     dw $0058,EnemyProjSpritemaps_BombTorizoChozoBreaking_5               ;86A518;
     dw Instruction_EnemyProjectile_QueueSoundInY_Lib2_Max6 : db $0C      ;86A51C;
@@ -5209,6 +5541,7 @@ InstList_EnemyProjectile_BombTorizoChozoBreaking_IndexA:
     dw $0070,EnemyProjSpritemaps_BombTorizoChozoBreaking_5               ;86A523;
     dw Instruction_EnemyProjectile_Delete                                ;86A527;
 
+%anchor($86A529)
 InstList_EnemyProjectile_BombTorizoChozoBreaking_IndexC:
     dw $0050,EnemyProjSpritemaps_BombTorizoChozoBreaking_6               ;86A529;
     dw Instruction_EnemyProjectile_QueueSoundInY_Lib2_Max6 : db $0C      ;86A52D;
@@ -5217,6 +5550,7 @@ InstList_EnemyProjectile_BombTorizoChozoBreaking_IndexC:
     dw $0070,EnemyProjSpritemaps_BombTorizoChozoBreaking_6               ;86A534;
     dw Instruction_EnemyProjectile_Delete                                ;86A538;
 
+%anchor($86A53A)
 InstList_EnemyProjectile_BombTorizoChozoBreaking_IndexE:
     dw $0048,EnemyProjSpritemaps_BombTorizoChozoBreaking_7               ;86A53A;
     dw Instruction_EnemyProjectile_QueueSoundInY_Lib2_Max6 : db $0C      ;86A53E;
@@ -5225,6 +5559,7 @@ InstList_EnemyProjectile_BombTorizoChozoBreaking_IndexE:
     dw $0070,EnemyProjSpritemaps_BombTorizoChozoBreaking_7               ;86A545;
     dw Instruction_EnemyProjectile_Delete                                ;86A549;
 
+%anchor($86A54B)
 InstList_EnemyProjectile_BombTorizoChozoBreaking_Index10:
     dw $0040,EnemyProjSpritemaps_BombTorizoChozoBreaking_8               ;86A54B;
     dw Instruction_EnemyProjectile_QueueSoundInY_Lib2_Max6 : db $0C      ;86A54F;
@@ -5233,6 +5568,7 @@ InstList_EnemyProjectile_BombTorizoChozoBreaking_Index10:
     dw $0070,EnemyProjSpritemaps_BombTorizoChozoBreaking_8               ;86A556;
     dw Instruction_EnemyProjectile_Delete                                ;86A55A;
 
+%anchor($86A55C)
 InstList_EnemyProjectile_BombTorizoChozoBreaking_Index12:
     dw $0040,EnemyProjSpritemaps_BombTorizoChozoBreaking_9               ;86A55C;
     dw Instruction_EnemyProjectile_QueueSoundInY_Lib2_Max6 : db $0C      ;86A560;
@@ -5241,6 +5577,7 @@ InstList_EnemyProjectile_BombTorizoChozoBreaking_Index12:
     dw $0070,EnemyProjSpritemaps_BombTorizoChozoBreaking_9               ;86A567;
     dw Instruction_EnemyProjectile_Delete                                ;86A56B;
 
+%anchor($86A56D)
 InstList_EnemyProjectile_BombTorizoChozoBreaking_Index14:
     dw $0040,EnemyProjSpritemaps_BombTorizoChozoBreaking_A               ;86A56D;
     dw Instruction_EnemyProjectile_QueueSoundInY_Lib2_Max6 : db $0C      ;86A571;
@@ -5249,6 +5586,7 @@ InstList_EnemyProjectile_BombTorizoChozoBreaking_Index14:
     dw $0070,EnemyProjSpritemaps_BombTorizoChozoBreaking_A               ;86A578;
     dw Instruction_EnemyProjectile_Delete                                ;86A57C;
 
+%anchor($86A57E)
 InstList_EnemyProjectile_BombTorizoChozoBreaking_Index16:
     dw $0040,EnemyProjSpritemaps_BombTorizoChozoBreaking_B               ;86A57E;
     dw Instruction_EnemyProjectile_QueueSoundInY_Lib2_Max6 : db $0C      ;86A582;
@@ -5257,6 +5595,7 @@ InstList_EnemyProjectile_BombTorizoChozoBreaking_Index16:
     dw $0070,EnemyProjSpritemaps_BombTorizoChozoBreaking_B               ;86A589;
     dw Instruction_EnemyProjectile_Delete                                ;86A58D;
 
+%anchor($86A58F)
 InstList_EnemyProjectile_BombTorizoChozoBreaking_Index18:
     dw $0040,EnemyProjSpritemaps_BombTorizoChozoBreaking_C               ;86A58F;
     dw Instruction_EnemyProjectile_QueueSoundInY_Lib2_Max6 : db $0C      ;86A593;
@@ -5265,6 +5604,7 @@ InstList_EnemyProjectile_BombTorizoChozoBreaking_Index18:
     dw $0070,EnemyProjSpritemaps_BombTorizoChozoBreaking_C               ;86A59A;
     dw Instruction_EnemyProjectile_Delete                                ;86A59E;
 
+%anchor($86A5A0)
 InstList_EnemyProjectile_BombTorizoChozoBreaking_Index1A:
     dw $0040,EnemyProjSpritemaps_BombTorizoChozoBreaking_D               ;86A5A0;
     dw Instruction_EnemyProjectile_QueueSoundInY_Lib2_Max6 : db $0C      ;86A5A4;
@@ -5273,6 +5613,7 @@ InstList_EnemyProjectile_BombTorizoChozoBreaking_Index1A:
     dw $0070,EnemyProjSpritemaps_BombTorizoChozoBreaking_D               ;86A5AB;
     dw Instruction_EnemyProjectile_Delete                                ;86A5AF;
 
+%anchor($86A5B1)
 InstList_EnemyProjectile_BombTorizoChozoBreaking_Index1C:
     dw $0040,EnemyProjSpritemaps_BombTorizoChozoBreaking_E               ;86A5B1;
     dw Instruction_EnemyProjectile_QueueSoundInY_Lib2_Max6 : db $0C      ;86A5B5;
@@ -5281,6 +5622,7 @@ InstList_EnemyProjectile_BombTorizoChozoBreaking_Index1C:
     dw $0070,EnemyProjSpritemaps_BombTorizoChozoBreaking_E               ;86A5BC;
     dw Instruction_EnemyProjectile_Delete                                ;86A5C0;
 
+%anchor($86A5C2)
 InstList_EnemyProjectile_BombTorizoChozoBreaking_Index1E:
     dw $0040,EnemyProjSpritemaps_BombTorizoChozoBreaking_F               ;86A5C2;
     dw Instruction_EnemyProjectile_QueueSoundInY_Lib2_Max6 : db $0C      ;86A5C6;
@@ -5289,6 +5631,7 @@ InstList_EnemyProjectile_BombTorizoChozoBreaking_Index1E:
     dw $0070,EnemyProjSpritemaps_BombTorizoChozoBreaking_F               ;86A5CD;
     dw Instruction_EnemyProjectile_Delete                                ;86A5D1;
 
+%anchor($86A5D3)
 InitAI_EnemyProjectile_BombTorizoContinuousDrool:
     LDA.W #$0000                                                         ;86A5D3;
     STA.W $19BB,Y                                                        ;86A5D6;
@@ -5364,6 +5707,7 @@ InitAI_EnemyProjectile_BombTorizoContinuousDrool:
     dw InstList_EnemyProj_BombTorizoLowHealthDrool_NoDelay_0             ;86A659;
     dw InstList_EnemyProj_BombTorizoLowHealthDrool_2FrameDelay           ;86A65B;
 
+%anchor($86A65D)
 InitAI_EnemyProjectile_BombTorizoInitialDrool:
     LDA.W #$0000                                                         ;86A65D;
     STA.W $19BB,Y                                                        ;86A660;
@@ -5414,6 +5758,7 @@ InitAI_EnemyProjectile_BombTorizoInitialDrool:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($86A6C7)
 UNUSED_InitAI_EnemyProjectile_BombTorizo_86A6C7:
     LDA.W #$0000                                                         ;86A6C7;
     STA.W $19BB,Y                                                        ;86A6CA;
@@ -5440,6 +5785,7 @@ UNUSED_InitAI_EnemyProjectile_BombTorizo_86A6C7:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($86A6F6)
 InitAI_EnemyProjectile_BombTorizoExplosiveSwipe:
     LDX.W $0E54                                                          ;86A6F6;
     LDA.W $0F7A,X                                                        ;86A6F9;
@@ -5483,6 +5829,7 @@ InitAI_EnemyProjectile_BombTorizoExplosiveSwipe:
     dw $FFCC,$FFE4,$FFF5,$0009,$0015,$0014,$FFCC,$FFE5,$FFF6,$0009       ;86A74E;
     dw $0014 ; Unused
 
+%anchor($86A764)
 InitAI_EnemyProj_BombTorizoChozoBreaking:
     LDX.W $1C27                                                          ;86A764;
     JSL.L Calculate_PLM_Block_Coordinates                                ;86A767;
@@ -5549,6 +5896,7 @@ InitAI_EnemyProj_BombTorizoChozoBreaking:
 .Yaccelerations:
     dw $0010,$0010,$0010,$0010,$0010,$0010,$0010,$0010                   ;86A80B;
 
+%anchor($86A81B)
 InitAI_EnemyProjectile_BombTorizoLowHealthExplosion:
     LDX.W $0E54                                                          ;86A81B;
     LDA.W $0F7A,X                                                        ;86A81E;
@@ -5587,6 +5935,7 @@ InitAI_EnemyProjectile_BombTorizoLowHealthExplosion:
     dw $FFF8,$FFF8,$FFF8
     dw $FFEC,$FFEC,$FFEC                               
 
+%anchor($86A871)
 InitAI_EnemyProjectile_TorizoDeathExplosion:
     LDX.W $0E54                                                          ;86A871;
     LDA.W $0F7A,X                                                        ;86A874;
@@ -5598,6 +5947,7 @@ InitAI_EnemyProjectile_TorizoDeathExplosion:
     RTS                                                                  ;86A886;
 
 
+%anchor($86A887)
 PreInst_EnemyProjectile_BombTorizoLowHealthDrool_Falling:
     JSR.W Move_EnemyProjectile_Horizontally                              ;86A887;
     BCS .hitWall                                                         ;86A88A;
@@ -5659,6 +6009,7 @@ PreInst_EnemyProjectile_BombTorizoLowHealthDrool_Falling:
     RTS                                                                  ;86A8EE;
 
 
+%anchor($86A8EF)
 PreInst_EnemyProjectile_BombTorizoChozoBreaking_Falling:
     JSR.W Move_EnemyProjectile_Vertically                                ;86A8EF;
     BIT.W $1ADB,X                                                        ;86A8F2;
@@ -5684,15 +6035,18 @@ PreInst_EnemyProjectile_BombTorizoChozoBreaking_Falling:
     LDA.W #RTS_86A918                                                    ;86A912;
     STA.W $1A03,X                                                        ;86A915;
 
+%anchor($86A918)
 RTS_86A918:
     RTS                                                                  ;86A918;
 
 
+%anchor($86A919)
 RTS_86A919:
     RTS                                                                  ;86A919;
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($86A91A)
 UNUSED_Debug_MoveEnemyProjectileWithController2:
     STZ.W $1AB7,X                                                        ;86A91A;
     LDA.B $8D                                                            ;86A91D;
@@ -5730,6 +6084,7 @@ UNUSED_Debug_MoveEnemyProjectileWithController2:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($86A95B)
 EnemyProjectile_BombTorizoContinuousDrool:
     dw InitAI_EnemyProjectile_BombTorizoContinuousDrool                  ;86A95B; Initialisation AI
     dw RTS_8684FB                                                        ;86A95D; Initial pre-instruction
@@ -5739,6 +6094,7 @@ EnemyProjectile_BombTorizoContinuousDrool:
     dw $0000                                                             ;86A965; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86A967; Shot instruction list
 
+%anchor($86A969)
 EnemyProjectile_BombTorizoInitialDrool:
     dw InitAI_EnemyProjectile_BombTorizoInitialDrool                     ;86A969; Initialisation AI
     dw RTS_8684FB                                                        ;86A96B; Initial pre-instruction
@@ -5749,6 +6105,7 @@ EnemyProjectile_BombTorizoInitialDrool:
     dw InstList_EnemyProjectile_Delete                                   ;86A975; Shot instruction list
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($86A977)
 UNUSED_EnemyProjectile_BombTorizo_86A977:
     dw UNUSED_InitAI_EnemyProjectile_BombTorizo_86A6C7                   ;86A977; Initialisation AI
     dw PreInst_EnemyProjectile_BombTorizoChozoBreaking_Falling           ;86A979; Initial pre-instruction
@@ -5759,6 +6116,7 @@ UNUSED_EnemyProjectile_BombTorizo_86A977:
     dw InstList_EnemyProjectile_Delete                                   ;86A983; Shot instruction list
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($86A985)
 EnemyProjectile_BombTorizoExplosiveSwipe:
     dw InitAI_EnemyProjectile_BombTorizoExplosiveSwipe                   ;86A985; Initialisation AI
     dw RTS_86A919                                                        ;86A987; Initial pre-instruction
@@ -5768,6 +6126,7 @@ EnemyProjectile_BombTorizoExplosiveSwipe:
     dw $0000                                                             ;86A98F; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86A991; Shot instruction list
 
+%anchor($86A993)
 EnemyProjectile_BombTorizoStatueBreaking:
     dw InitAI_EnemyProj_BombTorizoChozoBreaking                          ;86A993; Initialisation AI
     dw RTS_8684FB                                                        ;86A995; Initial pre-instruction
@@ -5777,6 +6136,7 @@ EnemyProjectile_BombTorizoStatueBreaking:
     dw $0000                                                             ;86A99D; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86A99F; Shot instruction list
 
+%anchor($86A9A1)
 EnemyProjectile_BombTorizoLowHealthExplosion:
     dw InitAI_EnemyProjectile_BombTorizoLowHealthExplosion               ;86A9A1; Initialisation AI
     dw RTS_8684FB                                                        ;86A9A3; Initial pre-instruction
@@ -5786,6 +6146,7 @@ EnemyProjectile_BombTorizoLowHealthExplosion:
     dw $0000                                                             ;86A9AB; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86A9AD; Shot instruction list
 
+%anchor($86A9AF)
 EnemyProjectile_BombTorizoDeathExplosion:
     dw InitAI_EnemyProjectile_TorizoDeathExplosion                       ;86A9AF; Initialisation AI
     dw RTS_8684FB                                                        ;86A9B1; Initial pre-instruction
@@ -5797,10 +6158,12 @@ EnemyProjectile_BombTorizoDeathExplosion:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($86A9BD)
 UNUSED_EnemyProjectile_Graphics_QuestionMark_86A9BD:
 incbin "../data/Tiles_EnemyProj_QuestionMark.bin" ; $80 bytes
 
 
+%anchor($86AA3D)
 UNUSED_InitAI_EnemyProjectile_QuestionMark_86AA3D:
     LDX.W $0330                                                          ;86AA3D;
     LDA.W #$0040                                                         ;86AA40;
@@ -5837,6 +6200,7 @@ UNUSED_InitAI_EnemyProjectile_QuestionMark_86AA3D:
     RTS                                                                  ;86AA8B;
 
 
+%anchor($86AA8C)
 UNUSED_PreInstruction_EnemyProjectile_QuestionMark:
     STZ.B $12                                                            ;86AA8C;
     STZ.B $14                                                            ;86AA8E;
@@ -5881,17 +6245,20 @@ UNUSED_PreInstruction_EnemyProjectile_QuestionMark:
     RTS                                                                  ;86AADA;
 
 
+%anchor($86AADB)
 UNUSED_InstList_EnemyProjectile_QuestionMark_0_86AADB:
     dw Instruction_EnemyProjectile_QueueSoundInY_Lib3_Max6 : db $09      ;86AADB;
     dw $012C,UNUSED_EnemyProjSpritemaps_QuestionMark_8D8C4D              ;86AADE;
     dw Instruction_EnemyProjectile_TimerInY,$0018                        ;86AAE2;
 
+%anchor($86AAE6)
 UNUSED_InstList_EnemyProjectile_QuestionMark_1_86AAE6:
     dw $0002,UNUSED_EnemyProjSpritemaps_QuestionMark_8D8C4D              ;86AAE6;
     dw $0002,EnemyProjSpritemaps_Blank_Default                           ;86AAEA;
     dw Instruction_EnemyProjectile_DecrementTimer_GotoYIfNonZero         ;86AAEE;
     dw UNUSED_InstList_EnemyProjectile_QuestionMark_1_86AAE6             ;86AAF0;
 
+%anchor($86AAF2)
 UNUSED_InstList_EnemyProjectile_Shot_QuestionMark_86AAF2:
     dw Instruction_EnemyProjectile_QueueSoundInY_Lib2_Max6 : db $0D      ;86AAF2;
     dw $0008,EnemyProjSpritemaps_Common_Smoke_0                          ;86AAF5;
@@ -5900,6 +6267,7 @@ UNUSED_InstList_EnemyProjectile_Shot_QuestionMark_86AAF2:
     dw $0008,EnemyProjSpritemaps_Common_Smoke_3                          ;86AB01;
     dw Instruction_EnemyProjectile_Delete                                ;86AB05;
 
+%anchor($86AB07)
 UNUSED_EnemyProjectile_QuestionMark_86AB07:
     dw UNUSED_InitAI_EnemyProjectile_QuestionMark_86AA3D                 ;86AB07; Initialisation AI
     dw UNUSED_PreInstruction_EnemyProjectile_QuestionMark                ;86AB09; Initial pre-instruction
@@ -5909,16 +6277,19 @@ UNUSED_EnemyProjectile_QuestionMark_86AB07:
     dw UNUSED_InstList_EnemyProjectile_Shot_QuestionMark_86AAF2          ;86AB13; Shot instruction list
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($86AB15)
 InstList_EnemyProjectile_TorizoChozoOrbs_Left:
     dw $0055,EnemyProjSpritemaps_TorizoChozoOrbs_0                       ;86AB15;
     dw Instruction_EnemyProjectile_GotoY                                 ;86AB19;
     dw InstList_EnemyProjectile_TorizoChozoOrbs_Left                     ;86AB1B;
 
+%anchor($86AB1D)
 InstList_EnemyProjectile_TorizoChozoOrbs_Right:
     dw $0055,EnemyProjSpritemaps_TorizoChozoOrbs_1                       ;86AB1D;
     dw Instruction_EnemyProjectile_GotoY                                 ;86AB21;
     dw InstList_EnemyProjectile_TorizoChozoOrbs_Right                    ;86AB23;
 
+%anchor($86AB25)
 InstList_EnemyProjectile_TorizoChozoOrbs_BreakOnWall:
     dw Instruction_EnemyProjectile_ClearPreInstruction                   ;86AB25;
     dw Instruction_EnemyProjectile_Properties_OrY,$5000                  ;86AB27;
@@ -5929,6 +6300,7 @@ InstList_EnemyProjectile_TorizoChozoOrbs_BreakOnWall:
     dw $0004,EnemyProjSpritemaps_Common_4                                ;86AB3B;
     dw Instruction_EnemyProjectile_Delete                                ;86AB3F;
 
+%anchor($86AB41)
 InstList_EnemyProjectile_TorizoChozoOrbs_BreakOnFloor:
     dw Instruction_EnemyProjectile_ClearPreInstruction                   ;86AB41;
     dw Instruction_EnemyProjectile_Properties_AndY,$DFFF                 ;86AB43;
@@ -5942,6 +6314,7 @@ InstList_EnemyProjectile_TorizoChozoOrbs_BreakOnFloor:
     dw $0009,EnemyProjSpritemaps_TorizoChozoOrbs_GoldenTorizoEyeBeam_5   ;86AB62;
     dw Instruction_EnemyProjectile_Delete                                ;86AB66;
 
+%anchor($86AB68)
 InstList_EnemyProjectile_Shot_TorizoChozoOrbs:
     dw Instruction_EnemyProjectile_ClearPreInstruction                   ;86AB68;
     dw Instruction_EnemyProjectile_Properties_OrY,$5000                  ;86AB6A;
@@ -5955,6 +6328,7 @@ InstList_EnemyProjectile_Shot_TorizoChozoOrbs:
     dw EnemyHeaders_GoldenTorizoOrb                                      ;86AB86;
     dw Instruction_EnemyProjectile_Delete                                ;86AB88;
 
+%anchor($86AB8A)
 Instruction_EnemyProjectile_SpawnEnemyDropsWIthYDropChances:
     PHY                                                                  ;86AB8A;
     PHX                                                                  ;86AB8B;
@@ -5982,6 +6356,7 @@ Instruction_EnemyProjectile_SpawnEnemyDropsWIthYDropChances:
     RTS                                                                  ;86ABAD;
 
 
+%anchor($86ABAE)
 InitAI_EnemyProjectile_TorizoChozoOrbs_Egg_EyeBeam_Common:
     LDA.W $0000,X                                                        ;86ABAE;
     STA.W $1B47,Y                                                        ;86ABB1;
@@ -6010,6 +6385,7 @@ InitAI_EnemyProjectile_TorizoChozoOrbs_Egg_EyeBeam_Common:
     RTS                                                                  ;86ABEA;
 
 
+%anchor($86ABEB)
 InitAI_EnemyProjectile_BombTorizoChozoOrbs:
     LDX.W $0E54                                                          ;86ABEB;
     LDA.W $0F7A,X                                                        ;86ABEE;
@@ -6042,6 +6418,7 @@ InitAI_EnemyProjectile_BombTorizoChozoOrbs:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($86AC1C)
 UNUSED_InitializeTorizoChozoOrbToTargetSamus:
     JSL.L GenerateRandomNumber                                           ;86AC1C;
     LDX.W $0E54                                                          ;86AC20;
@@ -6088,6 +6465,7 @@ UNUSED_InitializeTorizoChozoOrbToTargetSamus:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($86AC7C)
 InitAI_EnemyProjectile_GoldenTorizosChozoOrbs:
     LDX.W $0E54                                                          ;86AC7C;
     LDA.W $0F7A,X                                                        ;86AC7F;
@@ -6119,6 +6497,7 @@ InitAI_EnemyProjectile_GoldenTorizosChozoOrbs:
     dw $FFE5,$FF00,$FFD8,$FE40                                           ;86ACA5;
 
 
+%anchor($86ACAD)
 PreInstruction_EnemyProjectile_BombTorizosChozoOrbs:
     JSR.W Move_EnemyProjectile_Horizontally                              ;86ACAD;
     BCS .hitWall                                                         ;86ACB0;
@@ -6163,6 +6542,7 @@ PreInstruction_EnemyProjectile_BombTorizosChozoOrbs:
     RTS                                                                  ;86ACF9;
 
 
+%anchor($86ACFA)
 PreInstruction_EnemyProjectile_GoldenTorizosChozoOrbs:
     JSR.W Move_EnemyProjectile_Horizontally                              ;86ACFA;
     BCC .noCollision                                                     ;86ACFD;
@@ -6219,6 +6599,7 @@ PreInstruction_EnemyProjectile_GoldenTorizosChozoOrbs:
     RTS                                                                  ;86AD5D;
 
 
+%anchor($86AD5E)
 EnemyProjectile_BombTorizoChozoOrbs:
     dw InitAI_EnemyProjectile_BombTorizoChozoOrbs                        ;86AD5E; Initialisation AI
     dw PreInstruction_EnemyProjectile_BombTorizosChozoOrbs               ;86AD60; Initial pre-instruction
@@ -6228,6 +6609,7 @@ EnemyProjectile_BombTorizoChozoOrbs:
     dw $0000                                                             ;86AD68; Hit instruction list
     dw InstList_EnemyProjectile_Shot_TorizoChozoOrbs                     ;86AD6A; Shot instruction list
 
+%anchor($86AD6C)
 EnemyProjectile_BombTorizoChozoOrbsHigherDamage:
     dw InitAI_EnemyProjectile_BombTorizoChozoOrbs                        ;86AD6C; Initialisation AI
     dw PreInstruction_EnemyProjectile_BombTorizosChozoOrbs               ;86AD6E; Initial pre-instruction
@@ -6237,6 +6619,7 @@ EnemyProjectile_BombTorizoChozoOrbsHigherDamage:
     dw $0000                                                             ;86AD76; Hit instruction list
     dw InstList_EnemyProjectile_Shot_TorizoChozoOrbs                     ;86AD78; Shot instruction list
 
+%anchor($86AD7A)
 EnemyProjectile_GoldenTorizoChozoOrbs:
     dw InitAI_EnemyProjectile_GoldenTorizosChozoOrbs                     ;86AD7A; Initialisation AI
     dw PreInstruction_EnemyProjectile_GoldenTorizosChozoOrbs             ;86AD7C; Initial pre-instruction
@@ -6247,6 +6630,7 @@ EnemyProjectile_GoldenTorizoChozoOrbs:
     dw InstList_EnemyProjectile_Shot_TorizoChozoOrbs                     ;86AD86; Shot instruction list
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($86AD88)
 UNUSED_InstList_EnemyProjectile_86AD88:
     dw Instruction_EnemyProjectile_PreInstructionInY                     ;86AD88;
     dw PreInstruction_EnemyProjectile_TorizoSonicBoom                    ;86AD8A;
@@ -6254,6 +6638,7 @@ UNUSED_InstList_EnemyProjectile_86AD88:
     dw InstList_EnemyProjectile_TorizoSonicBoom_MovingLeft               ;86AD8E;
     dw InstList_EnemyProjectile_TorizoSonicBoom_MovingRight              ;86AD90;
 
+%anchor($86AD92)
 UNUSED_Instruction_EnemyProj_MoveHorizontally_GotoY_86AD92:
     STZ.B $12                                                            ;86AD92;
     STZ.B $14                                                            ;86AD94;
@@ -6283,26 +6668,31 @@ UNUSED_Instruction_EnemyProj_MoveHorizontally_GotoY_86AD92:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($86ADBF)
 InstList_EnemyProjectile_TorizoSonicBoom_FiredLeft:
     dw Instruction_EnemyProjectile_QueueSoundInY_Lib2_Max6 : db $48      ;86ADBF;
     dw $0006,EnemyProjSpritemaps_TorizoSonicBoom_0                       ;86ADC2;
     dw $0006,EnemyProjSpritemaps_TorizoSonicBoom_1                       ;86ADC6;
 
+%anchor($86ADCA)
 InstList_EnemyProjectile_TorizoSonicBoom_MovingLeft:
     dw $0050,EnemyProjSpritemaps_TorizoSonicBoom_2                       ;86ADCA;
     dw Instruction_EnemyProjectile_GotoY                                 ;86ADCE;
     dw InstList_EnemyProjectile_TorizoSonicBoom_MovingLeft               ;86ADD0;
 
+%anchor($86ADD2)
 InstList_EnemyProjectile_TorizoSonicBoom_FiredRight:
     dw Instruction_EnemyProjectile_QueueSoundInY_Lib2_Max6 : db $48      ;86ADD2;
     dw $0006,EnemyProjSpritemaps_TorizoSonicBoom_3                       ;86ADD5;
     dw $0006,EnemyProjSpritemaps_TorizoSonicBoom_4                       ;86ADD9;
 
+%anchor($86ADDD)
 InstList_EnemyProjectile_TorizoSonicBoom_MovingRight:
     dw $0050,EnemyProjSpritemaps_TorizoSonicBoom_5                       ;86ADDD;
     dw Instruction_EnemyProjectile_GotoY                                 ;86ADE1;
     dw InstList_EnemyProjectile_TorizoSonicBoom_MovingRight              ;86ADE3;
 
+%anchor($86ADE5)
 InstList_EnemyProjectile_TorizoSonicBoom_HitWall_0:
     dw Instruction_EnemyProjectile_ClearPreInstruction                   ;86ADE5;
     dw Instruction_EnemyProjectile_DisableCollisionWIthSamusProj         ;86ADE7;
@@ -6310,6 +6700,7 @@ InstList_EnemyProjectile_TorizoSonicBoom_HitWall_0:
     dw Instruction_EnemyProjectile_SetHighPriority                       ;86ADEB;
     dw Instruction_EnemyProjectile_TimerInY,$0005                        ;86ADED;
 
+%anchor($86ADF1)
 InstList_EnemyProjectile_TorizoSonicBoom_HitWall_1:
     dw Instruction_EnemyProjectile_Torizo_ResetPosition                  ;86ADF1;
     dw Instruction_MoveRandomlyWithinXRadius_YRadius                     ;86ADF3;
@@ -6324,6 +6715,7 @@ InstList_EnemyProjectile_TorizoSonicBoom_HitWall_1:
     dw InstList_EnemyProjectile_TorizoSonicBoom_HitWall_1                ;86AE11;
     dw Instruction_EnemyProjectile_Delete                                ;86AE13;
 
+%anchor($86AE15)
 InitAI_EnemyProjectile_TorizoSonicBoom:
     JSL.L GenerateRandomNumber                                           ;86AE15;
     LDX.W $0E54                                                          ;86AE19;
@@ -6367,6 +6759,7 @@ InitAI_EnemyProjectile_TorizoSonicBoom:
     RTS                                                                  ;86AE6B;
 
 
+%anchor($86AE6C)
 PreInstruction_EnemyProjectile_TorizoSonicBoom:
     JSR.W Move_EnemyProjectile_Horizontally                              ;86AE6C;
     BCS .hitWall                                                         ;86AE6F;
@@ -6403,6 +6796,7 @@ PreInstruction_EnemyProjectile_TorizoSonicBoom:
     RTS                                                                  ;86AEA7;
 
 
+%anchor($86AEA8)
 EnemyProjectile_BombTorizoSonicBoom:
     dw InitAI_EnemyProjectile_TorizoSonicBoom                            ;86AEA8; Initialisation AI
     dw PreInstruction_EnemyProjectile_TorizoSonicBoom                    ;86AEAA; Initial pre-instruction
@@ -6412,6 +6806,7 @@ EnemyProjectile_BombTorizoSonicBoom:
     dw $0000                                                             ;86AEB2; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86AEB4; Shot instruction list
 
+%anchor($86AEB6)
 EnemyProjectile_GoldenTorizoSonicBoom:
     dw InitAI_EnemyProjectile_TorizoSonicBoom                            ;86AEB6; Initialisation AI
     dw PreInstruction_EnemyProjectile_TorizoSonicBoom                    ;86AEB8; Initial pre-instruction
@@ -6421,6 +6816,7 @@ EnemyProjectile_GoldenTorizoSonicBoom:
     dw $0000                                                             ;86AEC0; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86AEC2; Shot instruction list
 
+%anchor($86AEC4)
 InstList_EnemyProj_WreckedShipChozoSpikeClearingFootsteps:
     dw Instruction_MoveRandomlyWithinXRadius_YRadius                     ;86AEC4;
     db $0F,$00,$0F,$03                                                   ;86AEC6;
@@ -6431,6 +6827,7 @@ InstList_EnemyProj_WreckedShipChozoSpikeClearingFootsteps:
     dw Instruction_EnemyProjectile_Delete                                ;86AEDA;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($86AEDC)
 UNUSED_InstList_EnemyProj_SpikeClearingExplosions_86AEDC:
     dw Instruction_MoveRandomlyWithinXRadius_YRadius                     ;86AEDC;
     db $0F,$00,$0F,$03                                                   ;86AEDE;
@@ -6443,6 +6840,7 @@ UNUSED_InstList_EnemyProj_SpikeClearingExplosions_86AEDC:
     dw Instruction_EnemyProjectile_Delete                                ;86AEFA;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($86AEFC)
 InitAI_EnemyProj_WreckedShipChozoSpikeClearingFootsteps:
     LDX.W $0E54                                                          ;86AEFC;
     LDA.W $0F7A,X                                                        ;86AEFF;
@@ -6456,9 +6854,11 @@ InitAI_EnemyProj_WreckedShipChozoSpikeClearingFootsteps:
     RTS                                                                  ;86AF13;
 
 
+%anchor($86AF14)
 InstList_EnemyProj_TourianStatueDustClouds_0:
     dw Instruction_EnemyProjectile_TimerInY,$0040                        ;86AF14;
 
+%anchor($86AF18)
 InstList_EnemyProj_TourianStatueDustClouds_1:
     dw Instruction_EnemyProjectile_ResetPosition                         ;86AF18;
     dw Instruction_MoveRandomlyWithinXRadius_YRadius                     ;86AF1A;
@@ -6471,6 +6871,7 @@ InstList_EnemyProj_TourianStatueDustClouds_1:
     dw InstList_EnemyProj_TourianStatueDustClouds_1                      ;86AF32;
     dw Instruction_EnemyProjectile_Delete                                ;86AF34;
 
+%anchor($86AF36)
 Instruction_EnemyProjectile_ResetPosition:
     LDA.W $1AFF,X                                                        ;86AF36;
     STA.W $1A4B,X                                                        ;86AF39;
@@ -6479,6 +6880,7 @@ Instruction_EnemyProjectile_ResetPosition:
     RTS                                                                  ;86AF42;
 
 
+%anchor($86AF43)
 InitAI_EnemyProjectile_TourianStatueDustClouds:
     LDA.W #$0080                                                         ;86AF43;
     STA.W $1AFF,Y                                                        ;86AF46;
@@ -6487,6 +6889,7 @@ InitAI_EnemyProjectile_TourianStatueDustClouds:
     RTS                                                                  ;86AF4F;
 
 
+%anchor($86AF50)
 InitAI_EnemyProjectile_TorizoLandingDustCloud_RightFoot:
     LDX.W $0E54                                                          ;86AF50;
     LDA.W $0F7E,X                                                        ;86AF53;
@@ -6500,6 +6903,7 @@ InitAI_EnemyProjectile_TorizoLandingDustCloud_RightFoot:
     RTS                                                                  ;86AF67;
 
 
+%anchor($86AF68)
 EnemyProjectile_WreckedShipChozoSpikeClearingFootsteps:
     dw InitAI_EnemyProj_WreckedShipChozoSpikeClearingFootsteps           ;86AF68; Initialisation AI
     dw RTS_8684FB                                                        ;86AF6A; Initial pre-instruction
@@ -6509,6 +6913,7 @@ EnemyProjectile_WreckedShipChozoSpikeClearingFootsteps:
     dw InstList_EnemyProjectile_Delete                                   ;86AF74; Shot instruction list
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($86AF76)
 UNUSED_EnemyProjectile_SpikeClearingExplosions_86AF76:
     dw InitAI_EnemyProj_WreckedShipChozoSpikeClearingFootsteps           ;86AF76; Initialisation AI
     dw RTS_8684FB                                                        ;86AF78; Initial pre-instruction
@@ -6518,6 +6923,7 @@ UNUSED_EnemyProjectile_SpikeClearingExplosions_86AF76:
     dw InstList_EnemyProjectile_Delete                                   ;86AF82; Shot instruction list
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($86AF84)
 EnemyProjectile_TourianStatueDustClouds:
     dw InitAI_EnemyProjectile_TourianStatueDustClouds                    ;86AF84; Initialisation AI
     dw RTS_8684FB                                                        ;86AF86; Initial pre-instruction
@@ -6526,6 +6932,7 @@ EnemyProjectile_TourianStatueDustClouds:
     dw $3000,$0000                                                       ;86AF8C; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86AF90; Shot instruction list
 
+%anchor($86AF92)
 Instruction_EnemyProjectile_TorizoLandingDustClouds:
     LDA.W $1A93,X                                                        ;86AF92;
     SEC                                                                  ;86AF95;
@@ -6534,6 +6941,7 @@ Instruction_EnemyProjectile_TorizoLandingDustClouds:
     RTS                                                                  ;86AF9C;
 
 
+%anchor($86AF9D)
 InstList_EnemyProjectile_TorizoLandingDustCloud_RightFoot:
     dw $0004,EnemyProjSpritemaps_TorizoLandingDustCloud_Right_0          ;86AF9D;
     dw Instruction_EnemyProjectile_TorizoLandingDustClouds               ;86AFA1;
@@ -6544,6 +6952,7 @@ InstList_EnemyProjectile_TorizoLandingDustCloud_RightFoot:
     dw $0004,EnemyProjSpritemaps_TorizoLandingDustCloud_Right_3          ;86AFAF;
     dw Instruction_EnemyProjectile_Delete                                ;86AFB3;
 
+%anchor($86AFB5)
 InstList_EnemyProjectile_TorizoLandingDustCloud_LeftFoot:
     dw $0004,EnemyProjSpritemaps_TorizoLandingDustCloud_Left_0           ;86AFB5;
     dw Instruction_EnemyProjectile_TorizoLandingDustClouds               ;86AFB9;
@@ -6554,6 +6963,7 @@ InstList_EnemyProjectile_TorizoLandingDustCloud_LeftFoot:
     dw $0004,EnemyProjSpritemaps_TorizoLandingDustCloud_Left_3           ;86AFC7;
     dw Instruction_EnemyProjectile_Delete                                ;86AFCB;
 
+%anchor($86AFCD)
 InitAI_EnemyProjectile_TorizoLandingDustCloud_LeftFoot:
     LDX.W $0E54                                                          ;86AFCD;
     LDA.W $0F7E,X                                                        ;86AFD0;
@@ -6567,6 +6977,7 @@ InitAI_EnemyProjectile_TorizoLandingDustCloud_LeftFoot:
     RTS                                                                  ;86AFE4;
 
 
+%anchor($86AFE5)
 EnemyProjectile_TorizoLandingDustCloud_RightFoot:
     dw InitAI_EnemyProjectile_TorizoLandingDustCloud_RightFoot           ;86AFE5; Initialisation AI
     dw RTS_8684FB                                                        ;86AFE7; Initial pre-instruction
@@ -6576,6 +6987,7 @@ EnemyProjectile_TorizoLandingDustCloud_RightFoot:
     dw $0000                                                             ;86AFEF; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86AFF1; Shot instruction list
 
+%anchor($86AFF3)
 EnemyProjectile_TorizoLandingDustCloud_LeftFoot:
     dw InitAI_EnemyProjectile_TorizoLandingDustCloud_LeftFoot            ;86AFF3; Initialisation AI
     dw RTS_8684FB                                                        ;86AFF5; Initial pre-instruction
@@ -6585,6 +6997,7 @@ EnemyProjectile_TorizoLandingDustCloud_LeftFoot:
     dw $0000                                                             ;86AFFD; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86AFFF; Shot instruction list
 
+%anchor($86B001)
 InitAI_EnemyProjectile_GoldenTorizoEgg:
     LDX.W $0E54                                                          ;86B001;
     LDA.W $0F7A,X                                                        ;86B004;
@@ -6621,6 +7034,7 @@ InitAI_EnemyProjectile_GoldenTorizoEgg:
     dw InstList_EnemyProjectile_GoldenTorizoEgg_BouncingLeft             ;86B039;
     dw $FFF0,$FF80,$FFFF,$FE80                                           ;86B03B;
 
+%anchor($86B043)
 PreInstruction_EnemyProjectile_GoldenTorizoEgg_Bouncing:
     DEC.W $1B23,X                                                        ;86B043;
     BMI .hatch                                                           ;86B046;
@@ -6688,6 +7102,7 @@ PreInstruction_EnemyProjectile_GoldenTorizoEgg_Bouncing:
     RTS                                                                  ;86B0B8;
 
 
+%anchor($86B0B9)
 PreInstruction_EnemyProjectile_GoldenTorizoEgg_Hatched:
     JSR.W Move_EnemyProjectile_Horizontally                              ;86B0B9;
     BCS .hitWall                                                         ;86B0BC;
@@ -6713,6 +7128,7 @@ PreInstruction_EnemyProjectile_GoldenTorizoEgg_Hatched:
     RTS                                                                  ;86B0DC;
 
 
+%anchor($86B0DD)
 PreInstruction_EnemyProjectile_GoldenTorizoEgg_HitWall:
     JSR.W Move_EnemyProjectile_Vertically                                ;86B0DD;
     BCS .collision                                                       ;86B0E0;
@@ -6739,6 +7155,7 @@ PreInstruction_EnemyProjectile_GoldenTorizoEgg_HitWall:
     RTS                                                                  ;86B103;
 
 
+%anchor($86B104)
 InstList_EnemyProjectile_GoldenTorizoEgg_BouncingLeft:
     dw $0030,EnemyProjSpritemaps_GoldenTorizoEgg_0                       ;86B104;
     dw Instruction_EnemyProjectile_Sleep                                 ;86B108;
@@ -6749,6 +7166,7 @@ InstList_EnemyProjectile_GoldenTorizoEgg_BouncingLeft:
     dw Instruction_EnemyProjectile_GotoY                                 ;86B118;
     dw InstList_EnemyProjectile_GoldenTorizoEgg_Hatch                    ;86B11A;
 
+%anchor($86B11C)
 InstList_EnemyProjectile_GoldenTorizoEgg_BouncingRight:
     dw $0030,EnemyProjSpritemaps_GoldenTorizoEgg_C                       ;86B11C;
     dw Instruction_EnemyProjectile_Sleep                                 ;86B120;
@@ -6759,11 +7177,13 @@ InstList_EnemyProjectile_GoldenTorizoEgg_BouncingRight:
     dw Instruction_EnemyProjectile_GotoY                                 ;86B130;
     dw InstList_EnemyProjectile_GoldenTorizoEgg_Hatch                    ;86B132;
 
+%anchor($86B134)
 InstList_EnemyProjectile_GoldenTorizoEgg_Hatch:
     dw Instruction_EnemyProjectile_Properties_AndY,$DFFF                 ;86B134;
     dw Instruction_EnemyProjectile_Properties_OrY,$8000                  ;86B138;
     dw Instruction_EnemyProjectile_GoldenTorizoEgg_GoToHatched           ;86B13C;
 
+%anchor($86B13E)
 Instruction_EnemyProjectile_GoldenTorizoEgg_GoToHatched:
     BIT.W $1AFF,X                                                        ;86B13E;
     BMI .rightwards                                                      ;86B141;
@@ -6776,11 +7196,13 @@ Instruction_EnemyProjectile_GoldenTorizoEgg_GoToHatched:
     RTS                                                                  ;86B14A;
 
 
+%anchor($86B14B)
 InstList_EnemyProjectile_GoldenTorizoEgg_Hatched_Left_0:
     dw Instruction_EnemyProjectile_QueueSoundInY_Lib2_Max6 : db $22      ;86B14B;
     dw Instruction_EnemyProjectile_PreInstructionInY                     ;86B14E;
     dw PreInstruction_EnemyProjectile_GoldenTorizoEgg_Hatched            ;86B150;
 
+%anchor($86B152)
 InstList_EnemyProjectile_GoldenTorizoEgg_Hatched_Left_1:
     dw $0006,EnemyProjSpritemaps_GoldenTorizoEgg_4                       ;86B152;
     dw $0006,EnemyProjSpritemaps_GoldenTorizoEgg_5                       ;86B156;
@@ -6789,11 +7211,13 @@ InstList_EnemyProjectile_GoldenTorizoEgg_Hatched_Left_1:
     dw Instruction_EnemyProjectile_GotoY                                 ;86B162;
     dw InstList_EnemyProjectile_GoldenTorizoEgg_Hatched_Left_1           ;86B164;
 
+%anchor($86B166)
 InstList_EnemyProjectile_GoldenTorizoEgg_Hatched_Right_0:
     dw Instruction_EnemyProjectile_QueueSoundInY_Lib2_Max6 : db $22      ;86B166;
     dw Instruction_EnemyProjectile_PreInstructionInY                     ;86B169;
     dw PreInstruction_EnemyProjectile_GoldenTorizoEgg_Hatched            ;86B16B;
 
+%anchor($86B16D)
 InstList_EnemyProjectile_GoldenTorizoEgg_Hatched_Right_1:
     dw $0006,EnemyProjSpritemaps_GoldenTorizoEgg_10                      ;86B16D;
     dw $0006,EnemyProjSpritemaps_GoldenTorizoEgg_11                      ;86B171;
@@ -6803,9 +7227,11 @@ InstList_EnemyProjectile_GoldenTorizoEgg_Hatched_Right_1:
     dw InstList_EnemyProjectile_GoldenTorizoEgg_Hatched_Right_1          ;86B17F;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($86B181)
 UNUSED_InstList_EnemyProjectile_Break_86B181:
     dw UNUSED_Instruction_EnemyProjectile_GotoBreak_86B183               ;86B181;
 
+%anchor($86B183)
 UNUSED_Instruction_EnemyProjectile_GotoBreak_86B183:
     LDA.W $1AFF,X                                                        ;86B183;
     BMI .facingRight                                                     ;86B186;
@@ -6818,6 +7244,7 @@ UNUSED_Instruction_EnemyProjectile_GotoBreak_86B183:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($86B190)
 InstList_EnemyProjectile_GoldenTorizoEgg_Break_FacingLeft:
     dw Instruction_EnemyProjectile_ClearPreInstruction                   ;86B190;
     dw $0004,EnemyProjSpritemaps_GoldenTorizoEgg_7                       ;86B192;
@@ -6827,6 +7254,7 @@ InstList_EnemyProjectile_GoldenTorizoEgg_Break_FacingLeft:
     dw $000A,EnemyProjSpritemaps_GoldenTorizoEgg_B                       ;86B1A2;
     dw Instruction_EnemyProjectile_Delete                                ;86B1A6;
 
+%anchor($86B1A8)
 InstList_EnemyProjectile_GoldenTorizoEgg_Break_FacingRight:
     dw Instruction_EnemyProjectile_ClearPreInstruction                   ;86B1A8;
     dw $0004,EnemyProjSpritemaps_GoldenTorizoEgg_13                      ;86B1AA;
@@ -6836,6 +7264,7 @@ InstList_EnemyProjectile_GoldenTorizoEgg_Break_FacingRight:
     dw $0008,EnemyProjSpritemaps_GoldenTorizoEgg_17                      ;86B1BA;
     dw Instruction_EnemyProjectile_Delete                                ;86B1BE;
 
+%anchor($86B1C0)
 EnemyProjectile_GoldenTorizoEgg:
     dw InitAI_EnemyProjectile_GoldenTorizoEgg                            ;86B1C0; Initialisation AI
     dw PreInstruction_EnemyProjectile_GoldenTorizoEgg_Bouncing           ;86B1C2; Initial pre-instruction
@@ -6844,6 +7273,7 @@ EnemyProjectile_GoldenTorizoEgg:
     dw $6064,$0000                                                       ;86B1C8; Properties, Hit instruction list
     dw InstList_EnemyProjectile_TorizoChozoOrbs_BreakOnWall              ;86B1CC; Shot instruction list
 
+%anchor($86B1CE)
 InitAI_EnemyProjectile_GoldenTorizoSuperMissile:
     LDA.W $0E54                                                          ;86B1CE;
     STA.W $1AFF,Y                                                        ;86B1D1;
@@ -6882,6 +7312,7 @@ InitAI_EnemyProjectile_GoldenTorizoSuperMissile:
     dw InstList_EnemyProj_GoldenTorizoSuperMissile_Leftwards_0           ;86B209;
     dw InstList_EnemyProj_GoldenTorizoSuperMissile_Rightwards_0          ;86B20B;
 
+%anchor($86B20D)
 PreInstruction_EnemyProjectile_GoldenTorizoSuperMissile_Held:
     LDY.W $1AFF,X                                                        ;86B20D;
     LDA.W $0F7A,Y                                                        ;86B210;
@@ -6907,6 +7338,7 @@ PreInstruction_EnemyProjectile_GoldenTorizoSuperMissile_Held:
     RTS                                                                  ;86B236;
 
 
+%anchor($86B237)
 PreInst_EnemyProjectile_GoldenTorizoSuperMissile_Thrown:
     JSR.W Move_EnemyProjectile_Horizontally                              ;86B237;
     BCS .collision                                                       ;86B23A;
@@ -6936,16 +7368,19 @@ PreInst_EnemyProjectile_GoldenTorizoSuperMissile_Thrown:
     RTS                                                                  ;86B268;
 
 
+%anchor($86B269)
 Instruction_AimSuperMissile_Rightwards:
     JSL.L CalculateAngleOfSamusFromEnemyProjectile                       ;86B269;
     AND.W #$007F                                                         ;86B26D;
     BRA CalculateGoldenTorizoSuperMissileVelocitiesFromAngle             ;86B270;
 
 
+%anchor($86B272)
 Instruction_AimSuperMissile_Leftwards:
     JSL.L CalculateAngleOfSamusFromEnemyProjectile                       ;86B272;
     ORA.W #$0080                                                         ;86B276;
 
+%anchor($86B279)
 CalculateGoldenTorizoSuperMissileVelocitiesFromAngle:
     PHX                                                                  ;86B279;
     PHY                                                                  ;86B27A;
@@ -6965,12 +7400,14 @@ CalculateGoldenTorizoSuperMissileVelocitiesFromAngle:
     RTS                                                                  ;86B292;
 
 
+%anchor($86B293)
 InstList_EnemyProj_GoldenTorizoSuperMissile_Rightwards_0:
     dw $0030,EnemyProjSpritemaps_GoldenTorizoSuperMissile_6              ;86B293;
     dw Instruction_AimSuperMissile_Rightwards                            ;86B297;
     dw Instruction_EnemyProjectile_PreInstructionInY                     ;86B299;
     dw PreInst_EnemyProjectile_GoldenTorizoSuperMissile_Thrown           ;86B29B;
 
+%anchor($86B29D)
 InstList_EnemyProj_GoldenTorizoSuperMissile_Rightwards_1:
     dw $0002,EnemyProjSpritemaps_GoldenTorizoSuperMissile_5              ;86B29D;
     dw $0002,EnemyProjSpritemaps_GoldenTorizoSuperMissile_4              ;86B2A1;
@@ -6983,12 +7420,14 @@ InstList_EnemyProj_GoldenTorizoSuperMissile_Rightwards_1:
     dw Instruction_EnemyProjectile_GotoY                                 ;86B2BD;
     dw InstList_EnemyProj_GoldenTorizoSuperMissile_Rightwards_1          ;86B2BF;
 
+%anchor($86B2C1)
 InstList_EnemyProj_GoldenTorizoSuperMissile_Leftwards_0:
     dw $0030,EnemyProjSpritemaps_GoldenTorizoSuperMissile_6              ;86B2C1;
     dw Instruction_AimSuperMissile_Leftwards                             ;86B2C5;
     dw Instruction_EnemyProjectile_PreInstructionInY                     ;86B2C7;
     dw PreInst_EnemyProjectile_GoldenTorizoSuperMissile_Thrown           ;86B2C9;
 
+%anchor($86B2CB)
 InstList_EnemyProj_GoldenTorizoSuperMissile_Leftwards_1:
     dw $0002,EnemyProjSpritemaps_GoldenTorizoSuperMissile_7              ;86B2CB;
     dw $0002,EnemyProjSpritemaps_GoldenTorizoSuperMissile_0              ;86B2CF;
@@ -7001,6 +7440,7 @@ InstList_EnemyProj_GoldenTorizoSuperMissile_Leftwards_1:
     dw Instruction_EnemyProjectile_GotoY                                 ;86B2EB;
     dw InstList_EnemyProj_GoldenTorizoSuperMissile_Leftwards_1           ;86B2ED;
 
+%anchor($86B2EF)
 InstList_EnemyProjectile_Shot_GoldenTorizoSuperMissile:
     dw Instruction_EnemyProjectile_XYRadiusInY : db $10,$10              ;86B2EF;
     dw Instruction_EnemyProjectile_ClearPreInstruction                   ;86B2F3;
@@ -7015,6 +7455,7 @@ InstList_EnemyProjectile_Shot_GoldenTorizoSuperMissile:
     dw $0005,EnemyProjSpritemaps_Common_BigExplosion_5                   ;86B314;
     dw Instruction_EnemyProjectile_Delete                                ;86B318;
 
+%anchor($86B31A)
 EnemyProjectile_GoldenTorizoSuperMissile:
     dw InitAI_EnemyProjectile_GoldenTorizoSuperMissile                   ;86B31A; Initialisation AI
     dw PreInstruction_EnemyProjectile_GoldenTorizoSuperMissile_Held      ;86B31C; Initial pre-instruction
@@ -7023,6 +7464,7 @@ EnemyProjectile_GoldenTorizoSuperMissile:
     dw $A0C8,$0000                                                       ;86B322; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Shot_GoldenTorizoSuperMissile            ;86B326; Shot instruction list
 
+%anchor($86B328)
 InitAI_EnemyProjectile_GoldenTorizoEyeBeam:
     LDX.W $0E54                                                          ;86B328;
     LDA.W $0F7A,X                                                        ;86B32B;
@@ -7077,6 +7519,7 @@ InitAI_EnemyProjectile_GoldenTorizoEyeBeam:
     dw InstList_EnemyProjectile_GoldenTorizoEyeBeam_Normal               ;86B380;
     dw $FFEC,$FC00,$FFE2,$0400                                           ;86B382;
 
+%anchor($86B38A)
 PreInstruction_EnemyProjectile_GoldenTorizoEyeBeam:
     JSR.W Move_EnemyProjectile_Horizontally                              ;86B38A;
     BCS .collision                                                       ;86B38D;
@@ -7107,6 +7550,7 @@ PreInstruction_EnemyProjectile_GoldenTorizoEyeBeam:
     RTS                                                                  ;86B3B7;
 
 
+%anchor($86B3B8)
 Instruction_EnemyProjectile_GotoYIfEyeBeamExplosionsDisabled:
     PHX                                                                  ;86B3B8;
     LDA.W $1B23,X                                                        ;86B3B9;
@@ -7126,6 +7570,7 @@ Instruction_EnemyProjectile_GotoYIfEyeBeamExplosionsDisabled:
     RTS                                                                  ;86B3CC;
 
 
+%anchor($86B3CD)
 InstList_EnemyProjectile_GoldenTorizoEyeBeam_HitWall:
     dw Instruction_EnemyProjectile_ClearPreInstruction                   ;86B3CD;
     dw $0004,EnemyProjSpritemaps_Common_0                                ;86B3CF;
@@ -7135,9 +7580,11 @@ InstList_EnemyProjectile_GoldenTorizoEyeBeam_HitWall:
     dw $0004,EnemyProjSpritemaps_Common_4                                ;86B3DF;
     dw Instruction_EnemyProjectile_Delete                                ;86B3E3;
 
+%anchor($86B3E5)
 InstList_EnemyProjectile_GoldenTorizoEyeBeam_HitFloor_0:
     dw Instruction_EnemyProjectile_ClearPreInstruction                   ;86B3E5;
 
+%anchor($86B3E7)
 InstList_EnemyProjectile_GoldenTorizoEyeBeam_HitFloor_1:
     dw $0008,EnemyProjSpritemaps_Blank_Default                           ;86B3E7;
     dw Instruction_EnemyProjectile_GotoYIfEyeBeamExplosionsDisabled      ;86B3EB;
@@ -7152,6 +7599,7 @@ InstList_EnemyProjectile_GoldenTorizoEyeBeam_HitFloor_1:
     dw $0009,EnemyProjSpritemaps_TorizoChozoOrbs_GoldenTorizoEyeBeam_5   ;86B40A;
     dw Instruction_EnemyProjectile_Delete                                ;86B40E;
 
+%anchor($86B410)
 InstList_EnemyProjectile_GoldenTorizoEyeBeam_Normal:
     dw $0001,EnemyProjSpritemaps_Common_4                                ;86B410;
     dw $0001,EnemyProjSpritemaps_Common_3                                ;86B414;
@@ -7161,6 +7609,7 @@ InstList_EnemyProjectile_GoldenTorizoEyeBeam_Normal:
     dw Instruction_EnemyProjectile_GotoY                                 ;86B424;
     dw InstList_EnemyProjectile_GoldenTorizoEyeBeam_Normal               ;86B426;
 
+%anchor($86B428)
 EnemyProjectile_GoldenTorizoEyeBeam:
     dw InitAI_EnemyProjectile_GoldenTorizoEyeBeam                        ;86B428; Initialisation AI
     dw PreInstruction_EnemyProjectile_GoldenTorizoEyeBeam                ;86B42A; Initial pre-instruction
@@ -7170,6 +7619,7 @@ EnemyProjectile_GoldenTorizoEyeBeam:
     dw InstList_EnemyProjectile_Delete                                   ;86B434; Shot instruction list
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($86B436)
 UNUSED_Instruction_ResetPosition_86B436:
     LDA.W $1AFF,X                                                        ;86B436;
     STA.W $1A4B,X                                                        ;86B439;
@@ -7179,10 +7629,12 @@ UNUSED_Instruction_ResetPosition_86B436:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($86B443)
 InstList_EnemyProj_OldTourianEscapeShaftFakeWallExplosion_0:
     dw Instruction_EnemyProjectile_ClearPreInstruction                   ;86B443;
     dw Instruction_EnemyProjectile_TimerInY,$0001                        ;86B445;
 
+%anchor($86B449)
 InstList_EnemyProj_OldTourianEscapeShaftFakeWallExplosion_1:
     dw Instruction_MoveRandomlyWithinXRadius_YRadius                     ;86B449;
     db $07,$00,$0F,$00                                                   ;86B44B;
@@ -7198,6 +7650,7 @@ InstList_EnemyProj_OldTourianEscapeShaftFakeWallExplosion_1:
     dw Instruction_EnemyProjectile_Delete                                ;86B46E;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($86B470)
 UNUSED_InstList_EnemyProjectile_86B470:
     dw Instruction_EnemyProjectile_QueueSoundInY_Lib2_Max6 : db $24      ;86B470;
     dw $0008,EnemyProjSpritemaps_Common_Smoke_0                          ;86B473;
@@ -7208,6 +7661,7 @@ UNUSED_InstList_EnemyProjectile_86B470:
     dw InstList_EnemyProj_OldTourianEscapeShaftFakeWallExplosion_1       ;86B485;
     dw Instruction_EnemyProjectile_Delete                                ;86B487;
 
+%anchor($86B489)
 UNUSED_Instruction_GotoY_Probability_1_4:
     JSL.L GenerateRandomNumber                                           ;86B489;
     AND.W #$C000                                                         ;86B48D;
@@ -7225,6 +7679,7 @@ UNUSED_Instruction_GotoY_Probability_1_4:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($86B49D)
 InitAI_EnemyProj_OldTourianEscapeShaftFakeWallExplosion:
     LDA.W #$0110                                                         ;86B49D;
     STA.W $1A4B,Y                                                        ;86B4A0;
@@ -7235,10 +7690,12 @@ InitAI_EnemyProj_OldTourianEscapeShaftFakeWallExplosion:
     RTS                                                                  ;86B4AF;
 
 
+%anchor($86B4B0)
 RTS_86B4B0:
     RTS                                                                  ;86B4B0;
 
 
+%anchor($86B4B1)
 EnemyProjectile_OldTourianEscapeShaftFakeWallExplosion:
     dw InitAI_EnemyProj_OldTourianEscapeShaftFakeWallExplosion           ;86B4B1; Initialisation AI
     dw RTS_86B4B0                                                        ;86B4B3; Initial pre-instruction
@@ -7247,30 +7704,35 @@ EnemyProjectile_OldTourianEscapeShaftFakeWallExplosion:
     dw $3000,$0000                                                       ;86B4B9; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86B4BD; Shot instruction list
 
+%anchor($86B4BF)
 InstList_EnemyProjectile_DragonFireball_Rising_Left:
     dw $0005,EnemyProjSpritemaps_DragonFireball_0                        ;86B4BF;
     dw $0005,EnemyProjSpritemaps_DragonFireball_1                        ;86B4C3;
     dw Instruction_EnemyProjectile_GotoY                                 ;86B4C7;
     dw InstList_EnemyProjectile_DragonFireball_Rising_Left               ;86B4C9;
 
+%anchor($86B4CB)
 InstList_EnemyProjectile_DragonFireball_Rising_Right:
     dw $0005,EnemyProjSpritemaps_DragonFireball_4                        ;86B4CB;
     dw $0005,EnemyProjSpritemaps_DragonFireball_5                        ;86B4CF;
     dw Instruction_EnemyProjectile_GotoY                                 ;86B4D3;
     dw InstList_EnemyProjectile_DragonFireball_Rising_Right              ;86B4D5;
 
+%anchor($86B4D7)
 InstList_EnemyProjectile_DragonFireball_Falling_Left:
     dw $0005,EnemyProjSpritemaps_DragonFireball_2                        ;86B4D7;
     dw $0005,EnemyProjSpritemaps_DragonFireball_3                        ;86B4DB;
     dw Instruction_EnemyProjectile_GotoY                                 ;86B4DF;
     dw InstList_EnemyProjectile_DragonFireball_Falling_Left              ;86B4E1;
 
+%anchor($86B4E3)
 InstList_EnemyProjectile_DragonFireball_Falling_Right:
     dw $0005,EnemyProjSpritemaps_DragonFireball_6                        ;86B4E3;
     dw $0005,EnemyProjSpritemaps_DragonFireball_7                        ;86B4E7;
     dw Instruction_EnemyProjectile_GotoY                                 ;86B4EB;
     dw InstList_EnemyProjectile_DragonFireball_Falling_Right             ;86B4ED;
 
+%anchor($86B4EF)
 InitAI_EnemyProjectile_DragonFireball:
     LDX.W $0E54                                                          ;86B4EF;
     LDA.W $0F7E,X                                                        ;86B4F2;
@@ -7304,6 +7766,7 @@ InitAI_EnemyProjectile_DragonFireball:
     RTS                                                                  ;86B534;
 
 
+%anchor($86B535)
 PreInstruction_EnemyProjectile_DragonFireball:
     LDA.W $1AB6,X                                                        ;86B535;
     AND.W #$FF00                                                         ;86B538;
@@ -7381,6 +7844,7 @@ PreInstruction_EnemyProjectile_DragonFireball:
     RTS                                                                  ;86B5B8;
 
 
+%anchor($86B5B9)
 Delete_EnemyProjectile_IfVerticallyOffScreen:
     LDA.W $1A93,X                                                        ;86B5B9;
     SEC                                                                  ;86B5BC;
@@ -7394,6 +7858,7 @@ Delete_EnemyProjectile_IfVerticallyOffScreen:
     RTS                                                                  ;86B5CA;
 
 
+%anchor($86B5CB)
 EnemyProjectile_DragonFireball:
     dw InitAI_EnemyProjectile_DragonFireball                             ;86B5CB; Initialisation AI
     dw PreInstruction_EnemyProjectile_DragonFireball                     ;86B5CD; Initial pre-instruction
@@ -7402,6 +7867,7 @@ EnemyProjectile_DragonFireball:
     dw $000A,$0000                                                       ;86B5D3; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86B5D7; Shot instruction list
 
+%anchor($86B5D9)
 InstList_EnemyProjectile_EyeDoorProjectile_Normal_0:
     dw $0004,EnemyProjSpritemaps_EyeDoorProjectile_4                     ;86B5D9;
     dw $0003,EnemyProjSpritemaps_EyeDoorProjectile_5                     ;86B5DD;
@@ -7410,11 +7876,13 @@ InstList_EnemyProjectile_EyeDoorProjectile_Normal_0:
     dw Instruction_EnemyProjectile_PreInstructionInY                     ;86B5E7;
     dw PreInstruction_EnemyProjectile_EyeDoorProjectile_Moving           ;86B5E9;
 
+%anchor($86B5EB)
 InstList_EnemyProjectile_EyeDoorProjectile_Normal_1:
     dw $0010,EnemyProjSpritemaps_EyeDoorProjectile_7                     ;86B5EB;
     dw Instruction_EnemyProjectile_GotoY                                 ;86B5EF;
     dw InstList_EnemyProjectile_EyeDoorProjectile_Normal_1               ;86B5F1;
 
+%anchor($86B5F3)
 InstList_EnemyProjectile_EyeDoorProjectile_Explode:
     dw Instruction_EnemyProjectile_ClearPreInstruction                   ;86B5F3;
     dw $0002,EnemyProjSpritemaps_EyeDoorProjectile_6                     ;86B5F5;
@@ -7422,6 +7890,7 @@ InstList_EnemyProjectile_EyeDoorProjectile_Explode:
     dw $0004,EnemyProjSpritemaps_EyeDoorProjectile_4                     ;86B5FD;
     dw Instruction_EnemyProjectile_Delete                                ;86B601;
 
+%anchor($86B603)
 InstList_EnemyProjectile_Shot_EyeDoorProjectile:
     dw $0004,EnemyProjSpritemaps_EyeDoorProjectile_0                     ;86B603;
     dw $0004,EnemyProjSpritemaps_EyeDoorProjectile_1                     ;86B607;
@@ -7429,11 +7898,13 @@ InstList_EnemyProjectile_Shot_EyeDoorProjectile:
     dw $0004,EnemyProjSpritemaps_EyeDoorProjectile_3                     ;86B60F;
     dw Instruction_EnemyProjectile_Delete                                ;86B613;
 
+%anchor($86B615)
 InstList_EnemyProjectile_EyeDoorSweat_Falling:
     dw $0006,EnemyProjSpritemaps_EyeDoorSweat_0                          ;86B615;
     dw Instruction_EnemyProjectile_GotoY                                 ;86B619;
     dw InstList_EnemyProjectile_EyeDoorSweat_Falling                     ;86B61B;
 
+%anchor($86B61D)
 InstList_EnemyProjectile_EyeDoorSweat_HitFloor:
     dw Instruction_EnemyProjectile_ClearPreInstruction                   ;86B61D;
     dw $0006,EnemyProjSpritemaps_EyeDoorSweat_1                          ;86B61F;
@@ -7441,6 +7912,7 @@ InstList_EnemyProjectile_EyeDoorSweat_HitFloor:
     dw $0006,EnemyProjSpritemaps_EyeDoorSweat_3                          ;86B627;
     dw Instruction_EnemyProjectile_Delete                                ;86B62B;
 
+%anchor($86B62D)
 InitAI_EnemyProjectile_EyeDoorProjectile:
     LDX.W $1C27                                                          ;86B62D;
     LDA.W $1DC7,X                                                        ;86B630;
@@ -7473,6 +7945,7 @@ InitAI_EnemyProjectile_EyeDoorProjectile:
     dw       $0010, $FFA0,$FFC0, $FF80,$FFE0, $FFA0,$0040, $FF80,$0020   ;86B65D;
     dw $0010,$0010, $0060,$FFC0, $0070,$FFC0, $0080,$FFC0, $0090,$FFC0   ;86B66D;
 
+%anchor($86B683)
 InitAI_EnemyProjectile_EyeDoorSweat:
     LDX.W $1C27                                                          ;86B683;
     JSL.L Calculate_PLM_Block_Coordinates                                ;86B686;
@@ -7504,6 +7977,7 @@ InitAI_EnemyProjectile_EyeDoorSweat:
     dw       $0200, $0040,$0200                                          ;86B6B3;
 
 
+%anchor($86B6B9)
 PreInstruction_EnemyProjectile_EyeDoorProjectile_Moving:
     JSR.W Move_EnemyProjectile_Horizontally                              ;86B6B9;
     BCS .collision                                                       ;86B6BC;
@@ -7554,6 +8028,7 @@ PreInstruction_EnemyProjectile_EyeDoorProjectile_Moving:
     RTS                                                                  ;86B713;
 
 
+%anchor($86B714)
 PreInstruction_EnemyProjectile_EyeDoorSweat:
     JSR.W Move_EnemyProjectile_Horizontally                              ;86B714;
     JSR.W Move_EnemyProjectile_Vertically                                ;86B717;
@@ -7581,6 +8056,7 @@ PreInstruction_EnemyProjectile_EyeDoorSweat:
     RTS                                                                  ;86B742;
 
 
+%anchor($86B743)
 EnemyProjectile_EyeDoorProjectile:
     dw InitAI_EnemyProjectile_EyeDoorProjectile                          ;86B743; Initialisation AI
     dw RTS_8684FB                                                        ;86B745; Initial pre-instruction
@@ -7590,6 +8066,7 @@ EnemyProjectile_EyeDoorProjectile:
     dw $0000                                                             ;86B74D; Hit instruction list
     dw InstList_EnemyProjectile_Shot_EyeDoorProjectile                   ;86B74F; Shot instruction list
 
+%anchor($86B751)
 EnemyProjectile_EyeDoorSweat:
     dw InitAI_EnemyProjectile_EyeDoorSweat                               ;86B751; Initialisation AI
     dw PreInstruction_EnemyProjectile_EyeDoorSweat                       ;86B753; Initial pre-instruction
@@ -7600,6 +8077,7 @@ EnemyProjectile_EyeDoorSweat:
     dw InstList_EnemyProjectile_Delete                                   ;86B75D; Shot instruction list
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($86B75F)
 UNUSED_Colors_86B75F:                                                    ;86B75F;
 ; "5294, 39CE, 2108, 2484" is colours Bh..Eh of lots of sprite palette 5s (common sprites)
     dw $5294,$39CE,$2108,$2484 ; (14h, 14h, 14h), (Eh, Eh, Eh), (8, 8, 8), (4, 4, 9)
@@ -7612,9 +8090,11 @@ UNUSED_Colors_86B75F:                                                    ;86B75F
     dw $5294,$39CE,$2108,$2484
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($86B79F)
 InstList_EnemyProjectile_TourianStatue_Delete:
     dw Instruction_EnemyProjectile_Delete                                ;86B79F;
 
+%anchor($86B7A1)
 InstList_EnemyProj_TourianStatueUnlockingParticleWaterSplash:
     dw $0008,EnemyProjSpritemaps_TourianStatueUnlockParticleWaterSplash_0 ;86B7A1;
     dw $0008,EnemyProjSpritemaps_TourianStatueUnlockParticleWaterSplash_1 ;86B7A5;
@@ -7622,6 +8102,7 @@ InstList_EnemyProj_TourianStatueUnlockingParticleWaterSplash:
     dw $0008,EnemyProjSpritemaps_TourianStatueUnlockParticleWaterSplash_3 ;86B7AD;
     dw Instruction_EnemyProjectile_Delete                                ;86B7B1;
 
+%anchor($86B7B3)
 InstList_EnemyProj_TourianStatueEyeGlow:
     dw $0008,EnemyProjSpritemaps_TourianStatueEyeGlow_8                  ;86B7B3;
     dw $0008,EnemyProjSpritemaps_TourianStatueEyeGlow_7                  ;86B7B7;
@@ -7641,6 +8122,7 @@ InstList_EnemyProj_TourianStatueEyeGlow:
     dw Instruction_EnemyProj_SpawnTourianStatueUnlockingParticle         ;86B7E6;
     dw Instruction_EnemyProjectile_Delete                                ;86B7E8;
 
+%anchor($86B7EA)
 Instruction_EnemyProj_SpawnTourianStatueUnlockingParticle:
     PHY                                                                  ;86B7EA;
     TXA                                                                  ;86B7EB;
@@ -7650,6 +8132,7 @@ Instruction_EnemyProj_SpawnTourianStatueUnlockingParticle:
     RTS                                                                  ;86B7F4;
 
 
+%anchor($86B7F5)
 Instruction_EnemyProj_TourianStatueUnlockingEarthquake:
     LDA.W #$0001                                                         ;86B7F5;
     STA.W $183E                                                          ;86B7F8;
@@ -7658,6 +8141,7 @@ Instruction_EnemyProj_TourianStatueUnlockingEarthquake:
     RTS                                                                  ;86B801;
 
 
+%anchor($86B802)
 InstList_EnemyProjectile_TourianStatueUnlockingParticle:
     dw $0003,EnemyProjSpritemaps_TourianStatueUnlockingParticle_0        ;86B802;
     dw $0003,EnemyProjSpritemaps_TourianStatueUnlockingParticle_1        ;86B806;
@@ -7667,6 +8151,7 @@ InstList_EnemyProjectile_TourianStatueUnlockingParticle:
     dw Instruction_EnemyProjectile_DecrementTimer_GotoYIfNonZero         ;86B814;
     dw InstList_EnemyProjectile_TourianStatueUnlockingParticle           ;86B816;
 
+%anchor($86B818)
 Inst_EnemyProj_SpawnTourianStatueUnlockingParticleTail:
     PHY                                                                  ;86B818;
     TXA                                                                  ;86B819;
@@ -7676,6 +8161,7 @@ Inst_EnemyProj_SpawnTourianStatueUnlockingParticleTail:
     RTS                                                                  ;86B822;
 
 
+%anchor($86B823)
 InstList_EnemyProj_SpawnTourianStatueUnlockingParticleTail:
     dw $0004,EnemyProjSpritemaps_TourianStatueUnlockingParticleTail_0    ;86B823;
     dw Instruction_EnemyProjectile_YPositionInY,$0008                    ;86B827;
@@ -7686,6 +8172,7 @@ InstList_EnemyProj_SpawnTourianStatueUnlockingParticleTail:
     dw $0004,EnemyProjSpritemaps_TourianStatueUnlockingParticleTail_3    ;86B839;
     dw Instruction_EnemyProjectile_Delete                                ;86B83F;
 
+%anchor($86B841)
 Instruction_EnemyProjectile_YPositionInY:
     LDA.W $1A93,X                                                        ;86B841;
     CLC                                                                  ;86B844;
@@ -7696,32 +8183,38 @@ Instruction_EnemyProjectile_YPositionInY:
     RTS                                                                  ;86B84D;
 
 
+%anchor($86B84E)
 InstList_EnemyProjectile_TourianStatuesSoul:
     dw $0008,EnemyProjSpritemaps_TourianStatuesSoul_0                    ;86B84E;
     dw $0008,EnemyProjSpritemaps_TourianStatuesSoul_1                    ;86B852;
     dw Instruction_EnemyProjectile_GotoY                                 ;86B856;
     dw InstList_EnemyProjectile_TourianStatuesSoul                       ;86B858;
 
+%anchor($86B85A)
 InstList_EnemyProjectile_TourianStatueBaseDecoration_0:
     dw $0080,EnemyProjSpritemaps_TourianStatueBaseDecoration             ;86B85A;
     dw Instruction_EnemyProjectile_PreInstructionInY                     ;86B85E;
     dw PreInst_EnemyProj_TourianStatueBaseDecoration_AllowProcess        ;86B860;
 
+%anchor($86B862)
 InstList_EnemyProjectile_TourianStatueBaseDecoration_1:
     dw $0777,EnemyProjSpritemaps_TourianStatueBaseDecoration             ;86B862;
     dw Instruction_EnemyProjectile_GotoY                                 ;86B866;
     dw InstList_EnemyProjectile_TourianStatueBaseDecoration_1            ;86B868;
 
+%anchor($86B86A)
 InstList_EnemyProjectile_TourianStatueRidley:
     dw $0777,EnemyProjSpritemaps_TourianStatueRidley                     ;86B86A;
     dw Instruction_EnemyProjectile_GotoY                                 ;86B86E;
     dw InstList_EnemyProjectile_TourianStatueRidley                      ;86B870;
 
+%anchor($86B872)
 InstList_EnemyProjectile_TourianStatuePhantoon:
     dw $0777,EnemyProjSpritemaps_TourianStatuePhantoon                   ;86B872;
     dw Instruction_EnemyProjectile_GotoY                                 ;86B876;
     dw InstList_EnemyProjectile_TourianStatuePhantoon                    ;86B878;
 
+%anchor($86B87A)
 InitAI_EnemyProj_TourianStatueUnlockingParticleWaterSplash:
     LDX.W $1993                                                          ;86B87A;
     LDA.W $1A4B,X                                                        ;86B87D;
@@ -7733,6 +8226,7 @@ InitAI_EnemyProj_TourianStatueUnlockingParticleWaterSplash:
     RTS                                                                  ;86B88D;
 
 
+%anchor($86B88E)
 InitAI_EnemyProjectile_TourianStatueEyeGlow:
     LDX.W $1993                                                          ;86B88E;
     LDA.W TourianStatueEyeData_Xposition,X                               ;86B891;
@@ -7757,6 +8251,7 @@ InitAI_EnemyProjectile_TourianStatueEyeGlow:
     RTS                                                                  ;86B8B4;
 
 
+%anchor($86B8B5)
 InitAI_EnemyProjectile_TourianStatueUnlockingParticle:
     LDX.W $1993                                                          ;86B8B5;
     LDA.W $1A4B,X                                                        ;86B8B8;
@@ -7780,6 +8275,7 @@ InitAI_EnemyProjectile_TourianStatueUnlockingParticle:
     RTS                                                                  ;86B8E7;
 
 
+%anchor($86B8E8)
 InitAI_EnemyProjectile_TourianStatueUnlockingParticleTail:
     LDX.W $1993                                                          ;86B8E8;
     LDA.W $1A4B,X                                                        ;86B8EB;
@@ -7789,6 +8285,7 @@ InitAI_EnemyProjectile_TourianStatueUnlockingParticleTail:
     RTS                                                                  ;86B8F7;
 
 
+%anchor($86B8F8)
 InitAI_EnemyProjectile_TourianStatuesSoul:
     LDX.W $1993                                                          ;86B8F8;
     LDA.W TourianStatueEyeData_Xposition,X                               ;86B8FB;
@@ -7804,6 +8301,7 @@ InitAI_EnemyProjectile_TourianStatuesSoul:
 ;       |     |      _________ Draygon
 ;       |     |     |      ___ Kraid
 ;       |     |     |     |
+%anchor($86B90E)
 TourianStatueEyeData:
   .Xposition:
     dw $0084,$007A,$009E,$0068                                           ;86B90E;
@@ -7820,6 +8318,7 @@ TourianStatueEyeData:
   .Kraid:
     dw $6BFA,$3BE0,$2680,$1580                                           ;86B936; green
 
+%anchor($86B93E)
 InitAI_EnemyProjectile_TourianStatueBaseDecoration:
     LDA.W #$0078                                                         ;86B93E;
     STA.W $1AFF,Y                                                        ;86B941;
@@ -7830,6 +8329,7 @@ InitAI_EnemyProjectile_TourianStatueBaseDecoration:
     RTS                                                                  ;86B950;
 
 
+%anchor($86B951)
 InitAI_EnemyProjectile_TourianStatue_Ridley:
     LDA.W #$008E                                                         ;86B951;
     STA.W $1AFF,Y                                                        ;86B954;
@@ -7840,6 +8340,7 @@ InitAI_EnemyProjectile_TourianStatue_Ridley:
     RTS                                                                  ;86B963;
 
 
+%anchor($86B964)
 InitAI_EnemyProjectile_TourianStatue_Phantoon:
     LDA.W #$0084                                                         ;86B964;
     STA.W $1AFF,Y                                                        ;86B967;
@@ -7850,6 +8351,7 @@ InitAI_EnemyProjectile_TourianStatue_Phantoon:
     RTS                                                                  ;86B976;
 
 
+%anchor($86B977)
 PreInst_EnemyProj_TourianStatueUnlockingParticleWaterSplash:
     LDA.W $195E                                                          ;86B977;
     SEC                                                                  ;86B97A;
@@ -7858,6 +8360,7 @@ PreInst_EnemyProj_TourianStatueUnlockingParticleWaterSplash:
     RTS                                                                  ;86B981;
 
 
+%anchor($86B982)
 PreInst_EnemyProjectile_TourianStatueUnlockingParticle:
     STZ.B $12                                                            ;86B982;
     STZ.B $14                                                            ;86B984;
@@ -7920,6 +8423,7 @@ PreInst_EnemyProjectile_TourianStatueUnlockingParticle:
     RTS                                                                  ;86B9FC;
 
 
+%anchor($86B9FD)
 PreInstruction_EnemyProjectile_TourianStatuesSoul:
     STZ.B $12                                                            ;86B9FD;
     STZ.B $14                                                            ;86B9FF;
@@ -7949,12 +8453,14 @@ PreInstruction_EnemyProjectile_TourianStatuesSoul:
     RTS                                                                  ;86BA36;
 
 
+%anchor($86BA37)
 PreInst_EnemyProj_TourianStatueBaseDecoration_AllowProcess:
     LDA.W $1E6F                                                          ;86BA37;
     BNE PreInst_EnemyProj_TourianStatue_Ridley_Phantoon_BaseDecor        ;86BA3A;
     LDA.W #$8000                                                         ;86BA3C;
     TSB.W $1E6D                                                          ;86BA3F;
 
+%anchor($86BA42)
 PreInst_EnemyProj_TourianStatue_Ridley_Phantoon_BaseDecor:
     LDA.W $1AFF,X                                                        ;86BA42;
     STA.W $1A4B,X                                                        ;86BA45;
@@ -7969,6 +8475,7 @@ PreInst_EnemyProj_TourianStatue_Ridley_Phantoon_BaseDecor:
     RTS                                                                  ;86BA5B;
 
 
+%anchor($86BA5C)
 EnemyProjectile_TourianStatueWaterSplash:
     dw InitAI_EnemyProj_TourianStatueUnlockingParticleWaterSplash        ;86BA5C; Initialisation AI
     dw PreInst_EnemyProj_TourianStatueUnlockingParticleWaterSplash       ;86BA5E; Initial pre-instruction
@@ -7978,6 +8485,7 @@ EnemyProjectile_TourianStatueWaterSplash:
     dw $0000                                                             ;86BA66; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86BA68; Shot instruction list
 
+%anchor($86BA6A)
 EnemyProjectile_TourianStatueEyeGlow:
     dw InitAI_EnemyProjectile_TourianStatueEyeGlow                       ;86BA6A; Initialisation AI
     dw RTS_8684FB                                                        ;86BA6C; Initial pre-instruction
@@ -7987,6 +8495,7 @@ EnemyProjectile_TourianStatueEyeGlow:
     dw $0000                                                             ;86BA74; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86BA76; Shot instruction list
 
+%anchor($86BA78)
 EnemyProjectile_TourianStatueUnlockingParticle:
     dw InitAI_EnemyProjectile_TourianStatueUnlockingParticle             ;86BA78; Initialisation AI
     dw PreInst_EnemyProjectile_TourianStatueUnlockingParticle            ;86BA7A; Initial pre-instruction
@@ -7996,6 +8505,7 @@ EnemyProjectile_TourianStatueUnlockingParticle:
     dw $0000                                                             ;86BA82; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86BA84; Shot instruction list
 
+%anchor($86BA86)
 EnemyProjectile_TourianStatueUnlockingParticleTail:
     dw InitAI_EnemyProjectile_TourianStatueUnlockingParticleTail         ;86BA86; Initialisation AI
     dw RTS_8684FB                                                        ;86BA88; Initial pre-instruction
@@ -8005,6 +8515,7 @@ EnemyProjectile_TourianStatueUnlockingParticleTail:
     dw $0000                                                             ;86BA90; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86BA92; Shot instruction list
 
+%anchor($86BA94)
 EnemyProjectile_TourianStatueSoul:
     dw InitAI_EnemyProjectile_TourianStatuesSoul                         ;86BA94; Initialisation AI
     dw PreInstruction_EnemyProjectile_TourianStatuesSoul                 ;86BA96; Initial pre-instruction
@@ -8014,6 +8525,7 @@ EnemyProjectile_TourianStatueSoul:
     dw $0000                                                             ;86BA9E; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86BAA0; Shot instruction list
 
+%anchor($86BAA2)
 EnemyProjectile_TourianStatueRidley:
     dw InitAI_EnemyProjectile_TourianStatue_Ridley                       ;86BAA2; Initialisation AI
     dw PreInst_EnemyProj_TourianStatue_Ridley_Phantoon_BaseDecor         ;86BAA4; Initial pre-instruction
@@ -8023,6 +8535,7 @@ EnemyProjectile_TourianStatueRidley:
     dw $0000                                                             ;86BAAC; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86BAAE; Shot instruction list
 
+%anchor($86BAB0)
 EnemyProjectile_TourianStatuePhantoon:
     dw InitAI_EnemyProjectile_TourianStatue_Phantoon                     ;86BAB0; Initialisation AI
     dw PreInst_EnemyProj_TourianStatue_Ridley_Phantoon_BaseDecor         ;86BAB2; Initial pre-instruction
@@ -8032,6 +8545,7 @@ EnemyProjectile_TourianStatuePhantoon:
     dw $0000                                                             ;86BABA; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86BABC; Shot instruction list
 
+%anchor($86BABE)
 EnemyProjectile_TourianStatueBaseDecoration:
     dw InitAI_EnemyProjectile_TourianStatueBaseDecoration                ;86BABE; Initialisation AI
     dw PreInst_EnemyProj_TourianStatue_Ridley_Phantoon_BaseDecor         ;86BAC0; Initial pre-instruction
@@ -8042,6 +8556,7 @@ EnemyProjectile_TourianStatueBaseDecoration:
     dw InstList_EnemyProjectile_Delete                                   ;86BACA; Shot instruction list
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($86BACC)
 UNUSED_InstList_EnemyProjectile_Parameter0_86BACC:
     dw $0002,UNUSED_EnemyProjSpritemaps_0_8D9268                         ;86BACC;
     dw $0002,UNUSED_EnemyProjSpritemaps_1_8D926F                         ;86BAD0;
@@ -8052,6 +8567,7 @@ UNUSED_InstList_EnemyProjectile_Parameter0_86BACC:
     dw $0002,UNUSED_EnemyProjSpritemaps_6_8D9292                         ;86BAE4;
     dw Instruction_EnemyProjectile_Delete                                ;86BAE8;
 
+%anchor($86BAEA)
 UNUSED_InstList_EnemyProjectile_Parameter1_86BAEA:
     dw $0002,UNUSED_EnemyProjSpritemaps_7_8D9299                         ;86BAEA;
     dw $0002,UNUSED_EnemyProjSpritemaps_8_8D92A0                         ;86BAEE;
@@ -8062,6 +8578,7 @@ UNUSED_InstList_EnemyProjectile_Parameter1_86BAEA:
     dw $0002,UNUSED_EnemyProjSpritemaps_D_8D92C3                         ;86BB02;
     dw Instruction_EnemyProjectile_Delete                                ;86BB06;
 
+%anchor($86BB08)
 UNUSED_InstList_EnemyProjectile_Parameter2_86BB08:
     dw $0002,UNUSED_EnemyProjSpritemaps_E_8D92CA                         ;86BB08;
     dw $0002,UNUSED_EnemyProjSpritemaps_E_8D92CA                         ;86BB0C;
@@ -8070,11 +8587,13 @@ UNUSED_InstList_EnemyProjectile_Parameter2_86BB08:
     dw $0002,UNUSED_EnemyProjSpritemaps_12_8D92FA                        ;86BB18;
     dw Instruction_EnemyProjectile_Delete                                ;86BB1C;
 
+%anchor($86BB1E)
 UNUSED_InstList_Pointers_86BB1E:
     dw UNUSED_InstList_EnemyProjectile_Parameter0_86BACC                 ;86BB1E;
     dw UNUSED_InstList_EnemyProjectile_Parameter1_86BAEA                 ;86BB20;
     dw UNUSED_InstList_EnemyProjectile_Parameter2_86BB08                 ;86BB22;
 
+%anchor($86BB24)
 UNUSED_RandomBuggyCode_86BB24:
     PHY                                                                  ;86BB24;
     LDY.W UNUSED_EnemyProjectile_86BB50                                  ;86BB25;
@@ -8084,6 +8603,7 @@ UNUSED_RandomBuggyCode_86BB24:
     RTS                                                                  ;86BB2F;
 
 
+%anchor($86BB30)
 UNUSED_InitAI_EnemyProjectile_86BB30:
     LDX.W $0E54                                                          ;86BB30;
     LDA.L $7E8022,X                                                      ;86BB33;
@@ -8101,11 +8621,13 @@ UNUSED_InitAI_EnemyProjectile_86BB30:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($86BB4F)
 RTS_86BB4F:
     RTS                                                                  ;86BB4F;
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($86BB50)
 UNUSED_EnemyProjectile_86BB50:
     dw UNUSED_InitAI_EnemyProjectile_86BB30                              ;86BB50; Initialisation AI
     dw RTS_86BB4F                                                        ;86BB52; Initial pre-instruction
@@ -8115,6 +8637,7 @@ UNUSED_EnemyProjectile_86BB50:
     dw InstList_EnemyProjectile_Delete                                   ;86BB5C; Shot instruction list
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($86BB5E)
 InstList_EnemyProjectile_PuromiBody:
     dw $0003,EnemyProjSpritemaps_PuromiBody_0                            ;86BB5E;
     dw $0003,EnemyProjSpritemaps_PuromiBody_1                            ;86BB62;
@@ -8131,6 +8654,7 @@ InstList_EnemyProjectile_PuromiBody:
     dw Instruction_EnemyProjectile_GotoY                                 ;86BB8E;
     dw InstList_EnemyProjectile_PuromiBody                               ;86BB90;
 
+%anchor($86BB92)
 InitAI_EnemyProjectile_PuromiBody:
     LDX.W $0E54                                                          ;86BB92;
     LDA.W $0F7A,X                                                        ;86BB95;
@@ -8155,10 +8679,12 @@ InitAI_EnemyProjectile_PuromiBody:
     RTS                                                                  ;86BBC5;
 
 
+%anchor($86BBC6)
 RTS_86BBC6:
     RTS                                                                  ;86BBC6;
 
 
+%anchor($86BBC7)
 EnemyProjectile_Puromi:
     dw InitAI_EnemyProjectile_PuromiBody                                 ;86BBC7; Initialisation AI
     dw RTS_86BBC6                                                        ;86BBC9; Initial pre-instruction
@@ -8167,10 +8693,12 @@ EnemyProjectile_Puromi:
     dw $C040,$0000                                                       ;86BBCF; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86BBD3; Shot instruction list
 
+%anchor($86BBD5)
 InstList_EnemyProjectile_NorfairLavaquakeRocks:
     dw $0001,EnemyProjSpritemaps_LavaquakeRocks                          ;86BBD5;
     dw Instruction_EnemyProjectile_Sleep                                 ;86BBD9;
 
+%anchor($86BBDB)
 InitAI_EnemyProjectile_NorfairLavaquakeRocks:
     LDA.W #InstList_EnemyProjectile_NorfairLavaquakeRocks                ;86BBDB;
     STA.W $1B47,Y                                                        ;86BBDE;
@@ -8192,12 +8720,14 @@ InitAI_EnemyProjectile_NorfairLavaquakeRocks:
     RTS                                                                  ;86BC0E;
 
 
+%anchor($86BC0F)
 PreInstruction_EnemyProjectile_NorfairLavaquakeRocks:
     JSR.W ($1AFF,X)                                                      ;86BC0F;
     JSR.W Delete_EnemyProjectile_IfOffScreen                             ;86BC12;
     RTS                                                                  ;86BC15;
 
 
+%anchor($86BC16)
 NorfairLavaquakeRocksFunction_Rising:
     LDA.W $1ADB,X                                                        ;86BC16;
     SEC                                                                  ;86BC19;
@@ -8274,6 +8804,7 @@ NorfairLavaquakeRocksFunction_Rising:
     RTS                                                                  ;86BC8E;
 
 
+%anchor($86BC8F)
 NorfairLavaquakeRocks_Falling:
     LDA.W $1ADB,X                                                        ;86BC8F;
     CLC                                                                  ;86BC92;
@@ -8331,6 +8862,7 @@ NorfairLavaquakeRocks_Falling:
     RTS                                                                  ;86BCF3;
 
 
+%anchor($86BCF4)
 Move_EnemyProjectile_AccordingToXVelocity:
     LDA.W $1AB7,X                                                        ;86BCF4;
     AND.W #$FF00                                                         ;86BCF7;
@@ -8352,6 +8884,7 @@ Move_EnemyProjectile_AccordingToXVelocity:
     RTS                                                                  ;86BD1D;
 
 
+%anchor($86BD1E)
 Delete_EnemyProjectile_IfOffScreen:
     JSR.W CheckIf_EnemyProjectile_IsOffScreen                            ;86BD1E;
     BEQ .return                                                          ;86BD21;
@@ -8362,6 +8895,7 @@ Delete_EnemyProjectile_IfOffScreen:
     RTS                                                                  ;86BD29;
 
 
+%anchor($86BD2A)
 CheckIf_EnemyProjectile_IsOffScreen:
     LDA.W $1A4B,X                                                        ;86BD2A;
     CMP.W $0911                                                          ;86BD2D;
@@ -8388,6 +8922,7 @@ CheckIf_EnemyProjectile_IsOffScreen:
     RTS                                                                  ;86BD59;
 
 
+%anchor($86BD5A)
 EnemyProjectile_LavaquakeRocks:
     dw InitAI_EnemyProjectile_NorfairLavaquakeRocks                      ;86BD5A; Initialisation AI
     dw PreInstruction_EnemyProjectile_NorfairLavaquakeRocks              ;86BD5C; Initial pre-instruction
@@ -8396,40 +8931,48 @@ EnemyProjectile_LavaquakeRocks:
     dw $0010,$0000                                                       ;86BD62; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86BD66; Shot instruction list
 
+%anchor($86BD68)
 InstList_EnemyProjectile_ShaktoolsAttack_FrontCircle_0:
     dw $0004,EnemyProjSpritemaps_ShaktoolsAttack                         ;86BD68;
     dw $0004,EnemyProjSpritemaps_ShaktoolsAttack_FrontMiddleCircle       ;86BD6C;
 
+%anchor($86BD70)
 InstList_EnemyProjectile_ShaktoolsAttack_FrontCircle_1:
     dw $0077,EnemyProjSpritemaps_ShaktoolsAttack_FrontCircle             ;86BD70;
     dw Instruction_EnemyProjectile_GotoY                                 ;86BD74;
     dw InstList_EnemyProjectile_ShaktoolsAttack_FrontCircle_1            ;86BD76;
 
+%anchor($86BD78)
 InstList_EnemyProjectile_ShaktoolsAttack_MiddleCircle_0:
     dw $0006,EnemyProjSpritemaps_ShaktoolsAttack                         ;86BD78;
     dw Instruction_EnemyProjectile_PreInstructionInY                     ;86BD7C;
     dw PreInst_EnemyProjectile_ShaktoolsAttack_MiddleBack_Moving         ;86BD7E;
     dw $0004,EnemyProjSpritemaps_ShaktoolsAttack                         ;86BD80;
 
+%anchor($86BD84)
 InstList_EnemyProjectile_ShaktoolsAttack_MiddleCircle_1:
     dw $0077,EnemyProjSpritemaps_ShaktoolsAttack_FrontMiddleCircle       ;86BD84;
     dw Instruction_EnemyProjectile_GotoY                                 ;86BD88;
     dw InstList_EnemyProjectile_ShaktoolsAttack_MiddleCircle_1           ;86BD8A;
 
+%anchor($86BD8C)
 InstList_EnemyProjectile_ShaktoolsAttack_BackCircle_0:
     dw $000A,EnemyProjSpritemaps_ShaktoolsAttack                         ;86BD8C;
     dw Instruction_EnemyProjectile_PreInstructionInY                     ;86BD90;
     dw PreInst_EnemyProjectile_ShaktoolsAttack_MiddleBack_Moving         ;86BD92;
 
+%anchor($86BD94)
 InstList_EnemyProjectile_ShaktoolsAttack_BackCircle_1:
     dw $0077,EnemyProjSpritemaps_ShaktoolsAttack                         ;86BD94;
     dw Instruction_EnemyProjectile_GotoY                                 ;86BD98;
     dw InstList_EnemyProjectile_ShaktoolsAttack_BackCircle_1             ;86BD9A;
 
+%anchor($86BD9C)
 InitAI_EnemyProjectile_ShaktoolsAttack_Middle_Back:
     LDA.W $1993                                                          ;86BD9C;
     STA.W $1AFF,Y                                                        ;86BD9F;
 
+%anchor($86BDA2)
 InitAI_EnemyProjectile_ShaktoolsAttack_Front:
     LDX.W $0E54                                                          ;86BDA2;
     LDA.W $0F7A,X                                                        ;86BDA5;
@@ -8468,6 +9011,7 @@ InitAI_EnemyProjectile_ShaktoolsAttack_Front:
 .Yoffset:
     dw $FFF0,$FFF4,$0000,$000C,$0010,$000C,$0000,$FFF4                   ;86BDF3;
 
+%anchor($86BE03)
 PreInstruction_EnemyProjectile_ShaktoolsAttack_Front:
     JSR.W Move_EnemyProjectile_Horizontally                              ;86BE03;
     BCS .delete                                                          ;86BE06;
@@ -8481,6 +9025,7 @@ PreInstruction_EnemyProjectile_ShaktoolsAttack_Front:
     RTS                                                                  ;86BE11;
 
 
+%anchor($86BE12)
 PreInst_EnemyProjectile_ShaktoolsAttack_MiddleBack_Moving:
     LDY.W $1AFF,X                                                        ;86BE12;
     LDA.W $1997,Y                                                        ;86BE15;
@@ -8495,6 +9040,7 @@ PreInst_EnemyProjectile_ShaktoolsAttack_MiddleBack_Moving:
     RTS                                                                  ;86BE24;
 
 
+%anchor($86BE25)
 EnemyProjectile_ShaktoolFrontCircle:
     dw InitAI_EnemyProjectile_ShaktoolsAttack_Front                      ;86BE25; Initialisation AI
     dw PreInstruction_EnemyProjectile_ShaktoolsAttack_Front              ;86BE27; Initial pre-instruction
@@ -8504,6 +9050,7 @@ EnemyProjectile_ShaktoolFrontCircle:
     dw $0000                                                             ;86BE2F; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86BE31; Shot instruction list
 
+%anchor($86BE33)
 EnemyProjectile_ShaktoolMiddleCircle:
     dw InitAI_EnemyProjectile_ShaktoolsAttack_Middle_Back                ;86BE33; Initialisation AI
     dw RTS_8684FB                                                        ;86BE35; Initial pre-instruction
@@ -8513,6 +9060,7 @@ EnemyProjectile_ShaktoolMiddleCircle:
     dw $0000                                                             ;86BE3D; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86BE3F; Shot instruction list
 
+%anchor($86BE41)
 EnemyProjectile_ShaktoolBackCircle:
     dw InitAI_EnemyProjectile_ShaktoolsAttack_Middle_Back                ;86BE41; Initialisation AI
     dw RTS_8684FB                                                        ;86BE43; Initial pre-instruction
@@ -8522,6 +9070,7 @@ EnemyProjectile_ShaktoolBackCircle:
     dw $0000                                                             ;86BE4B; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86BE4D; Shot instruction list
 
+%anchor($86BE4F)
 InitAI_EnemyProjectile_MotherBrainsTurrets:
     LDA.W #$0400                                                         ;86BE4F;
     STA.W $19BB,Y                                                        ;86BE52;
@@ -8591,31 +9140,44 @@ InitAI_EnemyProjectile_MotherBrainsTurrets:
 ;       |   |   |   |   |    |    _____ Pointing up
 ;       |   |   |   |   |    |   |    _ Pointing up-left
 ;       |   |   |   |   |    |   |   |
+%anchor($86BEF9)
 MotherBrainTurret_AllowedRotations_0:
     db $00,$01,$01,$01,$00, $00,$00,$00                                  ;86BEF9;
+%anchor($86BF01)
 MotherBrainTurret_AllowedRotations_1:
     db $00,$00,$01,$01,$01, $00,$00,$00                                  ;86BF01;
+%anchor($86BF09)
 MotherBrainTurret_AllowedRotations_2:
     db $01,$01,$01,$00,$00, $00,$00,$00                                  ;86BF09;
+%anchor($86BF11)
 MotherBrainTurret_AllowedRotations_3:
     db $00,$01,$01,$01,$00, $00,$00,$00                                  ;86BF11;
+%anchor($86BF19)
 MotherBrainTurret_AllowedRotations_4:
     db $00,$01,$01,$01,$01, $00,$00,$00                                  ;86BF19;
+%anchor($86BF21)
 MotherBrainTurret_AllowedRotations_5:
     db $01,$01,$01,$01,$00, $00,$00,$00                                  ;86BF21;
+%anchor($86BF29)
 MotherBrainTurret_AllowedRotations_6:
     db $00,$01,$01,$01,$00, $00,$00,$00                                  ;86BF29;
+%anchor($86BF31)
 MotherBrainTurret_AllowedRotations_7:
     db $00,$00,$01,$01,$01, $00,$00,$00                                  ;86BF31;
+%anchor($86BF39)
 MotherBrainTurret_AllowedRotations_8:
     db $01,$01,$01,$00,$00, $00,$00,$00                                  ;86BF39;
+%anchor($86BF41)
 MotherBrainTurret_AllowedRotations_9:
     db $00,$01,$01,$01,$00, $00,$00,$00                                  ;86BF41;
+%anchor($86BF49)
 MotherBrainTurret_AllowedRotations_A:
     db $00,$01,$01,$01,$01, $00,$00,$00                                  ;86BF49;
+%anchor($86BF51)
 MotherBrainTurret_AllowedRotations_B:
     db $01,$01,$01,$01,$00, $00,$00,$00                                  ;86BF51;
 
+%anchor($86BF59)
 InitAI_EnemyProjectile_MotherBrainsTurretBullets:
     LDA.W #$0000                                                         ;86BF59;
     STA.W $1B23,Y                                                        ;86BF5C;
@@ -8665,6 +9227,7 @@ InitAI_EnemyProjectile_MotherBrainsTurretBullets:
     dw $0000,$01F2,$02C0,$01F2,$0000,$FE0E,$FD40,$FE0E                   ;86BFCF;
 
 
+%anchor($86BFDF)
 PreInstruction_EnemyProjectile_MotherBrainsTurrets:
     JSR.W Check_If_Turret_Is_On_Screen                                   ;86BFDF;
     BCC .onScreen                                                        ;86BFE2;
@@ -8731,6 +9294,7 @@ PreInstruction_EnemyProjectile_MotherBrainsTurrets:
     dw InstList_EnemyProjectile_MotherBrainsTurret_Up                    ;86C04C;
     dw InstList_EnemyProjectile_MotherBrainsTurret_UpLeft                ;86C04E;
 
+%anchor($86C050)
 Set_Next_Turret_Direction:
     SEP #$20                                                             ;86C050;
     LDA.W $1A6F,X                                                        ;86C052;
@@ -8765,6 +9329,7 @@ Set_Next_Turret_Direction:
     RTS                                                                  ;86C08D;
 
 
+%anchor($86C08E)
 Set_Rotation_Timer:
     JSL.L GenerateRandomNumber                                           ;86C08E;
     AND.W #$00FF                                                         ;86C092;
@@ -8777,6 +9342,7 @@ Set_Rotation_Timer:
     RTS                                                                  ;86C0A0;
 
 
+%anchor($86C0A1)
 Set_Cooldown_Timer:
     JSL.L GenerateRandomNumber                                           ;86C0A1;
     AND.W #$00FF                                                         ;86C0A5;
@@ -8789,6 +9355,7 @@ Set_Cooldown_Timer:
     RTS                                                                  ;86C0B3;
 
 
+%anchor($86C0B4)
 Check_If_Turret_Is_On_Screen:
     LDA.W $1A93,X                                                        ;86C0B4;
     BMI .returnOffScreen                                                 ;86C0B7;
@@ -8817,6 +9384,7 @@ Check_If_Turret_Is_On_Screen:
     RTS                                                                  ;86C0DF;
 
 
+%anchor($86C0E0)
 PreInstruction_EnemyProjectile_MotherBrainsTurretBullets:
     LDA.W $1BD7,X                                                        ;86C0E0;
     EOR.W #$8000                                                         ;86C0E3;
@@ -8835,38 +9403,47 @@ PreInstruction_EnemyProjectile_MotherBrainsTurretBullets:
     RTS                                                                  ;86C100;
 
 
+%anchor($86C101)
 InstList_EnemyProjectile_MotherBrainsTurret_Left:
     dw $0001,EnemyProjSpritemaps_MotherBrainsTurrets_Left                ;86C101;
     dw Instruction_EnemyProjectile_Sleep                                 ;86C105;
 
+%anchor($86C107)
 InstList_EnemyProjectile_MotherBrainsTurret_DownLeft:
     dw $0001,EnemyProjSpritemaps_MotherBrainsTurrets_DownLeft            ;86C107;
     dw Instruction_EnemyProjectile_Sleep                                 ;86C10B;
 
+%anchor($86C10D)
 InstList_EnemyProjectile_MotherBrainsTurret_Down:
     dw $0001,EnemyProjSpritemaps_MotherBrainsTurrets_Down                ;86C10D;
     dw Instruction_EnemyProjectile_Sleep                                 ;86C111;
 
+%anchor($86C113)
 InstList_EnemyProjectile_MotherBrainsTurret_DownRight:
     dw $0001,EnemyProjSpritemaps_MotherBrainsTurrets_DownRight           ;86C113;
     dw Instruction_EnemyProjectile_Sleep                                 ;86C117;
 
+%anchor($86C119)
 InstList_EnemyProjectile_MotherBrainsTurret_Right:
     dw $0001,EnemyProjSpritemaps_MotherBrainsTurrets_Right               ;86C119;
     dw Instruction_EnemyProjectile_Sleep                                 ;86C11D;
 
+%anchor($86C11F)
 InstList_EnemyProjectile_MotherBrainsTurret_UpRight:
     dw $0001,EnemyProjSpritemaps_MotherBrainsTurrets_UpRight             ;86C11F;
     dw Instruction_EnemyProjectile_Sleep                                 ;86C123;
 
+%anchor($86C125)
 InstList_EnemyProjectile_MotherBrainsTurret_Up:
     dw $0001,EnemyProjSpritemaps_MotherBrainsTurrets_Up                  ;86C125;
     dw Instruction_EnemyProjectile_Sleep                                 ;86C129;
 
+%anchor($86C12B)
 InstList_EnemyProjectile_MotherBrainsTurret_UpLeft:
     dw $0001,EnemyProjSpritemaps_MotherBrainsTurrets_UpLeft              ;86C12B;
     dw Instruction_EnemyProjectile_Sleep                                 ;86C12F;
 
+%anchor($86C131)
 InstList_EnemyProj_MotherBrainsTurretBullets_GotoDirection:
     dw Instruction_EnemyProjectile_MotherBrainsTurretBullets_GotoY       ;86C131;
     dw InstList_EnemyProjectile_MotherBrainsTurretBullets_Left           ;86C133;
@@ -8878,38 +9455,47 @@ InstList_EnemyProj_MotherBrainsTurretBullets_GotoDirection:
     dw InstList_EnemyProjectile_MotherBrainsTurretBullets_Up             ;86C13F;
     dw InstList_EnemyProjectile_MotherBrainsTurretBullets_UpLeft         ;86C141;
 
+%anchor($86C143)
 InstList_EnemyProjectile_MotherBrainsTurretBullets_Left:
     dw $0001,EnemyProjSpritemaps_MotherBrainsTurretBullets_Left          ;86C143;
     dw Instruction_EnemyProjectile_Sleep                                 ;86C147;
 
+%anchor($86C149)
 InstList_EnemyProjectile_MotherBrainsTurretBullets_DownLeft:
     dw $0001,EnemyProjSpritemaps_MotherBrainsTurretBullets_DownLeft      ;86C149;
     dw Instruction_EnemyProjectile_Sleep                                 ;86C14D;
 
+%anchor($86C14F)
 InstList_EnemyProjectile_MotherBrainsTurretBullets_Down:
     dw $0001,EnemyProjSpritemaps_MotherBrainsTurretBullets_Down          ;86C14F;
     dw Instruction_EnemyProjectile_Sleep                                 ;86C153;
 
+%anchor($86C155)
 InstList_EnemyProjectile_MotherBrainsTurretBullets_DownRight:
     dw $0001,EnemyProjSpritemaps_MotherBrainsTurretBullets_DownRight     ;86C155;
     dw Instruction_EnemyProjectile_Sleep                                 ;86C159;
 
+%anchor($86C15B)
 InstList_EnemyProjectile_MotherBrainsTurretBullets_Right:
     dw $0001,EnemyProjSpritemaps_MotherBrainsTurretBullets_Right         ;86C15B;
     dw Instruction_EnemyProjectile_Sleep                                 ;86C15F;
 
+%anchor($86C161)
 InstList_EnemyProjectile_MotherBrainsTurretBullets_UpRight:
     dw $0001,EnemyProjSpritemaps_MotherBrainsTurretBullets_UpRight       ;86C161;
     dw Instruction_EnemyProjectile_Sleep                                 ;86C165;
 
+%anchor($86C167)
 InstList_EnemyProjectile_MotherBrainsTurretBullets_Up:
     dw $0001,EnemyProjSpritemaps_MotherBrainsTurretBullets_Up            ;86C167;
     dw Instruction_EnemyProjectile_Sleep                                 ;86C16B;
 
+%anchor($86C16D)
 InstList_EnemyProjectile_MotherBrainsTurretBullets_UpLeft:
     dw $0001,EnemyProjSpritemaps_MotherBrainsTurretBullets_UpLeft        ;86C16D;
     dw Instruction_EnemyProjectile_Sleep                                 ;86C171;
 
+%anchor($86C173)
 Instruction_EnemyProjectile_MotherBrainsTurretBullets_GotoY:
     TYA                                                                  ;86C173;
     CLC                                                                  ;86C174;
@@ -8920,6 +9506,7 @@ Instruction_EnemyProjectile_MotherBrainsTurretBullets_GotoY:
     RTS                                                                  ;86C17D;
 
 
+%anchor($86C17E)
 EnemyProjectile_MotherBrainTurret:
     dw InitAI_EnemyProjectile_MotherBrainsTurrets                        ;86C17E; Initialisation AI
     dw PreInstruction_EnemyProjectile_MotherBrainsTurrets                ;86C180; Initial pre-instruction
@@ -8928,6 +9515,7 @@ EnemyProjectile_MotherBrainTurret:
     dw $6000,$0000                                                       ;86C186; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86C18A; Shot instruction list
 
+%anchor($86C18C)
 EnemyProjectile_MotherBrainTurretBullets:
     dw InitAI_EnemyProjectile_MotherBrainsTurretBullets                  ;86C18C; Initialisation AI
     dw PreInstruction_EnemyProjectile_MotherBrainsTurretBullets          ;86C18E; Initial pre-instruction
@@ -8937,6 +9525,7 @@ EnemyProjectile_MotherBrainTurretBullets:
     dw InstList_EnemyProjectile_Shot_MotherBrainTurretBullets            ;86C196; Hit instruction list
     dw InstList_EnemyProjectile_Shot_MotherBrainTurretBullets            ;86C198; Shot instruction list
 
+%anchor($86C19A)
 InstList_EnemyProjectile_Shot_MotherBrainTurretBullets:
     dw Instruction_EnemyProjectile_UsePalette0                           ;86C19A;
     dw Instruction_EnemyProjectile_ClearPreInstruction                   ;86C19C;
@@ -8947,11 +9536,13 @@ InstList_EnemyProjectile_Shot_MotherBrainTurretBullets:
     dw $0020,EnemyProjSpritemaps_MotherBrainsTurretBullets               ;86C1AE;
     dw Instruction_EnemyProjectile_Delete                                ;86C1B2;
 
+%anchor($86C1B4)
 Instruction_EnemyProjectile_UsePalette0:
     STZ.W $19BB,X                                                        ;86C1B4;
     RTS                                                                  ;86C1B7;
 
 
+%anchor($86C1B8)
 Check_for_Bomb_Collision_with_Rectangle:
     LDA.W $0CD2                                                          ;86C1B8;
     BNE .bombActive                                                      ;86C1BB;
@@ -9009,6 +9600,7 @@ Check_for_Bomb_Collision_with_Rectangle:
     RTS                                                                  ;86C208;
 
 
+%anchor($86C209)
 Check_for_Enemy_Collision_with_Rectangle:
     LDA.W $0F7A,X                                                        ;86C209;
     SEC                                                                  ;86C20C;
@@ -9046,6 +9638,7 @@ Check_for_Enemy_Collision_with_Rectangle:
     RTS                                                                  ;86C238;
 
 
+%anchor($86C239)
 Check_for_Collision_with_Samus:
     JSR.W Setup_Variables_for_EnemyProjectile_Collision_Detection        ;86C239;
     LDA.W $0AF6                                                          ;86C23C;
@@ -9084,18 +9677,21 @@ Check_for_Collision_with_Samus:
     RTS                                                                  ;86C26B;
 
 
+%anchor($86C26C)
 Math_86C26C:
     STA.B $26                                                            ;86C26C;
     LDA.B $12                                                            ;86C26E;
     BRA Math_86C27A                                                      ;86C270;
 
 
+%anchor($86C272)
 Math_86C272:
     STA.B $26                                                            ;86C272;
     LDA.B $12                                                            ;86C274;
     CLC                                                                  ;86C276;
     ADC.W #$0040                                                         ;86C277;
 
+%anchor($86C27A)
 Math_86C27A:
     ASL A                                                                ;86C27A;
     AND.W #$01FE                                                         ;86C27B;
@@ -9118,6 +9714,7 @@ Math_86C27A:
     RTL                                                                  ;86C29A;
 
 
+%anchor($86C29B)
 Math_16bitUnsignedMultiplication_86C29B:
     REP #$20                                                             ;86C29B;
     SEP #$10                                                             ;86C29D;
@@ -9165,6 +9762,7 @@ Math_16bitUnsignedMultiplication_86C29B:
     RTS                                                                  ;86C2F2;
 
 
+%anchor($86C2F3)
 InitAI_EnemyProjectile_MotherBrainsOnionRings:
     TYX                                                                  ;86C2F3;
     LDA.W #$0008                                                         ;86C2F4;
@@ -9185,6 +9783,7 @@ InitAI_EnemyProjectile_MotherBrainsOnionRings:
     PLX                                                                  ;86C31C;
     STA.W $1ADB,X                                                        ;86C31D;
 
+%anchor($86C320)
 Move_to_OnionRing_Spawn_Position:
     LDA.W $0FBA                                                          ;86C320;
     CLC                                                                  ;86C323;
@@ -9197,6 +9796,7 @@ Move_to_OnionRing_Spawn_Position:
     RTS                                                                  ;86C334;
 
 
+%anchor($86C335)
 PreInstruction_EnemyProjectile_MotherBrainsOnionRings:
     LDA.W $1AFF,X                                                        ;86C335;
     BEQ .active                                                          ;86C338;
@@ -9219,10 +9819,12 @@ PreInstruction_EnemyProjectile_MotherBrainsOnionRings:
     JMP.W Handle_OnionRing_Collision_with_Room                           ;86C353;
 
 
+%anchor($86C356)
 Handle_OnionRing_Collision_with_Samus:
     JSR.W OnionRing_Contact_Explosion                                    ;86C356;
     LDA.W #$0050                                                         ;86C359; fallthrough to Hurt_Samus
 
+%anchor($86C35C)
 Hurt_Samus:
     JSL.L Suit_Damage_Division                                           ;86C35C;
     JSL.L Deal_A_Damage_to_Samus                                         ;86C360;
@@ -9242,6 +9844,7 @@ Hurt_Samus:
     RTS                                                                  ;86C380;
 
 
+%anchor($86C381)
 Handle_OnionRing_Collision_with_BabyMetroid:
     LDA.L $7E7828                                                        ;86C381;
     INC A                                                                ;86C385;
@@ -9262,6 +9865,7 @@ Handle_OnionRing_Collision_with_BabyMetroid:
     RTS                                                                  ;86C3A8;
 
 
+%anchor($86C3A9)
 Check_for_Collision_with_BabyMetroid:
     CLC                                                                  ;86C3A9;
     LDA.L $7E7854                                                        ;86C3AA;
@@ -9286,6 +9890,7 @@ Check_for_Collision_with_BabyMetroid:
     RTS                                                                  ;86C3C8;
 
 
+%anchor($86C3C9)
 Check_for_OnionRing_Collision_with_Room:
     LDA.W $1A93,X                                                        ;86C3C9;
     CMP.W #$0020                                                         ;86C3CC;
@@ -9307,6 +9912,7 @@ Check_for_OnionRing_Collision_with_Room:
     RTS                                                                  ;86C3E8;
 
 
+%anchor($86C3E9)
 Setup_Variables_for_EnemyProjectile_Collision_Detection:
     LDA.W $1A4B,X                                                        ;86C3E9;
     STA.B $12                                                            ;86C3EC;
@@ -9321,12 +9927,14 @@ Setup_Variables_for_EnemyProjectile_Collision_Detection:
     RTS                                                                  ;86C403;
 
 
+%anchor($86C404)
 Handle_OnionRing_Collision_with_Room:
     LDA.W #$000A                                                         ;86C404;
     STA.W $1840                                                          ;86C407;
     LDA.W #$0005                                                         ;86C40A;
     STA.W $183E                                                          ;86C40D;
 
+%anchor($86C410)
 OnionRing_Contact_Explosion:
     STZ.W $1997,X                                                        ;86C410;
     LDA.W $1A4B,X                                                        ;86C413;
@@ -9339,11 +9947,13 @@ OnionRing_Contact_Explosion:
     LDA.W #$0013                                                         ;86C427;
     JSL.L QueueSound_Lib3_Max6                                           ;86C42A;
 
+%anchor($86C42E)
 Instruction_EnemyProjectile_UsePalette0_duplicate:
     STZ.W $19BB,X                                                        ;86C42E;
     RTS                                                                  ;86C431;
 
 
+%anchor($86C432)
 InstList_EnemyProjectile_MotherBrainsOnionRings:
     dw Instruction_EnemyProjectile_XYRadiusInY : db $01,$01              ;86C432;
     dw $0010,EnemyProjSpritemaps_MotherBrainOnionRings_0                 ;86C436;
@@ -9359,6 +9969,7 @@ InstList_EnemyProjectile_MotherBrainsOnionRings:
     dw $0005,EnemyProjSpritemaps_MotherBrainOnionRings_5                 ;86C45E;
     dw Instruction_EnemyProjectile_Sleep                                 ;86C462;
 
+%anchor($86C464)
 InstList_EnemyProjectile_Hit_MotherBrainsOnionRings:
     dw Instruction_EnemyProjectile_UsePalette0_duplicate                 ;86C464;
     dw Instruction_EnemyProjectile_ClearPreInstruction                   ;86C466;
@@ -9370,6 +9981,7 @@ InstList_EnemyProjectile_Hit_MotherBrainsOnionRings:
     dw $0005,EnemyProjSpritemaps_Common_BigExplosion_5                   ;86C47C;
     dw Instruction_EnemyProjectile_Delete                                ;86C480;
 
+%anchor($86C482)
 InitAI_EnemyProjectile_MotherBrainsBomb:
     SEP #$20                                                             ;86C482;
     LDA.W $1993                                                          ;86C484;
@@ -9399,6 +10011,7 @@ InitAI_EnemyProjectile_MotherBrainsBomb:
     RTS                                                                  ;86C4C7;
 
 
+%anchor($86C4C8)
 PreInstruction_EnemyProjectile_MotherBrainsBomb:
     JSR.W MotherBrainsBomb_Bomb_Collision_Detection                      ;86C4C8;
     LDA.W $1B23,X                                                        ;86C4CB;
@@ -9472,6 +10085,7 @@ PreInstruction_EnemyProjectile_MotherBrainsBomb:
     dw $0007,$0010,$0020,$0040,$0070,$00B0,$00F0,$0130                   ;86C550;
     dw $0170,$0000                                                       ;86C560;
 
+%anchor($86C564)
 MotherBrainsBomb_Bomb_Collision_Detection:
     LDA.W $1A4B,X                                                        ;86C564;
     STA.B $12                                                            ;86C567;
@@ -9517,6 +10131,7 @@ MotherBrainsBomb_Bomb_Collision_Detection:
     RTS                                                                  ;86C5C1;
 
 
+%anchor($86C5C2)
 Move_MotherBrains_Bomb:
     CLC                                                                  ;86C5C2;
     ADC.W $1ADB,X                                                        ;86C5C3;
@@ -9553,6 +10168,7 @@ Move_MotherBrains_Bomb:
     RTS                                                                  ;86C604;
 
 
+%anchor($86C605)
 InitAI_EnemyProjectile_MotherBrainRedBeam_Charging:
     LDA.W #$0000                                                         ;86C605;
     STA.W $1AFF,Y                                                        ;86C608;
@@ -9600,6 +10216,7 @@ InitAI_EnemyProjectile_MotherBrainRedBeam_Charging:
     RTS                                                                  ;86C683;
 
 
+%anchor($86C684)
 InitAI_EnemyProjectile_MotherBrainRedBeam_Fired:
     LDA.L $7E8008                                                        ;86C684;
     STA.W $1A4B,Y                                                        ;86C688;
@@ -9686,10 +10303,12 @@ if !FEATURE_KEEP_UNREFERENCED
     dw $0002,$FFFE,$0002,$FFFE,$FFFE,$0002,$FFFE,$0002                   ;86C75D;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($86C76D)
 RTS_86C76D:
     RTS                                                                  ;86C76D;
 
 
+%anchor($86C76E)
 InstList_EnemyProjectile_MotherBrainBomb:
     dw $0006,EnemyProjSpritemaps_MotherBrainsBomb_0                      ;86C76E;
     dw $0005,EnemyProjSpritemaps_MotherBrainsBomb_1                      ;86C772;
@@ -9703,6 +10322,7 @@ InstList_EnemyProjectile_MotherBrainBomb:
     dw Instruction_EnemyProjectile_GotoY                                 ;86C792;
     dw InstList_EnemyProjectile_MotherBrainBomb                          ;86C794;
 
+%anchor($86C796)
 InstList_EnemyProjectile_MotherBrainRedBeam:
     dw $0003,EnemyProjSpritemaps_MotherBrainsRedBeam_0                   ;86C796;
     dw Instruction_EnemyProjectile_CallExternalFunctionInY               ;86C79A;
@@ -9733,6 +10353,7 @@ InstList_EnemyProjectile_MotherBrainRedBeam:
     dw $0001,EnemyProjSpritemaps_MotherBrainsRedBeam_6                   ;86C7F5;
     dw Instruction_EnemyProjectile_Delete                                ;86C7F9;
 
+%anchor($86C7FB)
 Spawn_MotherBrainRedBeam_Fired:
     PHX                                                                  ;86C7FB;
     PHY                                                                  ;86C7FC;
@@ -9744,12 +10365,14 @@ Spawn_MotherBrainRedBeam_Fired:
     RTL                                                                  ;86C809;
 
 
+%anchor($86C80A)
 InitAI_EnemyProjectile_MotherBrainRainbowBeam_Charging:
     TYX                                                                  ;86C80A;
     STZ.W $19BB,X                                                        ;86C80B;
     STZ.W $1AB7,X                                                        ;86C80E;
     STZ.W $1ADB,X                                                        ;86C811;
 
+%anchor($86C814)
 PreInst_EnemyProjectile_MotherBrainRainbowBeam_Charging:
     LDA.W $0FBA                                                          ;86C814;
     CLC                                                                  ;86C817;
@@ -9762,6 +10385,7 @@ PreInst_EnemyProjectile_MotherBrainRainbowBeam_Charging:
     RTS                                                                  ;86C828;
 
 
+%anchor($86C829)
 InstList_EnemyProjectile_MotherBrainRainbowBeam_Charging:
     dw $0005,EnemyProjSpritemaps_MotherBrainsRainbowBeamCharging_5       ;86C829;
     dw $0005,EnemyProjSpritemaps_MotherBrainsRainbowBeamCharging_4       ;86C82D;
@@ -9771,12 +10395,14 @@ InstList_EnemyProjectile_MotherBrainRainbowBeam_Charging:
     dw $0005,EnemyProjSpritemaps_MotherBrainsRainbowBeamCharging_0       ;86C83D;
     dw Instruction_EnemyProjectile_Delete                                ;86C841;
 
+%anchor($86C843)
 InitAI_EnemyProjectile_MotherBrainsDrool:
     TYX                                                                  ;86C843;
     STZ.W $19BB,X                                                        ;86C844;
     LDA.W $1993                                                          ;86C847;
     STA.W $1AFF,X                                                        ;86C84A;
 
+%anchor($86C84D)
 PreInstruction_EnemyProjectile_MotherBrainsDrool:
     LDA.W $1AFF,X                                                        ;86C84D;
     ASL A                                                                ;86C850;
@@ -9805,6 +10431,7 @@ PreInstruction_EnemyProjectile_MotherBrainsDrool:
     dw $000C,$0012
 
 
+%anchor($86C886)
 PreInstruction_EnemyProjectile_MotherBrainsDrool_Falling:
     LDA.W $1ADB,X                                                        ;86C886;
     CLC                                                                  ;86C889;
@@ -9828,6 +10455,7 @@ PreInstruction_EnemyProjectile_MotherBrainsDrool_Falling:
     RTS                                                                  ;86C8AF;
 
 
+%anchor($86C8B0)
 InstList_EnemyProjectile_MotherBrainsDrool:
     dw $000A,EnemyProjSpritemaps_MotherBrainsDrool_0                     ;86C8B0;
     dw $000A,EnemyProjSpritemaps_MotherBrainsDrool_1                     ;86C8B4;
@@ -9840,6 +10468,7 @@ InstList_EnemyProjectile_MotherBrainsDrool:
     dw $000A,EnemyProjSpritemaps_MotherBrainsDrool_2                     ;86C8CA;
     dw Instruction_EnemyProjectile_Sleep                                 ;86C8CE;
 
+%anchor($86C8D0)
 Instruction_EnemyProj_MotherBrainsDrool_MoveDownCPixels:
     LDA.W $1A93,X                                                        ;86C8D0;
     CLC                                                                  ;86C8D3;
@@ -9849,11 +10478,13 @@ Instruction_EnemyProj_MotherBrainsDrool_MoveDownCPixels:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($86C8DB)
 UNUSED_InstList_EnemyProjectile_MotherBrainsDrool_86C8DB:
     dw $000A,EnemyProjSpritemaps_MotherBrainsDrool_2                     ;86C8DB;
     dw Instruction_EnemyProjectile_Sleep                                 ;86C8DF;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($86C8E1)
 InstList_EnemyProjectile_MotherBrainsDrool_HitFloor:
     dw Instruction_EnemyProjectile_ClearPreInstruction                   ;86C8E1;
     dw $000A,EnemyProjSpritemaps_MotherBrainsDrool_3                     ;86C8E3;
@@ -9862,6 +10493,7 @@ InstList_EnemyProjectile_MotherBrainsDrool_HitFloor:
     dw $000A,EnemyProjSpritemaps_MotherBrainsDrool_6                     ;86C8EF;
     dw Instruction_EnemyProjectile_Delete                                ;86C8F3;
 
+%anchor($86C8F5)
 InitAI_EnemyProjectile_MotherBrainsDeathExplosion:
     TYX                                                                  ;86C8F5;
     LDA.W $1993                                                          ;86C8F6;
@@ -9877,6 +10509,7 @@ InitAI_EnemyProjectile_MotherBrainsDeathExplosion:
     LDA.B $14                                                            ;86C90F;
     STA.W $1ADB,X                                                        ;86C911;
 
+%anchor($86C914)
 PreInstruction_EnemyProjectile_MotherBrainsDeathExplosion:
     LDA.W $1AB7,X                                                        ;86C914;
     CLC                                                                  ;86C917;
@@ -9889,11 +10522,13 @@ PreInstruction_EnemyProjectile_MotherBrainsDeathExplosion:
     RTS                                                                  ;86C928;
 
 
+%anchor($86C929)
 MotherBrainsDeathExplosion_InstListPointers:
     dw InstList_EnemyProj_MiscDust_3_SmallExplosion                      ;86C929;
     dw InstList_EnemyProj_MiscDust_C_Smoke                               ;86C92B;
     dw InstList_EnemyProj_MiscDust_1D_BigExplosion                       ;86C92D;
 
+%anchor($86C92F)
 InitAI_EnemyProjectile_MotherBrainsRainbowBeamExplosion:
     TYX                                                                  ;86C92F;
     STZ.W $19BB,X                                                        ;86C930;
@@ -9910,6 +10545,7 @@ InitAI_EnemyProjectile_MotherBrainsRainbowBeamExplosion:
     RTS                                                                  ;86C94B;
 
 
+%anchor($86C94C)
 PreInstruction_EnemyProj_MotherBrainsRainbowBeamExplosion:
     LDA.W $1AB7,X                                                        ;86C94C;
     CLC                                                                  ;86C94F;
@@ -9922,6 +10558,7 @@ PreInstruction_EnemyProj_MotherBrainsRainbowBeamExplosion:
     RTS                                                                  ;86C960;
 
 
+%anchor($86C961)
 InitAI_EnemyProjectile_MotherBrainExplodedEscapeDoorParticle:
     TYX                                                                  ;86C961;
     STZ.W $19BB,X                                                        ;86C962;
@@ -9958,6 +10595,7 @@ InitAI_EnemyProjectile_MotherBrainExplodedEscapeDoorParticle:
     dw $0500,$FF80,$0500,$0080,$0500,$FF00,$0500,$0200                   ;86C9C4;
 
 
+%anchor($86C9D2)
 PreInst_EnemyProj_MotherBrainExplodedEscapeDoorParticles:
     LDA.W $1AB7,X                                                        ;86C9D2;
     BPL +                                                                ;86C9D5;
@@ -9999,6 +10637,7 @@ PreInst_EnemyProj_MotherBrainExplodedEscapeDoorParticles:
     RTS                                                                  ;86CA21;
 
 
+%anchor($86CA22)
 InstList_EnemyProj_MotherBrainExplodedEscapeDoorParticle:
     dw $0001,EnemyProjSpritemaps_MotherBrainExplodedEscapeDoorParticles_0 ;86CA22;
     dw $0001,EnemyProjSpritemaps_MotherBrainExplodedEscapeDoorParticles_1 ;86CA26;
@@ -10012,6 +10651,7 @@ InstList_EnemyProj_MotherBrainExplodedEscapeDoorParticle:
     dw InstList_EnemyProj_MotherBrainExplodedEscapeDoorParticle          ;86CA44;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($86CA46)
 UNUSED_InstList_86CA46:
     dw $0001,UNUSED_EnemyProjSpritemaps_0_8D96D3                         ;86CA46;
     dw $0001,UNUSED_EnemyProjSpritemaps_1_8D96DA                         ;86CA4A;
@@ -10025,6 +10665,7 @@ UNUSED_InstList_86CA46:
     dw UNUSED_InstList_86CA46                                            ;86CA68;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($86CA6A)
 InitAI_EnemyProjectile_MotherBrainPurpleBreath_Big:
     TYX                                                                  ;86CA6A;
     STZ.W $19BB,X                                                        ;86CA6B;
@@ -10039,6 +10680,7 @@ InitAI_EnemyProjectile_MotherBrainPurpleBreath_Big:
     RTS                                                                  ;86CA82;
 
 
+%anchor($86CA83)
 InitAI_EnemyProjectile_MotherBrainPurpleBreath_Small:
     TYX                                                                  ;86CA83;
     STZ.W $19BB,X                                                        ;86CA84;
@@ -10055,10 +10697,12 @@ InitAI_EnemyProjectile_MotherBrainPurpleBreath_Small:
     RTS                                                                  ;86CAA2;
 
 
+%anchor($86CAA3)
 RTS_86CAA3:
     RTS                                                                  ;86CAA3;
 
 
+%anchor($86CAA4)
 InstList_EnemyProjectile_MotherBrainPurpleBreath_Big:
     dw Instruction_EnemyProjectile_ClearPreInstruction                   ;86CAA4;
     dw $0008,EnemyProjSpritemaps_MotherBrainsPurpleBreath_Big_0          ;86CAA6;
@@ -10071,6 +10715,7 @@ InstList_EnemyProjectile_MotherBrainPurpleBreath_Big:
     dw $000B,EnemyProjSpritemaps_MotherBrainsPurpleBreath_Big_7          ;86CAC2;
     dw Instruction_EnemyProjectile_Delete                                ;86CAC6;
 
+%anchor($86CAC8)
 InstList_EnemyProjectile_MotherBrainPurpleBreath_Small:
     dw Instruction_EnemyProjectile_ClearPreInstruction                   ;86CAC8;
     dw $0008,EnemyProjSpritemaps_MotherBrainsPurpleBreath_Small_0        ;86CACA;
@@ -10084,16 +10729,19 @@ InstList_EnemyProjectile_MotherBrainPurpleBreath_Small:
     dw Instruction_EnemyProjectile_MotherBrainPurpleBreath_Inactive      ;86CAEA;
     dw Instruction_EnemyProjectile_Delete                                ;86CAEC;
 
+%anchor($86CAEE)
 Instruction_EnemyProjectile_MotherBrainPurpleBreath_Inactive:
     LDA.W #$0000                                                         ;86CAEE;
     STA.L $7E786A                                                        ;86CAF1;
     RTS                                                                  ;86CAF5;
 
 
+%anchor($86CAF6)
 InitAI_EnemyProjectile_TimeBombSetJapanText:
     TYX                                                                  ;86CAF6;
     STZ.W $19BB,X                                                        ;86CAF7;
 
+%anchor($86CAFA)
 PreInstruction_EnemyProjectile_TimeBombSetJapanText:
     STZ.W $1AB7,X                                                        ;86CAFA;
     STZ.W $1ADB,X                                                        ;86CAFD;
@@ -10104,10 +10752,12 @@ PreInstruction_EnemyProjectile_TimeBombSetJapanText:
     RTS                                                                  ;86CB0C;
 
 
+%anchor($86CB0D)
 InstList_EnemyProjectile_TimeBombSetJapanText:
     dw $0001,EnemyProjSpritemaps_TimeBombSetJapanSet                     ;86CB0D;
     dw Instruction_EnemyProjectile_Sleep                                 ;86CB11;
 
+%anchor($86CB13)
 EnemyProjectile_MotherBrainDeathExplosion:
     dw InitAI_EnemyProjectile_MotherBrainsDeathExplosion                 ;86CB13; Initialisation AI
     dw PreInstruction_EnemyProjectile_MotherBrainsDeathExplosion         ;86CB15; Initial pre-instruction
@@ -10117,6 +10767,7 @@ EnemyProjectile_MotherBrainDeathExplosion:
     dw $0000                                                             ;86CB1D; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86CB1F; Shot instruction list
 
+%anchor($86CB21)
 EnemyProjectile_MotherBrainExplodedEscapeDoorParticles:
     dw InitAI_EnemyProjectile_MotherBrainExplodedEscapeDoorParticle      ;86CB21; Initialisation AI
     dw PreInst_EnemyProj_MotherBrainExplodedEscapeDoorParticles          ;86CB23; Initial pre-instruction
@@ -10126,6 +10777,7 @@ EnemyProjectile_MotherBrainExplodedEscapeDoorParticles:
     dw $0000                                                             ;86CB2B; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86CB2D; Shot instruction list
 
+%anchor($86CB2F)
 EnemyProjectile_MotherBrainPurpleBreath_Big:
     dw InitAI_EnemyProjectile_MotherBrainPurpleBreath_Big                ;86CB2F; Initialisation AI
     dw RTS_86CAA3                                                        ;86CB31; Initial pre-instruction
@@ -10135,6 +10787,7 @@ EnemyProjectile_MotherBrainPurpleBreath_Big:
     dw $0000                                                             ;86CB39; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86CB3B; Shot instruction list
 
+%anchor($86CB3D)
 EnemyProjectile_MotherBrainPurpleBreath_Small:
     dw InitAI_EnemyProjectile_MotherBrainPurpleBreath_Small              ;86CB3D; Initialisation AI
     dw RTS_86CAA3                                                        ;86CB3F; Initial pre-instruction
@@ -10144,6 +10797,7 @@ EnemyProjectile_MotherBrainPurpleBreath_Small:
     dw $0000                                                             ;86CB47; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86CB49; Shot instruction list
 
+%anchor($86CB4B)
 EnemyProjectile_MotherBrainOnionRings:
     dw InitAI_EnemyProjectile_MotherBrainsOnionRings                     ;86CB4B; Initialisation AI
     dw PreInstruction_EnemyProjectile_MotherBrainsOnionRings             ;86CB4D; Initial pre-instruction
@@ -10153,6 +10807,7 @@ EnemyProjectile_MotherBrainOnionRings:
     dw InstList_EnemyProjectile_Hit_MotherBrainsOnionRings               ;86CB55; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86CB57; Shot instruction list
 
+%anchor($86CB59)
 EnemyProjectile_MotherBrainBomb:
     dw InitAI_EnemyProjectile_MotherBrainsBomb                           ;86CB59; Initialisation AI
     dw PreInstruction_EnemyProjectile_MotherBrainsBomb                   ;86CB5B; Initial pre-instruction
@@ -10162,6 +10817,7 @@ EnemyProjectile_MotherBrainBomb:
     dw $0000                                                             ;86CB63; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86CB65; Shot instruction list
 
+%anchor($86CB67)
 EnemyProjectile_MotherBrainRedBeam_Charging:
     dw InitAI_EnemyProjectile_MotherBrainRedBeam_Charging                ;86CB67; Initialisation AI
     dw RTS_86C76D                                                        ;86CB69; Initial pre-instruction
@@ -10171,6 +10827,7 @@ EnemyProjectile_MotherBrainRedBeam_Charging:
     dw $0000                                                             ;86CB71; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86CB73; Shot instruction list
 
+%anchor($86CB75)
 EnemyProjectile_MotherBrainRedBeam_Fired:
     dw InitAI_EnemyProjectile_MotherBrainRedBeam_Fired                   ;86CB75; Initialisation AI
     dw RTS_86C76D                                                        ;86CB77; Initial pre-instruction
@@ -10180,6 +10837,7 @@ EnemyProjectile_MotherBrainRedBeam_Fired:
     dw $0000                                                             ;86CB7F; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86CB81; Shot instruction list
 
+%anchor($86CB83)
 EnemyProjectile_MotherBrainRainbowBeam_Charging:
     dw InitAI_EnemyProjectile_MotherBrainRainbowBeam_Charging            ;86CB83; Initialisation AI
     dw PreInst_EnemyProjectile_MotherBrainRainbowBeam_Charging           ;86CB85; Initial pre-instruction
@@ -10189,6 +10847,7 @@ EnemyProjectile_MotherBrainRainbowBeam_Charging:
     dw $0000                                                             ;86CB8D; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86CB8F; Shot instruction list
 
+%anchor($86CB91)
 EnemyProjectile_MotherBrainDrool:
     dw InitAI_EnemyProjectile_MotherBrainsDrool                          ;86CB91; Initialisation AI
     dw PreInstruction_EnemyProjectile_MotherBrainsDrool                  ;86CB93; Initial pre-instruction
@@ -10198,6 +10857,7 @@ EnemyProjectile_MotherBrainDrool:
     dw $0000                                                             ;86CB9B; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86CB9D; Shot instruction list
 
+%anchor($86CB9F)
 EnemyProjectile_MotherBrainDyingDrool:
     dw InitAI_EnemyProjectile_MotherBrainsDrool                          ;86CB9F; Initialisation AI
     dw PreInstruction_EnemyProjectile_MotherBrainsDrool                  ;86CBA1; Initial pre-instruction
@@ -10207,6 +10867,7 @@ EnemyProjectile_MotherBrainDyingDrool:
     dw $0000                                                             ;86CBA9; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86CBAB; Shot instruction list
 
+%anchor($86CBAD)
 EnemyProjectile_MotherBrainRainbowBeam_Explosion:
     dw InitAI_EnemyProjectile_MotherBrainsRainbowBeamExplosion           ;86CBAD; Initialisation AI
     dw PreInstruction_EnemyProj_MotherBrainsRainbowBeamExplosion         ;86CBAF; Initial pre-instruction
@@ -10216,6 +10877,7 @@ EnemyProjectile_MotherBrainRainbowBeam_Explosion:
     dw $0000                                                             ;86CBB7; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86CBB9; Shot instruction list
 
+%anchor($86CBBB)
 EnemyProjectile_TimeBombSetJapanText:
     dw InitAI_EnemyProjectile_TimeBombSetJapanText                       ;86CBBB; Initialisation AI
     dw PreInstruction_EnemyProjectile_TimeBombSetJapanText               ;86CBBD; Initial pre-instruction
@@ -10225,6 +10887,7 @@ EnemyProjectile_TimeBombSetJapanText:
     dw $0000                                                             ;86CBC5; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86CBC7; Shot instruction list
 
+%anchor($86CBC9)
 InitAI_EnemyProjectile_MotherBrainsTubeFalling:
     TYX                                                                  ;86CBC9;
     LDA.W #$0E00                                                         ;86CBCA;
@@ -10240,10 +10903,12 @@ InitAI_EnemyProjectile_MotherBrainsTubeFalling:
     RTS                                                                  ;86CBE6;
 
 
+%anchor($86CBE7)
 PreInstruction_EnemyProjectile_MotherBrainsTubeFalling:
     JMP.W ($1AFF,X)                                                      ;86CBE7;
 
 
+%anchor($86CBEA)
 MotherBrainsTubeFallingFunction_GenerateExplosion:
     LDA.W $1A4B,X                                                        ;86CBEA;
     STA.B $12                                                            ;86CBED;
@@ -10257,6 +10922,7 @@ MotherBrainsTubeFallingFunction_GenerateExplosion:
     LDA.W #MotherBrainsTubeFallingFunction_Falling                       ;86CC02;
     STA.W $1AFF,X                                                        ;86CC05;
 
+%anchor($86CC08)
 MotherBrainsTubeFallingFunction_Falling:
     REP #$21                                                             ;86CC08;
     LDA.W $1ADB,X                                                        ;86CC0A;
@@ -10279,26 +10945,32 @@ MotherBrainsTubeFallingFunction_Falling:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($86CC33)
 UNUSED_86CC33:
     dw $FF00,$0100, $0100,$0000, $FF00,$FF00, $0100,$0000                ;86CC33;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($86CC43)
 InstList_EnemyProjectile_MotherBrainsTubeFalling_TopRight:
     dw $0001,EnemyProjSpritemaps_MotherBrainsTubeFalling_TopRight        ;86CC43;
     dw Instruction_EnemyProjectile_Sleep                                 ;86CC47;
 
+%anchor($86CC49)
 InstList_EnemyProjectile_MotherBrainsTubeFalling_TopLeft:
     dw $0001,EnemyProjSpritemaps_MotherBrainsTubeFalling_TopLeft         ;86CC49;
     dw Instruction_EnemyProjectile_Sleep                                 ;86CC4D;
 
+%anchor($86CC4F)
 InstList_EnemyProj_MotherBrainsTubeFalling_TopMiddleLeft:
     dw $0001,EnemyProjSpritemaps_MotherBrainsTubeFalling_TopMiddleLeft   ;86CC4F;
     dw Instruction_EnemyProjectile_Sleep                                 ;86CC53;
 
+%anchor($86CC55)
 InstList_EnemyProj_MotherBrainsTubeFalling_TopMiddleRight:
     dw $0001,EnemyProjSpritemaps_MotherBrainsTubeFalling_TopMiddleRight  ;86CC55;
     dw Instruction_EnemyProjectile_Sleep                                 ;86CC59;
 
+%anchor($86CC5B)
 EnemyProjectile_MotherBrainTubeFalling_TopRight:
     dw InitAI_EnemyProjectile_MotherBrainsTubeFalling                    ;86CC5B; Initialisation AI
     dw PreInstruction_EnemyProjectile_MotherBrainsTubeFalling            ;86CC5D; Initial pre-instruction
@@ -10308,6 +10980,7 @@ EnemyProjectile_MotherBrainTubeFalling_TopRight:
     dw $0000                                                             ;86CC65; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86CC67; Shot instruction list
 
+%anchor($86CC69)
 EnemyProjectile_MotherBrainTubeFalling_TopLeft:
     dw InitAI_EnemyProjectile_MotherBrainsTubeFalling                    ;86CC69; Initialisation AI
     dw PreInstruction_EnemyProjectile_MotherBrainsTubeFalling            ;86CC6B; Initial pre-instruction
@@ -10317,6 +10990,7 @@ EnemyProjectile_MotherBrainTubeFalling_TopLeft:
     dw $0000                                                             ;86CC73; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86CC75; Shot instruction list
 
+%anchor($86CC77)
 EnemyProjectile_MotherBrainTubeFalling_TopMiddleLeft:
     dw InitAI_EnemyProjectile_MotherBrainsTubeFalling                    ;86CC77; Initialisation AI
     dw PreInstruction_EnemyProjectile_MotherBrainsTubeFalling            ;86CC79; Initial pre-instruction
@@ -10326,6 +11000,7 @@ EnemyProjectile_MotherBrainTubeFalling_TopMiddleLeft:
     dw $0000                                                             ;86CC81; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86CC83; Shot instruction list
 
+%anchor($86CC85)
 EnemyProjectile_MotherBrainTubeFalling_TopMiddleRight:
     dw InitAI_EnemyProjectile_MotherBrainsTubeFalling                    ;86CC85; Initialisation AI
     dw PreInstruction_EnemyProjectile_MotherBrainsTubeFalling            ;86CC87; Initial pre-instruction
@@ -10335,6 +11010,7 @@ EnemyProjectile_MotherBrainTubeFalling_TopMiddleRight:
     dw $0000                                                             ;86CC8F; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86CC91; Shot instruction list
 
+%anchor($86CC93)
 InstList_EnemyProjectile_MotherBrainsGlassShattering_0:
     dw $0004,EnemyProjSpritemaps_MotherBrainsGlassShattering_Shard_0     ;86CC93;
     dw $0003,EnemyProjSpritemaps_MotherBrainsGlassShattering_Shard_1     ;86CC97;
@@ -10347,6 +11023,7 @@ InstList_EnemyProjectile_MotherBrainsGlassShattering_0:
     dw Instruction_EnemyProjectile_GotoY                                 ;86CCB3;
     dw InstList_EnemyProjectile_MotherBrainsGlassShattering_0            ;86CCB5;
 
+%anchor($86CCB7)
 InstList_EnemyProjectile_MotherBrainsGlassShattering_1_2:
     dw $0004,EnemyProjSpritemaps_MotherBrainsGlassShattering_Shard_10    ;86CCB7;
     dw $0003,EnemyProjSpritemaps_MotherBrainsGlassShattering_Shard_11    ;86CCBB;
@@ -10359,6 +11036,7 @@ InstList_EnemyProjectile_MotherBrainsGlassShattering_1_2:
     dw Instruction_EnemyProjectile_GotoY                                 ;86CCD7;
     dw InstList_EnemyProjectile_MotherBrainsGlassShattering_1_2          ;86CCD9;
 
+%anchor($86CCDB)
 InstList_EnemyProjectile_MotherBrainsGlassShattering_3_4_5:
     dw $0004,EnemyProjSpritemaps_MotherBrainsGlassShattering_Shard_8     ;86CCDB;
     dw $0003,EnemyProjSpritemaps_MotherBrainsGlassShattering_Shard_9     ;86CCDF;
@@ -10371,6 +11049,7 @@ InstList_EnemyProjectile_MotherBrainsGlassShattering_3_4_5:
     dw Instruction_EnemyProjectile_GotoY                                 ;86CCFB;
     dw InstList_EnemyProjectile_MotherBrainsGlassShattering_3_4_5        ;86CCFD;
 
+%anchor($86CCFF)
 InstList_EnemyProjectile_MotherBrainsGlassShattering_6_7:
     dw $0004,EnemyProjSpritemaps_MotherBrainsGlassShattering_Shard_18    ;86CCFF;
     dw $0003,EnemyProjSpritemaps_MotherBrainsGlassShattering_Shard_19    ;86CD03;
@@ -10383,6 +11062,7 @@ InstList_EnemyProjectile_MotherBrainsGlassShattering_6_7:
     dw Instruction_EnemyProjectile_GotoY                                 ;86CD1F;
     dw InstList_EnemyProjectile_MotherBrainsGlassShattering_6_7          ;86CD21;
 
+%anchor($86CD23)
 InstList_EnemyProjectile_MotherBrainsGlassShattering_8:
     dw $0004,EnemyProjSpritemaps_MotherBrainsGlassShattering_Shard_20    ;86CD23;
     dw $0003,EnemyProjSpritemaps_MotherBrainsGlassShattering_Shard_21    ;86CD27;
@@ -10395,6 +11075,7 @@ InstList_EnemyProjectile_MotherBrainsGlassShattering_8:
     dw Instruction_EnemyProjectile_GotoY                                 ;86CD43;
     dw InstList_EnemyProjectile_MotherBrainsGlassShattering_8            ;86CD45;
 
+%anchor($86CD47)
 InstList_EnemyProjectile_MotherBrainsGlassShattering_9_A:
     dw $0004,EnemyProjSpritemaps_MotherBrainsGlassShattering_Shard_30    ;86CD47;
     dw $0003,EnemyProjSpritemaps_MotherBrainsGlassShattering_Shard_31    ;86CD4B;
@@ -10407,6 +11088,7 @@ InstList_EnemyProjectile_MotherBrainsGlassShattering_9_A:
     dw Instruction_EnemyProjectile_GotoY                                 ;86CD67;
     dw InstList_EnemyProjectile_MotherBrainsGlassShattering_9_A          ;86CD69;
 
+%anchor($86CD6B)
 InstList_EnemyProjectile_MotherBrainsGlassShattering_B_C_D:
     dw $0004,EnemyProjSpritemaps_MotherBrainsGlassShattering_Shard_28    ;86CD6B;
     dw $0003,EnemyProjSpritemaps_MotherBrainsGlassShattering_Shard_29    ;86CD6F;
@@ -10419,6 +11101,7 @@ InstList_EnemyProjectile_MotherBrainsGlassShattering_B_C_D:
     dw Instruction_EnemyProjectile_GotoY                                 ;86CD8B;
     dw InstList_EnemyProjectile_MotherBrainsGlassShattering_B_C_D        ;86CD8D;
 
+%anchor($86CD8F)
 InstList_EnemyProjectile_MotherBrainsGlassShattering_E_F:
     dw $0004,EnemyProjSpritemaps_MotherBrainsGlassShattering_Shard_38    ;86CD8F;
     dw $0003,EnemyProjSpritemaps_MotherBrainsGlassShattering_Shard_39    ;86CD93;
@@ -10431,6 +11114,7 @@ InstList_EnemyProjectile_MotherBrainsGlassShattering_E_F:
     dw Instruction_EnemyProjectile_GotoY                                 ;86CDAF;
     dw InstList_EnemyProjectile_MotherBrainsGlassShattering_E_F          ;86CDB1;
 
+%anchor($86CDB3)
 InstList_EnemyProjectile_MotherBrainsGlassShattering_Sparkle:
     dw $0006,EnemyProjSpritemaps_MotherBrainsGlassShattering_Sparkle_0   ;86CDB3;
     dw $0008,EnemyProjSpritemaps_MotherBrainsGlassShattering_Sparkle_1   ;86CDB7;
@@ -10438,6 +11122,7 @@ InstList_EnemyProjectile_MotherBrainsGlassShattering_Sparkle:
     dw $0008,EnemyProjSpritemaps_MotherBrainsGlassShattering_Sparkle_3   ;86CDBF;
     dw Instruction_EnemyProjectile_Delete                                ;86CDC3;
 
+%anchor($86CDC5)
 InitAI_EnemyProjectile_MotherBrainsGlassShattering_Shard:
     JSL.L GenerateRandomNumber                                           ;86CDC5;
     ASL A                                                                ;86CDC9;
@@ -10523,6 +11208,7 @@ InitAI_EnemyProjectile_MotherBrainsGlassShattering_Shard:
     dw $0020,$0020,$0020                                                 ;86CE67;
 
 
+%anchor($86CE6D)
 InitAI_EnemyProjectile_MotherBrainGlassShattering_Sparkle:
     LDX.W $1993                                                          ;86CE6D;
     JSL.L GenerateRandomNumber                                           ;86CE70;
@@ -10544,6 +11230,7 @@ InitAI_EnemyProjectile_MotherBrainGlassShattering_Sparkle:
     RTS                                                                  ;86CE9A;
 
 
+%anchor($86CE9B)
 PreInstruction_EnemyProj_MotherBrainGlassShattering_Shard:
     STZ.B $12                                                            ;86CE9B;
     STZ.B $14                                                            ;86CE9D;
@@ -10595,6 +11282,7 @@ PreInstruction_EnemyProj_MotherBrainGlassShattering_Shard:
     RTS                                                                  ;86CEFB;
 
 
+%anchor($86CEFC)
 EnemyProjectile_MotherBrainGlassShattering_Shard:
     dw InitAI_EnemyProjectile_MotherBrainsGlassShattering_Shard          ;86CEFC; Initialisation AI
     dw PreInstruction_EnemyProj_MotherBrainGlassShattering_Shard         ;86CEFE; Initial pre-instruction
@@ -10604,6 +11292,7 @@ EnemyProjectile_MotherBrainGlassShattering_Shard:
     dw $0000                                                             ;86CF06; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86CF08; Shot instruction list
 
+%anchor($86CF0A)
 EnemyProjectile_MotherBrainGlassShattering_Sparkle:
     dw InitAI_EnemyProjectile_MotherBrainGlassShattering_Sparkle         ;86CF0A; Initialisation AI
     dw RTS_8684FB                                                        ;86CF0C; Initial pre-instruction
@@ -10613,6 +11302,7 @@ EnemyProjectile_MotherBrainGlassShattering_Sparkle:
     dw $0000                                                             ;86CF14; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86CF16; Shot instruction list
 
+%anchor($86CF18)
 EnemyProjectile_KiHunterAcidSpit_Left:
     dw InitAI_EnemyProjectile_KiHunterAcidSpit_Left                      ;86CF18; Initialisation AI
     dw RTS_86CFF7                                                        ;86CF1A; Initial pre-instruction
@@ -10622,6 +11312,7 @@ EnemyProjectile_KiHunterAcidSpit_Left:
     dw $0000                                                             ;86CF22; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86CF24; Shot instruction list
 
+%anchor($86CF26)
 EnemyProjectile_KiHunterAcidSpit_Right:
     dw InitAI_EnemyProjectile_KiHunterAcidSpit_Right                     ;86CF26; Initialisation AI
     dw RTS_86CFF7                                                        ;86CF28; Initial pre-instruction
@@ -10631,6 +11322,7 @@ EnemyProjectile_KiHunterAcidSpit_Right:
     dw $0000                                                             ;86CF30; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86CF32; Shot instruction list
 
+%anchor($86CF34)
 InstList_EnemyProjectile_KiHunterAcidSpit_Left:
     dw $0003,EnemyProjSpritemaps_KihunterAcidSpit_Left_0                 ;86CF34;
     dw $0003,EnemyProjSpritemaps_KihunterAcidSpit_Left_1                 ;86CF38;
@@ -10643,6 +11335,7 @@ InstList_EnemyProjectile_KiHunterAcidSpit_Left:
     dw $0001,EnemyProjSpritemaps_KihunterAcidSpit_Left_5                 ;86CF50;
     dw Instruction_EnemyProjectile_Sleep                                 ;86CF54;
 
+%anchor($86CF56)
 InstList_EnemyProjectile_KiHunterAcidSpit_HitFloor:
     dw Instruction_EnemyProjectile_ClearPreInstruction                   ;86CF56;
     dw $000C,EnemyProjSpritemaps_KihunterAcidSpit_0                      ;86CF58;
@@ -10652,6 +11345,7 @@ InstList_EnemyProjectile_KiHunterAcidSpit_HitFloor:
     dw $0008,EnemyProjSpritemaps_KihunterAcidSpit_4                      ;86CF68;
     dw Instruction_EnemyProjectile_Delete                                ;86CF6C;
 
+%anchor($86CF6E)
 InstList_EnemyProjectile_KiHunterAcidSpit_Right:
     dw $0003,EnemyProjSpritemaps_KihunterAcidSpit_Right_0                ;86CF6E;
     dw $0003,EnemyProjSpritemaps_KihunterAcidSpit_Right_1                ;86CF72;
@@ -10664,6 +11358,7 @@ InstList_EnemyProjectile_KiHunterAcidSpit_Right:
     dw $0001,EnemyProjSpritemaps_KihunterAcidSpit_Right_5                ;86CF8A;
     dw Instruction_EnemyProjectile_Sleep                                 ;86CF8E;
 
+%anchor($86CF90)
 InitAI_EnemyProjectile_KiHunterAcidSpit_Left:
     PHX                                                                  ;86CF90;
     LDX.W $0E54                                                          ;86CF91;
@@ -10676,6 +11371,7 @@ InitAI_EnemyProjectile_KiHunterAcidSpit_Left:
     BRA InitAI_EnemyProjectile_KiHunterAcidSpit__Common                  ;86CFA4;
 
 
+%anchor($86CFA6)
 InitAI_EnemyProjectile_KiHunterAcidSpit_Right:
     PHX                                                                  ;86CFA6;
     LDX.W $0E54                                                          ;86CFA7;
@@ -10686,6 +11382,7 @@ InitAI_EnemyProjectile_KiHunterAcidSpit_Right:
     ADC.W #$0016                                                         ;86CFB4;
     STA.W $1A4B,Y                                                        ;86CFB7;
 
+%anchor($86CFBA)
 InitAI_EnemyProjectile_KiHunterAcidSpit__Common:
     LDA.W #$0000                                                         ;86CFBA;
     STA.W $1ADB,Y                                                        ;86CFBD;
@@ -10700,6 +11397,7 @@ InitAI_EnemyProjectile_KiHunterAcidSpit__Common:
     RTS                                                                  ;86CFD4;
 
 
+%anchor($86CFD5)
 PreInstruction_EnemyProj_KiHunterAcidSpit_Left_StartMoving:
     LDA.W #PreInstruction_EnemyProj_KiHunterAcidSpit_Moving              ;86CFD5;
     STA.W $1A03,X                                                        ;86CFD8;
@@ -10710,6 +11408,7 @@ PreInstruction_EnemyProj_KiHunterAcidSpit_Left_StartMoving:
     RTS                                                                  ;86CFE5;
 
 
+%anchor($86CFE6)
 PreInstruction_EnemyProj_KiHunterAcidSpit_Right_StartMoving:
     LDA.W #PreInstruction_EnemyProj_KiHunterAcidSpit_Moving              ;86CFE6;
     STA.W $1A03,X                                                        ;86CFE9;
@@ -10720,10 +11419,12 @@ PreInstruction_EnemyProj_KiHunterAcidSpit_Right_StartMoving:
     RTS                                                                  ;86CFF6;
 
 
+%anchor($86CFF7)
 RTS_86CFF7:
     RTS                                                                  ;86CFF7;
 
 
+%anchor($86CFF8)
 PreInstruction_EnemyProj_KiHunterAcidSpit_Moving:
     REP #$30                                                             ;86CFF8;
     JSR.W Move_EnemyProjectile_Vertically                                ;86CFFA;
@@ -10756,6 +11457,7 @@ PreInstruction_EnemyProj_KiHunterAcidSpit_Moving:
     RTS                                                                  ;86D02D;
 
 
+%anchor($86D02E)
 EnemyProjectile_KagoBug:
     dw InitAI_EnemyProjectile_KagoBug                                    ;86D02E; Initialisation AI
     dw RTS_86D0EB                                                        ;86D030; Initial pre-instruction
@@ -10764,6 +11466,7 @@ EnemyProjectile_KagoBug:
     dw $0014,$0000                                                       ;86D036; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Shot_KagoBug                             ;86D03A; Shot instruction list
 
+%anchor($86D03C)
 InstList_EnemyProjectile_KagoBug_HitFloor:
     dw $0005,EnemyProjSpritemaps_KagoBugs_2                              ;86D03C;
     dw Instruction_EnemyProjectile_KagoBug_StartIdling                   ;86D040;
@@ -10771,21 +11474,25 @@ InstList_EnemyProjectile_KagoBug_HitFloor:
     dw Instruction_EnemyProjectile_GotoY                                 ;86D046;
     dw InstList_EnemyProjectile_KagoBug_HitFloor                         ;86D048;
 
+%anchor($86D04A)
 InstList_EnemyProjectile_KagoBug_Falling:
     dw $7FFF,EnemyProjSpritemaps_KagoBugs_1                              ;86D04A;
     dw Instruction_EnemyProjectile_GotoY                                 ;86D04E;
     dw InstList_EnemyProjectile_KagoBug_Falling                          ;86D050;
 
+%anchor($86D052)
 InstList_EnemyProjectile_KagoBug_Jump_0:
     dw $0010,EnemyProjSpritemaps_KagoBugs_2                              ;86D052;
     dw $0005,EnemyProjSpritemaps_KagoBugs_1                              ;86D056;
     dw Instruction_EnemyProjectile_KagoBug_StartJumping                  ;86D05A;
 
+%anchor($86D05C)
 InstList_EnemyProjectile_KagoBug_Jump_1:
     dw $7FFF,EnemyProjSpritemaps_KagoBugs_0                              ;86D05C;
     dw Instruction_EnemyProjectile_GotoY                                 ;86D060;
     dw InstList_EnemyProjectile_KagoBug_Jump_1                           ;86D062;
 
+%anchor($86D064)
 InstList_EnemyProjectile_Shot_KagoBug:
     dw Instruction_EnemyProjectile_UsePalette0_duplicate_again           ;86D064;
     dw $0004,EnemyProjSpritemaps_Common_0                                ;86D066;
@@ -10797,9 +11504,11 @@ InstList_EnemyProjectile_Shot_KagoBug:
     dw Instruction_EnemyProjectile_GotoY                                 ;86D07C;
     dw InstList_EnemyProjectile_Delete                                   ;86D07E;
 
+%anchor($86D080)
 InstList_EnemyProjectile_Delete_duplicate:
     dw Instruction_EnemyProjectile_Delete                                ;86D080;
 
+%anchor($86D082)
 KagoBug_Constants:
   .Yacceleration:
     dw $00E0                                                             ;86D082; Unit 1/100h px/frame²
@@ -10808,6 +11517,7 @@ KagoBug_Constants:
   .Xvelocity:
     dw $0200                                                             ;86D086; Unit 1/100h px/frame
 
+%anchor($86D088)
 InitAI_EnemyProjectile_KagoBug:
     LDA.W $0E54                                                          ;86D088;
     STA.W $1B23,Y                                                        ;86D08B;
@@ -10828,6 +11538,7 @@ InitAI_EnemyProjectile_KagoBug:
     RTS                                                                  ;86D0B2;
 
 
+%anchor($86D0B3)
 Handle_KagoBug_SoundEffect:
     PHX                                                                  ;86D0B3;
     PHY                                                                  ;86D0B4;
@@ -10845,6 +11556,7 @@ Handle_KagoBug_SoundEffect:
     RTS                                                                  ;86D0C9;
 
 
+%anchor($86D0CA)
 PreInstruction_EnemyProjectile_KagoBug_Idling:
     JSR.W Handle_KagoBug_SoundEffect                                     ;86D0CA;
     JSR.W Enable_KagoBug_Collision_with_SamusProj_IfFarEnoughFromKago    ;86D0CD;
@@ -10862,10 +11574,12 @@ PreInstruction_EnemyProjectile_KagoBug_Idling:
     LDA.W #RTS_86D0EB                                                    ;86D0E5;
     STA.W $1A03,X                                                        ;86D0E8;
 
+%anchor($86D0EB)
 RTS_86D0EB:
     RTS                                                                  ;86D0EB;
 
 
+%anchor($86D0EC)
 PreInstruction_EnemyProjectile_KagoBug_Jumping:
     JSR.W Handle_KagoBug_SoundEffect                                     ;86D0EC;
     JSR.W Enable_KagoBug_Collision_with_SamusProj_IfFarEnoughFromKago    ;86D0EF;
@@ -10899,6 +11613,7 @@ PreInstruction_EnemyProjectile_KagoBug_Jumping:
     RTS                                                                  ;86D127;
 
 
+%anchor($86D128)
 PreInstruction_EnemyProjectile_KagoBug_Falling:
     JSR.W Handle_KagoBug_SoundEffect                                     ;86D128;
     JSR.W Enable_KagoBug_Collision_with_SamusProj_IfFarEnoughFromKago    ;86D12B;
@@ -10928,6 +11643,7 @@ PreInstruction_EnemyProjectile_KagoBug_Falling:
     RTS                                                                  ;86D15B;
 
 
+%anchor($86D15C)
 Instruction_EnemyProjectile_KagoBug_StartJumping:
     JSR.W Handle_KagoBug_SoundEffect                                     ;86D15C;
     JSR.W Enable_KagoBug_Collision_with_SamusProj_IfFarEnoughFromKago    ;86D15F;
@@ -10985,6 +11701,7 @@ Instruction_EnemyProjectile_KagoBug_StartJumping:
     RTS                                                                  ;86D1B5;
 
 
+%anchor($86D1B6)
 Instruction_EnemyProjectile_KagoBug_StartIdling:
     LDA.W $05E5                                                          ;86D1B6;
     AND.W #$001F                                                         ;86D1B9;
@@ -10995,12 +11712,14 @@ Instruction_EnemyProjectile_KagoBug_StartIdling:
     RTS                                                                  ;86D1C6;
 
 
+%anchor($86D1C7)
 Instruction_EnemyProjectile_UsePalette0_duplicate_again:
     LDA.W #$0000                                                         ;86D1C7;
     STA.W $19BB,X                                                        ;86D1CA;
     RTS                                                                  ;86D1CD;
 
 
+%anchor($86D1CE)
 PreInstruction_EnemyProjectile_KagoBug_SpawnDrop:
     PHY                                                                  ;86D1CE;
     PHX                                                                  ;86D1CF;
@@ -11015,6 +11734,7 @@ PreInstruction_EnemyProjectile_KagoBug_SpawnDrop:
     RTS                                                                  ;86D1E3;
 
 
+%anchor($86D1E4)
 Enable_KagoBug_Collision_with_SamusProj_IfFarEnoughFromKago:
     PHX                                                                  ;86D1E4;
     PHY                                                                  ;86D1E5;
@@ -11040,6 +11760,7 @@ Enable_KagoBug_Collision_with_SamusProj_IfFarEnoughFromKago:
     RTS                                                                  ;86D207;
 
 
+%anchor($86D208)
 InstList_EnemyProjectile_PowampSpike:
     dw $0006,EnemyProjSpritemaps_PowampSpikes_0                          ;86D208;
     dw $0006,EnemyProjSpritemaps_PowampSpikes_1                          ;86D20C;
@@ -11047,6 +11768,7 @@ InstList_EnemyProjectile_PowampSpike:
     dw Instruction_EnemyProjectile_GotoY                                 ;86D214;
     dw InstList_EnemyProjectile_PowampSpike                              ;86D216;
 
+%anchor($86D218)
 InstList_EnemyProjectile_PowampSpike_Delete:
     dw Instruction_EnemyProjectile_Delete                                ;86D218;
 
@@ -11059,11 +11781,14 @@ InstList_EnemyProjectile_PowampSpike_Delete:
 ;       |     |     |     |     |     |      _________ 6: Left
 ;       |     |     |     |     |     |     |      ___ 7: Up-left
 ;       |     |     |     |     |     |     |     |
+%anchor($86D21A)
 PowampSpike_VelocityTable_X:
     dw $0000,$0020,$0020,$0020,$0000,$FFE0,$FFE0,$FFE0                   ;86D21A;
+%anchor($86D22A)
 PowampSpike_VelocityTable_Y:
     dw $FFE0,$FFE0,$0000,$0020,$0020,$0020,$0000,$FFE0                   ;86D22A;
 
+%anchor($86D23A)
 InitAI_EnemyProjectile_PowampSpike:
     PHP                                                                  ;86D23A;
     REP #$30                                                             ;86D23B;
@@ -11083,6 +11808,7 @@ InitAI_EnemyProjectile_PowampSpike:
     RTS                                                                  ;86D262;
 
 
+%anchor($86D263)
 PreInstruction_EnemyProjectile_PowampSpike:
     LDA.W $1AFF,X                                                        ;86D263;
     ASL A                                                                ;86D266;
@@ -11113,6 +11839,7 @@ PreInstruction_EnemyProjectile_PowampSpike:
     RTS                                                                  ;86D297;
 
 
+%anchor($86D298)
 EnemyProjectile_Powamp:
     dw InitAI_EnemyProjectile_PowampSpike                                ;86D298; Initialisation AI
     dw PreInstruction_EnemyProjectile_PowampSpike                        ;86D29A; Initial pre-instruction
@@ -11121,6 +11848,7 @@ EnemyProjectile_Powamp:
     dw $0014,$0000                                                       ;86D2A0; Properties, Hit instruction list
     dw InstList_EnemyProjectile_PowampSpike_Delete                       ;86D2A4; Shot instruction list
 
+%anchor($86D2A6)
 EnemyProjectile_RobotLaser_UpLeft:
     dw InitAI_EnemyProjectile_WreckedShipRobotLaser_UpLeft_Right         ;86D2A6; Initialisation AI
     dw PreInstruction_EnemyProjectile_WreckedShipRobotLaser              ;86D2A8; Initial pre-instruction
@@ -11129,6 +11857,7 @@ EnemyProjectile_RobotLaser_UpLeft:
     dw $0004,$0000                                                       ;86D2AE; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86D2B2; Shot instruction list
 
+%anchor($86D2B4)
 EnemyProjectile_RobotLaser_Horizontal:
     dw InitAI_EnemyProjectile_WreckedShipRobotLaser_Horizontal           ;86D2B4; Initialisation AI
     dw PreInstruction_EnemyProjectile_WreckedShipRobotLaser              ;86D2B6; Initial pre-instruction
@@ -11137,6 +11866,7 @@ EnemyProjectile_RobotLaser_Horizontal:
     dw $0014,$0000                                                       ;86D2BC; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86D2C0; Shot instruction list
 
+%anchor($86D2C2)
 EnemyProjectile_RobotLaser_DownLeft:
     dw InitAI_EnemyProjectile_WreckedShipRobotLaser_DownLeft_Right       ;86D2C2; Initialisation AI
     dw PreInstruction_EnemyProjectile_WreckedShipRobotLaser              ;86D2C4; Initial pre-instruction
@@ -11145,6 +11875,7 @@ EnemyProjectile_RobotLaser_DownLeft:
     dw $0004,$0000                                                       ;86D2CA; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86D2CE; Shot instruction list
 
+%anchor($86D2D0)
 EnemyProjectile_RobotLaser_UpRight:
     dw InitAI_EnemyProjectile_WreckedShipRobotLaser_UpLeft_Right         ;86D2D0; Initialisation AI
     dw PreInstruction_EnemyProjectile_WreckedShipRobotLaser              ;86D2D2; Initial pre-instruction
@@ -11153,6 +11884,7 @@ EnemyProjectile_RobotLaser_UpRight:
     dw $0004,$0000                                                       ;86D2D8; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86D2DC; Shot instruction list
 
+%anchor($86D2DE)
 EnemyProjectile_RobotLaser_DownRight:
     dw InitAI_EnemyProjectile_WreckedShipRobotLaser_DownLeft_Right       ;86D2DE; Initialisation AI
     dw PreInstruction_EnemyProjectile_WreckedShipRobotLaser              ;86D2E0; Initial pre-instruction
@@ -11161,11 +11893,13 @@ EnemyProjectile_RobotLaser_DownRight:
     dw $0004,$0000                                                       ;86D2E6; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86D2EA; Shot instruction list
 
+%anchor($86D2EC)
 InstList_EnemyProjectile_WreckedShipRobotLaser_0:
     dw $0004,EnemyProjSpritemaps_WorkRobotLaser_0                        ;86D2EC;
     dw $0004,EnemyProjSpritemaps_WorkRobotLaser_1                        ;86D2F0;
     dw $0004,EnemyProjSpritemaps_WorkRobotLaser_2                        ;86D2F4;
 
+%anchor($86D2F8)
 InstList_EnemyProjectile_WreckedShipRobotLaser_1:
     dw $0004,EnemyProjSpritemaps_WorkRobotLaser_3                        ;86D2F8;
     dw $0004,EnemyProjSpritemaps_WorkRobotLaser_4                        ;86D2FC;
@@ -11174,6 +11908,7 @@ InstList_EnemyProjectile_WreckedShipRobotLaser_1:
     dw Instruction_EnemyProjectile_GotoY                                 ;86D308;
     dw InstList_EnemyProjectile_WreckedShipRobotLaser_1                  ;86D30A;
 
+%anchor($86D30C)
 InitAI_EnemyProjectile_WreckedShipRobotLaser_DownLeft_Right:
     PHX                                                                  ;86D30C;
     LDX.W $0E54                                                          ;86D30D;
@@ -11193,6 +11928,7 @@ InitAI_EnemyProjectile_WreckedShipRobotLaser_DownLeft_Right:
     BRA InitAI_EnemyProjectile_WreckedShipRobotLaser_Common              ;86D32C;
 
 
+%anchor($86D32E)
 InitAI_EnemyProjectile_WreckedShipRobotLaser_Horizontal:
     PHX                                                                  ;86D32E;
     LDX.W $0E54                                                          ;86D32F;
@@ -11204,6 +11940,7 @@ InitAI_EnemyProjectile_WreckedShipRobotLaser_Horizontal:
     BRA InitAI_EnemyProjectile_WreckedShipRobotLaser_Common              ;86D33F;
 
 
+%anchor($86D341)
 InitAI_EnemyProjectile_WreckedShipRobotLaser_UpLeft_Right:
     PHX                                                                  ;86D341;
     LDX.W $0E54                                                          ;86D342;
@@ -11219,6 +11956,7 @@ InitAI_EnemyProjectile_WreckedShipRobotLaser_UpLeft_Right:
     LDA.W #$FF80                                                         ;86D355;
     STA.W $1ADB,Y                                                        ;86D358;
 
+%anchor($86D35B)
 InitAI_EnemyProjectile_WreckedShipRobotLaser_Common:
     LDA.W $0F7E,X                                                        ;86D35B;
     SEC                                                                  ;86D35E;
@@ -11271,6 +12009,7 @@ InitAI_EnemyProjectile_WreckedShipRobotLaser_Common:
     RTS                                                                  ;86D3BE;
 
 
+%anchor($86D3BF)
 PreInstruction_EnemyProjectile_WreckedShipRobotLaser:
     PHP                                                                  ;86D3BF;
     REP #$20                                                             ;86D3C0;
@@ -11289,6 +12028,7 @@ PreInstruction_EnemyProjectile_WreckedShipRobotLaser:
     RTS                                                                  ;86D3D6;
 
 
+%anchor($86D3D7)
 InstList_EnemyProjectile_NoobTubeCrack_0:
     dw $000C,EnemyProjSpritemaps_NoobTubeCrack_0                         ;86D3D7;
     dw $000A,EnemyProjSpritemaps_NoobTubeCrack_1                         ;86D3DB;
@@ -11332,6 +12072,7 @@ InstList_EnemyProjectile_NoobTubeCrack_0:
     dw Instruction_EnemyProjectile_TimerInY                              ;86D46B;
     dw $0006                                                             ;86D46D;
 
+%anchor($86D46F)
 InstList_EnemyProjectile_NoobTubeCrack_1:
     dw $0010,EnemyProjSpritemaps_NoobTubeCrack_23                        ;86D46F;
     dw $0010,EnemyProjSpritemaps_NoobTubeCrack_22                        ;86D473;
@@ -11339,9 +12080,11 @@ InstList_EnemyProjectile_NoobTubeCrack_1:
     dw InstList_EnemyProjectile_NoobTubeCrack_1                          ;86D479;
     dw Instruction_EnemyProjectile_Delete                                ;86D47B;
 
+%anchor($86D47D)
 InstList_EnemyProjectile_NoobTubeShard_Parameter0_0:
     dw Instruction_EnemyProjectile_TimerInY,$0020                        ;86D47D;
 
+%anchor($86D481)
 InstList_EnemyProjectile_NoobTubeShard_Parameter0_1:
     dw Instruction_EnemyProj_FlickerNoobTubeShardLeftRightSpritemap      ;86D481;
     dw EnemyProjSpritemaps_NoobTubeShards_0                              ;86D483;
@@ -11353,6 +12096,7 @@ InstList_EnemyProjectile_NoobTubeShard_Parameter0_1:
     dw Instruction_EnemyProjectile_NoobTubeCrack_Falling                 ;86D48F;
     dw Instruction_EnemyProjectile_TimerInY,$0110                        ;86D491;
 
+%anchor($86D495)
 InstList_EnemyProjectile_NoobTubeShard_Parameter0_2:
     dw Instruction_EnemyProj_FlickerNoobTubeShardLeftRightSpritemap      ;86D495;
     dw EnemyProjSpritemaps_NoobTubeShards_0                              ;86D497;
@@ -11361,9 +12105,11 @@ InstList_EnemyProjectile_NoobTubeShard_Parameter0_2:
     dw InstList_EnemyProjectile_NoobTubeShard_Parameter0_2               ;86D49D;
     dw Instruction_EnemyProjectile_Delete                                ;86D49F;
 
+%anchor($86D4A1)
 InstList_EnemyProjectile_NoobTubeShard_Parameter2_0:
     dw Instruction_EnemyProjectile_TimerInY,$0020                        ;86D4A1;
 
+%anchor($86D4A5)
 InstList_EnemyProjectile_NoobTubeShard_Parameter2_1:
     dw Instruction_EnemyProj_FlickerNoobTubeShardLeftRightSpritemap      ;86D4A5;
     dw EnemyProjSpritemaps_NoobTubeShards_2                              ;86D4A7;
@@ -11375,6 +12121,7 @@ InstList_EnemyProjectile_NoobTubeShard_Parameter2_1:
     dw Instruction_EnemyProjectile_NoobTubeCrack_Falling                 ;86D4B3;
     dw Instruction_EnemyProjectile_TimerInY,$0110                        ;86D4B5;
 
+%anchor($86D4B9)
 InstList_EnemyProjectile_NoobTubeShard_Parameter2_2:
     dw Instruction_EnemyProj_FlickerNoobTubeShardLeftRightSpritemap      ;86D4B9;
     dw EnemyProjSpritemaps_NoobTubeShards_2                              ;86D4BB;
@@ -11383,9 +12130,11 @@ InstList_EnemyProjectile_NoobTubeShard_Parameter2_2:
     dw InstList_EnemyProjectile_NoobTubeShard_Parameter2_2               ;86D4C1;
     dw Instruction_EnemyProjectile_Delete                                ;86D4C3;
 
+%anchor($86D4C5)
 InstList_EnemyProjectile_NoobTubeShard_Parameter4_0:
     dw Instruction_EnemyProjectile_TimerInY,$0020                        ;86D4C5;
 
+%anchor($86D4C9)
 InstList_EnemyProjectile_NoobTubeShard_Parameter4_1:
     dw Instruction_EnemyProj_FlickerNoobTubeShardLeftRightSpritemap      ;86D4C9;
     dw EnemyProjSpritemaps_NoobTubeShards_4                              ;86D4CB;
@@ -11397,6 +12146,7 @@ InstList_EnemyProjectile_NoobTubeShard_Parameter4_1:
     dw Instruction_EnemyProjectile_NoobTubeCrack_Falling                 ;86D4D7;
     dw Instruction_EnemyProjectile_TimerInY,$0110                        ;86D4D9;
 
+%anchor($86D4DD)
 InstList_EnemyProjectile_NoobTubeShard_Parameter4_2:
     dw Instruction_EnemyProj_FlickerNoobTubeShardLeftRightSpritemap      ;86D4DD;
     dw EnemyProjSpritemaps_NoobTubeShards_4                              ;86D4DF;
@@ -11405,9 +12155,11 @@ InstList_EnemyProjectile_NoobTubeShard_Parameter4_2:
     dw InstList_EnemyProjectile_NoobTubeShard_Parameter4_2               ;86D4E5;
     dw Instruction_EnemyProjectile_Delete                                ;86D4E7;
 
+%anchor($86D4E9)
 InstList_EnemyProjectile_NoobTubeShard_Parameter6_0:
     dw Instruction_EnemyProjectile_TimerInY,$0020                        ;86D4E9;
 
+%anchor($86D4ED)
 InstList_EnemyProjectile_NoobTubeShard_Parameter6_1:
     dw Instruction_EnemyProj_FlickerNoobTubeShardLeftRightSpritemap      ;86D4ED;
     dw EnemyProjSpritemaps_NoobTubeShards_6                              ;86D4EF;
@@ -11419,6 +12171,7 @@ InstList_EnemyProjectile_NoobTubeShard_Parameter6_1:
     dw Instruction_EnemyProjectile_NoobTubeCrack_Falling                 ;86D4FB;
     dw Instruction_EnemyProjectile_TimerInY,$0110                        ;86D4FD;
 
+%anchor($86D501)
 InstList_EnemyProjectile_NoobTubeShard_Parameter6_2:
     dw Instruction_EnemyProj_FlickerNoobTubeShardLeftRightSpritemap      ;86D501;
     dw EnemyProjSpritemaps_NoobTubeShards_6                              ;86D503;
@@ -11427,9 +12180,11 @@ InstList_EnemyProjectile_NoobTubeShard_Parameter6_2:
     dw InstList_EnemyProjectile_NoobTubeShard_Parameter6_2               ;86D509;
     dw Instruction_EnemyProjectile_Delete                                ;86D50B;
 
+%anchor($86D50D)
 InstList_EnemyProjectile_NoobTubeShard_Parameter8_0:
     dw Instruction_EnemyProjectile_TimerInY,$0020                        ;86D50D;
 
+%anchor($86D511)
 InstList_EnemyProjectile_NoobTubeShard_Parameter8_1:
     dw Instruction_EnemyProj_FlickerNoobTubeShardLeftRightSpritemap      ;86D511;
     dw EnemyProjSpritemaps_NoobTubeShards_8                              ;86D513;
@@ -11441,6 +12196,7 @@ InstList_EnemyProjectile_NoobTubeShard_Parameter8_1:
     dw Instruction_EnemyProjectile_NoobTubeCrack_Falling                 ;86D51F;
     dw Instruction_EnemyProjectile_TimerInY,$0110                        ;86D521;
 
+%anchor($86D525)
 InstList_EnemyProjectile_NoobTubeShard_Parameter8_2:
     dw Instruction_EnemyProj_FlickerNoobTubeShardLeftRightSpritemap      ;86D525;
     dw EnemyProjSpritemaps_NoobTubeShards_8                              ;86D527;
@@ -11449,9 +12205,11 @@ InstList_EnemyProjectile_NoobTubeShard_Parameter8_2:
     dw InstList_EnemyProjectile_NoobTubeShard_Parameter8_2               ;86D52D;
     dw Instruction_EnemyProjectile_Delete                                ;86D52F;
 
+%anchor($86D531)
 InstList_EnemyProjectile_NoobTubeShard_ParameterA_0:
     dw Instruction_EnemyProjectile_TimerInY,$0020                        ;86D531;
 
+%anchor($86D535)
 InstList_EnemyProjectile_NoobTubeShard_ParameterA_1:
     dw Instruction_EnemyProj_FlickerNoobTubeShardLeftRightSpritemap      ;86D535;
     dw EnemyProjSpritemaps_NoobTubeShards_A                              ;86D537;
@@ -11463,6 +12221,7 @@ InstList_EnemyProjectile_NoobTubeShard_ParameterA_1:
     dw Instruction_EnemyProjectile_NoobTubeCrack_Falling                 ;86D543;
     dw Instruction_EnemyProjectile_TimerInY,$0110                        ;86D545;
 
+%anchor($86D549)
 InstList_EnemyProjectile_NoobTubeShard_ParameterA_2:
     dw Instruction_EnemyProj_FlickerNoobTubeShardLeftRightSpritemap      ;86D549;
     dw EnemyProjSpritemaps_NoobTubeShards_A                              ;86D54B;
@@ -11471,9 +12230,11 @@ InstList_EnemyProjectile_NoobTubeShard_ParameterA_2:
     dw InstList_EnemyProjectile_NoobTubeShard_ParameterA_2               ;86D551;
     dw Instruction_EnemyProjectile_Delete                                ;86D553;
 
+%anchor($86D555)
 InstList_EnemyProjectile_NoobTubeShard_ParameterC_0:
     dw Instruction_EnemyProjectile_TimerInY,$0020                        ;86D555;
 
+%anchor($86D559)
 InstList_EnemyProjectile_NoobTubeShard_ParameterC_1:
     dw Instruction_EnemyProj_FlickerNoobTubeShardLeftRightSpritemap      ;86D559;
     dw EnemyProjSpritemaps_NoobTubeShards_C                              ;86D55B;
@@ -11485,6 +12246,7 @@ InstList_EnemyProjectile_NoobTubeShard_ParameterC_1:
     dw Instruction_EnemyProjectile_NoobTubeCrack_Falling                 ;86D567;
     dw Instruction_EnemyProjectile_TimerInY,$0110                        ;86D569;
 
+%anchor($86D56D)
 InstList_EnemyProjectile_NoobTubeShard_ParameterC_2:
     dw Instruction_EnemyProj_FlickerNoobTubeShardLeftRightSpritemap      ;86D56D;
     dw EnemyProjSpritemaps_NoobTubeShards_C                              ;86D56F;
@@ -11493,9 +12255,11 @@ InstList_EnemyProjectile_NoobTubeShard_ParameterC_2:
     dw InstList_EnemyProjectile_NoobTubeShard_ParameterC_2               ;86D575;
     dw Instruction_EnemyProjectile_Delete                                ;86D577;
 
+%anchor($86D579)
 InstList_EnemyProjectile_NoobTubeShard_ParameterE_0:
     dw Instruction_EnemyProjectile_TimerInY,$0020                        ;86D579;
 
+%anchor($86D57D)
 InstList_EnemyProjectile_NoobTubeShard_ParameterE_1:
     dw Instruction_EnemyProj_FlickerNoobTubeShardLeftRightSpritemap      ;86D57D;
     dw EnemyProjSpritemaps_NoobTubeShards_E                              ;86D57F;
@@ -11507,6 +12271,7 @@ InstList_EnemyProjectile_NoobTubeShard_ParameterE_1:
     dw Instruction_EnemyProjectile_NoobTubeCrack_Falling                 ;86D58B;
     dw Instruction_EnemyProjectile_TimerInY,$0110                        ;86D58D;
 
+%anchor($86D591)
 InstList_EnemyProjectile_NoobTubeShard_ParameterE_2:
     dw Instruction_EnemyProj_FlickerNoobTubeShardLeftRightSpritemap      ;86D591;
     dw EnemyProjSpritemaps_NoobTubeShards_E                              ;86D593;
@@ -11515,9 +12280,11 @@ InstList_EnemyProjectile_NoobTubeShard_ParameterE_2:
     dw InstList_EnemyProjectile_NoobTubeShard_ParameterE_2               ;86D599;
     dw Instruction_EnemyProjectile_Delete                                ;86D59B;
 
+%anchor($86D59D)
 InstList_EnemyProjectile_NoobTubeShard_Parameter10_0:
     dw Instruction_EnemyProjectile_TimerInY,$0020                        ;86D59D;
 
+%anchor($86D5A1)
 InstList_EnemyProjectile_NoobTubeShard_Parameter10_1:
     dw Instruction_EnemyProjectile_NoobTubeShard_FlickerSpritemap        ;86D5A1;
     dw EnemyProjSpritemaps_NoobTubeShards_10                             ;86D5A3;
@@ -11528,6 +12295,7 @@ InstList_EnemyProjectile_NoobTubeShard_Parameter10_1:
     dw Instruction_EnemyProjectile_NoobTubeCrack_Falling                 ;86D5AD;
     dw Instruction_EnemyProjectile_TimerInY,$0110                        ;86D5AF;
 
+%anchor($86D5B3)
 InstList_EnemyProjectile_NoobTubeShard_Parameter10_2:
     dw Instruction_EnemyProjectile_NoobTubeShard_FlickerSpritemap        ;86D5B3;
     dw EnemyProjSpritemaps_NoobTubeShards_10                             ;86D5B5;
@@ -11535,9 +12303,11 @@ InstList_EnemyProjectile_NoobTubeShard_Parameter10_2:
     dw InstList_EnemyProjectile_NoobTubeShard_Parameter10_2              ;86D5B9;
     dw Instruction_EnemyProjectile_Delete                                ;86D5BB;
 
+%anchor($86D5BD)
 InstList_EnemyProjectile_NoobTubeShard_Parameter12_0:
     dw Instruction_EnemyProjectile_TimerInY,$0020                        ;86D5BD;
 
+%anchor($86D5C1)
 InstList_EnemyProjectile_NoobTubeShard_Parameter12_1:
     dw Instruction_EnemyProj_FlickerNoobTubeShardLeftRightSpritemap      ;86D5C1;
     dw EnemyProjSpritemaps_NoobTubeShards_11                             ;86D5C3;
@@ -11549,6 +12319,7 @@ InstList_EnemyProjectile_NoobTubeShard_Parameter12_1:
     dw Instruction_EnemyProjectile_NoobTubeCrack_Falling                 ;86D5CF;
     dw Instruction_EnemyProjectile_TimerInY,$0110                        ;86D5D1;
 
+%anchor($86D5D5)
 InstList_EnemyProjectile_NoobTubeShard_Parameter12_2:
     dw Instruction_EnemyProj_FlickerNoobTubeShardLeftRightSpritemap      ;86D5D5;
     dw EnemyProjSpritemaps_NoobTubeShards_11                             ;86D5D7;
@@ -11557,6 +12328,7 @@ InstList_EnemyProjectile_NoobTubeShard_Parameter12_2:
     dw InstList_EnemyProjectile_NoobTubeShard_Parameter12_2              ;86D5DD;
     dw Instruction_EnemyProjectile_Delete                                ;86D5DF;
 
+%anchor($86D5E1)
 Instruction_EnemyProjectile_AssignNoobTubeShardFallingAngle:
     JSL.L GenerateRandomNumber                                           ;86D5E1;
     LDA.W $05E6                                                          ;86D5E5;
@@ -11566,6 +12338,7 @@ Instruction_EnemyProjectile_AssignNoobTubeShardFallingAngle:
     RTS                                                                  ;86D5F1;
 
 
+%anchor($86D5F2)
 Instruction_EnemyProj_FlickerNoobTubeShardLeftRightSpritemap:
     LDA.W $05B6                                                          ;86D5F2;
     LSR A                                                                ;86D5F5;
@@ -11600,6 +12373,7 @@ Instruction_EnemyProj_FlickerNoobTubeShardLeftRightSpritemap:
     RTS                                                                  ;86D629;
 
 
+%anchor($86D62A)
 Instruction_EnemyProjectile_NoobTubeShard_FlickerSpritemap:
     LDA.W $05B6                                                          ;86D62A;
     LSR A                                                                ;86D62D;
@@ -11625,6 +12399,7 @@ Instruction_EnemyProjectile_NoobTubeShard_FlickerSpritemap:
     RTS                                                                  ;86D651;
 
 
+%anchor($86D652)
 InstList_EnemyProjectile_NoobTubeReleasedAirBubbles:
     dw Instruction_EnemyProjectile_PreInstructionInY                     ;86D652;
     dw PreInstruction_EnemyProj_NoobTubeReleasedAirBubbles_Flying        ;86D654;
@@ -11648,6 +12423,7 @@ InstList_EnemyProjectile_NoobTubeReleasedAirBubbles:
     dw $0004,EnemyProjSpritemaps_NoobTubeReleasedAirBubbles_D            ;86D694;
     dw Instruction_EnemyProjectile_Delete                                ;86D698;
 
+%anchor($86D69A)
 Inststruction_EnemyProjectile_NoobTubeReleasedAirBubbles:
     JSL.L GenerateRandomNumber                                           ;86D69A;
     LDA.W $05E6                                                          ;86D69E;
@@ -11655,6 +12431,7 @@ Inststruction_EnemyProjectile_NoobTubeReleasedAirBubbles:
     RTS                                                                  ;86D6A4;
 
 
+%anchor($86D6A5)
 Instruction_EnemyProjectile_NoobTubeCrack:
     LDX.W $1C27                                                          ;86D6A5;
     JSL.L Calculate_PLM_Block_Coordinates                                ;86D6A8;
@@ -11677,6 +12454,7 @@ Instruction_EnemyProjectile_NoobTubeCrack:
     RTS                                                                  ;86D6C8;
 
 
+%anchor($86D6C9)
 InitAI_EnemyProjectile_NoobTubeShard:
     LDX.W $1C27                                                          ;86D6C9;
     JSL.L Calculate_PLM_Block_Coordinates                                ;86D6CC;
@@ -11736,6 +12514,7 @@ InitAI_EnemyProjectile_NoobTubeShard:
     dw InstList_EnemyProjectile_NoobTubeShard_Parameter10_0              ;86D770;
     dw InstList_EnemyProjectile_NoobTubeShard_Parameter12_0              ;86D772;
 
+%anchor($86D774)
 InitAI_EnemyProjectile_NoobTubeReleasedAirBubbles:
     LDX.W $1C27                                                          ;86D774;
     JSL.L Calculate_PLM_Block_Coordinates                                ;86D777;
@@ -11768,6 +12547,7 @@ InitAI_EnemyProjectile_NoobTubeReleasedAirBubbles:
     dw $0050,$0048,$0054,$0020,$0040,$0054                               ;86D7B3;
 
 
+%anchor($86D7BF)
 PreInstruction_EnemyProjectile_NoobTubeCrack_Flickering:
     LDA.W $1A4B,X                                                        ;86D7BF;
     CMP.W #$EE00                                                         ;86D7C2;
@@ -11787,6 +12567,7 @@ PreInstruction_EnemyProjectile_NoobTubeCrack_Flickering:
     RTS                                                                  ;86D7DD;
 
 
+%anchor($86D7DE)
 PreInstruction_EnemyProjectile_NoobTubeCrack_Falling:
     STZ.B $12                                                            ;86D7DE;
     STZ.B $14                                                            ;86D7E0;
@@ -11805,6 +12586,7 @@ PreInstruction_EnemyProjectile_NoobTubeCrack_Falling:
     RTS                                                                  ;86D7FC;
 
 
+%anchor($86D7FD)
 PreInstruction_EnemyProjectile_NoobTubeShard_Flying:
     STZ.B $12                                                            ;86D7FD;
     STZ.B $14                                                            ;86D7FF;
@@ -11838,6 +12620,7 @@ PreInstruction_EnemyProjectile_NoobTubeShard_Flying:
     RTS                                                                  ;86D83C;
 
 
+%anchor($86D83D)
 Instruction_EnemyProjectile_NoobTubeCrack_Falling:
     LDA.W $1AB7,X                                                        ;86D83D;
     AND.W #$01FE                                                         ;86D840;
@@ -11886,6 +12669,7 @@ Instruction_EnemyProjectile_NoobTubeCrack_Falling:
     RTS                                                                  ;86D89E;
 
 
+%anchor($86D89F)
 PreInstruction_EnemyProj_NoobTubeReleasedAirBubbles_Falling:
     LDA.W $1AB7,X                                                        ;86D89F;
     AND.W #$01FE                                                         ;86D8A2;
@@ -11917,6 +12701,7 @@ PreInstruction_EnemyProj_NoobTubeReleasedAirBubbles_Falling:
     ADC.W #$0004                                                         ;86D8D9;
     STA.W $1AB7,X                                                        ;86D8DC; fallthrough to PreInstruction_EnemyProj_NoobTubeReleasedAirBubbles_Flying
 
+%anchor($86D8DF)
 PreInstruction_EnemyProj_NoobTubeReleasedAirBubbles_Flying:
     STZ.B $12                                                            ;86D8DF;
     STZ.B $14                                                            ;86D8E1;
@@ -11937,6 +12722,7 @@ PreInstruction_EnemyProj_NoobTubeReleasedAirBubbles_Flying:
     RTS                                                                  ;86D903;
 
 
+%anchor($86D904)
 EnemyProjectile_NoobTubeCrack:
     dw Instruction_EnemyProjectile_NoobTubeCrack                         ;86D904; Initialisation AI
     dw RTS_8684FB                                                        ;86D906; Initial pre-instruction
@@ -11945,6 +12731,7 @@ EnemyProjectile_NoobTubeCrack:
     dw $3000,$0000                                                       ;86D90C; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86D910; Shot instruction list
 
+%anchor($86D912)
 EnemyProjectile_NoobTubeShard:
     dw InitAI_EnemyProjectile_NoobTubeShard                              ;86D912; Initialisation AI
     dw PreInstruction_EnemyProjectile_NoobTubeShard_Flying               ;86D914; Initial pre-instruction
@@ -11953,6 +12740,7 @@ EnemyProjectile_NoobTubeShard:
     dw $3000,$0000                                                       ;86D91A; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86D91E; Shot instruction list
 
+%anchor($86D920)
 EnemyProjectile_NoobTubeAirBubbles:
     dw InitAI_EnemyProjectile_NoobTubeReleasedAirBubbles                 ;86D920; Initialisation AI
     dw RTS_8684FB                                                        ;86D922; Initial pre-instruction
@@ -11961,46 +12749,57 @@ EnemyProjectile_NoobTubeAirBubbles:
     dw $3000,$0000                                                       ;86D928; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86D92C; Shot instruction list
 
+%anchor($86D92E)
 InstList_EnemyProjectile_CacatacSpike_Left_FacingUp:
     dw $0001,EnemyProjSpritemaps_CacatacSpikes_0                         ;86D92E;
     dw Instruction_EnemyProjectile_Sleep                                 ;86D932;
 
+%anchor($86D934)
 InstList_EnemyProjectile_CacatacSpike_UpLeft:
     dw $0001,EnemyProjSpritemaps_CacatacSpikes_1                         ;86D934;
     dw Instruction_EnemyProjectile_Sleep                                 ;86D938;
 
+%anchor($86D93A)
 InstList_EnemyProjectile_CacatacSpike_Up:
     dw $0001,EnemyProjSpritemaps_CacatacSpikes_2                         ;86D93A;
     dw Instruction_EnemyProjectile_Sleep                                 ;86D93E;
 
+%anchor($86D940)
 InstList_EnemyProjectile_CacatacSpike_UpRight:
     dw $0001,EnemyProjSpritemaps_CacatacSpikes_3                         ;86D940;
     dw Instruction_EnemyProjectile_Sleep                                 ;86D944;
 
+%anchor($86D946)
 InstList_EnemyProjectile_CacatacSpike_Right_FacingUp:
     dw $0001,EnemyProjSpritemaps_CacatacSpikes_4                         ;86D946;
     dw Instruction_EnemyProjectile_Sleep                                 ;86D94A;
 
+%anchor($86D94C)
 InstList_EnemyProjectile_CacatacSpike_Left_FacingDown:
     dw $0001,EnemyProjSpritemaps_CacatacSpikes_5                         ;86D94C;
     dw Instruction_EnemyProjectile_Sleep                                 ;86D950;
 
+%anchor($86D952)
 InstList_EnemyProjectile_CacatacSpike_DownLeft:
     dw $0001,EnemyProjSpritemaps_CacatacSpikes_6                         ;86D952;
     dw Instruction_EnemyProjectile_Sleep                                 ;86D956;
 
+%anchor($86D958)
 InstList_EnemyProjectile_CacatacSpike_Down:
     dw $0001,EnemyProjSpritemaps_CacatacSpikes_7                         ;86D958;
     dw Instruction_EnemyProjectile_Sleep                                 ;86D95C;
 
+%anchor($86D95E)
 InstList_EnemyProjectile_CacatacSpike_DownRight:
     dw $0001,EnemyProjSpritemaps_CacatacSpikes_8                         ;86D95E;
     dw Instruction_EnemyProjectile_Sleep                                 ;86D962;
 
+%anchor($86D964)
 InstList_EnemyProjectile_CacatacSpike_Down_FacingRight:
     dw $0001,EnemyProjSpritemaps_CacatacSpikes_9                         ;86D964;
     dw Instruction_EnemyProjectile_Sleep                                 ;86D968;
 
+%anchor($86D96A)
 CacatacSpike_InstListPointers:
     dw InstList_EnemyProjectile_CacatacSpike_Left_FacingUp               ;86D96A;
     dw InstList_EnemyProjectile_CacatacSpike_Up                          ;86D96C;
@@ -12013,6 +12812,7 @@ CacatacSpike_InstListPointers:
     dw InstList_EnemyProjectile_CacatacSpike_DownLeft                    ;86D97A;
     dw InstList_EnemyProjectile_CacatacSpike_DownRight                   ;86D97C;
 
+%anchor($86D97E)
 CacatacSpike_FunctionPointers:
     dw MoveCacatacSpike_Left                                             ;86D97E;
     dw MoveCacatacSpike_Up                                               ;86D980;
@@ -12025,6 +12825,7 @@ CacatacSpike_FunctionPointers:
     dw MoveCacatacSpike_DownLeft                                         ;86D98E;
     dw MoveCacatacSpike_DownRight                                        ;86D990;
 
+%anchor($86D992)
 InitAI_EnemyProjectile_CacatacSpike:
     LDA.W $1993                                                          ;86D992;
     STA.W $1AFF,Y                                                        ;86D995;
@@ -12056,6 +12857,7 @@ InitAI_EnemyProjectile_CacatacSpike:
     RTS                                                                  ;86D9DA;
 
 
+%anchor($86D9DB)
 PreInstruction_EnemyProjectile_CacatacSpike:
     TXY                                                                  ;86D9DB;
     LDX.W $1AFF,Y                                                        ;86D9DC;
@@ -12064,6 +12866,7 @@ PreInstruction_EnemyProjectile_CacatacSpike:
     RTS                                                                  ;86D9E5;
 
 
+%anchor($86D9E6)
 MoveCacatacSpikeUp:
     LDA.W $1ADB,X                                                        ;86D9E6;
     AND.W #$FF00                                                         ;86D9E9;
@@ -12087,6 +12890,7 @@ MoveCacatacSpikeUp:
     RTS                                                                  ;86DA0F;
 
 
+%anchor($86DA10)
 MoveCacatacSpikeDown:
     LDA.W $1AB7,X                                                        ;86DA10;
     AND.W #$FF00                                                         ;86DA13;
@@ -12110,6 +12914,7 @@ MoveCacatacSpikeDown:
     RTS                                                                  ;86DA39;
 
 
+%anchor($86DA3A)
 MoveCacatacSpikeLeft:
     LDA.W $1ADB,X                                                        ;86DA3A;
     AND.W #$FF00                                                         ;86DA3D;
@@ -12133,6 +12938,7 @@ MoveCacatacSpikeLeft:
     RTS                                                                  ;86DA63;
 
 
+%anchor($86DA64)
 MoveCacatacSpikeRight:
     LDA.W $1AB7,X                                                        ;86DA64;
     AND.W #$FF00                                                         ;86DA67;
@@ -12156,30 +12962,35 @@ MoveCacatacSpikeRight:
     RTS                                                                  ;86DA8D;
 
 
+%anchor($86DA8E)
 MoveCacatacSpike_Left:
     TYX                                                                  ;86DA8E;
     JSR.W MoveCacatacSpikeLeft                                           ;86DA8F;
     RTS                                                                  ;86DA92;
 
 
+%anchor($86DA93)
 MoveCacatacSpike_Right:
     TYX                                                                  ;86DA93;
     JSR.W MoveCacatacSpikeRight                                          ;86DA94;
     RTS                                                                  ;86DA97;
 
 
+%anchor($86DA98)
 MoveCacatacSpike_Up:
     TYX                                                                  ;86DA98;
     JSR.W MoveCacatacSpikeUp                                             ;86DA99;
     RTS                                                                  ;86DA9C;
 
 
+%anchor($86DA9D)
 MoveCacatacSpike_Down:
     TYX                                                                  ;86DA9D;
     JSR.W MoveCacatacSpikeDown                                           ;86DA9E;
     RTS                                                                  ;86DAA1;
 
 
+%anchor($86DAA2)
 MoveCacatacSpike_UpLeft:
     TYX                                                                  ;86DAA2;
     JSR.W MoveCacatacSpikeLeft                                           ;86DAA3;
@@ -12187,6 +12998,7 @@ MoveCacatacSpike_UpLeft:
     RTS                                                                  ;86DAA9;
 
 
+%anchor($86DAAA)
 MoveCacatacSpike_DownLeft:
     TYX                                                                  ;86DAAA;
     JSR.W MoveCacatacSpikeLeft                                           ;86DAAB;
@@ -12194,6 +13006,7 @@ MoveCacatacSpike_DownLeft:
     RTS                                                                  ;86DAB1;
 
 
+%anchor($86DAB2)
 MoveCacatacSpike_UpRight:
     TYX                                                                  ;86DAB2;
     JSR.W MoveCacatacSpikeRight                                          ;86DAB3;
@@ -12201,6 +13014,7 @@ MoveCacatacSpike_UpRight:
     RTS                                                                  ;86DAB9;
 
 
+%anchor($86DABA)
 MoveCacatacSpike_DownRight:
     TYX                                                                  ;86DABA;
     JSR.W MoveCacatacSpikeRight                                          ;86DABB;
@@ -12208,6 +13022,7 @@ MoveCacatacSpike_DownRight:
     RTS                                                                  ;86DAC1;
 
 
+%anchor($86DAC2)
 Delete_EnemyProjectile_IfOffScreen_duplicate:
     JSR.W CheckIf_EnemyProjectile_IsOffScreen_duplicate                  ;86DAC2;
     BEQ .return                                                          ;86DAC5;
@@ -12218,6 +13033,7 @@ Delete_EnemyProjectile_IfOffScreen_duplicate:
     RTS                                                                  ;86DACD;
 
 
+%anchor($86DACE)
 CheckIf_EnemyProjectile_IsOffScreen_duplicate:
     LDA.W $1A4B,X                                                        ;86DACE;
     CMP.W $0911                                                          ;86DAD1;
@@ -12244,6 +13060,7 @@ CheckIf_EnemyProjectile_IsOffScreen_duplicate:
     RTS                                                                  ;86DAFD;
 
 
+%anchor($86DAFE)
 EnemyProjectile_Cacatac:
     dw InitAI_EnemyProjectile_CacatacSpike                               ;86DAFE; Initialisation AI
     dw PreInstruction_EnemyProjectile_CacatacSpike                       ;86DB00; Initial pre-instruction
@@ -12252,12 +13069,14 @@ EnemyProjectile_Cacatac:
     dw $0005,$0000                                                       ;86DB06; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86DB0A; Shot instruction list
 
+%anchor($86DB0C)
 UNUSED_InstList_EnemyProjectile_StokeProjectile_86DB0B:
     dw $0010,UNUSED_EnemyProjSpritemaps_StokeProjectile_0_8DA94E         ;86DB0C;
     dw $0010,UNUSED_EnemyProjSpritemaps_StokeProjectile_1_8DA955         ;86DB10;
     dw Instruction_EnemyProjectile_GotoY                                 ;86DB14;
     dw UNUSED_InstList_EnemyProjectile_StokeProjectile_86DB0B            ;86DB16;
 
+%anchor($86DB18)
 UNUSED_InitAI_EnemyProjectile_StokeProjectile_86DB18:
     LDX.W $0E54                                                          ;86DB18;
     LDA.W #UNUSED_InstList_EnemyProjectile_StokeProjectile_86DB0B        ;86DB1B;
@@ -12287,12 +13106,14 @@ UNUSED_InitAI_EnemyProjectile_StokeProjectile_86DB18:
     RTS                                                                  ;86DB5A;
 
 
+%anchor($86DB5B)
 UNUSED_PreInstruction_EnemyProjectile_StokeProjectile_86DB5B:
     JSR.W ($1AFF,X)                                                      ;86DB5B;
     JSR.W UNUSED_Delete_EnemyProjectile_IfOffScreen_86DBB6               ;86DB5E;
     RTS                                                                  ;86DB61;
 
 
+%anchor($86DB62)
 UNUSED_EnemyProjectile_StokeProjectile_MoveLeft_86DB62:
     LDA.W $1ADB,X                                                        ;86DB62;
     AND.W #$FF00                                                         ;86DB65;
@@ -12316,6 +13137,7 @@ UNUSED_EnemyProjectile_StokeProjectile_MoveLeft_86DB62:
     RTS                                                                  ;86DB8B;
 
 
+%anchor($86DB8C)
 UNUSED_EnemyProjectile_StokeProjectile_MoveRight_86DB8C:
     LDA.W $1AB7,X                                                        ;86DB8C;
     AND.W #$FF00                                                         ;86DB8F;
@@ -12339,6 +13161,7 @@ UNUSED_EnemyProjectile_StokeProjectile_MoveRight_86DB8C:
     RTS                                                                  ;86DBB5;
 
 
+%anchor($86DBB6)
 UNUSED_Delete_EnemyProjectile_IfOffScreen_86DBB6:
     JSR.W CheckIf_EnemyProjectile_IsOffScreen_duplicate_again            ;86DBB6;
     BEQ .return                                                          ;86DBB9;
@@ -12349,6 +13172,7 @@ UNUSED_Delete_EnemyProjectile_IfOffScreen_86DBB6:
     RTS                                                                  ;86DBC1;
 
 
+%anchor($86DBC2)
 CheckIf_EnemyProjectile_IsOffScreen_duplicate_again:
     LDA.W $1A4B,X                                                        ;86DBC2;
     CMP.W $0911                                                          ;86DBC5;
@@ -12375,6 +13199,7 @@ CheckIf_EnemyProjectile_IsOffScreen_duplicate_again:
     RTS                                                                  ;86DBF1;
 
 
+%anchor($86DBF2)
 UNUSED_EnemyProjectile_Stoke_86DBF2:
     dw UNUSED_InitAI_EnemyProjectile_StokeProjectile_86DB18              ;86DBF2; Initialisation AI
     dw UNUSED_PreInstruction_EnemyProjectile_StokeProjectile_86DB5B      ;86DBF4; Initial pre-instruction
@@ -12383,10 +13208,12 @@ UNUSED_EnemyProjectile_Stoke_86DBF2:
     dw $0005,$0000                                                       ;86DBFA; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86DBFE; Shot instruction list
 
+%anchor($86DC00)
 InstList_EnemyProjectile_Shot_SporeSpawner:
     dw $0001,EnemyProjSpritemaps_SporeSpawners_0                         ;86DC00;
     dw Instruction_EnemyProjectile_Sleep                                 ;86DC04;
 
+%anchor($86DC06)
 InstList_EnemyProjectile_SporeSpawner_SpawnSpore:
     dw $0001,EnemyProjSpritemaps_SporeSpawners_0                         ;86DC06;
     dw $0006,EnemyProjSpritemaps_SporeSpawners_1                         ;86DC0A;
@@ -12396,6 +13223,7 @@ InstList_EnemyProjectile_SporeSpawner_SpawnSpore:
     dw $0001,EnemyProjSpritemaps_SporeSpawners_0                         ;86DC18;
     dw Instruction_EnemyProjectile_Sleep                                 ;86DC1C;
 
+%anchor($86DC1E)
 InstList_EnemyProjectile_Spores:
     dw $0005,EnemyProjSpritemaps_Spores_0                                ;86DC1E;
     dw $0005,EnemyProjSpritemaps_Spores_1                                ;86DC22;
@@ -12403,10 +13231,12 @@ InstList_EnemyProjectile_Spores:
     dw Instruction_EnemyProjectile_GotoY                                 ;86DC2A;
     dw InstList_EnemyProjectile_Spores                                   ;86DC2C;
 
+%anchor($86DC2E)
 InstList_EnemyProjectile_SporeSpawnsStalk:
     dw $0005,EnemyProjSpritemaps_SporeSpawnsStalk                        ;86DC2E;
     dw Instruction_EnemyProjectile_Sleep                                 ;86DC32;
 
+%anchor($86DC34)
 InstList_EnemyProjectile_Shot_Spores:
     dw $0001,EnemyProjSpritemaps_Common_SmallExplosion_0                 ;86DC34;
     dw Instruction_EnemyProjectile_Spores_SetProperties3000              ;86DC38;
@@ -12421,12 +13251,14 @@ InstList_EnemyProjectile_Shot_Spores:
     dw Instruction_EnemyProjectile_GotoY                                 ;86DC56;
     dw InstList_EnemyProjectile_Delete                                   ;86DC58;
 
+%anchor($86DC5A)
 Instruction_EnemyProjectile_Spores_SetProperties3000:
     LDA.W #$3000                                                         ;86DC5A;
     STA.W $1BD7,X                                                        ;86DC5D;
     RTS                                                                  ;86DC60;
 
 
+%anchor($86DC61)
 Instruction_EnemyProjectile_Spores_SpawnEnemyDrops:
     PHX                                                                  ;86DC61;
     PHY                                                                  ;86DC62;
@@ -12441,6 +13273,7 @@ Instruction_EnemyProjectile_Spores_SpawnEnemyDrops:
     RTS                                                                  ;86DC76;
 
 
+%anchor($86DC77)
 Instruction_EnemyProjectile_SporeSpawner_SpawnSpore:
     PHX                                                                  ;86DC77;
     PHY                                                                  ;86DC78;
@@ -12455,6 +13288,7 @@ Instruction_EnemyProjectile_SporeSpawner_SpawnSpore:
     RTS                                                                  ;86DC8C;
 
 
+%anchor($86DC8D)
 InitAI_EnemyProjectile_Spores:
     PHX                                                                  ;86DC8D;
     LDA.B $12                                                            ;86DC8E;
@@ -12468,6 +13302,7 @@ InitAI_EnemyProjectile_Spores:
     RTS                                                                  ;86DCA2;
 
 
+%anchor($86DCA3)
 InitAI_EnemyProjectile_SporeSpawnsStalk:
     LDA.W $1993                                                          ;86DCA3;
     ASL A                                                                ;86DCA6;
@@ -12485,6 +13320,7 @@ InitAI_EnemyProjectile_SporeSpawnsStalk:
     dw $FFC0,$FFC8,$FFD0,$FFD8,$FFE0                                     ;86DCB9;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($86DCC3)
 UNUSED_InitAI_EnemyProjectile_SporeSpawnsStalk_86DCC3:
     LDA.W $0F7E                                                          ;86DCC3;
     CLC                                                                  ;86DCC6;
@@ -12496,6 +13332,7 @@ UNUSED_InitAI_EnemyProjectile_SporeSpawnsStalk_86DCC3:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($86DCD4)
 InitAI_EnemyProjectile_SporeSpawner:
     LDA.W $1993                                                          ;86DCD4;
     ASL A                                                                ;86DCD7;
@@ -12510,6 +13347,7 @@ InitAI_EnemyProjectile_SporeSpawner:
 .data:
     dw $0020,$0060,$00A0,$00E0                                           ;86DCE6;
 
+%anchor($86DCEE)
 PreInstruction_EnemyProjectile_Spores:
     LDA.W $1AFF,X                                                        ;86DCEE;
     AND.W #$00FF                                                         ;86DCF1;
@@ -12551,14 +13389,17 @@ PreInstruction_EnemyProjectile_Spores:
     RTS                                                                  ;86DD43;
 
 
+%anchor($86DD44)
 RTS_86DD44:
     RTS                                                                  ;86DD44;
 
 
+%anchor($86DD45)
 RTS_86DD45:
     RTS                                                                  ;86DD45;
 
 
+%anchor($86DD46)
 PreInstruction_EnemyProjectile_SporeSpawner:
     LDA.L $7E9000                                                        ;86DD46;
     BEQ .enabled                                                         ;86DD4A;
@@ -12581,6 +13422,7 @@ PreInstruction_EnemyProjectile_SporeSpawner:
     RTS                                                                  ;86DD6B;
 
 
+%anchor($86DD6C)
 SporeMovementData:                                                       ;86DD6C;
     db $00,$01, $01,$00, $00,$01, $01,$00, $00,$01, $01,$00, $00,$01, $01,$00
     db $00,$01, $01,$00, $01,$00, $00,$01, $01,$00, $00,$01, $01,$00, $00,$01
@@ -12600,6 +13442,7 @@ SporeMovementData:                                                       ;86DD6C
     db $FF,$00, $FF,$00, $00,$FF, $FF,$00, $FF,$00, $FF,$FF, $FF,$00, $00,$00
 
 
+%anchor($86DE6C)
 EnemyProjectile_SporeSpawnStalk:
     dw InitAI_EnemyProjectile_SporeSpawnsStalk                           ;86DE6C; Initialisation AI
     dw RTS_86DD44                                                        ;86DE6E; Initial pre-instruction
@@ -12608,6 +13451,7 @@ EnemyProjectile_SporeSpawnStalk:
     dw $2000,$0000                                                       ;86DE74; Properties, Hit instruction list
     dw InstList_EnemyProjectile_SporeSpawnsStalk                         ;86DE78; Shot instruction list
 
+%anchor($86DE7A)
 EnemyProjectile_SporeSpawnSpores:
     dw InitAI_EnemyProjectile_Spores                                     ;86DE7A; Initialisation AI
     dw PreInstruction_EnemyProjectile_Spores                             ;86DE7C; Initial pre-instruction
@@ -12616,6 +13460,7 @@ EnemyProjectile_SporeSpawnSpores:
     dw $8004,$0000                                                       ;86DE82; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Shot_Spores                              ;86DE86; Shot instruction list
 
+%anchor($86DE88)
 EnemyProjectile_SporeSpawnSporeSpawner:
     dw InitAI_EnemyProjectile_SporeSpawner                               ;86DE88; Initialisation AI
     dw PreInstruction_EnemyProjectile_SporeSpawner                       ;86DE8A; Initial pre-instruction
@@ -12624,6 +13469,7 @@ EnemyProjectile_SporeSpawnSporeSpawner:
     dw $2000,$0000                                                       ;86DE90; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Shot_SporeSpawner                        ;86DE94; Shot instruction list
 
+%anchor($86DE96)
 InstList_EnemyProjectile_NamiFuneFireball_Left:
     dw $0005,EnemyProjSpritemaps_Namihe_Fune_Fireball_0                  ;86DE96;
     dw $0005,EnemyProjSpritemaps_Namihe_Fune_Fireball_1                  ;86DE9A;
@@ -12631,6 +13477,7 @@ InstList_EnemyProjectile_NamiFuneFireball_Left:
     dw Instruction_EnemyProjectile_GotoY                                 ;86DEA2;
     dw InstList_EnemyProjectile_NamiFuneFireball_Left                    ;86DEA4;
 
+%anchor($86DEA6)
 InstList_EnemyProjectile_NamiFuneFireball_Right:
     dw $0005,EnemyProjSpritemaps_Namihe_Fune_Fireball_3                  ;86DEA6;
     dw $0005,EnemyProjSpritemaps_Namihe_Fune_Fireball_4                  ;86DEAA;
@@ -12638,6 +13485,7 @@ InstList_EnemyProjectile_NamiFuneFireball_Right:
     dw Instruction_EnemyProjectile_GotoY                                 ;86DEB2;
     dw InstList_EnemyProjectile_NamiFuneFireball_Right                   ;86DEB4;
 
+%anchor($86DEB6)
 NamiFuneFireball_XVelocityTable:
   .left:
     dw $FFC0                                                             ;86DEB6;
@@ -12645,6 +13493,7 @@ NamiFuneFireball_XVelocityTable:
     dw       $0040, $FF80,$0080, $FF40,$00C0, $FF00,$0100                ;86DEB8;
     dw $FEC0,$0140, $FE80,$0180, $FE40,$01C0, $FE00,$0200                ;86DEC8;
 
+%anchor($86DED6)
 InitAI_EnemyProjectile_NamiFuneFireball:
     LDX.W $0E54                                                          ;86DED6;
     LDA.W #InstList_EnemyProjectile_NamiFuneFireball_Left                ;86DED9;
@@ -12689,12 +13538,14 @@ InitAI_EnemyProjectile_NamiFuneFireball:
     RTS                                                                  ;86DF38;
 
 
+%anchor($86DF39)
 PreInstruction_EnemyProjectile_NamiFuneFireball:
     JSR.W ($1AFF,X)                                                      ;86DF39;
     JSR.W Delete_EnemyProjectile_ifOffScreen_duplicate_again             ;86DF3C;
     RTS                                                                  ;86DF3F;
 
 
+%anchor($86DF40)
 Function_EnemyProjectile_NamiFuneFireball_Left:
     LDA.W $1ADB,X                                                        ;86DF40;
     AND.W #$FF00                                                         ;86DF43;
@@ -12718,6 +13569,7 @@ Function_EnemyProjectile_NamiFuneFireball_Left:
     RTS                                                                  ;86DF69;
 
 
+%anchor($86DF6A)
 Function_EnemyProjectile_NamiFuneFireball_Right:
     LDA.W $1AB7,X                                                        ;86DF6A;
     AND.W #$FF00                                                         ;86DF6D;
@@ -12741,6 +13593,7 @@ Function_EnemyProjectile_NamiFuneFireball_Right:
     RTS                                                                  ;86DF93;
 
 
+%anchor($86DF94)
 Delete_EnemyProjectile_ifOffScreen_duplicate_again:
     JSR.W CheckIf_EnemyProjectile_IsOffScreen_duplicate_again            ;86DF94;
     BEQ .return                                                          ;86DF97;
@@ -12752,6 +13605,7 @@ Delete_EnemyProjectile_ifOffScreen_duplicate_again:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($86DFA0)
 UNUSED_CheckIf_EnemyProj_isHorizontallyOffScreen_86DFA0:
     LDA.W $1A4B,X                                                        ;86DFA0;
     CMP.W $0911                                                          ;86DFA3;
@@ -12771,6 +13625,7 @@ UNUSED_CheckIf_EnemyProj_isHorizontallyOffScreen_86DFA0:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($86DFBC)
 EnemyProjectile_NamiheFireball:
     dw InitAI_EnemyProjectile_NamiFuneFireball                           ;86DFBC; Initialisation AI
     dw PreInstruction_EnemyProjectile_NamiFuneFireball                   ;86DFBE; Initial pre-instruction
@@ -12779,6 +13634,7 @@ EnemyProjectile_NamiheFireball:
     dw $00C8,$0000                                                       ;86DFC4; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86DFC8; Shot instruction list
 
+%anchor($86DFCA)
 EnemyProjectile_FuneFireball:
     dw InitAI_EnemyProjectile_NamiFuneFireball                           ;86DFCA; Initialisation AI
     dw PreInstruction_EnemyProjectile_NamiFuneFireball                   ;86DFCC; Initial pre-instruction
@@ -12787,19 +13643,23 @@ EnemyProjectile_FuneFireball:
     dw $003C,$0000                                                       ;86DFD2; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86DFD6; Shot instruction list
 
+%anchor($86DFD8)
 InstList_EnemyProjectile_MagdolliteFlame_Left:
     dw $0001,EnemyProjSpritemaps_MagdolliteFlame_0                       ;86DFD8;
     dw Instruction_EnemyProjectile_Sleep                                 ;86DFDC;
 
+%anchor($86DFDE)
 InstList_EnemyProjectile_MagdolliteFlame_Right:
     dw $0001,EnemyProjSpritemaps_MagdolliteFlame_1                       ;86DFDE;
     dw Instruction_EnemyProjectile_Sleep                                 ;86DFE2;
 
+%anchor($86DFE4)
 InstList_EnemyProjectile_Shot_MagdolliteFlame:
     dw Instruction_EnemyProjectile_MagdolliteFlame_SpawnDrops            ;86DFE4;
     dw Instruction_EnemyProjectile_GotoY                                 ;86DFE6;
     dw InstList_EnemyProjectile_Delete                                   ;86DFE8;
 
+%anchor($86DFEA)
 Instruction_EnemyProjectile_MagdolliteFlame_SpawnDrops:
     PHY                                                                  ;86DFEA;
     PHX                                                                  ;86DFEB;
@@ -12814,6 +13674,7 @@ Instruction_EnemyProjectile_MagdolliteFlame_SpawnDrops:
     RTS                                                                  ;86DFFF;
 
 
+%anchor($86E000)
 InitAI_EnemyProjectile_MagdolliteFlame:
     LDX.W $0E54                                                          ;86E000;
     LDA.W #InstList_EnemyProjectile_MagdolliteFlame_Left                 ;86E003;
@@ -12845,12 +13706,14 @@ InitAI_EnemyProjectile_MagdolliteFlame:
     RTS                                                                  ;86E048;
 
 
+%anchor($86E049)
 PreInstruction_EnemyProjectile_MagdolliteFlame:
     JSR.W ($1AFF,X)                                                      ;86E049;
     JSR.W Delete_EnemyProjectile_IfOffScreen_duplicate_again2            ;86E04C;
     RTS                                                                  ;86E04F;
 
 
+%anchor($86E050)
 Function_EnemyProjectile_MagdolliteFlame_Left:
     LDA.W $1ADB,X                                                        ;86E050;
     AND.W #$FF00                                                         ;86E053;
@@ -12874,6 +13737,7 @@ Function_EnemyProjectile_MagdolliteFlame_Left:
     RTS                                                                  ;86E079;
 
 
+%anchor($86E07A)
 Function_EnemyProjectile_MagdolliteFlame_Right:
     LDA.W $1AB7,X                                                        ;86E07A;
     AND.W #$FF00                                                         ;86E07D;
@@ -12897,6 +13761,7 @@ Function_EnemyProjectile_MagdolliteFlame_Right:
     RTS                                                                  ;86E0A3;
 
 
+%anchor($86E0A4)
 Delete_EnemyProjectile_IfOffScreen_duplicate_again2:
     JSR.W CheckIf_EnemyProjectile_IsOffScreen_duplicate_again3           ;86E0A4;
     BEQ .return                                                          ;86E0A7;
@@ -12907,6 +13772,7 @@ Delete_EnemyProjectile_IfOffScreen_duplicate_again2:
     RTS                                                                  ;86E0AF;
 
 
+%anchor($86E0B0)
 CheckIf_EnemyProjectile_IsOffScreen_duplicate_again3:
     LDA.W $1A4B,X                                                        ;86E0B0;
     CMP.W $0911                                                          ;86E0B3;
@@ -12933,6 +13799,7 @@ CheckIf_EnemyProjectile_IsOffScreen_duplicate_again3:
     RTS                                                                  ;86E0DF;
 
 
+%anchor($86E0E0)
 EnemyProjectile_Magdollite:
     dw InitAI_EnemyProjectile_MagdolliteFlame                            ;86E0E0; Initialisation AI
     dw PreInstruction_EnemyProjectile_MagdolliteFlame                    ;86E0E2; Initial pre-instruction
@@ -12941,6 +13808,7 @@ EnemyProjectile_Magdollite:
     dw $8028,$0000                                                       ;86E0E8; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Shot_MagdolliteFlame                     ;86E0EC; Shot instruction list
 
+%anchor($86E0EE)
 UNUSED_InstList_EnemyProj_MiscDust_0_BeamCharge_86E0EE:
     dw $0003,EnemyProjSpritemaps_DustCloud_Explosion_35                  ;86E0EE;
     dw $0003,EnemyProjSpritemaps_DustCloud_Explosion_36                  ;86E0F2;
@@ -12948,6 +13816,7 @@ UNUSED_InstList_EnemyProj_MiscDust_0_BeamCharge_86E0EE:
     dw $0003,EnemyProjSpritemaps_DustCloud_Explosion_38                  ;86E0FA;
     dw Instruction_EnemyProjectile_Delete                                ;86E0FE;
 
+%anchor($86E100)
 InstList_EnemyProj_MiscDust_1_MotherBrainElbowChargeParticle:
     dw $0005,EnemyProjSpritemaps_DrayTurretProj_DustCloud_Explosion_0    ;86E100;
     dw $0004,EnemyProjSpritemaps_DrayTurretProj_DustCloud_Explosion_1    ;86E104;
@@ -12957,6 +13826,7 @@ InstList_EnemyProj_MiscDust_1_MotherBrainElbowChargeParticle:
     dw $0003,EnemyProjSpritemaps_DrayTurretProj_DustCloud_Explosion_5    ;86E114;
     dw Instruction_EnemyProjectile_Delete                                ;86E118;
 
+%anchor($86E11A)
 InstList_EnemyProj_MiscDust_2_MotherBrainElbowChargeEnergy:
     dw $0004,EnemyProjSpritemaps_DrayTurretProj_DustCloud_Explosion_6    ;86E11A;
     dw $0003,EnemyProjSpritemaps_DrayTurretProj_DustCloud_Explosion_7    ;86E11E;
@@ -12967,6 +13837,7 @@ InstList_EnemyProj_MiscDust_2_MotherBrainElbowChargeEnergy:
     dw $000C,EnemyProjSpritemaps_Common_SmallExplosion_0                 ;86E132;
     dw Instruction_EnemyProjectile_Delete                                ;86E136;
 
+%anchor($86E138)
 InstList_EnemyProj_MiscDust_3_SmallExplosion:
     dw $0004,EnemyProjSpritemaps_Common_SmallExplosion_0                 ;86E138;
     dw $0006,EnemyProjSpritemaps_Common_SmallExplosion_1                 ;86E13C;
@@ -12976,6 +13847,7 @@ InstList_EnemyProj_MiscDust_3_SmallExplosion:
     dw $0006,EnemyProjSpritemaps_Common_SmallExplosion_5                 ;86E14C;
     dw Instruction_EnemyProjectile_Delete                                ;86E150;
 
+%anchor($86E152)
 InstList_EnemyProj_MiscDust_4_MotherBrainRainbowBeamExplosion:
     dw $0003,EnemyProjSpritemaps_DustCloud_Explosion_39                  ;86E152;
     dw $0003,EnemyProjSpritemaps_DustCloud_Explosion_3A                  ;86E156;
@@ -12984,6 +13856,7 @@ InstList_EnemyProj_MiscDust_4_MotherBrainRainbowBeamExplosion:
     dw $0004,EnemyProjSpritemaps_DustCloud_Explosion_3D                  ;86E162;
     dw Instruction_EnemyProjectile_Delete                                ;86E166;
 
+%anchor($86E168)
 UNUSED_InstList_EnemyProj_MiscDust_5_BeamTrail_86E168:
     dw $0008,EnemyProjSpritemaps_DustCloud_Explosion_3E                  ;86E168;
     dw $0008,EnemyProjSpritemaps_DustCloud_Explosion_3F                  ;86E16C;
@@ -12992,6 +13865,7 @@ UNUSED_InstList_EnemyProj_MiscDust_5_BeamTrail_86E168:
     dw $0018,EnemyProjSpritemaps_DrayTurretProj_DustCloud_Explosion_9    ;86E178;
     dw Instruction_EnemyProjectile_Delete                                ;86E17C;
 
+%anchor($86E17E)
 InstList_EnemyProj_MiscDust_6_DudShot_TinyExplosion:
     dw $0004,EnemyProjSpritemaps_DustCloud_Explosion_45                  ;86E17E;
     dw $0004,EnemyProjSpritemaps_DustCloud_Explosion_46                  ;86E182;
@@ -13001,17 +13875,20 @@ InstList_EnemyProj_MiscDust_6_DudShot_TinyExplosion:
     dw $0004,EnemyProjSpritemaps_DustCloud_Explosion_4A                  ;86E192;
     dw Instruction_EnemyProjectile_Delete                                ;86E196;
 
+%anchor($86E198)
 UNUSED_InstList_EnemyProj_MiscDust_7_PowerBomb_86E198:
     dw $0005,EnemyProjSpritemaps_DustCloud_Explosion_42                  ;86E198;
     dw $0005,EnemyProjSpritemaps_DustCloud_Explosion_43                  ;86E19C;
     dw $0005,EnemyProjSpritemaps_DustCloud_Explosion_44                  ;86E1A0;
     dw Instruction_EnemyProjectile_Delete                                ;86E1A4;
 
+%anchor($86E1A6)
 UNUSED_InstList_EnemyProj_MiscDust_8_ElevatorPad_86E1A6:
     dw $0001,EnemyProjSpritemaps_CeresElevatorPad_DustCloud_Explosion_0  ;86E1A6;
     dw $0001,EnemyProjSpritemaps_CeresElevatorPad_DustCloud_Explosion_1  ;86E1AA;
     dw Instruction_EnemyProjectile_Delete                                ;86E1AE;
 
+%anchor($86E1B0)
 InstList_EnemyProj_MiscDust_9_SmallDustCloud:
     dw $0005,EnemyProjSpritemaps_DustCloud_Explosion_4F                  ;86E1B0;
     dw $0005,EnemyProjSpritemaps_DustCloud_Explosion_4B                  ;86E1B4;
@@ -13020,6 +13897,7 @@ InstList_EnemyProj_MiscDust_9_SmallDustCloud:
     dw $0005,EnemyProjSpritemaps_DustCloud_Explosion_4E                  ;86E1C0;
     dw Instruction_EnemyProjectile_Delete                                ;86E1C4;
 
+%anchor($86E1C6)
 InstList_EnemyProj_MiscDust_A_CorpseDustCloud:
     dw $0003,EnemyProjSpritemaps_DustCloud_Explosion_4F                  ;86E1C6;
     dw $0003,EnemyProjSpritemaps_DustCloud_Explosion_50                  ;86E1CA;
@@ -13027,6 +13905,7 @@ InstList_EnemyProj_MiscDust_A_CorpseDustCloud:
     dw $0003,EnemyProjSpritemaps_DustCloud_Explosion_52                  ;86E1D2;
     dw Instruction_EnemyProjectile_Delete                                ;86E1D6;
 
+%anchor($86E1D8)
 InstList_EnemyProj_MiscDust_B_EyeDoorSweatDrop:
     dw $0005,EnemyProjSpritemaps_DustCloud_Explosion_53                  ;86E1D8;
     dw $0005,EnemyProjSpritemaps_DustCloud_Explosion_54                  ;86E1DC;
@@ -13034,6 +13913,7 @@ InstList_EnemyProj_MiscDust_B_EyeDoorSweatDrop:
     dw $0005,EnemyProjSpritemaps_DustCloud_Explosion_56                  ;86E1E4;
     dw Instruction_EnemyProjectile_Delete                                ;86E1E8;
 
+%anchor($86E1EA)
 InstList_EnemyProj_MiscDust_C_Smoke:
     dw $0008,EnemyProjSpritemaps_Common_Smoke_0                          ;86E1EA;
     dw $0008,EnemyProjSpritemaps_Common_Smoke_1                          ;86E1EE;
@@ -13041,12 +13921,14 @@ InstList_EnemyProj_MiscDust_C_Smoke:
     dw $0008,EnemyProjSpritemaps_Common_Smoke_3                          ;86E1F6;
     dw Instruction_EnemyProjectile_Delete                                ;86E1FA;
 
+%anchor($86E1FC)
 UNUSED_InstList_EnemyProj_MiscDust_1C_ElevatorPad_86E1FC:
     dw $0001,EnemyProjSpritemaps_CeresElevatorPad_DustCloud_Explosion_0  ;86E1FC;
     dw $0001,EnemyProjSpritemaps_CeresElevatorPad_DustCloud_Explosion_1  ;86E200;
     dw Instruction_EnemyProjectile_GotoY                                 ;86E204;
     dw UNUSED_InstList_EnemyProj_MiscDust_1C_ElevatorPad_86E1FC          ;86E206;
 
+%anchor($86E208)
 InstList_EnemyProj_MiscDust_1D_BigExplosion:
     dw $0005,EnemyProjSpritemaps_Common_BigExplosion_0                   ;86E208;
     dw $0005,EnemyProjSpritemaps_Common_BigExplosion_1                   ;86E20C;
@@ -13056,6 +13938,7 @@ InstList_EnemyProj_MiscDust_1D_BigExplosion:
     dw $0005,EnemyProjSpritemaps_Common_BigExplosion_5                   ;86E21C;
     dw Instruction_EnemyProjectile_Delete                                ;86E220;
 
+%anchor($86E222)
 UNUSED_InstList_EnemyProj_MiscDust_D_SmallEnergyDrop_86E222:
     dw $0008,EnemyProjSpritemaps_DustCloud_Explosion_57                  ;86E222;
     dw $0008,EnemyProjSpritemaps_DustCloud_Explosion_58                  ;86E226;
@@ -13063,6 +13946,7 @@ UNUSED_InstList_EnemyProj_MiscDust_D_SmallEnergyDrop_86E222:
     dw $0008,EnemyProjSpritemaps_DustCloud_Explosion_5A                  ;86E22E;
     dw Instruction_EnemyProjectile_Delete                                ;86E232;
 
+%anchor($86E234)
 UNUSED_InstList_EnemyProj_MiscDust_E_BigEnergyDrop_86E22E:
     dw $0008,EnemyProjSpritemaps_DustCloud_Explosion_5B                  ;86E234;
     dw $0008,EnemyProjSpritemaps_DustCloud_Explosion_5C                  ;86E238;
@@ -13070,6 +13954,7 @@ UNUSED_InstList_EnemyProj_MiscDust_E_BigEnergyDrop_86E22E:
     dw $0008,EnemyProjSpritemaps_DustCloud_Explosion_5E                  ;86E240;
     dw Instruction_EnemyProjectile_Delete                                ;86E244;
 
+%anchor($86E246)
 UNUSED_InstList_EnemyProj_MiscDust_F_Bomb_86E246:
     dw $0005,EnemyProjSpritemaps_DustCloud_Explosion_5F                  ;86E246;
     dw $0005,EnemyProjSpritemaps_DustCloud_Explosion_60                  ;86E24A;
@@ -13077,12 +13962,14 @@ UNUSED_InstList_EnemyProj_MiscDust_F_Bomb_86E246:
     dw $0005,EnemyProjSpritemaps_DustCloud_Explosion_62                  ;86E252;
     dw Instruction_EnemyProjectile_Delete                                ;86E256;
 
+%anchor($86E258)
 UNUSED_InstList_EnemyProj_MiscDust_10_WeirdEnergyDrop_86E258:
     dw $0010,EnemyProjSpritemaps_DustCloud_Explosion_63                  ;86E258;
     dw $0010,EnemyProjSpritemaps_DustCloud_Explosion_64                  ;86E25C;
     dw $0010,EnemyProjSpritemaps_DustCloud_Explosion_65                  ;86E260;
     dw Instruction_EnemyProjectile_Delete                                ;86E264;
 
+%anchor($86E266)
 InstList_EnemyProj_MiscDust_11_RockParticles:
     dw $0002,EnemyProjSpritemaps_DustCloud_Explosion_0                   ;86E266;
     dw $0002,EnemyProjSpritemaps_DustCloud_Explosion_1                   ;86E26A;
@@ -13102,6 +13989,7 @@ InstList_EnemyProj_MiscDust_11_RockParticles:
     dw $0002,EnemyProjSpritemaps_DustCloud_Explosion_F                   ;86E2A2;
     dw Instruction_EnemyProjectile_Delete                                ;86E2A6;
 
+%anchor($86E2A8)
 InstList_EnemyProj_MiscDust_12_ShortBigDustCloud:
     dw $0002,EnemyProjSpritemaps_Common_BigDustCloud_0                   ;86E2A8;
     dw $0002,EnemyProjSpritemaps_Common_BigDustCloud_1                   ;86E2AC;
@@ -13109,6 +13997,7 @@ InstList_EnemyProj_MiscDust_12_ShortBigDustCloud:
     dw $0002,EnemyProjSpritemaps_Common_BigDustCloud_3                   ;86E2B4;
     dw Instruction_EnemyProjectile_Delete                                ;86E2B8;
 
+%anchor($86E2BA)
 UNUSED_InstList_EnemyProj_MiscDust_13_CloudShortBeam_86E2BA:
     dw $0003,EnemyProjSpritemaps_DustCloud_Explosion_10                  ;86E2BA;
     dw $0003,EnemyProjSpritemaps_DustCloud_Explosion_11                  ;86E2BE;
@@ -13118,6 +14007,7 @@ UNUSED_InstList_EnemyProj_MiscDust_13_CloudShortBeam_86E2BA:
     dw $0005,EnemyProjSpritemaps_DustCloud_Explosion_15                  ;86E2CE;
     dw Instruction_EnemyProjectile_Delete                                ;86E2D2;
 
+%anchor($86E2D4)
 UNUSED_InstList_EnemyProj_MiscDust_14_CloudMediumBeam_86E2D4:
     dw $0003,EnemyProjSpritemaps_DustCloud_Explosion_10                  ;86E2D4;
     dw $0003,EnemyProjSpritemaps_DustCloud_Explosion_11                  ;86E2D8;
@@ -13128,6 +14018,7 @@ UNUSED_InstList_EnemyProj_MiscDust_14_CloudMediumBeam_86E2D4:
     dw $0003,EnemyProjSpritemaps_DustCloud_Explosion_16                  ;86E2EC;
     dw Instruction_EnemyProjectile_Delete                                ;86E2F0;
 
+%anchor($86E2F2)
 InstList_EnemyProj_MiscDust_15_BigDustCloud:
     dw $0005,EnemyProjSpritemaps_Common_BigDustCloud_0                   ;86E2F2;
     dw $0005,EnemyProjSpritemaps_Common_BigDustCloud_1                   ;86E2F6;
@@ -13139,6 +14030,7 @@ InstList_EnemyProj_MiscDust_15_BigDustCloud:
     dw $0005,EnemyProjSpritemaps_DustCloud_Explosion_13                  ;86E30E;
     dw Instruction_EnemyProjectile_Delete                                ;86E312;
 
+%anchor($86E314)
 UNUSED_InstList_EnemyProj_MiscDust_16_LongBeam_86E314:
     dw $0001,EnemyProjSpritemaps_DustCloud_Explosion_14                  ;86E314;
     dw $0001,EnemyProjSpritemaps_DustCloud_Explosion_15                  ;86E318;
@@ -13173,12 +14065,14 @@ UNUSED_InstList_EnemyProj_MiscDust_16_LongBeam_86E314:
     dw $0001,EnemyProjSpritemaps_DustCloud_Explosion_1A                  ;86E38C;
     dw Instruction_EnemyProjectile_Delete                                ;86E390;
 
+%anchor($86E392)
 UNUSED_InstList_EnemyProj_MiscDust_17_FlickerLongBeam_86E392:
     dw $0001,EnemyProjSpritemaps_DustCloud_Explosion_1A                  ;86E392;
     dw $0001,EnemyProjSpritemaps_DustCloud_Explosion_1B                  ;86E396;
     dw $0001,EnemyProjSpritemaps_DustCloud_Explosion_1A                  ;86E39A;
     dw Instruction_EnemyProjectile_Delete                                ;86E39E;
 
+%anchor($86E3A0)
 InstList_EnemyProj_MiscDust_18_LongDraygonBreathBubbles:
     dw $0008,EnemyProjSpritemaps_DustCloud_Explosion_1C                  ;86E3A0;
     dw $0008,EnemyProjSpritemaps_DustCloud_Explosion_1D                  ;86E3A4;
@@ -13191,6 +14085,7 @@ InstList_EnemyProj_MiscDust_18_LongDraygonBreathBubbles:
     dw $0008,EnemyProjSpritemaps_DustCloud_Explosion_24                  ;86E3C0;
     dw Instruction_EnemyProjectile_Delete                                ;86E3C4;
 
+%anchor($86E3C6)
 UNUSED_InstList_EnemyProj_MiscDust_19_SaveStationElec_86E3C6:
     dw $0001,EnemyProjSpritemaps_DustCloud_Explosion_25                  ;86E3C6;
     dw $0001,EnemyProjSpritemaps_DustCloud_Explosion_26                  ;86E3CA;
@@ -13202,6 +14097,7 @@ UNUSED_InstList_EnemyProj_MiscDust_19_SaveStationElec_86E3C6:
     dw $0001,EnemyProjSpritemaps_DustCloud_Explosion_2C                  ;86E3E2;
     dw Instruction_EnemyProjectile_Delete                                ;86E3E6;
 
+%anchor($86E3E8)
 UNUSED_InstList_EnemyProj_MiscDust_ExpandVerticalGate_86E3E8:
     dw $0010,EnemyProjSpritemaps_DustCloud_Explosion_2D                  ;86E3E8;
     dw $0010,EnemyProjSpritemaps_DustCloud_Explosion_2E                  ;86E3EC;
@@ -13213,6 +14109,7 @@ UNUSED_InstList_EnemyProj_MiscDust_ExpandVerticalGate_86E3E8:
     dw $0010,EnemyProjSpritemaps_DustCloud_Explosion_34                  ;86E404;
     dw Instruction_EnemyProjectile_Delete                                ;86E408;
 
+%anchor($86E40A)
 UNUSED_InstList_EnemyProj_MiscDust_ContractVertGate_86E40A:
     dw $0004,EnemyProjSpritemaps_DustCloud_Explosion_34                  ;86E40A;
     dw $0004,EnemyProjSpritemaps_DustCloud_Explosion_33                  ;86E40E;
@@ -13224,6 +14121,7 @@ UNUSED_InstList_EnemyProj_MiscDust_ContractVertGate_86E40A:
     dw $0004,EnemyProjSpritemaps_DustCloud_Explosion_2D                  ;86E426;
     dw Instruction_EnemyProjectile_Delete                                ;86E42A;
 
+%anchor($86E42C)
 MiscDust_InstListPointers:
     dw UNUSED_InstList_EnemyProj_MiscDust_0_BeamCharge_86E0EE            ;86E42C;
     dw InstList_EnemyProj_MiscDust_1_MotherBrainElbowChargeParticle      ;86E42E;
@@ -13256,6 +14154,7 @@ MiscDust_InstListPointers:
     dw UNUSED_InstList_EnemyProj_MiscDust_1C_ElevatorPad_86E1FC          ;86E464;
     dw InstList_EnemyProj_MiscDust_1D_BigExplosion                       ;86E466;
 
+%anchor($86E468)
 InitAI_EnemyProj_MiscDust:
     LDA.W $1993                                                          ;86E468;
     ASL A                                                                ;86E46B;
@@ -13273,12 +14172,16 @@ InitAI_EnemyProj_MiscDust:
 ;       |     |      _________ Minimum X offset
 ;       |     |     |      ___ Minimum Y offset
 ;       |     |     |     |
+%anchor($86E47E)
 PLM_MiscDust_XYOffsetTable_randomX:
     dw $0000                                                             ;86E47E;
+%anchor($86E480)
 PLM_MiscDust_XYOffsetTable_randomY:
     dw       $0000                                                       ;86E480;
+%anchor($86E482)
 PLM_MiscDust_XYOffsetTable_minX:
     dw             $0000                                                 ;86E482;
+%anchor($86E484)
 PLM_MiscDust_XYOffsetTable_minY:
     dw                   $0000                                           ;86E484;
     dw $0007,$0007,$FFFC,$FFFC
@@ -13287,6 +14190,7 @@ PLM_MiscDust_XYOffsetTable_minY:
     dw $001F,$003F,$FFF0,$FFE0
 
 
+%anchor($86E4A6)
 InitAI_EnemyProj_MiscDustPLM:
     LDA.W $1993                                                          ;86E4A6;
     AND.W #$00FF                                                         ;86E4A9;
@@ -13334,6 +14238,7 @@ InitAI_EnemyProj_MiscDustPLM:
     RTS                                                                  ;86E4FD;
 
 
+%anchor($86E4FE)
 PreInstruction_EnemyProjectile_MiscDust:
     JSR.W CheckIf_EnemyProjectile_IsOffScreen_duplicate_again4           ;86E4FE;
     BNE .offScreen                                                       ;86E501;
@@ -13345,10 +14250,12 @@ PreInstruction_EnemyProjectile_MiscDust:
     RTS                                                                  ;86E507;
 
 
+%anchor($86E508)
 RTS_86E508:
     RTS                                                                  ;86E508;
 
 
+%anchor($86E509)
 EnemyProjectile_MiscDust:
     dw InitAI_EnemyProj_MiscDust                                         ;86E509; Initialisation AI
     dw PreInstruction_EnemyProjectile_MiscDust                           ;86E50B; Initial pre-instruction
@@ -13357,6 +14264,7 @@ EnemyProjectile_MiscDust:
     dw $1000,$0000                                                       ;86E511; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86E515; Shot instruction list
 
+%anchor($86E517)
 EnemyProjectile_MiscDustPLM:
     dw InitAI_EnemyProj_MiscDustPLM                                      ;86E517; Initialisation AI
     dw RTS_86E508                                                        ;86E519; Initial pre-instruction
@@ -13366,6 +14274,7 @@ EnemyProjectile_MiscDustPLM:
     dw InstList_EnemyProjectile_Delete                                   ;86E523; Shot instruction list
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($86E525)
 UNUSED_EnemyProjectile_DustCloudExplosion_86E525:
     dw InitAI_EnemyProj_MiscDust                                         ;86E525; Initialisation AI
     dw InstList_EnemyProjectile_GunshipLiftoffDustClouds_Index0_0        ;86E527; >_< this is not a pre-instruction, its an instruction list
@@ -13375,6 +14284,7 @@ UNUSED_EnemyProjectile_DustCloudExplosion_86E525:
     dw InstList_EnemyProjectile_Delete                                   ;86E531; Shot instruction list
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($86E533)
 Instruction_EnemyProjectile_ShotGate_EnemyVelocityInY:
     LDA.W $0000,Y                                                        ;86E533;
     STA.W $1ADB,X                                                        ;86E536;
@@ -13383,6 +14293,7 @@ Instruction_EnemyProjectile_ShotGate_EnemyVelocityInY:
     RTS                                                                  ;86E53B;
 
 
+%anchor($86E53C)
 InstList_EnemyProjectile_ShotGate_SpawnedDownwards:
     dw Instruction_EnemyProjectile_ShotGate_EnemyVelocityInY,$0100       ;86E53C;
     dw Instruction_EnemyProjectile_PreInstructionInY                     ;86E540;
@@ -13397,10 +14308,12 @@ InstList_EnemyProjectile_ShotGate_SpawnedDownwards:
     dw Instruction_EnemyProjectile_Sleep                                 ;86E55A;
     dw Instruction_EnemyProjectile_ClearPreInstruction                   ;86E55C;
 
+%anchor($86E55E)
 InstList_EnemyProjectile_ShotGate_InitialClosedDownwards:
     dw Instruction_EnemyProjectile_ShotGate_EnemyVelocityInY,$FF00       ;86E55E;
     dw $0001,EnemyProjSpritemaps_DownwardsShotGate_3                     ;86E562;
 
+%anchor($86E566)
 InstList_EnemyProjectile_ShotGate_InitialClosedDownwards_sleep:
     dw Instruction_EnemyProjectile_Sleep                                 ;86E566;
     dw Instruction_EnemyProjectile_PreInstructionInY                     ;86E568;
@@ -13415,6 +14328,7 @@ InstList_EnemyProjectile_ShotGate_InitialClosedDownwards_sleep:
     dw Instruction_EnemyProjectile_Sleep                                 ;86E582;
     dw Instruction_EnemyProjectile_Delete                                ;86E584;
 
+%anchor($86E586)
 InstList_EnemyProjectile_ShotGate_SpawnedUpwards:
     dw Instruction_EnemyProjectile_ShotGate_EnemyVelocityInY,$FF00       ;86E586;
     dw Instruction_EnemyProjectile_PreInstructionInY                     ;86E58A;
@@ -13429,10 +14343,12 @@ InstList_EnemyProjectile_ShotGate_SpawnedUpwards:
     dw Instruction_EnemyProjectile_Sleep                                 ;86E5A4;
     dw Instruction_EnemyProjectile_ClearPreInstruction                   ;86E5A6;
 
+%anchor($86E5A8)
 InstList_EnemyProjectile_ShotGate_InitialClosedUpwards:
     dw Instruction_EnemyProjectile_ShotGate_EnemyVelocityInY,$0100       ;86E5A8;
     dw $0001,EnemyProjSpritemaps_UpwardsShotGate_3                       ;86E5AC;
 
+%anchor($86E5B0)
 InstList_EnemyProjectile_ShotGate_InitialClosedUpwards_sleep:
     dw Instruction_EnemyProjectile_Sleep                                 ;86E5B0;
     dw Instruction_EnemyProjectile_PreInstructionInY                     ;86E5B2;
@@ -13447,19 +14363,23 @@ InstList_EnemyProjectile_ShotGate_InitialClosedUpwards_sleep:
     dw Instruction_EnemyProjectile_Sleep                                 ;86E5CC;
     dw Instruction_EnemyProjectile_Delete                                ;86E5CE;
 
+%anchor($86E5D0)
 InitAI_EnemyProjectile_ShotGate_Spawned:
     LDA.W #$0000                                                         ;86E5D0;
     BRA InitAI_EnemyProjectile_ShotGate_Common                           ;86E5D3;
 
 
+%anchor($86E5D5)
 InitAI_EnemyProjectile_ShotGate_InitialClosedDownwards:
     LDA.W #$0040                                                         ;86E5D5;
     BRA InitAI_EnemyProjectile_ShotGate_Common                           ;86E5D8;
 
 
+%anchor($86E5DA)
 InitAI_EnemyProjectile_ShotGate_InitialClosedUpwards:
     LDA.W #$FFC0                                                         ;86E5DA;
 
+%anchor($86E5DD)
 InitAI_EnemyProjectile_ShotGate_Common:
     STA.B $12                                                            ;86E5DD;
     LDX.W $1C27                                                          ;86E5DF;
@@ -13483,10 +14403,12 @@ InitAI_EnemyProjectile_ShotGate_Common:
     RTS                                                                  ;86E603;
 
 
+%anchor($86E604)
 RTS_86E604:
     RTS                                                                  ;86E604;
 
 
+%anchor($86E605)
 PreInstruction_EnemyProjectile_ShotGate_InitialClosed:
     LDA.W $1ADB,X                                                        ;86E605;
     BPL +                                                                ;86E608;
@@ -13524,6 +14446,7 @@ PreInstruction_EnemyProjectile_ShotGate_InitialClosed:
     RTS                                                                  ;86E64A;
 
 
+%anchor($86E64B)
 EnemyProjectile_SpawnedDownwardsShotGate:
     dw InitAI_EnemyProjectile_ShotGate_Spawned                           ;86E64B; Initialisation AI
     dw RTS_86E604                                                        ;86E64D; Initial pre-instruction
@@ -13532,6 +14455,7 @@ EnemyProjectile_SpawnedDownwardsShotGate:
     dw $2000,$0000                                                       ;86E653; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86E657; Shot instruction list
 
+%anchor($86E659)
 EnemyProjectile_DownwardsShotGateInitiallyClosed:
     dw InitAI_EnemyProjectile_ShotGate_InitialClosedDownwards            ;86E659; Initialisation AI
     dw RTS_86E604                                                        ;86E65B; Initial pre-instruction
@@ -13540,6 +14464,7 @@ EnemyProjectile_DownwardsShotGateInitiallyClosed:
     dw $2000,$0000                                                       ;86E661; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86E665; Shot instruction list
 
+%anchor($86E667)
 EnemyProjectile_SpawnedUpwardsShotGate:
     dw InitAI_EnemyProjectile_ShotGate_Spawned                           ;86E667; Initialisation AI
     dw RTS_86E604                                                        ;86E669; Initial pre-instruction
@@ -13548,6 +14473,7 @@ EnemyProjectile_SpawnedUpwardsShotGate:
     dw $2000,$0000                                                       ;86E66F; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86E673; Shot instruction list
 
+%anchor($86E675)
 EnemyProjectile_UpwardsShotGateInitiallyClosed:
     dw InitAI_EnemyProjectile_ShotGate_InitialClosedUpwards              ;86E675; Initialisation AI
     dw RTS_86E604                                                        ;86E677; Initial pre-instruction
@@ -13556,9 +14482,11 @@ EnemyProjectile_UpwardsShotGateInitiallyClosed:
     dw $2000,$0000                                                       ;86E67D; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86E681; Shot instruction list
 
+%anchor($86E683)
 InstList_EnemyProjectile_SaveStationElectricity_0:
     dw Instruction_EnemyProjectile_TimerInY,$0014                        ;86E683;
 
+%anchor($86E687)
 InstList_EnemyProjectile_SaveStationElectricity_1:
     dw $0001,EnemyProjSpritemaps_SaveStationElectricity_0                ;86E687;
     dw $0001,EnemyProjSpritemaps_SaveStationElectricity_1                ;86E68B;
@@ -13572,6 +14500,7 @@ InstList_EnemyProjectile_SaveStationElectricity_1:
     dw InstList_EnemyProjectile_SaveStationElectricity_1                 ;86E6A9;
     dw Instruction_EnemyProjectile_Delete                                ;86E6AB;
 
+%anchor($86E6AD)
 InitAI_EnemyProjectile_SaveStationElectrictiy:
     LDX.W $1C27                                                          ;86E6AD;
     JSL.L Calculate_PLM_Block_Coordinates                                ;86E6B0;
@@ -13594,10 +14523,12 @@ InitAI_EnemyProjectile_SaveStationElectrictiy:
     RTS                                                                  ;86E6D0;
 
 
+%anchor($86E6D1)
 RTS_86E6D1:
     RTS                                                                  ;86E6D1;
 
 
+%anchor($86E6D2)
 EnemyProjectile_SaveStationElectricity:
     dw InitAI_EnemyProjectile_SaveStationElectrictiy                     ;86E6D2; Initialisation AI
     dw RTS_86E6D1                                                        ;86E6D4; Initial pre-instruction
@@ -13606,6 +14537,7 @@ EnemyProjectile_SaveStationElectricity:
     dw $3000,$0000                                                       ;86E6DA; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86E6DE; Shot instruction list
 
+%anchor($86E6E0)
 CheckIf_EnemyProjectile_IsOffScreen_duplicate_again4:
     PHX                                                                  ;86E6E0;
     PHY                                                                  ;86E6E1;
@@ -13642,6 +14574,7 @@ CheckIf_EnemyProjectile_IsOffScreen_duplicate_again4:
     RTS                                                                  ;86E721;
 
 
+%anchor($86E722)
 CheckIf_EnemyProjectile_IsInDraygonRoomBoundaries:
     LDA.W $1A4B,X                                                        ;86E722;
     BMI .returnOutOfRoom                                                 ;86E725;
@@ -13660,6 +14593,7 @@ CheckIf_EnemyProjectile_IsInDraygonRoomBoundaries:
     RTS                                                                  ;86E73D;
 
 
+%anchor($86E73E)
 Move_EnemyProjectile_AccordingToAngleAndSpeed:
     PHX                                                                  ;86E73E;
     LDA.L $7E97DC,X                                                      ;86E73F;
@@ -13715,6 +14649,7 @@ Move_EnemyProjectile_AccordingToAngleAndSpeed:
     RTS                                                                  ;86E7AA;
 
 
+%anchor($86E7AB)
 PlaceAndAim_DraygonsWallTurretProjectile:
     TYX                                                                  ;86E7AB;
     LDA.B $12                                                            ;86E7AC;
@@ -13752,6 +14687,7 @@ PlaceAndAim_DraygonsWallTurretProjectile:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($86E7FB)
 UNUSED_InstList_EnemyProj_BotwoonsBody_UpFacingLeft_86E7FB:
     dw $0008,EnemyProjSpritemaps_BotwoonsBody_UpFacingLeft_0             ;86E7FB;
     dw $0008,EnemyProjSpritemaps_BotwoonsBody_UpFacingLeft_1             ;86E7FF;
@@ -13761,6 +14697,7 @@ UNUSED_InstList_EnemyProj_BotwoonsBody_UpFacingLeft_86E7FB:
     dw UNUSED_InstList_EnemyProj_BotwoonsBody_UpFacingLeft_86E7FB        ;86E80D;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($86E80F)
 InstList_EnemyProjectile_BotwoonsBody_UpLeft:
     dw $0008,EnemyProjSpritemaps_BotwoonsBody_0                          ;86E80F;
     dw $0008,EnemyProjSpritemaps_BotwoonsBody_1                          ;86E813;
@@ -13769,6 +14706,7 @@ InstList_EnemyProjectile_BotwoonsBody_UpLeft:
     dw Instruction_EnemyProjectile_GotoY                                 ;86E81F;
     dw InstList_EnemyProjectile_BotwoonsBody_UpLeft                      ;86E821;
 
+%anchor($86E823)
 InstList_EnemyProjectile_BotwoonsBody_Left:
     dw $0008,EnemyProjSpritemaps_BotwoonsBody_4                          ;86E823;
     dw $0008,EnemyProjSpritemaps_BotwoonsBody_5                          ;86E827;
@@ -13777,6 +14715,7 @@ InstList_EnemyProjectile_BotwoonsBody_Left:
     dw Instruction_EnemyProjectile_GotoY                                 ;86E833;
     dw InstList_EnemyProjectile_BotwoonsBody_Left                        ;86E835;
 
+%anchor($86E837)
 InstList_EnemyProjectile_BotwoonsBody_DownLeft:
     dw $0008,EnemyProjSpritemaps_BotwoonsBody_8                          ;86E837;
     dw $0008,EnemyProjSpritemaps_BotwoonsBody_9                          ;86E83B;
@@ -13786,6 +14725,7 @@ InstList_EnemyProjectile_BotwoonsBody_DownLeft:
     dw InstList_EnemyProjectile_BotwoonsBody_DownLeft                    ;86E849;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($86E84B)
 UNUSED_InstList_EnemyProj_BotwoonsBody_DownFacingLeft_86E84B:
     dw $0008,UNUSED_EnemyProjSpritemap_BotwoonsBody_DownFacingLeft_8DB682 ;86E84B;
     dw $0008,UNUSED_EnemyProjSpritemap_BotwoonsBody_DownFacingLeft_8DB689 ;86E84F;
@@ -13795,6 +14735,7 @@ UNUSED_InstList_EnemyProj_BotwoonsBody_DownFacingLeft_86E84B:
     dw UNUSED_InstList_EnemyProj_BotwoonsBody_DownFacingLeft_86E84B      ;86E85D;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($86E85F)
 InstList_EnemyProjectile_BotwoonsBody_Down_FacingRight:
     dw $0008,EnemyProjSpritemaps_BotwoonsBody_C                          ;86E85F;
     dw $0008,EnemyProjSpritemaps_BotwoonsBody_D                          ;86E863;
@@ -13803,6 +14744,7 @@ InstList_EnemyProjectile_BotwoonsBody_Down_FacingRight:
     dw Instruction_EnemyProjectile_GotoY                                 ;86E86F;
     dw InstList_EnemyProjectile_BotwoonsBody_Down_FacingRight            ;86E871;
 
+%anchor($86E873)
 InstList_EnemyProjectile_BotwoonsBody_DownRight:
     dw $0008,EnemyProjSpritemaps_BotwoonsBody_10                         ;86E873;
     dw $0008,EnemyProjSpritemaps_BotwoonsBody_11                         ;86E877;
@@ -13811,6 +14753,7 @@ InstList_EnemyProjectile_BotwoonsBody_DownRight:
     dw Instruction_EnemyProjectile_GotoY                                 ;86E883;
     dw InstList_EnemyProjectile_BotwoonsBody_DownRight                   ;86E885;
 
+%anchor($86E887)
 InstList_EnemyProjectile_BotwoonsBody_Right:
     dw $0008,EnemyProjSpritemaps_BotwoonsBody_14                         ;86E887;
     dw $0008,EnemyProjSpritemaps_BotwoonsBody_15                         ;86E88B;
@@ -13819,6 +14762,7 @@ InstList_EnemyProjectile_BotwoonsBody_Right:
     dw Instruction_EnemyProjectile_GotoY                                 ;86E897;
     dw InstList_EnemyProjectile_BotwoonsBody_Right                       ;86E899;
 
+%anchor($86E89B)
 InstList_EnemyProjectile_BotwoonsBody_UpRight:
     dw $0008,EnemyProjSpritemaps_BotwoonsBody_18                         ;86E89B;
     dw $0008,EnemyProjSpritemaps_BotwoonsBody_19                         ;86E89F;
@@ -13827,6 +14771,7 @@ InstList_EnemyProjectile_BotwoonsBody_UpRight:
     dw Instruction_EnemyProjectile_GotoY                                 ;86E8AB;
     dw InstList_EnemyProjectile_BotwoonsBody_UpRight                     ;86E8AD;
 
+%anchor($86E8AF)
 InstList_EnemyProjectile_BotwoonsBody_Up_FacingRight:
     dw $0008,EnemyProjSpritemaps_BotwoonsBody_1C                         ;86E8AF;
     dw $0008,EnemyProjSpritemaps_BotwoonsBody_1D                         ;86E8B3;
@@ -13835,43 +14780,53 @@ InstList_EnemyProjectile_BotwoonsBody_Up_FacingRight:
     dw Instruction_EnemyProjectile_GotoY                                 ;86E8BF;
     dw InstList_EnemyProjectile_BotwoonsBody_Up_FacingRight              ;86E8C1;
 
+%anchor($86E8C3)
 InstList_EnemyProjectile_BotwoonsTail_Up_FacingRight:
     dw $0001,EnemyProjSpritemaps_BotwoonsBody_20                         ;86E8C3;
     dw Instruction_EnemyProjectile_Sleep                                 ;86E8C7;
 
+%anchor($86E8C9)
 InstList_EnemyProjectile_BotwoonsTail_UpLeft:
     dw $0001,EnemyProjSpritemaps_BotwoonsBody_21                         ;86E8C9;
     dw Instruction_EnemyProjectile_Sleep                                 ;86E8CD;
 
+%anchor($86E8CF)
 InstList_EnemyProjectile_BotwoonsTail_Left:
     dw $0001,EnemyProjSpritemaps_BotwoonsBody_22                         ;86E8CF;
     dw Instruction_EnemyProjectile_Sleep                                 ;86E8D3;
 
+%anchor($86E8D5)
 InstList_EnemyProjectile_BotwoonsTail_DownLeft:
     dw $0001,EnemyProjSpritemaps_BotwoonsBody_23                         ;86E8D5;
     dw Instruction_EnemyProjectile_Sleep                                 ;86E8D9;
 
+%anchor($86E8DB)
 InstList_EnemyProjectile_BotwoonsTail_Down:
     dw $0001,EnemyProjSpritemaps_BotwoonsBody_24                         ;86E8DB;
     dw Instruction_EnemyProjectile_Sleep                                 ;86E8DF;
 
+%anchor($86E8E1)
 InstList_EnemyProjectile_BotwoonsTail_DownRight:
     dw $0001,EnemyProjSpritemaps_BotwoonsBody_25                         ;86E8E1;
     dw Instruction_EnemyProjectile_Sleep                                 ;86E8E5;
 
+%anchor($86E8E7)
 InstList_EnemyProjectile_BotwoonsTail_Right:
     dw $0001,EnemyProjSpritemaps_BotwoonsBody_26                         ;86E8E7;
     dw Instruction_EnemyProjectile_Sleep                                 ;86E8EB;
 
+%anchor($86E8ED)
 InstList_EnemyProjectile_BotwoonsTail_UpRight:
     dw $0001,EnemyProjSpritemaps_BotwoonsBody_27                         ;86E8ED;
     dw Instruction_EnemyProjectile_Sleep                                 ;86E8F1;
 
+%anchor($86E8F3)
 InstList_EnemyProjectile_BotwoonsBodyTail_Hidden:
     dw $0001,EnemyProjSpritemaps_BotwoonsBody_28                         ;86E8F3;
     dw Instruction_EnemyProjectile_Sleep                                 ;86E8F7;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($86E8F9)
 UNUSED_InstList_EnemyProjectile_BotwoonsBodyTail_86E8F9:
     dw $0008,UNUSED_EnemyProjSpritemaps_BotwoonsBodyTail_0_8DB762        ;86E8F9;
     dw $0008,UNUSED_EnemyProjSpritemaps_BotwoonsBodyTail_1_8DB769        ;86E8FD;
@@ -13880,6 +14835,7 @@ UNUSED_InstList_EnemyProjectile_BotwoonsBodyTail_86E8F9:
     dw Instruction_EnemyProjectile_GotoY                                 ;86E909;
     dw UNUSED_InstList_EnemyProjectile_BotwoonsBodyTail_86E8F9           ;86E90B;
 
+%anchor($86E90D)
 UNUSED_InstList_EnemyProjectile_BotwoonsBodyTail_86E90D:
     dw $0008,UNUSED_EnemyProjSpritemaps_BotwoonsBodyTail_4_8DB77E        ;86E90D;
     dw $0008,UNUSED_EnemyProjSpritemaps_BotwoonsBodyTail_5_8DB785        ;86E911;
@@ -13888,6 +14844,7 @@ UNUSED_InstList_EnemyProjectile_BotwoonsBodyTail_86E90D:
     dw Instruction_EnemyProjectile_GotoY                                 ;86E91D;
     dw UNUSED_InstList_EnemyProjectile_BotwoonsBodyTail_86E90D           ;86E91F;
 
+%anchor($86E921)
 UNUSED_InstList_EnemyProjectile_BotwoonsBodyTail_86E921:
     dw $0008,UNUSED_EnemyProjSpritemaps_BotwoonsBodyTail_8_8DB79A        ;86E921;
     dw $0008,UNUSED_EnemyProjSpritemaps_BotwoonsBodyTail_9_8DB7A1        ;86E925;
@@ -13896,6 +14853,7 @@ UNUSED_InstList_EnemyProjectile_BotwoonsBodyTail_86E921:
     dw Instruction_EnemyProjectile_GotoY                                 ;86E931;
     dw UNUSED_InstList_EnemyProjectile_BotwoonsBodyTail_86E921           ;86E933;
 
+%anchor($86E935)
 UNUSED_InstList_EnemyProjectile_BotwoonsBodyTail_86E935:
     dw $0008,UNUSED_EnemyProjSpritemaps_BotwoonsBodyTail_C_8DB7B6        ;86E935;
     dw $0008,UNUSED_EnemyProjSpritemaps_BotwoonsBodyTail_D_8DB7BD        ;86E939;
@@ -13904,6 +14862,7 @@ UNUSED_InstList_EnemyProjectile_BotwoonsBodyTail_86E935:
     dw Instruction_EnemyProjectile_GotoY                                 ;86E945;
     dw UNUSED_InstList_EnemyProjectile_BotwoonsBodyTail_86E935           ;86E947;
 
+%anchor($86E949)
 UNUSED_InstList_EnemyProjectile_BotwoonsBodyTail_86E949:
     dw $0008,UNUSED_EnemyProjSpritemaps_BotwoonsBodyTail_10_8DB7D2       ;86E949;
     dw $0008,UNUSED_EnemyProjSpritemaps_BotwoonsBodyTail_11_8DB7D9       ;86E94D;
@@ -13912,6 +14871,7 @@ UNUSED_InstList_EnemyProjectile_BotwoonsBodyTail_86E949:
     dw Instruction_EnemyProjectile_GotoY                                 ;86E959;
     dw UNUSED_InstList_EnemyProjectile_BotwoonsBodyTail_86E949           ;86E95B;
 
+%anchor($86E95D)
 UNUSED_InstList_EnemyProjectile_BotwoonsBodyTail_86E95D:
     dw $0008,UNUSED_EnemyProjSpritemaps_BotwoonsBodyTail_14_8DB7EE       ;86E95D;
     dw $0008,UNUSED_EnemyProjSpritemaps_BotwoonsBodyTail_15_8DB7F5       ;86E961;
@@ -13920,6 +14880,7 @@ UNUSED_InstList_EnemyProjectile_BotwoonsBodyTail_86E95D:
     dw Instruction_EnemyProjectile_GotoY                                 ;86E96D;
     dw UNUSED_InstList_EnemyProjectile_BotwoonsBodyTail_86E95D           ;86E96F;
 
+%anchor($86E971)
 UNUSED_InstList_EnemyProjectile_BotwoonsBodyTail_86E971:
     dw $0008,UNUSED_EnemyProjSpritemaps_BotwoonsBodyTail_18_8DB80A       ;86E971;
     dw $0008,UNUSED_EnemyProjSpritemaps_BotwoonsBodyTail_19_8DB811       ;86E975;
@@ -13928,6 +14889,7 @@ UNUSED_InstList_EnemyProjectile_BotwoonsBodyTail_86E971:
     dw Instruction_EnemyProjectile_GotoY                                 ;86E981;
     dw UNUSED_InstList_EnemyProjectile_BotwoonsBodyTail_86E971           ;86E983;
 
+%anchor($86E985)
 UNUSED_InstList_EnemyProjectile_BotwoonsBodyTail_86E985:
     dw $0008,UNUSED_EnemyProjSpritemaps_BotwoonsBodyTail_1C_8DB826       ;86E985;
     dw $0008,UNUSED_EnemyProjSpritemaps_BotwoonsBodyTail_1D_8DB82D       ;86E989;
@@ -13936,6 +14898,7 @@ UNUSED_InstList_EnemyProjectile_BotwoonsBodyTail_86E985:
     dw Instruction_EnemyProjectile_GotoY                                 ;86E995;
     dw UNUSED_InstList_EnemyProjectile_BotwoonsBodyTail_86E985           ;86E997;
 
+%anchor($86E999)
 UNUSED_InstList_EnemyProjectile_BotwoonsBodyTail_86E999:
     dw $0008,UNUSED_EnemyProjSpritemaps_BotwoonsBodyTail_20_8DB842       ;86E999;
     dw $0008,UNUSED_EnemyProjSpritemaps_BotwoonsBodyTail_21_8DB849       ;86E99D;
@@ -13944,6 +14907,7 @@ UNUSED_InstList_EnemyProjectile_BotwoonsBodyTail_86E999:
     dw Instruction_EnemyProjectile_GotoY                                 ;86E9A9;
     dw UNUSED_InstList_EnemyProjectile_BotwoonsBodyTail_86E999           ;86E9AB;
 
+%anchor($86E9AD)
 UNUSED_InstList_EnemyProjectile_BotwoonsBodyTail_86E9AD:
     dw $0008,UNUSED_EnemyProjSpritemaps_BotwoonsBodyTail_24_8DB85E       ;86E9AD;
     dw $0008,UNUSED_EnemyProjSpritemaps_BotwoonsBodyTail_25_8DB865       ;86E9B1;
@@ -13952,39 +14916,48 @@ UNUSED_InstList_EnemyProjectile_BotwoonsBodyTail_86E9AD:
     dw Instruction_EnemyProjectile_GotoY                                 ;86E9BD;
     dw UNUSED_InstList_EnemyProjectile_BotwoonsBodyTail_86E9AD           ;86E9BF;
 
+%anchor($86E9C1)
 UNUSED_InstList_EnemyProjectile_BotwoonsBodyTail_86E9C1:
     dw $0001,UNUSED_EnemyProjSpritemaps_BotwoonsBodyTail_28_8DB87A       ;86E9C1;
     dw Instruction_EnemyProjectile_Sleep                                 ;86E9C5;
 
+%anchor($86E9C7)
 UNUSED_InstList_EnemyProjectile_BotwoonsBodyTail_86E9C7:
     dw $0001,UNUSED_EnemyProjSpritemaps_BotwoonsBodyTail_29_8DB881       ;86E9C7;
     dw Instruction_EnemyProjectile_Sleep                                 ;86E9CB;
 
+%anchor($86E9CD)
 UNUSED_InstList_EnemyProjectile_BotwoonsBodyTail_86E9CD:
     dw $0001,UNUSED_EnemyProjSpritemaps_BotwoonsBodyTail_2A_8DB888       ;86E9CD;
     dw Instruction_EnemyProjectile_Sleep                                 ;86E9D1;
 
+%anchor($86E9D3)
 UNUSED_InstList_EnemyProjectile_BotwoonsBodyTail_86E9D3:
     dw $0001,UNUSED_EnemyProjSpritemaps_BotwoonsBodyTail_2B_8DB88F       ;86E9D3;
     dw Instruction_EnemyProjectile_Sleep                                 ;86E9D7;
 
+%anchor($86E9D9)
 UNUSED_InstList_EnemyProjectile_BotwoonsBodyTail_86E9D9:
     dw $0001,UNUSED_EnemyProjSpritemaps_BotwoonsBodyTail_2C_8DB896       ;86E9D9;
     dw Instruction_EnemyProjectile_Sleep                                 ;86E9DD;
 
+%anchor($86E9DF)
 UNUSED_InstList_EnemyProjectile_BotwoonsBodyTail_86E9DF:
     dw $0001,UNUSED_EnemyProjSpritemaps_BotwoonsBodyTail_2D_8DB89D       ;86E9DF;
     dw Instruction_EnemyProjectile_Sleep                                 ;86E9E3;
 
+%anchor($86E9E5)
 UNUSED_InstList_EnemyProjectile_BotwoonsBodyTail_86E9E5:
     dw $0001,UNUSED_EnemyProjSpritemaps_BotwoonsBodyTail_2E_8DB8A4       ;86E9E5;
     dw Instruction_EnemyProjectile_Sleep                                 ;86E9E9;
 
+%anchor($86E9EB)
 UNUSED_InstList_EnemyProjectile_BotwoonsBodyTail_86E9EB:
     dw $0001,UNUSED_EnemyProjSpritemaps_BotwoonsBodyTail_2F_8DB8AB       ;86E9EB;
     dw Instruction_EnemyProjectile_Sleep                                 ;86E9EF;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($86E9F1)
 BotwoonsBodyTail_InstListPointers:
     dw InstList_EnemyProjectile_BotwoonsBody_Up_FacingRight              ;86E9F1;
     dw InstList_EnemyProjectile_BotwoonsBody_UpRight                     ;86E9F3;
@@ -14019,6 +14992,7 @@ BotwoonsBodyTail_InstListPointers:
     dw InstList_EnemyProjectile_BotwoonsBodyTail_Hidden                  ;86EA2D;
     dw InstList_EnemyProjectile_BotwoonsBodyTail_Hidden                  ;86EA2F;
 
+%anchor($86EA31)
 InitAI_EnemyProjectile_BotwoonsBody:
     LDA.W $0F7A                                                          ;86EA31;
     STA.W $1A4B,Y                                                        ;86EA34;
@@ -14055,6 +15029,7 @@ InitAI_EnemyProjectile_BotwoonsBody:
     RTS                                                                  ;86EA7F;
 
 
+%anchor($86EA80)
 PreInstruction_EnemyProjectile_BotwoonsBody:
     LDA.L $7E8020                                                        ;86EA80;
     BEQ .executeFunction                                                 ;86EA84;
@@ -14069,6 +15044,7 @@ PreInstruction_EnemyProjectile_BotwoonsBody:
     RTS                                                                  ;86EA97;
 
 
+%anchor($86EA98)
 Function_EnemyProjectile_BotwoonsBody_Main:
     LDA.W $1AFF,X                                                        ;86EA98;
     TAY                                                                  ;86EA9B;
@@ -14085,6 +15061,7 @@ Function_EnemyProjectile_BotwoonsBody_Main:
     RTS                                                                  ;86EAB3;
 
 
+%anchor($86EAB4)
 Function_EnemyProjectile_BotwoonsBody_HurtFlashHandling:
     LDA.W $19BB,X                                                        ;86EAB4;
     ORA.W #$0E00                                                         ;86EAB7;
@@ -14102,6 +15079,7 @@ Function_EnemyProjectile_BotwoonsBody_HurtFlashHandling:
     RTS                                                                  ;86EAD3;
 
 
+%anchor($86EAD4)
 Function_EnemyProj_BotwoonsBody_HurtFlashHandling_duplicate:
     LDA.W $19BB,Y                                                        ;86EAD4;
     ORA.W #$0E00                                                         ;86EAD7;
@@ -14119,6 +15097,7 @@ Function_EnemyProj_BotwoonsBody_HurtFlashHandling_duplicate:
     RTS                                                                  ;86EAF3;
 
 
+%anchor($86EAF4)
 Function_EnemyProjectile_BotwoonsBody_Dying_SetDelay:
     TXA                                                                  ;86EAF4;
     ASL A                                                                ;86EAF5;
@@ -14129,6 +15108,7 @@ Function_EnemyProjectile_BotwoonsBody_Dying_SetDelay:
     LDA.W #Function_EnemyProjectile_BotwoonsBody_Dying_Waiting           ;86EAFE;
     STA.W $1AB7,X                                                        ;86EB01; fallthrough to Function_EnemyProjectile_BotwoonsBody__Dying_Waiting
 
+%anchor($86EB04)
 Function_EnemyProjectile_BotwoonsBody_Dying_Waiting:
     INC.W $1AFF,X                                                        ;86EB04;
     LDA.W $1AFF,X                                                        ;86EB07;
@@ -14144,6 +15124,7 @@ Function_EnemyProjectile_BotwoonsBody_Dying_Waiting:
     RTS                                                                  ;86EB1E;
 
 
+%anchor($86EB1F)
 Function_EnemyProjectile_BotwoonsBody_Dying_Falling:
     TXY                                                                  ;86EB1F;
     LDA.W $1ADB,Y                                                        ;86EB20;
@@ -14201,10 +15182,12 @@ Function_EnemyProjectile_BotwoonsBody_Dying_Falling:
     RTS                                                                  ;86EB92;
 
 
+%anchor($86EB93)
 RTS_86EB93:
     RTS                                                                  ;86EB93;
 
 
+%anchor($86EB94)
 Function_EnemyProj_BotwoonsBody_QueueSmallExplosionSoundFX:
     PHY                                                                  ;86EB94;
     PHX                                                                  ;86EB95;
@@ -14215,6 +15198,7 @@ Function_EnemyProj_BotwoonsBody_QueueSmallExplosionSoundFX:
     RTS                                                                  ;86EB9F;
 
 
+%anchor($86EBA0)
 EnemyProjectile_BotwoonsBody:
     dw InitAI_EnemyProjectile_BotwoonsBody                               ;86EBA0; Initialisation AI
     dw PreInstruction_EnemyProjectile_BotwoonsBody                       ;86EBA2; Initial pre-instruction
@@ -14223,6 +15207,7 @@ EnemyProjectile_BotwoonsBody:
     dw $E080,$0000                                                       ;86EBA8; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86EBAC; Shot instruction list
 
+%anchor($86EBAE)
 InstList_EnemyProjectile_BotwoonsSpit:
     dw $0003,EnemyProjSpritemaps_BotwoonsSpit_0                          ;86EBAE;
     dw $0003,EnemyProjSpritemaps_BotwoonsSpit_1                          ;86EBB2;
@@ -14232,6 +15217,7 @@ InstList_EnemyProjectile_BotwoonsSpit:
     dw Instruction_EnemyProjectile_GotoY                                 ;86EBC2;
     dw InstList_EnemyProjectile_BotwoonsSpit                             ;86EBC4;
 
+%anchor($86EBC6)
 InitAI_EnemyProjectile_BotwoonsSpit:
     PHX                                                                  ;86EBC6;
     LDX.W $0E54                                                          ;86EBC7;
@@ -14260,12 +15246,14 @@ InitAI_EnemyProjectile_BotwoonsSpit:
     RTS                                                                  ;86EC04;
 
 
+%anchor($86EC05)
 PreInstruction_EnemyProjectile_BotwoonsSpit:
     JSR.W Move_EnemyProjectile_AccordingToAngleAndSpeed                  ;86EC05;
     JSR.W Delete_EnemyProjectile_IfOffScreen_duplicate_again3            ;86EC08;
     RTS                                                                  ;86EC0B;
 
 
+%anchor($86EC0C)
 Delete_EnemyProjectile_IfOffScreen_duplicate_again3:
     JSR.W CheckIf_EnemyProjectile_IsOffScreen_duplicate_again5           ;86EC0C;
     BEQ .return                                                          ;86EC0F;
@@ -14276,6 +15264,7 @@ Delete_EnemyProjectile_IfOffScreen_duplicate_again3:
     RTS                                                                  ;86EC17;
 
 
+%anchor($86EC18)
 CheckIf_EnemyProjectile_IsOffScreen_duplicate_again5:
     LDA.W $1A4B,X                                                        ;86EC18;
     CMP.W $0911                                                          ;86EC1B;
@@ -14302,6 +15291,7 @@ CheckIf_EnemyProjectile_IsOffScreen_duplicate_again5:
     RTS                                                                  ;86EC47;
 
 
+%anchor($86EC48)
 EnemyProjectile_BotwoonsSpit:
     dw InitAI_EnemyProjectile_BotwoonsSpit                               ;86EC48; Initialisation AI
     dw PreInstruction_EnemyProjectile_BotwoonsSpit                       ;86EC4A; Initial pre-instruction
@@ -14310,14 +15300,17 @@ EnemyProjectile_BotwoonsSpit:
     dw $1060,$0000                                                       ;86EC50; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86EC54; Shot instruction list
 
+%anchor($86EC56)
 InstList_EnemyProjectile_YappingMawsBody_FacingDown:
     dw $0001,EnemyProjSpritemaps_YappingMawsBody_0                       ;86EC56;
     dw Instruction_EnemyProjectile_Sleep                                 ;86EC5A;
 
+%anchor($86EC5C)
 InstList_EnemyProjectile_YappingMawsBody_FacingUp:
     dw $0001,EnemyProjSpritemaps_YappingMawsBody_1                       ;86EC5C;
     dw Instruction_EnemyProjectile_Sleep                                 ;86EC60;
 
+%anchor($86EC62)
 InitAI_EnemyProjectile_YappingMawsBody:
     LDX.W $0E54                                                          ;86EC62;
     LDA.W $0F7A,X                                                        ;86EC65;
@@ -14344,10 +15337,12 @@ InitAI_EnemyProjectile_YappingMawsBody:
     RTS                                                                  ;86EC93;
 
 
+%anchor($86EC94)
 RTS_86EC94:
     RTS                                                                  ;86EC94;
 
 
+%anchor($86EC95)
 EnemyProjectile_YappingMawsBody:
     dw InitAI_EnemyProjectile_YappingMawsBody                            ;86EC95; Initialisation AI
     dw RTS_86EC94                                                        ;86EC97; Initial pre-instruction
@@ -14356,14 +15351,17 @@ EnemyProjectile_YappingMawsBody:
     dw $2005,$0000                                                       ;86EC9D; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86ECA1; Shot instruction list
 
+%anchor($86ECA3)
 InstList_EnemyProjectile_Pickup_HandleRespawningEnemy:
     dw $0040,EnemyProjSpritemaps_Blank_Default                           ;86ECA3;
     dw Instruction_EnemyProjectile_Pickup_HandleRespawningEnemy          ;86ECA7;
     dw Instruction_EnemyProjectile_Delete                                ;86ECA9;
 
+%anchor($86ECAB)
 InstList_EnemyProjectile_EnemyDeathExplosion_BigExplosion_0:
     dw Instruction_EnemyProjectile_TimerInY,$0005                        ;86ECAB;
 
+%anchor($86ECAF)
 InstList_EnemyProjectile_EnemyDeathExplosion_BigExplosion_1:
     dw Instruction_EnemyProj_EnemyDeathExpl_SpawnSpriteObjectInY_10,$0003 ;86ECAF;
     dw Instruction_EnemyProj_EnemyDeathExpl_SpawnSpriteObjectInY_10,$000C ;86ECB3;
@@ -14374,9 +15372,11 @@ InstList_EnemyProjectile_EnemyDeathExplosion_BigExplosion_1:
     dw Instruction_EnemyProjectile_EnemyDeathExplosion_BecomePickup      ;86ECC1;
     dw Instruction_EnemyProjectile_Delete                                ;86ECC3;
 
+%anchor($86ECC5)
 InstList_EnemyProj_EnemyDeathExplosion_MiniKraidExplosion_0:
     dw Instruction_EnemyProjectile_TimerInY,$0010                        ;86ECC5;
 
+%anchor($86ECC9)
 InstList_EnemyProj_EnemyDeathExplosion_MiniKraidExplosion_1:
     dw Instruction_EnemyProj_EnemyDeathExpl_SpawnSpriteObjectInY_20,$0003 ;86ECC9;
     dw Instruction_EnemyProj_EnemyDeathExpl_SpawnSpriteObjectInY_20,$000C ;86ECCD;
@@ -14388,6 +15388,7 @@ InstList_EnemyProj_EnemyDeathExplosion_MiniKraidExplosion_1:
     dw Instruction_EnemyProjectile_EnemyDeathExplosion_BecomePickup      ;86ECDF;
     dw Instruction_EnemyProjectile_Delete                                ;86ECE1;
 
+%anchor($86ECE3)
 Instruction_EnemyProj_EnemyDeathExpl_SpawnSpriteObjectInY_20:
     PHX                                                                  ;86ECE3;
     PHY                                                                  ;86ECE4;
@@ -14417,6 +15418,7 @@ Instruction_EnemyProj_EnemyDeathExpl_SpawnSpriteObjectInY_20:
     RTS                                                                  ;86ED16;
 
 
+%anchor($86ED17)
 Instruction_EnemyProj_EnemyDeathExpl_SpawnSpriteObjectInY_10:
     PHX                                                                  ;86ED17;
     PHY                                                                  ;86ED18;
@@ -14446,6 +15448,7 @@ Instruction_EnemyProj_EnemyDeathExpl_SpawnSpriteObjectInY_10:
     RTS                                                                  ;86ED4A;
 
 
+%anchor($86ED4B)
 InstList_EnemyProjectile_EnemyDeathExplosion_NormalExplosion:
     dw $0005,EnemyProjSpritemaps_Common_BigExplosion_0                   ;86ED4B;
     dw $0005,EnemyProjSpritemaps_Common_BigExplosion_1                   ;86ED4F;
@@ -14457,6 +15460,7 @@ InstList_EnemyProjectile_EnemyDeathExplosion_NormalExplosion:
     dw Instruction_EnemyProjectile_EnemyDeathExplosion_BecomePickup      ;86ED65;
     dw Instruction_EnemyProjectile_Delete                                ;86ED67;
 
+%anchor($86ED69)
 InstList_EnemyProjectile_EnemyDeathExplosion_SmallExplosion:
     dw $0004,EnemyProjSpritemaps_EnemyDeathExplosion_0                   ;86ED69;
     dw $0006,EnemyProjSpritemaps_EnemyDeathExplosion_1                   ;86ED6D;
@@ -14469,14 +15473,17 @@ InstList_EnemyProjectile_EnemyDeathExplosion_SmallExplosion:
     dw Instruction_EnemyProjectile_Delete                                ;86ED85;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($86ED87)
 UNUSED_InstList_EnemyProj_EnemyDeathExplo_GotoDelete_86ED87:
     dw Instruction_EnemyProjectile_GotoY                                 ;86ED87;
     dw InstList_EnemyProjectile_Delete                                   ;86ED89;
 
+%anchor($86ED8B)
 UNUSED_InstList_EnemyProj_EnemyDeathExplosion_Delete_86ED8B:
     dw Instruction_EnemyProjectile_Delete                                ;86ED8B;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($86ED8D)
 InstList_EnemyProjectile_Pickup_SmallEnergy:
     dw $0008,EnemyProjSpritemaps_Pickup_EnemyDeathExplosion_4            ;86ED8D;
     dw $0008,EnemyProjSpritemaps_Pickup_EnemyDeathExplosion_5            ;86ED91;
@@ -14486,6 +15493,7 @@ InstList_EnemyProjectile_Pickup_SmallEnergy:
     dw InstList_EnemyProjectile_Pickup_SmallEnergy                       ;86ED9F;
     dw Instruction_EnemyProjectile_Sleep                                 ;86EDA1;
 
+%anchor($86EDA3)
 InstList_EnemyProjectile_Pickup_BigEnergy:
     dw $0008,EnemyProjSpritemaps_Pickup_EnemyDeathExplosion_8            ;86EDA3;
     dw $0008,EnemyProjSpritemaps_Pickup_EnemyDeathExplosion_9            ;86EDA7;
@@ -14495,6 +15503,7 @@ InstList_EnemyProjectile_Pickup_BigEnergy:
     dw InstList_EnemyProjectile_Pickup_BigEnergy                         ;86EDB5;
     dw Instruction_EnemyProjectile_Sleep                                 ;86EDB7;
 
+%anchor($86EDB9)
 InstList_EnemyProjectile_Pickup_Missiles:
     dw $0005,EnemyProjSpritemaps_Pickup_EnemyDeathExplosion_C            ;86EDB9;
     dw $0005,EnemyProjSpritemaps_Pickup_EnemyDeathExplosion_D            ;86EDBD;
@@ -14503,6 +15512,7 @@ InstList_EnemyProjectile_Pickup_Missiles:
     dw Instruction_EnemyProjectile_Sleep                                 ;86EDC5;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($86EDC7)
 UNUSED_InstList_EnemyProjectile_Pickup_Bombs_86EDC7:
     dw $0005,UNUSED_EnemyProjSpritemaps_Pickup_Bombs_0_8DC0C9            ;86EDC7;
     dw $0005,UNUSED_EnemyProjSpritemaps_Pickup_Bombs_1_8DC0D0            ;86EDCB;
@@ -14513,6 +15523,7 @@ UNUSED_InstList_EnemyProjectile_Pickup_Bombs_86EDC7:
     dw Instruction_EnemyProjectile_Sleep                                 ;86EDDB;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($86EDDD)
 InstList_EnemyProjectile_Pickup_SuperMissiles:
     dw $0005,EnemyProjSpritemaps_Pickup_EnemyDeathExplosion_E            ;86EDDD;
     dw $0005,EnemyProjSpritemaps_Pickup_EnemyDeathExplosion_F            ;86EDE1;
@@ -14520,6 +15531,7 @@ InstList_EnemyProjectile_Pickup_SuperMissiles:
     dw InstList_EnemyProjectile_Pickup_SuperMissiles                     ;86EDE7;
     dw Instruction_EnemyProjectile_Sleep                                 ;86EDE9;
 
+%anchor($86EDEB)
 InstList_EnemyProjectile_Pickup_PowerBombs:
     dw $0005,EnemyProjSpritemaps_Pickup_EnemyDeathExplosion_0            ;86EDEB;
     dw $0005,EnemyProjSpritemaps_Pickup_EnemyDeathExplosion_1            ;86EDEF;
@@ -14528,6 +15540,7 @@ InstList_EnemyProjectile_Pickup_PowerBombs:
     dw Instruction_EnemyProjectile_GotoY                                 ;86EDFB;
     dw InstList_EnemyProjectile_Pickup_PowerBombs                        ;86EDFD;
 
+%anchor($86EDFF)
 InstList_EnemyProj_EnemyDeathExplosion_KilledBySamusContact:
     dw $0002,EnemyProjSpritemaps_EnemyDeathExplosion_6                   ;86EDFF;
     dw $0002,EnemyProjSpritemaps_EnemyDeathExplosion_7                   ;86EE03;
@@ -14550,6 +15563,7 @@ InstList_EnemyProj_EnemyDeathExplosion_KilledBySamusContact:
     dw Instruction_EnemyProjectile_Delete                                ;86EE43;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($86EE45)
 UNUSED_InstList_EnemyProj_EnemyDeathExplo_KillContact_86EE45:
     dw $0002,UNUSED_EnemyProjSpritemaps_EDeathExplo_KillContact_0_8DB8E5 ;86EE45;
     dw $0002,UNUSED_EnemyProjSpritemaps_EDeathExplo_KillContact_1_8DB8F6 ;86EE49;
@@ -14572,6 +15586,7 @@ UNUSED_InstList_EnemyProj_EnemyDeathExplo_KillContact_86EE45:
     dw Instruction_EnemyProjectile_Delete                                ;86EE89;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($86EE8B)
 Instruction_EnemyProj_EnemyDeathExpl_QueueEnemyKilledSoundFX:
     PHX                                                                  ;86EE8B;
     PHY                                                                  ;86EE8C;
@@ -14582,6 +15597,7 @@ Instruction_EnemyProj_EnemyDeathExpl_QueueEnemyKilledSoundFX:
     RTS                                                                  ;86EE96;
 
 
+%anchor($86EE97)
 Instruction_EnemyProj_EDeathExplo_QueueSmallExplosionSoundFX:
     PHX                                                                  ;86EE97;
     PHY                                                                  ;86EE98;
@@ -14592,6 +15608,7 @@ Instruction_EnemyProj_EDeathExplo_QueueSmallExplosionSoundFX:
     RTS                                                                  ;86EEA2;
 
 
+%anchor($86EEA3)
 Instruction_EnemyProj_EDeathExplo_QueueContactKilledSoundFX:
     PHX                                                                  ;86EEA3;
     PHY                                                                  ;86EEA4;
@@ -14602,6 +15619,7 @@ Instruction_EnemyProj_EDeathExplo_QueueContactKilledSoundFX:
     RTS                                                                  ;86EEAE;
 
 
+%anchor($86EEAF)
 Instruction_EnemyProjectile_EnemyDeathExplosion_BecomePickup:
     PHX                                                                  ;86EEAF;
     PHY                                                                  ;86EEB0;
@@ -14645,6 +15663,7 @@ Instruction_EnemyProjectile_EnemyDeathExplosion_BecomePickup:
     RTS                                                                  ;86EF03;
 
 
+%anchor($86EF04)
 EnemyProjectile_Pickup_InstListPointers:
     dw $0000                                                             ;86EF04;
     dw InstList_EnemyProjectile_Pickup_SmallEnergy                       ;86EF06;
@@ -14653,6 +15672,7 @@ EnemyProjectile_Pickup_InstListPointers:
     dw InstList_EnemyProjectile_Pickup_Missiles                          ;86EF0C;
     dw InstList_EnemyProjectile_Pickup_SuperMissiles                     ;86EF0E;
 
+%anchor($86EF10)
 Instruction_EnemyProjectile_Pickup_HandleRespawningEnemy:
     PHY                                                                  ;86EF10;
     PHX                                                                  ;86EF11;
@@ -14670,6 +15690,7 @@ Instruction_EnemyProjectile_Pickup_HandleRespawningEnemy:
     RTS                                                                  ;86EF28;
 
 
+%anchor($86EF29)
 InitAI_EnemyProjectile_Pickup:
     PHX                                                                  ;86EF29;
     PHY                                                                  ;86EF2A;
@@ -14716,6 +15737,7 @@ InitAI_EnemyProjectile_Pickup:
     RTS                                                                  ;86EF88;
 
 
+%anchor($86EF89)
 InitAI_EnemyProjectile_EnemyDeathExplosion:
     PHX                                                                  ;86EF89;
     PHY                                                                  ;86EF8A;
@@ -14758,10 +15780,12 @@ InitAI_EnemyProjectile_EnemyDeathExplosion:
     dw InstList_EnemyProj_EnemyDeathExplosion_MiniKraidExplosion_0       ;86EFDB;
     dw InstList_EnemyProjectile_EnemyDeathExplosion_BigExplosion_0       ;86EFDD;
 
+%anchor($86EFDF)
 RTS_86EFDF:
     RTS                                                                  ;86EFDF;
 
 
+%anchor($86EFE0)
 PreInstruction_EnemyProjectile_Pickup:
     PHX                                                                  ;86EFE0;
     PHY                                                                  ;86EFE1;
@@ -14875,6 +15899,7 @@ PreInstruction_EnemyProjectile_Pickup:
     dw Function_EnemyProjectile_Pickup_ApplySuperMissiles                ;86F0B7; Ah: Super missiles
     dw $0000                                                             ;86F0B9;
 
+%anchor($86F0BB)
 Function_EnemyProjectile_Pickup_ApplySmallEnergy:
     LDA.W #$0005                                                         ;86F0BB;
     JSL.L Restore_A_Energy_ToSamus                                       ;86F0BE;
@@ -14883,6 +15908,7 @@ Function_EnemyProjectile_Pickup_ApplySmallEnergy:
     RTS                                                                  ;86F0C9;
 
 
+%anchor($86F0CA)
 Function_EnemyProjectile_Pickup_ApplyBigEnergy:
     LDA.W #$0014                                                         ;86F0CA;
     JSL.L Restore_A_Energy_ToSamus                                       ;86F0CD;
@@ -14891,6 +15917,7 @@ Function_EnemyProjectile_Pickup_ApplyBigEnergy:
     RTS                                                                  ;86F0D8;
 
 
+%anchor($86F0D9)
 Function_EnemyProjectile_Pickup_ApplyPowerBombs:
     LDA.W #$0001                                                         ;86F0D9;
     JSL.L Restore_A_PowerBombs_ToSamus                                   ;86F0DC;
@@ -14899,6 +15926,7 @@ Function_EnemyProjectile_Pickup_ApplyPowerBombs:
     RTS                                                                  ;86F0E7;
 
 
+%anchor($86F0E8)
 Function_EnemyProjectile_Pickup_ApplyMissiles:
     LDA.W #$0002                                                         ;86F0E8;
     JSL.L Restore_A_Missiles_ToSamus                                     ;86F0EB;
@@ -14907,6 +15935,7 @@ Function_EnemyProjectile_Pickup_ApplyMissiles:
     RTS                                                                  ;86F0F6;
 
 
+%anchor($86F0F7)
 Function_EnemyProjectile_Pickup_ApplySuperMissiles:
     LDA.W #$0001                                                         ;86F0F7;
     JSL.L Restore_A_SuperMissiles_ToSamus                                ;86F0FA;
@@ -14915,6 +15944,7 @@ Function_EnemyProjectile_Pickup_ApplySuperMissiles:
     RTS                                                                  ;86F105;
 
 
+%anchor($86F106)
 Random_Drop_Routine:
     PHX                                                                  ;86F106;
     PHY                                                                  ;86F107;
@@ -15118,6 +16148,7 @@ Random_Drop_Routine:
     db $05 ; Super missiles
     db $03 ; Power bombs
 
+%anchor($86F264)
 Respawn_Enemy:
     PHB                                                                  ;86F264;
     PHX                                                                  ;86F265;
@@ -15205,6 +16236,7 @@ Respawn_Enemy:
     JML.W [$1784]                                                        ;86F334;
 
 
+%anchor($86F337)
 EnemyProjectile_EnemyDeathPickup:
     dw InitAI_EnemyProjectile_Pickup                                     ;86F337; Initialisation AI
     dw PreInstruction_EnemyProjectile_Pickup                             ;86F339; Initial pre-instruction
@@ -15214,6 +16246,7 @@ EnemyProjectile_EnemyDeathPickup:
     dw InstList_EnemyProjectile_Delete                                   ;86F341; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86F343; Shot instruction list
 
+%anchor($86F345)
 EnemyProjectile_EnemyDeathExplosion:
     dw InitAI_EnemyProjectile_EnemyDeathExplosion                        ;86F345; Initialisation AI
     dw RTS_86EFDF                                                        ;86F347; Initial pre-instruction
@@ -15223,6 +16256,7 @@ EnemyProjectile_EnemyDeathExplosion:
     dw InstList_EnemyProjectile_Delete                                   ;86F34F; Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86F351; Shot instruction list
 
+%anchor($86F353)
 InstList_EnemyProjectile_FallingSpark_Falling:
     dw $0003,EnemyProjSpritemaps_Sparks_0                                ;86F353;
     dw $0003,EnemyProjSpritemaps_Sparks_1                                ;86F357;
@@ -15230,6 +16264,7 @@ InstList_EnemyProjectile_FallingSpark_Falling:
     dw Instruction_EnemyProjectile_GotoY                                 ;86F35F;
     dw InstList_EnemyProjectile_FallingSpark_Falling                     ;86F361;
 
+%anchor($86F363)
 InstList_EnemyProjectile_FallingSpark_HitFloor:
     dw $0001,EnemyProjSpritemaps_Sparks_0                                ;86F363;
     dw $0001,EnemyProjSpritemaps_Blank_Default                           ;86F367;
@@ -15244,6 +16279,7 @@ InstList_EnemyProjectile_FallingSpark_HitFloor:
     dw $0001,EnemyProjSpritemaps_Sparks_2                                ;86F38B;
     dw Instruction_EnemyProjectile_Delete                                ;86F38F;
 
+%anchor($86F391)
 InitAI_EnemyProjectile_FallingSpark:
     LDX.W $0E54                                                          ;86F391;
     LDA.W #InstList_EnemyProjectile_FallingSpark_Falling                 ;86F394;
@@ -15283,6 +16319,7 @@ InitAI_EnemyProjectile_FallingSpark:
     dw $0000,$4000
 
 
+%anchor($86F3F0)
 PreInstruction_EnemyProjectile_FallingSpark:
     LDA.W $1ADB,X                                                        ;86F3F0;
     BMI .positiveVelocity                                                ;86F3F3;
@@ -15358,6 +16395,7 @@ PreInstruction_EnemyProjectile_FallingSpark:
     RTS                                                                  ;86F497;
 
 
+%anchor($86F498)
 EnemyProjectile_FallingSpark:
     dw InitAI_EnemyProjectile_FallingSpark                               ;86F498; Initialisation AI
     dw PreInstruction_EnemyProjectile_FallingSpark                       ;86F49A; Initial pre-instruction
@@ -15366,5 +16404,6 @@ EnemyProjectile_FallingSpark:
     dw $0005,$0000                                                       ;86F4A0; Properties, Hit instruction list
     dw InstList_EnemyProjectile_Delete                                   ;86F4A4; Shot instruction list
 
+%anchor($86F4A6)
 Freespace_Bank86_F4A6:                                                   ;86F4A6;
 ; $B5A bytes

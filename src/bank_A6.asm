@@ -2,109 +2,132 @@
 org $A68000
 
 
+%anchor($A68000)
 CommonA6_GrappleAI_NoInteraction:
     JSL.L GrappleAI_SwitchEnemyAIToMainAI                                ;A68000;
     RTL                                                                  ;A68004;
 
 
+%anchor($A68005)
 CommonA6_GrappleAI_SamusLatchesOn:
     JSL.L GrappleAI_SamusLatchesOnWithGrapple                            ;A68005;
     RTL                                                                  ;A68009;
 
 
+%anchor($A6800A)
 CommonA6_GrappleAI_KillEnemy:
     JSL.L GrappleAI_EnemyGrappleDeath                                    ;A6800A;
     RTL                                                                  ;A6800E;
 
 
+%anchor($A6800F)
 CommonA6_GrappleAI_CancelGrappleBeam:
     JSL.L GrappleAI_SwitchToFrozenAI                                     ;A6800F;
     RTL                                                                  ;A68013;
 
 
+%anchor($A68014)
 CommonA6_GrappleAI_SamusLatchesOn_NoInvincibility:
     JSL.L GrappleAI_SamusLatchesOnWithGrapple_NoInvincibility            ;A68014;
     RTL                                                                  ;A68018;
 
 
+%anchor($A68019)
 UNUSED_CommonA6_GrappleAI_SamusLatchesOn_ParalyzeEnemy_A68019:
     JSL.L GrappleAI_SamusLatchesOnWithGrapple_ParalyzeEnemy              ;A68019;
     RTL                                                                  ;A6801D;
 
 
+%anchor($A6801E)
 CommonA6_GrappleAI_HurtSamus:
     JSL.L GrappleAI_SwitchToFrozenAI_duplicate                           ;A6801E;
     RTL                                                                  ;A68022;
 
 
+%anchor($A68023)
 CommonA6_NormalEnemyTouchAI:
     JSL.L NormalEnemyTouchAI                                             ;A68023;
     RTL                                                                  ;A68027;
 
 
+%anchor($A68028)
 CommonA6_NormalTouchAI_NoDeathCheck:
     JSL.L NormalEnemyTouchAI_NoDeathCheck_External                       ;A68028;
     RTL                                                                  ;A6802C;
 
 
+%anchor($A6802D)
 CommonA6_NormalEnemyShotAI:
     JSL.L NormalEnemyShotAI                                              ;A6802D;
     RTL                                                                  ;A68031;
 
 
+%anchor($A68032)
 CommonA6_NormalEnemyShotAI_NoDeathCheck_NoEnemyShotGraphic:
     JSL.L NormalEnemyShotAI_NoDeathCheck_NoEnemyShotGraphic_External     ;A68032;
     RTL                                                                  ;A68036;
 
 
+%anchor($A68037)
 CommonA6_NormalEnemyPowerBombAI:
     JSL.L NormalEnemyPowerBombAI                                         ;A68037;
     RTL                                                                  ;A6803B;
 
 
+%anchor($A6803C)
 CommonA6_NormalEnemyPowerBombAI_NoDeathCheck:
     JSL.L NormalEnemyPowerBombAI_NoDeathCheck_External                   ;A6803C;
     RTL                                                                  ;A68040;
 
 
+%anchor($A68041)
 CommonA6_NormalEnemyFrozenAI:
     JSL.L NormalEnemyFrozenAI                                            ;A68041;
     RTL                                                                  ;A68045;
 
 
+%anchor($A68046)
 CommonA6_CreateADudShot:
     JSL.L CreateADudShot                                                 ;A68046;
     RTL                                                                  ;A6804A;
 
 
+%anchor($A6804B)
 RTS_A6804B:
     RTS                                                                  ;A6804B;
 
 
+%anchor($A6804C)
 RTL_A6804C:
     RTL                                                                  ;A6804C;
 
 
+%anchor($A6804D)
 Spritemap_CommonA6_Nothing:
     dw $0000                                                             ;A6804D;
 
+%anchor($A6804F)
 ExtendedSpritemap_CommonA6_Nothing:
     dw $0001,$0000,$0000                                                 ;A6804F;
     dw Spritemap_CommonA6_Nothing                                        ;A68055;
     dw Hitbox_CommonA6_Nothing                                           ;A68057;
 
+%anchor($A68059)
 Hitbox_CommonA6_Nothing:
     dw $0001,$0000,$0000,$0000,$0000                                     ;A68059;
     dw CommonA6_NormalEnemyTouchAI                                       ;A68063;
     dw CommonA6_NormalEnemyShotAI                                        ;A68065;
 
+%anchor($A68067)
 InstList_CommonA6_DeleteEnemy:
     dw Instruction_CommonA6_DeleteEnemy                                  ;A68067;
 
+%anchor($A68069)
 NOPNOP_A68069:
     NOP                                                                  ;A68069;
     NOP                                                                  ;A6806A;
 
+%anchor($A6806B)
 Instruction_CommonA6_Enemy0FB2_InY:
     LDA.W $0000,Y                                                        ;A6806B;
     STA.W $0FB2,X                                                        ;A6806E;
@@ -113,16 +136,19 @@ Instruction_CommonA6_Enemy0FB2_InY:
     RTL                                                                  ;A68073;
 
 
+%anchor($A68074)
 Instruction_CommonA6_SetEnemy0FB2ToRTS:
     LDA.W #RTS_A6807B                                                    ;A68074;
     STA.W $0FB2,X                                                        ;A68077;
     RTL                                                                  ;A6807A;
 
 
+%anchor($A6807B)
 RTS_A6807B:
     RTS                                                                  ;A6807B;
 
 
+%anchor($A6807C)
 Instruction_CommonA6_DeleteEnemy:
     LDA.W $0F86,X                                                        ;A6807C;
     ORA.W #$0200                                                         ;A6807F;
@@ -132,6 +158,7 @@ Instruction_CommonA6_DeleteEnemy:
     RTL                                                                  ;A68089;
 
 
+%anchor($A6808A)
 Instruction_CommonA6_CallFunctionInY:
     LDA.W $0000,Y                                                        ;A6808A;
     STA.B $12                                                            ;A6808D;
@@ -149,6 +176,7 @@ Instruction_CommonA6_CallFunctionInY:
     RTL                                                                  ;A6809B;
 
 
+%anchor($A6809C)
 Instruction_CommonA6_CallFunctionInY_WithA:
     LDA.W $0000,Y                                                        ;A6809C;
     STA.B $12                                                            ;A6809F;
@@ -170,6 +198,7 @@ Instruction_CommonA6_CallFunctionInY_WithA:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A680B5)
 UNUSED_Instruction_CommonA6_CallExternalFunctionInY_A680B5:
     LDA.W $0000,Y                                                        ;A680B5;
     STA.B $12                                                            ;A680B8;
@@ -190,6 +219,7 @@ UNUSED_Instruction_CommonA6_CallExternalFunctionInY_A680B5:
     JML.W [$0012]                                                        ;A680CB;
 
 
+%anchor($A680CE)
 UNUSED_Inst_CommonA6_CallExternalFunctionInY_WithA_A680CE:
     LDA.W $0000,Y                                                        ;A680CE;
     STA.B $12                                                            ;A680D1;
@@ -213,12 +243,14 @@ UNUSED_Inst_CommonA6_CallExternalFunctionInY_WithA_A680CE:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($A680ED)
 Instruction_CommonA6_GotoY:
     LDA.W $0000,Y                                                        ;A680ED;
     TAY                                                                  ;A680F0;
     RTL                                                                  ;A680F1;
 
 
+%anchor($A680F2)
 Instruction_CommonA6_GotoY_PlusY:
     STY.B $12                                                            ;A680F2;
     DEY                                                                  ;A680F4;
@@ -238,6 +270,7 @@ Instruction_CommonA6_GotoY_PlusY:
     RTL                                                                  ;A68107;
 
 
+%anchor($A68108)
 Instruction_CommonA6_DecrementTimer_GotoYIfNonZero:
     DEC.W $0F90,X                                                        ;A68108;
     BNE Instruction_CommonA6_GotoY                                       ;A6810B;
@@ -246,6 +279,7 @@ Instruction_CommonA6_DecrementTimer_GotoYIfNonZero:
     RTL                                                                  ;A6810F;
 
 
+%anchor($A68110)
 Instruction_CommonA6_DecrementTimer_GotoYIfNonZero_duplicate:
     DEC.W $0F90,X                                                        ;A68110;
     BNE Instruction_CommonA6_GotoY                                       ;A68113;
@@ -254,6 +288,7 @@ Instruction_CommonA6_DecrementTimer_GotoYIfNonZero_duplicate:
     RTL                                                                  ;A68117;
 
 
+%anchor($A68118)
 Instruction_CommonA6_DecrementTimer_GotoY_PlusY_IfNonZero:
     SEP #$20                                                             ;A68118;
     DEC.W $0F90,X                                                        ;A6811A;
@@ -263,6 +298,7 @@ Instruction_CommonA6_DecrementTimer_GotoY_PlusY_IfNonZero:
     RTL                                                                  ;A68122;
 
 
+%anchor($A68123)
 Instruction_CommonA6_TimerInY:
     LDA.W $0000,Y                                                        ;A68123;
     STA.W $0F90,X                                                        ;A68126;
@@ -271,12 +307,14 @@ Instruction_CommonA6_TimerInY:
     RTL                                                                  ;A6812B;
 
 
+%anchor($A6812C)
 Instruction_CommonA6_SkipNextInstruction:
     INY                                                                  ;A6812C;
     INY                                                                  ;A6812D;
     RTL                                                                  ;A6812E;
 
 
+%anchor($A6812F)
 Instruction_CommonA6_Sleep:
     DEY                                                                  ;A6812F;
     DEY                                                                  ;A68130;
@@ -287,6 +325,7 @@ Instruction_CommonA6_Sleep:
     RTL                                                                  ;A68139;
 
 
+%anchor($A6813A)
 Instruction_CommonA6_WaitYFrames:
     LDA.W $0000,Y                                                        ;A6813A;
     STA.W $0F94,X                                                        ;A6813D;
@@ -299,6 +338,7 @@ Instruction_CommonA6_WaitYFrames:
     RTL                                                                  ;A6814A;
 
 
+%anchor($A6814B)
 Instruction_CommonA6_TransferYBytesInYToVRAM:
     PHX                                                                  ;A6814B;
     LDX.W $0330                                                          ;A6814C;
@@ -322,6 +362,7 @@ Instruction_CommonA6_TransferYBytesInYToVRAM:
     RTL                                                                  ;A68172;
 
 
+%anchor($A68173)
 Instruction_CommonA6_EnableOffScreenProcessing:
     LDA.W $0F86,X                                                        ;A68173;
     ORA.W #$0800                                                         ;A68176;
@@ -329,6 +370,7 @@ Instruction_CommonA6_EnableOffScreenProcessing:
     RTL                                                                  ;A6817C;
 
 
+%anchor($A6817D)
 Instruction_CommonA6_DisableOffScreenProcessing:
     LDA.W $0F86,X                                                        ;A6817D;
     AND.W #$F7FF                                                         ;A68180;
@@ -341,6 +383,7 @@ Instruction_CommonA6_DisableOffScreenProcessing:
 ;       |     |      _________ Negated speed
 ;       |     |     |      ___ Negated subspeed
 ;       |     |     |     |
+%anchor($A68187)
 CommonA6EnemySpeeds_LinearlyIncreasing:
   .speed:
     dw $0000                                                             ;A68187;
@@ -421,6 +464,7 @@ CommonA6EnemySpeeds_LinearlyIncreasing:
 ;       |     |      _________ Negated subspeed
 ;       |     |     |      ___ Negated speed
 ;       |     |     |     |
+%anchor($A6838F)
 CommonA6EnemySpeeds_QuadraticallyIncreasing:
 ; I.e. gravity
 ; Used by e.g. Botwoon when dying and falling to the floor
@@ -528,10 +572,12 @@ CommonA6EnemySpeeds_QuadraticallyIncreasing:
     dw $74F9,$0011,$8B07,$FFEE
 
 
+%anchor($A68687)
 Palette_Boulder:
     dw $3800,$49EF,$45CE,$3D8C,$396B,$3529,$2D08,$28C6                   ;A68687;
     dw $20A5,$1C63,$2506,$1CC4,$1083,$0841,$6EF7,$0000                   ;A68697;
 
+%anchor($A686A7)
 InstList_Boulder_FacingLeft:
     dw $0008                                                             ;A686A7;
     dw Spritemap_Boulder_0                                               ;A686A9;
@@ -552,6 +598,7 @@ InstList_Boulder_FacingLeft:
     dw Instruction_Common_GotoY                                          ;A686C7;
     dw InstList_Boulder_FacingLeft                                       ;A686C9;
 
+%anchor($A686CB)
 InstList_Boulder_FacingRight:
     dw $0008                                                             ;A686CB;
     dw Spritemap_Boulder_0                                               ;A686CD;
@@ -572,9 +619,11 @@ InstList_Boulder_FacingRight:
     dw Instruction_Common_GotoY                                          ;A686EB;
     dw InstList_Boulder_FacingRight                                      ;A686ED;
 
+%anchor($A686EF)
 BounceSpeedTableIndices:
     dw $0000,$1000,$1800                                                 ;A686EF;
 
+%anchor($A686F5)
 InitAI_Boulder:
     LDX.W $0E54                                                          ;A686F5;
     STZ.W $0FAC,X                                                        ;A686F8;
@@ -637,12 +686,14 @@ InitAI_Boulder:
     RTL                                                                  ;A68792;
 
 
+%anchor($A68793)
 MainAI_Boulder:
     LDX.W $0E54                                                          ;A68793;
     JSR.W ($0FA8,X)                                                      ;A68796;
     RTL                                                                  ;A68799;
 
 
+%anchor($A6879A)
 Function_Boulder_WaitForSamusToGetNear:
     LDX.W $0E54                                                          ;A6879A;
     JSL.L Get_SamusY_minus_EnemyY                                        ;A6879D;
@@ -680,6 +731,7 @@ Function_Boulder_WaitForSamusToGetNear:
     RTS                                                                  ;A687EC;
 
 
+%anchor($A687ED)
 Function_Boulder_Falling:
     LDX.W $0E54                                                          ;A687ED;
     LDA.W $0FAC,X                                                        ;A687F0;
@@ -716,6 +768,7 @@ Function_Boulder_Falling:
     RTS                                                                  ;A68831;
 
 
+%anchor($A68832)
 Function_Boulder_Bounce_Rising:
     LDX.W $0E54                                                          ;A68832;
     LDA.W $0FAC,X                                                        ;A68835;
@@ -771,6 +824,7 @@ Function_Boulder_Bounce_Rising:
     RTS                                                                  ;A6888A;
 
 
+%anchor($A6888B)
 Function_Boulder_Bounce_Falling:
     LDX.W $0E54                                                          ;A6888B;
     LDA.W $0FAC,X                                                        ;A6888E;
@@ -860,6 +914,7 @@ Function_Boulder_Bounce_Falling:
     RTS                                                                  ;A68941;
 
 
+%anchor($A68942)
 Function_Boulder_Rolling:
     LDX.W $0E54                                                          ;A68942;
     LDA.W $0FAA,X                                                        ;A68945;
@@ -943,11 +998,13 @@ Function_Boulder_Rolling:
     RTS                                                                  ;A689FB;
 
 
+%anchor($A689FC)
 Function_Boulder_LoadEnemyIndex:
     LDX.W $0E54                                                          ;A689FC;
     RTS                                                                  ;A689FF;
 
 
+%anchor($A68A00)
 MoveBoulderHorizontally:
     LDX.W $0E54                                                          ;A68A00;
     LDA.W $0F7C,X                                                        ;A68A03;
@@ -965,6 +1022,7 @@ MoveBoulderHorizontally:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A68A1D)
 UNUSED_MoveBoulderHorizontallyWithLinearSpeedTable_A68A1D:
     LDX.W $0E54                                                          ;A68A1D;
     LDA.W $0F7C,X                                                        ;A68A20;
@@ -982,6 +1040,7 @@ UNUSED_MoveBoulderHorizontallyWithLinearSpeedTable_A68A1D:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($A68A3A)
 MoveBoulderVertically:
     LDX.W $0E54                                                          ;A68A3A;
     LDA.W $0F80,X                                                        ;A68A3D;
@@ -998,14 +1057,17 @@ MoveBoulderVertically:
     RTS                                                                  ;A68A56;
 
 
+%anchor($A68A57)
 RTL_A68A57:
     RTL                                                                  ;A68A57;
 
 
+%anchor($A68A58)
 RTL_A68A58:
     RTL                                                                  ;A68A58;
 
 
+%anchor($A68A59)
 Spritemap_Boulder_0:
     dw $0004,$8000                                                       ;A68A59;
     db $00                                                               ;A68A5D;
@@ -1017,6 +1079,7 @@ Spritemap_Boulder_0:
     db $F0                                                               ;A68A6C;
     dw $2100                                                             ;A68A6D;
 
+%anchor($A68A6F)
 Spritemap_Boulder_1:
     dw $0004,$8000                                                       ;A68A6F;
     db $00                                                               ;A68A73;
@@ -1028,6 +1091,7 @@ Spritemap_Boulder_1:
     db $F0                                                               ;A68A82;
     dw $2140                                                             ;A68A83;
 
+%anchor($A68A85)
 Spritemap_Boulder_2:
     dw $0004,$8000                                                       ;A68A85;
     db $00                                                               ;A68A89;
@@ -1039,6 +1103,7 @@ Spritemap_Boulder_2:
     db $F0                                                               ;A68A98;
     dw $2104                                                             ;A68A99;
 
+%anchor($A68A9B)
 Spritemap_Boulder_3:
     dw $0004,$8000                                                       ;A68A9B;
     db $00                                                               ;A68A9F;
@@ -1050,6 +1115,7 @@ Spritemap_Boulder_3:
     db $F0                                                               ;A68AAE;
     dw $2144                                                             ;A68AAF;
 
+%anchor($A68AB1)
 Spritemap_Boulder_4:
     dw $0004,$8000                                                       ;A68AB1;
     db $00                                                               ;A68AB5;
@@ -1061,6 +1127,7 @@ Spritemap_Boulder_4:
     db $F0                                                               ;A68AC4;
     dw $2108                                                             ;A68AC5;
 
+%anchor($A68AC7)
 Spritemap_Boulder_5:
     dw $0004,$8000                                                       ;A68AC7;
     db $00                                                               ;A68ACB;
@@ -1072,6 +1139,7 @@ Spritemap_Boulder_5:
     db $F0                                                               ;A68ADA;
     dw $2148                                                             ;A68ADB;
 
+%anchor($A68ADD)
 Spritemap_Boulder_6:
     dw $0004,$8000                                                       ;A68ADD;
     db $00                                                               ;A68AE1;
@@ -1083,6 +1151,7 @@ Spritemap_Boulder_6:
     db $F0                                                               ;A68AF0;
     dw $210C                                                             ;A68AF1;
 
+%anchor($A68AF3)
 Spritemap_Boulder_7:
     dw $0004,$8000                                                       ;A68AF3;
     db $00                                                               ;A68AF7;
@@ -1094,16 +1163,19 @@ Spritemap_Boulder_7:
     db $F0                                                               ;A68B06;
     dw $214C                                                             ;A68B07;
 
+%anchor($A68B09)
 Palette_Kzan:
     dw $3800,$62BA,$49F3,$2D4D,$0C44,$49F3,$356E,$20C9                   ;A68B09;
     dw $1486,$241F,$1C17,$142F,$0C47,$0000,$0000,$0000                   ;A68B19;
 
 
+%anchor($A68B29)
 InstList_Kzan:
     dw $0001                                                             ;A68B29;
     dw Spritemap_Kzan                                                    ;A68B2B;
     dw Instruction_Common_Sleep                                          ;A68B2D;
 
+%anchor($A68B2F)
 InitAI_KzanTop:
     LDX.W $0E54                                                          ;A68B2F;
     LDA.W #InstList_Kzan                                                 ;A68B32;
@@ -1141,6 +1213,7 @@ InitAI_KzanTop:
     RTL                                                                  ;A68B84;
 
 
+%anchor($A68B85)
 InitAI_KzanBottom:
     LDX.W $0E54                                                          ;A68B85;
     LDA.W $0F3A,X                                                        ;A68B88;
@@ -1152,6 +1225,7 @@ InitAI_KzanBottom:
     RTL                                                                  ;A68B98;
 
 
+%anchor($A68B99)
 MainAI_KzanBottom:
     LDX.W $0E54                                                          ;A68B99; Same as init AI
     LDA.W $0F3A,X                                                        ;A68B9C;
@@ -1163,12 +1237,14 @@ MainAI_KzanBottom:
     RTL                                                                  ;A68BAC;
 
 
+%anchor($A68BAD)
 MainAI_KzanTop:
     LDX.W $0E54                                                          ;A68BAD;
     JSR.W ($0FA8,X)                                                      ;A68BB0;
     RTL                                                                  ;A68BB3;
 
 
+%anchor($A68BB4)
 Function_Kzan_WaitingToFall:
     PHX                                                                  ;A68BB4;
     LDX.W $0E54                                                          ;A68BB5;
@@ -1191,6 +1267,7 @@ Function_Kzan_WaitingToFall:
     RTS                                                                  ;A68BDB;
 
 
+%anchor($A68BDC)
 Function_Kzan_Falling:
     PHX                                                                  ;A68BDC;
     LDX.W $0E54                                                          ;A68BDD;
@@ -1239,6 +1316,7 @@ Function_Kzan_Falling:
     RTS                                                                  ;A68C49;
 
 
+%anchor($A68C4A)
 Function_Kzan_WaitingToRise:
     LDA.L $7E7806,X                                                      ;A68C4A;
     DEC A                                                                ;A68C4E;
@@ -1253,6 +1331,7 @@ Function_Kzan_WaitingToRise:
     RTS                                                                  ;A68C5C;
 
 
+%anchor($A68C5D)
 Function_Kzan_Rising:
     PHX                                                                  ;A68C5D;
     LDX.W $0E54                                                          ;A68C5E;
@@ -1286,6 +1365,7 @@ Function_Kzan_Rising:
     RTS                                                                  ;A68CA0;
 
 
+%anchor($A68CA1)
 CheckIfKzanIsTouchingSamusFromBelow:
     LDA.W $0AF6                                                          ;A68CA1;
     SEC                                                                  ;A68CA4;
@@ -1329,14 +1409,17 @@ CheckIfKzanIsTouchingSamusFromBelow:
     RTL                                                                  ;A68CE2;
 
 
+%anchor($A68CE3)
 RTL_A68CE3:
     RTL                                                                  ;A68CE3;
 
 
+%anchor($A68CE4)
 RTL_A68CE4:
     RTL                                                                  ;A68CE4;
 
 
+%anchor($A68CE5)
 Spritemap_Kzan:
     dw $0004,$8000                                                       ;A68CE5;
     db $04                                                               ;A68CE9;
@@ -1348,10 +1431,12 @@ Spritemap_Kzan:
     db $F4                                                               ;A68CF8;
     dw $2100                                                             ;A68CF9;
 
+%anchor($A68CFB)
 Palette_Hibashi:
     dw $3800,$3E7F,$2DFD,$10FB,$0097,$73FF,$53FF,$37FF                   ;A68CFB;
     dw $17FF,$24DF,$189B,$1076,$0C50,$084B,$5EFF,$0880                   ;A68D0B;
 
+%anchor($A68D1B)
 InstList_Hibashi_GraphicsPart:
     dw Instruction_Hibashi_PlaySFX                                       ;A68D1B;
     dw $0002                                                             ;A68D1D;
@@ -1425,11 +1510,13 @@ InstList_Hibashi_GraphicsPart:
     dw Instruction_Hibashi_FinishActivity                                ;A68DA5;
     dw Instruction_Common_Sleep                                          ;A68DA7;
 
+%anchor($A68DA9)
 InstList_Hibashi_HitboxPart:
     dw $0002                                                             ;A68DA9;
     dw Spritemap_Hibashi_0                                               ;A68DAB;
     dw Instruction_Common_Sleep                                          ;A68DAD;
 
+%anchor($A68DAF)
 Instruction_Hibashi_PlaySFX:
     PHX                                                                  ;A68DAF;
     PHY                                                                  ;A68DB0;
@@ -1440,138 +1527,183 @@ Instruction_Hibashi_PlaySFX:
     RTL                                                                  ;A68DBA;
 
 
+%anchor($A68DBB)
 Hibashi_YOffset_0:
     dw $0005                                                             ;A68DBB;
 
+%anchor($A68DBD)
 Hibashi_YOffset_1:
     dw $000A                                                             ;A68DBD;
 
+%anchor($A68DBF)
 Hibashi_YOffset_2:
     dw $000F                                                             ;A68DBF;
 
+%anchor($A68DC1)
 Hibashi_YOffset_3:
     dw $0014                                                             ;A68DC1;
 
+%anchor($A68DC3)
 Hibashi_YOffset_4:
     dw $0019                                                             ;A68DC3;
 
+%anchor($A68DC5)
 Hibashi_YOffset_5:
     dw $001E                                                             ;A68DC5;
 
+%anchor($A68DC7)
 Hibashi_YOffset_6:
     dw $0023                                                             ;A68DC7;
 
+%anchor($A68DC9)
 Hibashi_YOffset_7:
     dw $0028                                                             ;A68DC9;
 
+%anchor($A68DCB)
 Hibashi_YOffset_8:
     dw $002D                                                             ;A68DCB;
 
+%anchor($A68DCD)
 Hibashi_YOffset_9:
     dw $0032                                                             ;A68DCD;
 
+%anchor($A68DCF)
 Hibashi_YOffset_A:
     dw $0037                                                             ;A68DCF;
 
+%anchor($A68DD1)
 Hibashi_YOffset_B:
     dw $003C                                                             ;A68DD1;
 
+%anchor($A68DD3)
 Hibashi_YOffset_C:
     dw $0041                                                             ;A68DD3;
 
+%anchor($A68DD5)
 Hibashi_YOffset_D:
     dw $0046                                                             ;A68DD5;
 
+%anchor($A68DD7)
 Hibashi_YOffset_E:
     dw $004B                                                             ;A68DD7;
 
+%anchor($A68DD9)
 Hibashi_YOffset_F:
     dw $0050                                                             ;A68DD9;
 
+%anchor($A68DDB)
 Hibashi_YOffset_10:
     dw $0055                                                             ;A68DDB;
 
+%anchor($A68DDD)
 Hibashi_YOffset_11:
     dw $005A                                                             ;A68DDD;
 
+%anchor($A68DDF)
 Hibashi_YOffset_12:
     dw $005F                                                             ;A68DDF;
 
+%anchor($A68DE1)
 Hibashi_YOffset_13:
     dw $0064                                                             ;A68DE1;
 
+%anchor($A68DE3)
 Hibashi_YOffset_14:
     dw $0069                                                             ;A68DE3;
 
+%anchor($A68DE5)
 Hibashi_YOffset_15:
     dw $006E                                                             ;A68DE5;
 
+%anchor($A68DE7)
 Hibashi_XOffset_0:
     dw $0018                                                             ;A68DE7;
 
+%anchor($A68DE9)
 Hibashi_XOffset_1:
     dw $0018                                                             ;A68DE9;
 
+%anchor($A68DEB)
 Hibashi_XOffset_2:
     dw $0018                                                             ;A68DEB;
 
+%anchor($A68DED)
 Hibashi_XOffset_3:
     dw $0018                                                             ;A68DED;
 
+%anchor($A68DEF)
 Hibashi_XOffset_4:
     dw $0018                                                             ;A68DEF;
 
+%anchor($A68DF1)
 Hibashi_XOffset_5:
     dw $0018                                                             ;A68DF1;
 
+%anchor($A68DF3)
 Hibashi_XOffset_6:
     dw $0018                                                             ;A68DF3;
 
+%anchor($A68DF5)
 Hibashi_XOffset_7:
     dw $0018                                                             ;A68DF5;
 
+%anchor($A68DF7)
 Hibashi_XOffset_8:
     dw $0018                                                             ;A68DF7;
 
+%anchor($A68DF9)
 Hibashi_XOffset_9:
     dw $0018                                                             ;A68DF9;
 
+%anchor($A68DFB)
 Hibashi_XOffset_A:
     dw $0018                                                             ;A68DFB;
 
+%anchor($A68DFD)
 Hibashi_XOffset_B:
     dw $0018                                                             ;A68DFD;
 
+%anchor($A68DFF)
 Hibashi_XOffset_C:
     dw $0018                                                             ;A68DFF;
 
+%anchor($A68E01)
 Hibashi_XOffset_D:
     dw $0018                                                             ;A68E01;
 
+%anchor($A68E03)
 Hibashi_XOffset_E:
     dw $0018                                                             ;A68E03;
 
+%anchor($A68E05)
 Hibashi_XOffset_F:
     dw $0018                                                             ;A68E05;
 
+%anchor($A68E07)
 Hibashi_XOffset_10:
     dw $0018                                                             ;A68E07;
 
+%anchor($A68E09)
 Hibashi_XOffset_11:
     dw $0018                                                             ;A68E09;
 
+%anchor($A68E0B)
 Hibashi_XOffset_12:
     dw $0014                                                             ;A68E0B;
 
+%anchor($A68E0D)
 Hibashi_XOffset_13:
     dw $0010                                                             ;A68E0D;
 
+%anchor($A68E0F)
 Hibashi_XOffset_14:
     dw $000C                                                             ;A68E0F;
 
+%anchor($A68E11)
 Hibashi_XOffset_15:
     dw $0008                                                             ;A68E11;
 
+%anchor($A68E13)
 Instruction_Hibashi_ActivityFrame0:
     LDX.W $0E54                                                          ;A68E13;
     LDA.W $0FAE,X                                                        ;A68E16;
@@ -1585,6 +1717,7 @@ Instruction_Hibashi_ActivityFrame0:
     RTL                                                                  ;A68E2C;
 
 
+%anchor($A68E2D)
 Instruction_Hibashi_ActivityFrame1:
     LDX.W $0E54                                                          ;A68E2D;
     LDA.W $0FAE,X                                                        ;A68E30;
@@ -1596,6 +1729,7 @@ Instruction_Hibashi_ActivityFrame1:
     RTL                                                                  ;A68E40;
 
 
+%anchor($A68E41)
 Instruction_Hibashi_ActivityFrame2:
     LDX.W $0E54                                                          ;A68E41;
     LDA.W $0FAE,X                                                        ;A68E44;
@@ -1607,6 +1741,7 @@ Instruction_Hibashi_ActivityFrame2:
     RTL                                                                  ;A68E54;
 
 
+%anchor($A68E55)
 Instruction_Hibashi_ActivityFrame3:
     LDX.W $0E54                                                          ;A68E55;
     LDA.W $0FAE,X                                                        ;A68E58;
@@ -1618,6 +1753,7 @@ Instruction_Hibashi_ActivityFrame3:
     RTL                                                                  ;A68E68;
 
 
+%anchor($A68E69)
 Instruction_Hibashi_ActivityFrame4:
     LDX.W $0E54                                                          ;A68E69;
     LDA.W $0FAE,X                                                        ;A68E6C;
@@ -1629,6 +1765,7 @@ Instruction_Hibashi_ActivityFrame4:
     RTL                                                                  ;A68E7C;
 
 
+%anchor($A68E7D)
 Instruction_Hibashi_ActivityFrame5:
     LDX.W $0E54                                                          ;A68E7D;
     LDA.W $0FAE,X                                                        ;A68E80;
@@ -1640,6 +1777,7 @@ Instruction_Hibashi_ActivityFrame5:
     RTL                                                                  ;A68E90;
 
 
+%anchor($A68E91)
 Instruction_Hibashi_ActivityFrame6:
     LDX.W $0E54                                                          ;A68E91;
     LDA.W $0FAE,X                                                        ;A68E94;
@@ -1651,6 +1789,7 @@ Instruction_Hibashi_ActivityFrame6:
     RTL                                                                  ;A68EA4;
 
 
+%anchor($A68EA5)
 Instruction_Hibashi_ActivityFrame7:
     LDX.W $0E54                                                          ;A68EA5;
     LDA.W $0FAE,X                                                        ;A68EA8;
@@ -1662,6 +1801,7 @@ Instruction_Hibashi_ActivityFrame7:
     RTL                                                                  ;A68EB8;
 
 
+%anchor($A68EB9)
 Instruction_Hibashi_ActivityFrame8:
     LDX.W $0E54                                                          ;A68EB9;
     LDA.W $0FAE,X                                                        ;A68EBC;
@@ -1673,6 +1813,7 @@ Instruction_Hibashi_ActivityFrame8:
     RTL                                                                  ;A68ECC;
 
 
+%anchor($A68ECD)
 Instruction_Hibashi_ActivityFrame9:
     LDX.W $0E54                                                          ;A68ECD;
     LDA.W $0FAE,X                                                        ;A68ED0;
@@ -1684,6 +1825,7 @@ Instruction_Hibashi_ActivityFrame9:
     RTL                                                                  ;A68EE0;
 
 
+%anchor($A68EE1)
 Instruction_Hibashi_ActivityFrameA:
     LDX.W $0E54                                                          ;A68EE1;
     LDA.W $0FAE,X                                                        ;A68EE4;
@@ -1695,6 +1837,7 @@ Instruction_Hibashi_ActivityFrameA:
     RTL                                                                  ;A68EF4;
 
 
+%anchor($A68EF5)
 Instruction_Hibashi_ActivityFrameB:
     LDX.W $0E54                                                          ;A68EF5;
     LDA.W $0FAE,X                                                        ;A68EF8;
@@ -1706,6 +1849,7 @@ Instruction_Hibashi_ActivityFrameB:
     RTL                                                                  ;A68F08;
 
 
+%anchor($A68F09)
 Instruction_Hibashi_ActivityFrameC:
     LDX.W $0E54                                                          ;A68F09;
     LDA.W $0FAE,X                                                        ;A68F0C;
@@ -1717,6 +1861,7 @@ Instruction_Hibashi_ActivityFrameC:
     RTL                                                                  ;A68F1C;
 
 
+%anchor($A68F1D)
 Instruction_Hibashi_ActivityFrameD:
     LDX.W $0E54                                                          ;A68F1D;
     LDA.W $0FAE,X                                                        ;A68F20;
@@ -1728,6 +1873,7 @@ Instruction_Hibashi_ActivityFrameD:
     RTL                                                                  ;A68F30;
 
 
+%anchor($A68F31)
 Instruction_Hibashi_ActivityFrameE:
     LDX.W $0E54                                                          ;A68F31;
     LDA.W $0FAE,X                                                        ;A68F34;
@@ -1739,6 +1885,7 @@ Instruction_Hibashi_ActivityFrameE:
     RTL                                                                  ;A68F44;
 
 
+%anchor($A68F45)
 Instruction_Hibashi_ActivityFrameF:
     LDX.W $0E54                                                          ;A68F45;
     LDA.W $0FAE,X                                                        ;A68F48;
@@ -1750,6 +1897,7 @@ Instruction_Hibashi_ActivityFrameF:
     RTL                                                                  ;A68F58;
 
 
+%anchor($A68F59)
 Instruction_Hibashi_ActivityFrame10:
     LDX.W $0E54                                                          ;A68F59;
     LDA.W $0FAE,X                                                        ;A68F5C;
@@ -1761,6 +1909,7 @@ Instruction_Hibashi_ActivityFrame10:
     RTL                                                                  ;A68F6C;
 
 
+%anchor($A68F6D)
 Instruction_Hibashi_ActivityFrame11:
     LDX.W $0E54                                                          ;A68F6D;
     LDA.W $0FAE,X                                                        ;A68F70;
@@ -1772,6 +1921,7 @@ Instruction_Hibashi_ActivityFrame11:
     RTL                                                                  ;A68F80;
 
 
+%anchor($A68F81)
 Instruction_Hibashi_ActivityFrame12:
     LDX.W $0E54                                                          ;A68F81;
     LDA.W $0FAE,X                                                        ;A68F84;
@@ -1783,6 +1933,7 @@ Instruction_Hibashi_ActivityFrame12:
     RTL                                                                  ;A68F94;
 
 
+%anchor($A68F95)
 Instruction_Hibashi_ActivityFrame13:
     LDX.W $0E54                                                          ;A68F95;
     LDA.W $0FAE,X                                                        ;A68F98;
@@ -1794,6 +1945,7 @@ Instruction_Hibashi_ActivityFrame13:
     RTL                                                                  ;A68FA8;
 
 
+%anchor($A68FA9)
 Instruction_Hibashi_ActivityFrame14:
     LDX.W $0E54                                                          ;A68FA9;
     LDA.W $0FAE,X                                                        ;A68FAC;
@@ -1805,6 +1957,7 @@ Instruction_Hibashi_ActivityFrame14:
     RTL                                                                  ;A68FBC;
 
 
+%anchor($A68FBD)
 Instruction_Hibashi_ActivityFrame15:
     LDX.W $0E54                                                          ;A68FBD;
     LDA.W $0FAE,X                                                        ;A68FC0;
@@ -1816,6 +1969,7 @@ Instruction_Hibashi_ActivityFrame15:
     RTL                                                                  ;A68FD0;
 
 
+%anchor($A68FD1)
 Instruction_Hibashi_FinishActivity:
     LDX.W $0E54                                                          ;A68FD1;
     LDA.W #$0001                                                         ;A68FD4;
@@ -1834,6 +1988,7 @@ Instruction_Hibashi_FinishActivity:
     RTL                                                                  ;A68FFB;
 
 
+%anchor($A68FFC)
 InitAI_Hibashi:
     LDX.W $0E54                                                          ;A68FFC;
     LDA.W #InstList_Hibashi_HitboxPart                                   ;A68FFF;
@@ -1853,6 +2008,7 @@ InitAI_Hibashi:
     RTL                                                                  ;A69022;
 
 
+%anchor($A69023)
 MainAI_Hibashi:
     LDX.W $0E54                                                          ;A69023;
     LDA.W $0FB6,X                                                        ;A69026;
@@ -1863,6 +2019,7 @@ MainAI_Hibashi:
     RTL                                                                  ;A6902E;
 
 
+%anchor($A6902F)
 Function_Hibashi_Inactive:
     LDX.W $0E54                                                          ;A6902F;
     DEC.W $0FAA,X                                                        ;A69032;
@@ -1886,6 +2043,7 @@ Function_Hibashi_Inactive:
     RTS                                                                  ;A69061;
 
 
+%anchor($A69062)
 Function_Hibashi_Active:
     LDX.W $0E54                                                          ;A69062;
     LDA.W $0FAC,X                                                        ;A69065;
@@ -1902,19 +2060,23 @@ Function_Hibashi_Active:
     RTS                                                                  ;A6907F;
 
 
+%anchor($A69080)
 RTL_A69080:
     RTL                                                                  ;A69080;
 
 
+%anchor($A69081)
 RTL_A69081:
     RTL                                                                  ;A69081;
 
 
+%anchor($A69082)
 Spritemap_Hibashi_0:
     dw $0001,$81F9                                                       ;A69082;
     db $F9                                                               ;A69086;
     dw $210E                                                             ;A69087;
 
+%anchor($A69089)
 Spritemap_Hibashi_1:
     dw $0004,$0005                                                       ;A69089;
     db $FF                                                               ;A6908D;
@@ -1926,6 +2088,7 @@ Spritemap_Hibashi_1:
     db $F2                                                               ;A6909C;
     dw $2100                                                             ;A6909D;
 
+%anchor($A6909F)
 Spritemap_Hibashi_2:
     dw $0005,$0005                                                       ;A6909F;
     db $FF                                                               ;A690A3;
@@ -1939,6 +2102,7 @@ Spritemap_Hibashi_2:
     db $EC                                                               ;A690B7;
     dw $2100                                                             ;A690B8;
 
+%anchor($A690BA)
 Spritemap_Hibashi_3:
     dw $0006,$81EC                                                       ;A690BA;
     db $F7                                                               ;A690BE;
@@ -1954,6 +2118,7 @@ Spritemap_Hibashi_3:
     db $E4                                                               ;A690D7;
     dw $2100                                                             ;A690D8;
 
+%anchor($A690DA)
 Spritemap_Hibashi_4:
     dw $0007,$81EC                                                       ;A690DA;
     db $F7                                                               ;A690DE;
@@ -1971,6 +2136,7 @@ Spritemap_Hibashi_4:
     db $DE                                                               ;A690FC;
     dw $2100                                                             ;A690FD;
 
+%anchor($A690FF)
 Spritemap_Hibashi_5:
     dw $0007,$0005                                                       ;A690FF;
     db $FF                                                               ;A69103;
@@ -1988,6 +2154,7 @@ Spritemap_Hibashi_5:
     db $DC                                                               ;A69121;
     dw $2100                                                             ;A69122;
 
+%anchor($A69124)
 Spritemap_Hibashi_6:
     dw $0007,$0005                                                       ;A69124;
     db $FF                                                               ;A69128;
@@ -2005,6 +2172,7 @@ Spritemap_Hibashi_6:
     db $DA                                                               ;A69146;
     dw $2100                                                             ;A69147;
 
+%anchor($A69149)
 Spritemap_Hibashi_7:
     dw $0007,$81EC                                                       ;A69149;
     db $F7                                                               ;A6914D;
@@ -2022,6 +2190,7 @@ Spritemap_Hibashi_7:
     db $D8                                                               ;A6916B;
     dw $2100                                                             ;A6916C;
 
+%anchor($A6916E)
 Spritemap_Hibashi_8:
     dw $0008,$81EC                                                       ;A6916E;
     db $F7                                                               ;A69172;
@@ -2041,6 +2210,7 @@ Spritemap_Hibashi_8:
     db $D0                                                               ;A69195;
     dw $2100                                                             ;A69196;
 
+%anchor($A69198)
 Spritemap_Hibashi_9:
     dw $0008,$0005                                                       ;A69198;
     db $FF                                                               ;A6919C;
@@ -2060,6 +2230,7 @@ Spritemap_Hibashi_9:
     db $C6                                                               ;A691BF;
     dw $2100                                                             ;A691C0;
 
+%anchor($A691C2)
 Spritemap_Hibashi_A:
     dw $0009,$0005                                                       ;A691C2;
     db $FF                                                               ;A691C6;
@@ -2081,6 +2252,7 @@ Spritemap_Hibashi_A:
     db $C0                                                               ;A691EE;
     dw $2100                                                             ;A691EF;
 
+%anchor($A691F1)
 Spritemap_Hibashi_B:
     dw $000D,$8005                                                       ;A691F1;
     db $F7                                                               ;A691F5;
@@ -2110,6 +2282,7 @@ Spritemap_Hibashi_B:
     db $B8                                                               ;A69231;
     dw $2100                                                             ;A69232;
 
+%anchor($A69234)
 Spritemap_Hibashi_C:
     dw $000E,$8005                                                       ;A69234;
     db $F7                                                               ;A69238;
@@ -2141,6 +2314,7 @@ Spritemap_Hibashi_C:
     db $B0                                                               ;A69279;
     dw $2100                                                             ;A6927A;
 
+%anchor($A6927C)
 Spritemap_Hibashi_D:
     dw $000E,$8009                                                       ;A6927C;
     db $F5                                                               ;A69280;
@@ -2172,6 +2346,7 @@ Spritemap_Hibashi_D:
     db $A8                                                               ;A692C1;
     dw $2100                                                             ;A692C2;
 
+%anchor($A692C4)
 Spritemap_Hibashi_E:
     dw $000C,$81F9                                                       ;A692C4;
     db $F4                                                               ;A692C8;
@@ -2199,6 +2374,7 @@ Spritemap_Hibashi_E:
     db $A0                                                               ;A692FF;
     dw $2100                                                             ;A69300;
 
+%anchor($A69302)
 Spritemap_Hibashi_F:
     dw $000E,$0005                                                       ;A69302;
     db $FF                                                               ;A69306;
@@ -2230,6 +2406,7 @@ Spritemap_Hibashi_F:
     db $98                                                               ;A69347;
     dw $2100                                                             ;A69348;
 
+%anchor($A6934A)
 Spritemap_Hibashi_10:
     dw $000D,$0005                                                       ;A6934A;
     db $FF                                                               ;A6934E;
@@ -2259,6 +2436,7 @@ Spritemap_Hibashi_10:
     db $96                                                               ;A6938A;
     dw $2100                                                             ;A6938B;
 
+%anchor($A6938D)
 Spritemap_Hibashi_11:
     dw $000C,$81F9                                                       ;A6938D;
     db $CC                                                               ;A69391;
@@ -2286,6 +2464,7 @@ Spritemap_Hibashi_11:
     db $9A                                                               ;A693C8;
     dw $2100                                                             ;A693C9;
 
+%anchor($A693CB)
 Spritemap_Hibashi_12:
     dw $000B,$81F9                                                       ;A693CB;
     db $C0                                                               ;A693CF;
@@ -2311,6 +2490,7 @@ Spritemap_Hibashi_12:
     db $98                                                               ;A69401;
     dw $A100                                                             ;A69402;
 
+%anchor($A69404)
 Spritemap_Hibashi_13:
     dw $0008,$81F9                                                       ;A69404;
     db $B6                                                               ;A69408;
@@ -2330,6 +2510,7 @@ Spritemap_Hibashi_13:
     db $9C                                                               ;A6942B;
     dw $210E                                                             ;A6942C;
 
+%anchor($A6942E)
 Spritemap_Hibashi_14:
     dw $0006,$81F9                                                       ;A6942E;
     db $AA                                                               ;A69432;
@@ -2345,6 +2526,7 @@ Spritemap_Hibashi_14:
     db $9A                                                               ;A6944B;
     dw $2126                                                             ;A6944C;
 
+%anchor($A6944E)
 Spritemap_Hibashi_15:
     dw $0005,$81F9                                                       ;A6944E;
     db $A4                                                               ;A69452;
@@ -2358,15 +2540,18 @@ Spritemap_Hibashi_15:
     db $9B                                                               ;A69466;
     dw $2126                                                             ;A69467;
 
+%anchor($A69469)
 Spritemap_Hibashi_16:
     dw $0001,$81F9                                                       ;A69469;
     db $9C                                                               ;A6946D;
     dw $212E                                                             ;A6946E;
 
+%anchor($A69470)
 Palette_Puromi:
     dw $3800,$3E7F,$2DFD,$10FB,$0097,$73FF,$53FF,$37FF                   ;A69470;
     dw $17FF,$24DF,$189B,$1076,$0C50,$084B,$5EFF,$0880                   ;A69480;
 
+%anchor($A69490)
 InstList_Puromi:
     dw $0003                                                             ;A69490;
     dw Spritemap_Puromi_0                                                ;A69492;
@@ -2395,6 +2580,7 @@ InstList_Puromi:
     dw Instruction_Common_GotoY                                          ;A694C0;
     dw InstList_Puromi                                                   ;A694C2;
 
+%anchor($A694C4)
 InitAI_Puromi:
     LDX.W $0E54                                                          ;A694C4;
     LDA.W #InstList_Puromi                                               ;A694C7;
@@ -2548,12 +2734,14 @@ InitAI_Puromi:
 .fallingExplosionAngle_antiClockwise:
     dw $0180                                                             ;A6960C;
 
+%anchor($A6960E)
 MainAI_Puromi:
     LDX.W $0E54                                                          ;A6960E;
     JSR.W ($0FA8,X)                                                      ;A69611;
     RTL                                                                  ;A69614;
 
 
+%anchor($A69615)
 Function_Puromi_Inactive:
     LDX.W $0E54                                                          ;A69615;
     DEC.W $0FAA,X                                                        ;A69618;
@@ -2590,6 +2778,7 @@ Function_Puromi_Inactive:
     RTS                                                                  ;A69681;
 
 
+%anchor($A69682)
 Function_Puromi_Active:
     LDX.W $0E54                                                          ;A69682;
     LDA.W $0FAE,X                                                        ;A69685;
@@ -2650,6 +2839,7 @@ Function_Puromi_Active:
     RTS                                                                  ;A69720;
 
 
+%anchor($A69721)
 HandlePuromiProjectiles:
     LDX.W $0E54                                                          ;A69721;
     LDA.W #$0008                                                         ;A69724;
@@ -2739,6 +2929,7 @@ HandlePuromiProjectiles:
     RTS                                                                  ;A697E8;
 
 
+%anchor($A697E9)
 HandlePuromiSpriteObjects:
     LDX.W $0E54                                                          ;A697E9;
     LDA.W #$0006                                                         ;A697EC;
@@ -2828,6 +3019,7 @@ HandlePuromiSpriteObjects:
     RTS                                                                  ;A698AC;
 
 
+%anchor($A698AD)
 ClampAngle_CheckInactivityCondition:
     PHX                                                                  ;A698AD;
     PHA                                                                  ;A698AE;
@@ -2868,6 +3060,7 @@ ClampAngle_CheckInactivityCondition:
     RTS                                                                  ;A698E6;
 
 
+%anchor($A698E7)
 CheckExplosionCondition:
     PHX                                                                  ;A698E7;
     PHA                                                                  ;A698E8;
@@ -2926,6 +3119,7 @@ CheckExplosionCondition:
     RTS                                                                  ;A6993E;
 
 
+%anchor($A6993F)
 PlayPuromiExplosionSFX:
     PHY                                                                  ;A6993F;
     PHX                                                                  ;A69940;
@@ -2941,61 +3135,74 @@ PlayPuromiExplosionSFX:
     RTS                                                                  ;A69951;
 
 
+%anchor($A69952)
 RTL_A69952:
     RTL                                                                  ;A69952;
 
 
+%anchor($A69953)
 RTL_A69953:
     RTL                                                                  ;A69953;
 
 
+%anchor($A69954)
 Spritemap_Puromi_0:
     dw $0001,$81F9                                                       ;A69954;
     db $F8                                                               ;A69958;
     dw $230A                                                             ;A69959;
 
+%anchor($A6995B)
 Spritemap_Puromi_1:
     dw $0001,$81F9                                                       ;A6995B;
     db $F8                                                               ;A6995F;
     dw $2308                                                             ;A69960;
 
+%anchor($A69962)
 Spritemap_Puromi_2:
     dw $0001,$81F8                                                       ;A69962;
     db $F8                                                               ;A69966;
     dw $E30A                                                             ;A69967;
 
+%anchor($A69969)
 Spritemap_Puromi_3:
     dw $0001,$81F8                                                       ;A69969;
     db $F8                                                               ;A6996D;
     dw $E308                                                             ;A6996E;
 
+%anchor($A69970)
 Spritemap_Puromi_4:
     dw $0001,$81F9                                                       ;A69970;
     db $F8                                                               ;A69974;
     dw $2306                                                             ;A69975;
 
+%anchor($A69977)
 Spritemap_Puromi_5:
     dw $0001,$81F9                                                       ;A69977;
     db $F8                                                               ;A6997B;
     dw $2322                                                             ;A6997C;
 
+%anchor($A6997E)
 Spritemap_Puromi_6:
     dw $0001,$81F8                                                       ;A6997E;
     db $F8                                                               ;A69982;
     dw $E306                                                             ;A69983;
 
+%anchor($A69985)
 Spritemap_Puromi_7:
     dw $0001,$81F8                                                       ;A69985;
     db $F8                                                               ;A69989;
     dw $E322                                                             ;A6998A;
 
+%anchor($A6998C)
 Palette_MiniKraid:
     dw $3800,$559D,$1816,$100D,$4B9F,$3F37,$36D0,$2E69                   ;A6998C;
     dw $2608,$1DA6,$1125,$08C5,$0003,$094E,$1656,$0000                   ;A6999C;
 
+%anchor($A699AC)
 InstList_MiniKraid_ChooseAction:
     dw Instruction_MiniKraid_ChooseAction                                ;A699AC;
 
+%anchor($A699AE)
 InstList_MiniKraid_StepForwards_FacingLeft:
     dw $0010                                                             ;A699AE;
     dw Spritemap_MiniKraid_Stepping_FacingLeft_0                         ;A699B0;
@@ -3009,9 +3216,11 @@ InstList_MiniKraid_StepForwards_FacingLeft:
     dw Instruction_Common_GotoY                                          ;A699C0;
     dw InstList_MiniKraid_ChooseAction                                   ;A699C2;
 
+%anchor($A699C4)
 InstList_MiniKraid_ChooseAction_duplicate:
     dw Instruction_MiniKraid_ChooseAction                                ;A699C4;
 
+%anchor($A699C6)
 InstList_MiniKraid_StepBackwards_FacingLeft:
     dw $0010                                                             ;A699C6;
     dw Spritemap_MiniKraid_Stepping_FacingLeft_0                         ;A699C8;
@@ -3025,6 +3234,7 @@ InstList_MiniKraid_StepBackwards_FacingLeft:
     dw Instruction_CommonA6_GotoY                                        ;A699D8;
     dw InstList_MiniKraid_ChooseAction_duplicate                         ;A699DA;
 
+%anchor($A699DC)
 InstList_MiniKraid_FireSpit_FacingLeft:
     dw $0010                                                             ;A699DC;
     dw Spritemap_MiniKraid_FiringSpit_FacingLeft_0                       ;A699DE;
@@ -3040,15 +3250,18 @@ InstList_MiniKraid_FireSpit_FacingLeft:
     dw InstList_MiniKraid_ChooseAction                                   ;A699F2;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A699F4)
 UNUSED_InstList_MiniKraid_Standing_FacingLeft_A699F4:
     dw $7FFF                                                             ;A699F4;
     dw Spritemap_MiniKraid_FiringSpit_FacingLeft_0                       ;A699F6;
     dw Instruction_Common_Sleep                                          ;A699F8;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A699FA)
 InstList_MiniKraid_ChooseAction_duplicate_again2:
     dw Instruction_MiniKraid_ChooseAction                                ;A699FA;
 
+%anchor($A699FC)
 InstList_MiniKraid_StepForwards_FacingRight:
     dw $0010                                                             ;A699FC;
     dw Spritemap_MiniKraid_Stepping_FacingRight_0                        ;A699FE;
@@ -3062,9 +3275,11 @@ InstList_MiniKraid_StepForwards_FacingRight:
     dw Instruction_Common_GotoY                                          ;A69A0E;
     dw InstList_MiniKraid_ChooseAction_duplicate_again2                  ;A69A10;
 
+%anchor($A69A12)
 InstList_MiniKraid_ChooseAction_duplicate_again3:
     dw Instruction_MiniKraid_ChooseAction                                ;A69A12;
 
+%anchor($A69A14)
 InstList_MiniKraid_StepBackwards_FacingRight:
     dw $0010                                                             ;A69A14;
     dw Spritemap_MiniKraid_Stepping_FacingRight_0                        ;A69A16;
@@ -3078,6 +3293,7 @@ InstList_MiniKraid_StepBackwards_FacingRight:
     dw Instruction_Common_GotoY                                          ;A69A26;
     dw InstList_MiniKraid_ChooseAction_duplicate_again3                  ;A69A28;
 
+%anchor($A69A2A)
 InstList_MiniKraid_FireSpit_FacingRight:
     dw $0010                                                             ;A69A2A;
     dw Spritemap_MiniKraid_FiringSpit_FacingRight_0                      ;A69A2C;
@@ -3093,36 +3309,46 @@ InstList_MiniKraid_FireSpit_FacingRight:
     dw InstList_MiniKraid_ChooseAction_duplicate_again2                  ;A69A40;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A69A42)
 UNUSED_InstList_MiniKraid_Standing_FacingRight_A69A42:
     dw $7FFF                                                             ;A69A42;
     dw Spritemap_MiniKraid_FiringSpit_FacingRight_0                      ;A69A44;
     dw Instruction_Common_Sleep                                          ;A69A46;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A69A48)
 MiniKraidSpitVelocityTable_leftward_X1:
     dw $FE00                                                             ;A69A48;
 
+%anchor($A69A4A)
 MiniKraidSpitVelocityTable_leftward_Y1:
     dw $FB00                                                             ;A69A4A;
 
+%anchor($A69A4C)
 MiniKraidSpitVelocityTable_leftward_X2:
     dw $FC00                                                             ;A69A4C;
 
+%anchor($A69A4E)
 MiniKraidSpitVelocityTable_leftward_Y2:
     dw $FB00                                                             ;A69A4E;
 
+%anchor($A69A50)
 MiniKraidSpitVelocityTable_rightward_X1:
     dw $0200                                                             ;A69A50;
 
+%anchor($A69A52)
 MiniKraidSpitVelocityTable_rightward_Y1:
     dw $FB00                                                             ;A69A52;
 
+%anchor($A69A54)
 MiniKraidSpitVelocityTable_rightward_X2:
     dw $0400                                                             ;A69A54;
 
+%anchor($A69A56)
 MiniKraidSpitVelocityTable_rightward_Y2:
     dw $FB00                                                             ;A69A56;
 
+%anchor($A69A58)
 InitAI_MiniKraid:
     LDX.W $0E54                                                          ;A69A58;
     LDA.W $05E5                                                          ;A69A5B;
@@ -3167,6 +3393,7 @@ InitAI_MiniKraid:
     RTL                                                                  ;A69AC1;
 
 
+%anchor($A69AC2)
 MainAI_MiniKraid:
     LDX.W $0E54                                                          ;A69AC2;
     LDA.L $7E780E,X                                                      ;A69AC5;
@@ -3182,6 +3409,7 @@ MainAI_MiniKraid:
     RTL                                                                  ;A69ADB;
 
 
+%anchor($A69ADC)
 HandleMiniKraidSpike:
     PHX                                                                  ;A69ADC;
     TYA                                                                  ;A69ADD;
@@ -3223,6 +3451,7 @@ HandleMiniKraidSpike:
     RTS                                                                  ;A69B25;
 
 
+%anchor($A69B26)
 Instruction_MiniKraid_Move:
     PHY                                                                  ;A69B26;
     LDX.W $0E54                                                          ;A69B27;
@@ -3268,6 +3497,7 @@ Instruction_MiniKraid_Move:
     RTL                                                                  ;A69B73;
 
 
+%anchor($A69B74)
 Instruction_MiniKraid_ChooseAction:
     LDX.W $0E54                                                          ;A69B74;
     LDA.W $0FB0,X                                                        ;A69B77;
@@ -3304,6 +3534,7 @@ Instruction_MiniKraid_ChooseAction:
     RTL                                                                  ;A69BB1;
 
 
+%anchor($A69BB2)
 Instruction_MiniKraid_PlayCrySFX:
     JSL.L CheckIfEnemyCenterIsOnScreen                                   ;A69BB2;
     AND.L $00FFFF                                                        ;A69BB6; >.<
@@ -3315,11 +3546,13 @@ Instruction_MiniKraid_PlayCrySFX:
     RTL                                                                  ;A69BC3;
 
 
+%anchor($A69BC4)
 Instruction_MiniKraid_FireSpitLeft:
     PHY                                                                  ;A69BC4;
     LDY.W #$0000                                                         ;A69BC5;
     LDA.W #$FFFC                                                         ;A69BC8; fallthrough to FireMiniKraidSpit_Common
 
+%anchor($A69BCB)
 FireMiniKraidSpit_Common:
     LDX.W $0E54                                                          ;A69BCB;
     PHY                                                                  ;A69BCE;
@@ -3343,6 +3576,7 @@ FireMiniKraidSpit_Common:
     RTL                                                                  ;A69C01;
 
 
+%anchor($A69C02)
 Instruction_MiniKraid_FireSpitRight:
     PHY                                                                  ;A69C02;
     LDY.W #$0008                                                         ;A69C03;
@@ -3351,6 +3585,7 @@ Instruction_MiniKraid_FireSpitRight:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A69C0B)
 UNUSED_PowerBombReaction_MiniKraid_A69C0B:
     LDX.W $0E54                                                          ;A69C0B;
     LDA.W $0F7A,X                                                        ;A69C0E;
@@ -3362,6 +3597,7 @@ UNUSED_PowerBombReaction_MiniKraid_A69C0B:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($A69C22)
 EnemyTouch_MiniKraid:
     LDX.W $0E54                                                          ;A69C22;
     LDA.W $0F7A,X                                                        ;A69C25;
@@ -3372,6 +3608,7 @@ EnemyTouch_MiniKraid:
     BRA Reaction_MiniKraid_Common                                        ;A69C37;
 
 
+%anchor($A69C39)
 EnemyShot_PowerBombReaction_MiniKraid:
     LDX.W $0E54                                                          ;A69C39;
     LDA.W $0F7A,X                                                        ;A69C3C;
@@ -3382,6 +3619,7 @@ EnemyShot_PowerBombReaction_MiniKraid:
     BRA Reaction_MiniKraid_Common                                        ;A69C4E; >.<
 
 
+%anchor($A69C50)
 Reaction_MiniKraid_Common:
     LDX.W $0E54                                                          ;A69C50;
     LDA.W $0F8C,X                                                        ;A69C53;
@@ -3394,6 +3632,7 @@ Reaction_MiniKraid_Common:
     RTL                                                                  ;A69C63;
 
 
+%anchor($A69C64)
 Spritemap_MiniKraid_Stepping_FacingLeft_0:
     dw $0010,$01E2                                                       ;A69C64;
     db $17                                                               ;A69C68;
@@ -3429,6 +3668,7 @@ Spritemap_MiniKraid_Stepping_FacingLeft_0:
     db $FF                                                               ;A69CB3;
     dw $2140                                                             ;A69CB4;
 
+%anchor($A69CB6)
 Spritemap_MiniKraid_Stepping_FacingLeft_1:
     dw $0010,$81EA                                                       ;A69CB6;
     db $0F                                                               ;A69CBA;
@@ -3464,6 +3704,7 @@ Spritemap_MiniKraid_Stepping_FacingLeft_1:
     db $FE                                                               ;A69D05;
     dw $2140                                                             ;A69D06;
 
+%anchor($A69D08)
 Spritemap_MiniKraid_Stepping_FacingLeft_2:
     dw $0010,$01E1                                                       ;A69D08;
     db $14                                                               ;A69D0C;
@@ -3499,6 +3740,7 @@ Spritemap_MiniKraid_Stepping_FacingLeft_2:
     db $FD                                                               ;A69D57;
     dw $2140                                                             ;A69D58;
 
+%anchor($A69D5A)
 Spritemap_MiniKraid_Stepping_FacingLeft_3:
     dw $0010,$01DA                                                       ;A69D5A;
     db $17                                                               ;A69D5E;
@@ -3534,6 +3776,7 @@ Spritemap_MiniKraid_Stepping_FacingLeft_3:
     db $FD                                                               ;A69DA9;
     dw $2140                                                             ;A69DAA;
 
+%anchor($A69DAC)
 Spritemap_MiniKraid_FiringSpit_FacingLeft_0:
     dw $0010,$01E8                                                       ;A69DAC;
     db $F2                                                               ;A69DB0;
@@ -3569,6 +3812,7 @@ Spritemap_MiniKraid_FiringSpit_FacingLeft_0:
     db $FF                                                               ;A69DFB;
     dw $2140                                                             ;A69DFC;
 
+%anchor($A69DFE)
 Spritemap_MiniKraid_FiringSpit_FacingLeft_1:
     dw $0010,$81F8                                                       ;A69DFE;
     db $EF                                                               ;A69E02;
@@ -3604,6 +3848,7 @@ Spritemap_MiniKraid_FiringSpit_FacingLeft_1:
     db $FF                                                               ;A69E4D;
     dw $2140                                                             ;A69E4E;
 
+%anchor($A69E50)
 Spritemap_MiniKraid_FiringSpit_FacingLeft_2:
     dw $0010,$81F0                                                       ;A69E50;
     db $DF                                                               ;A69E54;
@@ -3639,6 +3884,7 @@ Spritemap_MiniKraid_FiringSpit_FacingLeft_2:
     db $FF                                                               ;A69E9F;
     dw $2140                                                             ;A69EA0;
 
+%anchor($A69EA2)
 Spritemap_MiniKraid_Stepping_FacingRight_0:
     dw $0010,$0016                                                       ;A69EA2;
     db $17                                                               ;A69EA6;
@@ -3674,6 +3920,7 @@ Spritemap_MiniKraid_Stepping_FacingRight_0:
     db $FF                                                               ;A69EF1;
     dw $6140                                                             ;A69EF2;
 
+%anchor($A69EF4)
 Spritemap_MiniKraid_Stepping_FacingRight_1:
     dw $0010,$8006                                                       ;A69EF4;
     db $0F                                                               ;A69EF8;
@@ -3709,6 +3956,7 @@ Spritemap_MiniKraid_Stepping_FacingRight_1:
     db $FE                                                               ;A69F43;
     dw $6140                                                             ;A69F44;
 
+%anchor($A69F46)
 Spritemap_MiniKraid_Stepping_FacingRight_2:
     dw $0010,$0017                                                       ;A69F46;
     db $14                                                               ;A69F4A;
@@ -3744,6 +3992,7 @@ Spritemap_MiniKraid_Stepping_FacingRight_2:
     db $FD                                                               ;A69F95;
     dw $6140                                                             ;A69F96;
 
+%anchor($A69F98)
 Spritemap_MiniKraid_Stepping_FacingRight_3:
     dw $0010,$001E                                                       ;A69F98;
     db $17                                                               ;A69F9C;
@@ -3779,6 +4028,7 @@ Spritemap_MiniKraid_Stepping_FacingRight_3:
     db $FD                                                               ;A69FE7;
     dw $6140                                                             ;A69FE8;
 
+%anchor($A69FEA)
 Spritemap_MiniKraid_FiringSpit_FacingRight_0:
     dw $0010,$0010                                                       ;A69FEA;
     db $F2                                                               ;A69FEE;
@@ -3814,6 +4064,7 @@ Spritemap_MiniKraid_FiringSpit_FacingRight_0:
     db $FF                                                               ;A6A039;
     dw $6140                                                             ;A6A03A;
 
+%anchor($A6A03C)
 Spritemap_MiniKraid_FiringSpit_FacingRight_1:
     dw $0010,$81F8                                                       ;A6A03C;
     db $EF                                                               ;A6A040;
@@ -3849,6 +4100,7 @@ Spritemap_MiniKraid_FiringSpit_FacingRight_1:
     db $FF                                                               ;A6A08B;
     dw $6140                                                             ;A6A08C;
 
+%anchor($A6A08E)
 Spritemap_MiniKraid_FiringSpit_FacingRight_2:
     dw $0010,$8000                                                       ;A6A08E;
     db $DF                                                               ;A6A092;
@@ -3885,22 +4137,26 @@ Spritemap_MiniKraid_FiringSpit_FacingRight_2:
     dw $6140                                                             ;A6A0DE;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A6A0E0)
 UNUSED_Spritemap_MiniKraid_A6A0E0:
     dw $0001,$01FD                                                       ;A6A0E0;
     db $FD                                                               ;A6A0E4;
     dw $211F                                                             ;A6A0E5;
 
+%anchor($A6A0E7)
 UNUSED_Spritemap_MiniKraid_A6A0E7:
     dw $0001,$01FC                                                       ;A6A0E7;
     db $FC                                                               ;A6A0EB;
     dw $210F                                                             ;A6A0EC;
 
+%anchor($A6A0EE)
 UNUSED_Spritemap_MiniKraid_A6A0EE:
     dw $0001,$01FC                                                       ;A6A0EE;
     db $FC                                                               ;A6A0F2;
     dw $610F                                                             ;A6A0F3;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A6A0F5)
 InitAI_Ridley:
     LDX.W $079F                                                          ;A6A0F5;
     LDA.L $7ED828,X                                                      ;A6A0F8;
@@ -4056,6 +4312,7 @@ InitAI_Ridley:
     RTL                                                                  ;A6A287;
 
 
+%anchor($A6A288)
 MainAI_RidleyCeres:
     LDA.W #$7FFF                                                         ;A6A288;
     STA.W $0F8C                                                          ;A6A28B;
@@ -4084,6 +4341,7 @@ MainAI_RidleyCeres:
     RTL                                                                  ;A6A2BC;
 
 
+%anchor($A6A2BD)
 RNGChanceToChooseNewTailSwingDelay:
     LDA.W $05E5                                                          ;A6A2BD;
     CMP.W #$FF00                                                         ;A6A2C0;
@@ -4097,11 +4355,13 @@ RNGChanceToChooseNewTailSwingDelay:
     RTS                                                                  ;A6A2D2;
 
 
+%anchor($A6A2D3)
 HurtAI_RidleyCeres:
     JSR.W MakeRidleysWingsAndTailFlashWhenHit                            ;A6A2D3;
     JSR.W DrawRidleyTail                                                 ;A6A2D6;
     JSR.W DrawRidleysWings                                               ;A6A2D9; fallthrough to HandleBabyMetroidCapsuleInteractions
 
+%anchor($A6A2DC)
 HandleBabyMetroidCapsuleInteractions:
     JSR.W HandleCarryingBabyMetroid                                      ;A6A2DC;
     LDA.L $7E7804                                                        ;A6A2DF;
@@ -4113,6 +4373,7 @@ HandleBabyMetroidCapsuleInteractions:
     RTL                                                                  ;A6A2F1;
 
 
+%anchor($A6A2F2)
 EnemyGraphicsDrawnHook_RidleyCeres_DrawBabyMetroidAndDoor:
     LDA.W $093F                                                          ;A6A2F2;
     BNE .skipBaby                                                        ;A6A2F5;
@@ -4139,9 +4400,11 @@ EnemyGraphicsDrawnHook_RidleyCeres_DrawBabyMetroidAndDoor:
     RTL                                                                  ;A6A320;
 
 
+%anchor($A6A321)
 CeresDoorOffsetsDuringEarthquake:
     dw $0000,$FFFC,$FFFF,$0003                                           ;A6A321;
 
+%anchor($A6A329)
 Spritemap_CeresDoor:
     dw $0008,$0000                                                       ;A6A329;
     db $18                                                               ;A6A32D;
@@ -4161,16 +4424,19 @@ Spritemap_CeresDoor:
     db $F0                                                               ;A6A350;
     dw $20E2                                                             ;A6A351;
 
+%anchor($A6A353)
 RTL_A6A353:
     RTL                                                                  ;A6A353;
 
 
+%anchor($A6A354)
 Function_Ridley_ResetSpeeds:
     STZ.W $0FAA                                                          ;A6A354;
     STZ.W $0FAC                                                          ;A6A357;
     RTS                                                                  ;A6A35A;
 
 
+%anchor($A6A35B)
 Function_Ridley_Startup_FirstRun:
     LDA.W $0797                                                          ;A6A35B;
     BNE Function_Ridley_Startup_InitalWait_return                        ;A6A35E;
@@ -4185,6 +4451,7 @@ Function_Ridley_Startup_FirstRun:
 .notNorfar:
     STA.W $0FB2                                                          ;A6A374; fallthrough to Function_Ridley_Startup_InitalWait
 
+%anchor($A6A377)
 Function_Ridley_Startup_InitalWait:
     DEC.W $0FB2                                                          ;A6A377;
     BPL Function_Ridley_Startup_InitalWait_return                        ;A6A37A;
@@ -4193,10 +4460,12 @@ Function_Ridley_Startup_InitalWait:
     STZ.W $0FB0                                                          ;A6A382;
     STZ.W $0FB2                                                          ;A6A385;
 
+%anchor($A6A388)
 Function_Ridley_Startup_InitalWait_return:
     RTS                                                                  ;A6A388;
 
 
+%anchor($A6A389)
 Function_Ridley_Startup_EyesAppear_Wait:
     LDA.W $0FB0                                                          ;A6A389;
     BMI .return                                                          ;A6A38C;
@@ -4240,6 +4509,7 @@ Function_Ridley_Startup_EyesAppear_Wait:
     RTS                                                                  ;A6A3DE;
 
 
+%anchor($A6A3DF)
 Function_Ridley_Startup_MainBodyAppears:
     INC.W $0FB2                                                          ;A6A3DF;
     LDA.W $0FB2                                                          ;A6A3E2;
@@ -4299,6 +4569,7 @@ Function_Ridley_Startup_MainBodyAppears:
     RTS                                                                  ;A6A454;
 
 
+%anchor($A6A455)
 Function_Ridley_Startup_RidleyRoars:
     DEC.W $0FB2                                                          ;A6A455;
     BPL Function_Ridley_Startup_RidleyRoars_return                       ;A6A458;
@@ -4313,10 +4584,12 @@ Function_Ridley_Startup_RidleyRoars:
     LDA.W #$00FC                                                         ;A6A471;
     STA.W $0FB2                                                          ;A6A474;
 
+%anchor($A6A477)
 Function_Ridley_Startup_RidleyRoars_return:
     RTS                                                                  ;A6A477;
 
 
+%anchor($A6A478)
 Function_Ridley_Startup_ColorBGInNorfair_RaiseAcid_MainAI:
     LDA.W $079F                                                          ;A6A478;
     CMP.W #$0002                                                         ;A6A47B;
@@ -4359,6 +4632,7 @@ Function_Ridley_Startup_ColorBGInNorfair_RaiseAcid_MainAI:
     RTS                                                                  ;A6A4D5;
 
 
+%anchor($A6A4D6)
 AdjustRidleyBackgroundColorsIfNecessary:
     ASL A                                                                ;A6A4D6;
     TAX                                                                  ;A6A4D7;
@@ -4454,6 +4728,7 @@ AdjustRidleyBackgroundColorsIfNecessary:
     dw $0596,$04D6,$0456,$140C,$0C08,$0404,$0000,$080E                   ;A6A693;
     dw $0409,$0004,$0000,$0C08,$0409,$7FFF                               ;A6A6A3;
 
+%anchor($A6A6AF)
 Function_RidleyCeres_StartupLiftoff_FacingLeft:
     LDA.W $0FAC                                                          ;A6A6AF;
     CLC                                                                  ;A6A6B2;
@@ -4469,6 +4744,7 @@ Function_RidleyCeres_StartupLiftoff_FacingLeft:
     LDA.W #Function_RidleyCeres_StartupLiftoff_FacingLeft_SlowingDown    ;A6A6C2;
     STA.W $0FA8                                                          ;A6A6C5; fallthrough to Function_RidleyCeres_StartupLiftoff_FacingLeft_SlowingDown
 
+%anchor($A6A6C8)
 Function_RidleyCeres_StartupLiftoff_FacingLeft_SlowingDown:
     LDA.W $0FAC                                                          ;A6A6C8;
     CLC                                                                  ;A6A6CB;
@@ -4486,6 +4762,7 @@ Function_RidleyCeres_StartupLiftoff_FacingLeft_SlowingDown:
     RTS                                                                  ;A6A6E7;
 
 
+%anchor($A6A6E8)
 Function_RidleyCeres_MainAI:
     LDA.L $7E781A                                                        ;A6A6E8;
     CMP.W #$0064                                                         ;A6A6EC;
@@ -4550,6 +4827,7 @@ Function_RidleyCeres_MainAI:
     dw Function_RidleyCeres_StartSwoop                                   ;A6A75F;
     dw Function_RidleyCeres_StartFireballing                             ;A6A761;
 
+%anchor($A6A763)
 CeresRidleyAttackCooldown_FlyToPosition:
     LDX.W #$00C0                                                         ;A6A763;
     LDY.W #$0064                                                         ;A6A766;
@@ -4565,6 +4843,7 @@ CeresRidleyAttackCooldown_FlyToPosition:
     RTS                                                                  ;A6A781;
 
 
+%anchor($A6A782)
 Function_RidleyCeres_StartFireballing:
     LDA.W $0FAC                                                          ;A6A782;
     BPL +                                                                ;A6A785;
@@ -4621,6 +4900,7 @@ Function_RidleyCeres_StartFireballing:
     RTS                                                                  ;A6A7F8;
 
 
+%anchor($A6A7F9)
 Function_RidleyCeres_Fireballing:
     LDA.W $05E5                                                          ;A6A7F9;
     AND.W #$0007                                                         ;A6A7FC;
@@ -4652,6 +4932,7 @@ Function_RidleyCeres_Fireballing:
     RTS                                                                  ;A6A83B;
 
 
+%anchor($A6A83C)
 Function_RidleyCeres_StartLunging:
     LDA.W #InstList_RidleyCeres_FacingLeft_Lunging                       ;A6A83C;
     JSR.W SetRidleyInstList                                              ;A6A83F;
@@ -4660,6 +4941,7 @@ Function_RidleyCeres_StartLunging:
     LDA.W #$0040                                                         ;A6A848;
     STA.W $0FB2                                                          ;A6A84B; fallthrough to Function_RidleyCeres_Lunging
 
+%anchor($A6A84E)
 Function_RidleyCeres_Lunging:
     LDA.W $0AF6                                                          ;A6A84E;
     STA.B $12                                                            ;A6A851;
@@ -4692,6 +4974,7 @@ Function_RidleyCeres_Lunging:
     RTS                                                                  ;A6A88C;
 
 
+%anchor($A6A88D)
 Function_RidleyCeres_StartSwoop:
     LDA.W #Function_RidleyCeres_FlyToSwoopSetupPosition                  ;A6A88D;
     STA.W $0FA8                                                          ;A6A890;
@@ -4701,6 +4984,7 @@ Function_RidleyCeres_StartSwoop:
     STA.L $7E7814                                                        ;A6A89C;
     STA.L $7E2002                                                        ;A6A8A0; fallthrough to Function_Ridley_Ceres_FlyToSwoopSetupPosition
 
+%anchor($A6A8A4)
 Function_RidleyCeres_FlyToSwoopSetupPosition:
     LDX.W #$00C0                                                         ;A6A8A4;
     LDY.W #$0050                                                         ;A6A8A7;
@@ -4725,6 +5009,7 @@ Function_RidleyCeres_FlyToSwoopSetupPosition:
     RTS                                                                  ;A6A8D3;
 
 
+%anchor($A6A8D4)
 Function_RidleyCeres_Swoop:
     LDA.W #$FFE0                                                         ;A6A8D4;
     STA.B $12                                                            ;A6A8D7;
@@ -4744,6 +5029,7 @@ Function_RidleyCeres_Swoop:
     RTS                                                                  ;A6A8F7;
 
 
+%anchor($A6A8F8)
 Function_RidleyCeres_SwoopingDownLeft:
     LDA.W #$FE00                                                         ;A6A8F8;
     STA.B $12                                                            ;A6A8FB;
@@ -4765,6 +5051,7 @@ Function_RidleyCeres_SwoopingDownLeft:
     RTS                                                                  ;A6A922;
 
 
+%anchor($A6A923)
 Function_RidleyCeres_SwoopingUpRight:
     LDA.W #$FE00                                                         ;A6A923;
     STA.B $12                                                            ;A6A926;
@@ -4784,6 +5071,7 @@ Function_RidleyCeres_SwoopingUpRight:
     RTS                                                                  ;A6A946;
 
 
+%anchor($A6A947)
 Function_RidleyCeres_EndOfSwoop:
     LDA.W #$FD00                                                         ;A6A947;
     STA.B $12                                                            ;A6A94A;
@@ -4805,6 +5093,7 @@ Function_RidleyCeres_EndOfSwoop:
     RTS                                                                  ;A6A970;
 
 
+%anchor($A6A971)
 Function_RidleyCeres_FlyAwayToEndFight:
     LDA.W #$FF40                                                         ;A6A971;
     STA.L $7E8000                                                        ;A6A974;
@@ -4819,16 +5108,19 @@ Function_RidleyCeres_FlyAwayToEndFight:
     CMP.W #$FF80                                                         ;A6A98E;
     BMI Function_RidleyCeres_FlyAwayToEndFight_reachedTarget             ;A6A991;
 
+%anchor($A6A993)
 Function_RidleyCeres_FlyAwayToEndFight_return:
     RTS                                                                  ;A6A993;
 
 
+%anchor($A6A994)
 Function_RidleyCeres_FlyAwayToEndFight_reachedTarget:
     LDA.W #Function_RidleyCeres_SpawnWallsAndUpdatePalettesForGetaway    ;A6A994;
     STA.W $0FA8                                                          ;A6A997;
     LDA.W #$0040                                                         ;A6A99A;
     STA.W $0FB2                                                          ;A6A99D; fallthrough to Function_RidleyCeres_SpawnWallsAndUpdatePalettesForGetaway
 
+%anchor($A6A9A0)
 Function_RidleyCeres_SpawnWallsAndUpdatePalettesForGetaway:
     DEC.W $0FB2                                                          ;A6A9A0;
     BPL Function_RidleyCeres_FlyAwayToEndFight_return                    ;A6A9A3;
@@ -4861,6 +5153,7 @@ Function_RidleyCeres_SpawnWallsAndUpdatePalettesForGetaway:
 .spritePalette7:
     dw $7E20,$6560,$2060,$1000,$7940,$5D00,$4CA0,$3CA0                   ;A6AA01;
 
+%anchor($A6AA11)
 Function_RidleyCeres_DisableAI_SetupMode7Ridley:
     LDA.W #RTS_A6AA4F                                                    ;A6AA11;
     STA.W $0FA8                                                          ;A6AA14;
@@ -4869,6 +5162,7 @@ Function_RidleyCeres_DisableAI_SetupMode7Ridley:
     JMP.W SetupMode7ForCeresRidleyEscape                                 ;A6AA1D;
 
 
+%anchor($A6AA20)
 SpawnWallsDuringCeresRidleyGetawayCutscene:
     LDX.W #.leftWall                                                     ;A6AA20;
     JSL.L SpawnEnemy                                                     ;A6AA23;
@@ -4885,15 +5179,18 @@ SpawnWallsDuringCeresRidleyGetawayCutscene:
     dw EnemyHeaders_CeresDoor                                            ;A6AA3F;
     dw $00F8,$007F,$0000,$2800,$0000,$0006,$0000                         ;A6AA41;
 
+%anchor($A6AA4F)
 RTS_A6AA4F:
     RTS                                                                  ;A6AA4F;
 
 
+%anchor($A6AA50)
 Function_RidleyCeres_CycleEmergencyTextColors:
     JSR.W CycleEmergencyTextColors                                       ;A6AA50;
     RTS                                                                  ;A6AA53;
 
 
+%anchor($A6AA54)
 SetupMode7ForCeresRidleyEscape:
     SEP #$20                                                             ;A6AA54;
     LDA.B #$07                                                           ;A6AA56;
@@ -4931,6 +5228,7 @@ SetupMode7ForCeresRidleyEscape:
     RTS                                                                  ;A6AAAE;
 
 
+%anchor($A6AAAF)
 HandleCeresRidleyGetawayCutscene:
     PHB                                                                  ;A6AAAF;
     PHK                                                                  ;A6AAB0;
@@ -4944,6 +5242,7 @@ HandleCeresRidleyGetawayCutscene:
     RTL                                                                  ;A6AABC;
 
 
+%anchor($A6AABD)
 ExecuteCeresRidleyGetawayCutscene:
     LDA.L $7E8026                                                        ;A6AABD;
     TAX                                                                  ;A6AAC1;
@@ -5016,6 +5315,7 @@ ExecuteCeresRidleyGetawayCutscene:
     RTS                                                                  ;A6AB5E;
 
 
+%anchor($A6AB5F)
 HandleCeresRidleyMode7TransformationMatrix:
     LDA.L $7E7814                                                        ;A6AB5F;
     XBA                                                                  ;A6AB63;
@@ -5102,6 +5402,7 @@ HandleCeresRidleyMode7TransformationMatrix:
     RTS                                                                  ;A6AC0D;
 
 
+%anchor($A6AC0E)
 Mode7Math_A6AC0E:
     STA.B $14                                                            ;A6AC0E;
     BIT.B $14                                                            ;A6AC10;
@@ -5114,6 +5415,7 @@ Mode7Math_A6AC0E:
     BRA Mode7Math_Common_A6AC30                                          ;A6AC1C;
 
 
+%anchor($A6AC1E)
 Mode7Math_A6AC1E:
     STA.B $14                                                            ;A6AC1E;
     BIT.B $14                                                            ;A6AC20;
@@ -5126,6 +5428,7 @@ Mode7Math_A6AC1E:
     CLC                                                                  ;A6AC2C;
     ADC.W #$0040                                                         ;A6AC2D;
 
+%anchor($A6AC30)
 Mode7Math_Common_A6AC30:
     ASL A                                                                ;A6AC30;
     AND.W #$01FE                                                         ;A6AC31;
@@ -5154,6 +5457,7 @@ Mode7Math_Common_A6AC30:
     RTL                                                                  ;A6AC57;
 
 
+%anchor($A6AC58)
 Mode7Math_A6AC58:
     PHX                                                                  ;A6AC58;
     PHY                                                                  ;A6AC59;
@@ -5214,6 +5518,7 @@ Mode7Math_A6AC58:
     RTS                                                                  ;A6ACBB;
 
 
+%anchor($A6ACBC)
 AnimateMode7BabyMetroidCapsuleDuringGetaway:
     LDA.W $05B6                                                          ;A6ACBC;
     AND.W #$0003                                                         ;A6ACBF;
@@ -5282,6 +5587,7 @@ AnimateMode7BabyMetroidCapsuleDuringGetaway:
 .tilemap5:
     db $9D,$9E                                                           ;A6AD25;
 
+%anchor($A6AD27)
 AnimateMode7RidleyWings:
     LDA.W $05B6                                                          ;A6AD27;
     AND.W #$0007                                                         ;A6AD2A;
@@ -5381,6 +5687,7 @@ AnimateMode7RidleyWings:
 .tilemapB:
     db $90,$9F,$A0,$A1,$A2,$A3,$40,$41,$42,$A4,$A5,$A6,$A7,$7D,$83,$2D   ;A6AE3D;
 
+%anchor($A6AE4D)
 CeresRidleyMode7GetawayBackgroundParameters:
     dw $0800,$0800,$0800,$0800,$0800,$0800,$0800,$0800                   ;A6AE4D;
     dw $0800,$0800,$0800,$0800,$0800,$0800,$0800,$0800                   ;A6AE5D;
@@ -5398,6 +5705,7 @@ CeresRidleyMode7GetawayBackgroundParameters:
     dw $0070,$0060,$0050,$0040,$0030,$0020,$0020,$0020                   ;A6AF1D;
     dw $FFFF                                                             ;A6AF2D;
 
+%anchor($A6AF2F)
 CeresRidleyGetawayYVelocityTable:
     dw $FFFA,$FFFA,$FFFA,$FFFA,$FFFA,$FFFA,$FFFA,$FFFA                   ;A6AF2F;
     dw $FFFA,$FFFA,$FFFA,$FFFA,$FFFC,$FFFC,$FFFC,$FFFC                   ;A6AF3F;
@@ -5414,6 +5722,7 @@ CeresRidleyGetawayYVelocityTable:
     dw $0003,$0004,$0006,$0008,$000A,$000C,$000E,$0010                   ;A6AFEF;
     dw $0014,$0018,$002C,$0030,$0080,$0100,$0100,$0100                   ;A6AFFF;
 
+%anchor($A6B00F)
 CeresRidleyGetawayXVelocityTable:
     dw $FFFF,$FFFF,$FFFF,$FFFF,$FFFF,$FFFF,$FFFF,$FFFF                   ;A6B00F;
     dw $FFFF,$FFFF,$FFFF,$FFFF,$FFFF,$FFFF,$FFFF,$FFFF                   ;A6B01F;
@@ -5430,6 +5739,7 @@ CeresRidleyGetawayXVelocityTable:
     dw $0002,$0002,$0003,$0003,$0004,$0004,$0005,$0005                   ;A6B0CF;
     dw $0008,$000C,$0010,$0014,$0020,$0020,$0020,$0020                   ;A6B0DF;
 
+%anchor($A6B0EF)
 RidleyCeres_UpdateBG12Palette5:
     XBA                                                                  ;A6B0EF;
     AND.W #$00FF                                                         ;A6B0F0;
@@ -5482,6 +5792,7 @@ RidleyCeres_UpdateBG12Palette5:
     dw $1CE8,$1486,$0402,$0001,$18A7,$1065,$0C43,$0822                   ;A6B207;
     dw $1CCA,$080A,$0406,$010A,$0088,$0047,$0421,$0000                   ;A6B217;
 
+%anchor($A6B227)
 MainAI_Ridley:
     LDA.L $7E8008                                                        ;A6B227;
     SEC                                                                  ;A6B22B;
@@ -5518,6 +5829,7 @@ MainAI_Ridley:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A6B26F)
 UNUSED_Ridley_TrySamusGrab_A6B26F:
     LDA.L $7E783C                                                        ;A6B26F;
     ORA.L $7E7836                                                        ;A6B273;
@@ -5536,15 +5848,18 @@ UNUSED_Ridley_TrySamusGrab_A6B26F:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($A6B288)
 RidleyHurtAIMaxTimer:
     dw $0008                                                             ;A6B288;
 
+%anchor($A6B28A)
 TimeIsFrozenAI_Ridley:
     LDA.W #$0000                                                         ;A6B28A;
     STA.L $7E8008                                                        ;A6B28D;
     LDA.W #$0001                                                         ;A6B291;
     STA.W $0FA4                                                          ;A6B294; fallthrough to HurtAI_Ridley
 
+%anchor($A6B297)
 HurtAI_Ridley:
     LDA.W $0FA4                                                          ;A6B297;
     AND.W #$0001                                                         ;A6B29A;
@@ -5590,6 +5905,7 @@ HurtAI_Ridley:
     RTL                                                                  ;A6B2F2;
 
 
+%anchor($A6B2F3)
 Function_Ridley_Startup_Liftoff_FacingRight:
     LDX.W #$0040                                                         ;A6B2F3;
     LDY.W #$0100                                                         ;A6B2F6;
@@ -5612,6 +5928,7 @@ Function_Ridley_Startup_Liftoff_FacingRight:
     LDA.W #DetermineAndExecuteNewRidleyAIScript                          ;A6B31B;
     STA.W $0FA8                                                          ;A6B31E;
 
+%anchor($A6B321)
 DetermineAndExecuteNewRidleyAIScript:
     JSR.W GetNewRidleyAIScript                                           ;A6B321;
     JSL.L GenerateRandomNumber                                           ;A6B324;
@@ -5623,6 +5940,7 @@ DetermineAndExecuteNewRidleyAIScript:
     JMP.W ($0FA8)                                                        ;A6B332;
 
 
+%anchor($A6B335)
 GetNewRidleyAIScript:
     LDA.W $0A1F                                                          ;A6B335;
     AND.W #$00FF                                                         ;A6B338;
@@ -5668,6 +5986,7 @@ GetNewRidleyAIScript:
     RTS                                                                  ;A6B37A;
 
 
+%anchor($A6B37B)
 CheckIfRidleyBelowHalfHealth:
     LDY.W #.belowHalfHealth                                              ;A6B37B;
     LDA.W $0F8C                                                          ;A6B37E;
@@ -5740,12 +6059,14 @@ CheckIfRidleyBelowHalfHealth:
     dw CheckFor_Deathswoop_PowerBombDodge_MoveToCenter_RamGrabSamus      ;A6B3E8;
     dw CheckFor_Deathswoop_PowerBombDodge_MoveToCenter_RamGrabSamus      ;A6B3EA;
 
+%anchor($A6B3EC)
 Function_Ridley_InitializeMovementToCenter:
     LDA.W #Function_Ridley_MoveToCenterSide                              ;A6B3EC;
     STA.W $0FA8                                                          ;A6B3EF;
     LDA.W #$0080                                                         ;A6B3F2;
     STA.W $0FB2                                                          ;A6B3F5; fallthrough to Function_Ridley_MoveToCenterSide
 
+%anchor($A6B3F8)
 Function_Ridley_MoveToCenterSide:
     DEC.W $0FB2                                                          ;A6B3F8;
     BMI .collision                                                       ;A6B3FB;
@@ -5775,6 +6096,7 @@ Function_Ridley_MoveToCenterSide:
     RTS                                                                  ;A6B42D;
 
 
+%anchor($A6B42E)
 GetRidleyAccelerationDivisorIndex:
     LDA.L $7E7824                                                        ;A6B42E;
     ASL A                                                                ;A6B432;
@@ -5787,6 +6109,7 @@ GetRidleyAccelerationDivisorIndex:
 .accelerationDivisorIndex:
     dw $0004,$0008,$000A,$000C                                           ;A6B439;
 
+%anchor($A6B441)
 Function_Ridley_StartUSwoop:
     LDA.W #Function_Ridley_FlyToUSwoopStartingPosition                   ;A6B441;
     STA.W $0FA8                                                          ;A6B444;
@@ -5795,6 +6118,7 @@ Function_Ridley_StartUSwoop:
     LDA.W #$0000                                                         ;A6B44E;
     STA.L $7E7814                                                        ;A6B451; fallthrough to Function_Ridley_FlyToUSwoopStartingPosition
 
+%anchor($A6B455)
 Function_Ridley_FlyToUSwoopStartingPosition:
     LDX.W #$00C0                                                         ;A6B455;
     LDA.L $7E7820                                                        ;A6B458;
@@ -5824,6 +6148,7 @@ Function_Ridley_FlyToUSwoopStartingPosition:
     RTS                                                                  ;A6B492;
 
 
+%anchor($A6B493)
 Function_Ridley_USwoop_FirstDive:
     LDA.L $7E7820                                                        ;A6B493;
     BNE .notFacingLeft                                                   ;A6B497;
@@ -5858,6 +6183,7 @@ Function_Ridley_USwoop_FirstDive:
     RTS                                                                  ;A6B4D0;
 
 
+%anchor($A6B4D1)
 Function_Ridley_USwoop_DiveToHalfwayPoint:
     LDA.L $7E7820                                                        ;A6B4D1;
     BNE .facingRight                                                     ;A6B4D5;
@@ -5894,6 +6220,7 @@ Function_Ridley_USwoop_DiveToHalfwayPoint:
     RTS                                                                  ;A6B515;
 
 
+%anchor($A6B516)
 Function_Ridley_USwoop_ClimbAfterHalfwayPoint:
     LDA.L $7E7820                                                        ;A6B516;
     BNE .facingRight                                                     ;A6B51A;
@@ -5928,6 +6255,7 @@ Function_Ridley_USwoop_ClimbAfterHalfwayPoint:
     RTS                                                                  ;A6B553;
 
 
+%anchor($A6B554)
 Function_Ridley_USwoop_FinalClimb:
     LDA.L $7E7820                                                        ;A6B554;
     BNE .facingRight                                                     ;A6B558;
@@ -5962,6 +6290,7 @@ Function_Ridley_USwoop_FinalClimb:
     JMP.W TurnAroundIfFacingAwayFromRoomCenter                           ;A6B591;
 
 
+%anchor($A6B594)
 Function_Ridley_USwoop_End:
     STZ.B $12                                                            ;A6B594;
     LDA.W #$8000                                                         ;A6B596;
@@ -5987,10 +6316,12 @@ Function_Ridley_USwoop_End:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A6B5BE)
 UNUSED_A6B5BE:
     dw $FFE0,$0000,$0020                                                 ;A6B5BE;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A6B5C4)
 Function_Ridley_ConsiderTailbouncing:
     LDA.W #$000B                                                         ;A6B5C4;
     STA.L $7E201E                                                        ;A6B5C7;
@@ -6005,6 +6336,7 @@ Function_Ridley_ConsiderTailbouncing:
     STA.W $0FB2                                                          ;A6B5E2; fallthrough to Function_Ridley_ConsideringTailbouncing
 
 
+%anchor($A6B5E5)
 Function_Ridley_ConsideringTailbouncing:
     LDA.L $7E7820                                                        ;A6B5E5;
     ASL A                                                                ;A6B5E9;
@@ -6033,6 +6365,7 @@ Function_Ridley_ConsideringTailbouncing:
 .targetXPosition:
     dw $00C0,$0080,$0040                                                 ;A6B60D;
 
+%anchor($A6B613)
 Function_Ridley_HoverWhileSamusIsSpinJumping:
     LDA.L $7E7820                                                        ;A6B613;
     ASL A                                                                ;A6B617;
@@ -6061,6 +6394,7 @@ Function_Ridley_HoverWhileSamusIsSpinJumping:
 .targetXPosition:
     dw $0040,$0080,$00C0                                                 ;A6B63B;
 
+%anchor($A6B641)
 FlyTowardTargetXPositionAndSamusYPosition:
     LDA.W $0AFA                                                          ;A6B641;
     CMP.W #$0160                                                         ;A6B644;
@@ -6100,6 +6434,7 @@ FlyTowardTargetXPositionAndSamusYPosition:
     RTS                                                                  ;A6B68A;
 
 
+%anchor($A6B68B)
 SetupRidleyTailForTailbouncing:
     LDA.W #$00F0                                                         ;A6B68B;
     STA.L $7E2012                                                        ;A6B68E;
@@ -6112,6 +6447,7 @@ SetupRidleyTailForTailbouncing:
     RTS                                                                  ;A6B6A6;
 
 
+%anchor($A6B6A7)
 Function_Ridley_FlyToTailbouncingStartPosition:
     LDA.W $0F7E                                                          ;A6B6A7;
     CMP.W #$0120                                                         ;A6B6AA;
@@ -6139,6 +6475,7 @@ Function_Ridley_FlyToTailbouncingStartPosition:
     STA.W $0FB2                                                          ;A6B6DA; fallthrough to Function_Ridley_StartTailbouncing
 
 
+%anchor($A6B6DD)
 Function_Ridley_StartTailbouncing:
     LDA.W $0F7A                                                          ;A6B6DD;
     STA.B $12                                                            ;A6B6E0;
@@ -6162,6 +6499,7 @@ Function_Ridley_StartTailbouncing:
     RTS                                                                  ;A6B70D;
 
 
+%anchor($A6B70E)
 Function_Ridley_Tailbouncing_AttemptToGrabSamus:
     JSR.W AttemptToGrabSamus                                             ;A6B70E;
     BCC .grabFailed                                                      ;A6B711;
@@ -6235,6 +6573,7 @@ Function_Ridley_Tailbouncing_AttemptToGrabSamus:
     RTS                                                                  ;A6B7B8;
 
 
+%anchor($A6B7B9)
 Function_Ridley_Tailbouncing_HitGround:
     JSR.W CheckIfSamusIsBelowTailbounceThreshold                         ;A6B7B9;
     BCC .nextFunction                                                    ;A6B7BC;
@@ -6261,6 +6600,7 @@ Function_Ridley_Tailbouncing_HitGround:
     RTS                                                                  ;A6B7E6;
 
 
+%anchor($A6B7E7)
 CheckForTailbounceCollisionWithSolidBlock:
     LDA.L $7E20A4                                                        ;A6B7E7;
     TAX                                                                  ;A6B7EB;
@@ -6308,6 +6648,7 @@ CheckForTailbounceCollisionWithSolidBlock:
     RTS                                                                  ;A6B84C;
 
 
+%anchor($A6B84D)
 RidleyGrabbedSamus_ResetTailAI:
     LDA.W #$0001                                                         ;A6B84D;
     STA.L $7E2000                                                        ;A6B850;
@@ -6315,6 +6656,7 @@ RidleyGrabbedSamus_ResetTailAI:
     RTS                                                                  ;A6B858;
 
 
+%anchor($A6B859)
 AttemptToGrabSamus:
     JSR.W CheckIfSpinJumpGrapplingDamageBoosting                         ;A6B859;
     BCS .grab                                                            ;A6B85C;
@@ -6325,6 +6667,7 @@ AttemptToGrabSamus:
     LDX.W #$0004                                                         ;A6B85F;
     LDY.W #$0004                                                         ;A6B862; fallthrough to AttemptToGrabSamus_SkipSpinCheck
 
+%anchor($A6B865)
 AttemptToGrabSamus_SkipSpinCheck:
     STX.B $16                                                            ;A6B865;
     STY.B $18                                                            ;A6B867;
@@ -6344,6 +6687,7 @@ AttemptToGrabSamus_SkipSpinCheck:
     JMP.W EfficientCollisionDetectionForSamusAt_12_14                    ;A6B886;
 
 
+%anchor($A6B889)
 GrabbingSamus_SetMinimumYSpeed_ResetTailAI:
     LDA.W $0FAC                                                          ;A6B889;
     BMI +                                                                ;A6B88C;
@@ -6361,6 +6705,7 @@ GrabbingSamus_SetMinimumYSpeed_ResetTailAI:
     JMP.W Function_Ridley_InPositionToGrabSamus_NoPowerBomb              ;A6B8A6;
 
 
+%anchor($A6B8A9)
 CheckForTurnaroundDuringTailbounce_RandomlyChangeDirection:
     LDA.W $0FAA                                                          ;A6B8A9;
     BNE .storeXSpeed                                                     ;A6B8AC;
@@ -6420,6 +6765,7 @@ CheckForTurnaroundDuringTailbounce_RandomlyChangeDirection:
     RTS                                                                  ;A6B90E;
 
 
+%anchor($A6B90F)
 SetSpeedsForTailbouncing:
     LDA.W $05E5                                                          ;A6B90F;
     AND.W #$0003                                                         ;A6B912;
@@ -6492,12 +6838,15 @@ SetSpeedsForTailbouncing:
 .randomYSpeed3:
     dw $FDC0,$FD40,$FC40,$FB60,$FA20,$F920                               ;A6B9C9;
 
+%anchor($A6B9D5)
 HoldingSamusXDispacement:
     dw $000C,$0000,$FFF4                                                 ;A6B9D5;
 
+%anchor($A6B9DB)
 HoldingSamusYDispacement:
     dw $0023,$002E,$0038                                                 ;A6B9DB;
 
+%anchor($A6B9E1)
 MoveSamusToWithinRidleysClawsIfHolding:
     LDA.L $7E7828                                                        ;A6B9E1;
     BEQ .noSamusXDisplacement                                            ;A6B9E5;
@@ -6564,6 +6913,7 @@ MoveSamusToWithinRidleysClawsIfHolding:
     RTS                                                                  ;A6BA53;
 
 
+%anchor($A6BA54)
 SetDisplacementForRidleyGrabbingSamus:
     LDA.L $7E7820                                                        ;A6BA54;
     ASL A                                                                ;A6BA58;
@@ -6588,6 +6938,7 @@ SetDisplacementForRidleyGrabbingSamus:
     RTS                                                                  ;A6BA84;
 
 
+%anchor($A6BA85)
 CheckIfRidleyIsReadyToExplode:
     LDA.L $7E800A                                                        ;A6BA85;
     CMP.W #$000A                                                         ;A6BA89;
@@ -6614,6 +6965,7 @@ CheckIfRidleyIsReadyToExplode:
     RTS                                                                  ;A6BAB6;
 
 
+%anchor($A6BAB7)
 CheckFor_Deathswoop_PowerBombDodge_MoveToCenter_RamGrabSamus:
     JSR.W CheckIfSpinJumpGrapplingDamageBoosting                         ;A6BAB7;
     BCC CheckIfRidleyIsReadyToExplode                                    ;A6BABA;
@@ -6720,6 +7072,7 @@ CheckFor_Deathswoop_PowerBombDodge_MoveToCenter_RamGrabSamus:
     JMP.W Function_Ridley_MoveToDeathSpot                                ;A6BB8C;
 
 
+%anchor($A6BB8F)
 Function_Ridley_InPositionToGrabSamus_NoPowerBomb:
     LDA.L $7E7820                                                        ;A6BB8F;
     ASL A                                                                ;A6BB93;
@@ -6745,6 +7098,7 @@ Function_Ridley_InPositionToGrabSamus_NoPowerBomb:
     LDA.W #$0020                                                         ;A6BBBE;
     STA.W $0FB2                                                          ;A6BBC1; fallthrough to Function_Ridley_HoldingSamus_MoveTowardTargetPosition
 
+%anchor($A6BBC4)
 Function_Ridley_HoldingSamus_MoveTowardTargetPosition:
     LDA.L $7E782E                                                        ;A6BBC4;
     STA.B $12                                                            ;A6BBC8;
@@ -6764,9 +7118,11 @@ Function_Ridley_HoldingSamus_MoveTowardTargetPosition:
     RTS                                                                  ;A6BBEA;
 
 
+%anchor($A6BBEB)
 TargetXPositionHoldingSamus:
     dw $0040,$0000,$00D0                                                 ;A6BBEB;
 
+%anchor($A6BBF1)
 Function_Ridley_DropSamus:
     DEC.W $0FB2                                                          ;A6BBF1;
     BMI .release                                                         ;A6BBF4;
@@ -6793,10 +7149,12 @@ Function_Ridley_DropSamus:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A6BC28)
 UNUSED_A6BC28:
     dw $00B0,$0000,$0050                                                 ;A6BC28;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A6BC2E)
 Function_Ridley_FallBackIntoPositionAfterDroppingSamus:
     DEC.W $0FB2                                                          ;A6BC2E;
     BMI .timerExpired                                                    ;A6BC31;
@@ -6826,6 +7184,7 @@ Function_Ridley_FallBackIntoPositionAfterDroppingSamus:
 .targetXPositions:
     dw $00B0,$0000,$0050                                                 ;A6BC62;
 
+%anchor($A6BC68)
 GrabSamus:
     JSR.W SetDisplacementForRidleyGrabbingSamus                          ;A6BC68;
     LDA.W $0F86                                                          ;A6BC6B;
@@ -6839,6 +7198,7 @@ GrabSamus:
     JMP.W TransferGraphicsForRidleysClawsHoldingSamusOrBabyMetroid       ;A6BC81;
 
 
+%anchor($A6BC84)
 ReleaseSamus:
     LDA.W #$0001                                                         ;A6BC84;
     STA.L $7E2004                                                        ;A6BC87;
@@ -6861,6 +7221,7 @@ ReleaseSamus:
     JMP.W TransferGraphicsForRidleysClawsHoldingSamusOrBabyMetroid       ;A6BCB1;
 
 
+%anchor($A6BCB4)
 HandleRidleySamusInteractionBit:
     LDA.L $7E7802                                                        ;A6BCB4;
     BMI .return                                                          ;A6BCB8;
@@ -6894,6 +7255,7 @@ HandleRidleySamusInteractionBit:
     RTS                                                                  ;A6BCF0;
 
 
+%anchor($A6BCF1)
 CheckIfSpinJumpGrapplingDamageBoosting:
     LDA.W $0A1F                                                          ;A6BCF1;
     AND.W #$00FF                                                         ;A6BCF4;
@@ -6918,6 +7280,7 @@ CheckIfSpinJumpGrapplingDamageBoosting:
     db $80,$80,$80,$00,$FF,$80,$80,$FF,$FF,$FF,$80,$00,$00,$80,$80,$80   ;A6BD04;
     db $80,$FF,$FF,$FF,$80,$80,$00,$80,$80,$00,$00,$80                   ;A6BD14;
 
+%anchor($A6BD20)
 CheckIfSamusIsBelowTailbounceThreshold:
     LDA.W $0AFA                                                          ;A6BD20;
     CMP.W #$0160                                                         ;A6BD23;
@@ -6931,6 +7294,7 @@ CheckIfSamusIsBelowTailbounceThreshold:
     RTS                                                                  ;A6BD2B;
 
 
+%anchor($A6BD2C)
 PowerBombCheck:
     LDA.L $7E7802                                                        ;A6BD2C;
     BMI .return                                                          ;A6BD30;
@@ -6949,6 +7313,7 @@ PowerBombCheck:
     RTS                                                                  ;A6BD4D;
 
 
+%anchor($A6BD4E)
 Function_Ridley_DodgingPowerbomb_MaybeHoldingSamus:
     LDA.W $0CEE                                                          ;A6BD4E;
     BEQ .powerBombActive                                                 ;A6BD51;
@@ -6986,6 +7351,7 @@ Function_Ridley_DodgingPowerbomb_MaybeHoldingSamus:
     RTS                                                                  ;A6BD99;
 
 
+%anchor($A6BD9A)
 Function_RidleyCeres_InitializeBabyMetroidDrop:
     LDA.W #$00C0                                                         ;A6BD9A;
     STA.B $12                                                            ;A6BD9D;
@@ -7004,6 +7370,7 @@ Function_RidleyCeres_InitializeBabyMetroidDrop:
     RTS                                                                  ;A6BDBB;
 
 
+%anchor($A6BDBC)
 Function_RidleyCeres_DropBabyMetroid:
     LDA.W #$FF40                                                         ;A6BDBC;
     STA.L $7E8000                                                        ;A6BDBF;
@@ -7026,6 +7393,7 @@ Function_RidleyCeres_DropBabyMetroid:
     RTS                                                                  ;A6BDF1;
 
 
+%anchor($A6BDF2)
 Function_RidleyCeres_PickupBabyMetroidDelay:
     DEC.W $0FB2                                                          ;A6BDF2;
     BPL Function_RidleyCeres_PickupBabyMetroid_return                    ;A6BDF5;
@@ -7034,6 +7402,7 @@ Function_RidleyCeres_PickupBabyMetroidDelay:
     LDA.W #Function_RidleyCeres_PickupBabyMetroid                        ;A6BDFD;
     STA.W $0FA8                                                          ;A6BE00; fallthrough to Function_RidleyCeres_PickupBabyMetroid
 
+%anchor($A6BE03)
 Function_RidleyCeres_PickupBabyMetroid:
     LDA.L $7E8804                                                        ;A6BE03;
     CLC                                                                  ;A6BE07;
@@ -7061,10 +7430,12 @@ Function_RidleyCeres_PickupBabyMetroid:
     JSR.W CheckIfRidleyIsWithinRangeToPickupBabyMetroid                  ;A6BE3C;
     BCS Function_RidleyCeres_PickupBabyMetroid_holding                   ;A6BE3F;
 
+%anchor($A6BE41)
 Function_RidleyCeres_PickupBabyMetroid_return:
     RTS                                                                  ;A6BE41;
 
 
+%anchor($A6BE42)
 Function_RidleyCeres_PickupBabyMetroid_holding:
     LDA.W #$0001                                                         ;A6BE42;
     STA.L $7E7836                                                        ;A6BE45;
@@ -7079,6 +7450,7 @@ Function_RidleyCeres_PickupBabyMetroid_holding:
     RTS                                                                  ;A6BE60;
 
 
+%anchor($A6BE61)
 CheckIfRidleyIsWithinRangeToPickupBabyMetroid:
     LDA.L $7E8804                                                        ;A6BE61;
     SEC                                                                  ;A6BE65;
@@ -7116,12 +7488,14 @@ CheckIfRidleyIsWithinRangeToPickupBabyMetroid:
     RTS                                                                  ;A6BE92;
 
 
+%anchor($A6BE93)
 HandleCarryingBabyMetroid:
     LDA.L $7E8800                                                        ;A6BE93;
     STA.B $12                                                            ;A6BE97;
     JMP.W ($0012)                                                        ;A6BE99;
 
 
+%anchor($A6BE9C)
 UpdateBabyMetroidPosition_CarriedInArms:
     LDA.W #$FFF0                                                         ;A6BE9C;
     CLC                                                                  ;A6BE9F;
@@ -7134,6 +7508,7 @@ UpdateBabyMetroidPosition_CarriedInArms:
     RTS                                                                  ;A6BEB2;
 
 
+%anchor($A6BEB3)
 UpdateBabyMetroidPosition_CarriedInFeet:
     LDA.W #$000E                                                         ;A6BEB3;
     CLC                                                                  ;A6BEB6;
@@ -7146,6 +7521,7 @@ UpdateBabyMetroidPosition_CarriedInFeet:
     RTS                                                                  ;A6BEC9;
 
 
+%anchor($A6BECA)
 DropBabyMetroid:
     LDA.W #$0000                                                         ;A6BECA;
     STA.L $7E880A                                                        ;A6BECD;
@@ -7153,6 +7529,7 @@ DropBabyMetroid:
     LDA.W #BabyMetroidDropped                                            ;A6BED5;
     STA.L $7E8800                                                        ;A6BED8; fallthrough to BabyMetroidDropped
 
+%anchor($A6BEDC)
 BabyMetroidDropped:
     LDA.L $7E880C                                                        ;A6BEDC;
     CLC                                                                  ;A6BEE0;
@@ -7181,6 +7558,7 @@ BabyMetroidDropped:
     RTS                                                                  ;A6BF19;
 
 
+%anchor($A6BF1A)
 DrawBabyMetroid:
     LDA.W #$7806                                                         ;A6BF1A;
     JSR.W GetBabyMetroidSpritemapPointerFromInstList                     ;A6BF1D;
@@ -7192,6 +7570,7 @@ DrawBabyMetroid:
     JMP.W RidleyGeneralUseDrawing                                        ;A6BF2E;
 
 
+%anchor($A6BF31)
 InstList_BabyMetroidCutscene_0:
     dw Instruction_BabyMetroidCutscene_GotoXIfNotFalling                 ;A6BF31;
     dw InstList_BabyMetroidCutscene_1                                    ;A6BF33;
@@ -7214,6 +7593,7 @@ InstList_BabyMetroidCutscene_0:
     dw $000A                                                             ;A6BF55;
     dw Spritemap_BabyMetroidCutscene_Round                               ;A6BF57;
 
+%anchor($A6BF59)
 InstList_BabyMetroidCutscene_1:
     dw Instruction_BabyMetroidCutscene_PlayCrySFXOrGotoX                 ;A6BF59;
     dw InstList_BabyMetroidCutscene_0                                    ;A6BF5B;
@@ -7272,6 +7652,7 @@ InstList_BabyMetroidCutscene_1:
     dw Instruction_BabyMetroidCutscene_GotoX                             ;A6BFC5;
     dw InstList_BabyMetroidCutscene_0                                    ;A6BFC7;
 
+%anchor($A6BFC9)
 Instruction_BabyMetroidCutscene_PlayCrySFXOrGotoX:
     LDA.L $7E880C                                                        ;A6BFC9;
     BNE .playSFX                                                         ;A6BFCD;
@@ -7283,12 +7664,14 @@ Instruction_BabyMetroidCutscene_PlayCrySFXOrGotoX:
     LDA.W #$0024                                                         ;A6BFD7;
     JSL.L QueueSound_Lib3_Max6                                           ;A6BFDA;
 
+%anchor($A6BFDE)
 Instruction_BabyMetroidCutscene_NextInstruction:
     INX                                                                  ;A6BFDE;
     INX                                                                  ;A6BFDF;
     RTS                                                                  ;A6BFE0;
 
 
+%anchor($A6BFE1)
 Instruction_BabyMetroidCutscene_UpdateColors:
     LDY.W $0000,X                                                        ;A6BFE1;
     PHX                                                                  ;A6BFE4;
@@ -7299,16 +7682,19 @@ Instruction_BabyMetroidCutscene_UpdateColors:
     BRA Instruction_BabyMetroidCutscene_NextInstruction                  ;A6BFF0;
 
 
+%anchor($A6BFF2)
 Instruction_BabyMetroidCutscene_GotoXIfNotFalling:
     LDA.L $7E880C                                                        ;A6BFF2;
     BEQ Instruction_BabyMetroidCutscene_NextInstruction                  ;A6BFF6;
 
+%anchor($A6BFF8)
 Instruction_BabyMetroidCutscene_GotoX:
     LDA.W $0000,X                                                        ;A6BFF8;
     TAX                                                                  ;A6BFFB;
     RTS                                                                  ;A6BFFC;
 
 
+%anchor($A6BFFD)
 Spritemap_BabyMetroidCutscene_HorizontalSquish:
     dw $0005,$0000                                                       ;A6BFFD;
     db $08                                                               ;A6C001;
@@ -7322,6 +7708,7 @@ Spritemap_BabyMetroidCutscene_HorizontalSquish:
     db $F8                                                               ;A6C015;
     dw $3742                                                             ;A6C016;
 
+%anchor($A6C018)
 Spritemap_BabyMetroidCutscene_Round:
     dw $0005,$0000                                                       ;A6C018;
     db $08                                                               ;A6C01C;
@@ -7335,6 +7722,7 @@ Spritemap_BabyMetroidCutscene_Round:
     db $F8                                                               ;A6C030;
     dw $374C                                                             ;A6C031;
 
+%anchor($A6C033)
 Spritemap_BabyMetroidCutscene_VerticalSquish:
     dw $0005,$0000                                                       ;A6C033;
     db $08                                                               ;A6C037;
@@ -7348,6 +7736,7 @@ Spritemap_BabyMetroidCutscene_VerticalSquish:
     db $F8                                                               ;A6C04B;
     dw $374E                                                             ;A6C04C;
 
+%anchor($A6C04E)
 CeresRidleyPostGetawayFunctionHandler:
     LDX.W $0FB2                                                          ;A6C04E;
     JMP.W (.pointers,X)                                                  ;A6C051;
@@ -7362,6 +7751,7 @@ CeresRidleyPostGetawayFunctionHandler:
     dw PostGetawayFunction_CycleEmergencyTextColors_HandleTyping         ;A6C05E;
     dw PostGetawayFunction_CycleEmergencyTextColors_StartEscape          ;A6C060;
 
+%anchor($A6C062)
 PostGetawayFunction_UpdateColors_TransferTimerSpriteTiles:
     LDA.L $7EC002                                                        ;A6C062;
     STA.L $7EC0C2                                                        ;A6C066;
@@ -7376,6 +7766,7 @@ PostGetawayFunction_UpdateColors_TransferTimerSpriteTiles:
     INC.W $0FB2                                                          ;A6C088;
     INC.W $0FB2                                                          ;A6C08B; fallthrough to PostGetawayFunction_TransferTimerBackgroundTiles
 
+%anchor($A6C08E)
 PostGetawayFunction_TransferTimerBackgroundTiles:
     JSR.W ProcessEscapeTimerTileTransfers                                ;A6C08E;
     BCC PostGetawayFunction_return                                       ;A6C091;
@@ -7384,6 +7775,7 @@ PostGetawayFunction_TransferTimerBackgroundTiles:
     INC.W $0FB2                                                          ;A6C099;
     INC.W $0FB2                                                          ;A6C09C; fallthrough to PostGetawayFunction_TransferEscapeTiles_ProcessEmergencyText
 
+%anchor($A6C09F)
 PostGetawayFunction_TransferEscapeTiles_ProcessEmergencyText:
     JSR.W ProcessEscapeTimerTileTransfers                                ;A6C09F;
     BCC PostGetawayFunction_return                                       ;A6C0A2;
@@ -7395,10 +7787,12 @@ PostGetawayFunction_TransferEscapeTiles_ProcessEmergencyText:
     LDA.W #$0007                                                         ;A6C0B3;
     JSL.L QueueMusicDataOrTrack_8FrameDelay                              ;A6C0B6;
 
+%anchor($A6C0BA)
 PostGetawayFunction_return:
     RTS                                                                  ;A6C0BA;
 
 
+%anchor($A6C0BB)
 PostGetawayFunction_SetupCeresEscapeTimer:
     JSR.W CycleEmergencyTextColors                                       ;A6C0BB;
     DEC.W $0FB0                                                          ;A6C0BE;
@@ -7425,6 +7819,7 @@ PostGetawayFunction_SetupCeresEscapeTimer:
     RTS                                                                  ;A6C0F4;
 
 
+%anchor($A6C0F5)
 PostGetawayFunction_Wait20f_QueueTilemapTransfers:
     DEC.W $0FB0                                                          ;A6C0F5;
     BNE PostGetawayFunction_CycleEmergencyTextColors_HandleTyping        ;A6C0F8;
@@ -7432,6 +7827,7 @@ PostGetawayFunction_Wait20f_QueueTilemapTransfers:
     INC.W $0FB2                                                          ;A6C0FD;
     JSL.L QueueCeresEscapeJapaneseTextTilemapTransfers                   ;A6C100; fallthrough to PostGetawayFunction_CycleEmergencyTextColors_HandleTyping
 
+%anchor($A6C104)
 PostGetawayFunction_CycleEmergencyTextColors_HandleTyping:
     JSR.W CycleEmergencyTextColors                                       ;A6C104;
     LDA.W #$3582                                                         ;A6C107;
@@ -7444,6 +7840,7 @@ PostGetawayFunction_CycleEmergencyTextColors_HandleTyping:
     RTS                                                                  ;A6C116;
 
 
+%anchor($A6C117)
 PostGetawayFunction_CycleEmergencyTextColors_StartEscape:
     JSR.W CycleEmergencyTextColors                                       ;A6C117;
     JSR.W Function_Ridley_ResetSpeeds                                    ;A6C11A;
@@ -7459,6 +7856,7 @@ PostGetawayFunction_CycleEmergencyTextColors_StartEscape:
     RTS                                                                  ;A6C135;
 
 
+%anchor($A6C136)
 DrawEmergencyText:
     LDX.W #.tilemapEntry                                                 ;A6C136;
     LDY.W $0330                                                          ;A6C139;
@@ -7487,6 +7885,7 @@ DrawEmergencyText:
     dw $399A                                                             ;A6C174;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A6C176)
 UNUSED_CycleColor_A6C176:
     LDX.W #$0016                                                         ;A6C176;
     LDA.L $7E8032                                                        ;A6C179;
@@ -7507,6 +7906,7 @@ UNUSED_CycleColor_A6C176:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($A6C19C)
 CycleEmergencyTextColors:
     LDA.L $7EC400                                                        ;A6C19C;
     ORA.W $0797                                                          ;A6C1A0;
@@ -7555,6 +7955,7 @@ CycleEmergencyTextColors:
     dw $1977,$18B0,$125D,$1197,$10AF,$0E7D,$0D97,$0CAE                   ;A6C223;
     dw $0A9E,$09B7,$08AD,$06BE,$05B7,$04AC                               ;A6C233;
 
+%anchor($A6C23F)
 SetupZebesEscapeTypewriter:
     LDA.L $7EC0FA                                                        ;A6C23F;
     STA.L $7EC13A                                                        ;A6C243;
@@ -7572,6 +7973,7 @@ SetupZebesEscapeTypewriter:
     RTL                                                                  ;A6C26D;
 
 
+%anchor($A6C26E)
 ProcessEscapeTimerTileTransfers:
     LDX.W $0FB0                                                          ;A6C26E;
     LDY.W $0330                                                          ;A6C271;
@@ -7603,6 +8005,7 @@ ProcessEscapeTimerTileTransfers:
     RTS                                                                  ;A6C2A6;
 
 
+%anchor($A6C2A7)
 HandleTypewriterText_External:
     STA.B $12                                                            ;A6C2A7;
     PHB                                                                  ;A6C2A9;
@@ -7613,6 +8016,7 @@ HandleTypewriterText_External:
     RTL                                                                  ;A6C2B0;
 
 
+%anchor($A6C2B1)
 HandleTypewriterText:
     LDA.L $7E803A                                                        ;A6C2B1;
     BEQ .timerExpired                                                    ;A6C2B5;
@@ -7722,6 +8126,7 @@ HandleTypewriterText:
     RTS                                                                  ;A6C382;
 
 
+%anchor($A6C383)
 QueueCeresEscapeJapaneseTextTilemapTransfers:
     LDX.W #TypewriterCeresEscapeJapaneseTextTilemapTransfer_size         ;A6C383;
     PHB                                                                  ;A6C386;
@@ -7755,12 +8160,15 @@ QueueCeresEscapeJapaneseTextTilemapTransfers:
     RTL                                                                  ;A6C3B7;
 
 
+%anchor($A6C3B8)
 TypewriterCeresEscapeJapaneseTextTilemapTransfer_size:
     dw $0018                                                             ;A6C3B8;
 
+%anchor($A6C3BA)
 TypewriterCeresEscapeJapaneseTextTilemapTransfer_src:
     dl TypewriterCeresEscapeJapanTextTilemap_Line0_Row0                  ;A6C3BA;
 
+%anchor($A6C3BD)
 TypewriterCeresEscapeJapaneseTextTilemapTransfer_VRAM:
     dw $528A,$0018                                                       ;A6C3BD;
     dl TypewriterCeresEscapeJapanTextTilemap_Line0_Row1                  ;A6C3C1;
@@ -7771,6 +8179,7 @@ TypewriterCeresEscapeJapaneseTextTilemapTransfer_VRAM:
     dw $52EA,$0000                                                       ;A6C3D2;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A6C3D6)
 UNUSED_TypewriterCeresEscapeJapanTextTilemapTransfer_A6C3D6:
     dw $0018                                                             ;A6C3D6;
     dl TypewriterCeresEscapeJapanTextTilemap_Line0_Row0                  ;A6C3D8;
@@ -7783,22 +8192,27 @@ UNUSED_TypewriterCeresEscapeJapanTextTilemapTransfer_A6C3D6:
     dw $4AEA,$0000                                                       ;A6C3F0;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A6C3F4)
 TypewriterCeresEscapeJapanTextTilemap_Line0_Row0:
     dw $3DA0,$3DA1,$3DA2,$3DA3,$3DA4,$3DA5,$3DA6,$3DA7                   ;A6C3F4;
     dw $3DAF,$3DA8,$3DAF,$3DA9                                           ;A6C404;
 
+%anchor($A6C40C)
 TypewriterCeresEscapeJapanTextTilemap_Line0_Row1:
     dw $3DB0,$3DB1,$3DB2,$3DB3,$3DB4,$3DB5,$3DB6,$3DB7                   ;A6C40C;
     dw $3DBF,$3DB8,$3DBF,$3DB9                                           ;A6C41C;
 
+%anchor($A6C424)
 TypewriterCeresEscapeJapanTextTilemap_Line1_Row0:
     dw $3DA9,$3DAA,$3DAB,$3DAC,$3DAD,$3DAE,$3DAF,$3D9C                   ;A6C424;
     dw $3D9D,$3D9E,$3D9F                                                 ;A6C434;
 
+%anchor($A6C43A)
 TypewriterCeresEscapeJapanTextTilemap_Line1_Row1:
     dw $3DB9,$3DBA,$3DBB,$3DBC,$3DBD,$3DBE,$3DBF,$3DC0                   ;A6C43A;
     dw $3DC1,$3DC2,$3DC3                                                 ;A6C44A;
 
+%anchor($A6C450)
 TypewriterText_CeresEscapeTimer:
     dw $0001,$0002,$000D,$5105                                           ;A6C450;
     db "SELF DESTRUCT SEQUENC"                                           ;A6C458;
@@ -7809,6 +8223,7 @@ TypewriterText_CeresEscapeTimer:
     db "COLONY IMMEDIATELY"                                              ;A6C488;
     dw $0000                                                             ;A6C49A;
 
+%anchor($A6C49C)
 TypewriterText_ZebesEscapeTimer:
     dw $0001,$0002,$000D,$4905                                           ;A6C49C;
     db "TIME BOMB SET!"                                                  ;A6C4A4;
@@ -7816,12 +8231,15 @@ TypewriterText_ZebesEscapeTimer:
     db "ESCAPE IMMEDIATELY!"                                             ;A6C4B6;
     dw $0000                                                             ;A6C4C9;
 
+%anchor($A6C4CB)
 ZebesEscapeTimerSpriteTileTransferEntries_size:
     dw $0200                                                             ;A6C4CB;
 
+%anchor($A6C4CD)
 ZebesEscapeTimerSpriteTileTransferEntries_src:
     dl Tiles_EscapeTimer_0                                               ;A6C4CD;
 
+%anchor($A6C4D0)
 ZebesEscapeTimerSpriteTileTransferEntries_VRAM:
     dw $7E00,$0120                                                       ;A6C4D0;
     dl Tiles_EscapeTimer_1                                               ;A6C4D4;
@@ -7837,12 +8255,15 @@ ZebesEscapeTimerSpriteTileTransferEntries_VRAM:
     dl Tiles_EscapeTimerText_4                                           ;A6C4F7;
     dw $7C20,$0000                                                       ;A6C4FA;
 
+%anchor($A6C4FE)
 CeresEscapeTimerBG12TransferEntries_size:
     dw $0200                                                             ;A6C4FE;
 
+%anchor($A6C500)
 CeresEscapeTimerBG12TransferEntries_src:
     dl Tiles_EscapeTimerText_0                                           ;A6C500;
 
+%anchor($A6C503)
 CeresEscapeTimerBG12TransferEntries_VRAM:
     dw $1820,$0200                                                       ;A6C503;
     dl Tiles_EscapeTimerText_1                                           ;A6C507;
@@ -7860,12 +8281,14 @@ CeresEscapeTimerBG12TransferEntries_VRAM:
     dl Tiles_CeresDoor_2                                                 ;A6C531;
     dw $0F00,$0000                                                       ;A6C534;
 
+%anchor($A6C538)
 Function_Ridley_MoveToDeathSpot:
     JSR.W MoveRidleyToDeathSpot                                          ;A6C538;
     BCC Function_Ridley_FinalRoar                                        ;A6C53B;
     RTS                                                                  ;A6C53D;
 
 
+%anchor($A6C53E)
 Function_Ridley_FinalRoar:
     LDA.W #InstList_Ridley_FacingLeft_DeathRoar                          ;A6C53E;
     JSR.W SetRidleyInstList                                              ;A6C541;
@@ -7874,10 +8297,12 @@ Function_Ridley_FinalRoar:
     LDA.W #$0020                                                         ;A6C54A;
     STA.W $0FB2                                                          ;A6C54D;
 
+%anchor($A6C550)
 Function_Ridley_FinalRoar_return:
     RTS                                                                  ;A6C550;
 
 
+%anchor($A6C551)
 Function_Ridley_MoveToDeathSpot_Wait_LowerAcid:
     JSR.W MoveRidleyToDeathSpot                                          ;A6C551;
     DEC.W $0FB2                                                          ;A6C554;
@@ -7898,6 +8323,7 @@ Function_Ridley_MoveToDeathSpot_Wait_LowerAcid:
     LDA.W #$00A0                                                         ;A6C582;
     STA.W $0FB2                                                          ;A6C585; fallthrough to Function_Ridley_DeathExplosions_DropSamusIfNeeded
 
+%anchor($A6C588)
 Function_Ridley_DeathExplosions_DropSamusIfNeeded:
     JSR.W SpawnRidleyExplosions                                          ;A6C588;
     DEC.W $0FB2                                                          ;A6C58B;
@@ -7914,6 +8340,7 @@ Function_Ridley_DeathExplosions_DropSamusIfNeeded:
     JMP.W SpawnRidleyExplosionEnemies                                    ;A6C5A5;
 
 
+%anchor($A6C5A8)
 Function_Ridley_DisableRidley:
     JSR.W SpawnRidleyExplosions                                          ;A6C5A8;
     LDA.W #$0000                                                         ;A6C5AB;
@@ -7928,6 +8355,7 @@ Function_Ridley_DisableRidley:
     RTS                                                                  ;A6C5C7;
 
 
+%anchor($A6C5C8)
 Function_Ridley_Wait20Frames:
     DEC.W $0FB2                                                          ;A6C5C8;
     BPL Function_Ridley_FinalRoar_return                                 ;A6C5CB;
@@ -7938,6 +8366,7 @@ Function_Ridley_Wait20Frames:
     RTS                                                                  ;A6C5D9;
 
 
+%anchor($A6C5DA)
 Function_Ridley_Wait100f_SpawnDrops_ChangeMusic_MarkBossDead:
     DEC.W $0FB2                                                          ;A6C5DA;
     BPL .return                                                          ;A6C5DD;
@@ -7956,6 +8385,7 @@ Function_Ridley_Wait100f_SpawnDrops_ChangeMusic_MarkBossDead:
     RTS                                                                  ;A6C600;
 
 
+%anchor($A6C601)
 MoveRidleyToDeathSpot:
     LDX.W #$0080                                                         ;A6C601;
     STX.B $12                                                            ;A6C604;
@@ -7972,6 +8402,7 @@ MoveRidleyToDeathSpot:
     RTS                                                                  ;A6C622;
 
 
+%anchor($A6C623)
 SpawnRidleyExplosions:
     LDA.L $7E800E                                                        ;A6C623;
     DEC A                                                                ;A6C627;
@@ -8018,6 +8449,7 @@ SpawnRidleyExplosions:
     dw $FFF3,$FFFE,$0012,$FFFE,$FFE0,$FFE1,$0008,$FFFC                   ;A6C680;
     dw $FFF6,$0013,$0013                                                 ;A6C690;
 
+%anchor($A6C696)
 InitAI_RidleyExplosion:
     LDX.W $0E54                                                          ;A6C696;
     LDA.W #$0001                                                         ;A6C699;
@@ -8060,6 +8492,7 @@ InitAI_RidleyExplosion:
     dw RidleyExplosionInitialization_14                                  ;A6C6FA;
     dw RidleyExplosionInitialization_16                                  ;A6C6FC;
 
+%anchor($A6C6FE)
 RidleyExplosionInitialization_0:
     LDX.W $0E54                                                          ;A6C6FE;
     LDA.L $7E202C                                                        ;A6C701;
@@ -8071,6 +8504,7 @@ RidleyExplosionInitialization_0:
     RTL                                                                  ;A6C715;
 
 
+%anchor($A6C716)
 RidleyExplosionInitialization_2:
     LDX.W $0E54                                                          ;A6C716;
     LDA.L $7E2040                                                        ;A6C719;
@@ -8082,6 +8516,7 @@ RidleyExplosionInitialization_2:
     RTL                                                                  ;A6C72D;
 
 
+%anchor($A6C72E)
 RidleyExplosionInitialization_4:
     LDX.W $0E54                                                          ;A6C72E;
     LDA.L $7E2054                                                        ;A6C731;
@@ -8093,6 +8528,7 @@ RidleyExplosionInitialization_4:
     RTL                                                                  ;A6C745;
 
 
+%anchor($A6C746)
 RidleyExplosionInitialization_6:
     LDX.W $0E54                                                          ;A6C746;
     LDA.L $7E2068                                                        ;A6C749;
@@ -8104,6 +8540,7 @@ RidleyExplosionInitialization_6:
     RTL                                                                  ;A6C75D;
 
 
+%anchor($A6C75E)
 RidleyExplosionInitialization_8:
     LDX.W $0E54                                                          ;A6C75E;
     LDA.L $7E207C                                                        ;A6C761;
@@ -8115,6 +8552,7 @@ RidleyExplosionInitialization_8:
     RTL                                                                  ;A6C775;
 
 
+%anchor($A6C776)
 RidleyExplosionInitialization_A:
     LDX.W $0E54                                                          ;A6C776;
     LDA.L $7E2090                                                        ;A6C779;
@@ -8126,6 +8564,7 @@ RidleyExplosionInitialization_A:
     RTL                                                                  ;A6C78D;
 
 
+%anchor($A6C78E)
 RidleyExplosionInitialization_C:
     LDX.W $0E54                                                          ;A6C78E;
     LDA.L $7E20A4                                                        ;A6C791;
@@ -8165,6 +8604,7 @@ RidleyExplosionInitialization_C:
     dw InstList_RidleyTailTip_PointingDownLeft                           ;A6C7D6;
     dw InstList_RidleyTailTip_PointingDownDownLeft                       ;A6C7D8;
 
+%anchor($A6C7DA)
 RidleyExplosionInitialization_E:
     LDY.W #$0000                                                         ;A6C7DA;
     LDA.L $7E7820                                                        ;A6C7DD;
@@ -8193,6 +8633,7 @@ RidleyExplosionInitialization_E:
     dw InstList_RidleyWings_FullyRaised_FacingLeft                       ;A6C808;
     dw InstList_RidleyWings_FullyRaised_FacingRight                      ;A6C80A;
 
+%anchor($A6C80C)
 RidleyExplosionInitialization_10:
     LDY.W #$0000                                                         ;A6C80C;
     LDA.L $7E7820                                                        ;A6C80F;
@@ -8221,6 +8662,7 @@ RidleyExplosionInitialization_10:
     dw InstList_RidleyLegs_PulledUp_FacingLeft                           ;A6C83A;
     dw InstList_RidleyLegs_PulledUp_FacingRight                          ;A6C83C;
 
+%anchor($A6C83E)
 RidleyExplosionInitialization_12:
     LDY.W #$0000                                                         ;A6C83E;
     LDA.L $7E7820                                                        ;A6C841;
@@ -8249,6 +8691,7 @@ RidleyExplosionInitialization_12:
     dw InstList_RidleyHead_MouthOpen_FacingLeft                          ;A6C86C;
     dw InstList_RidleyHead_MouthOpen_FacingRight                         ;A6C86E;
 
+%anchor($A6C870)
 RidleyExplosionInitialization_14:
     LDY.W #$0000                                                         ;A6C870;
     LDA.L $7E7820                                                        ;A6C873;
@@ -8277,6 +8720,7 @@ RidleyExplosionInitialization_14:
     dw InstList_RidleyTorso_FacingLeft                                   ;A6C89E;
     dw InstList_RidleyTorso_FacingRight                                  ;A6C8A0;
 
+%anchor($A6C8A2)
 RidleyExplosionInitialization_16:
     LDY.W #$0000                                                         ;A6C8A2;
     LDA.L $7E7820                                                        ;A6C8A5;
@@ -8305,6 +8749,7 @@ RidleyExplosionInitialization_16:
     dw InstList_RidleyClaw_FacingLeft                                    ;A6C8D0;
     dw InstList_RidleyClaw_FacingRight                                   ;A6C8D2;
 
+%anchor($A6C8D4)
 MainAI_RidleyExplosion:
     LDX.W $0E54                                                          ;A6C8D4;
     JSR.W HandleFlickering                                               ;A6C8D7;
@@ -8339,6 +8784,7 @@ MainAI_RidleyExplosion:
     RTL                                                                  ;A6C912;
 
 
+%anchor($A6C913)
 HandleFlickering:
     LDA.W $0FA4,X                                                        ;A6C913;
     AND.W #$0001                                                         ;A6C916;
@@ -8357,6 +8803,7 @@ HandleFlickering:
     RTS                                                                  ;A6C931;
 
 
+%anchor($A6C932)
 SpawnRidleyExplosionEnemies:
     LDX.W #RidleyExplosionEntry_6                                        ;A6C932;
     JSL.L SpawnEnemy                                                     ;A6C935;
@@ -8385,199 +8832,241 @@ SpawnRidleyExplosionEnemies:
     RTS                                                                  ;A6C986;
 
 
+%anchor($A6C987)
 RidleyExplosionEntry_0:
     dw Palette_RidleyExplosion_1                                         ;A6C987;
     dw $0000,$0000,$0000,$2C00,$0000,$0000,$0000                         ;A6C989;
 
+%anchor($A6C997)
 RidleyExplosionEntry_1:
     dw Palette_RidleyExplosion_1                                         ;A6C997;
     dw $0000,$0000,$0000,$2C00,$0000,$0002,$0000                         ;A6C999;
 
+%anchor($A6C9A7)
 RidleyExplosionEntry_2:
     dw Palette_RidleyExplosion_1                                         ;A6C9A7;
     dw $0000,$0000,$0000,$2C00,$0000,$0004,$0000                         ;A6C9A9;
 
+%anchor($A6C9B7)
 RidleyExplosionEntry_3:
     dw Palette_RidleyExplosion_1                                         ;A6C9B7;
     dw $0000,$0000,$0000,$2C00,$0000,$0006,$0000                         ;A6C9B9;
 
+%anchor($A6C9C7)
 RidleyExplosionEntry_4:
     dw Palette_RidleyExplosion_1                                         ;A6C9C7;
     dw $0000,$0000,$0000,$2C00,$0000,$0008,$0000                         ;A6C9C9;
 
+%anchor($A6C9D7)
 RidleyExplosionEntry_5:
     dw Palette_RidleyExplosion_1                                         ;A6C9D7;
     dw $0000,$0000,$0000,$2C00,$0000,$000A,$0000                         ;A6C9D9;
 
+%anchor($A6C9E7)
 RidleyExplosionEntry_6:
     dw Palette_RidleyExplosion_1                                         ;A6C9E7;
     dw $0000,$0000,$0000,$2C00,$0000,$000C,$0000                         ;A6C9E9;
 
+%anchor($A6C9F7)
 RidleyExplosionEntry_7:
     dw Palette_RidleyExplosion_1                                         ;A6C9F7;
     dw $0000,$0000,$0000,$2C00,$0000,$000E,$0000                         ;A6C9F9;
 
+%anchor($A6CA07)
 RidleyExplosionEntry_8:
     dw Palette_RidleyExplosion_1                                         ;A6CA07;
     dw $0000,$0000,$0000,$2C00,$0000,$0010,$0000                         ;A6CA09;
 
+%anchor($A6CA17)
 RidleyExplosionEntry_9:
     dw Palette_RidleyExplosion_1                                         ;A6CA17;
     dw $0000,$0000,$0000,$2C00,$0000,$0012,$0000                         ;A6CA19;
 
+%anchor($A6CA27)
 RidleyExplosionEntry_A:
     dw Palette_RidleyExplosion_1                                         ;A6CA27;
     dw $0000,$0000,$0000,$2C00,$0000,$0014,$0000                         ;A6CA29;
 
+%anchor($A6CA37)
 RidleyExplosionEntry_B:
     dw Palette_RidleyExplosion_1                                         ;A6CA37;
     dw $0000,$0000,$0000,$2C00,$0000,$0016,$0000                         ;A6CA39;
 
+%anchor($A6CA47)
 InstList_RidleyTail_Large:
     dw $0001                                                             ;A6CA47;
     dw Spritemap_RidleyTail_Large                                        ;A6CA49;
     dw Instruction_Common_Sleep                                          ;A6CA4B;
 
+%anchor($A6CA4D)
 InstList_RidleyTail_Medium:
     dw $0001                                                             ;A6CA4D;
     dw Spritemap_RidleyTail_Medium                                       ;A6CA4F;
     dw Instruction_Common_Sleep                                          ;A6CA51;
 
+%anchor($A6CA53)
 InstList_RidleyTail_Small:
     dw $0001                                                             ;A6CA53;
     dw Spritemap_RidleyTail_Small                                        ;A6CA55;
     dw Instruction_Common_Sleep                                          ;A6CA57;
 
+%anchor($A6CA59)
 InstList_RidleyWings_FullyRaised_FacingLeft:
     dw $0001                                                             ;A6CA59;
     dw Spritemap_RidleyWings_FacingLeft_FullyRaised                      ;A6CA5B;
     dw Instruction_CommonA6_Sleep                                        ;A6CA5D;
 
+%anchor($A6CA5F)
 InstList_RidleyWings_FullyRaised_FacingRight:
     dw $0001                                                             ;A6CA5F;
     dw Spritemap_RidleyWings_FacingRight_FullyRaised                     ;A6CA61;
     dw Instruction_Common_Sleep                                          ;A6CA63;
 
+%anchor($A6CA65)
 InstList_RidleyLegs_PulledUp_FacingLeft:
     dw $0001                                                             ;A6CA65;
     dw Spritemap_Ridley_FacingLeft_Legs_PulledUp                         ;A6CA67;
     dw Instruction_CommonA6_Sleep                                        ;A6CA69;
 
+%anchor($A6CA6B)
 InstList_RidleyLegs_PulledUp_FacingRight:
     dw $0001                                                             ;A6CA6B;
     dw Spritemap_Ridley_FacingRight_Legs_PulledUp                        ;A6CA6D;
     dw Instruction_CommonA6_Sleep                                        ;A6CA6F;
 
+%anchor($A6CA71)
 InstList_RidleyHead_MouthOpen_FacingLeft:
     dw $0001                                                             ;A6CA71;
     dw Spritemap_Ridley_FacingLeft_HeadNeck_MouthOpen                    ;A6CA73;
     dw Instruction_Common_Sleep                                          ;A6CA75;
 
+%anchor($A6CA77)
 InstList_RidleyHead_MouthOpen_FacingRight:
     dw $0001                                                             ;A6CA77;
     dw Spritemap_Ridley_FacingRight_HeadNeck_MouthOpen                   ;A6CA79;
     dw Instruction_Common_Sleep                                          ;A6CA7B;
 
+%anchor($A6CA7D)
 InstList_RidleyTorso_FacingLeft:
     dw $0001                                                             ;A6CA7D;
     dw Spritemap_Ridley_FacingLeft_Torso                                 ;A6CA7F;
     dw Instruction_CommonA6_Sleep                                        ;A6CA81;
 
+%anchor($A6CA83)
 InstList_RidleyTorso_FacingRight:
     dw $0001                                                             ;A6CA83;
     dw Spritemap_Ridley_FacingRight_Torso                                ;A6CA85;
     dw Instruction_CommonA6_Sleep                                        ;A6CA87;
 
+%anchor($A6CA89)
 InstList_RidleyClaw_FacingLeft:
     dw $0001                                                             ;A6CA89;
     dw Spritemap_Ridley_FacingLeft_Claws                                 ;A6CA8B;
     dw Instruction_CommonA6_Sleep                                        ;A6CA8D;
 
+%anchor($A6CA8F)
 InstList_RidleyClaw_FacingRight:
     dw $0001                                                             ;A6CA8F;
     dw Spritemap_Ridley_FacingRight_Claws                                ;A6CA91;
     dw Instruction_CommonA6_Sleep                                        ;A6CA93;
 
+%anchor($A6CA95)
 InstList_RidleyTailTip_PointingDown:
     dw $0001                                                             ;A6CA95;
     dw Spritemap_RidleyTailTip_PointingDown                              ;A6CA97;
     dw Instruction_CommonA6_Sleep                                        ;A6CA99;
 
+%anchor($A6CA9B)
 InstList_RidleyTailTip_PointingDownDownRight:
     dw $0001                                                             ;A6CA9B;
     dw Spritemap_RidleyTailTip_PointingDownDownRight                     ;A6CA9D;
     dw Instruction_Common_Sleep                                          ;A6CA9F;
 
+%anchor($A6CAA1)
 InstList_RidleyTailTip_PointingDownRight:
     dw $0001                                                             ;A6CAA1;
     dw Spritemap_RidleyTailTip_PointingDownRight                         ;A6CAA3;
     dw Instruction_CommonA6_Sleep                                        ;A6CAA5;
 
+%anchor($A6CAA7)
 InstList_RidleyTailTip_PointingRightDownRight:
     dw $0001                                                             ;A6CAA7;
     dw Spritemap_RidleyTailTip_PointingRightDownRight                    ;A6CAA9;
     dw Instruction_CommonA6_Sleep                                        ;A6CAAB;
 
+%anchor($A6CAAD)
 InstList_RidleyTailTip_PointingRight:
     dw $0001                                                             ;A6CAAD;
     dw Spritemap_RidleyTailTip_PointingRight                             ;A6CAAF;
     dw Instruction_Common_Sleep                                          ;A6CAB1;
 
+%anchor($A6CAB3)
 InstList_RidleyTailTip_PointingRightUpRight:
     dw $0001                                                             ;A6CAB3;
     dw Spritemap_RidleyTailTip_PointingRightUpRight                      ;A6CAB5;
     dw Instruction_CommonA6_Sleep                                        ;A6CAB7;
 
+%anchor($A6CAB9)
 InstList_RidleyTailTip_PointingUpRight:
     dw $0001                                                             ;A6CAB9;
     dw Spritemap_RidleyTailTip_PointingUpRight                           ;A6CABB;
     dw Instruction_CommonA6_Sleep                                        ;A6CABD;
 
+%anchor($A6CABF)
 InstList_RidleyTailTip_PointingUpUpRight:
     dw $0001                                                             ;A6CABF;
     dw Spritemap_RidleyTailTip_PointingUpUpRight                         ;A6CAC1;
     dw Instruction_CommonA6_Sleep                                        ;A6CAC3;
 
+%anchor($A6CAC5)
 InstList_RidleyTailTip_PointingUp:
     dw $0001                                                             ;A6CAC5;
     dw Spritemap_RidleyTailTip_PointingUp                                ;A6CAC7;
     dw Instruction_CommonA6_Sleep                                        ;A6CAC9;
 
+%anchor($A6CACB)
 InstList_RidleyTailTip_PointingUpUpLeft:
     dw $0001                                                             ;A6CACB;
     dw Spritemap_RidleyTailTip_PointingUpUpLeft                          ;A6CACD;
     dw Instruction_CommonA6_Sleep                                        ;A6CACF;
 
+%anchor($A6CAD1)
 InstList_RidleyTailTip_PointingUpLeft:
     dw $0001                                                             ;A6CAD1;
     dw Spritemap_RidleyTailTip_PointingUpLeft                            ;A6CAD3;
     dw Instruction_CommonA6_Sleep                                        ;A6CAD5;
 
+%anchor($A6CAD7)
 InstList_RidleyTailTip_PointingLeftUpLeft:
     dw $0001                                                             ;A6CAD7;
     dw Spritemap_RidleyTailTip_PointingLeftUpLeft                        ;A6CAD9;
     dw Instruction_Common_Sleep                                          ;A6CADB;
 
+%anchor($A6CADD)
 InstList_RidleyTailTip_PointingLeft:
     dw $0001                                                             ;A6CADD;
     dw Spritemap_RidleyTailTip_PointingLeft                              ;A6CADF;
     dw Instruction_Common_Sleep                                          ;A6CAE1;
 
+%anchor($A6CAE3)
 InstList_RidleyTailTip_PointingLeftDownLeft:
     dw $0001                                                             ;A6CAE3;
     dw Spritemap_RidleyTailTip_PointingLeftDownLeft                      ;A6CAE5;
     dw Instruction_Common_Sleep                                          ;A6CAE7;
 
+%anchor($A6CAE9)
 InstList_RidleyTailTip_PointingDownLeft:
     dw $0001                                                             ;A6CAE9;
     dw Spritemap_RidleyTailTip_PointingDownLeft                          ;A6CAEB;
     dw Instruction_CommonA6_Sleep                                        ;A6CAED;
 
+%anchor($A6CAEF)
 InstList_RidleyTailTip_PointingDownDownLeft:
     dw $0001                                                             ;A6CAEF;
     dw Spritemap_RidleyTailTip_PointingDownDownLeft                      ;A6CAF1;
     dw Instruction_CommonA6_Sleep                                        ;A6CAF3;
 
+%anchor($A6CAF5)
 HandleRidleyTailAI:
     JSR.W PlaySwishingSFXIfTailIsMovingFast                              ;A6CAF5;
     LDA.L $7E2000                                                        ;A6CAF8;
@@ -8614,6 +9103,7 @@ HandleRidleyTailAI:
     dw Function_RidleyTail_StrictTailbouncingExtending                   ;A6CB2F;
     dw Function_RidleyTail_TailSpin                                      ;A6CB31;
 
+%anchor($A6CB33)
 Function_RidleyTail_StartTailbouncing:
     LDA.W #$0008                                                         ;A6CB33;
     STA.L $7E2014                                                        ;A6CB36;
@@ -8623,12 +9113,14 @@ Function_RidleyTail_StartTailbouncing:
     RTS                                                                  ;A6CB44;
 
 
+%anchor($A6CB45)
 Function_RidleyTail_StillStartingTailbouncing:
     LDA.W #$0008                                                         ;A6CB45;
     STA.L $7E2014                                                        ;A6CB48;
     BRA Function_RidleyTail_2_3_6_7_Common                               ;A6CB4C;
 
 
+%anchor($A6CB4E)
 Function_RidleyTail_ContinueExtendingDuringTailbouncing:
     LDA.W #$0003                                                         ;A6CB4E;
     STA.L $7E2014                                                        ;A6CB51;
@@ -8638,6 +9130,7 @@ Function_RidleyTail_ContinueExtendingDuringTailbouncing:
     RTS                                                                  ;A6CB5F;
 
 
+%anchor($A6CB60)
 Function_RidleyTail_StrictTailbouncingExtending:
     LDA.W #$0002                                                         ;A6CB60;
     STA.L $7E2014                                                        ;A6CB63;
@@ -8647,6 +9140,7 @@ Function_RidleyTail_StrictTailbouncingExtending:
     RTS                                                                  ;A6CB71;
 
 
+%anchor($A6CB72)
 Function_RidleyTail_2_3_6_7_Common:
     LDA.L $7E7820                                                        ;A6CB72;
     BNE .notFacingLeft                                                   ;A6CB76;
@@ -8681,30 +9175,35 @@ Function_RidleyTail_2_3_6_7_Common:
     RTS                                                                  ;A6CBBF;
 
 
+%anchor($A6CBC0)
 Function_RidleyTail_FlingingAtSamus:
     LDA.W #RidleyTailAI_FlingTailAtSamus                                 ;A6CBC0;
     STA.B $12                                                            ;A6CBC3;
     BRA ExecuteRidleyTailAI                                              ;A6CBC5;
 
 
+%anchor($A6CBC7)
 Function_RidleyTail_DuringTailbouncing:
     LDA.W #Function_Ridley_Tailbouncing                                  ;A6CBC7;
     STA.B $12                                                            ;A6CBCA;
     BRA ExecuteRidleyTailAI                                              ;A6CBCC;
 
 
+%anchor($A6CBCE)
 Function_RidleyTail_StartExtendingDuringTailbouncing:
     LDA.W #ExtendTailForTailbouncing                                     ;A6CBCE;
     STA.B $12                                                            ;A6CBD1;
     BRA ExecuteRidleyTailAI                                              ;A6CBD3;
 
 
+%anchor($A6CBD5)
 Function_RidleyTail_TailSpin:
     LDA.W #SwingRidleyTailInCircles                                      ;A6CBD5;
     STA.B $12                                                            ;A6CBD8;
     BRA ExecuteRidleyTailAI                                              ;A6CBDA; >.<
 
 
+%anchor($A6CBDC)
 ExecuteRidleyTailAI:
     PHB                                                                  ;A6CBDC;
     PEA.W $7E7E                                                          ;A6CBDD;
@@ -8732,6 +9231,7 @@ ExecuteRidleyTailAI:
     RTS                                                                  ;A6CBFD;
 
 
+%anchor($A6CBFE)
 SetMinMaxTailAnglesBasedOnDirection:
     LDA.W $7820                                                          ;A6CBFE;
     ASL A                                                                ;A6CC01;
@@ -8749,6 +9249,7 @@ SetMinMaxTailAnglesBasedOnDirection:
 .maxAngle:
     dw $4040,$4040,$4010                                                 ;A6CC18;
 
+%anchor($A6CC1E)
 CheckIfAllTailPartsAreRotating:
     LDA.W $2020                                                          ;A6CC1E;
     AND.W $2034                                                          ;A6CC21;
@@ -8767,6 +9268,7 @@ CheckIfAllTailPartsAreRotating:
     RTS                                                                  ;A6CC38;
 
 
+%anchor($A6CC39)
 RidleyTailAI_FlingTailAtSamus:
     JSR.W SetMinMaxTailAnglesBasedOnDirection                            ;A6CC39;
     JSR.W CheckIfAllTailPartsAreRotating                                 ;A6CC3C;
@@ -8802,6 +9304,7 @@ RidleyTailAI_FlingTailAtSamus:
     RTS                                                                  ;A6CC7C;
 
 
+%anchor($A6CC7D)
 HandleRidleyTailFlingTrigger:
     LDA.W $2004                                                          ;A6CC7D;
     BEQ .notFlingingTail                                                 ;A6CC80;
@@ -8842,6 +9345,7 @@ HandleRidleyTailFlingTrigger:
     RTS                                                                  ;A6CCBC;
 
 
+%anchor($A6CCBD)
 SwingRidleyTailInCircles:
     JSR.W SetMinMaxTailAnglesBasedOnDirection                            ;A6CCBD;
     JSR.W CheckIfAllTailPartsAreRotating                                 ;A6CCC0;
@@ -8876,6 +9380,7 @@ SwingRidleyTailInCircles:
     RTS                                                                  ;A6CD0B;
 
 
+%anchor($A6CD0C)
 HandleTailFlingWhileSwingingInCircles:
     LDA.W $2004                                                          ;A6CD0C;
     BEQ .return                                                          ;A6CD0F;
@@ -8891,6 +9396,7 @@ HandleTailFlingWhileSwingingInCircles:
     RTS                                                                  ;A6CD23;
 
 
+%anchor($A6CD24)
 Function_Ridley_Tailbouncing:
     JSR.W SetMinMaxTailAnglesBasedOnDirection                            ;A6CD24;
     JSR.W CheckIfAllTailPartsAreRotating                                 ;A6CD27;
@@ -8963,6 +9469,7 @@ Function_Ridley_Tailbouncing:
     RTS                                                                  ;A6CDA9;
 
 
+%anchor($A6CDAA)
 ExtendTailForTailbouncing:
     JSR.W SetMinMaxTailAnglesBasedOnDirection                            ;A6CDAA;
     JSR.W CheckIfAllTailPartsAreRotating                                 ;A6CDAD;
@@ -9052,6 +9559,7 @@ ExtendTailForTailbouncing:
     RTS                                                                  ;A6CE64;
 
 
+%anchor($A6CE65)
 SetRidleyTailAnglesTo40XX:
     LDA.W $202A                                                          ;A6CE65;
     AND.W #$00FF                                                         ;A6CE68;
@@ -9084,6 +9592,7 @@ SetRidleyTailAnglesTo40XX:
     RTS                                                                  ;A6CEB9;
 
 
+%anchor($A6CEBA)
 UpdateRidleyTailPositions:
     LDA.W $0F7E                                                          ;A6CEBA;
     CLC                                                                  ;A6CEBD;
@@ -9163,6 +9672,7 @@ UpdateRidleyTailPositions:
 .XPositionOffsets:
     dw $0020,$0000,$FFE0                                                 ;A6CF54;
 
+%anchor($A6CF5A)
 RidleyTailExtending:
     LDA.W $203C                                                          ;A6CF5A;
     BEQ .reachedTargetDistanceFromPreviousTailPart                       ;A6CF5D;
@@ -9330,6 +9840,7 @@ RidleyTailExtending:
     RTS                                                                  ;A6D09E;
 
 
+%anchor($A6D09F)
 SetRidleyTailAngles:
     LDA.W $2020,X                                                        ;A6D09F;
     BMI .tailPartMoving                                                  ;A6D0A2;
@@ -9468,6 +9979,7 @@ SetRidleyTailAngles:
     RTS                                                                  ;A6D19C;
 
 
+%anchor($A6D19D)
 TargetAnAngleTowardMissileOrSamus:
     AND.W #$00FF                                                         ;A6D19D;
     XBA                                                                  ;A6D1A0;
@@ -9561,6 +10073,7 @@ TargetAnAngleTowardMissileOrSamus:
     RTS                                                                  ;A6D241;
 
 
+%anchor($A6D242)
 TargetAMissileOrSuperMissileIfAvailable:
     LDA.W $20A4                                                          ;A6D242;
     STA.B $12                                                            ;A6D245;
@@ -9631,6 +10144,7 @@ TargetAMissileOrSuperMissileIfAvailable:
     RTS                                                                  ;A6D2A9;
 
 
+%anchor($A6D2AA)
 PlaySwishingSFXIfTailIsMovingFast:
     LDA.L $7E2014                                                        ;A6D2AA;
     CMP.W #$0008                                                         ;A6D2AE;
@@ -9653,6 +10167,7 @@ PlaySwishingSFXIfTailIsMovingFast:
     RTS                                                                  ;A6D2D5;
 
 
+%anchor($A6D2D6)
 InitializeTailParts:
     LDA.W #$0001                                                         ;A6D2D6;
     STA.L $7E2014                                                        ;A6D2D9;
@@ -9716,6 +10231,7 @@ InitializeTailParts:
 .YPositionOfTailPart:
     dw $0002,$0007,$0003,$FFFD,$FFF9,$FFF9,$FFFF                         ;A6D3A6;
 
+%anchor($A6D3B4)
 UpdateTailPartRAMFromXToY:
     LDA.W #$007E                                                         ;A6D3B4;
     STA.B $14                                                            ;A6D3B7;
@@ -9740,15 +10256,18 @@ UpdateTailPartRAMFromXToY:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A6D3D4)
 UNUSED_SetAllTailPartsToNotMoving_A6D3D4:
     LDA.W #$0000                                                         ;A6D3D4;
     BRA SetAllTailPartsToMovingOrNotMoving                               ;A6D3D7;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($A6D3D9)
 SetAllTailPartsToMoving:
     LDA.W #$8000                                                         ;A6D3D9;
 
+%anchor($A6D3DC)
 SetAllTailPartsToMovingOrNotMoving:
     STA.L $7E2020                                                        ;A6D3DC;
     STA.L $7E2034                                                        ;A6D3E0;
@@ -9760,6 +10279,7 @@ SetAllTailPartsToMovingOrNotMoving:
     RTS                                                                  ;A6D3F8;
 
 
+%anchor($A6D3F9)
 Update_TailRotationDirection_Angle_DistanceFromRidley:
     PHX                                                                  ;A6D3F9;
     PHY                                                                  ;A6D3FA;
@@ -9791,6 +10311,7 @@ Update_TailRotationDirection_Angle_DistanceFromRidley:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A6D431)
 UNUSED_CheckIfAllTailPartsAreMoving_A6D431:
     LDA.L $7E2020                                                        ;A6D431;
     AND.L $7E2034                                                        ;A6D435;
@@ -9810,6 +10331,7 @@ UNUSED_CheckIfAllTailPartsAreMoving_A6D431:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($A6D453)
 DealSuitAdjustedEnemyDamageToSamus:
     LDX.W $0E54                                                          ;A6D453;
     LDA.W $0F78,X                                                        ;A6D456;
@@ -9820,6 +10342,7 @@ DealSuitAdjustedEnemyDamageToSamus:
     RTL                                                                  ;A6D466;
 
 
+%anchor($A6D467)
 SetRidleyInstList:
     STA.W $0F92                                                          ;A6D467;
     LDA.W #$0001                                                         ;A6D46A;
@@ -9828,6 +10351,7 @@ SetRidleyInstList:
     RTS                                                                  ;A6D473;
 
 
+%anchor($A6D474)
 DetermineAndSetRidleySpeedAndColorPalette:
     LDA.W #$0000                                                         ;A6D474;
     LDY.W $0F8C                                                          ;A6D477;
@@ -9846,6 +10370,7 @@ DetermineAndSetRidleySpeedAndColorPalette:
     STA.B $12                                                            ;A6D491;
     BMI HandleRidleyHealthBasedPalette_return                            ;A6D493;
 
+%anchor($A6D495)
 HandleRidleyHealthBasedPalette:
     LDA.L $7EC400                                                        ;A6D495;
     BNE HandleRidleyHealthBasedPalette_return                            ;A6D499;
@@ -9864,10 +10389,12 @@ HandleRidleyHealthBasedPalette:
     LDA.W #$000E                                                         ;A6D4AD;
     JSL.L WriteAColorsFromYtoColorIndexX                                 ;A6D4B0;
 
+%anchor($A6D4B4)
 HandleRidleyHealthBasedPalette_return:
     RTS                                                                  ;A6D4B4;
 
 
+%anchor($A6D4B5)
 DetermineAndSetCeresRidleysColorPalette:
     LDA.L $7E7802                                                        ;A6D4B5;
     BEQ HandleRidleyHealthBasedPalette_return                            ;A6D4B9;
@@ -9886,6 +10413,7 @@ DetermineAndSetCeresRidleysColorPalette:
     JMP.W HandleRidleyHealthBasedPalette                                 ;A6D4D7;
 
 
+%anchor($A6D4DA)
 MakeRidleysWingsAndTailFlashWhenHit:
     PHX                                                                  ;A6D4DA;
     LDX.W #$0E00                                                         ;A6D4DB;
@@ -9906,6 +10434,7 @@ MakeRidleysWingsAndTailFlashWhenHit:
     RTS                                                                  ;A6D4F8;
 
 
+%anchor($A6D4F9)
 CheckForCollisionWithNonAirBlock:
     TYA                                                                  ;A6D4F9;
     LSR A                                                                ;A6D4FA;
@@ -9938,9 +10467,11 @@ CheckForCollisionWithNonAirBlock:
     RTL                                                                  ;A6D522;
 
 
+%anchor($A6D523)
 AccelerateRidleyTowardDesiredXYPosition_NoDecelerationBoost:
     LDA.W #$0000                                                         ;A6D523;
 
+%anchor($A6D526)
 AccelerateRidleyTowardDesiredXYPosition:
     STA.B $1A                                                            ;A6D526;
     LDA.W RidleyAccelerationDivisorIndex,Y                               ;A6D528;
@@ -10019,6 +10550,7 @@ AccelerateRidleyTowardDesiredXYPosition:
     RTS                                                                  ;A6D5A8;
 
 
+%anchor($A6D5A9)
 AccelerateRidleyTowardDesiredXPosition:
     LDA.W $0F7A,X                                                        ;A6D5A9;
     SEC                                                                  ;A6D5AC;
@@ -10092,9 +10624,11 @@ AccelerateRidleyTowardDesiredXPosition:
     RTS                                                                  ;A6D61E;
 
 
+%anchor($A6D61F)
 RidleyAccelerationDivisorIndex:
     db $10,$0F,$0E,$0D,$0C,$0B,$0A,$09,$08,$07,$06,$05,$04,$03,$02,$01   ;A6D61F;
 
+%anchor($A6D62F)
 AccelerateCeresRidleyTowardDesiredXY:
     LDA.W CeresRidleyAccelerationDivisorIndex,Y                          ;A6D62F;
     AND.W #$00FF                                                         ;A6D632;
@@ -10169,6 +10703,7 @@ AccelerateCeresRidleyTowardDesiredXY:
     RTS                                                                  ;A6D6A5;
 
 
+%anchor($A6D6A6)
 CalculateRidleyXSpeed:
     LDA.W $0F7A,X                                                        ;A6D6A6;
     SEC                                                                  ;A6D6A9;
@@ -10238,10 +10773,12 @@ CalculateRidleyXSpeed:
     RTS                                                                  ;A6D711;
 
 
+%anchor($A6D712)
 CeresRidleyAccelerationDivisorIndex:
     db $10,$0F,$0E,$0D,$0C,$0B,$0A,$09,$08,$07,$06,$05,$04,$03,$02,$01   ;A6D712;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A6D722)
 UNUSED_A6D722:
     LDA.W #$0200                                                         ;A6D722;
     STA.B $16                                                            ;A6D725;
@@ -10253,6 +10790,7 @@ UNUSED_A6D722:
     RTS                                                                  ;A6D733;
 
 
+%anchor($A6D734)
 UNUSED_A6D734:
     LDA.W $0F7E,X                                                        ;A6D734;
     SEC                                                                  ;A6D737;
@@ -10313,6 +10851,7 @@ UNUSED_A6D734:
     RTS                                                                  ;A6D797;
 
 
+%anchor($A6D798)
 UNUSED_A6D798:
     LDA.W $0F7A,X                                                        ;A6D798;
     SEC                                                                  ;A6D79B;
@@ -10376,6 +10915,7 @@ UNUSED_A6D798:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($A6D800)
 UpdateRidleysUSwoopSpeedAndAngle:
     LDA.B $16                                                            ;A6D800;
     CMP.L $7E7816                                                        ;A6D802;
@@ -10434,6 +10974,7 @@ UpdateRidleysUSwoopSpeedAndAngle:
     RTS                                                                  ;A6D86A;
 
 
+%anchor($A6D86B)
 HandleMovementAndMainBodyWallCollisions:
     LDA.W #$0000                                                         ;A6D86B;
     STA.L $7E783E                                                        ;A6D86E;
@@ -10511,6 +11052,7 @@ HandleMovementAndMainBodyWallCollisions:
     RTS                                                                  ;A6D913;
 
 
+%anchor($A6D914)
 CeresRidleyRoomShaking:
     LDA.W $079F                                                          ;A6D914;
     CMP.W #$0002                                                         ;A6D917;
@@ -10553,6 +11095,7 @@ CeresRidleyRoomShaking:
     RTS                                                                  ;A6D954;
 
 
+%anchor($A6D955)
 TurnAroundIfFacingAwayFromRoomCenter:
     LDA.L $7E7820                                                        ;A6D955;
     BEQ .facingLeft                                                      ;A6D959;
@@ -10578,6 +11121,7 @@ TurnAroundIfFacingAwayFromRoomCenter:
     RTS                                                                  ;A6D97C;
 
 
+%anchor($A6D97D)
 HandleWingFlapping:
     JSR.W CalculateWingFlapSpeed                                         ;A6D97D;
     LDA.L $7E7812                                                        ;A6D980;
@@ -10600,6 +11144,7 @@ HandleWingFlapping:
     RTS                                                                  ;A6D9A7;
 
 
+%anchor($A6D9A8)
 CalculateWingFlapSpeed:
     LDA.W $0FAA                                                          ;A6D9A8;
     BPL +                                                                ;A6D9AB;
@@ -10651,16 +11196,19 @@ CalculateWingFlapSpeed:
 .wingFlapSpeeds:
     dw $000C,$000E,$0010,$0012,$001C,$0020,$0028,$0030                   ;A6D9ED;
 
+%anchor($A6D9FD)
 InitializeRibAnimation:
     LDA.W #RidleyRib_AnimationData                                       ;A6D9FD;
     STA.L $7E780A                                                        ;A6DA00;
     LDA.W #$0001                                                         ;A6DA04;
     STA.L $7E780C                                                        ;A6DA07;
 
+%anchor($A6DA0B)
 InitializeRibAnimation_return:
     RTS                                                                  ;A6DA0B;
 
 
+%anchor($A6DA0C)
 AnimateRidleysRibs:
     LDA.L $7E780C                                                        ;A6DA0C;
     DEC A                                                                ;A6DA10;
@@ -10707,6 +11255,7 @@ AnimateRidleysRibs:
     RTS                                                                  ;A6DA70;
 
 
+%anchor($A6DA71)
 RidleyRib_AnimationData:
     dw $0014                                                             ;A6DA71;
     dw Tiles_Ridley_1                                                    ;A6DA73;
@@ -10722,10 +11271,12 @@ RidleyRib_AnimationData:
     dw Tiles_RidleysRibsAndClaws_3                                       ;A6DA87;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A6DA89)
 RidleyRibAnimationDataPointer:
     dw RidleyRib_AnimationData                                           ;A6DA89; Unused?
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A6DA8B)
 TransferGraphicsForRidleysClawsHoldingSamusOrBabyMetroid:
     LDX.W #RidleyClawGraphicsPointers_released                           ;A6DA8B;
     BCC .notHolding                                                      ;A6DA8E;
@@ -10757,14 +11308,17 @@ TransferGraphicsForRidleysClawsHoldingSamusOrBabyMetroid:
     RTS                                                                  ;A6DACF;
 
 
+%anchor($A6DAD0)
 RidleyClawGraphicsPointers_released:
     dw Tiles_Ridley_3                                                    ;A6DAD0;
     dw Tiles_Ridley_4                                                    ;A6DAD2;
 
+%anchor($A6DAD4)
 RidleyClawGraphicsPointers_holding:
     dw Tiles_RidleysRibsAndClaws_2                                       ;A6DAD4;
     dw Tiles_RidleysRibsAndClaws_5                                       ;A6DAD6;
 
+%anchor($A6DAD8)
 DrawRidleysWings:
     LDA.L $7E7820                                                        ;A6DAD8;
     BEQ .facingLeft                                                      ;A6DADC;
@@ -10815,6 +11369,7 @@ DrawRidleysWings:
     dw Spritemap_RidleyWings_FacingRight_SlightlyRaised                  ;A6DB26;
     dw Spritemap_RidleyWings_FacingRight_MostlyRaised                    ;A6DB28;
 
+%anchor($A6DB2A)
 DrawRidleyTail:
     LDA.W $0F86                                                          ;A6DB2A;
     AND.W #$0100                                                         ;A6DB2D;
@@ -10875,12 +11430,14 @@ DrawRidleyTail:
     STA.B $14                                                            ;A6DBBD;
     LDY.W #Spritemap_RidleyTail_Large                                    ;A6DBBF; fallthrough to GeneralPurposeRidleyDrawing
 
+%anchor($A6DBC2)
 GeneralPurposeRidleyDrawing_SetPalette:
     LDA.L $7E7818                                                        ;A6DBC2;
     STA.B $16                                                            ;A6DBC6;
     JMP.W RidleyGeneralUseDrawing                                        ;A6DBC8;
 
 
+%anchor($A6DBCB)
 GetBabyMetroidSpritemapPointerFromInstList:
     STA.B $00                                                            ;A6DBCB;
     INC A                                                                ;A6DBCD;
@@ -10937,6 +11494,7 @@ GetBabyMetroidSpritemapPointerFromInstList:
     RTS                                                                  ;A6DC12;
 
 
+%anchor($A6DC13)
 RidleyGeneralUseDrawing:
     LDA.W $0000,Y                                                        ;A6DC13;
     INY                                                                  ;A6DC16;
@@ -11003,38 +11561,45 @@ RidleyGeneralUseDrawing:
     RTS                                                                  ;A6DC8F;
 
 
+%anchor($A6DC90)
 Spritemap_RidleyTail_Large:
     dw $0001,$C3F8                                                       ;A6DC90;
     db $F8                                                               ;A6DC94;
     dw $31E0                                                             ;A6DC95;
 
+%anchor($A6DC97)
 Spritemap_RidleyTail_Medium:
     dw $0001,$C3F8                                                       ;A6DC97;
     db $F8                                                               ;A6DC9B;
     dw $31E2                                                             ;A6DC9C;
 
+%anchor($A6DC9E)
 Spritemap_RidleyTail_Small:
     dw $0001,$C3F8                                                       ;A6DC9E;
     db $F8                                                               ;A6DCA2;
     dw $31E4                                                             ;A6DCA3;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A6DCA5)
 UNUSED_Spritemap_RidleyTail_Large_A6DCA5:
     dw $0001,$C3F8                                                       ;A6DCA5;
     db $F8                                                               ;A6DCA9;
     dw $71E0                                                             ;A6DCAA;
 
+%anchor($A6DCAC)
 UNUSED_Spritemap_RidleyTail_Medium_A6DCAC:
     dw $0001,$C3F8                                                       ;A6DCAC;
     db $F8                                                               ;A6DCB0;
     dw $71E2                                                             ;A6DCB1;
 
+%anchor($A6DCB3)
 UNUSED_Spritemap_RidleyTail_Small_A6DCB3:
     dw $0001,$C3F8                                                       ;A6DCB3;
     db $F8                                                               ;A6DCB7;
     dw $71E4                                                             ;A6DCB8;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A6DCBA)
 RidleyTailTipSpritemapPointers:
     dw Spritemap_RidleyTailTip_PointingDown                              ;A6DCBA;
     dw Spritemap_RidleyTailTip_PointingDownDownRight                     ;A6DCBC;
@@ -11053,86 +11618,103 @@ RidleyTailTipSpritemapPointers:
     dw Spritemap_RidleyTailTip_PointingDownLeft                          ;A6DCD6;
     dw Spritemap_RidleyTailTip_PointingDownDownLeft                      ;A6DCD8;
 
+%anchor($A6DCDA)
 Spritemap_RidleyTailTip_PointingLeft:
     dw $0001,$C3F0                                                       ;A6DCDA;
     db $F8                                                               ;A6DCDE;
     dw $31E6                                                             ;A6DCDF;
 
+%anchor($A6DCE1)
 Spritemap_RidleyTailTip_PointingLeftUpLeft:
     dw $0001,$C3F0                                                       ;A6DCE1;
     db $F4                                                               ;A6DCE5;
     dw $31E8                                                             ;A6DCE6;
 
+%anchor($A6DCE8)
 Spritemap_RidleyTailTip_PointingUpLeft:
     dw $0001,$C3F2                                                       ;A6DCE8;
     db $F3                                                               ;A6DCEC;
     dw $31EA                                                             ;A6DCED;
 
+%anchor($A6DCEF)
 Spritemap_RidleyTailTip_PointingUpUpLeft:
     dw $0001,$C3F4                                                       ;A6DCEF;
     db $F0                                                               ;A6DCF3;
     dw $31EC                                                             ;A6DCF4;
 
+%anchor($A6DCF6)
 Spritemap_RidleyTailTip_PointingUp:
     dw $0001,$C3F8                                                       ;A6DCF6;
     db $F0                                                               ;A6DCFA;
     dw $31EE                                                             ;A6DCFB;
 
+%anchor($A6DCFD)
 Spritemap_RidleyTailTip_PointingUpUpRight:
     dw $0001,$C3FC                                                       ;A6DCFD;
     db $F0                                                               ;A6DD01;
     dw $71EC                                                             ;A6DD02;
 
+%anchor($A6DD04)
 Spritemap_RidleyTailTip_PointingUpRight:
     dw $0001,$C3FE                                                       ;A6DD04;
     db $F3                                                               ;A6DD08;
     dw $71EA                                                             ;A6DD09;
 
+%anchor($A6DD0B)
 Spritemap_RidleyTailTip_PointingRightUpRight:
     dw $0001,$C200                                                       ;A6DD0B;
     db $F4                                                               ;A6DD0F;
     dw $71E8                                                             ;A6DD10;
 
+%anchor($A6DD12)
 Spritemap_RidleyTailTip_PointingRight:
     dw $0001,$C200                                                       ;A6DD12;
     db $F8                                                               ;A6DD16;
     dw $71E6                                                             ;A6DD17;
 
+%anchor($A6DD19)
 Spritemap_RidleyTailTip_PointingRightDownRight:
     dw $0001,$C200                                                       ;A6DD19;
     db $FC                                                               ;A6DD1D;
     dw $F1E8                                                             ;A6DD1E;
 
+%anchor($A6DD20)
 Spritemap_RidleyTailTip_PointingDownRight:
     dw $0001,$C3FE                                                       ;A6DD20;
     db $FE                                                               ;A6DD24;
     dw $F1EA                                                             ;A6DD25;
 
+%anchor($A6DD27)
 Spritemap_RidleyTailTip_PointingDownDownRight:
     dw $0001,$C3FC                                                       ;A6DD27;
     db $00                                                               ;A6DD2B;
     dw $F1EC                                                             ;A6DD2C;
 
+%anchor($A6DD2E)
 Spritemap_RidleyTailTip_PointingDown:
     dw $0001,$C3F9                                                       ;A6DD2E;
     db $00                                                               ;A6DD32;
     dw $F1EE                                                             ;A6DD33;
 
+%anchor($A6DD35)
 Spritemap_RidleyTailTip_PointingDownDownLeft:
     dw $0001,$C3F4                                                       ;A6DD35;
     db $FF                                                               ;A6DD39;
     dw $B1EC                                                             ;A6DD3A;
 
+%anchor($A6DD3C)
 Spritemap_RidleyTailTip_PointingDownLeft:
     dw $0001,$C3F2                                                       ;A6DD3C;
     db $FE                                                               ;A6DD40;
     dw $B1EA                                                             ;A6DD41;
 
+%anchor($A6DD43)
 Spritemap_RidleyTailTip_PointingLeftDownLeft:
     dw $0001,$C3F0                                                       ;A6DD43;
     db $FC                                                               ;A6DD47;
     dw $B1E8                                                             ;A6DD48;
 
+%anchor($A6DD4A)
 Spritemap_RidleyWings_FacingLeft_FullyRaised:
     dw $0006,$002C                                                       ;A6DD4A;
     db $D7                                                               ;A6DD4E;
@@ -11148,6 +11730,7 @@ Spritemap_RidleyWings_FacingLeft_FullyRaised:
     db $D7                                                               ;A6DD67;
     dw $3104                                                             ;A6DD68;
 
+%anchor($A6DD6A)
 Spritemap_RidleyWings_FacingLeft_MostlyRaised:
     dw $0005,$002C                                                       ;A6DD6A;
     db $E4                                                               ;A6DD6E;
@@ -11161,6 +11744,7 @@ Spritemap_RidleyWings_FacingLeft_MostlyRaised:
     db $DC                                                               ;A6DD82;
     dw $3109                                                             ;A6DD83;
 
+%anchor($A6DD85)
 Spritemap_RidleyWings_FacingLeft_SlightlyRaised:
     dw $0003,$002C                                                       ;A6DD85;
     db $F0                                                               ;A6DD89;
@@ -11170,6 +11754,7 @@ Spritemap_RidleyWings_FacingLeft_SlightlyRaised:
     db $E8                                                               ;A6DD93;
     dw $3134                                                             ;A6DD94;
 
+%anchor($A6DD96)
 Spritemap_RidleyWings_FacingLeft_SlightlyLowered:
     dw $0003,$002C                                                       ;A6DD96;
     db $E8                                                               ;A6DD9A;
@@ -11179,6 +11764,7 @@ Spritemap_RidleyWings_FacingLeft_SlightlyLowered:
     db $E8                                                               ;A6DDA4;
     dw $B134                                                             ;A6DDA5;
 
+%anchor($A6DDA7)
 Spritemap_RidleyWings_FacingLeft_MostlyLowered:
     dw $0005,$002C                                                       ;A6DDA7;
     db $F2                                                               ;A6DDAB;
@@ -11192,6 +11778,7 @@ Spritemap_RidleyWings_FacingLeft_MostlyLowered:
     db $F2                                                               ;A6DDBF;
     dw $B109                                                             ;A6DDC0;
 
+%anchor($A6DDC2)
 Spritemap_RidleyWings_FacingLeft_FullyLowered:
     dw $0006,$002C                                                       ;A6DDC2;
     db $FF                                                               ;A6DDC6;
@@ -11207,6 +11794,7 @@ Spritemap_RidleyWings_FacingLeft_FullyLowered:
     db $F7                                                               ;A6DDDF;
     dw $B104                                                             ;A6DDE0;
 
+%anchor($A6DDE2)
 Spritemap_RidleyWings_FacingRight_FullyRaised:
     dw $0006,$01CC                                                       ;A6DDE2;
     db $D7                                                               ;A6DDE6;
@@ -11222,6 +11810,7 @@ Spritemap_RidleyWings_FacingRight_FullyRaised:
     db $D7                                                               ;A6DDFF;
     dw $7104                                                             ;A6DE00;
 
+%anchor($A6DE02)
 Spritemap_RidleyWings_FacingRight_MostlyRaised:
     dw $0005,$01CC                                                       ;A6DE02;
     db $E4                                                               ;A6DE06;
@@ -11235,6 +11824,7 @@ Spritemap_RidleyWings_FacingRight_MostlyRaised:
     db $DC                                                               ;A6DE1A;
     dw $7109                                                             ;A6DE1B;
 
+%anchor($A6DE1D)
 Spritemap_RidleyWings_FacingRight_SlightlyRaised:
     dw $0003,$01CC                                                       ;A6DE1D;
     db $F0                                                               ;A6DE21;
@@ -11244,6 +11834,7 @@ Spritemap_RidleyWings_FacingRight_SlightlyRaised:
     db $E8                                                               ;A6DE2B;
     dw $7134                                                             ;A6DE2C;
 
+%anchor($A6DE2E)
 Spritemap_RidleyWings_FacingRight_SlightlyLowered:
     dw $0003,$01CC                                                       ;A6DE2E;
     db $E8                                                               ;A6DE32;
@@ -11253,6 +11844,7 @@ Spritemap_RidleyWings_FacingRight_SlightlyLowered:
     db $E8                                                               ;A6DE3C;
     dw $F134                                                             ;A6DE3D;
 
+%anchor($A6DE3F)
 Spritemap_RidleyWings_FacingRight_MostlyLowered:
     dw $0005,$01CC                                                       ;A6DE3F;
     db $F2                                                               ;A6DE43;
@@ -11266,6 +11858,7 @@ Spritemap_RidleyWings_FacingRight_MostlyLowered:
     db $F2                                                               ;A6DE57;
     dw $F109                                                             ;A6DE58;
 
+%anchor($A6DE5A)
 Spritemap_RidleyWings_FacingRight_FullyLowered:
     dw $0006,$01CC                                                       ;A6DE5A;
     db $FF                                                               ;A6DE5E;
@@ -11281,6 +11874,7 @@ Spritemap_RidleyWings_FacingRight_FullyLowered:
     db $F7                                                               ;A6DE77;
     dw $F104                                                             ;A6DE78;
 
+%anchor($A6DE7A)
 CheckIfRidleyIsOnScreen:
     LDA.W $0F7E                                                          ;A6DE7A;
     BMI .offScreen                                                       ;A6DE7D;
@@ -11309,6 +11903,7 @@ CheckIfRidleyIsOnScreen:
     RTS                                                                  ;A6DEA5;
 
 
+%anchor($A6DEA6)
 RidleyTail_vs_SamusProjectile_CollisionDetection:
     LDA.W $0CCE                                                          ;A6DEA6;
     BNE .projectilesToCheck                                              ;A6DEA9;
@@ -11375,6 +11970,7 @@ RidleyTail_vs_SamusProjectile_CollisionDetection:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A6DF08)
 UNUSED_ChangeRidleyProjectileDirection_A6DF08:
     LDA.W $0C04,Y                                                        ;A6DF08;
     AND.W #$000F                                                         ;A6DF0B;
@@ -11400,6 +11996,7 @@ UNUSED_ChangeRidleyProjectileDirection_A6DF08:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($A6DF29)
 EfficientCollisionDetectionForSamusAt_12_14:
     LDA.W $0AF6                                                          ;A6DF29;
     SEC                                                                  ;A6DF2C;
@@ -11437,17 +12034,20 @@ EfficientCollisionDetectionForSamusAt_12_14:
     RTS                                                                  ;A6DF58;
 
 
+%anchor($A6DF59)
 RidleyHitbox_vs_Samus_Collision:
     JSL.L NormalEnemyTouchAI_NoDeathCheck_External                       ;A6DF59;
     JMP.W RTL_A6DFB6                                                     ;A6DF5D;
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A6DF60)
 UNUSED_RidleyDamagesSamus_A6DF60:
     JSR.W UNUSED_RidleyDamagesSamus_A6DF66                               ;A6DF60;
     JMP.W RTL_A6DFB6                                                     ;A6DF63;
 
 
+%anchor($A6DF66)
 UNUSED_RidleyDamagesSamus_A6DF66:
     JSL.L DealSuitAdjustedEnemyDamageToSamus                             ;A6DF66;
     LDA.W #$0060                                                         ;A6DF6A;
@@ -11468,6 +12068,7 @@ UNUSED_RidleyDamagesSamus_A6DF66:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($A6DF8A)
 EnemyShot_Ridley:
     LDA.W $079F                                                          ;A6DF8A;
     CMP.W #$0002                                                         ;A6DF8D;
@@ -11492,13 +12093,16 @@ EnemyShot_Ridley:
     BRA RTL_A6DFB6                                                       ;A6DFB0;
 
 
+%anchor($A6DFB2)
 PowerBombReaction_Ridley:
     JSL.L NormalEnemyPowerBombAI_NoDeathCheck_External                   ;A6DFB2; fallthrough to RTL_A6DFB6
 
+%anchor($A6DFB6)
 RTL_A6DFB6:
     RTL                                                                  ;A6DFB6;
 
 
+%anchor($A6DFB7)
 SetRidleyAsDead:
     LDA.W $0F8C                                                          ;A6DFB7;
     BNE .return                                                          ;A6DFBA;
@@ -11516,6 +12120,7 @@ SetRidleyAsDead:
     RTL                                                                  ;A6DFD8;
 
 
+%anchor($A6DFD9)
 RidleyTail_vs_Samus_Interaction:
     LDA.W #$000E                                                         ;A6DFD9;
     STA.B $16                                                            ;A6DFDC;
@@ -11548,6 +12153,7 @@ RidleyTail_vs_Samus_Interaction:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A6E01B)
 UNUSED_ProjectileCollision_A6E01B:
     LDX.W $0E54                                                          ;A6E01B;
     LDA.W $0B64                                                          ;A6E01E;
@@ -11604,6 +12210,7 @@ UNUSED_ProjectileCollision_A6E01B:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($A6E088)
 KillProjectilesWithRidleyTailTip:
     LDA.W $0F86                                                          ;A6E088;
     AND.W #$0400                                                         ;A6E08B;
@@ -11634,6 +12241,7 @@ KillProjectilesWithRidleyTailTip:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A6E0C2)
 UNUSED_TailProjectileCollision_A6E0C2:
     LDA.L $7E207C                                                        ;A6E0C2;
     STA.B $12                                                            ;A6E0C6;
@@ -11675,6 +12283,7 @@ UNUSED_TailProjectileCollision_A6E0C2:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($A6E126)
 TailProjectileCollision:
     LDA.W $0B64,Y                                                        ;A6E126;
     STA.B $12                                                            ;A6E129;
@@ -11696,54 +12305,67 @@ TailProjectileCollision:
     RTS                                                                  ;A6E14E;
 
 
+%anchor($A6E14F)
 Palette_Ridley:
     dw $0000,$56BA,$41B2,$1447,$0403,$4E15,$3570,$24CB                   ;A6E14F;
     dw $1868,$5E5F,$183F,$1014,$031F,$01DA,$00F5,$0C63                   ;A6E15F;
 
+%anchor($A6E16F)
 Palette_CeresRidleyInit:
     dw $0000,$7E20,$6560,$2060,$1000,$7940,$5D00,$4CA0                   ;A6E16F;
     dw $3CA0,$43FF,$0113,$000F,$175C,$0299,$01D6,$57E0                   ;A6E17F;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A6E18F)
 UNUSED_Palette_Ridley_A6E18F:
     dw $0000,$6BF5,$06E1,$0641,$05A1,$5E5F,$183F,$1014                   ;A6E18F;
     dw $080A,$0404,$4F9F,$3ED8,$2E12,$6F70,$7FFF,$5EE0                   ;A6E19F;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A6E1AF)
 Palette_RidleyExplosion_0:
     dw $3800,$56BA,$41B2,$1447,$0403,$4E15,$3570,$24CB                   ;A6E1AF;
 
+%anchor($A6E1BF)
 Palette_RidleyExplosion_1:
     dw $1868,$5E5F,$183F,$1014,$031F,$01DA,$00F5,$0C63                   ;A6E1BF;
 
+%anchor($A6E1CF)
 Palette_NorfairRidleyInit:
     dw $3800,$6B5A,$5652,$28E7,$1863,$62B5,$4A10,$396B                   ;A6E1CF;
     dw $3129,$43FF,$0113,$000F,$175C,$0299,$01D6,$3BE0                   ;A6E1DF;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A6E1EF)
 UNUSED_Palette_Ridley_A6E1EF:
     dw $3800                                                             ;A6E1EF;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A6E1F1)
 Palette_BabyMetroidCutscene_EndOfInstList:
     dw $6BF5,$06E1,$0641,$05A1,$5E5F,$183F,$1014,$080A                   ;A6E1F1;
     dw $0404,$4F9F,$3ED8,$2E12,$6F70,$7FFF,$5EE0                         ;A6E201;
 
+%anchor($A6E20F)
 Palette_BabyMetroidCutscene_HorizontalSquish:
     dw $6BF5,$06E1,$0641,$05A1,$5E5F,$183F,$1014,$080A                   ;A6E20F;
     dw $0404,$4F9F,$3ED8,$2E12,$6F70,$7FFF,$5EE0                         ;A6E21F;
 
+%anchor($A6E22D)
 Palette_BabyMetroidCutscene_Round:
     dw $77F8,$1344,$12A4,$1204,$6ABF,$249F,$1C77,$146D                   ;A6E22D;
     dw $1067                                                             ;A6E23D;
 
+%anchor($A6E23F)
 Palette_CeresSteam:
     dw $5BFF,$4B38,$3A72,$7BD3,$7FFF,$6B43                               ;A6E23F;
 
+%anchor($A6E24B)
 Palette_BabyMetroidCutscene_VerticalSquish:
     dw $7FFB,$1FA7,$1F07,$1E67,$771F,$30FF,$28DA,$20D0                   ;A6E24B;
     dw $1CCA,$67FF,$579B,$46D5,$7BD6,$7FFF,$77A6                         ;A6E25B;
 
+%anchor($A6E269)
 CeresRidleyEyeFadeInIndices:
     db $0F,$0E,$0D,$0C,$0B,$0A,$09,$08,$07,$06,$05,$04,$03,$02,$01,$00   ;A6E269;
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00   ;A6E279;
@@ -11751,12 +12373,15 @@ CeresRidleyEyeFadeInIndices:
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00   ;A6E299;
     db $FF                                                               ;A6E2A9;
 
+%anchor($A6E2AA)
 CeresRidleyEyeFadeInColors_0:
     dw $031F                                                             ;A6E2AA;
 
+%anchor($A6E2AC)
 CeresRidleyEyeFadeInColors_1:
     dw $01DA                                                             ;A6E2AC;
 
+%anchor($A6E2AE)
 CeresRidleyEyeFadeInColors_2:
     dw $00F5,$02DD,$01B8,$00D3,$029A,$0196,$00D2,$0278                   ;A6E2AE;
     dw $0174,$00B0,$0236,$0153,$00AF,$0214,$0131,$008E                   ;A6E2BE;
@@ -11765,6 +12390,7 @@ CeresRidleyEyeFadeInColors_2:
     dw $0067,$0025,$0086,$0045,$0024,$0064,$0023,$0022                   ;A6E2EE;
     dw $0022,$0021,$0001,$0000,$0000,$0000                               ;A6E2FE;
 
+%anchor($A6E30A)
 Palette_Ridley_FadeIn:
     dw $0000,$0000,$0000,$0000,$0000,$0000,$0000,$0000                   ;A6E30A;
     dw $0000,$0000,$0000,$0421,$0401,$0000,$0000,$0421                   ;A6E31A;
@@ -11789,18 +12415,22 @@ Palette_Ridley_FadeIn:
     dw $20AA,$1447,$561D,$143D,$0C12,$56BA,$41B2,$1447                   ;A6E44A;
     dw $0403,$4E15,$3570,$24CB,$1868,$5E5F,$183F,$1014                   ;A6E45A;
 
+%anchor($A6E46A)
 Palette_Ridley_HealthBased_Below9000:
     dw $4E7A,$3D73,$1449,$0405,$45D6,$3151,$20AD,$184A                   ;A6E46A;
     dw $561F,$183F,$1015,$02BF,$019A                                     ;A6E47A;
 
+%anchor($A6E484)
 Palette_Ridley_HealthBased_Below5400:
     dw $00D6,$4A5A,$3973,$142A,$0407,$45B6,$3132,$20AE                   ;A6E484;
     dw $184B,$51FF,$183F,$1015,$029F                                     ;A6E494;
 
+%anchor($A6E49E)
 Palette_Ridley_HealthBased_Below1800:
     dw $019A,$00D6,$4A3B,$3954,$142B,$0808,$41B7,$2D33                   ;A6E49E;
     dw $20AF,$184C,$4DDF,$183F,$1016,$067F,$057B,$04B7                   ;A6E4AE;
 
+%anchor($A6E4BE)
 Instruction_Ridley_QueueRoarSFX:
     LDA.W #$0059                                                         ;A6E4BE;
     STA.L $7E781E                                                        ;A6E4C1;
@@ -11808,12 +12438,14 @@ Instruction_Ridley_QueueRoarSFX:
     RTL                                                                  ;A6E4C9;
 
 
+%anchor($A6E4CA)
 Instruction_Ridley_ResetRoarFlag:
     LDA.W #$0000                                                         ;A6E4CA;
     STA.L $7E781E                                                        ;A6E4CD;
     RTL                                                                  ;A6E4D1;
 
 
+%anchor($A6E4D2)
 Inst_Ridley_GotoYAndSetTimerTo8IfNotNorfairOrSamusLowEnergy:
     LDA.W $079F                                                          ;A6E4D2;
     CMP.W #$0002                                                         ;A6E4D5;
@@ -11824,6 +12456,7 @@ Inst_Ridley_GotoYAndSetTimerTo8IfNotNorfairOrSamusLowEnergy:
     LDA.W #$0008                                                         ;A6E4E2;
     STA.L $7E7800                                                        ;A6E4E5;
 
+%anchor($A6E4E9)
 Instruction_Ridley_GotoY:
     LDA.W $0000,Y                                                        ;A6E4E9;
     TAY                                                                  ;A6E4EC;
@@ -11831,6 +12464,7 @@ Instruction_Ridley_GotoY:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A6E4EE)
 UNUSED_Instruction_RidleyCeres_GotoYIfNotHoldingBaby_A6E4EE:
     LDA.L $7E7836                                                        ;A6E4EE;
     BNE Instruction_Ridley_GotoY                                         ;A6E4F2;
@@ -11839,6 +12473,7 @@ UNUSED_Instruction_RidleyCeres_GotoYIfNotHoldingBaby_A6E4EE:
     BRA Instruction_Ridley_GotoY                                         ;A6E4F6;
 
 
+%anchor($A6E4F8)
 UNUSED_Instruction_RidleyCeres_GotoYIfHoldingBaby_A6E4F8:
     LDA.L $7E7836                                                        ;A6E4F8;
     BEQ Instruction_Ridley_GotoY                                         ;A6E4FC;
@@ -11848,6 +12483,7 @@ UNUSED_Instruction_RidleyCeres_GotoYIfHoldingBaby_A6E4F8:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($A6E501)
 Inst_RidleyCeres_UpdateSamusPrevPosition_HeldYDisplacement:
     LDA.W $0AF6                                                          ;A6E501;
     STA.W $0B10                                                          ;A6E504;
@@ -11856,18 +12492,21 @@ Inst_RidleyCeres_UpdateSamusPrevPosition_HeldYDisplacement:
     LDA.W $0000,Y                                                        ;A6E50D;
     STA.L $7E783A                                                        ;A6E510;
 
+%anchor($A6E514)
 Instruction_Ridley_SkipToNextInstruction:
     INY                                                                  ;A6E514;
     INY                                                                  ;A6E515;
     RTL                                                                  ;A6E516;
 
 
+%anchor($A6E517)
 Instruction_Ridley_GotoYIfNotFacingLeft:
     LDA.L $7E7820                                                        ;A6E517;
     BEQ Instruction_Ridley_SkipToNextInstruction                         ;A6E51B;
     BRA Instruction_Ridley_GotoY                                         ;A6E51D;
 
 
+%anchor($A6E51F)
 Instruction_Ridley_MoveRidleyWithArgsInY:
     LDA.W $0000,Y                                                        ;A6E51F;
     CLC                                                                  ;A6E522;
@@ -11884,6 +12523,7 @@ Instruction_Ridley_MoveRidleyWithArgsInY:
     RTL                                                                  ;A6E537;
 
 
+%anchor($A6E538)
 InstList_Ridley_FacingLeft_Initial:
     dw Instruction_Ridley_GotoYIfNotFacingLeft                           ;A6E538;
     dw InstList_Ridley_FacingRight_Initial                               ;A6E53A;
@@ -11891,11 +12531,13 @@ InstList_Ridley_FacingLeft_Initial:
     dw ExtendedSpritemap_Ridley_FacingLeft                               ;A6E53E;
     dw Instruction_Common_Sleep                                          ;A6E540;
 
+%anchor($A6E542)
 InstList_Ridley_FacingRight_Initial:
     dw $000C                                                             ;A6E542;
     dw ExtendedSpritemap_Ridley_FacingRight                              ;A6E544;
     dw Instruction_CommonA6_Sleep                                        ;A6E546;
 
+%anchor($A6E548)
 InstList_RidleyCeres_FacingLeft_Lunging:
     dw Instruction_Ridley_GotoYIfNotFacingLeft                           ;A6E548;
     dw UNUSED_InstList_RidleyCeres_FacingRight_Lunging_A6E576            ;A6E54A;
@@ -11916,6 +12558,7 @@ InstList_RidleyCeres_FacingLeft_Lunging:
     dw ExtendedSpritemap_Ridley_FacingLeft                               ;A6E572;
     dw Instruction_Common_Sleep                                          ;A6E574;
 
+%anchor($A6E576)
 UNUSED_InstList_RidleyCeres_FacingRight_Lunging_A6E576:
     dw Inst_RidleyCeres_UpdateSamusPrevPosition_HeldYDisplacement        ;A6E576;
     dw $0000,$0004                                                       ;A6E578;
@@ -11935,6 +12578,7 @@ UNUSED_InstList_RidleyCeres_FacingRight_Lunging_A6E576:
     dw Instruction_Common_Sleep                                          ;A6E59E;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A6E5A0)
 UNUSED_InstList_RidleyCeres_FacingLeft_A6E5A0:
     dw Instruction_Ridley_GotoYIfNotFacingLeft                           ;A6E5A0;
     dw UNUSED_InstList_RidleyCeres_FacingRight_A6E5FE                    ;A6E5A2;
@@ -11945,6 +12589,7 @@ UNUSED_InstList_RidleyCeres_FacingLeft_A6E5A0:
     dw UNUSED_InstList_RidleyCeres_FacingLeft_HoldingBaby_A6E5B2         ;A6E5AE;
     dw Instruction_CommonA6_Sleep                                        ;A6E5B0;
 
+%anchor($A6E5B2)
 UNUSED_InstList_RidleyCeres_FacingLeft_HoldingBaby_A6E5B2:
     dw Inst_RidleyCeres_UpdateSamusPrevPosition_HeldYDisplacement        ;A6E5B2;
     dw $0002,$0003                                                       ;A6E5B4;
@@ -11952,6 +12597,7 @@ UNUSED_InstList_RidleyCeres_FacingLeft_HoldingBaby_A6E5B2:
     dw UNUSED_Instruction_RidleyCeres_GotoYIfHoldingBaby_A6E4F8          ;A6E5BA;
     dw UNUSED_InstList_RidleyCeres_FacingLeft_HoldingBaby_A6E5C8         ;A6E5BC;
 
+%anchor($A6E5BE)
 UNUSED_InstList_RidleyCeres_FacingLeft_HoldingBaby_A6E5BE:
     dw $0001                                                             ;A6E5BE;
     dw ExtendedSpritemap_Ridley_FacingLeft_LegsHalfExtended              ;A6E5C0;
@@ -11959,6 +12605,7 @@ UNUSED_InstList_RidleyCeres_FacingLeft_HoldingBaby_A6E5BE:
     dw UNUSED_InstList_RidleyCeres_FacingLeft_HoldingBaby_A6E5BE         ;A6E5C4;
     dw UNUSED_InstList_RidleyCeres_FacingLeft_HoldingBaby_A6E5F4         ;A6E5C6;
 
+%anchor($A6E5C8)
 UNUSED_InstList_RidleyCeres_FacingLeft_HoldingBaby_A6E5C8:
     dw Inst_RidleyCeres_UpdateSamusPrevPosition_HeldYDisplacement        ;A6E5C8;
     dw $0004,$0004                                                       ;A6E5CA;
@@ -11966,6 +12613,7 @@ UNUSED_InstList_RidleyCeres_FacingLeft_HoldingBaby_A6E5C8:
     dw UNUSED_Instruction_RidleyCeres_GotoYIfHoldingBaby_A6E4F8          ;A6E5D0;
     dw UNUSED_InstList_RidleyCeres_FacingLeft_HoldingBaby_A6E5DE         ;A6E5D2;
 
+%anchor($A6E5D4)
 UNUSED_InstList_RidleyCeres_FacingLeft_HoldingBaby_A6E5D4:
     dw $0001                                                             ;A6E5D4;
     dw ExtendedSpritemap_Ridley_FacingLeft_LegsExtended                  ;A6E5D6;
@@ -11973,6 +12621,7 @@ UNUSED_InstList_RidleyCeres_FacingLeft_HoldingBaby_A6E5D4:
     dw UNUSED_InstList_RidleyCeres_FacingLeft_HoldingBaby_A6E5D4         ;A6E5DA;
     dw UNUSED_InstList_RidleyCeres_FacingLeft_HoldingBaby_A6E5DE         ;A6E5DC;
 
+%anchor($A6E5DE)
 UNUSED_InstList_RidleyCeres_FacingLeft_HoldingBaby_A6E5DE:
     dw Inst_RidleyCeres_UpdateSamusPrevPosition_HeldYDisplacement        ;A6E5DE;
     dw $0002,$0003                                                       ;A6E5E0;
@@ -11980,6 +12629,7 @@ UNUSED_InstList_RidleyCeres_FacingLeft_HoldingBaby_A6E5DE:
     dw UNUSED_Instruction_RidleyCeres_GotoYIfHoldingBaby_A6E4F8          ;A6E5E6;
     dw UNUSED_InstList_RidleyCeres_FacingLeft_HoldingBaby_A6E5F4         ;A6E5E8;
 
+%anchor($A6E5EA)
 UNUSED_InstList_RidleyCeres_FacingLeft_HoldingBaby_A6E5EA:
     dw $0001                                                             ;A6E5EA;
     dw ExtendedSpritemap_Ridley_FacingLeft_LegsHalfExtended              ;A6E5EC;
@@ -11987,12 +12637,14 @@ UNUSED_InstList_RidleyCeres_FacingLeft_HoldingBaby_A6E5EA:
     dw UNUSED_InstList_RidleyCeres_FacingLeft_HoldingBaby_A6E5EA         ;A6E5F0;
     dw UNUSED_InstList_RidleyCeres_FacingLeft_HoldingBaby_A6E5F4         ;A6E5F2;
 
+%anchor($A6E5F4)
 UNUSED_InstList_RidleyCeres_FacingLeft_HoldingBaby_A6E5F4:
     dw Inst_RidleyCeres_UpdateSamusPrevPosition_HeldYDisplacement        ;A6E5F4;
     dw $0000,$0002                                                       ;A6E5F6;
     dw ExtendedSpritemap_Ridley_FacingLeft                               ;A6E5FA;
     dw Instruction_Common_Sleep                                          ;A6E5FC;
 
+%anchor($A6E5FE)
 UNUSED_InstList_RidleyCeres_FacingRight_A6E5FE:
     dw Inst_RidleyCeres_UpdateSamusPrevPosition_HeldYDisplacement        ;A6E5FE;
     dw $0000,$0002                                                       ;A6E600;
@@ -12001,6 +12653,7 @@ UNUSED_InstList_RidleyCeres_FacingRight_A6E5FE:
     dw UNUSED_InstList_RidleyCeres_FacingRight_HoldingBaby_A6E60C        ;A6E608;
     dw Instruction_CommonA6_Sleep                                        ;A6E60A;
 
+%anchor($A6E60C)
 UNUSED_InstList_RidleyCeres_FacingRight_HoldingBaby_A6E60C:
     dw Inst_RidleyCeres_UpdateSamusPrevPosition_HeldYDisplacement        ;A6E60C;
     dw $0002,$0003                                                       ;A6E60E;
@@ -12008,6 +12661,7 @@ UNUSED_InstList_RidleyCeres_FacingRight_HoldingBaby_A6E60C:
     dw UNUSED_Instruction_RidleyCeres_GotoYIfHoldingBaby_A6E4F8          ;A6E614;
     dw UNUSED_InstList_RidleyCeres_FacingRight_HoldingBaby_A6E622        ;A6E616;
 
+%anchor($A6E618)
 UNUSED_InstList_RidleyCeres_FacingRight_HoldingBaby_A6E618:
     dw $0001                                                             ;A6E618;
     dw ExtendedSpritemap_Ridley_FacingRight_LegsHalfExtended             ;A6E61A;
@@ -12015,6 +12669,7 @@ UNUSED_InstList_RidleyCeres_FacingRight_HoldingBaby_A6E618:
     dw UNUSED_InstList_RidleyCeres_FacingRight_HoldingBaby_A6E618        ;A6E61E;
     dw UNUSED_InstList_RidleyCeres_FacingRight_HoldingBaby_A6E64E        ;A6E620;
 
+%anchor($A6E622)
 UNUSED_InstList_RidleyCeres_FacingRight_HoldingBaby_A6E622:
     dw Inst_RidleyCeres_UpdateSamusPrevPosition_HeldYDisplacement        ;A6E622;
     dw $0004,$0004                                                       ;A6E624;
@@ -12022,6 +12677,7 @@ UNUSED_InstList_RidleyCeres_FacingRight_HoldingBaby_A6E622:
     dw UNUSED_Instruction_RidleyCeres_GotoYIfHoldingBaby_A6E4F8          ;A6E62A;
     dw UNUSED_InstList_RidleyCeres_FacingRight_HoldingBaby_A6E638        ;A6E62C;
 
+%anchor($A6E62E)
 UNUSED_InstList_RidleyCeres_FacingRight_HoldingBaby_A6E62E:
     dw $0001                                                             ;A6E62E;
     dw ExtendedSpritemap_Ridley_FacingLeft_LegsExtended                  ;A6E630;
@@ -12029,6 +12685,7 @@ UNUSED_InstList_RidleyCeres_FacingRight_HoldingBaby_A6E62E:
     dw UNUSED_InstList_RidleyCeres_FacingRight_HoldingBaby_A6E62E        ;A6E634;
     dw UNUSED_InstList_RidleyCeres_FacingRight_HoldingBaby_A6E638        ;A6E636;
 
+%anchor($A6E638)
 UNUSED_InstList_RidleyCeres_FacingRight_HoldingBaby_A6E638:
     dw Inst_RidleyCeres_UpdateSamusPrevPosition_HeldYDisplacement        ;A6E638;
     dw $0002,$0003                                                       ;A6E63A;
@@ -12036,6 +12693,7 @@ UNUSED_InstList_RidleyCeres_FacingRight_HoldingBaby_A6E638:
     dw UNUSED_Instruction_RidleyCeres_GotoYIfHoldingBaby_A6E4F8          ;A6E640;
     dw UNUSED_InstList_RidleyCeres_FacingRight_HoldingBaby_A6E64E        ;A6E642;
 
+%anchor($A6E644)
 UNUSED_InstList_RidleyCeres_FacingRight_HoldingBaby_A6E644:
     dw $0001                                                             ;A6E644;
     dw ExtendedSpritemap_Ridley_FacingLeft_LegsHalfExtended              ;A6E646;
@@ -12043,6 +12701,7 @@ UNUSED_InstList_RidleyCeres_FacingRight_HoldingBaby_A6E644:
     dw UNUSED_InstList_RidleyCeres_FacingRight_HoldingBaby_A6E644        ;A6E64A;
     dw UNUSED_InstList_RidleyCeres_FacingRight_HoldingBaby_A6E64E        ;A6E64C;
 
+%anchor($A6E64E)
 UNUSED_InstList_RidleyCeres_FacingRight_HoldingBaby_A6E64E:
     dw Inst_RidleyCeres_UpdateSamusPrevPosition_HeldYDisplacement        ;A6E64E;
     dw $0000,$0002                                                       ;A6E650;
@@ -12050,6 +12709,7 @@ UNUSED_InstList_RidleyCeres_FacingRight_HoldingBaby_A6E64E:
     dw Instruction_Common_Sleep                                          ;A6E656;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A6E658)
 InstList_RidleyCeres_FacingLeft_ExtendLegs:
     dw Instruction_Ridley_GotoYIfNotFacingLeft                           ;A6E658;
     dw InstList_RidleyCeres_FacingRight_ExtendLegs                       ;A6E65A;
@@ -12064,6 +12724,7 @@ InstList_RidleyCeres_FacingLeft_ExtendLegs:
     dw ExtendedSpritemap_Ridley_FacingLeft_LegsExtended                  ;A6E672;
     dw Instruction_Common_Sleep                                          ;A6E674;
 
+%anchor($A6E676)
 InstList_RidleyCeres_FacingRight_ExtendLegs:
     dw Inst_RidleyCeres_UpdateSamusPrevPosition_HeldYDisplacement        ;A6E676;
     dw $0000,$0004                                                       ;A6E678;
@@ -12076,6 +12737,7 @@ InstList_RidleyCeres_FacingRight_ExtendLegs:
     dw ExtendedSpritemap_Ridley_FacingRight_LegsExtended                 ;A6E68C;
     dw Instruction_Common_Sleep                                          ;A6E68E;
 
+%anchor($A6E690)
 InstList_Ridley_FacingLeft_OpeningRoar:
     dw Instruction_Ridley_GotoYIfNotFacingLeft                           ;A6E690;
     dw InstList_Ridley_FacingRight_OpeningRoar                           ;A6E692;
@@ -12093,6 +12755,7 @@ InstList_Ridley_FacingLeft_OpeningRoar:
     dw ExtendedSpritemap_Ridley_FacingLeft                               ;A6E6AA;
     dw Instruction_CommonA6_Sleep                                        ;A6E6AC;
 
+%anchor($A6E6AE)
 InstList_Ridley_FacingRight_OpeningRoar:
     dw $0006                                                             ;A6E6AE;
     dw ExtendedSpritemap_Ridley_FacingRight                              ;A6E6B0;
@@ -12108,6 +12771,7 @@ InstList_Ridley_FacingRight_OpeningRoar:
     dw ExtendedSpritemap_Ridley_FacingRight                              ;A6E6C4;
     dw Instruction_Common_Sleep                                          ;A6E6C6;
 
+%anchor($A6E6C8)
 InstList_Ridley_FacingLeft_DeathRoar:
     dw Instruction_Ridley_GotoYIfNotFacingLeft                           ;A6E6C8;
     dw InstList_Ridley_FacingRight_DeathRoar                             ;A6E6CA;
@@ -12121,6 +12785,7 @@ InstList_Ridley_FacingLeft_DeathRoar:
     dw Instruction_Ridley_ResetRoarFlag                                  ;A6E6DA;
     dw Instruction_Common_Sleep                                          ;A6E6DC;
 
+%anchor($A6E6DE)
 InstList_Ridley_FacingRight_DeathRoar:
     dw $0006                                                             ;A6E6DE;
     dw ExtendedSpritemap_Ridley_FacingRight                              ;A6E6E0;
@@ -12132,6 +12797,7 @@ InstList_Ridley_FacingRight_DeathRoar:
     dw Instruction_Ridley_ResetRoarFlag                                  ;A6E6EC;
     dw Instruction_Common_Sleep                                          ;A6E6EE;
 
+%anchor($A6E6F0)
 InstList_Ridley_TurnFromLeftToRight:
     dw Instruction_Ridley_SetDirectionToForwardTurning                   ;A6E6F0;
     dw $0001                                                             ;A6E6F2;
@@ -12145,6 +12811,7 @@ InstList_Ridley_TurnFromLeftToRight:
     dw ExtendedSpritemap_Ridley_FacingRight                              ;A6E702;
     dw Instruction_CommonA6_Sleep                                        ;A6E704;
 
+%anchor($A6E706)
 InstList_Ridley_TurnFromRightToLeft:
     dw Instruction_Ridley_SetDirectionToForwardTurning                   ;A6E706;
     dw $0001                                                             ;A6E708;
@@ -12158,6 +12825,7 @@ InstList_Ridley_TurnFromRightToLeft:
     dw ExtendedSpritemap_Ridley_FacingLeft                               ;A6E718;
     dw Instruction_Common_Sleep                                          ;A6E71A;
 
+%anchor($A6E71C)
 Instruction_Ridley_SetDirectionToLeft_UpdateTailParts:
     LDA.W #$0000                                                         ;A6E71C;
     STA.L $7E7820                                                        ;A6E71F;
@@ -12165,12 +12833,14 @@ Instruction_Ridley_SetDirectionToLeft_UpdateTailParts:
     RTL                                                                  ;A6E726;
 
 
+%anchor($A6E727)
 Instruction_Ridley_SetDirectionToForwardTurning:
     LDA.W #$0001                                                         ;A6E727;
     STA.L $7E7820                                                        ;A6E72A;
     RTL                                                                  ;A6E72E;
 
 
+%anchor($A6E72F)
 Instruction_Ridley_SetDirectionToRight_UpdateTailParts:
     LDA.W #$0002                                                         ;A6E72F;
     STA.L $7E7820                                                        ;A6E732;
@@ -12178,6 +12848,7 @@ Instruction_Ridley_SetDirectionToRight_UpdateTailParts:
     RTL                                                                  ;A6E739;
 
 
+%anchor($A6E73A)
 InstList_Ridley_FacingLeft_Fireballing_0:
     dw Instruction_Ridley_GotoYIfNotFacingLeft                           ;A6E73A;
     dw InstList_Ridley_FacingRight_Fireballing_0                         ;A6E73C;
@@ -12237,12 +12908,14 @@ InstList_Ridley_FacingLeft_Fireballing_0:
     dw $0008                                                             ;A6E7A8;
     dw ExtendedSpritemap_Ridley_FacingLeft_MouthHalfOpen                 ;A6E7AA;
 
+%anchor($A6E7AC)
 InstList_Ridley_FacingLeft_Fireballing_1:
     dw Instruction_Ridley_ResetRoarFlag                                  ;A6E7AC;
     dw $0001                                                             ;A6E7AE;
     dw ExtendedSpritemap_Ridley_FacingLeft                               ;A6E7B0;
     dw Instruction_Common_Sleep                                          ;A6E7B2;
 
+%anchor($A6E7B4)
 InstList_Ridley_FacingRight_Fireballing_0:
     dw Inst_Ridley_GotoYAndSetTimerTo8IfNotNorfairOrSamusLowEnergy       ;A6E7B4;
     dw InstList_Ridley_FacingRight_Fireballing_1                         ;A6E7B6;
@@ -12299,6 +12972,7 @@ InstList_Ridley_FacingRight_Fireballing_0:
     dw $0008                                                             ;A6E81C;
     dw ExtendedSpritemap_Ridley_FacingRight_MouthHalfOpen                ;A6E81E;
 
+%anchor($A6E820)
 InstList_Ridley_FacingRight_Fireballing_1:
     dw Instruction_Ridley_ResetRoarFlag                                  ;A6E820;
     dw $0001                                                             ;A6E822;
@@ -12306,6 +12980,7 @@ InstList_Ridley_FacingRight_Fireballing_1:
     dw Instruction_Common_Sleep                                          ;A6E826;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A6E828)
 UNUSED_SpawnUnusedEnemyProjectiles_A6E828:
     LDA.W #$0000                                                         ;A6E828;
     JSL.L UNUSED_SpawnUnusedEnemyProjectile_A6E840                       ;A6E82B;
@@ -12315,6 +12990,7 @@ UNUSED_SpawnUnusedEnemyProjectiles_A6E828:
     JSL.L UNUSED_SpawnUnusedEnemyProjectile_A6E840                       ;A6E839;
     LDA.W #$0003                                                         ;A6E83D;
 
+%anchor($A6E840)
 UNUSED_SpawnUnusedEnemyProjectile_A6E840:
     STA.W $0FB4                                                          ;A6E840;
     PHY                                                                  ;A6E843;
@@ -12325,6 +13001,7 @@ UNUSED_SpawnUnusedEnemyProjectile_A6E840:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($A6E84D)
 Instruction_Ridley_CalculateFireballAngleAndXYSpeeds:
     PHX                                                                  ;A6E84D;
     PHY                                                                  ;A6E84E;
@@ -12423,14 +13100,17 @@ Instruction_Ridley_CalculateFireballAngleAndXYSpeeds:
     RTL                                                                  ;A6E903;
 
 
+%anchor($A6E904)
 FireLeadsFireball:
     LDA.W #$0000                                                         ;A6E904;
     BRA SpawnRidleyFireball                                              ;A6E907;
 
 
+%anchor($A6E909)
 FireTrailsFireball:
     LDA.W #$000E                                                         ;A6E909;
 
+%anchor($A6E90C)
 SpawnRidleyFireball:
     STA.W $1995                                                          ;A6E90C;
     LDA.L $7E7820                                                        ;A6E90F;
@@ -12441,6 +13121,7 @@ SpawnRidleyFireball:
     RTL                                                                  ;A6E91C;
 
 
+%anchor($A6E91D)
 InstList_RidleyCeres_FacingLeft_FlyUp_StartMainAI:
     dw Instruction_Ridley_GotoYIfNotFacingLeft                           ;A6E91D;
     dw InstList_RidleyCeres_FacingRight_FlyUp_StartMainAI                ;A6E91F;
@@ -12459,6 +13140,7 @@ InstList_RidleyCeres_FacingLeft_FlyUp_StartMainAI:
     dw ExtendedSpritemap_Ridley_FacingLeft                               ;A6E941;
     dw Instruction_Common_Sleep                                          ;A6E943;
 
+%anchor($A6E945)
 InstList_RidleyCeres_FacingRight_FlyUp_StartMainAI:
     dw $0003                                                             ;A6E945;
     dw ExtendedSpritemap_Ridley_FacingRight                              ;A6E947;
@@ -12475,6 +13157,7 @@ InstList_RidleyCeres_FacingRight_FlyUp_StartMainAI:
     dw ExtendedSpritemap_Ridley_FacingRight                              ;A6E965;
     dw Instruction_Common_Sleep                                          ;A6E967;
 
+%anchor($A6E969)
 Instruction_RidleyCeres_SetRidleyMainAI_SetVerticalSpeed:
     LDA.W #Function_RidleyCeres_StartupLiftoff_FacingLeft                ;A6E969;
     STA.W $0FA8                                                          ;A6E96C;
@@ -12483,6 +13166,7 @@ Instruction_RidleyCeres_SetRidleyMainAI_SetVerticalSpeed:
     RTL                                                                  ;A6E975;
 
 
+%anchor($A6E976)
 Instruction_Ridley_SetRidleyMainAI_SetVerticalSpeed:
     LDA.W #Function_Ridley_Startup_Liftoff_FacingRight                   ;A6E976;
     STA.W $0FA8                                                          ;A6E979;
@@ -12491,6 +13175,7 @@ Instruction_Ridley_SetRidleyMainAI_SetVerticalSpeed:
     RTL                                                                  ;A6E982;
 
 
+%anchor($A6E983)
 ExtendedSpritemap_Ridley_FacingLeft:
     dw $0004,$000F,$0016                                                 ;A6E983;
     dw Spritemap_Ridley_FacingLeft_Legs_PulledUp                         ;A6E989;
@@ -12505,6 +13190,7 @@ ExtendedSpritemap_Ridley_FacingLeft:
     dw Spritemap_Ridley_FacingLeft_HeadNeck_MouthClosed                  ;A6E9A1;
     dw Hitbox_Ridley_FacingLeft_MouthClosed                              ;A6E9A3;
 
+%anchor($A6E9A5)
 ExtendedSpritemap_Ridley_FacingRight:
     dw $0004,$FFF1,$0016                                                 ;A6E9A5;
     dw Spritemap_Ridley_FacingRight_Legs_PulledUp                        ;A6E9AB;
@@ -12519,6 +13205,7 @@ ExtendedSpritemap_Ridley_FacingRight:
     dw Spritemap_Ridley_FacingRight_HeadNeck_MouthClosed                 ;A6E9C3;
     dw Hitbox_Ridley_FacingRight_MouthClosed                             ;A6E9C5;
 
+%anchor($A6E9C7)
 ExtendedSpritemap_Ridley_FacingLeft_MouthHalfOpen:
     dw $0004,$000F,$0016                                                 ;A6E9C7;
     dw Spritemap_Ridley_FacingLeft_Legs_PulledUp                         ;A6E9CD;
@@ -12533,6 +13220,7 @@ ExtendedSpritemap_Ridley_FacingLeft_MouthHalfOpen:
     dw Spritemap_Ridley_FacingLeft_HeadNeck_MouthHalfOpened              ;A6E9E5;
     dw Hitbox_Ridley_FacingLeft_MouthHalfOpen                            ;A6E9E7;
 
+%anchor($A6E9E9)
 ExtendedSpritemap_Ridley_FacingLeft_MouthOpen:
     dw $0004,$000F,$0016                                                 ;A6E9E9;
     dw Spritemap_Ridley_FacingLeft_Legs_PulledUp                         ;A6E9EF;
@@ -12547,6 +13235,7 @@ ExtendedSpritemap_Ridley_FacingLeft_MouthOpen:
     dw Spritemap_Ridley_FacingLeft_HeadNeck_MouthOpen                    ;A6EA07;
     dw Hitbox_Ridley_FacingLeft_MouthOpen                                ;A6EA09;
 
+%anchor($A6EA0B)
 ExtendedSpritemap_Ridley_FacingRight_MouthHalfOpen:
     dw $0004,$FFF1,$0016                                                 ;A6EA0B;
     dw Spritemap_Ridley_FacingRight_Legs_PulledUp                        ;A6EA11;
@@ -12561,6 +13250,7 @@ ExtendedSpritemap_Ridley_FacingRight_MouthHalfOpen:
     dw Spritemap_Ridley_FacingRight_HeadNeck_MouthHalfOpened             ;A6EA29;
     dw Hitbox_Ridley_FacingRight_MouthHalfOpened                         ;A6EA2B;
 
+%anchor($A6EA2D)
 ExtendedSpritemap_Ridley_FacingRight_MouthOpen:
     dw $0004,$FFF1,$0016                                                 ;A6EA2D;
     dw Spritemap_Ridley_FacingRight_Legs_PulledUp                        ;A6EA33;
@@ -12575,6 +13265,7 @@ ExtendedSpritemap_Ridley_FacingRight_MouthOpen:
     dw Spritemap_Ridley_FacingRight_HeadNeck_MouthOpen                   ;A6EA4B;
     dw Hitbox_Ridley_FacingRight_MouthOpen                               ;A6EA4D;
 
+%anchor($A6EA4F)
 ExtendedSpritemap_Ridley_FacingLeft_LegsHalfExtended:
     dw $0004,$000F,$0016                                                 ;A6EA4F;
     dw Spritemap_Ridley_FacingLeft_Legs_HalfExtended                     ;A6EA55;
@@ -12589,6 +13280,7 @@ ExtendedSpritemap_Ridley_FacingLeft_LegsHalfExtended:
     dw Spritemap_Ridley_FacingLeft_HeadNeck_MouthClosed                  ;A6EA6D;
     dw Hitbox_Ridley_FacingLeft_MouthClosed                              ;A6EA6F;
 
+%anchor($A6EA71)
 ExtendedSpritemap_Ridley_FacingLeft_LegsExtended:
     dw $0004,$000F,$0016                                                 ;A6EA71;
     dw Spritemap_Ridley_FacingLeft_Legs_Extended                         ;A6EA77;
@@ -12603,6 +13295,7 @@ ExtendedSpritemap_Ridley_FacingLeft_LegsExtended:
     dw Spritemap_Ridley_FacingLeft_HeadNeck_MouthClosed                  ;A6EA8F;
     dw Hitbox_Ridley_FacingLeft_MouthClosed                              ;A6EA91;
 
+%anchor($A6EA93)
 ExtendedSpritemap_Ridley_FacingRight_LegsHalfExtended:
     dw $0004,$FFF1,$0016                                                 ;A6EA93;
     dw Spritemap_Ridley_FacingRight_Legs_HalfExtended                    ;A6EA99;
@@ -12617,6 +13310,7 @@ ExtendedSpritemap_Ridley_FacingRight_LegsHalfExtended:
     dw Spritemap_Ridley_FacingRight_HeadNeck_MouthClosed                 ;A6EAB1;
     dw Hitbox_Ridley_FacingRight_MouthClosed                             ;A6EAB3;
 
+%anchor($A6EAB5)
 ExtendedSpritemap_Ridley_FacingRight_LegsExtended:
     dw $0004,$FFF1,$0016                                                 ;A6EAB5;
     dw Spritemap_Ridley_FacingRight_Legs_Extended                        ;A6EABB;
@@ -12631,11 +13325,13 @@ ExtendedSpritemap_Ridley_FacingRight_LegsExtended:
     dw Spritemap_Ridley_FacingRight_HeadNeck_MouthClosed                 ;A6EAD3;
     dw Hitbox_Ridley_FacingRight_MouthClosed                             ;A6EAD5;
 
+%anchor($A6EAD7)
 ExtendedSpritemap_Ridley_FacingForward:
     dw $0001,$0000,$FFFA                                                 ;A6EAD7;
     dw Spritemap_Ridley_FacingForward                                    ;A6EADD;
     dw Hitbox_Ridley_FacingForward                                       ;A6EADF;
 
+%anchor($A6EAE1)
 Hitbox_Ridley_FacingLeft_MouthClosed:
     dw $0002,$FFF4,$FFE6,$000B,$000D                                     ;A6EAE1;
     dw RidleyHitbox_vs_Samus_Collision                                   ;A6EAEB;
@@ -12644,6 +13340,7 @@ Hitbox_Ridley_FacingLeft_MouthClosed:
     dw RidleyHitbox_vs_Samus_Collision                                   ;A6EAF7;
     dw EnemyShot_Ridley                                                  ;A6EAF9;
 
+%anchor($A6EAFB)
 Hitbox_Ridley_FacingLeft_MouthHalfOpen:
     dw $0002,$FFD7,$FFED,$FFEB,$FFF7                                     ;A6EAFB;
     dw RidleyHitbox_vs_Samus_Collision                                   ;A6EB05;
@@ -12652,6 +13349,7 @@ Hitbox_Ridley_FacingLeft_MouthHalfOpen:
     dw RidleyHitbox_vs_Samus_Collision                                   ;A6EB11;
     dw EnemyShot_Ridley                                                  ;A6EB13;
 
+%anchor($A6EB15)
 Hitbox_Ridley_FacingLeft_MouthOpen:
     dw $0002,$FFDB,$FFD8,$FFF2,$FFE1                                     ;A6EB15;
     dw RidleyHitbox_vs_Samus_Collision                                   ;A6EB1F;
@@ -12660,43 +13358,51 @@ Hitbox_Ridley_FacingLeft_MouthOpen:
     dw RidleyHitbox_vs_Samus_Collision                                   ;A6EB2B;
     dw EnemyShot_Ridley                                                  ;A6EB2D;
 
+%anchor($A6EB2F)
 Hitbox_Ridley_FacingLeft_LegsPulledUp:
     dw $0001,$FFF1,$FFF6,$0007,$0002                                     ;A6EB2F;
     dw RidleyHitbox_vs_Samus_Collision                                   ;A6EB39;
     dw EnemyShot_Ridley                                                  ;A6EB3B;
 
+%anchor($A6EB3D)
 Hitbox_Ridley_FacingLeft_LegsHalfExtended:
     dw $0001,$FFEF,$FFF7,$0006,$000F                                     ;A6EB3D;
     dw RidleyHitbox_vs_Samus_Collision                                   ;A6EB47;
     dw EnemyShot_Ridley                                                  ;A6EB49;
 
+%anchor($A6EB4B)
 Hitbox_Ridley_FacingLeft_LegsExtended:
     dw $0001,$FFF2,$FFFF,$000A,$0017                                     ;A6EB4B;
     dw RidleyHitbox_vs_Samus_Collision                                   ;A6EB55;
     dw EnemyShot_Ridley                                                  ;A6EB57;
 
+%anchor($A6EB59)
 Hitbox_Ridley_FacingLeft_Claws:
     dw $0001,$FFF1,$FFFE,$FFFF,$0008                                     ;A6EB59;
     dw RidleyHitbox_vs_Samus_Collision                                   ;A6EB63;
     dw EnemyShot_Ridley                                                  ;A6EB65;
 
+%anchor($A6EB67)
 Hitbox_Ridley_FacingLeft_Torso:
     dw $0001,$FFF0,$FFEC,$000C,$0015                                     ;A6EB67;
     dw RidleyHitbox_vs_Samus_Collision                                   ;A6EB71;
     dw EnemyShot_Ridley                                                  ;A6EB73;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A6EB75)
 UNUSED_Hitbox_Ridley_FacingLeft_A6EB75:
     dw $0001,$FFF0,$FFEC,$000C,$0015                                     ;A6EB75;
     dw RidleyHitbox_vs_Samus_Collision                                   ;A6EB7F;
     dw EnemyShot_Ridley                                                  ;A6EB81;
 
+%anchor($A6EB83)
 UNUSED_Hitbox_Ridley_FacingLeft_A6EB83:
     dw $0001,$FFF0,$FFEC,$000C,$0015                                     ;A6EB83;
     dw RidleyHitbox_vs_Samus_Collision                                   ;A6EB8D;
     dw EnemyShot_Ridley                                                  ;A6EB8F;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A6EB91)
 Hitbox_Ridley_FacingForward:
     dw $0002,$FFF0,$FFE0,$0010,$0022                                     ;A6EB91;
     dw RidleyHitbox_vs_Samus_Collision                                   ;A6EB9B;
@@ -12705,6 +13411,7 @@ Hitbox_Ridley_FacingForward:
     dw RidleyHitbox_vs_Samus_Collision                                   ;A6EBA7;
     dw EnemyShot_Ridley                                                  ;A6EBA9;
 
+%anchor($A6EBAB)
 Hitbox_Ridley_FacingRight_MouthClosed:
     dw $0002,$FFF4,$FFE7,$000B,$000D                                     ;A6EBAB;
     dw RidleyHitbox_vs_Samus_Collision                                   ;A6EBB5;
@@ -12713,6 +13420,7 @@ Hitbox_Ridley_FacingRight_MouthClosed:
     dw RidleyHitbox_vs_Samus_Collision                                   ;A6EBC1;
     dw EnemyShot_Ridley                                                  ;A6EBC3;
 
+%anchor($A6EBC5)
 Hitbox_Ridley_FacingRight_MouthHalfOpened:
     dw $0002,$FFF3,$FFE3,$0014,$0005                                     ;A6EBC5;
     dw RidleyHitbox_vs_Samus_Collision                                   ;A6EBCF;
@@ -12721,6 +13429,7 @@ Hitbox_Ridley_FacingRight_MouthHalfOpened:
     dw RidleyHitbox_vs_Samus_Collision                                   ;A6EBDB;
     dw EnemyShot_Ridley                                                  ;A6EBDD;
 
+%anchor($A6EBDF)
 Hitbox_Ridley_FacingRight_MouthOpen:
     dw $0002,$FFF6,$FFE1,$0019,$0008                                     ;A6EBDF;
     dw RidleyHitbox_vs_Samus_Collision                                   ;A6EBE9;
@@ -12729,43 +13438,51 @@ Hitbox_Ridley_FacingRight_MouthOpen:
     dw RidleyHitbox_vs_Samus_Collision                                   ;A6EBF5;
     dw EnemyShot_Ridley                                                  ;A6EBF7;
 
+%anchor($A6EBF9)
 Hitbox_Ridley_FacingRight_LegsPulledUp:
     dw $0001,$FFF6,$FFF6,$0011,$0002                                     ;A6EBF9;
     dw RidleyHitbox_vs_Samus_Collision                                   ;A6EC03;
     dw EnemyShot_Ridley                                                  ;A6EC05;
 
+%anchor($A6EC07)
 Hitbox_Ridley_FacingRight_LegsHalfExtended:
     dw $0001,$FFF7,$FFF8,$0011,$000F                                     ;A6EC07;
     dw RidleyHitbox_vs_Samus_Collision                                   ;A6EC11;
     dw EnemyShot_Ridley                                                  ;A6EC13;
 
+%anchor($A6EC15)
 Hitbox_Ridley_FacingRight_LegsExtended:
     dw $0001,$FFF5,$FFF8,$000E,$0017                                     ;A6EC15;
     dw RidleyHitbox_vs_Samus_Collision                                   ;A6EC1F;
     dw EnemyShot_Ridley                                                  ;A6EC21;
 
+%anchor($A6EC23)
 Hitbox_Ridley_FacingRight_Claws:
     dw $0001,$0001,$FFFE,$000E,$0009                                     ;A6EC23;
     dw RidleyHitbox_vs_Samus_Collision                                   ;A6EC2D;
     dw EnemyShot_Ridley                                                  ;A6EC2F;
 
+%anchor($A6EC31)
 Hitbox_Ridley_FacingRight_Torso:
     dw $0001,$FFF3,$FFEA,$000E,$0015                                     ;A6EC31;
     dw RidleyHitbox_vs_Samus_Collision                                   ;A6EC3B;
     dw EnemyShot_Ridley                                                  ;A6EC3D;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A6EC3F)
 UNUSED_Hitbox_Ridley_FacingRight_A6EC3F:
     dw $0001,$FFF3,$FFEA,$000E,$0015                                     ;A6EC3F;
     dw RidleyHitbox_vs_Samus_Collision                                   ;A6EC49;
     dw EnemyShot_Ridley                                                  ;A6EC4B;
 
+%anchor($A6EC4D)
 UNUSED_Hitbox_Ridley_FacingRight_A6EC4D:
     dw $0001,$FFF3,$FFEA,$000E,$0015                                     ;A6EC4D;
     dw RidleyHitbox_vs_Samus_Collision                                   ;A6EC57;
     dw EnemyShot_Ridley                                                  ;A6EC59;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A6EC5B)
 Spritemap_Ridley_FacingLeft_HeadNeck_MouthClosed:
     dw $000C,$01E4                                                       ;A6EC5B;
     db $12                                                               ;A6EC5F;
@@ -12793,6 +13510,7 @@ Spritemap_Ridley_FacingLeft_HeadNeck_MouthClosed:
     db $E2                                                               ;A6EC96;
     dw $3160                                                             ;A6EC97;
 
+%anchor($A6EC99)
 Spritemap_Ridley_FacingLeft_HeadNeck_MouthHalfOpened:
     dw $000D,$0006                                                       ;A6EC99;
     db $F0                                                               ;A6EC9D;
@@ -12822,6 +13540,7 @@ Spritemap_Ridley_FacingLeft_HeadNeck_MouthHalfOpened:
     db $E8                                                               ;A6ECD9;
     dw $316C                                                             ;A6ECDA;
 
+%anchor($A6ECDC)
 Spritemap_Ridley_FacingLeft_HeadNeck_MouthOpen:
     dw $000F,$01E0                                                       ;A6ECDC;
     db $05                                                               ;A6ECE0;
@@ -12855,6 +13574,7 @@ Spritemap_Ridley_FacingLeft_HeadNeck_MouthOpen:
     db $D5                                                               ;A6ED26;
     dw $318A                                                             ;A6ED27;
 
+%anchor($A6ED29)
 Spritemap_Ridley_FacingLeft_Legs_PulledUp:
     dw $0007,$81FA                                                       ;A6ED29;
     db $FF                                                               ;A6ED2D;
@@ -12872,6 +13592,7 @@ Spritemap_Ridley_FacingLeft_Legs_PulledUp:
     db $F0                                                               ;A6ED4B;
     dw $31A7                                                             ;A6ED4C;
 
+%anchor($A6ED4E)
 Spritemap_Ridley_FacingLeft_Legs_HalfExtended:
     dw $0006,$01F9                                                       ;A6ED4E;
     db $04                                                               ;A6ED52;
@@ -12887,6 +13608,7 @@ Spritemap_Ridley_FacingLeft_Legs_HalfExtended:
     db $F4                                                               ;A6ED6B;
     dw $31C0                                                             ;A6ED6C;
 
+%anchor($A6ED6E)
 Spritemap_Ridley_FacingLeft_Legs_Extended:
     dw $0006,$01EF                                                       ;A6ED6E;
     db $08                                                               ;A6ED72;
@@ -12902,11 +13624,13 @@ Spritemap_Ridley_FacingLeft_Legs_Extended:
     db $F8                                                               ;A6ED8B;
     dw $31C4                                                             ;A6ED8C;
 
+%anchor($A6ED8E)
 Spritemap_Ridley_FacingLeft_Claws:
     dw $0001,$81F0                                                       ;A6ED8E;
     db $FC                                                               ;A6ED92;
     dw $3140                                                             ;A6ED93;
 
+%anchor($A6ED95)
 Spritemap_Ridley_FacingLeft_Torso:
     dw $0006,$81E8                                                       ;A6ED95;
     db $03                                                               ;A6ED99;
@@ -12922,6 +13646,7 @@ Spritemap_Ridley_FacingLeft_Torso:
     db $E8                                                               ;A6EDB2;
     dw $3100                                                             ;A6EDB3;
 
+%anchor($A6EDB5)
 Spritemap_Ridley_FacingForward:
     dw $0020,$0000                                                       ;A6EDB5;
     db $20                                                               ;A6EDB9;
@@ -12989,6 +13714,7 @@ Spritemap_Ridley_FacingForward:
     db $E0                                                               ;A6EE54;
     dw $30E2                                                             ;A6EE55;
 
+%anchor($A6EE57)
 Spritemap_Ridley_FacingRight_HeadNeck_MouthClosed:
     dw $000C,$0014                                                       ;A6EE57;
     db $12                                                               ;A6EE5B;
@@ -13016,6 +13742,7 @@ Spritemap_Ridley_FacingRight_HeadNeck_MouthClosed:
     db $E2                                                               ;A6EE92;
     dw $7160                                                             ;A6EE93;
 
+%anchor($A6EE95)
 Spritemap_Ridley_FacingRight_HeadNeck_MouthHalfOpened:
     dw $000D,$01F2                                                       ;A6EE95;
     db $F0                                                               ;A6EE99;
@@ -13045,6 +13772,7 @@ Spritemap_Ridley_FacingRight_HeadNeck_MouthHalfOpened:
     db $E8                                                               ;A6EED5;
     dw $716C                                                             ;A6EED6;
 
+%anchor($A6EED8)
 Spritemap_Ridley_FacingRight_HeadNeck_MouthOpen:
     dw $000F,$0018                                                       ;A6EED8;
     db $05                                                               ;A6EEDC;
@@ -13078,6 +13806,7 @@ Spritemap_Ridley_FacingRight_HeadNeck_MouthOpen:
     db $D5                                                               ;A6EF22;
     dw $718A                                                             ;A6EF23;
 
+%anchor($A6EF25)
 Spritemap_Ridley_FacingRight_Legs_PulledUp:
     dw $0007,$81F6                                                       ;A6EF25;
     db $FF                                                               ;A6EF29;
@@ -13095,6 +13824,7 @@ Spritemap_Ridley_FacingRight_Legs_PulledUp:
     db $F0                                                               ;A6EF47;
     dw $71A7                                                             ;A6EF48;
 
+%anchor($A6EF4A)
 Spritemap_Ridley_FacingRight_Legs_HalfExtended:
     dw $0006,$01FF                                                       ;A6EF4A;
     db $04                                                               ;A6EF4E;
@@ -13110,6 +13840,7 @@ Spritemap_Ridley_FacingRight_Legs_HalfExtended:
     db $F4                                                               ;A6EF67;
     dw $71C0                                                             ;A6EF68;
 
+%anchor($A6EF6A)
 Spritemap_Ridley_FacingRight_Legs_Extended:
     dw $0006,$0009                                                       ;A6EF6A;
     db $08                                                               ;A6EF6E;
@@ -13125,11 +13856,13 @@ Spritemap_Ridley_FacingRight_Legs_Extended:
     db $F8                                                               ;A6EF87;
     dw $71C4                                                             ;A6EF88;
 
+%anchor($A6EF8A)
 Spritemap_Ridley_FacingRight_Claws:
     dw $0001,$8000                                                       ;A6EF8A;
     db $FC                                                               ;A6EF8E;
     dw $7140                                                             ;A6EF8F;
 
+%anchor($A6EF91)
 Spritemap_Ridley_FacingRight_Torso:
     dw $0006,$8008                                                       ;A6EF91;
     db $03                                                               ;A6EF95;
@@ -13145,6 +13878,7 @@ Spritemap_Ridley_FacingRight_Torso:
     db $E8                                                               ;A6EFAE;
     dw $7100                                                             ;A6EFAF;
 
+%anchor($A6EFB1)
 InitAI_CeresSteam:
     LDX.W $0E54                                                          ;A6EFB1;
     STZ.W $0F98,X                                                        ;A6EFB4;
@@ -13171,10 +13905,12 @@ InitAI_CeresSteam:
     LDA.W InitAI_CeresSteam_initialFunctionPointers,Y                    ;A6EFEE;
     STA.W $0FA8,X                                                        ;A6EFF1;
 
+%anchor($A6EFF4)
 InitAI_CeresSteam_return:
     RTL                                                                  ;A6EFF4;
 
 
+%anchor($A6EFF5)
 InitAI_CeresSteam_instListPointers:
     dw InstList_CeresSteam_Up_0                                          ;A6EFF5;
     dw InstList_CeresSteam_Left_0                                        ;A6EFF7;
@@ -13183,6 +13919,7 @@ InitAI_CeresSteam_instListPointers:
     dw InstList_CeresSteam_Left_0                                        ;A6EFFD;
     dw InstList_CeresSteam_Right_0                                       ;A6EFFF;
 
+%anchor($A6F001)
 InitAI_CeresSteam_initialFunctionPointers:
     dw InitAI_CeresSteam_return                                          ;A6F001;
     dw InitAI_CeresSteam_return                                          ;A6F003;
@@ -13191,6 +13928,7 @@ InitAI_CeresSteam_initialFunctionPointers:
     dw Func_CeresSteam_CalculateGraphicalOffsetInRotatingElevRoom        ;A6F009;
     dw Func_CeresSteam_CalculateGraphicalOffsetInRotatingElevRoom        ;A6F00B;
 
+%anchor($A6F00D)
 MainAI_CeresSteam:
     LDX.W $0E54                                                          ;A6F00D;
     LDA.W #$7FFF                                                         ;A6F010;
@@ -13198,6 +13936,7 @@ MainAI_CeresSteam:
     JMP.W ($0FA8,X)                                                      ;A6F016;
 
 
+%anchor($A6F019)
 Func_CeresSteam_CalculateGraphicalOffsetInRotatingElevRoom:
     LDA.W $0F7A,X                                                        ;A6F019;
     STA.B $12                                                            ;A6F01C;
@@ -13216,6 +13955,7 @@ Func_CeresSteam_CalculateGraphicalOffsetInRotatingElevRoom:
     RTL                                                                  ;A6F03E;
 
 
+%anchor($A6F03F)
 EnemyTouch_CeresSteam:
     LDX.W $0E54                                                          ;A6F03F;
     LDA.W #$7FFF                                                         ;A6F042;
@@ -13224,6 +13964,7 @@ EnemyTouch_CeresSteam:
     RTL                                                                  ;A6F04C;
 
 
+%anchor($A6F04D)
 InstList_CeresSteam_Up_0:
     dw Instruction_CeresSteam_SetToIntangibleAndInvisible                ;A6F04D;
     dw $0001                                                             ;A6F04F;
@@ -13232,12 +13973,14 @@ InstList_CeresSteam_Up_0:
     dw InstList_CeresSteam_Up_0                                          ;A6F055;
     dw InstList_CeresSteam_Up_2                                          ;A6F057;
 
+%anchor($A6F059)
 InstList_CeresSteam_Up_1:
     dw Instruction_CeresSteam_SetToIntangibleAndInvisible                ;A6F059;
     dw $0040                                                             ;A6F05B;
     dw ExtendedSpritemap_CeresSteam_Up_0                                 ;A6F05D;
     dw Instruction_CeresSteam_SetToTangibleAndVisible                    ;A6F05F;
 
+%anchor($A6F061)
 InstList_CeresSteam_Up_2:
     dw $0003                                                             ;A6F061;
     dw ExtendedSpritemap_CeresSteam_Up_0                                 ;A6F063;
@@ -13256,6 +13999,7 @@ InstList_CeresSteam_Up_2:
     dw Instruction_Common_GotoY                                          ;A6F07D;
     dw InstList_CeresSteam_Up_1                                          ;A6F07F;
 
+%anchor($A6F081)
 InstList_CeresSteam_Left_0:
     dw Instruction_CeresSteam_SetToIntangibleAndInvisible                ;A6F081;
     dw $0001                                                             ;A6F083;
@@ -13264,12 +14008,14 @@ InstList_CeresSteam_Left_0:
     dw InstList_CeresSteam_Left_0                                        ;A6F089;
     dw InstList_CeresSteam_Left_2                                        ;A6F08B;
 
+%anchor($A6F08D)
 InstList_CeresSteam_Left_1:
     dw Instruction_CeresSteam_SetToIntangibleAndInvisible                ;A6F08D;
     dw $0040                                                             ;A6F08F;
     dw ExtendedSpritemap_CeresSteam_Left_0                               ;A6F091;
     dw Instruction_CeresSteam_SetToTangibleAndVisible                    ;A6F093;
 
+%anchor($A6F095)
 InstList_CeresSteam_Left_2:
     dw $0003                                                             ;A6F095;
     dw ExtendedSpritemap_CeresSteam_Left_0                               ;A6F097;
@@ -13288,6 +14034,7 @@ InstList_CeresSteam_Left_2:
     dw Instruction_Common_GotoY                                          ;A6F0B1;
     dw InstList_CeresSteam_Left_1                                        ;A6F0B3;
 
+%anchor($A6F0B5)
 InstList_CeresSteam_Down_0:
     dw Instruction_CeresSteam_SetToIntangibleAndInvisible                ;A6F0B5;
     dw $0001                                                             ;A6F0B7;
@@ -13296,12 +14043,14 @@ InstList_CeresSteam_Down_0:
     dw InstList_CeresSteam_Down_0                                        ;A6F0BD;
     dw InstList_CeresSteam_Down_2                                        ;A6F0BF;
 
+%anchor($A6F0C1)
 InstList_CeresSteam_Down_1:
     dw Instruction_CeresSteam_SetToIntangibleAndInvisible                ;A6F0C1;
     dw $0040                                                             ;A6F0C3;
     dw ExtendedSpritemap_CeresSteam_Down_0                               ;A6F0C5;
     dw Instruction_CeresSteam_SetToTangibleAndVisible                    ;A6F0C7;
 
+%anchor($A6F0C9)
 InstList_CeresSteam_Down_2:
     dw $0003                                                             ;A6F0C9;
     dw ExtendedSpritemap_CeresSteam_Down_0                               ;A6F0CB;
@@ -13320,6 +14069,7 @@ InstList_CeresSteam_Down_2:
     dw Instruction_Common_GotoY                                          ;A6F0E5;
     dw InstList_CeresSteam_Down_1                                        ;A6F0E7;
 
+%anchor($A6F0E9)
 InstList_CeresSteam_Right_0:
     dw Instruction_CeresSteam_SetToIntangibleAndInvisible                ;A6F0E9;
     dw $0001                                                             ;A6F0EB;
@@ -13328,12 +14078,14 @@ InstList_CeresSteam_Right_0:
     dw InstList_CeresSteam_Right_0                                       ;A6F0F1;
     dw InstList_CeresSteam_Right_2                                       ;A6F0F3;
 
+%anchor($A6F0F5)
 InstList_CeresSteam_Right_1:
     dw Instruction_CeresSteam_SetToIntangibleAndInvisible                ;A6F0F5;
     dw $0040                                                             ;A6F0F7;
     dw ExtendedSpritemap_CeresSteam_Right_0                              ;A6F0F9;
     dw Instruction_CeresSteam_SetToTangibleAndVisible                    ;A6F0FB;
 
+%anchor($A6F0FD)
 InstList_CeresSteam_Right_2:
     dw $0003                                                             ;A6F0FD;
     dw ExtendedSpritemap_CeresSteam_Right_0                              ;A6F0FF;
@@ -13352,6 +14104,7 @@ InstList_CeresSteam_Right_2:
     dw Instruction_Common_GotoY                                          ;A6F119;
     dw InstList_CeresSteam_Right_1                                       ;A6F11B;
 
+%anchor($A6F11D)
 Instruction_CeresSteam_SetToIntangibleAndInvisible:
     LDA.W $0F86,X                                                        ;A6F11D;
     ORA.W #$0500                                                         ;A6F120;
@@ -13359,6 +14112,7 @@ Instruction_CeresSteam_SetToIntangibleAndInvisible:
     RTL                                                                  ;A6F126;
 
 
+%anchor($A6F127)
 Instruction_CeresSteam_DecActivationTimer_Decide_GotoYOrY2:
     DEC.W $0FAE,X                                                        ;A6F127;
     BEQ .gotoY2                                                          ;A6F12A;
@@ -13371,6 +14125,7 @@ Instruction_CeresSteam_DecActivationTimer_Decide_GotoYOrY2:
     LDA.W $0002,Y                                                        ;A6F131;
     TAY                                                                  ;A6F134; fallthrough to Instruction_CeresSteam_SetToTangibleAndVisible
 
+%anchor($A6F135)
 Instruction_CeresSteam_SetToTangibleAndVisible:
     LDA.W $0F86,X                                                        ;A6F135;
     AND.W #$FBFF                                                         ;A6F138; >.< #$FAFF
@@ -13379,254 +14134,305 @@ Instruction_CeresSteam_SetToTangibleAndVisible:
     RTL                                                                  ;A6F141;
 
 
+%anchor($A6F142)
 ExtendedSpritemap_CeresSteam_Up_0:
     dw $1001,$0000,$0000                                                 ;A6F142;
     dw Spritemap_CeresSteam_Up_0                                         ;A6F148;
     dw Hitbox_CeresSteam_Up_0                                            ;A6F14A;
 
+%anchor($A6F14C)
 ExtendedSpritemap_CeresSteam_Up_1:
     dw $1001,$0000,$0000                                                 ;A6F14C;
     dw Spritemap_CeresSteam_Up_1                                         ;A6F152;
     dw Hitbox_CeresSteam_Up_1                                            ;A6F154;
 
+%anchor($A6F156)
 ExtendedSpritemap_CeresSteam_Up_2:
     dw $1001,$0000,$0000                                                 ;A6F156;
     dw Spritemap_CeresSteam_Up_2                                         ;A6F15C;
     dw Hitbox_CeresSteam_Up_2                                            ;A6F15E;
 
+%anchor($A6F160)
 ExtendedSpritemap_CeresSteam_Up_3:
     dw $1001,$0000,$0000                                                 ;A6F160;
     dw Spritemap_CeresSteam_Up_3                                         ;A6F166;
     dw Hitbox_CeresSteam_Up_3                                            ;A6F168;
 
+%anchor($A6F16A)
 ExtendedSpritemap_CeresSteam_Up_4:
     dw $1001,$0000,$0000                                                 ;A6F16A;
     dw Spritemap_CeresSteam_Up_4                                         ;A6F170;
     dw Hitbox_CeresSteam_Up_4                                            ;A6F172;
 
+%anchor($A6F174)
 ExtendedSpritemap_CeresSteam_Up_5:
     dw $1001,$0000,$0000                                                 ;A6F174;
     dw Spritemap_CeresSteam_Up_5                                         ;A6F17A;
     dw Hitbox_CeresSteam_Nothing                                         ;A6F17C;
 
+%anchor($A6F17E)
 ExtendedSpritemap_CeresSteam_Up_6:
     dw $1001,$0000,$0000                                                 ;A6F17E;
     dw Spritemap_CeresSteam_Up_6                                         ;A6F184;
     dw Hitbox_CeresSteam_Nothing                                         ;A6F186;
 
+%anchor($A6F188)
 ExtendedSpritemap_CeresSteam_Left_0:
     dw $1001,$0000,$0000                                                 ;A6F188;
     dw Spritemap_CeresSteam_Left_0                                       ;A6F18E;
     dw Hitbox_CeresSteam_Left_0                                          ;A6F190;
 
+%anchor($A6F192)
 ExtendedSpritemap_CeresSteam_Left_1:
     dw $1001,$0000,$0000                                                 ;A6F192;
     dw Spritemap_CeresSteam_Left_1                                       ;A6F198;
     dw Hitbox_CeresSteam_Left_1                                          ;A6F19A;
 
+%anchor($A6F19C)
 ExtendedSpritemap_CeresSteam_Left_2:
     dw $1001,$0000,$0000                                                 ;A6F19C;
     dw Spritemap_CeresSteam_Left_2                                       ;A6F1A2;
     dw Hitbox_CeresSteam_Left_2                                          ;A6F1A4;
 
+%anchor($A6F1A6)
 ExtendedSpritemap_CeresSteam_Left_3:
     dw $1001,$0000,$0000                                                 ;A6F1A6;
     dw Spritemap_CeresSteam_Left_3                                       ;A6F1AC;
     dw Hitbox_CeresSteam_Left_3                                          ;A6F1AE;
 
+%anchor($A6F1B0)
 ExtendedSpritemap_CeresSteam_Left_4:
     dw $1001,$0000,$0000                                                 ;A6F1B0;
     dw Spritemap_CeresSteam_Left_4                                       ;A6F1B6;
     dw Hitbox_CeresSteam_Left_4                                          ;A6F1B8;
 
+%anchor($A6F1BA)
 ExtendedSpritemap_CeresSteam_Left_5:
     dw $1001,$0000,$0000                                                 ;A6F1BA;
     dw Spritemap_CeresSteam_Left_5                                       ;A6F1C0;
     dw Hitbox_CeresSteam_Nothing                                         ;A6F1C2;
 
+%anchor($A6F1C4)
 ExtendedSpritemap_CeresSteam_Left_6:
     dw $1001,$0000,$0000                                                 ;A6F1C4;
     dw Spritemap_CeresSteam_Left_6                                       ;A6F1CA;
     dw Hitbox_CeresSteam_Nothing                                         ;A6F1CC;
 
+%anchor($A6F1CE)
 ExtendedSpritemap_CeresSteam_Down_0:
     dw $1001,$0000,$0000                                                 ;A6F1CE;
     dw Spritemap_CeresSteam_Down_0                                       ;A6F1D4;
     dw Hitbox_CeresSteam_Down_0                                          ;A6F1D6;
 
+%anchor($A6F1D8)
 ExtendedSpritemap_CeresSteam_Down_1:
     dw $1001,$0000,$0000                                                 ;A6F1D8;
     dw Spritemap_CeresSteam_Down_1                                       ;A6F1DE;
     dw Hitbox_CeresSteam_Down_1                                          ;A6F1E0;
 
+%anchor($A6F1E2)
 ExtendedSpritemap_CeresSteam_Down_2:
     dw $1001,$0000,$0000                                                 ;A6F1E2;
     dw Spritemap_CeresSteam_Down_2                                       ;A6F1E8;
     dw Hitbox_CeresSteam_Down_2                                          ;A6F1EA;
 
+%anchor($A6F1EC)
 ExtendedSpritemap_CeresSteam_Down_3:
     dw $1001,$0000,$0000                                                 ;A6F1EC;
     dw Spritemap_CeresSteam_Down_3                                       ;A6F1F2;
     dw Hitbox_CeresSteam_Down_3                                          ;A6F1F4;
 
+%anchor($A6F1F6)
 ExtendedSpritemap_CeresSteam_Down_4:
     dw $1001,$0000,$0000                                                 ;A6F1F6;
     dw Spritemap_CeresSteam_Down_4                                       ;A6F1FC;
     dw Hitbox_CeresSteam_Down_4                                          ;A6F1FE;
 
+%anchor($A6F200)
 ExtendedSpritemap_CeresSteam_Down_5:
     dw $1001,$0000,$0000                                                 ;A6F200;
     dw Spritemap_CeresSteam_Down_5                                       ;A6F206;
     dw Hitbox_CeresSteam_Nothing                                         ;A6F208;
 
+%anchor($A6F20A)
 ExtendedSpritemap_CeresSteam_Down_6:
     dw $1001,$0000,$0000                                                 ;A6F20A;
     dw Spritemap_CeresSteam_Down_6                                       ;A6F210;
     dw Hitbox_CeresSteam_Nothing                                         ;A6F212;
 
+%anchor($A6F214)
 ExtendedSpritemap_CeresSteam_Right_0:
     dw $1001,$0000,$0000                                                 ;A6F214;
     dw Spritemap_CeresSteam_Right_0                                      ;A6F21A;
     dw Hitbox_CeresSteam_Right_0                                         ;A6F21C;
 
+%anchor($A6F21E)
 ExtendedSpritemap_CeresSteam_Right_1:
     dw $1001,$0000,$0000                                                 ;A6F21E;
     dw Spritemap_CeresSteam_Right_1                                      ;A6F224;
     dw Hitbox_CeresSteam_Right_1                                         ;A6F226;
 
+%anchor($A6F228)
 ExtendedSpritemap_CeresSteam_Right_2:
     dw $1001,$0000,$0000                                                 ;A6F228;
     dw Spritemap_CeresSteam_Right_2                                      ;A6F22E;
     dw Hitbox_CeresSteam_Right_2                                         ;A6F230;
 
+%anchor($A6F232)
 ExtendedSpritemap_CeresSteam_Right_3:
     dw $1001,$0000,$0000                                                 ;A6F232;
     dw Spritemap_CeresSteam_Right_3                                      ;A6F238;
     dw Hitbox_CeresSteam_Right_3                                         ;A6F23A;
 
+%anchor($A6F23C)
 ExtendedSpritemap_CeresSteam_Right_4:
     dw $1001,$0000,$0000                                                 ;A6F23C;
     dw Spritemap_CeresSteam_Right_4                                      ;A6F242;
     dw Hitbox_CeresSteam_Right_4                                         ;A6F244;
 
+%anchor($A6F246)
 ExtendedSpritemap_CeresSteam_Right_5:
     dw $1001,$0000,$0000                                                 ;A6F246;
     dw Spritemap_CeresSteam_Right_5                                      ;A6F24C;
     dw Hitbox_CeresSteam_Nothing                                         ;A6F24E;
 
+%anchor($A6F250)
 ExtendedSpritemap_CeresSteam_Right_6:
     dw $1001,$0000,$0000                                                 ;A6F250;
     dw Spritemap_CeresSteam_Right_6                                      ;A6F256;
     dw Hitbox_CeresSteam_Nothing                                         ;A6F258;
 
+%anchor($A6F25A)
 Hitbox_CeresSteam_Nothing:
     dw $0000                                                             ;A6F25A;
 
+%anchor($A6F25C)
 Hitbox_CeresSteam_Up_0:
     dw $0001,$FFF8,$FFF0,$0007,$FFFF                                     ;A6F25C;
     dw EnemyTouch_CeresSteam                                             ;A6F266;
     dw RTL_A6804C                                                        ;A6F268;
 
+%anchor($A6F26A)
 Hitbox_CeresSteam_Up_1:
     dw $0001,$FFF8,$FFE9,$0007,$FFFE                                     ;A6F26A;
     dw EnemyTouch_CeresSteam                                             ;A6F274;
     dw RTL_A6804C                                                        ;A6F276;
 
+%anchor($A6F278)
 Hitbox_CeresSteam_Up_2:
     dw $0001,$FFF8,$FFE0,$0007,$FFF8                                     ;A6F278;
     dw EnemyTouch_CeresSteam                                             ;A6F282;
     dw RTL_A6804C                                                        ;A6F284;
 
+%anchor($A6F286)
 Hitbox_CeresSteam_Up_3:
     dw $0001,$FFF8,$FFD8,$0007,$FFF0                                     ;A6F286;
     dw EnemyTouch_CeresSteam                                             ;A6F290;
     dw RTL_A6804C                                                        ;A6F292;
 
+%anchor($A6F294)
 Hitbox_CeresSteam_Up_4:
     dw $0001,$FFF8,$FFD8,$0006,$FFE8                                     ;A6F294;
     dw EnemyTouch_CeresSteam                                             ;A6F29E;
     dw RTL_A6804C                                                        ;A6F2A0;
 
+%anchor($A6F2A2)
 Hitbox_CeresSteam_Left_0:
     dw $0001,$FFF0,$FFF8,$FFFF,$0007                                     ;A6F2A2;
     dw EnemyTouch_CeresSteam                                             ;A6F2AC;
     dw RTL_A6804C                                                        ;A6F2AE;
 
+%anchor($A6F2B0)
 Hitbox_CeresSteam_Left_1:
     dw $0001,$FFE8,$FFF8,$FFFE,$0007                                     ;A6F2B0;
     dw EnemyTouch_CeresSteam                                             ;A6F2BA;
     dw RTL_A6804C                                                        ;A6F2BC;
 
+%anchor($A6F2BE)
 Hitbox_CeresSteam_Left_2:
     dw $0001,$FFE0,$FFF9,$FFF7,$0007                                     ;A6F2BE;
     dw EnemyTouch_CeresSteam                                             ;A6F2C8;
     dw RTL_A6804C                                                        ;A6F2CA;
 
+%anchor($A6F2CC)
 Hitbox_CeresSteam_Left_3:
     dw $0001,$FFD8,$FFF7,$FFEF,$0005                                     ;A6F2CC;
     dw EnemyTouch_CeresSteam                                             ;A6F2D6;
     dw RTL_A6804C                                                        ;A6F2D8;
 
+%anchor($A6F2DA)
 Hitbox_CeresSteam_Left_4:
     dw $0001,$FFD8,$FFF5,$FFE6,$0002                                     ;A6F2DA;
     dw EnemyTouch_CeresSteam                                             ;A6F2E4;
     dw RTL_A6804C                                                        ;A6F2E6;
 
+%anchor($A6F2E8)
 Hitbox_CeresSteam_Down_0:
     dw $0001,$FFF8,$0000,$0007,$000E                                     ;A6F2E8;
     dw EnemyTouch_CeresSteam                                             ;A6F2F2;
     dw RTL_A6804C                                                        ;A6F2F4;
 
+%anchor($A6F2F6)
 Hitbox_CeresSteam_Down_1:
     dw $0001,$FFF8,$0000,$0007,$0017                                     ;A6F2F6;
     dw EnemyTouch_CeresSteam                                             ;A6F300;
     dw RTL_A6804C                                                        ;A6F302;
 
+%anchor($A6F304)
 Hitbox_CeresSteam_Down_2:
     dw $0001,$FFF8,$0008,$0007,$001F                                     ;A6F304;
     dw EnemyTouch_CeresSteam                                             ;A6F30E;
     dw RTL_A6804C                                                        ;A6F310;
 
+%anchor($A6F312)
 Hitbox_CeresSteam_Down_3:
     dw $0001,$FFF8,$000F,$0007,$0027                                     ;A6F312;
     dw EnemyTouch_CeresSteam                                             ;A6F31C;
     dw RTL_A6804C                                                        ;A6F31E;
 
+%anchor($A6F320)
 Hitbox_CeresSteam_Down_4:
     dw $0001,$FFF8,$0017,$0006,$0026                                     ;A6F320;
     dw EnemyTouch_CeresSteam                                             ;A6F32A;
     dw RTL_A6804C                                                        ;A6F32C;
 
+%anchor($A6F32E)
 Hitbox_CeresSteam_Right_0:
     dw $0001,$0000,$FFF8,$000F,$0007                                     ;A6F32E;
     dw EnemyTouch_CeresSteam                                             ;A6F338;
     dw RTL_A6804C                                                        ;A6F33A;
 
+%anchor($A6F33C)
 Hitbox_CeresSteam_Right_1:
     dw $0001,$0001,$FFF8,$0017,$0007                                     ;A6F33C;
     dw EnemyTouch_CeresSteam                                             ;A6F346;
     dw RTL_A6804C                                                        ;A6F348;
 
+%anchor($A6F34A)
 Hitbox_CeresSteam_Right_2:
     dw $0001,$0009,$FFF8,$001F,$0007                                     ;A6F34A;
     dw EnemyTouch_CeresSteam                                             ;A6F354;
     dw RTL_A6804C                                                        ;A6F356;
 
+%anchor($A6F358)
 Hitbox_CeresSteam_Right_3:
     dw $0001,$0012,$FFF7,$0026,$0005                                     ;A6F358;
     dw EnemyTouch_CeresSteam                                             ;A6F362;
     dw RTL_A6804C                                                        ;A6F364;
 
+%anchor($A6F366)
 Hitbox_CeresSteam_Right_4:
     dw $0001,$0019,$FFF5,$0028,$0003                                     ;A6F366;
     dw EnemyTouch_CeresSteam                                             ;A6F370;
     dw RTL_A6804C                                                        ;A6F372;
 
+%anchor($A6F374)
 Spritemap_CeresSteam_Up_0:
     dw $0001,$81F8                                                       ;A6F374;
     db $F0                                                               ;A6F378;
     dw $207C                                                             ;A6F379;
 
+%anchor($A6F37B)
 Spritemap_CeresSteam_Up_1:
     dw $0002,$81F8                                                       ;A6F37B;
     db $E8                                                               ;A6F37F;
@@ -13634,6 +14440,7 @@ Spritemap_CeresSteam_Up_1:
     db $F0                                                               ;A6F384;
     dw $207E                                                             ;A6F385;
 
+%anchor($A6F387)
 Spritemap_CeresSteam_Up_2:
     dw $0003,$81F8                                                       ;A6F387;
     db $E0                                                               ;A6F38B;
@@ -13643,6 +14450,7 @@ Spritemap_CeresSteam_Up_2:
     db $F0                                                               ;A6F395;
     dw $209A                                                             ;A6F396;
 
+%anchor($A6F398)
 Spritemap_CeresSteam_Up_3:
     dw $0004,$81F8                                                       ;A6F398;
     db $D7                                                               ;A6F39C;
@@ -13654,6 +14462,7 @@ Spritemap_CeresSteam_Up_3:
     db $F0                                                               ;A6F3AB;
     dw $209C                                                             ;A6F3AC;
 
+%anchor($A6F3AE)
 Spritemap_CeresSteam_Up_4:
     dw $0003,$81F8                                                       ;A6F3AE;
     db $D6                                                               ;A6F3B2;
@@ -13663,6 +14472,7 @@ Spritemap_CeresSteam_Up_4:
     db $E8                                                               ;A6F3BC;
     dw $209C                                                             ;A6F3BD;
 
+%anchor($A6F3BF)
 Spritemap_CeresSteam_Up_5:
     dw $0002,$81F8                                                       ;A6F3BF;
     db $D5                                                               ;A6F3C3;
@@ -13670,16 +14480,19 @@ Spritemap_CeresSteam_Up_5:
     db $E0                                                               ;A6F3C8;
     dw $209C                                                             ;A6F3C9;
 
+%anchor($A6F3CB)
 Spritemap_CeresSteam_Up_6:
     dw $0001,$81F8                                                       ;A6F3CB;
     db $D3                                                               ;A6F3CF;
     dw $209C                                                             ;A6F3D0;
 
+%anchor($A6F3D2)
 Spritemap_CeresSteam_Left_0:
     dw $0001,$81F0                                                       ;A6F3D2;
     db $F8                                                               ;A6F3D6;
     dw $207C                                                             ;A6F3D7;
 
+%anchor($A6F3D9)
 Spritemap_CeresSteam_Left_1:
     dw $0002,$81E8                                                       ;A6F3D9;
     db $F8                                                               ;A6F3DD;
@@ -13687,6 +14500,7 @@ Spritemap_CeresSteam_Left_1:
     db $F8                                                               ;A6F3E2;
     dw $207E                                                             ;A6F3E3;
 
+%anchor($A6F3E5)
 Spritemap_CeresSteam_Left_2:
     dw $0003,$81E0                                                       ;A6F3E5;
     db $F8                                                               ;A6F3E9;
@@ -13696,6 +14510,7 @@ Spritemap_CeresSteam_Left_2:
     db $F8                                                               ;A6F3F3;
     dw $209A                                                             ;A6F3F4;
 
+%anchor($A6F3F6)
 Spritemap_CeresSteam_Left_3:
     dw $0004,$81D8                                                       ;A6F3F6;
     db $F6                                                               ;A6F3FA;
@@ -13707,6 +14522,7 @@ Spritemap_CeresSteam_Left_3:
     db $F8                                                               ;A6F409;
     dw $209C                                                             ;A6F40A;
 
+%anchor($A6F40C)
 Spritemap_CeresSteam_Left_4:
     dw $0003,$81D7                                                       ;A6F40C;
     db $F4                                                               ;A6F410;
@@ -13716,6 +14532,7 @@ Spritemap_CeresSteam_Left_4:
     db $F8                                                               ;A6F41A;
     dw $209C                                                             ;A6F41B;
 
+%anchor($A6F41D)
 Spritemap_CeresSteam_Left_5:
     dw $0002,$81D6                                                       ;A6F41D;
     db $F2                                                               ;A6F421;
@@ -13723,16 +14540,19 @@ Spritemap_CeresSteam_Left_5:
     db $F4                                                               ;A6F426;
     dw $209C                                                             ;A6F427;
 
+%anchor($A6F429)
 Spritemap_CeresSteam_Left_6:
     dw $0001,$81D5                                                       ;A6F429;
     db $F0                                                               ;A6F42D;
     dw $209C                                                             ;A6F42E;
 
+%anchor($A6F430)
 Spritemap_CeresSteam_Down_0:
     dw $0001,$81F8                                                       ;A6F430;
     db $00                                                               ;A6F434;
     dw $A07C                                                             ;A6F435;
 
+%anchor($A6F437)
 Spritemap_CeresSteam_Down_1:
     dw $0002,$81F8                                                       ;A6F437;
     db $08                                                               ;A6F43B;
@@ -13740,6 +14560,7 @@ Spritemap_CeresSteam_Down_1:
     db $00                                                               ;A6F440;
     dw $A07E                                                             ;A6F441;
 
+%anchor($A6F443)
 Spritemap_CeresSteam_Down_2:
     dw $0003,$81F8                                                       ;A6F443;
     db $10                                                               ;A6F447;
@@ -13749,6 +14570,7 @@ Spritemap_CeresSteam_Down_2:
     db $00                                                               ;A6F451;
     dw $A09A                                                             ;A6F452;
 
+%anchor($A6F454)
 Spritemap_CeresSteam_Down_3:
     dw $0004,$81F8                                                       ;A6F454;
     db $18                                                               ;A6F458;
@@ -13760,6 +14582,7 @@ Spritemap_CeresSteam_Down_3:
     db $00                                                               ;A6F467;
     dw $A09C                                                             ;A6F468;
 
+%anchor($A6F46A)
 Spritemap_CeresSteam_Down_4:
     dw $0003,$81F8                                                       ;A6F46A;
     db $18                                                               ;A6F46E;
@@ -13769,6 +14592,7 @@ Spritemap_CeresSteam_Down_4:
     db $08                                                               ;A6F478;
     dw $A09C                                                             ;A6F479;
 
+%anchor($A6F47B)
 Spritemap_CeresSteam_Down_5:
     dw $0002,$81F8                                                       ;A6F47B;
     db $18                                                               ;A6F47F;
@@ -13776,16 +14600,19 @@ Spritemap_CeresSteam_Down_5:
     db $10                                                               ;A6F484;
     dw $A09C                                                             ;A6F485;
 
+%anchor($A6F487)
 Spritemap_CeresSteam_Down_6:
     dw $0001,$81F8                                                       ;A6F487;
     db $18                                                               ;A6F48B;
     dw $A09C                                                             ;A6F48C;
 
+%anchor($A6F48E)
 Spritemap_CeresSteam_Right_0:
     dw $0001,$8000                                                       ;A6F48E;
     db $F8                                                               ;A6F492;
     dw $607C                                                             ;A6F493;
 
+%anchor($A6F495)
 Spritemap_CeresSteam_Right_1:
     dw $0002,$8008                                                       ;A6F495;
     db $F8                                                               ;A6F499;
@@ -13793,6 +14620,7 @@ Spritemap_CeresSteam_Right_1:
     db $F8                                                               ;A6F49E;
     dw $607E                                                             ;A6F49F;
 
+%anchor($A6F4A1)
 Spritemap_CeresSteam_Right_2:
     dw $0003,$8010                                                       ;A6F4A1;
     db $F8                                                               ;A6F4A5;
@@ -13802,6 +14630,7 @@ Spritemap_CeresSteam_Right_2:
     db $F8                                                               ;A6F4AF;
     dw $609A                                                             ;A6F4B0;
 
+%anchor($A6F4B2)
 Spritemap_CeresSteam_Right_3:
     dw $0004,$8018                                                       ;A6F4B2;
     db $F6                                                               ;A6F4B6;
@@ -13813,6 +14642,7 @@ Spritemap_CeresSteam_Right_3:
     db $F8                                                               ;A6F4C5;
     dw $609C                                                             ;A6F4C6;
 
+%anchor($A6F4C8)
 Spritemap_CeresSteam_Right_4:
     dw $0003,$8019                                                       ;A6F4C8;
     db $F4                                                               ;A6F4CC;
@@ -13822,6 +14652,7 @@ Spritemap_CeresSteam_Right_4:
     db $F8                                                               ;A6F4D6;
     dw $609C                                                             ;A6F4D7;
 
+%anchor($A6F4D9)
 Spritemap_CeresSteam_Right_5:
     dw $0002,$801A                                                       ;A6F4D9;
     db $F2                                                               ;A6F4DD;
@@ -13829,19 +14660,23 @@ Spritemap_CeresSteam_Right_5:
     db $F4                                                               ;A6F4E2;
     dw $609C                                                             ;A6F4E3;
 
+%anchor($A6F4E5)
 Spritemap_CeresSteam_Right_6:
     dw $0001,$801B                                                       ;A6F4E5;
     db $F0                                                               ;A6F4E9;
     dw $609C                                                             ;A6F4EA;
 
+%anchor($A6F4EC)
 Palette_CeresDoor_BeforeEscape:
     dw $0000,$7E20,$6560,$2060,$1000,$7940,$5D00,$4CA0                   ;A6F4EC;
     dw $3CA0,$43FF,$0113,$000F,$175C,$0299,$01D6,$57E0                   ;A6F4FC;
 
+%anchor($A6F50C)
 Palette_CeresDoor_DuringEscape:
     dw $3800,$6B5A,$5652,$28E7,$1863,$62B5,$4A10,$396B                   ;A6F50C;
     dw $3129,$43FF,$0113,$000F,$175C,$0299,$01D6,$3BE0                   ;A6F51C;
 
+%anchor($A6F52C)
 InstListPointers_CeresDoor:
     dw InstList_CeresDoor_Normal_FacingRight                             ;A6F52C;
     dw InstList_CeresDoor_Normal_FacingLeft_0                            ;A6F52E;
@@ -13851,6 +14686,7 @@ InstListPointers_CeresDoor:
     dw InstList_CeresDoor_RidleyEscapeMode7LeftWall_0                    ;A6F536;
     dw InstList_CeresDoor_RidleyEscapeMode7RightWall_0                   ;A6F538;
 
+%anchor($A6F53A)
 InstList_CeresDoor_RidleysRoom_FacingRight_0:
     dw Instruction_CeresDoor_SetAsIntangible                             ;A6F53A;
     dw Instruction_CeresDoor_SetAsInvisible                              ;A6F53C;
@@ -13871,6 +14707,7 @@ InstList_CeresDoor_RidleysRoom_FacingRight_0:
     dw Spritemap_CeresDoor_FacingRight_Closed                            ;A6F55A;
     dw Instruction_CeresDoor_SetAsInvisible                              ;A6F55C;
 
+%anchor($A6F55E)
 InstList_CeresDoor_RidleysRoom_FacingRight_1:
     dw $0002                                                             ;A6F55E;
     dw Spritemap_CeresDoor_FacingRight_Closed                            ;A6F560;
@@ -13880,6 +14717,7 @@ InstList_CeresDoor_RidleysRoom_FacingRight_1:
     dw Instruction_Common_GotoY                                          ;A6F568;
     dw InstList_CeresDoor_Closed_FacingRight_0                           ;A6F56A;
 
+%anchor($A6F56C)
 InstList_CeresDoor_Normal_FacingRight:
     dw Instruction_CeresDoor_SetAsIntangible                             ;A6F56C;
     dw Instruction_CeresDoor_SetAsInvisible                              ;A6F56E;
@@ -13888,6 +14726,7 @@ InstList_CeresDoor_Normal_FacingRight:
     dw Inst_CeresDoor_GotoYIfSamusIsNotWithing30Pixels                   ;A6F574;
     dw InstList_CeresDoor_Closed_FacingRight_0                           ;A6F576;
 
+%anchor($A6F578)
 InstList_CeresDoor_Open_FacingRight_0:
     dw $0002                                                             ;A6F578;
     dw Spritemap_CeresDoor_FacingRight_Open                              ;A6F57A;
@@ -13896,6 +14735,7 @@ InstList_CeresDoor_Open_FacingRight_0:
     dw Instruction_Common_GotoY                                          ;A6F580;
     dw InstList_CeresDoor_Open_FacingRight_0                             ;A6F582;
 
+%anchor($A6F584)
 InstList_CeresDoor_Open_FacingRight_1:
     dw Instruction_CeresDoor_SetAsTangible                               ;A6F584;
     dw Instruction_CeresDoor_SetAsVisible                                ;A6F586;
@@ -13908,10 +14748,12 @@ InstList_CeresDoor_Open_FacingRight_1:
     dw $0005                                                             ;A6F594;
     dw Spritemap_CeresDoor_FacingRight_OpeningFrame1                     ;A6F596;
 
+%anchor($A6F598)
 InstList_CeresDoor_Closed_FacingRight_0:
     dw Instruction_CeresDoor_SetAsTangible                               ;A6F598;
     dw Instruction_CeresDoor_SetAsVisible                                ;A6F59A;
 
+%anchor($A6F59C)
 InstList_CeresDoor_Closed_FacingRight_1:
     dw $0002                                                             ;A6F59C;
     dw Spritemap_CeresDoor_FacingRight_Closed                            ;A6F59E;
@@ -13931,6 +14773,7 @@ InstList_CeresDoor_Closed_FacingRight_1:
     dw Instruction_Common_GotoY                                          ;A6F5BA;
     dw InstList_CeresDoor_Open_FacingRight_0                             ;A6F5BC;
 
+%anchor($A6F5BE)
 InstList_CeresDoor_Normal_FacingLeft_0:
     dw Instruction_CeresDoor_SetAsIntangible                             ;A6F5BE;
     dw Instruction_CeresDoor_SetAsInvisible                              ;A6F5C0;
@@ -13939,6 +14782,7 @@ InstList_CeresDoor_Normal_FacingLeft_0:
     dw Inst_CeresDoor_GotoYIfSamusIsNotWithing30Pixels                   ;A6F5C6;
     dw InstList_CeresDoor_Normal_FacingLeft_3                            ;A6F5C8;
 
+%anchor($A6F5CA)
 InstList_CeresDoor_Normal_FacingLeft_1:
     dw $0002                                                             ;A6F5CA;
     dw Spritemap_CeresDoor_FacingLeft_Closed                             ;A6F5CC;
@@ -13947,6 +14791,7 @@ InstList_CeresDoor_Normal_FacingLeft_1:
     dw Instruction_Common_GotoY                                          ;A6F5D2;
     dw InstList_CeresDoor_Normal_FacingLeft_1                            ;A6F5D4;
 
+%anchor($A6F5D6)
 InstList_CeresDoor_Normal_FacingLeft_2:
     dw Instruction_CeresDoor_SetAsTangible                               ;A6F5D6;
     dw Instruction_CeresDoor_SetAsVisible                                ;A6F5D8;
@@ -13959,10 +14804,12 @@ InstList_CeresDoor_Normal_FacingLeft_2:
     dw $0005                                                             ;A6F5E6;
     dw Spritemap_CeresDoor_FacingLeft_OpeningFrame1                      ;A6F5E8;
 
+%anchor($A6F5EA)
 InstList_CeresDoor_Normal_FacingLeft_3:
     dw Instruction_CeresDoor_SetAsTangible                               ;A6F5EA;
     dw Instruction_CeresDoor_SetAsVisible                                ;A6F5EC;
 
+%anchor($A6F5EE)
 InstList_CeresDoor_Normal_FacingLeft_4:
     dw $0002                                                             ;A6F5EE;
     dw Spritemap_CeresDoor_FacingLeft_Closed                             ;A6F5F0;
@@ -13982,45 +14829,54 @@ InstList_CeresDoor_Normal_FacingLeft_4:
     dw Instruction_Common_GotoY                                          ;A6F60C;
     dw InstList_CeresDoor_Normal_FacingLeft_1                            ;A6F60E;
 
+%anchor($A6F610)
 InstList_CeresDoor_RotatingElevRoom_PreExploDoorOverlay_0:
     dw Instruction_CeresDoor_SetAsIntangible                             ;A6F610;
 
+%anchor($A6F612)
 InstList_CeresDoor_RotatingElevRoom_PreExploDoorOverlay_1:
     dw $0001                                                             ;A6F612;
     dw Spritemap_CeresDoor_RotatingElevRoomPreExplosionDoorOverlay       ;A6F614;
     dw Instruction_Common_GotoY                                          ;A6F616;
     dw InstList_CeresDoor_RotatingElevRoom_PreExploDoorOverlay_1         ;A6F618;
 
+%anchor($A6F61A)
 InstList_CeresDoor_RotatingElevatorRoom_InvisibleWall_0:
     dw Instruction_CeresDoor_GotoYIfCeresRidleyHasNotEscaped             ;A6F61A;
     dw InstList_CeresDoor_Normal_FacingLeft_0                            ;A6F61C;
     dw Instruction_CeresDoor_SetAsTangible                               ;A6F61E;
     dw Instruction_CeresDoor_SetAsInvisible                              ;A6F620;
 
+%anchor($A6F622)
 InstList_CeresDoor_RotatingElevatorRoom_InvisibleWall_1:
     dw $0001                                                             ;A6F622;
     dw Spritemap_CeresDoor_FacingLeft_Closed                             ;A6F624;
     dw Instruction_Common_GotoY                                          ;A6F626;
     dw InstList_CeresDoor_RotatingElevatorRoom_InvisibleWall_1           ;A6F628;
 
+%anchor($A6F62A)
 InstList_CeresDoor_RidleyEscapeMode7LeftWall_0:
     dw Instruction_CeresDoor_SetAsIntangible                             ;A6F62A;
 
+%anchor($A6F62C)
 InstList_CeresDoor_RidleyEscapeMode7LeftWall_1:
     dw $0001                                                             ;A6F62C;
     dw Spritemap_CeresDoor_RidleyEscapeMode7LeftWall                     ;A6F62E;
     dw Instruction_Common_GotoY                                          ;A6F630;
     dw InstList_CeresDoor_RidleyEscapeMode7LeftWall_1                    ;A6F632;
 
+%anchor($A6F634)
 InstList_CeresDoor_RidleyEscapeMode7RightWall_0:
     dw Instruction_CeresDoor_SetAsIntangible                             ;A6F634;
 
+%anchor($A6F636)
 InstList_CeresDoor_RidleyEscapeMode7RightWall_1:
     dw $0001                                                             ;A6F636;
     dw Spritemap_CeresDoor_RidleyEscapeMode7RightWall                    ;A6F638;
     dw Instruction_Common_GotoY                                          ;A6F63A;
     dw InstList_CeresDoor_RidleyEscapeMode7RightWall_1                   ;A6F63C;
 
+%anchor($A6F63E)
 Inst_CeresDoor_GotoYIfSamusIsNotWithing30Pixels:
     LDA.W $0F7A,X                                                        ;A6F63E;
     SEC                                                                  ;A6F641;
@@ -14041,18 +14897,21 @@ Inst_CeresDoor_GotoYIfSamusIsNotWithing30Pixels:
   + CMP.W #$0030                                                         ;A6F65D;
     BCS Inst_CeresDoor_GotoYIfSamusIsNotWithin30Pixels_gotoY             ;A6F660;
 
+%anchor($A6F662)
 Inst_CeresDoor_GotoYIfSamusIsNotWithin30Pixels_outOfRange:
     INY                                                                  ;A6F662;
     INY                                                                  ;A6F663;
     RTL                                                                  ;A6F664;
 
 
+%anchor($A6F665)
 Inst_CeresDoor_GotoYIfSamusIsNotWithin30Pixels_gotoY:
     LDA.W $0000,Y                                                        ;A6F665;
     TAY                                                                  ;A6F668;
     RTL                                                                  ;A6F669;
 
 
+%anchor($A6F66A)
 Instruction_CeresDoor_GotoYIfAreaBossIsAlive:
     PHX                                                                  ;A6F66A;
     LDX.W $079F                                                          ;A6F66B;
@@ -14063,12 +14922,14 @@ Instruction_CeresDoor_GotoYIfAreaBossIsAlive:
     BRA Inst_CeresDoor_GotoYIfSamusIsNotWithin30Pixels_outOfRange        ;A6F676;
 
 
+%anchor($A6F678)
 Instruction_CeresDoor_GotoYIfCeresRidleyHasNotEscaped:
     LDA.W $093F                                                          ;A6F678;
     BEQ Inst_CeresDoor_GotoYIfSamusIsNotWithin30Pixels_gotoY             ;A6F67B;
     BRA Inst_CeresDoor_GotoYIfSamusIsNotWithin30Pixels_outOfRange        ;A6F67D;
 
 
+%anchor($A6F67F)
 SetElevatorRoomToRotateIfRidleyHasEscaped:
     LDA.W $093F                                                          ;A6F67F;
     BEQ .return                                                          ;A6F682;
@@ -14079,6 +14940,7 @@ SetElevatorRoomToRotateIfRidleyHasEscaped:
     RTL                                                                  ;A6F68A;
 
 
+%anchor($A6F68B)
 Instruction_CeresDoor_SetAsIntangible:
     LDA.W $0F86,X                                                        ;A6F68B;
     ORA.W #$0400                                                         ;A6F68E;
@@ -14086,6 +14948,7 @@ Instruction_CeresDoor_SetAsIntangible:
     RTL                                                                  ;A6F694;
 
 
+%anchor($A6F695)
 Instruction_CeresDoor_SetAsTangible:
     LDA.W $0F86,X                                                        ;A6F695;
     AND.W #$FBFF                                                         ;A6F698;
@@ -14093,12 +14956,14 @@ Instruction_CeresDoor_SetAsTangible:
     RTL                                                                  ;A6F69E;
 
 
+%anchor($A6F69F)
 Instruction_CeresDoor_SetDrawnByRidleyFlag:
     LDA.W #$0001                                                         ;A6F69F;
     STA.W $0FAA,X                                                        ;A6F6A2;
     RTL                                                                  ;A6F6A5;
 
 
+%anchor($A6F6A6)
 Instruction_CeresDoor_SetAsInvisible:
     LDA.W $0F86,X                                                        ;A6F6A6;
     ORA.W #$0100                                                         ;A6F6A9;
@@ -14106,9 +14971,11 @@ Instruction_CeresDoor_SetAsInvisible:
     RTL                                                                  ;A6F6AF;
 
 
+%anchor($A6F6B0)
 Instruction_CeresDoor_SetAsVisible_ClearDrawnByRidleyFlag:
     STZ.W $0FAA,X                                                        ;A6F6B0; fallthrough to Instruction_CeresDoor_SetAsVisible
 
+%anchor($A6F6B3)
 Instruction_CeresDoor_SetAsVisible:
     LDA.W $0F86,X                                                        ;A6F6B3;
     AND.W #$FEFF                                                         ;A6F6B6;
@@ -14116,12 +14983,14 @@ Instruction_CeresDoor_SetAsVisible:
     RTL                                                                  ;A6F6BC;
 
 
+%anchor($A6F6BD)
 Instruction_CeresDoor_QueueOpeningSFX:
     LDA.W #$002C                                                         ;A6F6BD;
     JSL.L QueueSound_Lib3_Max6                                           ;A6F6C0;
     RTL                                                                  ;A6F6C4;
 
 
+%anchor($A6F6C5)
 InitAI_CeresDoor:
     LDX.W $0E54                                                          ;A6F6C5;
     LDA.W #Spritemap_CeresDoor_Placeholder                               ;A6F6C8;
@@ -14179,6 +15048,7 @@ InitAI_CeresDoor:
     dw Function_CeresDoor_RidleyEscapeMode7Wall                          ;A6F735;
     dw Function_CeresDoor_RidleyEscapeMode7Wall                          ;A6F737;
 
+%anchor($A6F739)
 LoadRotatingElevatorRoomPreExplosioNDoorOverlayTilesIfNeeded:
     LDA.W $0FB4,X                                                        ;A6F739;
     CMP.W #$0002                                                         ;A6F73C;
@@ -14201,19 +15071,23 @@ LoadRotatingElevatorRoomPreExplosioNDoorOverlayTilesIfNeeded:
     RTS                                                                  ;A6F764;
 
 
+%anchor($A6F765)
 MainAI_CeresDoor:
     LDX.W $0E54                                                          ;A6F765;
     JMP.W ($0FA8,X)                                                      ;A6F768;
 
 
+%anchor($A6F76B)
 Function_CeresDoor_HandleEarthquakeDuringEscape:
     LDY.W #$0014                                                         ;A6F76B;
     BRA HandleEarthquakeDuringEscape                                     ;A6F76E;
 
 
+%anchor($A6F770)
 Function_CeresDoor_HandleEarthquakeDuringEscapeInRidleysRoom:
     LDY.W #$001D                                                         ;A6F770; fallthrough to HandleEarthquakeDuringEscape
 
+%anchor($A6F773)
 HandleEarthquakeDuringEscape:
     LDA.W $093F                                                          ;A6F773;
     CMP.W #$0002                                                         ;A6F776;
@@ -14243,6 +15117,7 @@ HandleEarthquakeDuringEscape:
     RTL                                                                  ;A6F7A4;
 
 
+%anchor($A6F7A5)
 Function_CeresDoor_RidleyEscapeMode7Wall:
     LDX.W $0E54                                                          ;A6F7A5;
     JSL.L Instruction_CeresDoor_SetAsInvisible                           ;A6F7A8;
@@ -14257,6 +15132,7 @@ Function_CeresDoor_RidleyEscapeMode7Wall:
     RTL                                                                  ;A6F7BC;
 
 
+%anchor($A6F7BD)
 Function_CeresDoor_RotatingElevatorRoom_Default:
     JSL.L Function_CeresDoor_RotatingElevatorRoom_ElevatorAnimations     ;A6F7BD;
     LDA.W $093F                                                          ;A6F7C1;
@@ -14273,6 +15149,7 @@ Function_CeresDoor_RotatingElevatorRoom_Default:
     RTL                                                                  ;A6F7DB;
 
 
+%anchor($A6F7DC)
 Function_CeresDoor_RotatingElevatorRoom_Rumbling_Explosions:
     DEC.W $0FAE,X                                                        ;A6F7DC;
     BPL .enemyRumbleTimerNotExpired                                      ;A6F7DF;
@@ -14330,6 +15207,7 @@ Function_CeresDoor_RotatingElevatorRoom_Rumbling_Explosions:
 .YOffset:
     dw $FFF8,$0000,$0004,$FFFE,$0016,$0002,$000C                         ;A6F842;
 
+%anchor($A6F850)
 Function_CeresDoor_RotatingElevatorRoom_ElevatorAnimations:
     PHX                                                                  ;A6F850;
     JSR.W AnimateCeresElevatorPlatform                                   ;A6F851;
@@ -14359,6 +15237,7 @@ Function_CeresDoor_RotatingElevatorRoom_ElevatorAnimations:
     dw $47FF,$0113,$000F,$175C,$0299,$01D6,$0000,$0000                   ;A6F8D1;
     dw $5BFF,$15B8,$14B4,$17DF,$02FC,$0239,$0000,$0000                   ;A6F8E1;
 
+%anchor($A6F8F1)
 AnimateCeresElevatorPlatform:
     LDA.W $05B6                                                          ;A6F8F1;
     AND.W #$0002                                                         ;A6F8F4;
@@ -14372,28 +15251,34 @@ AnimateCeresElevatorPlatform:
     dw Mode7Transfer_CeresElevatorPlatform_light                         ;A6F900;
     dw Mode7Transfer_CeresElevatorPlatform_dark                          ;A6F902;
 
+%anchor($A6F904)
 Mode7Transfer_CeresElevatorPlatform_light:
     db $80                                                               ;A6F904;
     dl CeresElevatorPlatform_light                                       ;A6F905;
     dw $0004,$060E                                                       ;A6F908;
     db $00,$00                                                           ;A6F90C;
 
+%anchor($A6F90E)
 Mode7Transfer_CeresElevatorPlatform_dark:
     db $80                                                               ;A6F90E;
     dl CeresElevatorPlatform_dark                                        ;A6F90F;
     dw $0004,$060E                                                       ;A6F912;
     db $00,$00                                                           ;A6F916;
 
+%anchor($A6F918)
 CeresElevatorPlatform_light:
     db $68,$69,$69,$78                                                   ;A6F918;
 
+%anchor($A6F91C)
 CeresElevatorPlatform_dark:
     db $8D,$8E,$8E,$79                                                   ;A6F91C;
 
+%anchor($A6F920)
 RTL_A6F920:
     RTL                                                                  ;A6F920;
 
 
+%anchor($A6F921)
 Spritemap_CeresDoor_RotatingElevRoomPreExplosionDoorOverlay:
     dw $000C,$81F8                                                       ;A6F921;
     db $18                                                               ;A6F925;
@@ -14421,6 +15306,7 @@ Spritemap_CeresDoor_RotatingElevRoomPreExplosionDoorOverlay:
     db $D8                                                               ;A6F95C;
     dw $2100                                                             ;A6F95D;
 
+%anchor($A6F95F)
 Spritemap_CeresDoor_FacingLeft_Closed:
     dw $0008,$01F8                                                       ;A6F95F;
     db $18                                                               ;A6F963;
@@ -14440,6 +15326,7 @@ Spritemap_CeresDoor_FacingLeft_Closed:
     db $F0                                                               ;A6F986;
     dw $60E2                                                             ;A6F987;
 
+%anchor($A6F989)
 Spritemap_CeresDoor_FacingLeft_OpeningFrame1:
     dw $0008,$01F8                                                       ;A6F989;
     db $10                                                               ;A6F98D;
@@ -14459,6 +15346,7 @@ Spritemap_CeresDoor_FacingLeft_OpeningFrame1:
     db $F0                                                               ;A6F9B0;
     dw $60E2                                                             ;A6F9B1;
 
+%anchor($A6F9B3)
 Spritemap_CeresDoor_FacingLeft_OpeningFrame2:
     dw $0006,$01F8                                                       ;A6F9B3;
     db $18                                                               ;A6F9B7;
@@ -14474,6 +15362,7 @@ Spritemap_CeresDoor_FacingLeft_OpeningFrame2:
     db $F0                                                               ;A6F9D0;
     dw $60E2                                                             ;A6F9D1;
 
+%anchor($A6F9D3)
 Spritemap_CeresDoor_FacingLeft_OpeningFrame3:
     dw $0006,$01F8                                                       ;A6F9D3;
     db $E0                                                               ;A6F9D7;
@@ -14489,6 +15378,7 @@ Spritemap_CeresDoor_FacingLeft_OpeningFrame3:
     db $F0                                                               ;A6F9F0;
     dw $60E2                                                             ;A6F9F1;
 
+%anchor($A6F9F3)
 Spritemap_CeresDoor_FacingLeft_Open:
     dw $0006,$01FA                                                       ;A6F9F3;
     db $18                                                               ;A6F9F7;
@@ -14504,6 +15394,7 @@ Spritemap_CeresDoor_FacingLeft_Open:
     db $F0                                                               ;A6FA10;
     dw $60E2                                                             ;A6FA11;
 
+%anchor($A6FA13)
 Spritemap_CeresDoor_FacingRight_Closed:
     dw $0008,$0000                                                       ;A6FA13;
     db $18                                                               ;A6FA17;
@@ -14523,6 +15414,7 @@ Spritemap_CeresDoor_FacingRight_Closed:
     db $F0                                                               ;A6FA3A;
     dw $20E2                                                             ;A6FA3B;
 
+%anchor($A6FA3D)
 Spritemap_CeresDoor_FacingRight_OpeningFrame1:
     dw $0008,$0000                                                       ;A6FA3D;
     db $10                                                               ;A6FA41;
@@ -14542,6 +15434,7 @@ Spritemap_CeresDoor_FacingRight_OpeningFrame1:
     db $F0                                                               ;A6FA64;
     dw $20E2                                                             ;A6FA65;
 
+%anchor($A6FA67)
 Spritemap_CeresDoor_FacingRight_OpeningFrame2:
     dw $0006,$0000                                                       ;A6FA67;
     db $18                                                               ;A6FA6B;
@@ -14557,6 +15450,7 @@ Spritemap_CeresDoor_FacingRight_OpeningFrame2:
     db $F0                                                               ;A6FA84;
     dw $20E2                                                             ;A6FA85;
 
+%anchor($A6FA87)
 Spritemap_CeresDoor_FacingRight_OpeningFrame3:
     dw $0006,$0000                                                       ;A6FA87;
     db $18                                                               ;A6FA8B;
@@ -14572,6 +15466,7 @@ Spritemap_CeresDoor_FacingRight_OpeningFrame3:
     db $F0                                                               ;A6FAA4;
     dw $20E2                                                             ;A6FAA5;
 
+%anchor($A6FAA7)
 Spritemap_CeresDoor_FacingRight_Open:
     dw $0006,$01FE                                                       ;A6FAA7;
     db $18                                                               ;A6FAAB;
@@ -14587,11 +15482,13 @@ Spritemap_CeresDoor_FacingRight_Open:
     db $F0                                                               ;A6FAC4;
     dw $20E2                                                             ;A6FAC5;
 
+%anchor($A6FAC7)
 Spritemap_CeresDoor_Placeholder:
     dw $0001,$0008                                                       ;A6FAC7;
     db $08                                                               ;A6FACB;
     dw $2020                                                             ;A6FACC;
 
+%anchor($A6FACE)
 Spritemap_CeresDoor_RidleyEscapeMode7LeftWall:
     dw $0013,$C3F8                                                       ;A6FACE;
     db $40                                                               ;A6FAD2;
@@ -14633,6 +15530,7 @@ Spritemap_CeresDoor_RidleyEscapeMode7LeftWall:
     db $E0                                                               ;A6FB2C;
     dw $04E0                                                             ;A6FB2D;
 
+%anchor($A6FB2F)
 Spritemap_CeresDoor_RidleyEscapeMode7RightWall:
     dw $000D,$C3F8                                                       ;A6FB2F;
     db $80                                                               ;A6FB33;
@@ -14662,6 +15560,7 @@ Spritemap_CeresDoor_RidleyEscapeMode7RightWall:
     db $30                                                               ;A6FB6F;
     dw $04E6                                                             ;A6FB70;
 
+%anchor($A6FB72)
 InitAI_Zebetite:
     LDX.W $0E54                                                          ;A6FB72;
     LDA.W $0F86,X                                                        ;A6FB75;
@@ -14748,6 +15647,7 @@ InitAI_Zebetite:
 .YPosition_nonZero:
     dw $006F,$0097,$006F,$0097                                           ;A6FC2B;
 
+%anchor($A6FC33)
 MainAI_Zebetite:
     LDX.W $0E54                                                          ;A6FC33;
     LDA.W $1840                                                          ;A6FC36;
@@ -14758,6 +15658,7 @@ MainAI_Zebetite:
     JMP.W ($0FA8,X)                                                      ;A6FC3E;
 
 
+%anchor($A6FC41)
 Function_Zebetite_SpawnBottomZebetiteIfNeeded:
     LDA.W $0FB2,X                                                        ;A6FC41;
     BPL .notNeeded                                                       ;A6FC44;
@@ -14773,6 +15674,7 @@ Function_Zebetite_SpawnBottomZebetiteIfNeeded:
     LDA.W #Function_Zebetite_WaitForDoorTransitionToFinish               ;A6FC55;
     STA.W $0FA8,X                                                        ;A6FC58; fallthrough to Function_Zebetite_WaitForDoorTransitionToFinish
 
+%anchor($A6FC5B)
 Function_Zebetite_WaitForDoorTransitionToFinish:
     LDA.W $0795                                                          ;A6FC5B;
     BEQ .finished                                                        ;A6FC5E;
@@ -14783,6 +15685,7 @@ Function_Zebetite_WaitForDoorTransitionToFinish:
     LDA.W #Function_Zebetite_Active                                      ;A6FC61;
     STA.W $0FA8,X                                                        ;A6FC64;
 
+%anchor($A6FC67)
 Function_Zebetite_Active:
     JSR.W HandleZebetitePaletteAnimation                                 ;A6FC67;
     JSR.W SetZebetiteInstList                                            ;A6FC6A;
@@ -14820,6 +15723,7 @@ Function_Zebetite_Active:
     RTL                                                                  ;A6FCA9;
 
 
+%anchor($A6FCAA)
 MarkZebetiteDestroyedEvent:
     LDX.W $0E54                                                          ;A6FCAA;
     LDA.W $0FAE,X                                                        ;A6FCAD;
@@ -14835,6 +15739,7 @@ MarkZebetiteDestroyedEvent:
     LDY.W #$0005                                                         ;A6FCC6;
     ROR.B $12                                                            ;A6FCC9; fallthrough to MarkUnmarkZebetiteDestroyedCounterEvent
 
+%anchor($A6FCCB)
 MarkUnmarkZebetiteDestroyedCounterEvent:
     BCC .unmark                                                          ;A6FCCB;
     TYA                                                                  ;A6FCCD;
@@ -14848,6 +15753,7 @@ MarkUnmarkZebetiteDestroyedCounterEvent:
     RTS                                                                  ;A6FCD8;
 
 
+%anchor($A6FCD9)
 SpawnTopZebetite:
     LDX.W #.enemy                                                        ;A6FCD9;
     JSL.L SpawnEnemy                                                     ;A6FCDC;
@@ -14857,6 +15763,7 @@ SpawnTopZebetite:
     dw EnemyHeaders_Zebetite                                             ;A6FCE1;
     dw $0000,$0000,$0000,$2000,$0000,$0000,$0000                         ;A6FCE3;
 
+%anchor($A6FCF1)
 SpawnBottomZebetite:
     LDX.W #.enemy                                                        ;A6FCF1;
     JSL.L SpawnEnemy                                                     ;A6FCF4;
@@ -14866,6 +15773,7 @@ SpawnBottomZebetite:
     dw EnemyHeaders_Zebetite                                             ;A6FCF9;
     dw $0000,$0000,$0000,$2000,$0000,$0002,$0000                         ;A6FCFB;
 
+%anchor($A6FD09)
 SetZebetiteInstList:
     LDX.W $0E54                                                          ;A6FD09;
     LDY.W #$0000                                                         ;A6FD0C;
@@ -14911,6 +15819,7 @@ SetZebetiteInstList:
     dw InstList_Small_HealthLessThan400                                  ;A6FD5A;
     dw InstList_Small_HealthLessThan200                                  ;A6FD5C;
 
+%anchor($A6FD5E)
 HandleZebetitePaletteAnimation:
     LDA.L $7EC400                                                        ;A6FD5E;
     BNE .return                                                          ;A6FD62;
@@ -14937,11 +15846,13 @@ HandleZebetitePaletteAnimation:
     dw $005F,$0037,$003F,$0019,$003F,$001B,$001F,$001D                   ;A6FD87;
     dw $001F,$001F,$001F,$001D,$003F,$001B,$003F,$0019                   ;A6FD97;
 
+%anchor($A6FDA7)
 EnemyTouch_Zebetite:
     JSL.L NormalEnemyTouchAI_NoDeathCheck_External                       ;A6FDA7;
     RTL                                                                  ;A6FDAB;
 
 
+%anchor($A6FDAC)
 EnemyShot_Zebetite:
     PHA                                                                  ;A6FDAC;
     LDA.W #$0009                                                         ;A6FDAD;
@@ -14957,56 +15868,67 @@ EnemyShot_Zebetite:
     RTL                                                                  ;A6FDCB;
 
 
+%anchor($A6FDCC)
 InstList_Big_HealthGreaterThanEqualTo800:
     dw $0001                                                             ;A6FDCC;
     dw Spritemap_Zebetite_Big_HealthGreaterThanEqualTo800                ;A6FDCE;
     dw Instruction_Common_Sleep                                          ;A6FDD0;
 
+%anchor($A6FDD2)
 InstList_Big_HealthLessThan800:
     dw $0001                                                             ;A6FDD2;
     dw SpritemapZebetite_Big_HealthLessThan800                           ;A6FDD4;
     dw Instruction_CommonA6_Sleep                                        ;A6FDD6;
 
+%anchor($A6FDD8)
 InstList_Big_HealthLessThan600:
     dw $0001                                                             ;A6FDD8;
     dw SpritemapZebetite_Big_HealthLessThan600                           ;A6FDDA;
     dw Instruction_CommonA6_Sleep                                        ;A6FDDC;
 
+%anchor($A6FDDE)
 InstList_Big_HealthLessThan400:
     dw $0001                                                             ;A6FDDE;
     dw SpritemapZebetite_Big_HealthLessThan400                           ;A6FDE0;
     dw Instruction_CommonA6_Sleep                                        ;A6FDE2;
 
+%anchor($A6FDE4)
 InstList_Big_HealthLessThan200:
     dw $0001                                                             ;A6FDE4;
     dw SpritemapZebetite_Big_HealthLessThan200                           ;A6FDE6;
     dw Instruction_CommonA6_Sleep                                        ;A6FDE8;
 
+%anchor($A6FDEA)
 InstList_Small_HealthGreaterThanEqualTo800:
     dw $0001                                                             ;A6FDEA;
     dw Spritemap_Zebetite_Small_HealthGreaterThanEqualTo800              ;A6FDEC;
     dw Instruction_CommonA6_Sleep                                        ;A6FDEE;
 
+%anchor($A6FDF0)
 InstList_Small_HealthLessThan800:
     dw $0001                                                             ;A6FDF0;
     dw SpritemapZebetite_Small_HealthLessThan800                         ;A6FDF2;
     dw Instruction_CommonA6_Sleep                                        ;A6FDF4;
 
+%anchor($A6FDF6)
 InstList_Small_HealthLessThan600:
     dw $0001                                                             ;A6FDF6;
     dw SpritemapZebetite_Small_HealthLessThan600                         ;A6FDF8;
     dw Instruction_Common_Sleep                                          ;A6FDFA;
 
+%anchor($A6FDFC)
 InstList_Small_HealthLessThan400:
     dw $0001                                                             ;A6FDFC;
     dw SpritemapZebetite_Small_HealthLessThan400                         ;A6FDFE;
     dw Instruction_CommonA6_Sleep                                        ;A6FE00;
 
+%anchor($A6FE02)
 InstList_Small_HealthLessThan200:
     dw $0001                                                             ;A6FE02;
     dw SpritemapZebetite_Small_HealthLessThan200                         ;A6FE04;
     dw Instruction_CommonA6_Sleep                                        ;A6FE06;
 
+%anchor($A6FE08)
 Spritemap_Zebetite_Big_HealthGreaterThanEqualTo800:
     dw $0003,$C3F8                                                       ;A6FE08;
     db $08                                                               ;A6FE0C;
@@ -15016,6 +15938,7 @@ Spritemap_Zebetite_Big_HealthGreaterThanEqualTo800:
     db $E8                                                               ;A6FE16;
     dw $310C                                                             ;A6FE17;
 
+%anchor($A6FE19)
 SpritemapZebetite_Big_HealthLessThan800:
     dw $0003,$C3F8                                                       ;A6FE19;
     db $08                                                               ;A6FE1D;
@@ -15025,6 +15948,7 @@ SpritemapZebetite_Big_HealthLessThan800:
     db $E8                                                               ;A6FE27;
     dw $310E                                                             ;A6FE28;
 
+%anchor($A6FE2A)
 SpritemapZebetite_Big_HealthLessThan600:
     dw $0006,$01FC                                                       ;A6FE2A;
     db $10                                                               ;A6FE2E;
@@ -15040,6 +15964,7 @@ SpritemapZebetite_Big_HealthLessThan600:
     db $E8                                                               ;A6FE47;
     dw $3120                                                             ;A6FE48;
 
+%anchor($A6FE4A)
 SpritemapZebetite_Big_HealthLessThan400:
     dw $0006,$01FC                                                       ;A6FE4A;
     db $10                                                               ;A6FE4E;
@@ -15055,6 +15980,7 @@ SpritemapZebetite_Big_HealthLessThan400:
     db $E8                                                               ;A6FE67;
     dw $3122                                                             ;A6FE68;
 
+%anchor($A6FE6A)
 SpritemapZebetite_Big_HealthLessThan200:
     dw $0006,$01FC                                                       ;A6FE6A;
     db $10                                                               ;A6FE6E;
@@ -15070,16 +15996,19 @@ SpritemapZebetite_Big_HealthLessThan200:
     db $E8                                                               ;A6FE87;
     dw $3124                                                             ;A6FE88;
 
+%anchor($A6FE8A)
 Spritemap_Zebetite_Small_HealthGreaterThanEqualTo800:
     dw $0001,$C3F8                                                       ;A6FE8A;
     db $F8                                                               ;A6FE8E;
     dw $310C                                                             ;A6FE8F;
 
+%anchor($A6FE91)
 SpritemapZebetite_Small_HealthLessThan800:
     dw $0001,$C3F8                                                       ;A6FE91;
     db $F8                                                               ;A6FE95;
     dw $310E                                                             ;A6FE96;
 
+%anchor($A6FE98)
 SpritemapZebetite_Small_HealthLessThan600:
     dw $0002,$01FC                                                       ;A6FE98;
     db $00                                                               ;A6FE9C;
@@ -15087,6 +16016,7 @@ SpritemapZebetite_Small_HealthLessThan600:
     db $F8                                                               ;A6FEA1;
     dw $3120                                                             ;A6FEA2;
 
+%anchor($A6FEA4)
 SpritemapZebetite_Small_HealthLessThan400:
     dw $0002,$01FC                                                       ;A6FEA4;
     db $00                                                               ;A6FEA8;
@@ -15094,6 +16024,7 @@ SpritemapZebetite_Small_HealthLessThan400:
     db $F8                                                               ;A6FEAD;
     dw $3122                                                             ;A6FEAE;
 
+%anchor($A6FEB0)
 SpritemapZebetite_Small_HealthLessThan200:
     dw $0002,$01FC                                                       ;A6FEB0;
     db $00                                                               ;A6FEB4;
@@ -15101,5 +16032,6 @@ SpritemapZebetite_Small_HealthLessThan200:
     db $F8                                                               ;A6FEB9;
     dw $3124                                                             ;A6FEBA;
 
+%anchor($A6FEBC)
 Freespace_BankA6_FEBC:                                                   ;A6FEBC;
 ; $144 bytes

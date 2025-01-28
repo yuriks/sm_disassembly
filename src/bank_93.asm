@@ -2,6 +2,7 @@
 org $938000
 
 
+%anchor($938000)
 InitializeProjectile:
     PHP                                                                  ;938000;
     PHB                                                                  ;938001;
@@ -72,6 +73,7 @@ InitializeProjectile:
     RTL                                                                  ;938070;
 
 
+%anchor($938071)
 InitializeSuperMissileLink:
     PHP                                                                  ;938071;
     PHB                                                                  ;938072;
@@ -102,6 +104,7 @@ InitializeSuperMissileLink:
     RTL                                                                  ;93809F;
 
 
+%anchor($9380A0)
 InitializeBomb:
     PHP                                                                  ;9380A0;
     PHB                                                                  ;9380A1;
@@ -132,6 +135,7 @@ InitializeBomb:
     RTL                                                                  ;9380CE;
 
 
+%anchor($9380CF)
 PartOfKillProjectile_QueueSFX_SetInstruction:
     PHP                                                                  ;9380CF;
     PHB                                                                  ;9380D0;
@@ -197,6 +201,7 @@ PartOfKillProjectile_QueueSFX_SetInstruction:
     RTL                                                                  ;93814D;
 
 
+%anchor($93814E)
 Initialize_Bomb_Explosion:
     PHP                                                                  ;93814E;
     PHB                                                                  ;93814F;
@@ -212,6 +217,7 @@ Initialize_Bomb_Explosion:
     RTL                                                                  ;938162;
 
 
+%anchor($938163)
 Initialize_ShinesparkEcho_or_SpazerSBATrailProjectile:
     PHP                                                                  ;938163;
     PHB                                                                  ;938164;
@@ -252,6 +258,7 @@ Initialize_ShinesparkEcho_or_SpazerSBATrailProjectile:
     RTL                                                                  ;9381A3;
 
 
+%anchor($9381A4)
 InitializeSBAProjectile:
     PHP                                                                  ;9381A4;
     PHB                                                                  ;9381A5;
@@ -280,6 +287,7 @@ InitializeSBAProjectile:
     RTL                                                                  ;9381D0;
 
 
+%anchor($9381D1)
 Get_ProjectileTrailFrame:
     PHP                                                                  ;9381D1;
     PHB                                                                  ;9381D2;
@@ -299,6 +307,7 @@ Get_ProjectileTrailFrame:
     RTL                                                                  ;9381E8;
 
 
+%anchor($9381E9)
 ProjectileInstructionHandler:
     PHP                                                                  ;9381E9;
     PHB                                                                  ;9381EA;
@@ -341,6 +350,7 @@ ProjectileInstructionHandler:
     RTL                                                                  ;93822E;
 
 
+%anchor($93822F)
 Instruction_SamusProjectile_Delete:
     REP #$30                                                             ;93822F;
     JSL.L Clear_Projectile                                               ;938231;
@@ -350,6 +360,7 @@ Instruction_SamusProjectile_Delete:
     RTL                                                                  ;938238;
 
 
+%anchor($938239)
 Instruction_SamusProjectile_GotoY:
     REP #$30                                                             ;938239;
     LDA.W $0000,Y                                                        ;93823B;
@@ -358,6 +369,7 @@ Instruction_SamusProjectile_GotoY:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($938240)
 UNUSED_Instruction_SamusProj_GotoY_BasedOnBombTimer_938240:
     REP #$30                                                             ;938240;
     LDA.W $0000,Y                                                        ;938242;
@@ -375,6 +387,7 @@ UNUSED_Instruction_SamusProj_GotoY_BasedOnBombTimer_938240:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($938254)
 DrawProjectiles:
     PHP                                                                  ;938254;
     REP #$30                                                             ;938255;
@@ -478,6 +491,7 @@ DrawProjectiles:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($9382FD)
 UNUSED_PartialDrawProjectiles_9282FD:
     PHP                                                                  ;9382FD;
     REP #$30                                                             ;9382FE;
@@ -527,6 +541,7 @@ UNUSED_PartialDrawProjectiles_9282FD:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($93834D)
 DrawBombsAndProjectileExplosions:
     PHP                                                                  ;93834D;
     REP #$30                                                             ;93834E;
@@ -591,9 +606,11 @@ DrawBombsAndProjectileExplosions:
     RTL                                                                  ;9383BE;
 
 
+%anchor($9383BF)
 HyperBeamDamageValue:
     dw $03E8                                                             ;9383BF;
 
+%anchor($9383C1)
 SamusProjectileDataPointers_UnchargedBeams:
 ; Uncharged beams. Indexed by beam type
     dw ProjectileDataTable_Uncharged_Power                               ;9383C1;
@@ -609,6 +626,7 @@ SamusProjectileDataPointers_UnchargedBeams:
     dw ProjectileDataTable_Uncharged_PlasmaIce                           ;9383D5;
     dw ProjectileDataTable_Uncharged_PlasmaIceWave                       ;9383D7;
 
+%anchor($9383D9)
 SamusProjectileDataPointers_ChargedBeams:
 ; Charged beams. Indexed by beam type. Used by ice SBA
     dw ProjectileDataTable_Charged_Power                                 ;9383D9;
@@ -624,6 +642,7 @@ SamusProjectileDataPointers_ChargedBeams:
     dw ProjectileDataTable_Charged_PlasmaIce                             ;9383ED;
     dw ProjectileDataTable_Charged_PlasmaIceWave                         ;9383EF;
 
+%anchor($9383F1)
 SamusProjectileDataPointers_NonBeam:
 ; Non-beam projectiles. Indexed by projectile type. Used for (super) missile, (power) bomb
     dw ProjectileDataTable_NonBeam_Missile                               ;9383F1;
@@ -636,6 +655,7 @@ SamusProjectileDataPointers_NonBeam:
     dw ProjectileDataTable_NonBeam_BeamExplosion                         ;9383FF;
     dw ProjectileDataTable_NonBeam_MissileExplosion                      ;938401;
 
+%anchor($938403)
 SamusProjectileDataPointers_ShinesparkEcho_SpazerSBATrail:
 ; Shinespark echo and spazer SBA trail projectile. Indexed by projectile type - 22h
     dw $0000                                                             ;938403;
@@ -647,6 +667,7 @@ SamusProjectileDataPointers_ShinesparkEcho_SpazerSBATrail:
     dw $0000                                                             ;93840F;
     dw ProjectileDataTable_NonBeam_ShinesparkEcho                        ;938411;
 
+%anchor($938413)
 SamusProjectileDataPointers_SBA:
 ; Non-ice SBA projectiles. Indexed by beam type
     dw $0000                                                             ;938413;
@@ -662,12 +683,14 @@ SamusProjectileDataPointers_SBA:
     dw $0000                                                             ;938427;
     dw $0000                                                             ;938429;
 
+%anchor($93842B)
 SamusProjectileDataPointers_SuperMissileLink:
 ; Super missile link. Indexed by projectile type (always 2)
     dw $0000                                                             ;93842B;
     dw $0000                                                             ;93842D;
     dw ProjectileDataTable_NonBeam_SuperMissileLink                      ;93842F;
 
+%anchor($938431)
 ProjectileDataTable_Uncharged_Power:
     dw $0014                                                             ;938431; Damage
     dw InstList_SamusProjectile_Power_Up                                 ;938433; Up, facing right
@@ -681,6 +704,7 @@ ProjectileDataTable_Uncharged_Power:
     dw InstList_SamusProjectile_Power_UpLeft                             ;938443; Up-left
     dw InstList_SamusProjectile_Power_Up                                 ;938445; Up, facing left
 
+%anchor($938447)
 ProjectileDataTable_Uncharged_Spazer:
     dw $0028                                                             ;938447; Damage
     dw InstList_SamusProjectile_Spazer_SpazerIce_Up_0                    ;938449; Up, facing right
@@ -694,6 +718,7 @@ ProjectileDataTable_Uncharged_Spazer:
     dw InstList_SamusProjectile_Spazer_SpazerIce_UpLeft_0                ;938459; Up-left
     dw InstList_SamusProjectile_Spazer_SpazerIce_Up_0                    ;93845B; Up, facing left
 
+%anchor($93845D)
 ProjectileDataTable_Uncharged_SpazerIce:
     dw $003C                                                             ;93845D; Damage
     dw InstList_SamusProjectile_Spazer_SpazerIce_Up_0                    ;93845F; Up, facing right
@@ -707,6 +732,7 @@ ProjectileDataTable_Uncharged_SpazerIce:
     dw InstList_SamusProjectile_Spazer_SpazerIce_UpLeft_0                ;93846F; Up-left
     dw InstList_SamusProjectile_Spazer_SpazerIce_Up_0                    ;938471; Up, facing left
 
+%anchor($938473)
 ProjectileDataTable_Uncharged_SpazerIceWave:
     dw $0064                                                             ;938473; Damage
     dw InstList_SamusProjectile_SpazerWave_SpazerIceWave_Up              ;938475; Up, facing right
@@ -720,6 +746,7 @@ ProjectileDataTable_Uncharged_SpazerIceWave:
     dw InstList_SamusProjectile_SpazerWave_SpazerIceWave_UpLeft          ;938485; Up-left
     dw InstList_SamusProjectile_SpazerWave_SpazerIceWave_Up              ;938487; Up, facing left
 
+%anchor($938489)
 ProjectileDataTable_Uncharged_PlasmaIceWave:
     dw $012C                                                             ;938489; Damage
     dw InstList_SamusProjectile_PlasmaIceWave_Down_Up                    ;93848B; Up, facing right
@@ -733,6 +760,7 @@ ProjectileDataTable_Uncharged_PlasmaIceWave:
     dw InstList_SamusProjectile_PlasmaIceWave_DownRight_UpLeft           ;93849B; Up-left
     dw InstList_SamusProjectile_PlasmaIceWave_Down_Up                    ;93849D; Up, facing left
 
+%anchor($93849F)
 ProjectileDataTable_Uncharged_Ice:
     dw $001E                                                             ;93849F; Damage
     dw InstList_SamusProjectile_Ice                                      ;9384A1; Up, facing right
@@ -746,6 +774,7 @@ ProjectileDataTable_Uncharged_Ice:
     dw InstList_SamusProjectile_Ice                                      ;9384B1; Up-left
     dw InstList_SamusProjectile_Ice                                      ;9384B3; Up, facing left
 
+%anchor($9384B5)
 ProjectileDataTable_Uncharged_Wave:
     dw $0032                                                             ;9384B5; Damage
     dw InstList_SamusProjectile_Wave_IceWave_Up                          ;9384B7; Up, facing right
@@ -759,6 +788,7 @@ ProjectileDataTable_Uncharged_Wave:
     dw InstList_SamusProjectile_Wave_IceWave_DownRight_UpLeft            ;9384C7; Up-left
     dw InstList_SamusProjectile_Wave_IceWave_Up                          ;9384C9; Up, facing left
 
+%anchor($9384CB)
 ProjectileDataTable_Uncharged_Plasma:
     dw $0096                                                             ;9384CB; Damage
     dw InstList_SamusProjectile_Plasma_PlasmaIce_Down_Up_0               ;9384CD; Up, facing right
@@ -772,6 +802,7 @@ ProjectileDataTable_Uncharged_Plasma:
     dw InstList_SamusProjectile_Plasma_PlasmaIce_DownRight_UpLeft_0      ;9384DD; Up-left
     dw InstList_SamusProjectile_Plasma_PlasmaIce_Down_Up_0               ;9384DF; Up, facing left
 
+%anchor($9384E1)
 ProjectileDataTable_Uncharged_IceWave:
     dw $003C                                                             ;9384E1; Damage
     dw InstList_SamusProjectile_Wave_IceWave_Up                          ;9384E3; Up, facing right
@@ -785,6 +816,7 @@ ProjectileDataTable_Uncharged_IceWave:
     dw InstList_SamusProjectile_Wave_IceWave_DownRight_UpLeft            ;9384F3; Up-left
     dw InstList_SamusProjectile_Wave_IceWave_Up                          ;9384F5; Up, facing left
 
+%anchor($9384F7)
 ProjectileDataTable_Uncharged_SpazerWave:
     dw $0046                                                             ;9384F7; Damage
     dw InstList_SamusProjectile_SpazerWave_SpazerIceWave_Up              ;9384F9; Up, facing right
@@ -798,6 +830,7 @@ ProjectileDataTable_Uncharged_SpazerWave:
     dw InstList_SamusProjectile_SpazerWave_SpazerIceWave_UpLeft          ;938509; Up-left
     dw InstList_SamusProjectile_SpazerWave_SpazerIceWave_Up              ;93850B; Up, facing left
 
+%anchor($93850D)
 ProjectileDataTable_Uncharged_PlasmaWave:
     dw $00FA                                                             ;93850D; Damage
     dw InstList_SamusProjectile_PlasmaWave_Down_Up                       ;93850F; Up, facing right
@@ -811,6 +844,7 @@ ProjectileDataTable_Uncharged_PlasmaWave:
     dw InstList_SamusProjectile_PlasmaWave_DownRight_UpLeft              ;93851F; Up-left
     dw InstList_SamusProjectile_PlasmaWave_Down_Up                       ;938521; Up, facing left
 
+%anchor($938523)
 ProjectileDataTable_Uncharged_PlasmaIce:
     dw $00C8                                                             ;938523; Damage
     dw InstList_SamusProjectile_Plasma_PlasmaIce_Down_Up_0               ;938525; Up, facing right
@@ -824,6 +858,7 @@ ProjectileDataTable_Uncharged_PlasmaIce:
     dw InstList_SamusProjectile_Plasma_PlasmaIce_DownRight_UpLeft_0      ;938535; Up-left
     dw InstList_SamusProjectile_Plasma_PlasmaIce_Down_Up_0               ;938537; Up, facing left
 
+%anchor($938539)
 ProjectileDataTable_Charged_Power:
     dw $003C                                                             ;938539; Damage
     dw InstList_SamusProjectile_Charged_Power_Up                         ;93853B; Up, facing right
@@ -837,6 +872,7 @@ ProjectileDataTable_Charged_Power:
     dw InstList_SamusProjectile_Charged_Power_UpLeft                     ;93854B; Up-left
     dw InstList_SamusProjectile_Charged_Power_Up                         ;93854D; Up, facing left
 
+%anchor($93854F)
 ProjectileDataTable_Charged_Spazer:
     dw $0078                                                             ;93854F; Damage
     dw InstList_SamusProjectile_Charged_S_SI_Down_Up_0                   ;938551; Up, facing right
@@ -850,6 +886,7 @@ ProjectileDataTable_Charged_Spazer:
     dw InstList_SamusProjectile_Charged_S_SI_DownRight_UpLeft_0          ;938561; Up-left
     dw InstList_SamusProjectile_Charged_S_SI_Down_Up_0                   ;938563; Up, facing left
 
+%anchor($938565)
 ProjectileDataTable_Charged_SpazerIce:
     dw $00B4                                                             ;938565; Damage
     dw InstList_SamusProjectile_Charged_S_SI_Down_Up_0                   ;938567; Up, facing right
@@ -863,6 +900,7 @@ ProjectileDataTable_Charged_SpazerIce:
     dw InstList_SamusProjectile_Charged_S_SI_DownRight_UpLeft_0          ;938577; Up-left
     dw InstList_SamusProjectile_Charged_S_SI_Down_Up_0                   ;938579; Up, facing left
 
+%anchor($93857B)
 ProjectileDataTable_Charged_SpazerIceWave:
     dw $012C                                                             ;93857B; Damage
     dw InstList_SamusProjectile_Charged_SW_SIW_Up_0                      ;93857D; Up, facing right
@@ -876,6 +914,7 @@ ProjectileDataTable_Charged_SpazerIceWave:
     dw InstList_SamusProjectile_Charged_SW_SIW_UpLeft_0                  ;93858D; Up-left
     dw InstList_SamusProjectile_Charged_SW_SIW_Up_0                      ;93858F; Up, facing left
 
+%anchor($938591)
 ProjectileDataTable_Charged_PlasmaIceWave:
     dw $0384                                                             ;938591; Damage
     dw InstList_SamusProjectile_Charged_PW_PIW_Down_Up_0                 ;938593; Up, facing right
@@ -889,6 +928,7 @@ ProjectileDataTable_Charged_PlasmaIceWave:
     dw InstList_SamusProjectile_Charged_PW_PIW_DownRight_UpLeft_0        ;9385A3; Up-left
     dw InstList_SamusProjectile_Charged_PW_PIW_Down_Up_0                 ;9385A5; Up, facing left
 
+%anchor($9385A7)
 ProjectileDataTable_Charged_Ice:
     dw $005A                                                             ;9385A7; Damage
     dw InstList_SamusProjectile_Charged_Ice                              ;9385A9; Up, facing right
@@ -902,6 +942,7 @@ ProjectileDataTable_Charged_Ice:
     dw InstList_SamusProjectile_Charged_Ice                              ;9385B9; Up-left
     dw InstList_SamusProjectile_Charged_Ice                              ;9385BB; Up, facing left
 
+%anchor($9385BD)
 ProjectileDataTable_Charged_Plasma:
     dw $01C2                                                             ;9385BD; Damage
     dw InstList_SamusProjectile_Charged_P_PI_Down_Up_0                   ;9385BF; Up, facing right
@@ -915,6 +956,7 @@ ProjectileDataTable_Charged_Plasma:
     dw InstList_SamusProjectile_Charged_P_PI_DownRight_UpLeft_0          ;9385CF; Up-left
     dw InstList_SamusProjectile_Charged_P_PI_Down_Up_0                   ;9385D1; Up, facing left
 
+%anchor($9385D3)
 ProjectileDataTable_Charged_Wave:
     dw $0096                                                             ;9385D3; Damage
     dw InstList_SamusProjectile_Charged_Wave_Up                          ;9385D5; Up, facing right
@@ -928,6 +970,7 @@ ProjectileDataTable_Charged_Wave:
     dw InstList_SamusProjectile_Charged_Wave_DownRight_UpLeft            ;9385E5; Up-left
     dw InstList_SamusProjectile_Charged_Wave_Up                          ;9385E7; Up, facing left
 
+%anchor($9385E9)
 ProjectileDataTable_Charged_IceWave:
     dw $00B4                                                             ;9385E9; Damage
     dw InstList_SamusProjectile_Charged_IW_Up                            ;9385EB; Up, facing right
@@ -941,6 +984,7 @@ ProjectileDataTable_Charged_IceWave:
     dw InstList_SamusProjectile_Charged_IW_DownRight_UpLeft              ;9385FB; Up-left
     dw InstList_SamusProjectile_Charged_IW_Up                            ;9385FD; Up, facing left
 
+%anchor($9385FF)
 ProjectileDataTable_Charged_SpazerWave:
     dw $00D2                                                             ;9385FF; Damage
     dw InstList_SamusProjectile_Charged_SW_SIW_Up_0                      ;938601; Up, facing right
@@ -954,6 +998,7 @@ ProjectileDataTable_Charged_SpazerWave:
     dw InstList_SamusProjectile_Charged_SW_SIW_UpLeft_0                  ;938611; Up-left
     dw InstList_SamusProjectile_Charged_SW_SIW_Up_0                      ;938613; Up, facing left
 
+%anchor($938615)
 ProjectileDataTable_Charged_PlasmaIce:
     dw $0258                                                             ;938615; Damage
     dw InstList_SamusProjectile_Charged_P_PI_Down_Up_0                   ;938617; Up, facing right
@@ -967,6 +1012,7 @@ ProjectileDataTable_Charged_PlasmaIce:
     dw InstList_SamusProjectile_Charged_P_PI_DownRight_UpLeft_0          ;938627; Up-left
     dw InstList_SamusProjectile_Charged_P_PI_Down_Up_0                   ;938629; Up, facing left
 
+%anchor($93862B)
 ProjectileDataTable_Charged_PlasmaWave:
     dw $02EE                                                             ;93862B; Damage
     dw InstList_SamusProjectile_Charged_PW_PIW_Down_Up_0                 ;93862D; Up, facing right
@@ -980,6 +1026,7 @@ ProjectileDataTable_Charged_PlasmaWave:
     dw InstList_SamusProjectile_Charged_PW_PIW_DownRight_UpLeft_0        ;93863D; Up-left
     dw InstList_SamusProjectile_Charged_PW_PIW_Down_Up_0                 ;93863F; Up, facing left
 
+%anchor($938641)
 ProjectileDataTable_NonBeam_Missile:
     dw $0064                                                             ;938641; Damage
     dw InstList_SamusProjectile_Missiles_Up                              ;938643; Up, facing right
@@ -993,6 +1040,7 @@ ProjectileDataTable_NonBeam_Missile:
     dw InstList_SamusProjectile_Missiles_UpLeft                          ;938653; Up-left
     dw InstList_SamusProjectile_Missiles_Up                              ;938655; Up, facing left
 
+%anchor($938657)
 ProjectileDataTable_NonBeam_SuperMissile:
     dw $012C                                                             ;938657; Damage
     dw InstList_SamusProjectile_SuperMissiles_Up                         ;938659; Up, facing right
@@ -1006,50 +1054,61 @@ ProjectileDataTable_NonBeam_SuperMissile:
     dw InstList_SamusProjectile_SuperMissiles_UpLeft                     ;938669; Up-left
     dw InstList_SamusProjectile_SuperMissiles_Up                         ;93866B; Up, facing left
 
+%anchor($93866D)
 ProjectileDataTable_NonBeam_SuperMissileLink:
     dw $012C                                                             ;93866D; Damage
     dw InstList_SamusProjectile_SuperMissileLink                         ;93866F;
 
+%anchor($938671)
 ProjectileDataTable_NonBeam_PowerBomb:
     dw $00C8                                                             ;938671; Damage
     dw InstList_SamusProjectile_PowerBomb                                ;938673;
 
+%anchor($938675)
 ProjectileDataTable_NonBeam_Bomb:
     dw $001E                                                             ;938675; Damage
     dw InstList_SamusProjectile_Bomb                                     ;938677;
 
+%anchor($938679)
 ProjectileDataTable_NonBeam_BeamExplosion:
     dw $0008                                                             ;938679; Damage is ignored
   .pointer:
     dw InstList_SamusProjectile_BeamExplosion                            ;93867B;
 
+%anchor($93867D)
 ProjectileDataTable_NonBeam_MissileExplosion:
     dw $0008                                                             ;93867D; Damage is ignored
   .pointer:
     dw InstList_SamusProjectile_MissileExplosion                         ;93867F;
 
+%anchor($938681)
 ProjectileDataTable_NonBeam_BombExplosion:
     dw $0000                                                             ;938681; Damage is ignored
   .pointer:
     dw InstList_SamusProjectile_BombExplosion                            ;938683;
 
+%anchor($938685)
 ProjectileDataTable_NonBeam_PlasmaSBA:
     dw $012C                                                             ;938685; Damage
     dw InstList_SamusProjectile_PlasmaSBA                                ;938687;
 
+%anchor($938689)
 ProjectileDataTable_NonBeam_WaveSBA:
     dw $012C                                                             ;938689; Damage
     dw InstList_SamusProjectile_WaveSBA                                  ;93868B;
 
+%anchor($93868D)
 ProjectileDataTable_NonBeam_SpazerSBA:
     dw $012C                                                             ;93868D; Damage
     dw InstList_SamusProjectile_Spazer_SpazerIce_Up_0                    ;93868F;
 
+%anchor($938691)
 ProjectileDataTable_NonBeam_SuperMissileExplosion:
     dw $0008                                                             ;938691; Damage is ignored
   .pointer:
     dw InstList_SamusProjectile_SuperMissileExplosion                    ;938693;
 
+%anchor($938695)
 UNUSED_ProjectileDataTable_NonBeam_Projectile25_938695:
     dw $F000                                                             ;938695; Damage
     dw UNUSED_InstList_SamusProjectile_Projectile25_93A0F3               ;938697; Up, facing right
@@ -1063,6 +1122,7 @@ UNUSED_ProjectileDataTable_NonBeam_Projectile25_938695:
     dw UNUSED_InstList_SamusProjectile_Projectile25_93A0F3               ;9386A7; Up-left
     dw UNUSED_InstList_SamusProjectile_Projectile25_93A0F3               ;9386A9; Up, facing left
 
+%anchor($9386AB)
 ProjectileDataTable_NonBeam_SpazerSBATrail:
     dw $012C                                                             ;9386AB; Damage
     dw InstList_SamusProjectile_SpazerSBATrail_0                         ;9386AD; Up, facing right
@@ -1076,6 +1136,7 @@ ProjectileDataTable_NonBeam_SpazerSBATrail:
     dw InstList_SamusProjectile_SpazerSBATrail_0                         ;9386BD; Up-left
     dw InstList_SamusProjectile_SpazerSBATrail_0                         ;9386BF; Up, facing left
 
+%anchor($9386C1)
 ProjectileDataTable_NonBeam_ShinesparkEcho:
     dw $1000                                                             ;9386C1; Damage
     dw InstList_SamusProjectile_ShinesparkEcho                           ;9386C3; Up, facing right
@@ -1089,62 +1150,73 @@ ProjectileDataTable_NonBeam_ShinesparkEcho:
     dw InstList_SamusProjectile_ShinesparkEcho                           ;9386D3; Up-left
     dw InstList_SamusProjectile_ShinesparkEcho                           ;9386D5; Up, facing left
 
+%anchor($9386D7)
 UNUSED_ProjectileDataTable_NonBeam_Projectile27_9386D7:
     dw $0000                                                             ;9386D7;
     dw UNUSED_InstList_SamusProjectile_Projectile27_93A16D               ;9386D9;
 
+%anchor($9386DB)
 InstList_SamusProjectile_Power_Up:
     dw $000F,ProjectileFlareSpritemaps_Power_2                           ;9386DB;
     db $04,$04 : dw $0000                                                ;9386DF;
     dw Instruction_SamusProjectile_GotoY                                 ;9386E3;
     dw InstList_SamusProjectile_Power_Up                                 ;9386E5;
 
+%anchor($9386E7)
 InstList_SamusProjectile_Power_UpRight:
     dw $000F,ProjectileFlareSpritemaps_Power_3                           ;9386E7;
     db $08,$04 : dw $0000                                                ;9386EB;
     dw Instruction_SamusProjectile_GotoY                                 ;9386EF;
     dw InstList_SamusProjectile_Power_UpRight                            ;9386F1;
 
+%anchor($9386F3)
 InstList_SamusProjectile_Power_Right:
     dw $000F,ProjectileFlareSpritemaps_Power_4                           ;9386F3;
     db $08,$04 : dw $0000                                                ;9386F7;
     dw Instruction_SamusProjectile_GotoY                                 ;9386FB;
     dw InstList_SamusProjectile_Power_Right                              ;9386FD;
 
+%anchor($9386FF)
 InstList_SamusProjectile_Power_DownRight:
     dw $000F,ProjectileFlareSpritemaps_Power_5                           ;9386FF;
     db $08,$04 : dw $0000                                                ;938703;
     dw Instruction_SamusProjectile_GotoY                                 ;938707;
     dw InstList_SamusProjectile_Power_DownRight                          ;938709;
 
+%anchor($93870B)
 InstList_SamusProjectile_Power_Down:
     dw $000F,ProjectileFlareSpritemaps_Power_6                           ;93870B;
     db $04,$04 : dw $0000                                                ;93870F;
     dw Instruction_SamusProjectile_GotoY                                 ;938713;
     dw InstList_SamusProjectile_Power_Down                               ;938715;
 
+%anchor($938717)
 InstList_SamusProjectile_Power_DownLeft:
     dw $000F,ProjectileFlareSpritemaps_Power_7                           ;938717;
     db $08,$04 : dw $0000                                                ;93871B;
     dw Instruction_SamusProjectile_GotoY                                 ;93871F;
     dw InstList_SamusProjectile_Power_DownLeft                           ;938721;
 
+%anchor($938723)
 InstList_SamusProjectile_Power_Left:
     dw $000F,ProjectileFlareSpritemaps_Power_0                           ;938723;
     db $08,$04 : dw $0000                                                ;938727;
     dw Instruction_SamusProjectile_GotoY                                 ;93872B;
     dw InstList_SamusProjectile_Power_Left                               ;93872D;
 
+%anchor($93872F)
 InstList_SamusProjectile_Power_UpLeft:
     dw $000F,ProjectileFlareSpritemaps_Power_1                           ;93872F;
     db $08,$04 : dw $0000                                                ;938733;
     dw Instruction_SamusProjectile_GotoY                                 ;938737;
     dw InstList_SamusProjectile_Power_UpLeft                             ;938739;
 
+%anchor($93873B)
 InstList_SamusProjectile_Wave_IceWave_Up:
     dw $0004,Spritemap_Nothing_93A117                                    ;93873B;
     db $0C,$04 : dw $0000                                                ;93873F;
 
+%anchor($938743)
 InstList_SamusProjectile_Wave_IceWave_Down:
     dw $0001,ProjectileFlareSpritemaps_Wave_IceWave_0                    ;938743;
     db $0C,$04 : dw $0000                                                ;938747;
@@ -1181,6 +1253,7 @@ InstList_SamusProjectile_Wave_IceWave_Down:
     dw Instruction_SamusProjectile_GotoY                                 ;9387C3;
     dw InstList_SamusProjectile_Wave_IceWave_Down                        ;9387C5;
 
+%anchor($9387C7)
 InstList_SamusProjectile_Wave_IceWave_DownLeft_UpRight:
     dw $0001,ProjectileFlareSpritemaps_Wave_IceWave_0                    ;9387C7;
     db $08,$08 : dw $0000                                                ;9387CB;
@@ -1217,6 +1290,7 @@ InstList_SamusProjectile_Wave_IceWave_DownLeft_UpRight:
     dw Instruction_SamusProjectile_GotoY                                 ;938847;
     dw InstList_SamusProjectile_Wave_IceWave_DownLeft_UpRight            ;938849;
 
+%anchor($93884B)
 InstList_SamusProjectile_Wave_IceWave_Left_Right:
     dw $0001,ProjectileFlareSpritemaps_Wave_IceWave_0                    ;93884B;
     db $04,$0C : dw $0000                                                ;93884F;
@@ -1253,6 +1327,7 @@ InstList_SamusProjectile_Wave_IceWave_Left_Right:
     dw Instruction_SamusProjectile_GotoY                                 ;9388CB;
     dw InstList_SamusProjectile_Wave_IceWave_Left_Right                  ;9388CD;
 
+%anchor($9388CF)
 InstList_SamusProjectile_Wave_IceWave_DownRight_UpLeft:
     dw $0001,ProjectileFlareSpritemaps_Wave_IceWave_0                    ;9388CF;
     db $08,$08 : dw $0000                                                ;9388D3;
@@ -1289,6 +1364,7 @@ InstList_SamusProjectile_Wave_IceWave_DownRight_UpLeft:
     dw Instruction_SamusProjectile_GotoY                                 ;93894F;
     dw InstList_SamusProjectile_Wave_IceWave_DownRight_UpLeft            ;938951;
 
+%anchor($938953)
 InstList_SamusProjectile_Ice:
     dw $0001,ProjectileFlareSpritemaps_Ice_0                             ;938953;
     db $08,$08 : dw $0000                                                ;938957;
@@ -1301,102 +1377,119 @@ InstList_SamusProjectile_Ice:
     dw Instruction_SamusProjectile_GotoY                                 ;938973;
     dw InstList_SamusProjectile_Ice                                      ;938975;
 
+%anchor($938977)
 InstList_SamusProjectile_Spazer_SpazerIce_Up_0:
     dw $0002,ProjectileFlareSpritemaps_S_SI_SW_SIW_23                    ;938977;
     db $0C,$08 : dw $0000                                                ;93897B;
     dw $0002,ProjectileFlareSpritemaps_S_SI_SW_SIW_25                    ;93897D;
     db $0C,$08 : dw $0001                                                ;938983;
 
+%anchor($938987)
 InstList_SamusProjectile_Spazer_SpazerIce_Up_1:
     dw $0002,ProjectileFlareSpritemaps_S_SI_SW_SIW_28                    ;938987;
     db $14,$08 : dw $0002                                                ;93898B;
     dw Instruction_SamusProjectile_GotoY                                 ;93898F;
     dw InstList_SamusProjectile_Spazer_SpazerIce_Up_1                    ;938991;
 
+%anchor($938993)
 InstList_SamusProjectile_Spazer_SpazerIce_UpRight_0:
     dw $0002,ProjectileFlareSpritemaps_S_SI_SW_SIW_0                     ;938993;
     db $08,$08 : dw $0000                                                ;938997;
     dw $0002,ProjectileFlareSpritemaps_S_SI_SW_SIW_1                     ;938999;
     db $0C,$0C : dw $0001                                                ;93899F;
 
+%anchor($9389A3)
 InstList_SamusProjectile_Spazer_SpazerIce_UpRight_1:
     dw $0002,ProjectileFlareSpritemaps_S_SI_SW_SIW_4                     ;9389A3;
     db $10,$10 : dw $0002                                                ;9389A7;
     dw Instruction_SamusProjectile_GotoY                                 ;9389AB;
     dw InstList_SamusProjectile_Spazer_SpazerIce_UpRight_1               ;9389AD;
 
+%anchor($9389AF)
 InstList_SamusProjectile_Spazer_SpazerIce_Right_0:
     dw $0002,ProjectileFlareSpritemaps_S_SI_SW_SIW_29                    ;9389AF;
     db $08,$0C : dw $0000                                                ;9389B3;
     dw $0002,ProjectileFlareSpritemaps_S_SI_SW_SIW_2B                    ;9389B5;
     db $08,$0C : dw $0001                                                ;9389BB;
 
+%anchor($9389BF)
 InstList_SamusProjectile_Spazer_SpazerIce_Right_1:
     dw $0002,ProjectileFlareSpritemaps_S_SI_SW_SIW_2E                    ;9389BF;
     db $08,$14 : dw $0002                                                ;9389C3;
     dw Instruction_SamusProjectile_GotoY                                 ;9389C7;
     dw InstList_SamusProjectile_Spazer_SpazerIce_Right_1                 ;9389C9;
 
+%anchor($9389CB)
 InstList_SamusProjectile_Spazer_SpazerIce_DownRight_0:
     dw $0002,ProjectileFlareSpritemaps_S_SI_SW_SIW_6                     ;9389CB;
     db $08,$08 : dw $0000                                                ;9389CF;
     dw $0002,ProjectileFlareSpritemaps_S_SI_SW_SIW_7                     ;9389D1;
     db $0C,$0C : dw $0001                                                ;9389D7;
 
+%anchor($9389DB)
 InstList_SamusProjectile_Spazer_SpazerIce_DownRight_1:
     dw $0002,ProjectileFlareSpritemaps_S_SI_SW_SIW_A                     ;9389DB;
     db $10,$10 : dw $0002                                                ;9389DF;
     dw Instruction_SamusProjectile_GotoY                                 ;9389E3;
     dw InstList_SamusProjectile_Spazer_SpazerIce_DownRight_1             ;9389E5;
 
+%anchor($9389E7)
 InstList_SamusProjectile_Spazer_SpazerIce_Down_0:
     dw $0002,ProjectileFlareSpritemaps_S_SI_SW_SIW_17                    ;9389E7;
     db $0C,$08 : dw $0000                                                ;9389EB;
     dw $0002,ProjectileFlareSpritemaps_S_SI_SW_SIW_19                    ;9389ED;
     db $0C,$08 : dw $0001                                                ;9389F3;
 
+%anchor($9389F7)
 InstList_SamusProjectile_Spazer_SpazerIce_Down_1:
     dw $0002,ProjectileFlareSpritemaps_S_SI_SW_SIW_1C                    ;9389F7;
     db $14,$08 : dw $0002                                                ;9389FB;
     dw Instruction_SamusProjectile_GotoY                                 ;9389FF;
     dw InstList_SamusProjectile_Spazer_SpazerIce_Down_1                  ;938A01;
 
+%anchor($938A03)
 InstList_SamusProjectile_Spazer_SpazerIce_DownLeft_0:
     dw $0002,ProjectileFlareSpritemaps_S_SI_SW_SIW_C                     ;938A03;
     db $08,$08 : dw $0000                                                ;938A07;
     dw $0002,ProjectileFlareSpritemaps_S_SI_SW_SIW_D                     ;938A0D;
     db $0C,$0C : dw $0001                                                ;938A0F;
 
+%anchor($938A13)
 InstList_SamusProjectile_Spazer_SpazerIce_DownLeft_1:
     dw $0002,ProjectileFlareSpritemaps_S_SI_SW_SIW_10                    ;938A13;
     db $10,$10 : dw $0002                                                ;938A17;
     dw Instruction_SamusProjectile_GotoY                                 ;938A1B;
     dw InstList_SamusProjectile_Spazer_SpazerIce_DownLeft_1              ;938A1D;
 
+%anchor($938A1F)
 InstList_SamusProjectile_Spazer_SpazerIce_Left_0:
     dw $0002,ProjectileFlareSpritemaps_S_SI_SW_SIW_1D                    ;938A1F;
     db $08,$0C : dw $0000                                                ;938A23;
     dw $0002,ProjectileFlareSpritemaps_S_SI_SW_SIW_1F                    ;938A29;
     db $08,$0C : dw $0001                                                ;938A2B;
 
+%anchor($938A2F)
 InstList_SamusProjectile_Spazer_SpazerIce_Left_1:
     dw $0002,ProjectileFlareSpritemaps_S_SI_SW_SIW_22                    ;938A2F;
     db $08,$14 : dw $0002                                                ;938A33;
     dw Instruction_SamusProjectile_GotoY                                 ;938A37;
     dw InstList_SamusProjectile_Spazer_SpazerIce_Left_1                  ;938A39;
 
+%anchor($938A3B)
 InstList_SamusProjectile_Spazer_SpazerIce_UpLeft_0:
     dw $0002,ProjectileFlareSpritemaps_S_SI_SW_SIW_11                    ;938A3B;
     db $08,$08 : dw $0000                                                ;938A3F;
     dw $0002,ProjectileFlareSpritemaps_S_SI_SW_SIW_12                    ;938A41;
     db $0C,$0C : dw $0001                                                ;938A47;
 
+%anchor($938A4B)
 InstList_SamusProjectile_Spazer_SpazerIce_UpLeft_1:
     dw $0002,ProjectileFlareSpritemaps_S_SI_SW_SIW_15                    ;938A4B;
     db $10,$10 : dw $0002                                                ;938A4F;
     dw Instruction_SamusProjectile_GotoY                                 ;938A53;
     dw InstList_SamusProjectile_Spazer_SpazerIce_UpLeft_1                ;938A55;
 
+%anchor($938A57)
 InstList_SamusProjectile_SpazerWave_SpazerIceWave_Up:
     dw $0002,ProjectileFlareSpritemaps_S_SI_SW_SIW_23                    ;938A57;
     db $0C,$08 : dw $0000                                                ;938A5B;
@@ -1421,6 +1514,7 @@ InstList_SamusProjectile_SpazerWave_SpazerIceWave_Up:
     dw Instruction_SamusProjectile_GotoY                                 ;938AA7;
     dw InstList_SamusProjectile_SpazerWave_SpazerIceWave_Up              ;938AA9;
 
+%anchor($938AAB)
 InstList_SamusProjectile_SpazerWave_SpazerIceWave_UpRight:
     dw $0002,ProjectileFlareSpritemaps_S_SI_SW_SIW_0                     ;938AAB;
     db $08,$08 : dw $0000                                                ;938AAF;
@@ -1445,6 +1539,7 @@ InstList_SamusProjectile_SpazerWave_SpazerIceWave_UpRight:
     dw Instruction_SamusProjectile_GotoY                                 ;938AFB;
     dw InstList_SamusProjectile_SpazerWave_SpazerIceWave_UpRight         ;938AFD;
 
+%anchor($938AFF)
 InstList_SamusProjectile_SpazerWave_SpazerIceWave_Right:
     dw $0002,ProjectileFlareSpritemaps_S_SI_SW_SIW_29                    ;938AFF;
     db $08,$0C : dw $0000                                                ;938B03;
@@ -1469,6 +1564,7 @@ InstList_SamusProjectile_SpazerWave_SpazerIceWave_Right:
     dw Instruction_SamusProjectile_GotoY                                 ;938B4F;
     dw InstList_SamusProjectile_SpazerWave_SpazerIceWave_Right           ;938B51;
 
+%anchor($938B53)
 InstList_SamusProjectile_SpazerWave_SpazerIceWave_DownRight:
     dw $0002,ProjectileFlareSpritemaps_S_SI_SW_SIW_6                     ;938B53;
     db $08,$08 : dw $0000                                                ;938B57;
@@ -1493,6 +1589,7 @@ InstList_SamusProjectile_SpazerWave_SpazerIceWave_DownRight:
     dw Instruction_SamusProjectile_GotoY                                 ;938BA3;
     dw InstList_SamusProjectile_SpazerWave_SpazerIceWave_DownRight       ;938BA5;
 
+%anchor($938BA7)
 InstList_SamusProjectile_SpazerWave_SpazerIceWave_Down:
     dw $0002,ProjectileFlareSpritemaps_S_SI_SW_SIW_17                    ;938BA7;
     db $0C,$08 : dw $0000                                                ;938BAB;
@@ -1517,6 +1614,7 @@ InstList_SamusProjectile_SpazerWave_SpazerIceWave_Down:
     dw Instruction_SamusProjectile_GotoY                                 ;938BF7;
     dw InstList_SamusProjectile_SpazerWave_SpazerIceWave_Down            ;938BF9;
 
+%anchor($938BFB)
 InstList_SamusProjectile_SpazerWave_SpazerIceWave_DownLeft:
     dw $0002,ProjectileFlareSpritemaps_S_SI_SW_SIW_C                     ;938BFB;
     db $08,$08 : dw $0000                                                ;938BFF;
@@ -1541,6 +1639,7 @@ InstList_SamusProjectile_SpazerWave_SpazerIceWave_DownLeft:
     dw Instruction_SamusProjectile_GotoY                                 ;938C4B;
     dw InstList_SamusProjectile_SpazerWave_SpazerIceWave_DownLeft        ;938C4D;
 
+%anchor($938C4F)
 InstList_SamusProjectile_SpazerWave_SpazerIceWave_Left:
     dw $0002,ProjectileFlareSpritemaps_S_SI_SW_SIW_1D                    ;938C4F;
     db $08,$0C : dw $0000                                                ;938C53;
@@ -1565,6 +1664,7 @@ InstList_SamusProjectile_SpazerWave_SpazerIceWave_Left:
     dw Instruction_SamusProjectile_GotoY                                 ;938C9F;
     dw InstList_SamusProjectile_SpazerWave_SpazerIceWave_Left            ;938CA1;
 
+%anchor($938CA3)
 InstList_SamusProjectile_SpazerWave_SpazerIceWave_UpLeft:
     dw $0002,ProjectileFlareSpritemaps_S_SI_SW_SIW_11                    ;938CA3;
     db $08,$08 : dw $0000                                                ;938CA7;
@@ -1589,50 +1689,60 @@ InstList_SamusProjectile_SpazerWave_SpazerIceWave_UpLeft:
     dw Instruction_SamusProjectile_GotoY                                 ;938CF3;
     dw InstList_SamusProjectile_SpazerWave_SpazerIceWave_UpLeft          ;938CF5;
 
+%anchor($938CF7)
 InstList_SamusProjectile_Plasma_PlasmaIce_Down_Up_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_4             ;938CF7;
     db $08,$10 : dw $0000                                                ;938CFB;
 
+%anchor($938CFF)
 InstList_SamusProjectile_Plasma_PlasmaIce_Down_Up_1:
     dw $000F,ProjectileFlareSpritemaps_Plasma_PlasmaIce_2                ;938CFF;
     db $08,$10 : dw $0001                                                ;938D03;
     dw Instruction_SamusProjectile_GotoY                                 ;938D07;
     dw InstList_SamusProjectile_Plasma_PlasmaIce_Down_Up_1               ;938D09;
 
+%anchor($938D0B)
 InstList_SamusProjectile_Plasma_PlasmaIce_DownLeft_UpRight_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_C             ;938D0B;
     db $08,$08 : dw $0000                                                ;938D0F;
 
+%anchor($938D13)
 InstList_SamusProjectile_Plasma_PlasmaIce_DownLeft_UpRight_1:
     dw $000F,ProjectileFlareSpritemaps_Plasma_PlasmaIce_3                ;938D13;
     db $08,$08 : dw $0001                                                ;938D17;
     dw Instruction_SamusProjectile_GotoY                                 ;938D1B;
     dw InstList_SamusProjectile_Plasma_PlasmaIce_DownLeft_UpRight_1      ;938D1D;
 
+%anchor($938D1F)
 InstList_SamusProjectile_Plasma_PlasmaIce_Left_Right_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_0             ;938D1F;
     db $08,$08 : dw $0000                                                ;938D23;
 
+%anchor($938D27)
 InstList_SamusProjectile_Plasma_PlasmaIce_Left_Right_1:
     dw $000F,ProjectileFlareSpritemaps_Plasma_PlasmaIce_0                ;938D27;
     db $10,$08 : dw $0001                                                ;938D2B;
     dw Instruction_SamusProjectile_GotoY                                 ;938D2F;
     dw InstList_SamusProjectile_Plasma_PlasmaIce_Left_Right_1            ;938D31;
 
+%anchor($938D33)
 InstList_SamusProjectile_Plasma_PlasmaIce_DownRight_UpLeft_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_8             ;938D33;
     db $08,$08 : dw $0000                                                ;938D37;
 
+%anchor($938D3B)
 InstList_SamusProjectile_Plasma_PlasmaIce_DownRight_UpLeft_1:
     dw $000F,ProjectileFlareSpritemaps_Plasma_PlasmaIce_1                ;938D3B;
     db $08,$08 : dw $0001                                                ;938D3F;
     dw Instruction_SamusProjectile_GotoY                                 ;938D43;
     dw InstList_SamusProjectile_Plasma_PlasmaIce_DownRight_UpLeft_1      ;938D45;
 
+%anchor($938D47)
 InstList_SamusProjectile_PlasmaIceWave_Down_Up:
     dw $0001,ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_4             ;938D47;
     db $0C,$10 : dw $0000                                                ;938D4B;
 
+%anchor($938D4F)
 InstList_SamusProjectile_PlasmaWave_Down_Up:
     dw $0002,ProjectileFlareSpritemaps_Charged_PW_PIW_14                 ;938D4F;
     db $0C,$10 : dw $0001                                                ;938D53;
@@ -1653,10 +1763,12 @@ InstList_SamusProjectile_PlasmaWave_Down_Up:
     dw Instruction_SamusProjectile_GotoY                                 ;938D8F;
     dw InstList_SamusProjectile_PlasmaWave_Down_Up                       ;938D91;
 
+%anchor($938D93)
 InstList_SamusProjectile_PlasmaIceWave_DownLeft_UpRight:
     dw $0001,ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_C             ;938D93;
     db $08,$08 : dw $0000                                                ;938D97;
 
+%anchor($938D9B)
 InstList_SamusProjectile_PlasmaWave_DownLeft_UpRight:
     dw $0002,ProjectileFlareSpritemaps_Charged_PW_PIW_32                 ;938D9B;
     db $08,$08 : dw $0001                                                ;938D9F;
@@ -1677,10 +1789,12 @@ InstList_SamusProjectile_PlasmaWave_DownLeft_UpRight:
     dw Instruction_SamusProjectile_GotoY                                 ;938DDB;
     dw InstList_SamusProjectile_PlasmaWave_DownLeft_UpRight              ;938DDD;
 
+%anchor($938DDF)
 InstList_SamusProj_PlasmaWave_PlasmaIceWave_Left_Right_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_0             ;938DDF;
     db $08,$0C : dw $0000                                                ;938DE3;
 
+%anchor($938DE7)
 InstList_SamusProj_PlasmaWave_PlasmaIceWave_Left_Right_1:
     dw $0002,ProjectileFlareSpritemaps_Charged_PW_PIW_0                  ;938DE7;
     db $10,$0C : dw $0001                                                ;938DEB;
@@ -1701,10 +1815,12 @@ InstList_SamusProj_PlasmaWave_PlasmaIceWave_Left_Right_1:
     dw Instruction_SamusProjectile_GotoY                                 ;938E27;
     dw InstList_SamusProj_PlasmaWave_PlasmaIceWave_Left_Right_1          ;938E29;
 
+%anchor($938E2B)
 InstList_SamusProjectile_PlasmaIceWave_DownRight_UpLeft:
     dw $0001,ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_8             ;938E2B;
     db $08,$08 : dw $0000                                                ;938E2F;
 
+%anchor($938E33)
 InstList_SamusProjectile_PlasmaWave_DownRight_UpLeft:
     dw $0002,ProjectileFlareSpritemaps_Charged_PW_PIW_A                  ;938E33;
     db $08,$08 : dw $0001                                                ;938E37;
@@ -1725,6 +1841,7 @@ InstList_SamusProjectile_PlasmaWave_DownRight_UpLeft:
     dw Instruction_SamusProjectile_GotoY                                 ;938E73;
     dw InstList_SamusProjectile_PlasmaWave_DownRight_UpLeft              ;938E75;
 
+%anchor($938E77)
 InstList_SamusProjectile_Charged_Power_Up:
     dw $0001,ProjectileFlareSpritemaps_Charged_Power_2                   ;938E77;
     db $08,$08 : dw $0000                                                ;938E7B;
@@ -1733,6 +1850,7 @@ InstList_SamusProjectile_Charged_Power_Up:
     dw Instruction_SamusProjectile_GotoY                                 ;938E87;
     dw InstList_SamusProjectile_Charged_Power_Up                         ;938E89;
 
+%anchor($938E8B)
 InstList_SamusProjectile_Charged_Power_UpRight:
     dw $0001,ProjectileFlareSpritemaps_Charged_Power_3                   ;938E8B;
     db $08,$08 : dw $0000                                                ;938E8F;
@@ -1741,6 +1859,7 @@ InstList_SamusProjectile_Charged_Power_UpRight:
     dw Instruction_SamusProjectile_GotoY                                 ;938E9B;
     dw InstList_SamusProjectile_Charged_Power_UpRight                    ;938E9D;
 
+%anchor($938E9F)
 InstList_SamusProjectile_Charged_Power_Right:
     dw $0001,ProjectileFlareSpritemaps_Charged_Power_4                   ;938E9F;
     db $08,$08 : dw $0000                                                ;938EA3;
@@ -1749,6 +1868,7 @@ InstList_SamusProjectile_Charged_Power_Right:
     dw Instruction_SamusProjectile_GotoY                                 ;938EAF;
     dw InstList_SamusProjectile_Charged_Power_Right                      ;938EB1;
 
+%anchor($938EB3)
 InstList_SamusProjectile_Charged_Power_DownRight:
     dw $0001,ProjectileFlareSpritemaps_Charged_Power_5                   ;938EB3;
     db $08,$08 : dw $0000                                                ;938EB7;
@@ -1757,6 +1877,7 @@ InstList_SamusProjectile_Charged_Power_DownRight:
     dw Instruction_SamusProjectile_GotoY                                 ;938EC3;
     dw InstList_SamusProjectile_Charged_Power_DownRight                  ;938EC5;
 
+%anchor($938EC7)
 InstList_SamusProjectile_Charged_Power_Down:
     dw $0001,ProjectileFlareSpritemaps_Charged_Power_6                   ;938EC7;
     db $08,$08 : dw $0000                                                ;938ECB;
@@ -1765,6 +1886,7 @@ InstList_SamusProjectile_Charged_Power_Down:
     dw Instruction_SamusProjectile_GotoY                                 ;938ED7;
     dw InstList_SamusProjectile_Charged_Power_Down                       ;938ED9;
 
+%anchor($938EDB)
 InstList_SamusProjectile_Charged_Power_DownLeft:
     dw $0001,ProjectileFlareSpritemaps_Charged_Power_7                   ;938EDB;
     db $08,$08 : dw $0000                                                ;938EDF;
@@ -1773,6 +1895,7 @@ InstList_SamusProjectile_Charged_Power_DownLeft:
     dw Instruction_SamusProjectile_GotoY                                 ;938EEB;
     dw InstList_SamusProjectile_Charged_Power_DownLeft                   ;938EED;
 
+%anchor($938EEF)
 InstList_SamusProjectile_Charged_Power_Left:
     dw $0001,ProjectileFlareSpritemaps_Charged_Power_0                   ;938EEF;
     db $08,$08 : dw $0000                                                ;938EF3;
@@ -1781,6 +1904,7 @@ InstList_SamusProjectile_Charged_Power_Left:
     dw Instruction_SamusProjectile_GotoY                                 ;938EFF;
     dw InstList_SamusProjectile_Charged_Power_Left                       ;938F01;
 
+%anchor($938F03)
 InstList_SamusProjectile_Charged_Power_UpLeft:
     dw $0001,ProjectileFlareSpritemaps_Charged_Power_1                   ;938F03;
     db $08,$08 : dw $0000                                                ;938F07;
@@ -1789,10 +1913,12 @@ InstList_SamusProjectile_Charged_Power_UpLeft:
     dw Instruction_SamusProjectile_GotoY                                 ;938F13;
     dw InstList_SamusProjectile_Charged_Power_UpLeft                     ;938F15;
 
+%anchor($938F17)
 InstList_SamusProjectile_Charged_Wave_Up:
     dw $0003,Spritemap_Nothing_93A117                                    ;938F17;
     db $0C,$08 : dw $0000                                                ;938F1B;
 
+%anchor($938F1F)
 InstList_SamusProjectile_Charged_Wave_Down:
     dw $0001,ProjectileFlareSpritemaps_ChargedWave_WaveSBA_0             ;938F1F;
     db $0C,$08 : dw $0000                                                ;938F23;
@@ -1829,6 +1955,7 @@ InstList_SamusProjectile_Charged_Wave_Down:
     dw Instruction_SamusProjectile_GotoY                                 ;938F9F;
     dw InstList_SamusProjectile_Charged_Wave_Down                        ;938FA1;
 
+%anchor($938FA3)
 InstList_SamusProjectile_Charged_Wave_DownLeft_UpRight:
     dw $0001,ProjectileFlareSpritemaps_ChargedWave_WaveSBA_0             ;938FA3;
     db $08,$08 : dw $0000                                                ;938FA7;
@@ -1865,6 +1992,7 @@ InstList_SamusProjectile_Charged_Wave_DownLeft_UpRight:
     dw Instruction_SamusProjectile_GotoY                                 ;939023;
     dw InstList_SamusProjectile_Charged_Wave_DownLeft_UpRight            ;939025;
 
+%anchor($939027)
 InstList_SamusProjectile_Charged_Wave_Left_Right:
     dw $0001,ProjectileFlareSpritemaps_ChargedWave_WaveSBA_0             ;939027;
     db $08,$0C : dw $0000                                                ;93902B;
@@ -1901,6 +2029,7 @@ InstList_SamusProjectile_Charged_Wave_Left_Right:
     dw Instruction_SamusProjectile_GotoY                                 ;9390A7;
     dw InstList_SamusProjectile_Charged_Wave_Left_Right                  ;9390A9;
 
+%anchor($9390AB)
 InstList_SamusProjectile_Charged_Wave_DownRight_UpLeft:
     dw $0001,ProjectileFlareSpritemaps_ChargedWave_WaveSBA_0             ;9390AB;
     db $08,$08 : dw $0000                                                ;9390AF;
@@ -1937,6 +2066,7 @@ InstList_SamusProjectile_Charged_Wave_DownRight_UpLeft:
     dw Instruction_SamusProjectile_GotoY                                 ;93912B;
     dw InstList_SamusProjectile_Charged_Wave_DownRight_UpLeft            ;93912D;
 
+%anchor($93912F)
 InstList_SamusProjectile_Charged_Ice:
     dw $0001,ProjectileFlareSpritemaps_Charged_Ice_0                     ;93912F;
     db $08,$08 : dw $0000                                                ;939133;
@@ -1949,10 +2079,12 @@ InstList_SamusProjectile_Charged_Ice:
     dw Instruction_SamusProjectile_GotoY                                 ;93914F;
     dw InstList_SamusProjectile_Charged_Ice                              ;939151;
 
+%anchor($939153)
 InstList_SamusProjectile_Charged_IW_Up:
     dw $0003,Spritemap_Nothing_93A117                                    ;939153;
     db $0C,$08 : dw $0000                                                ;939157;
 
+%anchor($93915B)
 InstList_SamusProjectile_Charged_IW_Down:
     dw $0001,ProjectileFlareSpritemaps_ChargedIceWave_0                  ;93915B;
     db $0C,$08 : dw $0000                                                ;93915F;
@@ -1989,6 +2121,7 @@ InstList_SamusProjectile_Charged_IW_Down:
     dw Instruction_SamusProjectile_GotoY                                 ;9391DB;
     dw InstList_SamusProjectile_Charged_IW_Down                          ;9391DD;
 
+%anchor($9391DF)
 InstList_SamusProjectile_Charged_IW_DownLeft_UpRight:
     dw $0001,ProjectileFlareSpritemaps_ChargedIceWave_0                  ;9391DF;
     db $08,$08 : dw $0000                                                ;9391E3;
@@ -2025,6 +2158,7 @@ InstList_SamusProjectile_Charged_IW_DownLeft_UpRight:
     dw Instruction_SamusProjectile_GotoY                                 ;93925F;
     dw InstList_SamusProjectile_Charged_IW_DownLeft_UpRight              ;939261;
 
+%anchor($939263)
 InstList_SamusProjectile_Charged_IW_Left_Right:
     dw $0001,ProjectileFlareSpritemaps_ChargedIceWave_0                  ;939263;
     db $08,$0C : dw $0000                                                ;939267;
@@ -2061,6 +2195,7 @@ InstList_SamusProjectile_Charged_IW_Left_Right:
     dw Instruction_SamusProjectile_GotoY                                 ;9392E3;
     dw InstList_SamusProjectile_Charged_IW_Left_Right                    ;9392E5;
 
+%anchor($9392E7)
 InstList_SamusProjectile_Charged_IW_DownRight_UpLeft:
     dw $0001,ProjectileFlareSpritemaps_ChargedIceWave_0                  ;9392E7;
     db $08,$08 : dw $0000                                                ;9392EB;
@@ -2097,6 +2232,7 @@ InstList_SamusProjectile_Charged_IW_DownRight_UpLeft:
     dw Instruction_SamusProjectile_GotoY                                 ;939367;
     dw InstList_SamusProjectile_Charged_IW_DownRight_UpLeft              ;939369;
 
+%anchor($93936B)
 InstList_SamusProjectile_Charged_S_SI_Down_Up_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_4C            ;93936B;
     db $0C,$08 : dw $0000                                                ;93936F;
@@ -2115,6 +2251,7 @@ InstList_SamusProjectile_Charged_S_SI_Down_Up_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_8             ;9393A1;
     db $0C,$10 : dw $0007                                                ;9393A7;
 
+%anchor($9393AB)
 InstList_SamusProjectile_Charged_S_SI_Down_Up_1:
     dw $0001,ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_41            ;9393AB;
     db $14,$10 : dw $0008                                                ;9393AF;
@@ -2123,6 +2260,7 @@ InstList_SamusProjectile_Charged_S_SI_Down_Up_1:
     dw Instruction_SamusProjectile_GotoY                                 ;9393BB;
     dw InstList_SamusProjectile_Charged_S_SI_Down_Up_1                   ;9393BD;
 
+%anchor($9393BF)
 InstList_SamusProjectile_Charged_S_SI_DownLeft_UpRight_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_4E            ;9393BF;
     db $08,$08 : dw $0000                                                ;9393C3;
@@ -2141,6 +2279,7 @@ InstList_SamusProjectile_Charged_S_SI_DownLeft_UpRight_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_14            ;9393F5;
     db $10,$10 : dw $0007                                                ;9393FB;
 
+%anchor($9393FF)
 InstList_SamusProjectile_Charged_S_SI_DownLeft_UpRight_1:
     dw $0001,ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_1C            ;9393FF;
     db $14,$14 : dw $0008                                                ;939403;
@@ -2149,6 +2288,7 @@ InstList_SamusProjectile_Charged_S_SI_DownLeft_UpRight_1:
     dw Instruction_SamusProjectile_GotoY                                 ;93940F;
     dw InstList_SamusProjectile_Charged_S_SI_DownLeft_UpRight_1          ;939411;
 
+%anchor($939413)
 InstList_SamusProjectile_Charged_S_SI_Left_Right_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_51            ;939413;
     db $08,$0C : dw $0000                                                ;939417;
@@ -2167,6 +2307,7 @@ InstList_SamusProjectile_Charged_S_SI_Left_Right_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_2             ;939449;
     db $10,$0C : dw $0007                                                ;93944F;
 
+%anchor($939453)
 InstList_SamusProjectile_Charged_S_SI_Left_Right_1:
     dw $0001,ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_3B            ;939453;
     db $10,$14 : dw $0008                                                ;939457;
@@ -2175,6 +2316,7 @@ InstList_SamusProjectile_Charged_S_SI_Left_Right_1:
     dw Instruction_SamusProjectile_GotoY                                 ;939463;
     dw InstList_SamusProjectile_Charged_S_SI_Left_Right_1                ;939465;
 
+%anchor($939467)
 InstList_SamusProjectile_Charged_S_SI_DownRight_UpLeft_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_53            ;939467;
     db $08,$08 : dw $0000                                                ;93946B;
@@ -2193,6 +2335,7 @@ InstList_SamusProjectile_Charged_S_SI_DownRight_UpLeft_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_E             ;93949D;
     db $10,$10 : dw $0007                                                ;9394A3;
 
+%anchor($9394A7)
 InstList_SamusProjectile_Charged_S_SI_DownRight_UpLeft_1:
     dw $0001,ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_22            ;9394A7;
     db $14,$14 : dw $0008                                                ;9394AB;
@@ -2201,6 +2344,7 @@ InstList_SamusProjectile_Charged_S_SI_DownRight_UpLeft_1:
     dw Instruction_SamusProjectile_GotoY                                 ;9394B7;
     dw InstList_SamusProjectile_Charged_S_SI_DownRight_UpLeft_1          ;9394B9;
 
+%anchor($9394BB)
 InstList_SamusProjectile_Charged_SW_SIW_Up_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_4C            ;9394BB;
     db $0C,$08 : dw $0000                                                ;9394BF;
@@ -2211,6 +2355,7 @@ InstList_SamusProjectile_Charged_SW_SIW_Up_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_5C            ;9394D1;
     db $0C,$08 : dw $0003                                                ;9394D7;
 
+%anchor($9394DB)
 InstList_SamusProjectile_Charged_SW_SIW_Up_1:
     dw $0001,ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_3C            ;9394DB;
     db $0C,$10 : dw $0004                                                ;9394DF;
@@ -2255,6 +2400,7 @@ InstList_SamusProjectile_Charged_SW_SIW_Up_1:
     dw Instruction_SamusProjectile_GotoY                                 ;93957B;
     dw InstList_SamusProjectile_Charged_SW_SIW_Up_1                      ;93957D;
 
+%anchor($93957F)
 InstList_SamusProjectile_Charged_SW_SIW_UpRight_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_4E            ;93957F;
     db $08,$08 : dw $0000                                                ;939583;
@@ -2265,6 +2411,7 @@ InstList_SamusProjectile_Charged_SW_SIW_UpRight_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_5E            ;939595;
     db $08,$08 : dw $0003                                                ;93959B;
 
+%anchor($93959F)
 InstList_SamusProjectile_Charged_SW_SIW_UpRight_1:
     dw $0001,ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_18            ;93959F;
     db $0C,$0C : dw $0004                                                ;9395A3;
@@ -2309,6 +2456,7 @@ InstList_SamusProjectile_Charged_SW_SIW_UpRight_1:
     dw Instruction_SamusProjectile_GotoY                                 ;93963F;
     dw InstList_SamusProjectile_Charged_SW_SIW_UpRight_1                 ;939641;
 
+%anchor($939643)
 InstList_SamusProjectile_Charged_SW_SIW_Right_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_51            ;939643;
     db $08,$0C : dw $0000                                                ;939647;
@@ -2319,6 +2467,7 @@ InstList_SamusProjectile_Charged_SW_SIW_Right_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_58            ;939659;
     db $08,$0C : dw $0003                                                ;93965F;
 
+%anchor($939663)
 InstList_SamusProjectile_Charged_SW_SIW_Right_1:
     dw $0001,ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_42            ;939663;
     db $10,$0C : dw $0004                                                ;939667;
@@ -2363,6 +2512,7 @@ InstList_SamusProjectile_Charged_SW_SIW_Right_1:
     dw Instruction_SamusProjectile_GotoY                                 ;939703;
     dw InstList_SamusProjectile_Charged_SW_SIW_Right_1                   ;939705;
 
+%anchor($939707)
 InstList_SamusProjectile_Charged_SW_SIW_DownRight_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_53            ;939707;
     db $08,$08 : dw $0000                                                ;93970B;
@@ -2373,6 +2523,7 @@ InstList_SamusProjectile_Charged_SW_SIW_DownRight_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_5A            ;93971D;
     db $08,$08 : dw $0003                                                ;939723;
 
+%anchor($939727)
 InstList_SamusProjectile_Charged_SW_SIW_DownRight_1:
     dw $0001,ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_1E            ;939727;
     db $0C,$0C : dw $0004                                                ;93972B;
@@ -2417,6 +2568,7 @@ InstList_SamusProjectile_Charged_SW_SIW_DownRight_1:
     dw Instruction_SamusProjectile_GotoY                                 ;9397C7;
     dw InstList_SamusProjectile_Charged_SW_SIW_DownRight_1               ;9397C9;
 
+%anchor($9397CB)
 InstList_SamusProjectile_Charged_SW_SIW_Down_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_55            ;9397CB;
     db $0C,$08 : dw $0000                                                ;9397CF;
@@ -2427,6 +2579,7 @@ InstList_SamusProjectile_Charged_SW_SIW_Down_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_5C            ;9397E1;
     db $0C,$08 : dw $0003                                                ;9397E7;
 
+%anchor($9397EB)
 InstList_SamusProjectile_Charged_SW_SIW_Down_1:
     dw $0001,ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_30            ;9397EB;
     db $0C,$10 : dw $0004                                                ;9397EF;
@@ -2471,6 +2624,7 @@ InstList_SamusProjectile_Charged_SW_SIW_Down_1:
     dw Instruction_SamusProjectile_GotoY                                 ;93988B;
     dw InstList_SamusProjectile_Charged_SW_SIW_Down_1                    ;93988D;
 
+%anchor($93988F)
 InstList_SamusProjectile_Charged_SW_SIW_DownLeft_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_4E            ;93988F;
     db $08,$08 : dw $0000                                                ;939893;
@@ -2481,6 +2635,7 @@ InstList_SamusProjectile_Charged_SW_SIW_DownLeft_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_5E            ;9398A5;
     db $08,$08 : dw $0003                                                ;9398AB;
 
+%anchor($9398AF)
 InstList_SamusProjectile_Charged_SW_SIW_DownLeft_1:
     dw $0001,ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_24            ;9398AF;
     db $0C,$0C : dw $0004                                                ;9398B3;
@@ -2525,6 +2680,7 @@ InstList_SamusProjectile_Charged_SW_SIW_DownLeft_1:
     dw Instruction_SamusProjectile_GotoY                                 ;93994F;
     dw InstList_SamusProjectile_Charged_SW_SIW_DownLeft_1                ;939951;
 
+%anchor($939953)
 InstList_SamusProjectile_Charged_SW_SIW_Left_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_48            ;939953;
     db $08,$0C : dw $0000                                                ;939957;
@@ -2535,6 +2691,7 @@ InstList_SamusProjectile_Charged_SW_SIW_Left_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_58            ;939969;
     db $08,$0C : dw $0003                                                ;93996F;
 
+%anchor($939973)
 InstList_SamusProjectile_Charged_SW_SIW_Left_1:
     dw $0001,ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_36            ;939973;
     db $10,$0C : dw $0004                                                ;939977;
@@ -2579,6 +2736,7 @@ InstList_SamusProjectile_Charged_SW_SIW_Left_1:
     dw Instruction_SamusProjectile_GotoY                                 ;939A13;
     dw InstList_SamusProjectile_Charged_SW_SIW_Left_1                    ;939A15;
 
+%anchor($939A17)
 InstList_SamusProjectile_Charged_SW_SIW_UpLeft_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_4A            ;939A17;
     db $08,$08 : dw $0000                                                ;939A1B;
@@ -2589,6 +2747,7 @@ InstList_SamusProjectile_Charged_SW_SIW_UpLeft_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_5A            ;939A2D;
     db $08,$08 : dw $0003                                                ;939A33;
 
+%anchor($939A37)
 InstList_SamusProjectile_Charged_SW_SIW_UpLeft_1:
     dw $0001,ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_2A            ;939A37;
     db $0C,$0C : dw $0004                                                ;939A3B;
@@ -2633,6 +2792,7 @@ InstList_SamusProjectile_Charged_SW_SIW_UpLeft_1:
     dw Instruction_SamusProjectile_GotoY                                 ;939AD7;
     dw InstList_SamusProjectile_Charged_SW_SIW_UpLeft_1                  ;939AD9;
 
+%anchor($939ADB)
 InstList_SamusProjectile_Charged_P_PI_Down_Up_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_4             ;939ADB;
     db $08,$08 : dw $0000                                                ;939ADF;
@@ -2647,6 +2807,7 @@ InstList_SamusProjectile_Charged_P_PI_Down_Up_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_16            ;939B01;
     db $08,$18 : dw $0005                                                ;939B07;
 
+%anchor($939B0B)
 InstList_SamusProjectile_Charged_P_PI_Down_Up_1:
     dw $0001,ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_7             ;939B0B;
     db $08,$1C : dw $0006                                                ;939B0F;
@@ -2655,6 +2816,7 @@ InstList_SamusProjectile_Charged_P_PI_Down_Up_1:
     dw Instruction_SamusProjectile_GotoY                                 ;939B1B;
     dw InstList_SamusProjectile_Charged_P_PI_Down_Up_1                   ;939B1D;
 
+%anchor($939B1F)
 InstList_SamusProjectile_Charged_P_PI_DownLeft_UpRight_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_C             ;939B1F;
     db $08,$08 : dw $0000                                                ;939B23;
@@ -2669,6 +2831,7 @@ InstList_SamusProjectile_Charged_P_PI_DownLeft_UpRight_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_1E            ;939B45;
     db $10,$10 : dw $0005                                                ;939B4B;
 
+%anchor($939B4F)
 InstList_SamusProjectile_Charged_P_PI_DownLeft_UpRight_1:
     dw $0001,ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_F             ;939B4F;
     db $14,$14 : dw $0006                                                ;939B53;
@@ -2677,6 +2840,7 @@ InstList_SamusProjectile_Charged_P_PI_DownLeft_UpRight_1:
     dw Instruction_SamusProjectile_GotoY                                 ;939B5F;
     dw InstList_SamusProjectile_Charged_P_PI_DownLeft_UpRight_1          ;939B61;
 
+%anchor($939B63)
 InstList_SamusProjectile_Charged_P_PI_Left_Right_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_0             ;939B63;
     db $08,$08 : dw $0000                                                ;939B67;
@@ -2691,6 +2855,7 @@ InstList_SamusProjectile_Charged_P_PI_Left_Right_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_12            ;939B89;
     db $18,$08 : dw $0005                                                ;939B8F;
 
+%anchor($939B93)
 InstList_SamusProjectile_Charged_P_PI_Left_Right_1:
     dw $0001,ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_3             ;939B93;
     db $1C,$08 : dw $0006                                                ;939B97;
@@ -2699,6 +2864,7 @@ InstList_SamusProjectile_Charged_P_PI_Left_Right_1:
     dw Instruction_SamusProjectile_GotoY                                 ;939BA3;
     dw InstList_SamusProjectile_Charged_P_PI_Left_Right_1                ;939BA5;
 
+%anchor($939BA7)
 InstList_SamusProjectile_Charged_P_PI_DownRight_UpLeft_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_8             ;939BA7;
     db $08,$08 : dw $0000                                                ;939BAB;
@@ -2713,6 +2879,7 @@ InstList_SamusProjectile_Charged_P_PI_DownRight_UpLeft_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_1A            ;939BCD;
     db $10,$10 : dw $0005                                                ;939BD3;
 
+%anchor($939BD7)
 InstList_SamusProjectile_Charged_P_PI_DownRight_UpLeft_1:
     dw $0001,ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_B             ;939BD7;
     db $14,$14 : dw $0006                                                ;939BDB;
@@ -2721,6 +2888,7 @@ InstList_SamusProjectile_Charged_P_PI_DownRight_UpLeft_1:
     dw Instruction_SamusProjectile_GotoY                                 ;939BE7;
     dw InstList_SamusProjectile_Charged_P_PI_DownRight_UpLeft_1          ;939BE9;
 
+%anchor($939BEB)
 InstList_SamusProjectile_Charged_PW_PIW_Down_Up_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_4             ;939BEB;
     db $0C,$08 : dw $0000                                                ;939BEF;
@@ -2735,6 +2903,7 @@ InstList_SamusProjectile_Charged_PW_PIW_Down_Up_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_16            ;939C11;
     db $0C,$18 : dw $0005                                                ;939C17;
 
+%anchor($939C1B)
 InstList_SamusProjectile_Charged_PW_PIW_Down_Up_1:
     dw $0001,ProjectileFlareSpritemaps_Charged_PW_PIW_19                 ;939C1B;
     db $0C,$1E : dw $0006                                                ;939C1F;
@@ -2771,6 +2940,7 @@ InstList_SamusProjectile_Charged_PW_PIW_Down_Up_1:
     dw Instruction_SamusProjectile_GotoY                                 ;939C9B;
     dw InstList_SamusProjectile_Charged_PW_PIW_Down_Up_1                 ;939C9D;
 
+%anchor($939C9F)
 InstList_SamusProjectile_Charged_PW_PIW_DownLeft_UpRight_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_C             ;939C9F;
     db $08,$08 : dw $0000                                                ;939CA3;
@@ -2785,6 +2955,7 @@ InstList_SamusProjectile_Charged_PW_PIW_DownLeft_UpRight_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_1E            ;939CC5;
     db $0C,$0C : dw $0005                                                ;939CCB;
 
+%anchor($939CCF)
 InstList_SamusProjectile_Charged_PW_PIW_DownLeft_UpRight_1:
     dw $0001,ProjectileFlareSpritemaps_Charged_PW_PIW_37                 ;939CCF;
     db $0C,$0C : dw $0006                                                ;939CD3;
@@ -2821,6 +2992,7 @@ InstList_SamusProjectile_Charged_PW_PIW_DownLeft_UpRight_1:
     dw Instruction_SamusProjectile_GotoY                                 ;939D4F;
     dw InstList_SamusProjectile_Charged_PW_PIW_DownLeft_UpRight_1        ;939D51;
 
+%anchor($939D53)
 InstList_SamusProjectile_Charged_PW_PIW_Left_Right_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_0             ;939D53;
     db $08,$0C : dw $0000                                                ;939D57;
@@ -2835,6 +3007,7 @@ InstList_SamusProjectile_Charged_PW_PIW_Left_Right_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_12            ;939D79;
     db $18,$0C : dw $0005                                                ;939D7F;
 
+%anchor($939D83)
 InstList_SamusProjectile_Charged_PW_PIW_Left_Right_1:
     dw $0001,ProjectileFlareSpritemaps_Charged_PW_PIW_5                  ;939D83;
     db $1C,$0C : dw $0006                                                ;939D87;
@@ -2871,6 +3044,7 @@ InstList_SamusProjectile_Charged_PW_PIW_Left_Right_1:
     dw Instruction_SamusProjectile_GotoY                                 ;939E03;
     dw InstList_SamusProjectile_Charged_PW_PIW_Left_Right_1              ;939E05;
 
+%anchor($939E07)
 InstList_SamusProjectile_Charged_PW_PIW_DownRight_UpLeft_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_8             ;939E07;
     db $08,$08 : dw $0000                                                ;939E0B;
@@ -2885,6 +3059,7 @@ InstList_SamusProjectile_Charged_PW_PIW_DownRight_UpLeft_0:
     dw $0001,ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_1A            ;939E2D;
     db $0C,$0C : dw $0005                                                ;939E33;
 
+%anchor($939E37)
 InstList_SamusProjectile_Charged_PW_PIW_DownRight_UpLeft_1:
     dw $0001,ProjectileFlareSpritemaps_Charged_PW_PIW_F                  ;939E37;
     db $0C,$0C : dw $0006                                                ;939E3B;
@@ -2921,108 +3096,126 @@ InstList_SamusProjectile_Charged_PW_PIW_DownRight_UpLeft_1:
     dw Instruction_SamusProjectile_GotoY                                 ;939EB7;
     dw InstList_SamusProjectile_Charged_PW_PIW_DownRight_UpLeft_1        ;939EB9;
 
+%anchor($939EBB)
 InstList_SamusProjectile_Missiles_Up:
     dw $000F,ProjectileFlareSpritemaps_Missile_2                         ;939EBB;
     db $04,$04 : dw $0000                                                ;939EBF;
     dw Instruction_SamusProjectile_GotoY                                 ;939EC3;
     dw InstList_SamusProjectile_Missiles_Up                              ;939EC5;
 
+%anchor($939EC7)
 InstList_SamusProjectile_Missiles_UpRight:
     dw $000F,ProjectileFlareSpritemaps_Missile_3                         ;939EC7;
     db $04,$04 : dw $0000                                                ;939ECB;
     dw Instruction_SamusProjectile_GotoY                                 ;939ECF;
     dw InstList_SamusProjectile_Missiles_UpRight                         ;939ED1;
 
+%anchor($939ED3)
 InstList_SamusProjectile_Missiles_Right:
     dw $000F,ProjectileFlareSpritemaps_Missile_4                         ;939ED3;
     db $04,$04 : dw $0000                                                ;939ED7;
     dw Instruction_SamusProjectile_GotoY                                 ;939EDB;
     dw InstList_SamusProjectile_Missiles_Right                           ;939EDD;
 
+%anchor($939EDF)
 InstList_SamusProjectile_Missiles_DownRight:
     dw $000F,ProjectileFlareSpritemaps_Missile_5                         ;939EDF;
     db $04,$04 : dw $0000                                                ;939EE3;
     dw Instruction_SamusProjectile_GotoY                                 ;939EE7;
     dw InstList_SamusProjectile_Missiles_DownRight                       ;939EE9;
 
+%anchor($939EEB)
 InstList_SamusProjectile_Missiles_Down:
     dw $000F,ProjectileFlareSpritemaps_Missile_6                         ;939EEB;
     db $04,$04 : dw $0000                                                ;939EEF;
     dw Instruction_SamusProjectile_GotoY                                 ;939EF3;
     dw InstList_SamusProjectile_Missiles_Down                            ;939EF5;
 
+%anchor($939EF7)
 InstList_SamusProjectile_Missiles_DownLeft:
     dw $000F,ProjectileFlareSpritemaps_Missile_7                         ;939EF7;
     db $04,$04 : dw $0000                                                ;939EFB;
     dw Instruction_SamusProjectile_GotoY                                 ;939EFF;
     dw InstList_SamusProjectile_Missiles_DownLeft                        ;939F01;
 
+%anchor($939F03)
 InstList_SamusProjectile_Missiles_Left:
     dw $000F,ProjectileFlareSpritemaps_Missile_0                         ;939F03;
     db $04,$04 : dw $0000                                                ;939F07;
     dw Instruction_SamusProjectile_GotoY                                 ;939F0B;
     dw InstList_SamusProjectile_Missiles_Left                            ;939F0D;
 
+%anchor($939F0F)
 InstList_SamusProjectile_Missiles_UpLeft:
     dw $000F,ProjectileFlareSpritemaps_Missile_1                         ;939F0F;
     db $04,$04 : dw $0000                                                ;939F13;
     dw Instruction_SamusProjectile_GotoY                                 ;939F17;
     dw InstList_SamusProjectile_Missiles_UpLeft                          ;939F19;
 
+%anchor($939F1B)
 InstList_SamusProjectile_SuperMissiles_Up:
     dw $000F,ProjectileFlareSpritemaps_SuperMissile_2                    ;939F1B;
     db $08,$08 : dw $0000                                                ;939F1F;
     dw Instruction_SamusProjectile_GotoY                                 ;939F23;
     dw InstList_SamusProjectile_SuperMissiles_Up                         ;939F25;
 
+%anchor($939F27)
 InstList_SamusProjectile_SuperMissiles_UpRight:
     dw $000F,ProjectileFlareSpritemaps_SuperMissile_3                    ;939F27;
     db $08,$08 : dw $0000                                                ;939F2B;
     dw Instruction_SamusProjectile_GotoY                                 ;939F2F;
     dw InstList_SamusProjectile_SuperMissiles_UpRight                    ;939F31;
 
+%anchor($939F33)
 InstList_SamusProjectile_SuperMissiles_Right:
     dw $000F,ProjectileFlareSpritemaps_SuperMissile_4                    ;939F33;
     db $08,$08 : dw $0000                                                ;939F37;
     dw Instruction_SamusProjectile_GotoY                                 ;939F3B;
     dw InstList_SamusProjectile_SuperMissiles_Right                      ;939F3D;
 
+%anchor($939F3F)
 InstList_SamusProjectile_SuperMissiles_DownRight:
     dw $000F,ProjectileFlareSpritemaps_SuperMissile_5                    ;939F3F;
     db $08,$08 : dw $0000                                                ;939F43;
     dw Instruction_SamusProjectile_GotoY                                 ;939F47;
     dw InstList_SamusProjectile_SuperMissiles_DownRight                  ;939F49;
 
+%anchor($939F4B)
 InstList_SamusProjectile_SuperMissiles_Down:
     dw $000F,ProjectileFlareSpritemaps_SuperMissile_6                    ;939F4B;
     db $08,$08 : dw $0000                                                ;939F4F;
     dw Instruction_SamusProjectile_GotoY                                 ;939F53;
     dw InstList_SamusProjectile_SuperMissiles_Down                       ;939F55;
 
+%anchor($939F57)
 InstList_SamusProjectile_SuperMissiles_DownLeft:
     dw $000F,ProjectileFlareSpritemaps_SuperMissile_7                    ;939F57;
     db $08,$08 : dw $0000                                                ;939F5B;
     dw Instruction_SamusProjectile_GotoY                                 ;939F5F;
     dw InstList_SamusProjectile_SuperMissiles_DownLeft                   ;939F61;
 
+%anchor($939F63)
 InstList_SamusProjectile_SuperMissiles_Left:
     dw $000F,ProjectileFlareSpritemaps_SuperMissile_0                    ;939F63;
     db $08,$08 : dw $0000                                                ;939F67;
     dw Instruction_SamusProjectile_GotoY                                 ;939F6B;
     dw InstList_SamusProjectile_SuperMissiles_Left                       ;939F6D;
 
+%anchor($939F6F)
 InstList_SamusProjectile_SuperMissiles_UpLeft:
     dw $000F,ProjectileFlareSpritemaps_SuperMissile_1                    ;939F6F;
     db $08,$08 : dw $0000                                                ;939F73;
     dw Instruction_SamusProjectile_GotoY                                 ;939F77;
     dw InstList_SamusProjectile_SuperMissiles_UpLeft                     ;939F79;
 
+%anchor($939F7B)
 InstList_SamusProjectile_SuperMissileLink:
     dw $000F,Spritemap_Nothing_93A117                                    ;939F7B;
     db $08,$08 : dw $0000                                                ;939F7F;
     dw Instruction_SamusProjectile_GotoY                                 ;939F83;
     dw InstList_SamusProjectile_SuperMissileLink                         ;939F85;
 
+%anchor($939F87)
 InstList_SamusProjectile_PowerBomb:
     dw $0005,ProjectileFlareSpritemaps_PowerBomb_0                       ;939F87;
     db $04,$04 : dw $0000                                                ;939F8B;
@@ -3033,6 +3226,7 @@ InstList_SamusProjectile_PowerBomb:
     dw Instruction_SamusProjectile_GotoY                                 ;939F9F;
     dw InstList_SamusProjectile_PowerBomb                                ;939FA1;
 
+%anchor($939FA3)
 InstList_SamusProjectile_PowerBomb_FastAnimation:
     dw $0001                                                             ;939FA3;
     dw ProjectileFlareSpritemaps_PowerBomb_0                             ;939FA5;
@@ -3044,6 +3238,7 @@ InstList_SamusProjectile_PowerBomb_FastAnimation:
     dw Instruction_SamusProjectile_GotoY                                 ;939FBB;
     dw InstList_SamusProjectile_PowerBomb_FastAnimation                  ;939FBD;
 
+%anchor($939FBF)
 InstList_SamusProjectile_Bomb:
     dw $0005,ProjectileFlareSpritemaps_Bomb_0                            ;939FBF;
     db $04,$04 : dw $0000                                                ;939FC3;
@@ -3056,6 +3251,7 @@ InstList_SamusProjectile_Bomb:
     dw Instruction_SamusProjectile_GotoY                                 ;939FDF;
     dw InstList_SamusProjectile_Bomb                                     ;939FE1;
 
+%anchor($939FE3)
 InstList_SamusProjectile_Bomb_FastAnimation:
     dw $0001,ProjectileFlareSpritemaps_Bomb_0                            ;939FE3;
     db $04,$04 : dw $0000                                                ;939FE7;
@@ -3068,6 +3264,7 @@ InstList_SamusProjectile_Bomb_FastAnimation:
     dw Instruction_SamusProjectile_GotoY                                 ;93A003;
     dw InstList_SamusProjectile_Bomb_FastAnimation                       ;93A005;
 
+%anchor($93A007)
 InstList_SamusProjectile_BeamExplosion:
     dw $0003,ProjectileFlareSpritemaps_BeamExplosion_0                   ;93A007;
     db $00,$00 : dw $0000                                                ;93A00B;
@@ -3083,6 +3280,7 @@ InstList_SamusProjectile_BeamExplosion:
     db $00,$00 : dw $0000                                                ;93A033;
     dw Instruction_SamusProjectile_Delete                                ;93A037;
 
+%anchor($93A039)
 InstList_SamusProjectile_MissileExplosion:
     dw $0003,ProjectileFlareSpritemaps_MissileExplosion_0                ;93A039;
     db $08,$08 : dw $0000                                                ;93A03D;
@@ -3098,6 +3296,7 @@ InstList_SamusProjectile_MissileExplosion:
     db $08,$08 : dw $0000                                                ;93A065;
     dw Instruction_SamusProjectile_Delete                                ;93A069;
 
+%anchor($93A06B)
 InstList_SamusProjectile_BombExplosion:
     dw $0002,ProjectileFlareSpritemaps_BombExplosion_PlasmaSBA_0         ;93A06B;
     db $08,$08 : dw $0000                                                ;93A06F;
@@ -3111,6 +3310,7 @@ InstList_SamusProjectile_BombExplosion:
     db $10,$10 : dw $0000                                                ;93A08F;
     dw Instruction_SamusProjectile_Delete                                ;93A093;
 
+%anchor($93A095)
 InstList_SamusProjectile_PlasmaSBA:
     dw $0002,ProjectileFlareSpritemaps_BombExplosion_PlasmaSBA_0         ;93A095;
     db $08,$08 : dw $0000                                                ;93A099;
@@ -3125,6 +3325,7 @@ InstList_SamusProjectile_PlasmaSBA:
     dw Instruction_SamusProjectile_GotoY                                 ;93A0BD;
     dw InstList_SamusProjectile_PlasmaSBA                                ;93A0BF;
 
+%anchor($93A0C1)
 InstList_SamusProjectile_SuperMissileExplosion:
     dw $0005,ProjectileFlareSpritemaps_SuperMissileExplosion_0           ;93A0C1;
     db $08,$08 : dw $0000                                                ;93A0C5;
@@ -3140,6 +3341,7 @@ InstList_SamusProjectile_SuperMissileExplosion:
     db $10,$10 : dw $0000                                                ;93A0ED;
     dw Instruction_SamusProjectile_Delete                                ;93A0F1;
 
+%anchor($93A0F3)
 UNUSED_InstList_SamusProjectile_Projectile25_93A0F3:
     dw $0002,Spritemap_Nothing_93A117                                    ;93A0F3;
     db $10,$20 : dw $0000                                                ;93A0F7;
@@ -3152,9 +3354,11 @@ UNUSED_InstList_SamusProjectile_Projectile25_93A0F3:
     dw Instruction_SamusProjectile_GotoY                                 ;93A113;
     dw UNUSED_InstList_SamusProjectile_Projectile25_93A0F3               ;93A115;
 
+%anchor($93A117)
 Spritemap_Nothing_93A117:
     dw $0000                                                             ;93A117;
 
+%anchor($93A119)
 InstList_SamusProjectile_ShinesparkEcho:
     dw $0002,Spritemap_Nothing_93A117                                    ;93A119;
     db $20,$20 : dw $0000                                                ;93A11D;
@@ -3167,18 +3371,21 @@ InstList_SamusProjectile_ShinesparkEcho:
     dw Instruction_SamusProjectile_GotoY                                 ;93A139;
     dw InstList_SamusProjectile_ShinesparkEcho                           ;93A13B;
 
+%anchor($93A13D)
 InstList_SamusProjectile_SpazerSBATrail_0:
     dw $0002,Spritemap_Nothing_93A117                                    ;93A13D;
     db $04,$08 : dw $0000                                                ;93A141;
     dw $0002,Spritemap_Nothing_93A117                                    ;93A143;
     db $0C,$08 : dw $0001                                                ;93A149;
 
+%anchor($93A14D)
 InstList_SamusProjectile_SpazerSBATrail_1:
     dw $0002,Spritemap_Nothing_93A117                                    ;93A14D;
     db $14,$08 : dw $0002                                                ;93A151;
     dw Instruction_SamusProjectile_GotoY                                 ;93A155;
     dw InstList_SamusProjectile_SpazerSBATrail_1                         ;93A157;
 
+%anchor($93A159)
 InstList_SamusProjectile_WaveSBA:
     dw $0008,ProjectileFlareSpritemaps_ChargedWave_WaveSBA_0             ;93A159;
     db $04,$04 : dw $0000                                                ;93A15D;
@@ -3187,6 +3394,7 @@ InstList_SamusProjectile_WaveSBA:
     dw Instruction_SamusProjectile_GotoY                                 ;93A169;
     dw InstList_SamusProjectile_WaveSBA                                  ;93A16B;
 
+%anchor($93A16D)
 UNUSED_InstList_SamusProjectile_Projectile27_93A16D:
     dw $0003,ProjectileFlareSpritemaps_BeamExplosion_0                   ;93A16D;
     db $00,$00 : dw $0000                                                ;93A171;
@@ -3203,6 +3411,7 @@ UNUSED_InstList_SamusProjectile_Projectile27_93A16D:
     dw Instruction_SamusProjectile_GotoY                                 ;93A19D;
     dw UNUSED_InstList_SamusProjectile_Projectile27_93A16D               ;93A19F;
 
+%anchor($93A1A1)
 FlareSpritemapPointers:
 ; Index 3Eh is used for a shinespark windup effect by unused function UNUSED_DrawShinesparkWindupEffectSprite_93F5E2
     dw ProjectileFlareSpritemaps_Flare_Charge_Hyper_Grapple_0            ;93A1A1;
@@ -3273,6 +3482,7 @@ FlareSpritemapPointers:
     dw ProjectileFlareSpritemaps_BombExplosion_PlasmaSBA_5               ;93A223;
 
 
+%anchor($93A225)
 FlareSpritemapTable_IndexOffsets:
 ;        _______________ Flare (charge beam / hyper beam / grapple beam)
 ;       |      _________ Flare slow sparks (charge beam / hyper beam)
@@ -3284,109 +3494,135 @@ FlareSpritemapTable_IndexOffsets:
     dw $0000,$002A,$0030                                                 ;93A22B;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($93A231)
 UNUSED_ProjectileFlareSpritemaps_93A231:
     dw $0001                                                             ;93A231;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 5, $2B)
 
+%anchor($93A238)
 UNUSED_ProjectileFlareSpritemaps_93A238:
     dw $0001                                                             ;93A238;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 5, $2A)
 
+%anchor($93A23F)
 UNUSED_ProjectileFlareSpritemaps_93A23F:
     dw $0001                                                             ;93A23F;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 5, $29)
 
+%anchor($93A246)
 UNUSED_ProjectileFlareSpritemaps_93A246:
     dw $0001                                                             ;93A246;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 5, $28)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($93A24D)
 ProjectileFlareSpritemaps_Power_0:
     dw $0001                                                             ;93A24D;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $30)
 
+%anchor($93A254)
 ProjectileFlareSpritemaps_Power_1:
     dw $0001                                                             ;93A254;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $31)
 
+%anchor($93A25B)
 ProjectileFlareSpritemaps_Power_2:
     dw $0001                                                             ;93A25B;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $32)
 
+%anchor($93A262)
 ProjectileFlareSpritemaps_Power_3:
     dw $0001                                                             ;93A262;
     %spritemapEntry(0, $1FC, $FC, 0, 1, 2, 6, $31)
 
+%anchor($93A269)
 ProjectileFlareSpritemaps_Power_4:
     dw $0001                                                             ;93A269;
     %spritemapEntry(0, $1FC, $FC, 1, 1, 2, 6, $30)
 
+%anchor($93A270)
 ProjectileFlareSpritemaps_Power_5:
     dw $0001                                                             ;93A270;
     %spritemapEntry(0, $1FC, $FC, 1, 1, 2, 6, $31)
 
+%anchor($93A277)
 ProjectileFlareSpritemaps_Power_6:
     dw $0001                                                             ;93A277;
     %spritemapEntry(0, $1FC, $FC, 1, 0, 2, 6, $32)
 
+%anchor($93A27E)
 ProjectileFlareSpritemaps_Power_7:
     dw $0001                                                             ;93A27E;
     %spritemapEntry(0, $1FC, $FC, 1, 0, 2, 6, $31)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($93A285)
 UNUSED_ProjectileFlareSpritemaps_93A285:
     dw $0001                                                             ;93A285;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $30)
 
+%anchor($93A28C)
 UNUSED_ProjectileFlareSpritemaps_93A28C:
     dw $0001                                                             ;93A28C;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $31)
 
+%anchor($93A293)
 UNUSED_ProjectileFlareSpritemaps_93A293:
     dw $0001                                                             ;93A293;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $32)
 
+%anchor($93A29A)
 UNUSED_ProjectileFlareSpritemaps_93A29A:
     dw $0001                                                             ;93A29A;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $32)
 
+%anchor($93A2A1)
 UNUSED_ProjectileFlareSpritemaps_93A2A1:
     dw $0001                                                             ;93A2A1;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $30)
 
+%anchor($93A2A8)
 UNUSED_ProjectileFlareSpritemaps_93A2A8:
     dw $0001                                                             ;93A2A8;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $31)
 
+%anchor($93A2AF)
 UNUSED_ProjectileFlareSpritemaps_93A2AF:
     dw $0001                                                             ;93A2AF;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $32)
 
+%anchor($93A2B6)
 UNUSED_ProjectileFlareSpritemaps_93A2B6:
     dw $0001                                                             ;93A2B6;
     %spritemapEntry(0, $1FC, $FC, 0, 1, 2, 6, $31)
 
+%anchor($93A2BD)
 UNUSED_ProjectileFlareSpritemaps_93A2BD:
     dw $0001                                                             ;93A2BD;
     %spritemapEntry(0, $1FC, $FC, 0, 1, 2, 6, $30)
 
+%anchor($93A2C4)
 UNUSED_ProjectileFlareSpritemaps_93A2C4:
     dw $0001                                                             ;93A2C4;
     %spritemapEntry(0, $1FC, $FC, 1, 1, 2, 6, $31)
 
+%anchor($93A2CB)
 UNUSED_ProjectileFlareSpritemaps_93A2CB:
     dw $0001                                                             ;93A2CB;
     %spritemapEntry(0, $1FC, $FC, 1, 0, 2, 6, $32)
 
+%anchor($93A2D2)
 UNUSED_ProjectileFlareSpritemaps_93A2D2:
     dw $0001                                                             ;93A2D2;
     %spritemapEntry(0, $1FC, $FC, 1, 0, 2, 6, $31)
 
+%anchor($93A2D9)
 UNUSED_ProjectileFlareSpritemaps_93A2D9:
     dw $0002                                                             ;93A2D9;
     %spritemapEntry(0, $00, $FC, 0, 0, 2, 6, $30)
     %spritemapEntry(0, $1F8, $FC, 0, 0, 2, 6, $30)
 
+%anchor($93A2E5)
 UNUSED_ProjectileFlareSpritemaps_93A2E5:
     dw $0004                                                             ;93A2E5;
     %spritemapEntry(0, $06, $00, 0, 0, 2, 6, $32)
@@ -3394,11 +3630,13 @@ UNUSED_ProjectileFlareSpritemaps_93A2E5:
     %spritemapEntry(0, $1FE, $F8, 0, 0, 2, 6, $32)
     %spritemapEntry(0, $1F6, $F8, 0, 0, 2, 6, $31)
 
+%anchor($93A2FB)
 UNUSED_ProjectileFlareSpritemaps_93A2FB:
     dw $0002                                                             ;93A2FB;
     %spritemapEntry(0, $1FC, $00, 0, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93A307)
 UNUSED_ProjectileFlareSpritemaps_93A307:
     dw $0004                                                             ;93A307;
     %spritemapEntry(0, $1F2, $00, 0, 1, 2, 6, $32)
@@ -3406,11 +3644,13 @@ UNUSED_ProjectileFlareSpritemaps_93A307:
     %spritemapEntry(0, $1FA, $F8, 0, 1, 2, 6, $32)
     %spritemapEntry(0, $02, $F8, 0, 1, 2, 6, $31)
 
+%anchor($93A31D)
 UNUSED_ProjectileFlareSpritemaps_93A31D:
     dw $0002                                                             ;93A31D;
     %spritemapEntry(0, $1F8, $FC, 0, 1, 2, 6, $30)
     %spritemapEntry(0, $00, $FC, 0, 1, 2, 6, $30)
 
+%anchor($93A329)
 UNUSED_ProjectileFlareSpritemaps_93A329:
     dw $0004                                                             ;93A329;
     %spritemapEntry(0, $1F2, $F8, 1, 1, 2, 6, $32)
@@ -3418,11 +3658,13 @@ UNUSED_ProjectileFlareSpritemaps_93A329:
     %spritemapEntry(0, $1FA, $00, 1, 1, 2, 6, $32)
     %spritemapEntry(0, $02, $00, 1, 1, 2, 6, $31)
 
+%anchor($93A33F)
 UNUSED_ProjectileFlareSpritemaps_93A33F:
     dw $0002                                                             ;93A33F;
     %spritemapEntry(0, $1FC, $F8, 1, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $00, 1, 0, 2, 6, $33)
 
+%anchor($93A34B)
 UNUSED_ProjectileFlareSpritemaps_93A34B:
     dw $0004                                                             ;93A34B;
     %spritemapEntry(0, $1F2, $00, 0, 1, 2, 6, $32)
@@ -3430,23 +3672,28 @@ UNUSED_ProjectileFlareSpritemaps_93A34B:
     %spritemapEntry(0, $1FA, $F8, 0, 1, 2, 6, $32)
     %spritemapEntry(0, $02, $F8, 0, 1, 2, 6, $31)
 
+%anchor($93A361)
 UNUSED_ProjectileFlareSpritemaps_93A361:
     dw $0001                                                             ;93A361;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $38)
 
+%anchor($93A368)
 UNUSED_ProjectileFlareSpritemaps_93A368:
     dw $0001                                                             ;93A368;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $39)
 
+%anchor($93A36F)
 UNUSED_ProjectileFlareSpritemaps_93A36F:
     dw $0001                                                             ;93A36F;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $3A)
 
+%anchor($93A376)
 UNUSED_ProjectileFlareSpritemaps_93A376:
     dw $0001                                                             ;93A376;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $3B)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($93A37D)
 ProjectileFlareSpritemaps_Plasma_PlasmaIce_0:
     dw $0004                                                             ;93A37D;
     %spritemapEntry(0, $08, $FC, 0, 0, 2, 6, $30)
@@ -3454,6 +3701,7 @@ ProjectileFlareSpritemaps_Plasma_PlasmaIce_0:
     %spritemapEntry(0, $00, $FC, 0, 0, 2, 6, $30)
     %spritemapEntry(0, $1F8, $FC, 0, 0, 2, 6, $30)
 
+%anchor($93A393)
 ProjectileFlareSpritemaps_Plasma_PlasmaIce_1:
     dw $0006                                                             ;93A393;
     %spritemapEntry(0, $08, $04, 0, 0, 2, 6, $32)
@@ -3463,6 +3711,7 @@ ProjectileFlareSpritemaps_Plasma_PlasmaIce_1:
     %spritemapEntry(0, $1F8, $F4, 0, 0, 2, 6, $32)
     %spritemapEntry(0, $1F0, $F4, 0, 0, 2, 6, $31)
 
+%anchor($93A3B3)
 ProjectileFlareSpritemaps_Plasma_PlasmaIce_2:
     dw $0004                                                             ;93A3B3;
     %spritemapEntry(0, $1FC, $08, 0, 0, 2, 6, $33)
@@ -3470,6 +3719,7 @@ ProjectileFlareSpritemaps_Plasma_PlasmaIce_2:
     %spritemapEntry(0, $1FC, $F8, 0, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $F0, 0, 0, 2, 6, $33)
 
+%anchor($93A3C9)
 ProjectileFlareSpritemaps_Plasma_PlasmaIce_3:
     dw $0006                                                             ;93A3C9;
     %spritemapEntry(0, $1F0, $04, 0, 1, 2, 6, $32)
@@ -3480,6 +3730,7 @@ ProjectileFlareSpritemaps_Plasma_PlasmaIce_3:
     %spritemapEntry(0, $08, $F4, 0, 1, 2, 6, $31)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($93A3E9)
 UNUSED_ProjectileFlareSpritemaps_93A3E9:
     dw $0004                                                             ;93A3E9;
     %spritemapEntry(0, $08, $FC, 0, 0, 2, 6, $30)
@@ -3487,6 +3738,7 @@ UNUSED_ProjectileFlareSpritemaps_93A3E9:
     %spritemapEntry(0, $00, $FC, 0, 0, 2, 6, $30)
     %spritemapEntry(0, $1F8, $FC, 0, 0, 2, 6, $30)
 
+%anchor($93A3FF)
 UNUSED_ProjectileFlareSpritemaps_93A3FF:
     dw $0006                                                             ;93A3FF;
     %spritemapEntry(0, $0A, $04, 0, 0, 2, 6, $32)
@@ -3496,6 +3748,7 @@ UNUSED_ProjectileFlareSpritemaps_93A3FF:
     %spritemapEntry(0, $1FA, $F4, 0, 0, 2, 6, $32)
     %spritemapEntry(0, $1F2, $F4, 0, 0, 2, 6, $31)
 
+%anchor($93A41F)
 UNUSED_ProjectileFlareSpritemaps_93A41F:
     dw $0004                                                             ;93A41F;
     %spritemapEntry(0, $1FC, $08, 0, 0, 2, 6, $33)
@@ -3503,6 +3756,7 @@ UNUSED_ProjectileFlareSpritemaps_93A41F:
     %spritemapEntry(0, $1FC, $00, 0, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93A435)
 UNUSED_ProjectileFlareSpritemaps_93A435:
     dw $0006                                                             ;93A435;
     %spritemapEntry(0, $1EE, $04, 0, 1, 2, 6, $32)
@@ -3512,6 +3766,7 @@ UNUSED_ProjectileFlareSpritemaps_93A435:
     %spritemapEntry(0, $1FE, $F4, 0, 1, 2, 6, $32)
     %spritemapEntry(0, $06, $F4, 0, 1, 2, 6, $31)
 
+%anchor($93A455)
 UNUSED_ProjectileFlareSpritemaps_93A455:
     dw $0004                                                             ;93A455;
     %spritemapEntry(0, $1F0, $FC, 0, 1, 2, 6, $30)
@@ -3519,6 +3774,7 @@ UNUSED_ProjectileFlareSpritemaps_93A455:
     %spritemapEntry(0, $1F8, $FC, 0, 1, 2, 6, $30)
     %spritemapEntry(0, $00, $FC, 0, 1, 2, 6, $30)
 
+%anchor($93A46B)
 UNUSED_ProjectileFlareSpritemaps_93A46B:
     dw $0006                                                             ;93A46B;
     %spritemapEntry(0, $1EE, $F4, 1, 1, 2, 6, $32)
@@ -3528,6 +3784,7 @@ UNUSED_ProjectileFlareSpritemaps_93A46B:
     %spritemapEntry(0, $1FE, $04, 1, 1, 2, 6, $32)
     %spritemapEntry(0, $06, $04, 1, 1, 2, 6, $31)
 
+%anchor($93A48B)
 UNUSED_ProjectileFlareSpritemaps_93A48B:
     dw $0004                                                             ;93A48B;
     %spritemapEntry(0, $1FC, $F0, 1, 0, 2, 6, $33)
@@ -3535,6 +3792,7 @@ UNUSED_ProjectileFlareSpritemaps_93A48B:
     %spritemapEntry(0, $1FC, $F8, 1, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $00, 1, 0, 2, 6, $33)
 
+%anchor($93A4A1)
 UNUSED_ProjectileFlareSpritemaps_93A4A1:
     dw $0006                                                             ;93A4A1;
     %spritemapEntry(0, $0A, $F4, 1, 0, 2, 6, $32)
@@ -3544,6 +3802,7 @@ UNUSED_ProjectileFlareSpritemaps_93A4A1:
     %spritemapEntry(0, $1FA, $04, 1, 0, 2, 6, $32)
     %spritemapEntry(0, $1F2, $04, 1, 0, 2, 6, $31)
 
+%anchor($93A4C1)
 UNUSED_ProjectileFlareSpritemaps_93A4C1:
     dw $0007                                                             ;93A4C1;
     %spritemapEntry(0, $14, $FC, 0, 0, 2, 6, $30)
@@ -3554,6 +3813,7 @@ UNUSED_ProjectileFlareSpritemaps_93A4C1:
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $30)
     %spritemapEntry(0, $1F4, $FC, 0, 0, 2, 6, $30)
 
+%anchor($93A4E6)
 UNUSED_ProjectileFlareSpritemaps_93A4E6:
     dw $000A                                                             ;93A4E6;
     %spritemapEntry(0, $10, $0C, 0, 0, 2, 6, $32)
@@ -3567,6 +3827,7 @@ UNUSED_ProjectileFlareSpritemaps_93A4E6:
     %spritemapEntry(0, $1F0, $EC, 0, 0, 2, 6, $32)
     %spritemapEntry(0, $1E8, $EC, 0, 0, 2, 6, $31)
 
+%anchor($93A51A)
 UNUSED_ProjectileFlareSpritemaps_93A51A:
     dw $0007                                                             ;93A51A;
     %spritemapEntry(0, $1FC, $14, 0, 0, 2, 6, $33)
@@ -3577,6 +3838,7 @@ UNUSED_ProjectileFlareSpritemaps_93A51A:
     %spritemapEntry(0, $1FC, $EC, 0, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $E4, 0, 0, 2, 6, $33)
 
+%anchor($93A53F)
 UNUSED_ProjectileFlareSpritemaps_93A53F:
     dw $000A                                                             ;93A53F;
     %spritemapEntry(0, $08, $EC, 0, 1, 2, 6, $32)
@@ -3590,6 +3852,7 @@ UNUSED_ProjectileFlareSpritemaps_93A53F:
     %spritemapEntry(0, $00, $F4, 0, 1, 2, 6, $32)
     %spritemapEntry(0, $08, $F4, 0, 1, 2, 6, $31)
 
+%anchor($93A573)
 UNUSED_ProjectileFlareSpritemaps_93A573:
     dw $0007                                                             ;93A573;
     %spritemapEntry(0, $14, $FC, 0, 0, 2, 6, $34)
@@ -3600,6 +3863,7 @@ UNUSED_ProjectileFlareSpritemaps_93A573:
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $34)
     %spritemapEntry(0, $1F4, $FC, 0, 0, 2, 6, $34)
 
+%anchor($93A598)
 UNUSED_ProjectileFlareSpritemaps_93A598:
     dw $000A                                                             ;93A598;
     %spritemapEntry(0, $10, $0C, 0, 0, 2, 6, $36)
@@ -3613,6 +3877,7 @@ UNUSED_ProjectileFlareSpritemaps_93A598:
     %spritemapEntry(0, $00, $FC, 0, 0, 2, 6, $36)
     %spritemapEntry(0, $1F8, $FC, 0, 0, 2, 6, $35)
 
+%anchor($93A5CC)
 UNUSED_ProjectileFlareSpritemaps_93A5CC:
     dw $0007                                                             ;93A5CC;
     %spritemapEntry(0, $1FC, $14, 0, 0, 2, 6, $37)
@@ -3623,6 +3888,7 @@ UNUSED_ProjectileFlareSpritemaps_93A5CC:
     %spritemapEntry(0, $1FC, $F4, 0, 0, 2, 6, $37)
     %spritemapEntry(0, $1FC, $EC, 0, 0, 2, 6, $37)
 
+%anchor($93A5F1)
 UNUSED_ProjectileFlareSpritemaps_93A5F1:
     dw $000A                                                             ;93A5F1;
     %spritemapEntry(0, $1E8, $0C, 0, 1, 2, 6, $36)
@@ -3636,6 +3902,7 @@ UNUSED_ProjectileFlareSpritemaps_93A5F1:
     %spritemapEntry(0, $00, $F4, 0, 1, 2, 6, $36)
     %spritemapEntry(0, $08, $F4, 0, 1, 2, 6, $35)
 
+%anchor($93A625)
 UNUSED_ProjectileFlareSpritemaps_93A625:
     dw $0004                                                             ;93A625;
     %spritemapEntry(0, $08, $FC, 0, 0, 2, 6, $34)
@@ -3643,6 +3910,7 @@ UNUSED_ProjectileFlareSpritemaps_93A625:
     %spritemapEntry(0, $1F8, $FC, 0, 0, 2, 6, $34)
     %spritemapEntry(0, $1F0, $FC, 0, 0, 2, 6, $34)
 
+%anchor($93A63B)
 UNUSED_ProjectileFlareSpritemaps_93A63B:
     dw $0006                                                             ;93A63B;
     %spritemapEntry(0, $08, $04, 0, 0, 2, 6, $36)
@@ -3652,6 +3920,7 @@ UNUSED_ProjectileFlareSpritemaps_93A63B:
     %spritemapEntry(0, $1F8, $F4, 0, 0, 2, 6, $36)
     %spritemapEntry(0, $1F0, $F4, 0, 0, 2, 6, $35)
 
+%anchor($93A65B)
 UNUSED_ProjectileFlareSpritemaps_93A65B:
     dw $0004                                                             ;93A65B;
     %spritemapEntry(0, $1FC, $08, 0, 0, 2, 6, $37)
@@ -3659,6 +3928,7 @@ UNUSED_ProjectileFlareSpritemaps_93A65B:
     %spritemapEntry(0, $1FC, $F8, 0, 0, 2, 6, $37)
     %spritemapEntry(0, $1FC, $F0, 0, 0, 2, 6, $37)
 
+%anchor($93A671)
 UNUSED_ProjectileFlareSpritemaps_93A671:
     dw $0006                                                             ;93A671;
     %spritemapEntry(0, $1F0, $04, 0, 1, 2, 6, $36)
@@ -3668,6 +3938,7 @@ UNUSED_ProjectileFlareSpritemaps_93A671:
     %spritemapEntry(0, $00, $F4, 0, 1, 2, 6, $36)
     %spritemapEntry(0, $08, $F4, 0, 1, 2, 6, $35)
 
+%anchor($93A691)
 UNUSED_ProjectileFlareSpritemaps_93A691:
     dw $0004                                                             ;93A691;
     %spritemapEntry(0, $00, $00, 1, 1, 2, 6, $34)
@@ -3675,6 +3946,7 @@ UNUSED_ProjectileFlareSpritemaps_93A691:
     %spritemapEntry(0, $00, $F8, 0, 1, 2, 6, $34)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 6, $34)
 
+%anchor($93A6A7)
 UNUSED_ProjectileFlareSpritemaps_93A6A7:
     dw $0004                                                             ;93A6A7;
     %spritemapEntry(0, $00, $00, 1, 1, 2, 6, $33)
@@ -3682,30 +3954,37 @@ UNUSED_ProjectileFlareSpritemaps_93A6A7:
     %spritemapEntry(0, $00, $F8, 0, 1, 2, 6, $33)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93A6BD)
 UNUSED_ProjectileFlareSpritemaps_93A6BD:
     dw $0001                                                             ;93A6BD;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $35)
 
+%anchor($93A6C4)
 UNUSED_ProjectileFlareSpritemaps_93A6C4:
     dw $0001                                                             ;93A6C4;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $36)
 
+%anchor($93A6CB)
 UNUSED_ProjectileFlareSpritemaps_93A6CB:
     dw $0001                                                             ;93A6CB;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $37)
 
+%anchor($93A6D2)
 UNUSED_ProjectileFlareSpritemaps_93A6D2:
     dw $0001                                                             ;93A6D2;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 6, $53)
 
+%anchor($93A6D9)
 UNUSED_ProjectileFlareSpritemaps_93A6D9:
     dw $0001                                                             ;93A6D9;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 6, $52)
 
+%anchor($93A6E0)
 UNUSED_ProjectileFlareSpritemaps_93A6E0:
     dw $0001                                                             ;93A6E0;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 6, $51)
 
+%anchor($93A6E7)
 UNUSED_ProjectileFlareSpritemaps_93A6E7:
     dw $0004                                                             ;93A6E7;
     %spritemapEntry(0, $1F8, $00, 1, 0, 3, 6, $50)
@@ -3714,82 +3993,96 @@ UNUSED_ProjectileFlareSpritemaps_93A6E7:
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 6, $50)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($93A6FD)
 ProjectileFlareSpritemaps_FlareSlowSparks_FacingRight_0:
     dw $0003                                                             ;93A6FD;
     %spritemapEntry(0, $00, $0C, 0, 0, 2, 5, $5B)
     %spritemapEntry(0, $08, $EC, 0, 0, 2, 5, $5B)
     %spritemapEntry(0, $1F0, $F4, 0, 0, 2, 5, $5B)
 
+%anchor($93A70E)
 ProjectileFlareSpritemaps_FlareSlowSparks_FacingRight_1:
     dw $0003                                                             ;93A70E;
     %spritemapEntry(0, $1FD, $0A, 0, 0, 2, 5, $5C)
     %spritemapEntry(0, $06, $EE, 0, 0, 2, 5, $5C)
     %spritemapEntry(0, $1F2, $F6, 0, 0, 2, 5, $5C)
 
+%anchor($93A71F)
 ProjectileFlareSpritemaps_FlareSlowSparks_FacingRight_2:
     dw $0003                                                             ;93A71F;
     %spritemapEntry(0, $1FC, $08, 0, 0, 2, 5, $5C)
     %spritemapEntry(0, $04, $F0, 0, 0, 2, 5, $5C)
     %spritemapEntry(0, $1F4, $F8, 0, 0, 2, 5, $5C)
 
+%anchor($93A730)
 ProjectileFlareSpritemaps_FlareSlowSparks_FacingRight_3:
     dw $0003                                                             ;93A730;
     %spritemapEntry(0, $02, $F2, 0, 0, 2, 5, $5D)
     %spritemapEntry(0, $1FB, $06, 0, 0, 2, 5, $5D)
     %spritemapEntry(0, $1F6, $FA, 0, 0, 2, 5, $5D)
 
+%anchor($93A741)
 ProjectileFlareSpritemaps_FlareSlowSparks_FacingRight_4:
     dw $0003                                                             ;93A741;
     %spritemapEntry(0, $1FB, $04, 0, 0, 2, 5, $5D)
     %spritemapEntry(0, $1F8, $FB, 0, 0, 2, 5, $5D)
     %spritemapEntry(0, $00, $F4, 0, 0, 2, 5, $5D)
 
+%anchor($93A752)
 ProjectileFlareSpritemaps_FlareSlowSparks_FacingRight_5:
     dw $0003                                                             ;93A752;
     %spritemapEntry(0, $1FB, $02, 0, 0, 2, 5, $5D)
     %spritemapEntry(0, $1FA, $FA, 0, 0, 2, 5, $5D)
     %spritemapEntry(0, $00, $F6, 0, 0, 2, 5, $5D)
 
+%anchor($93A763)
 ProjectileFlareSpritemaps_FlareFastSparks_FacingRight_0:
     dw $0003                                                             ;93A763;
     %spritemapEntry(0, $00, $EC, 1, 0, 2, 5, $5B)
     %spritemapEntry(0, $08, $0C, 1, 0, 2, 5, $5B)
     %spritemapEntry(0, $1F0, $04, 1, 0, 2, 5, $5B)
 
+%anchor($93A774)
 ProjectileFlareSpritemaps_FlareFastSparks_FacingRight_1:
     dw $0003                                                             ;93A774;
     %spritemapEntry(0, $1FE, $EE, 1, 0, 2, 5, $5C)
     %spritemapEntry(0, $06, $0A, 1, 0, 2, 5, $5C)
     %spritemapEntry(0, $1F2, $02, 1, 0, 2, 5, $5C)
 
+%anchor($93A785)
 ProjectileFlareSpritemaps_FlareFastSparks_FacingRight_2:
     dw $0003                                                             ;93A785;
     %spritemapEntry(0, $04, $08, 1, 0, 2, 5, $5C)
     %spritemapEntry(0, $1F4, $00, 1, 0, 2, 5, $5C)
     %spritemapEntry(0, $1FD, $F0, 1, 0, 2, 5, $5C)
 
+%anchor($93A796)
 ProjectileFlareSpritemaps_FlareFastSparks_FacingRight_3:
     dw $0003                                                             ;93A796;
     %spritemapEntry(0, $02, $06, 1, 0, 2, 5, $5D)
     %spritemapEntry(0, $1FC, $F2, 1, 0, 2, 5, $5D)
     %spritemapEntry(0, $1F6, $FE, 1, 0, 2, 5, $5D)
 
+%anchor($93A7A7)
 ProjectileFlareSpritemaps_FlareFastSparks_FacingRight_4:
     dw $0003                                                             ;93A7A7;
     %spritemapEntry(0, $1FC, $F4, 1, 0, 2, 5, $5D)
     %spritemapEntry(0, $1F8, $FC, 1, 0, 2, 5, $5D)
     %spritemapEntry(0, $00, $04, 1, 0, 2, 5, $5D)
 
+%anchor($93A7B8)
 ProjectileFlareSpritemaps_FlareFastSparks_FacingRight_5:
     dw $0003                                                             ;93A7B8;
     %spritemapEntry(0, $1FC, $F6, 1, 0, 2, 5, $5D)
     %spritemapEntry(0, $1FA, $FD, 1, 0, 2, 5, $5D)
     %spritemapEntry(0, $00, $02, 1, 0, 2, 5, $5D)
 
+%anchor($93A7C9)
 ProjectileFlareSpritemaps_MissileExplosion_0:
     dw $0001                                                             ;93A7C9;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 5, $5F)
 
+%anchor($93A7D0)
 ProjectileFlareSpritemaps_MissileExplosion_1:
     dw $0004                                                             ;93A7D0;
     %spritemapEntry(0, $00, $00, 1, 1, 3, 5, $8A)
@@ -3797,6 +4090,7 @@ ProjectileFlareSpritemaps_MissileExplosion_1:
     %spritemapEntry(0, $00, $F8, 0, 1, 3, 5, $8A)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 5, $8A)
 
+%anchor($93A7E6)
 ProjectileFlareSpritemaps_MissileExplosion_2:
     dw $0004                                                             ;93A7E6;
     %spritemapEntry(1, $4200, $00, 1, 1, 3, 5, $90)
@@ -3804,6 +4098,7 @@ ProjectileFlareSpritemaps_MissileExplosion_2:
     %spritemapEntry(1, $4200, $F0, 0, 1, 3, 5, $90)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 3, 5, $90)
 
+%anchor($93A7FC)
 ProjectileFlareSpritemaps_MissileExplosion_3:
     dw $0004                                                             ;93A7FC;
     %spritemapEntry(1, $4200, $00, 1, 1, 3, 5, $92)
@@ -3811,6 +4106,7 @@ ProjectileFlareSpritemaps_MissileExplosion_3:
     %spritemapEntry(1, $4200, $F0, 0, 1, 3, 5, $92)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 3, 5, $92)
 
+%anchor($93A812)
 ProjectileFlareSpritemaps_MissileExplosion_4:
     dw $0004                                                             ;93A812;
     %spritemapEntry(1, $4200, $00, 1, 1, 3, 5, $94)
@@ -3818,6 +4114,7 @@ ProjectileFlareSpritemaps_MissileExplosion_4:
     %spritemapEntry(1, $4200, $F0, 0, 1, 3, 5, $94)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 3, 5, $94)
 
+%anchor($93A828)
 ProjectileFlareSpritemaps_MissileExplosion_5:
     dw $0004                                                             ;93A828;
     %spritemapEntry(1, $4200, $00, 1, 1, 3, 5, $96)
@@ -3825,6 +4122,7 @@ ProjectileFlareSpritemaps_MissileExplosion_5:
     %spritemapEntry(1, $4200, $F0, 0, 1, 3, 5, $96)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 3, 5, $96)
 
+%anchor($93A83E)
 ProjectileFlareSpritemaps_BombExplosion_PlasmaSBA_0:
     dw $0004                                                             ;93A83E;
     %spritemapEntry(0, $00, $00, 1, 1, 3, 5, $8B)
@@ -3832,6 +4130,7 @@ ProjectileFlareSpritemaps_BombExplosion_PlasmaSBA_0:
     %spritemapEntry(0, $00, $F8, 0, 1, 3, 5, $8B)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 5, $8B)
 
+%anchor($93A854)
 ProjectileFlareSpritemaps_BombExplosion_PlasmaSBA_1:
     dw $0004                                                             ;93A854;
     %spritemapEntry(0, $00, $00, 1, 1, 3, 5, $7A)
@@ -3839,6 +4138,7 @@ ProjectileFlareSpritemaps_BombExplosion_PlasmaSBA_1:
     %spritemapEntry(0, $00, $F8, 0, 1, 3, 5, $7A)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 5, $7A)
 
+%anchor($93A86A)
 ProjectileFlareSpritemaps_BombExplosion_PlasmaSBA_2:
     dw $0004                                                             ;93A86A;
     %spritemapEntry(1, $4200, $00, 1, 1, 3, 5, $70)
@@ -3846,6 +4146,7 @@ ProjectileFlareSpritemaps_BombExplosion_PlasmaSBA_2:
     %spritemapEntry(1, $4200, $F0, 0, 1, 3, 5, $70)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 3, 5, $70)
 
+%anchor($93A880)
 ProjectileFlareSpritemaps_BombExplosion_PlasmaSBA_3:
     dw $0004                                                             ;93A880;
     %spritemapEntry(1, $4200, $00, 1, 1, 3, 5, $72)
@@ -3853,6 +4154,7 @@ ProjectileFlareSpritemaps_BombExplosion_PlasmaSBA_3:
     %spritemapEntry(1, $4200, $F0, 0, 1, 3, 5, $72)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 3, 5, $72)
 
+%anchor($93A896)
 ProjectileFlareSpritemaps_BombExplosion_PlasmaSBA_4:
     dw $0004                                                             ;93A896;
     %spritemapEntry(1, $4200, $00, 1, 1, 3, 5, $74)
@@ -3860,6 +4162,7 @@ ProjectileFlareSpritemaps_BombExplosion_PlasmaSBA_4:
     %spritemapEntry(1, $4200, $F0, 0, 1, 3, 5, $74)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 3, 5, $74)
 
+%anchor($93A8AC)
 ProjectileFlareSpritemaps_BombExplosion_PlasmaSBA_5:
     dw $0004                                                             ;93A8AC;
     %spritemapEntry(0, $1F8, $00, 0, 0, 3, 5, $5E)
@@ -3868,89 +4171,105 @@ ProjectileFlareSpritemaps_BombExplosion_PlasmaSBA_5:
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 5, $5E)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($93A8C2)
 UNUSED_ProjectileFlareSpritemaps_93A8C2:
     dw $0001                                                             ;93A8C2;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 6, $38)
 
+%anchor($93A8C9)
 UNUSED_ProjectileFlareSpritemaps_93A8C9:
     dw $0001                                                             ;93A8C9;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 6, $39)
 
+%anchor($93A8D0)
 UNUSED_ProjectileFlareSpritemaps_93A8D0:
     dw $0001                                                             ;93A8D0;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 6, $3A)
 
+%anchor($93A8D7)
 UNUSED_ProjectileFlareSpritemaps_93A8D7:
     dw $0001                                                             ;93A8D7;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 6, $3B)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($93A8DE)
 ProjectileFlareSpritemaps_FlareSlowSparks_FacingLeft_0:
     dw $0003                                                             ;93A8DE;
     %spritemapEntry(0, $1F8, $0C, 0, 1, 2, 6, $5B)
     %spritemapEntry(0, $1F0, $EC, 0, 1, 2, 6, $5B)
     %spritemapEntry(0, $08, $F4, 0, 1, 2, 6, $5B)
 
+%anchor($93A8EF)
 ProjectileFlareSpritemaps_FlareSlowSparks_FacingLeft_1:
     dw $0003                                                             ;93A8EF;
     %spritemapEntry(0, $1FB, $0A, 0, 1, 2, 6, $5C)
     %spritemapEntry(0, $1F2, $EE, 0, 1, 2, 6, $5C)
     %spritemapEntry(0, $06, $F6, 0, 1, 2, 6, $5C)
 
+%anchor($93A900)
 ProjectileFlareSpritemaps_FlareSlowSparks_FacingLeft_2:
     dw $0003                                                             ;93A900;
     %spritemapEntry(0, $1FC, $08, 0, 1, 2, 6, $5C)
     %spritemapEntry(0, $1F4, $F0, 0, 1, 2, 6, $5C)
     %spritemapEntry(0, $04, $F8, 0, 1, 2, 6, $5C)
 
+%anchor($93A911)
 ProjectileFlareSpritemaps_FlareSlowSparks_FacingLeft_3:
     dw $0003                                                             ;93A911;
     %spritemapEntry(0, $1F6, $F2, 0, 1, 2, 6, $5D)
     %spritemapEntry(0, $1FD, $06, 0, 1, 2, 6, $5D)
     %spritemapEntry(0, $02, $FA, 0, 1, 2, 6, $5D)
 
+%anchor($93A922)
 ProjectileFlareSpritemaps_FlareSlowSparks_FacingLeft_4:
     dw $0003                                                             ;93A922;
     %spritemapEntry(0, $1FD, $04, 0, 1, 2, 6, $5D)
     %spritemapEntry(0, $00, $FB, 0, 1, 2, 6, $5D)
     %spritemapEntry(0, $1F8, $F4, 0, 1, 2, 6, $5D)
 
+%anchor($93A933)
 ProjectileFlareSpritemaps_FlareSlowSparks_FacingLeft_5:
     dw $0003                                                             ;93A933;
     %spritemapEntry(0, $1FD, $02, 0, 1, 2, 6, $5D)
     %spritemapEntry(0, $1FE, $FA, 0, 1, 2, 6, $5D)
     %spritemapEntry(0, $1F8, $F6, 0, 1, 2, 6, $5D)
 
+%anchor($93A944)
 ProjectileFlareSpritemaps_FlareFastSparks_FacingLeft_0:
     dw $0003                                                             ;93A944;
     %spritemapEntry(0, $1F8, $EC, 1, 1, 2, 6, $5B)
     %spritemapEntry(0, $1F0, $0C, 1, 1, 2, 6, $5B)
     %spritemapEntry(0, $08, $04, 1, 1, 2, 6, $5B)
 
+%anchor($93A955)
 ProjectileFlareSpritemaps_FlareFastSparks_FacingLeft_1:
     dw $0003                                                             ;93A955;
     %spritemapEntry(0, $1FA, $EE, 1, 1, 2, 6, $5C)
     %spritemapEntry(0, $1F2, $0A, 1, 1, 2, 6, $5C)
     %spritemapEntry(0, $06, $02, 1, 1, 2, 6, $5C)
 
+%anchor($93A966)
 ProjectileFlareSpritemaps_FlareFastSparks_FacingLeft_2:
     dw $0003                                                             ;93A966;
     %spritemapEntry(0, $1F4, $08, 1, 1, 2, 6, $5C)
     %spritemapEntry(0, $04, $00, 1, 1, 2, 6, $5C)
     %spritemapEntry(0, $1FB, $F0, 1, 1, 2, 6, $5C)
 
+%anchor($93A977)
 ProjectileFlareSpritemaps_FlareFastSparks_FacingLeft_3:
     dw $0003                                                             ;93A977;
     %spritemapEntry(0, $1F6, $06, 1, 1, 2, 6, $5D)
     %spritemapEntry(0, $1FC, $F2, 1, 1, 2, 6, $5D)
     %spritemapEntry(0, $02, $FE, 1, 1, 2, 6, $5D)
 
+%anchor($93A988)
 ProjectileFlareSpritemaps_FlareFastSparks_FacingLeft_4:
     dw $0003                                                             ;93A988;
     %spritemapEntry(0, $1FC, $F4, 1, 1, 2, 6, $5D)
     %spritemapEntry(0, $00, $FC, 1, 1, 2, 6, $5D)
     %spritemapEntry(0, $1F8, $04, 1, 1, 2, 6, $5D)
 
+%anchor($93A999)
 ProjectileFlareSpritemaps_FlareFastSparks_FacingLeft_5:
     dw $0003                                                             ;93A999;
     %spritemapEntry(0, $1FC, $F6, 1, 1, 2, 6, $5D)
@@ -3958,21 +4277,25 @@ ProjectileFlareSpritemaps_FlareFastSparks_FacingLeft_5:
     %spritemapEntry(0, $1F8, $02, 1, 1, 2, 6, $5D)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($93A9AA)
 UNUSED_ProjectileFlareSpritemaps_93A9AA:
     dw $0001                                                             ;93A9AA;
     %spritemapEntry(0, $1F7, $F7, 0, 0, 3, 5, $48)
 
+%anchor($93A9B1)
 UNUSED_ProjectileFlareSpritemaps_93A9B1:
     dw $0002                                                             ;93A9B1;
     %spritemapEntry(0, $01, $01, 0, 0, 3, 5, $48)
     %spritemapEntry(1, $43F3, $F3, 0, 0, 3, 5, $7C)
 
+%anchor($93A9BD)
 UNUSED_ProjectileFlareSpritemaps_93A9BD:
     dw $0003                                                             ;93A9BD;
     %spritemapEntry(1, $43FD, $FD, 0, 0, 3, 5, $7C)
     %spritemapEntry(0, $1F7, $01, 0, 0, 3, 5, $48)
     %spritemapEntry(1, $43F3, $F3, 0, 0, 3, 5, $7E)
 
+%anchor($93A9CE)
 UNUSED_ProjectileFlareSpritemaps_93A9CE:
     dw $0004                                                             ;93A9CE;
     %spritemapEntry(0, $01, $F7, 0, 0, 3, 5, $48)
@@ -3980,6 +4303,7 @@ UNUSED_ProjectileFlareSpritemaps_93A9CE:
     %spritemapEntry(1, $43F3, $FD, 0, 0, 3, 5, $7C)
     %spritemapEntry(1, $43F3, $F3, 0, 0, 3, 5, $9A)
 
+%anchor($93A9E4)
 UNUSED_ProjectileFlareSpritemaps_93A9E4:
     dw $0004                                                             ;93A9E4;
     %spritemapEntry(1, $43FD, $F3, 0, 0, 3, 5, $7C)
@@ -3987,29 +4311,35 @@ UNUSED_ProjectileFlareSpritemaps_93A9E4:
     %spritemapEntry(1, $43F3, $FD, 0, 0, 3, 5, $7E)
     %spritemapEntry(1, $43F3, $F3, 0, 0, 3, 5, $9C)
 
+%anchor($93A9FA)
 UNUSED_ProjectileFlareSpritemaps_93A9FA:
     dw $0003                                                             ;93A9FA;
     %spritemapEntry(1, $43FD, $F3, 0, 0, 3, 5, $7E)
     %spritemapEntry(1, $43FD, $FD, 0, 0, 3, 5, $9C)
     %spritemapEntry(1, $43F3, $FD, 0, 0, 3, 5, $9A)
 
+%anchor($93AA0B)
 UNUSED_ProjectileFlareSpritemaps_93AA0B:
     dw $0002                                                             ;93AA0B;
     %spritemapEntry(1, $43FD, $F3, 0, 0, 3, 5, $9A)
     %spritemapEntry(1, $43F3, $FD, 0, 0, 3, 5, $9C)
 
+%anchor($93AA17)
 UNUSED_ProjectileFlareSpritemaps_93AA17:
     dw $0001                                                             ;93AA17;
     %spritemapEntry(1, $43FD, $F3, 0, 0, 3, 5, $9C)
 
+%anchor($93AA1E)
 UNUSED_ProjectileFlareSpritemaps_93AA1E:
     dw $0001                                                             ;93AA1E;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 6, $5E)
 
+%anchor($93AA25)
 UNUSED_ProjectileFlareSpritemaps_93AA25:
     dw $0001                                                             ;93AA25;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 6, $5F)
 
+%anchor($93AA2C)
 UNUSED_ProjectileFlareSpritemaps_93AA2C:
     dw $0004                                                             ;93AA2C;
     %spritemapEntry(0, $00, $00, 1, 1, 3, 6, $60)
@@ -4017,6 +4347,7 @@ UNUSED_ProjectileFlareSpritemaps_93AA2C:
     %spritemapEntry(0, $1F8, $00, 1, 0, 3, 6, $60)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 6, $60)
 
+%anchor($93AA42)
 UNUSED_ProjectileFlareSpritemaps_93AA42:
     dw $0004                                                             ;93AA42;
     %spritemapEntry(0, $00, $00, 1, 1, 3, 6, $61)
@@ -4024,6 +4355,7 @@ UNUSED_ProjectileFlareSpritemaps_93AA42:
     %spritemapEntry(0, $1F8, $00, 1, 0, 3, 6, $61)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 6, $61)
 
+%anchor($93AA58)
 UNUSED_ProjectileFlareSpritemaps_93AA58:
     dw $0004                                                             ;93AA58;
     %spritemapEntry(0, $00, $00, 1, 1, 3, 6, $62)
@@ -4031,6 +4363,7 @@ UNUSED_ProjectileFlareSpritemaps_93AA58:
     %spritemapEntry(0, $1F8, $00, 1, 0, 3, 6, $62)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 6, $62)
 
+%anchor($93AA6E)
 UNUSED_ProjectileFlareSpritemaps_93AA6E:
     dw $0004                                                             ;93AA6E;
     %spritemapEntry(0, $00, $00, 1, 1, 3, 6, $63)
@@ -4039,6 +4372,7 @@ UNUSED_ProjectileFlareSpritemaps_93AA6E:
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 6, $63)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($93AA84)
 ProjectileFlareSpritemaps_SuperMissileExplosion_0:
     dw $0004                                                             ;93AA84;
     %spritemapEntry(0, $00, $00, 1, 1, 3, 5, $8A)
@@ -4046,6 +4380,7 @@ ProjectileFlareSpritemaps_SuperMissileExplosion_0:
     %spritemapEntry(0, $00, $F8, 0, 1, 3, 5, $8A)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 5, $8A)
 
+%anchor($93AA9A)
 ProjectileFlareSpritemaps_SuperMissileExplosion_1:
     dw $0004                                                             ;93AA9A;
     %spritemapEntry(1, $4200, $00, 1, 1, 3, 5, $90)
@@ -4053,6 +4388,7 @@ ProjectileFlareSpritemaps_SuperMissileExplosion_1:
     %spritemapEntry(1, $43F0, $00, 1, 0, 3, 5, $90)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 3, 5, $90)
 
+%anchor($93AAB0)
 ProjectileFlareSpritemaps_SuperMissileExplosion_2:
     dw $0004                                                             ;93AAB0;
     %spritemapEntry(1, $4200, $00, 1, 1, 3, 5, $92)
@@ -4060,6 +4396,7 @@ ProjectileFlareSpritemaps_SuperMissileExplosion_2:
     %spritemapEntry(1, $4200, $F0, 0, 1, 3, 5, $92)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 3, 5, $92)
 
+%anchor($93AAC6)
 ProjectileFlareSpritemaps_SuperMissileExplosion_3:
     dw $000C                                                             ;93AAC6;
     %spritemapEntry(0, $10, $00, 1, 1, 3, 5, $C2)
@@ -4075,6 +4412,7 @@ ProjectileFlareSpritemaps_SuperMissileExplosion_3:
     %spritemapEntry(1, $43F0, $00, 1, 0, 3, 5, $B0)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 3, 5, $B0)
 
+%anchor($93AB04)
 ProjectileFlareSpritemaps_SuperMissileExplosion_4:
     dw $0008                                                             ;93AB04;
     %spritemapEntry(1, $4208, $00, 1, 1, 3, 5, $B5)
@@ -4086,6 +4424,7 @@ ProjectileFlareSpritemaps_SuperMissileExplosion_4:
     %spritemapEntry(1, $43E8, $F0, 0, 0, 3, 5, $B5)
     %spritemapEntry(1, $43F0, $E8, 0, 0, 3, 5, $B3)
 
+%anchor($93AB2E)
 ProjectileFlareSpritemaps_SuperMissileExplosion_5:
     dw $000C                                                             ;93AB2E;
     %spritemapEntry(0, $00, $10, 1, 1, 3, 5, $BB)
@@ -4101,18 +4440,22 @@ ProjectileFlareSpritemaps_SuperMissileExplosion_5:
     %spritemapEntry(1, $4208, $E8, 0, 1, 3, 5, $B8)
     %spritemapEntry(1, $43E8, $E8, 0, 0, 3, 5, $B8)
 
+%anchor($93AB6C)
 ProjectileFlareSpritemaps_Flare_Charge_Hyper_Grapple_0:
     dw $0001                                                             ;93AB6C;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $53)
 
+%anchor($93AB73)
 ProjectileFlareSpritemaps_Flare_Charge_Hyper_Grapple_1:
     dw $0001                                                             ;93AB73;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $52)
 
+%anchor($93AB7A)
 ProjectileFlareSpritemaps_Flare_Charge_Hyper_Grapple_2:
     dw $0001                                                             ;93AB7A;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $51)
 
+%anchor($93AB81)
 ProjectileFlareSpritemaps_Flare_Charge_Hyper_Grapple_3:
     dw $0004                                                             ;93AB81;
     %spritemapEntry(0, $1F8, $00, 1, 0, 2, 6, $50)
@@ -4120,32 +4463,39 @@ ProjectileFlareSpritemaps_Flare_Charge_Hyper_Grapple_3:
     %spritemapEntry(0, $00, $F8, 0, 1, 2, 6, $50)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 6, $50)
 
+%anchor($93AB97)
 ProjectileFlareSpritemaps_PowerBomb_0:
     dw $0001                                                             ;93AB97;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 5, $26)
 
+%anchor($93AB9E)
 ProjectileFlareSpritemaps_PowerBomb_1:
     dw $0001                                                             ;93AB9E;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 5, $27)
 
+%anchor($93ABA5)
 ProjectileFlareSpritemaps_PowerBomb_2:
     dw $0001                                                             ;93ABA5;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 5, $7B)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($93ABAC)
 UNUSED_ProjectileFlareSpritemaps_93ABAC:
     dw $0001                                                             ;93ABAC;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 5, $5F)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($93ABB3)
 ProjectileFlareSpritemaps_BeamExplosion_0:
     dw $0001                                                             ;93ABB3;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 6, $53)
 
+%anchor($93ABBA)
 ProjectileFlareSpritemaps_BeamExplosion_1:
     dw $0001                                                             ;93ABBA;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 6, $51)
 
+%anchor($93ABC1)
 ProjectileFlareSpritemaps_BeamExplosion_2:
     dw $0004                                                             ;93ABC1;
     %spritemapEntry(0, $00, $00, 1, 1, 3, 6, $60)
@@ -4153,6 +4503,7 @@ ProjectileFlareSpritemaps_BeamExplosion_2:
     %spritemapEntry(0, $1F8, $00, 1, 0, 3, 6, $60)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 6, $60)
 
+%anchor($93ABD7)
 ProjectileFlareSpritemaps_BeamExplosion_3:
     dw $0004                                                             ;93ABD7;
     %spritemapEntry(0, $00, $00, 1, 1, 3, 6, $61)
@@ -4160,6 +4511,7 @@ ProjectileFlareSpritemaps_BeamExplosion_3:
     %spritemapEntry(0, $1F8, $00, 1, 0, 3, 6, $61)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 6, $61)
 
+%anchor($93ABED)
 ProjectileFlareSpritemaps_BeamExplosion_4:
     dw $0004                                                             ;93ABED;
     %spritemapEntry(0, $00, $00, 1, 1, 3, 6, $62)
@@ -4167,6 +4519,7 @@ ProjectileFlareSpritemaps_BeamExplosion_4:
     %spritemapEntry(0, $1F8, $00, 1, 0, 3, 6, $62)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 6, $62)
 
+%anchor($93AC03)
 ProjectileFlareSpritemaps_BeamExplosion_5:
     dw $0004                                                             ;93AC03;
     %spritemapEntry(0, $00, $00, 1, 1, 3, 6, $63)
@@ -4175,6 +4528,7 @@ ProjectileFlareSpritemaps_BeamExplosion_5:
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 6, $63)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($93AC19)
 UNUSED_ProjectileFlareSpritemaps_93AC19:
     dw $0004                                                             ;93AC19;
     %spritemapEntry(0, $1F2, $FC, 0, 1, 3, 5, $6C)
@@ -4182,6 +4536,7 @@ UNUSED_ProjectileFlareSpritemaps_93AC19:
     %spritemapEntry(0, $00, $FC, 0, 1, 3, 5, $6C)
     %spritemapEntry(0, $1F8, $FC, 0, 0, 3, 5, $6C)
 
+%anchor($93AC2F)
 UNUSED_ProjectileFlareSpritemaps_93AC2F:
     dw $0004                                                             ;93AC2F;
     %spritemapEntry(0, $00, $FC, 0, 1, 3, 5, $6E)
@@ -4189,6 +4544,7 @@ UNUSED_ProjectileFlareSpritemaps_93AC2F:
     %spritemapEntry(0, $1F8, $FC, 0, 0, 3, 5, $6E)
     %spritemapEntry(0, $1F0, $FC, 0, 0, 3, 5, $6D)
 
+%anchor($93AC45)
 UNUSED_ProjectileFlareSpritemaps_93AC45:
     dw $0004                                                             ;93AC45;
     %spritemapEntry(0, $1F0, $FE, 0, 0, 3, 5, $6F)
@@ -4196,98 +4552,122 @@ UNUSED_ProjectileFlareSpritemaps_93AC45:
     %spritemapEntry(0, $00, $FE, 0, 0, 3, 5, $6F)
     %spritemapEntry(0, $1F8, $FE, 0, 0, 3, 5, $6F)
 
+%anchor($93AC5B)
 UNUSED_ProjectileFlareSpritemaps_93AC5B:
     dw $0001                                                             ;93AC5B;
     %spritemapEntry(1, $43F8, $F8, 0, 0, 3, 5, $7C)
 
+%anchor($93AC62)
 UNUSED_ProjectileFlareSpritemaps_93AC62:
     dw $0001                                                             ;93AC62;
     %spritemapEntry(1, $43F8, $F6, 0, 0, 3, 5, $7E)
 
+%anchor($93AC69)
 UNUSED_ProjectileFlareSpritemaps_93AC69:
     dw $0001                                                             ;93AC69;
     %spritemapEntry(1, $43F8, $F4, 0, 0, 3, 5, $9A)
 
+%anchor($93AC70)
 UNUSED_ProjectileFlareSpritemaps_93AC70:
     dw $0001                                                             ;93AC70;
     %spritemapEntry(1, $43F8, $F2, 0, 0, 3, 5, $9C)
 
+%anchor($93AC77)
 UNUSED_ProjectileFlareSpritemaps_93AC77:
     dw $0001                                                             ;93AC77;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 5, $48)
 
+%anchor($93AC7E)
 UNUSED_ProjectileFlareSpritemaps_93AC7E:
     dw $0001                                                             ;93AC7E;
     %spritemapEntry(0, $1FC, $FA, 0, 0, 2, 5, $49)
 
+%anchor($93AC85)
 UNUSED_ProjectileFlareSpritemaps_93AC85:
     dw $0001                                                             ;93AC85;
     %spritemapEntry(0, $1FC, $F8, 0, 0, 2, 5, $4A)
 
+%anchor($93AC8C)
 UNUSED_ProjectileFlareSpritemaps_93AC8C:
     dw $0001                                                             ;93AC8C;
     %spritemapEntry(0, $1FC, $F6, 0, 0, 2, 5, $4B)
 
+%anchor($93AC93)
 UNUSED_ProjectileFlareSpritemaps_93AC93:
     dw $0001                                                             ;93AC93;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 5, $2C)
 
+%anchor($93AC9A)
 UNUSED_ProjectileFlareSpritemaps_93AC9A:
     dw $0001                                                             ;93AC9A;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 5, $2D)
 
+%anchor($93ACA1)
 UNUSED_ProjectileFlareSpritemaps_93ACA1:
     dw $0001                                                             ;93ACA1;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 5, $2E)
 
+%anchor($93ACA8)
 UNUSED_ProjectileFlareSpritemaps_93ACA8:
     dw $0001                                                             ;93ACA8;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 5, $2F)
 
+%anchor($93ACAF)
 UNUSED_ProjectileFlareSpritemaps_93ACAF:
     dw $0001                                                             ;93ACAF;
     %spritemapEntry(1, $43F8, $F6, 0, 0, 3, 5, $76)
 
+%anchor($93ACB6)
 UNUSED_ProjectileFlareSpritemaps_93ACB6:
     dw $0001                                                             ;93ACB6;
     %spritemapEntry(1, $43F8, $F4, 0, 0, 3, 5, $78)
 
+%anchor($93ACBD)
 UNUSED_ProjectileFlareSpritemaps_93ACBD:
     dw $0001                                                             ;93ACBD;
     %spritemapEntry(1, $43F8, $F2, 0, 0, 3, 5, $98)
 
+%anchor($93ACC4)
 UNUSED_ProjectileFlareSpritemaps_93ACC4:
     dw $0001                                                             ;93ACC4;
     %spritemapEntry(1, $43F8, $F0, 0, 0, 3, 5, $9E)
 
+%anchor($93ACCB)
 UNUSED_ProjectileFlareSpritemaps_93ACCB:
     dw $0001                                                             ;93ACCB;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 5, $25)
 
+%anchor($93ACD2)
 UNUSED_ProjectileFlareSpritemaps_93ACD2:
     dw $0001                                                             ;93ACD2;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 5, $43)
 
+%anchor($93ACD9)
 UNUSED_ProjectileFlareSpritemaps_93ACD9:
     dw $0001                                                             ;93ACD9;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 5, $40)
 
+%anchor($93ACE0)
 UNUSED_ProjectileFlareSpritemaps_93ACE0:
     dw $0001                                                             ;93ACE0;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 5, $3E)
 
+%anchor($93ACE7)
 UNUSED_ProjectileFlareSpritemaps_93ACE7:
     dw $0001                                                             ;93ACE7;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 5, $3D)
 
+%anchor($93ACEE)
 UNUSED_ProjectileFlareSpritemaps_93ACEE:
     dw $0001                                                             ;93ACEE;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 5, $41)
 
+%anchor($93ACF5)
 UNUSED_ProjectileFlareSpritemaps_93ACF5:
     dw $0001                                                             ;93ACF5;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 5, $42)
 
+%anchor($93ACFC)
 UNUSED_ProjectileFlareSpritemaps_93ACFC:
     dw $0004                                                             ;93ACFC;
     %spritemapEntry(0, $00, $00, 1, 1, 3, 5, $44)
@@ -4295,6 +4675,7 @@ UNUSED_ProjectileFlareSpritemaps_93ACFC:
     %spritemapEntry(0, $00, $F8, 0, 1, 3, 5, $44)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 5, $44)
 
+%anchor($93AD12)
 UNUSED_ProjectileFlareSpritemaps_93AC12:
     dw $0004                                                             ;93AD12;
     %spritemapEntry(0, $00, $00, 1, 1, 3, 5, $45)
@@ -4302,6 +4683,7 @@ UNUSED_ProjectileFlareSpritemaps_93AC12:
     %spritemapEntry(0, $1F8, $00, 1, 0, 3, 5, $45)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 5, $45)
 
+%anchor($93AD28)
 UNUSED_ProjectileFlareSpritemaps_93AC28:
     dw $0004                                                             ;93AD28;
     %spritemapEntry(0, $1F8, $00, 1, 0, 3, 5, $46)
@@ -4309,109 +4691,130 @@ UNUSED_ProjectileFlareSpritemaps_93AC28:
     %spritemapEntry(0, $00, $F8, 0, 1, 3, 5, $46)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 5, $46)
 
+%anchor($93AD3E)
 UNUSED_ProjectileFlareSpritemaps_93AC3E:
     dw $0001                                                             ;93AD3E;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 5, $42)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($93AD45)
 ProjectileFlareSpritemaps_Bomb_0:
     dw $0001                                                             ;93AD45;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 5, $4C)
 
+%anchor($93AD4C)
 ProjectileFlareSpritemaps_Bomb_1:
     dw $0001                                                             ;93AD4C;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 5, $4D)
 
+%anchor($93AD53)
 ProjectileFlareSpritemaps_Bomb_2:
     dw $0001                                                             ;93AD53;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 5, $4E)
 
+%anchor($93AD5A)
 ProjectileFlareSpritemaps_Bomb_3:
     dw $0001                                                             ;93AD5A;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 5, $4F)
 
+%anchor($93AD61)
 ProjectileFlareSpritemaps_Missile_0:
     dw $0002                                                             ;93AD61;
     %spritemapEntry(0, $1FF, $FC, 0, 0, 2, 5, $55)
     %spritemapEntry(0, $1F7, $FC, 0, 0, 2, 5, $54)
 
+%anchor($93AD6D)
 ProjectileFlareSpritemaps_Missile_1:
     dw $0003                                                             ;93AD6D;
     %spritemapEntry(0, $1F8, $F5, 0, 0, 2, 5, $56)
     %spritemapEntry(0, $00, $FD, 0, 0, 2, 5, $58)
     %spritemapEntry(0, $1F8, $FD, 0, 0, 2, 5, $57)
 
+%anchor($93AD7E)
 ProjectileFlareSpritemaps_Missile_2:
     dw $0002                                                             ;93AD7E;
     %spritemapEntry(0, $1FC, $F7, 0, 0, 2, 5, $59)
     %spritemapEntry(0, $1FC, $FF, 0, 0, 2, 5, $5A)
 
+%anchor($93AD8A)
 ProjectileFlareSpritemaps_Missile_3:
     dw $0003                                                             ;93AD8A;
     %spritemapEntry(0, $00, $F5, 0, 1, 2, 5, $56)
     %spritemapEntry(0, $1F8, $FD, 0, 1, 2, 5, $58)
     %spritemapEntry(0, $00, $FD, 0, 1, 2, 5, $57)
 
+%anchor($93AD9B)
 ProjectileFlareSpritemaps_Missile_4:
     dw $0002                                                             ;93AD9B;
     %spritemapEntry(0, $1F9, $FC, 0, 1, 2, 5, $55)
     %spritemapEntry(0, $01, $FC, 0, 1, 2, 5, $54)
 
+%anchor($93ADA7)
 ProjectileFlareSpritemaps_Missile_5:
     dw $0003                                                             ;93ADA7;
     %spritemapEntry(0, $00, $03, 1, 1, 2, 5, $56)
     %spritemapEntry(0, $1F8, $FB, 1, 1, 2, 5, $58)
     %spritemapEntry(0, $00, $FB, 1, 1, 2, 5, $57)
 
+%anchor($93ADB8)
 ProjectileFlareSpritemaps_Missile_6:
     dw $0002                                                             ;93ADB8;
     %spritemapEntry(0, $1FD, $01, 1, 0, 2, 5, $59)
     %spritemapEntry(0, $1FD, $F9, 1, 0, 2, 5, $5A)
 
+%anchor($93ADC4)
 ProjectileFlareSpritemaps_Missile_7:
     dw $0003                                                             ;93ADC4;
     %spritemapEntry(0, $1F8, $03, 1, 0, 2, 5, $56)
     %spritemapEntry(0, $00, $FB, 1, 0, 2, 5, $58)
     %spritemapEntry(0, $1F8, $FB, 1, 0, 2, 5, $57)
 
+%anchor($93ADD5)
 ProjectileFlareSpritemaps_SuperMissile_0:
     dw $0002                                                             ;93ADD5;
     %spritemapEntry(0, $00, $FC, 0, 0, 2, 5, $65)
     %spritemapEntry(0, $1F8, $FC, 0, 0, 2, 5, $64)
 
+%anchor($93ADE1)
 ProjectileFlareSpritemaps_SuperMissile_1:
     dw $0003                                                             ;93ADE1;
     %spritemapEntry(0, $02, $FE, 0, 0, 2, 5, $68)
     %spritemapEntry(0, $1FA, $FE, 0, 0, 2, 5, $67)
     %spritemapEntry(0, $1FA, $F6, 0, 0, 2, 5, $66)
 
+%anchor($93ADF2)
 ProjectileFlareSpritemaps_SuperMissile_2:
     dw $0002                                                             ;93ADF2;
     %spritemapEntry(0, $1FC, $F8, 0, 0, 2, 5, $69)
     %spritemapEntry(0, $1FC, $00, 0, 0, 2, 5, $6A)
 
+%anchor($93ADFE)
 ProjectileFlareSpritemaps_SuperMissile_3:
     dw $0003                                                             ;93ADFE;
     %spritemapEntry(0, $1F6, $FE, 0, 1, 2, 5, $68)
     %spritemapEntry(0, $1FE, $FE, 0, 1, 2, 5, $67)
     %spritemapEntry(0, $1FE, $F6, 0, 1, 2, 5, $66)
 
+%anchor($93AE0F)
 ProjectileFlareSpritemaps_SuperMissile_4:
     dw $0002                                                             ;93AE0F;
     %spritemapEntry(0, $1F8, $FC, 0, 1, 2, 5, $65)
     %spritemapEntry(0, $00, $FC, 0, 1, 2, 5, $64)
 
+%anchor($93AE1B)
 ProjectileFlareSpritemaps_SuperMissile_5:
     dw $0003                                                             ;93AE1B;
     %spritemapEntry(0, $1F6, $FA, 1, 1, 2, 5, $68)
     %spritemapEntry(0, $1FE, $FA, 1, 1, 2, 5, $67)
     %spritemapEntry(0, $1FE, $02, 1, 1, 2, 5, $66)
 
+%anchor($93AE2C)
 ProjectileFlareSpritemaps_SuperMissile_6:
     dw $0002                                                             ;93AE2C;
     %spritemapEntry(0, $1FC, $00, 1, 0, 2, 5, $69)
     %spritemapEntry(0, $1FC, $F8, 1, 0, 2, 5, $6A)
 
+%anchor($93AE38)
 ProjectileFlareSpritemaps_SuperMissile_7:
     dw $0003                                                             ;93AE38;
     %spritemapEntry(0, $02, $FA, 1, 0, 2, 5, $68)
@@ -4419,155 +4822,193 @@ ProjectileFlareSpritemaps_SuperMissile_7:
     %spritemapEntry(0, $1FA, $02, 1, 0, 2, 5, $66)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($93AE49)
 UNUSED_ProjectileFlareSpritemaps_93AE49:
     dw $0001                                                             ;93AE49;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 5, $3C)
 
+%anchor($93AE50)
 UNUSED_ProjectileFlareSpritemaps_93AE50:
     dw $0001                                                             ;93AE50;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 5, $3D)
 
+%anchor($93AE57)
 UNUSED_ProjectileFlareSpritemaps_93AE57:
     dw $0001                                                             ;93AE57;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 5, $3E)
 
+%anchor($93AE5E)
 UNUSED_ProjectileFlareSpritemaps_93AE5E:
     dw $0001                                                             ;93AE5E;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 5, $3F)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($93AE65)
 ProjectileFlareSpritemaps_Wave_IceWave_0:
     dw $0001                                                             ;93AE65;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $30)
 
+%anchor($93AE6C)
 ProjectileFlareSpritemaps_Wave_IceWave_1:
     dw $0001                                                             ;93AE6C;
     %spritemapEntry(0, $1FC, $F4, 0, 0, 2, 6, $30)
 
+%anchor($93AE73)
 ProjectileFlareSpritemaps_Wave_IceWave_2:
     dw $0001                                                             ;93AE73;
     %spritemapEntry(0, $1FC, $EF, 0, 0, 2, 6, $31)
 
+%anchor($93AE7A)
 ProjectileFlareSpritemaps_Wave_IceWave_3:
     dw $0001                                                             ;93AE7A;
     %spritemapEntry(0, $1FC, $ED, 0, 0, 2, 6, $31)
 
+%anchor($93AE81)
 ProjectileFlareSpritemaps_Wave_IceWave_4:
     dw $0001                                                             ;93AE81;
     %spritemapEntry(0, $1FC, $EC, 0, 0, 2, 6, $32)
 
+%anchor($93AE88)
 ProjectileFlareSpritemaps_Wave_IceWave_5:
     dw $0001                                                             ;93AE88;
     %spritemapEntry(0, $1FC, $04, 0, 0, 2, 6, $30)
 
+%anchor($93AE8F)
 ProjectileFlareSpritemaps_Wave_IceWave_6:
     dw $0001                                                             ;93AE8F;
     %spritemapEntry(0, $1FC, $09, 0, 0, 2, 6, $31)
 
+%anchor($93AE96)
 ProjectileFlareSpritemaps_Wave_IceWave_7:
     dw $0001                                                             ;93AE96;
     %spritemapEntry(0, $1FC, $0B, 0, 0, 2, 6, $31)
 
+%anchor($93AE9D)
 ProjectileFlareSpritemaps_Wave_IceWave_8:
     dw $0001                                                             ;93AE9D;
     %spritemapEntry(0, $1FC, $0C, 0, 0, 2, 6, $32)
 
+%anchor($93AEA4)
 ProjectileFlareSpritemaps_Wave_IceWave_9:
     dw $0001                                                             ;93AEA4;
     %spritemapEntry(0, $02, $F6, 0, 0, 2, 6, $30)
 
+%anchor($93AEAB)
 ProjectileFlareSpritemaps_Wave_IceWave_A:
     dw $0001                                                             ;93AEAB;
     %spritemapEntry(0, $05, $F3, 0, 0, 2, 6, $31)
 
+%anchor($93AEB2)
 ProjectileFlareSpritemaps_Wave_IceWave_B:
     dw $0001                                                             ;93AEB2;
     %spritemapEntry(0, $07, $F1, 0, 0, 2, 6, $31)
 
+%anchor($93AEB9)
 ProjectileFlareSpritemaps_Wave_IceWave_C:
     dw $0001                                                             ;93AEB9;
     %spritemapEntry(0, $08, $F0, 0, 0, 2, 6, $32)
 
+%anchor($93AEC0)
 ProjectileFlareSpritemaps_Wave_IceWave_D:
     dw $0001                                                             ;93AEC0;
     %spritemapEntry(0, $1F6, $02, 0, 0, 2, 6, $30)
 
+%anchor($93AEC7)
 ProjectileFlareSpritemaps_Wave_IceWave_E:
     dw $0001                                                             ;93AEC7;
     %spritemapEntry(0, $1F3, $05, 0, 0, 2, 6, $31)
 
+%anchor($93AECE)
 ProjectileFlareSpritemaps_Wave_IceWave_F:
     dw $0001                                                             ;93AECE;
     %spritemapEntry(0, $1F1, $07, 0, 0, 2, 6, $31)
 
+%anchor($93AED5)
 ProjectileFlareSpritemaps_Wave_IceWave_10:
     dw $0001                                                             ;93AED5;
     %spritemapEntry(0, $1F0, $08, 0, 0, 2, 6, $32)
 
+%anchor($93AEDC)
 ProjectileFlareSpritemaps_Wave_IceWave_11:
     dw $0001                                                             ;93AEDC;
     %spritemapEntry(0, $04, $FC, 0, 0, 2, 6, $30)
 
+%anchor($93AEE3)
 ProjectileFlareSpritemaps_Wave_IceWave_12:
     dw $0001                                                             ;93AEE3;
     %spritemapEntry(0, $09, $FC, 0, 0, 2, 6, $31)
 
+%anchor($93AEEA)
 ProjectileFlareSpritemaps_Wave_IceWave_13:
     dw $0001                                                             ;93AEEA;
     %spritemapEntry(0, $0B, $FC, 0, 0, 2, 6, $31)
 
+%anchor($93AEF1)
 ProjectileFlareSpritemaps_Wave_IceWave_14:
     dw $0001                                                             ;93AEF1;
     %spritemapEntry(0, $0C, $FC, 0, 0, 2, 6, $32)
 
+%anchor($93AEF8)
 ProjectileFlareSpritemaps_Wave_IceWave_15:
     dw $0001                                                             ;93AEF8;
     %spritemapEntry(0, $1F4, $FC, 0, 0, 2, 6, $30)
 
+%anchor($93AEFF)
 ProjectileFlareSpritemaps_Wave_IceWave_16:
     dw $0001                                                             ;93AEFF;
     %spritemapEntry(0, $1EF, $FC, 0, 0, 2, 6, $31)
 
+%anchor($93AF06)
 ProjectileFlareSpritemaps_Wave_IceWave_17:
     dw $0001                                                             ;93AF06;
     %spritemapEntry(0, $1ED, $FC, 0, 0, 2, 6, $31)
 
+%anchor($93AF0D)
 ProjectileFlareSpritemaps_Wave_IceWave_18:
     dw $0001                                                             ;93AF0D;
     %spritemapEntry(0, $1EC, $FC, 0, 0, 2, 6, $32)
 
+%anchor($93AF14)
 ProjectileFlareSpritemaps_Wave_IceWave_19:
     dw $0001                                                             ;93AF14;
     %spritemapEntry(0, $1F6, $F6, 0, 0, 2, 6, $30)
 
+%anchor($93AF1B)
 ProjectileFlareSpritemaps_Wave_IceWave_1A:
     dw $0001                                                             ;93AF1B;
     %spritemapEntry(0, $1F3, $F3, 0, 0, 2, 6, $31)
 
+%anchor($93AF22)
 ProjectileFlareSpritemaps_Wave_IceWave_1B:
     dw $0001                                                             ;93AF22;
     %spritemapEntry(0, $1F1, $F1, 0, 0, 2, 6, $31)
 
+%anchor($93AF29)
 ProjectileFlareSpritemaps_Wave_IceWave_1C:
     dw $0001                                                             ;93AF29;
     %spritemapEntry(0, $1F0, $F0, 0, 0, 2, 6, $32)
 
+%anchor($93AF30)
 ProjectileFlareSpritemaps_Wave_IceWave_1D:
     dw $0001                                                             ;93AF30;
     %spritemapEntry(0, $02, $02, 0, 0, 2, 6, $30)
 
+%anchor($93AF37)
 ProjectileFlareSpritemaps_Wave_IceWave_1E:
     dw $0001                                                             ;93AF37;
     %spritemapEntry(0, $05, $05, 0, 0, 2, 6, $31)
 
+%anchor($93AF3E)
 ProjectileFlareSpritemaps_Wave_IceWave_1F:
     dw $0001                                                             ;93AF3E;
     %spritemapEntry(0, $07, $07, 0, 0, 2, 6, $31)
 
+%anchor($93AF45)
 ProjectileFlareSpritemaps_Wave_IceWave_20:
     dw $0001                                                             ;93AF45;
     %spritemapEntry(0, $08, $08, 0, 0, 2, 6, $32)
 
+%anchor($93AF4C)
 ProjectileFlareSpritemaps_ChargedWave_WaveSBA_0:
     dw $0004                                                             ;93AF4C;
     %spritemapEntry(0, $00, $00, 1, 1, 2, 6, $34)
@@ -4575,6 +5016,7 @@ ProjectileFlareSpritemaps_ChargedWave_WaveSBA_0:
     %spritemapEntry(0, $00, $F8, 0, 1, 2, 6, $34)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 6, $34)
 
+%anchor($93AF62)
 ProjectileFlareSpritemaps_ChargedWave_WaveSBA_1:
     dw $0004                                                             ;93AF62;
     %spritemapEntry(0, $00, $00, 1, 1, 2, 6, $33)
@@ -4582,6 +5024,7 @@ ProjectileFlareSpritemaps_ChargedWave_WaveSBA_1:
     %spritemapEntry(0, $00, $F8, 0, 1, 2, 6, $33)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93AF78)
 ProjectileFlareSpritemaps_ChargedWave_WaveSBA_2:
     dw $0008                                                             ;93AF78;
     %spritemapEntry(0, $00, $08, 1, 1, 2, 6, $33)
@@ -4593,6 +5036,7 @@ ProjectileFlareSpritemaps_ChargedWave_WaveSBA_2:
     %spritemapEntry(0, $00, $F0, 0, 1, 2, 6, $34)
     %spritemapEntry(0, $1F8, $F0, 0, 0, 2, 6, $34)
 
+%anchor($93AFA2)
 ProjectileFlareSpritemaps_ChargedWave_WaveSBA_3:
     dw $0008                                                             ;93AFA2;
     %spritemapEntry(0, $00, $08, 1, 1, 2, 6, $34)
@@ -4604,6 +5048,7 @@ ProjectileFlareSpritemaps_ChargedWave_WaveSBA_3:
     %spritemapEntry(0, $00, $F0, 0, 1, 2, 6, $33)
     %spritemapEntry(0, $1F8, $F0, 0, 0, 2, 6, $33)
 
+%anchor($93AFCC)
 ProjectileFlareSpritemaps_ChargedWave_WaveSBA_4:
     dw $0008                                                             ;93AFCC;
     %spritemapEntry(0, $00, $0D, 1, 1, 2, 6, $33)
@@ -4615,6 +5060,7 @@ ProjectileFlareSpritemaps_ChargedWave_WaveSBA_4:
     %spritemapEntry(0, $00, $EB, 0, 1, 2, 6, $34)
     %spritemapEntry(0, $1F8, $EB, 0, 0, 2, 6, $34)
 
+%anchor($93AFF6)
 ProjectileFlareSpritemaps_ChargedWave_WaveSBA_5:
     dw $0008                                                             ;93AFF6;
     %spritemapEntry(0, $00, $0D, 1, 1, 2, 6, $34)
@@ -4626,6 +5072,7 @@ ProjectileFlareSpritemaps_ChargedWave_WaveSBA_5:
     %spritemapEntry(0, $00, $EB, 0, 1, 2, 6, $33)
     %spritemapEntry(0, $1F8, $EB, 0, 0, 2, 6, $33)
 
+%anchor($93B020)
 ProjectileFlareSpritemaps_ChargedWave_WaveSBA_6:
     dw $0008                                                             ;93B020;
     %spritemapEntry(0, $00, $0F, 1, 1, 2, 6, $33)
@@ -4637,6 +5084,7 @@ ProjectileFlareSpritemaps_ChargedWave_WaveSBA_6:
     %spritemapEntry(0, $00, $E9, 0, 1, 2, 6, $34)
     %spritemapEntry(0, $1F8, $E9, 0, 0, 2, 6, $34)
 
+%anchor($93B04A)
 ProjectileFlareSpritemaps_ChargedWave_WaveSBA_7:
     dw $0008                                                             ;93B04A;
     %spritemapEntry(0, $00, $0F, 1, 1, 2, 6, $34)
@@ -4648,6 +5096,7 @@ ProjectileFlareSpritemaps_ChargedWave_WaveSBA_7:
     %spritemapEntry(0, $00, $E9, 0, 1, 2, 6, $33)
     %spritemapEntry(0, $1F8, $E9, 0, 0, 2, 6, $33)
 
+%anchor($93B074)
 ProjectileFlareSpritemaps_ChargedWave_WaveSBA_8:
     dw $0008                                                             ;93B074;
     %spritemapEntry(0, $00, $10, 1, 1, 2, 6, $33)
@@ -4659,6 +5108,7 @@ ProjectileFlareSpritemaps_ChargedWave_WaveSBA_8:
     %spritemapEntry(0, $00, $E8, 0, 1, 2, 6, $34)
     %spritemapEntry(0, $1F8, $E8, 0, 0, 2, 6, $34)
 
+%anchor($93B09E)
 ProjectileFlareSpritemaps_ChargedWave_WaveSBA_9:
     dw $0008                                                             ;93B09E;
     %spritemapEntry(0, $00, $10, 1, 1, 2, 6, $34)
@@ -4670,6 +5120,7 @@ ProjectileFlareSpritemaps_ChargedWave_WaveSBA_9:
     %spritemapEntry(0, $00, $E8, 0, 1, 2, 6, $33)
     %spritemapEntry(0, $1F8, $E8, 0, 0, 2, 6, $33)
 
+%anchor($93B0C8)
 ProjectileFlareSpritemaps_ChargedWave_WaveSBA_A:
     dw $0008                                                             ;93B0C8;
     %spritemapEntry(0, $05, $FB, 1, 1, 2, 6, $34)
@@ -4681,6 +5132,7 @@ ProjectileFlareSpritemaps_ChargedWave_WaveSBA_A:
     %spritemapEntry(0, $1FB, $FD, 0, 1, 2, 6, $33)
     %spritemapEntry(0, $1F3, $FD, 0, 0, 2, 6, $33)
 
+%anchor($93B0F2)
 ProjectileFlareSpritemaps_ChargedWave_WaveSBA_B:
     dw $0008                                                             ;93B0F2;
     %spritemapEntry(0, $04, $FC, 1, 1, 2, 6, $33)
@@ -4692,6 +5144,7 @@ ProjectileFlareSpritemaps_ChargedWave_WaveSBA_B:
     %spritemapEntry(0, $1FC, $FC, 0, 1, 2, 6, $34)
     %spritemapEntry(0, $1F4, $FC, 0, 0, 2, 6, $34)
 
+%anchor($93B11C)
 ProjectileFlareSpritemaps_ChargedWave_WaveSBA_C:
     dw $0008                                                             ;93B11C;
     %spritemapEntry(0, $1F9, $07, 1, 1, 2, 6, $33)
@@ -4703,6 +5156,7 @@ ProjectileFlareSpritemaps_ChargedWave_WaveSBA_C:
     %spritemapEntry(0, $07, $F1, 0, 1, 2, 6, $34)
     %spritemapEntry(0, $1FF, $F1, 0, 0, 2, 6, $34)
 
+%anchor($93B146)
 ProjectileFlareSpritemaps_ChargedWave_WaveSBA_D:
     dw $0008                                                             ;93B146;
     %spritemapEntry(0, $1F9, $07, 1, 1, 2, 6, $34)
@@ -4714,6 +5168,7 @@ ProjectileFlareSpritemaps_ChargedWave_WaveSBA_D:
     %spritemapEntry(0, $07, $F1, 0, 1, 2, 6, $33)
     %spritemapEntry(0, $1FF, $F1, 0, 0, 2, 6, $33)
 
+%anchor($93B170)
 ProjectileFlareSpritemaps_ChargedWave_WaveSBA_E:
     dw $0008                                                             ;93B170;
     %spritemapEntry(0, $1F7, $09, 1, 1, 2, 6, $33)
@@ -4725,6 +5180,7 @@ ProjectileFlareSpritemaps_ChargedWave_WaveSBA_E:
     %spritemapEntry(0, $09, $EF, 0, 1, 2, 6, $34)
     %spritemapEntry(0, $01, $EF, 0, 0, 2, 6, $34)
 
+%anchor($93B19A)
 ProjectileFlareSpritemaps_ChargedWave_WaveSBA_F:
     dw $0008                                                             ;93B19A;
     %spritemapEntry(0, $1F7, $09, 1, 1, 2, 6, $34)
@@ -4736,6 +5192,7 @@ ProjectileFlareSpritemaps_ChargedWave_WaveSBA_F:
     %spritemapEntry(0, $09, $EF, 0, 1, 2, 6, $33)
     %spritemapEntry(0, $01, $EF, 0, 0, 2, 6, $33)
 
+%anchor($93B1C4)
 ProjectileFlareSpritemaps_ChargedWave_WaveSBA_10:
     dw $0008                                                             ;93B1C4;
     %spritemapEntry(0, $1F6, $0A, 1, 1, 2, 6, $33)
@@ -4747,6 +5204,7 @@ ProjectileFlareSpritemaps_ChargedWave_WaveSBA_10:
     %spritemapEntry(0, $0A, $EE, 0, 1, 2, 6, $34)
     %spritemapEntry(0, $02, $EE, 0, 0, 2, 6, $34)
 
+%anchor($93B1EE)
 ProjectileFlareSpritemaps_ChargedWave_WaveSBA_11:
     dw $0008                                                             ;93B1EE;
     %spritemapEntry(0, $1F6, $0A, 1, 1, 2, 6, $34)
@@ -4758,6 +5216,7 @@ ProjectileFlareSpritemaps_ChargedWave_WaveSBA_11:
     %spritemapEntry(0, $0A, $EE, 0, 1, 2, 6, $33)
     %spritemapEntry(0, $02, $EE, 0, 0, 2, 6, $33)
 
+%anchor($93B218)
 ProjectileFlareSpritemaps_ChargedWave_WaveSBA_12:
     dw $0008                                                             ;93B218;
     %spritemapEntry(0, $1F3, $FB, 1, 0, 2, 6, $34)
@@ -4769,6 +5228,7 @@ ProjectileFlareSpritemaps_ChargedWave_WaveSBA_12:
     %spritemapEntry(0, $1FD, $FD, 0, 0, 2, 6, $33)
     %spritemapEntry(0, $05, $FD, 0, 1, 2, 6, $33)
 
+%anchor($93B242)
 ProjectileFlareSpritemaps_ChargedWave_WaveSBA_13:
     dw $0008                                                             ;93B242;
     %spritemapEntry(0, $1F4, $FC, 1, 0, 2, 6, $33)
@@ -4780,6 +5240,7 @@ ProjectileFlareSpritemaps_ChargedWave_WaveSBA_13:
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $34)
     %spritemapEntry(0, $04, $FC, 0, 1, 2, 6, $34)
 
+%anchor($93B26C)
 ProjectileFlareSpritemaps_ChargedWave_WaveSBA_14:
     dw $0008                                                             ;93B26C;
     %spritemapEntry(0, $1FF, $07, 1, 0, 2, 6, $33)
@@ -4791,6 +5252,7 @@ ProjectileFlareSpritemaps_ChargedWave_WaveSBA_14:
     %spritemapEntry(0, $1F1, $F1, 0, 0, 2, 6, $34)
     %spritemapEntry(0, $1F9, $F1, 0, 1, 2, 6, $34)
 
+%anchor($93B296)
 ProjectileFlareSpritemaps_ChargedWave_WaveSBA_15:
     dw $0008                                                             ;93B296;
     %spritemapEntry(0, $1FF, $07, 1, 0, 2, 6, $34)
@@ -4802,6 +5264,7 @@ ProjectileFlareSpritemaps_ChargedWave_WaveSBA_15:
     %spritemapEntry(0, $1F1, $F1, 0, 0, 2, 6, $33)
     %spritemapEntry(0, $1F9, $F1, 0, 1, 2, 6, $33)
 
+%anchor($93B2C0)
 ProjectileFlareSpritemaps_ChargedWave_WaveSBA_16:
     dw $0008                                                             ;93B2C0;
     %spritemapEntry(0, $01, $09, 1, 0, 2, 6, $33)
@@ -4813,6 +5276,7 @@ ProjectileFlareSpritemaps_ChargedWave_WaveSBA_16:
     %spritemapEntry(0, $1EF, $EF, 0, 0, 2, 6, $34)
     %spritemapEntry(0, $1F7, $EF, 0, 1, 2, 6, $34)
 
+%anchor($93B2EA)
 ProjectileFlareSpritemaps_ChargedWave_WaveSBA_17:
     dw $0008                                                             ;93B2EA;
     %spritemapEntry(0, $01, $09, 1, 0, 2, 6, $34)
@@ -4824,6 +5288,7 @@ ProjectileFlareSpritemaps_ChargedWave_WaveSBA_17:
     %spritemapEntry(0, $1EF, $EF, 0, 0, 2, 6, $33)
     %spritemapEntry(0, $1F7, $EF, 0, 1, 2, 6, $33)
 
+%anchor($93B314)
 ProjectileFlareSpritemaps_ChargedWave_WaveSBA_18:
     dw $0008                                                             ;93B314;
     %spritemapEntry(0, $02, $0A, 1, 0, 2, 6, $33)
@@ -4835,6 +5300,7 @@ ProjectileFlareSpritemaps_ChargedWave_WaveSBA_18:
     %spritemapEntry(0, $1EE, $EE, 0, 0, 2, 6, $34)
     %spritemapEntry(0, $1F6, $EE, 0, 1, 2, 6, $34)
 
+%anchor($93B33E)
 ProjectileFlareSpritemaps_ChargedWave_WaveSBA_19:
     dw $0008                                                             ;93B33E;
     %spritemapEntry(0, $02, $0A, 1, 0, 2, 6, $34)
@@ -4847,6 +5313,7 @@ ProjectileFlareSpritemaps_ChargedWave_WaveSBA_19:
     %spritemapEntry(0, $1F6, $EE, 0, 1, 2, 6, $33)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($93B368)
 UNUSED_ProjectileFlareSpritemaps_ChargedWave_WaveSBA_93B368:
     dw $0004                                                             ;93B368;
     %spritemapEntry(0, $00, $F8, 0, 1, 2, 6, $34)
@@ -4854,6 +5321,7 @@ UNUSED_ProjectileFlareSpritemaps_ChargedWave_WaveSBA_93B368:
     %spritemapEntry(0, $1F8, $00, 1, 0, 2, 6, $34)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 6, $34)
 
+%anchor($93B37E)
 UNUSED_ProjectileFlareSpritemaps_ChargedWave_WaveSBA_93B37E:
     dw $0004                                                             ;93B37E;
     %spritemapEntry(0, $00, $F8, 0, 1, 2, 6, $33)
@@ -4862,6 +5330,7 @@ UNUSED_ProjectileFlareSpritemaps_ChargedWave_WaveSBA_93B37E:
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 6, $33)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($93B394)
 ProjectileFlareSpritemaps_ChargedWave_WaveSBA_1A:
     dw $0008                                                             ;93B394;
     %spritemapEntry(0, $1F8, $F8, 0, 1, 2, 6, $34)
@@ -4873,6 +5342,7 @@ ProjectileFlareSpritemaps_ChargedWave_WaveSBA_1A:
     %spritemapEntry(0, $08, $F8, 0, 1, 2, 6, $33)
     %spritemapEntry(0, $00, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93B3BE)
 ProjectileFlareSpritemaps_ChargedWave_WaveSBA_1B:
     dw $0008                                                             ;93B3BE;
     %spritemapEntry(0, $1F8, $F8, 0, 1, 2, 6, $33)
@@ -4884,6 +5354,7 @@ ProjectileFlareSpritemaps_ChargedWave_WaveSBA_1B:
     %spritemapEntry(0, $08, $F8, 0, 1, 2, 6, $34)
     %spritemapEntry(0, $00, $F8, 0, 0, 2, 6, $34)
 
+%anchor($93B3E8)
 ProjectileFlareSpritemaps_ChargedWave_WaveSBA_1C:
     dw $0008                                                             ;93B3E8;
     %spritemapEntry(0, $1F3, $F8, 0, 1, 2, 6, $34)
@@ -4895,6 +5366,7 @@ ProjectileFlareSpritemaps_ChargedWave_WaveSBA_1C:
     %spritemapEntry(0, $0D, $F8, 0, 1, 2, 6, $33)
     %spritemapEntry(0, $05, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93B412)
 ProjectileFlareSpritemaps_ChargedWave_WaveSBA_1D:
     dw $0008                                                             ;93B412;
     %spritemapEntry(0, $1F3, $F8, 0, 1, 2, 6, $33)
@@ -4906,6 +5378,7 @@ ProjectileFlareSpritemaps_ChargedWave_WaveSBA_1D:
     %spritemapEntry(0, $0D, $F8, 0, 1, 2, 6, $34)
     %spritemapEntry(0, $05, $F8, 0, 0, 2, 6, $34)
 
+%anchor($93B43C)
 ProjectileFlareSpritemaps_ChargedWave_WaveSBA_1E:
     dw $0008                                                             ;93B43C;
     %spritemapEntry(0, $1F1, $F8, 0, 1, 2, 6, $34)
@@ -4917,6 +5390,7 @@ ProjectileFlareSpritemaps_ChargedWave_WaveSBA_1E:
     %spritemapEntry(0, $0F, $F8, 0, 1, 2, 6, $33)
     %spritemapEntry(0, $07, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93B466)
 ProjectileFlareSpritemaps_ChargedWave_WaveSBA_1F:
     dw $0008                                                             ;93B466;
     %spritemapEntry(0, $1F1, $F8, 0, 1, 2, 6, $33)
@@ -4928,6 +5402,7 @@ ProjectileFlareSpritemaps_ChargedWave_WaveSBA_1F:
     %spritemapEntry(0, $0F, $F8, 0, 1, 2, 6, $34)
     %spritemapEntry(0, $07, $F8, 0, 0, 2, 6, $34)
 
+%anchor($93B490)
 ProjectileFlareSpritemaps_ChargedWave_WaveSBA_20:
     dw $0008                                                             ;93B490;
     %spritemapEntry(0, $1F0, $F8, 0, 1, 2, 6, $34)
@@ -4939,6 +5414,7 @@ ProjectileFlareSpritemaps_ChargedWave_WaveSBA_20:
     %spritemapEntry(0, $10, $F8, 0, 1, 2, 6, $33)
     %spritemapEntry(0, $08, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93B4BA)
 ProjectileFlareSpritemaps_ChargedWave_WaveSBA_21:
     dw $0008                                                             ;93B4BA;
     %spritemapEntry(0, $1F0, $F8, 0, 1, 2, 6, $33)
@@ -4951,175 +5427,210 @@ ProjectileFlareSpritemaps_ChargedWave_WaveSBA_21:
     %spritemapEntry(0, $08, $F8, 0, 0, 2, 6, $34)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($93B4E4)
 UNUSED_ProjectileFlareSpritemaps_93B4E4:
     dw $0001                                                             ;93B4E4;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $30)
 
+%anchor($93B4EB)
 UNUSED_ProjectileFlareSpritemaps_93B4EB:
     dw $0002                                                             ;93B4EB;
     %spritemapEntry(0, $1FC, $04, 0, 0, 2, 6, $37)
     %spritemapEntry(0, $1FC, $F4, 0, 0, 2, 6, $30)
 
+%anchor($93B4F7)
 UNUSED_ProjectileFlareSpritemaps_93B4F7:
     dw $0002                                                             ;93B4F7;
     %spritemapEntry(0, $1FC, $09, 0, 0, 2, 6, $36)
     %spritemapEntry(0, $1FC, $EF, 0, 0, 2, 6, $31)
 
+%anchor($93B503)
 UNUSED_ProjectileFlareSpritemaps_93B503:
     dw $0002                                                             ;93B503;
     %spritemapEntry(0, $1FC, $0B, 0, 0, 2, 6, $37)
     %spritemapEntry(0, $1FC, $ED, 0, 0, 2, 6, $32)
 
+%anchor($93B50F)
 UNUSED_ProjectileFlareSpritemaps_93B50F:
     dw $0002                                                             ;93B50F;
     %spritemapEntry(0, $1FC, $0C, 0, 0, 2, 6, $35)
     %spritemapEntry(0, $1FC, $EC, 0, 0, 2, 6, $30)
 
+%anchor($93B51B)
 UNUSED_ProjectileFlareSpritemaps_93B51B:
     dw $0002                                                             ;93B51B;
     %spritemapEntry(0, $1FC, $F4, 0, 0, 2, 6, $37)
     %spritemapEntry(0, $1FC, $04, 0, 0, 2, 6, $30)
 
+%anchor($93B527)
 UNUSED_ProjectileFlareSpritemaps_93B527:
     dw $0002                                                             ;93B527;
     %spritemapEntry(0, $1FC, $EF, 0, 0, 2, 6, $35)
     %spritemapEntry(0, $1FC, $09, 0, 0, 2, 6, $31)
 
+%anchor($93B533)
 UNUSED_ProjectileFlareSpritemaps_93B533:
     dw $0002                                                             ;93B533;
     %spritemapEntry(0, $1FC, $0B, 0, 0, 2, 6, $32)
     %spritemapEntry(0, $1FC, $ED, 0, 0, 2, 6, $36)
 
+%anchor($93B53F)
 UNUSED_ProjectileFlareSpritemaps_93B53F:
     dw $0002                                                             ;93B53F;
     %spritemapEntry(0, $1FC, $EC, 0, 0, 2, 6, $37)
     %spritemapEntry(0, $1FC, $0C, 0, 0, 2, 6, $30)
 
+%anchor($93B54B)
 UNUSED_ProjectileFlareSpritemaps_93B54B:
     dw $0002                                                             ;93B54B;
     %spritemapEntry(0, $1F6, $02, 0, 0, 2, 6, $37)
     %spritemapEntry(0, $02, $F6, 0, 0, 2, 6, $30)
 
+%anchor($93B557)
 UNUSED_ProjectileFlareSpritemaps_93B557:
     dw $0002                                                             ;93B557;
     %spritemapEntry(0, $1F3, $05, 0, 0, 2, 6, $36)
     %spritemapEntry(0, $05, $F3, 0, 0, 2, 6, $31)
 
+%anchor($93B563)
 UNUSED_ProjectileFlareSpritemaps_93B563:
     dw $0002                                                             ;93B563;
     %spritemapEntry(0, $1F1, $07, 0, 0, 2, 6, $37)
     %spritemapEntry(0, $07, $F1, 0, 0, 2, 6, $32)
 
+%anchor($93B56F)
 UNUSED_ProjectileFlareSpritemaps_93B56F:
     dw $0002                                                             ;93B56F;
     %spritemapEntry(0, $08, $F0, 0, 0, 2, 6, $30)
     %spritemapEntry(0, $1F0, $08, 0, 0, 2, 6, $35)
 
+%anchor($93B57B)
 UNUSED_ProjectileFlareSpritemaps_93B57B:
     dw $0002                                                             ;93B57B;
     %spritemapEntry(0, $02, $F6, 0, 0, 2, 6, $35)
     %spritemapEntry(0, $1F6, $02, 0, 0, 2, 6, $30)
 
+%anchor($93B587)
 UNUSED_ProjectileFlareSpritemaps_93B587:
     dw $0002                                                             ;93B587;
     %spritemapEntry(0, $05, $F3, 0, 0, 2, 6, $36)
     %spritemapEntry(0, $1F3, $05, 0, 0, 2, 6, $31)
 
+%anchor($93B593)
 UNUSED_ProjectileFlareSpritemaps_93B593:
     dw $0002                                                             ;93B593;
     %spritemapEntry(0, $07, $F1, 0, 0, 2, 6, $37)
     %spritemapEntry(0, $1F1, $07, 0, 0, 2, 6, $30)
 
+%anchor($93B59F)
 UNUSED_ProjectileFlareSpritemaps_93B59F:
     dw $0002                                                             ;93B59F;
     %spritemapEntry(0, $1F0, $08, 0, 0, 2, 6, $31)
     %spritemapEntry(0, $08, $F0, 0, 0, 2, 6, $35)
 
+%anchor($93B5AB)
 UNUSED_ProjectileFlareSpritemaps_93B5AB:
     dw $0002                                                             ;93B5AB;
     %spritemapEntry(0, $1F4, $FC, 0, 0, 2, 6, $37)
     %spritemapEntry(0, $04, $FC, 0, 0, 2, 6, $30)
 
+%anchor($93B5B7)
 UNUSED_ProjectileFlareSpritemaps_93B5B7:
     dw $0002                                                             ;93B5B7;
     %spritemapEntry(0, $1F1, $FC, 0, 0, 2, 6, $36)
     %spritemapEntry(0, $09, $FC, 0, 0, 2, 6, $31)
 
+%anchor($93B5C3)
 UNUSED_ProjectileFlareSpritemaps_93B5C3:
     dw $0002                                                             ;93B5C3;
     %spritemapEntry(0, $1ED, $FC, 0, 0, 2, 6, $37)
     %spritemapEntry(0, $0B, $FC, 0, 0, 2, 6, $32)
 
+%anchor($93B5CF)
 UNUSED_ProjectileFlareSpritemaps_93B5CF:
     dw $0002                                                             ;93B5CF;
     %spritemapEntry(0, $0C, $FC, 0, 0, 2, 6, $35)
     %spritemapEntry(0, $1EC, $FC, 0, 0, 2, 6, $31)
 
+%anchor($93B5DB)
 UNUSED_ProjectileFlareSpritemaps_93B5DB:
     dw $0002                                                             ;93B5DB;
     %spritemapEntry(0, $1F4, $FC, 0, 0, 2, 6, $30)
     %spritemapEntry(0, $04, $FC, 0, 0, 2, 6, $37)
 
+%anchor($93B5E7)
 UNUSED_ProjectileFlareSpritemaps_93B5E7:
     dw $0002                                                             ;93B5E7;
     %spritemapEntry(0, $09, $FC, 0, 0, 2, 6, $36)
     %spritemapEntry(0, $1EF, $FC, 0, 0, 2, 6, $31)
 
+%anchor($93B5F3)
 UNUSED_ProjectileFlareSpritemaps_93B5F3:
     dw $0002                                                             ;93B5F3;
     %spritemapEntry(0, $0C, $FC, 0, 0, 2, 6, $35)
     %spritemapEntry(0, $1ED, $FC, 0, 0, 2, 6, $32)
 
+%anchor($93B5FF)
 UNUSED_ProjectileFlareSpritemaps_93B5FF:
     dw $0002                                                             ;93B5FF;
     %spritemapEntry(0, $1EC, $FC, 0, 0, 2, 6, $37)
     %spritemapEntry(0, $0D, $FC, 0, 0, 2, 6, $30)
 
+%anchor($93B60B)
 UNUSED_ProjectileFlareSpritemaps_93B60B:
     dw $0002                                                             ;93B60B;
     %spritemapEntry(0, $02, $02, 0, 0, 2, 6, $37)
     %spritemapEntry(0, $1F6, $F6, 0, 0, 2, 6, $30)
 
+%anchor($93B617)
 UNUSED_ProjectileFlareSpritemaps_93B617:
     dw $0002                                                             ;93B617;
     %spritemapEntry(0, $05, $05, 0, 0, 2, 6, $36)
     %spritemapEntry(0, $1F3, $F3, 0, 0, 2, 6, $31)
 
+%anchor($93B623)
 UNUSED_ProjectileFlareSpritemaps_93B623:
     dw $0002                                                             ;93B623;
     %spritemapEntry(0, $07, $07, 0, 0, 2, 6, $35)
     %spritemapEntry(0, $1F1, $F1, 0, 0, 2, 6, $32)
 
+%anchor($93B62F)
 UNUSED_ProjectileFlareSpritemaps_93B62F:
     dw $0002                                                             ;93B62F;
     %spritemapEntry(0, $08, $08, 0, 0, 2, 6, $37)
     %spritemapEntry(0, $1F0, $F0, 0, 0, 2, 6, $31)
 
+%anchor($93B63B)
 UNUSED_ProjectileFlareSpritemaps_93B63B:
     dw $0002                                                             ;93B63B;
     %spritemapEntry(0, $1F6, $F6, 0, 0, 2, 6, $37)
     %spritemapEntry(0, $02, $02, 0, 0, 2, 6, $30)
 
+%anchor($93B647)
 UNUSED_ProjectileFlareSpritemaps_93B647:
     dw $0002                                                             ;93B647;
     %spritemapEntry(0, $1F3, $F3, 0, 0, 2, 6, $36)
     %spritemapEntry(0, $05, $05, 0, 0, 2, 6, $31)
 
+%anchor($93B653)
 UNUSED_ProjectileFlareSpritemaps_93B653:
     dw $0002                                                             ;93B653;
     %spritemapEntry(0, $1F1, $F1, 0, 0, 2, 6, $35)
     %spritemapEntry(0, $07, $07, 0, 0, 2, 6, $32)
 
+%anchor($93B65F)
 UNUSED_ProjectileFlareSpritemaps_93B65F:
     dw $0002                                                             ;93B65F;
     %spritemapEntry(0, $1F0, $F0, 0, 0, 2, 6, $37)
     %spritemapEntry(0, $08, $08, 0, 0, 2, 6, $30)
 
+%anchor($93B66B)
 UNUSED_ProjectileFlareSpritemaps_93B66B:
     dw $0001                                                             ;93B66B;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $30)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($93B672)
 ProjectileFlareSpritemaps_ChargedIceWave_0:
     dw $0004                                                             ;93B672;
     %spritemapEntry(0, $00, $00, 1, 1, 2, 6, $34)
@@ -5127,6 +5638,7 @@ ProjectileFlareSpritemaps_ChargedIceWave_0:
     %spritemapEntry(0, $00, $F8, 0, 1, 2, 6, $34)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 6, $34)
 
+%anchor($93B688)
 ProjectileFlareSpritemaps_ChargedIceWave_1:
     dw $0004                                                             ;93B688;
     %spritemapEntry(0, $00, $00, 1, 1, 2, 6, $33)
@@ -5134,6 +5646,7 @@ ProjectileFlareSpritemaps_ChargedIceWave_1:
     %spritemapEntry(0, $00, $F8, 0, 1, 2, 6, $33)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93B69E)
 ProjectileFlareSpritemaps_ChargedIceWave_2:
     dw $0008                                                             ;93B69E;
     %spritemapEntry(0, $00, $08, 1, 1, 2, 6, $33)
@@ -5145,6 +5658,7 @@ ProjectileFlareSpritemaps_ChargedIceWave_2:
     %spritemapEntry(0, $00, $F0, 0, 1, 2, 6, $34)
     %spritemapEntry(0, $1F8, $F0, 0, 0, 2, 6, $34)
 
+%anchor($93B6C8)
 ProjectileFlareSpritemaps_ChargedIceWave_3:
     dw $0008                                                             ;93B6C8;
     %spritemapEntry(0, $00, $08, 1, 1, 2, 6, $34)
@@ -5156,6 +5670,7 @@ ProjectileFlareSpritemaps_ChargedIceWave_3:
     %spritemapEntry(0, $00, $F0, 0, 1, 2, 6, $33)
     %spritemapEntry(0, $1F8, $F0, 0, 0, 2, 6, $33)
 
+%anchor($93B6F2)
 ProjectileFlareSpritemaps_ChargedIceWave_4:
     dw $0008                                                             ;93B6F2;
     %spritemapEntry(0, $00, $0D, 1, 1, 2, 6, $33)
@@ -5167,6 +5682,7 @@ ProjectileFlareSpritemaps_ChargedIceWave_4:
     %spritemapEntry(0, $00, $EB, 0, 1, 2, 6, $34)
     %spritemapEntry(0, $1F8, $EB, 0, 0, 2, 6, $34)
 
+%anchor($93B71C)
 ProjectileFlareSpritemaps_ChargedIceWave_5:
     dw $0008                                                             ;93B71C;
     %spritemapEntry(0, $00, $0D, 1, 1, 2, 6, $34)
@@ -5178,6 +5694,7 @@ ProjectileFlareSpritemaps_ChargedIceWave_5:
     %spritemapEntry(0, $00, $EB, 0, 1, 2, 6, $33)
     %spritemapEntry(0, $1F8, $EB, 0, 0, 2, 6, $33)
 
+%anchor($93B746)
 ProjectileFlareSpritemaps_ChargedIceWave_6:
     dw $0008                                                             ;93B746;
     %spritemapEntry(0, $00, $0F, 1, 1, 2, 6, $33)
@@ -5189,6 +5706,7 @@ ProjectileFlareSpritemaps_ChargedIceWave_6:
     %spritemapEntry(0, $00, $E9, 0, 1, 2, 6, $34)
     %spritemapEntry(0, $1F8, $E9, 0, 0, 2, 6, $34)
 
+%anchor($93B770)
 ProjectileFlareSpritemaps_ChargedIceWave_7:
     dw $0008                                                             ;93B770;
     %spritemapEntry(0, $00, $0F, 1, 1, 2, 6, $34)
@@ -5200,6 +5718,7 @@ ProjectileFlareSpritemaps_ChargedIceWave_7:
     %spritemapEntry(0, $00, $E9, 0, 1, 2, 6, $33)
     %spritemapEntry(0, $1F8, $E9, 0, 0, 2, 6, $33)
 
+%anchor($93B79A)
 ProjectileFlareSpritemaps_ChargedIceWave_8:
     dw $0008                                                             ;93B79A;
     %spritemapEntry(0, $00, $10, 1, 1, 2, 6, $33)
@@ -5211,6 +5730,7 @@ ProjectileFlareSpritemaps_ChargedIceWave_8:
     %spritemapEntry(0, $00, $E8, 0, 1, 2, 6, $34)
     %spritemapEntry(0, $1F8, $E8, 0, 0, 2, 6, $34)
 
+%anchor($93B7C4)
 ProjectileFlareSpritemaps_ChargedIceWave_9:
     dw $0008                                                             ;93B7C4;
     %spritemapEntry(0, $00, $10, 1, 1, 2, 6, $34)
@@ -5222,6 +5742,7 @@ ProjectileFlareSpritemaps_ChargedIceWave_9:
     %spritemapEntry(0, $00, $E8, 0, 1, 2, 6, $33)
     %spritemapEntry(0, $1F8, $E8, 0, 0, 2, 6, $33)
 
+%anchor($93B7EE)
 ProjectileFlareSpritemaps_ChargedIceWave_A:
     dw $0008                                                             ;93B7EE;
     %spritemapEntry(0, $05, $FB, 1, 1, 2, 6, $34)
@@ -5233,6 +5754,7 @@ ProjectileFlareSpritemaps_ChargedIceWave_A:
     %spritemapEntry(0, $1FB, $FD, 0, 1, 2, 6, $33)
     %spritemapEntry(0, $1F3, $FD, 0, 0, 2, 6, $33)
 
+%anchor($93B818)
 ProjectileFlareSpritemaps_ChargedIceWave_B:
     dw $0008                                                             ;93B818;
     %spritemapEntry(0, $04, $FC, 1, 1, 2, 6, $33)
@@ -5244,6 +5766,7 @@ ProjectileFlareSpritemaps_ChargedIceWave_B:
     %spritemapEntry(0, $1FC, $FC, 0, 1, 2, 6, $34)
     %spritemapEntry(0, $1F4, $FC, 0, 0, 2, 6, $34)
 
+%anchor($93B842)
 ProjectileFlareSpritemaps_ChargedIceWave_C:
     dw $0008                                                             ;93B842;
     %spritemapEntry(0, $1F9, $07, 1, 1, 2, 6, $33)
@@ -5255,6 +5778,7 @@ ProjectileFlareSpritemaps_ChargedIceWave_C:
     %spritemapEntry(0, $07, $F1, 0, 1, 2, 6, $34)
     %spritemapEntry(0, $1FF, $F1, 0, 0, 2, 6, $34)
 
+%anchor($93B86C)
 ProjectileFlareSpritemaps_ChargedIceWave_D:
     dw $0008                                                             ;93B86C;
     %spritemapEntry(0, $1F9, $07, 1, 1, 2, 6, $34)
@@ -5266,6 +5790,7 @@ ProjectileFlareSpritemaps_ChargedIceWave_D:
     %spritemapEntry(0, $07, $F1, 0, 1, 2, 6, $33)
     %spritemapEntry(0, $1FF, $F1, 0, 0, 2, 6, $33)
 
+%anchor($93B896)
 ProjectileFlareSpritemaps_ChargedIceWave_E:
     dw $0008                                                             ;93B896;
     %spritemapEntry(0, $1F7, $09, 1, 1, 2, 6, $33)
@@ -5277,6 +5802,7 @@ ProjectileFlareSpritemaps_ChargedIceWave_E:
     %spritemapEntry(0, $09, $EF, 0, 1, 2, 6, $34)
     %spritemapEntry(0, $01, $EF, 0, 0, 2, 6, $34)
 
+%anchor($93B8C0)
 ProjectileFlareSpritemaps_ChargedIceWave_F:
     dw $0008                                                             ;93B8C0;
     %spritemapEntry(0, $1F7, $09, 1, 1, 2, 6, $34)
@@ -5288,6 +5814,7 @@ ProjectileFlareSpritemaps_ChargedIceWave_F:
     %spritemapEntry(0, $09, $EF, 0, 1, 2, 6, $33)
     %spritemapEntry(0, $01, $EF, 0, 0, 2, 6, $33)
 
+%anchor($93B8EA)
 ProjectileFlareSpritemaps_ChargedIceWave_10:
     dw $0008                                                             ;93B8EA;
     %spritemapEntry(0, $1F6, $0A, 1, 1, 2, 6, $33)
@@ -5299,6 +5826,7 @@ ProjectileFlareSpritemaps_ChargedIceWave_10:
     %spritemapEntry(0, $0A, $EE, 0, 1, 2, 6, $34)
     %spritemapEntry(0, $02, $EE, 0, 0, 2, 6, $34)
 
+%anchor($93B914)
 ProjectileFlareSpritemaps_ChargedIceWave_11:
     dw $0008                                                             ;93B914;
     %spritemapEntry(0, $1F6, $0A, 1, 1, 2, 6, $34)
@@ -5310,6 +5838,7 @@ ProjectileFlareSpritemaps_ChargedIceWave_11:
     %spritemapEntry(0, $0A, $EE, 0, 1, 2, 6, $33)
     %spritemapEntry(0, $02, $EE, 0, 0, 2, 6, $33)
 
+%anchor($93B93E)
 ProjectileFlareSpritemaps_ChargedIceWave_12:
     dw $0008                                                             ;93B93E;
     %spritemapEntry(0, $1F3, $FB, 1, 0, 2, 6, $34)
@@ -5321,6 +5850,7 @@ ProjectileFlareSpritemaps_ChargedIceWave_12:
     %spritemapEntry(0, $1FD, $FD, 0, 0, 2, 6, $33)
     %spritemapEntry(0, $05, $FD, 0, 1, 2, 6, $33)
 
+%anchor($93B968)
 ProjectileFlareSpritemaps_ChargedIceWave_13:
     dw $0008                                                             ;93B968;
     %spritemapEntry(0, $1F4, $FC, 1, 0, 2, 6, $33)
@@ -5332,6 +5862,7 @@ ProjectileFlareSpritemaps_ChargedIceWave_13:
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $34)
     %spritemapEntry(0, $04, $FC, 0, 1, 2, 6, $34)
 
+%anchor($93B992)
 ProjectileFlareSpritemaps_ChargedIceWave_14:
     dw $0008                                                             ;93B992;
     %spritemapEntry(0, $1FF, $07, 1, 0, 2, 6, $33)
@@ -5343,6 +5874,7 @@ ProjectileFlareSpritemaps_ChargedIceWave_14:
     %spritemapEntry(0, $1F1, $F1, 0, 0, 2, 6, $34)
     %spritemapEntry(0, $1F9, $F1, 0, 1, 2, 6, $34)
 
+%anchor($93B9BC)
 ProjectileFlareSpritemaps_ChargedIceWave_15:
     dw $0008                                                             ;93B9BC;
     %spritemapEntry(0, $1FF, $07, 1, 0, 2, 6, $34)
@@ -5354,6 +5886,7 @@ ProjectileFlareSpritemaps_ChargedIceWave_15:
     %spritemapEntry(0, $1F1, $F1, 0, 0, 2, 6, $33)
     %spritemapEntry(0, $1F9, $F1, 0, 1, 2, 6, $33)
 
+%anchor($93B9E6)
 ProjectileFlareSpritemaps_ChargedIceWave_16:
     dw $0008                                                             ;93B9E6;
     %spritemapEntry(0, $01, $09, 1, 0, 2, 6, $33)
@@ -5365,6 +5898,7 @@ ProjectileFlareSpritemaps_ChargedIceWave_16:
     %spritemapEntry(0, $1EF, $EF, 0, 0, 2, 6, $34)
     %spritemapEntry(0, $1F7, $EF, 0, 1, 2, 6, $34)
 
+%anchor($93BA10)
 ProjectileFlareSpritemaps_ChargedIceWave_17:
     dw $0008                                                             ;93BA10;
     %spritemapEntry(0, $01, $09, 1, 0, 2, 6, $34)
@@ -5376,6 +5910,7 @@ ProjectileFlareSpritemaps_ChargedIceWave_17:
     %spritemapEntry(0, $1EF, $EF, 0, 0, 2, 6, $33)
     %spritemapEntry(0, $1F7, $EF, 0, 1, 2, 6, $33)
 
+%anchor($93BA3A)
 ProjectileFlareSpritemaps_ChargedIceWave_18:
     dw $0008                                                             ;93BA3A;
     %spritemapEntry(0, $02, $0A, 1, 0, 2, 6, $33)
@@ -5387,6 +5922,7 @@ ProjectileFlareSpritemaps_ChargedIceWave_18:
     %spritemapEntry(0, $1EE, $EE, 0, 0, 2, 6, $34)
     %spritemapEntry(0, $1F6, $EE, 0, 1, 2, 6, $34)
 
+%anchor($93BA64)
 ProjectileFlareSpritemaps_ChargedIceWave_19:
     dw $0008                                                             ;93BA64;
     %spritemapEntry(0, $02, $0A, 1, 0, 2, 6, $34)
@@ -5398,6 +5934,7 @@ ProjectileFlareSpritemaps_ChargedIceWave_19:
     %spritemapEntry(0, $1EE, $EE, 0, 0, 2, 6, $33)
     %spritemapEntry(0, $1F6, $EE, 0, 1, 2, 6, $33)
 
+%anchor($93BA8E)
 ProjectileFlareSpritemaps_ChargedIceWave_1A:
     dw $0004                                                             ;93BA8E;
     %spritemapEntry(0, $00, $F8, 0, 1, 2, 6, $34)
@@ -5405,6 +5942,7 @@ ProjectileFlareSpritemaps_ChargedIceWave_1A:
     %spritemapEntry(0, $1F8, $00, 1, 0, 2, 6, $34)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 6, $34)
 
+%anchor($93BAA4)
 ProjectileFlareSpritemaps_ChargedIceWave_1B:
     dw $0004                                                             ;93BAA4;
     %spritemapEntry(0, $00, $F8, 0, 1, 2, 6, $33)
@@ -5412,6 +5950,7 @@ ProjectileFlareSpritemaps_ChargedIceWave_1B:
     %spritemapEntry(0, $1F8, $00, 1, 0, 2, 6, $33)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93BABA)
 ProjectileFlareSpritemaps_ChargedIceWave_1C:
     dw $0008                                                             ;93BABA;
     %spritemapEntry(0, $1F8, $F8, 0, 1, 2, 6, $34)
@@ -5423,6 +5962,7 @@ ProjectileFlareSpritemaps_ChargedIceWave_1C:
     %spritemapEntry(0, $08, $F8, 0, 1, 2, 6, $33)
     %spritemapEntry(0, $00, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93BAE4)
 ProjectileFlareSpritemaps_ChargedIceWave_1D:
     dw $0008                                                             ;93BAE4;
     %spritemapEntry(0, $1F8, $F8, 0, 1, 2, 6, $33)
@@ -5434,6 +5974,7 @@ ProjectileFlareSpritemaps_ChargedIceWave_1D:
     %spritemapEntry(0, $08, $F8, 0, 1, 2, 6, $34)
     %spritemapEntry(0, $00, $F8, 0, 0, 2, 6, $34)
 
+%anchor($93BB0E)
 ProjectileFlareSpritemaps_ChargedIceWave_1E:
     dw $0008                                                             ;93BB0E;
     %spritemapEntry(0, $1F3, $F8, 0, 1, 2, 6, $34)
@@ -5445,6 +5986,7 @@ ProjectileFlareSpritemaps_ChargedIceWave_1E:
     %spritemapEntry(0, $0D, $F8, 0, 1, 2, 6, $33)
     %spritemapEntry(0, $05, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93BB38)
 ProjectileFlareSpritemaps_ChargedIceWave_1F:
     dw $0008                                                             ;93BB38;
     %spritemapEntry(0, $1F3, $F8, 0, 1, 2, 6, $33)
@@ -5456,6 +5998,7 @@ ProjectileFlareSpritemaps_ChargedIceWave_1F:
     %spritemapEntry(0, $0D, $F8, 0, 1, 2, 6, $34)
     %spritemapEntry(0, $05, $F8, 0, 0, 2, 6, $34)
 
+%anchor($93BB62)
 ProjectileFlareSpritemaps_ChargedIceWave_20:
     dw $0008                                                             ;93BB62;
     %spritemapEntry(0, $1F1, $F8, 0, 1, 2, 6, $34)
@@ -5467,6 +6010,7 @@ ProjectileFlareSpritemaps_ChargedIceWave_20:
     %spritemapEntry(0, $0F, $F8, 0, 1, 2, 6, $33)
     %spritemapEntry(0, $07, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93BB8C)
 ProjectileFlareSpritemaps_ChargedIceWave_21:
     dw $0008                                                             ;93BB8C;
     %spritemapEntry(0, $1F1, $F8, 0, 1, 2, 6, $33)
@@ -5478,6 +6022,7 @@ ProjectileFlareSpritemaps_ChargedIceWave_21:
     %spritemapEntry(0, $0F, $F8, 0, 1, 2, 6, $34)
     %spritemapEntry(0, $07, $F8, 0, 0, 2, 6, $34)
 
+%anchor($93BBB6)
 ProjectileFlareSpritemaps_ChargedIceWave_22:
     dw $0008                                                             ;93BBB6;
     %spritemapEntry(0, $1F0, $F8, 0, 1, 2, 6, $34)
@@ -5489,6 +6034,7 @@ ProjectileFlareSpritemaps_ChargedIceWave_22:
     %spritemapEntry(0, $10, $F8, 0, 1, 2, 6, $33)
     %spritemapEntry(0, $08, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93BBE0)
 ProjectileFlareSpritemaps_ChargedIceWave_23:
     dw $0008                                                             ;93BBE0;
     %spritemapEntry(0, $1F0, $F8, 0, 1, 2, 6, $33)
@@ -5500,6 +6046,7 @@ ProjectileFlareSpritemaps_ChargedIceWave_23:
     %spritemapEntry(0, $10, $F8, 0, 1, 2, 6, $34)
     %spritemapEntry(0, $08, $F8, 0, 0, 2, 6, $34)
 
+%anchor($93BC0A)
 ProjectileFlareSpritemaps_Charged_PW_PIW_0:
     dw $0004                                                             ;93BC0A;
     %spritemapEntry(0, $08, $FC, 0, 0, 2, 6, $30)
@@ -5507,6 +6054,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_0:
     %spritemapEntry(0, $1F8, $FC, 0, 0, 2, 6, $30)
     %spritemapEntry(0, $1F0, $FC, 0, 0, 2, 6, $30)
 
+%anchor($93BC20)
 ProjectileFlareSpritemaps_Charged_PW_PIW_1:
     dw $0008                                                             ;93BC20;
     %spritemapEntry(0, $08, $04, 0, 0, 2, 6, $30)
@@ -5518,6 +6066,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_1:
     %spritemapEntry(0, $1F8, $F4, 0, 0, 2, 6, $30)
     %spritemapEntry(0, $1F0, $F4, 0, 0, 2, 6, $30)
 
+%anchor($93BC4A)
 ProjectileFlareSpritemaps_Charged_PW_PIW_2:
     dw $0008                                                             ;93BC4A;
     %spritemapEntry(0, $08, $09, 0, 0, 2, 6, $30)
@@ -5529,6 +6078,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_2:
     %spritemapEntry(0, $1F8, $EF, 0, 0, 2, 6, $30)
     %spritemapEntry(0, $1F0, $EF, 0, 0, 2, 6, $30)
 
+%anchor($93BC74)
 ProjectileFlareSpritemaps_Charged_PW_PIW_3:
     dw $0008                                                             ;93BC74;
     %spritemapEntry(0, $08, $0B, 0, 0, 2, 6, $30)
@@ -5540,6 +6090,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_3:
     %spritemapEntry(0, $1F8, $ED, 0, 0, 2, 6, $30)
     %spritemapEntry(0, $1F0, $ED, 0, 0, 2, 6, $30)
 
+%anchor($93BC9E)
 ProjectileFlareSpritemaps_Charged_PW_PIW_4:
     dw $0008                                                             ;93BC9E;
     %spritemapEntry(0, $08, $0C, 0, 0, 2, 6, $30)
@@ -5551,6 +6102,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_4:
     %spritemapEntry(0, $1F8, $EC, 0, 0, 2, 6, $30)
     %spritemapEntry(0, $1F0, $EC, 0, 0, 2, 6, $30)
 
+%anchor($93BCC8)
 ProjectileFlareSpritemaps_Charged_PW_PIW_5:
     dw $0007                                                             ;93BCC8;
     %spritemapEntry(0, $14, $FC, 0, 0, 2, 6, $30)
@@ -5561,6 +6113,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_5:
     %spritemapEntry(0, $1F4, $FC, 0, 0, 2, 6, $30)
     %spritemapEntry(0, $1EC, $FC, 0, 0, 2, 6, $30)
 
+%anchor($93BCED)
 ProjectileFlareSpritemaps_Charged_PW_PIW_6:
     dw $000E                                                             ;93BCED;
     %spritemapEntry(0, $14, $04, 0, 0, 2, 6, $30)
@@ -5578,6 +6131,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_6:
     %spritemapEntry(0, $1F4, $F4, 0, 0, 2, 6, $30)
     %spritemapEntry(0, $1EC, $F4, 0, 0, 2, 6, $30)
 
+%anchor($93BD35)
 ProjectileFlareSpritemaps_Charged_PW_PIW_7:
     dw $000E                                                             ;93BD35;
     %spritemapEntry(0, $14, $09, 0, 0, 2, 6, $30)
@@ -5595,6 +6149,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_7:
     %spritemapEntry(0, $1F4, $EF, 0, 0, 2, 6, $30)
     %spritemapEntry(0, $1EC, $EF, 0, 0, 2, 6, $30)
 
+%anchor($93BD7D)
 ProjectileFlareSpritemaps_Charged_PW_PIW_8:
     dw $000E                                                             ;93BD7D;
     %spritemapEntry(0, $14, $0B, 0, 0, 2, 6, $30)
@@ -5612,6 +6167,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_8:
     %spritemapEntry(0, $1F4, $ED, 0, 0, 2, 6, $30)
     %spritemapEntry(0, $1EC, $ED, 0, 0, 2, 6, $30)
 
+%anchor($93BDC5)
 ProjectileFlareSpritemaps_Charged_PW_PIW_9:
     dw $000E                                                             ;93BDC5;
     %spritemapEntry(0, $14, $0C, 0, 0, 2, 6, $30)
@@ -5629,6 +6185,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_9:
     %spritemapEntry(0, $1F4, $EC, 0, 0, 2, 6, $30)
     %spritemapEntry(0, $1EC, $EC, 0, 0, 2, 6, $30)
 
+%anchor($93BE0D)
 ProjectileFlareSpritemaps_Charged_PW_PIW_A:
     dw $0006                                                             ;93BE0D;
     %spritemapEntry(0, $08, $04, 0, 0, 2, 6, $32)
@@ -5638,6 +6195,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_A:
     %spritemapEntry(0, $00, $FC, 0, 0, 2, 6, $32)
     %spritemapEntry(0, $1F8, $FC, 0, 0, 2, 6, $31)
 
+%anchor($93BE2D)
 ProjectileFlareSpritemaps_Charged_PW_PIW_B:
     dw $000C                                                             ;93BE2D;
     %spritemapEntry(0, $0F, $FE, 0, 0, 2, 6, $32)
@@ -5653,6 +6211,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_B:
     %spritemapEntry(0, $1FA, $02, 0, 0, 2, 6, $32)
     %spritemapEntry(0, $1F2, $02, 0, 0, 2, 6, $31)
 
+%anchor($93BE6B)
 ProjectileFlareSpritemaps_Charged_PW_PIW_C:
     dw $000C                                                             ;93BE6B;
     %spritemapEntry(0, $12, $FB, 0, 0, 2, 6, $32)
@@ -5668,6 +6227,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_C:
     %spritemapEntry(0, $1F7, $05, 0, 0, 2, 6, $32)
     %spritemapEntry(0, $1EF, $05, 0, 0, 2, 6, $31)
 
+%anchor($93BEA9)
 ProjectileFlareSpritemaps_Charged_PW_PIW_D:
     dw $000C                                                             ;93BEA9;
     %spritemapEntry(0, $14, $F9, 0, 0, 2, 6, $32)
@@ -5683,6 +6243,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_D:
     %spritemapEntry(0, $1F5, $07, 0, 0, 2, 6, $32)
     %spritemapEntry(0, $1ED, $07, 0, 0, 2, 6, $31)
 
+%anchor($93BEE7)
 ProjectileFlareSpritemaps_Charged_PW_PIW_E:
     dw $000C                                                             ;93BEE7;
     %spritemapEntry(0, $15, $F8, 0, 0, 2, 6, $32)
@@ -5698,6 +6259,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_E:
     %spritemapEntry(0, $1F4, $08, 0, 0, 2, 6, $32)
     %spritemapEntry(0, $1EC, $08, 0, 0, 2, 6, $31)
 
+%anchor($93BF25)
 ProjectileFlareSpritemaps_Charged_PW_PIW_F:
     dw $000A                                                             ;93BF25;
     %spritemapEntry(0, $1F0, $EC, 0, 0, 2, 6, $32)
@@ -5711,6 +6273,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_F:
     %spritemapEntry(0, $00, $FC, 0, 0, 2, 6, $32)
     %spritemapEntry(0, $1F8, $FC, 0, 0, 2, 6, $31)
 
+%anchor($93BF59)
 ProjectileFlareSpritemaps_Charged_PW_PIW_10:
     dw $0014                                                             ;93BF59;
     %spritemapEntry(0, $1F7, $E6, 0, 0, 2, 6, $32)
@@ -5734,6 +6297,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_10:
     %spritemapEntry(0, $1FA, $02, 0, 0, 2, 6, $32)
     %spritemapEntry(0, $1F2, $02, 0, 0, 2, 6, $31)
 
+%anchor($93BFBF)
 ProjectileFlareSpritemaps_Charged_PW_PIW_11:
     dw $0014                                                             ;93BFBF;
     %spritemapEntry(0, $1FA, $E3, 0, 0, 2, 6, $32)
@@ -5757,6 +6321,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_11:
     %spritemapEntry(0, $1F7, $05, 0, 0, 2, 6, $32)
     %spritemapEntry(0, $1EF, $05, 0, 0, 2, 6, $31)
 
+%anchor($93C025)
 ProjectileFlareSpritemaps_Charged_PW_PIW_12:
     dw $0014                                                             ;93C025;
     %spritemapEntry(0, $1E5, $F7, 0, 0, 2, 6, $32)
@@ -5780,6 +6345,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_12:
     %spritemapEntry(0, $1F5, $07, 0, 0, 2, 6, $32)
     %spritemapEntry(0, $1ED, $07, 0, 0, 2, 6, $31)
 
+%anchor($93C08B)
 ProjectileFlareSpritemaps_Charged_PW_PIW_13:
     dw $0014                                                             ;93C08B;
     %spritemapEntry(0, $1E4, $F8, 0, 0, 2, 6, $32)
@@ -5803,6 +6369,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_13:
     %spritemapEntry(0, $1F4, $08, 0, 0, 2, 6, $32)
     %spritemapEntry(0, $1EC, $08, 0, 0, 2, 6, $31)
 
+%anchor($93C0F1)
 ProjectileFlareSpritemaps_Charged_PW_PIW_14:
     dw $0004                                                             ;93C0F1;
     %spritemapEntry(0, $1FC, $08, 0, 0, 2, 6, $33)
@@ -5810,6 +6377,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_14:
     %spritemapEntry(0, $1FC, $F0, 0, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93C107)
 ProjectileFlareSpritemaps_Charged_PW_PIW_15:
     dw $0008                                                             ;93C107;
     %spritemapEntry(0, $04, $08, 0, 0, 2, 6, $33)
@@ -5821,6 +6389,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_15:
     %spritemapEntry(0, $1F5, $F0, 0, 0, 2, 6, $33)
     %spritemapEntry(0, $1F5, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93C131)
 ProjectileFlareSpritemaps_Charged_PW_PIW_16:
     dw $0008                                                             ;93C131;
     %spritemapEntry(0, $09, $08, 0, 0, 2, 6, $33)
@@ -5832,6 +6401,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_16:
     %spritemapEntry(0, $1EF, $F0, 0, 0, 2, 6, $33)
     %spritemapEntry(0, $1EF, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93C15B)
 ProjectileFlareSpritemaps_Charged_PW_PIW_17:
     dw $0008                                                             ;93C15B;
     %spritemapEntry(0, $0B, $08, 0, 0, 2, 6, $33)
@@ -5843,6 +6413,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_17:
     %spritemapEntry(0, $1EE, $F0, 0, 0, 2, 6, $33)
     %spritemapEntry(0, $1EE, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93C185)
 ProjectileFlareSpritemaps_Charged_PW_PIW_18:
     dw $0008                                                             ;93C185;
     %spritemapEntry(0, $0C, $08, 0, 0, 2, 6, $33)
@@ -5854,6 +6425,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_18:
     %spritemapEntry(0, $1ED, $F0, 0, 0, 2, 6, $33)
     %spritemapEntry(0, $1ED, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93C1AF)
 ProjectileFlareSpritemaps_Charged_PW_PIW_19:
     dw $0007                                                             ;93C1AF;
     %spritemapEntry(0, $1FC, $14, 0, 0, 2, 6, $33)
@@ -5864,6 +6436,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_19:
     %spritemapEntry(0, $1FC, $EC, 0, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $F4, 0, 0, 2, 6, $33)
 
+%anchor($93C1D4)
 ProjectileFlareSpritemaps_Charged_PW_PIW_1A:
     dw $000E                                                             ;93C1D4;
     %spritemapEntry(0, $04, $14, 0, 0, 2, 6, $33)
@@ -5881,6 +6454,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_1A:
     %spritemapEntry(0, $1F5, $EC, 0, 0, 2, 6, $33)
     %spritemapEntry(0, $1F5, $F4, 0, 0, 2, 6, $33)
 
+%anchor($93C21C)
 ProjectileFlareSpritemaps_Charged_PW_PIW_1B:
     dw $000E                                                             ;93C21C;
     %spritemapEntry(0, $1EF, $14, 0, 0, 2, 6, $33)
@@ -5898,6 +6472,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_1B:
     %spritemapEntry(0, $1EF, $EC, 0, 0, 2, 6, $33)
     %spritemapEntry(0, $1EF, $F4, 0, 0, 2, 6, $33)
 
+%anchor($93C264)
 ProjectileFlareSpritemaps_Charged_PW_PIW_1C:
     dw $000E                                                             ;93C264;
     %spritemapEntry(0, $1EE, $14, 0, 0, 2, 6, $33)
@@ -5915,6 +6490,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_1C:
     %spritemapEntry(0, $1EE, $EC, 0, 0, 2, 6, $33)
     %spritemapEntry(0, $1EE, $F4, 0, 0, 2, 6, $33)
 
+%anchor($93C2AC)
 ProjectileFlareSpritemaps_Charged_PW_PIW_1D:
     dw $000E                                                             ;93C2AC;
     %spritemapEntry(0, $1ED, $14, 0, 0, 2, 6, $33)
@@ -5933,6 +6509,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_1D:
     %spritemapEntry(0, $1ED, $F4, 0, 0, 2, 6, $33)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($93C2F4)
 UNUSED_ProjectileFlareSpritemaps_Charged_PW_PIW_93C2F4:
     dw $0004                                                             ;93C2F4;
     %spritemapEntry(0, $08, $FC, 0, 0, 2, 6, $34)
@@ -5940,6 +6517,7 @@ UNUSED_ProjectileFlareSpritemaps_Charged_PW_PIW_93C2F4:
     %spritemapEntry(0, $1F8, $FC, 0, 0, 2, 6, $34)
     %spritemapEntry(0, $1F0, $FC, 0, 0, 2, 6, $34)
 
+%anchor($93C30A)
 UNUSED_ProjectileFlareSpritemaps_Charged_PW_PIW_93C30A:
     dw $0008                                                             ;93C30A;
     %spritemapEntry(0, $08, $04, 0, 0, 2, 6, $34)
@@ -5951,6 +6529,7 @@ UNUSED_ProjectileFlareSpritemaps_Charged_PW_PIW_93C30A:
     %spritemapEntry(0, $1F8, $F4, 0, 0, 2, 6, $34)
     %spritemapEntry(0, $1F0, $F4, 0, 0, 2, 6, $34)
 
+%anchor($93C334)
 UNUSED_ProjectileFlareSpritemaps_Charged_PW_PIW_93C334:
     dw $0008                                                             ;93C334;
     %spritemapEntry(0, $08, $09, 0, 0, 2, 6, $34)
@@ -5962,6 +6541,7 @@ UNUSED_ProjectileFlareSpritemaps_Charged_PW_PIW_93C334:
     %spritemapEntry(0, $1F8, $EF, 0, 0, 2, 6, $34)
     %spritemapEntry(0, $1F0, $EF, 0, 0, 2, 6, $34)
 
+%anchor($93C35E)
 UNUSED_ProjectileFlareSpritemaps_Charged_PW_PIW_93C35E:
     dw $0008                                                             ;93C35E;
     %spritemapEntry(0, $08, $0B, 0, 0, 2, 6, $34)
@@ -5973,6 +6553,7 @@ UNUSED_ProjectileFlareSpritemaps_Charged_PW_PIW_93C35E:
     %spritemapEntry(0, $1F8, $ED, 0, 0, 2, 6, $34)
     %spritemapEntry(0, $1F0, $ED, 0, 0, 2, 6, $34)
 
+%anchor($93C388)
 UNUSED_ProjectileFlareSpritemaps_Charged_PW_PIW_93C388:
     dw $0008                                                             ;93C388;
     %spritemapEntry(0, $08, $0C, 0, 0, 2, 6, $34)
@@ -5985,6 +6566,7 @@ UNUSED_ProjectileFlareSpritemaps_Charged_PW_PIW_93C388:
     %spritemapEntry(0, $1F0, $EC, 0, 0, 2, 6, $34)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($93C3B2)
 ProjectileFlareSpritemaps_Charged_PW_PIW_1E:
     dw $0007                                                             ;93C3B2;
     %spritemapEntry(0, $14, $FC, 0, 0, 2, 6, $34)
@@ -5995,6 +6577,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_1E:
     %spritemapEntry(0, $1F4, $FC, 0, 0, 2, 6, $34)
     %spritemapEntry(0, $1EC, $FC, 0, 0, 2, 6, $34)
 
+%anchor($93C3D7)
 ProjectileFlareSpritemaps_Charged_PW_PIW_1F:
     dw $000E                                                             ;93C3D7;
     %spritemapEntry(0, $14, $04, 0, 0, 2, 6, $34)
@@ -6012,6 +6595,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_1F:
     %spritemapEntry(0, $1F4, $F4, 0, 0, 2, 6, $34)
     %spritemapEntry(0, $1EC, $F4, 0, 0, 2, 6, $34)
 
+%anchor($93C41F)
 ProjectileFlareSpritemaps_Charged_PW_PIW_20:
     dw $000E                                                             ;93C41F;
     %spritemapEntry(0, $14, $09, 0, 0, 2, 6, $34)
@@ -6029,6 +6613,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_20:
     %spritemapEntry(0, $1F4, $EF, 0, 0, 2, 6, $34)
     %spritemapEntry(0, $1EC, $EF, 0, 0, 2, 6, $34)
 
+%anchor($93C467)
 ProjectileFlareSpritemaps_Charged_PW_PIW_21:
     dw $000E                                                             ;93C467;
     %spritemapEntry(0, $14, $0B, 0, 0, 2, 6, $34)
@@ -6046,6 +6631,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_21:
     %spritemapEntry(0, $1F4, $ED, 0, 0, 2, 6, $34)
     %spritemapEntry(0, $1EC, $ED, 0, 0, 2, 6, $34)
 
+%anchor($93C4AF)
 ProjectileFlareSpritemaps_Charged_PW_PIW_22:
     dw $000E                                                             ;93C4AF;
     %spritemapEntry(0, $14, $0C, 0, 0, 2, 6, $34)
@@ -6063,6 +6649,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_22:
     %spritemapEntry(0, $1F4, $EC, 0, 0, 2, 6, $34)
     %spritemapEntry(0, $1EC, $EC, 0, 0, 2, 6, $34)
 
+%anchor($93C4F7)
 UNSUED_ProjectileFlareSpritemaps_Charged_PW_PIW_93C4F7:
     dw $0008                                                             ;93C4F7;
     %spritemapEntry(0, $08, $0C, 1, 1, 2, 6, $36)
@@ -6074,6 +6661,7 @@ UNSUED_ProjectileFlareSpritemaps_Charged_PW_PIW_93C4F7:
     %spritemapEntry(0, $1F0, $F4, 0, 0, 2, 6, $35)
     %spritemapEntry(0, $1F8, $FC, 0, 0, 2, 6, $35)
 
+%anchor($93C521)
 UNSUED_ProjectileFlareSpritemaps_Charged_PW_PIW_93C521:
     dw $0010                                                             ;93C521;
     %spritemapEntry(0, $0F, $06, 1, 1, 2, 6, $36)
@@ -6093,6 +6681,7 @@ UNSUED_ProjectileFlareSpritemaps_Charged_PW_PIW_93C521:
     %spritemapEntry(0, $1EA, $FA, 0, 0, 2, 6, $35)
     %spritemapEntry(0, $1F2, $02, 0, 0, 2, 6, $35)
 
+%anchor($93C573)
 UNSUED_ProjectileFlareSpritemaps_Charged_PW_PIW_93C573:
     dw $0010                                                             ;93C573;
     %spritemapEntry(0, $1FF, $15, 1, 1, 2, 6, $36)
@@ -6112,6 +6701,7 @@ UNSUED_ProjectileFlareSpritemaps_Charged_PW_PIW_93C573:
     %spritemapEntry(0, $1E7, $FD, 0, 0, 2, 6, $35)
     %spritemapEntry(0, $1EF, $05, 0, 0, 2, 6, $35)
 
+%anchor($93C5C5)
 UNSUED_ProjectileFlareSpritemaps_Charged_PW_PIW_93C5C5:
     dw $0010                                                             ;93C5C5;
     %spritemapEntry(0, $1FD, $17, 1, 1, 2, 6, $36)
@@ -6131,6 +6721,7 @@ UNSUED_ProjectileFlareSpritemaps_Charged_PW_PIW_93C5C5:
     %spritemapEntry(0, $1E5, $FF, 0, 0, 2, 6, $35)
     %spritemapEntry(0, $1ED, $07, 0, 0, 2, 6, $35)
 
+%anchor($93C617)
 UNSUED_ProjectileFlareSpritemaps_Charged_PW_PIW_93C617:
     dw $0010                                                             ;93C617;
     %spritemapEntry(0, $1FC, $18, 1, 1, 2, 6, $36)
@@ -6150,6 +6741,7 @@ UNSUED_ProjectileFlareSpritemaps_Charged_PW_PIW_93C617:
     %spritemapEntry(0, $1E4, $00, 0, 0, 2, 6, $35)
     %spritemapEntry(0, $1EC, $08, 0, 0, 2, 6, $35)
 
+%anchor($93C669)
 ProjectileFlareSpritemaps_Charged_PW_PIW_23:
     dw $000C                                                             ;93C669;
     %spritemapEntry(0, $10, $14, 1, 1, 2, 6, $36)
@@ -6165,6 +6757,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_23:
     %spritemapEntry(0, $1F0, $F4, 0, 0, 2, 6, $35)
     %spritemapEntry(0, $1F8, $FC, 0, 0, 2, 6, $35)
 
+%anchor($93C6A7)
 ProjectileFlareSpritemaps_Charged_PW_PIW_24:
     dw $0018                                                             ;93C6A7;
     %spritemapEntry(0, $0A, $1A, 1, 1, 2, 6, $36)
@@ -6192,6 +6785,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_24:
     %spritemapEntry(0, $1EA, $FA, 0, 0, 2, 6, $35)
     %spritemapEntry(0, $1F2, $02, 0, 0, 2, 6, $35)
 
+%anchor($93C721)
 ProjectileFlareSpritemaps_Charged_PW_PIW_25:
     dw $0018                                                             ;93C721;
     %spritemapEntry(0, $1DF, $ED, 0, 0, 2, 6, $36)
@@ -6219,6 +6813,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_25:
     %spritemapEntry(0, $1E7, $FD, 0, 0, 2, 6, $35)
     %spritemapEntry(0, $1EF, $05, 0, 0, 2, 6, $35)
 
+%anchor($93C79B)
 ProjectileFlareSpritemaps_Charged_PW_PIW_26:
     dw $0018                                                             ;93C79B;
     %spritemapEntry(0, $1DD, $EF, 0, 0, 2, 6, $36)
@@ -6246,6 +6841,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_26:
     %spritemapEntry(0, $1E5, $FF, 0, 0, 2, 6, $35)
     %spritemapEntry(0, $1ED, $07, 0, 0, 2, 6, $35)
 
+%anchor($93C815)
 ProjectileFlareSpritemaps_Charged_PW_PIW_27:
     dw $0018                                                             ;93C815;
     %spritemapEntry(0, $04, $20, 1, 1, 2, 6, $36)
@@ -6274,6 +6870,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_27:
     %spritemapEntry(0, $1EC, $08, 0, 0, 2, 6, $35)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($93C88F)
 UNUSED_ProjectileFlareSpritemaps_Charged_PW_PIW_93C88F:
     dw $0004                                                             ;93C88F;
     %spritemapEntry(0, $1FC, $08, 0, 0, 2, 6, $37)
@@ -6281,6 +6878,7 @@ UNUSED_ProjectileFlareSpritemaps_Charged_PW_PIW_93C88F:
     %spritemapEntry(0, $1FC, $F0, 0, 0, 2, 6, $37)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 2, 6, $37)
 
+%anchor($93C8A5)
 UNUSED_ProjectileFlareSpritemaps_Charged_PW_PIW_93C8A5:
     dw $0008                                                             ;93C8A5;
     %spritemapEntry(0, $04, $08, 0, 0, 2, 6, $37)
@@ -6292,6 +6890,7 @@ UNUSED_ProjectileFlareSpritemaps_Charged_PW_PIW_93C8A5:
     %spritemapEntry(0, $1F5, $F0, 0, 0, 2, 6, $37)
     %spritemapEntry(0, $1F5, $F8, 0, 0, 2, 6, $37)
 
+%anchor($93C8CF)
 UNUSED_ProjectileFlareSpritemaps_Charged_PW_PIW_93C8CF:
     dw $0008                                                             ;93C8CF;
     %spritemapEntry(0, $09, $08, 0, 0, 2, 6, $37)
@@ -6303,6 +6902,7 @@ UNUSED_ProjectileFlareSpritemaps_Charged_PW_PIW_93C8CF:
     %spritemapEntry(0, $1EF, $F0, 0, 0, 2, 6, $37)
     %spritemapEntry(0, $1EF, $F8, 0, 0, 2, 6, $37)
 
+%anchor($93C8F9)
 UNUSED_ProjectileFlareSpritemaps_Charged_PW_PIW_93C8F9:
     dw $0008                                                             ;93C8F9;
     %spritemapEntry(0, $0B, $08, 0, 0, 2, 6, $37)
@@ -6314,6 +6914,7 @@ UNUSED_ProjectileFlareSpritemaps_Charged_PW_PIW_93C8F9:
     %spritemapEntry(0, $1EE, $F0, 0, 0, 2, 6, $37)
     %spritemapEntry(0, $1EE, $F8, 0, 0, 2, 6, $37)
 
+%anchor($93C923)
 UNUSED_ProjectileFlareSpritemaps_Charged_PW_PIW_93C923:
     dw $0008                                                             ;93C923;
     %spritemapEntry(0, $0C, $08, 0, 0, 2, 6, $37)
@@ -6326,6 +6927,7 @@ UNUSED_ProjectileFlareSpritemaps_Charged_PW_PIW_93C923:
     %spritemapEntry(0, $1ED, $F8, 0, 0, 2, 6, $37)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($93C94D)
 ProjectileFlareSpritemaps_Charged_PW_PIW_28:
     dw $0007                                                             ;93C94D;
     %spritemapEntry(0, $1FC, $14, 0, 0, 2, 6, $37)
@@ -6336,6 +6938,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_28:
     %spritemapEntry(0, $1FC, $EC, 0, 0, 2, 6, $37)
     %spritemapEntry(0, $1FC, $F4, 0, 0, 2, 6, $37)
 
+%anchor($93C972)
 ProjectileFlareSpritemaps_Charged_PW_PIW_29:
     dw $000E                                                             ;93C972;
     %spritemapEntry(0, $04, $14, 0, 0, 2, 6, $37)
@@ -6353,6 +6956,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_29:
     %spritemapEntry(0, $1F5, $EC, 0, 0, 2, 6, $37)
     %spritemapEntry(0, $1F5, $F4, 0, 0, 2, 6, $37)
 
+%anchor($93C9BA)
 ProjectileFlareSpritemaps_Charged_PW_PIW_2A:
     dw $000E                                                             ;93C9BA;
     %spritemapEntry(0, $1EF, $14, 0, 0, 2, 6, $37)
@@ -6370,6 +6974,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_2A:
     %spritemapEntry(0, $1EF, $EC, 0, 0, 2, 6, $37)
     %spritemapEntry(0, $1EF, $F4, 0, 0, 2, 6, $37)
 
+%anchor($93CA02)
 ProjectileFlareSpritemaps_Charged_PW_PIW_2B:
     dw $000E                                                             ;93CA02;
     %spritemapEntry(0, $1EE, $14, 0, 0, 2, 6, $37)
@@ -6387,6 +6992,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_2B:
     %spritemapEntry(0, $1EE, $EC, 0, 0, 2, 6, $37)
     %spritemapEntry(0, $1EE, $F4, 0, 0, 2, 6, $37)
 
+%anchor($93CA4A)
 ProjectileFlareSpritemaps_Charged_PW_PIW_2C:
     dw $000E                                                             ;93CA4A;
     %spritemapEntry(0, $1ED, $14, 0, 0, 2, 6, $37)
@@ -6405,6 +7011,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_2C:
     %spritemapEntry(0, $1ED, $F4, 0, 0, 2, 6, $37)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($93CA92)
 UNUSED_ProjectileFlareSpritemaps_Charged_PW_PIW_93CA92:
     dw $0008                                                             ;93CA92;
     %spritemapEntry(0, $1F0, $0C, 1, 0, 2, 6, $36)
@@ -6416,6 +7023,7 @@ UNUSED_ProjectileFlareSpritemaps_Charged_PW_PIW_93CA92:
     %spritemapEntry(0, $08, $F4, 0, 1, 2, 6, $35)
     %spritemapEntry(0, $00, $FC, 0, 1, 2, 6, $35)
 
+%anchor($93CABC)
 UNUSED_ProjectileFlareSpritemaps_Charged_PW_PIW_93CABC:
     dw $0010                                                             ;93CABC;
     %spritemapEntry(0, $1E9, $06, 1, 0, 2, 6, $36)
@@ -6435,6 +7043,7 @@ UNUSED_ProjectileFlareSpritemaps_Charged_PW_PIW_93CABC:
     %spritemapEntry(0, $0E, $FA, 0, 1, 2, 6, $35)
     %spritemapEntry(0, $06, $02, 0, 1, 2, 6, $35)
 
+%anchor($93CB0E)
 UNUSED_ProjectileFlareSpritemaps_Charged_PW_PIW_93CB0E:
     dw $0010                                                             ;93CB0E;
     %spritemapEntry(0, $1F9, $15, 1, 0, 2, 6, $36)
@@ -6454,6 +7063,7 @@ UNUSED_ProjectileFlareSpritemaps_Charged_PW_PIW_93CB0E:
     %spritemapEntry(0, $11, $FD, 0, 1, 2, 6, $35)
     %spritemapEntry(0, $09, $05, 0, 1, 2, 6, $35)
 
+%anchor($93CB60)
 UNUSED_ProjectileFlareSpritemaps_Charged_PW_PIW_93CB60:
     dw $0010                                                             ;93CB60;
     %spritemapEntry(0, $1FB, $17, 1, 0, 2, 6, $36)
@@ -6473,6 +7083,7 @@ UNUSED_ProjectileFlareSpritemaps_Charged_PW_PIW_93CB60:
     %spritemapEntry(0, $13, $FF, 0, 1, 2, 6, $35)
     %spritemapEntry(0, $0B, $07, 0, 1, 2, 6, $35)
 
+%anchor($93CBB2)
 UNUSED_ProjectileFlareSpritemaps_Charged_PW_PIW_93CBB2:
     dw $0010                                                             ;93CBB2;
     %spritemapEntry(0, $1FC, $18, 1, 0, 2, 6, $36)
@@ -6493,6 +7104,7 @@ UNUSED_ProjectileFlareSpritemaps_Charged_PW_PIW_93CBB2:
     %spritemapEntry(0, $0C, $08, 0, 1, 2, 6, $35)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($93CC04)
 ProjectileFlareSpritemaps_Charged_PW_PIW_2D:
     dw $000C                                                             ;93CC04;
     %spritemapEntry(0, $1E8, $14, 1, 0, 2, 6, $36)
@@ -6508,6 +7120,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_2D:
     %spritemapEntry(0, $08, $F4, 0, 1, 2, 6, $35)
     %spritemapEntry(0, $00, $FC, 0, 1, 2, 6, $35)
 
+%anchor($93CC42)
 ProjectileFlareSpritemaps_Charged_PW_PIW_2E:
     dw $0018                                                             ;93CC42;
     %spritemapEntry(0, $1EE, $1A, 1, 0, 2, 6, $36)
@@ -6535,6 +7148,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_2E:
     %spritemapEntry(0, $0E, $FA, 0, 1, 2, 6, $35)
     %spritemapEntry(0, $06, $02, 0, 1, 2, 6, $35)
 
+%anchor($93CCBC)
 ProjectileFlareSpritemaps_Charged_PW_PIW_2F:
     dw $0018                                                             ;93CCBC;
     %spritemapEntry(0, $19, $ED, 0, 1, 2, 6, $36)
@@ -6562,6 +7176,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_2F:
     %spritemapEntry(0, $11, $FD, 0, 1, 2, 6, $35)
     %spritemapEntry(0, $09, $05, 0, 1, 2, 6, $35)
 
+%anchor($93CD36)
 ProjectileFlareSpritemaps_Charged_PW_PIW_30:
     dw $0018                                                             ;93CD36;
     %spritemapEntry(0, $1B, $EF, 0, 1, 2, 6, $36)
@@ -6589,6 +7204,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_30:
     %spritemapEntry(0, $13, $FF, 0, 1, 2, 6, $35)
     %spritemapEntry(0, $0B, $07, 0, 1, 2, 6, $35)
 
+%anchor($93CDB0)
 ProjectileFlareSpritemaps_Charged_PW_PIW_31:
     dw $0018                                                             ;93CDB0;
     %spritemapEntry(0, $1F4, $20, 1, 0, 2, 6, $36)
@@ -6616,6 +7232,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_31:
     %spritemapEntry(0, $14, $00, 0, 1, 2, 6, $35)
     %spritemapEntry(0, $0C, $08, 0, 1, 2, 6, $35)
 
+%anchor($93CE2A)
 ProjectileFlareSpritemaps_Charged_PW_PIW_32:
     dw $0006                                                             ;93CE2A;
     %spritemapEntry(0, $1F0, $04, 0, 1, 2, 6, $32)
@@ -6625,6 +7242,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_32:
     %spritemapEntry(0, $1F8, $FC, 0, 1, 2, 6, $32)
     %spritemapEntry(0, $00, $FC, 0, 1, 2, 6, $31)
 
+%anchor($93CE4A)
 ProjectileFlareSpritemaps_Charged_PW_PIW_33:
     dw $000C                                                             ;93CE4A;
     %spritemapEntry(0, $1E9, $FE, 0, 1, 2, 6, $32)
@@ -6640,6 +7258,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_33:
     %spritemapEntry(0, $1FE, $02, 0, 1, 2, 6, $32)
     %spritemapEntry(0, $06, $02, 0, 1, 2, 6, $31)
 
+%anchor($93CE88)
 ProjectileFlareSpritemaps_Charged_PW_PIW_34:
     dw $000C                                                             ;93CE88;
     %spritemapEntry(0, $1E6, $FB, 0, 1, 2, 6, $32)
@@ -6655,6 +7274,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_34:
     %spritemapEntry(0, $01, $05, 0, 1, 2, 6, $32)
     %spritemapEntry(0, $09, $05, 0, 1, 2, 6, $31)
 
+%anchor($93CEC6)
 ProjectileFlareSpritemaps_Charged_PW_PIW_35:
     dw $000C                                                             ;93CEC6;
     %spritemapEntry(0, $1E4, $F9, 0, 1, 2, 6, $32)
@@ -6670,6 +7290,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_35:
     %spritemapEntry(0, $03, $07, 0, 1, 2, 6, $32)
     %spritemapEntry(0, $0B, $07, 0, 1, 2, 6, $31)
 
+%anchor($93CF04)
 ProjectileFlareSpritemaps_Charged_PW_PIW_36:
     dw $000C                                                             ;93CF04;
     %spritemapEntry(0, $1E3, $F8, 0, 1, 2, 6, $32)
@@ -6685,6 +7306,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_36:
     %spritemapEntry(0, $04, $08, 0, 1, 2, 6, $32)
     %spritemapEntry(0, $0C, $08, 0, 1, 2, 6, $31)
 
+%anchor($93CF42)
 ProjectileFlareSpritemaps_Charged_PW_PIW_37:
     dw $000A                                                             ;93CF42;
     %spritemapEntry(0, $08, $EC, 0, 1, 2, 6, $32)
@@ -6698,6 +7320,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_37:
     %spritemapEntry(0, $1F8, $FC, 0, 1, 2, 6, $32)
     %spritemapEntry(0, $00, $FC, 0, 1, 2, 6, $31)
 
+%anchor($93CF76)
 ProjectileFlareSpritemaps_Charged_PW_PIW_38:
     dw $0014                                                             ;93CF76;
     %spritemapEntry(0, $01, $E6, 0, 1, 2, 6, $32)
@@ -6721,6 +7344,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_38:
     %spritemapEntry(0, $1FE, $02, 0, 1, 2, 6, $32)
     %spritemapEntry(0, $06, $02, 0, 1, 2, 6, $31)
 
+%anchor($93CFDC)
 ProjectileFlareSpritemaps_Charged_PW_PIW_39:
     dw $0014                                                             ;93CFDC;
     %spritemapEntry(0, $1FE, $E3, 0, 1, 2, 6, $32)
@@ -6744,6 +7368,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_39:
     %spritemapEntry(0, $01, $05, 0, 1, 2, 6, $32)
     %spritemapEntry(0, $09, $05, 0, 1, 2, 6, $31)
 
+%anchor($93D042)
 ProjectileFlareSpritemaps_Charged_PW_PIW_3A:
     dw $0014                                                             ;93D042;
     %spritemapEntry(0, $13, $F7, 0, 1, 2, 6, $32)
@@ -6767,6 +7392,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_3A:
     %spritemapEntry(0, $03, $07, 0, 1, 2, 6, $32)
     %spritemapEntry(0, $0B, $07, 0, 1, 2, 6, $31)
 
+%anchor($93D0A8)
 ProjectileFlareSpritemaps_Charged_PW_PIW_3B:
     dw $0014                                                             ;93D0A8;
     %spritemapEntry(0, $14, $F8, 0, 1, 2, 6, $32)
@@ -6790,6 +7416,7 @@ ProjectileFlareSpritemaps_Charged_PW_PIW_3B:
     %spritemapEntry(0, $04, $08, 0, 1, 2, 6, $32)
     %spritemapEntry(0, $0C, $08, 0, 1, 2, 6, $31)
 
+%anchor($93D10E)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_0:
     dw $0004                                                             ;93D10E;
     %spritemapEntry(0, $1F2, $00, 0, 1, 2, 6, $32)
@@ -6797,6 +7424,7 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_0:
     %spritemapEntry(0, $1FA, $F8, 0, 1, 2, 6, $32)
     %spritemapEntry(0, $02, $F8, 0, 1, 2, 6, $31)
 
+%anchor($93D124)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_1:
     dw $000C                                                             ;93D124;
     %spritemapEntry(0, $1F2, $00, 0, 1, 2, 6, $32)
@@ -6812,6 +7440,7 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_1:
     %spritemapEntry(0, $00, $FE, 0, 1, 2, 6, $32)
     %spritemapEntry(0, $08, $FE, 0, 1, 2, 6, $31)
 
+%anchor($93D162)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_2:
     dw $000C                                                             ;93D162;
     %spritemapEntry(0, $1F2, $00, 0, 1, 2, 6, $32)
@@ -6827,6 +7456,7 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_2:
     %spritemapEntry(0, $03, $01, 0, 1, 2, 6, $32)
     %spritemapEntry(0, $0B, $01, 0, 1, 2, 6, $31)
 
+%anchor($93D1A0)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_3:
     dw $000C                                                             ;93D1A0;
     %spritemapEntry(0, $1F2, $00, 0, 1, 2, 6, $32)
@@ -6842,6 +7472,7 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_3:
     %spritemapEntry(0, $05, $03, 0, 1, 2, 6, $32)
     %spritemapEntry(0, $0D, $03, 0, 1, 2, 6, $31)
 
+%anchor($93D1DE)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_4:
     dw $000C                                                             ;93D1DE;
     %spritemapEntry(0, $1F2, $00, 0, 1, 2, 6, $32)
@@ -6857,6 +7488,7 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_4:
     %spritemapEntry(0, $06, $04, 0, 1, 2, 6, $32)
     %spritemapEntry(0, $0E, $04, 0, 1, 2, 6, $31)
 
+%anchor($93D21C)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_5:
     dw $000C                                                             ;93D21C;
     %spritemapEntry(0, $1EF, $FE, 0, 1, 2, 6, $32)
@@ -6872,6 +7504,7 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_5:
     %spritemapEntry(0, $1FA, $F8, 0, 1, 2, 6, $32)
     %spritemapEntry(0, $02, $F8, 0, 1, 2, 6, $31)
 
+%anchor($93D25A)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_6:
     dw $0004                                                             ;93D25A;
     %spritemapEntry(0, $1F2, $F8, 1, 1, 2, 6, $32)
@@ -6879,6 +7512,7 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_6:
     %spritemapEntry(0, $1FA, $00, 1, 1, 2, 6, $32)
     %spritemapEntry(0, $02, $00, 1, 1, 2, 6, $31)
 
+%anchor($93D270)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_7:
     dw $000C                                                             ;93D270;
     %spritemapEntry(0, $1F2, $F8, 1, 1, 2, 6, $32)
@@ -6894,6 +7528,7 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_7:
     %spritemapEntry(0, $00, $FA, 1, 1, 2, 6, $32)
     %spritemapEntry(0, $08, $FA, 1, 1, 2, 6, $31)
 
+%anchor($93D2AE)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_8:
     dw $000C                                                             ;93D2AE;
     %spritemapEntry(0, $1F2, $F8, 1, 1, 2, 6, $32)
@@ -6909,6 +7544,7 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_8:
     %spritemapEntry(0, $03, $F7, 1, 1, 2, 6, $32)
     %spritemapEntry(0, $0B, $F7, 1, 1, 2, 6, $31)
 
+%anchor($93D2EC)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_9:
     dw $000C                                                             ;93D2EC;
     %spritemapEntry(0, $1F2, $F8, 1, 1, 2, 6, $32)
@@ -6924,6 +7560,7 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_9:
     %spritemapEntry(0, $05, $F5, 1, 1, 2, 6, $32)
     %spritemapEntry(0, $0D, $F5, 1, 1, 2, 6, $31)
 
+%anchor($93D32A)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_A:
     dw $000C                                                             ;93D32A;
     %spritemapEntry(0, $1F2, $F8, 1, 1, 2, 6, $32)
@@ -6939,6 +7576,7 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_A:
     %spritemapEntry(0, $06, $F4, 1, 1, 2, 6, $32)
     %spritemapEntry(0, $0E, $F4, 1, 1, 2, 6, $31)
 
+%anchor($93D368)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_B:
     dw $000C                                                             ;93D368;
     %spritemapEntry(0, $1EF, $FA, 1, 1, 2, 6, $32)
@@ -6954,6 +7592,7 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_B:
     %spritemapEntry(0, $1FA, $00, 1, 1, 2, 6, $32)
     %spritemapEntry(0, $02, $00, 1, 1, 2, 6, $31)
 
+%anchor($93D3A6)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_C:
     dw $0004                                                             ;93D3A6;
     %spritemapEntry(0, $06, $F8, 1, 0, 2, 6, $32)
@@ -6961,6 +7600,7 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_C:
     %spritemapEntry(0, $1FE, $00, 1, 0, 2, 6, $32)
     %spritemapEntry(0, $1F6, $00, 1, 0, 2, 6, $31)
 
+%anchor($93D3BC)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_D:
     dw $000C                                                             ;93D3BC;
     %spritemapEntry(0, $06, $F8, 1, 0, 2, 6, $32)
@@ -6976,6 +7616,7 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_D:
     %spritemapEntry(0, $1F8, $FA, 1, 0, 2, 6, $32)
     %spritemapEntry(0, $1F0, $FA, 1, 0, 2, 6, $31)
 
+%anchor($93D3FA)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_E:
     dw $000C                                                             ;93D3FA;
     %spritemapEntry(0, $06, $F8, 1, 0, 2, 6, $32)
@@ -6991,6 +7632,7 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_E:
     %spritemapEntry(0, $1F5, $F7, 1, 0, 2, 6, $32)
     %spritemapEntry(0, $1ED, $F7, 1, 0, 2, 6, $31)
 
+%anchor($93D438)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_F:
     dw $000C                                                             ;93D438;
     %spritemapEntry(0, $06, $F8, 1, 0, 2, 6, $32)
@@ -7006,6 +7648,7 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_F:
     %spritemapEntry(0, $1F3, $F5, 1, 0, 2, 6, $32)
     %spritemapEntry(0, $1EB, $F5, 1, 0, 2, 6, $31)
 
+%anchor($93D476)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_10:
     dw $000C                                                             ;93D476;
     %spritemapEntry(0, $06, $F8, 1, 0, 2, 6, $32)
@@ -7022,6 +7665,7 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_10:
     %spritemapEntry(0, $1EA, $F4, 1, 0, 2, 6, $31)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($93D4B4)
 UNUSED_ProjectileFlareSpritemaps_S_SI_SW_SIW_93D4B4:
     dw $000C                                                             ;93D4B4;
     %spritemapEntry(0, $09, $FA, 1, 0, 2, 6, $32)
@@ -7038,6 +7682,7 @@ UNUSED_ProjectileFlareSpritemaps_S_SI_SW_SIW_93D4B4:
     %spritemapEntry(0, $1F6, $00, 1, 0, 2, 6, $31)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($93D4F2)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_11:
     dw $0004                                                             ;93D4F2;
     %spritemapEntry(0, $06, $00, 0, 0, 2, 6, $32)
@@ -7045,6 +7690,7 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_11:
     %spritemapEntry(0, $1FE, $F8, 0, 0, 2, 6, $32)
     %spritemapEntry(0, $1F6, $F8, 0, 0, 2, 6, $31)
 
+%anchor($93D508)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_12:
     dw $000C                                                             ;93D508;
     %spritemapEntry(0, $06, $00, 0, 0, 2, 6, $32)
@@ -7060,6 +7706,7 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_12:
     %spritemapEntry(0, $1F8, $FE, 0, 0, 2, 6, $32)
     %spritemapEntry(0, $1F0, $FE, 0, 0, 2, 6, $31)
 
+%anchor($93D546)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_13:
     dw $000C                                                             ;93D546;
     %spritemapEntry(0, $06, $00, 0, 0, 2, 6, $32)
@@ -7075,6 +7722,7 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_13:
     %spritemapEntry(0, $1F5, $01, 0, 0, 2, 6, $32)
     %spritemapEntry(0, $1ED, $01, 0, 0, 2, 6, $31)
 
+%anchor($93D584)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_14:
     dw $000C                                                             ;93D584;
     %spritemapEntry(0, $06, $00, 0, 0, 2, 6, $32)
@@ -7090,6 +7738,7 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_14:
     %spritemapEntry(0, $1F3, $03, 0, 0, 2, 6, $32)
     %spritemapEntry(0, $1EB, $03, 0, 0, 2, 6, $31)
 
+%anchor($93D5C2)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_15:
     dw $000C                                                             ;93D5C2;
     %spritemapEntry(0, $06, $00, 0, 0, 2, 6, $32)
@@ -7105,6 +7754,7 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_15:
     %spritemapEntry(0, $1F2, $04, 0, 0, 2, 6, $32)
     %spritemapEntry(0, $1EA, $04, 0, 0, 2, 6, $31)
 
+%anchor($93D600)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_16:
     dw $000C                                                             ;93D600;
     %spritemapEntry(0, $09, $FE, 0, 0, 2, 6, $32)
@@ -7120,11 +7770,13 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_16:
     %spritemapEntry(0, $1FE, $F8, 0, 0, 2, 6, $32)
     %spritemapEntry(0, $1F6, $F8, 0, 0, 2, 6, $31)
 
+%anchor($93D63E)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_17:
     dw $0002                                                             ;93D63E;
     %spritemapEntry(0, $1FC, $F8, 1, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $00, 1, 0, 2, 6, $33)
 
+%anchor($93D64A)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_18:
     dw $0006                                                             ;93D64A;
     %spritemapEntry(0, $00, $F8, 1, 0, 2, 6, $33)
@@ -7134,6 +7786,7 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_18:
     %spritemapEntry(0, $1FC, $F8, 1, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $00, 1, 0, 2, 6, $33)
 
+%anchor($93D66A)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_19:
     dw $0006                                                             ;93D66A;
     %spritemapEntry(0, $04, $F8, 1, 0, 2, 6, $33)
@@ -7143,6 +7796,7 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_19:
     %spritemapEntry(0, $1FC, $F8, 1, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $00, 1, 0, 2, 6, $33)
 
+%anchor($93D68A)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_1A:
     dw $0006                                                             ;93D68A;
     %spritemapEntry(0, $09, $F8, 1, 0, 2, 6, $33)
@@ -7152,6 +7806,7 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_1A:
     %spritemapEntry(0, $1FC, $F8, 1, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $00, 1, 0, 2, 6, $33)
 
+%anchor($93D6AA)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_1B:
     dw $0006                                                             ;93D6AA;
     %spritemapEntry(0, $0B, $F8, 1, 0, 2, 6, $33)
@@ -7161,6 +7816,7 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_1B:
     %spritemapEntry(0, $1FC, $F8, 1, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $00, 1, 0, 2, 6, $33)
 
+%anchor($93D6CA)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_1C:
     dw $0006                                                             ;93D6CA;
     %spritemapEntry(0, $0C, $F8, 1, 0, 2, 6, $33)
@@ -7170,11 +7826,13 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_1C:
     %spritemapEntry(0, $1FC, $F8, 1, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $00, 1, 0, 2, 6, $33)
 
+%anchor($93D6EA)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_1D:
     dw $0002                                                             ;93D6EA;
     %spritemapEntry(0, $00, $FC, 0, 0, 2, 6, $30)
     %spritemapEntry(0, $1F8, $FC, 0, 0, 2, 6, $30)
 
+%anchor($93D6F6)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_1E:
     dw $0006                                                             ;93D6F6;
     %spritemapEntry(0, $00, $00, 0, 0, 2, 6, $30)
@@ -7184,6 +7842,7 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_1E:
     %spritemapEntry(0, $00, $F8, 0, 0, 2, 6, $30)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 6, $30)
 
+%anchor($93D716)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_1F:
     dw $0006                                                             ;93D716;
     %spritemapEntry(0, $00, $F4, 0, 0, 2, 6, $30)
@@ -7193,6 +7852,7 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_1F:
     %spritemapEntry(0, $1F8, $FC, 0, 0, 2, 6, $30)
     %spritemapEntry(0, $1F8, $F4, 0, 0, 2, 6, $30)
 
+%anchor($93D736)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_20:
     dw $0006                                                             ;93D736;
     %spritemapEntry(0, $00, $EF, 0, 0, 2, 6, $30)
@@ -7202,6 +7862,7 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_20:
     %spritemapEntry(0, $1F8, $FC, 0, 0, 2, 6, $30)
     %spritemapEntry(0, $1F8, $EF, 0, 0, 2, 6, $30)
 
+%anchor($93D756)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_21:
     dw $0006                                                             ;93D756;
     %spritemapEntry(0, $00, $ED, 0, 0, 2, 6, $30)
@@ -7211,6 +7872,7 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_21:
     %spritemapEntry(0, $1F8, $FC, 0, 0, 2, 6, $30)
     %spritemapEntry(0, $1F8, $ED, 0, 0, 2, 6, $30)
 
+%anchor($93D776)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_22:
     dw $0006                                                             ;93D776;
     %spritemapEntry(0, $00, $EC, 0, 0, 2, 6, $30)
@@ -7220,11 +7882,13 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_22:
     %spritemapEntry(0, $1F8, $FC, 0, 0, 2, 6, $30)
     %spritemapEntry(0, $1F8, $EC, 0, 0, 2, 6, $30)
 
+%anchor($93D796)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_23:
     dw $0002                                                             ;93D796;
     %spritemapEntry(0, $1FC, $00, 0, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93D7A2)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_24:
     dw $0006                                                             ;93D7A2;
     %spritemapEntry(0, $00, $00, 0, 0, 2, 6, $33)
@@ -7234,6 +7898,7 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_24:
     %spritemapEntry(0, $1FC, $00, 0, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93D7C2)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_25:
     dw $0006                                                             ;93D7C2;
     %spritemapEntry(0, $04, $00, 0, 0, 2, 6, $33)
@@ -7243,6 +7908,7 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_25:
     %spritemapEntry(0, $1FC, $00, 0, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93D7E2)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_26:
     dw $0006                                                             ;93D7E2;
     %spritemapEntry(0, $09, $00, 0, 0, 2, 6, $33)
@@ -7252,6 +7918,7 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_26:
     %spritemapEntry(0, $1FC, $00, 0, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93D802)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_27:
     dw $0006                                                             ;93D802;
     %spritemapEntry(0, $0B, $00, 0, 0, 2, 6, $33)
@@ -7261,6 +7928,7 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_27:
     %spritemapEntry(0, $1FC, $00, 0, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93D822)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_28:
     dw $0006                                                             ;93D822;
     %spritemapEntry(0, $0C, $00, 0, 0, 2, 6, $33)
@@ -7270,11 +7938,13 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_28:
     %spritemapEntry(0, $1FC, $00, 0, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93D842)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_29:
     dw $0002                                                             ;93D842;
     %spritemapEntry(0, $1F8, $FC, 0, 1, 2, 6, $30)
     %spritemapEntry(0, $00, $FC, 0, 1, 2, 6, $30)
 
+%anchor($93D84E)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_2A:
     dw $0006                                                             ;93D84E;
     %spritemapEntry(0, $00, $00, 0, 0, 2, 6, $30)
@@ -7284,6 +7954,7 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_2A:
     %spritemapEntry(0, $00, $F8, 0, 0, 2, 6, $30)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 6, $30)
 
+%anchor($93D86E)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_2B:
     dw $0006                                                             ;93D86E;
     %spritemapEntry(0, $1F8, $F4, 0, 1, 2, 6, $30)
@@ -7293,6 +7964,7 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_2B:
     %spritemapEntry(0, $00, $FC, 0, 1, 2, 6, $30)
     %spritemapEntry(0, $00, $F4, 0, 1, 2, 6, $30)
 
+%anchor($93D88E)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_2C:
     dw $0006                                                             ;93D88E;
     %spritemapEntry(0, $1F8, $EF, 0, 1, 2, 6, $30)
@@ -7302,6 +7974,7 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_2C:
     %spritemapEntry(0, $00, $FC, 0, 1, 2, 6, $30)
     %spritemapEntry(0, $00, $EF, 0, 1, 2, 6, $30)
 
+%anchor($93D8AE)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_2D:
     dw $0006                                                             ;93D8AE;
     %spritemapEntry(0, $1F8, $ED, 0, 1, 2, 6, $30)
@@ -7311,6 +7984,7 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_2D:
     %spritemapEntry(0, $00, $FC, 0, 1, 2, 6, $30)
     %spritemapEntry(0, $00, $ED, 0, 1, 2, 6, $30)
 
+%anchor($93D8CE)
 ProjectileFlareSpritemaps_S_SI_SW_SIW_2E:
     dw $0006                                                             ;93D8CE;
     %spritemapEntry(0, $1F8, $EC, 0, 1, 2, 6, $30)
@@ -7320,6 +7994,7 @@ ProjectileFlareSpritemaps_S_SI_SW_SIW_2E:
     %spritemapEntry(0, $00, $FC, 0, 1, 2, 6, $30)
     %spritemapEntry(0, $00, $EC, 0, 1, 2, 6, $30)
 
+%anchor($93D8EE)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_0:
     dw $0004                                                             ;93D8EE;
     %spritemapEntry(0, $08, $FC, 0, 0, 2, 6, $34)
@@ -7327,6 +8002,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_0:
     %spritemapEntry(0, $1F8, $FC, 0, 0, 2, 6, $34)
     %spritemapEntry(0, $1F0, $FC, 0, 0, 2, 6, $34)
 
+%anchor($93D904)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_1:
     dw $000C                                                             ;93D904;
     %spritemapEntry(0, $08, $FC, 0, 0, 2, 6, $34)
@@ -7342,6 +8018,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_1:
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 6, $34)
     %spritemapEntry(0, $1F0, $F8, 0, 0, 2, 6, $34)
 
+%anchor($93D942)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_2:
     dw $000C                                                             ;93D942;
     %spritemapEntry(0, $08, $04, 0, 0, 2, 6, $34)
@@ -7357,6 +8034,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_2:
     %spritemapEntry(0, $1F8, $F4, 0, 0, 2, 6, $34)
     %spritemapEntry(0, $1F0, $F4, 0, 0, 2, 6, $34)
 
+%anchor($93D980)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_3:
     dw $000C                                                             ;93D980;
     %spritemapEntry(0, $08, $09, 0, 0, 2, 6, $34)
@@ -7372,6 +8050,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_3:
     %spritemapEntry(0, $1F8, $EF, 0, 0, 2, 6, $34)
     %spritemapEntry(0, $1F0, $EF, 0, 0, 2, 6, $34)
 
+%anchor($93D9BE)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_4:
     dw $000C                                                             ;93D9BE;
     %spritemapEntry(0, $08, $0B, 0, 0, 2, 6, $34)
@@ -7387,6 +8066,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_4:
     %spritemapEntry(0, $1F8, $ED, 0, 0, 2, 6, $34)
     %spritemapEntry(0, $1F0, $ED, 0, 0, 2, 6, $34)
 
+%anchor($93D9FC)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_5:
     dw $000C                                                             ;93D9FC;
     %spritemapEntry(0, $08, $0C, 0, 0, 2, 6, $34)
@@ -7402,6 +8082,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_5:
     %spritemapEntry(0, $1F8, $EC, 0, 0, 2, 6, $34)
     %spritemapEntry(0, $1F0, $EC, 0, 0, 2, 6, $34)
 
+%anchor($93DA3A)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_6:
     dw $0004                                                             ;93DA3A;
     %spritemapEntry(0, $1FC, $F0, 0, 0, 2, 6, $37)
@@ -7409,6 +8090,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_6:
     %spritemapEntry(0, $1FC, $00, 0, 0, 2, 6, $37)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 2, 6, $37)
 
+%anchor($93DA50)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_7:
     dw $000C                                                             ;93DA50;
     %spritemapEntry(0, $1FC, $F0, 0, 0, 2, 6, $37)
@@ -7424,6 +8106,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_7:
     %spritemapEntry(0, $1F8, $00, 0, 0, 2, 6, $37)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 6, $37)
 
+%anchor($93DA8E)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_8:
     dw $000C                                                             ;93DA8E;
     %spritemapEntry(0, $08, $08, 0, 0, 2, 6, $37)
@@ -7439,6 +8122,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_8:
     %spritemapEntry(0, $1FC, $F8, 0, 0, 2, 6, $37)
     %spritemapEntry(0, $1FC, $F0, 0, 0, 2, 6, $37)
 
+%anchor($93DACC)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_9:
     dw $000C                                                             ;93DACC;
     %spritemapEntry(0, $0D, $08, 0, 0, 2, 6, $37)
@@ -7454,6 +8138,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_9:
     %spritemapEntry(0, $1FC, $F8, 0, 0, 2, 6, $37)
     %spritemapEntry(0, $1FC, $F0, 0, 0, 2, 6, $37)
 
+%anchor($93DB0A)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_A:
     dw $000C                                                             ;93DB0A;
     %spritemapEntry(0, $0F, $08, 0, 0, 2, 6, $37)
@@ -7469,6 +8154,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_A:
     %spritemapEntry(0, $1FC, $F8, 0, 0, 2, 6, $37)
     %spritemapEntry(0, $1FC, $F0, 0, 0, 2, 6, $37)
 
+%anchor($93DB48)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_B:
     dw $000C                                                             ;93DB48;
     %spritemapEntry(0, $10, $08, 0, 0, 2, 6, $37)
@@ -7484,6 +8170,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_B:
     %spritemapEntry(0, $1FC, $F8, 0, 0, 2, 6, $37)
     %spritemapEntry(0, $1FC, $F0, 0, 0, 2, 6, $37)
 
+%anchor($93DB86)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_C:
     dw $0006                                                             ;93DB86;
     %spritemapEntry(0, $04, $08, 1, 1, 2, 6, $36)
@@ -7493,6 +8180,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_C:
     %spritemapEntry(0, $1FC, $00, 0, 0, 2, 6, $35)
     %spritemapEntry(0, $1F4, $F8, 0, 0, 2, 6, $35)
 
+%anchor($93DBA6)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_D:
     dw $0012                                                             ;93DBA6;
     %spritemapEntry(0, $04, $08, 1, 1, 2, 6, $36)
@@ -7514,6 +8202,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_D:
     %spritemapEntry(0, $1FA, $03, 0, 0, 2, 6, $35)
     %spritemapEntry(0, $1F2, $FB, 0, 0, 2, 6, $35)
 
+%anchor($93DC02)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_E:
     dw $0012                                                             ;93DC02;
     %spritemapEntry(0, $04, $08, 1, 1, 2, 6, $36)
@@ -7535,6 +8224,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_E:
     %spritemapEntry(0, $02, $F9, 0, 0, 2, 6, $35)
     %spritemapEntry(0, $1FA, $F1, 0, 0, 2, 6, $35)
 
+%anchor($93DC5E)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_F:
     dw $0012                                                             ;93DC5E;
     %spritemapEntry(0, $04, $08, 1, 1, 2, 6, $36)
@@ -7556,6 +8246,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_F:
     %spritemapEntry(0, $05, $F6, 0, 0, 2, 6, $35)
     %spritemapEntry(0, $1FD, $EE, 0, 0, 2, 6, $35)
 
+%anchor($93DCBA)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_10:
     dw $0012                                                             ;93DCBA;
     %spritemapEntry(0, $04, $08, 1, 1, 2, 6, $36)
@@ -7577,6 +8268,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_10:
     %spritemapEntry(0, $09, $F1, 0, 0, 2, 6, $35)
     %spritemapEntry(0, $01, $E9, 0, 0, 2, 6, $35)
 
+%anchor($93DD16)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_11:
     dw $0012                                                             ;93DD16;
     %spritemapEntry(0, $04, $08, 1, 1, 2, 6, $36)
@@ -7598,6 +8290,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_11:
     %spritemapEntry(0, $0A, $F1, 0, 0, 2, 6, $35)
     %spritemapEntry(0, $02, $E9, 0, 0, 2, 6, $35)
 
+%anchor($93DD72)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_12:
     dw $0006                                                             ;93DD72;
     %spritemapEntry(0, $1F4, $08, 1, 0, 2, 6, $36)
@@ -7607,6 +8300,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_12:
     %spritemapEntry(0, $1FC, $00, 0, 1, 2, 6, $35)
     %spritemapEntry(0, $04, $F8, 0, 1, 2, 6, $35)
 
+%anchor($93DD92)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_13:
     dw $0012                                                             ;93DD92;
     %spritemapEntry(0, $1F4, $08, 1, 0, 2, 6, $36)
@@ -7628,6 +8322,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_13:
     %spritemapEntry(0, $1FE, $03, 0, 1, 2, 6, $35)
     %spritemapEntry(0, $06, $FB, 0, 1, 2, 6, $35)
 
+%anchor($93DDEE)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_14:
     dw $0012                                                             ;93DDEE;
     %spritemapEntry(0, $1F4, $08, 1, 0, 2, 6, $36)
@@ -7649,6 +8344,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_14:
     %spritemapEntry(0, $1F6, $F9, 0, 1, 2, 6, $35)
     %spritemapEntry(0, $1FE, $F1, 0, 1, 2, 6, $35)
 
+%anchor($93DE4A)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_15:
     dw $0012                                                             ;93DE4A;
     %spritemapEntry(0, $1F4, $08, 1, 0, 2, 6, $36)
@@ -7670,6 +8366,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_15:
     %spritemapEntry(0, $1F3, $F6, 0, 1, 2, 6, $35)
     %spritemapEntry(0, $1FB, $EE, 0, 1, 2, 6, $35)
 
+%anchor($93DEA6)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_16:
     dw $0012                                                             ;93DEA6;
     %spritemapEntry(0, $1F4, $08, 1, 0, 2, 6, $36)
@@ -7691,6 +8388,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_16:
     %spritemapEntry(0, $1EF, $F2, 0, 1, 2, 6, $35)
     %spritemapEntry(0, $1F7, $EA, 0, 1, 2, 6, $35)
 
+%anchor($93DF02)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_17:
     dw $0012                                                             ;93DF02;
     %spritemapEntry(0, $1F4, $08, 1, 0, 2, 6, $36)
@@ -7712,6 +8410,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_17:
     %spritemapEntry(0, $1EE, $F1, 0, 1, 2, 6, $35)
     %spritemapEntry(0, $1F6, $E9, 0, 1, 2, 6, $35)
 
+%anchor($93DF5E)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_18:
     dw $0006                                                             ;93DF5E;
     %spritemapEntry(0, $1FE, $F4, 0, 1, 2, 6, $32)
@@ -7721,6 +8420,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_18:
     %spritemapEntry(0, $1F6, $FC, 0, 1, 2, 6, $32)
     %spritemapEntry(0, $1FE, $FC, 0, 1, 2, 6, $31)
 
+%anchor($93DF7E)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_19:
     dw $0012                                                             ;93DF7E;
     %spritemapEntry(0, $1F8, $EE, 0, 1, 2, 6, $32)
@@ -7742,6 +8442,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_19:
     %spritemapEntry(0, $1FC, $02, 0, 1, 2, 6, $32)
     %spritemapEntry(0, $04, $02, 0, 1, 2, 6, $31)
 
+%anchor($93DFDA)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_1A:
     dw $0012                                                             ;93DFDA;
     %spritemapEntry(0, $07, $FD, 0, 1, 2, 6, $32)
@@ -7763,6 +8464,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_1A:
     %spritemapEntry(0, $1FF, $05, 0, 1, 2, 6, $32)
     %spritemapEntry(0, $07, $05, 0, 1, 2, 6, $31)
 
+%anchor($93E036)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_1B:
     dw $0012                                                             ;93E036;
     %spritemapEntry(0, $09, $FF, 0, 1, 2, 6, $32)
@@ -7784,6 +8486,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_1B:
     %spritemapEntry(0, $01, $07, 0, 1, 2, 6, $32)
     %spritemapEntry(0, $09, $07, 0, 1, 2, 6, $31)
 
+%anchor($93E092)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_1C:
     dw $0012                                                             ;93E092;
     %spritemapEntry(0, $1F2, $E8, 0, 1, 2, 6, $32)
@@ -7805,6 +8508,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_1C:
     %spritemapEntry(0, $02, $08, 0, 1, 2, 6, $32)
     %spritemapEntry(0, $0A, $08, 0, 1, 2, 6, $31)
 
+%anchor($93E0EE)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_1D:
     dw $0012                                                             ;93E0EE;
     %spritemapEntry(0, $00, $F7, 0, 1, 2, 6, $32)
@@ -7826,6 +8530,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_1D:
     %spritemapEntry(0, $1F6, $FC, 0, 1, 2, 6, $32)
     %spritemapEntry(0, $1FE, $FC, 0, 1, 2, 6, $31)
 
+%anchor($93E14A)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_1E:
     dw $0006                                                             ;93E14A;
     %spritemapEntry(0, $1FE, $04, 1, 1, 2, 6, $32)
@@ -7835,6 +8540,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_1E:
     %spritemapEntry(0, $1F6, $FC, 1, 1, 2, 6, $32)
     %spritemapEntry(0, $1FE, $FC, 1, 1, 2, 6, $31)
 
+%anchor($93E16A)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_1F:
     dw $0012                                                             ;93E16A;
     %spritemapEntry(0, $04, $FE, 1, 1, 2, 6, $32)
@@ -7856,6 +8562,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_1F:
     %spritemapEntry(0, $1FC, $F6, 1, 1, 2, 6, $32)
     %spritemapEntry(0, $04, $F6, 1, 1, 2, 6, $31)
 
+%anchor($93E1C6)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_20:
     dw $0012                                                             ;93E1C6;
     %spritemapEntry(0, $1F5, $0D, 1, 1, 2, 6, $32)
@@ -7877,6 +8584,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_20:
     %spritemapEntry(0, $1FF, $F3, 1, 1, 2, 6, $32)
     %spritemapEntry(0, $07, $F3, 1, 1, 2, 6, $31)
 
+%anchor($93E222)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_21:
     dw $0012                                                             ;93E222;
     %spritemapEntry(0, $1F3, $0F, 1, 1, 2, 6, $32)
@@ -7898,6 +8606,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_21:
     %spritemapEntry(0, $01, $F1, 1, 1, 2, 6, $32)
     %spritemapEntry(0, $09, $F1, 1, 1, 2, 6, $31)
 
+%anchor($93E27E)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_22:
     dw $0012                                                             ;93E27E;
     %spritemapEntry(0, $1F2, $10, 1, 1, 2, 6, $32)
@@ -7919,6 +8628,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_22:
     %spritemapEntry(0, $02, $F0, 1, 1, 2, 6, $32)
     %spritemapEntry(0, $0A, $F0, 1, 1, 2, 6, $31)
 
+%anchor($93E2DA)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_23:
     dw $0012                                                             ;93E2DA;
     %spritemapEntry(0, $1FE, $04, 1, 1, 2, 6, $32)
@@ -7940,6 +8650,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_23:
     %spritemapEntry(0, $1F6, $FC, 1, 1, 2, 6, $32)
     %spritemapEntry(0, $1FE, $FC, 1, 1, 2, 6, $31)
 
+%anchor($93E336)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_24:
     dw $0006                                                             ;93E336;
     %spritemapEntry(0, $1FA, $04, 1, 0, 2, 6, $32)
@@ -7949,6 +8660,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_24:
     %spritemapEntry(0, $02, $FC, 1, 0, 2, 6, $32)
     %spritemapEntry(0, $1FA, $FC, 1, 0, 2, 6, $31)
 
+%anchor($93E356)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_25:
     dw $0012                                                             ;93E356;
     %spritemapEntry(0, $1F4, $FE, 1, 0, 2, 6, $32)
@@ -7970,6 +8682,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_25:
     %spritemapEntry(0, $1FC, $F6, 1, 0, 2, 6, $32)
     %spritemapEntry(0, $1F4, $F6, 1, 0, 2, 6, $31)
 
+%anchor($93E3B2)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_26:
     dw $0012                                                             ;93E3B2;
     %spritemapEntry(0, $03, $0D, 1, 0, 2, 6, $32)
@@ -7991,6 +8704,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_26:
     %spritemapEntry(0, $1F9, $F3, 1, 0, 2, 6, $32)
     %spritemapEntry(0, $1F1, $F3, 1, 0, 2, 6, $31)
 
+%anchor($93E40E)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_27:
     dw $0012                                                             ;93E40E;
     %spritemapEntry(0, $05, $0F, 1, 0, 2, 6, $32)
@@ -8012,6 +8726,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_27:
     %spritemapEntry(0, $1F7, $F1, 1, 0, 2, 6, $32)
     %spritemapEntry(0, $1EF, $F1, 1, 0, 2, 6, $31)
 
+%anchor($93E46A)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_28:
     dw $0012                                                             ;93E46A;
     %spritemapEntry(0, $1EE, $F8, 1, 0, 2, 6, $32)
@@ -8033,6 +8748,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_28:
     %spritemapEntry(0, $1F6, $F0, 1, 0, 2, 6, $32)
     %spritemapEntry(0, $1EE, $F0, 1, 0, 2, 6, $31)
 
+%anchor($93E4C6)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_29:
     dw $0012                                                             ;93E4C6;
     %spritemapEntry(0, $1F8, $01, 1, 0, 2, 6, $32)
@@ -8054,6 +8770,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_29:
     %spritemapEntry(0, $02, $FC, 1, 0, 2, 6, $32)
     %spritemapEntry(0, $1FA, $FC, 1, 0, 2, 6, $31)
 
+%anchor($93E522)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_2A:
     dw $0006                                                             ;93E522;
     %spritemapEntry(0, $0A, $04, 0, 0, 2, 6, $32)
@@ -8063,6 +8780,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_2A:
     %spritemapEntry(0, $1FA, $F4, 0, 0, 2, 6, $32)
     %spritemapEntry(0, $1F2, $F4, 0, 0, 2, 6, $31)
 
+%anchor($93E542)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_2B:
     dw $0012                                                             ;93E542;
     %spritemapEntry(0, $04, $0A, 0, 0, 2, 6, $32)
@@ -8084,6 +8802,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_2B:
     %spritemapEntry(0, $1F4, $FA, 0, 0, 2, 6, $32)
     %spritemapEntry(0, $1EC, $FA, 0, 0, 2, 6, $31)
 
+%anchor($93E59E)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_2C:
     dw $0012                                                             ;93E59E;
     %spritemapEntry(0, $01, $0D, 0, 0, 2, 6, $32)
@@ -8105,6 +8824,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_2C:
     %spritemapEntry(0, $1F1, $FD, 0, 0, 2, 6, $32)
     %spritemapEntry(0, $1E9, $FD, 0, 0, 2, 6, $31)
 
+%anchor($93E5FA)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_2D:
     dw $0012                                                             ;93E5FA;
     %spritemapEntry(0, $1FF, $0F, 0, 0, 2, 6, $32)
@@ -8126,6 +8846,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_2D:
     %spritemapEntry(0, $1EF, $FF, 0, 0, 2, 6, $32)
     %spritemapEntry(0, $1E7, $FF, 0, 0, 2, 6, $31)
 
+%anchor($93E656)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_2E:
     dw $0012                                                             ;93E656;
     %spritemapEntry(0, $16, $F8, 0, 0, 2, 6, $32)
@@ -8147,6 +8868,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_2E:
     %spritemapEntry(0, $1EE, $00, 0, 0, 2, 6, $32)
     %spritemapEntry(0, $1E6, $00, 0, 0, 2, 6, $31)
 
+%anchor($93E6B2)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_2F:
     dw $0012                                                             ;93E6B2;
     %spritemapEntry(0, $0D, $02, 0, 0, 2, 6, $32)
@@ -8168,6 +8890,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_2F:
     %spritemapEntry(0, $1FA, $F4, 0, 0, 2, 6, $32)
     %spritemapEntry(0, $1F2, $F4, 0, 0, 2, 6, $31)
 
+%anchor($93E70E)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_30:
     dw $0004                                                             ;93E70E;
     %spritemapEntry(0, $1FC, $F0, 1, 0, 2, 6, $33)
@@ -8175,6 +8898,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_30:
     %spritemapEntry(0, $1FC, $F8, 1, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $00, 1, 0, 2, 6, $33)
 
+%anchor($93E724)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_31:
     dw $000C                                                             ;93E724;
     %spritemapEntry(0, $1FC, $F0, 1, 0, 2, 6, $33)
@@ -8190,6 +8914,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_31:
     %spritemapEntry(0, $1FC, $F8, 1, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $00, 1, 0, 2, 6, $33)
 
+%anchor($93E762)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_32:
     dw $000C                                                             ;93E762;
     %spritemapEntry(0, $1F4, $08, 1, 0, 2, 6, $33)
@@ -8205,6 +8930,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_32:
     %spritemapEntry(0, $1FC, $F8, 1, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $00, 1, 0, 2, 6, $33)
 
+%anchor($93E7A0)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_33:
     dw $000C                                                             ;93E7A0;
     %spritemapEntry(0, $09, $F0, 1, 0, 2, 6, $33)
@@ -8220,6 +8946,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_33:
     %spritemapEntry(0, $1FC, $F8, 1, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $00, 1, 0, 2, 6, $33)
 
+%anchor($93E7DE)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_34:
     dw $000C                                                             ;93E7DE;
     %spritemapEntry(0, $0B, $F0, 1, 0, 2, 6, $33)
@@ -8235,6 +8962,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_34:
     %spritemapEntry(0, $1FC, $F8, 1, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $00, 1, 0, 2, 6, $33)
 
+%anchor($93E81C)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_35:
     dw $000C                                                             ;93E81C;
     %spritemapEntry(0, $0C, $08, 1, 0, 2, 6, $33)
@@ -8250,6 +8978,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_35:
     %spritemapEntry(0, $1FC, $F8, 1, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $00, 1, 0, 2, 6, $33)
 
+%anchor($93E85A)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_36:
     dw $0004                                                             ;93E85A;
     %spritemapEntry(0, $1F0, $FC, 0, 0, 2, 6, $30)
@@ -8257,6 +8986,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_36:
     %spritemapEntry(0, $00, $FC, 0, 0, 2, 6, $30)
     %spritemapEntry(0, $1F8, $FC, 0, 0, 2, 6, $30)
 
+%anchor($93E870)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_37:
     dw $000C                                                             ;93E870;
     %spritemapEntry(0, $1F0, $00, 0, 0, 2, 6, $30)
@@ -8272,6 +9002,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_37:
     %spritemapEntry(0, $00, $F8, 0, 0, 2, 6, $30)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 6, $30)
 
+%anchor($93E8AE)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_38:
     dw $000C                                                             ;93E8AE;
     %spritemapEntry(0, $1F0, $FC, 0, 0, 2, 6, $30)
@@ -8287,6 +9018,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_38:
     %spritemapEntry(0, $1F8, $FC, 0, 0, 2, 6, $30)
     %spritemapEntry(0, $1F8, $F4, 0, 0, 2, 6, $30)
 
+%anchor($93E8EC)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_39:
     dw $000C                                                             ;93E8EC;
     %spritemapEntry(0, $1F0, $EF, 0, 0, 2, 6, $30)
@@ -8302,6 +9034,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_39:
     %spritemapEntry(0, $1F8, $FC, 0, 0, 2, 6, $30)
     %spritemapEntry(0, $1F8, $EF, 0, 0, 2, 6, $30)
 
+%anchor($93E92A)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_3A:
     dw $000C                                                             ;93E92A;
     %spritemapEntry(0, $08, $0B, 0, 0, 2, 6, $30)
@@ -8317,6 +9050,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_3A:
     %spritemapEntry(0, $1F8, $FC, 0, 0, 2, 6, $30)
     %spritemapEntry(0, $1F8, $ED, 0, 0, 2, 6, $30)
 
+%anchor($93E968)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_3B:
     dw $000C                                                             ;93E968;
     %spritemapEntry(0, $1F0, $EC, 0, 0, 2, 6, $30)
@@ -8332,6 +9066,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_3B:
     %spritemapEntry(0, $1F8, $FC, 0, 0, 2, 6, $30)
     %spritemapEntry(0, $1F8, $EC, 0, 0, 2, 6, $30)
 
+%anchor($93E9A6)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_3C:
     dw $0004                                                             ;93E9A6;
     %spritemapEntry(0, $1FC, $08, 0, 0, 2, 6, $33)
@@ -8339,6 +9074,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_3C:
     %spritemapEntry(0, $1FC, $00, 0, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93E9BC)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_3D:
     dw $000C                                                             ;93E9BC;
     %spritemapEntry(0, $1FC, $08, 0, 0, 2, 6, $33)
@@ -8354,6 +9090,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_3D:
     %spritemapEntry(0, $1FC, $00, 0, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93E9FA)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_3E:
     dw $000C                                                             ;93E9FA;
     %spritemapEntry(0, $04, $08, 0, 0, 2, 6, $33)
@@ -8369,6 +9106,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_3E:
     %spritemapEntry(0, $1FC, $00, 0, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93EA38)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_3F:
     dw $000C                                                             ;93EA38;
     %spritemapEntry(0, $09, $08, 0, 0, 2, 6, $33)
@@ -8384,6 +9122,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_3F:
     %spritemapEntry(0, $1FC, $00, 0, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93EA76)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_40:
     dw $000C                                                             ;93EA76;
     %spritemapEntry(0, $0B, $08, 0, 0, 2, 6, $33)
@@ -8399,6 +9138,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_40:
     %spritemapEntry(0, $1FC, $00, 0, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93EAB4)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_41:
     dw $000C                                                             ;93EAB4;
     %spritemapEntry(0, $1EC, $08, 0, 0, 2, 6, $33)
@@ -8414,6 +9154,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_41:
     %spritemapEntry(0, $1FC, $00, 0, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93EAF2)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_42:
     dw $0004                                                             ;93EAF2;
     %spritemapEntry(0, $1F0, $FC, 0, 1, 2, 6, $30)
@@ -8421,6 +9162,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_42:
     %spritemapEntry(0, $1F8, $FC, 0, 1, 2, 6, $30)
     %spritemapEntry(0, $00, $FC, 0, 1, 2, 6, $30)
 
+%anchor($93EB08)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_43:
     dw $000C                                                             ;93EB08;
     %spritemapEntry(0, $1F0, $00, 0, 0, 2, 6, $30)
@@ -8436,6 +9178,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_43:
     %spritemapEntry(0, $00, $F8, 0, 0, 2, 6, $30)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 6, $30)
 
+%anchor($93EB46)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_44:
     dw $000C                                                             ;93EB46;
     %spritemapEntry(0, $1F0, $04, 0, 1, 2, 6, $30)
@@ -8451,6 +9194,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_44:
     %spritemapEntry(0, $00, $FC, 0, 1, 2, 6, $30)
     %spritemapEntry(0, $00, $F4, 0, 1, 2, 6, $30)
 
+%anchor($93EB84)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_45:
     dw $000C                                                             ;93EB84;
     %spritemapEntry(0, $1F0, $09, 0, 1, 2, 6, $30)
@@ -8466,6 +9210,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_45:
     %spritemapEntry(0, $00, $FC, 0, 1, 2, 6, $30)
     %spritemapEntry(0, $00, $EF, 0, 1, 2, 6, $30)
 
+%anchor($93EBC2)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_46:
     dw $000C                                                             ;93EBC2;
     %spritemapEntry(0, $1F0, $0B, 0, 1, 2, 6, $30)
@@ -8481,6 +9226,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_46:
     %spritemapEntry(0, $00, $FC, 0, 1, 2, 6, $30)
     %spritemapEntry(0, $00, $ED, 0, 1, 2, 6, $30)
 
+%anchor($93EC00)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_47:
     dw $000C                                                             ;93EC00;
     %spritemapEntry(0, $1F0, $0C, 0, 1, 2, 6, $30)
@@ -8496,6 +9242,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_47:
     %spritemapEntry(0, $00, $FC, 0, 1, 2, 6, $30)
     %spritemapEntry(0, $00, $EC, 0, 1, 2, 6, $30)
 
+%anchor($93EC3E)
 ProjectileFlareSpritemaps_Charged_Power_0:
     dw $0004                                                             ;93EC3E;
     %spritemapEntry(0, $00, $F8, 0, 1, 2, 6, $33)
@@ -8503,6 +9250,7 @@ ProjectileFlareSpritemaps_Charged_Power_0:
     %spritemapEntry(0, $1F8, $00, 1, 0, 2, 6, $33)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93EC54)
 ProjectileFlareSpritemaps_Charged_Power_1:
     dw $0004                                                             ;93EC54;
     %spritemapEntry(0, $00, $00, 1, 1, 2, 6, $33)
@@ -8510,6 +9258,7 @@ ProjectileFlareSpritemaps_Charged_Power_1:
     %spritemapEntry(0, $1F8, $00, 1, 0, 2, 6, $33)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93EC6A)
 ProjectileFlareSpritemaps_Charged_Power_2:
     dw $0004                                                             ;93EC6A;
     %spritemapEntry(0, $00, $00, 1, 1, 2, 6, $33)
@@ -8517,6 +9266,7 @@ ProjectileFlareSpritemaps_Charged_Power_2:
     %spritemapEntry(0, $1F8, $00, 1, 0, 2, 6, $33)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93EC80)
 ProjectileFlareSpritemaps_Charged_Power_3:
     dw $0004                                                             ;93EC80;
     %spritemapEntry(0, $00, $00, 1, 1, 2, 6, $33)
@@ -8524,6 +9274,7 @@ ProjectileFlareSpritemaps_Charged_Power_3:
     %spritemapEntry(0, $1F8, $00, 1, 0, 2, 6, $33)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93EC96)
 ProjectileFlareSpritemaps_Charged_Power_4:
     dw $0004                                                             ;93EC96;
     %spritemapEntry(0, $00, $00, 1, 1, 2, 6, $33)
@@ -8531,6 +9282,7 @@ ProjectileFlareSpritemaps_Charged_Power_4:
     %spritemapEntry(0, $1F8, $00, 1, 0, 2, 6, $33)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93ECAC)
 ProjectileFlareSpritemaps_Charged_Power_5:
     dw $0004                                                             ;93ECAC;
     %spritemapEntry(0, $00, $00, 1, 1, 2, 6, $33)
@@ -8538,6 +9290,7 @@ ProjectileFlareSpritemaps_Charged_Power_5:
     %spritemapEntry(0, $1F8, $00, 1, 0, 2, 6, $33)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93ECC2)
 ProjectileFlareSpritemaps_Charged_Power_6:
     dw $0004                                                             ;93ECC2;
     %spritemapEntry(0, $00, $00, 1, 1, 2, 6, $33)
@@ -8545,6 +9298,7 @@ ProjectileFlareSpritemaps_Charged_Power_6:
     %spritemapEntry(0, $1F8, $00, 1, 0, 2, 6, $33)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93ECD8)
 ProjectileFlareSpritemaps_Charged_Power_7:
     dw $0004                                                             ;93ECD8;
     %spritemapEntry(0, $00, $00, 1, 1, 2, 6, $33)
@@ -8552,6 +9306,7 @@ ProjectileFlareSpritemaps_Charged_Power_7:
     %spritemapEntry(0, $1F8, $00, 1, 0, 2, 6, $33)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93ECEE)
 ProjectileFlareSpritemaps_Charged_Power_8:
     dw $0004                                                             ;93ECEE;
     %spritemapEntry(0, $00, $00, 1, 1, 2, 6, $34)
@@ -8559,6 +9314,7 @@ ProjectileFlareSpritemaps_Charged_Power_8:
     %spritemapEntry(0, $1F8, $00, 1, 0, 2, 6, $34)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 6, $34)
 
+%anchor($93ED04)
 ProjectileFlareSpritemaps_Charged_Power_9:
     dw $0004                                                             ;93ED04;
     %spritemapEntry(0, $00, $00, 1, 1, 2, 6, $34)
@@ -8566,6 +9322,7 @@ ProjectileFlareSpritemaps_Charged_Power_9:
     %spritemapEntry(0, $1F8, $00, 1, 0, 2, 6, $34)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 6, $34)
 
+%anchor($93ED1A)
 ProjectileFlareSpritemaps_Charged_Power_A:
     dw $0004                                                             ;93ED1A;
     %spritemapEntry(0, $00, $00, 1, 1, 2, 6, $34)
@@ -8573,6 +9330,7 @@ ProjectileFlareSpritemaps_Charged_Power_A:
     %spritemapEntry(0, $1F8, $00, 1, 0, 2, 6, $34)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 6, $34)
 
+%anchor($93ED30)
 ProjectileFlareSpritemaps_Charged_Power_B:
     dw $0004                                                             ;93ED30;
     %spritemapEntry(0, $00, $00, 1, 1, 2, 6, $34)
@@ -8580,6 +9338,7 @@ ProjectileFlareSpritemaps_Charged_Power_B:
     %spritemapEntry(0, $1F8, $00, 1, 0, 2, 6, $34)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 6, $34)
 
+%anchor($93ED46)
 ProjectileFlareSpritemaps_Charged_Power_C:
     dw $0004                                                             ;93ED46;
     %spritemapEntry(0, $00, $00, 1, 1, 2, 6, $34)
@@ -8587,6 +9346,7 @@ ProjectileFlareSpritemaps_Charged_Power_C:
     %spritemapEntry(0, $1F8, $00, 1, 0, 2, 6, $34)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 6, $34)
 
+%anchor($93ED5C)
 ProjectileFlareSpritemaps_Charged_Power_D:
     dw $0004                                                             ;93ED5C;
     %spritemapEntry(0, $00, $00, 1, 1, 2, 6, $34)
@@ -8594,6 +9354,7 @@ ProjectileFlareSpritemaps_Charged_Power_D:
     %spritemapEntry(0, $1F8, $00, 1, 0, 2, 6, $34)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 6, $34)
 
+%anchor($93ED72)
 ProjectileFlareSpritemaps_Charged_Power_E:
     dw $0004                                                             ;93ED72;
     %spritemapEntry(0, $00, $00, 1, 1, 2, 6, $34)
@@ -8601,6 +9362,7 @@ ProjectileFlareSpritemaps_Charged_Power_E:
     %spritemapEntry(0, $1F8, $00, 1, 0, 2, 6, $34)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 6, $34)
 
+%anchor($93ED88)
 ProjectileFlareSpritemaps_Charged_Power_F:
     dw $0004                                                             ;93ED88;
     %spritemapEntry(0, $00, $00, 1, 1, 2, 6, $34)
@@ -8608,6 +9370,7 @@ ProjectileFlareSpritemaps_Charged_Power_F:
     %spritemapEntry(0, $1F8, $00, 1, 0, 2, 6, $34)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 6, $34)
 
+%anchor($93ED9E)
 ProjectileFlareSpritemaps_Charged_Ice_0:
     dw $0004                                                             ;93ED9E;
     %spritemapEntry(0, $00, $00, 1, 1, 2, 6, $33)
@@ -8615,6 +9378,7 @@ ProjectileFlareSpritemaps_Charged_Ice_0:
     %spritemapEntry(0, $00, $F8, 0, 1, 2, 6, $33)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93EDB4)
 ProjectileFlareSpritemaps_Charged_Ice_1:
     dw $0004                                                             ;93EDB4;
     %spritemapEntry(0, $00, $00, 1, 1, 2, 6, $34)
@@ -8622,6 +9386,7 @@ ProjectileFlareSpritemaps_Charged_Ice_1:
     %spritemapEntry(0, $00, $F8, 0, 1, 2, 6, $34)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 6, $34)
 
+%anchor($93EDCA)
 ProjectileFlareSpritemaps_Charged_Ice_2:
     dw $0004                                                             ;93EDCA;
     %spritemapEntry(0, $00, $00, 1, 1, 2, 6, $33)
@@ -8629,6 +9394,7 @@ ProjectileFlareSpritemaps_Charged_Ice_2:
     %spritemapEntry(0, $00, $F8, 0, 1, 2, 6, $33)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 6, $33)
 
+%anchor($93EDE0)
 ProjectileFlareSpritemaps_Charged_Ice_3:
     dw $0004                                                             ;93EDE0;
     %spritemapEntry(0, $00, $00, 1, 1, 2, 6, $34)
@@ -8636,38 +9402,46 @@ ProjectileFlareSpritemaps_Charged_Ice_3:
     %spritemapEntry(0, $00, $F8, 0, 1, 2, 6, $34)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 6, $34)
 
+%anchor($93EDF6)
 ProjectileFlareSpritemaps_Ice_0:
     dw $0001                                                             ;93EDF6;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $30)
 
+%anchor($93EDFD)
 ProjectileFlareSpritemaps_Ice_1:
     dw $0001                                                             ;93EDFD;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $31)
 
+%anchor($93EE04)
 ProjectileFlareSpritemaps_Ice_2:
     dw $0001                                                             ;93EE04;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $32)
 
+%anchor($93EE0B)
 ProjectileFlareSpritemaps_Ice_3:
     dw $0001                                                             ;93EE0B;
     %spritemapEntry(0, $1FC, $FC, 0, 1, 2, 6, $31)
 
+%anchor($93EE12)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_48:
     dw $0001                                                             ;93EE12;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $30)
 
+%anchor($93EE19)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_49:
     dw $0002                                                             ;93EE19;
     %spritemapEntry(0, $1F8, $FC, 0, 0, 2, 6, $30)
     %spritemapEntry(0, $00, $FC, 0, 0, 2, 6, $30)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($93EE25)
 UNUSED_ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_93EE25:
     dw $0003                                                             ;93EE25;
     %spritemapEntry(0, $1F4, $FC, 0, 0, 2, 6, $30)
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $30)
     %spritemapEntry(0, $04, $FC, 0, 0, 2, 6, $30)
 
+%anchor($93EE36)
 UNUSED_ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_93EE36:
     dw $0004                                                             ;93EE36;
     %spritemapEntry(0, $08, $FC, 0, 0, 2, 6, $30)
@@ -8676,11 +9450,13 @@ UNUSED_ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_93EE36:
     %spritemapEntry(0, $1F0, $FC, 0, 0, 2, 6, $30)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($93EE4C)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_4A:
     dw $0002                                                             ;93EE4C;
     %spritemapEntry(0, $02, $FC, 0, 0, 2, 6, $32)
     %spritemapEntry(0, $1FA, $FC, 0, 0, 2, 6, $31)
 
+%anchor($93EE58)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_4B:
     dw $0004                                                             ;93EE58;
     %spritemapEntry(0, $06, $00, 0, 0, 2, 6, $32)
@@ -8689,6 +9465,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_4B:
     %spritemapEntry(0, $1F6, $F8, 0, 0, 2, 6, $31)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($93EE6E)
 UNUSED_ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_93EE6E:
     dw $0006                                                             ;93EE6E;
     %spritemapEntry(0, $0A, $04, 0, 0, 2, 6, $32)
@@ -8699,22 +9476,26 @@ UNUSED_ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_93EE6E:
     %spritemapEntry(0, $1F2, $F4, 0, 0, 2, 6, $31)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($93EE8E)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_4C:
     dw $0001                                                             ;93EE8E;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $33)
 
+%anchor($93EE95)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_4D:
     dw $0002                                                             ;93EE95;
     %spritemapEntry(0, $1FC, $00, 0, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 2, 6, $33)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($93EEA1)
 UNUSED_ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_93EEA1:
     dw $0003                                                             ;93EEA1;
     %spritemapEntry(0, $1FC, $F4, 0, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $04, 0, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $33)
 
+%anchor($93EEB2)
 UNUSED_ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_93EEB2:
     dw $0004                                                             ;93EEB2;
     %spritemapEntry(0, $1FC, $F0, 0, 0, 2, 6, $33)
@@ -8723,11 +9504,13 @@ UNUSED_ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_93EEB2:
     %spritemapEntry(0, $1FC, $F8, 0, 0, 2, 6, $33)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($93EEC8)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_4E:
     dw $0002                                                             ;93EEC8;
     %spritemapEntry(0, $1F6, $FC, 0, 1, 2, 6, $32)
     %spritemapEntry(0, $1FE, $FC, 0, 1, 2, 6, $31)
 
+%anchor($93EED4)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_4F:
     dw $0004                                                             ;93EED4;
     %spritemapEntry(0, $1F2, $00, 0, 1, 2, 6, $32)
@@ -8735,6 +9518,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_4F:
     %spritemapEntry(0, $1FA, $F8, 0, 1, 2, 6, $32)
     %spritemapEntry(0, $02, $F8, 0, 1, 2, 6, $31)
 
+%anchor($93EEEA)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_50:
     dw $0006                                                             ;93EEEA;
     %spritemapEntry(0, $1EE, $04, 0, 1, 2, 6, $32)
@@ -8744,22 +9528,26 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_50:
     %spritemapEntry(0, $1FE, $F4, 0, 1, 2, 6, $32)
     %spritemapEntry(0, $06, $F4, 0, 1, 2, 6, $31)
 
+%anchor($93EF0A)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_51:
     dw $0001                                                             ;93EF0A;
     %spritemapEntry(0, $1FC, $FC, 0, 1, 2, 6, $30)
 
+%anchor($93EF11)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_52:
     dw $0002                                                             ;93EF11;
     %spritemapEntry(0, $00, $FC, 0, 1, 2, 6, $30)
     %spritemapEntry(0, $1F8, $FC, 0, 1, 2, 6, $30)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($93EF1D)
 UNUSED_ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_93EF1D:
     dw $0003                                                             ;93EF1D;
     %spritemapEntry(0, $04, $FC, 0, 1, 2, 6, $30)
     %spritemapEntry(0, $1FC, $FC, 0, 1, 2, 6, $30)
     %spritemapEntry(0, $1F4, $FC, 0, 1, 2, 6, $30)
 
+%anchor($93EF2E)
 UNUSED_ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_93EF2E:
     dw $0004                                                             ;93EF2E;
     %spritemapEntry(0, $1F0, $FC, 0, 1, 2, 6, $30)
@@ -8768,11 +9556,13 @@ UNUSED_ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_93EF2E:
     %spritemapEntry(0, $08, $FC, 0, 1, 2, 6, $30)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($93EF44)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_53:
     dw $0002                                                             ;93EF44;
     %spritemapEntry(0, $1F6, $FC, 1, 1, 2, 6, $32)
     %spritemapEntry(0, $1FE, $FC, 1, 1, 2, 6, $31)
 
+%anchor($93EF50)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_54:
     dw $0004                                                             ;93EF50;
     %spritemapEntry(0, $1F2, $F8, 1, 1, 2, 6, $32)
@@ -8781,6 +9571,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_54:
     %spritemapEntry(0, $02, $00, 1, 1, 2, 6, $31)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($93EF66)
 UNUSED_ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_93EF66:
     dw $0006                                                             ;93EF66;
     %spritemapEntry(0, $1EE, $F4, 1, 1, 2, 6, $32)
@@ -8791,22 +9582,26 @@ UNUSED_ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_93EF66:
     %spritemapEntry(0, $06, $04, 1, 1, 2, 6, $31)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($93EF86)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_55:
     dw $0001                                                             ;93EF86;
     %spritemapEntry(0, $1FC, $FC, 1, 0, 2, 6, $33)
 
+%anchor($93EF8D)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_56:
     dw $0002                                                             ;93EF8D;
     %spritemapEntry(0, $1FC, $F8, 1, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $00, 1, 0, 2, 6, $33)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($93EF99)
 UNUSED_ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_93EF99:
     dw $0003                                                             ;93EF99;
     %spritemapEntry(0, $1FC, $04, 1, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $F4, 1, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $FC, 1, 0, 2, 6, $33)
 
+%anchor($93EFAA)
 UNUSED_ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_93EFAA:
     dw $0004                                                             ;93EFAA;
     %spritemapEntry(0, $1FC, $08, 1, 0, 2, 6, $33)
@@ -8814,11 +9609,13 @@ UNUSED_ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_93EFAA:
     %spritemapEntry(0, $1FC, $F8, 1, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $00, 1, 0, 2, 6, $33)
 
+%anchor($93EFC0)
 UNUSED_ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_93EFC0:
     dw $0002                                                             ;93EFC0;
     %spritemapEntry(0, $1F6, $FC, 1, 1, 2, 6, $32)
     %spritemapEntry(0, $1FE, $FC, 1, 1, 2, 6, $31)
 
+%anchor($93EFCC)
 UNUSED_ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_93EFCC:
     dw $0004                                                             ;93EFCC;
     %spritemapEntry(0, $1F2, $F8, 1, 1, 2, 6, $32)
@@ -8826,6 +9623,7 @@ UNUSED_ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_93EFCC:
     %spritemapEntry(0, $1FA, $00, 1, 1, 2, 6, $32)
     %spritemapEntry(0, $02, $00, 1, 1, 2, 6, $31)
 
+%anchor($93EFE2)
 UNUSED_ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_93EFE2:
     dw $0006                                                             ;93EFE2;
     %spritemapEntry(0, $1EE, $F4, 1, 1, 2, 6, $32)
@@ -8836,22 +9634,26 @@ UNUSED_ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_93EFE2:
     %spritemapEntry(0, $06, $04, 1, 1, 2, 6, $31)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($93F002)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_57:
     dw $0001                                                             ;93F002;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $34)
 
+%anchor($93F009)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_58:
     dw $0002                                                             ;93F009;
     %spritemapEntry(0, $1F8, $FC, 0, 0, 2, 6, $34)
     %spritemapEntry(0, $00, $FC, 0, 0, 2, 6, $34)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($93F015)
 UNUSED_ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_93F015:
     dw $0003                                                             ;93F015;
     %spritemapEntry(0, $1F4, $FC, 0, 0, 2, 6, $34)
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $34)
     %spritemapEntry(0, $04, $FC, 0, 0, 2, 6, $34)
 
+%anchor($93F026)
 UNUSED_ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_93F026:
     dw $0004                                                             ;93F026;
     %spritemapEntry(0, $08, $FC, 0, 0, 2, 6, $34)
@@ -8860,11 +9662,13 @@ UNUSED_ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_93F026:
     %spritemapEntry(0, $1F0, $FC, 0, 0, 2, 6, $34)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($93F03C)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_59:
     dw $0002                                                             ;93F03C;
     %spritemapEntry(0, $1FC, $F8, 0, 0, 2, 6, $36)
     %spritemapEntry(0, $1FC, $00, 1, 1, 2, 6, $36)
 
+%anchor($93F048)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_5A:
     dw $0004                                                             ;93F048;
     %spritemapEntry(0, $00, $FC, 1, 1, 2, 6, $35)
@@ -8873,6 +9677,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_5A:
     %spritemapEntry(0, $1F8, $FC, 0, 0, 2, 6, $35)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($93F05E)
 UNUSED_ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_93F05E:
     dw $0006                                                             ;93F05E;
     %spritemapEntry(0, $04, $08, 1, 1, 2, 6, $36)
@@ -8883,22 +9688,26 @@ UNUSED_ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_93F05E:
     %spritemapEntry(0, $1F4, $F8, 0, 0, 2, 6, $35)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($93F07E)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_5B:
     dw $0001                                                             ;93F07E;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $37)
 
+%anchor($93F085)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_5C:
     dw $0002                                                             ;93F085;
     %spritemapEntry(0, $1FC, $00, 0, 0, 2, 6, $37)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 2, 6, $37)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($93F091)
 UNUSED_ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_93F091:
     dw $0003                                                             ;93F091;
     %spritemapEntry(0, $1FC, $04, 0, 0, 2, 6, $37)
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $37)
     %spritemapEntry(0, $1FC, $F4, 0, 0, 2, 6, $37)
 
+%anchor($93F0A2)
 UNUSED_ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_93F0A2:
     dw $0004                                                             ;93F0A2;
     %spritemapEntry(0, $1FC, $08, 0, 0, 2, 6, $37)
@@ -8907,11 +9716,13 @@ UNUSED_ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_93F0A2:
     %spritemapEntry(0, $1FC, $F0, 0, 0, 2, 6, $37)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($93F0B8)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_5D:
     dw $0002                                                             ;93F0B8;
     %spritemapEntry(0, $1FC, $F8, 0, 1, 2, 6, $36)
     %spritemapEntry(0, $1FC, $00, 1, 0, 2, 6, $36)
 
+%anchor($93F0C4)
 ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_5E:
     dw $0004                                                             ;93F0C4;
     %spritemapEntry(0, $1F8, $FC, 1, 0, 2, 6, $35)
@@ -8920,6 +9731,7 @@ ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_5E:
     %spritemapEntry(0, $00, $FC, 0, 1, 2, 6, $35)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($93F0DA)
 UNUSED_ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_93F0DA:
     dw $0006                                                             ;93F0DA;
     %spritemapEntry(0, $1F4, $08, 1, 0, 2, 6, $36)
@@ -8930,17 +9742,20 @@ UNUSED_ProjectileFlareSpritemaps_Charged_S_SI_SW_SIW_93F0DA:
     %spritemapEntry(0, $04, $F8, 0, 1, 2, 6, $35)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($93F0FA)
 ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_0:
     dw $0001                                                             ;93F0FA;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $30)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($93F101)
 UNUSED_ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_93F101:
     dw $0002                                                             ;93F101;
     %spritemapEntry(0, $1F8, $FC, 0, 0, 2, 6, $30)
     %spritemapEntry(0, $00, $FC, 0, 0, 2, 6, $30)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($93F10D)
 ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_1:
     dw $0003                                                             ;93F10D;
     %spritemapEntry(0, $1F4, $FC, 0, 0, 2, 6, $30)
@@ -8948,6 +9763,7 @@ ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_1:
     %spritemapEntry(0, $04, $FC, 0, 0, 2, 6, $30)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($93F11E)
 UNUSED_ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_93F11E:
     dw $0004                                                             ;93F11E;
     %spritemapEntry(0, $1F0, $FC, 0, 0, 2, 6, $30)
@@ -8955,6 +9771,7 @@ UNUSED_ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_93F11E:
     %spritemapEntry(0, $00, $FC, 0, 0, 2, 6, $30)
     %spritemapEntry(0, $08, $FC, 0, 0, 2, 6, $30)
 
+%anchor($93F134)
 UNUSED_ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_93F134:
     dw $0005                                                             ;93F134;
     %spritemapEntry(0, $0C, $FC, 0, 0, 2, 6, $30)
@@ -8964,6 +9781,7 @@ UNUSED_ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_93F134:
     %spritemapEntry(0, $1EC, $FC, 0, 0, 2, 6, $30)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($93F14F)
 ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_2:
     dw $0006                                                             ;93F14F;
     %spritemapEntry(0, $10, $FC, 0, 0, 2, 6, $30)
@@ -8973,6 +9791,7 @@ ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_2:
     %spritemapEntry(0, $1F0, $FC, 0, 0, 2, 6, $30)
     %spritemapEntry(0, $1E8, $FC, 0, 0, 2, 6, $30)
 
+%anchor($93F16F)
 ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_3:
     dw $0007                                                             ;93F16F;
     %spritemapEntry(0, $14, $FC, 0, 0, 2, 6, $30)
@@ -8983,17 +9802,20 @@ ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_3:
     %spritemapEntry(0, $1EC, $FC, 0, 0, 2, 6, $30)
     %spritemapEntry(0, $1E4, $FC, 0, 0, 2, 6, $30)
 
+%anchor($93F194)
 ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_4:
     dw $0001                                                             ;93F194;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $33)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($93F19B)
 UNUSED_ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_93F19B:
     dw $0002                                                             ;93F19B;
     %spritemapEntry(0, $1FC, $00, 0, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 2, 6, $33)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($93F1A7)
 ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_5:
     dw $0003                                                             ;93F1A7;
     %spritemapEntry(0, $1FC, $04, 0, 0, 2, 6, $33)
@@ -9001,6 +9823,7 @@ ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_5:
     %spritemapEntry(0, $1FC, $F4, 0, 0, 2, 6, $33)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($93F1B8)
 UNUSED_ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_93F1B8:
     dw $0004                                                             ;93F1B8;
     %spritemapEntry(0, $1FC, $08, 0, 0, 2, 6, $33)
@@ -9008,6 +9831,7 @@ UNUSED_ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_93F1B8:
     %spritemapEntry(0, $1FC, $F8, 0, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $F0, 0, 0, 2, 6, $33)
 
+%anchor($93F1CE)
 UNUSED_ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_93F1CE:
     dw $0005                                                             ;93F1CE;
     %spritemapEntry(0, $1FC, $0C, 0, 0, 2, 6, $33)
@@ -9017,6 +9841,7 @@ UNUSED_ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_93F1CE:
     %spritemapEntry(0, $1FC, $EC, 0, 0, 2, 6, $33)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($93F1E9)
 ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_6:
     dw $0006                                                             ;93F1E9;
     %spritemapEntry(0, $1FC, $10, 0, 0, 2, 6, $33)
@@ -9026,6 +9851,7 @@ ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_6:
     %spritemapEntry(0, $1FC, $F0, 0, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $E8, 0, 0, 2, 6, $33)
 
+%anchor($93F209)
 ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_7:
     dw $0007                                                             ;93F209;
     %spritemapEntry(0, $1FC, $14, 0, 0, 2, 6, $33)
@@ -9036,11 +9862,13 @@ ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_7:
     %spritemapEntry(0, $1FC, $EC, 0, 0, 2, 6, $33)
     %spritemapEntry(0, $1FC, $E4, 0, 0, 2, 6, $33)
 
+%anchor($93F22E)
 ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_8:
     dw $0002                                                             ;93F22E;
     %spritemapEntry(0, $00, $FC, 0, 0, 2, 6, $32)
     %spritemapEntry(0, $1F8, $FC, 0, 0, 2, 6, $31)
 
+%anchor($93F23A)
 ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_9:
     dw $0004                                                             ;93F23A;
     %spritemapEntry(0, $04, $00, 0, 0, 2, 6, $32)
@@ -9049,6 +9877,7 @@ ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_9:
     %spritemapEntry(0, $1F4, $F8, 0, 0, 2, 6, $31)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($93F250)
 UNUSED_ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_93F250:
     dw $0006                                                             ;93F250;
     %spritemapEntry(0, $08, $04, 0, 0, 2, 6, $32)
@@ -9059,6 +9888,7 @@ UNUSED_ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_93F250:
     %spritemapEntry(0, $1F0, $F4, 0, 0, 2, 6, $31)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($93F270)
 ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_A:
     dw $0008                                                             ;93F270;
     %spritemapEntry(0, $0C, $08, 0, 0, 2, 6, $32)
@@ -9070,6 +9900,7 @@ ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_A:
     %spritemapEntry(0, $1F4, $F0, 0, 0, 2, 6, $32)
     %spritemapEntry(0, $1EC, $F0, 0, 0, 2, 6, $31)
 
+%anchor($93F29A)
 ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_B:
     dw $000A                                                             ;93F29A;
     %spritemapEntry(0, $10, $0C, 0, 0, 2, 6, $32)
@@ -9083,11 +9914,13 @@ ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_B:
     %spritemapEntry(0, $1F0, $EC, 0, 0, 2, 6, $32)
     %spritemapEntry(0, $1E8, $EC, 0, 0, 2, 6, $31)
 
+%anchor($93F2CE)
 ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_C:
     dw $0002                                                             ;93F2CE;
     %spritemapEntry(0, $1F8, $FC, 0, 1, 2, 6, $32)
     %spritemapEntry(0, $00, $FC, 0, 1, 2, 6, $31)
 
+%anchor($93F2DA)
 ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_D:
     dw $0004                                                             ;93F2DA;
     %spritemapEntry(0, $1F4, $00, 0, 1, 2, 6, $32)
@@ -9096,6 +9929,7 @@ ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_D:
     %spritemapEntry(0, $04, $F8, 0, 1, 2, 6, $31)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($93F2F0)
 UNUSED_ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_93F2F0:
     dw $0006                                                             ;93F2F0;
     %spritemapEntry(0, $1F0, $04, 0, 1, 2, 6, $32)
@@ -9106,6 +9940,7 @@ UNUSED_ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_93F2F0:
     %spritemapEntry(0, $08, $F4, 0, 1, 2, 6, $31)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($93F310)
 ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_E:
     dw $0008                                                             ;93F310;
     %spritemapEntry(0, $1EC, $08, 0, 1, 2, 6, $32)
@@ -9117,6 +9952,7 @@ ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_E:
     %spritemapEntry(0, $04, $F0, 0, 1, 2, 6, $32)
     %spritemapEntry(0, $0C, $F0, 0, 1, 2, 6, $31)
 
+%anchor($93F33A)
 ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_F:
     dw $000A                                                             ;93F33A;
     %spritemapEntry(0, $1E8, $0C, 0, 1, 2, 6, $32)
@@ -9130,17 +9966,20 @@ ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_F:
     %spritemapEntry(0, $08, $EC, 0, 1, 2, 6, $32)
     %spritemapEntry(0, $10, $EC, 0, 1, 2, 6, $31)
 
+%anchor($93F36E)
 ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_10:
     dw $0001                                                             ;93F36E;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $34)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($93F375)
 UNUSED_ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_93F375:
     dw $0002                                                             ;93F375;
     %spritemapEntry(0, $00, $FC, 0, 0, 2, 6, $34)
     %spritemapEntry(0, $1F8, $FC, 0, 0, 2, 6, $34)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($93F381)
 ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_11:
     dw $0003                                                             ;93F381;
     %spritemapEntry(0, $04, $FC, 0, 0, 2, 6, $34)
@@ -9148,6 +9987,7 @@ ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_11:
     %spritemapEntry(0, $1F4, $FC, 0, 0, 2, 6, $34)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($93F392)
 UNUSED_ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_93F392:
     dw $0004                                                             ;93F392;
     %spritemapEntry(0, $08, $FC, 0, 0, 2, 6, $34)
@@ -9155,6 +9995,7 @@ UNUSED_ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_93F392:
     %spritemapEntry(0, $1F8, $FC, 0, 0, 2, 6, $34)
     %spritemapEntry(0, $1F0, $FC, 0, 0, 2, 6, $34)
 
+%anchor($93F3A8)
 UNUSED_ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_93F3A8:
     dw $0005                                                             ;93F3A8;
     %spritemapEntry(0, $0C, $FC, 0, 0, 2, 6, $34)
@@ -9164,6 +10005,7 @@ UNUSED_ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_93F3A8:
     %spritemapEntry(0, $1EC, $FC, 0, 0, 2, 6, $34)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($93F3C3)
 ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_12:
     dw $0006                                                             ;93F3C3;
     %spritemapEntry(0, $10, $FC, 0, 0, 2, 6, $34)
@@ -9173,6 +10015,7 @@ ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_12:
     %spritemapEntry(0, $1F0, $FC, 0, 0, 2, 6, $34)
     %spritemapEntry(0, $1E8, $FC, 0, 0, 2, 6, $34)
 
+%anchor($93F3E3)
 ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_13:
     dw $0007                                                             ;93F3E3;
     %spritemapEntry(0, $14, $FC, 0, 0, 2, 6, $34)
@@ -9183,17 +10026,20 @@ ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_13:
     %spritemapEntry(0, $1EC, $FC, 0, 0, 2, 6, $34)
     %spritemapEntry(0, $1E4, $FC, 0, 0, 2, 6, $34)
 
+%anchor($93F408)
 ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_14:
     dw $0001                                                             ;93F408;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 6, $37)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($93F40F)
 UNUSED_ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_93F40F:
     dw $0002                                                             ;93F40F;
     %spritemapEntry(0, $1FC, $00, 0, 0, 2, 6, $37)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 2, 6, $37)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($93F41B)
 ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_15:
     dw $0003                                                             ;93F41B;
     %spritemapEntry(0, $1FC, $04, 0, 0, 2, 6, $37)
@@ -9201,6 +10047,7 @@ ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_15:
     %spritemapEntry(0, $1FC, $F4, 0, 0, 2, 6, $37)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($93F42C)
 UNUSED_ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_93F42C:
     dw $0004                                                             ;93F42C;
     %spritemapEntry(0, $1FC, $08, 0, 0, 2, 6, $37)
@@ -9208,6 +10055,7 @@ UNUSED_ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_93F42C:
     %spritemapEntry(0, $1FC, $F8, 0, 0, 2, 6, $37)
     %spritemapEntry(0, $1FC, $F0, 0, 0, 2, 6, $37)
 
+%anchor($93F442)
 UNUSED_ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_93F442:
     dw $0005                                                             ;93F442;
     %spritemapEntry(0, $1FC, $0C, 0, 0, 2, 6, $37)
@@ -9217,6 +10065,7 @@ UNUSED_ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_93F442:
     %spritemapEntry(0, $1FC, $EC, 0, 0, 2, 6, $37)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($93F45D)
 ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_16:
     dw $0006                                                             ;93F45D;
     %spritemapEntry(0, $1FC, $10, 0, 0, 2, 6, $37)
@@ -9226,6 +10075,7 @@ ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_16:
     %spritemapEntry(0, $1FC, $F0, 0, 0, 2, 6, $37)
     %spritemapEntry(0, $1FC, $E8, 0, 0, 2, 6, $37)
 
+%anchor($93F47D)
 ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_17:
     dw $0007                                                             ;93F47D;
     %spritemapEntry(0, $1FC, $14, 0, 0, 2, 6, $37)
@@ -9236,11 +10086,13 @@ ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_17:
     %spritemapEntry(0, $1FC, $EC, 0, 0, 2, 6, $37)
     %spritemapEntry(0, $1FC, $E4, 0, 0, 2, 6, $37)
 
+%anchor($93F4A2)
 ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_18:
     dw $0002                                                             ;93F4A2;
     %spritemapEntry(0, $1FC, $F8, 0, 0, 2, 6, $36)
     %spritemapEntry(0, $1FC, $00, 1, 1, 2, 6, $36)
 
+%anchor($93F4AE)
 ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_19:
     dw $0004                                                             ;93F4AE;
     %spritemapEntry(0, $00, $04, 1, 1, 2, 6, $36)
@@ -9249,6 +10101,7 @@ ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_19:
     %spritemapEntry(0, $1F8, $FC, 0, 0, 2, 6, $35)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($93F4C4)
 UNUSED_ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_93F4C4:
     dw $0006                                                             ;93F4C4;
     %spritemapEntry(0, $1FC, $F8, 1, 1, 2, 6, $35)
@@ -9259,6 +10112,7 @@ UNUSED_ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_93F4C4:
     %spritemapEntry(0, $1F4, $F8, 0, 0, 2, 6, $35)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($93F4E4)
 ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_1A:
     dw $0008                                                             ;93F4E4;
     %spritemapEntry(0, $08, $04, 1, 1, 2, 6, $35)
@@ -9270,6 +10124,7 @@ ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_1A:
     %spritemapEntry(0, $1F8, $FC, 0, 0, 2, 6, $35)
     %spritemapEntry(0, $1F0, $F4, 0, 0, 2, 6, $35)
 
+%anchor($93F50E)
 ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_1B:
     dw $000A                                                             ;93F50E;
     %spritemapEntry(0, $0C, $10, 1, 1, 2, 6, $36)
@@ -9283,11 +10138,13 @@ ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_1B:
     %spritemapEntry(0, $1F4, $F8, 0, 0, 2, 6, $35)
     %spritemapEntry(0, $1EC, $F0, 0, 0, 2, 6, $35)
 
+%anchor($93F542)
 ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_1C:
     dw $0002                                                             ;93F542;
     %spritemapEntry(0, $1FC, $F8, 0, 1, 2, 6, $36)
     %spritemapEntry(0, $1FC, $00, 1, 0, 2, 6, $36)
 
+%anchor($93F54E)
 ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_1D:
     dw $0004                                                             ;93F54E;
     %spritemapEntry(0, $1F8, $04, 1, 0, 2, 6, $36)
@@ -9296,6 +10153,7 @@ ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_1D:
     %spritemapEntry(0, $00, $FC, 0, 1, 2, 6, $35)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($93F564)
 UNUSED_ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_93F564:
     dw $0006                                                             ;93F564;
     %spritemapEntry(0, $1FC, $F8, 1, 0, 2, 6, $35)
@@ -9306,6 +10164,7 @@ UNUSED_ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_93F564:
     %spritemapEntry(0, $04, $F8, 0, 1, 2, 6, $35)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($93F584)
 ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_1E:
     dw $0008                                                             ;93F584;
     %spritemapEntry(0, $1F0, $04, 1, 0, 2, 6, $35)
@@ -9317,6 +10176,7 @@ ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_1E:
     %spritemapEntry(0, $00, $FC, 0, 1, 2, 6, $35)
     %spritemapEntry(0, $08, $F4, 0, 1, 2, 6, $35)
 
+%anchor($93F5AE)
 ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_1F:
     dw $000A                                                             ;93F5AE;
     %spritemapEntry(0, $1EC, $10, 1, 0, 2, 6, $36)
@@ -9331,6 +10191,7 @@ ProjectileFlareSpritemaps_Charged_P_PI_PW_PIW_1F:
     %spritemapEntry(0, $0C, $F0, 0, 1, 2, 6, $35)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($93F5E2)
 UNUSED_DrawShinesparkWindupEffectSprite_93F5E2:
     PHP                                                                  ;93F5E2;
     PHB                                                                  ;93F5E3;
@@ -9367,5 +10228,6 @@ UNUSED_DrawShinesparkWindupEffectSprite_93F5E2:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($93F61D)
 Freespace_Bank93_F61D:                                                   ;93F61D;
 ; $9E3 bytes

@@ -2,109 +2,132 @@
 org $B28000
 
 
+%anchor($B28000)
 CommonB2_GrappleAI_NoInteraction:
     JSL.L GrappleAI_SwitchEnemyAIToMainAI                                ;B28000;
     RTL                                                                  ;B28004;
 
 
+%anchor($B28005)
 CommonB2_GrappleAI_SamusLatchesOn:
     JSL.L GrappleAI_SamusLatchesOnWithGrapple                            ;B28005;
     RTL                                                                  ;B28009;
 
 
+%anchor($B2800A)
 CommonB2_GrappleAI_KillEnemy:
     JSL.L GrappleAI_EnemyGrappleDeath                                    ;B2800A;
     RTL                                                                  ;B2800E;
 
 
+%anchor($B2800F)
 CommonB2_GrappleAI_CancelGrappleBeam:
     JSL.L GrappleAI_SwitchToFrozenAI                                     ;B2800F;
     RTL                                                                  ;B28013;
 
 
+%anchor($B28014)
 CommonB2_GrappleAI_SamusLatchesOn_NoInvincibility:
     JSL.L GrappleAI_SamusLatchesOnWithGrapple_NoInvincibility            ;B28014;
     RTL                                                                  ;B28018;
 
 
+%anchor($B28019)
 UNUSED_CommonB2_GrappleAI_SamusLatchesOn_ParalyzeEnemy_B28019:
     JSL.L GrappleAI_SamusLatchesOnWithGrapple_ParalyzeEnemy              ;B28019;
     RTL                                                                  ;B2801D;
 
 
+%anchor($B2801E)
 CommonB2_GrappleAI_HurtSamus:
     JSL.L GrappleAI_SwitchToFrozenAI_duplicate                           ;B2801E;
     RTL                                                                  ;B28022;
 
 
+%anchor($B28023)
 CommonB2_NormalEnemyTouchAI:
     JSL.L NormalEnemyTouchAI                                             ;B28023;
     RTL                                                                  ;B28027;
 
 
+%anchor($B28028)
 CommonB2_NormalTouchAI_NoDeathCheck:
     JSL.L NormalEnemyTouchAI_NoDeathCheck_External                       ;B28028;
     RTL                                                                  ;B2802C;
 
 
+%anchor($B2802D)
 CommonB2_NormalEnemyShotAI:
     JSL.L NormalEnemyShotAI                                              ;B2802D;
     RTL                                                                  ;B28031;
 
 
+%anchor($B28032)
 CommonB2_NormalEnemyShotAI_NoDeathCheck_NoEnemyShotGraphic:
     JSL.L NormalEnemyShotAI_NoDeathCheck_NoEnemyShotGraphic_External     ;B28032;
     RTL                                                                  ;B28036;
 
 
+%anchor($B28037)
 CommonB2_NormalEnemyPowerBombAI:
     JSL.L NormalEnemyPowerBombAI                                         ;B28037;
     RTL                                                                  ;B2803B;
 
 
+%anchor($B2803C)
 CommonB2_NormalEnemyPowerBombAI_NoDeathCheck:
     JSL.L NormalEnemyPowerBombAI_NoDeathCheck_External                   ;B2803C;
     RTL                                                                  ;B28040;
 
 
+%anchor($B28041)
 CommonB2_NormalEnemyFrozenAI:
     JSL.L NormalEnemyFrozenAI                                            ;B28041;
     RTL                                                                  ;B28045;
 
 
+%anchor($B28046)
 CommonB2_CreateADudShot_JSL:
     JSL.L CreateADudShot                                                 ;B28046;
     RTL                                                                  ;B2804A;
 
 
+%anchor($B2804B)
 RTS_B2804B:
     RTS                                                                  ;B2804B;
 
 
+%anchor($B2804C)
 RTL_B2804C:
     RTL                                                                  ;B2804C;
 
 
+%anchor($B2804D)
 Spritemap_CommonB2_Nothing:
     dw $0000                                                             ;B2804D;
 
+%anchor($B2804F)
 ExtendedSpritemap_CommonB2_Nothing:
     dw $0001,$0000,$0000                                                 ;B2804F;
     dw Spritemap_CommonB2_Nothing                                        ;B28055;
     dw Hitbox_CommonB2_Nothing                                           ;B28057;
 
+%anchor($B28059)
 Hitbox_CommonB2_Nothing:
     dw $0001,$0000,$0000,$0000,$0000                                     ;B28059;
     dw CommonB2_NormalEnemyTouchAI                                       ;B28063;
     dw CommonB2_NormalEnemyShotAI                                        ;B28065;
 
+%anchor($B28067)
 InstList_CommonB2_DeleteEnemy:
     dw Instruction_CommonB2_DeleteEnemy                                  ;B28067;
 
+%anchor($B28069)
 NOPNOP_B28069:
     NOP                                                                  ;B28069;
     NOP                                                                  ;B2806A;
 
+%anchor($B2806B)
 Instruction_CommonB2_Enemy0FB2_InY:
     LDA.W $0000,Y                                                        ;B2806B;
     STA.W $0FB2,X                                                        ;B2806E;
@@ -113,16 +136,19 @@ Instruction_CommonB2_Enemy0FB2_InY:
     RTL                                                                  ;B28073;
 
 
+%anchor($B28074)
 Instruction_CommonB2_SetEnemy0FB2ToRTS:
     LDA.W #RTS_B2807B                                                    ;B28074;
     STA.W $0FB2,X                                                        ;B28077;
     RTL                                                                  ;B2807A;
 
 
+%anchor($B2807B)
 RTS_B2807B:
     RTS                                                                  ;B2807B;
 
 
+%anchor($B2807C)
 Instruction_CommonB2_DeleteEnemy:
     LDA.W $0F86,X                                                        ;B2807C;
     ORA.W #$0200                                                         ;B2807F;
@@ -132,6 +158,7 @@ Instruction_CommonB2_DeleteEnemy:
     RTL                                                                  ;B28089;
 
 
+%anchor($B2808A)
 Instruction_CommonB2_CallFunctionInY:
     LDA.W $0000,Y                                                        ;B2808A;
     STA.B $12                                                            ;B2808D;
@@ -149,6 +176,7 @@ Instruction_CommonB2_CallFunctionInY:
     RTL                                                                  ;B2809B;
 
 
+%anchor($B2809C)
 Instruction_CommonB2_CallFunctionInY_WithA:
     LDA.W $0000,Y                                                        ;B2809C;
     STA.B $12                                                            ;B2809F;
@@ -170,6 +198,7 @@ Instruction_CommonB2_CallFunctionInY_WithA:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B280B5)
 UNUSED_Instruction_CommonB2_CallExternalFunctionInY_B280B5:
     LDA.W $0000,Y                                                        ;B280B5;
     STA.B $12                                                            ;B280B8;
@@ -190,6 +219,7 @@ UNUSED_Instruction_CommonB2_CallExternalFunctionInY_B280B5:
     JML.W [$0012]                                                        ;B280CB;
 
 
+%anchor($B280CE)
 UNUSED_Inst_CommonB2_CallExternalFunctionInY_WithA_B280CE:
     LDA.W $0000,Y                                                        ;B280CE;
     STA.B $12                                                            ;B280D1;
@@ -213,12 +243,14 @@ UNUSED_Inst_CommonB2_CallExternalFunctionInY_WithA_B280CE:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($B280ED)
 Instruction_CommonB2_GotoY:
     LDA.W $0000,Y                                                        ;B280ED;
     TAY                                                                  ;B280F0;
     RTL                                                                  ;B280F1;
 
 
+%anchor($B280F2)
 Instruction_CommonB2_GotoY_PlusY:
     STY.B $12                                                            ;B280F2;
     DEY                                                                  ;B280F4;
@@ -238,6 +270,7 @@ Instruction_CommonB2_GotoY_PlusY:
     RTL                                                                  ;B28107;
 
 
+%anchor($B28108)
 Instruction_CommonB2_DecrementTimer_GotoYIfNonZero:
     DEC.W $0F90,X                                                        ;B28108;
     BNE Instruction_CommonB2_GotoY                                       ;B2810B;
@@ -246,6 +279,7 @@ Instruction_CommonB2_DecrementTimer_GotoYIfNonZero:
     RTL                                                                  ;B2810F;
 
 
+%anchor($B28110)
 Instruction_CommonB2_DecrementTimer_GotoYIfNonZero_duplicate:
     DEC.W $0F90,X                                                        ;B28110;
     BNE Instruction_CommonB2_GotoY                                       ;B28113;
@@ -254,6 +288,7 @@ Instruction_CommonB2_DecrementTimer_GotoYIfNonZero_duplicate:
     RTL                                                                  ;B28117;
 
 
+%anchor($B28118)
 Instruction_CommonB2_DecrementTimer_GotoY_PlusY_IfNonZero:
     SEP #$20                                                             ;B28118;
     DEC.W $0F90,X                                                        ;B2811A;
@@ -263,6 +298,7 @@ Instruction_CommonB2_DecrementTimer_GotoY_PlusY_IfNonZero:
     RTL                                                                  ;B28122;
 
 
+%anchor($B28123)
 Instruction_CommonB2_TimerInY:
     LDA.W $0000,Y                                                        ;B28123;
     STA.W $0F90,X                                                        ;B28126;
@@ -271,12 +307,14 @@ Instruction_CommonB2_TimerInY:
     RTL                                                                  ;B2812B;
 
 
+%anchor($B2812C)
 Instruction_CommonB2_SkipNextInstruction:
     INY                                                                  ;B2812C;
     INY                                                                  ;B2812D;
     RTL                                                                  ;B2812E;
 
 
+%anchor($B2812F)
 Instruction_CommonB2_Sleep:
     DEY                                                                  ;B2812F;
     DEY                                                                  ;B28130;
@@ -287,6 +325,7 @@ Instruction_CommonB2_Sleep:
     RTL                                                                  ;B28139;
 
 
+%anchor($B2813A)
 Instruction_CommonB2_WaitYFrames:
     LDA.W $0000,Y                                                        ;B2813A;
     STA.W $0F94,X                                                        ;B2813D;
@@ -299,6 +338,7 @@ Instruction_CommonB2_WaitYFrames:
     RTL                                                                  ;B2814A;
 
 
+%anchor($B2814B)
 Instruction_CommonB2_TransferYBytesInYToVRAM:
     PHX                                                                  ;B2814B;
     LDX.W $0330                                                          ;B2814C;
@@ -322,6 +362,7 @@ Instruction_CommonB2_TransferYBytesInYToVRAM:
     RTL                                                                  ;B28172;
 
 
+%anchor($B28173)
 Instruction_CommonB2_EnableOffScreenProcessing:
     LDA.W $0F86,X                                                        ;B28173;
     ORA.W #$0800                                                         ;B28176;
@@ -329,6 +370,7 @@ Instruction_CommonB2_EnableOffScreenProcessing:
     RTL                                                                  ;B2817C;
 
 
+%anchor($B2817D)
 Instruction_CommonB2_DisableOffScreenProcessing:
     LDA.W $0F86,X                                                        ;B2817D;
     AND.W #$F7FF                                                         ;B28180;
@@ -341,6 +383,7 @@ Instruction_CommonB2_DisableOffScreenProcessing:
 ;       |     |      _________ Negated speed
 ;       |     |     |      ___ Negated subspeed
 ;       |     |     |     |
+%anchor($B28187)
 CommonB2EnemySpeeds_LinearlyIncreasing:
   .speed:
     dw $0000                                                             ;B28187;
@@ -421,6 +464,7 @@ CommonB2EnemySpeeds_LinearlyIncreasing:
 ;       |     |      _________ Negated subspeed
 ;       |     |     |      ___ Negated speed
 ;       |     |     |     |
+%anchor($B2838F)
 CommonB2EnemySpeeds_QuadraticallyIncreasing:
 ; I.e. gravity
 ; Used by e.g. Botwoon when dying and falling to the floor
@@ -528,41 +572,50 @@ CommonB2EnemySpeeds_QuadraticallyIncreasing:
     dw $74F9,$0011,$8B07,$FFEE
 
 
+%anchor($B28687)
 Palette_Pirate_Grey:
     dw $3800,$5755,$4A4F,$1CE4,$0C60,$56B2,$3E0D,$2D68                   ;B28687;
     dw $2526,$5EBB,$3DB3,$292E,$1486,$033B,$0216,$0113                   ;B28697;
 
+%anchor($B286A7)
 Palette_Pirate_Green:
     dw $3800,$3F57,$2E4D,$00E2,$0060,$3AB0,$220B,$1166                   ;B286A7;
     dw $0924,$5EBB,$3DB3,$292E,$1486,$033B,$0216,$0113                   ;B286B7;
 
+%anchor($B286C7)
 Palette_Pirate_Magenta:
     dw $3800,$4EBF,$4D9E,$1009,$0C04,$49DE,$555D,$30B0                   ;B286C7;
     dw $1C4D,$5EBB,$3DB3,$292E,$1486,$033B,$0216,$0113                   ;B286D7;
 
+%anchor($B286E7)
 Palette_Pirate_Red:
     dw $3800,$02FD,$013E,$006C,$0066,$021E,$005F,$0059                   ;B286E7;
     dw $0073,$5EBB,$3DB3,$292E,$1486,$033B,$0216,$0113                   ;B286F7;
 
+%anchor($B28707)
 Palette_Pirate_Silver_GoldNinja:
     dw $3800,$6BFF,$4ED6,$14A4,$0420,$5B7B,$3E52,$31CD                   ;B28707;
     dw $2149,$5EBB,$3DB3,$292E,$1486,$033B,$0216,$0113                   ;B28717;
 
+%anchor($B28727)
 Palette_Pirate_Gold_NonNinja:
     dw $3800,$4BBE,$06B9,$00EA,$0065,$173A,$0276,$01F2                   ;B28727;
     dw $014D,$5EBB,$3DB3,$292E,$1486,$033B,$0216,$0113                   ;B28737;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B28747)
 UNUSED_Palette_Pirate_Silver_GoldNinja_B28747:
     dw $3800,$6BFF,$4ED6,$14A4,$0420,$5B7B,$3E52,$31CD                   ;B28747;
     dw $2149,$5EBB,$3DB3,$292E,$1486,$033B,$0216,$0113                   ;B28757;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B28767)
 PowerBombReaction_Ninja_Walking_GreyWall:
     JSL.L NormalEnemyPowerBombAI                                         ;B28767;
     RTL                                                                  ;B2876B;
 
 
+%anchor($B2876C)
 EnemyTouch_SpacePirate:
     LDX.W $0E54                                                          ;B2876C;
     LDA.W $0F9E,X                                                        ;B2876F;
@@ -573,6 +626,7 @@ EnemyTouch_SpacePirate:
     RTL                                                                  ;B28778;
 
 
+%anchor($B28779)
 EnemyShot_SpacePirate_Normal:
     LDX.W $0E54                                                          ;B28779;
     LDA.W $0F78,X                                                        ;B2877C;
@@ -582,6 +636,7 @@ EnemyShot_SpacePirate_Normal:
     RTL                                                                  ;B28788;
 
 
+%anchor($B28789)
 NormalPirateShot:
     LDX.W $0E54                                                          ;B28789;
     LDA.W $0F7A,X                                                        ;B2878C;
@@ -611,6 +666,7 @@ NormalPirateShot:
     RTL                                                                  ;B287C7;
 
 
+%anchor($B287C8)
 EnemyShot_SpacePirate_GoldNinjaIsVulnerable:
     LDX.W $0E54                                                          ;B287C8;
     LDA.W $0F78,X                                                        ;B287CB;
@@ -679,6 +735,7 @@ EnemyShot_SpacePirate_GoldNinjaIsVulnerable:
     BRA .gotoNormal                                                      ;B2883C;
 
 
+%anchor($B2883E)
 EnemyShot_SpacePirate_GoldNinjaIsInvincible:
     LDX.W $0E54                                                          ;B2883E;
     LDA.W $0F78,X                                                        ;B28841;
@@ -738,6 +795,7 @@ EnemyShot_SpacePirate_GoldNinjaIsInvincible:
     RTL                                                                  ;B2889F;
 
 
+%anchor($B288A0)
 ExtendedSpritemaps_PirateWall_0:
     dw $0002,$0000,$0000                                                 ;B288A0;
     dw Spitemaps_PirateWall_9                                            ;B288A6;
@@ -746,6 +804,7 @@ ExtendedSpritemaps_PirateWall_0:
     dw Spitemaps_PirateWall_0                                            ;B288AE;
     dw Hitboxes_PirateWall_0                                             ;B288B0;
 
+%anchor($B288B2)
 ExtendedSpritemaps_PirateWall_1:
     dw $0002,$0000,$0000                                                 ;B288B2;
     dw Spitemaps_PirateWall_8                                            ;B288B8;
@@ -754,6 +813,7 @@ ExtendedSpritemaps_PirateWall_1:
     dw Spitemaps_PirateWall_1                                            ;B288C0;
     dw Hitboxes_PirateWall_1                                             ;B288C2;
 
+%anchor($B288C4)
 ExtendedSpritemaps_PirateWall_2:
     dw $0002,$0000,$0000                                                 ;B288C4;
     dw Spitemaps_PirateWall_7                                            ;B288CA;
@@ -762,6 +822,7 @@ ExtendedSpritemaps_PirateWall_2:
     dw Spitemaps_PirateWall_2                                            ;B288D2;
     dw Hitboxes_PirateWall_2                                             ;B288D4;
 
+%anchor($B288D6)
 ExtendedSpritemaps_PirateWall_3:
     dw $0002,$0000,$0000                                                 ;B288D6;
     dw Spitemaps_PirateWall_3                                            ;B288DC;
@@ -770,6 +831,7 @@ ExtendedSpritemaps_PirateWall_3:
     dw Spitemaps_PirateWall_6                                            ;B288E4;
     dw Hitboxes_PirateWall_6                                             ;B288E6;
 
+%anchor($B288E8)
 ExtendedSpritemaps_PirateWall_4:
     dw $0002,$0000,$0000                                                 ;B288E8;
     dw Spitemaps_PirateWall_4                                            ;B288EE;
@@ -778,6 +840,7 @@ ExtendedSpritemaps_PirateWall_4:
     dw Spitemaps_PirateWall_5                                            ;B288F6;
     dw Hitboxes_PirateWall_5                                             ;B288F8;
 
+%anchor($B288FA)
 ExtendedSpritemaps_PirateWall_5:
     dw $0002,$0000,$FFFE                                                 ;B288FA;
     dw Spitemaps_PirateWall_A                                            ;B28900;
@@ -786,6 +849,7 @@ ExtendedSpritemaps_PirateWall_5:
     dw Spitemaps_PirateWall_9                                            ;B28908;
     dw Hitboxes_PirateWall_9                                             ;B2890A;
 
+%anchor($B2890C)
 ExtendedSpritemaps_PirateWall_6:
     dw $0002,$0001,$FFFE                                                 ;B2890C;
     dw Spitemaps_PirateWall_B                                            ;B28912;
@@ -794,16 +858,19 @@ ExtendedSpritemaps_PirateWall_6:
     dw Spitemaps_PirateWall_5                                            ;B2891A;
     dw Hitboxes_PirateWall_5                                             ;B2891C;
 
+%anchor($B2891E)
 ExtendedSpritemaps_PirateWall_7:
     dw $0001,$0000,$0000                                                 ;B2891E;
     dw Spitemaps_PirateWall_C                                            ;B28924;
     dw Hitboxes_PirateWall_C                                             ;B28926;
 
+%anchor($B28928)
 ExtendedSpritemaps_PirateWall_8:
     dw $0001,$0000,$0000                                                 ;B28928;
     dw Spitemaps_PirateWall_D                                            ;B2892E;
     dw Hitboxes_PirateWall_D                                             ;B28930;
 
+%anchor($B28932)
 ExtendedSpritemaps_PirateWall_9:
     dw $0002,$0000,$0000                                                 ;B28932;
     dw Spitemaps_PirateWall_17                                           ;B28938;
@@ -812,6 +879,7 @@ ExtendedSpritemaps_PirateWall_9:
     dw Spitemaps_PirateWall_E                                            ;B28940;
     dw Hitboxes_PirateWall_E                                             ;B28942;
 
+%anchor($B28944)
 ExtendedSpritemaps_PirateWall_A:
     dw $0002,$0000,$0000                                                 ;B28944;
     dw Spitemaps_PirateWall_16                                           ;B2894A;
@@ -820,6 +888,7 @@ ExtendedSpritemaps_PirateWall_A:
     dw Spitemaps_PirateWall_F                                            ;B28952;
     dw Hitboxes_PirateWall_F                                             ;B28954;
 
+%anchor($B28956)
 ExtendedSpritemaps_PirateWall_B:
     dw $0002,$0000,$0000                                                 ;B28956;
     dw Spitemaps_PirateWall_15                                           ;B2895C;
@@ -828,6 +897,7 @@ ExtendedSpritemaps_PirateWall_B:
     dw Spitemaps_PirateWall_10                                           ;B28964;
     dw Hitboxes_PirateWall_10                                            ;B28966;
 
+%anchor($B28968)
 ExtendedSpritemaps_PirateWall_C:
     dw $0002,$0000,$0000                                                 ;B28968;
     dw Spitemaps_PirateWall_11                                           ;B2896E;
@@ -836,6 +906,7 @@ ExtendedSpritemaps_PirateWall_C:
     dw Spitemaps_PirateWall_14                                           ;B28976;
     dw Hitboxes_PirateWall_14                                            ;B28978;
 
+%anchor($B2897A)
 ExtendedSpritemaps_PirateWall_D:
     dw $0002,$0000,$0000                                                 ;B2897A;
     dw Spitemaps_PirateWall_12                                           ;B28980;
@@ -844,6 +915,7 @@ ExtendedSpritemaps_PirateWall_D:
     dw Spitemaps_PirateWall_13                                           ;B28988;
     dw Hitboxes_PirateWall_13                                            ;B2898A;
 
+%anchor($B2898C)
 ExtendedSpritemaps_PirateWall_E:
     dw $0002,$0000,$0000                                                 ;B2898C;
     dw Spitemaps_PirateWall_18                                           ;B28992;
@@ -852,6 +924,7 @@ ExtendedSpritemaps_PirateWall_E:
     dw Spitemaps_PirateWall_13                                           ;B2899A;
     dw Hitboxes_PirateWall_13                                            ;B2899C;
 
+%anchor($B2899E)
 ExtendedSpritemaps_PirateWall_F:
     dw $0002,$0000,$0000                                                 ;B2899E;
     dw Spitemaps_PirateWall_19                                           ;B289A4;
@@ -860,16 +933,19 @@ ExtendedSpritemaps_PirateWall_F:
     dw Spitemaps_PirateWall_13                                           ;B289AC;
     dw Hitboxes_PirateWall_13                                            ;B289AE;
 
+%anchor($B289B0)
 ExtendedSpritemaps_PirateWall_10:
     dw $0001,$0000,$0000                                                 ;B289B0;
     dw Spitemaps_PirateWall_1A                                           ;B289B6;
     dw Hitboxes_PirateWall_1A                                            ;B289B8;
 
+%anchor($B289BA)
 ExtendedSpritemaps_PirateWall_11:
     dw $0001,$0000,$0000                                                 ;B289BA;
     dw Spitemaps_PirateWall_1B                                           ;B289C0;
     dw Hitboxes_PirateWall_1B                                            ;B289C2;
 
+%anchor($B289C4)
 ExtendedSpritemaps_PirateWalking_0:
     dw $0002,$FFFB,$0003                                                 ;B289C4;
     dw Spitemaps_PirateWalking_26_Ninja_D                                ;B289CA;
@@ -878,6 +954,7 @@ ExtendedSpritemaps_PirateWalking_0:
     dw Spritemaps_PirateWalking_1                                        ;B289D2;
     dw Hitboxes_PirateWalking_1                                          ;B289D4;
 
+%anchor($B289D6)
 ExtendedSpritemaps_PirateWalking_1:
     dw $0002,$FFFB,$0003                                                 ;B289D6;
     dw Spitemaps_PirateWalking_27_Ninja_E                                ;B289DC;
@@ -886,6 +963,7 @@ ExtendedSpritemaps_PirateWalking_1:
     dw Spritemaps_PirateWalking_2                                        ;B289E4;
     dw Hitboxes_PirateWalking_2                                          ;B289E6;
 
+%anchor($B289E8)
 ExtendedSpritemaps_PirateWalking_2:
     dw $0002,$FFFB,$0003                                                 ;B289E8;
     dw Spitemaps_PirateWalking_28_Ninja_F                                ;B289EE;
@@ -894,6 +972,7 @@ ExtendedSpritemaps_PirateWalking_2:
     dw Spritemaps_PirateWalking_3                                        ;B289F6;
     dw Hitboxes_PirateWalking_3                                          ;B289F8;
 
+%anchor($B289FA)
 ExtendedSpritemaps_PirateWalking_3:
     dw $0002,$FFFB,$0003                                                 ;B289FA;
     dw Spitemaps_PirateWalking_29_Ninja_10                               ;B28A00;
@@ -902,6 +981,7 @@ ExtendedSpritemaps_PirateWalking_3:
     dw Spritemaps_PirateWalking_4                                        ;B28A08;
     dw Hitboxes_PirateWalking_4                                          ;B28A0A;
 
+%anchor($B28A0C)
 ExtendedSpritemaps_PirateWalking_4:
     dw $0002,$FFFB,$0003                                                 ;B28A0C;
     dw Spitemaps_PirateWalking_29_Ninja_10                               ;B28A12;
@@ -910,6 +990,7 @@ ExtendedSpritemaps_PirateWalking_4:
     dw Spritemaps_PirateWalking_5                                        ;B28A1A;
     dw Hitboxes_PirateWalking_5                                          ;B28A1C;
 
+%anchor($B28A1E)
 ExtendedSpritemaps_PirateWalking_5:
     dw $0002,$FFFB,$0003                                                 ;B28A1E;
     dw Spitemaps_PirateWalking_28_Ninja_F                                ;B28A24;
@@ -918,6 +999,7 @@ ExtendedSpritemaps_PirateWalking_5:
     dw Spritemaps_PirateWalking_6                                        ;B28A2C;
     dw Hitboxes_PirateWalking_6                                          ;B28A2E;
 
+%anchor($B28A30)
 ExtendedSpritemaps_PirateWalking_6:
     dw $0002,$FFFB,$0003                                                 ;B28A30;
     dw Spitemaps_PirateWalking_27_Ninja_E                                ;B28A36;
@@ -926,6 +1008,7 @@ ExtendedSpritemaps_PirateWalking_6:
     dw Spritemaps_PirateWalking_7                                        ;B28A3E;
     dw Hitboxes_PirateWalking_7                                          ;B28A40;
 
+%anchor($B28A42)
 ExtendedSpritemaps_PirateWalking_7:
     dw $0002,$FFFB,$0003                                                 ;B28A42;
     dw Spitemaps_PirateWalking_26_Ninja_D                                ;B28A48;
@@ -934,6 +1017,7 @@ ExtendedSpritemaps_PirateWalking_7:
     dw Spritemaps_PirateWalking_8                                        ;B28A50;
     dw Hitboxes_PirateWalking_8                                          ;B28A52;
 
+%anchor($B28A54)
 ExtendedSpritemaps_PirateNinja_0:
     dw $0002,$0000,$0005                                                 ;B28A54;
     dw Spitemaps_PirateWalking_26_Ninja_D                                ;B28A5A;
@@ -942,6 +1026,7 @@ ExtendedSpritemaps_PirateNinja_0:
     dw Spitemaps_PirateWalking_B_Ninja_2                                 ;B28A62;
     dw Hitboxes_PirateWalking_12_Ninja_A                                 ;B28A64;
 
+%anchor($B28A66)
 ExtendedSpritemaps_PirateNinja_1:
     dw $0002,$0000,$0005                                                 ;B28A66;
     dw Spitemaps_PirateNinja_11                                          ;B28A6C;
@@ -950,6 +1035,7 @@ ExtendedSpritemaps_PirateNinja_1:
     dw Spitemaps_PirateWalking_9_Ninja_0                                 ;B28A74;
     dw Hitboxes_PirateWalking_9_Ninja_0                                  ;B28A76;
 
+%anchor($B28A78)
 ExtendedSpritemaps_PirateNinja_2:
     dw $0002,$0000,$0005                                                 ;B28A78;
     dw Spitemaps_PirateNinja_12                                          ;B28A7E;
@@ -958,6 +1044,7 @@ ExtendedSpritemaps_PirateNinja_2:
     dw Spitemaps_PirateWalking_9_Ninja_0                                 ;B28A86;
     dw Hitboxes_PirateWalking_9_Ninja_0                                  ;B28A88;
 
+%anchor($B28A8A)
 ExtendedSpritemaps_PirateNinja_3:
     dw $0002,$0000,$0004                                                 ;B28A8A;
     dw Spitemaps_PirateNinja_13                                          ;B28A90;
@@ -966,6 +1053,7 @@ ExtendedSpritemaps_PirateNinja_3:
     dw Spitemaps_PirateWalking_9_Ninja_0                                 ;B28A98;
     dw Hitboxes_PirateWalking_9_Ninja_0                                  ;B28A9A;
 
+%anchor($B28A9C)
 ExtendedSpritemaps_PirateNinja_4:
     dw $0002,$0000,$0003                                                 ;B28A9C;
     dw Spitemaps_PirateNinja_14                                          ;B28AA2;
@@ -974,6 +1062,7 @@ ExtendedSpritemaps_PirateNinja_4:
     dw Spitemaps_PirateWalking_9_Ninja_0                                 ;B28AAA;
     dw Hitboxes_PirateWalking_9_Ninja_0                                  ;B28AAC;
 
+%anchor($B28AAE)
 ExtendedSpritemaps_PirateNinja_5:
     dw $0002,$0000,$0005                                                 ;B28AAE;
     dw Spitemaps_PirateNinja_13                                          ;B28AB4;
@@ -982,6 +1071,7 @@ ExtendedSpritemaps_PirateNinja_5:
     dw Spitemaps_PirateWalking_9_Ninja_0                                 ;B28ABC;
     dw Hitboxes_PirateWalking_9_Ninja_0                                  ;B28ABE;
 
+%anchor($B28AC0)
 ExtendedSpritemaps_PirateNinja_6:
     dw $0002,$0000,$0005                                                 ;B28AC0;
     dw Spitemaps_PirateNinja_11                                          ;B28AC6;
@@ -990,6 +1080,7 @@ ExtendedSpritemaps_PirateNinja_6:
     dw Spitemaps_PirateWalking_9_Ninja_0                                 ;B28ACE;
     dw Hitboxes_PirateWalking_9_Ninja_0                                  ;B28AD0;
 
+%anchor($B28AD2)
 ExtendedSpritemaps_PirateNinja_7:
     dw $0002,$0000,$0006                                                 ;B28AD2;
     dw Spitemaps_PirateWalking_29_Ninja_10                               ;B28AD8;
@@ -998,6 +1089,7 @@ ExtendedSpritemaps_PirateNinja_7:
     dw Spitemaps_PirateWalking_9_Ninja_0                                 ;B28AE0;
     dw Hitboxes_PirateWalking_9_Ninja_0                                  ;B28AE2;
 
+%anchor($B28AE4)
 ExtendedSpritemaps_PirateNinja_8:
     dw $0002,$0000,$0007                                                 ;B28AE4;
     dw Spitemaps_PirateNinja_18                                          ;B28AEA;
@@ -1006,6 +1098,7 @@ ExtendedSpritemaps_PirateNinja_8:
     dw Spitemaps_PirateWalking_B_Ninja_2                                 ;B28AF2;
     dw Hitboxes_PirateWalking_12_Ninja_A                                 ;B28AF4;
 
+%anchor($B28AF6)
 ExtendedSpritemaps_PirateWalking_8:
     dw $0002,$0005,$0003                                                 ;B28AF6;
     dw Spitemaps_PirateWalking_2B_Ninja_21                               ;B28AFC;
@@ -1014,6 +1107,7 @@ ExtendedSpritemaps_PirateWalking_8:
     dw Spitemaps_PirateWalking_E                                         ;B28B04;
     dw Hitboxes_PirateWalking_15                                         ;B28B06;
 
+%anchor($B28B08)
 ExtendedSpritemaps_PirateWalking_9:
     dw $0002,$0005,$0003                                                 ;B28B08;
     dw Spitemaps_PirateWalking_2C_Ninja_22                               ;B28B0E;
@@ -1022,6 +1116,7 @@ ExtendedSpritemaps_PirateWalking_9:
     dw Spitemaps_PirateWalking_F                                         ;B28B16;
     dw Hitboxes_PirateWalking_16                                         ;B28B18;
 
+%anchor($B28B1A)
 ExtendedSpritemaps_PirateWalking_A:
     dw $0002,$0005,$0003                                                 ;B28B1A;
     dw Spitemaps_PirateWalking_2D_Ninja_23                               ;B28B20;
@@ -1030,6 +1125,7 @@ ExtendedSpritemaps_PirateWalking_A:
     dw Spitemaps_PirateWalking_10                                        ;B28B28;
     dw Hitboxes_PirateWalking_17                                         ;B28B2A;
 
+%anchor($B28B2C)
 ExtendedSpritemaps_PirateWalking_B:
     dw $0002,$0005,$0003                                                 ;B28B2C;
     dw Spitemaps_PirateWalking_2E_Ninja_24                               ;B28B32;
@@ -1038,6 +1134,7 @@ ExtendedSpritemaps_PirateWalking_B:
     dw Spitemaps_PirateWalking_11                                        ;B28B3A;
     dw Hitboxes_PirateWalking_18                                         ;B28B3C;
 
+%anchor($B28B3E)
 ExtendedSpritemaps_PirateWalking_C:
     dw $0002,$0005,$0003                                                 ;B28B3E;
     dw Spitemaps_PirateWalking_2E_Ninja_24                               ;B28B44;
@@ -1046,6 +1143,7 @@ ExtendedSpritemaps_PirateWalking_C:
     dw Spitemaps_PirateWalking_12                                        ;B28B4C;
     dw Hitboxes_PirateWalking_19                                         ;B28B4E;
 
+%anchor($B28B50)
 ExtendedSpritemaps_PirateWalking_D:
     dw $0002,$0005,$0003                                                 ;B28B50;
     dw Spitemaps_PirateWalking_2D_Ninja_23                               ;B28B56;
@@ -1054,6 +1152,7 @@ ExtendedSpritemaps_PirateWalking_D:
     dw Spitemaps_PirateWalking_13                                        ;B28B5E;
     dw Hitboxes_PirateWalking_1A                                         ;B28B60;
 
+%anchor($B28B62)
 ExtendedSpritemaps_PirateWalking_E:
     dw $0002,$0005,$0003                                                 ;B28B62;
     dw Spitemaps_PirateWalking_2C_Ninja_22                               ;B28B68;
@@ -1062,6 +1161,7 @@ ExtendedSpritemaps_PirateWalking_E:
     dw Spitemaps_PirateWalking_14                                        ;B28B70;
     dw Hitboxes_PirateWalking_1B                                         ;B28B72;
 
+%anchor($B28B74)
 ExtendedSpritemaps_PirateWalking_F:
     dw $0002,$0005,$0003                                                 ;B28B74;
     dw Spitemaps_PirateWalking_2B_Ninja_21                               ;B28B7A;
@@ -1070,6 +1170,7 @@ ExtendedSpritemaps_PirateWalking_F:
     dw Spitemaps_PirateWalking_15                                        ;B28B82;
     dw Hitboxes_PirateWalking_1C                                         ;B28B84;
 
+%anchor($B28B86)
 ExtendedSpritemaps_PirateNinja_9:
     dw $0002,$0000,$0005                                                 ;B28B86;
     dw Spitemaps_PirateWalking_2B_Ninja_21                               ;B28B8C;
@@ -1078,6 +1179,7 @@ ExtendedSpritemaps_PirateNinja_9:
     dw Spitemaps_PirateWalking_17_Ninja_4                                ;B28B94;
     dw Hitboxes_PirateWalking_26_Ninja_13                                ;B28B96;
 
+%anchor($B28B98)
 ExtendedSpritemaps_PirateNinja_A:
     dw $0002,$0000,$0005                                                 ;B28B98;
     dw Spitemaps_PirateNinja_25                                          ;B28B9E;
@@ -1086,6 +1188,7 @@ ExtendedSpritemaps_PirateNinja_A:
     dw Spitemaps_PirateWalking_16_Ninja_3                                ;B28BA6;
     dw Hitboxes_PirateWalking_1D_Ninja_A                                 ;B28BA8;
 
+%anchor($B28BAA)
 ExtendedSpritemaps_PirateNinja_B:
     dw $0002,$0000,$0005                                                 ;B28BAA;
     dw Spitemaps_PirateNinja_26                                          ;B28BB0;
@@ -1094,6 +1197,7 @@ ExtendedSpritemaps_PirateNinja_B:
     dw Spitemaps_PirateWalking_16_Ninja_3                                ;B28BB8;
     dw Hitboxes_PirateWalking_1D_Ninja_A                                 ;B28BBA;
 
+%anchor($B28BBC)
 ExtendedSpritemaps_PirateNinja_C:
     dw $0002,$0000,$0004                                                 ;B28BBC;
     dw Spitemaps_PirateNinja_27                                          ;B28BC2;
@@ -1102,6 +1206,7 @@ ExtendedSpritemaps_PirateNinja_C:
     dw Spitemaps_PirateWalking_16_Ninja_3                                ;B28BCA;
     dw Hitboxes_PirateWalking_1D_Ninja_A                                 ;B28BCC;
 
+%anchor($B28BCE)
 ExtendedSpritemaps_PirateNinja_D:
     dw $0002,$0000,$0003                                                 ;B28BCE;
     dw Spitemaps_PirateNinja_28                                          ;B28BD4;
@@ -1110,6 +1215,7 @@ ExtendedSpritemaps_PirateNinja_D:
     dw Spitemaps_PirateWalking_16_Ninja_3                                ;B28BDC;
     dw Hitboxes_PirateWalking_1D_Ninja_A                                 ;B28BDE;
 
+%anchor($B28BE0)
 ExtendedSpritemaps_PirateNinja_E:
     dw $0002,$0000,$0005                                                 ;B28BE0;
     dw Spitemaps_PirateNinja_27                                          ;B28BE6;
@@ -1118,6 +1224,7 @@ ExtendedSpritemaps_PirateNinja_E:
     dw Spitemaps_PirateWalking_16_Ninja_3                                ;B28BEE;
     dw Hitboxes_PirateWalking_1D_Ninja_A                                 ;B28BF0;
 
+%anchor($B28BF2)
 ExtendedSpritemaps_PirateNinja_F:
     dw $0002,$0000,$0005                                                 ;B28BF2;
     dw Spitemaps_PirateWalking_2E_Ninja_24                               ;B28BF8;
@@ -1126,6 +1233,7 @@ ExtendedSpritemaps_PirateNinja_F:
     dw Spitemaps_PirateWalking_16_Ninja_3                                ;B28C00;
     dw Hitboxes_PirateWalking_1D_Ninja_A                                 ;B28C02;
 
+%anchor($B28C04)
 ExtendedSpritemaps_PirateNinja_10:
     dw $0002,$0000,$0006                                                 ;B28C04;
     dw Spitemaps_PirateNinja_2C                                          ;B28C0A;
@@ -1134,6 +1242,7 @@ ExtendedSpritemaps_PirateNinja_10:
     dw Spitemaps_PirateWalking_16_Ninja_3                                ;B28C12;
     dw Hitboxes_PirateWalking_1D_Ninja_A                                 ;B28C14;
 
+%anchor($B28C16)
 ExtendedSpritemaps_PirateNinja_11:
     dw $0002,$0000,$0007                                                 ;B28C16;
     dw Spitemaps_PirateNinja_2C                                          ;B28C1C;
@@ -1142,6 +1251,7 @@ ExtendedSpritemaps_PirateNinja_11:
     dw Spitemaps_PirateWalking_17_Ninja_4                                ;B28C24;
     dw Hitboxes_PirateWalking_26_Ninja_13                                ;B28C26;
 
+%anchor($B28C28)
 ExtendedSpritemaps_PirateWalking_10:
     dw $0002,$0000,$0003                                                 ;B28C28;
     dw Spitemaps_PirateWalking_1A                                        ;B28C2E;
@@ -1150,6 +1260,7 @@ ExtendedSpritemaps_PirateWalking_10:
     dw Spitemaps_PirateWalking_9_Ninja_0                                 ;B28C36;
     dw Hitboxes_PirateWalking_9_Ninja_0                                  ;B28C38;
 
+%anchor($B28C3A)
 ExtendedSpritemaps_PirateWalking_11:
     dw $0002,$0000,$0003                                                 ;B28C3A;
     dw Spitemaps_PirateWalking_1B                                        ;B28C40;
@@ -1158,6 +1269,7 @@ ExtendedSpritemaps_PirateWalking_11:
     dw Spitemaps_PirateWalking_9_Ninja_0                                 ;B28C48;
     dw Hitboxes_PirateWalking_9_Ninja_0                                  ;B28C4A;
 
+%anchor($B28C4C)
 ExtendedSpritemaps_PirateWalking_12:
     dw $0002,$0000,$0003                                                 ;B28C4C;
     dw Spitemaps_PirateWalking_1C                                        ;B28C52;
@@ -1166,6 +1278,7 @@ ExtendedSpritemaps_PirateWalking_12:
     dw Spitemaps_PirateWalking_9_Ninja_0                                 ;B28C5A;
     dw Hitboxes_PirateWalking_9_Ninja_0                                  ;B28C5C;
 
+%anchor($B28C5E)
 ExtendedSpritemaps_PirateWalking_13:
     dw $0002,$0000,$0003                                                 ;B28C5E;
     dw Spitemaps_PirateWalking_1D                                        ;B28C64;
@@ -1174,6 +1287,7 @@ ExtendedSpritemaps_PirateWalking_13:
     dw Spitemaps_PirateWalking_9_Ninja_0                                 ;B28C6C;
     dw Hitboxes_PirateWalking_9_Ninja_0                                  ;B28C6E;
 
+%anchor($B28C70)
 ExtendedSpritemaps_PirateWalking_14:
     dw $0002,$FFFF,$0004                                                 ;B28C70;
     dw Spitemaps_PirateWalking_1E                                        ;B28C76;
@@ -1182,6 +1296,7 @@ ExtendedSpritemaps_PirateWalking_14:
     dw Spitemaps_PirateWalking_9_Ninja_0                                 ;B28C7E;
     dw Hitboxes_PirateWalking_9_Ninja_0                                  ;B28C80;
 
+%anchor($B28C82)
 ExtendedSpritemaps_PirateWalking_15:
     dw $0002,$FFFE,$0006                                                 ;B28C82;
     dw Spitemaps_PirateWalking_1F                                        ;B28C88;
@@ -1190,6 +1305,7 @@ ExtendedSpritemaps_PirateWalking_15:
     dw Spitemaps_PirateWalking_B_Ninja_2                                 ;B28C90;
     dw Hitboxes_PirateWalking_12_Ninja_A                                 ;B28C92;
 
+%anchor($B28C94)
 ExtendedSpritemaps_PirateWalking_16:
     dw $0002,$0000,$0003                                                 ;B28C94;
     dw Spitemaps_PirateWalking_20                                        ;B28C9A;
@@ -1198,6 +1314,7 @@ ExtendedSpritemaps_PirateWalking_16:
     dw Spitemaps_PirateWalking_16_Ninja_3                                ;B28CA2;
     dw Hitboxes_PirateWalking_1D_Ninja_A                                 ;B28CA4;
 
+%anchor($B28CA6)
 ExtendedSpritemaps_PirateWalking_17:
     dw $0002,$0000,$0003                                                 ;B28CA6;
     dw Spitemaps_PirateWalking_21                                        ;B28CAC;
@@ -1206,6 +1323,7 @@ ExtendedSpritemaps_PirateWalking_17:
     dw Spitemaps_PirateWalking_16_Ninja_3                                ;B28CB4;
     dw Hitboxes_PirateWalking_1D_Ninja_A                                 ;B28CB6;
 
+%anchor($B28CB8)
 ExtendedSpritemaps_PirateWalking_18:
     dw $0002,$0000,$0003                                                 ;B28CB8;
     dw Spitemaps_PirateWalking_22                                        ;B28CBE;
@@ -1214,6 +1332,7 @@ ExtendedSpritemaps_PirateWalking_18:
     dw Spitemaps_PirateWalking_16_Ninja_3                                ;B28CC6;
     dw Hitboxes_PirateWalking_1D_Ninja_A                                 ;B28CC8;
 
+%anchor($B28CCA)
 ExtendedSpritemaps_PirateWalking_19:
     dw $0002,$0000,$0003                                                 ;B28CCA;
     dw Spitemaps_PirateWalking_23                                        ;B28CD0;
@@ -1222,6 +1341,7 @@ ExtendedSpritemaps_PirateWalking_19:
     dw Spitemaps_PirateWalking_16_Ninja_3                                ;B28CD8;
     dw Hitboxes_PirateWalking_1D_Ninja_A                                 ;B28CDA;
 
+%anchor($B28CDC)
 ExtendedSpritemaps_PirateWalking_1A:
     dw $0002,$0001,$0004                                                 ;B28CDC;
     dw Spitemaps_PirateWalking_24                                        ;B28CE2;
@@ -1230,6 +1350,7 @@ ExtendedSpritemaps_PirateWalking_1A:
     dw Spitemaps_PirateWalking_16_Ninja_3                                ;B28CEA;
     dw Hitboxes_PirateWalking_1D_Ninja_A                                 ;B28CEC;
 
+%anchor($B28CEE)
 ExtendedSpritemaps_PirateWalking_1B:
     dw $0002,$0002,$0006                                                 ;B28CEE;
     dw Spitemaps_PirateWalking_25                                        ;B28CF4;
@@ -1238,6 +1359,7 @@ ExtendedSpritemaps_PirateWalking_1B:
     dw Spitemaps_PirateWalking_17_Ninja_4                                ;B28CFC;
     dw Hitboxes_PirateWalking_26_Ninja_13                                ;B28CFE;
 
+%anchor($B28D00)
 ExtendedSpritemaps_PirateWalking_1C:
     dw $0003,$FFFB,$FFF4                                                 ;B28D00;
     dw Spitemaps_PirateWalking_18                                        ;B28D06;
@@ -1249,6 +1371,7 @@ ExtendedSpritemaps_PirateWalking_1C:
     dw Spitemaps_PirateWalking_9_Ninja_0                                 ;B28D16;
     dw Hitboxes_PirateWalking_9_Ninja_0                                  ;B28D18;
 
+%anchor($B28D1A)
 ExtendedSpritemaps_PirateWalking_1D:
     dw $0002,$0000,$0003                                                 ;B28D1A;
     dw Spitemaps_PirateWalking_1A                                        ;B28D20;
@@ -1257,6 +1380,7 @@ ExtendedSpritemaps_PirateWalking_1D:
     dw Spitemaps_PirateWalking_9_Ninja_0                                 ;B28D28;
     dw Hitboxes_PirateWalking_9_Ninja_0                                  ;B28D2A;
 
+%anchor($B28D2C)
 ExtendedSpritemaps_PirateWalking_1E:
     dw $0003,$FFFB,$FFF5                                                 ;B28D2C;
     dw Spitemaps_PirateWalking_19                                        ;B28D32;
@@ -1268,6 +1392,7 @@ ExtendedSpritemaps_PirateWalking_1E:
     dw Spitemaps_PirateWalking_9_Ninja_0                                 ;B28D42;
     dw Hitboxes_PirateWalking_9_Ninja_0                                  ;B28D44;
 
+%anchor($B28D46)
 ExtendedSpritemaps_PirateWalking_1F:
     dw $0003,$0005,$FFF4                                                 ;B28D46;
     dw Spitemaps_PirateWalking_18                                        ;B28D4C;
@@ -1279,6 +1404,7 @@ ExtendedSpritemaps_PirateWalking_1F:
     dw Spitemaps_PirateWalking_16_Ninja_3                                ;B28D5C;
     dw Hitboxes_PirateWalking_1D_Ninja_A                                 ;B28D5E;
 
+%anchor($B28D60)
 ExtendedSpritemaps_PirateWalking_20:
     dw $0002,$0000,$0003                                                 ;B28D60;
     dw Spitemaps_PirateWalking_20                                        ;B28D66;
@@ -1287,6 +1413,7 @@ ExtendedSpritemaps_PirateWalking_20:
     dw Spitemaps_PirateWalking_16_Ninja_3                                ;B28D6E;
     dw Hitboxes_PirateWalking_1D_Ninja_A                                 ;B28D70;
 
+%anchor($B28D72)
 ExtendedSpritemaps_PirateWalking_21:
     dw $0003,$0005,$FFF5                                                 ;B28D72;
     dw Spitemaps_PirateWalking_19                                        ;B28D78;
@@ -1298,91 +1425,109 @@ ExtendedSpritemaps_PirateWalking_21:
     dw Spitemaps_PirateWalking_16_Ninja_3                                ;B28D88;
     dw Hitboxes_PirateWalking_1D_Ninja_A                                 ;B28D8A;
 
+%anchor($B28D8C)
 ExtendedSpritemaps_PirateWalking_22:
     dw $0001,$0000,$0001                                                 ;B28D8C;
     dw Spritemaps_PirateWalking_0                                        ;B28D92;
     dw Hitboxes_PirateWalking_0                                          ;B28D94;
 
+%anchor($B28D96)
 ExtendedSpritemaps_PirateNinja_12:
     dw $0001,$0000,$0000                                                 ;B28D96;
     dw Spitemaps_PirateNinja_2D                                          ;B28D9C;
     dw Hitboxes_PirateNinja_40                                           ;B28D9E;
 
+%anchor($B28DA0)
 ExtendedSpritemaps_PirateNinja_13:
     dw $0001,$0000,$0000                                                 ;B28DA0;
     dw Spitemaps_PirateNinja_2E                                          ;B28DA6;
     dw Hitboxes_PirateNinja_41                                           ;B28DA8;
 
+%anchor($B28DAA)
 ExtendedSpritemaps_PirateNinja_14:
     dw $0001,$0000,$0000                                                 ;B28DAA;
     dw Spitemaps_PirateNinja_2E_miscount                                 ;B28DB0;
     dw Hitboxes_PirateNinja_42                                           ;B28DB2;
 
+%anchor($B28DB4)
 ExtendedSpritemaps_PirateNinja_15:
     dw $0001,$0000,$0000                                                 ;B28DB4;
     dw Spitemaps_PirateNinja_2F                                          ;B28DBA;
     dw Hitboxes_PirateNinja_43                                           ;B28DBC;
 
+%anchor($B28DBE)
 ExtendedSpritemaps_PirateNinja_16:
     dw $0001,$0000,$0000                                                 ;B28DBE;
     dw Spitemaps_PirateNinja_30                                          ;B28DC4;
     dw Hitboxes_PirateNinja_44                                           ;B28DC6;
 
+%anchor($B28DC8)
 ExtendedSpritemaps_PirateNinja_17:
     dw $0001,$0000,$0000                                                 ;B28DC8;
     dw Spitemaps_PirateNinja_31                                          ;B28DCE;
     dw Hitboxes_PirateNinja_45                                           ;B28DD0;
 
+%anchor($B28DD2)
 ExtendedSpritemaps_PirateNinja_18:
     dw $0001,$0000,$0000                                                 ;B28DD2;
     dw Spitemaps_PirateNinja_32                                          ;B28DD8;
     dw Hitboxes_PirateNinja_46                                           ;B28DDA;
 
+%anchor($B28DDC)
 ExtendedSpritemaps_PirateNinja_19:
     dw $0001,$0000,$0000                                                 ;B28DDC;
     dw Spitemaps_PirateNinja_33                                          ;B28DE2;
     dw Hitboxes_PirateNinja_47                                           ;B28DE4;
 
+%anchor($B28DE6)
 ExtendedSpritemaps_PirateNinja_1A:
     dw $0001,$0000,$0000                                                 ;B28DE6;
     dw Spitemaps_PirateNinja_34                                          ;B28DEC;
     dw Hitboxes_PirateNinja_48                                           ;B28DEE;
 
+%anchor($B28DF0)
 ExtendedSpritemaps_PirateNinja_1B:
     dw $0001,$0000,$0000                                                 ;B28DF0;
     dw Spitemaps_PirateNinja_35                                          ;B28DF6;
     dw Hitboxes_PirateNinja_49                                           ;B28DF8;
 
+%anchor($B28DFA)
 ExtendedSpritemaps_PirateNinja_1C:
     dw $0001,$0000,$0000                                                 ;B28DFA;
     dw Spitemaps_PirateNinja_36                                          ;B28E00;
     dw Hitboxes_PirateNinja_4A                                           ;B28E02;
 
+%anchor($B28E04)
 ExtendedSpritemaps_PirateNinja_1D:
     dw $0001,$0000,$0000                                                 ;B28E04;
     dw Spitemaps_PirateNinja_37                                          ;B28E0A;
     dw Hitboxes_PirateNinja_4B                                           ;B28E0C;
 
+%anchor($B28E0E)
 ExtendedSpritemaps_PirateNinja_1E:
     dw $0001,$0000,$0000                                                 ;B28E0E;
     dw Spitemaps_PirateNinja_38                                          ;B28E14;
     dw Hitboxes_PirateNinja_4C                                           ;B28E16;
 
+%anchor($B28E18)
 ExtendedSpritemaps_PirateNinja_1F:
     dw $0001,$0000,$0000                                                 ;B28E18;
     dw Spitemaps_PirateNinja_39                                          ;B28E1E;
     dw Hitboxes_PirateNinja_4D                                           ;B28E20;
 
+%anchor($B28E22)
 ExtendedSpritemaps_PirateNinja_20:
     dw $0001,$0000,$0000                                                 ;B28E22;
     dw Spitemaps_PirateNinja_3A                                          ;B28E28;
     dw Hitboxes_PirateNinja_4E                                           ;B28E2A;
 
+%anchor($B28E2C)
 ExtendedSpritemaps_PirateNinja_21:
     dw $0001,$0000,$0000                                                 ;B28E2C;
     dw Spitemaps_PirateNinja_3B                                          ;B28E32;
     dw Hitboxes_PirateNinja_4F                                           ;B28E34;
 
+%anchor($B28E36)
 ExtendedSpritemaps_PirateNinja_22:
     dw $0002,$FFFB,$0001                                                 ;B28E36;
     dw Spitemaps_PirateWalking_26_Ninja_D                                ;B28E3C;
@@ -1391,6 +1536,7 @@ ExtendedSpritemaps_PirateNinja_22:
     dw Spitemaps_PirateNinja_5                                           ;B28E44;
     dw Hitboxes_PirateNinja_14                                           ;B28E46;
 
+%anchor($B28E48)
 ExtendedSpritemaps_PirateNinja_23:
     dw $0002,$FFFB,$0003                                                 ;B28E48;
     dw Spitemaps_PirateWalking_27_Ninja_E                                ;B28E4E;
@@ -1399,6 +1545,7 @@ ExtendedSpritemaps_PirateNinja_23:
     dw Spitemaps_PirateNinja_6                                           ;B28E56;
     dw Hitboxes_PirateNinja_15                                           ;B28E58;
 
+%anchor($B28E5A)
 ExtendedSpritemaps_PirateNinja_24:
     dw $0002,$FFFB,$0004                                                 ;B28E5A;
     dw Spitemaps_PirateWalking_28_Ninja_F                                ;B28E60;
@@ -1407,6 +1554,7 @@ ExtendedSpritemaps_PirateNinja_24:
     dw Spitemaps_PirateNinja_7                                           ;B28E68;
     dw Hitboxes_PirateNinja_16                                           ;B28E6A;
 
+%anchor($B28E6C)
 ExtendedSpritemaps_PirateNinja_25:
     dw $0002,$FFFB,$0002                                                 ;B28E6C;
     dw Spitemaps_PirateWalking_29_Ninja_10                               ;B28E72;
@@ -1415,6 +1563,7 @@ ExtendedSpritemaps_PirateNinja_25:
     dw Spitemaps_PirateNinja_8                                           ;B28E7A;
     dw Hitboxes_PirateNinja_17                                           ;B28E7C;
 
+%anchor($B28E7E)
 ExtendedSpritemaps_PirateNinja_26:
     dw $0002,$FFFB,$0001                                                 ;B28E7E;
     dw Spitemaps_PirateWalking_29_Ninja_10                               ;B28E84;
@@ -1423,6 +1572,7 @@ ExtendedSpritemaps_PirateNinja_26:
     dw Spitemaps_PirateNinja_9                                           ;B28E8C;
     dw Hitboxes_PirateNinja_18                                           ;B28E8E;
 
+%anchor($B28E90)
 ExtendedSpritemaps_PirateNinja_27:
     dw $0002,$FFFB,$0003                                                 ;B28E90;
     dw Spitemaps_PirateWalking_28_Ninja_F                                ;B28E96;
@@ -1431,6 +1581,7 @@ ExtendedSpritemaps_PirateNinja_27:
     dw Spitemaps_PirateNinja_A                                           ;B28E9E;
     dw Hitboxes_PirateNinja_19                                           ;B28EA0;
 
+%anchor($B28EA2)
 ExtendedSpritemaps_PirateNinja_28:
     dw $0002,$FFFB,$0003                                                 ;B28EA2;
     dw Spitemaps_PirateWalking_27_Ninja_E                                ;B28EA8;
@@ -1439,6 +1590,7 @@ ExtendedSpritemaps_PirateNinja_28:
     dw Spitemaps_PirateNinja_B                                           ;B28EB0;
     dw Hitboxes_PirateNinja_1A                                           ;B28EB2;
 
+%anchor($B28EB4)
 ExtendedSpritemaps_PirateNinja_29:
     dw $0002,$FFFB,$0001                                                 ;B28EB4;
     dw Spitemaps_PirateWalking_26_Ninja_D                                ;B28EBA;
@@ -1447,6 +1599,7 @@ ExtendedSpritemaps_PirateNinja_29:
     dw Spitemaps_PirateNinja_C                                           ;B28EC2;
     dw Hitboxes_PirateNinja_1B                                           ;B28EC4;
 
+%anchor($B28EC6)
 ExtendedSpritemaps_PirateNinja_2A:
     dw $0002,$0005,$0001                                                 ;B28EC6;
     dw Spitemaps_PirateWalking_2B_Ninja_21                               ;B28ECC;
@@ -1455,6 +1608,7 @@ ExtendedSpritemaps_PirateNinja_2A:
     dw Spitemaps_PirateNinja_19                                          ;B28ED4;
     dw Hitboxes_PirateNinja_2A                                           ;B28ED6;
 
+%anchor($B28ED8)
 ExtendedSpritemaps_PirateNinja_2B:
     dw $0002,$0005,$0003                                                 ;B28ED8;
     dw Spitemaps_PirateWalking_2C_Ninja_22                               ;B28EDE;
@@ -1463,6 +1617,7 @@ ExtendedSpritemaps_PirateNinja_2B:
     dw Spitemaps_PirateNinja_1A                                          ;B28EE6;
     dw Hitboxes_PirateNinja_2B                                           ;B28EE8;
 
+%anchor($B28EEA)
 ExtendedSpritemaps_PirateNinja_2C:
     dw $0002,$0005,$0004                                                 ;B28EEA;
     dw Spitemaps_PirateWalking_2D_Ninja_23                               ;B28EF0;
@@ -1471,6 +1626,7 @@ ExtendedSpritemaps_PirateNinja_2C:
     dw Spitemaps_PirateNinja_1B                                          ;B28EF8;
     dw Hitboxes_PirateNinja_2C                                           ;B28EFA;
 
+%anchor($B28EFC)
 ExtendedSpritemaps_PirateNinja_2D:
     dw $0002,$0005,$0002                                                 ;B28EFC;
     dw Spitemaps_PirateWalking_2E_Ninja_24                               ;B28F02;
@@ -1479,6 +1635,7 @@ ExtendedSpritemaps_PirateNinja_2D:
     dw Spitemaps_PirateNinja_1C                                          ;B28F0A;
     dw Hitboxes_PirateNinja_2D                                           ;B28F0C;
 
+%anchor($B28F0E)
 ExtendedSpritemaps_PirateNinja_2E:
     dw $0002,$0005,$0001                                                 ;B28F0E;
     dw Spitemaps_PirateWalking_2E_Ninja_24                               ;B28F14;
@@ -1487,6 +1644,7 @@ ExtendedSpritemaps_PirateNinja_2E:
     dw Spitemaps_PirateNinja_1D                                          ;B28F1C;
     dw Hitboxes_PirateNinja_2E                                           ;B28F1E;
 
+%anchor($B28F20)
 ExtendedSpritemaps_PirateNinja_2F:
     dw $0002,$0005,$0003                                                 ;B28F20;
     dw Spitemaps_PirateWalking_2D_Ninja_23                               ;B28F26;
@@ -1495,6 +1653,7 @@ ExtendedSpritemaps_PirateNinja_2F:
     dw Spitemaps_PirateNinja_1E                                          ;B28F2E;
     dw Hitboxes_PirateNinja_2F                                           ;B28F30;
 
+%anchor($B28F32)
 ExtendedSpritemaps_PirateNinja_30:
     dw $0002,$0005,$0003                                                 ;B28F32;
     dw Spitemaps_PirateWalking_2C_Ninja_22                               ;B28F38;
@@ -1503,6 +1662,7 @@ ExtendedSpritemaps_PirateNinja_30:
     dw Spitemaps_PirateNinja_1F                                          ;B28F40;
     dw Hitboxes_PirateNinja_30                                           ;B28F42;
 
+%anchor($B28F44)
 ExtendedSpritemaps_PirateNinja_31:
     dw $0002,$0005,$0001                                                 ;B28F44;
     dw Spitemaps_PirateWalking_2B_Ninja_21                               ;B28F4A;
@@ -1511,149 +1671,178 @@ ExtendedSpritemaps_PirateNinja_31:
     dw Spitemaps_PirateNinja_20                                          ;B28F52;
     dw Hitboxes_PirateNinja_31                                           ;B28F54;
 
+%anchor($B28F56)
 ExtendedSpritemaps_PirateNinja_32:
     dw $0001,$0000,$0003                                                 ;B28F56;
     dw Spitemaps_PirateNinja_15                                          ;B28F5C;
     dw Hitboxes_PirateNinja_25                                           ;B28F5E;
 
+%anchor($B28F60)
 ExtendedSpritemaps_PirateNinja_33:
     dw $0001,$0000,$0003                                                 ;B28F60;
     dw Spitemaps_PirateNinja_16                                          ;B28F66;
     dw Hitboxes_PirateNinja_26                                           ;B28F68;
 
+%anchor($B28F6A)
 ExtendedSpritemaps_PirateNinja_34:
     dw $0001,$0000,$0003                                                 ;B28F6A;
     dw Spitemaps_PirateNinja_17                                          ;B28F70;
     dw Hitboxes_PirateNinja_27                                           ;B28F72;
 
+%anchor($B28F74)
 ExtendedSpritemaps_PirateNinja_35:
     dw $0001,$0000,$0003                                                 ;B28F74;
     dw Spitemaps_PirateNinja_29                                          ;B28F7A;
     dw Hitboxes_PirateNinja_3B                                           ;B28F7C;
 
+%anchor($B28F7E)
 ExtendedSpritemaps_PirateNinja_36:
     dw $0001,$0000,$0003                                                 ;B28F7E;
     dw Spitemaps_PirateNinja_2A                                          ;B28F84;
     dw Hitboxes_PirateNinja_3C                                           ;B28F86;
 
+%anchor($B28F88)
 ExtendedSpritemaps_PirateNinja_37:
     dw $0001,$0000,$0003                                                 ;B28F88;
     dw Spitemaps_PirateNinja_2B                                          ;B28F8E;
     dw Hitboxes_PirateNinja_3D                                           ;B28F90;
 
+%anchor($B28F92)
 ExtendedSpritemaps_PirateWalking_23:
     dw $0001,$0000,$0008                                                 ;B28F92;
     dw Spitemaps_PirateWalking_2A_Ninja_18                               ;B28F98;
     dw Hitboxes_PirateWalking_38                                         ;B28F9A;
 
+%anchor($B28F9C)
 ExtendedSpritemaps_PirateNinja_38:
     dw $0001,$0000,$0008                                                 ;B28F9C;
     dw Spitemaps_PirateWalking_2A_Ninja_18                               ;B28FA2;
     dw Hitboxes_PirateNinja_29                                           ;B28FA4;
 
+%anchor($B28FA6)
 ExtendedSpritemaps_PirateWalking_24:
     dw $0001,$0000,$0008                                                 ;B28FA6;
     dw Spitemaps_PirateWalking_2F                                        ;B28FAC;
     dw Hitboxes_PirateWalking_3D                                         ;B28FAE;
 
+%anchor($B28FB0)
 ExtendedSpritemaps_PirateNinja_39:
     dw $0001,$0000,$0008                                                 ;B28FB0;
     dw Spitemaps_PirateWalking_2F                                        ;B28FB6;
     dw Hitboxes_PirateNinja_3F                                           ;B28FB8;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B28FBA)
 UNUSED_ExtendedSpritemaps_SpacePirate_B28FBA:
     dw $0001,$0000,$0000                                                 ;B28FBA;
     dw UNUSED_Spitemaps_SpacePirate_B2DEBA                               ;B28FC0;
     dw UNUSED_Hitboxes_SpacePirate_B2A57C                                ;B28FC2;
 
+%anchor($B28FC4)
 UNUSED_ExtendedSpritemaps_SpacePirate_B28FC4:
     dw $0001,$0000,$0000                                                 ;B28FC4;
     dw UNUSED_Spitemaps_SpacePirate_B2DF20                               ;B28FCA;
     dw UNUSED_Hitboxes_SpacePirate_B2A58A                                ;B28FCC;
 
+%anchor($B28FCE)
 UNUSED_ExtendedSpritemaps_SpacePirate_B28FCE:
     dw $0001,$0000,$0000                                                 ;B28FCE;
     dw UNUSED_Spitemaps_SpacePirate_B2DF6D                               ;B28FD4;
     dw UNUSED_Hitboxes_SpacePirate_B2A598                                ;B28FD6;
 
+%anchor($B28FD8)
 UNUSED_ExtendedSpritemaps_SpacePirate_B28FD8:
     dw $0001,$0000,$0000                                                 ;B28FD8;
     dw UNUSED_Spitemaps_SpacePirate_B2DFB5                               ;B28FDE;
     dw UNUSED_Hitboxes_SpacePirate_B2A5A6                                ;B28FE0;
 
+%anchor($B28FE2)
 UNUSED_ExtendedSpritemaps_SpacePirate_B28FE2:
     dw $0001,$0000,$0000                                                 ;B28FE2;
     dw UNUSED_Spitemaps_SpacePirate_B2E71A                               ;B28FE8;
     dw UNUSED_Hitboxes_SpacePirate_B2A760                                ;B28FEA;
 
+%anchor($B28FEC)
 UNUSED_ExtendedSpritemaps_SpacePirate_B28FEC:
     dw $0001,$0000,$0000                                                 ;B28FEC;
     dw UNUSED_Spitemaps_SpacePirate_B2E780                               ;B28FF2;
     dw UNUSED_Hitboxes_SpacePirate_B2A76E                                ;B28FF4;
 
+%anchor($B28FF6)
 UNUSED_ExtendedSpritemaps_SpacePirate_B28FF6:
     dw $0001,$0000,$0000                                                 ;B28FF6;
     dw UNUSED_Spitemaps_SpacePirate_B2E7CD                               ;B28FFC;
     dw UNUSED_Hitboxes_SpacePirate_B2A77C                                ;B28FFE;
 
+%anchor($B29000)
 UNUSED_ExtendedSpritemaps_SpacePirate_B29000:
     dw $0001,$0000,$0000                                                 ;B29000;
     dw UNUSED_Spitemaps_SpacePirate_B2E815                               ;B29006;
     dw UNUSED_Hitboxes_SpacePirate_B2A78A                                ;B29008;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B2900A)
 ExtendedSpritemaps_PirateNinja_3A:
     dw $0001,$0000,$0000                                                 ;B2900A;
     dw Spitemaps_PirateNinja_48                                          ;B29010;
     dw Hitboxes_PirateNinja_5A                                           ;B29012;
 
+%anchor($B29014)
 ExtendedSpritemaps_PirateNinja_3B:
     dw $0001,$0000,$0000                                                 ;B29014;
     dw Spitemaps_PirateNinja_4C                                          ;B2901A;
     dw Hitboxes_PirateNinja_5E                                           ;B2901C;
 
+%anchor($B2901E)
 ExtendedSpritemaps_PirateNinja_3C:
     dw $0001,$0000,$0000                                                 ;B2901E;
     dw Spitemaps_PirateNinja_4E                                          ;B29024;
     dw Hitboxes_PirateNinja_60                                           ;B29026;
 
+%anchor($B29028)
 ExtendedSpritemaps_PirateNinja_3D:
     dw $0001,$0000,$0000                                                 ;B29028;
     dw Spitemaps_PirateNinja_52                                          ;B2902E;
     dw Hitboxes_PirateNinja_64                                           ;B29030;
 
+%anchor($B29032)
 ExtendedSpritemaps_PirateNinja_3E:
     dw $0001,$0005,$0000                                                 ;B29032;
     dw Spitemaps_PirateNinja_4A                                          ;B29038;
     dw Hitboxes_PirateNinja_5C                                           ;B2903A;
 
+%anchor($B2903C)
 ExtendedSpritemaps_PirateNinja_3F:
     dw $0001,$FFFB,$0001                                                 ;B2903C;
     dw Spitemaps_PirateNinja_4B                                          ;B29042;
     dw Hitboxes_PirateNinja_5D                                           ;B29044;
 
+%anchor($B29046)
 ExtendedSpritemaps_PirateNinja_40:
     dw $0001,$FFFB,$0000                                                 ;B29046;
     dw Spitemaps_PirateNinja_50                                          ;B2904C;
     dw Hitboxes_PirateNinja_62                                           ;B2904E;
 
+%anchor($B29050)
 ExtendedSpritemaps_PirateNinja_41:
     dw $0001,$0005,$0001                                                 ;B29050;
     dw Spitemaps_PirateNinja_51                                          ;B29056;
     dw Hitboxes_PirateNinja_63                                           ;B29058;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B2905A)
 UNUSED_ExtendedSpritemaps_SpacePirate_B2905A:
     dw $0001,$0000,$0000                                                 ;B2905A;
     dw UNUSED_Spitemaps_SpacePirate_B2C9FC                               ;B29060;
     dw UNUSED_Hitboxes_SpacePirate_B29FE8                                ;B29062;
 
+%anchor($B29064)
 UNUSED_ExtendedSpritemaps_SpacePirate_B29064:
     dw $0001,$0000,$0000                                                 ;B29064;
     dw UNUSED_Spitemaps_SpacePirate_B2C9FC                               ;B2906A;
     dw UNUSED_Hitboxes_SpacePirate_B29FE8                                ;B2906C;
 
+%anchor($B2906E)
 UNUSED_ExtendedSpritemaps_SpacePirate_B2906E:
     dw $0002,$FFFB,$0003                                                 ;B2906E;
     dw Spitemaps_PirateNinja_47                                          ;B29074;
@@ -1662,6 +1851,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B2906E:
     dw UNUSED_Spitemaps_SpacePirate_B2D0F8                               ;B2907C;
     dw UNUSED_Hitboxes_SpacePirate_B2A17E                                ;B2907E;
 
+%anchor($B29080)
 UNUSED_ExtendedSpritemaps_SpacePirate_B29080:
     dw $0002,$FFFB,$0003                                                 ;B29080;
     dw UNUSED_Spitemaps_SpacePirate_B2DB49                               ;B29086;
@@ -1670,6 +1860,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B29080:
     dw UNUSED_Spitemaps_SpacePirate_B2D12C                               ;B2908E;
     dw UNUSED_Hitboxes_SpacePirate_B2A18C                                ;B29090;
 
+%anchor($B29092)
 UNUSED_ExtendedSpritemaps_SpacePirate_B29092:
     dw $0002,$FFFB,$0003                                                 ;B29092;
     dw UNUSED_Spitemaps_SpacePirate_B2DB78                               ;B29098;
@@ -1678,6 +1869,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B29092:
     dw UNUSED_Spitemaps_SpacePirate_B2D165                               ;B290A0;
     dw UNUSED_Hitboxes_SpacePirate_B2A19A                                ;B290A2;
 
+%anchor($B290A4)
 UNUSED_ExtendedSpritemaps_SpacePirate_B290A4:
     dw $0002,$FFFB,$0003                                                 ;B290A4;
     dw UNUSED_Spitemaps_SpacePirate_B2DBA2                               ;B290AA;
@@ -1686,6 +1878,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B290A4:
     dw UNUSED_Spitemaps_SpacePirate_B2D1A3                               ;B290B2;
     dw UNUSED_Hitboxes_SpacePirate_B2A1A8                                ;B290B4;
 
+%anchor($B290B6)
 UNUSED_ExtendedSpritemaps_SpacePirate_B290B6:
     dw $0002,$FFFB,$0003                                                 ;B290B6;
     dw UNUSED_Spitemaps_SpacePirate_B2DBA2                               ;B290BC;
@@ -1694,6 +1887,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B290B6:
     dw UNUSED_Spitemaps_SpacePirate_B2D1DC                               ;B290C4;
     dw UNUSED_Hitboxes_SpacePirate_B2A1B6                                ;B290C6;
 
+%anchor($B290C8)
 UNUSED_ExtendedSpritemaps_SpacePirate_B290C8:
     dw $0002,$FFFB,$0003                                                 ;B290C8;
     dw UNUSED_Spitemaps_SpacePirate_B2DB78                               ;B290CE;
@@ -1702,6 +1896,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B290C8:
     dw UNUSED_Spitemaps_SpacePirate_B2D210                               ;B290D6;
     dw UNUSED_Hitboxes_SpacePirate_B2A1C4                                ;B290D8;
 
+%anchor($B290DA)
 UNUSED_ExtendedSpritemaps_SpacePirate_B290DA:
     dw $0002,$FFFB,$0003                                                 ;B290DA;
     dw UNUSED_Spitemaps_SpacePirate_B2DB49                               ;B290E0;
@@ -1710,6 +1905,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B290DA:
     dw UNUSED_Spitemaps_SpacePirate_B2D249                               ;B290E8;
     dw UNUSED_Hitboxes_SpacePirate_B2A1D2                                ;B290EA;
 
+%anchor($B290EC)
 UNUSED_ExtendedSpritemaps_SpacePirate_B290EC:
     dw $0002,$FFFB,$0003                                                 ;B290EC;
     dw Spitemaps_PirateNinja_47                                          ;B290F2;
@@ -1719,6 +1915,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B290EC:
     dw UNUSED_Hitboxes_SpacePirate_B2A1E0                                ;B290FC;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B290FE)
 ExtendedSpritemaps_PirateNinja_42:
     dw $0002,$0000,$0005                                                 ;B290FE;
     dw Spitemaps_PirateNinja_47                                          ;B29104;
@@ -1728,6 +1925,7 @@ ExtendedSpritemaps_PirateNinja_42:
     dw Hitboxes_PirateNinja_52                                           ;B2910E;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B29110)
 UNUSED_ExtendedSpritemaps_SpacePirate_B29110:
     dw $0002,$0000,$0005                                                 ;B29110;
     dw UNUSED_Spitemaps_SpacePirate_B2DBCC                               ;B29116;
@@ -1736,6 +1934,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B29110:
     dw Spitemaps_PirateNinja_3D                                          ;B2911E;
     dw Hitboxes_PirateNinja_51                                           ;B29120;
 
+%anchor($B29122)
 UNUSED_ExtendedSpritemaps_SpacePirate_B29122:
     dw $0002,$0000,$0005                                                 ;B29122;
     dw UNUSED_Spitemaps_SpacePirate_B2DBF1                               ;B29128;
@@ -1744,6 +1943,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B29122:
     dw Spitemaps_PirateNinja_3D                                          ;B29130;
     dw Hitboxes_PirateNinja_51                                           ;B29132;
 
+%anchor($B29134)
 UNUSED_ExtendedSpritemaps_SpacePirate_B29134:
     dw $0002,$0000,$0004                                                 ;B29134;
     dw UNUSED_Spitemaps_SpacePirate_B2DC16                               ;B2913A;
@@ -1752,6 +1952,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B29134:
     dw Spitemaps_PirateNinja_3D                                          ;B29142;
     dw Hitboxes_PirateNinja_51                                           ;B29144;
 
+%anchor($B29146)
 UNUSED_ExtendedSpritemaps_SpacePirate_B29146:
     dw $0002,$0000,$0003                                                 ;B29146;
     dw UNUSED_Spitemaps_SpacePirate_B2DC45                               ;B2914C;
@@ -1760,6 +1961,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B29146:
     dw Spitemaps_PirateNinja_3D                                          ;B29154;
     dw Hitboxes_PirateNinja_51                                           ;B29156;
 
+%anchor($B29158)
 UNUSED_ExtendedSpritemaps_SpacePirate_B29158:
     dw $0002,$0000,$0005                                                 ;B29158;
     dw UNUSED_Spitemaps_SpacePirate_B2DC16                               ;B2915E;
@@ -1768,6 +1970,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B29158:
     dw Spitemaps_PirateNinja_3D                                          ;B29166;
     dw Hitboxes_PirateNinja_51                                           ;B29168;
 
+%anchor($B2916A)
 UNUSED_ExtendedSpritemaps_SpacePirate_B2916A:
     dw $0002,$0000,$0005                                                 ;B2916A;
     dw UNUSED_Spitemaps_SpacePirate_B2DBCC                               ;B29170;
@@ -1776,6 +1979,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B2916A:
     dw Spitemaps_PirateNinja_3D                                          ;B29178;
     dw Hitboxes_PirateNinja_51                                           ;B2917A;
 
+%anchor($B2917C)
 UNUSED_ExtendedSpritemaps_SpacePirate_B2917C:
     dw $0002,$0000,$0006                                                 ;B2917C;
     dw UNUSED_Spitemaps_SpacePirate_B2DBA2                               ;B29182;
@@ -1784,6 +1988,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B2917C:
     dw Spitemaps_PirateNinja_3D                                          ;B2918A;
     dw Hitboxes_PirateNinja_51                                           ;B2918C;
 
+%anchor($B2918E)
 UNUSED_ExtendedSpritemaps_SpacePirate_B2918E:
     dw $0002,$0000,$0007                                                 ;B2918E;
     dw UNUSED_Spitemaps_SpacePirate_B2DFFD                               ;B29194;
@@ -1792,46 +1997,55 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B2918E:
     dw Spitemaps_PirateNinja_3E                                          ;B2919C;
     dw Hitboxes_PirateNinja_52                                           ;B2919E;
 
+%anchor($B291A0)
 UNUSED_ExtendedSpritemaps_SpacePirate_B291A0:
     dw $0001,$0000,$0003                                                 ;B291A0;
     dw UNUSED_Spitemaps_SpacePirate_B2D328                               ;B291A6;
     dw UNUSED_Hitboxes_SpacePirate_B2A20A                                ;B291A8;
 
+%anchor($B291AA)
 UNUSED_ExtendedSpritemaps_SpacePirate_B291AA:
     dw $0001,$0000,$0003                                                 ;B291AA;
     dw UNUSED_Spitemaps_SpacePirate_B2D339                               ;B291B0;
     dw UNUSED_Hitboxes_SpacePirate_B2A218                                ;B291B2;
 
+%anchor($B291B4)
 UNUSED_ExtendedSpritemaps_SpacePirate_B291B4:
     dw $0001,$0000,$0003                                                 ;B291B4;
     dw UNUSED_Spitemaps_SpacePirate_B2D345                               ;B291BA;
     dw UNUSED_Hitboxes_SpacePirate_B2A226                                ;B291BC;
 
+%anchor($B291BE)
 UNUSED_ExtendedSpritemaps_SpacePirate_B291BE:
     dw $0001,$0000,$0003                                                 ;B291BE;
     dw UNUSED_Spitemaps_SpacePirate_B2D356                               ;B291C4;
     dw UNUSED_Hitboxes_SpacePirate_B2A234                                ;B291C6;
 
+%anchor($B291C8)
 UNUSED_ExtendedSpritemaps_SpacePirate_B291C8:
     dw $0001,$0000,$0003                                                 ;B291C8;
     dw UNUSED_Spitemaps_SpacePirate_B2D362                               ;B291CE;
     dw UNUSED_Hitboxes_SpacePirate_B2A242                                ;B291D0;
 
+%anchor($B291D2)
 UNUSED_ExtendedSpritemaps_SpacePirate_B291D2:
     dw $0001,$0000,$0003                                                 ;B291D2;
     dw UNUSED_Spitemaps_SpacePirate_B2D373                               ;B291D8;
     dw UNUSED_Hitboxes_SpacePirate_B2A250                                ;B291DA;
 
+%anchor($B291DC)
 UNUSED_ExtendedSpritemaps_SpacePirate_B291DC:
     dw $0001,$0000,$0003                                                 ;B291DC;
     dw UNUSED_Spitemaps_SpacePirate_B2D37F                               ;B291E2;
     dw UNUSED_Hitboxes_SpacePirate_B2A25E                                ;B291E4;
 
+%anchor($B291E6)
 UNUSED_ExtendedSpritemaps_SpacePirate_B291E6:
     dw $0001,$0000,$0003                                                 ;B291E6;
     dw UNUSED_Spitemaps_SpacePirate_B2D390                               ;B291EC;
     dw UNUSED_Hitboxes_SpacePirate_B2A26C                                ;B291EE;
 
+%anchor($B291F0)
 UNUSED_ExtendedSpritemaps_SpacePirate_B291F0:
     dw $0002,$0005,$0003                                                 ;B291F0;
     dw Spitemaps_PirateNinja_4D                                          ;B291F6;
@@ -1840,6 +2054,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B291F0:
     dw UNUSED_Spitemaps_SpacePirate_B2D406                               ;B291FE;
     dw UNUSED_Hitboxes_SpacePirate_B2A2A4                                ;B29200;
 
+%anchor($B29202)
 UNUSED_ExtendedSpritemaps_SpacePirate_B29202:
     dw $0002,$0005,$0003                                                 ;B29202;
     dw UNUSED_Spitemaps_SpacePirate_B2E3A9                               ;B29208;
@@ -1848,6 +2063,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B29202:
     dw UNUSED_Spitemaps_SpacePirate_B2D43A                               ;B29210;
     dw UNUSED_Hitboxes_SpacePirate_B2A2B2                                ;B29212;
 
+%anchor($B29214)
 UNUSED_ExtendedSpritemaps_SpacePirate_B29214:
     dw $0002,$0005,$0003                                                 ;B29214;
     dw UNUSED_Spitemaps_SpacePirate_B2E3D8                               ;B2921A;
@@ -1856,6 +2072,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B29214:
     dw UNUSED_Spitemaps_SpacePirate_B2D473                               ;B29222;
     dw UNUSED_Hitboxes_SpacePirate_B2A2C0                                ;B29224;
 
+%anchor($B29226)
 UNUSED_ExtendedSpritemaps_SpacePirate_B29226:
     dw $0002,$0005,$0003                                                 ;B29226;
     dw UNUSED_Spitemaps_SpacePirate_B2E402                               ;B2922C;
@@ -1864,6 +2081,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B29226:
     dw UNUSED_Spitemaps_SpacePirate_B2D4B1                               ;B29234;
     dw UNUSED_Hitboxes_SpacePirate_B2A2CE                                ;B29236;
 
+%anchor($B29238)
 UNUSED_ExtendedSpritemaps_SpacePirate_B29238:
     dw $0002,$0005,$0003                                                 ;B29238;
     dw UNUSED_Spitemaps_SpacePirate_B2E402                               ;B2923E;
@@ -1872,6 +2090,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B29238:
     dw UNUSED_Spitemaps_SpacePirate_B2D4EA                               ;B29246;
     dw UNUSED_Hitboxes_SpacePirate_B2A2DC                                ;B29248;
 
+%anchor($B2924A)
 UNUSED_ExtendedSpritemaps_SpacePirate_B2924A:
     dw $0002,$0005,$0003                                                 ;B2924A;
     dw UNUSED_Spitemaps_SpacePirate_B2E3D8                               ;B29250;
@@ -1880,6 +2099,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B2924A:
     dw UNUSED_Spitemaps_SpacePirate_B2D51E                               ;B29258;
     dw UNUSED_Hitboxes_SpacePirate_B2A2EA                                ;B2925A;
 
+%anchor($B2925C)
 UNUSED_ExtendedSpritemaps_SpacePirate_B2925C:
     dw $0002,$0005,$0003                                                 ;B2925C;
     dw UNUSED_Spitemaps_SpacePirate_B2E3A9                               ;B29262;
@@ -1888,6 +2108,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B2925C:
     dw UNUSED_Spitemaps_SpacePirate_B2D557                               ;B2926A;
     dw UNUSED_Hitboxes_SpacePirate_B2A2F8                                ;B2926C;
 
+%anchor($B2926E)
 UNUSED_ExtendedSpritemaps_SpacePirate_B2926E:
     dw $0002,$0005,$0003                                                 ;B2926E;
     dw Spitemaps_PirateNinja_4D                                          ;B29274;
@@ -1897,6 +2118,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B2926E:
     dw UNUSED_Hitboxes_SpacePirate_B2A306                                ;B2927E;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B29280)
 ExtendedSpritemaps_PirateNinja_43:
     dw $0002,$0000,$0005                                                 ;B29280;
     dw Spitemaps_PirateNinja_4D                                          ;B29286;
@@ -1906,6 +2128,7 @@ ExtendedSpritemaps_PirateNinja_43:
     dw Hitboxes_PirateNinja_56                                           ;B29290;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B29292)
 UNUSED_ExtendedSpritemaps_SpacePirate_B29292:
     dw $0002,$0000,$0005                                                 ;B29292;
     dw UNUSED_Spitemaps_SpacePirate_B2E42C                               ;B29298;
@@ -1914,6 +2137,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B29292:
     dw Spitemaps_PirateNinja_41                                          ;B292A0;
     dw Hitboxes_PirateNinja_55                                           ;B292A2;
 
+%anchor($B292A4)
 UNUSED_ExtendedSpritemaps_SpacePirate_B292A4:
     dw $0002,$0000,$0005                                                 ;B292A4;
     dw UNUSED_Spitemaps_SpacePirate_B2E451                               ;B292AA;
@@ -1922,6 +2146,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B292A4:
     dw Spitemaps_PirateNinja_41                                          ;B292B2;
     dw Hitboxes_PirateNinja_55                                           ;B292B4;
 
+%anchor($B292B6)
 UNUSED_ExtendedSpritemaps_SpacePirate_B292B6:
     dw $0002,$0000,$0004                                                 ;B292B6;
     dw UNUSED_Spitemaps_SpacePirate_B2E476                               ;B292BC;
@@ -1930,6 +2155,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B292B6:
     dw Spitemaps_PirateNinja_41                                          ;B292C4;
     dw Hitboxes_PirateNinja_55                                           ;B292C6;
 
+%anchor($B292C8)
 UNUSED_ExtendedSpritemaps_SpacePirate_B292C8:
     dw $0002,$0000,$0003                                                 ;B292C8;
     dw UNUSED_Spitemaps_SpacePirate_B2E4A5                               ;B292CE;
@@ -1938,6 +2164,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B292C8:
     dw Spitemaps_PirateNinja_41                                          ;B292D6;
     dw Hitboxes_PirateNinja_55                                           ;B292D8;
 
+%anchor($B292DA)
 UNUSED_ExtendedSpritemaps_SpacePirate_B292DA:
     dw $0002,$0000,$0005                                                 ;B292DA;
     dw UNUSED_Spitemaps_SpacePirate_B2E476                               ;B292E0;
@@ -1946,6 +2173,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B292DA:
     dw Spitemaps_PirateNinja_41                                          ;B292E8;
     dw Hitboxes_PirateNinja_55                                           ;B292EA;
 
+%anchor($B292EC)
 UNUSED_ExtendedSpritemaps_SpacePirate_B292EC:
     dw $0002,$0000,$0005                                                 ;B292EC;
     dw UNUSED_Spitemaps_SpacePirate_B2E402                               ;B292F2;
@@ -1954,6 +2182,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B292EC:
     dw Spitemaps_PirateNinja_41                                          ;B292FA;
     dw Hitboxes_PirateNinja_55                                           ;B292FC;
 
+%anchor($B292FE)
 UNUSED_ExtendedSpritemaps_SpacePirate_B292FE:
     dw $0002,$0000,$0006                                                 ;B292FE;
     dw UNUSED_Spitemaps_SpacePirate_B2E85D                               ;B29304;
@@ -1962,6 +2191,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B292FE:
     dw Spitemaps_PirateNinja_41                                          ;B2930C;
     dw Hitboxes_PirateNinja_55                                           ;B2930E;
 
+%anchor($B29310)
 UNUSED_ExtendedSpritemaps_SpacePirate_B29310:
     dw $0002,$0000,$0007                                                 ;B29310;
     dw UNUSED_Spitemaps_SpacePirate_B2E85D                               ;B29316;
@@ -1970,109 +2200,130 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B29310:
     dw Spitemaps_PirateNinja_42                                          ;B2931E;
     dw Hitboxes_PirateNinja_56                                           ;B29320;
 
+%anchor($B29322)
 UNUSED_ExtendedSpritemaps_SpacePirate_B29322:
     dw $0001,$0000,$0000                                                 ;B29322;
     dw UNUSED_Spitemaps_SpacePirate_B2D636                               ;B29328;
     dw UNUSED_Hitboxes_SpacePirate_B2A322                                ;B2932A;
 
+%anchor($B2932C)
 UNUSED_ExtendedSpritemaps_SpacePirate_B2932C:
     dw $0001,$0000,$0000                                                 ;B2932C;
     dw UNUSED_Spitemaps_SpacePirate_B2D647                               ;B29332;
     dw UNUSED_Hitboxes_SpacePirate_B2A330                                ;B29334;
 
+%anchor($B29336)
 UNUSED_ExtendedSpritemaps_SpacePirate_B29336:
     dw $0001,$0000,$0000                                                 ;B29336;
     dw UNUSED_Spitemaps_SpacePirate_B2D653                               ;B2933C;
     dw UNUSED_Hitboxes_SpacePirate_B2A33E                                ;B2933E;
 
+%anchor($B29340)
 UNUSED_ExtendedSpritemaps_SpacePirate_B29340:
     dw $0001,$0000,$0000                                                 ;B29340;
     dw UNUSED_Spitemaps_SpacePirate_B2D664                               ;B29346;
     dw UNUSED_Hitboxes_SpacePirate_B2A34C                                ;B29348;
 
+%anchor($B2934A)
 UNUSED_ExtendedSpritemaps_SpacePirate_B2934A:
     dw $0001,$0000,$0000                                                 ;B2934A;
     dw UNUSED_Spitemaps_SpacePirate_B2D670                               ;B29350;
     dw UNUSED_Hitboxes_SpacePirate_B2A35A                                ;B29352;
 
+%anchor($B29354)
 UNUSED_ExtendedSpritemaps_SpacePirate_B29354:
     dw $0001,$0000,$0000                                                 ;B29354;
     dw UNUSED_Spitemaps_SpacePirate_B2D681                               ;B2935A;
     dw UNUSED_Hitboxes_SpacePirate_B2A368                                ;B2935C;
 
+%anchor($B2935E)
 UNUSED_ExtendedSpritemaps_SpacePirate_B2935E:
     dw $0001,$0000,$0000                                                 ;B2935E;
     dw UNUSED_Spitemaps_SpacePirate_B2D68D                               ;B29364;
     dw UNUSED_Hitboxes_SpacePirate_B2A376                                ;B29366;
 
+%anchor($B29368)
 UNUSED_ExtendedSpritemaps_SpacePirate_B29368:
     dw $0001,$0000,$0004                                                 ;B29368;
     dw UNUSED_Spitemaps_SpacePirate_B2D69E                               ;B2936E;
     dw UNUSED_Hitboxes_SpacePirate_B2A384                                ;B29370;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B29372)
 ExtendedSpritemaps_PirateNinja_44:
     dw $0001,$0002,$0000                                                 ;B29372;
     dw Spitemaps_PirateNinja_49                                          ;B29378;
     dw Hitboxes_PirateNinja_5B                                           ;B2937A;
 
+%anchor($B2937C)
 ExtendedSpritemaps_PirateNinja_45:
     dw $0001,$FFFE,$0000                                                 ;B2937C;
     dw Spitemaps_PirateNinja_4F                                          ;B29382;
     dw Hitboxes_PirateNinja_61                                           ;B29384;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B29386)
 UNUSED_ExtendedSpritemaps_SpacePirate_B29386:
     dw $0001,$0000,$0003                                                 ;B29386;
     dw UNUSED_Spitemaps_SpacePirate_B2C9FC                               ;B2938C;
     dw UNUSED_Hitboxes_SpacePirate_B29FE8                                ;B2938E;
 
+%anchor($B29390)
 UNUSED_ExtendedSpritemaps_SpacePirate_B29390:
     dw $0001,$0000,$0003                                                 ;B29390;
     dw UNUSED_Spitemaps_SpacePirate_B2C9FC                               ;B29396;
     dw UNUSED_Hitboxes_SpacePirate_B29FE8                                ;B29398;
 
+%anchor($B2939A)
 UNUSED_ExtendedSpritemaps_SpacePirate_B2939A:
     dw $0001,$FFFF,$0004                                                 ;B2939A;
     dw UNUSED_Spitemaps_SpacePirate_B2C9FC                               ;B293A0;
     dw UNUSED_Hitboxes_SpacePirate_B29FE8                                ;B293A2;
 
+%anchor($B293A4)
 UNUSED_ExtendedSpritemaps_SpacePirate_B293A4:
     dw $0001,$FFFE,$0006                                                 ;B293A4;
     dw UNUSED_Spitemaps_SpacePirate_B2C9FC                               ;B293AA;
     dw UNUSED_Hitboxes_SpacePirate_B29FE8                                ;B293AC;
 
+%anchor($B293AE)
 UNUSED_ExtendedSpritemaps_SpacePirate_B293AE:
     dw $0001,$0000,$0003                                                 ;B293AE;
     dw UNUSED_Spitemaps_SpacePirate_B2C9FC                               ;B293B4;
     dw UNUSED_Hitboxes_SpacePirate_B29FE8                                ;B293B6;
 
+%anchor($B293B8)
 UNUSED_ExtendedSpritemaps_SpacePirate_B293B8:
     dw $0001,$0000,$0003                                                 ;B293B8;
     dw UNUSED_Spitemaps_SpacePirate_B2C9FC                               ;B293BE;
     dw UNUSED_Hitboxes_SpacePirate_B29FE8                                ;B293C0;
 
+%anchor($B293C2)
 UNUSED_ExtendedSpritemaps_SpacePirate_B293C2:
     dw $0001,$0000,$0003                                                 ;B293C2;
     dw UNUSED_Spitemaps_SpacePirate_B2C9FC                               ;B293C8;
     dw UNUSED_Hitboxes_SpacePirate_B29FE8                                ;B293CA;
 
+%anchor($B293CC)
 UNUSED_ExtendedSpritemaps_SpacePirate_B293CC:
     dw $0001,$0000,$0003                                                 ;B293CC;
     dw UNUSED_Spitemaps_SpacePirate_B2C9FC                               ;B293D2;
     dw UNUSED_Hitboxes_SpacePirate_B29FE8                                ;B293D4;
 
+%anchor($B293D6)
 UNUSED_ExtendedSpritemaps_SpacePirate_B293D6:
     dw $0001,$0001,$0004                                                 ;B293D6;
     dw UNUSED_Spitemaps_SpacePirate_B2C9FC                               ;B293DC;
     dw UNUSED_Hitboxes_SpacePirate_B29FE8                                ;B293DE;
 
+%anchor($B293E0)
 UNUSED_ExtendedSpritemaps_SpacePirate_B293E0:
     dw $0001,$0002,$0006                                                 ;B293E0;
     dw UNUSED_Spitemaps_SpacePirate_B2C9FC                               ;B293E6;
     dw UNUSED_Hitboxes_SpacePirate_B29FE8                                ;B293E8;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B293EA)
 ExtendedSpritemaps_PirateNinja_46:
     dw $0003,$FFFB,$FFF4                                                 ;B293EA;
     dw Spitemaps_PirateNinja_43                                          ;B293F0;
@@ -2084,6 +2335,7 @@ ExtendedSpritemaps_PirateNinja_46:
     dw Spitemaps_PirateNinja_3D                                          ;B29400;
     dw Hitboxes_PirateNinja_51                                           ;B29402;
 
+%anchor($B29404)
 ExtendedSpritemaps_PirateNinja_47:
     dw $0002,$0000,$0003                                                 ;B29404;
     dw Spitemaps_PirateNinja_45                                          ;B2940A;
@@ -2092,6 +2344,7 @@ ExtendedSpritemaps_PirateNinja_47:
     dw Spitemaps_PirateNinja_3D                                          ;B29412;
     dw Hitboxes_PirateNinja_51                                           ;B29414;
 
+%anchor($B29416)
 ExtendedSpritemaps_PirateNinja_48:
     dw $0003,$FFFB,$FFF5                                                 ;B29416;
     dw Spitemaps_PirateNinja_44                                          ;B2941C;
@@ -2103,6 +2356,7 @@ ExtendedSpritemaps_PirateNinja_48:
     dw Spitemaps_PirateNinja_3D                                          ;B2942C;
     dw Hitboxes_PirateNinja_51                                           ;B2942E;
 
+%anchor($B29430)
 ExtendedSpritemaps_PirateNinja_49:
     dw $0003,$0005,$FFF4                                                 ;B29430;
     dw Spitemaps_PirateNinja_43                                          ;B29436;
@@ -2114,6 +2368,7 @@ ExtendedSpritemaps_PirateNinja_49:
     dw Spitemaps_PirateNinja_41                                          ;B29446;
     dw Hitboxes_PirateNinja_55                                           ;B29448;
 
+%anchor($B2944A)
 ExtendedSpritemaps_PirateNinja_4A:
     dw $0002,$0000,$0003                                                 ;B2944A;
     dw Spitemaps_PirateNinja_46                                          ;B29450;
@@ -2122,6 +2377,7 @@ ExtendedSpritemaps_PirateNinja_4A:
     dw Spitemaps_PirateNinja_41                                          ;B29458;
     dw Hitboxes_PirateNinja_55                                           ;B2945A;
 
+%anchor($B2945C)
 ExtendedSpritemaps_PirateNinja_4B:
     dw $0003,$0005,$FFF5                                                 ;B2945C;
     dw Spitemaps_PirateNinja_44                                          ;B29462;
@@ -2133,92 +2389,110 @@ ExtendedSpritemaps_PirateNinja_4B:
     dw Spitemaps_PirateNinja_41                                          ;B29472;
     dw Hitboxes_PirateNinja_55                                           ;B29474;
 
+%anchor($B29476)
 ExtendedSpritemaps_PirateNinja_4C:
     dw $0001,$0000,$0001                                                 ;B29476;
     dw Spitemaps_PirateNinja_3C                                          ;B2947C;
     dw Hitboxes_PirateNinja_50                                           ;B2947E;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B29480)
 UNUSED_ExtendedSpritemaps_SpacePirate_B29480:
     dw $0001,$0000,$0000                                                 ;B29480;
     dw UNUSED_Spitemaps_SpacePirate_B2E9F7                               ;B29486;
     dw UNUSED_Hitboxes_SpacePirate_B2A802                                ;B29488;
 
+%anchor($B2948A)
 UNUSED_ExtendedSpritemaps_SpacePirate_B2948A:
     dw $0001,$0000,$0000                                                 ;B2948A;
     dw UNUSED_Spitemaps_SpacePirate_B2EA0D                               ;B29490;
     dw UNUSED_Hitboxes_SpacePirate_B2A810                                ;B29492;
 
+%anchor($B29494)
 UNUSED_ExtendedSpritemaps_SpacePirate_B29494:
     dw $0001,$0000,$0000                                                 ;B29494;
     dw UNUSED_Spitemaps_SpacePirate_B2EA2D                               ;B2949A;
     dw UNUSED_Hitboxes_SpacePirate_B2A81E                                ;B2949C;
 
+%anchor($B2949E)
 UNUSED_ExtendedSpritemaps_SpacePirate_B2949E:
     dw $0001,$0000,$0000                                                 ;B2949E;
     dw UNUSED_Spitemaps_SpacePirate_B2EA48                               ;B294A4;
     dw UNUSED_Hitboxes_SpacePirate_B2A82C                                ;B294A6;
 
+%anchor($B294A8)
 UNUSED_ExtendedSpritemaps_SpacePirate_B294A8:
     dw $0001,$0000,$0000                                                 ;B294A8;
     dw UNUSED_Spitemaps_SpacePirate_B2EA6D                               ;B294AE;
     dw UNUSED_Hitboxes_SpacePirate_B2A83A                                ;B294B0;
 
+%anchor($B294B2)
 UNUSED_ExtendedSpritemaps_SpacePirate_B294B2:
     dw $0001,$0000,$0000                                                 ;B294B2;
     dw UNUSED_Spitemaps_SpacePirate_B2EA83                               ;B294B8;
     dw UNUSED_Hitboxes_SpacePirate_B2A848                                ;B294BA;
 
+%anchor($B294BC)
 UNUSED_ExtendedSpritemaps_SpacePirate_B294BC:
     dw $0001,$0000,$0000                                                 ;B294BC;
     dw UNUSED_Spitemaps_SpacePirate_B2EAA3                               ;B294C2;
     dw UNUSED_Hitboxes_SpacePirate_B2A856                                ;B294C4;
 
+%anchor($B294C6)
 UNUSED_ExtendedSpritemaps_SpacePirate_B294C6:
     dw $0001,$0000,$0000                                                 ;B294C6;
     dw UNUSED_Spitemaps_SpacePirate_B2EABE                               ;B294CC;
     dw UNUSED_Hitboxes_SpacePirate_B2A864                                ;B294CE;
 
+%anchor($B294D0)
 UNUSED_ExtendedSpritemaps_SpacePirate_B294D0:
     dw $0001,$0000,$0000                                                 ;B294D0;
     dw UNUSED_Spitemaps_SpacePirate_B2EBD4                               ;B294D6;
     dw UNUSED_Hitboxes_SpacePirate_B2A872                                ;B294D8;
 
+%anchor($B294DA)
 UNUSED_ExtendedSpritemaps_SpacePirate_B294DA:
     dw $0001,$0000,$0000                                                 ;B294DA;
     dw UNUSED_Spitemaps_SpacePirate_B2EBEA                               ;B294E0;
     dw UNUSED_Hitboxes_SpacePirate_B2A880                                ;B294E2;
 
+%anchor($B294E4)
 UNUSED_ExtendedSpritemaps_SpacePirate_B294E4:
     dw $0001,$0000,$0000                                                 ;B294E4;
     dw UNUSED_Spitemaps_SpacePirate_B2EC0A                               ;B294EA;
     dw UNUSED_Hitboxes_SpacePirate_B2A88E                                ;B294EC;
 
+%anchor($B294EE)
 UNUSED_ExtendedSpritemaps_SpacePirate_B294EE:
     dw $0001,$0000,$0000                                                 ;B294EE;
     dw UNUSED_Spitemaps_SpacePirate_B2EC25                               ;B294F4;
     dw UNUSED_Hitboxes_SpacePirate_B2A89C                                ;B294F6;
 
+%anchor($B294F8)
 UNUSED_ExtendedSpritemaps_SpacePirate_B294F8:
     dw $0001,$0000,$0000                                                 ;B294F8;
     dw UNUSED_Spitemaps_SpacePirate_B2EC4A                               ;B294FE;
     dw UNUSED_Hitboxes_SpacePirate_B2A8AA                                ;B29500;
 
+%anchor($B29502)
 UNUSED_ExtendedSpritemaps_SpacePirate_B29502:
     dw $0001,$0000,$0000                                                 ;B29502;
     dw UNUSED_Spitemaps_SpacePirate_B2EC60                               ;B29508;
     dw UNUSED_Hitboxes_SpacePirate_B2A8B8                                ;B2950A;
 
+%anchor($B2950C)
 UNUSED_ExtendedSpritemaps_SpacePirate_B2950C:
     dw $0001,$0000,$0000                                                 ;B2950C;
     dw UNUSED_Spitemaps_SpacePirate_B2EC80                               ;B29512;
     dw UNUSED_Hitboxes_SpacePirate_B2A8C6                                ;B29514;
 
+%anchor($B29516)
 UNUSED_ExtendedSpritemaps_SpacePirate_B29516:
     dw $0001,$0000,$0000                                                 ;B29516;
     dw UNUSED_Spitemaps_SpacePirate_B2EC9B                               ;B2951C;
     dw UNUSED_Hitboxes_SpacePirate_B2A8D4                                ;B2951E;
 
+%anchor($B29520)
 UNUSED_ExtendedSpritemaps_SpacePirate_B29520:
     dw $0002,$FFFB,$0001                                                 ;B29520;
     dw Spitemaps_PirateNinja_47                                          ;B29526;
@@ -2227,6 +2501,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B29520:
     dw UNUSED_Spitemaps_SpacePirate_B2D948                               ;B2952E;
     dw UNUSED_Hitboxes_SpacePirate_B2A448                                ;B29530;
 
+%anchor($B29532)
 UNUSED_ExtendedSpritemaps_SpacePirate_B29532:
     dw $0002,$FFFB,$0003                                                 ;B29532;
     dw UNUSED_Spitemaps_SpacePirate_B2DB49                               ;B29538;
@@ -2235,6 +2510,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B29532:
     dw UNUSED_Spitemaps_SpacePirate_B2D97C                               ;B29540;
     dw UNUSED_Hitboxes_SpacePirate_B2A456                                ;B29542;
 
+%anchor($B29544)
 UNUSED_ExtendedSpritemaps_SpacePirate_B29544:
     dw $0002,$FFFB,$0004                                                 ;B29544;
     dw UNUSED_Spitemaps_SpacePirate_B2DB78                               ;B2954A;
@@ -2243,6 +2519,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B29544:
     dw UNUSED_Spitemaps_SpacePirate_B2D9BA                               ;B29552;
     dw UNUSED_Hitboxes_SpacePirate_B2A464                                ;B29554;
 
+%anchor($B29556)
 UNUSED_ExtendedSpritemaps_SpacePirate_B29556:
     dw $0002,$FFFB,$0002                                                 ;B29556;
     dw UNUSED_Spitemaps_SpacePirate_B2DBA2                               ;B2955C;
@@ -2251,6 +2528,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B29556:
     dw UNUSED_Spitemaps_SpacePirate_B2D9F8                               ;B29564;
     dw UNUSED_Hitboxes_SpacePirate_B2A472                                ;B29566;
 
+%anchor($B29568)
 UNUSED_ExtendedSpritemaps_SpacePirate_B29568:
     dw $0002,$FFFB,$0001                                                 ;B29568;
     dw UNUSED_Spitemaps_SpacePirate_B2DBA2                               ;B2956E;
@@ -2259,6 +2537,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B29568:
     dw UNUSED_Spitemaps_SpacePirate_B2DA31                               ;B29576;
     dw UNUSED_Hitboxes_SpacePirate_B2A480                                ;B29578;
 
+%anchor($B2957A)
 UNUSED_ExtendedSpritemaps_SpacePirate_B2957A:
     dw $0002,$FFFB,$0003                                                 ;B2957A;
     dw UNUSED_Spitemaps_SpacePirate_B2DB78                               ;B29580;
@@ -2267,6 +2546,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B2957A:
     dw UNUSED_Spitemaps_SpacePirate_B2DA65                               ;B29588;
     dw UNUSED_Hitboxes_SpacePirate_B2A48E                                ;B2958A;
 
+%anchor($B2958C)
 UNUSED_ExtendedSpritemaps_SpacePirate_B2958C:
     dw $0002,$FFFB,$0003                                                 ;B2958C;
     dw UNUSED_Spitemaps_SpacePirate_B2DB49                               ;B29592;
@@ -2275,6 +2555,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B2958C:
     dw UNUSED_Spitemaps_SpacePirate_B2DAA3                               ;B2959A;
     dw UNUSED_Hitboxes_SpacePirate_B2A49C                                ;B2959C;
 
+%anchor($B2959E)
 UNUSED_ExtendedSpritemaps_SpacePirate_B2959E:
     dw $0002,$FFFB,$0001                                                 ;B2959E;
     dw Spitemaps_PirateNinja_47                                          ;B295A4;
@@ -2283,6 +2564,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B2959E:
     dw UNUSED_Spitemaps_SpacePirate_B2DAE1                               ;B295AC;
     dw UNUSED_Hitboxes_SpacePirate_B2A4AA                                ;B295AE;
 
+%anchor($B295B0)
 UNUSED_ExtendedSpritemaps_SpacePirate_B295B0:
     dw $0002,$0005,$0001                                                 ;B295B0;
     dw Spitemaps_PirateNinja_4D                                          ;B295B6;
@@ -2291,6 +2573,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B295B0:
     dw UNUSED_Spitemaps_SpacePirate_B2E1A8                               ;B295BE;
     dw UNUSED_Hitboxes_SpacePirate_B2A62C                                ;B295C0;
 
+%anchor($B295C2)
 UNUSED_ExtendedSpritemaps_SpacePirate_B295C2:
     dw $0002,$0005,$0003                                                 ;B295C2;
     dw UNUSED_Spitemaps_SpacePirate_B2E3A9                               ;B295C8;
@@ -2299,6 +2582,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B295C2:
     dw UNUSED_Spitemaps_SpacePirate_B2E1DC                               ;B295D0;
     dw UNUSED_Hitboxes_SpacePirate_B2A63A                                ;B295D2;
 
+%anchor($B295D4)
 UNUSED_ExtendedSpritemaps_SpacePirate_B295D4:
     dw $0002,$0005,$0004                                                 ;B295D4;
     dw UNUSED_Spitemaps_SpacePirate_B2E3D8                               ;B295DA;
@@ -2307,6 +2591,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B295D4:
     dw UNUSED_Spitemaps_SpacePirate_B2E21A                               ;B295E2;
     dw UNUSED_Hitboxes_SpacePirate_B2A648                                ;B295E4;
 
+%anchor($B295E6)
 UNUSED_ExtendedSpritemaps_SpacePirate_B295E6:
     dw $0002,$0005,$0002                                                 ;B295E6;
     dw UNUSED_Spitemaps_SpacePirate_B2E402                               ;B295EC;
@@ -2315,6 +2600,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B295E6:
     dw UNUSED_Spitemaps_SpacePirate_B2E258                               ;B295F4;
     dw UNUSED_Hitboxes_SpacePirate_B2A656                                ;B295F6;
 
+%anchor($B295F8)
 UNUSED_ExtendedSpritemaps_SpacePirate_B295F8:
     dw $0002,$0005,$0001                                                 ;B295F8;
     dw UNUSED_Spitemaps_SpacePirate_B2E402                               ;B295FE;
@@ -2323,6 +2609,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B295F8:
     dw UNUSED_Spitemaps_SpacePirate_B2E291                               ;B29606;
     dw UNUSED_Hitboxes_SpacePirate_B2A664                                ;B29608;
 
+%anchor($B2960A)
 UNUSED_ExtendedSpritemaps_SpacePirate_B2960A:
     dw $0002,$0005,$0003                                                 ;B2960A;
     dw UNUSED_Spitemaps_SpacePirate_B2E3D8                               ;B29610;
@@ -2331,6 +2618,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B2960A:
     dw UNUSED_Spitemaps_SpacePirate_B2E2C5                               ;B29618;
     dw UNUSED_Hitboxes_SpacePirate_B2A672                                ;B2961A;
 
+%anchor($B2961C)
 UNUSED_ExtendedSpritemaps_SpacePirate_B2961C:
     dw $0002,$0005,$0003                                                 ;B2961C;
     dw UNUSED_Spitemaps_SpacePirate_B2E3A9                               ;B29622;
@@ -2339,6 +2627,7 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B2961C:
     dw UNUSED_Spitemaps_SpacePirate_B2E303                               ;B2962A;
     dw UNUSED_Hitboxes_SpacePirate_B2A680                                ;B2962C;
 
+%anchor($B2962E)
 UNUSED_ExtendedSpritemaps_SpacePirate_B2962E:
     dw $0002                                                             ;B2962E;
     dw $0005,$0001                                                       ;B29630;
@@ -2348,592 +2637,709 @@ UNUSED_ExtendedSpritemaps_SpacePirate_B2962E:
     dw UNUSED_Spitemaps_SpacePirate_B2E341                               ;B2963C;
     dw UNUSED_Hitboxes_SpacePirate_B2A68E                                ;B2963E;
 
+%anchor($B29640)
 UNUSED_ExtendedSpritemaps_SpacePirate_B29640:
     dw $0001                                                             ;B29640;
     dw $0000,$0003                                                       ;B29642;
     dw UNUSED_Spitemaps_SpacePirate_B2DC79                               ;B29646;
     dw UNUSED_Hitboxes_SpacePirate_B2A528                                ;B29648;
 
+%anchor($B2964A)
 UNUSED_ExtendedSpritemaps_SpacePirate_B2964A:
     dw $0001,$0000,$0003                                                 ;B2964A;
     dw UNUSED_Spitemaps_SpacePirate_B2DCDF                               ;B29650;
     dw UNUSED_Hitboxes_SpacePirate_B2A536                                ;B29652;
 
+%anchor($B29654)
 UNUSED_ExtendedSpritemaps_SpacePirate_B29654:
     dw $0001,$0000,$0003                                                 ;B29654;
     dw UNUSED_Spitemaps_SpacePirate_B2DD40                               ;B2965A;
     dw UNUSED_Hitboxes_SpacePirate_B2A544                                ;B2965C;
 
+%anchor($B2965E)
 UNUSED_ExtendedSpritemaps_SpacePirate_B2965E:
     dw $0001,$0000,$0003                                                 ;B2965E;
     dw UNUSED_Spitemaps_SpacePirate_B2E4D9                               ;B29664;
     dw UNUSED_Hitboxes_SpacePirate_B2A70C                                ;B29666;
 
+%anchor($B29668)
 UNUSED_ExtendedSpritemaps_SpacePirate_B29668:
     dw $0001,$0000,$0003                                                 ;B29668;
     dw UNUSED_Spitemaps_SpacePirate_B2E53F                               ;B2966E;
     dw UNUSED_Hitboxes_SpacePirate_B2A71A                                ;B29670;
 
+%anchor($B29672)
 UNUSED_ExtendedSpritemaps_SpacePirate_B29672:
     dw $0001,$0000,$0003                                                 ;B29672;
     dw UNUSED_Spitemaps_SpacePirate_B2E5A0                               ;B29678;
     dw UNUSED_Hitboxes_SpacePirate_B2A728                                ;B2967A;
 
+%anchor($B2967C)
 UNUSED_ExtendedSpritemaps_SpacePirate_B2967C:
     dw $0001,$0000,$0008                                                 ;B2967C;
     dw UNUSED_Spitemaps_SpacePirate_B2E03D                               ;B29682;
     dw UNUSED_Hitboxes_SpacePirate_B2A5D0                                ;B29684;
 
+%anchor($B29686)
 UNUSED_ExtendedSpritemaps_SpacePirate_B29686:
     dw $0001,$0000,$0008                                                 ;B29686;
     dw UNUSED_Spitemaps_SpacePirate_B2E88C                               ;B2968C;
     dw UNUSED_Hitboxes_SpacePirate_B2A7A6                                ;B2968E;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B29690)
 Hitboxes_PirateWall_0:
     dw $0001,$FFEE,$FFED,$0006,$0000                                     ;B29690;
     dw EnemyTouch_SpacePirate                                            ;B2969A;
     dw EnemyShot_SpacePirate_Normal                                      ;B2969C;
 
+%anchor($B2969E)
 Hitboxes_PirateWall_1:
     dw $0001,$FFEE,$FFED,$0006,$0000                                     ;B2969E;
     dw EnemyTouch_SpacePirate                                            ;B296A8;
     dw EnemyShot_SpacePirate_Normal                                      ;B296AA;
 
+%anchor($B296AC)
 Hitboxes_PirateWall_2:
     dw $0001,$FFEE,$FFED,$0006,$0000                                     ;B296AC;
     dw EnemyTouch_SpacePirate                                            ;B296B6;
     dw EnemyShot_SpacePirate_Normal                                      ;B296B8;
 
+%anchor($B296BA)
 Hitboxes_PirateWall_3:
     dw $0001,$FFEE,$FFED,$0006,$0000                                     ;B296BA;
     dw EnemyTouch_SpacePirate                                            ;B296C4;
     dw EnemyShot_SpacePirate_Normal                                      ;B296C6;
 
+%anchor($B296C8)
 Hitboxes_PirateWall_4:
     dw $0001,$FFEE,$FFED,$0006,$0000                                     ;B296C8;
     dw EnemyTouch_SpacePirate                                            ;B296D2;
     dw EnemyShot_SpacePirate_Normal                                      ;B296D4;
 
+%anchor($B296D6)
 Hitboxes_PirateWall_5:
     dw $0001,$FFF2,$0000,$0004,$001E                                     ;B296D6;
     dw EnemyTouch_SpacePirate                                            ;B296E0;
     dw EnemyShot_SpacePirate_Normal                                      ;B296E2;
 
+%anchor($B296E4)
 Hitboxes_PirateWall_6:
     dw $0001,$FFF1,$0000,$FFFF,$001E                                     ;B296E4;
     dw EnemyTouch_SpacePirate                                            ;B296EE;
     dw EnemyShot_SpacePirate_Normal                                      ;B296F0;
 
+%anchor($B296F2)
 Hitboxes_PirateWall_7:
     dw $0001,$FFF1,$FFFA,$0000,$0017                                     ;B296F2;
     dw EnemyTouch_SpacePirate                                            ;B296FC;
     dw EnemyShot_SpacePirate_Normal                                      ;B296FE;
 
+%anchor($B29700)
 Hitboxes_PirateWall_8:
     dw $0001,$FFF0,$FFFB,$FFFF,$0019                                     ;B29700;
     dw EnemyTouch_SpacePirate                                            ;B2970A;
     dw EnemyShot_SpacePirate_Normal                                      ;B2970C;
 
+%anchor($B2970E)
 Hitboxes_PirateWall_9:
     dw $0001,$FFEF,$FFF8,$0000,$001E                                     ;B2970E;
     dw EnemyTouch_SpacePirate                                            ;B29718;
     dw EnemyShot_SpacePirate_Normal                                      ;B2971A;
 
+%anchor($B2971C)
 Hitboxes_PirateWalking_0:
     dw $0001,$FFF3,$FFED,$000A,$001E                                     ;B2971C;
     dw EnemyTouch_SpacePirate                                            ;B29726;
     dw EnemyShot_SpacePirate_Normal                                      ;B29728;
 
+%anchor($B2972A)
 Hitboxes_PirateWall_A:
     dw $0001,$FFF1,$FFED,$000E,$0006                                     ;B2972A;
     dw EnemyTouch_SpacePirate                                            ;B29734;
     dw EnemyShot_SpacePirate_Normal                                      ;B29736;
 
+%anchor($B29738)
 Hitboxes_PirateWall_B:
     dw $0001,$FFF0,$FFED,$000E,$0003                                     ;B29738;
     dw EnemyTouch_SpacePirate                                            ;B29742;
     dw EnemyShot_SpacePirate_Normal                                      ;B29744;
 
+%anchor($B29746)
 Hitboxes_PirateWall_C:
     dw $0001,$FFF6,$FFEB,$0013,$0016                                     ;B29746;
     dw EnemyTouch_SpacePirate                                            ;B29750;
     dw EnemyShot_SpacePirate_Normal                                      ;B29752;
 
+%anchor($B29754)
 Hitboxes_PirateWall_D:
     dw $0001,$FFF8,$FFED,$0012,$0010                                     ;B29754;
     dw EnemyTouch_SpacePirate                                            ;B2975E;
     dw EnemyShot_SpacePirate_Normal                                      ;B29760;
 
+%anchor($B29762)
 Hitboxes_PirateWall_E:
     dw $0001,$FFF7,$FFE9,$0011,$0000                                     ;B29762;
     dw EnemyTouch_SpacePirate                                            ;B2976C;
     dw EnemyShot_SpacePirate_Normal                                      ;B2976E;
 
+%anchor($B29770)
 Hitboxes_PirateWall_F:
     dw $0001,$FFF7,$FFED,$0010,$0000                                     ;B29770;
     dw EnemyTouch_SpacePirate                                            ;B2977A;
     dw EnemyShot_SpacePirate_Normal                                      ;B2977C;
 
+%anchor($B2977E)
 Hitboxes_PirateWall_10:
     dw $0001,$FFF7,$FFED,$0011,$0000                                     ;B2977E;
     dw EnemyTouch_SpacePirate                                            ;B29788;
     dw EnemyShot_SpacePirate_Normal                                      ;B2978A;
 
+%anchor($B2978C)
 Hitboxes_PirateWall_11:
     dw $0001,$FFF7,$FFED,$0010,$0000                                     ;B2978C;
     dw EnemyTouch_SpacePirate                                            ;B29796;
     dw EnemyShot_SpacePirate_Normal                                      ;B29798;
 
+%anchor($B2979A)
 Hitboxes_PirateWall_12:
     dw $0001,$FFF7,$FFED,$0011,$0000                                     ;B2979A;
     dw EnemyTouch_SpacePirate                                            ;B297A4;
     dw EnemyShot_SpacePirate_Normal                                      ;B297A6;
 
+%anchor($B297A8)
 Hitboxes_PirateWall_13:
     dw $0001,$FFF9,$0000,$000F,$001E                                     ;B297A8;
     dw EnemyTouch_SpacePirate                                            ;B297B2;
     dw EnemyShot_SpacePirate_Normal                                      ;B297B4;
 
+%anchor($B297B6)
 Hitboxes_PirateWall_14:
     dw $0001,$FFFE,$0000,$000F,$001E                                     ;B297B6;
     dw EnemyTouch_SpacePirate                                            ;B297C0;
     dw EnemyShot_SpacePirate_Normal                                      ;B297C2;
 
+%anchor($B297C4)
 Hitboxes_PirateWall_15:
     dw $0001,$FFFE,$0000,$000F,$0017                                     ;B297C4;
     dw EnemyTouch_SpacePirate                                            ;B297CE;
     dw EnemyShot_SpacePirate_Normal                                      ;B297D0;
 
+%anchor($B297D2)
 Hitboxes_PirateWall_16:
     dw $0001,$0000,$0000,$000F,$0019                                     ;B297D2;
     dw EnemyTouch_SpacePirate                                            ;B297DC;
     dw EnemyShot_SpacePirate_Normal                                      ;B297DE;
 
+%anchor($B297E0)
 Hitboxes_PirateWall_17:
     dw $0001,$FFFF,$0000,$000F,$001E                                     ;B297E0;
     dw EnemyTouch_SpacePirate                                            ;B297EA;
     dw EnemyShot_SpacePirate_Normal                                      ;B297EC;
 
+%anchor($B297EE)
 Hitboxes_PirateWall_18:
     dw $0001,$FFF1,$FFED,$000F,$0000                                     ;B297EE;
     dw EnemyTouch_SpacePirate                                            ;B297F8;
     dw EnemyShot_SpacePirate_Normal                                      ;B297FA;
 
+%anchor($B297FC)
 Hitboxes_PirateWall_19:
     dw $0001,$FFF1,$FFED,$000E,$0003                                     ;B297FC;
     dw EnemyTouch_SpacePirate                                            ;B29806;
     dw EnemyShot_SpacePirate_Normal                                      ;B29808;
 
+%anchor($B2980A)
 Hitboxes_PirateWall_1A:
     dw $0001,$FFEC,$FFED,$000A,$0019                                     ;B2980A;
     dw EnemyTouch_SpacePirate                                            ;B29814;
     dw EnemyShot_SpacePirate_Normal                                      ;B29816;
 
+%anchor($B29818)
 Hitboxes_PirateWall_1B:
     dw $0001,$FFEC,$FFED,$0006,$0010                                     ;B29818;
     dw EnemyTouch_SpacePirate                                            ;B29822;
     dw EnemyShot_SpacePirate_Normal                                      ;B29824;
 
+%anchor($B29826)
 Hitboxes_PirateWalking_1:
     dw $0001,$FFF5,$0000,$0008,$001E                                     ;B29826;
     dw EnemyTouch_SpacePirate                                            ;B29830;
     dw EnemyShot_SpacePirate_Normal                                      ;B29832;
 
+%anchor($B29834)
 Hitboxes_PirateWalking_2:
     dw $0001,$FFF5,$0000,$0008,$001E                                     ;B29834;
     dw EnemyTouch_SpacePirate                                            ;B2983E;
     dw EnemyShot_SpacePirate_Normal                                      ;B29840;
 
+%anchor($B29842)
 Hitboxes_PirateWalking_3:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B29842;
     dw EnemyTouch_SpacePirate                                            ;B2984C;
     dw EnemyShot_SpacePirate_Normal                                      ;B2984E;
 
+%anchor($B29850)
 Hitboxes_PirateWalking_4:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B29850;
     dw EnemyTouch_SpacePirate                                            ;B2985A;
     dw EnemyShot_SpacePirate_Normal                                      ;B2985C;
 
+%anchor($B2985E)
 Hitboxes_PirateWalking_5:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2985E;
     dw EnemyTouch_SpacePirate                                            ;B29868;
     dw EnemyShot_SpacePirate_Normal                                      ;B2986A;
 
+%anchor($B2986C)
 Hitboxes_PirateWalking_6:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2986C;
     dw EnemyTouch_SpacePirate                                            ;B29876;
     dw EnemyShot_SpacePirate_Normal                                      ;B29878;
 
+%anchor($B2987A)
 Hitboxes_PirateWalking_7:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2987A;
     dw EnemyTouch_SpacePirate                                            ;B29884;
     dw EnemyShot_SpacePirate_Normal                                      ;B29886;
 
+%anchor($B29888)
 Hitboxes_PirateWalking_8:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B29888;
     dw EnemyTouch_SpacePirate                                            ;B29892;
     dw EnemyShot_SpacePirate_Normal                                      ;B29894;
 
+%anchor($B29896)
 Hitboxes_PirateWalking_9_Ninja_0:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B29896;
     dw EnemyTouch_SpacePirate                                            ;B298A0;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B298A2;
 
+%anchor($B298A4)
 Hitboxes_PirateWalking_A_Ninja_1:
     dw $0001,$FFF9,$0000,$0006,$0010                                     ;B298A4;
     dw EnemyTouch_SpacePirate                                            ;B298AE;
     dw EnemyShot_SpacePirate_Normal                                      ;B298B0;
 
+%anchor($B298B2)
 Hitboxes_PirateWalking_A_Ninja_2:
     dw $0001,$FFF9,$FFF7,$0006,$0006                                     ;B298B2;
     dw EnemyTouch_SpacePirate                                            ;B298BC;
     dw EnemyShot_SpacePirate_Normal                                      ;B298BE;
 
+%anchor($B298C0)
 Hitboxes_PirateWalking_B_Ninja_3:
     dw $0001,$FFF9,$FFF7,$0006,$0006                                     ;B298C0;
     dw EnemyTouch_SpacePirate                                            ;B298CA;
     dw EnemyShot_SpacePirate_Normal                                      ;B298CC;
 
+%anchor($B298CE)
 Hitboxes_PirateWalking_C_Ninja_4:
     dw $0001,$FFF9,$FFF7,$0006,$0006                                     ;B298CE;
     dw EnemyTouch_SpacePirate                                            ;B298D8;
     dw EnemyShot_SpacePirate_Normal                                      ;B298DA;
 
+%anchor($B298DC)
 Hitboxes_PirateWalking_D_Ninja_5:
     dw $0001,$FFF9,$FFF7,$0006,$0006                                     ;B298DC;
     dw EnemyTouch_SpacePirate                                            ;B298E6;
     dw EnemyShot_SpacePirate_Normal                                      ;B298E8;
 
+%anchor($B298EA)
 Hitboxes_PirateWalking_E_Ninja_6:
     dw $0001,$FFF9,$FFF7,$0006,$0006                                     ;B298EA;
     dw EnemyTouch_SpacePirate                                            ;B298F4;
     dw EnemyShot_SpacePirate_Normal                                      ;B298F6;
 
+%anchor($B298F8)
 Hitboxes_PirateWalking_F_Ninja_7:
     dw $0001,$FFF9,$FFF7,$0006,$0006                                     ;B298F8;
     dw EnemyTouch_SpacePirate                                            ;B29902;
     dw EnemyShot_SpacePirate_Normal                                      ;B29904;
 
+%anchor($B29906)
 Hitboxes_PirateWalking_10_Ninja_8:
     dw $0001,$FFF9,$FFF7,$0006,$0006                                     ;B29906;
     dw EnemyTouch_SpacePirate                                            ;B29910;
     dw EnemyShot_SpacePirate_Normal                                      ;B29912;
 
+%anchor($B29914)
 Hitboxes_PirateWalking_11_Ninja_9:
     dw $0001,$FFF9,$FFF7,$0006,$0006                                     ;B29914;
     dw EnemyTouch_SpacePirate                                            ;B2991E;
     dw EnemyShot_SpacePirate_Normal                                      ;B29920;
 
+%anchor($B29922)
 Hitboxes_PirateWalking_12_Ninja_A:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B29922;
     dw EnemyTouch_SpacePirate                                            ;B2992C;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B2992E;
 
+%anchor($B29930)
 Hitboxes_PirateWalking_13:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B29930;
     dw EnemyTouch_SpacePirate                                            ;B2993A;
     dw EnemyShot_SpacePirate_Normal                                      ;B2993C;
 
+%anchor($B2993E)
 Hitboxes_PirateWalking_14:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2993E;
     dw EnemyTouch_SpacePirate                                            ;B29948;
     dw EnemyShot_SpacePirate_Normal                                      ;B2994A;
 
+%anchor($B2994C)
 Hitboxes_PirateWalking_15:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2994C;
     dw EnemyTouch_SpacePirate                                            ;B29956;
     dw EnemyShot_SpacePirate_Normal                                      ;B29958;
 
+%anchor($B2995A)
 Hitboxes_PirateWalking_16:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2995A;
     dw EnemyTouch_SpacePirate                                            ;B29964;
     dw EnemyShot_SpacePirate_Normal                                      ;B29966;
 
+%anchor($B29968)
 Hitboxes_PirateWalking_17:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B29968;
     dw EnemyTouch_SpacePirate                                            ;B29972;
     dw EnemyShot_SpacePirate_Normal                                      ;B29974;
 
+%anchor($B29976)
 Hitboxes_PirateWalking_18:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B29976;
     dw EnemyTouch_SpacePirate                                            ;B29980;
     dw EnemyShot_SpacePirate_Normal                                      ;B29982;
 
+%anchor($B29984)
 Hitboxes_PirateWalking_19:
     dw $0001,$FFF9,$FFFF,$0006,$001E                                     ;B29984;
     dw EnemyTouch_SpacePirate                                            ;B2998E;
     dw EnemyShot_SpacePirate_Normal                                      ;B29990;
 
+%anchor($B29992)
 Hitboxes_PirateWalking_1A:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B29992;
     dw EnemyTouch_SpacePirate                                            ;B2999C;
     dw EnemyShot_SpacePirate_Normal                                      ;B2999E;
 
+%anchor($B299A0)
 Hitboxes_PirateWalking_1B:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B299A0;
     dw EnemyTouch_SpacePirate                                            ;B299AA;
     dw EnemyShot_SpacePirate_Normal                                      ;B299AC;
 
+%anchor($B299AE)
 Hitboxes_PirateWalking_1C:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B299AE;
     dw EnemyTouch_SpacePirate                                            ;B299B8;
     dw EnemyShot_SpacePirate_Normal                                      ;B299BA;
 
+%anchor($B299BC)
 Hitboxes_PirateWalking_1D_Ninja_A:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B299BC;
     dw EnemyTouch_SpacePirate                                            ;B299C6;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B299C8;
 
+%anchor($B299CA)
 Hitboxes_PirateWalking_1E_Ninja_B:
     dw $0001,$FFF9,$FFF7,$0006,$0006                                     ;B299CA;
     dw EnemyTouch_SpacePirate                                            ;B299D4;
     dw EnemyShot_SpacePirate_Normal                                      ;B299D6;
 
+%anchor($B299D8)
 Hitboxes_PirateWalking_1F_Ninja_C:
     dw $0001,$FFF9,$FFF7,$0006,$0006                                     ;B299D8;
     dw EnemyTouch_SpacePirate                                            ;B299E2;
     dw EnemyShot_SpacePirate_Normal                                      ;B299E4;
 
+%anchor($B299E6)
 Hitboxes_PirateWalking_20_Ninja_D:
     dw $0001,$FFF9,$FFF7,$0006,$0006                                     ;B299E6;
     dw EnemyTouch_SpacePirate                                            ;B299F0;
     dw EnemyShot_SpacePirate_Normal                                      ;B299F2;
 
+%anchor($B299F4)
 Hitboxes_PirateWalking_21_Ninja_E:
     dw $0001,$FFF9,$FFF7,$0006,$0006                                     ;B299F4;
     dw EnemyTouch_SpacePirate                                            ;B299FE;
     dw EnemyShot_SpacePirate_Normal                                      ;B29A00;
 
+%anchor($B29A02)
 Hitboxes_PirateWalking_22_Ninja_F:
     dw $0001,$FFF9,$FFF7,$0006,$0006                                     ;B29A02;
     dw EnemyTouch_SpacePirate                                            ;B29A0C;
     dw EnemyShot_SpacePirate_Normal                                      ;B29A0E;
 
+%anchor($B29A10)
 Hitboxes_PirateWalking_23_Ninja_10:
     dw $0001,$FFF9,$FFF7,$0006,$0006                                     ;B29A10;
     dw EnemyTouch_SpacePirate                                            ;B29A1A;
     dw EnemyShot_SpacePirate_Normal                                      ;B29A1C;
 
+%anchor($B29A1E)
 Hitboxes_PirateWalking_24_Ninja_11:
     dw $0001,$FFF9,$FFF7,$0006,$0006                                     ;B29A1E;
     dw EnemyTouch_SpacePirate                                            ;B29A28;
     dw EnemyShot_SpacePirate_Normal                                      ;B29A2A;
 
+%anchor($B29A2C)
 Hitboxes_PirateWalking_25_Ninja_12:
     dw $0001,$FFF9,$FFF7,$0006,$0006                                     ;B29A2C;
     dw EnemyTouch_SpacePirate                                            ;B29A36;
     dw EnemyShot_SpacePirate_Normal                                      ;B29A38;
 
+%anchor($B29A3A)
 Hitboxes_PirateWalking_26_Ninja_13:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B29A3A;
     dw EnemyTouch_SpacePirate                                            ;B29A44;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B29A46;
 
+%anchor($B29A48)
 Hitboxes_PirateWalking_27:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B29A48;
     dw EnemyTouch_SpacePirate                                            ;B29A52;
     dw EnemyShot_SpacePirate_Normal                                      ;B29A54;
 
+%anchor($B29A56)
 Hitboxes_PirateWalking_28:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B29A56;
     dw EnemyTouch_SpacePirate                                            ;B29A60;
     dw EnemyShot_SpacePirate_Normal                                      ;B29A62;
 
+%anchor($B29A64)
 Hitboxes_PirateWalking_29:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B29A64;
     dw EnemyTouch_SpacePirate                                            ;B29A6E;
     dw EnemyShot_SpacePirate_Normal                                      ;B29A70;
 
+%anchor($B29A72)
 Hitboxes_PirateWalking_2A:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B29A72;
     dw EnemyTouch_SpacePirate                                            ;B29A7C;
     dw EnemyShot_SpacePirate_Normal                                      ;B29A7E;
 
+%anchor($B29A80)
 Hitboxes_PirateWalking_2B:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B29A80;
     dw EnemyTouch_SpacePirate                                            ;B29A8A;
     dw EnemyShot_SpacePirate_Normal                                      ;B29A8C;
 
+%anchor($B29A8E)
 Hitboxes_PirateWalking_2C:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B29A8E;
     dw EnemyTouch_SpacePirate                                            ;B29A98;
     dw EnemyShot_SpacePirate_Normal                                      ;B29A9A;
 
+%anchor($B29A9C)
 Hitboxes_PirateWalking_2D:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B29A9C;
     dw EnemyTouch_SpacePirate                                            ;B29AA6;
     dw EnemyShot_SpacePirate_Normal                                      ;B29AA8;
 
+%anchor($B29AAA)
 Hitboxes_PirateWalking_2E:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B29AAA;
     dw EnemyTouch_SpacePirate                                            ;B29AB4;
     dw EnemyShot_SpacePirate_Normal                                      ;B29AB6;
 
+%anchor($B29AB8)
 Hitboxes_PirateWalking_2F:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B29AB8;
     dw EnemyTouch_SpacePirate                                            ;B29AC2;
     dw EnemyShot_SpacePirate_Normal                                      ;B29AC4;
 
+%anchor($B29AC6)
 Hitboxes_PirateWalking_30:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B29AC6;
     dw EnemyTouch_SpacePirate                                            ;B29AD0;
     dw EnemyShot_SpacePirate_Normal                                      ;B29AD2;
 
+%anchor($B29AD4)
 Hitboxes_PirateWalking_31:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B29AD4;
     dw EnemyTouch_SpacePirate                                            ;B29ADE;
     dw EnemyShot_SpacePirate_Normal                                      ;B29AE0;
 
+%anchor($B29AE2)
 Hitboxes_PirateWalking_32:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B29AE2;
     dw EnemyTouch_SpacePirate                                            ;B29AEC;
     dw EnemyShot_SpacePirate_Normal                                      ;B29AEE;
 
+%anchor($B29AF0)
 Hitboxes_PirateNinja_14:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B29AF0;
     dw EnemyTouch_SpacePirate                                            ;B29AFA;
     dw EnemyShot_SpacePirate_Normal                                      ;B29AFC;
 
+%anchor($B29AFE)
 Hitboxes_PirateNinja_15:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B29AFE;
     dw EnemyTouch_SpacePirate                                            ;B29B08;
     dw EnemyShot_SpacePirate_Normal                                      ;B29B0A;
 
+%anchor($B29B0C)
 Hitboxes_PirateNinja_16:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B29B0C;
     dw EnemyTouch_SpacePirate                                            ;B29B16;
     dw EnemyShot_SpacePirate_Normal                                      ;B29B18;
 
+%anchor($B29B1A)
 Hitboxes_PirateNinja_17:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B29B1A;
     dw EnemyTouch_SpacePirate                                            ;B29B24;
     dw EnemyShot_SpacePirate_Normal                                      ;B29B26;
 
+%anchor($B29B28)
 Hitboxes_PirateNinja_18:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B29B28;
     dw EnemyTouch_SpacePirate                                            ;B29B32;
     dw EnemyShot_SpacePirate_Normal                                      ;B29B34;
 
+%anchor($B29B36)
 Hitboxes_PirateNinja_19:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B29B36;
     dw EnemyTouch_SpacePirate                                            ;B29B40;
     dw EnemyShot_SpacePirate_Normal                                      ;B29B42;
 
+%anchor($B29B44)
 Hitboxes_PirateNinja_1A:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B29B44;
     dw EnemyTouch_SpacePirate                                            ;B29B4E;
     dw EnemyShot_SpacePirate_Normal                                      ;B29B50;
 
+%anchor($B29B52)
 Hitboxes_PirateNinja_1B:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B29B52;
     dw EnemyTouch_SpacePirate                                            ;B29B5C;
     dw EnemyShot_SpacePirate_Normal                                      ;B29B5E;
 
+%anchor($B29B60)
 Hitboxes_PirateWalking_33_Ninja_1C:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B29B60;
     dw EnemyTouch_SpacePirate                                            ;B29B6A;
     dw EnemyShot_SpacePirate_GoldNinjaIsVulnerable                       ;B29B6C;
 
+%anchor($B29B6E)
 Hitboxes_PirateWalking_34_Ninja_1D:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B29B6E;
     dw EnemyTouch_SpacePirate                                            ;B29B78;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B29B7A;
 
+%anchor($B29B7C)
 Hitboxes_PirateWalking_35_Ninja_1E:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B29B7C;
     dw EnemyTouch_SpacePirate                                            ;B29B86;
     dw EnemyShot_SpacePirate_Normal                                      ;B29B88;
 
+%anchor($B29B8A)
 Hitboxes_PirateWalking_36_Ninja_1F:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B29B8A;
     dw EnemyTouch_SpacePirate                                            ;B29B94;
     dw EnemyShot_SpacePirate_Normal                                      ;B29B96;
 
+%anchor($B29B98)
 Hitboxes_PirateWalking_37_Ninja_20:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B29B98;
     dw EnemyTouch_SpacePirate                                            ;B29BA2;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B29BA4;
 
+%anchor($B29BA6)
 Hitboxes_PirateNinja_21:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B29BA6;
     dw EnemyTouch_SpacePirate                                            ;B29BB0;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B29BB2;
 
+%anchor($B29BB4)
 Hitboxes_PirateNinja_22:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B29BB4;
     dw EnemyTouch_SpacePirate                                            ;B29BBE;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B29BC0;
 
+%anchor($B29BC2)
 Hitboxes_PirateNinja_23:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B29BC2;
     dw EnemyTouch_SpacePirate                                            ;B29BCC;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B29BCE;
 
+%anchor($B29BD0)
 Hitboxes_PirateNinja_24:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B29BD0;
     dw EnemyTouch_SpacePirate                                            ;B29BDA;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B29BDC;
 
+%anchor($B29BDE)
 Hitboxes_PirateNinja_25:
     dw $0001,$FFF9,$FFED,$0006,$001E                                     ;B29BDE;
     dw EnemyTouch_SpacePirate                                            ;B29BE8;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B29BEA;
 
+%anchor($B29BEC)
 Hitboxes_PirateNinja_26:
     dw $0001,$FFF9,$FFED,$0006,$001E                                     ;B29BEC;
     dw EnemyTouch_SpacePirate                                            ;B29BF6;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B29BF8;
 
+%anchor($B29BFA)
 Hitboxes_PirateNinja_27:
     dw $0001,$FFF9,$FFED,$0006,$001E                                     ;B29BFA;
     dw EnemyTouch_SpacePirate                                            ;B29C04;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B29C06;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B29C08)
 UNUSED_Hitboxes_SpacePirate_B29C08:
     dw $0001,$FFF9,$FFED,$0006,$001E                                     ;B29C08;
     dw EnemyTouch_SpacePirate                                            ;B29C12;
     dw EnemyShot_SpacePirate_Normal                                      ;B29C14;
 
+%anchor($B29C16)
 UNUSED_Hitboxes_SpacePirate_B29C16:
     dw $0001,$FFF1,$FFED,$000B,$0019                                     ;B29C16;
     dw EnemyTouch_SpacePirate                                            ;B29C20;
     dw EnemyShot_SpacePirate_Normal                                      ;B29C22;
 
+%anchor($B29C24)
 UNUSED_Hitboxes_SpacePirate_B29C24:
     dw $0001,$FFEE,$FFED,$0008,$0018                                     ;B29C24;
     dw EnemyTouch_SpacePirate                                            ;B29C2E;
     dw EnemyShot_SpacePirate_Normal                                      ;B29C30;
 
+%anchor($B29C32)
 UNUSED_Hitboxes_SpacePirate_B29C32:
     dw $0001,$FFF1,$FFED,$000B,$0010                                     ;B29C32;
     dw EnemyTouch_SpacePirate                                            ;B29C3C;
     dw EnemyShot_SpacePirate_Normal                                      ;B29C3E;
 
+%anchor($B29C40)
 UNUSED_Hitboxes_SpacePirate_B29C40:
     dw $0001,$FFF0,$FFED,$000C,$0010                                     ;B29C40;
     dw EnemyTouch_SpacePirate                                            ;B29C4A;
     dw EnemyShot_SpacePirate_Normal                                      ;B29C4C;
 
+%anchor($B29C4E)
 UNUSED_Hitboxes_SpacePirate_B29C4E:
     dw $0001,$FFF0,$FFED,$000B,$0010                                     ;B29C4E;
     dw EnemyTouch_SpacePirate                                            ;B29C58;
     dw EnemyShot_SpacePirate_Normal                                      ;B29C5A;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B29C5C)
 Hitboxes_PirateNinja_28:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B29C5C;
     dw EnemyTouch_SpacePirate                                            ;B29C66;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B29C68;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B29C6A)
 UNUSED_Hitboxes_SpacePirate_B29C6A:
     dw $0001,$FFF9,$FFF7,$0006,$0006                                     ;B29C6A;
     dw EnemyTouch_SpacePirate                                            ;B29C74;
     dw EnemyShot_SpacePirate_Normal                                      ;B29C76;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B29C78)
 Hitboxes_PirateWalking_38:
     dw $0002,$FFF9,$FFED,$0006,$0017                                     ;B29C78;
     dw EnemyTouch_SpacePirate                                            ;B29C82;
@@ -2942,6 +3348,7 @@ Hitboxes_PirateWalking_38:
     dw EnemyTouch_SpacePirate                                            ;B29C8E;
     dw EnemyShot_SpacePirate_GoldNinjaIsVulnerable                       ;B29C90;
 
+%anchor($B29C92)
 Hitboxes_PirateNinja_29:
     dw $0002,$FFF9,$FFED,$0006,$0017                                     ;B29C92;
     dw EnemyTouch_SpacePirate                                            ;B29C9C;
@@ -2951,11 +3358,13 @@ Hitboxes_PirateNinja_29:
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B29CAA;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B29CAC)
 UNUSED_Hitboxes_SpacePirate_B29CAC:
     dw $0001,$FFF9,$FFED,$0006,$001E                                     ;B29CAC;
     dw EnemyTouch_SpacePirate                                            ;B29CB6;
     dw EnemyShot_SpacePirate_Normal                                      ;B29CB8;
 
+%anchor($B29CBA)
 UNUSED_Hitboxes_SpacePirate_B29CBA:
     dw $0002,$FFF9,$FFED,$0006,$001E                                     ;B29CBA;
     dw EnemyTouch_SpacePirate                                            ;B29CC4;
@@ -2964,6 +3373,7 @@ UNUSED_Hitboxes_SpacePirate_B29CBA:
     dw EnemyTouch_SpacePirate                                            ;B29CD0;
     dw EnemyShot_SpacePirate_Normal                                      ;B29CD2;
 
+%anchor($B29CD4)
 UNUSED_Hitboxes_SpacePirate_B29CD4:
     dw $0002,$FFF9,$FFED,$0006,$0010                                     ;B29CD4;
     dw EnemyTouch_SpacePirate                                            ;B29CDE;
@@ -2973,143 +3383,171 @@ UNUSED_Hitboxes_SpacePirate_B29CD4:
     dw EnemyShot_SpacePirate_Normal                                      ;B29CEC;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B29CEE)
 Hitboxes_PirateNinja_2A:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B29CEE;
     dw EnemyTouch_SpacePirate                                            ;B29CF8;
     dw EnemyShot_SpacePirate_Normal                                      ;B29CFA;
 
+%anchor($B29CFC)
 Hitboxes_PirateNinja_2B:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B29CFC;
     dw EnemyTouch_SpacePirate                                            ;B29D06;
     dw EnemyShot_SpacePirate_Normal                                      ;B29D08;
 
+%anchor($B29D0A)
 Hitboxes_PirateNinja_2C:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B29D0A;
     dw EnemyTouch_SpacePirate                                            ;B29D14;
     dw EnemyShot_SpacePirate_Normal                                      ;B29D16;
 
+%anchor($B29D18)
 Hitboxes_PirateNinja_2D:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B29D18;
     dw EnemyTouch_SpacePirate                                            ;B29D22;
     dw EnemyShot_SpacePirate_Normal                                      ;B29D24;
 
+%anchor($B29D26)
 Hitboxes_PirateNinja_2E:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B29D26;
     dw EnemyTouch_SpacePirate                                            ;B29D30;
     dw EnemyShot_SpacePirate_Normal                                      ;B29D32;
 
+%anchor($B29D34)
 Hitboxes_PirateNinja_2F:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B29D34;
     dw EnemyTouch_SpacePirate                                            ;B29D3E;
     dw EnemyShot_SpacePirate_Normal                                      ;B29D40;
 
+%anchor($B29D42)
 Hitboxes_PirateNinja_30:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B29D42;
     dw EnemyTouch_SpacePirate                                            ;B29D4C;
     dw EnemyShot_SpacePirate_Normal                                      ;B29D4E;
 
+%anchor($B29D50)
 Hitboxes_PirateNinja_31:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B29D50;
     dw EnemyTouch_SpacePirate                                            ;B29D5A;
     dw EnemyShot_SpacePirate_Normal                                      ;B29D5C;
 
+%anchor($B29D5E)
 Hitboxes_PirateWalking_39_Ninja_32:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B29D5E;
     dw EnemyTouch_SpacePirate                                            ;B29D68;
     dw EnemyShot_SpacePirate_GoldNinjaIsVulnerable                       ;B29D6A;
 
+%anchor($B29D6C)
 Hitboxes_PirateNinja_33:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B29D6C;
     dw EnemyTouch_SpacePirate                                            ;B29D76;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B29D78;
 
+%anchor($B29D7A)
 Hitboxes_PirateWalking_3A_Ninja_34:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B29D7A;
     dw EnemyTouch_SpacePirate                                            ;B29D84;
     dw EnemyShot_SpacePirate_GoldNinjaIsVulnerable                       ;B29D86;
 
+%anchor($B29D88)
 Hitboxes_PirateWalking_3B_Ninja_35:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B29D88;
     dw EnemyTouch_SpacePirate                                            ;B29D92;
     dw EnemyShot_SpacePirate_GoldNinjaIsVulnerable                       ;B29D94;
 
+%anchor($B29D96)
 Hitboxes_PirateWalking_3C_Ninja_36:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B29D96;
     dw EnemyTouch_SpacePirate                                            ;B29DA0;
     dw EnemyShot_SpacePirate_GoldNinjaIsVulnerable                       ;B29DA2;
 
+%anchor($B29DA4)
 Hitboxes_PirateNinja_37:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B29DA4;
     dw EnemyTouch_SpacePirate                                            ;B29DAE;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B29DB0;
 
+%anchor($B29DB2)
 Hitboxes_PirateNinja_38:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B29DB2;
     dw EnemyTouch_SpacePirate                                            ;B29DBC;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B29DBE;
 
+%anchor($B29DC0)
 Hitboxes_PirateNinja_39:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B29DC0;
     dw EnemyTouch_SpacePirate                                            ;B29DCA;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B29DCC;
 
+%anchor($B29DCE)
 Hitboxes_PirateNinja_3A:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B29DCE;
     dw EnemyTouch_SpacePirate                                            ;B29DD8;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B29DDA;
 
+%anchor($B29DDC)
 Hitboxes_PirateNinja_3B:
     dw $0001,$FFF9,$FFED,$0006,$001E                                     ;B29DDC;
     dw EnemyTouch_SpacePirate                                            ;B29DE6;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B29DE8;
 
+%anchor($B29DEA)
 Hitboxes_PirateNinja_3C:
     dw $0001,$FFF9,$FFED,$0006,$001E                                     ;B29DEA;
     dw EnemyTouch_SpacePirate                                            ;B29DF4;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B29DF6;
 
+%anchor($B29DF8)
 Hitboxes_PirateNinja_3D:
     dw $0001,$FFF9,$FFED,$0006,$001E                                     ;B29DF8;
     dw EnemyTouch_SpacePirate                                            ;B29E02;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B29E04;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B29E06)
 UNUSED_Hitboxes_SpacePirate_B29E06:
     dw $0001,$FFF9,$FFED,$0006,$001E                                     ;B29E06;
     dw EnemyTouch_SpacePirate                                            ;B29E10;
     dw EnemyShot_SpacePirate_Normal                                      ;B29E12;
 
+%anchor($B29E14)
 UNUSED_Hitboxes_SpacePirate_B29E14:
     dw $0001,$FFF9,$FFED,$0006,$0010                                     ;B29E14;
     dw EnemyTouch_SpacePirate                                            ;B29E1E;
     dw EnemyShot_SpacePirate_Normal                                      ;B29E20;
 
+%anchor($B29E22)
 UNUSED_Hitboxes_SpacePirate_B29E22:
     dw $0001,$FFF7,$FFED,$0010,$0014                                     ;B29E22;
     dw EnemyTouch_SpacePirate                                            ;B29E2C;
     dw EnemyShot_SpacePirate_Normal                                      ;B29E2E;
 
+%anchor($B29E30)
 UNUSED_Hitboxes_SpacePirate_B29E30:
     dw $0001,$FFF5,$FFED,$000E,$0010                                     ;B29E30;
     dw EnemyTouch_SpacePirate                                            ;B29E3A;
     dw EnemyShot_SpacePirate_Normal                                      ;B29E3C;
 
+%anchor($B29E3E)
 UNUSED_Hitboxes_SpacePirate_B29E3E:
     dw $0001,$FFF5,$FFED,$000F,$0010                                     ;B29E3E;
     dw EnemyTouch_SpacePirate                                            ;B29E48;
     dw EnemyShot_SpacePirate_Normal                                      ;B29E4A;
 
+%anchor($B29E4C)
 UNUSED_Hitboxes_SpacePirate_B29E4C:
     dw $0001,$FFF5,$FFED,$000E,$0010                                     ;B29E4C;
     dw EnemyTouch_SpacePirate                                            ;B29E56;
     dw EnemyShot_SpacePirate_Normal                                      ;B29E58;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B29E5A)
 Hitboxes_PirateNinja_3E:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B29E5A;
     dw EnemyTouch_SpacePirate                                            ;B29E64;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B29E66;
 
+%anchor($B29E68)
 Hitboxes_PirateWalking_3D:
     dw $0002,$FFF9,$FFED,$0006,$0017                                     ;B29E68;
     dw EnemyTouch_SpacePirate                                            ;B29E72;
@@ -3118,6 +3556,7 @@ Hitboxes_PirateWalking_3D:
     dw EnemyTouch_SpacePirate                                            ;B29E7E;
     dw EnemyShot_SpacePirate_GoldNinjaIsVulnerable                       ;B29E80;
 
+%anchor($B29E82)
 Hitboxes_PirateNinja_3F:
     dw $0002,$FFF9,$FFED,$0006,$0017                                     ;B29E82;
     dw EnemyTouch_SpacePirate                                            ;B29E8C;
@@ -3127,11 +3566,13 @@ Hitboxes_PirateNinja_3F:
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B29E9A;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B29E9C)
 UNUSED_Hitboxes_SpacePirate_B29E9C:
     dw $0001,$FFF9,$FFED,$0006,$001E                                     ;B29E9C;
     dw EnemyTouch_SpacePirate                                            ;B29EA6;
     dw EnemyShot_SpacePirate_Normal                                      ;B29EA8;
 
+%anchor($B29EAA)
 UNUSED_Hitboxes_SpacePirate_B29EAA:
     dw $0002,$FFF9,$FFED,$0006,$001E                                     ;B29EAA;
     dw EnemyTouch_SpacePirate                                            ;B29EB4;
@@ -3140,6 +3581,7 @@ UNUSED_Hitboxes_SpacePirate_B29EAA:
     dw EnemyTouch_SpacePirate                                            ;B29EC0;
     dw EnemyShot_SpacePirate_Normal                                      ;B29EC2;
 
+%anchor($B29EC4)
 UNUSED_Hitboxes_SpacePirate_B29EC4:
     dw $0002,$FFF9,$FFED,$0006,$0010                                     ;B29EC4;
     dw EnemyTouch_SpacePirate                                            ;B29ECE;
@@ -3149,660 +3591,788 @@ UNUSED_Hitboxes_SpacePirate_B29EC4:
     dw EnemyShot_SpacePirate_Normal                                      ;B29EDC;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B29EDE)
 Hitboxes_PirateNinja_40:
     dw $0001,$FFF5,$FFF3,$000A,$000A                                     ;B29EDE;
     dw EnemyTouch_SpacePirate                                            ;B29EE8;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B29EEA;
 
+%anchor($B29EEC)
 Hitboxes_PirateNinja_41:
     dw $0001,$FFF5,$FFF3,$000A,$000A                                     ;B29EEC;
     dw EnemyTouch_SpacePirate                                            ;B29EF6;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B29EF8;
 
+%anchor($B29EFA)
 Hitboxes_PirateNinja_42:
     dw $0001,$FFF5,$FFF3,$000A,$000A                                     ;B29EFA;
     dw EnemyTouch_SpacePirate                                            ;B29F04;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B29F06;
 
+%anchor($B29F08)
 Hitboxes_PirateNinja_43:
     dw $0001,$FFF5,$FFF3,$000A,$000A                                     ;B29F08;
     dw EnemyTouch_SpacePirate                                            ;B29F12;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B29F14;
 
+%anchor($B29F16)
 Hitboxes_PirateNinja_44:
     dw $0001,$FFF5,$FFF3,$000A,$000A                                     ;B29F16;
     dw EnemyTouch_SpacePirate                                            ;B29F20;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B29F22;
 
+%anchor($B29F24)
 Hitboxes_PirateNinja_45:
     dw $0001,$FFF5,$FFF3,$000A,$000A                                     ;B29F24;
     dw EnemyTouch_SpacePirate                                            ;B29F2E;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B29F30;
 
+%anchor($B29F32)
 Hitboxes_PirateNinja_46:
     dw $0001,$FFF5,$FFF3,$000A,$000A                                     ;B29F32;
     dw EnemyTouch_SpacePirate                                            ;B29F3C;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B29F3E;
 
+%anchor($B29F40)
 Hitboxes_PirateNinja_47:
     dw $0001,$FFF5,$FFF3,$000A,$000A                                     ;B29F40;
     dw EnemyTouch_SpacePirate                                            ;B29F4A;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B29F4C;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B29F4E)
 UNUSED_Hitboxes_SpacePirate_B29F4E:
     dw $0001,$FFF3,$FFEC,$000C,$0006                                     ;B29F4E;
     dw EnemyTouch_SpacePirate                                            ;B29F58;
     dw EnemyShot_SpacePirate_Normal                                      ;B29F5A;
 
+%anchor($B29F5C)
 UNUSED_Hitboxes_SpacePirate_B29F5C:
     dw $0001,$FFF1,$FFEC,$000D,$0006                                     ;B29F5C;
     dw EnemyTouch_SpacePirate                                            ;B29F66;
     dw EnemyShot_SpacePirate_Normal                                      ;B29F68;
 
+%anchor($B29F6A)
 UNUSED_Hitboxes_SpacePirate_B29F6A:
     dw $0001,$FFF8,$FFEA,$000C,$0019                                     ;B29F6A;
     dw EnemyTouch_SpacePirate                                            ;B29F74;
     dw EnemyShot_SpacePirate_Normal                                      ;B29F76;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B29F78)
 Hitboxes_PirateNinja_48:
     dw $0001,$FFF5,$FFF3,$000A,$000A                                     ;B29F78;
     dw EnemyTouch_SpacePirate                                            ;B29F82;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B29F84;
 
+%anchor($B29F86)
 Hitboxes_PirateNinja_49:
     dw $0001,$FFF5,$FFF3,$000A,$000A                                     ;B29F86;
     dw EnemyTouch_SpacePirate                                            ;B29F90;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B29F92;
 
+%anchor($B29F94)
 Hitboxes_PirateNinja_4A:
     dw $0001,$FFF5,$FFF3,$000A,$000A                                     ;B29F94;
     dw EnemyTouch_SpacePirate                                            ;B29F9E;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B29FA0;
 
+%anchor($B29FA2)
 Hitboxes_PirateNinja_4B:
     dw $0001,$FFF5,$FFF3,$000A,$000A                                     ;B29FA2;
     dw EnemyTouch_SpacePirate                                            ;B29FAC;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B29FAE;
 
+%anchor($B29FB0)
 Hitboxes_PirateNinja_4C:
     dw $0001,$FFF5,$FFF3,$000A,$000A                                     ;B29FB0;
     dw EnemyTouch_SpacePirate                                            ;B29FBA;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B29FBC;
 
+%anchor($B29FBE)
 Hitboxes_PirateNinja_4D:
     dw $0001,$FFF5,$FFF3,$000A,$000A                                     ;B29FBE;
     dw EnemyTouch_SpacePirate                                            ;B29FC8;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B29FCA;
 
+%anchor($B29FCC)
 Hitboxes_PirateNinja_4E:
     dw $0001,$FFF5,$FFF3,$000A,$000A                                     ;B29FCC;
     dw EnemyTouch_SpacePirate                                            ;B29FD6;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B29FD8;
 
+%anchor($B29FDA)
 Hitboxes_PirateNinja_4F:
     dw $0001,$FFF5,$FFF3,$000A,$000A                                     ;B29FDA;
     dw EnemyTouch_SpacePirate                                            ;B29FE4;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B29FE6;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B29FE8)
 UNUSED_Hitboxes_SpacePirate_B29FE8:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B29FE8;
     dw EnemyTouch_SpacePirate                                            ;B29FF2;
     dw EnemyShot_SpacePirate_Normal                                      ;B29FF4;
 
+%anchor($B29FF6)
 UNUSED_Hitboxes_SpacePirate_B29FF6:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B29FF6;
     dw EnemyTouch_SpacePirate                                            ;B2A000;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A002;
 
+%anchor($B2A004)
 UNUSED_Hitboxes_SpacePirate_B2A004:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A004;
     dw EnemyTouch_SpacePirate                                            ;B2A00E;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A010;
 
+%anchor($B2A012)
 UNUSED_Hitboxes_SpacePirate_B2A012:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A012;
     dw EnemyTouch_SpacePirate                                            ;B2A01C;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A01E;
 
+%anchor($B2A020)
 UNUSED_Hitboxes_SpacePirate_B2A020:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A020;
     dw EnemyTouch_SpacePirate                                            ;B2A02A;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A02C;
 
+%anchor($B2A02E)
 UNUSED_Hitboxes_SpacePirate_B2A02E:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A02E;
     dw EnemyTouch_SpacePirate                                            ;B2A038;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A03A;
 
+%anchor($B2A03C)
 UNUSED_Hitboxes_SpacePirate_B2A0C3:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A03C;
     dw EnemyTouch_SpacePirate                                            ;B2A046;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A048;
 
+%anchor($B2A04A)
 UNUSED_Hitboxes_SpacePirate_B2A04A:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A04A;
     dw EnemyTouch_SpacePirate                                            ;B2A054;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A056;
 
+%anchor($B2A058)
 UNUSED_Hitboxes_SpacePirate_B2A058:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A058;
     dw EnemyTouch_SpacePirate                                            ;B2A062;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A064;
 
+%anchor($B2A066)
 UNUSED_Hitboxes_SpacePirate_B2A066:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A066;
     dw EnemyTouch_SpacePirate                                            ;B2A070;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A072;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B2A074)
 Hitboxes_PirateNinja_50:
     dw $0001,$FFF9,$FFED,$0006,$001E                                     ;B2A074;
     dw EnemyTouch_SpacePirate                                            ;B2A07E;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B2A080;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B2A082)
 UNUSED_Hitboxes_SpacePirate_B2A082:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A082;
     dw EnemyTouch_SpacePirate                                            ;B2A08C;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A08E;
 
+%anchor($B2A090)
 UNUSED_Hitboxes_SpacePirate_B2A090:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A090;
     dw EnemyTouch_SpacePirate                                            ;B2A09A;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A09C;
 
+%anchor($B2A09E)
 UNUSED_Hitboxes_SpacePirate_B2A09E:
     dw $0001,$FFF9,$FFED,$0006,$0010                                     ;B2A09E;
     dw EnemyTouch_SpacePirate                                            ;B2A0A8;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A0AA;
 
+%anchor($B2A0AC)
 UNUSED_Hitboxes_SpacePirate_B2A0AC:
     dw $0001,$FFF9,$FFED,$0006,$0010                                     ;B2A0AC;
     dw EnemyTouch_SpacePirate                                            ;B2A0B6;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A0B8;
 
+%anchor($B2A0BA)
 UNUSED_Hitboxes_SpacePirate_B2A0BA:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A0BA;
     dw EnemyTouch_SpacePirate                                            ;B2A0C4;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A0C6;
 
+%anchor($B2A0C8)
 UNUSED_Hitboxes_SpacePirate_B2A0C8:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A0C8;
     dw EnemyTouch_SpacePirate                                            ;B2A0D2;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A0D4;
 
+%anchor($B2A0D6)
 UNUSED_Hitboxes_SpacePirate_B2A0D6:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A0D6;
     dw EnemyTouch_SpacePirate                                            ;B2A0E0;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A0E2;
 
+%anchor($B2A0E4)
 UNUSED_Hitboxes_SpacePirate_B2A0E4:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A0E4;
     dw EnemyTouch_SpacePirate                                            ;B2A0EE;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A0F0;
 
+%anchor($B2A0F2)
 UNUSED_Hitboxes_SpacePirate_B2A0F2:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A0F2;
     dw EnemyTouch_SpacePirate                                            ;B2A0FC;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A0FE;
 
+%anchor($B2A100)
 UNUSED_Hitboxes_SpacePirate_B2A100:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A100;
     dw EnemyTouch_SpacePirate                                            ;B2A10A;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A10C;
 
+%anchor($B2A10E)
 UNUSED_Hitboxes_SpacePirate_B2A10E:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A10E;
     dw EnemyTouch_SpacePirate                                            ;B2A118;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A11A;
 
+%anchor($B2A11C)
 UNUSED_Hitboxes_SpacePirate_B2A11C:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A11C;
     dw EnemyTouch_SpacePirate                                            ;B2A126;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A128;
 
+%anchor($B2A12A)
 UNUSED_Hitboxes_SpacePirate_B2A12A:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A12A;
     dw EnemyTouch_SpacePirate                                            ;B2A134;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A136;
 
+%anchor($B2A138)
 UNUSED_Hitboxes_SpacePirate_B2A138:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A138;
     dw EnemyTouch_SpacePirate                                            ;B2A142;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A144;
 
+%anchor($B2A146)
 UNUSED_Hitboxes_SpacePirate_B2A146:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A146;
     dw EnemyTouch_SpacePirate                                            ;B2A150;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A152;
 
+%anchor($B2A154)
 UNUSED_Hitboxes_SpacePirate_B2A154:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A154;
     dw EnemyTouch_SpacePirate                                            ;B2A15E;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A160;
 
+%anchor($B2A162)
 UNUSED_Hitboxes_SpacePirate_B2A162:
     dw $0001,$FFF9,$FFED,$0006,$0010                                     ;B2A162;
     dw EnemyTouch_SpacePirate                                            ;B2A16C;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A16E;
 
+%anchor($B2A170)
 UNUSED_Hitboxes_SpacePirate_B2A170:
     dw $0001,$FFF9,$FFED,$0006,$0010                                     ;B2A170;
     dw EnemyTouch_SpacePirate                                            ;B2A17A;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A17C;
 
+%anchor($B2A17E)
 UNUSED_Hitboxes_SpacePirate_B2A17E:
     dw $0001,$FFF9,$FFFF,$0006,$001E                                     ;B2A17E;
     dw EnemyTouch_SpacePirate                                            ;B2A188;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A18A;
 
+%anchor($B2A18C)
 UNUSED_Hitboxes_SpacePirate_B2A18C:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A18C;
     dw EnemyTouch_SpacePirate                                            ;B2A196;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A198;
 
+%anchor($B2A19A)
 UNUSED_Hitboxes_SpacePirate_B2A19A:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A19A;
     dw EnemyTouch_SpacePirate                                            ;B2A1A4;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A1A6;
 
+%anchor($B2A1A8)
 UNUSED_Hitboxes_SpacePirate_B2A1A8:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A1A8;
     dw EnemyTouch_SpacePirate                                            ;B2A1B2;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A1B4;
 
+%anchor($B2A1B6)
 UNUSED_Hitboxes_SpacePirate_B2A1B6:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A1B6;
     dw EnemyTouch_SpacePirate                                            ;B2A1C0;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A1C2;
 
+%anchor($B2A1C4)
 UNUSED_Hitboxes_SpacePirate_B2A1C4:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A1C4;
     dw EnemyTouch_SpacePirate                                            ;B2A1CE;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A1D0;
 
+%anchor($B2A1D2)
 UNUSED_Hitboxes_SpacePirate_B2A1D2:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A1D2;
     dw EnemyTouch_SpacePirate                                            ;B2A1DC;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A1DE;
 
+%anchor($B2A1E0)
 UNUSED_Hitboxes_SpacePirate_B2A1E0:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A1E0;
     dw EnemyTouch_SpacePirate                                            ;B2A1EA;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A1EC;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B2A1EE)
 Hitboxes_PirateNinja_51:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A1EE;
     dw EnemyTouch_SpacePirate                                            ;B2A1F8;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B2A1FA;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B2A1FC)
 UNUSED_Hitboxes_SpacePirate_B2A1FC:
     dw $0001,$FFF9,$0000,$0006,$0010                                     ;B2A1FC;
     dw EnemyTouch_SpacePirate                                            ;B2A206;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A208;
 
+%anchor($B2A20A)
 UNUSED_Hitboxes_SpacePirate_B2A20A:
     dw $0001,$FFF9,$FFF7,$0006,$0006                                     ;B2A20A;
     dw EnemyTouch_SpacePirate                                            ;B2A214;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A216;
 
+%anchor($B2A218)
 UNUSED_Hitboxes_SpacePirate_B2A218:
     dw $0001,$FFF9,$FFF7,$0006,$0006                                     ;B2A218;
     dw EnemyTouch_SpacePirate                                            ;B2A222;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A224;
 
+%anchor($B2A226)
 UNUSED_Hitboxes_SpacePirate_B2A226:
     dw $0001,$FFF9,$FFF7,$0006,$0006                                     ;B2A226;
     dw EnemyTouch_SpacePirate                                            ;B2A230;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A232;
 
+%anchor($B2A234)
 UNUSED_Hitboxes_SpacePirate_B2A234:
     dw $0001,$FFF9,$FFF7,$0006,$0006                                     ;B2A234;
     dw EnemyTouch_SpacePirate                                            ;B2A23E;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A240;
 
+%anchor($B2A242)
 UNUSED_Hitboxes_SpacePirate_B2A242:
     dw $0001,$FFF9,$FFF7,$0006,$0006                                     ;B2A242;
     dw EnemyTouch_SpacePirate                                            ;B2A24C;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A24E;
 
+%anchor($B2A250)
 UNUSED_Hitboxes_SpacePirate_B2A250:
     dw $0001,$FFF9,$FFF7,$0006,$0006                                     ;B2A250;
     dw EnemyTouch_SpacePirate                                            ;B2A25A;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A25C;
 
+%anchor($B2A25E)
 UNUSED_Hitboxes_SpacePirate_B2A25E:
     dw $0001,$FFF9,$FFF7,$0006,$0006                                     ;B2A25E;
     dw EnemyTouch_SpacePirate                                            ;B2A268;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A26A;
 
+%anchor($B2A26C)
 UNUSED_Hitboxes_SpacePirate_B2A26C:
     dw $0001,$FFF9,$FFF7,$0006,$0006                                     ;B2A26C;
     dw EnemyTouch_SpacePirate                                            ;B2A276;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A278;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B2A27A)
 Hitboxes_PirateNinja_52:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A27A;
     dw EnemyTouch_SpacePirate                                            ;B2A284;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A286;
 
+%anchor($B2A288)
 Hitboxes_PirateNinja_53:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A288;
     dw EnemyTouch_SpacePirate                                            ;B2A292;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B2A294;
 
+%anchor($B2A296)
 Hitboxes_PirateNinja_54:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A296;
     dw EnemyTouch_SpacePirate                                            ;B2A2A0;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B2A2A2;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B2A2A4)
 UNUSED_Hitboxes_SpacePirate_B2A2A4:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A2A4;
     dw EnemyTouch_SpacePirate                                            ;B2A2AE;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A2B0;
 
+%anchor($B2A2B2)
 UNUSED_Hitboxes_SpacePirate_B2A2B2:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A2B2;
     dw EnemyTouch_SpacePirate                                            ;B2A2BC;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A2BE;
 
+%anchor($B2A2C0)
 UNUSED_Hitboxes_SpacePirate_B2A2C0:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A2C0;
     dw EnemyTouch_SpacePirate                                            ;B2A2CA;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A2CC;
 
+%anchor($B2A2CE)
 UNUSED_Hitboxes_SpacePirate_B2A2CE:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A2CE;
     dw EnemyTouch_SpacePirate                                            ;B2A2D8;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A2DA;
 
+%anchor($B2A2DC)
 UNUSED_Hitboxes_SpacePirate_B2A2DC:
     dw $0001,$FFF9,$FFFF,$0006,$001E                                     ;B2A2DC;
     dw EnemyTouch_SpacePirate                                            ;B2A2E6;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A2E8;
 
+%anchor($B2A2EA)
 UNUSED_Hitboxes_SpacePirate_B2A2EA:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A2EA;
     dw EnemyTouch_SpacePirate                                            ;B2A2F4;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A2F6;
 
+%anchor($B2A2F8)
 UNUSED_Hitboxes_SpacePirate_B2A2F8:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A2F8;
     dw EnemyTouch_SpacePirate                                            ;B2A302;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A304;
 
+%anchor($B2A306)
 UNUSED_Hitboxes_SpacePirate_B2A306:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A306;
     dw EnemyTouch_SpacePirate                                            ;B2A310;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A312;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B2A314)
 Hitboxes_PirateNinja_55:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A314;
     dw EnemyTouch_SpacePirate                                            ;B2A31E;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B2A320;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B2A322)
 UNUSED_Hitboxes_SpacePirate_B2A322:
     dw $0001,$FFF9,$FFF7,$0006,$0006                                     ;B2A322;
     dw EnemyTouch_SpacePirate                                            ;B2A32C;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A32E;
 
+%anchor($B2A330)
 UNUSED_Hitboxes_SpacePirate_B2A330:
     dw $0001,$FFF9,$FFF7,$0006,$0006                                     ;B2A330;
     dw EnemyTouch_SpacePirate                                            ;B2A33A;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A33C;
 
+%anchor($B2A33E)
 UNUSED_Hitboxes_SpacePirate_B2A33E:
     dw $0001,$FFF9,$FFF7,$0006,$0006                                     ;B2A33E;
     dw EnemyTouch_SpacePirate                                            ;B2A348;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A34A;
 
+%anchor($B2A34C)
 UNUSED_Hitboxes_SpacePirate_B2A34C:
     dw $0001,$FFF9,$FFF7,$0006,$0006                                     ;B2A34C;
     dw EnemyTouch_SpacePirate                                            ;B2A356;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A358;
 
+%anchor($B2A35A)
 UNUSED_Hitboxes_SpacePirate_B2A35A:
     dw $0001,$FFF9,$FFF7,$0006,$0006                                     ;B2A35A;
     dw EnemyTouch_SpacePirate                                            ;B2A364;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A366;
 
+%anchor($B2A368)
 UNUSED_Hitboxes_SpacePirate_B2A368:
     dw $0001,$FFF9,$FFF7,$0006,$0006                                     ;B2A368;
     dw EnemyTouch_SpacePirate                                            ;B2A372;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A374;
 
+%anchor($B2A376)
 UNUSED_Hitboxes_SpacePirate_B2A376:
     dw $0001,$FFF9,$FFF7,$0006,$0006                                     ;B2A376;
     dw EnemyTouch_SpacePirate                                            ;B2A380;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A382;
 
+%anchor($B2A384)
 UNUSED_Hitboxes_SpacePirate_B2A384:
     dw $0001,$FFF9,$FFF7,$0006,$0006                                     ;B2A384;
     dw EnemyTouch_SpacePirate                                            ;B2A38E;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A390;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B2A392)
 Hitboxes_PirateNinja_56:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A392;
     dw EnemyTouch_SpacePirate                                            ;B2A39C;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A39E;
 
+%anchor($B2A3A0)
 Hitboxes_PirateNinja_57:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A3A0;
     dw EnemyTouch_SpacePirate                                            ;B2A3AA;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B2A3AC;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B2A3AE)
 UNUSED_Hitboxes_SpacePirate_B2A3AE:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A3AE;
     dw EnemyTouch_SpacePirate                                            ;B2A3B8;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A3BA;
 
+%anchor($B2A3BC)
 UNUSED_Hitboxes_SpacePirate_B2A3BC:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A3BC;
     dw EnemyTouch_SpacePirate                                            ;B2A3C6;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A3C8;
 
+%anchor($B2A3CA)
 UNUSED_Hitboxes_SpacePirate_B2A3CA:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A3CA;
     dw EnemyTouch_SpacePirate                                            ;B2A3D4;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A3D6;
 
+%anchor($B2A3D8)
 UNUSED_Hitboxes_SpacePirate_B2A3D8:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A3D8;
     dw EnemyTouch_SpacePirate                                            ;B2A3E2;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A3E4;
 
+%anchor($B2A3E6)
 UNUSED_Hitboxes_SpacePirate_B2A3E6:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A3E6;
     dw EnemyTouch_SpacePirate                                            ;B2A3F0;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A3F2;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B2A3F4)
 Hitboxes_PirateNinja_58:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A3F4;
     dw EnemyTouch_SpacePirate                                            ;B2A3FE;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B2A400;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B2A402)
 UNUSED_Hitboxes_SpacePirate_B2A402:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A402;
     dw EnemyTouch_SpacePirate                                            ;B2A40C;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A40E;
 
+%anchor($B2A410)
 UNUSED_Hitboxes_SpacePirate_B2A410:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A410;
     dw EnemyTouch_SpacePirate                                            ;B2A41A;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A41C;
 
+%anchor($B2A41E)
 UNUSED_Hitboxes_SpacePirate_B2A41E:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A41E;
     dw EnemyTouch_SpacePirate                                            ;B2A428;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A42A;
 
+%anchor($B2A42C)
 UNUSED_Hitboxes_SpacePirate_B2A42C:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A42C;
     dw EnemyTouch_SpacePirate                                            ;B2A436;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A438;
 
+%anchor($B2A43A)
 UNUSED_Hitboxes_SpacePirate_B2A43A:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A43A;
     dw EnemyTouch_SpacePirate                                            ;B2A444;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A446;
 
+%anchor($B2A448)
 UNUSED_Hitboxes_SpacePirate_B2A448:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A448;
     dw EnemyTouch_SpacePirate                                            ;B2A452;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A454;
 
+%anchor($B2A456)
 UNUSED_Hitboxes_SpacePirate_B2A456:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A456;
     dw EnemyTouch_SpacePirate                                            ;B2A460;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A462;
 
+%anchor($B2A464)
 UNUSED_Hitboxes_SpacePirate_B2A464:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A464;
     dw EnemyTouch_SpacePirate                                            ;B2A46E;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A470;
 
+%anchor($B2A472)
 UNUSED_Hitboxes_SpacePirate_B2A472:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A472;
     dw EnemyTouch_SpacePirate                                            ;B2A47C;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A47E;
 
+%anchor($B2A480)
 UNUSED_Hitboxes_SpacePirate_B2A480:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A480;
     dw EnemyTouch_SpacePirate                                            ;B2A48A;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A48C;
 
+%anchor($B2A48E)
 UNUSED_Hitboxes_SpacePirate_B2A48E:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A48E;
     dw EnemyTouch_SpacePirate                                            ;B2A498;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A49A;
 
+%anchor($B2A49C)
 UNUSED_Hitboxes_SpacePirate_B2A49C:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A49C;
     dw EnemyTouch_SpacePirate                                            ;B2A4A6;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A4A8;
 
+%anchor($B2A4AA)
 UNUSED_Hitboxes_SpacePirate_B2A4AA:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A4AA;
     dw EnemyTouch_SpacePirate                                            ;B2A4B4;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A4B6;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B2A4B8)
 Hitboxes_PirateNinja_59:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A4B8;
     dw EnemyTouch_SpacePirate                                            ;B2A4C2;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A4C4;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B2A4C6)
 UNUSED_Hitboxes_SpacePirate_B2A4C6:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A4C6;
     dw EnemyTouch_SpacePirate                                            ;B2A4D0;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A4D2;
 
+%anchor($B2A4D4)
 UNUSED_Hitboxes_SpacePirate_B2A4D4:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A4D4;
     dw EnemyTouch_SpacePirate                                            ;B2A4DE;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A4E0;
 
+%anchor($B2A4E2)
 UNUSED_Hitboxes_SpacePirate_B2A4E2:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A4E2;
     dw EnemyTouch_SpacePirate                                            ;B2A4EC;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A4EE;
 
+%anchor($B2A4F0)
 UNUSED_Hitboxes_SpacePirate_B2A4F0:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A4F0;
     dw EnemyTouch_SpacePirate                                            ;B2A4FA;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A4FC;
 
+%anchor($B2A4FE)
 UNUSED_Hitboxes_SpacePirate_B2A4FE:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A4FE;
     dw EnemyTouch_SpacePirate                                            ;B2A508;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A50A;
 
+%anchor($B2A50C)
 UNUSED_Hitboxes_SpacePirate_B2A50C:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A50C;
     dw EnemyTouch_SpacePirate                                            ;B2A516;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A518;
 
+%anchor($B2A51A)
 UNUSED_Hitboxes_SpacePirate_B2A51A:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A51A;
     dw EnemyTouch_SpacePirate                                            ;B2A524;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A526;
 
+%anchor($B2A528)
 UNUSED_Hitboxes_SpacePirate_B2A528:
     dw $0001,$FFF9,$FFED,$0006,$001E                                     ;B2A528;
     dw EnemyTouch_SpacePirate                                            ;B2A532;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A534;
 
+%anchor($B2A536)
 UNUSED_Hitboxes_SpacePirate_B2A536:
     dw $0001,$FFF9,$FFED,$0006,$001E                                     ;B2A536;
     dw EnemyTouch_SpacePirate                                            ;B2A540;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A542;
 
+%anchor($B2A544)
 UNUSED_Hitboxes_SpacePirate_B2A544:
     dw $0001,$FFF9,$FFED,$0006,$001E                                     ;B2A544;
     dw EnemyTouch_SpacePirate                                            ;B2A54E;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A550;
 
+%anchor($B2A552)
 UNUSED_Hitboxes_SpacePirate_B2A552:
     dw $0001,$FFF9,$FFED,$0006,$001E                                     ;B2A552;
     dw EnemyTouch_SpacePirate                                            ;B2A55C;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A55E;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B2A560)
 Hitboxes_PirateNinja_5A:
     dw $0001,$FFF9,$FFED,$0006,$0010                                     ;B2A560;
     dw EnemyTouch_SpacePirate                                            ;B2A56A;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A56C;
 
+%anchor($B2A56E)
 Hitboxes_PirateNinja_5B:
     dw $0001,$FFF9,$FFED,$0006,$001E                                     ;B2A56E;
     dw EnemyTouch_SpacePirate                                            ;B2A578;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B2A57A;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B2A57C)
 UNUSED_Hitboxes_SpacePirate_B2A57C:
     dw $0001,$FFF9,$FFED,$0006,$0010                                     ;B2A57C;
     dw EnemyTouch_SpacePirate                                            ;B2A586;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A588;
 
+%anchor($B2A58A)
 UNUSED_Hitboxes_SpacePirate_B2A58A:
     dw $0001,$FFF9,$FFED,$0006,$0010                                     ;B2A58A;
     dw EnemyTouch_SpacePirate                                            ;B2A594;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A596;
 
+%anchor($B2A598)
 UNUSED_Hitboxes_SpacePirate_B2A598:
     dw $0001,$FFF9,$FFED,$0006,$0010                                     ;B2A598;
     dw EnemyTouch_SpacePirate                                            ;B2A5A2;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A5A4;
 
+%anchor($B2A5A6)
 UNUSED_Hitboxes_SpacePirate_B2A5A6:
     dw $0001,$FFF9,$FFED,$0006,$0010                                     ;B2A5A6;
     dw EnemyTouch_SpacePirate                                            ;B2A5B0;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A5B2;
 
+%anchor($B2A5B4)
 UNUSED_Hitboxes_SpacePirate_B2A5B4:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A5B4;
     dw EnemyTouch_SpacePirate                                            ;B2A5BE;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A5C0;
 
+%anchor($B2A5C2)
 UNUSED_Hitboxes_SpacePirate_B2A5C2:
     dw $0001,$FFF9,$FFF7,$0006,$0006                                     ;B2A5C2;
     dw EnemyTouch_SpacePirate                                            ;B2A5CC;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A5CE;
 
+%anchor($B2A5D0)
 UNUSED_Hitboxes_SpacePirate_B2A5D0:
     dw $0002,$FFF9,$FFED,$0006,$0017                                     ;B2A5D0;
     dw EnemyTouch_SpacePirate                                            ;B2A5DA;
@@ -3812,11 +4382,13 @@ UNUSED_Hitboxes_SpacePirate_B2A5D0:
     dw EnemyShot_SpacePirate_Normal                                      ;B2A5E8;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B2A5EA)
 Hitboxes_PirateNinja_5C:
     dw $0001,$FFF9,$FFED,$0006,$001E                                     ;B2A5EA;
     dw EnemyTouch_SpacePirate                                            ;B2A5F4;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B2A5F6;
 
+%anchor($B2A5F8)
 Hitboxes_PirateNinja_5D:
     dw $0002,$FFF9,$FFED,$0006,$001E                                     ;B2A5F8;
     dw EnemyTouch_SpacePirate                                            ;B2A602;
@@ -3825,6 +4397,7 @@ Hitboxes_PirateNinja_5D:
     dw EnemyTouch_SpacePirate                                            ;B2A60E;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B2A610;
 
+%anchor($B2A612)
 Hitboxes_PirateNinja_5E:
     dw $0002,$FFF9,$FFED,$0006,$0010                                     ;B2A612;
     dw EnemyTouch_SpacePirate                                            ;B2A61C;
@@ -3834,145 +4407,173 @@ Hitboxes_PirateNinja_5E:
     dw EnemyShot_SpacePirate_Normal                                      ;B2A62A;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B2A62C)
 UNUSED_Hitboxes_SpacePirate_B2A62C:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A62C;
     dw EnemyTouch_SpacePirate                                            ;B2A636;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A638;
 
+%anchor($B2A63A)
 UNUSED_Hitboxes_SpacePirate_B2A63A:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A63A;
     dw EnemyTouch_SpacePirate                                            ;B2A644;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A646;
 
+%anchor($B2A648)
 UNUSED_Hitboxes_SpacePirate_B2A648:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A648;
     dw EnemyTouch_SpacePirate                                            ;B2A652;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A654;
 
+%anchor($B2A656)
 UNUSED_Hitboxes_SpacePirate_B2A656:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A656;
     dw EnemyTouch_SpacePirate                                            ;B2A660;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A662;
 
+%anchor($B2A664)
 UNUSED_Hitboxes_SpacePirate_B2A664:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A664;
     dw EnemyTouch_SpacePirate                                            ;B2A66E;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A670;
 
+%anchor($B2A672)
 UNUSED_Hitboxes_SpacePirate_B2A672:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A672;
     dw EnemyTouch_SpacePirate                                            ;B2A67C;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A67E;
 
+%anchor($B2A680)
 UNUSED_Hitboxes_SpacePirate_B2A680:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A680;
     dw EnemyTouch_SpacePirate                                            ;B2A68A;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A68C;
 
+%anchor($B2A68E)
 UNUSED_Hitboxes_SpacePirate_B2A68E:
     dw $0001,$FFF9,$0000,$0006,$001E                                     ;B2A68E;
     dw EnemyTouch_SpacePirate                                            ;B2A698;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A69A;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B2A69C)
 Hitboxes_PirateNinja_5F:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A69C;
     dw EnemyTouch_SpacePirate                                            ;B2A6A6;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A6A8;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B2A6AA)
 UNUSED_Hitboxes_SpacePirate_B2A6AA:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A6AA;
     dw EnemyTouch_SpacePirate                                            ;B2A6B4;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A6B6;
 
+%anchor($B2A6B8)
 UNUSED_Hitboxes_SpacePirate_B2A6B8:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A6B8;
     dw EnemyTouch_SpacePirate                                            ;B2A6C2;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A6C4;
 
+%anchor($B2A6C6)
 UNUSED_Hitboxes_SpacePirate_B2A6C6:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A6C6;
     dw EnemyTouch_SpacePirate                                            ;B2A6D0;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A6D2;
 
+%anchor($B2A6D4)
 UNUSED_Hitboxes_SpacePirate_B2A6D4:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A6D4;
     dw EnemyTouch_SpacePirate                                            ;B2A6DE;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A6E0;
 
+%anchor($B2A6E2)
 UNUSED_Hitboxes_SpacePirate_B2A6E2:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A6E2;
     dw EnemyTouch_SpacePirate                                            ;B2A6EC;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A6EE;
 
+%anchor($B2A6F0)
 UNUSED_Hitboxes_SpacePirate_B2A6F0:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A6F0;
     dw EnemyTouch_SpacePirate                                            ;B2A6FA;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A6FC;
 
+%anchor($B2A6FE)
 UNUSED_Hitboxes_SpacePirate_B2A6FE:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A6FE;
     dw EnemyTouch_SpacePirate                                            ;B2A708;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A70A;
 
+%anchor($B2A70C)
 UNUSED_Hitboxes_SpacePirate_B2A70C:
     dw $0001,$FFF9,$FFED,$0006,$001E                                     ;B2A70C;
     dw EnemyTouch_SpacePirate                                            ;B2A716;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A718;
 
+%anchor($B2A71A)
 UNUSED_Hitboxes_SpacePirate_B2A71A:
     dw $0001,$FFF9,$FFED,$0006,$001E                                     ;B2A71A;
     dw EnemyTouch_SpacePirate                                            ;B2A724;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A726;
 
+%anchor($B2A728)
 UNUSED_Hitboxes_SpacePirate_B2A728:
     dw $0001,$FFF9,$FFED,$0006,$001E                                     ;B2A728;
     dw EnemyTouch_SpacePirate                                            ;B2A732;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A734;
 
+%anchor($B2A736)
 UNUSED_Hitboxes_SpacePirate_B2A736:
     dw $0001,$FFF9,$FFED,$0006,$001E                                     ;B2A736;
     dw EnemyTouch_SpacePirate                                            ;B2A740;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A742;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B2A744)
 Hitboxes_PirateNinja_60:
     dw $0001,$FFF9,$FFED,$0006,$0010                                     ;B2A744;
     dw EnemyTouch_SpacePirate                                            ;B2A74E;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A750;
 
+%anchor($B2A752)
 Hitboxes_PirateNinja_61:
     dw $0001,$FFF9,$FFED,$0006,$001E                                     ;B2A752;
     dw EnemyTouch_SpacePirate                                            ;B2A75C;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B2A75E;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B2A760)
 UNUSED_Hitboxes_SpacePirate_B2A760:
     dw $0001,$FFF9,$FFED,$0006,$0010                                     ;B2A760;
     dw EnemyTouch_SpacePirate                                            ;B2A76A;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A76C;
 
+%anchor($B2A76E)
 UNUSED_Hitboxes_SpacePirate_B2A76E:
     dw $0001,$FFF9,$FFED,$0006,$0010                                     ;B2A76E;
     dw EnemyTouch_SpacePirate                                            ;B2A778;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A77A;
 
+%anchor($B2A77C)
 UNUSED_Hitboxes_SpacePirate_B2A77C:
     dw $0001,$FFF9,$FFED,$0006,$0010                                     ;B2A77C;
     dw EnemyTouch_SpacePirate                                            ;B2A786;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A788;
 
+%anchor($B2A78A)
 UNUSED_Hitboxes_SpacePirate_B2A78A:
     dw $0001,$FFF9,$FFED,$0006,$0010                                     ;B2A78A;
     dw EnemyTouch_SpacePirate                                            ;B2A794;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A796;
 
+%anchor($B2A798)
 UNUSED_Hitboxes_SpacePirate_B2A798:
     dw $0001,$FFF9,$FFED,$0006,$0000                                     ;B2A798;
     dw EnemyTouch_SpacePirate                                            ;B2A7A2;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A7A4;
 
+%anchor($B2A7A6)
 UNUSED_Hitboxes_SpacePirate_B2A7A6:
     dw $0002,$FFF9,$FFED,$0006,$0017                                     ;B2A7A6;
     dw EnemyTouch_SpacePirate                                            ;B2A7B0;
@@ -3982,11 +4583,13 @@ UNUSED_Hitboxes_SpacePirate_B2A7A6:
     dw EnemyShot_SpacePirate_Normal                                      ;B2A7BE;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B2A7C0)
 Hitboxes_PirateNinja_62:
     dw $0001,$FFF9,$FFED,$0006,$001E                                     ;B2A7C0;
     dw EnemyTouch_SpacePirate                                            ;B2A7CA;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B2A7CC;
 
+%anchor($B2A7CE)
 Hitboxes_PirateNinja_63:
     dw $0002,$FFF9,$FFED,$0006,$001E                                     ;B2A7CE;
     dw EnemyTouch_SpacePirate                                            ;B2A7D8;
@@ -3995,6 +4598,7 @@ Hitboxes_PirateNinja_63:
     dw EnemyTouch_SpacePirate                                            ;B2A7E4;
     dw EnemyShot_SpacePirate_GoldNinjaIsInvincible                       ;B2A7E6;
 
+%anchor($B2A7E8)
 Hitboxes_PirateNinja_64:
     dw $0002,$FFF9,$FFED,$0006,$0010                                     ;B2A7E8;
     dw EnemyTouch_SpacePirate                                            ;B2A7F2;
@@ -4004,87 +4608,104 @@ Hitboxes_PirateNinja_64:
     dw EnemyShot_SpacePirate_Normal                                      ;B2A800;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B2A802)
 UNUSED_Hitboxes_SpacePirate_B2A802:
     dw $0001,$FFF5,$FFF3,$000A,$000A                                     ;B2A802;
     dw EnemyTouch_SpacePirate                                            ;B2A80C;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A80E;
 
+%anchor($B2A810)
 UNUSED_Hitboxes_SpacePirate_B2A810:
     dw $0001,$FFF5,$FFF3,$000A,$000A                                     ;B2A810;
     dw EnemyTouch_SpacePirate                                            ;B2A81A;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A81C;
 
+%anchor($B2A81E)
 UNUSED_Hitboxes_SpacePirate_B2A81E:
     dw $0001,$FFF5,$FFF3,$000A,$000A                                     ;B2A81E;
     dw EnemyTouch_SpacePirate                                            ;B2A828;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A82A;
 
+%anchor($B2A82C)
 UNUSED_Hitboxes_SpacePirate_B2A82C:
     dw $0001,$FFF5,$FFF3,$000A,$000A                                     ;B2A82C;
     dw EnemyTouch_SpacePirate                                            ;B2A836;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A838;
 
+%anchor($B2A83A)
 UNUSED_Hitboxes_SpacePirate_B2A83A:
     dw $0001,$FFF5,$FFF3,$000A,$000A                                     ;B2A83A;
     dw EnemyTouch_SpacePirate                                            ;B2A844;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A846;
 
+%anchor($B2A848)
 UNUSED_Hitboxes_SpacePirate_B2A848:
     dw $0001,$FFF5,$FFF3,$000A,$000A                                     ;B2A848;
     dw EnemyTouch_SpacePirate                                            ;B2A852;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A854;
 
+%anchor($B2A856)
 UNUSED_Hitboxes_SpacePirate_B2A856:
     dw $0001,$FFF5,$FFF3,$000A,$000A                                     ;B2A856;
     dw EnemyTouch_SpacePirate                                            ;B2A860;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A862;
 
+%anchor($B2A864)
 UNUSED_Hitboxes_SpacePirate_B2A864:
     dw $0001,$FFF5,$FFF3,$000A,$000A                                     ;B2A864;
     dw EnemyTouch_SpacePirate                                            ;B2A86E;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A870;
 
+%anchor($B2A872)
 UNUSED_Hitboxes_SpacePirate_B2A872:
     dw $0001,$FFF5,$FFF3,$000A,$000A                                     ;B2A872;
     dw EnemyTouch_SpacePirate                                            ;B2A87C;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A87E;
 
+%anchor($B2A880)
 UNUSED_Hitboxes_SpacePirate_B2A880:
     dw $0001,$FFF5,$FFF3,$000A,$000A                                     ;B2A880;
     dw EnemyTouch_SpacePirate                                            ;B2A88A;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A88C;
 
+%anchor($B2A88E)
 UNUSED_Hitboxes_SpacePirate_B2A88E:
     dw $0001,$FFF5,$FFF3,$000A,$000A                                     ;B2A88E;
     dw EnemyTouch_SpacePirate                                            ;B2A898;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A89A;
 
+%anchor($B2A89C)
 UNUSED_Hitboxes_SpacePirate_B2A89C:
     dw $0001,$FFF5,$FFF3,$000A,$000A                                     ;B2A89C;
     dw EnemyTouch_SpacePirate                                            ;B2A8A6;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A8A8;
 
+%anchor($B2A8AA)
 UNUSED_Hitboxes_SpacePirate_B2A8AA:
     dw $0001,$FFF5,$FFF3,$000A,$000A                                     ;B2A8AA;
     dw EnemyTouch_SpacePirate                                            ;B2A8B4;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A8B6;
 
+%anchor($B2A8B8)
 UNUSED_Hitboxes_SpacePirate_B2A8B8:
     dw $0001,$FFF5,$FFF3,$000A,$000A                                     ;B2A8B8;
     dw EnemyTouch_SpacePirate                                            ;B2A8C2;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A8C4;
 
+%anchor($B2A8C6)
 UNUSED_Hitboxes_SpacePirate_B2A8C6:
     dw $0001,$FFF5,$FFF3,$000A,$000A                                     ;B2A8C6;
     dw EnemyTouch_SpacePirate                                            ;B2A8D0;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A8D2;
 
+%anchor($B2A8D4)
 UNUSED_Hitboxes_SpacePirate_B2A8D4:
     dw $0001,$FFF5,$FFF3,$000A,$000A                                     ;B2A8D4;
     dw EnemyTouch_SpacePirate                                            ;B2A8DE;
     dw EnemyShot_SpacePirate_Normal                                      ;B2A8E0;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B2A8E2)
 Spitemaps_PirateWall_0:
     dw $0008,$01EF                                                       ;B2A8E2;
     db $FD                                                               ;B2A8E6;
@@ -4104,6 +4725,7 @@ Spitemaps_PirateWall_0:
     db $DE                                                               ;B2A909;
     dw $212D                                                             ;B2A90A;
 
+%anchor($B2A90C)
 Spitemaps_PirateWall_1:
     dw $0009,$01FC                                                       ;B2A90C;
     db $F3                                                               ;B2A910;
@@ -4125,6 +4747,7 @@ Spitemaps_PirateWall_1:
     db $E2                                                               ;B2A938;
     dw $212D                                                             ;B2A939;
 
+%anchor($B2A93B)
 Spitemaps_PirateWall_2:
     dw $0008,$01EF                                                       ;B2A93B;
     db $F3                                                               ;B2A93F;
@@ -4144,6 +4767,7 @@ Spitemaps_PirateWall_2:
     db $E1                                                               ;B2A962;
     dw $212D                                                             ;B2A963;
 
+%anchor($B2A965)
 Spitemaps_PirateWall_3:
     dw $000A,$01FB                                                       ;B2A965;
     db $F1                                                               ;B2A969;
@@ -4167,6 +4791,7 @@ Spitemaps_PirateWall_3:
     db $F0                                                               ;B2A996;
     dw $2100                                                             ;B2A997;
 
+%anchor($B2A999)
 Spitemaps_PirateWall_4:
     dw $0009,$81F4                                                       ;B2A999;
     db $EB                                                               ;B2A99D;
@@ -4188,6 +4813,7 @@ Spitemaps_PirateWall_4:
     db $F2                                                               ;B2A9C5;
     dw $2100                                                             ;B2A9C6;
 
+%anchor($B2A9C8)
 Spitemaps_PirateWall_5:
     dw $000A,$01F4                                                       ;B2A9C8;
     db $19                                                               ;B2A9CC;
@@ -4211,6 +4837,7 @@ Spitemaps_PirateWall_5:
     db $05                                                               ;B2A9F9;
     dw $2145                                                             ;B2A9FA;
 
+%anchor($B2A9FC)
 Spitemaps_PirateWall_6:
     dw $000C,$0000                                                       ;B2A9FC;
     db $FD                                                               ;B2AA00;
@@ -4238,6 +4865,7 @@ Spitemaps_PirateWall_6:
     db $09                                                               ;B2AA37;
     dw $2145                                                             ;B2AA38;
 
+%anchor($B2AA3A)
 Spitemaps_PirateWall_7:
     dw $000C,$0000                                                       ;B2AA3A;
     db $F9                                                               ;B2AA3E;
@@ -4265,6 +4893,7 @@ Spitemaps_PirateWall_7:
     db $0D                                                               ;B2AA75;
     dw $2145                                                             ;B2AA76;
 
+%anchor($B2AA78)
 Spitemaps_PirateWall_8:
     dw $000C,$01F3                                                       ;B2AA78;
     db $03                                                               ;B2AA7C;
@@ -4292,6 +4921,7 @@ Spitemaps_PirateWall_8:
     db $04                                                               ;B2AAB3;
     dw $210A                                                             ;B2AAB4;
 
+%anchor($B2AAB6)
 Spitemaps_PirateWall_9:
     dw $000A,$01F5                                                       ;B2AAB6;
     db $00                                                               ;B2AABA;
@@ -4315,6 +4945,7 @@ Spitemaps_PirateWall_9:
     db $16                                                               ;B2AAE7;
     dw $2145                                                             ;B2AAE8;
 
+%anchor($B2AAEA)
 Spritemaps_PirateWalking_0:
     dw $0014,$0007                                                       ;B2AAEA;
     db $FE                                                               ;B2AAEE;
@@ -4358,6 +4989,7 @@ Spritemaps_PirateWalking_0:
     db $E8                                                               ;B2AB4D;
     dw $2154                                                             ;B2AB4E;
 
+%anchor($B2AB50)
 Spitemaps_PirateWall_A:
     dw $000D,$81F9                                                       ;B2AB50;
     db $FC                                                               ;B2AB54;
@@ -4387,6 +5019,7 @@ Spitemaps_PirateWall_A:
     db $F0                                                               ;B2AB90;
     dw $2100                                                             ;B2AB91;
 
+%anchor($B2AB93)
 Spitemaps_PirateWall_B:
     dw $000E,$01F0                                                       ;B2AB93;
     db $F7                                                               ;B2AB97;
@@ -4418,6 +5051,7 @@ Spitemaps_PirateWall_B:
     db $F3                                                               ;B2ABD8;
     dw $6102                                                             ;B2ABD9;
 
+%anchor($B2ABDB)
 Spitemaps_PirateWall_C:
     dw $0014,$0000                                                       ;B2ABDB;
     db $F2                                                               ;B2ABDF;
@@ -4461,6 +5095,7 @@ Spitemaps_PirateWall_C:
     db $0B                                                               ;B2AC3E;
     dw $6143                                                             ;B2AC3F;
 
+%anchor($B2AC41)
 Spitemaps_PirateWall_D:
     dw $0010,$0008                                                       ;B2AC41;
     db $FC                                                               ;B2AC45;
@@ -4496,6 +5131,7 @@ Spitemaps_PirateWall_D:
     db $FF                                                               ;B2AC90;
     dw $6122                                                             ;B2AC91;
 
+%anchor($B2AC93)
 Spitemaps_PirateWall_E:
     dw $0008,$0009                                                       ;B2AC93;
     db $FD                                                               ;B2AC97;
@@ -4515,6 +5151,7 @@ Spitemaps_PirateWall_E:
     db $DE                                                               ;B2ACBA;
     dw $612D                                                             ;B2ACBB;
 
+%anchor($B2ACBD)
 Spitemaps_PirateWall_F:
     dw $0009,$01FC                                                       ;B2ACBD;
     db $F3                                                               ;B2ACC1;
@@ -4536,6 +5173,7 @@ Spitemaps_PirateWall_F:
     db $E2                                                               ;B2ACE9;
     dw $612D                                                             ;B2ACEA;
 
+%anchor($B2ACEC)
 Spitemaps_PirateWall_10:
     dw $0008,$0009                                                       ;B2ACEC;
     db $F3                                                               ;B2ACF0;
@@ -4555,6 +5193,7 @@ Spitemaps_PirateWall_10:
     db $E1                                                               ;B2AD13;
     dw $612D                                                             ;B2AD14;
 
+%anchor($B2AD16)
 Spitemaps_PirateWall_11:
     dw $000A,$01FD                                                       ;B2AD16;
     db $F1                                                               ;B2AD1A;
@@ -4578,6 +5217,7 @@ Spitemaps_PirateWall_11:
     db $F0                                                               ;B2AD47;
     dw $6100                                                             ;B2AD48;
 
+%anchor($B2AD4A)
 Spitemaps_PirateWall_12:
     dw $0009,$81FC                                                       ;B2AD4A;
     db $EB                                                               ;B2AD4E;
@@ -4599,6 +5239,7 @@ Spitemaps_PirateWall_12:
     db $F2                                                               ;B2AD76;
     dw $6100                                                             ;B2AD77;
 
+%anchor($B2AD79)
 Spitemaps_PirateWall_13:
     dw $000A,$0004                                                       ;B2AD79;
     db $19                                                               ;B2AD7D;
@@ -4622,6 +5263,7 @@ Spitemaps_PirateWall_13:
     db $05                                                               ;B2ADAA;
     dw $6145                                                             ;B2ADAB;
 
+%anchor($B2ADAD)
 Spitemaps_PirateWall_14:
     dw $000C,$01F8                                                       ;B2ADAD;
     db $FD                                                               ;B2ADB1;
@@ -4649,6 +5291,7 @@ Spitemaps_PirateWall_14:
     db $09                                                               ;B2ADE8;
     dw $6145                                                             ;B2ADE9;
 
+%anchor($B2ADEB)
 Spitemaps_PirateWall_15:
     dw $000C,$01F8                                                       ;B2ADEB;
     db $F9                                                               ;B2ADEF;
@@ -4676,6 +5319,7 @@ Spitemaps_PirateWall_15:
     db $0D                                                               ;B2AE26;
     dw $6145                                                             ;B2AE27;
 
+%anchor($B2AE29)
 Spitemaps_PirateWall_16:
     dw $000C,$0005                                                       ;B2AE29;
     db $03                                                               ;B2AE2D;
@@ -4703,6 +5347,7 @@ Spitemaps_PirateWall_16:
     db $04                                                               ;B2AE64;
     dw $610A                                                             ;B2AE65;
 
+%anchor($B2AE67)
 Spitemaps_PirateWall_17:
     dw $000A,$0003                                                       ;B2AE67;
     db $00                                                               ;B2AE6B;
@@ -4726,6 +5371,7 @@ Spitemaps_PirateWall_17:
     db $16                                                               ;B2AE98;
     dw $6145                                                             ;B2AE99;
 
+%anchor($B2AE9B)
 Spitemaps_PirateWall_18:
     dw $000D,$81F7                                                       ;B2AE9B;
     db $FC                                                               ;B2AE9F;
@@ -4755,6 +5401,7 @@ Spitemaps_PirateWall_18:
     db $F0                                                               ;B2AEDB;
     dw $6100                                                             ;B2AEDC;
 
+%anchor($B2AEDE)
 Spitemaps_PirateWall_19:
     dw $000E,$0008                                                       ;B2AEDE;
     db $F7                                                               ;B2AEE2;
@@ -4786,6 +5433,7 @@ Spitemaps_PirateWall_19:
     db $F3                                                               ;B2AF23;
     dw $2102                                                             ;B2AF24;
 
+%anchor($B2AF26)
 Spitemaps_PirateWall_1A:
     dw $0014,$01F8                                                       ;B2AF26;
     db $F2                                                               ;B2AF2A;
@@ -4829,6 +5477,7 @@ Spitemaps_PirateWall_1A:
     db $0B                                                               ;B2AF89;
     dw $2143                                                             ;B2AF8A;
 
+%anchor($B2AF8C)
 Spitemaps_PirateWall_1B:
     dw $0010,$01F0                                                       ;B2AF8C;
     db $FC                                                               ;B2AF90;
@@ -4864,6 +5513,7 @@ Spitemaps_PirateWall_1B:
     db $FF                                                               ;B2AFDB;
     dw $2122                                                             ;B2AFDC;
 
+%anchor($B2AFDE)
 Spritemaps_PirateWalking_1:
     dw $000A,$01F5                                                       ;B2AFDE;
     db $13                                                               ;B2AFE2;
@@ -4887,6 +5537,7 @@ Spritemaps_PirateWalking_1:
     db $00                                                               ;B2B00F;
     dw $210B                                                             ;B2B010;
 
+%anchor($B2B012)
 Spritemaps_PirateWalking_2:
     dw $000B,$01F9                                                       ;B2B012;
     db $12                                                               ;B2B016;
@@ -4912,6 +5563,7 @@ Spritemaps_PirateWalking_2:
     db $FE                                                               ;B2B048;
     dw $210A                                                             ;B2B049;
 
+%anchor($B2B04B)
 Spritemaps_PirateWalking_3:
     dw $000C,$01FD                                                       ;B2B04B;
     db $18                                                               ;B2B04F;
@@ -4939,6 +5591,7 @@ Spritemaps_PirateWalking_3:
     db $FC                                                               ;B2B086;
     dw $2109                                                             ;B2B087;
 
+%anchor($B2B089)
 Spritemaps_PirateWalking_4:
     dw $000B,$01FA                                                       ;B2B089;
     db $16                                                               ;B2B08D;
@@ -4964,6 +5617,7 @@ Spritemaps_PirateWalking_4:
     db $0A                                                               ;B2B0BF;
     dw $2124                                                             ;B2B0C0;
 
+%anchor($B2B0C2)
 Spritemaps_PirateWalking_5:
     dw $000A,$01FA                                                       ;B2B0C2;
     db $00                                                               ;B2B0C6;
@@ -4987,6 +5641,7 @@ Spritemaps_PirateWalking_5:
     db $00                                                               ;B2B0F3;
     dw $2107                                                             ;B2B0F4;
 
+%anchor($B2B0F6)
 Spritemaps_PirateWalking_6:
     dw $000B,$01F7                                                       ;B2B0F6;
     db $13                                                               ;B2B0FA;
@@ -5012,6 +5667,7 @@ Spritemaps_PirateWalking_6:
     db $FF                                                               ;B2B12C;
     dw $2109                                                             ;B2B12D;
 
+%anchor($B2B12F)
 Spritemaps_PirateWalking_7:
     dw $000C,$01FB                                                       ;B2B12F;
     db $06                                                               ;B2B133;
@@ -5039,6 +5695,7 @@ Spritemaps_PirateWalking_7:
     db $00                                                               ;B2B16A;
     dw $210A                                                             ;B2B16B;
 
+%anchor($B2B16D)
 Spritemaps_PirateWalking_8:
     dw $000B,$01FA                                                       ;B2B16D;
     db $16                                                               ;B2B171;
@@ -5064,6 +5721,7 @@ Spritemaps_PirateWalking_8:
     db $FF                                                               ;B2B1A3;
     dw $210B                                                             ;B2B1A4;
 
+%anchor($B2B1A6)
 Spitemaps_PirateWalking_9_Ninja_0:
     dw $000A,$01F8                                                       ;B2B1A6;
     db $11                                                               ;B2B1AA;
@@ -5087,6 +5745,7 @@ Spitemaps_PirateWalking_9_Ninja_0:
     db $09                                                               ;B2B1D7;
     dw $2124                                                             ;B2B1D8;
 
+%anchor($B2B1DA)
 Spitemaps_PirateWalking_A_Ninja_1:
     dw $000A,$81F7                                                       ;B2B1DA;
     db $FF                                                               ;B2B1DE;
@@ -5110,6 +5769,7 @@ Spitemaps_PirateWalking_A_Ninja_1:
     db $0B                                                               ;B2B20B;
     dw $2143                                                             ;B2B20C;
 
+%anchor($B2B20E)
 Spitemaps_PirateWalking_B_Ninja_2:
     dw $000A,$01FC                                                       ;B2B20E;
     db $08                                                               ;B2B212;
@@ -5133,6 +5793,7 @@ Spitemaps_PirateWalking_B_Ninja_2:
     db $15                                                               ;B2B23F;
     dw $2125                                                             ;B2B240;
 
+%anchor($B2B242)
 Spitemaps_PirateWalking_C:
     dw $0005,$81EA                                                       ;B2B242;
     db $00                                                               ;B2B246;
@@ -5146,6 +5807,7 @@ Spitemaps_PirateWalking_C:
     db $F0                                                               ;B2B25A;
     dw $212E                                                             ;B2B25B;
 
+%anchor($B2B25D)
 Spitemaps_PirateWalking_D:
     dw $0005,$8006                                                       ;B2B25D;
     db $00                                                               ;B2B261;
@@ -5159,6 +5821,7 @@ Spitemaps_PirateWalking_D:
     db $F0                                                               ;B2B275;
     dw $612E                                                             ;B2B276;
 
+%anchor($B2B278)
 Spitemaps_PirateWalking_E:
     dw $000A,$0003                                                       ;B2B278;
     db $13                                                               ;B2B27C;
@@ -5182,6 +5845,7 @@ Spitemaps_PirateWalking_E:
     db $00                                                               ;B2B2A9;
     dw $610B                                                             ;B2B2AA;
 
+%anchor($B2B2AC)
 Spitemaps_PirateWalking_F:
     dw $000B,$01FF                                                       ;B2B2AC;
     db $12                                                               ;B2B2B0;
@@ -5207,6 +5871,7 @@ Spitemaps_PirateWalking_F:
     db $FE                                                               ;B2B2E2;
     dw $610A                                                             ;B2B2E3;
 
+%anchor($B2B2E5)
 Spitemaps_PirateWalking_10:
     dw $000C,$01FB                                                       ;B2B2E5;
     db $18                                                               ;B2B2E9;
@@ -5234,6 +5899,7 @@ Spitemaps_PirateWalking_10:
     db $FC                                                               ;B2B320;
     dw $6109                                                             ;B2B321;
 
+%anchor($B2B323)
 Spitemaps_PirateWalking_11:
     dw $000B,$01FE                                                       ;B2B323;
     db $16                                                               ;B2B327;
@@ -5259,6 +5925,7 @@ Spitemaps_PirateWalking_11:
     db $0A                                                               ;B2B359;
     dw $6124                                                             ;B2B35A;
 
+%anchor($B2B35C)
 Spitemaps_PirateWalking_12:
     dw $000A,$01FE                                                       ;B2B35C;
     db $00                                                               ;B2B360;
@@ -5282,6 +5949,7 @@ Spitemaps_PirateWalking_12:
     db $00                                                               ;B2B38D;
     dw $6107                                                             ;B2B38E;
 
+%anchor($B2B390)
 Spitemaps_PirateWalking_13:
     dw $000B,$0001                                                       ;B2B390;
     db $13                                                               ;B2B394;
@@ -5307,6 +5975,7 @@ Spitemaps_PirateWalking_13:
     db $FF                                                               ;B2B3C6;
     dw $6109                                                             ;B2B3C7;
 
+%anchor($B2B3C9)
 Spitemaps_PirateWalking_14:
     dw $000C,$01FD                                                       ;B2B3C9;
     db $06                                                               ;B2B3CD;
@@ -5334,6 +6003,7 @@ Spitemaps_PirateWalking_14:
     db $00                                                               ;B2B404;
     dw $610A                                                             ;B2B405;
 
+%anchor($B2B407)
 Spitemaps_PirateWalking_15:
     dw $000B,$01FE                                                       ;B2B407;
     db $16                                                               ;B2B40B;
@@ -5359,6 +6029,7 @@ Spitemaps_PirateWalking_15:
     db $FF                                                               ;B2B43D;
     dw $610B                                                             ;B2B43E;
 
+%anchor($B2B440)
 Spitemaps_PirateWalking_16_Ninja_3:
     dw $000A,$0000                                                       ;B2B440;
     db $11                                                               ;B2B444;
@@ -5383,6 +6054,7 @@ Spitemaps_PirateWalking_16_Ninja_3:
     dw $6124                                                             ;B2B472;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B2B474)
 UNUSED_Spitemaps_SpacePirate_B2B474:
     dw $000A,$81F9                                                       ;B2B474;
     db $FF                                                               ;B2B478;
@@ -5407,6 +6079,7 @@ UNUSED_Spitemaps_SpacePirate_B2B474:
     dw $6143                                                             ;B2B4A6;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B2B4A8)
 Spitemaps_PirateWalking_17_Ninja_4:
     dw $000A,$01FC                                                       ;B2B4A8;
     db $08                                                               ;B2B4AC;
@@ -5430,6 +6103,7 @@ Spitemaps_PirateWalking_17_Ninja_4:
     db $15                                                               ;B2B4D9;
     dw $6125                                                             ;B2B4DA;
 
+%anchor($B2B4DC)
 Spitemaps_PirateWalking_18:
     dw $0004,$0000                                                       ;B2B4DC;
     db $00                                                               ;B2B4E0;
@@ -5441,6 +6115,7 @@ Spitemaps_PirateWalking_18:
     db $F8                                                               ;B2B4EF;
     dw $2150                                                             ;B2B4F0;
 
+%anchor($B2B4F2)
 Spitemaps_PirateWalking_19:
     dw $0004,$0000                                                       ;B2B4F2;
     db $00                                                               ;B2B4F6;
@@ -5452,6 +6127,7 @@ Spitemaps_PirateWalking_19:
     db $F8                                                               ;B2B505;
     dw $2152                                                             ;B2B506;
 
+%anchor($B2B508)
 Spitemaps_PirateWalking_1A:
     dw $0009,$01FB                                                       ;B2B508;
     db $FB                                                               ;B2B50C;
@@ -5473,6 +6149,7 @@ Spitemaps_PirateWalking_1A:
     db $EB                                                               ;B2B534;
     dw $210E                                                             ;B2B535;
 
+%anchor($B2B537)
 Spitemaps_PirateWalking_1B:
     dw $0009,$01FA                                                       ;B2B537;
     db $FB                                                               ;B2B53B;
@@ -5494,6 +6171,7 @@ Spitemaps_PirateWalking_1B:
     db $EC                                                               ;B2B563;
     dw $210E                                                             ;B2B564;
 
+%anchor($B2B566)
 Spitemaps_PirateWalking_1C:
     dw $000A,$01F8                                                       ;B2B566;
     db $00                                                               ;B2B56A;
@@ -5517,6 +6195,7 @@ Spitemaps_PirateWalking_1C:
     db $ED                                                               ;B2B597;
     dw $210E                                                             ;B2B598;
 
+%anchor($B2B59A)
 Spitemaps_PirateWalking_1D:
     dw $0009,$81EE                                                       ;B2B59A;
     db $F8                                                               ;B2B59E;
@@ -5538,6 +6217,7 @@ Spitemaps_PirateWalking_1D:
     db $EE                                                               ;B2B5C6;
     dw $210E                                                             ;B2B5C7;
 
+%anchor($B2B5C9)
 Spitemaps_PirateWalking_1E:
     dw $0009,$81EE                                                       ;B2B5C9;
     db $FA                                                               ;B2B5CD;
@@ -5559,6 +6239,7 @@ Spitemaps_PirateWalking_1E:
     db $EF                                                               ;B2B5F5;
     dw $210E                                                             ;B2B5F6;
 
+%anchor($B2B5F8)
 Spitemaps_PirateWalking_1F:
     dw $0009,$81EE                                                       ;B2B5F8;
     db $FB                                                               ;B2B5FC;
@@ -5580,6 +6261,7 @@ Spitemaps_PirateWalking_1F:
     db $F0                                                               ;B2B624;
     dw $210E                                                             ;B2B625;
 
+%anchor($B2B627)
 Spitemaps_PirateWalking_20:
     dw $0009,$01FD                                                       ;B2B627;
     db $FB                                                               ;B2B62B;
@@ -5601,6 +6283,7 @@ Spitemaps_PirateWalking_20:
     db $EB                                                               ;B2B653;
     dw $610E                                                             ;B2B654;
 
+%anchor($B2B656)
 Spitemaps_PirateWalking_21:
     dw $0009,$01FE                                                       ;B2B656;
     db $FB                                                               ;B2B65A;
@@ -5622,6 +6305,7 @@ Spitemaps_PirateWalking_21:
     db $EC                                                               ;B2B682;
     dw $610E                                                             ;B2B683;
 
+%anchor($B2B685)
 Spitemaps_PirateWalking_22:
     dw $000A,$0000                                                       ;B2B685;
     db $00                                                               ;B2B689;
@@ -5645,6 +6329,7 @@ Spitemaps_PirateWalking_22:
     db $ED                                                               ;B2B6B6;
     dw $610E                                                             ;B2B6B7;
 
+%anchor($B2B6B9)
 Spitemaps_PirateWalking_23:
     dw $0009,$8002                                                       ;B2B6B9;
     db $F8                                                               ;B2B6BD;
@@ -5666,6 +6351,7 @@ Spitemaps_PirateWalking_23:
     db $EE                                                               ;B2B6E5;
     dw $610E                                                             ;B2B6E6;
 
+%anchor($B2B6E8)
 Spitemaps_PirateWalking_24:
     dw $0009,$8002                                                       ;B2B6E8;
     db $FA                                                               ;B2B6EC;
@@ -5687,6 +6373,7 @@ Spitemaps_PirateWalking_24:
     db $EF                                                               ;B2B714;
     dw $610E                                                             ;B2B715;
 
+%anchor($B2B717)
 Spitemaps_PirateWalking_25:
     dw $0009,$8002                                                       ;B2B717;
     db $FB                                                               ;B2B71B;
@@ -5708,6 +6395,7 @@ Spitemaps_PirateWalking_25:
     db $F0                                                               ;B2B743;
     dw $610E                                                             ;B2B744;
 
+%anchor($B2B746)
 Spitemaps_PirateNinja_5:
     dw $000A,$81F4                                                       ;B2B746;
     db $00                                                               ;B2B74A;
@@ -5731,6 +6419,7 @@ Spitemaps_PirateNinja_5:
     db $0E                                                               ;B2B777;
     dw $2143                                                             ;B2B778;
 
+%anchor($B2B77A)
 Spitemaps_PirateNinja_6:
     dw $000C,$000B                                                       ;B2B77A;
     db $10                                                               ;B2B77E;
@@ -5758,6 +6447,7 @@ Spitemaps_PirateNinja_6:
     db $FE                                                               ;B2B7B5;
     dw $210A                                                             ;B2B7B6;
 
+%anchor($B2B7B8)
 Spitemaps_PirateNinja_7:
     dw $000C,$01FC                                                       ;B2B7B8;
     db $06                                                               ;B2B7BC;
@@ -5785,6 +6475,7 @@ Spitemaps_PirateNinja_7:
     db $09                                                               ;B2B7F3;
     dw $2143                                                             ;B2B7F4;
 
+%anchor($B2B7F6)
 Spitemaps_PirateNinja_8:
     dw $000B,$01FA                                                       ;B2B7F6;
     db $14                                                               ;B2B7FA;
@@ -5810,6 +6501,7 @@ Spitemaps_PirateNinja_8:
     db $07                                                               ;B2B82C;
     dw $2124                                                             ;B2B82D;
 
+%anchor($B2B82F)
 Spitemaps_PirateNinja_9:
     dw $000A,$01FC                                                       ;B2B82F;
     db $08                                                               ;B2B833;
@@ -5833,6 +6525,7 @@ Spitemaps_PirateNinja_9:
     db $FF                                                               ;B2B860;
     dw $2107                                                             ;B2B861;
 
+%anchor($B2B863)
 Spitemaps_PirateNinja_A:
     dw $000C,$000A                                                       ;B2B863;
     db $0F                                                               ;B2B867;
@@ -5860,6 +6553,7 @@ Spitemaps_PirateNinja_A:
     db $FF                                                               ;B2B89E;
     dw $2109                                                             ;B2B89F;
 
+%anchor($B2B8A1)
 Spitemaps_PirateNinja_B:
     dw $000C,$0007                                                       ;B2B8A1;
     db $12                                                               ;B2B8A5;
@@ -5887,6 +6581,7 @@ Spitemaps_PirateNinja_B:
     db $00                                                               ;B2B8DC;
     dw $210A                                                             ;B2B8DD;
 
+%anchor($B2B8DF)
 Spitemaps_PirateNinja_C:
     dw $000B,$01FA                                                       ;B2B8DF;
     db $14                                                               ;B2B8E3;
@@ -5912,6 +6607,7 @@ Spitemaps_PirateNinja_C:
     db $FF                                                               ;B2B915;
     dw $210B                                                             ;B2B916;
 
+%anchor($B2B918)
 Spitemaps_PirateWalking_26_Ninja_D:
     dw $0009,$01FC                                                       ;B2B918;
     db $FC                                                               ;B2B91C;
@@ -5933,6 +6629,7 @@ Spitemaps_PirateWalking_26_Ninja_D:
     db $FE                                                               ;B2B944;
     dw $214A                                                             ;B2B945;
 
+%anchor($B2B947)
 Spitemaps_PirateWalking_27_Ninja_E:
     dw $0009,$81EB                                                       ;B2B947;
     db $00                                                               ;B2B94B;
@@ -5954,6 +6651,7 @@ Spitemaps_PirateWalking_27_Ninja_E:
     db $FD                                                               ;B2B973;
     dw $214A                                                             ;B2B974;
 
+%anchor($B2B976)
 Spitemaps_PirateWalking_28_Ninja_F:
     dw $0008,$81E9                                                       ;B2B976;
     db $FE                                                               ;B2B97A;
@@ -5973,6 +6671,7 @@ Spitemaps_PirateWalking_28_Ninja_F:
     db $FD                                                               ;B2B99D;
     dw $214A                                                             ;B2B99E;
 
+%anchor($B2B9A0)
 Spitemaps_PirateWalking_29_Ninja_10:
     dw $0008,$81E8                                                       ;B2B9A0;
     db $00                                                               ;B2B9A4;
@@ -5992,6 +6691,7 @@ Spitemaps_PirateWalking_29_Ninja_10:
     db $FF                                                               ;B2B9C7;
     dw $214A                                                             ;B2B9C8;
 
+%anchor($B2B9CA)
 Spitemaps_PirateNinja_11:
     dw $0007,$01F6                                                       ;B2B9CA;
     db $FC                                                               ;B2B9CE;
@@ -6009,6 +6709,7 @@ Spitemaps_PirateNinja_11:
     db $E9                                                               ;B2B9EC;
     dw $210E                                                             ;B2B9ED;
 
+%anchor($B2B9EF)
 Spitemaps_PirateNinja_12:
     dw $0007,$81F4                                                       ;B2B9EF;
     db $F2                                                               ;B2B9F3;
@@ -6026,6 +6727,7 @@ Spitemaps_PirateNinja_12:
     db $FD                                                               ;B2BA11;
     dw $214A                                                             ;B2BA12;
 
+%anchor($B2BA14)
 Spitemaps_PirateNinja_13:
     dw $0009,$01F1                                                       ;B2BA14;
     db $FD                                                               ;B2BA18;
@@ -6047,6 +6749,7 @@ Spitemaps_PirateNinja_13:
     db $FD                                                               ;B2BA40;
     dw $214C                                                             ;B2BA41;
 
+%anchor($B2BA43)
 Spitemaps_PirateNinja_14:
     dw $000A,$01F0                                                       ;B2BA43;
     db $FD                                                               ;B2BA47;
@@ -6070,6 +6773,7 @@ Spitemaps_PirateNinja_14:
     db $FD                                                               ;B2BA74;
     dw $214C                                                             ;B2BA75;
 
+%anchor($B2BA77)
 Spitemaps_PirateNinja_15:
     dw $0014,$01F6                                                       ;B2BA77;
     db $12                                                               ;B2BA7B;
@@ -6113,6 +6817,7 @@ Spitemaps_PirateNinja_15:
     db $15                                                               ;B2BADA;
     dw $2126                                                             ;B2BADB;
 
+%anchor($B2BADD)
 Spitemaps_PirateNinja_16:
     dw $0013,$01F7                                                       ;B2BADD;
     db $08                                                               ;B2BAE1;
@@ -6154,6 +6859,7 @@ Spitemaps_PirateNinja_16:
     db $FD                                                               ;B2BB3B;
     dw $214A                                                             ;B2BB3C;
 
+%anchor($B2BB3E)
 Spitemaps_PirateNinja_17:
     dw $0014,$01F7                                                       ;B2BB3E;
     db $09                                                               ;B2BB42;
@@ -6198,6 +6904,7 @@ Spitemaps_PirateNinja_17:
     dw $214A                                                             ;B2BBA2;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B2BBA4)
 UNUSED_Spitemaps_SpacePirate_B2BBA4:
     dw $000E,$81F4                                                       ;B2BBA4;
     db $FF                                                               ;B2BBA8;
@@ -6229,6 +6936,7 @@ UNUSED_Spitemaps_SpacePirate_B2BBA4:
     db $15                                                               ;B2BBE9;
     dw $2125                                                             ;B2BBEA;
 
+%anchor($B2BBEC)
 UNUSED_Spitemaps_SpacePirate_B2BBEC:
     dw $0012,$81F3                                                       ;B2BBEC;
     db $EC                                                               ;B2BBF0;
@@ -6268,6 +6976,7 @@ UNUSED_Spitemaps_SpacePirate_B2BBEC:
     db $0B                                                               ;B2BC45;
     dw $2143                                                             ;B2BC46;
 
+%anchor($B2BC48)
 UNUSED_Spitemaps_SpacePirate_B2BC48:
     dw $0014,$01F8                                                       ;B2BC48;
     db $F2                                                               ;B2BC4C;
@@ -6311,6 +7020,7 @@ UNUSED_Spitemaps_SpacePirate_B2BC48:
     db $0B                                                               ;B2BCAB;
     dw $2143                                                             ;B2BCAC;
 
+%anchor($B2BCAE)
 UNUSED_Spitemaps_SpacePirate_B2BCAE:
     dw $000F,$01E8                                                       ;B2BCAE;
     db $F7                                                               ;B2BCB2;
@@ -6344,6 +7054,7 @@ UNUSED_Spitemaps_SpacePirate_B2BCAE:
     db $05                                                               ;B2BCF8;
     dw $2143                                                             ;B2BCF9;
 
+%anchor($B2BCFB)
 UNUSED_Spitemaps_SpacePirate_B2BCFB:
     dw $000E,$01F0                                                       ;B2BCFB;
     db $05                                                               ;B2BCFF;
@@ -6375,6 +7086,7 @@ UNUSED_Spitemaps_SpacePirate_B2BCFB:
     db $E6                                                               ;B2BD40;
     dw $212D                                                             ;B2BD41;
 
+%anchor($B2BD43)
 UNUSED_Spitemaps_SpacePirate_B2BD43:
     dw $000E,$01F0                                                       ;B2BD43;
     db $05                                                               ;B2BD47;
@@ -6407,6 +7119,7 @@ UNUSED_Spitemaps_SpacePirate_B2BD43:
     dw $212D                                                             ;B2BD89;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B2BD8B)
 Spitemaps_PirateNinja_18:
     dw $0009,$01F9                                                       ;B2BD8B;
     db $00                                                               ;B2BD8F;
@@ -6429,6 +7142,7 @@ Spitemaps_PirateNinja_18:
     dw $214A                                                             ;B2BDB8;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B2BDBA)
 UNUSED_Spitemaps_SpacePirate_B2BDBA:
     dw $0003,$01FC                                                       ;B2BDBA;
     db $04                                                               ;B2BDBE;
@@ -6439,6 +7153,7 @@ UNUSED_Spitemaps_SpacePirate_B2BDBA:
     dw $212D                                                             ;B2BDC9;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B2BDCB)
 Spitemaps_PirateWalking_2A_Ninja_18:
     dw $0010,$81F9                                                       ;B2BDCB;
     db $FE                                                               ;B2BDCF;
@@ -6475,6 +7190,7 @@ Spitemaps_PirateWalking_2A_Ninja_18:
     dw $2125                                                             ;B2BE1B;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B2BE1D)
 UNUSED_Spitemaps_SpacePirate_B2BE1D:
     dw $0011,$81F3                                                       ;B2BE1D;
     db $FB                                                               ;B2BE21;
@@ -6512,6 +7228,7 @@ UNUSED_Spitemaps_SpacePirate_B2BE1D:
     db $0A                                                               ;B2BE71;
     dw $216F                                                             ;B2BE72;
 
+%anchor($B2BE74)
 UNUSED_Spitemaps_SpacePirate_B2BE74:
     dw $0013,$01FE                                                       ;B2BE74;
     db $FF                                                               ;B2BE78;
@@ -6553,6 +7270,7 @@ UNUSED_Spitemaps_SpacePirate_B2BE74:
     db $FC                                                               ;B2BED2;
     dw $E17D                                                             ;B2BED3;
 
+%anchor($B2BED5)
 UNUSED_Spitemaps_SpacePirate_B2BED5:
     dw $0016,$0009                                                       ;B2BED5;
     db $F4                                                               ;B2BED9;
@@ -6601,6 +7319,7 @@ UNUSED_Spitemaps_SpacePirate_B2BED5:
     dw $E17D                                                             ;B2BF43;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B2BF45)
 Spitemaps_PirateNinja_19:
     dw $000A,$81FC                                                       ;B2BF45;
     db $00                                                               ;B2BF49;
@@ -6624,6 +7343,7 @@ Spitemaps_PirateNinja_19:
     db $0E                                                               ;B2BF76;
     dw $6143                                                             ;B2BF77;
 
+%anchor($B2BF79)
 Spitemaps_PirateNinja_1A:
     dw $000C,$01ED                                                       ;B2BF79;
     db $10                                                               ;B2BF7D;
@@ -6651,6 +7371,7 @@ Spitemaps_PirateNinja_1A:
     db $FE                                                               ;B2BFB4;
     dw $610A                                                             ;B2BFB5;
 
+%anchor($B2BFB7)
 Spitemaps_PirateNinja_1B:
     dw $000C,$01FC                                                       ;B2BFB7;
     db $06                                                               ;B2BFBB;
@@ -6678,6 +7399,7 @@ Spitemaps_PirateNinja_1B:
     db $09                                                               ;B2BFF2;
     dw $6143                                                             ;B2BFF3;
 
+%anchor($B2BFF5)
 Spitemaps_PirateNinja_1C:
     dw $000B,$01FE                                                       ;B2BFF5;
     db $14                                                               ;B2BFF9;
@@ -6703,6 +7425,7 @@ Spitemaps_PirateNinja_1C:
     db $07                                                               ;B2C02B;
     dw $6124                                                             ;B2C02C;
 
+%anchor($B2C02E)
 Spitemaps_PirateNinja_1D:
     dw $000A,$01FC                                                       ;B2C02E;
     db $08                                                               ;B2C032;
@@ -6726,6 +7449,7 @@ Spitemaps_PirateNinja_1D:
     db $FF                                                               ;B2C05F;
     dw $6107                                                             ;B2C060;
 
+%anchor($B2C062)
 Spitemaps_PirateNinja_1E:
     dw $000C,$01EE                                                       ;B2C062;
     db $0F                                                               ;B2C066;
@@ -6753,6 +7477,7 @@ Spitemaps_PirateNinja_1E:
     db $FF                                                               ;B2C09D;
     dw $6109                                                             ;B2C09E;
 
+%anchor($B2C0A0)
 Spitemaps_PirateNinja_1F:
     dw $000C,$01F1                                                       ;B2C0A0;
     db $12                                                               ;B2C0A4;
@@ -6780,6 +7505,7 @@ Spitemaps_PirateNinja_1F:
     db $00                                                               ;B2C0DB;
     dw $610A                                                             ;B2C0DC;
 
+%anchor($B2C0DE)
 Spitemaps_PirateNinja_20:
     dw $000B,$01FE                                                       ;B2C0DE;
     db $14                                                               ;B2C0E2;
@@ -6805,6 +7531,7 @@ Spitemaps_PirateNinja_20:
     db $FF                                                               ;B2C114;
     dw $610B                                                             ;B2C115;
 
+%anchor($B2C117)
 Spitemaps_PirateWalking_2B_Ninja_21:
     dw $0009,$01FC                                                       ;B2C117;
     db $FC                                                               ;B2C11B;
@@ -6826,6 +7553,7 @@ Spitemaps_PirateWalking_2B_Ninja_21:
     db $FE                                                               ;B2C143;
     dw $614A                                                             ;B2C144;
 
+%anchor($B2C146)
 Spitemaps_PirateWalking_2C_Ninja_22:
     dw $0009,$8005                                                       ;B2C146;
     db $00                                                               ;B2C14A;
@@ -6847,6 +7575,7 @@ Spitemaps_PirateWalking_2C_Ninja_22:
     db $FD                                                               ;B2C172;
     dw $614A                                                             ;B2C173;
 
+%anchor($B2C175)
 Spitemaps_PirateWalking_2D_Ninja_23:
     dw $0008,$8007                                                       ;B2C175;
     db $FE                                                               ;B2C179;
@@ -6866,6 +7595,7 @@ Spitemaps_PirateWalking_2D_Ninja_23:
     db $FD                                                               ;B2C19C;
     dw $614A                                                             ;B2C19D;
 
+%anchor($B2C19F)
 Spitemaps_PirateWalking_2E_Ninja_24:
     dw $0008,$8008                                                       ;B2C19F;
     db $00                                                               ;B2C1A3;
@@ -6885,6 +7615,7 @@ Spitemaps_PirateWalking_2E_Ninja_24:
     db $FF                                                               ;B2C1C6;
     dw $614A                                                             ;B2C1C7;
 
+%anchor($B2C1C9)
 Spitemaps_PirateNinja_25:
     dw $0007,$0002                                                       ;B2C1C9;
     db $FC                                                               ;B2C1CD;
@@ -6902,6 +7633,7 @@ Spitemaps_PirateNinja_25:
     db $E9                                                               ;B2C1EB;
     dw $610E                                                             ;B2C1EC;
 
+%anchor($B2C1EE)
 Spitemaps_PirateNinja_26:
     dw $0007,$81FC                                                       ;B2C1EE;
     db $F2                                                               ;B2C1F2;
@@ -6919,6 +7651,7 @@ Spitemaps_PirateNinja_26:
     db $FD                                                               ;B2C210;
     dw $614A                                                             ;B2C211;
 
+%anchor($B2C213)
 Spitemaps_PirateNinja_27:
     dw $0009,$0007                                                       ;B2C213;
     db $FD                                                               ;B2C217;
@@ -6940,6 +7673,7 @@ Spitemaps_PirateNinja_27:
     db $FD                                                               ;B2C23F;
     dw $614C                                                             ;B2C240;
 
+%anchor($B2C242)
 Spitemaps_PirateNinja_28:
     dw $000A,$0008                                                       ;B2C242;
     db $FD                                                               ;B2C246;
@@ -6963,6 +7697,7 @@ Spitemaps_PirateNinja_28:
     db $FD                                                               ;B2C273;
     dw $614C                                                             ;B2C274;
 
+%anchor($B2C276)
 Spitemaps_PirateNinja_29:
     dw $0014,$0002                                                       ;B2C276;
     db $12                                                               ;B2C27A;
@@ -7006,6 +7741,7 @@ Spitemaps_PirateNinja_29:
     db $15                                                               ;B2C2D9;
     dw $6126                                                             ;B2C2DA;
 
+%anchor($B2C2DC)
 Spitemaps_PirateNinja_2A:
     dw $0013,$0001                                                       ;B2C2DC;
     db $08                                                               ;B2C2E0;
@@ -7047,6 +7783,7 @@ Spitemaps_PirateNinja_2A:
     db $FD                                                               ;B2C33A;
     dw $614A                                                             ;B2C33B;
 
+%anchor($B2C33D)
 Spitemaps_PirateNinja_2B:
     dw $0014,$0001                                                       ;B2C33D;
     db $09                                                               ;B2C341;
@@ -7091,6 +7828,7 @@ Spitemaps_PirateNinja_2B:
     dw $614A                                                             ;B2C3A1;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B2C3A3)
 UNUSED_Spitemaps_SpacePirate_B2C3A3:
     dw $000E,$81FC                                                       ;B2C3A3;
     db $FF                                                               ;B2C3A7;
@@ -7122,6 +7860,7 @@ UNUSED_Spitemaps_SpacePirate_B2C3A3:
     db $15                                                               ;B2C3E8;
     dw $6125                                                             ;B2C3E9;
 
+%anchor($B2C3EB)
 UNUSED_Spitemaps_SpacePirate_B2C3EB:
     dw $0012,$81FD                                                       ;B2C3EB;
     db $EC                                                               ;B2C3EF;
@@ -7161,6 +7900,7 @@ UNUSED_Spitemaps_SpacePirate_B2C3EB:
     db $0B                                                               ;B2C444;
     dw $6143                                                             ;B2C445;
 
+%anchor($B2C447)
 UNUSED_Spitemaps_SpacePirate_B2C447:
     dw $0014,$0000                                                       ;B2C447;
     db $F2                                                               ;B2C44B;
@@ -7204,6 +7944,7 @@ UNUSED_Spitemaps_SpacePirate_B2C447:
     db $0B                                                               ;B2C4AA;
     dw $6143                                                             ;B2C4AB;
 
+%anchor($B2C4AD)
 UNUSED_Spitemaps_SpacePirate_B2C4AD:
     dw $000F,$0010                                                       ;B2C4AD;
     db $F7                                                               ;B2C4B1;
@@ -7237,6 +7978,7 @@ UNUSED_Spitemaps_SpacePirate_B2C4AD:
     db $05                                                               ;B2C4F7;
     dw $6143                                                             ;B2C4F8;
 
+%anchor($B2C4FA)
 UNUSED_Spitemaps_SpacePirate_B2C4FA:
     dw $000E,$0008                                                       ;B2C4FA;
     db $05                                                               ;B2C4FE;
@@ -7268,6 +8010,7 @@ UNUSED_Spitemaps_SpacePirate_B2C4FA:
     db $E6                                                               ;B2C53F;
     dw $612D                                                             ;B2C540;
 
+%anchor($B2C542)
 UNUSED_Spitemaps_SpacePirate_B2C542:
     dw $000E,$0008                                                       ;B2C542;
     db $05                                                               ;B2C546;
@@ -7300,6 +8043,7 @@ UNUSED_Spitemaps_SpacePirate_B2C542:
     dw $612D                                                             ;B2C588;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B2C58A)
 Spitemaps_PirateNinja_2C:
     dw $0009,$01FF                                                       ;B2C58A;
     db $00                                                               ;B2C58E;
@@ -7321,6 +8065,7 @@ Spitemaps_PirateNinja_2C:
     db $FE                                                               ;B2C5B6;
     dw $614A                                                             ;B2C5B7;
 
+%anchor($B2C5B9)
 Spitemaps_PirateWalking_2F:
     dw $0010,$81F7                                                       ;B2C5B9;
     db $FE                                                               ;B2C5BD;
@@ -7357,6 +8102,7 @@ Spitemaps_PirateWalking_2F:
     dw $6125                                                             ;B2C609;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B2C60B)
 UNUSED_Spitemaps_SpacePirate_B2C60B:
     dw $0011,$81FD                                                       ;B2C60B;
     db $FB                                                               ;B2C60F;
@@ -7394,6 +8140,7 @@ UNUSED_Spitemaps_SpacePirate_B2C60B:
     db $0A                                                               ;B2C65F;
     dw $616F                                                             ;B2C660;
 
+%anchor($B2C662)
 UNUSED_Spitemaps_SpacePirate_B2C662:
     dw $0013,$01FA                                                       ;B2C662;
     db $FF                                                               ;B2C666;
@@ -7435,6 +8182,7 @@ UNUSED_Spitemaps_SpacePirate_B2C662:
     db $FC                                                               ;B2C6C0;
     dw $A17D                                                             ;B2C6C1;
 
+%anchor($B2C6C3)
 UNUSED_Spitemaps_SpacePirate_B2C6C3:
     dw $0016,$01EF                                                       ;B2C6C3;
     db $F4                                                               ;B2C6C7;
@@ -7483,6 +8231,7 @@ UNUSED_Spitemaps_SpacePirate_B2C6C3:
     dw $A17D                                                             ;B2C731;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B2C733)
 Spitemaps_PirateNinja_2D:
     dw $0004,$81FA                                                       ;B2C733;
     db $00                                                               ;B2C737;
@@ -7494,6 +8243,7 @@ Spitemaps_PirateNinja_2D:
     db $F0                                                               ;B2C746;
     dw $2160                                                             ;B2C747;
 
+%anchor($B2C749)
 Spitemaps_PirateNinja_2E:
     dw $0006,$01F5                                                       ;B2C749;
     db $10                                                               ;B2C74D;
@@ -7509,6 +8259,7 @@ Spitemaps_PirateNinja_2E:
     db $F0                                                               ;B2C766;
     dw $2164                                                             ;B2C767;
 
+%anchor($B2C769)
 Spitemaps_PirateNinja_2E_miscount:
     dw $0005,$000C                                                       ;B2C769;
     db $FE                                                               ;B2C76D;
@@ -7522,6 +8273,7 @@ Spitemaps_PirateNinja_2E_miscount:
     db $F6                                                               ;B2C781;
     dw $2168                                                             ;B2C782;
 
+%anchor($B2C784)
 Spitemaps_PirateNinja_2F:
     dw $0007,$0010                                                       ;B2C784;
     db $FA                                                               ;B2C788;
@@ -7539,6 +8291,7 @@ Spitemaps_PirateNinja_2F:
     db $02                                                               ;B2C7A6;
     dw $E1A2                                                             ;B2C7A7;
 
+%anchor($B2C7A9)
 Spitemaps_PirateNinja_30:
     dw $0004,$81F6                                                       ;B2C7A9;
     db $F0                                                               ;B2C7AD;
@@ -7550,6 +8303,7 @@ Spitemaps_PirateNinja_30:
     db $00                                                               ;B2C7BC;
     dw $E160                                                             ;B2C7BD;
 
+%anchor($B2C7BF)
 Spitemaps_PirateNinja_31:
     dw $0006,$0004                                                       ;B2C7BF;
     db $E8                                                               ;B2C7C3;
@@ -7565,6 +8319,7 @@ Spitemaps_PirateNinja_31:
     db $00                                                               ;B2C7DC;
     dw $E164                                                             ;B2C7DD;
 
+%anchor($B2C7DF)
 Spitemaps_PirateNinja_32:
     dw $0005,$01EC                                                       ;B2C7DF;
     db $FA                                                               ;B2C7E3;
@@ -7578,6 +8333,7 @@ Spitemaps_PirateNinja_32:
     db $FA                                                               ;B2C7F7;
     dw $E168                                                             ;B2C7F8;
 
+%anchor($B2C7FA)
 Spitemaps_PirateNinja_33:
     dw $0007,$01E9                                                       ;B2C7FA;
     db $FE                                                               ;B2C7FE;
@@ -7596,6 +8352,7 @@ Spitemaps_PirateNinja_33:
     dw $21A2                                                             ;B2C81D;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B2C81F)
 UNUSED_Spitemaps_SpacePirate_B2C81F:
     dw $000D,$81F9                                                       ;B2C81F;
     db $FC                                                               ;B2C823;
@@ -7625,6 +8382,7 @@ UNUSED_Spitemaps_SpacePirate_B2C81F:
     db $F0                                                               ;B2C85F;
     dw $2100                                                             ;B2C860;
 
+%anchor($B2C862)
 UNUSED_Spitemaps_SpacePirate_B2C862:
     dw $000E,$01F0                                                       ;B2C862;
     db $F7                                                               ;B2C866;
@@ -7656,6 +8414,7 @@ UNUSED_Spitemaps_SpacePirate_B2C862:
     db $F3                                                               ;B2C8A7;
     dw $6102                                                             ;B2C8A8;
 
+%anchor($B2C8AA)
 UNUSED_Spitemaps_SpacePirate_B2C8AA:
     dw $0014,$0000                                                       ;B2C8AA;
     db $F2                                                               ;B2C8AE;
@@ -7700,6 +8459,7 @@ UNUSED_Spitemaps_SpacePirate_B2C8AA:
     dw $6143                                                             ;B2C90E;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B2C910)
 Spitemaps_PirateNinja_34:
     dw $0004,$81F6                                                       ;B2C910;
     db $00                                                               ;B2C914;
@@ -7711,6 +8471,7 @@ Spitemaps_PirateNinja_34:
     db $F0                                                               ;B2C923;
     dw $6160                                                             ;B2C924;
 
+%anchor($B2C926)
 Spitemaps_PirateNinja_35:
     dw $0006,$0003                                                       ;B2C926;
     db $10                                                               ;B2C92A;
@@ -7726,6 +8487,7 @@ Spitemaps_PirateNinja_35:
     db $F0                                                               ;B2C943;
     dw $6164                                                             ;B2C944;
 
+%anchor($B2C946)
 Spitemaps_PirateNinja_36:
     dw $0005,$01EC                                                       ;B2C946;
     db $FE                                                               ;B2C94A;
@@ -7739,6 +8501,7 @@ Spitemaps_PirateNinja_36:
     db $F6                                                               ;B2C95E;
     dw $6168                                                             ;B2C95F;
 
+%anchor($B2C961)
 Spitemaps_PirateNinja_37:
     dw $0007,$01E8                                                       ;B2C961;
     db $FA                                                               ;B2C965;
@@ -7756,6 +8519,7 @@ Spitemaps_PirateNinja_37:
     db $02                                                               ;B2C983;
     dw $A1A2                                                             ;B2C984;
 
+%anchor($B2C986)
 Spitemaps_PirateNinja_38:
     dw $0004,$81FA                                                       ;B2C986;
     db $F0                                                               ;B2C98A;
@@ -7767,6 +8531,7 @@ Spitemaps_PirateNinja_38:
     db $00                                                               ;B2C999;
     dw $A160                                                             ;B2C99A;
 
+%anchor($B2C99C)
 Spitemaps_PirateNinja_39:
     dw $0006,$01F4                                                       ;B2C99C;
     db $E8                                                               ;B2C9A0;
@@ -7782,6 +8547,7 @@ Spitemaps_PirateNinja_39:
     db $00                                                               ;B2C9B9;
     dw $A164                                                             ;B2C9BA;
 
+%anchor($B2C9BC)
 Spitemaps_PirateNinja_3A:
     dw $0005,$000C                                                       ;B2C9BC;
     db $FA                                                               ;B2C9C0;
@@ -7795,6 +8561,7 @@ Spitemaps_PirateNinja_3A:
     db $FA                                                               ;B2C9D4;
     dw $A168                                                             ;B2C9D5;
 
+%anchor($B2C9D7)
 Spitemaps_PirateNinja_3B:
     dw $0007,$000F                                                       ;B2C9D7;
     db $FE                                                               ;B2C9DB;
@@ -7813,6 +8580,7 @@ Spitemaps_PirateNinja_3B:
     dw $61A2                                                             ;B2C9FA;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B2C9FC)
 UNUSED_Spitemaps_SpacePirate_B2C9FC:
     dw $0008,$01EF                                                       ;B2C9FC;
     db $FD                                                               ;B2CA00;
@@ -7832,6 +8600,7 @@ UNUSED_Spitemaps_SpacePirate_B2C9FC:
     db $DE                                                               ;B2CA23;
     dw $212D                                                             ;B2CA24;
 
+%anchor($B2CA26)
 UNUSED_Spitemaps_SpacePirate_B2CA26:
     dw $0009,$01FC                                                       ;B2CA26;
     db $F3                                                               ;B2CA2A;
@@ -7853,6 +8622,7 @@ UNUSED_Spitemaps_SpacePirate_B2CA26:
     db $E2                                                               ;B2CA52;
     dw $212D                                                             ;B2CA53;
 
+%anchor($B2CA55)
 UNUSED_Spitemaps_SpacePirate_B2CA55:
     dw $0008,$01EF                                                       ;B2CA55;
     db $F3                                                               ;B2CA59;
@@ -7872,6 +8642,7 @@ UNUSED_Spitemaps_SpacePirate_B2CA55:
     db $E1                                                               ;B2CA7C;
     dw $212D                                                             ;B2CA7D;
 
+%anchor($B2CA7F)
 UNUSED_Spitemaps_SpacePirate_B2CA7F:
     dw $000A,$01FB                                                       ;B2CA7F;
     db $F1                                                               ;B2CA83;
@@ -7895,6 +8666,7 @@ UNUSED_Spitemaps_SpacePirate_B2CA7F:
     db $F0                                                               ;B2CAB0;
     dw $2100                                                             ;B2CAB1;
 
+%anchor($B2CAB3)
 UNUSED_Spitemaps_SpacePirate_B2CAB3:
     dw $0009,$81F4                                                       ;B2CAB3;
     db $EB                                                               ;B2CAB7;
@@ -7916,6 +8688,7 @@ UNUSED_Spitemaps_SpacePirate_B2CAB3:
     db $F2                                                               ;B2CADF;
     dw $2100                                                             ;B2CAE0;
 
+%anchor($B2CAE2)
 UNUSED_Spitemaps_SpacePirate_B2CAE2:
     dw $000A,$01F4                                                       ;B2CAE2;
     db $19                                                               ;B2CAE6;
@@ -7939,6 +8712,7 @@ UNUSED_Spitemaps_SpacePirate_B2CAE2:
     db $05                                                               ;B2CB13;
     dw $2145                                                             ;B2CB14;
 
+%anchor($B2CB16)
 UNUSED_Spitemaps_SpacePirate_B2CB16:
     dw $000C,$0000                                                       ;B2CB16;
     db $FD                                                               ;B2CB1A;
@@ -7966,6 +8740,7 @@ UNUSED_Spitemaps_SpacePirate_B2CB16:
     db $09                                                               ;B2CB51;
     dw $2145                                                             ;B2CB52;
 
+%anchor($B2CB54)
 UNUSED_Spitemaps_SpacePirate_B2CB54:
     dw $000C,$0000                                                       ;B2CB54;
     db $F9                                                               ;B2CB58;
@@ -7993,6 +8768,7 @@ UNUSED_Spitemaps_SpacePirate_B2CB54:
     db $0D                                                               ;B2CB8F;
     dw $2145                                                             ;B2CB90;
 
+%anchor($B2CB92)
 UNUSED_Spitemaps_SpacePirate_B2CB92:
     dw $000C,$01F3                                                       ;B2CB92;
     db $03                                                               ;B2CB96;
@@ -8020,6 +8796,7 @@ UNUSED_Spitemaps_SpacePirate_B2CB92:
     db $04                                                               ;B2CBCD;
     dw $210A                                                             ;B2CBCE;
 
+%anchor($B2CBD0)
 UNUSED_Spitemaps_SpacePirate_B2CBD0:
     dw $000A,$01F5                                                       ;B2CBD0;
     db $00                                                               ;B2CBD4;
@@ -8044,6 +8821,7 @@ UNUSED_Spitemaps_SpacePirate_B2CBD0:
     dw $2145                                                             ;B2CC02;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B2CC04)
 Spitemaps_PirateNinja_3C:
     dw $0014,$0007                                                       ;B2CC04;
     db $FE                                                               ;B2CC08;
@@ -8088,6 +8866,7 @@ Spitemaps_PirateNinja_3C:
     dw $2154                                                             ;B2CC68;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B2CC6A)
 UNUSED_Spitemaps_SpacePirate_B2CC6A:
     dw $000D,$81F9                                                       ;B2CC6A;
     db $FC                                                               ;B2CC6E;
@@ -8117,6 +8896,7 @@ UNUSED_Spitemaps_SpacePirate_B2CC6A:
     db $F0                                                               ;B2CCAA;
     dw $2100                                                             ;B2CCAB;
 
+%anchor($B2CCAD)
 UNUSED_Spitemaps_SpacePirate_B2CCAD:
     dw $000E,$01F0                                                       ;B2CCAD;
     db $F7                                                               ;B2CCB1;
@@ -8148,6 +8928,7 @@ UNUSED_Spitemaps_SpacePirate_B2CCAD:
     db $F3                                                               ;B2CCF2;
     dw $6102                                                             ;B2CCF3;
 
+%anchor($B2CCF5)
 UNUSED_Spitemaps_SpacePirate_B2CCF5:
     dw $0014,$0000                                                       ;B2CCF5;
     db $F2                                                               ;B2CCF9;
@@ -8191,6 +8972,7 @@ UNUSED_Spitemaps_SpacePirate_B2CCF5:
     db $0B                                                               ;B2CD58;
     dw $6143                                                             ;B2CD59;
 
+%anchor($B2CD5B)
 UNUSED_Spitemaps_SpacePirate_B2CD5B:
     dw $0010,$0008                                                       ;B2CD5B;
     db $FC                                                               ;B2CD5F;
@@ -8226,6 +9008,7 @@ UNUSED_Spitemaps_SpacePirate_B2CD5B:
     db $FF                                                               ;B2CDAA;
     dw $6122                                                             ;B2CDAB;
 
+%anchor($B2CDAD)
 UNUSED_Spitemaps_SpacePirate_B2CDAD:
     dw $0008,$0009                                                       ;B2CDAD;
     db $FD                                                               ;B2CDB1;
@@ -8245,6 +9028,7 @@ UNUSED_Spitemaps_SpacePirate_B2CDAD:
     db $DE                                                               ;B2CDD4;
     dw $612D                                                             ;B2CDD5;
 
+%anchor($B2CDD7)
 UNUSED_Spitemaps_SpacePirate_B2CDD7:
     dw $0009,$01FC                                                       ;B2CDD7;
     db $F3                                                               ;B2CDDB;
@@ -8266,6 +9050,7 @@ UNUSED_Spitemaps_SpacePirate_B2CDD7:
     db $E2                                                               ;B2CE03;
     dw $612D                                                             ;B2CE04;
 
+%anchor($B2CE06)
 UNUSED_Spitemaps_SpacePirate_B2CE06:
     dw $0008,$0009                                                       ;B2CE06;
     db $F3                                                               ;B2CE0A;
@@ -8285,6 +9070,7 @@ UNUSED_Spitemaps_SpacePirate_B2CE06:
     db $E1                                                               ;B2CE2D;
     dw $612D                                                             ;B2CE2E;
 
+%anchor($B2CE30)
 UNUSED_Spitemaps_SpacePirate_B2CE30:
     dw $000A,$01FD                                                       ;B2CE30;
     db $F1                                                               ;B2CE34;
@@ -8308,6 +9094,7 @@ UNUSED_Spitemaps_SpacePirate_B2CE30:
     db $F0                                                               ;B2CE61;
     dw $6100                                                             ;B2CE62;
 
+%anchor($B2CE64)
 UNUSED_Spitemaps_SpacePirate_B2CE64:
     dw $0009,$81FC                                                       ;B2CE64;
     db $EB                                                               ;B2CE68;
@@ -8329,6 +9116,7 @@ UNUSED_Spitemaps_SpacePirate_B2CE64:
     db $F2                                                               ;B2CE90;
     dw $6100                                                             ;B2CE91;
 
+%anchor($B2CE93)
 UNUSED_Spitemaps_SpacePirate_B2CE93:
     dw $000A,$0004                                                       ;B2CE93;
     db $19                                                               ;B2CE97;
@@ -8352,6 +9140,7 @@ UNUSED_Spitemaps_SpacePirate_B2CE93:
     db $05                                                               ;B2CEC4;
     dw $6145                                                             ;B2CEC5;
 
+%anchor($B2CEC7)
 UNUSED_Spitemaps_SpacePirate_B2CEC7:
     dw $000C,$01F8                                                       ;B2CEC7;
     db $FD                                                               ;B2CECB;
@@ -8379,6 +9168,7 @@ UNUSED_Spitemaps_SpacePirate_B2CEC7:
     db $09                                                               ;B2CF02;
     dw $6145                                                             ;B2CF03;
 
+%anchor($B2CF05)
 UNUSED_Spitemaps_SpacePirate_B2CF05:
     dw $000C,$01F8                                                       ;B2CF05;
     db $F9                                                               ;B2CF09;
@@ -8406,6 +9196,7 @@ UNUSED_Spitemaps_SpacePirate_B2CF05:
     db $0D                                                               ;B2CF40;
     dw $6145                                                             ;B2CF41;
 
+%anchor($B2CF43)
 UNUSED_Spitemaps_SpacePirate_B2CF43:
     dw $000C,$0005                                                       ;B2CF43;
     db $03                                                               ;B2CF47;
@@ -8433,6 +9224,7 @@ UNUSED_Spitemaps_SpacePirate_B2CF43:
     db $04                                                               ;B2CF7E;
     dw $610A                                                             ;B2CF7F;
 
+%anchor($B2CF81)
 UNUSED_Spitemaps_SpacePirate_B2CF81:
     dw $000A,$0003                                                       ;B2CF81;
     db $00                                                               ;B2CF85;
@@ -8456,6 +9248,7 @@ UNUSED_Spitemaps_SpacePirate_B2CF81:
     db $16                                                               ;B2CFB2;
     dw $6145                                                             ;B2CFB3;
 
+%anchor($B2CFB5)
 UNUSED_Spitemaps_SpacePirate_B2CFB5:
     dw $000D,$81F7                                                       ;B2CFB5;
     db $FC                                                               ;B2CFB9;
@@ -8485,6 +9278,7 @@ UNUSED_Spitemaps_SpacePirate_B2CFB5:
     db $F0                                                               ;B2CFF5;
     dw $6100                                                             ;B2CFF6;
 
+%anchor($B2CFF8)
 UNUSED_Spitemaps_SpacePirate_B2CFF8:
     dw $000E,$0008                                                       ;B2CFF8;
     db $F7                                                               ;B2CFFC;
@@ -8516,6 +9310,7 @@ UNUSED_Spitemaps_SpacePirate_B2CFF8:
     db $F3                                                               ;B2D03D;
     dw $2102                                                             ;B2D03E;
 
+%anchor($B2D040)
 UNUSED_Spitemaps_SpacePirate_B2D040:
     dw $0014,$01F8                                                       ;B2D040;
     db $F2                                                               ;B2D044;
@@ -8559,6 +9354,7 @@ UNUSED_Spitemaps_SpacePirate_B2D040:
     db $0B                                                               ;B2D0A3;
     dw $2143                                                             ;B2D0A4;
 
+%anchor($B2D0A6)
 UNUSED_Spitemaps_SpacePirate_B2D0A6:
     dw $0010,$01F0                                                       ;B2D0A6;
     db $FC                                                               ;B2D0AA;
@@ -8594,6 +9390,7 @@ UNUSED_Spitemaps_SpacePirate_B2D0A6:
     db $FF                                                               ;B2D0F5;
     dw $2122                                                             ;B2D0F6;
 
+%anchor($B2D0F8)
 UNUSED_Spitemaps_SpacePirate_B2D0F8:
     dw $000A,$01F5                                                       ;B2D0F8;
     db $13                                                               ;B2D0FC;
@@ -8617,6 +9414,7 @@ UNUSED_Spitemaps_SpacePirate_B2D0F8:
     db $00                                                               ;B2D129;
     dw $210B                                                             ;B2D12A;
 
+%anchor($B2D12C)
 UNUSED_Spitemaps_SpacePirate_B2D12C:
     dw $000B,$01F9                                                       ;B2D12C;
     db $12                                                               ;B2D130;
@@ -8642,6 +9440,7 @@ UNUSED_Spitemaps_SpacePirate_B2D12C:
     db $FE                                                               ;B2D162;
     dw $210A                                                             ;B2D163;
 
+%anchor($B2D165)
 UNUSED_Spitemaps_SpacePirate_B2D165:
     dw $000C,$01FD                                                       ;B2D165;
     db $18                                                               ;B2D169;
@@ -8669,6 +9468,7 @@ UNUSED_Spitemaps_SpacePirate_B2D165:
     db $FC                                                               ;B2D1A0;
     dw $2109                                                             ;B2D1A1;
 
+%anchor($B2D1A3)
 UNUSED_Spitemaps_SpacePirate_B2D1A3:
     dw $000B,$01FA                                                       ;B2D1A3;
     db $16                                                               ;B2D1A7;
@@ -8694,6 +9494,7 @@ UNUSED_Spitemaps_SpacePirate_B2D1A3:
     db $0A                                                               ;B2D1D9;
     dw $2124                                                             ;B2D1DA;
 
+%anchor($B2D1DC)
 UNUSED_Spitemaps_SpacePirate_B2D1DC:
     dw $000A,$01FA                                                       ;B2D1DC;
     db $00                                                               ;B2D1E0;
@@ -8717,6 +9518,7 @@ UNUSED_Spitemaps_SpacePirate_B2D1DC:
     db $00                                                               ;B2D20D;
     dw $2107                                                             ;B2D20E;
 
+%anchor($B2D210)
 UNUSED_Spitemaps_SpacePirate_B2D210:
     dw $000B,$01F7                                                       ;B2D210;
     db $13                                                               ;B2D214;
@@ -8742,6 +9544,7 @@ UNUSED_Spitemaps_SpacePirate_B2D210:
     db $FF                                                               ;B2D246;
     dw $2109                                                             ;B2D247;
 
+%anchor($B2D249)
 UNUSED_Spitemaps_SpacePirate_B2D249:
     dw $000C,$01FB                                                       ;B2D249;
     db $06                                                               ;B2D24D;
@@ -8769,6 +9572,7 @@ UNUSED_Spitemaps_SpacePirate_B2D249:
     db $00                                                               ;B2D284;
     dw $210A                                                             ;B2D285;
 
+%anchor($B2D287)
 UNUSED_Spitemaps_SpacePirate_B2D287:
     dw $000B,$01FA                                                       ;B2D287;
     db $16                                                               ;B2D28B;
@@ -8795,6 +9599,7 @@ UNUSED_Spitemaps_SpacePirate_B2D287:
     dw $210B                                                             ;B2D2BE;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B2D2C0)
 Spitemaps_PirateNinja_3D:
     dw $000A,$01F8                                                       ;B2D2C0;
     db $11                                                               ;B2D2C4;
@@ -8819,6 +9624,7 @@ Spitemaps_PirateNinja_3D:
     dw $2124                                                             ;B2D2F2;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B2D2F4)
 UNUSED_Spitemaps_SpacePirate_B2D2F4:
     dw $000A,$81F7                                                       ;B2D2F4;
     db $FF                                                               ;B2D2F8;
@@ -8842,6 +9648,7 @@ UNUSED_Spitemaps_SpacePirate_B2D2F4:
     db $0B                                                               ;B2D325;
     dw $2143                                                             ;B2D326;
 
+%anchor($B2D328)
 UNUSED_Spitemaps_SpacePirate_B2D328:
     dw $0003,$0004                                                       ;B2D328;
     db $FC                                                               ;B2D32C;
@@ -8851,6 +9658,7 @@ UNUSED_Spitemaps_SpacePirate_B2D328:
     db $FC                                                               ;B2D336;
     dw $214A                                                             ;B2D337;
 
+%anchor($B2D339)
 UNUSED_Spitemaps_SpacePirate_B2D339:
     dw $0002,$81FC                                                       ;B2D339;
     db $F8                                                               ;B2D33D;
@@ -8858,6 +9666,7 @@ UNUSED_Spitemaps_SpacePirate_B2D339:
     db $F8                                                               ;B2D342;
     dw $2127                                                             ;B2D343;
 
+%anchor($B2D345)
 UNUSED_Spitemaps_SpacePirate_B2D345:
     dw $0003,$01FC                                                       ;B2D345;
     db $F4                                                               ;B2D349;
@@ -8867,6 +9676,7 @@ UNUSED_Spitemaps_SpacePirate_B2D345:
     db $04                                                               ;B2D353;
     dw $E12D                                                             ;B2D354;
 
+%anchor($B2D356)
 UNUSED_Spitemaps_SpacePirate_B2D356:
     dw $0002,$81F4                                                       ;B2D356;
     db $F8                                                               ;B2D35A;
@@ -8874,6 +9684,7 @@ UNUSED_Spitemaps_SpacePirate_B2D356:
     db $F8                                                               ;B2D35F;
     dw $E12A                                                             ;B2D360;
 
+%anchor($B2D362)
 UNUSED_Spitemaps_SpacePirate_B2D362:
     dw $0003,$01F4                                                       ;B2D362;
     db $FC                                                               ;B2D366;
@@ -8883,6 +9694,7 @@ UNUSED_Spitemaps_SpacePirate_B2D362:
     db $FC                                                               ;B2D370;
     dw $E14A                                                             ;B2D371;
 
+%anchor($B2D373)
 UNUSED_Spitemaps_SpacePirate_B2D373:
     dw $0002,$81F4                                                       ;B2D373;
     db $F8                                                               ;B2D377;
@@ -8890,6 +9702,7 @@ UNUSED_Spitemaps_SpacePirate_B2D373:
     db $F8                                                               ;B2D37C;
     dw $E127                                                             ;B2D37D;
 
+%anchor($B2D37F)
 UNUSED_Spitemaps_SpacePirate_B2D37F:
     dw $0003,$01FC                                                       ;B2D37F;
     db $04                                                               ;B2D383;
@@ -8899,6 +9712,7 @@ UNUSED_Spitemaps_SpacePirate_B2D37F:
     db $F4                                                               ;B2D38D;
     dw $212D                                                             ;B2D38E;
 
+%anchor($B2D390)
 UNUSED_Spitemaps_SpacePirate_B2D390:
     dw $0002,$81FC                                                       ;B2D390;
     db $F8                                                               ;B2D394;
@@ -8907,6 +9721,7 @@ UNUSED_Spitemaps_SpacePirate_B2D390:
     dw $212A                                                             ;B2D39A;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B2D39C)
 Spitemaps_PirateNinja_3E:
     dw $000A,$01FC                                                       ;B2D39C;
     db $08                                                               ;B2D3A0;
@@ -8930,6 +9745,7 @@ Spitemaps_PirateNinja_3E:
     db $15                                                               ;B2D3CD;
     dw $2125                                                             ;B2D3CE;
 
+%anchor($B2D3D0)
 Spitemaps_PirateNinja_3F:
     dw $0005,$81EA                                                       ;B2D3D0;
     db $00                                                               ;B2D3D4;
@@ -8943,6 +9759,7 @@ Spitemaps_PirateNinja_3F:
     db $F0                                                               ;B2D3E8;
     dw $212E                                                             ;B2D3E9;
 
+%anchor($B2D3EB)
 Spitemaps_PirateNinja_40:
     dw $0005,$8006                                                       ;B2D3EB;
     db $00                                                               ;B2D3EF;
@@ -8957,6 +9774,7 @@ Spitemaps_PirateNinja_40:
     dw $612E                                                             ;B2D404;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B2D406)
 UNUSED_Spitemaps_SpacePirate_B2D406:
     dw $000A,$0003                                                       ;B2D406;
     db $13                                                               ;B2D40A;
@@ -8980,6 +9798,7 @@ UNUSED_Spitemaps_SpacePirate_B2D406:
     db $00                                                               ;B2D437;
     dw $610B                                                             ;B2D438;
 
+%anchor($B2D43A)
 UNUSED_Spitemaps_SpacePirate_B2D43A:
     dw $000B,$01FF                                                       ;B2D43A;
     db $12                                                               ;B2D43E;
@@ -9005,6 +9824,7 @@ UNUSED_Spitemaps_SpacePirate_B2D43A:
     db $FE                                                               ;B2D470;
     dw $610A                                                             ;B2D471;
 
+%anchor($B2D473)
 UNUSED_Spitemaps_SpacePirate_B2D473:
     dw $000C,$01FB                                                       ;B2D473;
     db $18                                                               ;B2D477;
@@ -9032,6 +9852,7 @@ UNUSED_Spitemaps_SpacePirate_B2D473:
     db $FC                                                               ;B2D4AE;
     dw $6109                                                             ;B2D4AF;
 
+%anchor($B2D4B1)
 UNUSED_Spitemaps_SpacePirate_B2D4B1:
     dw $000B,$01FE                                                       ;B2D4B1;
     db $16                                                               ;B2D4B5;
@@ -9057,6 +9878,7 @@ UNUSED_Spitemaps_SpacePirate_B2D4B1:
     db $0A                                                               ;B2D4E7;
     dw $6124                                                             ;B2D4E8;
 
+%anchor($B2D4EA)
 UNUSED_Spitemaps_SpacePirate_B2D4EA:
     dw $000A,$01FE                                                       ;B2D4EA;
     db $00                                                               ;B2D4EE;
@@ -9080,6 +9902,7 @@ UNUSED_Spitemaps_SpacePirate_B2D4EA:
     db $00                                                               ;B2D51B;
     dw $6107                                                             ;B2D51C;
 
+%anchor($B2D51E)
 UNUSED_Spitemaps_SpacePirate_B2D51E:
     dw $000B,$0001                                                       ;B2D51E;
     db $13                                                               ;B2D522;
@@ -9105,6 +9928,7 @@ UNUSED_Spitemaps_SpacePirate_B2D51E:
     db $FF                                                               ;B2D554;
     dw $6109                                                             ;B2D555;
 
+%anchor($B2D557)
 UNUSED_Spitemaps_SpacePirate_B2D557:
     dw $000C,$01FD                                                       ;B2D557;
     db $06                                                               ;B2D55B;
@@ -9132,6 +9956,7 @@ UNUSED_Spitemaps_SpacePirate_B2D557:
     db $00                                                               ;B2D592;
     dw $610A                                                             ;B2D593;
 
+%anchor($B2D595)
 UNUSED_Spitemaps_SpacePirate_B2D595:
     dw $000B,$01FE                                                       ;B2D595;
     db $16                                                               ;B2D599;
@@ -9158,6 +9983,7 @@ UNUSED_Spitemaps_SpacePirate_B2D595:
     dw $610B                                                             ;B2D5CC;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B2D5CE)
 Spitemaps_PirateNinja_41:
     dw $000A,$0000                                                       ;B2D5CE;
     db $11                                                               ;B2D5D2;
@@ -9182,6 +10008,7 @@ Spitemaps_PirateNinja_41:
     dw $6124                                                             ;B2D600;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B2D602)
 UNUSED_Spitemaps_SpacePirate_B2D602:
     dw $000A,$81F9                                                       ;B2D602;
     db $FF                                                               ;B2D606;
@@ -9205,6 +10032,7 @@ UNUSED_Spitemaps_SpacePirate_B2D602:
     db $0B                                                               ;B2D633;
     dw $6143                                                             ;B2D634;
 
+%anchor($B2D636)
 UNUSED_Spitemaps_SpacePirate_B2D636:
     dw $0003,$01F4                                                       ;B2D636;
     db $FC                                                               ;B2D63A;
@@ -9214,6 +10042,7 @@ UNUSED_Spitemaps_SpacePirate_B2D636:
     db $FC                                                               ;B2D644;
     dw $614A                                                             ;B2D645;
 
+%anchor($B2D647)
 UNUSED_Spitemaps_SpacePirate_B2D647:
     dw $0002,$81F4                                                       ;B2D647;
     db $F8                                                               ;B2D64B;
@@ -9221,6 +10050,7 @@ UNUSED_Spitemaps_SpacePirate_B2D647:
     db $F8                                                               ;B2D650;
     dw $6127                                                             ;B2D651;
 
+%anchor($B2D653)
 UNUSED_Spitemaps_SpacePirate_B2D653:
     dw $0003,$01FC                                                       ;B2D653;
     db $F4                                                               ;B2D657;
@@ -9230,6 +10060,7 @@ UNUSED_Spitemaps_SpacePirate_B2D653:
     db $04                                                               ;B2D661;
     dw $A12D                                                             ;B2D662;
 
+%anchor($B2D664)
 UNUSED_Spitemaps_SpacePirate_B2D664:
     dw $0002,$81FC                                                       ;B2D664;
     db $F8                                                               ;B2D668;
@@ -9237,6 +10068,7 @@ UNUSED_Spitemaps_SpacePirate_B2D664:
     db $F8                                                               ;B2D66D;
     dw $A12A                                                             ;B2D66E;
 
+%anchor($B2D670)
 UNUSED_Spitemaps_SpacePirate_B2D670:
     dw $0003,$0004                                                       ;B2D670;
     db $FC                                                               ;B2D674;
@@ -9246,6 +10078,7 @@ UNUSED_Spitemaps_SpacePirate_B2D670:
     db $FC                                                               ;B2D67E;
     dw $A14A                                                             ;B2D67F;
 
+%anchor($B2D681)
 UNUSED_Spitemaps_SpacePirate_B2D681:
     dw $0002,$81FC                                                       ;B2D681;
     db $F8                                                               ;B2D685;
@@ -9253,6 +10086,7 @@ UNUSED_Spitemaps_SpacePirate_B2D681:
     db $F8                                                               ;B2D68A;
     dw $A127                                                             ;B2D68B;
 
+%anchor($B2D68D)
 UNUSED_Spitemaps_SpacePirate_B2D68D:
     dw $0003,$01FC                                                       ;B2D68D;
     db $04                                                               ;B2D691;
@@ -9262,6 +10096,7 @@ UNUSED_Spitemaps_SpacePirate_B2D68D:
     db $F4                                                               ;B2D69B;
     dw $612D                                                             ;B2D69C;
 
+%anchor($B2D69E)
 UNUSED_Spitemaps_SpacePirate_B2D69E:
     dw $0002,$81F4                                                       ;B2D69E;
     db $F8                                                               ;B2D6A2;
@@ -9270,6 +10105,7 @@ UNUSED_Spitemaps_SpacePirate_B2D69E:
     dw $612A                                                             ;B2D6A8;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B2D6AA)
 Spitemaps_PirateNinja_42:
     dw $000A,$01FC                                                       ;B2D6AA;
     db $08                                                               ;B2D6AE;
@@ -9293,6 +10129,7 @@ Spitemaps_PirateNinja_42:
     db $15                                                               ;B2D6DB;
     dw $6125                                                             ;B2D6DC;
 
+%anchor($B2D6DE)
 Spitemaps_PirateNinja_43:
     dw $0004,$0000                                                       ;B2D6DE;
     db $00                                                               ;B2D6E2;
@@ -9304,6 +10141,7 @@ Spitemaps_PirateNinja_43:
     db $F8                                                               ;B2D6F1;
     dw $2150                                                             ;B2D6F2;
 
+%anchor($B2D6F4)
 Spitemaps_PirateNinja_44:
     dw $0004,$0000                                                       ;B2D6F4;
     db $00                                                               ;B2D6F8;
@@ -9315,6 +10153,7 @@ Spitemaps_PirateNinja_44:
     db $F8                                                               ;B2D707;
     dw $2152                                                             ;B2D708;
 
+%anchor($B2D70A)
 Spitemaps_PirateNinja_45:
     dw $0009,$01FB                                                       ;B2D70A;
     db $FB                                                               ;B2D70E;
@@ -9337,6 +10176,7 @@ Spitemaps_PirateNinja_45:
     dw $210E                                                             ;B2D737;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B2D739)
 UNUSED_Spitemaps_SpacePirate_B2D739:
     dw $0009,$01FA                                                       ;B2D739;
     db $FB                                                               ;B2D73D;
@@ -9358,6 +10198,7 @@ UNUSED_Spitemaps_SpacePirate_B2D739:
     db $EC                                                               ;B2D765;
     dw $210E                                                             ;B2D766;
 
+%anchor($B2D768)
 UNUSED_Spitemaps_SpacePirate_B2D768:
     dw $000A,$01F8                                                       ;B2D768;
     db $00                                                               ;B2D76C;
@@ -9381,6 +10222,7 @@ UNUSED_Spitemaps_SpacePirate_B2D768:
     db $ED                                                               ;B2D799;
     dw $210E                                                             ;B2D79A;
 
+%anchor($B2D79C)
 UNUSED_Spitemaps_SpacePirate_B2D79C:
     dw $0009,$81EE                                                       ;B2D79C;
     db $F8                                                               ;B2D7A0;
@@ -9402,6 +10244,7 @@ UNUSED_Spitemaps_SpacePirate_B2D79C:
     db $EE                                                               ;B2D7C8;
     dw $210E                                                             ;B2D7C9;
 
+%anchor($B2D7CB)
 UNUSED_Spitemaps_SpacePirate_B2D7CB:
     dw $0009,$81EE                                                       ;B2D7CB;
     db $FA                                                               ;B2D7CF;
@@ -9423,6 +10266,7 @@ UNUSED_Spitemaps_SpacePirate_B2D7CB:
     db $EF                                                               ;B2D7F7;
     dw $210E                                                             ;B2D7F8;
 
+%anchor($B2D7FA)
 UNUSED_Spitemaps_SpacePirate_B2D7FA:
     dw $0009,$81EE                                                       ;B2D7FA;
     db $FB                                                               ;B2D7FE;
@@ -9445,6 +10289,7 @@ UNUSED_Spitemaps_SpacePirate_B2D7FA:
     dw $210E                                                             ;B2D827;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B2D829)
 Spitemaps_PirateNinja_46:
     dw $0009,$01FD                                                       ;B2D829;
     db $FB                                                               ;B2D82D;
@@ -9467,6 +10312,7 @@ Spitemaps_PirateNinja_46:
     dw $610E                                                             ;B2D856;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B2D858)
 UNUSED_Spitemaps_SpacePirate_B2D858:
     dw $0009,$01FE                                                       ;B2D858;
     db $FB                                                               ;B2D85C;
@@ -9488,6 +10334,7 @@ UNUSED_Spitemaps_SpacePirate_B2D858:
     db $EC                                                               ;B2D884;
     dw $610E                                                             ;B2D885;
 
+%anchor($B2D887)
 UNUSED_Spitemaps_SpacePirate_B2D887:
     dw $000A,$0000                                                       ;B2D887;
     db $00                                                               ;B2D88B;
@@ -9511,6 +10358,7 @@ UNUSED_Spitemaps_SpacePirate_B2D887:
     db $ED                                                               ;B2D8B8;
     dw $610E                                                             ;B2D8B9;
 
+%anchor($B2D8BB)
 UNUSED_Spitemaps_SpacePirate_B2D8BB:
     dw $0009,$8002                                                       ;B2D8BB;
     db $F8                                                               ;B2D8BF;
@@ -9532,6 +10380,7 @@ UNUSED_Spitemaps_SpacePirate_B2D8BB:
     db $EE                                                               ;B2D8E7;
     dw $610E                                                             ;B2D8E8;
 
+%anchor($B2D8EA)
 UNUSED_Spitemaps_SpacePirate_B2D8EA:
     dw $0009,$8002                                                       ;B2D8EA;
     db $FA                                                               ;B2D8EE;
@@ -9553,6 +10402,7 @@ UNUSED_Spitemaps_SpacePirate_B2D8EA:
     db $EF                                                               ;B2D916;
     dw $610E                                                             ;B2D917;
 
+%anchor($B2D919)
 UNUSED_Spitemaps_SpacePirate_B2D919:
     dw $0009,$8002                                                       ;B2D919;
     db $FB                                                               ;B2D91D;
@@ -9574,6 +10424,7 @@ UNUSED_Spitemaps_SpacePirate_B2D919:
     db $F0                                                               ;B2D945;
     dw $610E                                                             ;B2D946;
 
+%anchor($B2D948)
 UNUSED_Spitemaps_SpacePirate_B2D948:
     dw $000A,$81F4                                                       ;B2D948;
     db $00                                                               ;B2D94C;
@@ -9597,6 +10448,7 @@ UNUSED_Spitemaps_SpacePirate_B2D948:
     db $0E                                                               ;B2D979;
     dw $2143                                                             ;B2D97A;
 
+%anchor($B2D97C)
 UNUSED_Spitemaps_SpacePirate_B2D97C:
     dw $000C,$000B                                                       ;B2D97C;
     db $10                                                               ;B2D980;
@@ -9624,6 +10476,7 @@ UNUSED_Spitemaps_SpacePirate_B2D97C:
     db $FE                                                               ;B2D9B7;
     dw $210A                                                             ;B2D9B8;
 
+%anchor($B2D9BA)
 UNUSED_Spitemaps_SpacePirate_B2D9BA:
     dw $000C,$01FC                                                       ;B2D9BA;
     db $06                                                               ;B2D9BE;
@@ -9651,6 +10504,7 @@ UNUSED_Spitemaps_SpacePirate_B2D9BA:
     db $09                                                               ;B2D9F5;
     dw $2143                                                             ;B2D9F6;
 
+%anchor($B2D9F8)
 UNUSED_Spitemaps_SpacePirate_B2D9F8:
     dw $000B,$01FA                                                       ;B2D9F8;
     db $14                                                               ;B2D9FC;
@@ -9676,6 +10530,7 @@ UNUSED_Spitemaps_SpacePirate_B2D9F8:
     db $07                                                               ;B2DA2E;
     dw $2124                                                             ;B2DA2F;
 
+%anchor($B2DA31)
 UNUSED_Spitemaps_SpacePirate_B2DA31:
     dw $000A,$01FC                                                       ;B2DA31;
     db $08                                                               ;B2DA35;
@@ -9699,6 +10554,7 @@ UNUSED_Spitemaps_SpacePirate_B2DA31:
     db $FF                                                               ;B2DA62;
     dw $2107                                                             ;B2DA63;
 
+%anchor($B2DA65)
 UNUSED_Spitemaps_SpacePirate_B2DA65:
     dw $000C,$000A                                                       ;B2DA65;
     db $0F                                                               ;B2DA69;
@@ -9726,6 +10582,7 @@ UNUSED_Spitemaps_SpacePirate_B2DA65:
     db $FF                                                               ;B2DAA0;
     dw $2109                                                             ;B2DAA1;
 
+%anchor($B2DAA3)
 UNUSED_Spitemaps_SpacePirate_B2DAA3:
     dw $000C,$0007                                                       ;B2DAA3;
     db $12                                                               ;B2DAA7;
@@ -9753,6 +10610,7 @@ UNUSED_Spitemaps_SpacePirate_B2DAA3:
     db $00                                                               ;B2DADE;
     dw $210A                                                             ;B2DADF;
 
+%anchor($B2DAE1)
 UNUSED_Spitemaps_SpacePirate_B2DAE1:
     dw $000B,$01FA                                                       ;B2DAE1;
     db $14                                                               ;B2DAE5;
@@ -9779,6 +10637,7 @@ UNUSED_Spitemaps_SpacePirate_B2DAE1:
     dw $210B                                                             ;B2DB18;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B2DB1A)
 Spitemaps_PirateNinja_47:
     dw $0009,$01FC                                                       ;B2DB1A;
     db $FC                                                               ;B2DB1E;
@@ -9801,6 +10660,7 @@ Spitemaps_PirateNinja_47:
     dw $214A                                                             ;B2DB47;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B2DB49)
 UNUSED_Spitemaps_SpacePirate_B2DB49:
     dw $0009,$81EB                                                       ;B2DB49;
     db $00                                                               ;B2DB4D;
@@ -9822,6 +10682,7 @@ UNUSED_Spitemaps_SpacePirate_B2DB49:
     db $FD                                                               ;B2DB75;
     dw $214A                                                             ;B2DB76;
 
+%anchor($B2DB78)
 UNUSED_Spitemaps_SpacePirate_B2DB78:
     dw $0008,$81E9                                                       ;B2DB78;
     db $FE                                                               ;B2DB7C;
@@ -9841,6 +10702,7 @@ UNUSED_Spitemaps_SpacePirate_B2DB78:
     db $FD                                                               ;B2DB9F;
     dw $214A                                                             ;B2DBA0;
 
+%anchor($B2DBA2)
 UNUSED_Spitemaps_SpacePirate_B2DBA2:
     dw $0008,$81E8                                                       ;B2DBA2;
     db $00                                                               ;B2DBA6;
@@ -9860,6 +10722,7 @@ UNUSED_Spitemaps_SpacePirate_B2DBA2:
     db $FF                                                               ;B2DBC9;
     dw $214A                                                             ;B2DBCA;
 
+%anchor($B2DBCC)
 UNUSED_Spitemaps_SpacePirate_B2DBCC:
     dw $0007,$01F6                                                       ;B2DBCC;
     db $FC                                                               ;B2DBD0;
@@ -9877,6 +10740,7 @@ UNUSED_Spitemaps_SpacePirate_B2DBCC:
     db $E9                                                               ;B2DBEE;
     dw $210E                                                             ;B2DBEF;
 
+%anchor($B2DBF1)
 UNUSED_Spitemaps_SpacePirate_B2DBF1:
     dw $0007,$81F4                                                       ;B2DBF1;
     db $F2                                                               ;B2DBF5;
@@ -9894,6 +10758,7 @@ UNUSED_Spitemaps_SpacePirate_B2DBF1:
     db $FD                                                               ;B2DC13;
     dw $214A                                                             ;B2DC14;
 
+%anchor($B2DC16)
 UNUSED_Spitemaps_SpacePirate_B2DC16:
     dw $0009,$01F1                                                       ;B2DC16;
     db $FD                                                               ;B2DC1A;
@@ -9915,6 +10780,7 @@ UNUSED_Spitemaps_SpacePirate_B2DC16:
     db $FD                                                               ;B2DC42;
     dw $214C                                                             ;B2DC43;
 
+%anchor($B2DC45)
 UNUSED_Spitemaps_SpacePirate_B2DC45:
     dw $000A,$01F0                                                       ;B2DC45;
     db $FD                                                               ;B2DC49;
@@ -9938,6 +10804,7 @@ UNUSED_Spitemaps_SpacePirate_B2DC45:
     db $FD                                                               ;B2DC76;
     dw $214C                                                             ;B2DC77;
 
+%anchor($B2DC79)
 UNUSED_Spitemaps_SpacePirate_B2DC79:
     dw $0014,$01F6                                                       ;B2DC79;
     db $12                                                               ;B2DC7D;
@@ -9981,6 +10848,7 @@ UNUSED_Spitemaps_SpacePirate_B2DC79:
     db $15                                                               ;B2DCDC;
     dw $2126                                                             ;B2DCDD;
 
+%anchor($B2DCDF)
 UNUSED_Spitemaps_SpacePirate_B2DCDF:
     dw $0013,$01F7                                                       ;B2DCDF;
     db $08                                                               ;B2DCE3;
@@ -10022,6 +10890,7 @@ UNUSED_Spitemaps_SpacePirate_B2DCDF:
     db $FD                                                               ;B2DD3D;
     dw $214A                                                             ;B2DD3E;
 
+%anchor($B2DD40)
 UNUSED_Spitemaps_SpacePirate_B2DD40:
     dw $0014,$01F7                                                       ;B2DD40;
     db $09                                                               ;B2DD44;
@@ -10065,6 +10934,7 @@ UNUSED_Spitemaps_SpacePirate_B2DD40:
     db $FE                                                               ;B2DDA3;
     dw $214A                                                             ;B2DDA4;
 
+%anchor($B2DDA6)
 UNUSED_Spitemaps_SpacePirate_B2DDA6:
     dw $000E,$81F4                                                       ;B2DDA6;
     db $FF                                                               ;B2DDAA;
@@ -10097,6 +10967,7 @@ UNUSED_Spitemaps_SpacePirate_B2DDA6:
     dw $2125                                                             ;B2DDEC;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B2DDEE)
 Spitemaps_PirateNinja_48:
     dw $0012,$81F3                                                       ;B2DDEE;
     db $EC                                                               ;B2DDF2;
@@ -10136,6 +11007,7 @@ Spitemaps_PirateNinja_48:
     db $0B                                                               ;B2DE47;
     dw $2143                                                             ;B2DE48;
 
+%anchor($B2DE4A)
 Spitemaps_PirateNinja_49:
     dw $0016,$01FE                                                       ;B2DE4A;
     db $15                                                               ;B2DE4E;
@@ -10184,6 +11056,7 @@ Spitemaps_PirateNinja_49:
     dw $E12D                                                             ;B2DEB8;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B2DEBA)
 UNUSED_Spitemaps_SpacePirate_B2DEBA:
     dw $0014,$01F8                                                       ;B2DEBA;
     db $F2                                                               ;B2DEBE;
@@ -10227,6 +11100,7 @@ UNUSED_Spitemaps_SpacePirate_B2DEBA:
     db $0B                                                               ;B2DF1D;
     dw $2143                                                             ;B2DF1E;
 
+%anchor($B2DF20)
 UNUSED_Spitemaps_SpacePirate_B2DF20:
     dw $000F,$01E8                                                       ;B2DF20;
     db $F7                                                               ;B2DF24;
@@ -10260,6 +11134,7 @@ UNUSED_Spitemaps_SpacePirate_B2DF20:
     db $05                                                               ;B2DF6A;
     dw $2143                                                             ;B2DF6B;
 
+%anchor($B2DF6D)
 UNUSED_Spitemaps_SpacePirate_B2DF6D:
     dw $000E,$01F0                                                       ;B2DF6D;
     db $05                                                               ;B2DF71;
@@ -10291,6 +11166,7 @@ UNUSED_Spitemaps_SpacePirate_B2DF6D:
     db $E6                                                               ;B2DFB2;
     dw $212D                                                             ;B2DFB3;
 
+%anchor($B2DFB5)
 UNUSED_Spitemaps_SpacePirate_B2DFB5:
     dw $000E,$01F0                                                       ;B2DFB5;
     db $05                                                               ;B2DFB9;
@@ -10322,6 +11198,7 @@ UNUSED_Spitemaps_SpacePirate_B2DFB5:
     db $E7                                                               ;B2DFFA;
     dw $212D                                                             ;B2DFFB;
 
+%anchor($B2DFFD)
 UNUSED_Spitemaps_SpacePirate_B2DFFD:
     dw $0009,$01F9                                                       ;B2DFFD;
     db $00                                                               ;B2E001;
@@ -10343,6 +11220,7 @@ UNUSED_Spitemaps_SpacePirate_B2DFFD:
     db $FE                                                               ;B2E029;
     dw $214A                                                             ;B2E02A;
 
+%anchor($B2E02C)
 UNUSED_Spitemaps_SpacePirate_B2E02C:
     dw $0003,$01FC                                                       ;B2E02C;
     db $04                                                               ;B2E030;
@@ -10352,6 +11230,7 @@ UNUSED_Spitemaps_SpacePirate_B2E02C:
     db $F4                                                               ;B2E03A;
     dw $212D                                                             ;B2E03B;
 
+%anchor($B2E03D)
 UNUSED_Spitemaps_SpacePirate_B2E03D:
     dw $0010,$81F9                                                       ;B2E03D;
     db $FE                                                               ;B2E041;
@@ -10388,6 +11267,7 @@ UNUSED_Spitemaps_SpacePirate_B2E03D:
     dw $2125                                                             ;B2E08D;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B2E08F)
 Spitemaps_PirateNinja_4A:
     dw $0011,$81F3                                                       ;B2E08F;
     db $FB                                                               ;B2E093;
@@ -10425,6 +11305,7 @@ Spitemaps_PirateNinja_4A:
     db $0A                                                               ;B2E0E3;
     dw $216F                                                             ;B2E0E4;
 
+%anchor($B2E0E6)
 Spitemaps_PirateNinja_4B:
     dw $0013,$01FE                                                       ;B2E0E6;
     db $FF                                                               ;B2E0EA;
@@ -10466,6 +11347,7 @@ Spitemaps_PirateNinja_4B:
     db $FC                                                               ;B2E144;
     dw $E17D                                                             ;B2E145;
 
+%anchor($B2E147)
 Spitemaps_PirateNinja_4C:
     dw $0013,$01DE                                                       ;B2E147;
     db $0A                                                               ;B2E14B;
@@ -10508,6 +11390,7 @@ Spitemaps_PirateNinja_4C:
     dw $212D                                                             ;B2E1A6;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B2E1A8)
 UNUSED_Spitemaps_SpacePirate_B2E1A8:
     dw $000A,$81FC                                                       ;B2E1A8;
     db $00                                                               ;B2E1AC;
@@ -10531,6 +11414,7 @@ UNUSED_Spitemaps_SpacePirate_B2E1A8:
     db $0E                                                               ;B2E1D9;
     dw $6143                                                             ;B2E1DA;
 
+%anchor($B2E1DC)
 UNUSED_Spitemaps_SpacePirate_B2E1DC:
     dw $000C,$01ED                                                       ;B2E1DC;
     db $10                                                               ;B2E1E0;
@@ -10558,6 +11442,7 @@ UNUSED_Spitemaps_SpacePirate_B2E1DC:
     db $FE                                                               ;B2E217;
     dw $610A                                                             ;B2E218;
 
+%anchor($B2E21A)
 UNUSED_Spitemaps_SpacePirate_B2E21A:
     dw $000C,$01FC                                                       ;B2E21A;
     db $06                                                               ;B2E21E;
@@ -10585,6 +11470,7 @@ UNUSED_Spitemaps_SpacePirate_B2E21A:
     db $09                                                               ;B2E255;
     dw $6143                                                             ;B2E256;
 
+%anchor($B2E258)
 UNUSED_Spitemaps_SpacePirate_B2E258:
     dw $000B,$01FE                                                       ;B2E258;
     db $14                                                               ;B2E25C;
@@ -10610,6 +11496,7 @@ UNUSED_Spitemaps_SpacePirate_B2E258:
     db $07                                                               ;B2E28E;
     dw $6124                                                             ;B2E28F;
 
+%anchor($B2E291)
 UNUSED_Spitemaps_SpacePirate_B2E291:
     dw $000A,$01FC                                                       ;B2E291;
     db $08                                                               ;B2E295;
@@ -10633,6 +11520,7 @@ UNUSED_Spitemaps_SpacePirate_B2E291:
     db $FF                                                               ;B2E2C2;
     dw $6107                                                             ;B2E2C3;
 
+%anchor($B2E2C5)
 UNUSED_Spitemaps_SpacePirate_B2E2C5:
     dw $000C,$01EE                                                       ;B2E2C5;
     db $0F                                                               ;B2E2C9;
@@ -10660,6 +11548,7 @@ UNUSED_Spitemaps_SpacePirate_B2E2C5:
     db $FF                                                               ;B2E300;
     dw $6109                                                             ;B2E301;
 
+%anchor($B2E303)
 UNUSED_Spitemaps_SpacePirate_B2E303:
     dw $000C,$01F1                                                       ;B2E303;
     db $12                                                               ;B2E307;
@@ -10687,6 +11576,7 @@ UNUSED_Spitemaps_SpacePirate_B2E303:
     db $00                                                               ;B2E33E;
     dw $610A                                                             ;B2E33F;
 
+%anchor($B2E341)
 UNUSED_Spitemaps_SpacePirate_B2E341:
     dw $000B,$01FE                                                       ;B2E341;
     db $14                                                               ;B2E345;
@@ -10713,6 +11603,7 @@ UNUSED_Spitemaps_SpacePirate_B2E341:
     dw $610B                                                             ;B2E378;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B2E37A)
 Spitemaps_PirateNinja_4D:
     dw $0009,$01FC                                                       ;B2E37A;
     db $FC                                                               ;B2E37E;
@@ -10735,6 +11626,7 @@ Spitemaps_PirateNinja_4D:
     dw $614A                                                             ;B2E3A7;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B2E3A9)
 UNUSED_Spitemaps_SpacePirate_B2E3A9:
     dw $0009,$8005                                                       ;B2E3A9;
     db $00                                                               ;B2E3AD;
@@ -10756,6 +11648,7 @@ UNUSED_Spitemaps_SpacePirate_B2E3A9:
     db $FD                                                               ;B2E3D5;
     dw $614A                                                             ;B2E3D6;
 
+%anchor($B2E3D8)
 UNUSED_Spitemaps_SpacePirate_B2E3D8:
     dw $0008,$8007                                                       ;B2E3D8;
     db $FE                                                               ;B2E3DC;
@@ -10775,6 +11668,7 @@ UNUSED_Spitemaps_SpacePirate_B2E3D8:
     db $FD                                                               ;B2E3FF;
     dw $614A                                                             ;B2E400;
 
+%anchor($B2E402)
 UNUSED_Spitemaps_SpacePirate_B2E402:
     dw $0008,$8008                                                       ;B2E402;
     db $00                                                               ;B2E406;
@@ -10794,6 +11688,7 @@ UNUSED_Spitemaps_SpacePirate_B2E402:
     db $FF                                                               ;B2E429;
     dw $614A                                                             ;B2E42A;
 
+%anchor($B2E42C)
 UNUSED_Spitemaps_SpacePirate_B2E42C:
     dw $0007,$0002                                                       ;B2E42C;
     db $FC                                                               ;B2E430;
@@ -10811,6 +11706,7 @@ UNUSED_Spitemaps_SpacePirate_B2E42C:
     db $E9                                                               ;B2E44E;
     dw $610E                                                             ;B2E44F;
 
+%anchor($B2E451)
 UNUSED_Spitemaps_SpacePirate_B2E451:
     dw $0007,$81FC                                                       ;B2E451;
     db $F2                                                               ;B2E455;
@@ -10828,6 +11724,7 @@ UNUSED_Spitemaps_SpacePirate_B2E451:
     db $FD                                                               ;B2E473;
     dw $614A                                                             ;B2E474;
 
+%anchor($B2E476)
 UNUSED_Spitemaps_SpacePirate_B2E476:
     dw $0009,$0007                                                       ;B2E476;
     db $FD                                                               ;B2E47A;
@@ -10849,6 +11746,7 @@ UNUSED_Spitemaps_SpacePirate_B2E476:
     db $FD                                                               ;B2E4A2;
     dw $614C                                                             ;B2E4A3;
 
+%anchor($B2E4A5)
 UNUSED_Spitemaps_SpacePirate_B2E4A5:
     dw $000A,$0008                                                       ;B2E4A5;
     db $FD                                                               ;B2E4A9;
@@ -10872,6 +11770,7 @@ UNUSED_Spitemaps_SpacePirate_B2E4A5:
     db $FD                                                               ;B2E4D6;
     dw $614C                                                             ;B2E4D7;
 
+%anchor($B2E4D9)
 UNUSED_Spitemaps_SpacePirate_B2E4D9:
     dw $0014,$0002                                                       ;B2E4D9;
     db $12                                                               ;B2E4DD;
@@ -10915,6 +11814,7 @@ UNUSED_Spitemaps_SpacePirate_B2E4D9:
     db $15                                                               ;B2E53C;
     dw $6126                                                             ;B2E53D;
 
+%anchor($B2E53F)
 UNUSED_Spitemaps_SpacePirate_B2E53F:
     dw $0013,$0001                                                       ;B2E53F;
     db $08                                                               ;B2E543;
@@ -10956,6 +11856,7 @@ UNUSED_Spitemaps_SpacePirate_B2E53F:
     db $FD                                                               ;B2E59D;
     dw $614A                                                             ;B2E59E;
 
+%anchor($B2E5A0)
 UNUSED_Spitemaps_SpacePirate_B2E5A0:
     dw $0014,$0001                                                       ;B2E5A0;
     db $09                                                               ;B2E5A4;
@@ -10999,6 +11900,7 @@ UNUSED_Spitemaps_SpacePirate_B2E5A0:
     db $FE                                                               ;B2E603;
     dw $614A                                                             ;B2E604;
 
+%anchor($B2E606)
 UNUSED_Spitemaps_SpacePirate_B2E606:
     dw $000E,$81FC                                                       ;B2E606;
     db $FF                                                               ;B2E60A;
@@ -11031,6 +11933,7 @@ UNUSED_Spitemaps_SpacePirate_B2E606:
     dw $6125                                                             ;B2E64C;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B2E64E)
 Spitemaps_PirateNinja_4E:
     dw $0012,$81FD                                                       ;B2E64E;
     db $EC                                                               ;B2E652;
@@ -11070,6 +11973,7 @@ Spitemaps_PirateNinja_4E:
     db $0B                                                               ;B2E6A7;
     dw $6143                                                             ;B2E6A8;
 
+%anchor($B2E6AA)
 Spitemaps_PirateNinja_4F:
     dw $0016,$01FA                                                       ;B2E6AA;
     db $15                                                               ;B2E6AE;
@@ -11118,6 +12022,7 @@ Spitemaps_PirateNinja_4F:
     dw $A12D                                                             ;B2E718;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B2E71A)
 UNUSED_Spitemaps_SpacePirate_B2E71A:
     dw $0014,$0000                                                       ;B2E71A;
     db $F2                                                               ;B2E71E;
@@ -11161,6 +12066,7 @@ UNUSED_Spitemaps_SpacePirate_B2E71A:
     db $0B                                                               ;B2E77D;
     dw $6143                                                             ;B2E77E;
 
+%anchor($B2E780)
 UNUSED_Spitemaps_SpacePirate_B2E780:
     dw $000F,$0010                                                       ;B2E780;
     db $F7                                                               ;B2E784;
@@ -11194,6 +12100,7 @@ UNUSED_Spitemaps_SpacePirate_B2E780:
     db $05                                                               ;B2E7CA;
     dw $6143                                                             ;B2E7CB;
 
+%anchor($B2E7CD)
 UNUSED_Spitemaps_SpacePirate_B2E7CD:
     dw $000E,$0008                                                       ;B2E7CD;
     db $05                                                               ;B2E7D1;
@@ -11225,6 +12132,7 @@ UNUSED_Spitemaps_SpacePirate_B2E7CD:
     db $E6                                                               ;B2E812;
     dw $612D                                                             ;B2E813;
 
+%anchor($B2E815)
 UNUSED_Spitemaps_SpacePirate_B2E815:
     dw $000E,$0008                                                       ;B2E815;
     db $05                                                               ;B2E819;
@@ -11256,6 +12164,7 @@ UNUSED_Spitemaps_SpacePirate_B2E815:
     db $E7                                                               ;B2E85A;
     dw $612D                                                             ;B2E85B;
 
+%anchor($B2E85D)
 UNUSED_Spitemaps_SpacePirate_B2E85D:
     dw $0009,$01FF                                                       ;B2E85D;
     db $00                                                               ;B2E861;
@@ -11277,6 +12186,7 @@ UNUSED_Spitemaps_SpacePirate_B2E85D:
     db $FE                                                               ;B2E889;
     dw $614A                                                             ;B2E88A;
 
+%anchor($B2E88C)
 UNUSED_Spitemaps_SpacePirate_B2E88C:
     dw $0010,$81F7                                                       ;B2E88C;
     db $FE                                                               ;B2E890;
@@ -11313,6 +12223,7 @@ UNUSED_Spitemaps_SpacePirate_B2E88C:
     dw $6125                                                             ;B2E8DC;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B2E8DE)
 Spitemaps_PirateNinja_50:
     dw $0011,$81FD                                                       ;B2E8DE;
     db $FB                                                               ;B2E8E2;
@@ -11350,6 +12261,7 @@ Spitemaps_PirateNinja_50:
     db $0A                                                               ;B2E932;
     dw $616F                                                             ;B2E933;
 
+%anchor($B2E935)
 Spitemaps_PirateNinja_51:
     dw $0013,$01FA                                                       ;B2E935;
     db $FF                                                               ;B2E939;
@@ -11391,6 +12303,7 @@ Spitemaps_PirateNinja_51:
     db $FC                                                               ;B2E993;
     dw $A17D                                                             ;B2E994;
 
+%anchor($B2E996)
 Spitemaps_PirateNinja_52:
     dw $0013,$001A                                                       ;B2E996;
     db $0A                                                               ;B2E99A;
@@ -11433,6 +12346,7 @@ Spitemaps_PirateNinja_52:
     dw $612D                                                             ;B2E9F5;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B2E9F7)
 UNUSED_Spitemaps_SpacePirate_B2E9F7:
     dw $0004,$81FA                                                       ;B2E9F7;
     db $00                                                               ;B2E9FB;
@@ -11444,6 +12358,7 @@ UNUSED_Spitemaps_SpacePirate_B2E9F7:
     db $F0                                                               ;B2EA0A;
     dw $2160                                                             ;B2EA0B;
 
+%anchor($B2EA0D)
 UNUSED_Spitemaps_SpacePirate_B2EA0D:
     dw $0006,$01F5                                                       ;B2EA0D;
     db $10                                                               ;B2EA11;
@@ -11459,6 +12374,7 @@ UNUSED_Spitemaps_SpacePirate_B2EA0D:
     db $F0                                                               ;B2EA2A;
     dw $2164                                                             ;B2EA2B;
 
+%anchor($B2EA2D)
 UNUSED_Spitemaps_SpacePirate_B2EA2D:
     dw $0005,$000C                                                       ;B2EA2D;
     db $FE                                                               ;B2EA31;
@@ -11472,6 +12388,7 @@ UNUSED_Spitemaps_SpacePirate_B2EA2D:
     db $F6                                                               ;B2EA45;
     dw $2168                                                             ;B2EA46;
 
+%anchor($B2EA48)
 UNUSED_Spitemaps_SpacePirate_B2EA48:
     dw $0007,$0010                                                       ;B2EA48;
     db $FA                                                               ;B2EA4C;
@@ -11489,6 +12406,7 @@ UNUSED_Spitemaps_SpacePirate_B2EA48:
     db $02                                                               ;B2EA6A;
     dw $E1A2                                                             ;B2EA6B;
 
+%anchor($B2EA6D)
 UNUSED_Spitemaps_SpacePirate_B2EA6D:
     dw $0004,$81F6                                                       ;B2EA6D;
     db $F0                                                               ;B2EA71;
@@ -11500,6 +12418,7 @@ UNUSED_Spitemaps_SpacePirate_B2EA6D:
     db $00                                                               ;B2EA80;
     dw $E160                                                             ;B2EA81;
 
+%anchor($B2EA83)
 UNUSED_Spitemaps_SpacePirate_B2EA83:
     dw $0006,$0004                                                       ;B2EA83;
     db $E8                                                               ;B2EA87;
@@ -11515,6 +12434,7 @@ UNUSED_Spitemaps_SpacePirate_B2EA83:
     db $00                                                               ;B2EAA0;
     dw $E164                                                             ;B2EAA1;
 
+%anchor($B2EAA3)
 UNUSED_Spitemaps_SpacePirate_B2EAA3:
     dw $0005,$01EC                                                       ;B2EAA3;
     db $FA                                                               ;B2EAA7;
@@ -11528,6 +12448,7 @@ UNUSED_Spitemaps_SpacePirate_B2EAA3:
     db $FA                                                               ;B2EABB;
     dw $E168                                                             ;B2EABC;
 
+%anchor($B2EABE)
 UNUSED_Spitemaps_SpacePirate_B2EABE:
     dw $0007,$01E9                                                       ;B2EABE;
     db $FE                                                               ;B2EAC2;
@@ -11545,6 +12466,7 @@ UNUSED_Spitemaps_SpacePirate_B2EABE:
     db $EE                                                               ;B2EAE0;
     dw $21A2                                                             ;B2EAE1;
 
+%anchor($B2EAE3)
 UNUSED_Spitemaps_SpacePirate_B2EAE3:
     dw $000D,$81F9                                                       ;B2EAE3;
     db $FC                                                               ;B2EAE7;
@@ -11574,6 +12496,7 @@ UNUSED_Spitemaps_SpacePirate_B2EAE3:
     db $F0                                                               ;B2EB23;
     dw $2100                                                             ;B2EB24;
 
+%anchor($B2EB26)
 UNUSED_Spitemaps_SpacePirate_B2EB26:
     dw $000E,$01F0                                                       ;B2EB26;
     db $F7                                                               ;B2EB2A;
@@ -11605,6 +12528,7 @@ UNUSED_Spitemaps_SpacePirate_B2EB26:
     db $F3                                                               ;B2EB6B;
     dw $6102                                                             ;B2EB6C;
 
+%anchor($B2EB6E)
 UNUSED_Spitemaps_SpacePirate_B2EB6E:
     dw $0014,$0000                                                       ;B2EB6E;
     db $F2                                                               ;B2EB72;
@@ -11648,6 +12572,7 @@ UNUSED_Spitemaps_SpacePirate_B2EB6E:
     db $0B                                                               ;B2EBD1;
     dw $6143                                                             ;B2EBD2;
 
+%anchor($B2EBD4)
 UNUSED_Spitemaps_SpacePirate_B2EBD4:
     dw $0004,$81F6                                                       ;B2EBD4;
     db $00                                                               ;B2EBD8;
@@ -11659,6 +12584,7 @@ UNUSED_Spitemaps_SpacePirate_B2EBD4:
     db $F0                                                               ;B2EBE7;
     dw $6160                                                             ;B2EBE8;
 
+%anchor($B2EBEA)
 UNUSED_Spitemaps_SpacePirate_B2EBEA:
     dw $0006,$0003                                                       ;B2EBEA;
     db $10                                                               ;B2EBEE;
@@ -11674,6 +12600,7 @@ UNUSED_Spitemaps_SpacePirate_B2EBEA:
     db $F0                                                               ;B2EC07;
     dw $6164                                                             ;B2EC08;
 
+%anchor($B2EC0A)
 UNUSED_Spitemaps_SpacePirate_B2EC0A:
     dw $0005,$01EC                                                       ;B2EC0A;
     db $FE                                                               ;B2EC0E;
@@ -11687,6 +12614,7 @@ UNUSED_Spitemaps_SpacePirate_B2EC0A:
     db $F6                                                               ;B2EC22;
     dw $6168                                                             ;B2EC23;
 
+%anchor($B2EC25)
 UNUSED_Spitemaps_SpacePirate_B2EC25:
     dw $0007,$01E8                                                       ;B2EC25;
     db $FA                                                               ;B2EC29;
@@ -11704,6 +12632,7 @@ UNUSED_Spitemaps_SpacePirate_B2EC25:
     db $02                                                               ;B2EC47;
     dw $A1A2                                                             ;B2EC48;
 
+%anchor($B2EC4A)
 UNUSED_Spitemaps_SpacePirate_B2EC4A:
     dw $0004,$81FA                                                       ;B2EC4A;
     db $F0                                                               ;B2EC4E;
@@ -11715,6 +12644,7 @@ UNUSED_Spitemaps_SpacePirate_B2EC4A:
     db $00                                                               ;B2EC5D;
     dw $A160                                                             ;B2EC5E;
 
+%anchor($B2EC60)
 UNUSED_Spitemaps_SpacePirate_B2EC60:
     dw $0006,$01F4                                                       ;B2EC60;
     db $E8                                                               ;B2EC64;
@@ -11730,6 +12660,7 @@ UNUSED_Spitemaps_SpacePirate_B2EC60:
     db $00                                                               ;B2EC7D;
     dw $A164                                                             ;B2EC7E;
 
+%anchor($B2EC80)
 UNUSED_Spitemaps_SpacePirate_B2EC80:
     dw $0005,$000C                                                       ;B2EC80;
     db $FA                                                               ;B2EC84;
@@ -11743,6 +12674,7 @@ UNUSED_Spitemaps_SpacePirate_B2EC80:
     db $FA                                                               ;B2EC98;
     dw $A168                                                             ;B2EC99;
 
+%anchor($B2EC9B)
 UNUSED_Spitemaps_SpacePirate_B2EC9B:
     dw $0007,$000F                                                       ;B2EC9B;
     db $FE                                                               ;B2EC9F;
@@ -11761,6 +12693,7 @@ UNUSED_Spitemaps_SpacePirate_B2EC9B:
     dw $61A2                                                             ;B2ECBE;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B2ECC0)
 InstList_PirateWall_FireLaser_WallJumpLeft:
     dw Instruction_PirateWall_FunctionInY                                ;B2ECC0;
     dw RTS_B2F0E3                                                        ;B2ECC2;
@@ -11781,18 +12714,21 @@ InstList_PirateWall_FireLaser_WallJumpLeft:
     dw ExtendedSpritemaps_PirateWall_11                                  ;B2ECE0;
     dw Instruction_Common_Sleep                                          ;B2ECE2;
 
+%anchor($B2ECE4)
 InstList_PirateWall_LandedOnLeftWall:
     dw Instruction_PirateWall_FunctionInY                                ;B2ECE4;
     dw Function_PirateWall_ClimbingLeftWall                              ;B2ECE6;
     dw $000A                                                             ;B2ECE8;
     dw ExtendedSpritemaps_PirateWall_10                                  ;B2ECEA;
 
+%anchor($B2ECEC)
 InstList_PirateWall_MovingUpLeftWall_0:
     dw Instruction_PirateWall_FunctionInY                                ;B2ECEC;
     dw Function_PirateWall_ClimbingLeftWall                              ;B2ECEE;
     dw Instruction_Common_TimerInY                                       ;B2ECF0;
     dw $0004                                                             ;B2ECF2;
 
+%anchor($B2ECF4)
 InstList_PirateWall_MovingUpLeftWall_1:
     dw $000A                                                             ;B2ECF4;
     dw ExtendedSpritemaps_PirateWall_0                                   ;B2ECF6;
@@ -11821,12 +12757,14 @@ InstList_PirateWall_MovingUpLeftWall_1:
     dw InstList_PirateWall_MovingUpLeftWall_1                            ;B2ED32;
     dw Instruction_PirateWall_RandomlyChooseADirection_LeftWall          ;B2ED34;
 
+%anchor($B2ED36)
 InstList_PirateWall_MovingDownLeftWall_0:
     dw Instruction_PirateWall_FunctionInY                                ;B2ED36;
     dw Function_PirateWall_ClimbingLeftWall                              ;B2ED38;
     dw Instruction_Common_TimerInY                                       ;B2ED3A;
     dw $0004                                                             ;B2ED3C;
 
+%anchor($B2ED3E)
 InstList_PirateWall_MovingDownLeftWall_1:
     dw $000A                                                             ;B2ED3E;
     dw ExtendedSpritemaps_PirateWall_0                                   ;B2ED40;
@@ -11857,6 +12795,7 @@ InstList_PirateWall_MovingDownLeftWall_1:
     dw InstList_PirateWall_MovingDownLeftWall_1                          ;B2ED7C;
     dw Instruction_PirateWall_RandomlyChooseADirection_LeftWall          ;B2ED7E;
 
+%anchor($B2ED80)
 InstList_PirateWall_FireLaser_WallJumpRight:
     dw Instruction_PirateWall_FunctionInY                                ;B2ED80;
     dw RTS_B2F04F                                                        ;B2ED82;
@@ -11877,18 +12816,21 @@ InstList_PirateWall_FireLaser_WallJumpRight:
     dw ExtendedSpritemaps_PirateWall_8                                   ;B2EDA0;
     dw Instruction_Common_Sleep                                          ;B2EDA2;
 
+%anchor($B2EDA4)
 InstList_PirateWall_LandingOnRightWall:
     dw Instruction_PirateWall_FunctionInY                                ;B2EDA4;
     dw Function_PirateWall_ClimbingRightWall                             ;B2EDA6;
     dw $000A                                                             ;B2EDA8;
     dw ExtendedSpritemaps_PirateWall_7                                   ;B2EDAA;
 
+%anchor($B2EDAC)
 InstList_PirateWall_MovingDownRightWall_0:
     dw Instruction_PirateWall_FunctionInY                                ;B2EDAC;
     dw Function_PirateWall_ClimbingRightWall                             ;B2EDAE;
     dw Instruction_Common_TimerInY                                       ;B2EDB0;
     dw $0004                                                             ;B2EDB2;
 
+%anchor($B2EDB4)
 InstList_PirateWall_MovingDownRightWall_1:
     dw $000A                                                             ;B2EDB4;
     dw ExtendedSpritemaps_PirateWall_9                                   ;B2EDB6;
@@ -11918,12 +12860,14 @@ InstList_PirateWall_MovingDownRightWall_1:
     dw InstList_PirateWall_MovingDownRightWall_1                         ;B2EDF2;
     dw Instruction_PirateWall_RandomlyChooseADirection_RightWall         ;B2EDF4;
 
+%anchor($B2EDF6)
 InstList_PirateWall_MovingUpRightWall_0:
     dw Instruction_PirateWall_FunctionInY                                ;B2EDF6;
     dw Function_PirateWall_ClimbingRightWall                             ;B2EDF8;
     dw Instruction_Common_TimerInY                                       ;B2EDFA;
     dw $0004                                                             ;B2EDFC;
 
+%anchor($B2EDFE)
 InstList_PirateWall_MovingUpRightWall_1:
     dw $000A                                                             ;B2EDFE;
     dw ExtendedSpritemaps_PirateWall_9                                   ;B2EE00;
@@ -11952,6 +12896,7 @@ InstList_PirateWall_MovingUpRightWall_1:
     dw InstList_PirateWall_MovingUpRightWall_1                           ;B2EE3C;
     dw Instruction_PirateWall_RandomlyChooseADirection_RightWall         ;B2EE3E;
 
+%anchor($B2EE40)
 Inst_PirateWall_MoveYPixelsDown_ChangeDirOnCollision_Left:
     PHX                                                                  ;B2EE40;
     LDX.W $0E54                                                          ;B2EE41;
@@ -11985,6 +12930,7 @@ Inst_PirateWall_MoveYPixelsDown_ChangeDirOnCollision_Left:
     RTL                                                                  ;B2EE71;
 
 
+%anchor($B2EE72)
 Inst_PirateWall_MoveYPixelsDown_ChangeDirOnCollision_Right:
     PHX                                                                  ;B2EE72;
     LDX.W $0E54                                                          ;B2EE73;
@@ -12018,6 +12964,7 @@ Inst_PirateWall_MoveYPixelsDown_ChangeDirOnCollision_Right:
     RTL                                                                  ;B2EEA3;
 
 
+%anchor($B2EEA4)
 Instruction_PirateWall_RandomlyChooseADirection_LeftWall:
     PHX                                                                  ;B2EEA4;
     LDY.W #InstList_PirateWall_MovingDownLeftWall_0                      ;B2EEA5;
@@ -12033,6 +12980,7 @@ Instruction_PirateWall_RandomlyChooseADirection_LeftWall:
     RTL                                                                  ;B2EEBB;
 
 
+%anchor($B2EEBC)
 Instruction_PirateWall_RandomlyChooseADirection_RightWall:
     PHX                                                                  ;B2EEBC;
     LDY.W #InstList_PirateWall_MovingDownRightWall_0                     ;B2EEBD;
@@ -12048,6 +12996,7 @@ Instruction_PirateWall_RandomlyChooseADirection_RightWall:
     RTL                                                                  ;B2EED3;
 
 
+%anchor($B2EED4)
 Instruction_PirateWall_PrepareWallJumpToRight:
     PHX                                                                  ;B2EED4;
     PHY                                                                  ;B2EED5;
@@ -12070,6 +13019,7 @@ Instruction_PirateWall_PrepareWallJumpToRight:
     RTL                                                                  ;B2EEFC;
 
 
+%anchor($B2EEFD)
 Instruction_PirateWall_PrepareWallJumpToLeft:
     PHX                                                                  ;B2EEFD;
     PHY                                                                  ;B2EEFE;
@@ -12094,6 +13044,7 @@ Instruction_PirateWall_PrepareWallJumpToLeft:
     RTL                                                                  ;B2EF29;
 
 
+%anchor($B2EF2A)
 Instruction_PirateWall_FireLaserLeft:
     PHX                                                                  ;B2EF2A;
     PHY                                                                  ;B2EF2B;
@@ -12119,6 +13070,7 @@ Instruction_PirateWall_FireLaserLeft:
     RTL                                                                  ;B2EF5C;
 
 
+%anchor($B2EF5D)
 Instruction_PirateWall_FireLaserRight:
     PHX                                                                  ;B2EF5D;
     PHY                                                                  ;B2EF5E;
@@ -12140,6 +13092,7 @@ Instruction_PirateWall_FireLaserRight:
     RTL                                                                  ;B2EF82;
 
 
+%anchor($B2EF83)
 Instruction_PirateWall_FunctionInY:
     PHY                                                                  ;B2EF83;
     PHX                                                                  ;B2EF84;
@@ -12153,6 +13106,7 @@ Instruction_PirateWall_FunctionInY:
     RTL                                                                  ;B2EF92;
 
 
+%anchor($B2EF93)
 Instruction_PirateWall_QueueSpacePirateAttackSFX:
     PHX                                                                  ;B2EF93;
     PHY                                                                  ;B2EF94;
@@ -12163,6 +13117,7 @@ Instruction_PirateWall_QueueSpacePirateAttackSFX:
     RTL                                                                  ;B2EF9E;
 
 
+%anchor($B2EF9F)
 InitAI_PirateWall:
     LDX.W $0E54                                                          ;B2EF9F;
     LDY.W #InstList_PirateWall_MovingDownLeftWall_0                      ;B2EFA2;
@@ -12228,12 +13183,14 @@ InitAI_PirateWall:
     RTL                                                                  ;B2F02C;
 
 
+%anchor($B2F02D)
 MainAI_PirateWall:
     LDX.W $0E54                                                          ;B2F02D;
     JSR.W ($0FA8,X)                                                      ;B2F030;
     RTL                                                                  ;B2F033;
 
 
+%anchor($B2F034)
 Function_PirateWall_ClimbingLeftWall:
     LDX.W $0E54                                                          ;B2F034;
     LDA.W #$0020                                                         ;B2F037;
@@ -12246,18 +13203,22 @@ Function_PirateWall_ClimbingLeftWall:
     RTS                                                                  ;B2F04C;
 
 
+%anchor($B2F04D)
 RTS_B2F04D:
     RTS                                                                  ;B2F04D;
 
 
+%anchor($B2F04E)
 RTS_B2F04E:
     RTS                                                                  ;B2F04E;
 
 
+%anchor($B2F04F)
 RTS_B2F04F:
     RTS                                                                  ;B2F04F;
 
 
+%anchor($B2F050)
 Function_PirateWall_WallJumpingRight:
     LDX.W $0E54                                                          ;B2F050;
     LDA.W $0FB6,X                                                        ;B2F053;
@@ -12313,6 +13274,7 @@ Function_PirateWall_WallJumpingRight:
     RTS                                                                  ;B2F0C7;
 
 
+%anchor($B2F0C8)
 Function_PirateWall_ClimbingRightWall:
     LDX.W $0E54                                                          ;B2F0C8;
     LDA.W #$0020                                                         ;B2F0CB;
@@ -12325,18 +13287,22 @@ Function_PirateWall_ClimbingRightWall:
     RTS                                                                  ;B2F0E0;
 
 
+%anchor($B2F0E1)
 RTS_B2F0E1:
     RTS                                                                  ;B2F0E1;
 
 
+%anchor($B2F0E2)
 RTS_B2F0E2:
     RTS                                                                  ;B2F0E2;
 
 
+%anchor($B2F0E3)
 RTS_B2F0E3:
     RTS                                                                  ;B2F0E3;
 
 
+%anchor($B2F0E4)
 Function_PirateWall_WallJumpingLeft:
     LDX.W $0E54                                                          ;B2F0E4;
     LDA.W $0FB6,X                                                        ;B2F0E7;
@@ -12392,6 +13358,7 @@ Function_PirateWall_WallJumpingLeft:
     RTS                                                                  ;B2F15B;
 
 
+%anchor($B2F15C)
 InstList_PirateNinja_ProjectileClawAttack_Left:
     dw Instruction_PirateWall_FunctionInY                                ;B2F15C;
     dw RTS_A0804B                                                        ;B2F15E;
@@ -12440,6 +13407,7 @@ InstList_PirateNinja_ProjectileClawAttack_Left:
     dw Instruction_Common_GotoY                                          ;B2F1C0;
     dw InstList_PirateNinja_Active_FacingLeft_0                          ;B2F1C2;
 
+%anchor($B2F1C4)
 InstList_PirateNinja_SpinJumpLeft_0:
     dw Instruction_PirateWall_FunctionInY                                ;B2F1C4;
     dw RTS_A0804B                                                        ;B2F1C6;
@@ -12472,6 +13440,7 @@ InstList_PirateNinja_SpinJumpLeft_0:
     dw Instruction_PirateWall_FunctionInY                                ;B2F202;
     dw Function_PirateNinja_SpinJumpleft_Rising                          ;B2F204;
 
+%anchor($B2F206)
 InstList_PirateNinja_SpinJumpLeft_1:
     dw Instruction_PirateNinja_QueueSoundInY_Lib2_Max6                   ;B2F206;
     dw $003F,$0001                                                       ;B2F208;
@@ -12493,10 +13462,12 @@ InstList_PirateNinja_SpinJumpLeft_1:
     dw Instruction_Common_GotoY                                          ;B2F22A;
     dw InstList_PirateNinja_SpinJumpLeft_1                               ;B2F22C;
 
+%anchor($B2F22E)
 InstList_PirateNinja_Active_FacingLeft_0:
     dw Instruction_PirateWall_FunctionInY                                ;B2F22E;
     dw Function_PirateNinja_Active                                       ;B2F230;
 
+%anchor($B2F232)
 InstList_PirateNinja_Active_FacingLeft_1:
     dw $000A                                                             ;B2F232;
     dw ExtendedSpritemaps_PirateNinja_32                                 ;B2F234;
@@ -12513,6 +13484,7 @@ InstList_PirateNinja_Active_FacingLeft_1:
     dw InstList_PirateNinja_Active_FacingLeft_1                          ;B2F24A;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B2F24C)
 UNUSED_InstList_PirateNinja_WalkingLeft_B2F24C:
     dw $0005                                                             ;B2F24C;
     dw ExtendedSpritemaps_PirateNinja_22                                 ;B2F24E;
@@ -12534,6 +13506,7 @@ UNUSED_InstList_PirateNinja_WalkingLeft_B2F24C:
     dw UNUSED_InstList_PirateNinja_WalkingLeft_B2F24C                    ;B2F26E;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B2F270)
 InstList_PirateNinja_Flinch_FacingLeft:
     dw Instruction_PirateWall_FunctionInY                                ;B2F270;
     dw RTS_A0804B                                                        ;B2F272;
@@ -12542,6 +13515,7 @@ InstList_PirateNinja_Flinch_FacingLeft:
     dw Instruction_Common_GotoY                                          ;B2F278;
     dw InstList_PirateNinja_Active_FacingLeft_0                          ;B2F27A;
 
+%anchor($B2F27C)
 InstList_PirateNinja_DivekickLeft_Jump_0:
     dw Instruction_PirateWall_FunctionInY                                ;B2F27C;
     dw RTS_B2804B                                                        ;B2F27E;
@@ -12551,6 +13525,7 @@ InstList_PirateNinja_DivekickLeft_Jump_0:
     dw Instruction_PirateWall_FunctionInY                                ;B2F286;
     dw Instruction_PirateNinja_DivekickLeft_Jump                         ;B2F288;
 
+%anchor($B2F28A)
 InstList_PirateNinja_DivekickLeft_Jump_1:
     dw Instruction_PirateNinja_PaletteIndexInY                           ;B2F28A;
     dw $0200,$0004                                                       ;B2F28C;
@@ -12562,6 +13537,7 @@ InstList_PirateNinja_DivekickLeft_Jump_1:
     dw InstList_PirateNinja_DivekickLeft_Jump_1                          ;B2F29C;
     dw Instruction_Common_Sleep                                          ;B2F29E;
 
+%anchor($B2F2A0)
 InstList_PirateNinja_DivekickLeft_Divekick:
     dw Instruction_PirateNinja_PaletteIndexInY                           ;B2F2A0;
     dw $0E00                                                             ;B2F2A2;
@@ -12572,10 +13548,12 @@ InstList_PirateNinja_DivekickLeft_Divekick:
     dw ExtendedSpritemaps_PirateNinja_3B                                 ;B2F2AE;
     dw Instruction_Common_Sleep                                          ;B2F2B0;
 
+%anchor($B2F2B2)
 InstList_PirateNinja_DivekickLeft_WalkToLeftPost_0:
     dw Instruction_PirateWall_FunctionInY                                ;B2F2B2;
     dw Instruction_PirateNinja_DivekickLeft_WalkToLeftPost               ;B2F2B4;
 
+%anchor($B2F2B6)
 InstList_PirateNinja_DivekickLeft_WalkToLeftPost_1:
     dw $0005                                                             ;B2F2B6;
     dw ExtendedSpritemaps_PirateNinja_22                                 ;B2F2B8;
@@ -12596,10 +13574,12 @@ InstList_PirateNinja_DivekickLeft_WalkToLeftPost_1:
     dw Instruction_Common_GotoY                                          ;B2F2D6;
     dw InstList_PirateNinja_DivekickLeft_WalkToLeftPost_1                ;B2F2D8;
 
+%anchor($B2F2DA)
 InstList_PirateNinja_Initial_FacingLeft_0:
     dw Instruction_PirateWall_FunctionInY                                ;B2F2DA;
     dw Function_PirateNinja_Initial                                      ;B2F2DC;
 
+%anchor($B2F2DE)
 InstList_PirateNinja_Initial_FacingLeft_1:
     dw $0020                                                             ;B2F2DE;
     dw ExtendedSpritemaps_PirateNinja_46                                 ;B2F2E0;
@@ -12615,6 +13595,7 @@ InstList_PirateNinja_Initial_FacingLeft_1:
     dw InstList_PirateNinja_Initial_FacingLeft_1                         ;B2F2F4;
     dw Instruction_CommonB2_Sleep                                        ;B2F2F6;
 
+%anchor($B2F2F8)
 InstList_PirateNinja_Land_FacingLeft_0:
     dw Instruction_PirateNinja_PaletteIndexInY                           ;B2F2F8;
     dw $0200                                                             ;B2F2FA;
@@ -12631,6 +13612,7 @@ InstList_PirateNinja_Land_FacingLeft_0:
     dw Instruction_PirateWall_FunctionInY                                ;B2F310;
     dw Function_PirateNinja_ReadingToDivekick                            ;B2F312;
 
+%anchor($B2F314)
 InstList_PirateNinja_Land_FacingLeft_1:
     dw $000A                                                             ;B2F314;
     dw ExtendedSpritemaps_PirateNinja_35                                 ;B2F316;
@@ -12644,12 +13626,14 @@ InstList_PirateNinja_Land_FacingLeft_1:
     dw InstList_PirateNinja_Land_FacingLeft_1                            ;B2F326;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B2F328)
 UNUSED_InstList_PirateNinja_FacingForward_B2F328:
     dw $0008                                                             ;B2F328;
     dw ExtendedSpritemaps_PirateNinja_4C                                 ;B2F32A;
     dw Instruction_Common_Sleep                                          ;B2F32C;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B2F32E)
 InstList_PirateNinja_StandingKick_FacingLeft:
     dw Instruction_PirateWall_FunctionInY                                ;B2F32E;
     dw RTS_A0804B                                                        ;B2F330;
@@ -12665,6 +13649,7 @@ InstList_PirateNinja_StandingKick_FacingLeft:
     dw Instruction_Common_GotoY                                          ;B2F346;
     dw InstList_PirateNinja_Active_FacingLeft_0                          ;B2F348;
 
+%anchor($B2F34A)
 InstList_PirateNinja_ProjectileClawAttack_Right:
     dw Instruction_PirateWall_FunctionInY                                ;B2F34A;
     dw RTS_B2804B                                                        ;B2F34C;
@@ -12712,6 +13697,7 @@ InstList_PirateNinja_ProjectileClawAttack_Right:
     dw Instruction_Common_GotoY                                          ;B2F3AE;
     dw InstList_PirateNinja_Active_FacingRight_0                         ;B2F3B0;
 
+%anchor($B2F3B2)
 InstList_PirateNinja_SpinJumpRight_0:
     dw Instruction_PirateWall_FunctionInY                                ;B2F3B2;
     dw RTS_B2804B                                                        ;B2F3B4;
@@ -12744,6 +13730,7 @@ InstList_PirateNinja_SpinJumpRight_0:
     dw Instruction_PirateWall_FunctionInY                                ;B2F3F0;
     dw Function_PirateNinja_SpinJumpRight_Rising                         ;B2F3F2;
 
+%anchor($B2F3F4)
 InstList_PirateNinja_SpinJumpRight_1:
     dw Instruction_PirateNinja_QueueSoundInY_Lib2_Max6                   ;B2F3F4;
     dw $003F,$0001                                                       ;B2F3F6;
@@ -12766,15 +13753,18 @@ InstList_PirateNinja_SpinJumpRight_1:
     dw InstList_PirateNinja_SpinJumpRight_1                              ;B2F41A;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B2F41C)
 UNUSED_InstList_PirateNinja_B2F41C:
     dw $0010                                                             ;B2F41C;
     dw ExtendedSpritemaps_PirateNinja_9                                  ;B2F41E;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B2F420)
 InstList_PirateNinja_Active_FacingRight_0:
     dw Instruction_PirateWall_FunctionInY                                ;B2F420;
     dw Function_PirateNinja_Active                                       ;B2F422;
 
+%anchor($B2F424)
 InstList_PirateNinja_Active_FacingRight_1:
     dw $000A                                                             ;B2F424;
     dw ExtendedSpritemaps_PirateNinja_35                                 ;B2F426;
@@ -12791,6 +13781,7 @@ InstList_PirateNinja_Active_FacingRight_1:
     dw InstList_PirateNinja_Active_FacingRight_1                         ;B2F43C;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B2F43E)
 UNUSED_InstList_PirateNinja_WalkingRight_B2F43E:
     dw $0005                                                             ;B2F43E;
     dw ExtendedSpritemaps_PirateNinja_2A                                 ;B2F440;
@@ -12812,6 +13803,7 @@ UNUSED_InstList_PirateNinja_WalkingRight_B2F43E:
     dw UNUSED_InstList_PirateNinja_WalkingRight_B2F43E                   ;B2F460;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B2F462)
 InstList_PirateNinja_Flinch_FacingRight:
     dw Instruction_PirateWall_FunctionInY                                ;B2F462;
     dw RTS_B2804B                                                        ;B2F464;
@@ -12820,6 +13812,7 @@ InstList_PirateNinja_Flinch_FacingRight:
     dw Instruction_Common_GotoY                                          ;B2F46A;
     dw InstList_PirateNinja_Active_FacingRight_0                         ;B2F46C;
 
+%anchor($B2F46E)
 InstList_PirateNinja_DivekickRight_Jump_0:
     dw Instruction_PirateWall_FunctionInY                                ;B2F46E;
     dw RTS_B2804B                                                        ;B2F470;
@@ -12829,6 +13822,7 @@ InstList_PirateNinja_DivekickRight_Jump_0:
     dw Instruction_PirateWall_FunctionInY                                ;B2F478;
     dw Instruction_PirateNinja_DivekickRight_Jump                        ;B2F47A;
 
+%anchor($B2F47C)
 InstList_PirateNinja_DivekickRight_Jump_1:
     dw Instruction_PirateNinja_PaletteIndexInY                           ;B2F47C;
     dw $0200,$0004                                                       ;B2F47E;
@@ -12840,6 +13834,7 @@ InstList_PirateNinja_DivekickRight_Jump_1:
     dw InstList_PirateNinja_DivekickRight_Jump_1                         ;B2F48E;
     dw Instruction_Common_Sleep                                          ;B2F490;
 
+%anchor($B2F492)
 InstList_PirateNinja_DivekickRight_Divekick:
     dw Instruction_PirateNinja_PaletteIndexInY                           ;B2F492;
     dw $0E00                                                             ;B2F494;
@@ -12850,10 +13845,12 @@ InstList_PirateNinja_DivekickRight_Divekick:
     dw ExtendedSpritemaps_PirateNinja_3D                                 ;B2F4A0;
     dw Instruction_Common_Sleep                                          ;B2F4A2;
 
+%anchor($B2F4A4)
 InstList_PirateNinja_DivekickRight_WalkToRightPost_0:
     dw Instruction_PirateWall_FunctionInY                                ;B2F4A4;
     dw Instruction_PirateNinja_DivekickRight_WalkToRightPost             ;B2F4A6;
 
+%anchor($B2F4A8)
 InstList_PirateNinja_DivekickRight_WalkToRightPost_1:
     dw $0005                                                             ;B2F4A8;
     dw ExtendedSpritemaps_PirateNinja_2A                                 ;B2F4AA;
@@ -12874,10 +13871,12 @@ InstList_PirateNinja_DivekickRight_WalkToRightPost_1:
     dw Instruction_Common_GotoY                                          ;B2F4C8;
     dw InstList_PirateNinja_DivekickRight_WalkToRightPost_1              ;B2F4CA;
 
+%anchor($B2F4CC)
 InstList_PirateNinja_Initial_FacingRight_0:
     dw Instruction_PirateWall_FunctionInY                                ;B2F4CC;
     dw Function_PirateNinja_Initial                                      ;B2F4CE;
 
+%anchor($B2F4D0)
 InstList_PirateNinja_Initial_FacingRight_1:
     dw $0020                                                             ;B2F4D0;
     dw ExtendedSpritemaps_PirateNinja_49                                 ;B2F4D2;
@@ -12893,6 +13892,7 @@ InstList_PirateNinja_Initial_FacingRight_1:
     dw InstList_PirateNinja_Initial_FacingRight_1                        ;B2F4E6;
     dw Instruction_Common_Sleep                                          ;B2F4E8;
 
+%anchor($B2F4EA)
 InstList_PirateNinja_Land_FacingRight_0:
     dw Instruction_PirateNinja_PaletteIndexInY                           ;B2F4EA;
     dw $0200                                                             ;B2F4EC;
@@ -12909,6 +13909,7 @@ InstList_PirateNinja_Land_FacingRight_0:
     dw Instruction_PirateWall_FunctionInY                                ;B2F502;
     dw Function_PirateNinja_ReadingToDivekick                            ;B2F504;
 
+%anchor($B2F506)
 InstList_PirateNinja_Land_FacingRight_1:
     dw $000A                                                             ;B2F506;
     dw ExtendedSpritemaps_PirateNinja_32                                 ;B2F508;
@@ -12921,6 +13922,7 @@ InstList_PirateNinja_Land_FacingRight_1:
     dw Instruction_Common_GotoY                                          ;B2F516;
     dw InstList_PirateNinja_Land_FacingRight_1                           ;B2F518;
 
+%anchor($B2F51A)
 InstList_PirateNinja_StandingKick_FacingRight:
     dw Instruction_PirateWall_FunctionInY                                ;B2F51A;
     dw RTS_A0804B                                                        ;B2F51C;
@@ -12936,6 +13938,7 @@ InstList_PirateNinja_StandingKick_FacingRight:
     dw Instruction_Common_GotoY                                          ;B2F532;
     dw InstList_PirateNinja_Active_FacingRight_0                         ;B2F534;
 
+%anchor($B2F536)
 Instruction_PirateNinja_PaletteIndexInY:
     PHX                                                                  ;B2F536;
     PHY                                                                  ;B2F537;
@@ -12949,6 +13952,7 @@ Instruction_PirateNinja_PaletteIndexInY:
     RTL                                                                  ;B2F545;
 
 
+%anchor($B2F546)
 Instruction_PirateNinja_QueueSoundInY_Lib2_Max6:
     PHX                                                                  ;B2F546;
     PHY                                                                  ;B2F547;
@@ -12962,6 +13966,7 @@ Instruction_PirateNinja_QueueSoundInY_Lib2_Max6:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B2F554)
 UNUSED_Instruction_PirateNinja_GotoFunction0FAC_B2F554:
     PHX                                                                  ;B2F554;
     LDX.W $0E54                                                          ;B2F555;
@@ -12974,6 +13979,7 @@ UNUSED_Instruction_PirateNinja_GotoFunction0FAC_B2F554:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($B2F564)
 Instruction_PirateNinja_SpawnClawProjWithThrowDirSpawnOffset:
     PHX                                                                  ;B2F564;
     PHY                                                                  ;B2F565;
@@ -13000,6 +14006,7 @@ Instruction_PirateNinja_SpawnClawProjWithThrowDirSpawnOffset:
     RTL                                                                  ;B2F58F;
 
 
+%anchor($B2F590)
 Instruction_PirateNinja_SetFunction0FAC_Active:
     PHX                                                                  ;B2F590;
     LDX.W $0E54                                                          ;B2F591;
@@ -13022,6 +14029,7 @@ Instruction_PirateNinja_SetFunction0FAC_Active:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B2F5B3)
 UNUSED_Instruction_PirateNinja_Set0FAC_StandingKick_B2F5B3:
     PHX                                                                  ;B2F5B3;
     LDX.W $0E54                                                          ;B2F5B4;
@@ -13044,12 +14052,14 @@ UNUSED_Instruction_PirateNinja_Set0FAC_StandingKick_B2F5B3:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($B2F5D6)
 Instruction_PirateNinja_ResetSpeed:
     LDA.W #$0000                                                         ;B2F5D6;
     STA.L $7E7800,X                                                      ;B2F5D9;
     RTL                                                                  ;B2F5DD;
 
 
+%anchor($B2F5DE)
 InitAI_PirateNinja:
     LDX.W $0E54                                                          ;B2F5DE;
     LDY.W #InstList_PirateNinja_Initial_FacingLeft_0                     ;B2F5E1;
@@ -13149,12 +14159,14 @@ InitAI_PirateNinja:
     RTL                                                                  ;B2F6A1;
 
 
+%anchor($B2F6A2)
 MainAI_PirateNinja:
     LDX.W $0E54                                                          ;B2F6A2;
     JSR.W ($0FA8,X)                                                      ;B2F6A5;
     RTL                                                                  ;B2F6A8;
 
 
+%anchor($B2F6A9)
 Function_PirateNinja_Initial:
     LDX.W $0E54                                                          ;B2F6A9;
     LDA.W $0F7A,X                                                        ;B2F6AC;
@@ -13190,6 +14202,7 @@ Function_PirateNinja_Initial:
     RTS                                                                  ;B2F6E3;
 
 
+%anchor($B2F6E4)
 Function_PirateNinja_Active:
     JSR.W PirateNinja_FlinchTrigger                                      ;B2F6E4;
     BNE .return                                                          ;B2F6E7;
@@ -13203,6 +14216,7 @@ Function_PirateNinja_Active:
     RTS                                                                  ;B2F6F6;
 
 
+%anchor($B2F6F7)
 PirateNinja_ProjectileClawAttackTrigger:
     LDA.W $0FA4,X                                                        ;B2F6F7;
     AND.W #$003F                                                         ;B2F6FA;
@@ -13235,6 +14249,7 @@ PirateNinja_ProjectileClawAttackTrigger:
     RTS                                                                  ;B2F72D;
 
 
+%anchor($B2F72E)
 PirateNinja_FlinchTrigger:
     PHX                                                                  ;B2F72E;
     LDX.W $0E54                                                          ;B2F72F;
@@ -13295,6 +14310,7 @@ PirateNinja_FlinchTrigger:
     RTS                                                                  ;B2F78C;
 
 
+%anchor($B2F78D)
 PirateNinja_SpinJumpTrigger:
     PHX                                                                  ;B2F78D;
     LDX.W $0E54                                                          ;B2F78E;
@@ -13330,6 +14346,7 @@ PirateNinja_SpinJumpTrigger:
     RTS                                                                  ;B2F7C5;
 
 
+%anchor($B2F7C6)
 PirateNinja_StandingKickTrigger:
     PHX                                                                  ;B2F7C6;
     LDX.W $0E54                                                          ;B2F7C7;
@@ -13378,6 +14395,7 @@ PirateNinja_StandingKickTrigger:
     RTS                                                                  ;B2F816;
 
 
+%anchor($B2F817)
 Function_PirateNinja_SpinJumpleft_Rising:
     LDA.L $7E7800,X                                                      ;B2F817;
     AND.W #$FF00                                                         ;B2F81B;
@@ -13405,6 +14423,7 @@ Function_PirateNinja_SpinJumpleft_Rising:
     RTS                                                                  ;B2F84B;
 
 
+%anchor($B2F84C)
 Function_PirateNinja_SpinJumpLeft_Falling:
     LDA.L $7E7800,X                                                      ;B2F84C;
     AND.W #$FF00                                                         ;B2F850;
@@ -13437,6 +14456,7 @@ Function_PirateNinja_SpinJumpLeft_Falling:
     RTS                                                                  ;B2F88F;
 
 
+%anchor($B2F890)
 Function_PirateNinja_SpinJumpRight_Rising:
     LDA.L $7E7800,X                                                      ;B2F890;
     AND.W #$FF00                                                         ;B2F894;
@@ -13464,6 +14484,7 @@ Function_PirateNinja_SpinJumpRight_Rising:
     RTS                                                                  ;B2F8C4;
 
 
+%anchor($B2F8C5)
 Function_PirateNinja_SpinJumpRight_Falling:
     LDA.L $7E7800,X                                                      ;B2F8C5;
     AND.W #$FF00                                                         ;B2F8C9;
@@ -13496,6 +14517,7 @@ Function_PirateNinja_SpinJumpRight_Falling:
     RTS                                                                  ;B2F908;
 
 
+%anchor($B2F909)
 Function_PirateNinja_ReadingToDivekick:
     JSR.W PirateNinja_FlinchTrigger                                      ;B2F909;
     BNE .return                                                          ;B2F90C;
@@ -13507,6 +14529,7 @@ Function_PirateNinja_ReadingToDivekick:
     RTS                                                                  ;B2F916;
 
 
+%anchor($B2F917)
 PirateNinja_DivekickTrigger:
     LDX.W $0E54                                                          ;B2F917;
     LDA.W $0FAE,X                                                        ;B2F91A;
@@ -13558,6 +14581,7 @@ PirateNinja_DivekickTrigger:
     dw InstList_PirateNinja_DivekickRight_Jump_0                         ;B2F965;
     dw InstList_PirateNinja_DivekickRight_Jump_0                         ;B2F967;
 
+%anchor($B2F969)
 Instruction_PirateNinja_SetLeftDivekickJumpInitialYSpeed:
     PHX                                                                  ;B2F969;
     PHY                                                                  ;B2F96A;
@@ -13575,6 +14599,7 @@ Instruction_PirateNinja_SetLeftDivekickJumpInitialYSpeed:
     RTL                                                                  ;B2F984;
 
 
+%anchor($B2F985)
 Instruction_PirateNinja_DivekickLeft_Jump:
     LDA.L $7E7800,X                                                      ;B2F985;
     AND.W #$FF00                                                         ;B2F989;
@@ -13604,6 +14629,7 @@ Instruction_PirateNinja_DivekickLeft_Jump:
     RTS                                                                  ;B2F9C0;
 
 
+%anchor($B2F9C1)
 Instruction_PirateNinja_DivekickLeft_Divekick:
     LDA.W $0F7A,X                                                        ;B2F9C1;
     SEC                                                                  ;B2F9C4;
@@ -13641,6 +14667,7 @@ Instruction_PirateNinja_DivekickLeft_Divekick:
     RTS                                                                  ;B2FA14;
 
 
+%anchor($B2FA15)
 Instruction_PirateNinja_DivekickLeft_WalkToLeftPost:
     LDA.W $0F7A,X                                                        ;B2FA15;
     CLC                                                                  ;B2FA18;
@@ -13661,6 +14688,7 @@ Instruction_PirateNinja_DivekickLeft_WalkToLeftPost:
     RTS                                                                  ;B2FA3C;
 
 
+%anchor($B2FA3D)
 Instruction_PirateNinja_SetRightDivekickJumpInitialYSpeed:
     PHX                                                                  ;B2FA3D;
     PHY                                                                  ;B2FA3E;
@@ -13678,6 +14706,7 @@ Instruction_PirateNinja_SetRightDivekickJumpInitialYSpeed:
     RTL                                                                  ;B2FA58;
 
 
+%anchor($B2FA59)
 Instruction_PirateNinja_DivekickRight_Jump:
     LDA.L $7E7800,X                                                      ;B2FA59;
     AND.W #$FF00                                                         ;B2FA5D;
@@ -13707,6 +14736,7 @@ Instruction_PirateNinja_DivekickRight_Jump:
     RTS                                                                  ;B2FA94;
 
 
+%anchor($B2FA95)
 Instruction_PirateNinja_DivekickRight_Divekick:
     LDA.W $0F7A,X                                                        ;B2FA95;
     CLC                                                                  ;B2FA98;
@@ -13744,6 +14774,7 @@ Instruction_PirateNinja_DivekickRight_Divekick:
     RTS                                                                  ;B2FAE8;
 
 
+%anchor($B2FAE9)
 Instruction_PirateNinja_DivekickRight_WalkToRightPost:
     LDA.W $0F7A,X                                                        ;B2FAE9;
     CLC                                                                  ;B2FAEC;
@@ -13764,6 +14795,7 @@ Instruction_PirateNinja_DivekickRight_WalkToRightPost:
     RTS                                                                  ;B2FB10;
 
 
+%anchor($B2FB11)
 PirateNinja_SpawnLandingDustCloud:
     LDA.W $0F7A,X                                                        ;B2FB11;
     SEC                                                                  ;B2FB14;
@@ -13792,6 +14824,7 @@ PirateNinja_SpawnLandingDustCloud:
     RTS                                                                  ;B2FB4B;
 
 
+%anchor($B2FB4C)
 InstList_PirateWalking_Flinch_FacingLeft:
     dw Instruction_PirateWalking_FunctionInY                             ;B2FB4C;
     dw RTS_A0804B                                                        ;B2FB4E;
@@ -13800,6 +14833,7 @@ InstList_PirateWalking_Flinch_FacingLeft:
     dw Instruction_Common_GotoY                                          ;B2FB54;
     dw InstList_PirateWalking_WalkingLeft_0                              ;B2FB56;
 
+%anchor($B2FB58)
 InstList_PirateWalking_Flinch_FacingRight:
     dw Instruction_PirateWalking_FunctionInY                             ;B2FB58;
     dw RTS_A0804B                                                        ;B2FB5A;
@@ -13808,10 +14842,12 @@ InstList_PirateWalking_Flinch_FacingRight:
     dw Instruction_Common_GotoY                                          ;B2FB60;
     dw InstList_PirateWalking_WalkingRight_0                             ;B2FB62;
 
+%anchor($B2FB64)
 InstList_PirateWalking_WalkingLeft_0:
     dw Instruction_PirateWalking_FunctionInY                             ;B2FB64;
     dw Function_PirateWalking_WalkingLeft                                ;B2FB66;
 
+%anchor($B2FB68)
 InstList_PirateWalking_WalkingLeft_1:
     dw $000A                                                             ;B2FB68;
     dw ExtendedSpritemaps_PirateWalking_0                                ;B2FB6A;
@@ -13832,6 +14868,7 @@ InstList_PirateWalking_WalkingLeft_1:
     dw Instruction_Common_GotoY                                          ;B2FB88;
     dw InstList_PirateWalking_WalkingLeft_1                              ;B2FB8A;
 
+%anchor($B2FB8C)
 InstList_PirateWalking_FireLasersLeft:
     dw Instruction_PirateWalking_FunctionInY                             ;B2FB8C;
     dw RTS_B2FE4A                                                        ;B2FB8E;
@@ -13860,6 +14897,7 @@ InstList_PirateWalking_FireLasersLeft:
     dw ExtendedSpritemaps_PirateWalking_11                               ;B2FBC2;
     dw Instruction_PirateWalking_ChooseAMovement                         ;B2FBC4;
 
+%anchor($B2FBC6)
 InstList_PirateWalking_LookingAround_FacingLeft:
     dw Instruction_PirateWalking_FunctionInY                             ;B2FBC6;
     dw RTS_B2FE4A                                                        ;B2FBC8;
@@ -13878,10 +14916,12 @@ InstList_PirateWalking_LookingAround_FacingLeft:
     dw Instruction_Common_GotoY                                          ;B2FBE2;
     dw InstList_PirateWalking_WalkingRight_0                             ;B2FBE4;
 
+%anchor($B2FBE6)
 InstList_PirateWalking_WalkingRight_0:
     dw Instruction_PirateWalking_FunctionInY                             ;B2FBE6;
     dw Function_PirateWalking_WalkingRight                               ;B2FBE8;
 
+%anchor($B2FBEA)
 InstList_PirateWalking_WalkingRight_1:
     dw $000A                                                             ;B2FBEA;
     dw ExtendedSpritemaps_PirateWalking_8                                ;B2FBEC;
@@ -13902,6 +14942,7 @@ InstList_PirateWalking_WalkingRight_1:
     dw Instruction_Common_GotoY                                          ;B2FC0A;
     dw InstList_PirateWalking_WalkingRight_1                             ;B2FC0C;
 
+%anchor($B2FC0E)
 InstList_PirateWalking_FireLasersRight:
     dw Instruction_PirateWalking_FunctionInY                             ;B2FC0E;
     dw RTS_B2FE4A                                                        ;B2FC10;
@@ -13930,6 +14971,7 @@ InstList_PirateWalking_FireLasersRight:
     dw ExtendedSpritemaps_PirateWalking_17                               ;B2FC44;
     dw Instruction_PirateWalking_ChooseAMovement                         ;B2FC46;
 
+%anchor($B2FC48)
 InstList_PirateWalking_LookingAround_FacingRight:
     dw Instruction_PirateWalking_FunctionInY                             ;B2FC48;
     dw RTS_B2FE4A                                                        ;B2FC4A;
@@ -13948,6 +14990,7 @@ InstList_PirateWalking_LookingAround_FacingRight:
     dw Instruction_Common_GotoY                                          ;B2FC64;
     dw InstList_PirateWalking_WalkingLeft_0                              ;B2FC66;
 
+%anchor($B2FC68)
 Instruction_PirateWalking_FireLaserLeftWithYOffsetInY:
     PHX                                                                  ;B2FC68;
     PHY                                                                  ;B2FC69;
@@ -13971,6 +15014,7 @@ Instruction_PirateWalking_FireLaserLeftWithYOffsetInY:
     RTL                                                                  ;B2FC8F;
 
 
+%anchor($B2FC90)
 Instruction_PirateWalking_FireLaserRightWithYOffsetInY:
     PHX                                                                  ;B2FC90;
     PHY                                                                  ;B2FC91;
@@ -13994,6 +15038,7 @@ Instruction_PirateWalking_FireLaserRightWithYOffsetInY:
     RTL                                                                  ;B2FCB7;
 
 
+%anchor($B2FCB8)
 Instruction_PirateWalking_FunctionInY:
     PHY                                                                  ;B2FCB8;
     PHX                                                                  ;B2FCB9;
@@ -14007,6 +15052,7 @@ Instruction_PirateWalking_FunctionInY:
     RTL                                                                  ;B2FCC7;
 
 
+%anchor($B2FCC8)
 Instruction_PirateWalking_ChooseAMovement:
     PHX                                                                  ;B2FCC8;
     LDX.W $0E54                                                          ;B2FCC9;
@@ -14043,6 +15089,7 @@ Instruction_PirateWalking_ChooseAMovement:
     RTL                                                                  ;B2FD01;
 
 
+%anchor($B2FD02)
 InitAI_PirateWalking:
     LDX.W $0E54                                                          ;B2FD02;
     LDY.W #InstList_PirateWalking_WalkingLeft_0                          ;B2FD05;
@@ -14067,6 +15114,7 @@ InitAI_PirateWalking:
     RTL                                                                  ;B2FD31;
 
 
+%anchor($B2FD32)
 MainAI_PirateWalking:
     LDX.W $0E54                                                          ;B2FD32;
     JSR.W ($0FA8,X)                                                      ;B2FD35;
@@ -14079,6 +15127,7 @@ MainAI_PirateWalking:
     RTL                                                                  ;B2FD43;
 
 
+%anchor($B2FD44)
 Function_PirateWalking_WalkingLeft:
     LDX.W $0E54                                                          ;B2FD44;
     LDA.W #$0010                                                         ;B2FD47;
@@ -14144,6 +15193,7 @@ Function_PirateWalking_WalkingLeft:
     RTS                                                                  ;B2FDCD;
 
 
+%anchor($B2FDCE)
 Function_PirateWalking_WalkingRight:
     LDX.W $0E54                                                          ;B2FDCE;
     LDA.W #$0010                                                         ;B2FDD1;
@@ -14204,10 +15254,12 @@ Function_PirateWalking_WalkingRight:
     RTS                                                                  ;B2FE49;
 
 
+%anchor($B2FE4A)
 RTS_B2FE4A:
     RTS                                                                  ;B2FE4A;
 
 
+%anchor($B2FE4B)
 PirateWalking_FlinchTrigger:
     PHX                                                                  ;B2FE4B;
     LDX.W $0E54                                                          ;B2FE4C;
@@ -14268,5 +15320,6 @@ PirateWalking_FlinchTrigger:
     RTS                                                                  ;B2FEA9;
 
 
+%anchor($B2FEAA)
 Freespace_BankB2_FEAA:                                                   ;B2FEAA;
 ; $156 bytes

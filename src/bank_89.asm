@@ -2,57 +2,75 @@
 org $898000
 
 
+%anchor($898000)
 ItemPLMGFX_Bombs:
 incbin "../data/ItemPLMGraphics_Bombs.bin" ; $100 bytes
 
+%anchor($898100)
 ItemPLMGFX_GravitySuit:
 incbin "../data/ItemPLMGraphics_GravitySuit.bin" ; $100 bytes
 
+%anchor($898200)
 ItemPLMGFX_SpringBall:
 incbin "../data/ItemPLMGraphics_SpringBall.bin" ; $100 bytes
 
+%anchor($898300)
 ItemPLMGFX_VariaSuit:
 incbin "../data/ItemPLMGraphics_VariaSuit.bin" ; $100 bytes
 
+%anchor($898400)
 ItemPLMGFX_HiJumpBoots:
 incbin "../data/ItemPLMGraphics_HiJumpBoots.bin" ; $100 bytes
 
+%anchor($898500)
 ItemPLMGFX_ScrewAttack:
 incbin "../data/ItemPLMGraphics_ScrewAttack.bin" ; $100 bytes
 
+%anchor($898600)
 ItemPLMGFX_SpaceJump:
 incbin "../data/ItemPLMGraphics_SpaceJump.bin" ; $100 bytes
 
+%anchor($898700)
 ItemPLMGFX_MorphBall:
 incbin "../data/ItemPLMGraphics_MorphBall.bin" ; $100 bytes
 
+%anchor($898800)
 ItemPLMGFX_GrappleBeam:
 incbin "../data/ItemPLMGraphics_GrappleBeam.bin" ; $100 bytes
 
+%anchor($898900)
 ItemPLMGFX_XrayScope:
 incbin "../data/ItemPLMGraphics_XrayScope.bin" ; $100 bytes
 
+%anchor($898A00)
 ItemPLMGFX_SpeedBooster:
 incbin "../data/ItemPLMGraphics_SpeedBooster.bin" ; $100 bytes
 
+%anchor($898B00)
 ItemPLMGFX_ChargeBeam:
 incbin "../data/ItemPLMGraphics_ChargeBeam.bin" ; $100 bytes
 
+%anchor($898C00)
 ItemPLMGFX_IceBeam:
 incbin "../data/ItemPLMGraphics_IceBeam.bin" ; $100 bytes
 
+%anchor($898D00)
 ItemPLMGFX_WaveBeam:
 incbin "../data/ItemPLMGraphics_WaveBeam.bin" ; $100 bytes
 
+%anchor($898E00)
 ItemPLMGFX_PlasmaBeam:
 incbin "../data/ItemPLMGraphics_PlasmaBeam.bin" ; $100 bytes
 
+%anchor($898F00)
 ItemPLMGFX_Spazer:
 incbin "../data/ItemPLMGraphics_Spazer.bin" ; $100 bytes
 
+%anchor($899000)
 ItemPLMGFX_ReserveTank:
 incbin "../data/ItemPLMGraphics_ReserveTank.bin" ; $100 bytes
 
+%anchor($899100)
 Freespace_Bank89_9100:
 ; $700 zero bytes
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00   ;899100;
@@ -168,6 +186,7 @@ Freespace_Bank89_9100:
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00   ;8997E0;
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00   ;8997F0;
 
+%anchor($899800)
 IndirectHDMATable_PowerBombExplosionWindow2_Left_200below:
     db $81                                                               ;899800;
     dw $C606                                                             ;899801;
@@ -682,6 +701,7 @@ IndirectHDMATable_PowerBombExplosionWindow2_Left_200below:
     db $81                                                               ;899AFD;
     dw $C606                                                             ;899AFE;
 
+%anchor($899B00)
 IndirectHDMATable_PowerBombExplosionWindow2_Left_100below:
     db $81                                                               ;899B00;
     dw $C606                                                             ;899B01;
@@ -1196,6 +1216,7 @@ IndirectHDMATable_PowerBombExplosionWindow2_Left_100below:
     db $81                                                               ;899DFD;
     dw $C406                                                             ;899DFE;
 
+%anchor($899E00)
 IndirectHDMATable_PowerBombExplosionWindow2_Left_top:
     db $81                                                               ;899E00;
     dw $C406                                                             ;899E01;
@@ -1711,6 +1732,7 @@ IndirectHDMATable_PowerBombExplosionWindow2_Left_top:
     dw $C606                                                             ;89A0FE;
     db $00                                                               ;89A100;
 
+%anchor($89A101)
 IndirectHDMATable_PowerBombExplosionWindow2_Right_200below:
     db $81                                                               ;89A101;
     dw $C607                                                             ;89A102;
@@ -2225,6 +2247,7 @@ IndirectHDMATable_PowerBombExplosionWindow2_Right_200below:
     db $81                                                               ;89A3FE;
     dw $C607                                                             ;89A3FF;
 
+%anchor($89A401)
 IndirectHDMATable_PowerBombExplosionWindow2_Right_100below:
     db $81                                                               ;89A401;
     dw $C607                                                             ;89A402;
@@ -2739,6 +2762,7 @@ IndirectHDMATable_PowerBombExplosionWindow2_Right_100below:
     db $81                                                               ;89A6FE;
     dw $C506                                                             ;89A6FF;
 
+%anchor($89A701)
 IndirectHDMATable_PowerBombExplosionWindow2_Right_top:
     db $81                                                               ;89A701;
     dw $C506                                                             ;89A702;
@@ -3254,44 +3278,55 @@ IndirectHDMATable_PowerBombExplosionWindow2_Right_top:
     dw $C607                                                             ;89A9FF;
     db $00                                                               ;89AA01;
 
+%anchor($89AA02)
 PaletteBlends_Bank89_Color1:
     dw $0000                                                             ;89AA02;
 
+%anchor($89AA04)
 PaletteBlends_Bank89_Color2:
     dw $0E3F                                                             ;89AA04;
 
+%anchor($89AA06)
 PaletteBlends_Bank89_Color3:
     dw $0D7F,$0000,$6318,$6318,$0000,$6318,$6318,$0000                   ;89AA06;
     dw $6318,$6318,$0000,$6318,$6318,$0000                               ;89AA16;
 
+%anchor($89AA22)
 PaletteBlends_Bank89_20:
     dw $3800,$314A,$20C6,$0820,$6318,$6318,$0000,$6318                   ;89AA22;
     dw $6318,$0000,$6318,$6318,$0000,$6318,$6318,$0000                   ;89AA32;
 
+%anchor($89AA42)
 PaletteBlends_Bank89_40:
     dw $3800,$0400,$1C63,$0000,$28E3,$1C60,$0000,$2485                   ;89AA42;
     dw $3D88,$0000,$0880,$0420,$0000,$28E3,$1C60,$0000                   ;89AA52;
 
+%anchor($89AA62)
 PaletteBlends_Bank89_60:
     dw $3800,$20A5,$1C84,$1024,$1087,$14A8,$0844,$6318                   ;89AA62;
     dw $6318,$0000,$6318,$6318,$0000,$6318,$6318,$0000                   ;89AA72;
 
+%anchor($89AA82)
 PaletteBlends_Bank89_80:
     dw $3800,$6318,$6318,$0000,$6318,$6318,$0000,$6318                   ;89AA82;
     dw $6318,$0000,$6318,$6318,$0000,$6318,$6318,$0000                   ;89AA92;
 
+%anchor($89AAA2)
 PaletteBlends_Bank89_A0:
     dw $3800,$6318,$6318,$0000,$6318,$6318,$0000,$6318                   ;89AAA2;
     dw $6318,$0000,$6318,$6318,$0000,$6318,$6318,$0000                   ;89AAB2;
 
+%anchor($89AAC2)
 PaletteBlends_Bank89_C0:
     dw $3800,$6318,$6318,$0000,$6318,$6318,$0000,$6318                   ;89AAC2;
     dw $6318,$0000,$6318,$6318,$0000,$6318,$6318,$0000                   ;89AAD2;
 
+%anchor($89AAE2)
 PaletteBlends_Bank89_E0:
     dw $3800,$0400,$18A2,$0000,$0020,$0C62,$0000,$0400                   ;89AAE2;
     dw $1C45,$0000,$6318,$6318,$0000,$6318,$6318,$0000                   ;89AAF2;
 
+%anchor($89AB02)
 Load_FX_Entry:
     PHP                                                                  ;89AB02;
     PHB                                                                  ;89AB03;
@@ -3350,6 +3385,7 @@ Load_FX_Entry:
     RTL                                                                  ;89AB81;
 
 
+%anchor($89AB82)
 Load_FX_Header:
     PHP                                                                  ;89AB82;
     PHB                                                                  ;89AB83;
@@ -3526,6 +3562,7 @@ Load_FX_Header:
     RTL                                                                  ;89ACC2;
 
 
+%anchor($89ACC3)
 RoomMainASM_CeresElevatorShaft:
     PHB                                                                  ;89ACC3;
     PHK                                                                  ;89ACC4;
@@ -3646,5 +3683,6 @@ RoomMainASM_CeresElevatorShaft:
     dw $0018,$0020,$00FE,$001A,$0021,$00FE,$003C,$0022                   ;89AEEB;
     dw $00FE                                                             ;89AEFB;
 
+%anchor($89AEFD)
 Freespace_Bank89_AEFD:                                                   ;89AEFD;
 ; $5103 bytes

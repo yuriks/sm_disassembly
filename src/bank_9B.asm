@@ -2,554 +2,689 @@
 org $9B8000
 
 
+%anchor($9B8000)
 Tiles_SamusDeathSequence:
 incbin "../data/Tiles_SamusDeathSequence.bin" ; $1400 bytes
 
+%anchor($9B9400)
 SamusPalettes_PowerSuit:
     dw $3800,$0108,$03BD,$1405,$3BE0,$21A8,$579F,$4AD2                   ;9B9400;
     dw $3A4E,$00BB,$02B5,$016B,$0252,$1104,$0074,$000D                   ;9B9410;
 
+%anchor($9B9420)
 SamusPalettes_DeathSequence_YellowFlash:
     dw $03FF,$03FF,$03FF,$03FF,$03FF,$03FF,$03FF,$03FF                   ;9B9420;
     dw $03FF,$03FF,$03FF,$03FF,$03FF,$03FF,$03FF,$03FF                   ;9B9430;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($9B9440)
 UNUSED_SamusPalettes_9B9440:
     dw $3800,$02FF,$0217,$0150,$0089,$00BB,$3A9F,$2A19                   ;9B9440;
     dw $1DB4,$114F,$090B,$3BE0,$033F,$021B,$010E,$0074                   ;9B9450;
 
+%anchor($9B9460)
 UNUSED_SamusPalettes_9B9460:
     dw $3800,$1B1F,$1A78,$19D3,$192D,$155B,$46DF,$3A7A                   ;9B9460;
     dw $2E16,$25D2,$1D8E,$5FE0,$13BF,$129B,$0192,$00F8                   ;9B9470;
 
+%anchor($9B9480)
 UNUSED_SamusPalettes_9B9480:
     dw $3800,$3B5F,$3AFA,$3A77,$3A13,$21BB,$573F,$4EFB                   ;9B9480;
     dw $4AB9,$4276,$3E54,$6FE8,$13FF,$231B,$0216,$017C                   ;9B9490;
 
+%anchor($9B94A0)
 UNUSED_SamusPalettes_9B94A0:
     dw $3800,$5B9F,$5B7C,$5B3B,$5AF8,$365B,$6B7F,$677D                   ;9B94A0;
     dw $635B,$5F3A,$5B19,$7FF4,$53FF,$339F,$333F,$2A9F                   ;9B94B0;
 
+%anchor($9B94C0)
 UNUSED_SamusPalettes_9B94C0:
     dw $3800,$7FFF,$7FFF,$7FFF,$7FFF,$7FFF,$7FFF,$7FFF                   ;9B94C0;
     dw $7FFF,$7FFF,$7FFF,$7FFF,$7FFF,$7FFF,$7FFF,$7FFF                   ;9B94D0;
 
+%anchor($9B94E0)
 UNUSED_SamusPalettes_9B94E0:
     dw $7D00,$7D00,$7D00,$7D00,$7D00,$7D00,$7D00,$7D00                   ;9B94E0;
     dw $7D00,$7D00,$7D00,$7D00,$7D00,$7D00,$7D00,$7D00                   ;9B94F0;
 
+%anchor($9B9500)
 UNUSED_SamusPalettes_9B9500:
 ; Used by unused routine UNUSED_SetSamusPaletteToSolidWhite_91DD4C, test palette perhaps
     dw $3800,$7FFF,$7FFF,$7FFF,$7FFF,$7FFF,$7FFF,$7FFF                   ;9B9500;
     dw $7FFF,$7FFF,$7FFF,$7FFF,$7FFF,$7FFF,$7FFF,$7FFF                   ;9B9510;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($9B9520)
 SamusPalettes_VariaSuit:
     dw $0000,$0108,$02FF,$1405,$3BE0,$21A8,$579F,$4AD2                   ;9B9520;
     dw $3A4E,$00BB,$01BE,$008E,$0252,$1104,$0074,$000D                   ;9B9530;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($9B9540)
 UNUSED_SamusPalettes_9B9540:
     dw $14E0,$00CE,$421F,$1405,$3BE0,$21A8,$579F,$4AD2                   ;9B9540;
     dw $3A4E,$00BB,$5914,$30AA,$0216,$1104,$0074,$000D                   ;9B9550;
 
+%anchor($9B9560)
 UNUSED_SamusPalettes_9B9560:
     dw $2003,$28CE,$6E1F,$3C05,$63E0,$49A8,$7F9F,$72D2                   ;9B9560;
     dw $624E,$28BB,$7D14,$58AA,$2A16,$3904,$2874,$280D                   ;9B9570;
 
+%anchor($9B9580)
 UNUSED_SamusPalettes_9B9580:
     dw $2003,$516E,$7EBF,$64A5,$7FE0,$7248,$7FFF,$7F72                   ;9B9580;
     dw $7EEE,$555B,$7DB4,$7D4A,$52B6,$61A4,$5114,$50AD                   ;9B9590;
 
+%anchor($9B95A0)
 UNUSED_SamusPalettes_9B95A0:
     dw $0000,$52AE,$7FFF,$65E5,$7FE0,$7388,$7FFF,$7FF2                   ;9B95A0;
     dw $7FEE,$569B,$7EF4,$7E8A,$53F6,$62E4,$5254,$51ED                   ;9B95B0;
 
+%anchor($9B95C0)
 UNUSED_SamusPalettes_9B95C0:
     dw $3800,$00CE,$421F,$1405,$3BE0,$21A8,$579F,$4AD2                   ;9B95C0;
     dw $3A4E,$00BB,$5914,$30AA,$0216,$1104,$0074,$000D                   ;9B95D0;
 
+%anchor($9B95E0)
 UNUSED_SamusPalettes_9B95E0:
     dw $3800,$1618,$575F,$294F,$4FEA,$36F2,$6BFF,$5FFC                   ;9B95E0;
     dw $4798,$15FF,$6E5E,$45F4,$175F,$264E,$15BE,$1557                   ;9B95F0;
 
+%anchor($9B9600)
 UNUSED_SamusPalettes_9B9600:
     dw $3800,$02DE,$43FF,$1615,$3BF0,$23B8,$57FF,$4BFF                   ;9B9600;
     dw $3BFE,$02BF,$5B1F,$32BA,$03FF,$1314,$027F,$021D                   ;9B9610;
 
+%anchor($9B9620)
 UNUSED_SamusPalettes_9B9620:
     dw $3800,$2BFF,$6BFF,$3F5F,$63FA,$4BFF,$7FFF,$73FF                   ;9B9620;
     dw $63FF,$2BFF,$7FFF,$5BFF,$2BFF,$3BFE,$2BBF,$2B5F                   ;9B9630;
 
+%anchor($9B9640)
 UNUSED_SamusPalettes_9B9640:
     dw $3800,$00CE,$421F,$1405,$3BE0,$21A8,$579F,$4AD2                   ;9B9640;
     dw $3A4E,$00BB,$5914,$30AA,$0216,$1104,$0074,$000D                   ;9B9650;
 
+%anchor($9B9660)
 UNUSED_SamusPalettes_9B9660:
     dw $3800,$020E,$435F,$1545,$43E0,$22E8,$57FF,$4BF2                   ;9B9660;
     dw $3B8E,$01FB,$5A54,$31EA,$0356,$1244,$01B4,$014D                   ;9B9670;
 
+%anchor($9B9680)
 UNUSED_SamusPalettes_9B9680:
     dw $3800,$034E,$43FF,$1685,$4FE0,$23E8,$57FF,$4BF2                   ;9B9680;
     dw $3BEE,$033B,$5B94,$332A,$03F6,$1384,$02F4,$028D                   ;9B9690;
 
+%anchor($9B96A0)
 UNUSED_SamusPalettes_9B96A0:
     dw $3800,$2BEE,$6BFF,$3FC5,$63E0,$4BE8,$7FFF,$73F2                   ;9B96A0;
     dw $63EE,$2BFB,$7FF4,$5BEA,$2BF6,$3BE4,$2BF4,$2BED                   ;9B96B0;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($9B96C0)
 SamusPalettes_CrystalFlash_0:
 ; Crystal flash Samus. Colours 0..9 = Samus colours, Ah..Fh = bubble colours
 ; These two parts are loaded independently / asynchronously
     dw $3800,$4210,$4210,$4210,$4210,$4210,$4210,$4210                   ;9B96C0;
     dw $4210,$4210                                                       ;9B96D0;
 
+%anchor($9B96D4)
 SamusPalettes_CrystalFlash_0_bubble:
     dw $7FFF,$7BDF,$77BF,$6F7F,$6B5F,$673F                               ;9B96D4;
 
+%anchor($9B96E0)
 SamusPalettes_CrystalFlash_1:
     dw $3800,$4E73,$4E73,$4E73,$4E73,$4E73,$4E73,$4E73                   ;9B96E0;
     dw $4E73,$4E73                                                       ;9B96F0;
 
+%anchor($9B96F4)
 SamusPalettes_CrystalFlash_1_bubble:
     dw $673F,$7FFF,$7BDF,$77BF,$6F7F,$6B5F                               ;9B96F4;
 
+%anchor($9B9700)
 SamusPalettes_CrystalFlash_2:
     dw $3800,$5EF7,$5EF7,$5EF7,$5EF7,$5EF7,$5EF7,$5EF7                   ;9B9700;
     dw $5EF7,$5EF7                                                       ;9B9710;
 
+%anchor($9B9714)
 SamusPalettes_CrystalFlash_2_bubble:
     dw $6B5F,$673F,$7FFF,$7BDF,$77BF,$6F7F                               ;9B9714;
 
+%anchor($9B9720)
 SamusPalettes_CrystalFlash_3:
     dw $3800,$6F7B,$6F7B,$6F7B,$6F7B,$6F7B,$6F7B,$6F7B                   ;9B9720;
     dw $6F7B,$6F7B                                                       ;9B9730;
 
+%anchor($9B9734)
 SamusPalettes_CrystalFlash_3_bubble:
     dw $6F7F,$6B5F,$673F,$7FFF,$7BDF,$77BF                               ;9B9734;
 
+%anchor($9B9740)
 SamusPalettes_CrystalFlash_4:
     dw $3800,$5EF7,$5EF7,$5EF7,$5EF7,$5EF7,$5EF7,$5EF7                   ;9B9740;
     dw $5EF7,$5EF7                                                       ;9B9750;
 
+%anchor($9B9754)
 SamusPalettes_CrystalFlash_4_bubble:
     dw $77BF,$6F7F,$6B5F,$673F,$7FFF,$7BDF                               ;9B9754;
 
+%anchor($9B9760)
 SamusPalettes_CrystalFlash_5:
     dw $3800,$4E73,$4E73,$4E73,$4E73,$4E73,$4E73,$4E73                   ;9B9760;
     dw $4E73,$4E73                                                       ;9B9770;
 
+%anchor($9B9774)
 SamusPalettes_CrystalFlash_5_bubble:
     dw $7FFF,$77BF,$6F7F,$6B5F,$673F,$7FFF                               ;9B9774;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($9B9780)
 UNUSED_SamusPalettes_9B9780:
     dw $0000,$00CE,$421F,$1405,$3BE0,$21A8,$579F,$4AD2                   ;9B9780;
     dw $3A4E,$00BB,$5914,$30AA,$0216,$1104,$0074,$000D                   ;9B9790;
 
+%anchor($9B97A0)
 UNUSED_SamusPalettes_9B97A0:
     dw $0000,$21D6,$56BF,$28AA,$4FE5,$364D,$63BF,$5B36                   ;9B97A0;
     dw $52D4,$155C,$65B8,$454F,$16B9,$25A9,$1518,$14B2                   ;9B97B0;
 
+%anchor($9B97C0)
 UNUSED_SamusPalettes_9B97C0:
     dw $0000,$2E39,$6B5F,$4170,$67EB,$4F13,$73DF,$6F9B                   ;9B97C0;
     dw $6779,$2E1E,$727B,$5E15,$2F5C,$3E6F,$2DDB,$2D78                   ;9B97D0;
 
+%anchor($9B97E0)
 UNUSED_SamusPalettes_9B97E0:
     dw $0000,$42DE,$7FFF,$5615,$7BF0,$63B8,$7FFF,$7FFF                   ;9B97E0;
     dw $7BFE,$42BF,$7F1F,$72BA,$43FF,$5314,$427F,$421D                   ;9B97F0;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($9B9800)
 SamusPalettes_GravitySuit:
     dw $3800,$0108,$421F,$1405,$3BE0,$21A8,$579F,$4AD2                   ;9B9800;
     dw $3A4E,$00BB,$5914,$30AA,$0274,$1104,$0074,$000D                   ;9B9810;
 
+%anchor($9B9820)
 SamusPalettes_PowerSuit_DeathSequence_BeamCharging_0:
 ; Power suit - death sequence (eight frames) / beam charging (first four frames)
     dw $0000,$0108,$03BD,$1405,$3BE0,$21A8,$579F,$4AD2                   ;9B9820;
     dw $3A4E,$00BB,$02B5,$016B,$0252,$1104,$0074,$000D                   ;9B9830;
 
+%anchor($9B9840)
 SamusPalettes_PowerSuit_DeathSequence_BeamCharging_1:
     dw $0C63,$0D4A,$0FBD,$2068,$43E3,$29EA,$5B9F,$4EF3                   ;9B9840;
     dw $4270,$0D1B,$0ED6,$0DAD,$0E73,$1D47,$0CD5,$0C6F                   ;9B9850;
 
+%anchor($9B9860)
 SamusPalettes_PowerSuit_DeathSequence_BeamCharging_2:
     dw $1CE7,$1DAD,$1FBD,$2CEB,$4BE7,$362D,$5F9F,$5715                   ;9B9860;
     dw $4AB2,$1D7C,$1EF7,$1E10,$1EB5,$29AA,$1D56,$1CF1                   ;9B9870;
 
+%anchor($9B9880)
 SamusPalettes_PowerSuit_DeathSequence_BeamCharging_3:
     dw $2D6B,$2E10,$2FBD,$396E,$53EB,$4270,$63BF,$5B36                   ;9B9880;
     dw $52D4,$2DDC,$2F18,$2E52,$2ED6,$3A0E,$2DB8,$2D73                   ;9B9890;
 
+%anchor($9B98A0)
 SamusPalettes_PowerSuit_DeathSequence_4:
     dw $3DEF,$3E73,$3FDE,$49F2,$5BEF,$4ED3,$6BBF,$6358                   ;9B98A0;
     dw $5B16,$3E5D,$3F5A,$3EB5,$3F18,$4671,$3E39,$3DF6                   ;9B98B0;
 
+%anchor($9B98C0)
 SamusPalettes_PowerSuit_DeathSequence_5:
     dw $4E73,$4ED6,$4FDE,$5675,$63F3,$5B16,$6FBF,$6B7A                   ;9B98C0;
     dw $6358,$4EBD,$4F7B,$4EF7,$4F5A,$52D4,$4E9A,$4E78                   ;9B98D0;
 
+%anchor($9B98E0)
 SamusPalettes_PowerSuit_DeathSequence_6:
     dw $5EF7,$5F39,$5FDE,$62F8,$6BF7,$6759,$73DF,$6F9B                   ;9B98E0;
     dw $6B7A,$5F1E,$5F9C,$5F5A,$5F7B,$6338,$5F1C,$5EFA                   ;9B98F0;
 
+%anchor($9B9900)
 SamusPalettes_PowerSuit_DeathSequence_7:
     dw $6F7B,$6F9C,$6FDE,$6F7B,$73FB,$739C,$77DF,$77BD                   ;9B9900;
     dw $73BC,$6F7E,$6FBD,$6F9C,$6FBD,$6F9B,$6F7D,$6F7C                   ;9B9910;
 
+%anchor($9B9920)
 SamusPalettes_VariaSuit_DeathSequence_BeamCharging_0:
 ; Varia suit - death sequence (eight frames) / beam charging (first four frames)
     dw $0000,$0108,$02FF,$1405,$3BE0,$21A8,$579F,$4AD2                   ;9B9920;
     dw $3A4E,$00BB,$01BE,$008E,$0252,$1104,$0074,$000D                   ;9B9930;
 
+%anchor($9B9940)
 SamusPalettes_VariaSuit_DeathSequence_BeamCharging_1:
     dw $0C63,$0D4A,$0F1F,$2068,$43E3,$29EA,$5B9F,$4EF3                   ;9B9940;
     dw $4270,$0D1B,$0DFE,$0CF0,$0E73,$1D47,$0CD5,$0C6F                   ;9B9950;
 
+%anchor($9B9960)
 SamusPalettes_VariaSuit_DeathSequence_BeamCharging_2:
     dw $1CE7,$1DAD,$1F3F,$2CEB,$4BE7,$362D,$5F9F,$5715                   ;9B9960;
     dw $4AB2,$1D7C,$1E3E,$1D52,$1EB5,$29AA,$1D56,$1CF1                   ;9B9970;
 
+%anchor($9B9980)
 SamusPalettes_VariaSuit_DeathSequence_BeamCharging_3:
     dw $2D6B,$2E10,$2F5F,$396E,$53EB,$4270,$63BF,$5B36                   ;9B9980;
     dw $52D4,$2DDC,$2E7E,$2DD4,$2ED6,$3A0E,$2DB8,$2D73                   ;9B9990;
 
+%anchor($9B99A0)
 SamusPalettes_VariaSuit_DeathSequence_4:
     dw $3DEF,$3E73,$3F7F,$49F2,$5BEF,$4ED3,$6BBF,$6358                   ;9B99A0;
     dw $5B16,$3E5D,$3EDE,$3E36,$3F18,$4671,$3E39,$3DF6                   ;9B99B0;
 
+%anchor($9B99C0)
 SamusPalettes_VariaSuit_DeathSequence_5:
     dw $4E73,$4ED6,$4F9F,$5675,$63F3,$5B16,$6FBF,$6B7A                   ;9B99C0;
     dw $6358,$4EBD,$4F1E,$4E98,$4F5A,$52D4,$4E9A,$4E78                   ;9B99D0;
 
+%anchor($9B99E0)
 SamusPalettes_VariaSuit_DeathSequence_6:
     dw $5EF7,$5F39,$5FBF,$62F8,$6BF7,$6759,$73DF,$6F9B                   ;9B99E0;
     dw $6B7A,$5F1E,$5F5E,$5F1A,$5F7B,$6338,$5F1C,$5EFA                   ;9B99F0;
 
+%anchor($9B9A00)
 SamusPalettes_VariaSuit_DeathSequence_7:
     dw $6F7B,$6F9C,$6FDF,$6F7B,$73FB,$739C,$77DF,$77BD                   ;9B9A00;
     dw $73BC,$6F7E,$6F9E,$6F7C,$6FBD,$6F9B,$6F7D,$6F7C                   ;9B9A10;
 
+%anchor($9B9A20)
 SamusPalettes_GravitySuit_DeathSequence_BeamCharging_0:
 ; Gravity suit - death sequence (eight frames) / beam charging (first four frames)
     dw $14E0,$00CE,$421F,$1405,$3BE0,$21A8,$579F,$4AD2                   ;9B9A20;
     dw $3A4E,$00BB,$5914,$30AA,$0216,$1104,$0074,$000D                   ;9B9A30;
 
+%anchor($9B9A40)
 SamusPalettes_GravitySuit_DeathSequence_BeamCharging_1:
     dw $2143,$0D30,$463F,$2068,$43E3,$29EA,$5B9F,$4EF3                   ;9B9A40;
     dw $4270,$0D1B,$5D55,$390C,$0E37,$1D47,$0CD5,$0C6F                   ;9B9A50;
 
+%anchor($9B9A60)
 SamusPalettes_GravitySuit_DeathSequence_BeamCharging_2:
     dw $2DA7,$1D92,$4E7F,$2CEB,$4BE7,$362D,$5F9F,$5715                   ;9B9A60;
     dw $4AB2,$1D7C,$61B6,$416F,$1E78,$29AA,$1D56,$1CF1                   ;9B9A70;
 
+%anchor($9B9A80)
 SamusPalettes_GravitySuit_DeathSequence_BeamCharging_3:
     dw $3A0B,$2DF4,$56BF,$396E,$53EB,$4270,$63BF,$5B36                   ;9B9A80;
     dw $52D4,$2DDC,$6618,$4DD1,$2EB9,$3A0E,$2DB8,$2D73                   ;9B9A90;
 
+%anchor($9B9AA0)
 SamusPalettes_GravitySuit_DeathSequence_4:
     dw $4A6F,$3E56,$5EFF,$49F2,$5BEF,$4ED3,$6BBF,$6358                   ;9B9AA0;
     dw $5B16,$3E5D,$6A79,$5654,$3EFA,$4671,$3E39,$3DF6                   ;9B9AB0;
 
+%anchor($9B9AC0)
 SamusPalettes_GravitySuit_DeathSequence_5:
     dw $56D3,$4EB8,$673F,$5675,$63F3,$5B16,$6FBF,$6B7A                   ;9B9AC0;
     dw $6358,$4EBD,$6EDA,$5EB7,$4F3B,$52D4,$4E9A,$4E78                   ;9B9AD0;
 
+%anchor($9B9AE0)
 SamusPalettes_GravitySuit_DeathSequence_6:
     dw $6337,$5F1A,$6F7F,$62F8,$6BF7,$6759,$73DF,$6F9B                   ;9B9AE0;
     dw $6B7A,$5F1E,$733C,$6B19,$5F7C,$6338,$5F1C,$5EFA                   ;9B9AF0;
 
+%anchor($9B9B00)
 SamusPalettes_GravitySuit_DeathSequence_7:
     dw $6F9B,$6F7C,$77BF,$6F7B,$73FB,$739C,$77DF,$77BD                   ;9B9B00;
     dw $73BC,$6F7E,$779D,$737C,$6FBD,$6F9B,$6F7D,$6F7C                   ;9B9B10;
 
+%anchor($9B9B20)
 SamusPalettes_PowerSuit_SpeedBoosting_BabyMetroidDrain_0:
 ; SamusPalettes_PowerSuit_SpeedBoosting_BabyMetroidDrain_3 also used for metroid drain blue
     dw $0000,$0108,$03BD,$1405,$3BE0,$21A8,$579F,$4AD2                   ;9B9B20;
     dw $3A4E,$00BB,$02B5,$016B,$0252,$1104,$0074,$000D                   ;9B9B30;
 
+%anchor($9B9B40)
 SamusPalettes_PowerSuit_SpeedBoosting_BabyMetroidDrain_1:
     dw $2003,$28CE,$37BD,$3C05,$63E0,$49A8,$7F9F,$72D2                   ;9B9B40;
     dw $624E,$28BB,$36B5,$356B,$2A16,$3904,$2874,$280D                   ;9B9B50;
 
+%anchor($9B9B60)
 SamusPalettes_PowerSuit_SpeedBoosting_BabyMetroidDrain_2:
     dw $2003,$516E,$4BBD,$64A5,$7FE0,$7248,$7FFF,$7F72                   ;9B9B60;
     dw $7EEE,$555B,$4AB5,$496B,$52B6,$61A4,$5114,$50AD                   ;9B9B70;
 
+%anchor($9B9B80)
 SamusPalettes_PowerSuit_SpeedBoosting_BabyMetroidDrain_3:
     dw $0000,$52AE,$5FBD,$65E5,$7FE0,$7388,$7FFF,$7FF2                   ;9B9B80;
     dw $7FEE,$569B,$5F55,$5E0B,$53F6,$62E4,$5254,$51ED                   ;9B9B90;
 
+%anchor($9B9BA0)
 SamusPalettes_PowerSuit_SpeedBoosterShine_0:
     dw $0000,$0108,$03BD,$1405,$3BE0,$21A8,$579F,$4AD2                   ;9B9BA0;
     dw $3A4E,$00BB,$02B5,$016B,$0252,$1104,$0074,$000D                   ;9B9BB0;
 
+%anchor($9B9BC0)
 SamusPalettes_PowerSuit_SpeedBoosterShine_1:
     dw $0000,$1DAD,$1FBD,$2CEB,$4BE7,$362D,$5F9F,$5715                   ;9B9BC0;
     dw $4AB2,$1D7C,$1EF7,$1E10,$1EB5,$29AA,$1D56,$1CF1                   ;9B9BD0;
 
+%anchor($9B9BE0)
 SamusPalettes_PowerSuit_SpeedBoosterShine_2:
     dw $0000,$3E73,$3FDE,$49F2,$5BEF,$4ED3,$6BBF,$6358                   ;9B9BE0;
     dw $5B16,$3E5D,$3F5A,$3EB5,$3F18,$4671,$3E39,$3DF6                   ;9B9BF0;
 
+%anchor($9B9C00)
 SamusPalettes_PowerSuit_SpeedBoosterShine_3:
     dw $0000,$5F39,$5FDE,$62F8,$6BF7,$6759,$73DF,$6F9B                   ;9B9C00;
     dw $6B7A,$5F1E,$5F9C,$5F5A,$5F7B,$6338,$5F1C,$5EFA                   ;9B9C10;
 
+%anchor($9B9C20)
 SamusPalettes_PowerSuit_Shinespark_PseudoScrewAttack_0:
 ; SamusPalettes_PowerSuit_Shinespark_PseudoScrewAttack_3 also used for power suit pseudo screw attack
     dw $3800,$0108,$03BD,$1405,$3BE0,$21A8,$579F,$4AD2                   ;9B9C20;
     dw $3A4E,$00BB,$02B5,$016B,$0252,$1104,$0074,$000D                   ;9B9C30;
 
+%anchor($9B9C40)
 SamusPalettes_PowerSuit_Shinespark_PseudoScrewAttack_1:
     dw $3800,$01AD,$03FF,$294F,$4FEA,$36F2,$6BFF,$5FFC                   ;9B9C40;
     dw $4798,$017C,$0318,$0210,$02B5,$264E,$15BE,$1557                   ;9B9C50;
 
+%anchor($9B9C60)
 SamusPalettes_PowerSuit_Shinespark_PseudoScrewAttack_2:
     dw $3800,$0273,$17FF,$1615,$3BF0,$23B8,$57FF,$4BFF                   ;9B9C60;
     dw $3BFE,$025D,$037B,$02B5,$0318,$1314,$027F,$021D                   ;9B9C70;
 
+%anchor($9B9C80)
 SamusPalettes_PowerSuit_Shinespark_PseudoScrewAttack_3:
     dw $3800,$0339,$23FF,$3F5F,$63FA,$4BFF,$7FFF,$73FF                   ;9B9C80;
     dw $63FF,$031E,$03DE,$035A,$037B,$3BFE,$2BBF,$2B5F                   ;9B9C90;
 
+%anchor($9B9CA0)
 SamusPalettes_PowerSuit_ScrewAttack_0:
     dw $3800,$0108,$03BD,$1405,$3BE0,$21A8,$579F,$4AD2                   ;9B9CA0;
     dw $3A4E,$00BB,$02B5,$016B,$0252,$1104,$0074,$000D                   ;9B9CB0;
 
+%anchor($9B9CC0)
 SamusPalettes_PowerSuit_ScrewAttack_1:
     dw $3800,$01A8,$03F8,$1545,$43E0,$22E8,$57FF,$4BF2                   ;9B9CC0;
     dw $3B8E,$01FB,$0355,$020B,$0356,$1244,$01B4,$014D                   ;9B9CD0;
 
+%anchor($9B9CE0)
 SamusPalettes_PowerSuit_ScrewAttack_2:
     dw $3800,$0248,$03F3,$1685,$4FE0,$23E8,$57FF,$4BF2                   ;9B9CE0;
     dw $3BEE,$033B,$03F5,$02AB,$03F6,$1384,$02F4,$028D                   ;9B9CF0;
 
+%anchor($9B9D00)
 SamusPalettes_PowerSuit_ScrewAttack_3:
     dw $3800,$02E8,$03EE,$3FC5,$63E0,$4BE8,$7FFF,$73F2                   ;9B9D00;
     dw $63EE,$2BFB,$03F0,$034B,$2BF6,$3BE4,$2BF4,$2BED                   ;9B9D10;
 
+%anchor($9B9D20)
 SamusPalettes_VariaSuit_SpeedBoosting_BabyMetroidDrain_0:
 ; SamusPalettes_VariaSuit_SpeedBoosting_BabyMetroidDrain_3 also used for metroid drain blue
     dw $0000,$0108,$02FF,$1405,$3BE0,$21A8,$579F,$4AD2                   ;9B9D20;
     dw $3A4E,$00BB,$01BE,$008E,$0252,$1104,$0074,$000D                   ;9B9D30;
 
+%anchor($9B9D40)
 SamusPalettes_VariaSuit_SpeedBoosting_BabyMetroidDrain_1:
     dw $2003,$2908,$2AFF,$3C05,$63E0,$49A8,$7F9F,$72D2                   ;9B9D40;
     dw $624E,$28BB,$29BE,$288E,$2A4D,$3904,$2874,$280D                   ;9B9D50;
 
+%anchor($9B9D60)
 SamusPalettes_VariaSuit_SpeedBoosting_BabyMetroidDrain_2:
     dw $2003,$5108,$52FF,$64A5,$7FE0,$7248,$7FFF,$7F72                   ;9B9D60;
     dw $7EEE,$555B,$51BE,$508E,$3E4D,$61A4,$5114,$50AD                   ;9B9D70;
 
+%anchor($9B9D80)
 SamusPalettes_VariaSuit_SpeedBoosting_BabyMetroidDrain_3:
     dw $0000,$79A8,$7B9F,$65E5,$7FE0,$7388,$7FFF,$7FF2                   ;9B9D80;
     dw $7FEE,$569B,$765E,$752E,$524D,$62E4,$5254,$51ED                   ;9B9D90;
 
+%anchor($9B9DA0)
 SamusPalettes_VariaSuit_SpeedBoosterShine_0:
     dw $0000,$0108,$02FF,$1405,$3BE0,$21A8,$579F,$4AD2                   ;9B9DA0;
     dw $3A4E,$00BB,$01BE,$008E,$0252,$1104,$0074,$000D                   ;9B9DB0;
 
+%anchor($9B9DC0)
 SamusPalettes_VariaSuit_SpeedBoosterShine_1:
     dw $0000,$1DAD,$1F3F,$2CEB,$4BE7,$362D,$5F9F,$5715                   ;9B9DC0;
     dw $4AB2,$1D7C,$1E3E,$1D52,$1EB5,$29AA,$1D56,$1CF1                   ;9B9DD0;
 
+%anchor($9B9DE0)
 SamusPalettes_VariaSuit_SpeedBoosterShine_2:
     dw $0000,$3E73,$3F7F,$49F2,$5BEF,$4ED3,$6BBF,$6358                   ;9B9DE0;
     dw $5B16,$3E5D,$3EDE,$3E36,$3F18,$4671,$3E39,$3DF6                   ;9B9DF0;
 
+%anchor($9B9E00)
 SamusPalettes_VariaSuit_SpeedBoosterShine_3:
     dw $0000,$5F39,$5FBF,$62F8,$6BF7,$6759,$73DF,$6F9B                   ;9B9E00;
     dw $6B7A,$5F1E,$5F5E,$5F1A,$5F7B,$6338,$5F1C,$5EFA                   ;9B9E10;
 
+%anchor($9B9E20)
 SamusPalettes_VariaSuit_Shinespark_PseudoScrewAttack_0:
 ; SamusPalettes_VariaSuit_Shinespark_PseudoScrewAttack_3 also used for varia suit pseudo screw attack
     dw $3800,$0108,$02FF,$1405,$3BE0,$21A8,$579F,$4AD2                   ;9B9E20;
     dw $3A4E,$00BB,$01BE,$008E,$0252,$1104,$0074,$000D                   ;9B9E30;
 
+%anchor($9B9E40)
 SamusPalettes_VariaSuit_Shinespark_PseudoScrewAttack_1:
     dw $3800,$01AD,$039F,$294F,$4FEA,$36F2,$6BFF,$5FFC                   ;9B9E40;
     dw $4798,$15FF,$025E,$0133,$02F7,$264E,$15BE,$1557                   ;9B9E50;
 
+%anchor($9B9E60)
 SamusPalettes_VariaSuit_Shinespark_PseudoScrewAttack_2:
     dw $3800,$0252,$03FF,$1615,$3BF0,$23B8,$57FF,$4BFF                   ;9B9E60;
     dw $3BFE,$02BF,$02FE,$01D8,$039C,$1314,$027F,$021D                   ;9B9E70;
 
+%anchor($9B9E80)
 SamusPalettes_VariaSuit_Shinespark_PseudoScrewAttack_3:
     dw $3800,$02F7,$17FF,$3F5F,$63FA,$4BFF,$7FFF,$73FF                   ;9B9E80;
     dw $63FF,$2BFF,$039E,$027D,$03FF,$3BFE,$2BBF,$2B5F                   ;9B9E90;
 
+%anchor($9B9EA0)
 SamusPalettes_VariaSuit_ScrewAttack_0:
     dw $3800,$0108,$02FF,$1405,$3BE0,$21A8,$579F,$4AD2                   ;9B9EA0;
     dw $3A4E,$00BB,$01BE,$008E,$0252,$1104,$0074,$000D                   ;9B9EB0;
 
+%anchor($9B9EC0)
 SamusPalettes_VariaSuit_ScrewAttack_1:
     dw $3800,$01A8,$039F,$1545,$43E0,$22E8,$57FF,$4BF2                   ;9B9EC0;
     dw $3B8E,$01FB,$025E,$012E,$02F2,$1244,$01B4,$014D                   ;9B9ED0;
 
+%anchor($9B9EE0)
 SamusPalettes_VariaSuit_ScrewAttack_2:
     dw $3800,$0248,$039A,$1685,$4FE0,$23E8,$57FF,$4BF2                   ;9B9EE0;
     dw $3BEE,$033B,$02FE,$01CE,$0392,$1384,$02F4,$028D                   ;9B9EF0;
 
+%anchor($9B9F00)
 SamusPalettes_VariaSuit_ScrewAttack_3:
     dw $3800,$02E8,$0394,$3FC5,$63E0,$4BE8,$7FFF,$73F2                   ;9B9F00;
     dw $63EE,$2BFB,$039E,$026E,$03F2,$3BE4,$2BF4,$2BED                   ;9B9F10;
 
+%anchor($9B9F20)
 SamusPalettes_GravitySuit_SpeedBoosting_BabyMetroidDrain_0:
 ; SamusPalettes_GravitySuit_SpeedBoosting_BabyMetroidDrain_3 also used for metroid drain blue
     dw $14E0,$00CE,$421F,$1405,$3BE0,$21A8,$579F,$4AD2                   ;9B9F20;
     dw $3A4E,$00BB,$5914,$30AA,$0216,$1104,$0074,$000D                   ;9B9F30;
 
+%anchor($9B9F40)
 SamusPalettes_GravitySuit_SpeedBoosting_BabyMetroidDrain_1:
     dw $2003,$28CE,$6E1F,$3C05,$63E0,$49A8,$7F9F,$72D2                   ;9B9F40;
     dw $624E,$28BB,$7D14,$58AA,$2A16,$3904,$2874,$280D                   ;9B9F50;
 
+%anchor($9B9F60)
 SamusPalettes_GravitySuit_SpeedBoosting_BabyMetroidDrain_2:
     dw $2003,$516E,$7EBF,$64A5,$7FE0,$7248,$7FFF,$7F72                   ;9B9F60;
     dw $7EEE,$555B,$7DB4,$7D4A,$52B6,$61A4,$5114,$50AD                   ;9B9F70;
 
+%anchor($9B9F80)
 SamusPalettes_GravitySuit_SpeedBoosting_BabyMetroidDrain_3:
     dw $0000,$52AE,$7FFF,$65E5,$7FE0,$7388,$7FFF,$7FF2                   ;9B9F80;
     dw $7FEE,$569B,$7EF4,$7E8A,$53F6,$62E4,$5254,$51ED                   ;9B9F90;
 
+%anchor($9B9FA0)
 SamusPalettes_GravitySuit_SpeedBoosterShine_0:
     dw $0000,$00CE,$421F,$1405,$3BE0,$21A8,$579F,$4AD2                   ;9B9FA0;
     dw $3A4E,$00BB,$5914,$30AA,$0216,$1104,$0074,$000D                   ;9B9FB0;
 
+%anchor($9B9FC0)
 SamusPalettes_GravitySuit_SpeedBoosterShine_1:
     dw $0000,$1D92,$4E7F,$2CEB,$4BE7,$362D,$5F9F,$5715                   ;9B9FC0;
     dw $4AB2,$1D7C,$61B6,$416F,$1E78,$29AA,$1D56,$1CF1                   ;9B9FD0;
 
+%anchor($9B9FE0)
 SamusPalettes_GravitySuit_SpeedBoosterShine_2:
     dw $0000,$3E56,$5EFF,$49F2,$5BEF,$4ED3,$6BBF,$6358                   ;9B9FE0;
     dw $5B16,$3E5D,$6A79,$5654,$3EFA,$4671,$3E39,$3DF6                   ;9B9FF0;
 
+%anchor($9BA000)
 SamusPalettes_GravitySuit_SpeedBoosterShine_3:
     dw $0000,$5F1A,$6F7F,$62F8,$6BF7,$6759,$73DF,$6F9B                   ;9BA000;
     dw $6B7A,$5F1E,$733C,$6B19,$5F7C,$6338,$5F1C,$5EFA                   ;9BA010;
 
+%anchor($9BA020)
 SamusPalettes_GravitySuit_Shinespark_0:
 ; SamusPalettes_GravitySuit_Shinespark_3 also used for gravity suit pseudo screw attack
     dw $3800,$00CE,$421F,$1405,$3BE0,$21A8,$579F,$4AD2                   ;9BA020;
     dw $3A4E,$00BB,$5914,$30AA,$0216,$1104,$0074,$000D                   ;9BA030;
 
+%anchor($9BA040)
 SamusPalettes_GravitySuit_Shinespark_1:
     dw $3800,$1618,$575F,$294F,$4FEA,$36F2,$6BFF,$5FFC                   ;9BA040;
     dw $4798,$15FF,$6E5E,$45F4,$175F,$264E,$15BE,$1557                   ;9BA050;
 
+%anchor($9BA060)
 SamusPalettes_GravitySuit_Shinespark_2:
     dw $3800,$02DE,$43FF,$1615,$3BF0,$23B8,$57FF,$4BFF                   ;9BA060;
     dw $3BFE,$02BF,$5B1F,$32BA,$03FF,$1314,$027F,$021D                   ;9BA070;
 
+%anchor($9BA080)
 SamusPalettes_GravitySuit_Shinespark_3:
     dw $3800,$2BFF,$6BFF,$3F5F,$63FA,$4BFF,$7FFF,$73FF                   ;9BA080;
     dw $63FF,$2BFF,$7FFF,$5BFF,$2BFF,$3BFE,$2BBF,$2B5F                   ;9BA090;
 
+%anchor($9BA0A0)
 SamusPalettes_GravitySuit_ScrewAttack_0:
     dw $3800,$00CE,$421F,$1405,$3BE0,$21A8,$579F,$4AD2                   ;9BA0A0;
     dw $3A4E,$00BB,$5914,$30AA,$0216,$1104,$0074,$000D                   ;9BA0B0;
 
+%anchor($9BA0C0)
 SamusPalettes_GravitySuit_ScrewAttack_1:
     dw $3800,$020E,$435F,$1545,$43E0,$22E8,$57FF,$4BF2                   ;9BA0C0;
     dw $3B8E,$01FB,$5A54,$31EA,$0356,$1244,$01B4,$014D                   ;9BA0D0;
 
+%anchor($9BA0E0)
 SamusPalettes_GravitySuit_ScrewAttack_2:
     dw $3800,$034E,$43FF,$1685,$4FE0,$23E8,$57FF,$4BF2                   ;9BA0E0;
     dw $3BEE,$033B,$5B94,$332A,$03F6,$1384,$02F4,$028D                   ;9BA0F0;
 
+%anchor($9BA100)
 SamusPalettes_GravitySuit_ScrewAttack_3:
     dw $3800,$2BEE,$6BFF,$3FC5,$63E0,$4BE8,$7FFF,$73F2                   ;9BA100;
     dw $63EE,$2BFB,$7FF4,$5BEA,$2BF6,$3BE4,$2BF4,$2BED                   ;9BA110;
 
+%anchor($9BA120)
 SamusPalettes_DeathSequence_SuitlessSamus_0:
     dw $21A8,$02FF,$0217,$0150,$0089,$7FFF,$3A9F,$2A19                   ;9BA120;
     dw $1DB4,$114F,$090B,$4E73,$4210,$318C,$2108,$1084                   ;9BA130;
 
+%anchor($9BA140)
 SamusPalettes_DeathSequence_SuitlessSamus_1:
     dw $29EA,$0F1F,$0E38,$0D91,$0CEB,$7FFF,$42BF,$3239                   ;9BA140;
     dw $29F5,$1D91,$154D,$5294,$4631,$39CE,$294A,$1CE7                   ;9BA150;
 
+%anchor($9BA160)
 SamusPalettes_DeathSequence_SuitlessSamus_2:
     dw $362D,$1F3F,$1E79,$1DF3,$1D4E,$7FFF,$4ADF,$3E7A                   ;9BA160;
     dw $3636,$29F3,$25B0,$5AD6,$4E73,$4210,$35AD,$294A                   ;9BA170;
 
+%anchor($9BA180)
 SamusPalettes_DeathSequence_SuitlessSamus_3:
     dw $4270,$2F5F,$2EBA,$2E35,$2DD1,$7FFF,$531F,$46BB                   ;9BA180;
     dw $4278,$3A35,$3212,$5EF7,$56B5,$4E73,$4210,$39CE                   ;9BA190;
 
+%anchor($9BA1A0)
 SamusPalettes_DeathSequence_SuitlessSamus_4:
     dw $4ED3,$3F7F,$3EFB,$3E97,$3E34,$7FFF,$5B3F,$52FC                   ;9BA1A0;
     dw $4ED9,$4697,$4275,$6739,$5EF7,$56B5,$4E73,$4631                   ;9BA1B0;
 
+%anchor($9BA1C0)
 SamusPalettes_DeathSequence_SuitlessSamus_5:
     dw $5B16,$4F9F,$4F3C,$4EF9,$4E96,$7FFF,$635F,$5F3C                   ;9BA1C0;
     dw $5B1A,$52F9,$52D7,$6B5A,$6739,$5EF7,$5AD6,$5294                   ;9BA1D0;
 
+%anchor($9BA1E0)
 SamusPalettes_DeathSequence_SuitlessSamus_6:
     dw $6759,$5FBF,$5F7D,$5F3B,$5F19,$7FFF,$6B9F,$677D                   ;9BA1E0;
     dw $675C,$633B,$5F3A,$739C,$6F7B,$6B5A,$6739,$6318                   ;9BA1F0;
 
+%anchor($9BA200)
 SamusPalettes_DeathSequence_SuitlessSamus_7:
     dw $739C,$6FDF,$6FBE,$6F9D,$6F7C,$7FFF,$73BF,$73BE                   ;9BA200;
     dw $739D,$6F9D,$6F9C,$77BD,$77BD,$739C,$739C,$6F7B                   ;9BA210;
 
+%anchor($9BA220)
 SamusPalettes_DeathSequence_SuitlessSamus_8:
     dw $77BD,$77BD,$77BD,$77BD,$77BD,$77BD,$77BD,$77BD                   ;9BA220;
     dw $77BD,$77BD,$77BD,$77BD,$77BD,$77BD,$77BD,$77BD                   ;9BA230;
 
+%anchor($9BA240)
 SamusPalettes_HyperBeam_0:
     dw $0000,$2119,$319E,$1096,$35BF,$1CF9,$319E,$2D7D                   ;9BA240;
     dw $295B,$253B,$211A,$18D7,$211A,$14B7,$18D8,$1096                   ;9BA250;
 
+%anchor($9BA260)
 SamusPalettes_HyperBeam_1:
     dw $0000,$1639,$2ABE,$09B6,$2EDF,$1619,$2ABE,$26BD                   ;9BA260;
     dw $1E7B,$1E5B,$1A3A,$0DF7,$1A3A,$0DD7,$11F8,$09B6                   ;9BA270;
 
+%anchor($9BA280)
 SamusPalettes_HyperBeam_2:
     dw $0000,$0F39,$23DE,$02D6,$23FF,$0B39,$23DE,$1FBD                   ;9BA280;
     dw $177B,$137B,$135A,$06F7,$135A,$02F7,$0B18,$02D6                   ;9BA290;
 
+%anchor($9BA2A0)
 SamusPalettes_HyperBeam_3:
     dw $0000,$0F2F,$23D3,$02CB,$23F4,$0B2E,$23D3,$1FB2                   ;9BA2A0;
     dw $1771,$1370,$134F,$06ED,$134F,$02EC,$0B0D,$02CB                   ;9BA2B0;
 
+%anchor($9BA2C0)
 SamusPalettes_HyperBeam_4:
     dw $0000,$0F23,$23C8,$02C0,$23E8,$0B22,$23C8,$1FA7                   ;9BA2C0;
     dw $1765,$1364,$1344,$06E1,$1344,$02E0,$0B02,$02C0                   ;9BA2D0;
 
+%anchor($9BA2E0)
 SamusPalettes_HyperBeam_5:
     dw $0000,$3284,$4329,$2221,$4749,$2E83,$4329,$4308                   ;9BA2E0;
     dw $3AC6,$36C5,$32A5,$2A42,$32A5,$2641,$2A63,$2221                   ;9BA2F0;
 
+%anchor($9BA300)
 SamusPalettes_HyperBeam_6:
     dw $0400,$51E5,$6289,$4181,$66AA,$4DE4,$6289,$5E68                   ;9BA300;
     dw $5A27,$5626,$5205,$49A3,$5205,$45A2,$49C3,$4181                   ;9BA310;
 
+%anchor($9BA320)
 SamusPalettes_HyperBeam_7:
     dw $0000,$554D,$69D2,$48CA,$69F2,$512C,$69D2,$65B1                   ;9BA320;
     dw $5D8F,$596E,$594E,$4D0B,$594E,$48EA,$510C,$48CA                   ;9BA330;
 
+%anchor($9BA340)
 SamusPalettes_HyperBeam_8:
     dw $7FFF,$5876,$691A,$4812,$6D1B,$5455,$691A,$68FA                   ;9BA340;
     dw $60B8,$5C97,$5896,$5034,$5896,$4C13,$5054,$4812                   ;9BA350;
 
+%anchor($9BA360)
 SamusPalettes_HyperBeam_9:
     dw $3800,$3CB8,$4D5D,$2C55,$517D,$38B7,$4D5D,$493C                   ;9BA360;
     dw $44FA,$40F9,$3CD9,$3476,$3CD9,$3075,$3497,$2C55                   ;9BA370;
 
+%anchor($9BA380)
 SamusPalettes_HurtFlash:
     dw $0000,$6739,$6F9C,$5EF7,$7BFF,$6739,$77BD,$6F9C                   ;9BA380;
     dw $6B7B,$6B7B,$6B7B,$5F18,$6B7B,$5F18,$6739,$5F18                   ;9BA390;
 
+%anchor($9BA3A0)
 SamusPalettes_Intro:
 ; Intro Samus (greyscale)
     dw $3800,$2DAD,$52D6,$1084,$77FF,$2DAD,$677B,$52D6                   ;9BA3A0;
     dw $4252,$4252,$4252,$1908,$4252,$1908,$2DAD,$1908                   ;9BA3B0;
 
+%anchor($9BA3C0)
 SamusPalettes_Visor:                                                     ;9BA3C0;
     dw $3BE0,$5FF0,$7FFF ; Using x-ray
     dw $43FF,$2F5A,$1AB5 ; In room with layer blending configuration = 28h/2Ah (with colour math backdrops)
 
+%anchor($9BA3CC)
 SetProjectileTrailPosition:
     PHP                                                                  ;9BA3CC;
     PHB                                                                  ;9BA3CD;
@@ -694,6 +829,7 @@ SetProjectileTrailPosition:
     RTL                                                                  ;9BA4B2;
 
 
+%anchor($9BA4B3)
 BeamTrailOffsets_uncharged:
     dw UnchargedBeamTrails_Default                                       ;9BA4B3;
     dw UnchargedBeamTrails_Wave_WaveIce                                  ;9BA4B5;
@@ -708,6 +844,7 @@ BeamTrailOffsets_uncharged:
     dw UnchargedBeamTrails_IcePlasma                                     ;9BA4C7;
     dw UnchargedBeamTrails_WaveIcePlasma                                 ;9BA4C9;
 
+%anchor($9BA4CB)
 BeamTrailOffsets_charged:
     dw ChargedBeamTrails_Default                                         ;9BA4CB;
     dw ChargedBeamTrails_Wave_WaveIce                                    ;9BA4CD;
@@ -722,6 +859,7 @@ BeamTrailOffsets_charged:
     dw ChargedBeamTrails_IcePlasma                                       ;9BA4DF;
     dw ChargedBeamTrails_WaveIcePlasma                                   ;9BA4E1;
 
+%anchor($9BA4E3)
 BeamTrailOffsets_spazerSBA:
     dw $0000                                                             ;9BA4E3;
     dw $0000                                                             ;9BA4E5;
@@ -734,6 +872,7 @@ BeamTrailOffsets_spazerSBA:
     dw $0000                                                             ;9BA4F3;
     dw $0000                                                             ;9BA4F5;
 
+%anchor($9BA4F7)
 UnchargedBeamTrails_Wave_WaveIce:
     dw UnchargedBeamTrails_Wave_WaveIce_0                                ;9BA4F7;
     dw UnchargedBeamTrails_Wave_WaveIce_2                                ;9BA4F9;
@@ -746,6 +885,7 @@ UnchargedBeamTrails_Wave_WaveIce:
     dw UnchargedBeamTrails_Wave_WaveIce_3                                ;9BA507;
     dw UnchargedBeamTrails_Wave_WaveIce_0                                ;9BA509;
 
+%anchor($9BA50B)
 UnchargedBeamTrails_Default:
     dw UnchargedBeamTrails_Default_0                                     ;9BA50B;
     dw UnchargedBeamTrails_Default_0                                     ;9BA50D;
@@ -758,6 +898,7 @@ UnchargedBeamTrails_Default:
     dw UnchargedBeamTrails_Default_0                                     ;9BA51B;
     dw UnchargedBeamTrails_Default_0                                     ;9BA51D;
 
+%anchor($9BA51F)
 UnchargedBeamTrails_IceSpazer:
     dw UnchargedBeamTrails_IceSpazer_0                                   ;9BA51F;
     dw UnchargedBeamTrails_IceSpazer_2                                   ;9BA521;
@@ -770,6 +911,7 @@ UnchargedBeamTrails_IceSpazer:
     dw UnchargedBeamTrails_IceSpazer_7                                   ;9BA52F;
     dw UnchargedBeamTrails_IceSpazer_0                                   ;9BA531;
 
+%anchor($9BA533)
 UnchargedBeamTrails_WaveIceSpazer:
     dw UnchargedBeamTrails_WaveIceSpazer_0                               ;9BA533;
     dw UnchargedBeamTrails_WaveIceSpazer_1                               ;9BA535;
@@ -782,6 +924,7 @@ UnchargedBeamTrails_WaveIceSpazer:
     dw UnchargedBeamTrails_WaveIceSpazer_7                               ;9BA543;
     dw UnchargedBeamTrails_WaveIceSpazer_0                               ;9BA545;
 
+%anchor($9BA547)
 UnchargedBeamTrails_IcePlasma:
     dw UnchargedBeamTrails_IcePlasma_0                                   ;9BA547;
     dw UnchargedBeamTrails_IcePlasma_1                                   ;9BA549;
@@ -794,6 +937,7 @@ UnchargedBeamTrails_IcePlasma:
     dw UnchargedBeamTrails_IcePlasma_7                                   ;9BA557;
     dw UnchargedBeamTrails_IcePlasma_0                                   ;9BA559;
 
+%anchor($9BA55B)
 UnchargedBeamTrails_WaveIcePlasma:
     dw UnchargedBeamTrails_WaveIcePlasma_0                               ;9BA55B;
     dw UnchargedBeamTrails_WaveIcePlasma_1                               ;9BA55D;
@@ -814,162 +958,200 @@ UnchargedBeamTrails_WaveIcePlasma:
 ;     Y: Right trail Y offset
 
 ; Indexed by [[projectile instruction pointer] - 2] * 4
+%anchor($9BA56F)
 UnchargedBeamTrails_Default_0:
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00   ;9BA56F;
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00   ;9BA57F;
 
+%anchor($9BA58F)
 UnchargedBeamTrails_Wave_WaveIce_0:
     db $00,$00,$00,$00,$08,$00,$00,$00,$0C,$00,$00,$00,$10,$00,$00,$00   ;9BA58F;
     db $14,$00,$00,$00,$10,$00,$00,$00,$0C,$00,$00,$00,$08,$00,$00,$00   ;9BA59F;
     db $00,$00,$00,$00,$F8,$00,$00,$00,$F4,$00,$00,$00,$F0,$00,$00,$00   ;9BA5AF;
     db $EC,$00,$00,$00,$F0,$00,$00,$00,$F4,$00,$00,$00,$F8,$00,$00,$00   ;9BA5BF;
 
+%anchor($9BA5CF)
 UnchargedBeamTrails_Wave_WaveIce_1:
     db $00,$00,$00,$00,$00,$F8,$00,$00,$00,$F4,$00,$00,$00,$F0,$00,$00   ;9BA5CF;
     db $00,$EC,$00,$00,$00,$F0,$00,$00,$00,$F4,$00,$00,$00,$F8,$00,$00   ;9BA5DF;
     db $00,$00,$00,$00,$00,$08,$00,$00,$00,$0C,$00,$00,$00,$10,$00,$00   ;9BA5EF;
     db $00,$14,$00,$00,$00,$10,$00,$00,$00,$0C,$00,$00,$00,$08,$00,$00   ;9BA5FF;
 
+%anchor($9BA60F)
 UnchargedBeamTrails_Wave_WaveIce_2:
     db $00,$00,$00,$00,$FC,$FC,$00,$00,$F8,$F8,$00,$00,$F6,$F6,$00,$00   ;9BA60F;
     db $F4,$F4,$00,$00,$F6,$F6,$00,$00,$F8,$F8,$00,$00,$FC,$FC,$00,$00   ;9BA61F;
     db $00,$00,$00,$00,$04,$04,$00,$00,$08,$08,$00,$00,$0A,$0A,$00,$00   ;9BA62F;
     db $0C,$0C,$00,$00,$0A,$0A,$00,$00,$08,$08,$00,$00,$04,$04,$00,$00   ;9BA63F;
 
+%anchor($9BA64F)
 UnchargedBeamTrails_Wave_WaveIce_3:
     db $00,$00,$00,$00,$04,$FC,$00,$00,$08,$F8,$00,$00,$0A,$F6,$00,$00   ;9BA64F;
     db $0C,$F4,$00,$00,$0A,$F6,$00,$00,$08,$F8,$00,$00,$04,$FC,$00,$00   ;9BA65F;
     db $00,$00,$00,$00,$FC,$04,$00,$00,$F8,$08,$00,$00,$F6,$0A,$00,$00   ;9BA66F;
     db $F4,$0C,$00,$00,$F6,$0A,$00,$00,$F8,$08,$00,$00,$FC,$04,$00,$00   ;9BA67F;
 
+%anchor($9BA68F)
 UnchargedBeamTrails_IceSpazer_0:
     db $00,$00,$00,$00,$F8,$08,$08,$08,$F0,$08,$10,$08                   ;9BA68F;
 
+%anchor($9BA69B)
 UnchargedBeamTrails_IceSpazer_1:
     db $00,$00,$00,$00,$F8,$F8,$08,$F8,$F0,$F8,$10,$F8                   ;9BA69B;
 
+%anchor($9BA6A7)
 UnchargedBeamTrails_IceSpazer_2:
     db $F8,$08,$F8,$08,$F2,$02,$FE,$0E,$EC,$FC,$02,$14                   ;9BA6A7;
 
+%anchor($9BA6B3)
 UnchargedBeamTrails_IceSpazer_3:
     db $F8,$00,$F8,$00,$F8,$F8,$F8,$08,$F8,$F0,$F8,$10                   ;9BA6B3;
 
+%anchor($9BA6BF)
 UnchargedBeamTrails_IceSpazer_4:
     db $F8,$F8,$F8,$F8,$FE,$F0,$F0,$FE,$04,$EC,$EC,$04                   ;9BA6BF;
 
+%anchor($9BA6CB)
 UnchargedBeamTrails_IceSpazer_5:
     db $08,$F8,$08,$F8,$0E,$FE,$02,$F2,$14,$04,$FE,$EC                   ;9BA6CB;
 
+%anchor($9BA6D7)
 UnchargedBeamTrails_IceSpazer_6:
     db $08,$00,$08,$00,$08,$08,$08,$F8,$08,$10,$08,$F0                   ;9BA6D7;
 
+%anchor($9BA6E3)
 UnchargedBeamTrails_IceSpazer_7:
     db $08,$08,$08,$08,$02,$10,$10,$02,$FC,$14,$14,$FC                   ;9BA6E3;
 
+%anchor($9BA6EF)
 UnchargedBeamTrails_WaveIceSpazer_0:
     db $00,$00,$00,$00,$FC,$08,$04,$08,$F8,$08,$08,$08,$F4,$08,$0C,$08   ;9BA6EF;
     db $F0,$08,$10,$08,$F0,$08,$10,$08,$F0,$08,$10,$08,$F4,$08,$0C,$08   ;9BA6FF;
     db $F8,$08,$08,$08,$FC,$08,$04,$08                                   ;9BA70F;
 
+%anchor($9BA717)
 UnchargedBeamTrails_WaveIceSpazer_1:
     db $00,$00,$00,$00,$F4,$06,$FA,$0C,$F2,$02,$FE,$0E,$F0,$00,$00,$10   ;9BA717;
     db $EE,$FE,$02,$12,$EC,$FC,$02,$14,$EE,$FE,$02,$12,$F0,$00,$00,$10   ;9BA727;
     db $F2,$02,$FE,$0E,$F4,$06,$FA,$0C                                   ;9BA737;
 
+%anchor($9BA73F)
 UnchargedBeamTrails_WaveIceSpazer_2:
     db $00,$00,$00,$00,$F8,$FC,$F8,$04,$F8,$F8,$F8,$08,$F8,$F4,$F8,$0C   ;9BA73F;
     db $F8,$F0,$F8,$10,$F8,$F0,$F8,$10,$F8,$F0,$F8,$10,$F8,$F4,$F8,$0C   ;9BA74F;
     db $F8,$F8,$F8,$08,$F8,$FC,$F8,$04                                   ;9BA75F;
 
+%anchor($9BA767)
 UnchargedBeamTrails_WaveIceSpazer_3:
     db $00,$00,$00,$00,$F4,$FA,$FA,$F4,$FE,$F0,$F0,$FE,$F0,$00,$00,$F0   ;9BA767;
     db $EE,$02,$02,$EE,$04,$EC,$EC,$04,$EE,$02,$02,$EE,$F0,$00,$00,$F0   ;9BA777;
     db $FE,$F0,$F0,$FE,$F4,$FA,$FA,$F4                                   ;9BA787;
 
+%anchor($9BA78F)
 UnchargedBeamTrails_WaveIceSpazer_4:
     db $00,$00,$00,$00,$FC,$F8,$04,$F8,$F8,$F8,$08,$F8,$F4,$F8,$0C,$F8   ;9BA78F;
     db $F0,$F8,$10,$F8,$F0,$F8,$10,$F8,$F0,$F8,$10,$F8,$F4,$F8,$0C,$F8   ;9BA79F;
     db $F8,$F8,$08,$F8,$FC,$F8,$04,$F8                                   ;9BA7AF;
 
+%anchor($9BA7B7)
 UnchargedBeamTrails_WaveIceSpazer_5:
     db $00,$00,$00,$00,$02,$F2,$0E,$FE,$00,$F0,$10,$00,$FE,$EE,$12,$02   ;9BA7B7;
     db $FE,$EC,$14,$04,$FE,$EC,$14,$04,$FE,$EC,$14,$04,$FE,$EE,$12,$02   ;9BA7C7;
     db $00,$F0,$10,$00,$02,$F2,$0E,$FE                                   ;9BA7D7;
 
+%anchor($9BA7DF)
 UnchargedBeamTrails_WaveIceSpazer_6:
     db $00,$00,$00,$00,$08,$FC,$08,$04,$08,$F8,$08,$08,$08,$F4,$08,$0C   ;9BA7DF;
     db $08,$F0,$08,$10,$08,$F0,$08,$10,$08,$F0,$08,$10,$08,$F4,$08,$0C   ;9BA7EF;
     db $08,$F8,$08,$08,$08,$FC,$08,$04                                   ;9BA7FF;
 
+%anchor($9BA807)
 UnchargedBeamTrails_WaveIceSpazer_7:
     db $00,$00,$00,$00,$06,$0A,$0A,$06,$02,$10,$10,$02,$00,$10,$10,$00   ;9BA807;
     db $FE,$12,$12,$FE,$FC,$14,$14,$FC,$FE,$12,$12,$FE,$00,$10,$10,$00   ;9BA817;
     db $02,$10,$10,$02,$06,$0A,$0A,$06                                   ;9BA827;
 
+%anchor($9BA82F)
 UnchargedBeamTrails_IcePlasma_0:
     db $00,$00,$00,$00,$00,$10,$00,$10                                   ;9BA82F;
 
+%anchor($9BA837)
 UnchargedBeamTrails_IcePlasma_1:
     db $00,$00,$00,$00,$F4,$0C,$F4,$0C                                   ;9BA837;
 
+%anchor($9BA83F)
 UnchargedBeamTrails_IcePlasma_2:
     db $00,$00,$00,$00,$F0,$00,$F0,$00                                   ;9BA83F;
 
+%anchor($9BA847)
 UnchargedBeamTrails_IcePlasma_3:
     db $00,$00,$00,$00,$F4,$F4,$F4,$F4                                   ;9BA847;
 
+%anchor($9BA84F)
 UnchargedBeamTrails_IcePlasma_4:
     db $00,$00,$00,$00,$00,$F0,$00,$F0                                   ;9BA84F;
 
+%anchor($9BA857)
 UnchargedBeamTrails_IcePlasma_5:
     db $00,$00,$00,$00,$0C,$F4,$0C,$F4                                   ;9BA857;
 
+%anchor($9BA85F)
 UnchargedBeamTrails_IcePlasma_6:
     db $00,$00,$00,$00,$10,$00,$10,$00                                   ;9BA85F;
 
+%anchor($9BA867)
 UnchargedBeamTrails_IcePlasma_7:
     db $00,$00,$00,$00,$0C,$0C,$0C,$0C                                   ;9BA867;
 
+%anchor($9BA86F)
 UnchargedBeamTrails_WaveIcePlasma_0:
     db $00,$00,$00,$00,$00,$10,$00,$10,$F8,$10,$08,$10,$F0,$10,$10,$10   ;9BA86F;
     db $F0,$10,$10,$10,$F0,$10,$10,$10,$F0,$10,$10,$10,$F0,$10,$10,$10   ;9BA87F;
     db $F8,$10,$08,$10                                                   ;9BA88F;
 
+%anchor($9BA893)
 UnchargedBeamTrails_WaveIcePlasma_1:
     db $00,$00,$00,$00,$F4,$0C,$F4,$0C,$EC,$08,$F8,$12,$E8,$02,$FE,$14   ;9BA893;
     db $E8,$00,$00,$18,$E8,$00,$00,$18,$E8,$00,$00,$18,$E8,$02,$FE,$14   ;9BA8A3;
     db $EC,$08,$F8,$12                                                   ;9BA8B3;
 
+%anchor($9BA8B7)
 UnchargedBeamTrails_WaveIcePlasma_2:
     db $00,$00,$00,$00,$F0,$00,$F0,$00,$F0,$F8,$F0,$08,$F0,$F4,$F0,$0C   ;9BA8B7;
     db $F0,$F0,$F0,$10,$F0,$F0,$F0,$10,$F0,$F0,$F0,$10,$F0,$F4,$F0,$0C   ;9BA8C7;
     db $F0,$F8,$F0,$08                                                   ;9BA8D7;
 
+%anchor($9BA8DB)
 UnchargedBeamTrails_WaveIcePlasma_3:
     db $00,$00,$00,$00,$F4,$F4,$F4,$F4,$EE,$FA,$FA,$EE,$EC,$FE,$FE,$EC   ;9BA8DB;
     db $E8,$00,$00,$E8,$E8,$00,$00,$E8,$E8,$00,$00,$E8,$EC,$FE,$FE,$EC   ;9BA8EB;
     db $EE,$FA,$FA,$EE                                                   ;9BA8FB;
 
+%anchor($9BA8FF)
 UnchargedBeamTrails_WaveIcePlasma_4:
     db $00,$00,$00,$00,$00,$F0,$00,$F0,$F8,$F0,$08,$F0,$F0,$F0,$10,$F0   ;9BA8FF;
     db $F0,$F0,$10,$F0,$F0,$F0,$10,$F0,$F0,$F0,$10,$F0,$F0,$F0,$10,$F0   ;9BA90F;
     db $F8,$F0,$08,$F0                                                   ;9BA91F;
 
+%anchor($9BA923)
 UnchargedBeamTrails_WaveIcePlasma_5:
     db $00,$00,$00,$00,$0C,$F4,$0C,$F4,$14,$F8,$08,$EE,$18,$FE,$02,$EC   ;9BA923;
     db $18,$00,$00,$E8,$18,$00,$00,$E8,$18,$00,$00,$E8,$18,$FE,$02,$EC   ;9BA933;
     db $14,$F8,$08,$EE                                                   ;9BA943;
 
+%anchor($9BA947)
 UnchargedBeamTrails_WaveIcePlasma_6:
     db $00,$00,$00,$00,$10,$00,$10,$00,$10,$F8,$10,$08,$10,$F4,$10,$0C   ;9BA947;
     db $10,$F0,$10,$10,$10,$F0,$10,$10,$10,$F0,$10,$10,$10,$F4,$10,$0C   ;9BA957;
     db $10,$F8,$10,$08                                                   ;9BA967;
 
+%anchor($9BA96B)
 UnchargedBeamTrails_WaveIcePlasma_7:
     db $00,$00,$00,$00,$0C,$0C,$0C,$0C,$12,$06,$06,$12,$14,$02,$02,$14   ;9BA96B;
     db $18,$00,$00,$18,$18,$00,$00,$18,$18,$00,$00,$18,$14,$02,$02,$14   ;9BA97B;
     db $12,$06,$06,$12                                                   ;9BA98B;
 
+%anchor($9BA98F)
 ChargedBeamTrails_Default:
     dw ChargedBeamTrails_Default_0                                       ;9BA98F; Up, facing right
     dw ChargedBeamTrails_Default_0                                       ;9BA991; Up-right
@@ -982,6 +1164,7 @@ ChargedBeamTrails_Default:
     dw ChargedBeamTrails_Default_0                                       ;9BA99F; Up-left
     dw ChargedBeamTrails_Default_0                                       ;9BA9A1; Up, facing left
 
+%anchor($9BA9A3)
 ChargedBeamTrails_Wave_WaveIce:
     dw ChargedBeamTrails_Wave_WaveIce_0                                  ;9BA9A3; Up, facing right
     dw ChargedBeamTrails_Wave_WaveIce_2                                  ;9BA9A5; Up-right
@@ -994,6 +1177,7 @@ ChargedBeamTrails_Wave_WaveIce:
     dw ChargedBeamTrails_Wave_WaveIce_3                                  ;9BA9B3; Up-left
     dw ChargedBeamTrails_Wave_WaveIce_0                                  ;9BA9B5; Up, facing left
 
+%anchor($9BA9B7)
 ChargedBeamTrails_IceSpazer:
     dw ChargedBeamTrails_IceSpazer_0                                     ;9BA9B7; Up, facing right
     dw ChargedBeamTrails_IceSpazer_1                                     ;9BA9B9; Up-right
@@ -1006,6 +1190,7 @@ ChargedBeamTrails_IceSpazer:
     dw ChargedBeamTrails_IceSpazer_7                                     ;9BA9C7; Up-left
     dw ChargedBeamTrails_IceSpazer_0                                     ;9BA9C9; Up, facing left
 
+%anchor($9BA9CB)
 ChargedBeamTrails_WaveIceSpazer:
     dw ChargedBeamTrails_WaveIceSpazer_0                                 ;9BA9CB; Up, facing right
     dw ChargedBeamTrails_WaveIceSpazer_1                                 ;9BA9CD; Up-right
@@ -1018,6 +1203,7 @@ ChargedBeamTrails_WaveIceSpazer:
     dw ChargedBeamTrails_WaveIceSpazer_7                                 ;9BA9DB; Up-left
     dw ChargedBeamTrails_WaveIceSpazer_0                                 ;9BA9DD; Up, facing left
 
+%anchor($9BA9DF)
 ChargedBeamTrails_IcePlasma:
     dw ChargedBeamTrails_IcePlasma_0                                     ;9BA9DF; Up, facing right
     dw ChargedBeamTrails_IcePlasma_1                                     ;9BA9E1; Up-right
@@ -1030,6 +1216,7 @@ ChargedBeamTrails_IcePlasma:
     dw ChargedBeamTrails_IcePlasma_7                                     ;9BA9EF; Up-left
     dw ChargedBeamTrails_IcePlasma_0                                     ;9BA9F1; Up, facing left
 
+%anchor($9BA9F3)
 ChargedBeamTrails_WaveIcePlasma:
     dw ChargedBeamTrails_WaveIcePlasma_0                                 ;9BA9F3; Up, facing right
     dw ChargedBeamTrails_WaveIcePlasma_1                                 ;9BA9F5; Up-right
@@ -1042,74 +1229,88 @@ ChargedBeamTrails_WaveIcePlasma:
     dw ChargedBeamTrails_WaveIcePlasma_7                                 ;9BAA03; Up-left
     dw ChargedBeamTrails_WaveIcePlasma_0                                 ;9BAA05; Up, facing left
 
+%anchor($9BAA07)
 ChargedBeamTrails_Default_0:
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00   ;9BAA07;
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00   ;9BAA17;
 
+%anchor($9BAA27)
 ChargedBeamTrails_Wave_WaveIce_0:
     db $00,$00,$00,$00,$00,$00,$00,$00,$F8,$00,$08,$00,$F8,$00,$08,$00   ;9BAA27;
     db $F4,$00,$0C,$00,$F4,$00,$0C,$00,$F0,$00,$10,$00,$F0,$00,$10,$00   ;9BAA37;
     db $F0,$00,$10,$00,$F0,$00,$10,$00,$F0,$00,$10,$00,$F0,$00,$10,$00   ;9BAA47;
     db $F4,$00,$0C,$00,$F4,$00,$0C,$00,$F8,$00,$08,$00,$F8,$00,$08,$00   ;9BAA57;
 
+%anchor($9BAA67)
 ChargedBeamTrails_Wave_WaveIce_1:
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$F8,$00,$08,$00,$F8,$00,$08   ;9BAA67;
     db $00,$F4,$00,$0C,$00,$F4,$00,$0C,$00,$F0,$00,$10,$00,$F0,$00,$10   ;9BAA77;
     db $00,$F0,$00,$10,$00,$F0,$00,$10,$00,$F0,$00,$10,$00,$F0,$00,$10   ;9BAA87;
     db $00,$F4,$00,$0C,$00,$F4,$00,$0C,$00,$F8,$00,$08,$00,$F8,$00,$08   ;9BAA97;
 
+%anchor($9BAAA7)
 ChargedBeamTrails_Wave_WaveIce_2:
     db $00,$00,$00,$00,$00,$00,$00,$00,$FC,$FC,$04,$04,$FC,$FC,$04,$04   ;9BAAA7;
     db $F8,$F8,$08,$08,$F8,$F8,$08,$08,$F8,$F8,$08,$08,$F8,$F8,$08,$08   ;9BAAB7;
     db $F6,$F6,$0A,$0A,$F6,$F6,$0A,$0A,$F8,$F8,$08,$08,$F8,$F8,$08,$08   ;9BAAC7;
     db $F8,$F8,$08,$08,$F8,$F8,$08,$08,$FC,$FC,$04,$04,$FC,$FC,$04,$04   ;9BAAD7;
 
+%anchor($9BAAE7)
 ChargedBeamTrails_Wave_WaveIce_3:
     db $00,$00,$00,$00,$00,$00,$00,$00,$FC,$04,$04,$FC,$FC,$04,$04,$FC   ;9BAAE7;
     db $F8,$08,$08,$F8,$F8,$08,$08,$F8,$F8,$08,$08,$F8,$F8,$08,$08,$F8   ;9BAAF7;
     db $F6,$0A,$0A,$F6,$F6,$0A,$0A,$F6,$F8,$08,$08,$F8,$F8,$08,$08,$F8   ;9BAB07;
     db $F8,$08,$08,$F8,$F8,$08,$08,$F8,$FC,$04,$04,$FC,$FC,$04,$04,$FC   ;9BAB17;
 
+%anchor($9BAB27)
 ChargedBeamTrails_IceSpazer_0:
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$08,$00,$08,$00,$08,$00,$08   ;9BAB27;
     db $00,$10,$00,$10,$00,$10,$00,$10,$F8,$10,$08,$10,$F8,$10,$08,$10   ;9BAB37;
     db $F0,$10,$10,$10,$F0,$10,$10,$10                                   ;9BAB47;
 
+%anchor($9BAB4F)
 ChargedBeamTrails_IceSpazer_1:
     db $00,$00,$00,$00,$00,$00,$00,$00,$F8,$08,$F8,$08,$F8,$08,$F8,$08   ;9BAB4F;
     db $F4,$0C,$F4,$0C,$F4,$0C,$F4,$0C,$F0,$08,$F8,$10,$F0,$08,$F8,$10   ;9BAB5F;
     db $E8,$00,$00,$18,$E8,$00,$00,$18                                   ;9BAB6F;
 
+%anchor($9BAB77)
 ChargedBeamTrails_IceSpazer_2:
     db $00,$00,$00,$00,$00,$00,$00,$00,$F8,$08,$F8,$08,$F8,$08,$F8,$08   ;9BAB77;
     db $F0,$00,$F0,$00,$F0,$00,$F0,$00,$F0,$F8,$F0,$08,$F0,$F8,$F0,$08   ;9BAB87;
     db $F0,$F0,$F0,$10,$F0,$F0,$F0,$10                                   ;9BAB97;
 
+%anchor($9BAB9F)
 ChargedBeamTrails_IceSpazer_3:
     db $00,$00,$00,$00,$00,$00,$00,$00,$F8,$F8,$F8,$F8,$F8,$F8,$F8,$F8   ;9BAB9F;
     db $F4,$F4,$F4,$F4,$F4,$F4,$F4,$F4,$F0,$F8,$F8,$F0,$F0,$F8,$F8,$F0   ;9BABAF;
     db $E8,$00,$00,$E8,$E8,$00,$00,$E8                                   ;9BABBF;
 
+%anchor($9BABC7)
 ChargedBeamTrails_IceSpazer_4:
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$F8,$00,$F8,$00,$F8,$00,$F8   ;9BABC7;
     db $00,$F0,$00,$F0,$00,$F0,$00,$F0,$F8,$F0,$08,$F0,$F8,$F0,$08,$F0   ;9BABD7;
     db $F0,$F0,$10,$F0,$F0,$F0,$10,$F0                                   ;9BABE7;
 
+%anchor($9BABEF)
 ChargedBeamTrails_IceSpazer_5:
     db $00,$00,$00,$00,$00,$00,$00,$00,$08,$F8,$08,$F8,$08,$F8,$08,$F8   ;9BABEF;
     db $0C,$F4,$0C,$F4,$0C,$F4,$0C,$F4,$10,$F8,$08,$F0,$10,$F8,$08,$F0   ;9BABFF;
     db $18,$00,$00,$E8,$18,$00,$00,$E8                                   ;9BAC0F;
 
+%anchor($9BAC17)
 ChargedBeamTrails_IceSpazer_6:
     db $00,$00,$00,$00,$00,$00,$00,$00,$08,$00,$08,$00,$08,$00,$08,$00   ;9BAC17;
     db $10,$00,$10,$00,$10,$00,$10,$00,$10,$F8,$10,$08,$10,$F8,$10,$08   ;9BAC27;
     db $10,$F0,$10,$10,$10,$F0,$10,$10                                   ;9BAC37;
 
+%anchor($9BAC3F)
 ChargedBeamTrails_IceSpazer_7:
     db $00,$00,$00,$00,$00,$00,$00,$00,$08,$08,$08,$08,$08,$08,$08,$08   ;9BAC3F;
     db $0C,$0C,$0C,$0C,$0C,$0C,$0C,$0C,$10,$08,$08,$10,$10,$08,$08,$10   ;9BAC4F;
     db $18,$00,$00,$18,$18,$00,$00,$18                                   ;9BAC5F;
 
+%anchor($9BAC67)
 ChargedBeamTrails_WaveIceSpazer_0:
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$08,$00,$08,$00,$08,$00,$08   ;9BAC67;
     db $00,$10,$00,$10,$00,$10,$00,$10,$FC,$10,$04,$10,$FC,$10,$04,$10   ;9BAC77;
@@ -1118,6 +1319,7 @@ ChargedBeamTrails_WaveIceSpazer_0:
     db $F0,$10,$10,$10,$F0,$10,$10,$10,$F4,$10,$0C,$10,$F4,$10,$0C,$10   ;9BACA7;
     db $F8,$10,$08,$10,$F8,$10,$08,$10,$FC,$10,$04,$10,$FC,$10,$04,$10   ;9BACB7;
 
+%anchor($9BACC7)
 ChargedBeamTrails_WaveIceSpazer_1:
     db $00,$00,$00,$00,$00,$00,$00,$00,$F8,$08,$F8,$08,$F8,$08,$F8,$08   ;9BACC7;
     db $F4,$0C,$F4,$0C,$F4,$0C,$F4,$0C,$F0,$08,$F8,$10,$F0,$08,$F8,$10   ;9BACD7;
@@ -1126,6 +1328,7 @@ ChargedBeamTrails_WaveIceSpazer_1:
     db $E8,$00,$00,$18,$E8,$00,$00,$18,$F0,$08,$F8,$10,$F0,$08,$F8,$10   ;9BAD07;
     db $F0,$08,$F8,$10,$F0,$08,$F8,$10,$F0,$08,$F8,$10,$F0,$08,$F8,$10   ;9BAD17;
 
+%anchor($9BAD27)
 ChargedBeamTrails_WaveIceSpazer_2:
     db $00,$00,$00,$00,$00,$00,$00,$00,$F8,$00,$F8,$00,$F8,$00,$F8,$00   ;9BAD27;
     db $F0,$00,$F0,$00,$F0,$00,$F0,$00,$F0,$FC,$F0,$04,$F0,$FC,$F0,$04   ;9BAD37;
@@ -1134,6 +1337,7 @@ ChargedBeamTrails_WaveIceSpazer_2:
     db $F0,$F0,$F0,$10,$F0,$F0,$F0,$10,$F0,$F4,$F0,$0C,$F0,$F4,$F0,$0C   ;9BAD67;
     db $F0,$F8,$F0,$08,$F0,$F8,$F0,$08,$F0,$FC,$F0,$04,$F0,$FC,$F0,$04   ;9BAD77;
 
+%anchor($9BAD87)
 ChargedBeamTrails_WaveIceSpazer_3:
     db $00,$00,$00,$00,$00,$00,$00,$00,$F8,$F8,$F8,$F8,$F8,$F8,$F8,$F8   ;9BAD87;
     db $F4,$F4,$F4,$F4,$F4,$F4,$F4,$F4,$F0,$F8,$F8,$F0,$F0,$F8,$F8,$F0   ;9BAD97;
@@ -1142,6 +1346,7 @@ ChargedBeamTrails_WaveIceSpazer_3:
     db $E8,$00,$00,$E8,$E8,$00,$00,$E8,$EC,$FC,$FC,$EC,$EC,$FC,$FC,$EC   ;9BADC7;
     db $F0,$F8,$F8,$F0,$F0,$F8,$F8,$F0,$F0,$F8,$F8,$F0,$F0,$F8,$F8,$F0   ;9BADD7;
 
+%anchor($9BADE7)
 ChargedBeamTrails_WaveIceSpazer_4:
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$F8,$00,$F8,$00,$F8,$00,$F8   ;9BADE7;
     db $00,$F0,$00,$F0,$00,$F0,$00,$F0,$FC,$F0,$04,$F0,$FC,$F0,$04,$F0   ;9BADF7;
@@ -1150,6 +1355,7 @@ ChargedBeamTrails_WaveIceSpazer_4:
     db $F0,$F0,$10,$F0,$F0,$F0,$10,$F0,$F4,$F0,$0C,$F0,$F4,$F0,$0C,$F0   ;9BAE27;
     db $F8,$F0,$08,$F0,$F8,$F0,$08,$F0,$FC,$F0,$04,$F0,$FC,$F0,$04,$F0   ;9BAE37;
 
+%anchor($9BAE47)
 ChargedBeamTrails_WaveIceSpazer_5:
     db $00,$00,$00,$00,$00,$00,$00,$00,$08,$F8,$08,$F8,$08,$F8,$08,$F8   ;9BAE47;
     db $0C,$F4,$0C,$F4,$0C,$F4,$0C,$F4,$08,$F0,$10,$F8,$08,$F0,$10,$F8   ;9BAE57;
@@ -1158,6 +1364,7 @@ ChargedBeamTrails_WaveIceSpazer_5:
     db $00,$E8,$18,$00,$00,$E8,$18,$00,$04,$EC,$14,$FC,$04,$EC,$14,$FC   ;9BAE87;
     db $08,$F0,$10,$F8,$08,$F0,$10,$F8,$08,$F0,$10,$F8,$08,$F0,$10,$F8   ;9BAE97;
 
+%anchor($9BAEA7)
 ChargedBeamTrails_WaveIceSpazer_6:
     db $00,$00,$00,$00,$00,$00,$00,$00,$08,$00,$08,$00,$08,$00,$08,$00   ;9BAEA7;
     db $10,$00,$10,$00,$10,$00,$10,$00,$10,$FC,$10,$04,$10,$FC,$10,$04   ;9BAEB7;
@@ -1166,6 +1373,7 @@ ChargedBeamTrails_WaveIceSpazer_6:
     db $10,$F0,$10,$10,$10,$F0,$10,$10,$10,$F4,$10,$0C,$10,$F4,$10,$0C   ;9BAEE7;
     db $10,$F8,$10,$08,$10,$F8,$10,$08,$10,$FC,$10,$04,$10,$FC,$10,$04   ;9BAEF7;
 
+%anchor($9BAF07)
 ChargedBeamTrails_WaveIceSpazer_7:
     db $00,$00,$00,$00,$00,$00,$00,$00,$08,$08,$08,$08,$08,$08,$08,$08   ;9BAF07;
     db $0C,$0C,$0C,$0C,$0C,$0C,$0C,$0C,$08,$10,$10,$08,$08,$10,$10,$08   ;9BAF17;
@@ -1174,38 +1382,47 @@ ChargedBeamTrails_WaveIceSpazer_7:
     db $00,$18,$18,$00,$00,$18,$18,$00,$04,$14,$14,$04,$04,$14,$14,$04   ;9BAF47;
     db $08,$10,$10,$08,$08,$10,$10,$08,$08,$10,$10,$08,$08,$10,$10,$08   ;9BAF57;
 
+%anchor($9BAF67)
 ChargedBeamTrails_IcePlasma_0:
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$0C,$00,$0C,$00,$0C,$00,$0C   ;9BAF67;
     db $00,$18,$00,$18,$00,$18,$00,$18,$00,$1C,$00,$1C,$00,$1C,$00,$1C   ;9BAF77;
 
+%anchor($9BAF87)
 ChargedBeamTrails_IcePlasma_1:
     db $00,$00,$00,$00,$00,$00,$00,$00,$F8,$08,$F8,$08,$F8,$08,$F8,$08   ;9BAF87;
     db $F0,$10,$F0,$10,$F0,$10,$F0,$10,$E8,$18,$E8,$18,$E8,$18,$E8,$18   ;9BAF97;
 
+%anchor($9BAFA7)
 ChargedBeamTrails_IcePlasma_2:
     db $00,$00,$00,$00,$00,$00,$00,$00,$F4,$00,$F4,$00,$F4,$00,$F4,$00   ;9BAFA7;
     db $E8,$00,$E8,$00,$E8,$00,$E8,$00,$E4,$00,$E4,$00,$E4,$00,$E4,$00   ;9BAFB7;
 
+%anchor($9BAFC7)
 ChargedBeamTrails_IcePlasma_3:
     db $00,$00,$00,$00,$00,$00,$00,$00,$F8,$F8,$F8,$F8,$F8,$F8,$F8,$F8   ;9BAFC7;
     db $F0,$F0,$F0,$F0,$F0,$F0,$F0,$F0,$E8,$E8,$E8,$E8,$E8,$E8,$E8,$E8   ;9BAFD7;
 
+%anchor($9BAFE7)
 ChargedBeamTrails_IcePlasma_4:
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$F4,$00,$F4,$00,$F4,$00,$F4   ;9BAFE7;
     db $00,$E8,$00,$E8,$00,$E8,$00,$E8,$00,$E4,$00,$E4,$00,$E4,$00,$E4   ;9BAFF7;
 
+%anchor($9BB007)
 ChargedBeamTrails_IcePlasma_5:
     db $00,$00,$00,$00,$00,$00,$00,$00,$08,$F8,$08,$F8,$08,$F8,$08,$F8   ;9BB007;
     db $10,$F0,$10,$F0,$10,$F0,$10,$F0,$18,$E8,$18,$E8,$18,$E8,$18,$E8   ;9BB017;
 
+%anchor($9BB027)
 ChargedBeamTrails_IcePlasma_6:
     db $00,$00,$00,$00,$00,$00,$00,$00,$0C,$00,$0C,$00,$0C,$00,$0C,$00   ;9BB027;
     db $18,$00,$18,$00,$18,$00,$18,$00,$1C,$00,$1C,$00,$1C,$00,$1C,$00   ;9BB037;
 
+%anchor($9BB047)
 ChargedBeamTrails_IcePlasma_7:
     db $00,$00,$00,$00,$00,$00,$00,$00,$08,$08,$08,$08,$08,$08,$08,$08   ;9BB047;
     db $10,$10,$10,$10,$10,$10,$10,$10,$18,$18,$18,$18,$18,$18,$18,$18   ;9BB057;
 
+%anchor($9BB067)
 ChargedBeamTrails_WaveIcePlasma_0:
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$0C,$00,$0C,$00,$0C,$00,$0C   ;9BB067;
     db $00,$18,$00,$18,$00,$18,$00,$18,$00,$1C,$00,$1C,$00,$1C,$00,$1C   ;9BB077;
@@ -1214,6 +1431,7 @@ ChargedBeamTrails_WaveIcePlasma_0:
     db $F0,$1C,$10,$1C,$F0,$1C,$10,$1C,$F4,$1C,$0C,$1C,$F4,$1C,$0C,$1C   ;9BB0A7;
     db $F8,$1C,$08,$1C,$F8,$1C,$08,$1C                                   ;9BB0B7;
 
+%anchor($9BB0BF)
 ChargedBeamTrails_WaveIcePlasma_1:
     db $00,$00,$00,$00,$00,$00,$00,$00,$F8,$08,$F8,$08,$F8,$08,$F8,$08   ;9BB0BF;
     db $F0,$10,$F0,$10,$F0,$10,$F0,$10,$EC,$14,$EC,$14,$EC,$14,$EC,$14   ;9BB0CF;
@@ -1222,6 +1440,7 @@ ChargedBeamTrails_WaveIcePlasma_1:
     db $E0,$08,$F8,$20,$E0,$08,$F8,$20,$E0,$0C,$F4,$1C,$E0,$0C,$F4,$1C   ;9BB0FF;
     db $E4,$0C,$F0,$18,$E4,$0C,$F0,$18                                   ;9BB10F;
 
+%anchor($9BB117)
 ChargedBeamTrails_WaveIcePlasma_2:
     db $00,$00,$00,$00,$00,$00,$00,$00,$F4,$00,$F4,$00,$F4,$00,$F4,$00   ;9BB117;
     db $E8,$00,$E8,$00,$E8,$00,$E8,$00,$E4,$00,$E4,$00,$E4,$00,$E4,$00   ;9BB127;
@@ -1230,6 +1449,7 @@ ChargedBeamTrails_WaveIcePlasma_2:
     db $E4,$F0,$E4,$10,$E4,$F0,$E4,$10,$E4,$F4,$E4,$0C,$E4,$F4,$E4,$0C   ;9BB157;
     db $E4,$F8,$E4,$08,$E4,$F8,$E4,$08                                   ;9BB167;
 
+%anchor($9BB16F)
 ChargedBeamTrails_WaveIcePlasma_3:
     db $00,$00,$00,$00,$00,$00,$00,$00,$F8,$F8,$F8,$F8,$F8,$F8,$F8,$F8   ;9BB16F;
     db $F0,$F0,$F0,$F0,$F0,$F0,$F0,$F0,$EC,$EC,$EC,$EC,$EC,$EC,$EC,$EC   ;9BB17F;
@@ -1238,6 +1458,7 @@ ChargedBeamTrails_WaveIcePlasma_3:
     db $E0,$F8,$F8,$E0,$E0,$F8,$F8,$E0,$E0,$F4,$F4,$E0,$E0,$F4,$F4,$E0   ;9BB1AF;
     db $E8,$F0,$F0,$E8,$E8,$F0,$F0,$E8                                   ;9BB1BF;
 
+%anchor($9BB1C7)
 ChargedBeamTrails_WaveIcePlasma_4:
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$F4,$00,$F4,$00,$F4,$00,$F4   ;9BB1C7;
     db $00,$E8,$00,$E8,$00,$E8,$00,$E8,$00,$E4,$00,$E4,$00,$E4,$00,$E4   ;9BB1D7;
@@ -1246,6 +1467,7 @@ ChargedBeamTrails_WaveIcePlasma_4:
     db $F0,$E4,$10,$E4,$F0,$E4,$10,$E4,$F4,$E4,$0C,$E4,$F4,$E4,$0C,$E4   ;9BB207;
     db $F8,$E4,$08,$E4,$F8,$E4,$08,$E4                                   ;9BB217;
 
+%anchor($9BB21F)
 ChargedBeamTrails_WaveIcePlasma_5:
     db $00,$00,$00,$00,$00,$00,$00,$00,$08,$F8,$08,$F8,$08,$F8,$08,$F8   ;9BB21F;
     db $10,$F0,$10,$F0,$10,$F0,$10,$F0,$14,$EC,$14,$EC,$14,$EC,$14,$EC   ;9BB22F;
@@ -1254,6 +1476,7 @@ ChargedBeamTrails_WaveIcePlasma_5:
     db $20,$F8,$08,$E0,$20,$F8,$08,$E0,$20,$F4,$0C,$E4,$20,$F4,$0C,$E4   ;9BB25F;
     db $1C,$F4,$10,$E8,$1C,$F4,$10,$E8                                   ;9BB26F;
 
+%anchor($9BB277)
 ChargedBeamTrails_WaveIcePlasma_6:
     db $00,$00,$00,$00,$00,$00,$00,$00,$0C,$00,$0C,$00,$0C,$00,$0C,$00   ;9BB277;
     db $18,$00,$18,$00,$18,$00,$18,$00,$1C,$00,$1C,$00,$1C,$00,$1C,$00   ;9BB287;
@@ -1262,6 +1485,7 @@ ChargedBeamTrails_WaveIcePlasma_6:
     db $1C,$F0,$1C,$10,$1C,$F0,$1C,$10,$1C,$F4,$1C,$0C,$1C,$F4,$1C,$0C   ;9BB2B7;
     db $1C,$F8,$1C,$08,$1C,$F8,$1C,$08                                   ;9BB2C7;
 
+%anchor($9BB2CF)
 ChargedBeamTrails_WaveIcePlasma_7:
     db $00,$00,$00,$00,$00,$00,$00,$00,$08,$08,$08,$08,$08,$08,$08,$08   ;9BB2CF;
     db $10,$10,$10,$10,$10,$10,$10,$10,$14,$14,$14,$14,$14,$14,$14,$14   ;9BB2DF;
@@ -1270,6 +1494,7 @@ ChargedBeamTrails_WaveIcePlasma_7:
     db $20,$08,$08,$20,$20,$08,$08,$20,$20,$0C,$0C,$20,$20,$0C,$0C,$20   ;9BB30F;
     db $18,$10,$10,$18,$18,$10,$10,$18                                   ;9BB31F;
 
+%anchor($9BB327)
 SpazerSBATrail_WaveSpazer:
     dw SpazerSBATrail_WaveSpazer_0                                       ;9BB327; Up, facing right
     dw SpazerSBATrail_WaveSpazer_1                                       ;9BB329; Up-right
@@ -1290,18 +1515,23 @@ SpazerSBATrail_WaveSpazer:
 ;     Y: Right trail Y offset
 
 ; Indexed by [[projectile instruction pointer] - 2] * 4
+%anchor($9BB33B)
 SpazerSBATrail_WaveSpazer_0:
     db $00,$00,$00,$00, $10,$00,$F0,$00, $00,$00,$00,$00, $F0,$00,$10,$00 ;9BB33B;
 
+%anchor($9BB34B)
 SpazerSBATrail_WaveSpazer_1:
     db $00,$00,$00,$00, $F6,$F6,$0A,$0A, $00,$00,$00,$00, $0A,$0A,$F6,$F6 ;9BB34B;
 
+%anchor($9BB35B)
 SpazerSBATrail_WaveSpazer_2:
     db $00,$00,$00,$00, $00,$F0,$00,$10, $00,$00,$00,$00, $00,$10,$00,$F0 ;9BB35B;
 
+%anchor($9BB36B)
 SpazerSBATrail_WaveSpazer_3:
     db $00,$00,$00,$00, $0A,$F6,$F6,$0A, $00,$00,$00,$00, $F6,$0A,$0A,$F6 ;9BB36B;
 
+%anchor($9BB37B)
 UNSUED_SpazerSBATrail_Spazer_IceSpazer_9BB37B:
     dw UNSUED_SpazerSBATrail_Spazer_IceSpazer_0_9BB38F                   ;9BB37B;
     dw UNSUED_SpazerSBATrail_Spazer_IceSpazer_0_9BB38F                   ;9BB37D;
@@ -1314,12 +1544,15 @@ UNSUED_SpazerSBATrail_Spazer_IceSpazer_9BB37B:
     dw UNSUED_SpazerSBATrail_Spazer_IceSpazer_0_9BB38F                   ;9BB38B;
     dw UNSUED_SpazerSBATrail_Spazer_IceSpazer_0_9BB38F                   ;9BB38D;
 
+%anchor($9BB38F)
 UNSUED_SpazerSBATrail_Spazer_IceSpazer_0_9BB38F:
     db $00,$00,$00,$00, $F8,$08,$08,$08, $F0,$08,$10,$08                 ;9BB38F;
 
+%anchor($9BB39B)
 UNSUED_SpazerSBATrail_Spazer_IceSpazer_1_9BB39B:
     db $00,$00,$00,$00, $F8,$F8,$08,$F8, $F0,$F8,$10,$F8                 ;9BB39B;
 
+%anchor($9BB3A7)
 SetSamusDeathSequencePose:
     PHP                                                                  ;9BB3A7;
     PHB                                                                  ;9BB3A8;
@@ -1410,11 +1643,13 @@ SetSamusDeathSequencePose:
     db $05 ; 1Ah: Grabbed by Draygon
     db $05 ; 1Bh: Shinespark / crystal flash / drained by metroid / damaged by MB's attacks
 
+%anchor($9BB43C)
 Draw_Samus_Starting_Death_Animation_JSL:
     JSL.L Draw_Samus_Starting_Death_Animation                            ;9BB43C;
     RTL                                                                  ;9BB440;
 
 
+%anchor($9BB441)
 Handle_Death_Animation_Flashing:
     PHP                                                                  ;9BB441;
     PHB                                                                  ;9BB442;
@@ -1489,6 +1724,7 @@ Handle_Death_Animation_Flashing:
     RTL                                                                  ;9BB4B5;
 
 
+%anchor($9BB4B6)
 FinishDeathAnimationFlashing:
     PHP                                                                  ;9BB4B6;
     REP #$30                                                             ;9BB4B7;
@@ -1584,6 +1820,7 @@ FinishDeathAnimationFlashing:
     dw SamusDeathSequencePalettePointers_Suit_varia                      ;9BB5CA;
     dw SamusDeathSequencePalettePointers_Suit_gravity                    ;9BB5CC;
 
+%anchor($9BB5CE)
 WriteDeathAnimationSpritePalettes:
     PHP                                                                  ;9BB5CE;
     REP #$30                                                             ;9BB5CF;
@@ -1677,6 +1914,7 @@ WriteDeathAnimationSpritePalettes:
     dw SamusDeathSequencePalettePointers_Suit_varia                      ;9BB6D4;
     dw SamusDeathSequencePalettePointers_Suit_gravity                    ;9BB6D6;
 
+%anchor($9BB6D8)
 QueueTransferOfSegmentOfSamusDeathSequenceToVRAM:
     PHP                                                                  ;9BB6D8;
     REP #$30                                                             ;9BB6D9;
@@ -1703,6 +1941,7 @@ QueueTransferOfSegmentOfSamusDeathSequenceToVRAM:
     RTS                                                                  ;9BB700;
 
 
+%anchor($9BB701)
 Handle_DeathSequence_SuitExplosionWhiteOut:
     PHP                                                                  ;9BB701;
     PHB                                                                  ;9BB702;
@@ -1716,6 +1955,7 @@ Handle_DeathSequence_SuitExplosionWhiteOut:
     RTL                                                                  ;9BB70F;
 
 
+%anchor($9BB710)
 HandleDeathSequenceWhiteOut:
     PHP                                                                  ;9BB710;
     REP #$30                                                             ;9BB711;
@@ -1759,6 +1999,7 @@ HandleDeathSequenceWhiteOut:
     RTS                                                                  ;9BB757;
 
 
+%anchor($9BB758)
 HandleDeathSequenceSuitExplosion:
     PHP                                                                  ;9BB758;
     REP #$30                                                             ;9BB759;
@@ -1818,12 +2059,15 @@ HandleDeathSequenceSuitExplosion:
     RTS                                                                  ;9BB7BE;
 
 
+%anchor($9BB7BF)
 SamusDeathSequencePointers_Source:
     dw $8400,$8800,$8C00,$9000,$8000                                     ;9BB7BF;
 
+%anchor($9BB7C9)
 SamusDeathSequencePointers_Destination:
     dw $6200,$6400,$6600,$6800,$6000                                     ;9BB7C9;
 
+%anchor($9BB7D3)
 SamusDeathSequencePalettePointers_Suit_power:
     dw SamusPalettes_PowerSuit_DeathSequence_BeamCharging_0              ;9BB7D3;
     dw SamusPalettes_DeathSequence_YellowFlash                           ;9BB7D5;
@@ -1836,6 +2080,7 @@ SamusDeathSequencePalettePointers_Suit_power:
     dw SamusPalettes_PowerSuit_DeathSequence_7                           ;9BB7E3;
     dw SamusPalettes_DeathSequence_SuitlessSamus_8                       ;9BB7E5;
 
+%anchor($9BB7E7)
 SamusDeathSequencePalettePointers_Suit_varia:
     dw SamusPalettes_VariaSuit_DeathSequence_BeamCharging_0              ;9BB7E7;
     dw SamusPalettes_DeathSequence_YellowFlash                           ;9BB7E9;
@@ -1848,6 +2093,7 @@ SamusDeathSequencePalettePointers_Suit_varia:
     dw SamusPalettes_VariaSuit_DeathSequence_7                           ;9BB7F7;
     dw SamusPalettes_DeathSequence_SuitlessSamus_8                       ;9BB7F9;
 
+%anchor($9BB7FB)
 SamusDeathSequencePalettePointers_Suit_gravity:
     dw SamusPalettes_GravitySuit_DeathSequence_BeamCharging_0            ;9BB7FB;
     dw SamusPalettes_DeathSequence_YellowFlash                           ;9BB7FD;
@@ -1860,6 +2106,7 @@ SamusDeathSequencePalettePointers_Suit_gravity:
     dw SamusPalettes_GravitySuit_DeathSequence_7                         ;9BB80B;
     dw SamusPalettes_DeathSequence_SuitlessSamus_8                       ;9BB80D;
 
+%anchor($9BB80F)
 SamusDeathSequencePalettePointers_Suitless:
     dw SamusPalettes_DeathSequence_SuitlessSamus_0                       ;9BB80F;
     dw SamusPalettes_DeathSequence_SuitlessSamus_0                       ;9BB811;
@@ -1872,6 +2119,7 @@ SamusDeathSequencePalettePointers_Suitless:
     dw SamusPalettes_DeathSequence_SuitlessSamus_7                       ;9BB81F;
     dw SamusPalettes_DeathSequence_SuitlessSamus_8                       ;9BB821;
 
+%anchor($9BB823)
 DeathSequenceSuitExplosionPaletteIndexTable:
 ;        _____ Timer
 ;       |    _ Palette table index (for SamusDeathSequencePalettePointers_Suit_power and SamusDeathSequencePalettePointers_Suitless)
@@ -1889,11 +2137,13 @@ DeathSequenceSuitExplosionPaletteIndexTable:
     db $06,$08
     db $50,$09
 
+%anchor($9BB835)
 ShadesOfWhite:
     dw $0421,$0C63,$14A5,$1CE7,$2529,$2D6B,$35AD,$4210                   ;9BB835;
     dw $4A52,$4E73,$5294,$56B5,$5AD6,$5EF7,$6318,$6739                   ;9BB845;
     dw $6B5A,$6F7B,$739C,$77BD,$7BDE,$7FFF                               ;9BB855;
 
+%anchor($9BB861)
 CancelGrappleBeamIfInIncompatiblePose:
     LDA.W $0A1F                                                          ;9BB861;
     AND.W #$00FF                                                         ;9BB864;
@@ -1973,6 +2223,7 @@ CancelGrappleBeamIfInIncompatiblePose:
     db $00 ;  1Ah: Grabbed by Draygon
     db $01 ; *1Bh: Shinespark / crystal flash / drained by metroid / damaged by MB's attacks
 
+%anchor($9BB8D4)
 RTS_9BB8D4:
     RTS                                                                  ;9BB8D4;
 
@@ -1993,6 +2244,7 @@ RTS_9BB8D4:
     RTS                                                                  ;9BB8F0;
 
 
+%anchor($9BB8F1)
 CheckIfGrappleIsConnectedToBlock:
     STZ.W $0D22                                                          ;9BB8F1;
     STZ.W $0D24                                                          ;9BB8F4;
@@ -2009,6 +2261,7 @@ CheckIfGrappleIsConnectedToBlock:
     RTS                                                                  ;9BB906;
 
 
+%anchor($9BB907)
 ProcessEnemyGrappleBeamCollisionResult:
     ASL A                                                                ;9BB907;
     TAX                                                                  ;9BB908;
@@ -2024,40 +2277,47 @@ ProcessEnemyGrappleBeamCollisionResult:
     dw ReturnZero_SECRTS_9BB92D                                          ;9BB916;
     dw ProcessEnemyGrappleBeamCollisionResult_HurtSamus                  ;9BB918;
 
+%anchor($9BB91A)
 CLCRTS_9BB91A:
     CLC                                                                  ;9BB91A;
     RTS                                                                  ;9BB91B;
 
 
+%anchor($9BB91C)
 ReturnZero_SECRTS_9BB91C:
     LDA.W #$0000                                                         ;9BB91C;
     SEC                                                                  ;9BB91F;
     RTS                                                                  ;9BB920;
 
 
+%anchor($9BB921)
 CLCRTS_9BB921:
     CLC                                                                  ;9BB921;
     RTS                                                                  ;9BB922;
 
 
+%anchor($9BB923)
 ReturnOne_SECRTS_9BB923:
     LDA.W #$0001                                                         ;9BB923;
     SEC                                                                  ;9BB926;
     RTS                                                                  ;9BB927;
 
 
+%anchor($9BB928)
 ReturnZero_SECRTS_9BB928:
     LDA.W #$0000                                                         ;9BB928;
     SEC                                                                  ;9BB92B;
     RTS                                                                  ;9BB92C;
 
 
+%anchor($9BB92D)
 ReturnZero_SECRTS_9BB92D:
     LDA.W #$0000                                                         ;9BB92D;
     SEC                                                                  ;9BB930;
     RTS                                                                  ;9BB931;
 
 
+%anchor($9BB932)
 ProcessEnemyGrappleBeamCollisionResult_HurtSamus:
     LDX.B $12                                                            ;9BB932;
     LDA.L $A00006,X                                                      ;9BB934;
@@ -2103,6 +2363,7 @@ ProcessEnemyGrappleBeamCollisionResult_HurtSamus:
     RTS                                                                  ;9BB97B;
 
 
+%anchor($9BB97C)
 HandleConnectingGrapple:
     LDA.W $0A1F                                                          ;9BB97C;
     AND.W #$00FF                                                         ;9BB97F;
@@ -2150,60 +2411,70 @@ HandleConnectingGrapple:
     JMP.W ($0D82)                                                        ;9BB9D6;
 
 
+%anchor($9BB9D9)
 HandleConnectingGrapple_SwingingClockwise:
     LDA.W #$00B2                                                         ;9BB9D9;
     STA.W $0A2A                                                          ;9BB9DC;
     JMP.W HandleConnectingGrapple_Swinging                               ;9BB9DF;
 
 
+%anchor($9BB9E2)
 HandleConnectingGrapple_SwingingAntiClockwise:
     LDA.W #$00B3                                                         ;9BB9E2;
     STA.W $0A2A                                                          ;9BB9E5;
     BRA HandleConnectingGrapple_Swinging                                 ;9BB9E8;
 
 
+%anchor($9BB9EA)
 HandleConnectingGrapple_Standing_AimingRight:
     LDA.W #$00A8                                                         ;9BB9EA;
     STA.W $0A2A                                                          ;9BB9ED;
     JMP.W HandleConnectingGrapple_StuckInPlace                           ;9BB9F0;
 
 
+%anchor($9BB9F3)
 HandleConnectingGrapple_Standing_AimingDownRight:
     LDA.W #$00AA                                                         ;9BB9F3;
     STA.W $0A2A                                                          ;9BB9F6;
     JMP.W HandleConnectingGrapple_StuckInPlace                           ;9BB9F9;
 
 
+%anchor($9BB9FC)
 HandleConnectingGrapple_Standing_AimingDownLeft:
     LDA.W #$00AB                                                         ;9BB9FC;
     STA.W $0A2A                                                          ;9BB9FF;
     JMP.W HandleConnectingGrapple_StuckInPlace                           ;9BBA02;
 
 
+%anchor($9BBA05)
 HandleConnectingGrapple_Standing_AimingLeft:
     LDA.W #$00A9                                                         ;9BBA05;
     STA.W $0A2A                                                          ;9BBA08;
     JMP.W HandleConnectingGrapple_StuckInPlace                           ;9BBA0B;
 
 
+%anchor($9BBA0E)
 HandleConnectingGrapple_Crouching_AimingRight:
     LDA.W #$00B4                                                         ;9BBA0E;
     STA.W $0A2A                                                          ;9BBA11;
     JMP.W HandleConnectingGrapple_StuckInPlace                           ;9BBA14;
 
 
+%anchor($9BBA17)
 HandleConnectingGrapple_Crouching_AimingDownRight:
     LDA.W #$00B6                                                         ;9BBA17;
     STA.W $0A2A                                                          ;9BBA1A;
     JMP.W HandleConnectingGrapple_StuckInPlace                           ;9BBA1D;
 
 
+%anchor($9BBA20)
 HandleConnectingGrapple_Crouching_AimingDownLeft:
     LDA.W #$00B7                                                         ;9BBA20;
     STA.W $0A2A                                                          ;9BBA23;
     JMP.W HandleConnectingGrapple_StuckInPlace                           ;9BBA26;
 
 
+%anchor($9BBA29)
 HandleConnectingGrapple_Crouching_AimingLeft:
     LDA.W #$00B5                                                         ;9BBA29;
     STA.W $0A2A                                                          ;9BBA2C;
@@ -2211,36 +2482,42 @@ HandleConnectingGrapple_Crouching_AimingLeft:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($9BBA31)
 UNUSED_HandleConnectingGrapple_InAir_AimingRight_9BBA31:
     LDA.W #$00AC                                                         ;9BBA31;
     STA.W $0A2A                                                          ;9BBA34;
     BRA HandleConnectingGrapple_StuckInPlace                             ;9BBA37;
 
 
+%anchor($9BBA39)
 UNUSED_HandleConnectingGrapple_InAir_AimingDownRight_9BBA39:
     LDA.W #$00B0                                                         ;9BBA39;
     STA.W $0A2A                                                          ;9BBA3C;
     BRA HandleConnectingGrapple_StuckInPlace                             ;9BBA3F;
 
 
+%anchor($9BBA41)
 UNUSED_HandleConnectingGrapple_InAir_AimingDown_FaceR_9BBA41:
     LDA.W #$00AE                                                         ;9BBA41;
     STA.W $0A2A                                                          ;9BBA44;
     BRA HandleConnectingGrapple_StuckInPlace                             ;9BBA47;
 
 
+%anchor($9BBA49)
 UNUSED_HandleConnectingGrapple_InAir_AimingDown_FaceL_9BBA49:
     LDA.W #$00AF                                                         ;9BBA49;
     STA.W $0A2A                                                          ;9BBA4C;
     BRA HandleConnectingGrapple_StuckInPlace                             ;9BBA4F;
 
 
+%anchor($9BBA51)
 UNUSED_HandleConnectingGrapple_InAir_AimingDownLeft_9BBA51:
     LDA.W #$00B1                                                         ;9BBA51;
     STA.W $0A2A                                                          ;9BBA54;
     BRA HandleConnectingGrapple_StuckInPlace                             ;9BBA57;
 
 
+%anchor($9BBA59)
 UNUSED_HandleConnectingGrapple_InAir_AimingLeft_9BBA59:
     LDA.W #$00AD                                                         ;9BBA59;
     STA.W $0A2A                                                          ;9BBA5C;
@@ -2248,6 +2525,7 @@ UNUSED_HandleConnectingGrapple_InAir_AimingLeft_9BBA59:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($9BBA61)
 HandleConnectingGrapple_Swinging:
     LDA.W #$0009                                                         ;9BBA61;
     STA.W $0A30                                                          ;9BBA64;
@@ -2276,6 +2554,7 @@ HandleConnectingGrapple_Swinging:
     RTS                                                                  ;9BBA9A;
 
 
+%anchor($9BBA9B)
 HandleConnectingGrapple_StuckInPlace:
     LDA.W #$000A                                                         ;9BBA9B;
     STA.W $0A30                                                          ;9BBA9E;
@@ -2304,6 +2583,7 @@ HandleConnectingGrapple_StuckInPlace:
     RTS                                                                  ;9BBAD4;
 
 
+%anchor($9BBAD5)
 HandleSpecialGrappleBeamAngles:
     LDX.W #$0046                                                         ;9BBAD5;
 
@@ -2382,6 +2662,7 @@ HandleSpecialGrappleBeamAngles:
     RTS                                                                  ;9BBB63;
 
 
+%anchor($9BBB64)
 HandleGrappleDpadInput:
     LDA.B $8F                                                            ;9BBB64;
     BIT.W #$0800                                                         ;9BBB66;
@@ -2492,6 +2773,7 @@ HandleGrappleDpadInput:
     RTS                                                                  ;9BBC1E;
 
 
+%anchor($9BBC1F)
 DetermineGrappleSwingAngularAccelerationDueToAngleOfSwing:
     LDA.W $0CFA                                                          ;9BBC1F;
     AND.W #$C000                                                         ;9BBC22;
@@ -2625,6 +2907,7 @@ DetermineGrappleSwingAngularAccelerationDueToAngleOfSwing:
     RTS                                                                  ;9BBCFE;
 
 
+%anchor($9BBCFF)
 UpdateGrappleSwingAngularVelocity:
     LDA.W $0D26                                                          ;9BBCFF;
     CLC                                                                  ;9BBD02;
@@ -2664,6 +2947,7 @@ UpdateGrappleSwingAngularVelocity:
     RTS                                                                  ;9BBD43;
 
 
+%anchor($9BBD44)
 HandleGrappleKick:
     LDA.W $0D30                                                          ;9BBD44;
     BEQ .return                                                          ;9BBD47;
@@ -2717,6 +3001,7 @@ HandleGrappleKick:
     RTS                                                                  ;9BBD94;
 
 
+%anchor($9BBD95)
 SetSamusAnimationFrameAndPositionDuringGrappleSwinging:
     PHP                                                                  ;9BBD95;
     PHB                                                                  ;9BBD96;
@@ -2851,6 +3136,7 @@ SetSamusAnimationFrameAndPositionDuringGrappleSwinging:
     RTL                                                                  ;9BBE97;
 
 
+%anchor($9BBE98)
 ClampScrollingSpeed:
     LDA.W $0AF6                                                          ;9BBE98;
     SEC                                                                  ;9BBE9B;
@@ -2897,6 +3183,7 @@ ClampScrollingSpeed:
     RTS                                                                  ;9BBEEA;
 
 
+%anchor($9BBEEB)
 SetSamusAnimationFrameAndPositionForConnectingGrapple_Stuck:
     PHP                                                                  ;9BBEEB;
     PHB                                                                  ;9BBEEC;
@@ -2925,6 +3212,7 @@ SetSamusAnimationFrameAndPositionForConnectingGrapple_Stuck:
     RTL                                                                  ;9BBF1A;
 
 
+%anchor($9BBF1B)
 UpdateGrappleBeamStartPositionDuringGrappleFire:
     PHP                                                                  ;9BBF1B;
     PHB                                                                  ;9BBF1C;
@@ -3004,6 +3292,7 @@ UpdateGrappleBeamStartPositionDuringGrappleFire:
     RTL                                                                  ;9BBFA4;
 
 
+%anchor($9BBFA5)
 UpdateGrappleBeamTiles_IncrementFlareCounter:
     PHP                                                                  ;9BBFA5;
     PHB                                                                  ;9BBFA6;
@@ -3023,6 +3312,7 @@ UpdateGrappleBeamTiles_IncrementFlareCounter:
     RTL                                                                  ;9BBFBC;
 
 
+%anchor($9BBFBD)
 UpdateGrappleBeamTiles:
     LDA.W $0D3E                                                          ;9BBFBD;
     DEC A                                                                ;9BBFC0;
@@ -3087,6 +3377,7 @@ UpdateGrappleBeamTiles:
     RTS                                                                  ;9BC035;
 
 
+%anchor($9BC036)
 HandleGrappleBeamFlare:
     PHP                                                                  ;9BC036;
     PHB                                                                  ;9BC037;
@@ -3192,19 +3483,23 @@ HandleGrappleBeamFlare:
 ;       |     |     |     |     |     |     |     |      _______ 8: Up-left
 ;       |     |     |     |     |     |     |     |     |      _ 9: Up, facing left
 ;       |     |     |     |     |     |     |     |     |     |
+%anchor($9BC0DB)
 GrappleBeamFireVelocityTable_X:                                          ;9BC0DB;
 ; Grapple beam extension X velocity * 100h (must be multiple of 4)
     dw $0000,$087C,$0BF4,$087C,$0000,$0000,$F784,$F40C,$F784,$0000
 
+%anchor($9BC0EF)
 GrappleBeamFireVelocityTable_Y:                                          ;9BC0EF;
 ; Grapple beam extension X velocity * 100h (must be multiple of 4)
     dw $F40C,$F784,$0000,$087C,$0BF4,$0BF4,$087C,$0000,$F784,$F40C
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($9BC103)
 UNUSED_9BC103:
     db $80                                                               ;9BC103;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($9BC104)
 GrappleBeamFireAngles:                                                   ;9BC104;
 ;        _______________________________________________________ 0: Up, facing right
 ;       |      _________________________________________________ 1: Up-right
@@ -3220,22 +3515,27 @@ GrappleBeamFireAngles:                                                   ;9BC104
 ; Indexed by [direction grapple is fired] * 2
     dw $8000,$A000,$C000,$E000,$0000,$0000,$2000,$4000,$6000,$8000
 
+%anchor($9BC118)
 GrappleSwingConstants_AccelerationDueToAngleOfSwing:
 ; Grapple swing Samus base acceleration due to angle of swing
     dw $0018                                                             ;9BC118;
 
+%anchor($9BC11A)
 GrappleSwingConstants_AccelerationDueToButtonInput:
 ; Grapple swing Samus base acceleration due to button input
     dw $000C                                                             ;9BC11A;
 
+%anchor($9BC11C)
 GrappleSwingConstants_Deceleration:
 ; Grapple swing Samus base deceleration
     dw $0005                                                             ;9BC11C;
 
+%anchor($9BC11E)
 GrappleSwingConstants_AbsoluteAngularVelocity:
 ; Absolute grapple swing angular velocity
     dw $0480                                                             ;9BC11E;
 
+%anchor($9BC120)
 GrappleSwingConstants_ExtraAngularVelocity_GrappleKick:
 ; Extra grapple swing angular velocity (for grapple kick)
     dw $0300                                                             ;9BC120;
@@ -3251,30 +3551,39 @@ GrappleSwingConstants_ExtraAngularVelocity_GrappleKick:
 ;       |     |     |     |     |     |     |     |      _______ 8: Up-left
 ;       |     |     |     |     |     |     |     |     |      _ 9: Up, facing left
 ;       |     |     |     |     |     |     |     |     |     |
+%anchor($9BC122)
 GrappleBeamFireOffsets_NotRunning_OriginX:                               ;9BC122;
     dw $0002,$000A,$0002,$000A,$0003,$FFFC,$FFF6,$FFFE,$FFF6,$FFFE
 
+%anchor($9BC136)
 GrappleBeamFireOffsets_NotRunning_OriginY:                               ;9BC136;
     dw $FFF0,$FFF4,$0002,$0000,$0006,$0006,$0000,$0002,$FFF4,$FFF0
 
+%anchor($9BC14A)
 GrappleBeamFireOffsets_NotRunning_FlareX:                                ;9BC14A;
     dw $0002,$0012,$000F,$0011,$0003,$FFFC,$FFEF,$FFF1,$FFEE,$FFFE
 
+%anchor($9BC15E)
 GrappleBeamFireOffsets_NotRunning_FlareY:                                ;9BC15E;
     dw $FFE4,$FFED,$0001,$0006,$0011,$0011,$0006,$0001,$FFEC,$FFE4
 
+%anchor($9BC172)
 GrappleBeamFireOffsets_Running_OriginX:                                  ;9BC172;
     dw $0002,$000A,$0002,$000A,$0003,$FFFC,$FFF6,$FFFE,$FFF6,$FFFE
 
+%anchor($9BC186)
 GrappleBeamFireOffsets_Running_OriginY:                                  ;9BC186;
     dw $FFF0,$FFF4,$FFFE,$0000,$0006,$0006,$0000,$FFFE,$FFF4,$FFF0
 
+%anchor($9BC19A)
 GrappleBeamFireOffsets_Running_FlareX:                                   ;9BC19A;
     dw $0002,$0013,$0014,$0012,$0003,$FFFC,$FFEE,$FFEC,$FFED,$FFFE
 
+%anchor($9BC1AE)
 GrappleBeamFireOffsets_Running_FlareY:                                   ;9BC1AE;
     dw $FFE0,$FFEA,$FFFD,$0006,$0019,$0019,$0006,$FFFD,$FFEC,$FFE0
 
+%anchor($9BC1C2)
 GrappleSwingSamusXYOffsets:
 ; Indices into $C2C2/C302 tables. Indexed by [grapple beam end angle] / 100h
     db $00,$00,$00,$00,$01,$01,$01,$01,$01,$01,$01,$01,$02,$02,$02,$02   ;9BC1C2;
@@ -3294,24 +3603,29 @@ GrappleSwingSamusXYOffsets:
     db $1C,$1C,$1C,$1C,$1D,$1D,$1D,$1D,$1D,$1D,$1D,$1D,$1E,$1E,$1E,$1E   ;9BC2A2;
     db $1E,$1E,$1E,$1E,$1F,$1F,$1F,$1F,$1F,$1F,$1F,$1F,$00,$00,$00,$00   ;9BC2B2;
 
+%anchor($9BC2C2)
 GrappleSwingSamusXYOffsets_Left:
     db $00,$F1, $07,$F2, $0C,$F5, $12,$F6, $16,$FA, $1A,$02, $1D,$05, $1F,$0A ;9BC2C2;
     db $1F,$11, $1E,$16, $1B,$1B, $1A,$1F, $15,$26, $10,$29, $10,$2C, $08,$2E ;9BC2D2;
     db $00,$2F, $F9,$2E, $F4,$2B, $EE,$2A, $EA,$26, $E6,$1E, $E3,$1B, $E1,$16 ;9BC2E2;
     db $E1,$0F, $E2,$0A, $E5,$05, $E6,$01, $EB,$FA, $F0,$F7, $F0,$F4, $F8,$F2 ;9BC2F2;
 
+%anchor($9BC302)
 GrappleSwingSamusXYOffsets_Right:
     db $00,$F2, $09,$F3, $10,$F6, $12,$F8, $15,$FB, $1A,$02, $1C,$06, $1E,$0A ;9BC302;
     db $1E,$10, $1E,$17, $1B,$1C, $1A,$21, $15,$25, $10,$29, $0B,$2B, $05,$2D ;9BC312;
     db $00,$2E, $F7,$2D, $F0,$2A, $EE,$28, $EB,$25, $E6,$1E, $E4,$1A, $E2,$16 ;9BC322;
     db $E1,$0F, $E2,$09, $E5,$04, $E6,$FF, $EB,$FB, $F0,$F7, $F5,$F5, $FB,$F3 ;9BC332;
 
+%anchor($9BC342)
 GrappleBeamStartTilesBeginEndPointers_0:
     dw Tiles_GrappleBeam_Horizontal_Beam                                 ;9BC342;
 
+%anchor($9BC344)
 GrappleBeamStartTilesBeginEndPointers_1:
     dw Tiles_GrappleBeam_Diagonal_Beam                                   ;9BC344;
 
+%anchor($9BC346)
 GrappleBeamTilesPointers:
     dw Tiles_GrappleBeam_Vertical_Beam+$20                               ;9BC346;
     dw Tiles_GrappleBeam_Vertical_Beam+$20                               ;9BC348;
@@ -3379,6 +3693,7 @@ GrappleBeamTilesPointers:
     dw Tiles_GrappleBeam_Vertical_Beam+$20                               ;9BC3C4;
 
 ; Indexed by [direction grapple is fired] * 4.
+%anchor($9BC3C6)
 ConnectingToGrappleBlockPointerTable_Default:
   .next: ; Next grapple beam function
     dw GrappleBeamFunction_Connected_Swinging                            ;9BC3C6;
@@ -3403,6 +3718,7 @@ ConnectingToGrappleBlockPointerTable_Default:
     dw GrappleBeamFunction_Connected_Swinging                            ;9BC3EA;
     dw HandleConnectingGrapple_SwingingAntiClockwise                     ;9BC3EC;
 
+%anchor($9BC3EE)
 ConnectingToGrappleBlockPointerTable_MovingVertically:
   .next:
     dw GrappleBeamFunction_Connected_Swinging                            ;9BC3EE;
@@ -3427,6 +3743,7 @@ ConnectingToGrappleBlockPointerTable_MovingVertically:
     dw GrappleBeamFunction_Connected_Swinging                            ;9BC412;
     dw HandleConnectingGrapple_SwingingAntiClockwise                     ;9BC414;
 
+%anchor($9BC416)
 ConnectingToGrappleBlockPointerTable_Crouching:
   .next:
     dw GrappleBeamFunction_Connected_Swinging                            ;9BC416;
@@ -3452,6 +3769,7 @@ ConnectingToGrappleBlockPointerTable_Crouching:
     dw HandleConnectingGrapple_SwingingAntiClockwise                     ;9BC43C;
 
 
+%anchor($9BC43E)
 GrappleBeamSpecialAngles:
 ;        __________________________ Angle. Unit pi/8000h radians
 ;       |      ____________________ Samus pose
@@ -3484,10 +3802,12 @@ GrappleBeamSpecialAngles:
     dw GrappleBeamFunction_WallGrab                                      ;9BC48C;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($9BC48E)
 UNUSED_9BC48E:
     db $20,$3A                                                           ;9BC48E;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($9BC490)
 GrappleBeamHandler:
     PHP                                                                  ;9BC490;
     PHB                                                                  ;9BC491;
@@ -3540,6 +3860,7 @@ GrappleBeamHandler:
     RTL                                                                  ;9BC4EF;
 
 
+%anchor($9BC4F0)
 GrappleBeamFunction_Inactive:
     LDA.B $8F                                                            ;9BC4F0;
     BIT.W $09B2                                                          ;9BC4F2;
@@ -3562,6 +3883,7 @@ GrappleBeamFunction_Inactive:
     RTS                                                                  ;9BC51D;
 
 
+%anchor($9BC51E)
 GrappleBeamFunction_Fire_GotoCancel:
     LDA.W $0A1C                                                          ;9BC51E;
     CMP.W #$00F0                                                         ;9BC521;
@@ -3737,6 +4059,7 @@ GrappleBeamFunction_Fire_GotoCancel:
     RTS                                                                  ;9BC6B1;
 
 
+%anchor($9BC6B2)
 GetDirectionGrappleIsFiredWhenHeldByDraygon:
     CMP.W #$00BE                                                         ;9BC6B2;
     BEQ facingLeft                                                       ;9BC6B5;
@@ -3768,6 +4091,7 @@ GetDirectionGrappleIsFiredWhenHeldByDraygon:
     RTS                                                                  ;9BC6DB;
 
 
+%anchor($9BC6DC)
 facingLeft:
     LDA.W #$0006                                                         ;9BC6DC;
     STA.B $16                                                            ;9BC6DF;
@@ -3798,12 +4122,14 @@ facingLeft:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($9BC701)
 UNUSED_CLCRTS_9B7C01:
     CLC                                                                  ;9BC701;
     RTS                                                                  ;9BC702;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($9BC703)
 GrappleBeamFunction_Firing:
     LDA.B $8B                                                            ;9BC703;
     BIT.W $09B2                                                          ;9BC705;
@@ -3858,6 +4184,7 @@ GrappleBeamFunction_Firing:
     RTS                                                                  ;9BC758;
 
 
+%anchor($9BC759)
 UNUSED_GrappleBeamFunction_Unfiring_9BC759:
     LDA.B $8B                                                            ;9BC759;
     BIT.W $09B2                                                          ;9BC75B;
@@ -3881,6 +4208,7 @@ UNUSED_GrappleBeamFunction_Unfiring_9BC759:
     RTS                                                                  ;9BC77D;
 
 
+%anchor($9BC77E)
 GrappleBeamFunction_Connected_LockedInPlace:
     LDA.B $8B                                                            ;9BC77E;
     BIT.W $09B2                                                          ;9BC780;
@@ -3904,6 +4232,7 @@ GrappleBeamFunction_Connected_LockedInPlace:
     RTS                                                                  ;9BC79C;
 
 
+%anchor($9BC79D)
 GrappleBeamFunction_Connected_Swinging:
     LDA.B $8B                                                            ;9BC79D;
     BIT.W $09B2                                                          ;9BC79F;
@@ -3968,6 +4297,7 @@ GrappleBeamFunction_Connected_Swinging:
     RTS                                                                  ;9BC813;
 
 
+%anchor($9BC814)
 GrappleBeamFunction_WallGrab:
     LDA.B $8B                                                            ;9BC814;
     BIT.W $09B2                                                          ;9BC816;
@@ -3988,6 +4318,7 @@ GrappleBeamFunction_WallGrab:
     RTS                                                                  ;9BC831;
 
 
+%anchor($9BC832)
 GrappleBeamFunction_WallGrabRelease:
     LDA.W $0A9E                                                          ;9BC832;
     DEC A                                                                ;9BC835;
@@ -4011,6 +4342,7 @@ GrappleBeamFunction_WallGrabRelease:
     RTS                                                                  ;9BC855;
 
 
+%anchor($9BC856)
 GrappleBeamFunction_HitNothing_Cancel:
     LDA.W #$0007                                                         ;9BC856;
     JSL.L QueueSound                                                     ;9BC859;
@@ -4057,6 +4389,7 @@ GrappleBeamFunction_HitNothing_Cancel:
     RTS                                                                  ;9BC8C4;
 
 
+%anchor($9BC8C5)
 GrappleBeamFunction_Dropped:
     LDA.W #$0007                                                         ;9BC8C5;
     JSL.L QueueSound                                                     ;9BC8C8;
@@ -4182,6 +4515,7 @@ GrappleBeamFunction_Dropped:
 .crouchingPoses:
     db $85,$71,$27,$73,$27,$28,$74,$28,$72,$86                           ;9BC9C4;
 
+%anchor($9BC9CE)
 GrappleBeamFunction_WallJumping:
     LDA.W #$0007                                                         ;9BC9CE;
     JSL.L QueueSound                                                     ;9BC9D1;
@@ -4242,6 +4576,7 @@ GrappleBeamFunction_WallJumping:
     RTS                                                                  ;9BCA64;
 
 
+%anchor($9BCA65)
 PropelSamusFromGrappleSwing:
     LDA.W $0D26                                                          ;9BCA65;
     BMI .negativeVelocity                                                ;9BCA68;
@@ -4393,6 +4728,7 @@ PropelSamusFromGrappleSwing:
     RTS                                                                  ;9BCB8A;
 
 
+%anchor($9BCB8B)
 GrappleBeamFunction_ReleasedFromSwing:
     LDA.W #$0007                                                         ;9BCB8B;
     JSL.L QueueSound                                                     ;9BCB8E;
@@ -4440,6 +4776,7 @@ GrappleBeamFunction_ReleasedFromSwing:
     RTS                                                                  ;9BCBFA;
 
 
+%anchor($9BCBFB)
 Freespace_Bank9B_CBFB:                                                   ;9BCBFB;
 ; $1405 bytes
 
@@ -4447,92 +4784,122 @@ Freespace_Bank9B_CBFB:                                                   ;9BCBFB
 warnpc $9BE000
 ORG $9BE000
 
+%anchor($9BE000)
 SamusTiles_Top_Set8_Entry0:
 incbin "../data/SamusTiles_Top_Set8_Entry0.bin" ; $20 bytes
 
+%anchor($9BE020)
 SamusTiles_Top_Set8_Entry1:
 incbin "../data/SamusTiles_Top_Set8_Entry1.bin" ; $20 bytes
 
+%anchor($9BE040)
 SamusTiles_Top_Set8_Entry2:
 incbin "../data/SamusTiles_Top_Set8_Entry2.bin" ; $120 bytes
 
+%anchor($9BE160)
 SamusTiles_Top_Set8_Entry3:
 incbin "../data/SamusTiles_Top_Set8_Entry3.bin" ; $E0 bytes
 
+%anchor($9BE240)
 SamusTiles_Top_Set8_Entry4:
 incbin "../data/SamusTiles_Top_Set8_Entry4.bin" ; $160 bytes
 
+%anchor($9BE3A0)
 SamusTiles_Top_Set8_Entry5:
 incbin "../data/SamusTiles_Top_Set8_Entry5.bin" ; $1E0 bytes
 
+%anchor($9BE580)
 SamusTiles_Top_Set8_Entry6:
 incbin "../data/SamusTiles_Top_Set8_Entry6.bin" ; $100 bytes
 
+%anchor($9BE680)
 SamusTiles_Top_Set8_Entry7:
 incbin "../data/SamusTiles_Top_Set8_Entry7.bin" ; $140 bytes
 
+%anchor($9BE7C0)
 SamusTiles_Top_Set8_Entry8:
 incbin "../data/SamusTiles_Top_Set8_Entry8.bin" ; $160 bytes
 
+%anchor($9BE920)
 SamusTiles_Top_Set8_Entry9:
 incbin "../data/SamusTiles_Top_Set8_Entry9.bin" ; $E0 bytes
 
+%anchor($9BEA00)
 SamusTiles_Bottom_Set8_Entry0:
 incbin "../data/SamusTiles_Bottom_Set8_Entry0.bin" ; $200 bytes
 
+%anchor($9BEC00)
 SamusTiles_Bottom_Set8_Entry1:
 incbin "../data/SamusTiles_Bottom_Set8_Entry1.bin" ; $200 bytes
 
+%anchor($9BEE00)
 SamusTiles_Bottom_Set8_Entry2:
 incbin "../data/SamusTiles_Bottom_Set8_Entry2.bin" ; $20 bytes
 
+%anchor($9BEE20)
 SamusTiles_Top_Set9_Entry0:
 incbin "../data/SamusTiles_Top_Set9_Entry0.bin" ; $C0 bytes
 
+%anchor($9BEEE0)
 SamusTiles_Top_Set9_Entry1:
 incbin "../data/SamusTiles_Top_Set9_Entry1.bin" ; $C0 bytes
 
+%anchor($9BEFA0)
 SamusTiles_Top_Set9_Entry2:
 incbin "../data/SamusTiles_Top_Set9_Entry2.bin" ; $E0 bytes
 
+%anchor($9BF080)
 SamusTiles_Top_Set9_Entry3:
 incbin "../data/SamusTiles_Top_Set9_Entry3.bin" ; $100 bytes
 
+%anchor($9BF180)
 SamusTiles_Top_Set9_Entry4:
 incbin "../data/SamusTiles_Top_Set9_Entry4.bin" ; $C0 bytes
 
+%anchor($9BF240)
 SamusTiles_Top_Set9_Entry5:
 incbin "../data/SamusTiles_Top_Set9_Entry5.bin" ; $E0 bytes
 
+%anchor($9BF320)
 SamusTiles_Top_Set9_Entry6:
 incbin "../data/SamusTiles_Top_Set9_Entry6.bin" ; $100 bytes
 
+%anchor($9BF420)
 SamusTiles_Top_Set9_Entry7:
 incbin "../data/SamusTiles_Top_Set9_Entry7.bin" ; $100 bytes
 
+%anchor($9BF520)
 SamusTiles_Top_Set9_Entry8:
 incbin "../data/SamusTiles_Top_Set9_Entry8.bin" ; $120 bytes
 
+%anchor($9BF640)
 SamusTiles_Top_Set9_Entry9:
 incbin "../data/SamusTiles_Top_Set9_Entry9.bin" ; $120 bytes
 
+%anchor($9BF760)
 SamusTiles_Top_Set9_EntryA:
 incbin "../data/SamusTiles_Top_Set9_EntryA.bin" ; $100 bytes
 
+%anchor($9BF860)
 SamusTiles_Top_Set9_EntryB:
 incbin "../data/SamusTiles_Top_Set9_EntryB.bin" ; $140 bytes
 
+%anchor($9BF9A0)
 SamusTiles_Top_Set9_EntryC:
 incbin "../data/SamusTiles_Top_Set9_EntryC.bin" ; $E0 bytes
 
+%anchor($9BFAA0)
 SamusTiles_Top_Set9_EntryD:
 incbin "../data/SamusTiles_Top_Set9_EntryD.bin" ; $140 bytes
 
+%anchor($9BFBE0)
 SamusTiles_Top_Set9_EntryE:
 incbin "../data/SamusTiles_Top_Set9_EntryE.bin" ; $C0 bytes
 
+%anchor($9BFCA0)
 SamusTiles_Top_Set9_EntryF:
 incbin "../data/SamusTiles_Top_Set9_EntryF.bin" ; $100 bytes
 
+%anchor($9BFDA0)
 Freespace_Bank9B_FDA0:                                                   ;9BFDA0;
 ; $260 bytes

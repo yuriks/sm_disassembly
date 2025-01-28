@@ -2,6 +2,7 @@
 org $948000
 
 
+%anchor($948000)
 PostGrappleCollisionDetection_Horizontal_Slope_NonSquare:
     LDA.W $0B02                                                          ;948000;
     LSR A                                                                ;948003;
@@ -145,6 +146,7 @@ PostGrappleCollisionDetection_Horizontal_Slope_NonSquare:
     JMP.W PostGrappleCollisionDetection_Horizontal_Solid                 ;9480DD;
 
 
+%anchor($9480E0)
 PostGrappleCollisionDetection_Vertical_Slope_NonSquare:
     LDA.W $0B02                                                          ;9480E0;
     LSR A                                                                ;9480E3;
@@ -286,6 +288,7 @@ PostGrappleCollisionDetection_Vertical_Slope_NonSquare:
     JMP.W PostGrappleCollisionDetection_Vertical_Solid                   ;9481B5;
 
 
+%anchor($9481B8)
 PostGrappleCollisionDetection_Horizontal_Slope_Square:
     LDA.L $7F6402,X                                                      ;9481B8;
     AND.W #$001F                                                         ;9481BC;
@@ -362,6 +365,7 @@ PostGrappleCollisionDetection_Horizontal_Slope_Square:
     RTS                                                                  ;94822F;
 
 
+%anchor($948230)
 PostGrappleCollisionDetection_Vertical_Slope_Square:
     LDA.L $7F6402,X                                                      ;948230;
     AND.W #$001F                                                         ;948234;
@@ -437,11 +441,13 @@ PostGrappleCollisionDetection_Vertical_Slope_Square:
     RTS                                                                  ;9482A6;
 
 
+%anchor($9482A7)
 CLCRTS_9482A7:
     CLC                                                                  ;9482A7;
     RTS                                                                  ;9482A8;
 
 
+%anchor($9482A9)
 PostGrappleCollisionDetection_Horizontal_Slope:
     LDX.W $0DC4                                                          ;9482A9;
     LDA.L $7F6402,X                                                      ;9482AC;
@@ -455,6 +461,7 @@ PostGrappleCollisionDetection_Horizontal_Slope:
     JMP.W PostGrappleCollisionDetection_Horizontal_Slope_Square          ;9482BB;
 
 
+%anchor($9482BE)
 PostGrappleCollisionDetection_Horizontal_Solid:
     LDA.B $20                                                            ;9482BE;
     AND.W #$000F                                                         ;9482C0;
@@ -462,6 +469,7 @@ PostGrappleCollisionDetection_Horizontal_Solid:
     RTS                                                                  ;9482C4;
 
 
+%anchor($9482C5)
 PostGrappleCollisionDetection_Vertical_Slope:
     LDX.W $0DC4                                                          ;9482C5;
     LDA.L $7F6402,X                                                      ;9482C8;
@@ -475,6 +483,7 @@ PostGrappleCollisionDetection_Vertical_Slope:
     JMP.W PostGrappleCollisionDetection_Vertical_Slope_Square            ;9482D7;
 
 
+%anchor($9482DA)
 PostGrappleCollisionDetection_Vertical_Solid:
     LDA.B $20                                                            ;9482DA;
     AND.W #$000F                                                         ;9482DC;
@@ -482,6 +491,7 @@ PostGrappleCollisionDetection_Vertical_Solid:
     RTS                                                                  ;9482E0;
 
 
+%anchor($9482E1)
 PostGrappleCollisionDetection_Horizontal_JumpTable:
     dw CLCRTS_9482A7                                                     ;9482E1;  0: Air
     dw PostGrappleCollisionDetection_Horizontal_Slope                    ;9482E3; *1: Slope
@@ -500,6 +510,7 @@ PostGrappleCollisionDetection_Horizontal_JumpTable:
     dw PostGrappleCollisionDetection_Horizontal_Solid                    ;9482FD;  Eh: Grapple block
     dw PostGrappleCollisionDetection_Horizontal_Solid                    ;9482FF;  Fh: Bombable block
 
+%anchor($948301)
 PostGrappleCollisionDetection_Vertical_JumpTable:
     dw CLCRTS_9482A7                                                     ;948301;  0: Air
     dw PostGrappleCollisionDetection_Vertical_Slope                      ;948303; *1: Slope
@@ -518,6 +529,7 @@ PostGrappleCollisionDetection_Vertical_JumpTable:
     dw PostGrappleCollisionDetection_Vertical_Solid                      ;94831D;  Eh: Grapple block
     dw PostGrappleCollisionDetection_Vertical_Solid                      ;94831F;  Fh: Bombable block
 
+%anchor($948321)
 PostGrappleCollisionDetection_Horizontal_SingleBlock:
     PHX                                                                  ;948321;
     TXA                                                                  ;948322;
@@ -535,6 +547,7 @@ PostGrappleCollisionDetection_Horizontal_SingleBlock:
     RTS                                                                  ;948337;
 
 
+%anchor($948338)
 PostGrappleCollisionDetection_Vertical_SingleBlock:
     PHX                                                                  ;948338;
     TXA                                                                  ;948339;
@@ -552,6 +565,7 @@ PostGrappleCollisionDetection_Vertical_SingleBlock:
     RTS                                                                  ;94834E;
 
 
+%anchor($94834F)
 PostGrappleCollisionDetection_Rightwards:
     PHB                                                                  ;94834F;
     PHK                                                                  ;948350;
@@ -610,6 +624,7 @@ PostGrappleCollisionDetection_Rightwards:
     RTS                                                                  ;9483B0;
 
 
+%anchor($9483B1)
 PostGrappleCollisionDetection_Leftwards:
     PHB                                                                  ;9483B1;
     PHK                                                                  ;9483B2;
@@ -666,6 +681,7 @@ PostGrappleCollisionDetection_Leftwards:
     RTS                                                                  ;94840E;
 
 
+%anchor($94840F)
 PostGrappleCollisionDetection_Downwards:
     PHB                                                                  ;94840F;
     PHK                                                                  ;948410;
@@ -721,6 +737,7 @@ PostGrappleCollisionDetection_Downwards:
     RTS                                                                  ;948469;
 
 
+%anchor($94846A)
 PostGrappleCollisionDetection_Upwards:
     PHB                                                                  ;94846A;
     PHK                                                                  ;94846B;
@@ -775,6 +792,7 @@ PostGrappleCollisionDetection_Upwards:
     RTS                                                                  ;9484C3;
 
 
+%anchor($9484C4)
 PostGrappleCollisionDetection_Horizontal:
     PHP                                                                  ;9484C4;
     JSR.W PostGrappleCollisionDetection_Rightwards                       ;9484C5;
@@ -783,6 +801,7 @@ PostGrappleCollisionDetection_Horizontal:
     RTL                                                                  ;9484CC;
 
 
+%anchor($9484CD)
 PostGrappleCollisionDetection_Vertical:
     PHP                                                                  ;9484CD;
     JSR.W PostGrappleCollisionDetection_Downwards                        ;9484CE;
@@ -791,6 +810,7 @@ PostGrappleCollisionDetection_Vertical:
     RTL                                                                  ;9484D5;
 
 
+%anchor($9484D6)
 SamusBlockCollisionDetection_Horizontal_Slope_NonSquare:
     LDA.W $1E77                                                          ;9484D6;
     BIT.W #$0080                                                         ;9484D9;
@@ -928,6 +948,7 @@ SamusBlockCollisionDetection_Horizontal_Slope_NonSquare:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($948606)
 UNUSED_948606:
     LDA.W $0DC4                                                          ;948606;
     STA.W $4204                                                          ;948609;
@@ -1083,6 +1104,7 @@ UNUSED_948606:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($9486FE)
 SamusBlockCollisionReaction_Vertical_Slope_NonSquare:
     LDA.W $0B02                                                          ;9486FE;
     LSR A                                                                ;948701;
@@ -1238,6 +1260,7 @@ SamusBlockCollisionReaction_Vertical_Slope_NonSquare:
     RTS                                                                  ;9487F3;
 
 
+%anchor($9487F4)
 Align_SamusYPosition_WithNonSquareSlope:
     PHB                                                                  ;9487F4;
     PHK                                                                  ;9487F5;
@@ -1385,10 +1408,12 @@ Align_SamusYPosition_WithNonSquareSlope:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($94891B)
 UNUSED_SlopeDefinitions_94891B:
     db $0F,$0E,$0D,$0C,$0B,$0A,$09,$08,$07,$06,$05,$04,$03,$02,$01,$00   ;94891B;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($94892B)
 SlopeDefinitions_SlopeLeftXOffsetByYPixel:
 ; ALMOST unused, used only by post-grapple collision detection (which has no effect), but referenced by some unused code too
 ; Data here looks incorrect, many of the rows here are identical to $8B2B
@@ -1426,6 +1451,7 @@ SlopeDefinitions_SlopeLeftXOffsetByYPixel:
     db $14,$14,$14,$14,$14,$14,$0E,$0B,$08,$05,$02,$00,$00,$00,$00,$00   ;948B0B; 1Eh: Unused. Middle third-width triangle
     db $10,$0D,$0A,$07,$04,$01,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00   ;948B1B; 1Fh: Unused. Lower third-width triangle
 
+%anchor($948B2B)
 SlopeDefinitions_SlopeTopXOffsetByYPixel:
 ; Indexed by ([block BTS] & 1Fh) * 10h + [Samus X position] % 10h
     db $08,$08,$08,$08,$08,$08,$08,$08,$08,$08,$08,$08,$08,$08,$08,$08   ;948B2B;
@@ -1461,6 +1487,7 @@ SlopeDefinitions_SlopeTopXOffsetByYPixel:
     db $14,$14,$14,$14,$14,$14,$0E,$0B,$08,$05,$02,$00,$00,$00,$00,$00   ;948D0B; 1Eh: Unused. Middle third-width triangle
     db $10,$0D,$0A,$07,$04,$01,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00   ;948D1B; 1Fh: Unused. Lower third-width triangle
 
+%anchor($948D2B)
 SamusBlockCollisionReaction_Horizontal_Slope_Square:
     ASL A                                                                ;948D2B;
     ASL A                                                                ;948D2C;
@@ -1553,6 +1580,7 @@ SamusBlockCollisionReaction_Horizontal_Slope_Square:
     RTS                                                                  ;948DBC;
 
 
+%anchor($948DBD)
 SamusBlockCollisionReaction_Vertical_Slope_Square:
     ASL A                                                                ;948DBD;
     ASL A                                                                ;948DBE;
@@ -1646,6 +1674,7 @@ SamusBlockCollisionReaction_Vertical_Slope_Square:
     RTS                                                                  ;948E53;
 
 
+%anchor($948E54)
 SquareSlopeDefinitions_Bank94:                                           ;948E54;
 ; Enemies use $A0:C435, enemy projectiles use $86:8729
 ; 0 = air, 80h = solid
@@ -1661,6 +1690,7 @@ SquareSlopeDefinitions_Bank94:                                           ;948E54
     db $80,$80,$80,$80 ; 4: Whole
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($948E68)
 UNUSED_DetermineSamusSuitPaletteIndex_948E68:
     LDY.W #$0004                                                         ;948E68;
     LDA.W $09A2                                                          ;948E6B;
@@ -1678,21 +1708,25 @@ UNUSED_DetermineSamusSuitPaletteIndex_948E68:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($948E7D)
 CLCRTS_948E7D:
     CLC                                                                  ;948E7D;
     RTS                                                                  ;948E7E;
 
 
+%anchor($948E7F)
 CLCRTS_948E7F:
     CLC                                                                  ;948E7F;
     RTS                                                                  ;948E80;
 
 
+%anchor($948E81)
 CLCRTS_948E81:
     CLC                                                                  ;948E81;
     RTS                                                                  ;948E82;
 
 
+%anchor($948E83)
 SamusBlockCollisionReaction_SpikeBlock_BTS0_GenericSpike:
     LDA.W $079F                                                          ;948E83;
     CMP.W #$0003                                                         ;948E86;
@@ -1731,6 +1765,7 @@ SamusBlockCollisionReaction_SpikeBlock_BTS0_GenericSpike:
     RTS                                                                  ;948ECE;
 
 
+%anchor($948ECF)
 SamusBlockCollisionReaction_SpikeBlock_BTS1_KraidsLairSpike:
     LDA.W $18A8                                                          ;948ECF;
     BNE .return                                                          ;948ED2;
@@ -1761,6 +1796,7 @@ SamusBlockCollisionReaction_SpikeBlock_BTS1_KraidsLairSpike:
     RTS                                                                  ;948F09;
 
 
+%anchor($948F0A)
 SamusBlockCollisionReact_SpikeBlock_BTS3_DraygonBrokenTurret:
     LDA.W $18A8                                                          ;948F0A;
     BNE .return                                                          ;948F0D;
@@ -1791,16 +1827,19 @@ SamusBlockCollisionReact_SpikeBlock_BTS3_DraygonBrokenTurret:
     RTS                                                                  ;948F44;
 
 
+%anchor($948F45)
 SECRTS_948F45:
     SEC                                                                  ;948F45;
     RTS                                                                  ;948F46;
 
 
+%anchor($948F47)
 CLCRTS_948F47:
     CLC                                                                  ;948F47;
     RTS                                                                  ;948F48;
 
 
+%anchor($948F49)
 SamusBlockCollisionReaction_Horizontal_SolidShootableGrapple:
     STZ.B $14                                                            ;948F49;
     LDA.B $20                                                            ;948F4B;
@@ -1838,6 +1877,7 @@ SamusBlockCollisionReaction_Horizontal_SolidShootableGrapple:
     RTS                                                                  ;948F81;
 
 
+%anchor($948F82)
 SamusBlockCollisionReaction_Vertical_SolidShootableGrapple:
     STZ.B $14                                                            ;948F82;
     LDA.B $20                                                            ;948F84;
@@ -1875,6 +1915,7 @@ SamusBlockCollisionReaction_Vertical_SolidShootableGrapple:
     RTS                                                                  ;948FBA;
 
 
+%anchor($948FBB)
 SamusBlockCollisionReaction_Horizontal_Slope:
     LDX.W $0DC4                                                          ;948FBB;
     LDA.L $7F6402,X                                                      ;948FBE;
@@ -1891,6 +1932,7 @@ SamusBlockCollisionReaction_Horizontal_Slope:
     JMP.W SamusBlockCollisionReaction_Horizontal_Slope_Square            ;948FD7;
 
 
+%anchor($948FDA)
 SamusBlockCollisionReaction_Vertical_Slope:
     LDX.W $0DC4                                                          ;948FDA;
     LDA.L $7F6402,X                                                      ;948FDD;
@@ -1906,6 +1948,7 @@ SamusBlockCollisionReaction_Vertical_Slope:
     JMP.W SamusBlockCollisionReaction_Vertical_Slope_Square              ;948FF3;
 
 
+%anchor($948FF6)
 SamusBlockCollisionReaction_Vertical_SpikeAir_JumpTable:
 ; Yeah, great table
     dw CLCRTS_948E81                                                     ;948FF6;
@@ -1926,11 +1969,13 @@ SamusBlockCollisionReaction_Vertical_SpikeAir_JumpTable:
     dw CLCRTS_948E81                                                     ;949014;
     dw CLCRTS_948E81                                                     ;949016;
 
+%anchor($949018)
 CLCRTS_949018:
     CLC                                                                  ;949018;
     RTS                                                                  ;949019;
 
 
+%anchor($94901A)
 SamusBlockCollisionReaction_Vertical_SpikeAir:
     LDX.W $0DC4                                                          ;94901A;
     LDA.L $7F6402,X                                                      ;94901D;
@@ -1942,6 +1987,7 @@ SamusBlockCollisionReaction_Vertical_SpikeAir:
     RTS                                                                  ;94902A;
 
 
+%anchor($94902B)
 SamusBlockCollisionReaction_Vertical_SpikeBlock_JumpTable:
     dw SamusBlockCollisionReaction_SpikeBlock_BTS0_GenericSpike          ;94902B;
     dw SamusBlockCollisionReaction_SpikeBlock_BTS1_KraidsLairSpike       ;94902D;
@@ -1960,6 +2006,7 @@ SamusBlockCollisionReaction_Vertical_SpikeBlock_JumpTable:
     dw SECRTS_948F45                                                     ;949047;
     dw SECRTS_948F45                                                     ;949049;
 
+%anchor($94904B)
 SamusBlockCollisionReaction_Horizontal_SpikeBlock:
     LDX.W $0DC4                                                          ;94904B;
     LDA.L $7F6402,X                                                      ;94904E;
@@ -1970,6 +2017,7 @@ SamusBlockCollisionReaction_Horizontal_SpikeBlock:
     JMP.W SamusBlockCollisionReaction_Horizontal_SolidShootableGrapple   ;94905A;
 
 
+%anchor($94905D)
 SamusBlockCollisionReaction_Vertical_SpikeBlock:
     LDX.W $0DC4                                                          ;94905D;
     LDA.L $7F6402,X                                                      ;949060;
@@ -1980,6 +2028,7 @@ SamusBlockCollisionReaction_Vertical_SpikeBlock:
     JMP.W SamusBlockCollisionReaction_Vertical_SolidShootableGrapple     ;94906C;
 
 
+%anchor($94906F)
 SamusBlockCollisionReaction_Horizontal_SpecialAir:
     LDX.W $0DC4                                                          ;94906F;
     LDA.L $7F6401,X                                                      ;949072;
@@ -2008,6 +2057,7 @@ SamusBlockCollisionReaction_Horizontal_SpecialAir:
     RTS                                                                  ;94909C;
 
 
+%anchor($94909D)
 SamusBlockCollisionReaction_Vertical_SpecialAir:
     LDX.W $0DC4                                                          ;94909D;
     LDA.L $7F6401,X                                                      ;9490A0;
@@ -2036,6 +2086,7 @@ SamusBlockCollisionReaction_Vertical_SpecialAir:
     RTS                                                                  ;9490CA;
 
 
+%anchor($9490CB)
 SamusBlockCollisionReaction_Horizontal_SpecialBlock:
     LDX.W $0DC4                                                          ;9490CB;
     LDA.L $7F6401,X                                                      ;9490CE;
@@ -2073,6 +2124,7 @@ SamusBlockCollisionReaction_Horizontal_SpecialBlock:
     RTS                                                                  ;949101;
 
 
+%anchor($949102)
 SamusBlockCollisionReaction_Vertical_SpecialBlock:
     LDX.W $0DC4                                                          ;949102;
     LDA.L $7F6401,X                                                      ;949105;
@@ -2110,6 +2162,7 @@ SamusBlockCollisionReaction_Vertical_SpecialBlock:
     RTS                                                                  ;949138;
 
 
+%anchor($949139)
 SamusBlockCollisionReaction_Special_PLMTable_areaIndependent:
     dw PLMEntries_Collision_1x1RespawningCrumbleBlock                    ;949139;
     dw PLMEntries_Collision_2x1RespawningCrumbleBlock                    ;94913B;
@@ -2192,6 +2245,7 @@ SamusBlockCollisionReaction_Special_PLMTable_areaIndependent:
     dw PLMEntries_nothing                                                ;9491D5;
     dw PLMEntries_nothing                                                ;9491D7;
 
+%anchor($9491D9)
 SamusBlockCollisionReaction_Special_PLMTable_crateria:
     dw PLMEntries_nothing                                                ;9491D9;
     dw PLMEntries_nothing                                                ;9491DB;
@@ -2210,6 +2264,7 @@ SamusBlockCollisionReaction_Special_PLMTable_crateria:
     dw PLMEntries_nothing                                                ;9491F5;
     dw PLMEntries_nothing                                                ;9491F7;
 
+%anchor($9491F9)
 SamusBlockCollisionReaction_Special_PLMTable_brinstar:
     dw PLMEntries_collisionReactionClearCarry                            ;9491F9;
     dw PLMEntries_collisionReactionClearCarry                            ;9491FB;
@@ -2228,6 +2283,7 @@ SamusBlockCollisionReaction_Special_PLMTable_brinstar:
     dw PLMEntries_nothing                                                ;949215;
     dw PLMEntries_nothing                                                ;949217;
 
+%anchor($949219)
 SamusBlockCollisionReaction_Special_PLMTable_norfair:
     dw PLMEntries_nothing                                                ;949219;
     dw PLMEntries_nothing                                                ;94921B;
@@ -2246,6 +2302,7 @@ SamusBlockCollisionReaction_Special_PLMTable_norfair:
     dw PLMEntries_nothing                                                ;949235;
     dw PLMEntries_nothing                                                ;949237;
 
+%anchor($949239)
 SamusBlockCollisionReaction_Special_PLMTable_wreckedShip:
     dw PLMEntries_Collision_WreckedShipChozoHandCheck                    ;949239;
     dw PLMEntries_nothing                                                ;94923B;
@@ -2264,6 +2321,7 @@ SamusBlockCollisionReaction_Special_PLMTable_wreckedShip:
     dw PLMEntries_nothing                                                ;949255;
     dw PLMEntries_nothing                                                ;949257;
 
+%anchor($949259)
 SamusBlockCollisionReaction_Special_PLMTable_maridia:
     dw PLMEntries_collisionReactionQuicksandSurface                      ;949259;
     dw PLMEntries_collisionReactionQuicksandSurface                      ;94925B;
@@ -2282,6 +2340,7 @@ SamusBlockCollisionReaction_Special_PLMTable_maridia:
     dw PLMEntries_nothing                                                ;949275;
     dw PLMEntries_nothing                                                ;949277;
 
+%anchor($949279)
 SamusBlockCollisionReaction_Special_PLMTable_tourian:
     dw PLMEntries_nothing                                                ;949279;
     dw PLMEntries_nothing                                                ;94927B;
@@ -2300,6 +2359,7 @@ SamusBlockCollisionReaction_Special_PLMTable_tourian:
     dw PLMEntries_nothing                                                ;949295;
     dw PLMEntries_nothing                                                ;949297;
 
+%anchor($949299)
 SamusBlockCollisionReaction_Special_PLMTable_ceres:
     dw PLMEntries_nothing                                                ;949299;
     dw PLMEntries_nothing                                                ;94929B;
@@ -2318,6 +2378,7 @@ SamusBlockCollisionReaction_Special_PLMTable_ceres:
     dw PLMEntries_nothing                                                ;9492B5;
     dw PLMEntries_nothing                                                ;9492B7;
 
+%anchor($9492B9)
 SamusBlockCollisionReaction_Special_PLMTable_debug:
     dw PLMEntries_nothing                                                ;9492B9;
     dw PLMEntries_nothing                                                ;9492BB;
@@ -2336,6 +2397,7 @@ SamusBlockCollisionReaction_Special_PLMTable_debug:
     dw PLMEntries_nothing                                                ;9492D5;
     dw PLMEntries_nothing                                                ;9492D7;
 
+%anchor($9492D9)
 SamusBlockCollisionReaction_Special_PLMTable_AirPointers:
 ; Special air pointers to the above
     dw SamusBlockCollisionReaction_Special_PLMTable_crateria             ;9492D9;
@@ -2347,6 +2409,7 @@ SamusBlockCollisionReaction_Special_PLMTable_AirPointers:
     dw SamusBlockCollisionReaction_Special_PLMTable_ceres                ;9492E5;
     dw SamusBlockCollisionReaction_Special_PLMTable_debug                ;9492E7;
 
+%anchor($9492E9)
 SamusBlockCollisionReaction_Special_PLMTable_BlockPointers:
 ; Special block pointers to the above
     dw SamusBlockCollisionReaction_Special_PLMTable_crateria             ;9492E9;
@@ -2358,6 +2421,7 @@ SamusBlockCollisionReaction_Special_PLMTable_BlockPointers:
     dw SamusBlockCollisionReaction_Special_PLMTable_ceres                ;9492F5;
     dw SamusBlockCollisionReaction_Special_PLMTable_debug                ;9492F7;
 
+%anchor($9492F9)
 SamusBlockCollisionReaction_Horizontal_BombableAir:
     LDX.W $0DC4                                                          ;9492F9;
     LDA.L $7F6401,X                                                      ;9492FC;
@@ -2377,6 +2441,7 @@ SamusBlockCollisionReaction_Horizontal_BombableAir:
     RTS                                                                  ;949312;
 
 
+%anchor($949313)
 SamusBlockCollisionReaction_Vertical_BombableAir:
     LDX.W $0DC4                                                          ;949313;
     LDA.L $7F6401,X                                                      ;949316;
@@ -2396,6 +2461,7 @@ SamusBlockCollisionReaction_Vertical_BombableAir:
     RTS                                                                  ;94932C;
 
 
+%anchor($94932D)
 SamusBlockCollisionReaction_Horizontal_BombBlock:
     LDX.W $0DC4                                                          ;94932D;
     LDA.L $7F6401,X                                                      ;949330;
@@ -2418,6 +2484,7 @@ SamusBlockCollisionReaction_Horizontal_BombBlock:
     RTS                                                                  ;94934B;
 
 
+%anchor($94934C)
 SamusBlockCollisionReaction_Vertical_BombBlock:
     LDX.W $0DC4                                                          ;94934C;
     LDA.L $7F6401,X                                                      ;94934F;
@@ -2440,6 +2507,7 @@ SamusBlockCollisionReaction_Vertical_BombBlock:
     RTS                                                                  ;94936A;
 
 
+%anchor($94936B)
 SamusBlockCollisionReaction_Bombable_PLMTable:
     dw PLMEntries_Collision_1x1RespawningBombBlock                       ;94936B;
     dw PLMEntries_Collision_2x1RespawningBombBlock                       ;94936D;
@@ -2458,6 +2526,7 @@ SamusBlockCollisionReaction_Bombable_PLMTable:
     dw PLMEntries_nothing                                                ;949387;
     dw PLMEntries_nothing                                                ;949389;
 
+%anchor($94938B)
 SamusBlockCollisionReaction_Horizontal_Door:
     LDA.W #DoorTransitionFunction_HandleElevator                         ;94938B;
     STA.W $099C                                                          ;94938E;
@@ -2492,6 +2561,7 @@ SamusBlockCollisionReaction_Horizontal_Door:
     JMP.W SamusBlockCollisionReaction_Horizontal_SolidShootableGrapple   ;9493CB;
 
 
+%anchor($9493CE)
 SamusBlockCollisionReaction_Vertical_Door:
     LDA.W #DoorTransitionFunction_HandleElevator                         ;9493CE;
     STA.W $099C                                                          ;9493D1;
@@ -2526,6 +2596,7 @@ SamusBlockCollisionReaction_Vertical_Door:
     JMP.W SamusBlockCollisionReaction_Vertical_SolidShootableGrapple     ;94940E;
 
 
+%anchor($949411)
 BlockShotBombedGrappledCollisionInsideReaction_HorizontalExt:
     LDX.W $0DC4                                                          ;949411;
     LDA.L $7F6402,X                                                      ;949414;
@@ -2562,6 +2633,7 @@ BlockShotBombedGrappledCollisionInsideReaction_HorizontalExt:
     RTS                                                                  ;949446;
 
 
+%anchor($949447)
 BlockShotBombedGrappledCollisionInsideReaction_VerticalExt:
     LDX.W $0DC4                                                          ;949447;
     LDA.L $7F6402,X                                                      ;94944A;
@@ -2611,6 +2683,7 @@ BlockShotBombedGrappledCollisionInsideReaction_VerticalExt:
     RTS                                                                  ;949494;
 
 
+%anchor($949495)
 CalculateSamusYBlockSpan:
     LDA.W $0AFA                                                          ;949495;
     SEC                                                                  ;949498;
@@ -2632,6 +2705,7 @@ CalculateSamusYBlockSpan:
     RTS                                                                  ;9494B4;
 
 
+%anchor($9494B5)
 CalculateSamusXBlockSpan:
     LDA.W $0AF6                                                          ;9494B5;
     SEC                                                                  ;9494B8;
@@ -2653,6 +2727,7 @@ CalculateSamusXBlockSpan:
     RTS                                                                  ;9494D4;
 
 
+%anchor($9494D5)
 SamusBlockCollisionReactionPointers_Horizontal:
     dw CLCRTS_948F47                                                     ;9494D5; *0: Air
     dw SamusBlockCollisionReaction_Horizontal_Slope                      ;9494D7;  1: Slope
@@ -2671,6 +2746,7 @@ SamusBlockCollisionReactionPointers_Horizontal:
     dw SamusBlockCollisionReaction_Horizontal_SolidShootableGrapple      ;9494F1;  Eh: Grapple block
     dw SamusBlockCollisionReaction_Horizontal_BombBlock                  ;9494F3;  Fh: Bombable block
 
+%anchor($9494F5)
 SamusBlockCollisionReactionPointers_Vertical:
     dw CLCRTS_948F47                                                     ;9494F5; 0: Air
     dw SamusBlockCollisionReaction_Vertical_Slope                        ;9494F7; 1: Slope
@@ -2689,6 +2765,7 @@ SamusBlockCollisionReactionPointers_Vertical:
     dw SamusBlockCollisionReaction_Vertical_SolidShootableGrapple        ;949511; Eh: Grapple block
     dw SamusBlockCollisionReaction_Vertical_BombBlock                    ;949513; Fh: Bombable block
 
+%anchor($949515)
 SamusBlockCollisionReaction_Horizontal:
     PHX                                                                  ;949515;
     TXA                                                                  ;949516;
@@ -2706,6 +2783,7 @@ SamusBlockCollisionReaction_Horizontal:
     RTS                                                                  ;94952B;
 
 
+%anchor($94952C)
 SamusBlockCollisionReaction_Vertical:
     PHX                                                                  ;94952C;
     TXA                                                                  ;94952D;
@@ -2723,6 +2801,7 @@ SamusBlockCollisionReaction_Vertical:
     RTS                                                                  ;949542;
 
 
+%anchor($949543)
 SamusBlockCollisionDetection_Horizontal:
     JSR.W CalculateSamusYBlockSpan                                       ;949543;
     LDA.W $0AFA                                                          ;949546;
@@ -2785,6 +2864,7 @@ SamusBlockCollisionDetection_Horizontal:
     RTS                                                                  ;94959D;
 
 
+%anchor($94959E)
 SamusBlockCollisionDetection_Vertical_LeftToRight:
     JSR.W CalculateSamusXBlockSpan                                       ;94959E;
     LDA.W $0AFC                                                          ;9495A1;
@@ -2845,6 +2925,7 @@ SamusBlockCollisionDetection_Vertical_LeftToRight:
     RTS                                                                  ;9495F4;
 
 
+%anchor($9495F5)
 SamusBlockCollisionDetection_Vertical_RightToLeft:
     JSR.W CalculateSamusXBlockSpan                                       ;9495F5;
     STZ.B $1A                                                            ;9495F8;
@@ -2909,6 +2990,7 @@ SamusBlockCollisionDetection_Vertical_RightToLeft:
     RTS                                                                  ;949652;
 
 
+%anchor($949653)
 Get_12_14_949653:
     LDA.B $12                                                            ;949653;
     BPL .return                                                          ;949655;
@@ -2925,6 +3007,7 @@ Get_12_14_949653:
     RTS                                                                  ;949668;
 
 
+%anchor($949669)
 Get_12_14_949669:
     LDA.B $12                                                            ;949669;
     BPL .return                                                          ;94966B;
@@ -2941,6 +3024,7 @@ Get_12_14_949669:
     RTS                                                                  ;94967E;
 
 
+%anchor($94967F)
 WallJumpBlockCollisionDetection:
     PHP                                                                  ;94967F;
     PHB                                                                  ;949680;
@@ -2970,6 +3054,7 @@ WallJumpBlockCollisionDetection:
     RTL                                                                  ;9496AA;
 
 
+%anchor($9496AB)
 BlockCollisionDetectionDueToChangeOfPose:
     LDA.B $12                                                            ;9496AB;
     BPL .positive                                                        ;9496AD;
@@ -3008,6 +3093,7 @@ BlockCollisionDetectionDueToChangeOfPose:
     RTL                                                                  ;9496E2;
 
 
+%anchor($9496E3)
 BlockCollisionDetectionDueToChangeOfPose_SingleBlock:
     PHP                                                                  ;9496E3;
     PHB                                                                  ;9496E4;
@@ -3048,6 +3134,7 @@ BlockCollisionDetectionDueToChangeOfPose_SingleBlock:
     RTL                                                                  ;94971D;
 
 
+%anchor($94971E)
 MoveSamusRight_NoSolidEnemyCollision:
     PHP                                                                  ;94971E;
     PHB                                                                  ;94971F;
@@ -3089,6 +3176,7 @@ MoveSamusRight_NoSolidEnemyCollision:
     RTL                                                                  ;949762;
 
 
+%anchor($949763)
 MoveSamusDown_NoSolidEnemyCollision:
     PHP                                                                  ;949763;
     PHB                                                                  ;949764;
@@ -3146,6 +3234,7 @@ MoveSamusDown_NoSolidEnemyCollision:
     RTL                                                                  ;9497BE;
 
 
+%anchor($9497BF)
 BlockInsideReaction_Slope:
     LDX.W $0DC4                                                          ;9497BF;
     LDA.L $7F6402,X                                                      ;9497C2;
@@ -3159,16 +3248,19 @@ BlockInsideReaction_Slope:
     RTS                                                                  ;9497CF;
 
 
+%anchor($9497D0)
 BlockInsideReaction_Air_ShootableAir_BombableAir:
     LDA.W #SamusXSpeedTable_Normal                                       ;9497D0;
     STA.W $0A6C                                                          ;9497D3;
     RTS                                                                  ;9497D6;
 
 
+%anchor($9497D7)
 RTS_9497D7:
     RTS                                                                  ;9497D7;
 
 
+%anchor($9497D8)
 CLCRTS_9497D8:
     CLC                                                                  ;9497D8;
     RTS                                                                  ;9497D9;
@@ -3186,6 +3278,7 @@ CLCRTS_9497D8:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($9497F2)
 UNUSED_SomeKindOfUpwardsBoost_9497F2:
     LDA.W $0B36                                                          ;9497F2;
     CMP.W #$0001                                                         ;9497F5;
@@ -3206,11 +3299,13 @@ UNUSED_SomeKindOfUpwardsBoost_9497F2:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($949810)
 CLCRTS_949810:
     CLC                                                                  ;949810;
     RTS                                                                  ;949811;
 
 
+%anchor($949812)
 CLCRTS_949812:
     CLC                                                                  ;949812;
     RTS                                                                  ;949813;
@@ -3257,10 +3352,12 @@ CLCRTS_949812:
     dw       $0002                                                       ;949863;
 
 
+%anchor($949865)
 RTS_949865:
     RTS                                                                  ;949865;
 
 
+%anchor($949866)
 BlockInsideReaction_SpikeAir_BTS2_AirSpike:
     LDA.W $0A6E                                                          ;949866;
     BNE .return                                                          ;949869;
@@ -3295,6 +3392,7 @@ BlockInsideReaction_SpikeAir_BTS2_AirSpike:
     RTS                                                                  ;9498AB;
 
 
+%anchor($9498AC)
 BlockInsideReaction_SpikeAir_JumpTable:
     dw CLCRTS_9497D8                                                     ;9498AC;
     dw CLCRTS_949812                                                     ;9498AE;
@@ -3313,6 +3411,7 @@ BlockInsideReaction_SpikeAir_JumpTable:
     dw RTS_9497D7                                                        ;9498C8;
     dw RTS_9497D7                                                        ;9498CA;
 
+%anchor($9498CC)
 BlockInsideReaction_SpikeAir:
     LDX.W $0DC4                                                          ;9498CC;
     LDA.L $7F6402,X                                                      ;9498CF;
@@ -3323,18 +3422,21 @@ BlockInsideReaction_SpikeAir:
     RTS                                                                  ;9498DB;
 
 
+%anchor($9498DC)
 BlockInsideReaction_SolidDoorSpikeSpecialShotGrappleBomb:
     LDA.W #SamusXSpeedTable_Normal                                       ;9498DC;
     STA.W $0A6C                                                          ;9498DF;
     RTS                                                                  ;9498E2;
 
 
+%anchor($9498E3)
 BlockInsideReaction_SpecialAir_Default:
     LDA.W #SamusXSpeedTable_Normal                                       ;9498E3;
     STA.W $0A6C                                                          ;9498E6;
     RTS                                                                  ;9498E9;
 
 
+%anchor($9498EA)
 BlockInsideReaction_SpecialAir_BTS8_WSTreadmill_Right:
     LDA.W $079F                                                          ;9498EA;
     CMP.W #$0003                                                         ;9498ED;
@@ -3356,6 +3458,7 @@ BlockInsideReaction_SpecialAir_BTS8_WSTreadmill_Right:
     RTS                                                                  ;94990F;
 
 
+%anchor($949910)
 BlockInsideReaction_SpecialAir_BTS9_WSTreadmill_Left:
     LDA.W $079F                                                          ;949910;
     CMP.W #$0003                                                         ;949913;
@@ -3377,6 +3480,7 @@ BlockInsideReaction_SpecialAir_BTS9_WSTreadmill_Left:
     RTS                                                                  ;949935;
 
 
+%anchor($949936)
 BlockInsideReaction_SpecialAir_BTSA_RightwardsTreadmill:
     STZ.W $0B56                                                          ;949936;
     LDA.W #$0002                                                         ;949939;
@@ -3386,6 +3490,7 @@ BlockInsideReaction_SpecialAir_BTSA_RightwardsTreadmill:
     RTS                                                                  ;949945;
 
 
+%anchor($949946)
 BlockInsideReaction_SpecialAir_BTSB_LeftwardsTreadmill:
     STZ.W $0B56                                                          ;949946;
     LDA.W #$FFFE                                                         ;949949;
@@ -3395,6 +3500,7 @@ BlockInsideReaction_SpecialAir_BTSB_LeftwardsTreadmill:
     RTS                                                                  ;949955;
 
 
+%anchor($949956)
 BlockInsideReaction_SpecialAir_BTS46_ScrollPLMTrigger:
     LDA.W $1E73                                                          ;949956;
     CMP.W #$0001                                                         ;949959;
@@ -3406,6 +3512,7 @@ BlockInsideReaction_SpecialAir_BTS46_ScrollPLMTrigger:
     RTS                                                                  ;949965;
 
 
+%anchor($949966)
 BlockInsideReaction_SpecialAir_JumpTable:
     dw BlockInsideReaction_SpecialAir_Default                            ;949966;
     dw BlockInsideReaction_SpecialAir_Default                            ;949968;
@@ -3489,6 +3596,7 @@ BlockInsideReaction_SpecialAir_JumpTable:
     dw BlockInsideReaction_SpecialAir_Default                            ;949A04;
 
 ; Region dependent
+%anchor($949A06)
 BlockInsideReaction_SpecialAir_PLMTable_crateria:
     dw PLMEntries_insideReactionCrateria80                               ;949A06;
     dw PLMEntries_nothing                                                ;949A08;
@@ -3507,6 +3615,7 @@ BlockInsideReaction_SpecialAir_PLMTable_crateria:
     dw PLMEntries_nothing                                                ;949A22;
     dw PLMEntries_nothing                                                ;949A24;
 
+%anchor($949A26)
 BlockInsideReaction_SpecialAir_PLMTable_brinstar:
     dw PLMEntries_insideReactionBrinstarFloorPlant                       ;949A26;
     dw PLMEntries_insideReactionBrinstarCeilingPlant                     ;949A28;
@@ -3525,6 +3634,7 @@ BlockInsideReaction_SpecialAir_PLMTable_brinstar:
     dw PLMEntries_nothing                                                ;949A42;
     dw PLMEntries_nothing                                                ;949A44;
 
+%anchor($949A46)
 BlockInsideReaction_SpecialAir_PLMTable_norfair:
     dw PLMEntries_insideReactionNothing_B653                             ;949A46;
     dw PLMEntries_insideReactionNothing_B657                             ;949A48;
@@ -3543,6 +3653,7 @@ BlockInsideReaction_SpecialAir_PLMTable_norfair:
     dw PLMEntries_nothing                                                ;949A62;
     dw PLMEntries_nothing                                                ;949A64;
 
+%anchor($949A66)
 BlockInsideReaction_SpecialAir_PLMTable_wreckedShip:
     dw PLMEntries_nothing                                                ;949A66;
     dw PLMEntries_nothing                                                ;949A68;
@@ -3561,6 +3672,7 @@ BlockInsideReaction_SpecialAir_PLMTable_wreckedShip:
     dw PLMEntries_nothing                                                ;949A82;
     dw PLMEntries_nothing                                                ;949A84;
 
+%anchor($949A86)
 BlockInsideReaction_SpecialAir_PLMTable_maridia:
     dw PLMEntries_insideReactionQuicksandSurface                         ;949A86;
     dw PLMEntries_insideReactionQuicksandSurface                         ;949A88;
@@ -3579,6 +3691,7 @@ BlockInsideReaction_SpecialAir_PLMTable_maridia:
     dw PLMEntries_nothing                                                ;949AA2;
     dw PLMEntries_nothing                                                ;949AA4;
 
+%anchor($949AA6)
 BlockInsideReaction_SpecialAir_PLMTable_tourian:
     dw PLMEntries_nothing                                                ;949AA6;
     dw PLMEntries_nothing                                                ;949AA8;
@@ -3597,6 +3710,7 @@ BlockInsideReaction_SpecialAir_PLMTable_tourian:
     dw PLMEntries_nothing                                                ;949AC2;
     dw PLMEntries_nothing                                                ;949AC4;
 
+%anchor($949AC6)
 BlockInsideReaction_SpecialAir_PLMTable_ceres:
     dw PLMEntries_nothing                                                ;949AC6;
     dw PLMEntries_nothing                                                ;949AC8;
@@ -3615,6 +3729,7 @@ BlockInsideReaction_SpecialAir_PLMTable_ceres:
     dw PLMEntries_nothing                                                ;949AE2;
     dw PLMEntries_nothing                                                ;949AE4;
 
+%anchor($949AE6)
 BlockInsideReaction_SpecialAir_PLMTable_debug:
     dw PLMEntries_insideReactionCrateria80                               ;949AE6;
     dw PLMEntries_nothing                                                ;949AE8;
@@ -3633,6 +3748,7 @@ BlockInsideReaction_SpecialAir_PLMTable_debug:
     dw PLMEntries_nothing                                                ;949B02;
     dw PLMEntries_nothing                                                ;949B04;
 
+%anchor($949B06)
 BlockInsideReaction_SpecialAir_PLMTable_Pointers:
     dw BlockInsideReaction_SpecialAir_PLMTable_crateria                  ;949B06;
     dw BlockInsideReaction_SpecialAir_PLMTable_brinstar                  ;949B08;
@@ -3643,6 +3759,7 @@ BlockInsideReaction_SpecialAir_PLMTable_Pointers:
     dw BlockInsideReaction_SpecialAir_PLMTable_ceres                     ;949B12;
     dw BlockInsideReaction_SpecialAir_PLMTable_debug                     ;949B14;
 
+%anchor($949B16)
 BlockInsideReaction_SpecialAir:
     LDX.W $0DC4                                                          ;949B16;
     LDA.L $7F6401,X                                                      ;949B19;
@@ -3670,6 +3787,7 @@ BlockInsideReaction_SpecialAir:
     RTS                                                                  ;949B3F;
 
 
+%anchor($949B40)
 BlockInsideReactionPointers:
     dw BlockInsideReaction_Air_ShootableAir_BombableAir                  ;949B40; *0: Air
     dw BlockInsideReaction_Slope                                         ;949B42;  1: Slope
@@ -3688,6 +3806,7 @@ BlockInsideReactionPointers:
     dw BlockInsideReaction_SolidDoorSpikeSpecialShotGrappleBomb          ;949B5C; *Eh: Grapple block
     dw BlockInsideReaction_SolidDoorSpikeSpecialShotGrappleBomb          ;949B5E; *Fh: Bombable block
 
+%anchor($949B60)
 SamusBlockInsideHandling:
     PHB                                                                  ;949B60;
     PHK                                                                  ;949B61;
@@ -3780,6 +3899,7 @@ SamusBlockInsideHandling:
     RTL                                                                  ;949C1C;
 
 
+%anchor($949C1D)
 CalculateBlockAt_12_1E_1C_20:
     PHP                                                                  ;949C1D;
     REP #$30                                                             ;949C1E;
@@ -3835,6 +3955,7 @@ CalculateBlockAt_12_1E_1C_20:
     RTS                                                                  ;949C72;
 
 
+%anchor($949C73)
 DetermineProjectile_Prototype:
     PHP                                                                  ;949C73;
     PHB                                                                  ;949C74;
@@ -3874,6 +3995,7 @@ DetermineProjectile_Prototype:
     RTS                                                                  ;949CAB;
 
 
+%anchor($949CAC)
 BombAndPowerBombExplosionBlockCollisionHandling:
     PHP                                                                  ;949CAC;
     PHB                                                                  ;949CAD;
@@ -3917,6 +4039,7 @@ BombAndPowerBombExplosionBlockCollisionHandling:
     RTL                                                                  ;949CF3;
 
 
+%anchor($949CF4)
 BombExplosionBlockCollisionHandling:
     LDA.W $0C7C,X                                                        ;949CF4;
     BNE .return                                                          ;949CF7;
@@ -3946,10 +4069,12 @@ BombExplosionBlockCollisionHandling:
     RTS                                                                  ;949D32;
 
 
+%anchor($949D33)
 RTS_949D33:
     RTS                                                                  ;949D33;
 
 
+%anchor($949D34)
 MoveBlockIndexX_OneBlockUp:
     TXA                                                                  ;949D34;
     SEC                                                                  ;949D35;
@@ -3959,6 +4084,7 @@ MoveBlockIndexX_OneBlockUp:
     RTS                                                                  ;949D3D;
 
 
+%anchor($949D3E)
 MoveBlockIndexX_OneRowDown_OneColumnRight:
     TXA                                                                  ;949D3E;
     SEC                                                                  ;949D3F;
@@ -3969,6 +4095,7 @@ MoveBlockIndexX_OneRowDown_OneColumnRight:
     RTS                                                                  ;949D48;
 
 
+%anchor($949D49)
 MoveBlockIndexX_TwoColumnsLeft:
     DEX                                                                  ;949D49;
     DEX                                                                  ;949D4A;
@@ -3977,6 +4104,7 @@ MoveBlockIndexX_TwoColumnsLeft:
     RTS                                                                  ;949D4D;
 
 
+%anchor($949D4E)
 MoveBlockIndexX_OneRowDown_OneColumRight_duplicate:
     TXA                                                                  ;949D4E;
     SEC                                                                  ;949D4F;
@@ -3987,16 +4115,19 @@ MoveBlockIndexX_OneRowDown_OneColumRight_duplicate:
     RTS                                                                  ;949D58;
 
 
+%anchor($949D59)
 CLCRTS_949D59:
     CLC                                                                  ;949D59;
     RTS                                                                  ;949D5A;
 
 
+%anchor($949D5B)
 SECRTS_949D5B:
     SEC                                                                  ;949D5B;
     RTS                                                                  ;949D5C;
 
 
+%anchor($949D5D)
 BombSpreadBlockReaction_Slope:
     LDX.W $0DC4                                                          ;949D5D;
     LDA.L $7F6402,X                                                      ;949D60;
@@ -4011,6 +4142,7 @@ BombSpreadBlockReaction_Slope:
     RTS                                                                  ;949D70;
 
 
+%anchor($949D71)
 BlockBombedReaction_SpecialBlock:
     LDX.W $0DC4                                                          ;949D71;
     LDA.L $7F6401,X                                                      ;949D74;
@@ -4042,6 +4174,7 @@ BlockBombedReaction_SpecialBlock:
     RTS                                                                  ;949DA3;
 
 
+%anchor($949DA4)
 BlockBombedReaction_SpecialBlock_PLMTable_areaIndependent:
     dw PLMEntries_1x1RespawningCrumbleBlock                              ;949DA4;
     dw PLMEntries_2x1RespawningCrumbleBlock                              ;949DA6;
@@ -4060,6 +4193,7 @@ BlockBombedReaction_SpecialBlock_PLMTable_areaIndependent:
     dw PLMEntries_BombReaction_SpeedBoostBlock                           ;949DC0;
     dw PLMEntries_BombReaction_SpeedBoostBlock                           ;949DC2;
 
+%anchor($949DC4)
 BlockBombedReaction_SpecialBlock_PLMTable_crateria:
     dw PLMEntries_nothing                                                ;949DC4;
     dw PLMEntries_nothing                                                ;949DC6;
@@ -4070,6 +4204,7 @@ BlockBombedReaction_SpecialBlock_PLMTable_crateria:
     dw PLMEntries_nothing                                                ;949DD0;
     dw PLMEntries_nothing                                                ;949DD2;
 
+%anchor($949DD4)
 BlockBombedReaction_SpecialBlock_PLMTable_brinstar:
     dw PLMEntries_nothing                                                ;949DD4;
     dw PLMEntries_nothing                                                ;949DD6;
@@ -4080,6 +4215,7 @@ BlockBombedReaction_SpecialBlock_PLMTable_brinstar:
     dw PLMEntries_nothing                                                ;949DE0;
     dw PLMEntries_nothing                                                ;949DE2;
 
+%anchor($949DE4)
 BlockBombedReaction_SpecialBlock_PLMTable_norfair:
     dw PLMEntries_nothing                                                ;949DE4;
     dw PLMEntries_nothing                                                ;949DE6;
@@ -4090,6 +4226,7 @@ BlockBombedReaction_SpecialBlock_PLMTable_norfair:
     dw PLMEntries_nothing                                                ;949DF0;
     dw PLMEntries_nothing                                                ;949DF2;
 
+%anchor($949DF4)
 BlockBombedReaction_SpecialBlock_PLMTable_wreckedShip:
     dw PLMEntries_nothing                                                ;949DF4;
     dw PLMEntries_nothing                                                ;949DF6;
@@ -4100,6 +4237,7 @@ BlockBombedReaction_SpecialBlock_PLMTable_wreckedShip:
     dw PLMEntries_nothing                                                ;949E00;
     dw PLMEntries_nothing                                                ;949E02;
 
+%anchor($949E04)
 BlockBombedReaction_SpecialBlock_PLMTable_maridia:
     dw PLMEntries_nothing                                                ;949E04;
     dw PLMEntries_nothing                                                ;949E06;
@@ -4110,6 +4248,7 @@ BlockBombedReaction_SpecialBlock_PLMTable_maridia:
     dw PLMEntries_nothing                                                ;949E10;
     dw PLMEntries_nothing                                                ;949E12;
 
+%anchor($949E14)
 BlockBombedReaction_SpecialBlock_PLMTable_tourian:
     dw PLMEntries_nothing                                                ;949E14;
     dw PLMEntries_nothing                                                ;949E16;
@@ -4120,6 +4259,7 @@ BlockBombedReaction_SpecialBlock_PLMTable_tourian:
     dw PLMEntries_nothing                                                ;949E20;
     dw PLMEntries_nothing                                                ;949E22;
 
+%anchor($949E24)
 BlockBombedReaction_SpecialBlock_PLMTable_ceres:
     dw PLMEntries_nothing                                                ;949E24;
     dw PLMEntries_nothing                                                ;949E26;
@@ -4130,6 +4270,7 @@ BlockBombedReaction_SpecialBlock_PLMTable_ceres:
     dw PLMEntries_nothing                                                ;949E30;
     dw PLMEntries_nothing                                                ;949E32;
 
+%anchor($949E34)
 BlockBombedReaction_SpecialBlock_PLMTable_debug:
     dw PLMEntries_nothing                                                ;949E34;
     dw PLMEntries_nothing                                                ;949E36;
@@ -4140,6 +4281,7 @@ BlockBombedReaction_SpecialBlock_PLMTable_debug:
     dw PLMEntries_nothing                                                ;949E40;
     dw PLMEntries_nothing                                                ;949E42;
 
+%anchor($949E44)
 BlockBombedReaction_SpecialBlock_PLMTable_areaPointers:
     dw BlockBombedReaction_SpecialBlock_PLMTable_crateria                ;949E44;
     dw BlockBombedReaction_SpecialBlock_PLMTable_brinstar                ;949E46;
@@ -4150,10 +4292,12 @@ BlockBombedReaction_SpecialBlock_PLMTable_areaPointers:
     dw BlockBombedReaction_SpecialBlock_PLMTable_ceres                   ;949E50;
     dw BlockBombedReaction_SpecialBlock_PLMTable_debug                   ;949E52;
 
+%anchor($949E54)
 RTS_949E54:
     RTS                                                                  ;949E54;
 
 
+%anchor($949E55)
 BlockBombShotGrappledReaction_ShootableAir:
     LDX.W $0DC4                                                          ;949E55;
     LDA.L $7F6401,X                                                      ;949E58;
@@ -4175,6 +4319,7 @@ BlockBombShotGrappledReaction_ShootableAir:
     RTS                                                                  ;949E72;
 
 
+%anchor($949E73)
 BlockBombShotGrappledReaction_ShootableBlock:
     LDX.W $0DC4                                                          ;949E73;
     LDA.L $7F6401,X                                                      ;949E76;
@@ -4206,6 +4351,7 @@ BlockBombShotGrappledReaction_ShootableBlock:
     RTS                                                                  ;949EA5;
 
 
+%anchor($949EA6)
 BlockBombShotGrappledReaction_Shootable_PLMTable_noArea:
     dw PLMEntries_Reaction_1x1RespawningShotBlock                        ;949EA6;
     dw PLMEntries_Reaction_2x1RespawningShotBlock                        ;949EA8;
@@ -4288,6 +4434,7 @@ BlockBombShotGrappledReaction_Shootable_PLMTable_noArea:
     dw PLMEntries_nothing                                                ;949F42;
     dw PLMEntries_Reaction_CrittersEscapeBlock                           ;949F44;
 
+%anchor($949F46)
 BlockBombShotGrappledReaction_Shootable_PLMTable_crateria:
     dw PLMEntries_nothing                                                ;949F46;
     dw PLMEntries_nothing                                                ;949F48;
@@ -4298,6 +4445,7 @@ BlockBombShotGrappledReaction_Shootable_PLMTable_crateria:
     dw PLMEntries_nothing                                                ;949F52;
     dw PLMEntries_nothing                                                ;949F54;
 
+%anchor($949F56)
 BlockBombShotGrappledReaction_Shootable_PLMTable_brinstar:
     dw PLMEntries_nothing                                                ;949F56;
     dw PLMEntries_nothing                                                ;949F58;
@@ -4308,6 +4456,7 @@ BlockBombShotGrappledReaction_Shootable_PLMTable_brinstar:
     dw PLMEntries_nothing                                                ;949F62;
     dw PLMEntries_nothing                                                ;949F64;
 
+%anchor($949F66)
 BlockBombShotGrappledReaction_Shootable_PLMTable_norfair:
     dw PLMEntries_nothing                                                ;949F66;
     dw PLMEntries_nothing                                                ;949F68;
@@ -4318,6 +4467,7 @@ BlockBombShotGrappledReaction_Shootable_PLMTable_norfair:
     dw PLMEntries_nothing                                                ;949F72;
     dw PLMEntries_nothing                                                ;949F74;
 
+%anchor($949F76)
 BlockBombShotGrappledReaction_Shootable_PLMTable_wreckedShip:
     dw PLMEntries_nothing                                                ;949F76;
     dw PLMEntries_nothing                                                ;949F78;
@@ -4328,6 +4478,7 @@ BlockBombShotGrappledReaction_Shootable_PLMTable_wreckedShip:
     dw PLMEntries_nothing                                                ;949F82;
     dw PLMEntries_nothing                                                ;949F84;
 
+%anchor($949F86)
 BlockBombShotGrappledReaction_Shootable_PLMTable_maridia:
     dw PLMEntries_nothing                                                ;949F86;
     dw PLMEntries_nothing                                                ;949F88;
@@ -4338,6 +4489,7 @@ BlockBombShotGrappledReaction_Shootable_PLMTable_maridia:
     dw PLMEntries_nothing                                                ;949F92;
     dw PLMEntries_nothing                                                ;949F94;
 
+%anchor($949F96)
 BlockBombShotGrappledReaction_Shootable_PLMTable_tourian:
     dw PLMEntries_nothing                                                ;949F96;
     dw PLMEntries_nothing                                                ;949F98;
@@ -4348,6 +4500,7 @@ BlockBombShotGrappledReaction_Shootable_PLMTable_tourian:
     dw PLMEntries_nothing                                                ;949FA2;
     dw PLMEntries_nothing                                                ;949FA4;
 
+%anchor($949FA6)
 BlockBombShotGrappledReaction_Shootable_PLMTable_ceres:
     dw PLMEntries_nothing                                                ;949FA6;
     dw PLMEntries_nothing                                                ;949FA8;
@@ -4358,6 +4511,7 @@ BlockBombShotGrappledReaction_Shootable_PLMTable_ceres:
     dw PLMEntries_nothing                                                ;949FB2;
     dw PLMEntries_nothing                                                ;949FB4;
 
+%anchor($949FB6)
 BlockBombShotGrappledReaction_Shootable_PLMTable_debug:
     dw PLMEntries_nothing                                                ;949FB6;
     dw PLMEntries_nothing                                                ;949FB8;
@@ -4368,6 +4522,7 @@ BlockBombShotGrappledReaction_Shootable_PLMTable_debug:
     dw PLMEntries_nothing                                                ;949FC2;
     dw PLMEntries_nothing                                                ;949FC4;
 
+%anchor($949FC6)
 BlockBombShotGrappledReaction_Shootable_PLMTable_areaPointer:
     dw BlockBombShotGrappledReaction_Shootable_PLMTable_crateria         ;949FC6;
     dw BlockBombShotGrappledReaction_Shootable_PLMTable_brinstar         ;949FC8;
@@ -4378,6 +4533,7 @@ BlockBombShotGrappledReaction_Shootable_PLMTable_areaPointer:
     dw BlockBombShotGrappledReaction_Shootable_PLMTable_ceres            ;949FD2;
     dw BlockBombShotGrappledReaction_Shootable_PLMTable_debug            ;949FD4;
 
+%anchor($949FD6)
 BlockShotBombedGrappledReaction_BombableAir:
     LDX.W $0DC4                                                          ;949FD6;
     LDA.L $7F6401,X                                                      ;949FD9;
@@ -4399,6 +4555,7 @@ BlockShotBombedGrappledReaction_BombableAir:
     RTS                                                                  ;949FF3;
 
 
+%anchor($949FF4)
 BlockShotBombedGrappledReaction_BombableBlock:
     LDX.W $0DC4                                                          ;949FF4;
     LDA.L $7F6401,X                                                      ;949FF7;
@@ -4420,6 +4577,7 @@ BlockShotBombedGrappledReaction_BombableBlock:
     RTS                                                                  ;94A011;
 
 
+%anchor($94A012)
 BlockShotBombedGrappledReaction_Bombable_PLMTable:
     dw PLMEntries_Reaction_1x1RespawningBombBlock                        ;94A012;
     dw PLMEntries_Reaction_2x1RespawningBombBlock                        ;94A014;
@@ -4438,6 +4596,7 @@ BlockShotBombedGrappledReaction_Bombable_PLMTable:
     dw PLMEntries_nothing                                                ;94A02E;
     dw PLMEntries_nothing                                                ;94A030;
 
+%anchor($94A032)
 BlockBombedReactionPointers:
     dw CLCRTS_949D59                                                     ;94A032;  0: Air
     dw CLCRTS_949D59                                                     ;94A034;  1: Slope
@@ -4456,6 +4615,7 @@ BlockBombedReactionPointers:
     dw SECRTS_949D5B                                                     ;94A04E;  Eh: Grapple block
     dw BlockShotBombedGrappledReaction_BombableBlock                     ;94A050; *Fh: Bombable block
 
+%anchor($94A052)
 BlockBombedReaction:
     PHX                                                                  ;94A052;
     STX.W $0DC4                                                          ;94A053;
@@ -4472,6 +4632,7 @@ BlockBombedReaction:
     RTS                                                                  ;94A069;
 
 
+%anchor($94A06A)
 PowerBombExplosionBlockCollisionHandling:
     LDA.W $0C7C,X                                                        ;94A06A;
     BEQ .zero                                                            ;94A06D;
@@ -4561,6 +4722,7 @@ PowerBombExplosionBlockCollisionHandling:
     RTS                                                                  ;94A0F3;
 
 
+%anchor($94A0F4)
 PowerBombExplosionBlockCollisionHandling_Row:
     SEP #$20                                                             ;94A0F4;
     STA.W $4202                                                          ;94A0F6;
@@ -4588,6 +4750,7 @@ PowerBombExplosionBlockCollisionHandling_Row:
     RTS                                                                  ;94A119;
 
 
+%anchor($94A11A)
 PowerBombExplosionBlockCollisionHandling_Column:
     SEP #$20                                                             ;94A11A;
     STA.W $4202                                                          ;94A11C;
@@ -4618,6 +4781,7 @@ PowerBombExplosionBlockCollisionHandling_Column:
     RTS                                                                  ;94A146;
 
 
+%anchor($94A147)
 BlockShotReaction_Horizontal_Slope:
     LDX.W $0DC4                                                          ;94A147;
     LDA.L $7F6402,X                                                      ;94A14A;
@@ -4631,11 +4795,13 @@ BlockShotReaction_Horizontal_Slope:
     JMP.W BlockShotReaction_Horizontal_Slope_Square                      ;94A159;
 
 
+%anchor($94A15C)
 SECRTS_94A15C:
     SEC                                                                  ;94A15C;
     RTS                                                                  ;94A15D;
 
 
+%anchor($94A15E)
 BlockShotReaction_Vertical_Slope:
     LDX.W $0DC4                                                          ;94A15E;
     LDA.L $7F6402,X                                                      ;94A161;
@@ -4649,11 +4815,13 @@ BlockShotReaction_Vertical_Slope:
     JMP.W BlockShotReaction_Vertical_Slope_Square                        ;94A170;
 
 
+%anchor($94A173)
 SECRTS_94A173:
     SEC                                                                  ;94A173;
     RTS                                                                  ;94A174;
 
 
+%anchor($94A175)
 BlockShotReactionPointers_Horizontal:
     dw CLCRTS_949D59                                                     ;94A175;  0: Air
     dw BlockShotReaction_Horizontal_Slope                                ;94A177; *1: Slope
@@ -4672,6 +4840,7 @@ BlockShotReactionPointers_Horizontal:
     dw SECRTS_949D5B                                                     ;94A191;  Eh: Grapple block
     dw BlockShotBombedGrappledReaction_BombableBlock                     ;94A193; *Fh: Bombable block
 
+%anchor($94A195)
 BlockShotReactionPointers_Vertical:
 ; Same as horizontal pointers except for slope
     dw CLCRTS_949D59                                                     ;94A195;  0: Air
@@ -4691,6 +4860,7 @@ BlockShotReactionPointers_Vertical:
     dw SECRTS_949D5B                                                     ;94A1B1;  Eh: Grapple block
     dw BlockShotBombedGrappledReaction_BombableBlock                     ;94A1B3; *Fh: Bombable block
 
+%anchor($94A1B5)
 BlockShotReaction_Horizontal:
     CPX.W $07B9                                                          ;94A1B5;
     BCS .return                                                          ;94A1B8;
@@ -4715,6 +4885,7 @@ BlockShotReaction_Horizontal:
     RTS                                                                  ;94A1D5;
 
 
+%anchor($94A1D6)
 BlockShotReaction_Vertical:
     CPX.W $07B9                                                          ;94A1D6;
     BCS .return                                                          ;94A1D9;
@@ -4739,6 +4910,7 @@ BlockShotReaction_Vertical:
     RTS                                                                  ;94A1F6;
 
 
+%anchor($94A1F7)
 CalculateProjectileYBlockSpan:
     LDA.W $0B78,X                                                        ;94A1F7;
     SEC                                                                  ;94A1FA;
@@ -4761,6 +4933,7 @@ CalculateProjectileYBlockSpan:
     RTS                                                                  ;94A218;
 
 
+%anchor($94A219)
 CalculateProjectileXBlockSpan:
     LDA.W $0B64,X                                                        ;94A219;
     SEC                                                                  ;94A21C;
@@ -4783,6 +4956,7 @@ CalculateProjectileXBlockSpan:
     RTS                                                                  ;94A23A;
 
 
+%anchor($94A23B)
 MoveBeamHorizontally_NoWaveBeam:
     PHB                                                                  ;94A23B;
     PHX                                                                  ;94A23C;
@@ -4874,6 +5048,7 @@ MoveBeamHorizontally_NoWaveBeam:
     RTL                                                                  ;94A2C9;
 
 
+%anchor($94A2CA)
 MoveBeamVertically_NoWaveBeam:
     PHB                                                                  ;94A2CA;
     PHX                                                                  ;94A2CB;
@@ -4962,6 +5137,7 @@ MoveBeamVertically_NoWaveBeam:
     RTL                                                                  ;94A351;
 
 
+%anchor($94A352)
 MoveBeamHorizontally_WaveBeam:
     PHB                                                                  ;94A352;
     PHX                                                                  ;94A353;
@@ -5050,6 +5226,7 @@ MoveBeamHorizontally_WaveBeam:
     RTL                                                                  ;94A3E3;
 
 
+%anchor($94A3E4)
 MoveBeamVertically_WaveBeam:
     PHB                                                                  ;94A3E4;
     PHX                                                                  ;94A3E5;
@@ -5135,6 +5312,7 @@ MoveBeamVertically_WaveBeam:
     RTL                                                                  ;94A46E;
 
 
+%anchor($94A46F)
 MoveMissileHorizontally:
     PHB                                                                  ;94A46F;
     PHX                                                                  ;94A470;
@@ -5201,6 +5379,7 @@ MoveMissileHorizontally:
     RTL                                                                  ;94A4D8;
 
 
+%anchor($94A4D9)
 MoveMissileVertically:
     PHB                                                                  ;94A4D9;
     PHX                                                                  ;94A4DA;
@@ -5267,6 +5446,7 @@ MoveMissileVertically:
     RTL                                                                  ;94A542;
 
 
+%anchor($94A543)
 BlockShotReaction_Horizontal_Slope_NonSquare:
     REP #$20                                                             ;94A543;
     LDX.W $0DC4                                                          ;94A545;
@@ -5288,6 +5468,7 @@ BlockShotReaction_Horizontal_Slope_NonSquare:
     RTS                                                                  ;94A568;
 
 
+%anchor($94A569)
 BlockShotReaction_Vertical_Slope_NonSquare:
     REP #$20                                                             ;94A569;
     LDX.W $0DC4                                                          ;94A56B;
@@ -5309,6 +5490,7 @@ BlockShotReaction_Vertical_Slope_NonSquare:
     RTS                                                                  ;94A58E;
 
 
+%anchor($94A58F)
 BlockShotReaction_Slope_NonSquare:
     LDA.L $7F6402,X                                                      ;94A58F;
     AND.W #$001F                                                         ;94A593;
@@ -5380,6 +5562,7 @@ BlockShotReaction_Slope_NonSquare:
     RTS                                                                  ;94A600;
 
 
+%anchor($94A601)
 BombSpreadBlockReaction_Pointers:
     dw CLCRTS_949D59                                                     ;94A601;  0: Air
     dw BombSpreadBlockReaction_Slope                                     ;94A603; *1: Slope
@@ -5398,6 +5581,7 @@ BombSpreadBlockReaction_Pointers:
     dw SECRTS_949D5B                                                     ;94A61D;  Eh: Grapple block
     dw SECRTS_949D5B                                                     ;94A61F;  Fh: Bombable block
 
+%anchor($94A621)
 BombSpreadBlockCollisionDetection:
     PHP                                                                  ;94A621;
     PHB                                                                  ;94A622;
@@ -5450,6 +5634,7 @@ BombSpreadBlockCollisionDetection:
     RTL                                                                  ;94A669;
 
 
+%anchor($94A66A)
 BlockShotReaction_Horizontal_Slope_Square:
     ASL A                                                                ;94A66A;
     ASL A                                                                ;94A66B;
@@ -5571,6 +5756,7 @@ BlockShotReaction_Horizontal_Slope_Square:
     RTS                                                                  ;94A719;
 
 
+%anchor($94A71A)
 BlockShotReaction_Vertical_Slope_Square:
     ASL A                                                                ;94A71A;
     ASL A                                                                ;94A71B;
@@ -5692,18 +5878,21 @@ BlockShotReaction_Vertical_Slope_Square:
     RTS                                                                  ;94A7C8;
 
 
+%anchor($94A7C9)
 BlockGrappleReaction_Air_SpikeAir_SpecialAir:
     REP #$40                                                             ;94A7C9;
     CLC                                                                  ;94A7CB; >.<
     RTS                                                                  ;94A7CC;
 
 
+%anchor($94A7CD)
 BlockGrappleReaction_Slope_SolidBlock_DoorBlock_SpecialBlock:
     REP #$40                                                             ;94A7CD;
     SEC                                                                  ;94A7CF;
     RTS                                                                  ;94A7D0;
 
 
+%anchor($94A7D1)
 BlockGrappleReaction_GrappleBlock:
     LDA.W #$8000                                                         ;94A7D1;
     TRB.W $0CF4                                                          ;94A7D4;
@@ -5731,6 +5920,7 @@ BlockGrappleReaction_GrappleBlock:
     dw PLMEntries_Grappled_BreakableGrappleBlock                         ;94A7F9;
     dw PLMEntries_Grappled_GrappleBlock                                  ;94A7FB;
 
+%anchor($94A7FD)
 BlockGrappleReaction_SpikeBlock:
     LDX.W $0DC4                                                          ;94A7FD;
     LDA.L $7F6401,X                                                      ;94A800;
@@ -5768,6 +5958,7 @@ BlockGrappleReaction_SpikeBlock:
     dw PLMEntries_Grappled_GenericSpikeBlock                             ;94A837;
     dw PLMEntries_Grappled_GenericSpikeBlock                             ;94A839;
 
+%anchor($94A83B)
 BlockGrappleReaction_Pointers:
     dw BlockGrappleReaction_Air_SpikeAir_SpecialAir                      ;94A83B;  0: Air
     dw BlockGrappleReaction_Slope_SolidBlock_DoorBlock_SpecialBlock      ;94A83D;  1: Slope
@@ -5786,6 +5977,7 @@ BlockGrappleReaction_Pointers:
     dw BlockGrappleReaction_GrappleBlock                                 ;94A857; *Eh: Grapple block
     dw BlockShotBombedGrappledReaction_BombableBlock                     ;94A859; *Fh: Bombable block
 
+%anchor($94A85B)
 GrappleBeamBlockCollisionDetection:
     PHB                                                                  ;94A85B;
     PHK                                                                  ;94A85C;
@@ -5876,6 +6068,7 @@ GrappleBeamBlockCollisionDetection:
     RTL                                                                  ;94A91E;
 
 
+%anchor($94A91F)
 BlockGrappleReaction:
     PHB                                                                  ;94A91F;
     PHK                                                                  ;94A920;
@@ -5912,6 +6105,7 @@ BlockGrappleReaction:
     RTL                                                                  ;94A956;
 
 
+%anchor($94A957)
 CalculatePositionFromGrappleBeamEndWithDistanceAndAngle:
     LDX.W $0D82                                                          ;94A957;
     LDA.W $0CF4                                                          ;94A95A;
@@ -6066,6 +6260,7 @@ CalculatePositionFromGrappleBeamEndWithDistanceAndAngle:
     RTS                                                                  ;94AA63;
 
 
+%anchor($94AA64)
 GrappleSwingCollisionReaction:
     SEP #$20                                                             ;94AA64;
     LDA.W $0D96                                                          ;94AA66;
@@ -6102,16 +6297,19 @@ GrappleSwingCollisionReaction:
     RTS                                                                  ;94AA99;
 
 
+%anchor($94AA9A)
 CLCRTS_94AA9A:
     CLC                                                                  ;94AA9A;
     RTS                                                                  ;94AA9B;
 
 
+%anchor($94AA9C)
 SECRTS_94AA9C:
     SEC                                                                  ;94AA9C;
     RTS                                                                  ;94AA9D;
 
 
+%anchor($94AA9E)
 GrappleSwingCollisionReaction_SpikeAir:
     LDA.W $18A8                                                          ;94AA9E;
     BNE .return                                                          ;94AAA1;
@@ -6148,6 +6346,7 @@ GrappleSwingCollisionReaction_SpikeAir:
     dw $0000,$0000,$0010,$0000,$0000,$0000,$0000,$0000                   ;94AAF7;
     dw $0000,$0000,$0000,$0000,$0000,$0000,$0000,$0000                   ;94AB07;
 
+%anchor($94AB17)
 GrappleSwingCollisionReaction_SpikeBlock:
     LDA.W $18A8                                                          ;94AB17;
     BNE .return                                                          ;94AB1A;
@@ -6184,6 +6383,7 @@ GrappleSwingCollisionReaction_SpikeBlock:
     dw $003C,$0010,$0000,$0000,$0000,$0000,$0000,$0000                   ;94AB70;
     dw $0000,$0000,$0000,$0000,$0000,$0000,$0000,$0000                   ;94AB80;
 
+%anchor($94AB90)
 GrappleSwingCollisionReaction_Pointers:
     dw CLCRTS_94AA9A                                                     ;94AB90;  0: Air
     dw SECRTS_94AA9C                                                     ;94AB92;  1: Slope
@@ -6202,6 +6402,7 @@ GrappleSwingCollisionReaction_Pointers:
     dw SECRTS_94AA9C                                                     ;94ABAC;  Eh: Grapple block
     dw SECRTS_94AA9C                                                     ;94ABAE;  Fh: Bombable block
 
+%anchor($94ABB0)
 GrappleSwingCollisionReaction_duplicate:
     SEP #$20                                                             ;94ABB0;
     LDA.W $0D96                                                          ;94ABB2;
@@ -6238,6 +6439,7 @@ GrappleSwingCollisionReaction_duplicate:
     RTS                                                                  ;94ABE5;
 
 
+%anchor($94ABE6)
 GrappleSwingCollisionDetectionDueToSwinging:
     LDA.W #$0006                                                         ;94ABE6;
     STA.W $0D98                                                          ;94ABE9;
@@ -6265,6 +6467,7 @@ GrappleSwingCollisionDetectionDueToSwinging:
     RTS                                                                  ;94AC10;
 
 
+%anchor($94AC11)
 UpdateGrappleBeamStartPositionDuringGrappleSwinging:
     LDA.W $0CFB                                                          ;94AC11;
     AND.W #$00FF                                                         ;94AC14;
@@ -6280,6 +6483,7 @@ UpdateGrappleBeamStartPositionDuringGrappleSwinging:
     RTL                                                                  ;94AC30;
 
 
+%anchor($94AC31)
 HandleGrappleBeamLengthChange:
     PHB                                                                  ;94AC31;
     PHK                                                                  ;94AC32;
@@ -6400,6 +6604,7 @@ HandleGrappleBeamLengthChange:
     RTL                                                                  ;94ACFD;
 
 
+%anchor($94ACFE)
 HandleGrappleBeamSwingingMovement:
     PHB                                                                  ;94ACFE;
     PHK                                                                  ;94ACFF;
@@ -6697,6 +6902,7 @@ HandleGrappleBeamSwingingMovement:
     RTL                                                                  ;94AF0A;
 
 
+%anchor($94AF0B)
 CLCRTL_94AF0B:
     CLC                                                                  ;94AF0B;
     RTL                                                                  ;94AF0C;
@@ -6770,6 +6976,7 @@ CLCRTL_94AF0B:
     RTL                                                                  ;94AF86;
 
 
+%anchor($94AF87)
 InitializeGrappleSegmentAnimations:
     LDX.W #$001E                                                         ;94AF87;
 
@@ -6795,6 +7002,7 @@ InitializeGrappleSegmentAnimations:
     RTL                                                                  ;94AFB9;
 
 
+%anchor($94AFBA)
 DrawGrappleBeam:
     PHB                                                                  ;94AFBA;
     PHK                                                                  ;94AFBB;
@@ -6932,6 +7140,7 @@ DrawGrappleBeam:
     RTL                                                                  ;94B0A9;
 
 
+%anchor($94B0AA)
 DrawGrappleSegment:
     LDX.W $0590                                                          ;94B0AA;
     CLC                                                                  ;94B0AD;
@@ -6972,12 +7181,14 @@ DrawGrappleSegment:
     RTS                                                                  ;94B0F3;
 
 
+%anchor($94B0F4)
 Instruction_DrawGrappleBeam_GotoY:
     LDA.W $0000,Y                                                        ;94B0F4;
     TAY                                                                  ;94B0F7;
     RTS                                                                  ;94B0F8;
 
 
+%anchor($94B0F9)
 DrawGrappleBeamEnd_NotConnected:
     LDA.W $0D0C                                                          ;94B0F9;
     SEC                                                                  ;94B0FC;
@@ -7019,6 +7230,7 @@ DrawGrappleBeamEnd_NotConnected:
     RTS                                                                  ;94B14A;
 
 
+%anchor($94B14B)
 DrawGrappleBeamEnd_Connected:
     LDX.W $0590                                                          ;94B14B;
     CLC                                                                  ;94B14E;
@@ -7049,21 +7261,26 @@ DrawGrappleBeamEnd_Connected:
     RTS                                                                  ;94B18A;
 
 
+%anchor($94B18B)
 InstList_DrawGrappleBeam_GrappleSegmentAnimations_0:
     dw $0005,$3A21                                                       ;94B18B;
 
+%anchor($94B18F)
 InstList_DrawGrappleBeam_GrappleSegmentAnimations_1:
     dw $0005,$3A22                                                       ;94B18F;
 
+%anchor($94B193)
 InstList_DrawGrappleBeam_GrappleSegmentAnimations_2:
     dw $0005,$3A23                                                       ;94B193;
 
+%anchor($94B197)
 InstList_DrawGrappleBeam_GrappleSegmentAnimations_3:
     dw $0005,$3A24                                                       ;94B197;
     dw Instruction_DrawGrappleBeam_GotoY                                 ;94B19B;
     dw InstList_DrawGrappleBeam_GrappleSegmentAnimations_0               ;94B19D;
 
 
+%anchor($94B19F)
 Freespace_Bank94_B19F:                                                   ;94B19F;
 ; $1661 bytes
 
@@ -7071,9 +7288,11 @@ Freespace_Bank94_B19F:                                                   ;94B19F
 warnpc $94C800
 org $94C800
 
+%anchor($94C800)
 Tiles_GunshipLiftoffDustClouds:
 incbin "../data/Tiles_GunshipLiftoffDustClouds.bin" ; $1400 bytes
 
+%anchor($94DC00)
 Freespace_Bank94_DC00:                                                   ;94DC00;
 ; $1400 bytes
 

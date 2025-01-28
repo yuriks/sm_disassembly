@@ -2,6 +2,7 @@
 org $928000
 
 
+%anchor($928000)
 Set_SamusTilesDefinitions_ForCurrentAnimation:
     PHP                                                                  ;928000;
     PHB                                                                  ;928001;
@@ -83,6 +84,7 @@ Set_SamusTilesDefinitions_ForCurrentAnimation:
     RTL                                                                  ;92808C;
 
 
+%anchor($92808D)
 SamusSpritemapTable:
 ; Indexed by [$92:9263/945D + [Samus pose] * 2] + [Samus animation frame]
     dw UNUSED_Debug_SamusSpritemap_0_9290ED                              ;92808D;
@@ -2694,10 +2696,12 @@ SamusSpritemapTable:
 ; 082F. Top half - CC: Facing left  - shinespark - vertical
     dw SamusSpritemaps_C17D                                              ;9290EB;
 
+%anchor($9290ED)
 UNUSED_Debug_SamusSpritemap_0_9290ED:
     dw $0001                                                             ;9290ED;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 0, $15A)
 
+%anchor($9290F4)
 UNUSED_Debug_SamusSpritemap_1_9290F4:
     dw $0019                                                             ;9290F4;
     %spritemapEntry(0, $39, $E8, 0, 0, 3, 0, $136)
@@ -2727,11 +2731,13 @@ UNUSED_Debug_SamusSpritemap_1_9290F4:
     %spritemapEntry(0, $1E0, $E8, 0, 0, 3, 0, $145)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($929173)
 UNUSED_929173:
     dw $0001                                                             ;929173;
     %spritemapEntry(0, $00, $00, 0, 0, 3, 5, $5F)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($92917A)
 SamusTileViewer_SamusTopHalf:
     dw $0010                                                             ;92917A;
     %spritemapEntry(0, $18, $00, 0, 0, 3, 4, $17)
@@ -2751,6 +2757,7 @@ SamusTileViewer_SamusTopHalf:
     %spritemapEntry(0, $1E8, $F8, 0, 0, 3, 4, $01)
     %spritemapEntry(0, $1E0, $F8, 0, 0, 3, 4, $00)
 
+%anchor($9291CC)
 SamusTileViewer_SamusBottomHalf:
     dw $0010                                                             ;9291CC;
     %spritemapEntry(0, $18, $00, 0, 0, 3, 4, $1F)
@@ -2770,6 +2777,7 @@ SamusTileViewer_SamusBottomHalf:
     %spritemapEntry(0, $1E8, $F8, 0, 0, 3, 4, $09)
     %spritemapEntry(0, $1E0, $F8, 0, 0, 3, 4, $08)
 
+%anchor($92921E)
 SamusTileViewer_Beam:
     dw $0008                                                             ;92921E;
     %spritemapEntry(0, $18, $00, 0, 0, 3, 6, $37)
@@ -2781,6 +2789,7 @@ SamusTileViewer_Beam:
     %spritemapEntry(0, $1E8, $00, 0, 0, 3, 6, $31)
     %spritemapEntry(0, $1E0, $00, 0, 0, 3, 6, $30)
 
+%anchor($929248)
 SamusTileViewer_GrappleBeam:
     dw $0005                                                             ;929248;
     %spritemapEntry(0, $00, $00, 0, 0, 3, 5, $24)
@@ -2789,6 +2798,7 @@ SamusTileViewer_GrappleBeam:
     %spritemapEntry(0, $1E8, $00, 0, 0, 3, 5, $21)
     %spritemapEntry(0, $1E0, $00, 0, 0, 3, 5, $20)
 
+%anchor($929263)
 SamusSpritemapTableIndices_TopHalf:
 ; Indexed by [Samus pose], base indices into SamusSpritemapTable
     dw $0002,$019A,$01A3,$01AD,$01AF,$01B1,$01B3,$01B5                   ;929263;
@@ -2824,6 +2834,7 @@ SamusSpritemapTableIndices_TopHalf:
     dw $0433,$01CD,$01CF,$01B1,$01B3,$01B5,$01B7,$01CD                   ;929443;
     dw $01CF,$01B1,$01B3,$01B5,$01B7                                     ;929453;
 
+%anchor($92945D)
 SamusSpritemapTableIndices_BottomHalf:
 ; Indexed by [Samus pose], base indices into SamusSpritemapTable
     dw $0062,$04AA,$04B3,$04C0,$04C2,$04C0,$04C2,$04C0                   ;92945D;
@@ -2859,72 +2870,85 @@ SamusSpritemapTableIndices_BottomHalf:
     dw $069B,$0679,$067A,$0679,$067A,$0679,$067A,$0679                   ;92963D;
     dw $067A,$0679,$067A,$0679,$067A                                     ;92964D;
 
+%anchor($929657)
 SamusSpritemaps_9657:
     dw $0002                                                             ;929657;
     %spritemapEntry(1, $43FB, $F8, 0, 0, 2, 4, $00)
     %spritemapEntry(1, $43FB, $F0, 0, 0, 2, 4, $02)
 
+%anchor($929663)
 SamusSpritemaps_9663:
     dw $0002                                                             ;929663;
     %spritemapEntry(1, $43FB, $F7, 0, 0, 2, 4, $00)
     %spritemapEntry(1, $43FB, $EF, 0, 0, 2, 4, $02)
 
+%anchor($92966F)
 SamusSpritemaps_966F:
     dw $0003                                                             ;92966F;
     %spritemapEntry(1, $43FF, $F7, 0, 0, 2, 4, $00)
     %spritemapEntry(0, $07, $EF, 0, 0, 2, 4, $04)
     %spritemapEntry(1, $43F7, $EF, 0, 0, 2, 4, $02)
 
+%anchor($929680)
 SamusSpritemaps_9680:
     dw $0003                                                             ;929680;
     %spritemapEntry(0, $08, $EE, 0, 0, 2, 4, $04)
     %spritemapEntry(1, $4200, $F6, 0, 0, 2, 4, $00)
     %spritemapEntry(1, $43F8, $EE, 0, 0, 2, 4, $02)
 
+%anchor($929691)
 SamusSpritemaps_9691:
     dw $0002                                                             ;929691;
     %spritemapEntry(1, $43F9, $F7, 0, 0, 2, 4, $00)
     %spritemapEntry(1, $43F9, $EF, 0, 0, 2, 4, $02)
 
+%anchor($92969D)
 SamusSpritemaps_969D:
     dw $0003                                                             ;92969D;
     %spritemapEntry(1, $43FE, $EF, 0, 0, 2, 4, $00)
     %spritemapEntry(1, $43F6, $F7, 0, 0, 2, 4, $02)
     %spritemapEntry(1, $43F6, $EF, 0, 0, 2, 4, $04)
 
+%anchor($9296AE)
 SamusSpritemaps_96AE:
     dw $0002                                                             ;9296AE;
     %spritemapEntry(1, $43F5, $F8, 0, 0, 2, 4, $00)
     %spritemapEntry(1, $43F5, $F0, 0, 0, 2, 4, $02)
 
+%anchor($9296BA)
 SamusSpritemaps_96BA:
     dw $0002                                                             ;9296BA;
     %spritemapEntry(1, $43F5, $F7, 0, 0, 2, 4, $00)
     %spritemapEntry(1, $43F5, $EF, 0, 0, 2, 4, $02)
 
+%anchor($9296C6)
 SamusSpritemaps_96C6:
     dw $0003                                                             ;9296C6;
     %spritemapEntry(1, $43F1, $F7, 0, 0, 2, 4, $00)
     %spritemapEntry(1, $43F9, $EF, 0, 0, 2, 4, $02)
     %spritemapEntry(1, $43F1, $EF, 0, 0, 2, 4, $04)
 
+%anchor($9296D7)
 SamusSpritemaps_96D7:
     dw $0003                                                             ;9296D7;
     %spritemapEntry(1, $43F0, $F6, 0, 0, 2, 4, $00)
     %spritemapEntry(1, $43F0, $EE, 0, 0, 2, 4, $02)
     %spritemapEntry(1, $43F8, $EE, 0, 0, 2, 4, $04)
 
+%anchor($9296E8)
 SamusSpritemaps_96E8:
     dw $0002                                                             ;9296E8;
     %spritemapEntry(1, $43F7, $F7, 0, 0, 2, 4, $00)
     %spritemapEntry(1, $43F7, $EF, 0, 0, 2, 4, $02)
 
+%anchor($9296F4)
 SamusSpritemaps_96F4:
     dw $0003                                                             ;9296F4;
     %spritemapEntry(1, $43FA, $F7, 0, 0, 2, 4, $00)
     %spritemapEntry(0, $02, $EF, 0, 0, 2, 4, $04)
     %spritemapEntry(1, $43F2, $EF, 0, 0, 2, 4, $02)
 
+%anchor($929705)
 SamusSpritemaps_9705:
     dw $0006                                                             ;929705;
     %spritemapEntry(0, $1FD, $FB, 0, 0, 2, 4, $02)
@@ -2934,6 +2958,7 @@ SamusSpritemaps_9705:
     %spritemapEntry(0, $07, $FD, 0, 0, 2, 4, $06)
     %spritemapEntry(1, $43FA, $F0, 0, 0, 2, 4, $00)
 
+%anchor($929725)
 SamusSpritemaps_9725:
     dw $0006                                                             ;929725;
     %spritemapEntry(0, $1ED, $01, 0, 1, 2, 4, $02)
@@ -2943,6 +2968,7 @@ SamusSpritemaps_9725:
     %spritemapEntry(0, $1FC, $F3, 0, 0, 2, 4, $06)
     %spritemapEntry(1, $43F6, $F0, 0, 0, 2, 4, $00)
 
+%anchor($929745)
 SamusSpritemaps_9745:
     dw $0005                                                             ;929745;
     %spritemapEntry(0, $06, $01, 0, 0, 2, 4, $04)
@@ -2951,6 +2977,7 @@ SamusSpritemaps_9745:
     %spritemapEntry(0, $0D, $03, 0, 0, 2, 4, $05)
     %spritemapEntry(0, $09, $FF, 0, 0, 2, 4, $06)
 
+%anchor($929760)
 SamusSpritemaps_9760:
     dw $0005                                                             ;929760;
     %spritemapEntry(0, $1EF, $FF, 0, 1, 2, 4, $04)
@@ -2959,6 +2986,7 @@ SamusSpritemaps_9760:
     %spritemapEntry(0, $1EB, $03, 0, 1, 2, 4, $06)
     %spritemapEntry(1, $43F8, $F1, 0, 0, 2, 4, $02)
 
+%anchor($92977B)
 SamusSpritemaps_977B:
     dw $0005                                                             ;92977B;
     %spritemapEntry(0, $01, $00, 0, 0, 2, 4, $02)
@@ -2967,6 +2995,7 @@ SamusSpritemaps_977B:
     %spritemapEntry(0, $0A, $FD, 0, 0, 2, 4, $04)
     %spritemapEntry(0, $02, $FD, 0, 0, 2, 4, $05)
 
+%anchor($929796)
 SamusSpritemaps_9796:
     dw $0005                                                             ;929796;
     %spritemapEntry(0, $1FF, $00, 0, 0, 2, 4, $02)
@@ -2975,6 +3004,7 @@ SamusSpritemaps_9796:
     %spritemapEntry(0, $1EE, $FD, 0, 1, 2, 4, $04)
     %spritemapEntry(0, $1F6, $FD, 0, 1, 2, 4, $05)
 
+%anchor($9297B1)
 SamusSpritemaps_97B1:
     dw $0004                                                             ;9297B1;
     %spritemapEntry(0, $0A, $EE, 0, 1, 2, 4, $04)
@@ -2982,6 +3012,7 @@ SamusSpritemaps_97B1:
     %spritemapEntry(0, $0E, $EA, 0, 1, 2, 4, $05)
     %spritemapEntry(1, $43F7, $F1, 0, 0, 2, 4, $02)
 
+%anchor($9297C7)
 SamusSpritemaps_97C7:
     dw $0004                                                             ;9297C7;
     %spritemapEntry(0, $1EA, $E9, 0, 0, 2, 4, $04)
@@ -2989,18 +3020,21 @@ SamusSpritemaps_97C7:
     %spritemapEntry(0, $1EE, $ED, 0, 0, 2, 4, $05)
     %spritemapEntry(1, $43F9, $F1, 0, 0, 2, 4, $02)
 
+%anchor($9297DD)
 SamusSpritemaps_97DD:
     dw $0003                                                             ;9297DD;
     %spritemapEntry(1, $43FF, $F8, 0, 0, 2, 4, $00)
     %spritemapEntry(0, $07, $F0, 0, 0, 2, 4, $04)
     %spritemapEntry(1, $43F7, $F0, 0, 0, 2, 4, $02)
 
+%anchor($9297EE)
 SamusSpritemaps_97EE:
     dw $0003                                                             ;9297EE;
     %spritemapEntry(1, $43F1, $F8, 0, 0, 2, 4, $00)
     %spritemapEntry(1, $43F9, $F0, 0, 0, 2, 4, $02)
     %spritemapEntry(1, $43F1, $F0, 0, 0, 2, 4, $04)
 
+%anchor($9297FF)
 SamusSpritemaps_97FF:
     dw $0005                                                             ;9297FF;
     %spritemapEntry(0, $1F9, $F9, 0, 0, 2, 4, $02)
@@ -3009,6 +3043,7 @@ SamusSpritemaps_97FF:
     %spritemapEntry(0, $1FE, $E9, 0, 0, 2, 4, $05)
     %spritemapEntry(1, $43F9, $F1, 0, 0, 2, 4, $00)
 
+%anchor($92981A)
 SamusSpritemaps_981A:
     dw $0005                                                             ;92981A;
     %spritemapEntry(0, $1FF, $F9, 0, 0, 2, 4, $02)
@@ -3017,18 +3052,21 @@ SamusSpritemaps_981A:
     %spritemapEntry(1, $43F7, $F1, 0, 0, 2, 4, $00)
     %spritemapEntry(0, $1FA, $E9, 0, 1, 2, 4, $05)
 
+%anchor($929835)
 SamusSpritemaps_9835:
     dw $0003                                                             ;929835;
     %spritemapEntry(1, $43FF, $EE, 0, 0, 2, 4, $00)
     %spritemapEntry(0, $1F7, $FE, 0, 0, 2, 4, $04)
     %spritemapEntry(1, $43F7, $EE, 0, 0, 2, 4, $02)
 
+%anchor($929846)
 SamusSpritemaps_9846:
     dw $0003                                                             ;929846;
     %spritemapEntry(1, $43F1, $EE, 0, 0, 2, 4, $00)
     %spritemapEntry(0, $01, $FE, 0, 0, 2, 4, $04)
     %spritemapEntry(1, $43F9, $EE, 0, 0, 2, 4, $02)
 
+%anchor($929857)
 SamusSpritemaps_9857:
     dw $0005                                                             ;929857;
     %spritemapEntry(0, $0C, $EA, 0, 1, 2, 4, $02)
@@ -3037,6 +3075,7 @@ SamusSpritemaps_9857:
     %spritemapEntry(0, $08, $EE, 0, 1, 2, 4, $05)
     %spritemapEntry(1, $43FB, $F0, 0, 0, 2, 4, $00)
 
+%anchor($929872)
 SamusSpritemaps_9872:
     dw $0006                                                             ;929872;
     %spritemapEntry(0, $1FB, $FB, 0, 0, 2, 4, $02)
@@ -3046,6 +3085,7 @@ SamusSpritemaps_9872:
     %spritemapEntry(0, $1F0, $EE, 0, 0, 2, 4, $06)
     %spritemapEntry(1, $43F5, $F0, 0, 0, 2, 4, $00)
 
+%anchor($929892)
 SamusSpritemaps_9892:
     dw $0005                                                             ;929892;
     %spritemapEntry(0, $1F7, $F1, 0, 1, 2, 4, $06)
@@ -3054,6 +3094,7 @@ SamusSpritemaps_9892:
     %spritemapEntry(1, $43FB, $E8, 0, 0, 2, 4, $02)
     %spritemapEntry(1, $43FB, $F0, 0, 0, 2, 4, $04)
 
+%anchor($9298AD)
 SamusSpritemaps_98AD:
     dw $0005                                                             ;9298AD;
     %spritemapEntry(0, $04, $F4, 0, 1, 2, 4, $06)
@@ -3062,6 +3103,7 @@ SamusSpritemaps_98AD:
     %spritemapEntry(1, $43FD, $F0, 0, 1, 2, 4, $02)
     %spritemapEntry(1, $43F5, $F0, 0, 1, 2, 4, $04)
 
+%anchor($9298C8)
 SamusSpritemaps_98C8:
     dw $0007                                                             ;9298C8;
     %spritemapEntry(0, $1F5, $F3, 0, 0, 2, 4, $02)
@@ -3072,6 +3114,7 @@ SamusSpritemaps_98C8:
     %spritemapEntry(0, $1FE, $00, 0, 0, 2, 4, $06)
     %spritemapEntry(0, $1F6, $00, 0, 0, 2, 4, $07)
 
+%anchor($9298ED)
 SamusSpritemaps_98ED:
     dw $0007                                                             ;9298ED;
     %spritemapEntry(0, $1FD, $FB, 0, 0, 2, 4, $02)
@@ -3082,6 +3125,7 @@ SamusSpritemaps_98ED:
     %spritemapEntry(1, $43FA, $F0, 0, 0, 2, 4, $00)
     %spritemapEntry(0, $09, $FB, 0, 0, 2, 4, $07)
 
+%anchor($929912)
 SamusSpritemaps_9912:
     dw $0004                                                             ;929912;
     %spritemapEntry(1, $43F9, $F8, 0, 0, 2, 4, $00)
@@ -3089,6 +3133,7 @@ SamusSpritemaps_9912:
     %spritemapEntry(0, $0A, $FE, 0, 0, 2, 4, $04)
     %spritemapEntry(0, $02, $FE, 0, 0, 2, 4, $05)
 
+%anchor($929928)
 SamusSpritemaps_9928:
     dw $0004                                                             ;929928;
     %spritemapEntry(1, $43F7, $F8, 0, 0, 2, 4, $00)
@@ -3096,6 +3141,7 @@ SamusSpritemaps_9928:
     %spritemapEntry(0, $1EE, $FE, 0, 1, 2, 4, $04)
     %spritemapEntry(0, $1F6, $FE, 0, 1, 2, 4, $05)
 
+%anchor($92993E)
 SamusSpritemaps_993E:
     dw $0004                                                             ;92993E;
     %spritemapEntry(0, $1F4, $E8, 0, 0, 2, 4, $06)
@@ -3103,6 +3149,7 @@ SamusSpritemaps_993E:
     %spritemapEntry(1, $43FC, $F0, 0, 0, 2, 4, $02)
     %spritemapEntry(1, $43F4, $F0, 0, 0, 2, 4, $04)
 
+%anchor($929954)
 SamusSpritemaps_9954:
     dw $0005                                                             ;929954;
     %spritemapEntry(0, $1F4, $00, 0, 0, 2, 4, $06)
@@ -3111,15 +3158,18 @@ SamusSpritemaps_9954:
     %spritemapEntry(1, $43F4, $E8, 0, 0, 2, 4, $02)
     %spritemapEntry(1, $43F4, $F0, 0, 0, 2, 4, $04)
 
+%anchor($92996F)
 SamusSpritemaps_996F:
     dw $0001                                                             ;92996F;
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 6, $00)
 
+%anchor($929976)
 SamusSpritemaps_9976:
     dw $0002                                                             ;929976;
     %spritemapEntry(1, $43FF, $F0, 0, 1, 2, 4, $00)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 2, 4, $00)
 
+%anchor($929982)
 SamusSpritemaps_9982:
     dw $0004                                                             ;929982;
     %spritemapEntry(0, $04, $E8, 0, 0, 2, 4, $04)
@@ -3127,6 +3177,7 @@ SamusSpritemaps_9982:
     %spritemapEntry(1, $43FC, $F0, 0, 0, 2, 4, $00)
     %spritemapEntry(1, $43F4, $F0, 0, 0, 2, 4, $02)
 
+%anchor($929998)
 SamusSpritemaps_9998:
     dw $0004                                                             ;929998;
     %spritemapEntry(0, $1F5, $E8, 0, 1, 2, 4, $04)
@@ -3134,6 +3185,7 @@ SamusSpritemaps_9998:
     %spritemapEntry(1, $43F2, $F0, 0, 0, 2, 4, $00)
     %spritemapEntry(1, $43FA, $F0, 0, 0, 2, 4, $02)
 
+%anchor($9299AE)
 SamusSpritemaps_99AE:
     dw $0006                                                             ;9299AE;
     %spritemapEntry(0, $1F3, $E8, 0, 0, 2, 4, $02)
@@ -3143,6 +3195,7 @@ SamusSpritemaps_99AE:
     %spritemapEntry(0, $03, $F0, 0, 0, 2, 4, $06)
     %spritemapEntry(1, $43F3, $F0, 0, 0, 2, 4, $00)
 
+%anchor($9299CE)
 SamusSpritemaps_99CE:
     dw $0005                                                             ;9299CE;
     %spritemapEntry(0, $04, $E8, 0, 0, 2, 4, $02)
@@ -3151,6 +3204,7 @@ SamusSpritemaps_99CE:
     %spritemapEntry(0, $1F4, $F0, 0, 0, 2, 4, $05)
     %spritemapEntry(1, $43FC, $F0, 0, 0, 2, 4, $00)
 
+%anchor($9299E9)
 SamusSpritemaps_99E9:
     dw $0004                                                             ;9299E9;
     %spritemapEntry(0, $04, $E8, 0, 0, 2, 4, $06)
@@ -3158,6 +3212,7 @@ SamusSpritemaps_99E9:
     %spritemapEntry(1, $43F4, $F0, 0, 0, 2, 4, $02)
     %spritemapEntry(1, $43FC, $F0, 0, 0, 2, 4, $04)
 
+%anchor($9299FF)
 SamusSpritemaps_99FF:
     dw $0006                                                             ;9299FF;
     %spritemapEntry(0, $1E2, $F4, 0, 1, 2, 4, $04)
@@ -3167,6 +3222,7 @@ SamusSpritemaps_99FF:
     %spritemapEntry(0, $04, $00, 0, 0, 2, 4, $07)
     %spritemapEntry(1, $43FC, $F0, 0, 0, 2, 4, $02)
 
+%anchor($929A1F)
 SamusSpritemaps_9A1F:
     dw $0006                                                             ;929A1F;
     %spritemapEntry(0, $15, $F4, 0, 0, 2, 4, $04)
@@ -3176,41 +3232,49 @@ SamusSpritemaps_9A1F:
     %spritemapEntry(1, $4204, $F0, 0, 0, 2, 4, $00)
     %spritemapEntry(1, $43F4, $F0, 0, 0, 2, 4, $02)
 
+%anchor($929A3F)
 SamusSpritemaps_9A3F:
     dw $0002                                                             ;929A3F;
     %spritemapEntry(1, $43FA, $F8, 0, 0, 2, 4, $00)
     %spritemapEntry(1, $43FA, $F0, 0, 0, 2, 4, $02)
 
+%anchor($929A4B)
 SamusSpritemaps_9A4B:
     dw $0002                                                             ;929A4B;
     %spritemapEntry(1, $43F8, $F8, 0, 0, 2, 4, $00)
     %spritemapEntry(1, $43F8, $F0, 0, 0, 2, 4, $02)
 
+%anchor($929A57)
 SamusSpritemaps_9A57:
     dw $0002                                                             ;929A57;
     %spritemapEntry(1, $43F6, $F8, 0, 0, 2, 4, $00)
     %spritemapEntry(1, $43F6, $F0, 0, 0, 2, 4, $02)
 
+%anchor($929A63)
 SamusSpritemaps_9A63:
     dw $0002                                                             ;929A63;
     %spritemapEntry(1, $43F8, $F8, 0, 0, 2, 4, $00)
     %spritemapEntry(1, $43F8, $F0, 0, 0, 2, 4, $02)
 
+%anchor($929A6F)
 SamusSpritemaps_9A6F:
     dw $0002                                                             ;929A6F;
     %spritemapEntry(1, $43FC, $F0, 0, 0, 2, 4, $00)
     %spritemapEntry(1, $43F4, $F0, 0, 0, 2, 4, $02)
 
+%anchor($929A7B)
 SamusSpritemaps_9A7B:
     dw $0002                                                             ;929A7B;
     %spritemapEntry(1, $43FC, $F0, 0, 0, 2, 4, $00)
     %spritemapEntry(1, $4204, $F0, 0, 0, 2, 4, $02)
 
+%anchor($929A87)
 SamusSpritemaps_9A87:
     dw $0002                                                             ;929A87;
     %spritemapEntry(1, $43F4, $F0, 0, 1, 2, 4, $00)
     %spritemapEntry(1, $43EC, $F0, 0, 1, 2, 4, $02)
 
+%anchor($929A93)
 SamusSpritemaps_9A93:
     dw $0005                                                             ;929A93;
     %spritemapEntry(0, $1ED, $F8, 0, 1, 2, 4, $06)
@@ -3219,6 +3283,7 @@ SamusSpritemaps_9A93:
     %spritemapEntry(1, $43F0, $F0, 0, 1, 2, 4, $02)
     %spritemapEntry(1, $4200, $F0, 0, 1, 2, 4, $04)
 
+%anchor($929AAE)
 SamusSpritemaps_9AAE:
     dw $0005                                                             ;929AAE;
     %spritemapEntry(0, $1F6, $FC, 0, 1, 2, 4, $06)
@@ -3227,14 +3292,17 @@ SamusSpritemaps_9AAE:
     %spritemapEntry(1, $4200, $F0, 0, 0, 2, 4, $02)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 2, 4, $04)
 
+%anchor($929AC9)
 SamusSpritemaps_9AC9:
     dw $0001                                                             ;929AC9;
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 4, $00)
 
+%anchor($929AD0)
 SamusSpritemaps_9AD0:
     dw $0001                                                             ;929AD0;
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 4, $00)
 
+%anchor($929AD7)
 SamusSpritemaps_9AD7:
     dw $0006                                                             ;929AD7;
     %spritemapEntry(0, $1F8, $00, 0, 0, 2, 4, $02)
@@ -3244,6 +3312,7 @@ SamusSpritemaps_9AD7:
     %spritemapEntry(0, $04, $F0, 0, 0, 2, 4, $06)
     %spritemapEntry(1, $43F4, $F0, 0, 0, 2, 4, $00)
 
+%anchor($929AF7)
 SamusSpritemaps_9AF7:
     dw $0006                                                             ;929AF7;
     %spritemapEntry(0, $1F7, $00, 0, 0, 2, 4, $02)
@@ -3253,6 +3322,7 @@ SamusSpritemaps_9AF7:
     %spritemapEntry(0, $1F3, $F0, 0, 0, 2, 4, $06)
     %spritemapEntry(1, $43FB, $F0, 0, 0, 2, 4, $00)
 
+%anchor($929B17)
 SamusSpritemaps_9B17:
     dw $0004                                                             ;929B17;
     %spritemapEntry(0, $1FF, $05, 1, 1, 2, 4, $04)
@@ -3260,6 +3330,7 @@ SamusSpritemaps_9B17:
     %spritemapEntry(1, $43F8, $F0, 0, 0, 2, 4, $00)
     %spritemapEntry(1, $43F8, $F8, 0, 0, 2, 4, $02)
 
+%anchor($929B2D)
 SamusSpritemaps_9B2D:
     dw $0004                                                             ;929B2D;
     %spritemapEntry(0, $1F8, $05, 1, 0, 2, 4, $04)
@@ -3267,6 +3338,7 @@ SamusSpritemaps_9B2D:
     %spritemapEntry(1, $43F8, $F0, 0, 0, 2, 4, $00)
     %spritemapEntry(1, $43F8, $F8, 0, 0, 2, 4, $02)
 
+%anchor($929B43)
 SamusSpritemaps_9B43:
     dw $0004                                                             ;929B43;
     %spritemapEntry(1, $43F4, $F0, 0, 0, 2, 4, $00)
@@ -3274,6 +3346,7 @@ SamusSpritemaps_9B43:
     %spritemapEntry(0, $0C, $00, 0, 0, 2, 4, $05)
     %spritemapEntry(1, $4204, $F0, 0, 0, 2, 4, $02)
 
+%anchor($929B59)
 SamusSpritemaps_9B59:
     dw $0004                                                             ;929B59;
     %spritemapEntry(1, $43FC, $F0, 0, 0, 2, 4, $00)
@@ -3281,17 +3354,20 @@ SamusSpritemaps_9B59:
     %spritemapEntry(0, $1EC, $00, 0, 0, 2, 4, $05)
     %spritemapEntry(1, $43EC, $F0, 0, 0, 2, 4, $02)
 
+%anchor($929B6F)
 SamusSpritemaps_9B6F:
     dw $0003                                                             ;929B6F;
     %spritemapEntry(0, $01, $FE, 0, 0, 2, 4, $02)
     %spritemapEntry(0, $1F9, $FE, 0, 0, 2, 4, $03)
     %spritemapEntry(1, $43F7, $F0, 0, 0, 2, 4, $00)
 
+%anchor($929B80)
 SamusSpritemaps_9B80:
     dw $0002                                                             ;929B80;
     %spritemapEntry(1, $43F9, $F8, 0, 0, 2, 4, $00)
     %spritemapEntry(1, $43F9, $F0, 0, 0, 2, 4, $02)
 
+%anchor($929B8C)
 SamusSpritemaps_9B8C:
     dw $0004                                                             ;929B8C;
     %spritemapEntry(0, $1FE, $03, 0, 0, 2, 4, $04)
@@ -3299,22 +3375,26 @@ SamusSpritemaps_9B8C:
     %spritemapEntry(1, $43F7, $F8, 0, 0, 2, 4, $00)
     %spritemapEntry(1, $43F7, $F0, 0, 0, 2, 4, $02)
 
+%anchor($929BA2)
 SamusSpritemaps_9BA2:
     dw $0002                                                             ;929BA2;
     %spritemapEntry(1, $43F9, $F8, 0, 0, 2, 4, $00)
     %spritemapEntry(1, $43F9, $F0, 0, 0, 2, 4, $02)
 
+%anchor($929BAE)
 SamusSpritemaps_9BAE:
     dw $0003                                                             ;929BAE;
     %spritemapEntry(0, $1FB, $00, 0, 0, 2, 4, $02)
     %spritemapEntry(0, $1F7, $FC, 0, 0, 2, 4, $03)
     %spritemapEntry(1, $43F7, $F0, 0, 0, 2, 4, $00)
 
+%anchor($929BBF)
 SamusSpritemaps_9BBF:
     dw $0002                                                             ;929BBF;
     %spritemapEntry(1, $43F9, $F8, 0, 0, 2, 4, $00)
     %spritemapEntry(1, $43F9, $F0, 0, 0, 2, 4, $02)
 
+%anchor($929BCB)
 SamusSpritemaps_9BCB:
     dw $0006                                                             ;929BCB;
     %spritemapEntry(0, $1FD, $F9, 0, 0, 2, 4, $02)
@@ -3324,6 +3404,7 @@ SamusSpritemaps_9BCB:
     %spritemapEntry(0, $07, $FC, 0, 0, 2, 4, $06)
     %spritemapEntry(1, $43FA, $EF, 0, 0, 2, 4, $00)
 
+%anchor($929BEB)
 SamusSpritemaps_9BEB:
     dw $0006                                                             ;929BEB;
     %spritemapEntry(0, $1F1, $FC, 0, 1, 2, 4, $02)
@@ -3333,6 +3414,7 @@ SamusSpritemaps_9BEB:
     %spritemapEntry(0, $1FC, $F1, 0, 0, 2, 4, $06)
     %spritemapEntry(1, $43F6, $EF, 0, 0, 2, 4, $00)
 
+%anchor($929C0B)
 SamusSpritemaps_9C0B:
     dw $0005                                                             ;929C0B;
     %spritemapEntry(0, $1F9, $F0, 0, 1, 2, 4, $02)
@@ -3341,6 +3423,7 @@ SamusSpritemaps_9C0B:
     %spritemapEntry(0, $0A, $FD, 0, 0, 2, 4, $04)
     %spritemapEntry(0, $02, $FD, 0, 0, 2, 4, $05)
 
+%anchor($929C26)
 SamusSpritemaps_9C26:
     dw $0005                                                             ;929C26;
     %spritemapEntry(0, $1F9, $F0, 0, 1, 2, 4, $02)
@@ -3349,6 +3432,7 @@ SamusSpritemaps_9C26:
     %spritemapEntry(0, $0A, $FD, 0, 0, 2, 4, $04)
     %spritemapEntry(0, $02, $FD, 0, 0, 2, 4, $05)
 
+%anchor($929C41)
 SamusSpritemaps_9C41:
     dw $0005                                                             ;929C41;
     %spritemapEntry(0, $1F9, $F0, 0, 1, 2, 4, $02)
@@ -3357,6 +3441,7 @@ SamusSpritemaps_9C41:
     %spritemapEntry(0, $0A, $FD, 0, 0, 2, 4, $04)
     %spritemapEntry(0, $02, $FD, 0, 0, 2, 4, $05)
 
+%anchor($929C5C)
 SamusSpritemaps_9C5C:
     dw $0005                                                             ;929C5C;
     %spritemapEntry(0, $1F9, $F0, 0, 1, 2, 4, $02)
@@ -3365,6 +3450,7 @@ SamusSpritemaps_9C5C:
     %spritemapEntry(0, $0A, $FD, 0, 0, 2, 4, $04)
     %spritemapEntry(0, $02, $FD, 0, 0, 2, 4, $05)
 
+%anchor($929C77)
 SamusSpritemaps_9C77:
     dw $0005                                                             ;929C77;
     %spritemapEntry(0, $1F7, $F0, 0, 0, 2, 4, $02)
@@ -3373,6 +3459,7 @@ SamusSpritemaps_9C77:
     %spritemapEntry(0, $1EE, $FD, 0, 1, 2, 4, $04)
     %spritemapEntry(0, $1F6, $FD, 0, 1, 2, 4, $05)
 
+%anchor($929C92)
 SamusSpritemaps_9C92:
     dw $0005                                                             ;929C92;
     %spritemapEntry(0, $1F7, $F0, 0, 0, 2, 4, $02)
@@ -3381,6 +3468,7 @@ SamusSpritemaps_9C92:
     %spritemapEntry(0, $1EE, $FD, 0, 1, 2, 4, $04)
     %spritemapEntry(0, $1F6, $FD, 0, 1, 2, 4, $05)
 
+%anchor($929CAD)
 SamusSpritemaps_9CAD:
     dw $0005                                                             ;929CAD;
     %spritemapEntry(0, $1FF, $F0, 0, 0, 2, 4, $02)
@@ -3389,6 +3477,7 @@ SamusSpritemaps_9CAD:
     %spritemapEntry(0, $1EE, $FD, 0, 1, 2, 4, $04)
     %spritemapEntry(0, $1F6, $FD, 0, 1, 2, 4, $05)
 
+%anchor($929CC8)
 SamusSpritemaps_9CC8:
     dw $0005                                                             ;929CC8;
     %spritemapEntry(0, $1FF, $F0, 0, 0, 2, 4, $02)
@@ -3397,6 +3486,7 @@ SamusSpritemaps_9CC8:
     %spritemapEntry(0, $1EE, $FD, 0, 1, 2, 4, $04)
     %spritemapEntry(0, $1F6, $FD, 0, 1, 2, 4, $05)
 
+%anchor($929CE3)
 SamusSpritemaps_9CE3:
     dw $0005                                                             ;929CE3;
     %spritemapEntry(0, $0C, $E9, 0, 1, 2, 4, $02)
@@ -3405,6 +3495,7 @@ SamusSpritemaps_9CE3:
     %spritemapEntry(0, $08, $ED, 0, 1, 2, 4, $05)
     %spritemapEntry(1, $43FB, $EF, 0, 0, 2, 4, $00)
 
+%anchor($929CFE)
 SamusSpritemaps_9CFE:
     dw $0006                                                             ;929CFE;
     %spritemapEntry(0, $1FB, $F9, 0, 0, 2, 4, $02)
@@ -3414,6 +3505,7 @@ SamusSpritemaps_9CFE:
     %spritemapEntry(0, $1F0, $ED, 0, 0, 2, 4, $06)
     %spritemapEntry(1, $43F5, $EF, 0, 0, 2, 4, $00)
 
+%anchor($929D1E)
 SamusSpritemaps_9D1E:
     dw $0007                                                             ;929D1E;
     %spritemapEntry(0, $1F5, $F1, 0, 0, 2, 4, $02)
@@ -3424,6 +3516,7 @@ SamusSpritemaps_9D1E:
     %spritemapEntry(0, $1FE, $FF, 0, 0, 2, 4, $06)
     %spritemapEntry(0, $1F6, $FF, 0, 0, 2, 4, $07)
 
+%anchor($929D43)
 SamusSpritemaps_9D43:
     dw $0007                                                             ;929D43;
     %spritemapEntry(0, $1FC, $F9, 0, 0, 2, 4, $02)
@@ -3434,6 +3527,7 @@ SamusSpritemaps_9D43:
     %spritemapEntry(1, $43FA, $EF, 0, 0, 2, 4, $00)
     %spritemapEntry(0, $09, $FA, 0, 0, 2, 4, $07)
 
+%anchor($929D68)
 SamusSpritemaps_9D68:
     dw $0007                                                             ;929D68;
     %spritemapEntry(0, $1F5, $F1, 0, 0, 2, 4, $02)
@@ -3444,6 +3538,7 @@ SamusSpritemaps_9D68:
     %spritemapEntry(0, $1FE, $FE, 0, 0, 2, 4, $06)
     %spritemapEntry(0, $1F6, $FE, 0, 0, 2, 4, $07)
 
+%anchor($929D8D)
 SamusSpritemaps_9D8D:
     dw $0007                                                             ;929D8D;
     %spritemapEntry(0, $1FC, $F9, 0, 0, 2, 4, $02)
@@ -3454,6 +3549,7 @@ SamusSpritemaps_9D8D:
     %spritemapEntry(1, $43FA, $EE, 0, 0, 2, 4, $00)
     %spritemapEntry(0, $09, $F9, 0, 0, 2, 4, $07)
 
+%anchor($929DB2)
 SamusSpritemaps_9DB2:
     dw $0005                                                             ;929DB2;
     %spritemapEntry(0, $0C, $E8, 0, 1, 2, 4, $02)
@@ -3462,6 +3558,7 @@ SamusSpritemaps_9DB2:
     %spritemapEntry(0, $08, $EC, 0, 1, 2, 4, $05)
     %spritemapEntry(1, $43FB, $EE, 0, 0, 2, 4, $00)
 
+%anchor($929DCD)
 SamusSpritemaps_9DCD:
     dw $0006                                                             ;929DCD;
     %spritemapEntry(0, $1FB, $F9, 0, 0, 2, 4, $02)
@@ -3471,6 +3568,7 @@ SamusSpritemaps_9DCD:
     %spritemapEntry(0, $1F0, $EC, 0, 0, 2, 4, $06)
     %spritemapEntry(1, $43F5, $EE, 0, 0, 2, 4, $00)
 
+%anchor($929DED)
 SamusSpritemaps_9DED:
     dw $0006                                                             ;929DED;
     %spritemapEntry(0, $1FD, $F9, 0, 0, 2, 4, $02)
@@ -3480,6 +3578,7 @@ SamusSpritemaps_9DED:
     %spritemapEntry(0, $07, $FB, 0, 0, 2, 4, $06)
     %spritemapEntry(1, $43FA, $EE, 0, 0, 2, 4, $00)
 
+%anchor($929E0D)
 SamusSpritemaps_9E0D:
     dw $0006                                                             ;929E0D;
     %spritemapEntry(0, $1F1, $FB, 0, 1, 2, 4, $02)
@@ -3489,6 +3588,7 @@ SamusSpritemaps_9E0D:
     %spritemapEntry(0, $1ED, $FF, 0, 1, 2, 4, $06)
     %spritemapEntry(1, $43F6, $EE, 0, 0, 2, 4, $00)
 
+%anchor($929E2D)
 SamusSpritemaps_9E2D:
     dw $0005                                                             ;929E2D;
     %spritemapEntry(0, $01, $FF, 0, 0, 2, 4, $02)
@@ -3497,6 +3597,7 @@ SamusSpritemaps_9E2D:
     %spritemapEntry(0, $0A, $FC, 0, 0, 2, 4, $04)
     %spritemapEntry(0, $02, $FC, 0, 0, 2, 4, $05)
 
+%anchor($929E48)
 SamusSpritemaps_9E48:
     dw $0005                                                             ;929E48;
     %spritemapEntry(0, $1FF, $FF, 0, 0, 2, 4, $02)
@@ -3505,6 +3606,7 @@ SamusSpritemaps_9E48:
     %spritemapEntry(0, $1EE, $FC, 0, 1, 2, 4, $04)
     %spritemapEntry(0, $1F6, $FC, 0, 1, 2, 4, $05)
 
+%anchor($929E63)
 SamusSpritemaps_9E63:
     dw $0006                                                             ;929E63;
     %spritemapEntry(0, $05, $F7, 0, 0, 2, 4, $02)
@@ -3514,6 +3616,7 @@ SamusSpritemaps_9E63:
     %spritemapEntry(0, $1F9, $EF, 0, 1, 2, 4, $06)
     %spritemapEntry(1, $43FA, $F0, 0, 1, 2, 4, $00)
 
+%anchor($929E83)
 SamusSpritemaps_9E83:
     dw $0005                                                             ;929E83;
     %spritemapEntry(0, $05, $EF, 0, 0, 2, 4, $02)
@@ -3522,6 +3625,7 @@ SamusSpritemaps_9E83:
     %spritemapEntry(0, $1F9, $EE, 0, 1, 2, 4, $05)
     %spritemapEntry(1, $43FA, $F0, 0, 1, 2, 4, $00)
 
+%anchor($929E9E)
 SamusSpritemaps_9E9E:
     dw $0005                                                             ;929E9E;
     %spritemapEntry(0, $1FD, $F6, 0, 0, 2, 4, $02)
@@ -3530,6 +3634,7 @@ SamusSpritemaps_9E9E:
     %spritemapEntry(0, $1FE, $EF, 0, 0, 2, 4, $05)
     %spritemapEntry(1, $43F6, $F0, 0, 0, 2, 4, $00)
 
+%anchor($929EB9)
 SamusSpritemaps_9EB9:
     dw $0005                                                             ;929EB9;
     %spritemapEntry(0, $1F9, $F0, 0, 0, 2, 4, $02)
@@ -3538,6 +3643,7 @@ SamusSpritemaps_9EB9:
     %spritemapEntry(0, $1FE, $EE, 0, 0, 2, 4, $05)
     %spritemapEntry(1, $43F6, $F0, 0, 0, 2, 4, $00)
 
+%anchor($929ED4)
 SamusSpritemaps_9ED4:
     dw $0006                                                             ;929ED4;
     %spritemapEntry(0, $1FE, $F4, 0, 0, 2, 4, $02)
@@ -3547,6 +3653,7 @@ SamusSpritemaps_9ED4:
     %spritemapEntry(0, $1FA, $FA, 0, 0, 2, 4, $06)
     %spritemapEntry(1, $43F6, $F2, 0, 0, 2, 4, $00)
 
+%anchor($929EF4)
 SamusSpritemaps_9EF4:
     dw $0006                                                             ;929EF4;
     %spritemapEntry(0, $1FD, $F5, 0, 0, 2, 4, $02)
@@ -3556,6 +3663,7 @@ SamusSpritemaps_9EF4:
     %spritemapEntry(0, $1FB, $FB, 0, 0, 2, 4, $06)
     %spritemapEntry(1, $43F6, $F3, 0, 0, 2, 4, $00)
 
+%anchor($929F14)
 SamusSpritemaps_9F14:
     dw $0006                                                             ;929F14;
     %spritemapEntry(0, $1FC, $F6, 0, 0, 2, 4, $02)
@@ -3565,6 +3673,7 @@ SamusSpritemaps_9F14:
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 4, $06)
     %spritemapEntry(1, $43F6, $F4, 0, 0, 2, 4, $00)
 
+%anchor($929F34)
 SamusSpritemaps_9F34:
     dw $0007                                                             ;929F34;
     %spritemapEntry(0, $00, $00, 0, 0, 2, 4, $02)
@@ -3575,6 +3684,7 @@ SamusSpritemaps_9F34:
     %spritemapEntry(0, $1FE, $FA, 0, 1, 2, 4, $07)
     %spritemapEntry(1, $43FA, $F2, 0, 1, 2, 4, $00)
 
+%anchor($929F59)
 SamusSpritemaps_9F59:
     dw $0007                                                             ;929F59;
     %spritemapEntry(0, $1FF, $01, 0, 0, 2, 4, $02)
@@ -3585,6 +3695,7 @@ SamusSpritemaps_9F59:
     %spritemapEntry(0, $1FD, $FB, 0, 1, 2, 4, $07)
     %spritemapEntry(1, $43FA, $F3, 0, 1, 2, 4, $00)
 
+%anchor($929F7E)
 SamusSpritemaps_9F7E:
     dw $0007                                                             ;929F7E;
     %spritemapEntry(0, $1FE, $02, 0, 0, 2, 4, $02)
@@ -3595,6 +3706,7 @@ SamusSpritemaps_9F7E:
     %spritemapEntry(0, $1FC, $FC, 0, 1, 2, 4, $07)
     %spritemapEntry(1, $43FA, $F4, 0, 1, 2, 4, $00)
 
+%anchor($929FA3)
 SamusSpritemaps_9FA3:
     dw $0006                                                             ;929FA3;
     %spritemapEntry(0, $1FE, $F4, 0, 0, 2, 4, $02)
@@ -3604,6 +3716,7 @@ SamusSpritemaps_9FA3:
     %spritemapEntry(0, $1FA, $FA, 0, 0, 2, 4, $06)
     %spritemapEntry(1, $43F6, $F2, 0, 0, 2, 4, $00)
 
+%anchor($929FC3)
 SamusSpritemaps_9FC3:
     dw $0006                                                             ;929FC3;
     %spritemapEntry(0, $1FD, $F5, 0, 0, 2, 4, $02)
@@ -3613,6 +3726,7 @@ SamusSpritemaps_9FC3:
     %spritemapEntry(0, $1FB, $FB, 0, 0, 2, 4, $06)
     %spritemapEntry(1, $43F6, $F3, 0, 0, 2, 4, $00)
 
+%anchor($929FE3)
 SamusSpritemaps_9FE3:
     dw $0006                                                             ;929FE3;
     %spritemapEntry(0, $1FC, $F6, 0, 0, 2, 4, $02)
@@ -3622,6 +3736,7 @@ SamusSpritemaps_9FE3:
     %spritemapEntry(0, $1FC, $FC, 0, 0, 2, 4, $06)
     %spritemapEntry(1, $43F6, $F4, 0, 0, 2, 4, $00)
 
+%anchor($92A003)
 SamusSpritemaps_A003:
     dw $0007                                                             ;92A003;
     %spritemapEntry(0, $00, $00, 0, 0, 2, 4, $02)
@@ -3632,6 +3747,7 @@ SamusSpritemaps_A003:
     %spritemapEntry(0, $1FE, $FA, 0, 1, 2, 4, $07)
     %spritemapEntry(1, $43FA, $F2, 0, 1, 2, 4, $00)
 
+%anchor($92A028)
 SamusSpritemaps_A028:
     dw $0007                                                             ;92A028;
     %spritemapEntry(0, $1FF, $01, 0, 0, 2, 4, $02)
@@ -3642,6 +3758,7 @@ SamusSpritemaps_A028:
     %spritemapEntry(0, $1FD, $FB, 0, 1, 2, 4, $07)
     %spritemapEntry(1, $43FA, $F3, 0, 1, 2, 4, $00)
 
+%anchor($92A04D)
 SamusSpritemaps_A04D:
     dw $0007                                                             ;92A04D;
     %spritemapEntry(0, $1FE, $02, 0, 0, 2, 4, $02)
@@ -3652,6 +3769,7 @@ SamusSpritemaps_A04D:
     %spritemapEntry(0, $1FC, $FC, 0, 1, 2, 4, $07)
     %spritemapEntry(1, $43FA, $F4, 0, 1, 2, 4, $00)
 
+%anchor($92A072)
 SamusSpritemaps_A072:
     dw $0004                                                             ;92A072;
     %spritemapEntry(1, $43F9, $F8, 0, 0, 2, 4, $00)
@@ -3659,6 +3777,7 @@ SamusSpritemaps_A072:
     %spritemapEntry(0, $0A, $FD, 0, 0, 2, 4, $04)
     %spritemapEntry(0, $02, $FD, 0, 0, 2, 4, $05)
 
+%anchor($92A088)
 SamusSpritemaps_A088:
     dw $0004                                                             ;92A088;
     %spritemapEntry(1, $43F9, $F8, 0, 0, 2, 4, $00)
@@ -3666,6 +3785,7 @@ SamusSpritemaps_A088:
     %spritemapEntry(0, $0A, $FD, 0, 0, 2, 4, $04)
     %spritemapEntry(0, $02, $FD, 0, 0, 2, 4, $05)
 
+%anchor($92A09E)
 SamusSpritemaps_A09E:
     dw $0004                                                             ;92A09E;
     %spritemapEntry(1, $43F9, $F8, 0, 0, 2, 4, $00)
@@ -3673,6 +3793,7 @@ SamusSpritemaps_A09E:
     %spritemapEntry(0, $0A, $FD, 0, 0, 2, 4, $04)
     %spritemapEntry(0, $02, $FD, 0, 0, 2, 4, $05)
 
+%anchor($92A0B4)
 SamusSpritemaps_A0B4:
     dw $0004                                                             ;92A0B4;
     %spritemapEntry(1, $43F7, $F8, 0, 0, 2, 4, $00)
@@ -3680,6 +3801,7 @@ SamusSpritemaps_A0B4:
     %spritemapEntry(0, $1EE, $FD, 0, 1, 2, 4, $04)
     %spritemapEntry(0, $1F6, $FD, 0, 1, 2, 4, $05)
 
+%anchor($92A0CA)
 SamusSpritemaps_A0CA:
     dw $0004                                                             ;92A0CA;
     %spritemapEntry(1, $43F7, $F8, 0, 0, 2, 4, $00)
@@ -3687,6 +3809,7 @@ SamusSpritemaps_A0CA:
     %spritemapEntry(0, $1EE, $FD, 0, 1, 2, 4, $04)
     %spritemapEntry(0, $1F6, $FD, 0, 1, 2, 4, $05)
 
+%anchor($92A0E0)
 SamusSpritemaps_A0E0:
     dw $0004                                                             ;92A0E0;
     %spritemapEntry(1, $43F7, $F8, 0, 0, 2, 4, $00)
@@ -3694,6 +3817,7 @@ SamusSpritemaps_A0E0:
     %spritemapEntry(0, $1EE, $FD, 0, 1, 2, 4, $04)
     %spritemapEntry(0, $1F6, $FD, 0, 1, 2, 4, $05)
 
+%anchor($92A0F6)
 SamusSpritemaps_A0F6:
     dw $0005                                                             ;92A0F6;
     %spritemapEntry(0, $01, $00, 0, 0, 2, 4, $02)
@@ -3702,6 +3826,7 @@ SamusSpritemaps_A0F6:
     %spritemapEntry(0, $0A, $FD, 0, 0, 2, 4, $04)
     %spritemapEntry(0, $02, $FD, 0, 0, 2, 4, $05)
 
+%anchor($92A111)
 SamusSpritemaps_A111:
     dw $0005                                                             ;92A111;
     %spritemapEntry(0, $1FF, $00, 0, 0, 2, 4, $02)
@@ -3710,14 +3835,17 @@ SamusSpritemaps_A111:
     %spritemapEntry(0, $1EE, $FD, 0, 1, 2, 4, $04)
     %spritemapEntry(0, $1F6, $FD, 0, 1, 2, 4, $05)
 
+%anchor($92A12C)
 SamusSpritemaps_A12C:
     dw $0001                                                             ;92A12C;
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 0, $00)
 
+%anchor($92A133)
 SamusSpritemaps_A133:
     dw $0001                                                             ;92A133;
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 4, $00)
 
+%anchor($92A13A)
 SamusSpritemaps_A13A:
     dw $0009                                                             ;92A13A;
     %spritemapEntry(0, $04, $10, 0, 0, 3, 4, $00)
@@ -3730,6 +3858,7 @@ SamusSpritemaps_A13A:
     %spritemapEntry(0, $1F4, $F0, 0, 0, 3, 4, $07)
     %spritemapEntry(0, $1F4, $E8, 0, 0, 3, 4, $10)
 
+%anchor($92A169)
 SamusSpritemaps_A169:
     dw $0007                                                             ;92A169;
     %spritemapEntry(0, $04, $00, 0, 0, 3, 4, $00)
@@ -3740,6 +3869,7 @@ SamusSpritemaps_A169:
     %spritemapEntry(0, $1F4, $F8, 0, 0, 3, 4, $05)
     %spritemapEntry(0, $1F4, $F0, 0, 0, 3, 4, $06)
 
+%anchor($92A18E)
 SamusSpritemaps_A18E:
     dw $000B                                                             ;92A18E;
     %spritemapEntry(0, $1FC, $10, 0, 0, 3, 4, $00)
@@ -3754,6 +3884,7 @@ SamusSpritemaps_A18E:
     %spritemapEntry(0, $04, $E8, 0, 0, 3, 4, $11)
     %spritemapEntry(0, $1FC, $E8, 0, 0, 3, 4, $12)
 
+%anchor($92A1C7)
 SamusSpritemaps_A1C7:
     dw $000F                                                             ;92A1C7;
     %spritemapEntry(0, $1FC, $10, 0, 0, 3, 4, $00)
@@ -3772,6 +3903,7 @@ SamusSpritemaps_A1C7:
     %spritemapEntry(0, $04, $E8, 0, 0, 3, 4, $15)
     %spritemapEntry(0, $1FC, $E8, 0, 0, 3, 4, $16)
 
+%anchor($92A214)
 SamusSpritemaps_A214:
     dw $0008                                                             ;92A214;
     %spritemapEntry(0, $1FC, $10, 0, 0, 3, 4, $00)
@@ -3783,6 +3915,7 @@ SamusSpritemaps_A214:
     %spritemapEntry(0, $1F4, $F0, 0, 0, 3, 4, $06)
     %spritemapEntry(0, $04, $E8, 0, 0, 3, 4, $07)
 
+%anchor($92A23E)
 SamusSpritemaps_A23E:
     dw $000A                                                             ;92A23E;
     %spritemapEntry(0, $1FC, $10, 0, 0, 3, 4, $00)
@@ -3796,6 +3929,7 @@ SamusSpritemaps_A23E:
     %spritemapEntry(0, $04, $E8, 0, 0, 3, 4, $10)
     %spritemapEntry(0, $1FC, $E8, 0, 0, 3, 4, $11)
 
+%anchor($92A272)
 SamusSpritemaps_A272:
     dw $000B                                                             ;92A272;
     %spritemapEntry(0, $1F4, $10, 0, 0, 3, 4, $00)
@@ -3810,6 +3944,7 @@ SamusSpritemaps_A272:
     %spritemapEntry(0, $1FC, $E8, 0, 0, 3, 4, $11)
     %spritemapEntry(0, $1F4, $E8, 0, 0, 3, 4, $12)
 
+%anchor($92A2AB)
 SamusSpritemaps_A2AB:
     dw $0007                                                             ;92A2AB;
     %spritemapEntry(0, $04, $08, 0, 0, 3, 4, $00)
@@ -3820,18 +3955,21 @@ SamusSpritemaps_A2AB:
     %spritemapEntry(0, $1FC, $E8, 0, 0, 3, 4, $05)
     %spritemapEntry(0, $1F4, $E8, 0, 0, 3, 4, $06)
 
+%anchor($92A2D0)
 SamusSpritemaps_A2D0:
     dw $0003                                                             ;92A2D0;
     %spritemapEntry(0, $11, $FA, 0, 0, 2, 4, $02)
     %spritemapEntry(0, $09, $FA, 0, 0, 2, 4, $03)
     %spritemapEntry(1, $43FA, $F0, 0, 0, 2, 4, $00)
 
+%anchor($92A2E1)
 SamusSpritemaps_A2E1:
     dw $0003                                                             ;92A2E1;
     %spritemapEntry(0, $11, $F9, 0, 0, 2, 4, $02)
     %spritemapEntry(0, $09, $F9, 0, 0, 2, 4, $03)
     %spritemapEntry(1, $43FA, $EF, 0, 0, 2, 4, $00)
 
+%anchor($92A2F2)
 SamusSpritemaps_A2F2:
     dw $0004                                                             ;92A2F2;
     %spritemapEntry(0, $11, $F9, 0, 0, 2, 4, $02)
@@ -3839,6 +3977,7 @@ SamusSpritemaps_A2F2:
     %spritemapEntry(0, $07, $F7, 0, 0, 2, 4, $04)
     %spritemapEntry(1, $43F7, $EF, 0, 0, 2, 4, $00)
 
+%anchor($92A308)
 SamusSpritemaps_A308:
     dw $0005                                                             ;92A308;
     %spritemapEntry(0, $11, $F8, 0, 0, 2, 4, $02)
@@ -3847,12 +3986,14 @@ SamusSpritemaps_A308:
     %spritemapEntry(0, $05, $F6, 0, 0, 2, 4, $05)
     %spritemapEntry(1, $43F5, $EE, 0, 0, 2, 4, $00)
 
+%anchor($92A323)
 SamusSpritemaps_A323:
     dw $0003                                                             ;92A323;
     %spritemapEntry(0, $11, $F9, 0, 0, 2, 4, $02)
     %spritemapEntry(0, $09, $F9, 0, 0, 2, 4, $03)
     %spritemapEntry(1, $43FA, $EF, 0, 0, 2, 4, $00)
 
+%anchor($92A334)
 SamusSpritemaps_A334:
     dw $0004                                                             ;92A334;
     %spritemapEntry(0, $11, $F9, 0, 0, 2, 4, $02)
@@ -3860,6 +4001,7 @@ SamusSpritemaps_A334:
     %spritemapEntry(0, $0A, $F7, 0, 0, 2, 4, $04)
     %spritemapEntry(1, $43FA, $EF, 0, 0, 2, 4, $00)
 
+%anchor($92A34A)
 SamusSpritemaps_A34A:
     dw $0005                                                             ;92A34A;
     %spritemapEntry(0, $1EF, $FA, 0, 1, 2, 4, $02)
@@ -3868,6 +4010,7 @@ SamusSpritemaps_A34A:
     %spritemapEntry(0, $1F6, $00, 0, 0, 2, 4, $05)
     %spritemapEntry(1, $43F6, $F0, 0, 0, 2, 4, $00)
 
+%anchor($92A365)
 SamusSpritemaps_A365:
     dw $0005                                                             ;92A365;
     %spritemapEntry(0, $1EF, $F9, 0, 1, 2, 4, $02)
@@ -3876,6 +4019,7 @@ SamusSpritemaps_A365:
     %spritemapEntry(0, $1F6, $FF, 0, 0, 2, 4, $05)
     %spritemapEntry(1, $43F6, $EF, 0, 0, 2, 4, $00)
 
+%anchor($92A380)
 SamusSpritemaps_A380:
     dw $0006                                                             ;92A380;
     %spritemapEntry(0, $1EE, $F7, 0, 0, 2, 4, $02)
@@ -3885,6 +4029,7 @@ SamusSpritemaps_A380:
     %spritemapEntry(0, $1EF, $F9, 0, 1, 2, 4, $05)
     %spritemapEntry(0, $1E7, $F9, 0, 1, 2, 4, $06)
 
+%anchor($92A3A0)
 SamusSpritemaps_A3A0:
     dw $0006                                                             ;92A3A0;
     %spritemapEntry(0, $1EE, $F6, 0, 0, 2, 4, $02)
@@ -3894,6 +4039,7 @@ SamusSpritemaps_A3A0:
     %spritemapEntry(0, $1F6, $FE, 0, 0, 2, 4, $06)
     %spritemapEntry(1, $43F6, $EE, 0, 0, 2, 4, $00)
 
+%anchor($92A3C0)
 SamusSpritemaps_A3C0:
     dw $0005                                                             ;92A3C0;
     %spritemapEntry(0, $1EF, $F9, 0, 1, 2, 4, $02)
@@ -3902,6 +4048,7 @@ SamusSpritemaps_A3C0:
     %spritemapEntry(0, $1F6, $FF, 0, 0, 2, 4, $05)
     %spritemapEntry(1, $43F6, $EF, 0, 0, 2, 4, $00)
 
+%anchor($92A3DB)
 SamusSpritemaps_A3DB:
     dw $0007                                                             ;92A3DB;
     %spritemapEntry(0, $1EF, $F9, 0, 1, 2, 4, $02)
@@ -3912,6 +4059,7 @@ SamusSpritemaps_A3DB:
     %spritemapEntry(0, $1F6, $EF, 0, 0, 2, 4, $07)
     %spritemapEntry(1, $43FE, $EF, 0, 0, 2, 4, $00)
 
+%anchor($92A400)
 SamusSpritemaps_A400:
     dw $0005                                                             ;92A400;
     %spritemapEntry(0, $11, $F8, 0, 0, 2, 4, $02)
@@ -3920,6 +4068,7 @@ SamusSpritemaps_A400:
     %spritemapEntry(0, $0A, $EE, 0, 0, 2, 4, $05)
     %spritemapEntry(1, $43FA, $EE, 0, 0, 2, 4, $00)
 
+%anchor($92A41B)
 SamusSpritemaps_A41B:
     dw $0007                                                             ;92A41B;
     %spritemapEntry(0, $1EF, $F8, 0, 1, 2, 4, $02)
@@ -3930,12 +4079,14 @@ SamusSpritemaps_A41B:
     %spritemapEntry(0, $1F6, $EE, 0, 0, 2, 4, $07)
     %spritemapEntry(1, $43FE, $EE, 0, 0, 2, 4, $00)
 
+%anchor($92A440)
 SamusSpritemaps_A440:
     dw $0003                                                             ;92A440;
     %spritemapEntry(0, $11, $FA, 0, 0, 2, 4, $02)
     %spritemapEntry(0, $09, $FA, 0, 0, 2, 4, $03)
     %spritemapEntry(1, $43FA, $F0, 0, 0, 2, 4, $00)
 
+%anchor($92A451)
 SamusSpritemaps_A451:
     dw $0005                                                             ;92A451;
     %spritemapEntry(0, $1EF, $FA, 0, 1, 2, 4, $02)
@@ -3944,6 +4095,7 @@ SamusSpritemaps_A451:
     %spritemapEntry(0, $1F6, $00, 0, 0, 2, 4, $05)
     %spritemapEntry(1, $43F6, $F0, 0, 0, 2, 4, $00)
 
+%anchor($92A46C)
 SamusSpritemaps_A46C:
     dw $0004                                                             ;92A46C;
     %spritemapEntry(0, $1C, $FD, 0, 0, 2, 4, $04)
@@ -3951,6 +4103,7 @@ SamusSpritemaps_A46C:
     %spritemapEntry(1, $4205, $F6, 0, 0, 2, 4, $00)
     %spritemapEntry(1, $4200, $F8, 0, 0, 2, 4, $02)
 
+%anchor($92A482)
 SamusSpritemaps_A482:
     dw $0004                                                             ;92A482;
     %spritemapEntry(0, $1B, $F7, 0, 0, 2, 4, $04)
@@ -3958,36 +4111,42 @@ SamusSpritemaps_A482:
     %spritemapEntry(1, $4204, $F4, 0, 0, 2, 4, $00)
     %spritemapEntry(1, $43FF, $F6, 0, 0, 2, 4, $02)
 
+%anchor($92A498)
 SamusSpritemaps_A498:
     dw $0003                                                             ;92A498;
     %spritemapEntry(1, $4210, $F1, 0, 0, 2, 4, $00)
     %spritemapEntry(1, $4204, $F3, 0, 0, 2, 4, $02)
     %spritemapEntry(1, $43FF, $F5, 0, 0, 2, 4, $04)
 
+%anchor($92A4A9)
 SamusSpritemaps_A4A9:
     dw $0003                                                             ;92A4A9;
     %spritemapEntry(1, $4202, $EF, 0, 0, 2, 4, $00)
     %spritemapEntry(1, $420E, $ED, 0, 0, 2, 4, $02)
     %spritemapEntry(1, $43FF, $F2, 0, 0, 2, 4, $04)
 
+%anchor($92A4BA)
 SamusSpritemaps_A4BA:
     dw $0003                                                             ;92A4BA;
     %spritemapEntry(1, $420C, $E5, 0, 0, 2, 4, $00)
     %spritemapEntry(1, $4202, $EF, 0, 0, 2, 4, $02)
     %spritemapEntry(1, $43FF, $F2, 0, 0, 2, 4, $04)
 
+%anchor($92A4CB)
 SamusSpritemaps_A4CB:
     dw $0003                                                             ;92A4CB;
     %spritemapEntry(1, $4209, $E5, 0, 0, 2, 4, $00)
     %spritemapEntry(1, $4201, $EF, 0, 0, 2, 4, $02)
     %spritemapEntry(1, $43FF, $F2, 0, 0, 2, 4, $04)
 
+%anchor($92A4DC)
 SamusSpritemaps_A4DC:
     dw $0003                                                             ;92A4DC;
     %spritemapEntry(1, $4207, $E3, 0, 0, 2, 4, $00)
     %spritemapEntry(1, $4201, $ED, 0, 0, 2, 4, $02)
     %spritemapEntry(1, $43FE, $F1, 0, 0, 2, 4, $04)
 
+%anchor($92A4ED)
 SamusSpritemaps_A4ED:
     dw $0004                                                             ;92A4ED;
     %spritemapEntry(0, $04, $E6, 0, 0, 2, 4, $04)
@@ -3995,6 +4154,7 @@ SamusSpritemaps_A4ED:
     %spritemapEntry(1, $43FD, $EC, 0, 0, 2, 4, $00)
     %spritemapEntry(1, $43FB, $F0, 0, 0, 2, 4, $02)
 
+%anchor($92A503)
 SamusSpritemaps_A503:
     dw $0004                                                             ;92A503;
     %spritemapEntry(0, $1FD, $E5, 0, 0, 2, 4, $04)
@@ -4002,6 +4162,7 @@ SamusSpritemaps_A503:
     %spritemapEntry(1, $43F6, $EC, 0, 0, 2, 4, $00)
     %spritemapEntry(1, $43F8, $F0, 0, 0, 2, 4, $02)
 
+%anchor($92A519)
 SamusSpritemaps_A519:
     dw $0004                                                             ;92A519;
     %spritemapEntry(0, $1F8, $E6, 0, 1, 2, 4, $04)
@@ -4009,36 +4170,42 @@ SamusSpritemaps_A519:
     %spritemapEntry(1, $43F3, $EC, 0, 0, 2, 4, $00)
     %spritemapEntry(1, $43F7, $F0, 0, 0, 2, 4, $02)
 
+%anchor($92A52F)
 SamusSpritemaps_A52F:
     dw $0003                                                             ;92A52F;
     %spritemapEntry(1, $43EE, $E2, 0, 1, 2, 4, $00)
     %spritemapEntry(1, $43F3, $ED, 0, 0, 2, 4, $02)
     %spritemapEntry(1, $43F5, $F1, 0, 0, 2, 4, $04)
 
+%anchor($92A540)
 SamusSpritemaps_A540:
     dw $0003                                                             ;92A540;
     %spritemapEntry(1, $43E8, $E4, 0, 1, 2, 4, $00)
     %spritemapEntry(1, $43F0, $EF, 0, 0, 2, 4, $02)
     %spritemapEntry(1, $43F2, $F2, 0, 0, 2, 4, $04)
 
+%anchor($92A551)
 SamusSpritemaps_A551:
     dw $0003                                                             ;92A551;
     %spritemapEntry(1, $43E3, $E5, 0, 1, 2, 4, $00)
     %spritemapEntry(1, $43EE, $EF, 0, 0, 2, 4, $02)
     %spritemapEntry(1, $43F2, $F2, 0, 0, 2, 4, $04)
 
+%anchor($92A562)
 SamusSpritemaps_A562:
     dw $0003                                                             ;92A562;
     %spritemapEntry(1, $43E0, $E9, 0, 1, 2, 4, $00)
     %spritemapEntry(1, $43EB, $F2, 0, 0, 2, 4, $02)
     %spritemapEntry(1, $43F1, $F3, 0, 0, 2, 4, $04)
 
+%anchor($92A573)
 SamusSpritemaps_A573:
     dw $0003                                                             ;92A573;
     %spritemapEntry(1, $43E0, $EF, 0, 1, 2, 4, $00)
     %spritemapEntry(1, $43EB, $F4, 0, 0, 2, 4, $02)
     %spritemapEntry(1, $43F1, $F3, 0, 0, 2, 4, $04)
 
+%anchor($92A584)
 SamusSpritemaps_A584:
     dw $0004                                                             ;92A584;
     %spritemapEntry(0, $1DD, $F7, 0, 1, 2, 4, $04)
@@ -4046,6 +4213,7 @@ SamusSpritemaps_A584:
     %spritemapEntry(1, $43EB, $F9, 0, 0, 2, 4, $00)
     %spritemapEntry(1, $43F0, $F7, 0, 0, 2, 4, $02)
 
+%anchor($92A59A)
 SamusSpritemaps_A59A:
     dw $0004                                                             ;92A59A;
     %spritemapEntry(0, $1DC, $FC, 0, 1, 2, 4, $04)
@@ -4053,6 +4221,7 @@ SamusSpritemaps_A59A:
     %spritemapEntry(1, $43EB, $F9, 0, 0, 2, 4, $00)
     %spritemapEntry(1, $43F0, $F8, 0, 0, 2, 4, $02)
 
+%anchor($92A5B0)
 SamusSpritemaps_A5B0:
     dw $0008                                                             ;92A5B0;
     %spritemapEntry(0, $01, $FB, 0, 0, 2, 4, $04)
@@ -4064,6 +4233,7 @@ SamusSpritemaps_A5B0:
     %spritemapEntry(0, $1EB, $02, 0, 0, 2, 4, $14)
     %spritemapEntry(0, $1EB, $FA, 0, 0, 2, 4, $15)
 
+%anchor($92A5DA)
 SamusSpritemaps_A5DA:
     dw $0008                                                             ;92A5DA;
     %spritemapEntry(0, $1DC, $F8, 0, 1, 2, 4, $04)
@@ -4075,6 +4245,7 @@ SamusSpritemaps_A5DA:
     %spritemapEntry(0, $1EB, $00, 0, 0, 2, 4, $14)
     %spritemapEntry(0, $1EB, $F8, 0, 0, 2, 4, $15)
 
+%anchor($92A604)
 SamusSpritemaps_A604:
     dw $000A                                                             ;92A604;
     %spritemapEntry(0, $05, $FA, 0, 0, 2, 4, $04)
@@ -4088,6 +4259,7 @@ SamusSpritemaps_A604:
     %spritemapEntry(0, $1EB, $FD, 0, 0, 2, 4, $16)
     %spritemapEntry(0, $1EB, $F5, 0, 0, 2, 4, $17)
 
+%anchor($92A638)
 SamusSpritemaps_A638:
     dw $000A                                                             ;92A638;
     %spritemapEntry(0, $05, $F9, 0, 0, 2, 4, $04)
@@ -4101,6 +4273,7 @@ SamusSpritemaps_A638:
     %spritemapEntry(0, $1EB, $FB, 0, 0, 2, 4, $16)
     %spritemapEntry(0, $1EB, $F3, 0, 0, 2, 4, $17)
 
+%anchor($92A66C)
 SamusSpritemaps_A66C:
     dw $0009                                                             ;92A66C;
     %spritemapEntry(0, $1FD, $FE, 0, 0, 2, 4, $04)
@@ -4113,6 +4286,7 @@ SamusSpritemaps_A66C:
     %spritemapEntry(0, $1F4, $EE, 0, 0, 2, 4, $15)
     %spritemapEntry(0, $1EC, $EE, 0, 0, 2, 4, $16)
 
+%anchor($92A69B)
 SamusSpritemaps_A69B:
     dw $0009                                                             ;92A69B;
     %spritemapEntry(0, $1FE, $FE, 0, 0, 2, 4, $04)
@@ -4125,6 +4299,7 @@ SamusSpritemaps_A69B:
     %spritemapEntry(0, $1E5, $E3, 0, 1, 2, 4, $15)
     %spritemapEntry(0, $1ED, $E3, 0, 1, 2, 4, $16)
 
+%anchor($92A6CA)
 SamusSpritemaps_A6CA:
     dw $0009                                                             ;92A6CA;
     %spritemapEntry(0, $1E9, $E9, 0, 1, 2, 4, $04)
@@ -4137,6 +4312,7 @@ SamusSpritemaps_A6CA:
     %spritemapEntry(0, $1F6, $EC, 0, 0, 2, 4, $15)
     %spritemapEntry(0, $1EE, $EC, 0, 0, 2, 4, $16)
 
+%anchor($92A6F9)
 SamusSpritemaps_A6F9:
     dw $0008                                                             ;92A6F9;
     %spritemapEntry(0, $00, $02, 0, 0, 2, 4, $04)
@@ -4148,6 +4324,7 @@ SamusSpritemaps_A6F9:
     %spritemapEntry(0, $1F5, $E5, 0, 1, 2, 4, $14)
     %spritemapEntry(0, $1F5, $DD, 0, 1, 2, 4, $15)
 
+%anchor($92A723)
 SamusSpritemaps_A723:
     dw $0008                                                             ;92A723;
     %spritemapEntry(0, $1FF, $03, 0, 0, 2, 4, $04)
@@ -4159,6 +4336,7 @@ SamusSpritemaps_A723:
     %spritemapEntry(0, $1FD, $EB, 0, 0, 2, 4, $14)
     %spritemapEntry(0, $1F5, $EB, 0, 0, 2, 4, $15)
 
+%anchor($92A74D)
 SamusSpritemaps_A74D:
     dw $0008                                                             ;92A74D;
     %spritemapEntry(0, $1FF, $01, 0, 0, 2, 4, $04)
@@ -4170,6 +4348,7 @@ SamusSpritemaps_A74D:
     %spritemapEntry(0, $03, $EB, 0, 0, 2, 4, $14)
     %spritemapEntry(0, $1FB, $EB, 0, 0, 2, 4, $15)
 
+%anchor($92A777)
 SamusSpritemaps_A777:
     dw $0009                                                             ;92A777;
     %spritemapEntry(0, $0B, $E8, 0, 0, 2, 4, $04)
@@ -4182,6 +4361,7 @@ SamusSpritemaps_A777:
     %spritemapEntry(0, $05, $EB, 0, 0, 2, 4, $15)
     %spritemapEntry(0, $1FD, $EB, 0, 0, 2, 4, $16)
 
+%anchor($92A7A6)
 SamusSpritemaps_A7A6:
     dw $000A                                                             ;92A7A6;
     %spritemapEntry(0, $10, $EA, 0, 0, 2, 4, $04)
@@ -4195,6 +4375,7 @@ SamusSpritemaps_A7A6:
     %spritemapEntry(0, $08, $ED, 0, 0, 2, 4, $16)
     %spritemapEntry(0, $00, $ED, 0, 0, 2, 4, $17)
 
+%anchor($92A7DA)
 SamusSpritemaps_A7DA:
     dw $000A                                                             ;92A7DA;
     %spritemapEntry(0, $1F1, $FD, 0, 0, 2, 4, $04)
@@ -4208,6 +4389,7 @@ SamusSpritemaps_A7DA:
     %spritemapEntry(0, $09, $EE, 0, 0, 2, 4, $16)
     %spritemapEntry(0, $01, $EE, 0, 0, 2, 4, $17)
 
+%anchor($92A80E)
 SamusSpritemaps_A80E:
     dw $000A                                                             ;92A80E;
     %spritemapEntry(0, $1F4, $FC, 0, 0, 2, 4, $04)
@@ -4221,6 +4403,7 @@ SamusSpritemaps_A80E:
     %spritemapEntry(0, $0A, $F6, 0, 0, 2, 4, $16)
     %spritemapEntry(0, $0A, $EE, 0, 0, 2, 4, $17)
 
+%anchor($92A842)
 SamusSpritemaps_A842:
     dw $000A                                                             ;92A842;
     %spritemapEntry(0, $1F4, $FC, 0, 0, 2, 4, $04)
@@ -4234,6 +4417,7 @@ SamusSpritemaps_A842:
     %spritemapEntry(0, $0B, $F8, 0, 0, 2, 4, $16)
     %spritemapEntry(0, $0B, $F0, 0, 0, 2, 4, $17)
 
+%anchor($92A876)
 SamusSpritemaps_A876:
     dw $0009                                                             ;92A876;
     %spritemapEntry(1, $43FE, $F3, 0, 0, 2, 4, $00)
@@ -4246,6 +4430,7 @@ SamusSpritemaps_A876:
     %spritemapEntry(0, $1C, $F7, 0, 0, 2, 4, $15)
     %spritemapEntry(0, $14, $F7, 0, 0, 2, 4, $16)
 
+%anchor($92A8A5)
 SamusSpritemaps_A8A5:
     dw $0009                                                             ;92A8A5;
     %spritemapEntry(1, $43FE, $F4, 0, 0, 2, 4, $00)
@@ -4258,6 +4443,7 @@ SamusSpritemaps_A8A5:
     %spritemapEntry(0, $0E, $FD, 0, 0, 2, 4, $15)
     %spritemapEntry(0, $0E, $F5, 0, 0, 2, 4, $16)
 
+%anchor($92A8D4)
 SamusSpritemaps_A8D4:
     dw $0004                                                             ;92A8D4;
     %spritemapEntry(0, $1DC, $FB, 1, 1, 2, 4, $04)
@@ -4265,6 +4451,7 @@ SamusSpritemaps_A8D4:
     %spritemapEntry(1, $43EB, $FA, 1, 1, 2, 4, $00)
     %spritemapEntry(1, $43F0, $F8, 1, 1, 2, 4, $02)
 
+%anchor($92A8EA)
 SamusSpritemaps_A8EA:
     dw $0004                                                             ;92A8EA;
     %spritemapEntry(0, $1DD, $01, 1, 1, 2, 4, $04)
@@ -4272,36 +4459,42 @@ SamusSpritemaps_A8EA:
     %spritemapEntry(1, $43EC, $FC, 1, 1, 2, 4, $00)
     %spritemapEntry(1, $43F1, $FA, 1, 1, 2, 4, $02)
 
+%anchor($92A900)
 SamusSpritemaps_A900:
     dw $0003                                                             ;92A900;
     %spritemapEntry(1, $43E0, $FF, 1, 1, 2, 4, $00)
     %spritemapEntry(1, $43EC, $FD, 1, 1, 2, 4, $02)
     %spritemapEntry(1, $43F1, $FB, 1, 1, 2, 4, $04)
 
+%anchor($92A911)
 SamusSpritemaps_A911:
     dw $0003                                                             ;92A911;
     %spritemapEntry(1, $43EE, $01, 1, 1, 2, 4, $00)
     %spritemapEntry(1, $43E2, $03, 1, 1, 2, 4, $02)
     %spritemapEntry(1, $43F1, $FE, 1, 1, 2, 4, $04)
 
+%anchor($92A922)
 SamusSpritemaps_A922:
     dw $0003                                                             ;92A922;
     %spritemapEntry(1, $43E4, $0B, 1, 1, 2, 4, $00)
     %spritemapEntry(1, $43EE, $01, 1, 1, 2, 4, $02)
     %spritemapEntry(1, $43F1, $FE, 1, 1, 2, 4, $04)
 
+%anchor($92A933)
 SamusSpritemaps_A933:
     dw $0003                                                             ;92A933;
     %spritemapEntry(1, $43E7, $0B, 1, 1, 2, 4, $00)
     %spritemapEntry(1, $43EF, $01, 1, 1, 2, 4, $02)
     %spritemapEntry(1, $43F1, $FE, 1, 1, 2, 4, $04)
 
+%anchor($92A944)
 SamusSpritemaps_A944:
     dw $0003                                                             ;92A944;
     %spritemapEntry(1, $43E9, $0D, 1, 1, 2, 4, $00)
     %spritemapEntry(1, $43EF, $03, 1, 1, 2, 4, $02)
     %spritemapEntry(1, $43F2, $FF, 1, 1, 2, 4, $04)
 
+%anchor($92A955)
 SamusSpritemaps_A955:
     dw $0004                                                             ;92A955;
     %spritemapEntry(0, $1F4, $12, 1, 1, 2, 4, $04)
@@ -4309,6 +4502,7 @@ SamusSpritemaps_A955:
     %spritemapEntry(1, $43F3, $04, 1, 1, 2, 4, $00)
     %spritemapEntry(1, $43F5, $00, 1, 1, 2, 4, $02)
 
+%anchor($92A96B)
 SamusSpritemaps_A96B:
     dw $0004                                                             ;92A96B;
     %spritemapEntry(0, $1FB, $13, 1, 1, 2, 4, $04)
@@ -4316,6 +4510,7 @@ SamusSpritemaps_A96B:
     %spritemapEntry(1, $43FA, $04, 1, 1, 2, 4, $00)
     %spritemapEntry(1, $43F8, $00, 1, 1, 2, 4, $02)
 
+%anchor($92A981)
 SamusSpritemaps_A981:
     dw $0004                                                             ;92A981;
     %spritemapEntry(0, $00, $12, 1, 0, 2, 4, $04)
@@ -4323,36 +4518,42 @@ SamusSpritemaps_A981:
     %spritemapEntry(1, $43FD, $04, 1, 1, 2, 4, $00)
     %spritemapEntry(1, $43F9, $00, 1, 1, 2, 4, $02)
 
+%anchor($92A997)
 SamusSpritemaps_A997:
     dw $0003                                                             ;92A997;
     %spritemapEntry(1, $4202, $0E, 1, 0, 2, 4, $00)
     %spritemapEntry(1, $43FD, $03, 1, 1, 2, 4, $02)
     %spritemapEntry(1, $43FB, $FF, 1, 1, 2, 4, $04)
 
+%anchor($92A9A8)
 SamusSpritemaps_A9A8:
     dw $0003                                                             ;92A9A8;
     %spritemapEntry(1, $4208, $0C, 1, 0, 2, 4, $00)
     %spritemapEntry(1, $4200, $01, 1, 1, 2, 4, $02)
     %spritemapEntry(1, $43FE, $FE, 1, 1, 2, 4, $04)
 
+%anchor($92A9B9)
 SamusSpritemaps_A9B9:
     dw $0003                                                             ;92A9B9;
     %spritemapEntry(1, $420D, $0B, 1, 0, 2, 4, $00)
     %spritemapEntry(1, $4202, $01, 1, 1, 2, 4, $02)
     %spritemapEntry(1, $43FE, $FE, 1, 1, 2, 4, $04)
 
+%anchor($92A9CA)
 SamusSpritemaps_A9CA:
     dw $0003                                                             ;92A9CA;
     %spritemapEntry(1, $4210, $07, 1, 0, 2, 4, $00)
     %spritemapEntry(1, $4205, $FE, 1, 1, 2, 4, $02)
     %spritemapEntry(1, $43FF, $FD, 1, 1, 2, 4, $04)
 
+%anchor($92A9DB)
 SamusSpritemaps_A9DB:
     dw $0003                                                             ;92A9DB;
     %spritemapEntry(1, $4210, $01, 1, 0, 2, 4, $00)
     %spritemapEntry(1, $4205, $FC, 1, 1, 2, 4, $02)
     %spritemapEntry(1, $43FF, $FD, 1, 1, 2, 4, $04)
 
+%anchor($92A9EC)
 SamusSpritemaps_A9EC:
     dw $0004                                                             ;92A9EC;
     %spritemapEntry(0, $1B, $01, 1, 0, 2, 4, $04)
@@ -4360,6 +4561,7 @@ SamusSpritemaps_A9EC:
     %spritemapEntry(1, $4205, $F7, 1, 1, 2, 4, $00)
     %spritemapEntry(1, $4200, $F9, 1, 1, 2, 4, $02)
 
+%anchor($92AA02)
 SamusSpritemaps_AA02:
     dw $0004                                                             ;92AA02;
     %spritemapEntry(0, $1C, $FC, 1, 0, 2, 4, $04)
@@ -4367,6 +4569,7 @@ SamusSpritemaps_AA02:
     %spritemapEntry(1, $4205, $F7, 1, 1, 2, 4, $00)
     %spritemapEntry(1, $4200, $F8, 1, 1, 2, 4, $02)
 
+%anchor($92AA18)
 SamusSpritemaps_AA18:
     dw $0008                                                             ;92AA18;
     %spritemapEntry(0, $1F7, $FD, 1, 1, 2, 4, $04)
@@ -4378,6 +4581,7 @@ SamusSpritemaps_AA18:
     %spritemapEntry(0, $0D, $F6, 1, 1, 2, 4, $14)
     %spritemapEntry(0, $0D, $FE, 1, 1, 2, 4, $15)
 
+%anchor($92AA42)
 SamusSpritemaps_AA42:
     dw $0008                                                             ;92AA42;
     %spritemapEntry(0, $1C, $00, 1, 0, 2, 4, $04)
@@ -4389,6 +4593,7 @@ SamusSpritemaps_AA42:
     %spritemapEntry(0, $0D, $F8, 1, 1, 2, 4, $14)
     %spritemapEntry(0, $0D, $00, 1, 1, 2, 4, $15)
 
+%anchor($92AA6C)
 SamusSpritemaps_AA6C:
     dw $000A                                                             ;92AA6C;
     %spritemapEntry(0, $1F3, $FE, 1, 1, 2, 4, $04)
@@ -4402,6 +4607,7 @@ SamusSpritemaps_AA6C:
     %spritemapEntry(0, $0D, $FB, 1, 1, 2, 4, $16)
     %spritemapEntry(0, $0D, $03, 1, 1, 2, 4, $17)
 
+%anchor($92AAA0)
 SamusSpritemaps_AAA0:
     dw $000A                                                             ;92AAA0;
     %spritemapEntry(0, $1F3, $FF, 1, 1, 2, 4, $04)
@@ -4415,6 +4621,7 @@ SamusSpritemaps_AAA0:
     %spritemapEntry(0, $0D, $FD, 1, 1, 2, 4, $16)
     %spritemapEntry(0, $0D, $05, 1, 1, 2, 4, $17)
 
+%anchor($92AAD4)
 SamusSpritemaps_AAD4:
     dw $0009                                                             ;92AAD4;
     %spritemapEntry(0, $1FB, $FA, 1, 1, 2, 4, $04)
@@ -4427,6 +4634,7 @@ SamusSpritemaps_AAD4:
     %spritemapEntry(0, $04, $0A, 1, 1, 2, 4, $15)
     %spritemapEntry(0, $0C, $0A, 1, 1, 2, 4, $16)
 
+%anchor($92AB03)
 SamusSpritemaps_AB03:
     dw $0009                                                             ;92AB03;
     %spritemapEntry(0, $1FA, $FA, 1, 1, 2, 4, $04)
@@ -4439,6 +4647,7 @@ SamusSpritemaps_AB03:
     %spritemapEntry(0, $13, $15, 1, 0, 2, 4, $15)
     %spritemapEntry(0, $0B, $15, 1, 0, 2, 4, $16)
 
+%anchor($92AB32)
 SamusSpritemaps_AB32:
     dw $0009                                                             ;92AB32;
     %spritemapEntry(0, $0F, $0F, 1, 0, 2, 4, $04)
@@ -4451,6 +4660,7 @@ SamusSpritemaps_AB32:
     %spritemapEntry(0, $02, $0C, 1, 1, 2, 4, $15)
     %spritemapEntry(0, $0A, $0C, 1, 1, 2, 4, $16)
 
+%anchor($92AB61)
 SamusSpritemaps_AB61:
     dw $0008                                                             ;92AB61;
     %spritemapEntry(0, $1F8, $F6, 1, 1, 2, 4, $04)
@@ -4462,6 +4672,7 @@ SamusSpritemaps_AB61:
     %spritemapEntry(0, $03, $13, 1, 0, 2, 4, $14)
     %spritemapEntry(0, $03, $1B, 1, 0, 2, 4, $15)
 
+%anchor($92AB8B)
 SamusSpritemaps_AB8B:
     dw $0008                                                             ;92AB8B;
     %spritemapEntry(0, $1F9, $F5, 1, 1, 2, 4, $04)
@@ -4473,6 +4684,7 @@ SamusSpritemaps_AB8B:
     %spritemapEntry(0, $1FB, $0D, 1, 1, 2, 4, $14)
     %spritemapEntry(0, $03, $0D, 1, 1, 2, 4, $15)
 
+%anchor($92ABB5)
 SamusSpritemaps_ABB5:
     dw $0008                                                             ;92ABB5;
     %spritemapEntry(0, $1F9, $F7, 1, 1, 2, 4, $04)
@@ -4484,6 +4696,7 @@ SamusSpritemaps_ABB5:
     %spritemapEntry(0, $1F5, $0D, 1, 1, 2, 4, $14)
     %spritemapEntry(0, $1FD, $0D, 1, 1, 2, 4, $15)
 
+%anchor($92ABDF)
 SamusSpritemaps_ABDF:
     dw $0009                                                             ;92ABDF;
     %spritemapEntry(0, $1ED, $10, 1, 1, 2, 4, $04)
@@ -4496,6 +4709,7 @@ SamusSpritemaps_ABDF:
     %spritemapEntry(0, $1F3, $0D, 1, 1, 2, 4, $15)
     %spritemapEntry(0, $1FB, $0D, 1, 1, 2, 4, $16)
 
+%anchor($92AC0E)
 SamusSpritemaps_AC0E:
     dw $000A                                                             ;92AC0E;
     %spritemapEntry(0, $1E8, $0E, 1, 1, 2, 4, $04)
@@ -4509,6 +4723,7 @@ SamusSpritemaps_AC0E:
     %spritemapEntry(0, $1F0, $0B, 1, 1, 2, 4, $16)
     %spritemapEntry(0, $1F8, $0B, 1, 1, 2, 4, $17)
 
+%anchor($92AC42)
 SamusSpritemaps_AC42:
     dw $000A                                                             ;92AC42;
     %spritemapEntry(0, $07, $FB, 1, 1, 2, 4, $04)
@@ -4522,6 +4737,7 @@ SamusSpritemaps_AC42:
     %spritemapEntry(0, $1EF, $0A, 1, 1, 2, 4, $16)
     %spritemapEntry(0, $1F7, $0A, 1, 1, 2, 4, $17)
 
+%anchor($92AC76)
 SamusSpritemaps_AC76:
     dw $000A                                                             ;92AC76;
     %spritemapEntry(0, $04, $FC, 1, 1, 2, 4, $04)
@@ -4535,6 +4751,7 @@ SamusSpritemaps_AC76:
     %spritemapEntry(0, $1EE, $02, 1, 1, 2, 4, $16)
     %spritemapEntry(0, $1EE, $0A, 1, 1, 2, 4, $17)
 
+%anchor($92ACAA)
 SamusSpritemaps_ACAA:
     dw $000A                                                             ;92ACAA;
     %spritemapEntry(0, $04, $FC, 1, 1, 2, 4, $04)
@@ -4548,6 +4765,7 @@ SamusSpritemaps_ACAA:
     %spritemapEntry(0, $1ED, $00, 1, 1, 2, 4, $16)
     %spritemapEntry(0, $1ED, $08, 1, 1, 2, 4, $17)
 
+%anchor($92ACDE)
 SamusSpritemaps_ACDE:
     dw $0009                                                             ;92ACDE;
     %spritemapEntry(1, $43F2, $FD, 1, 1, 2, 4, $00)
@@ -4560,6 +4778,7 @@ SamusSpritemaps_ACDE:
     %spritemapEntry(0, $1DC, $01, 1, 1, 2, 4, $15)
     %spritemapEntry(0, $1E4, $01, 1, 1, 2, 4, $16)
 
+%anchor($92AD0D)
 SamusSpritemaps_AD0D:
     dw $0009                                                             ;92AD0D;
     %spritemapEntry(1, $43F2, $FC, 1, 1, 2, 4, $00)
@@ -4572,11 +4791,13 @@ SamusSpritemaps_AD0D:
     %spritemapEntry(0, $1EA, $FB, 1, 1, 2, 4, $15)
     %spritemapEntry(0, $1EA, $03, 1, 1, 2, 4, $16)
 
+%anchor($92AD3C)
 SamusSpritemaps_AD3C:
     dw $0002                                                             ;92AD3C;
     %spritemapEntry(1, $43F8, $10, 0, 0, 2, 4, $08)
     %spritemapEntry(1, $43F8, $00, 0, 0, 2, 4, $0A)
 
+%anchor($92AD48)
 SamusSpritemaps_AD48:
     dw $0005                                                             ;92AD48;
     %spritemapEntry(1, $43F3, $07, 0, 0, 2, 4, $08)
@@ -4585,6 +4806,7 @@ SamusSpritemaps_AD48:
     %spritemapEntry(0, $1F3, $17, 0, 0, 2, 4, $0D)
     %spritemapEntry(0, $03, $0F, 0, 0, 2, 4, $0E)
 
+%anchor($92AD63)
 SamusSpritemaps_AD63:
     dw $0004                                                             ;92AD63;
     %spritemapEntry(1, $43F0, $FF, 0, 0, 2, 4, $08)
@@ -4592,11 +4814,13 @@ SamusSpritemaps_AD63:
     %spritemapEntry(1, $43F8, $FF, 0, 0, 2, 4, $0C)
     %spritemapEntry(0, $08, $07, 0, 0, 2, 4, $0E)
 
+%anchor($92AD79)
 SamusSpritemaps_AD79:
     dw $0002                                                             ;92AD79;
     %spritemapEntry(1, $43F7, $10, 0, 0, 2, 4, $08)
     %spritemapEntry(1, $43F7, $00, 0, 0, 2, 4, $0A)
 
+%anchor($92AD85)
 SamusSpritemaps_AD85:
     dw $0006                                                             ;92AD85;
     %spritemapEntry(1, $43F3, $07, 0, 0, 2, 4, $08)
@@ -4606,6 +4830,7 @@ SamusSpritemaps_AD85:
     %spritemapEntry(0, $1F3, $17, 0, 0, 2, 4, $0E)
     %spritemapEntry(0, $03, $0F, 0, 0, 2, 4, $0F)
 
+%anchor($92ADA5)
 SamusSpritemaps_ADA5:
     dw $0004                                                             ;92ADA5;
     %spritemapEntry(1, $43EF, $FF, 0, 0, 2, 4, $08)
@@ -4613,17 +4838,20 @@ SamusSpritemaps_ADA5:
     %spritemapEntry(1, $43F7, $FF, 0, 0, 2, 4, $0C)
     %spritemapEntry(0, $1F7, $0F, 0, 0, 2, 4, $0E)
 
+%anchor($92ADBB)
 SamusSpritemaps_ADBB:
     dw $0003                                                             ;92ADBB;
     %spritemapEntry(1, $43F1, $10, 0, 0, 2, 4, $08)
     %spritemapEntry(1, $43F9, $10, 0, 0, 2, 4, $0A)
     %spritemapEntry(1, $43F9, $00, 0, 0, 2, 4, $0C)
 
+%anchor($92ADCC)
 SamusSpritemaps_ADCC:
     dw $0002                                                             ;92ADCC;
     %spritemapEntry(1, $43EF, $00, 0, 0, 2, 4, $08)
     %spritemapEntry(1, $43F7, $00, 0, 0, 2, 4, $0A)
 
+%anchor($92ADD8)
 SamusSpritemaps_ADD8:
     dw $0004                                                             ;92ADD8;
     %spritemapEntry(1, $43FB, $00, 0, 0, 2, 4, $08)
@@ -4631,6 +4859,7 @@ SamusSpritemaps_ADD8:
     %spritemapEntry(0, $1F3, $08, 0, 0, 2, 4, $0C)
     %spritemapEntry(0, $03, $10, 0, 0, 2, 4, $0D)
 
+%anchor($92ADEE)
 SamusSpritemaps_ADEE:
     dw $0006                                                             ;92ADEE;
     %spritemapEntry(1, $43FF, $06, 0, 0, 2, 4, $08)
@@ -4640,6 +4869,7 @@ SamusSpritemaps_ADEE:
     %spritemapEntry(0, $1EF, $06, 0, 0, 2, 4, $0E)
     %spritemapEntry(0, $07, $16, 0, 0, 2, 4, $0F)
 
+%anchor($92AE0E)
 SamusSpritemaps_AE0E:
     dw $0004                                                             ;92AE0E;
     %spritemapEntry(0, $1FB, $18, 0, 0, 2, 4, $0C)
@@ -4647,6 +4877,7 @@ SamusSpritemaps_AE0E:
     %spritemapEntry(1, $43F3, $08, 0, 0, 2, 4, $0A)
     %spritemapEntry(0, $1F3, $18, 0, 0, 2, 4, $0D)
 
+%anchor($92AE24)
 SamusSpritemaps_AE24:
     dw $0006                                                             ;92AE24;
     %spritemapEntry(1, $43FE, $06, 0, 0, 2, 4, $08)
@@ -4656,6 +4887,7 @@ SamusSpritemaps_AE24:
     %spritemapEntry(0, $1EE, $0E, 0, 0, 2, 4, $0E)
     %spritemapEntry(0, $1EE, $06, 0, 0, 2, 4, $0F)
 
+%anchor($92AE44)
 SamusSpritemaps_AE44:
     dw $0008                                                             ;92AE44;
     %spritemapEntry(0, $1F0, $08, 0, 0, 2, 4, $0C)
@@ -4667,6 +4899,7 @@ SamusSpritemaps_AE44:
     %spritemapEntry(1, $43FC, $10, 0, 0, 2, 4, $08)
     %spritemapEntry(1, $43FC, $00, 0, 0, 2, 4, $0A)
 
+%anchor($92AE6E)
 SamusSpritemaps_AE6E:
     dw $0008                                                             ;92AE6E;
     %spritemapEntry(0, $1F0, $08, 0, 0, 2, 4, $0C)
@@ -4678,24 +4911,28 @@ SamusSpritemaps_AE6E:
     %spritemapEntry(1, $43FC, $10, 0, 0, 2, 4, $08)
     %spritemapEntry(1, $43FC, $00, 0, 0, 2, 4, $0A)
 
+%anchor($92AE98)
 SamusSpritemaps_AE98:
     dw $0003                                                             ;92AE98;
     %spritemapEntry(1, $43F1, $10, 0, 0, 2, 4, $08)
     %spritemapEntry(1, $43F9, $10, 0, 0, 2, 4, $0A)
     %spritemapEntry(1, $43F9, $00, 0, 0, 2, 4, $0C)
 
+%anchor($92AEA9)
 SamusSpritemaps_AEA9:
     dw $0003                                                             ;92AEA9;
     %spritemapEntry(1, $43F1, $10, 0, 0, 2, 4, $08)
     %spritemapEntry(1, $43F9, $10, 0, 0, 2, 4, $0A)
     %spritemapEntry(1, $43F9, $00, 0, 0, 2, 4, $0C)
 
+%anchor($92AEBA)
 SamusSpritemaps_AEBA:
     dw $0003                                                             ;92AEBA;
     %spritemapEntry(1, $43FF, $10, 0, 1, 2, 4, $08)
     %spritemapEntry(1, $43F7, $10, 0, 1, 2, 4, $0A)
     %spritemapEntry(1, $43F7, $00, 0, 1, 2, 4, $0C)
 
+%anchor($92AECB)
 SamusSpritemaps_AECB:
     dw $0004                                                             ;92AECB;
     %spritemapEntry(0, $1FB, $0F, 0, 0, 2, 4, $0A)
@@ -4703,6 +4940,7 @@ SamusSpritemaps_AECB:
     %spritemapEntry(0, $1EB, $0F, 0, 0, 2, 4, $0C)
     %spritemapEntry(1, $43F3, $FF, 0, 0, 2, 4, $08)
 
+%anchor($92AEE1)
 SamusSpritemaps_AEE1:
     dw $0004                                                             ;92AEE1;
     %spritemapEntry(0, $1FD, $0F, 0, 1, 3, 4, $0A)
@@ -4710,52 +4948,61 @@ SamusSpritemaps_AEE1:
     %spritemapEntry(0, $0D, $0F, 0, 1, 2, 4, $0C)
     %spritemapEntry(1, $43FD, $FF, 0, 1, 2, 4, $08)
 
+%anchor($92AEF7)
 SamusSpritemaps_AEF7:
     dw $0003                                                             ;92AEF7;
     %spritemapEntry(1, $43FE, $08, 0, 0, 2, 4, $08)
     %spritemapEntry(1, $43F6, $00, 0, 0, 2, 4, $0A)
     %spritemapEntry(0, $06, $00, 0, 0, 2, 4, $0C)
 
+%anchor($92AF08)
 SamusSpritemaps_AF08:
     dw $0003                                                             ;92AF08;
     %spritemapEntry(1, $43F2, $08, 0, 1, 2, 4, $08)
     %spritemapEntry(1, $43FA, $00, 0, 1, 2, 4, $0A)
     %spritemapEntry(0, $1F2, $00, 0, 1, 2, 4, $0C)
 
+%anchor($92AF19)
 SamusSpritemaps_AF19:
     dw $0003                                                             ;92AF19;
     %spritemapEntry(0, $1F6, $10, 0, 1, 2, 4, $0C)
     %spritemapEntry(1, $43FE, $10, 0, 1, 2, 4, $08)
     %spritemapEntry(1, $43F6, $00, 0, 1, 2, 4, $0A)
 
+%anchor($92AF2A)
 SamusSpritemaps_AF2A:
     dw $0003                                                             ;92AF2A;
     %spritemapEntry(0, $02, $10, 0, 0, 2, 4, $0C)
     %spritemapEntry(1, $43F2, $10, 0, 0, 2, 4, $08)
     %spritemapEntry(1, $43FA, $00, 0, 0, 2, 4, $0A)
 
+%anchor($92AF3B)
 SamusSpritemaps_AF3B:
     dw $0003                                                             ;92AF3B;
     %spritemapEntry(0, $1F1, $08, 0, 0, 2, 4, $0A)
     %spritemapEntry(0, $1F1, $00, 0, 0, 2, 4, $0B)
     %spritemapEntry(1, $43F9, $00, 0, 0, 2, 4, $08)
 
+%anchor($92AF4C)
 SamusSpritemaps_AF4C:
     dw $0003                                                             ;92AF4C;
     %spritemapEntry(0, $07, $08, 0, 1, 2, 4, $0A)
     %spritemapEntry(0, $07, $00, 0, 1, 2, 4, $0B)
     %spritemapEntry(1, $43F7, $00, 0, 1, 2, 4, $08)
 
+%anchor($92AF5D)
 SamusSpritemaps_AF5D:
     dw $0002                                                             ;92AF5D;
     %spritemapEntry(1, $43EC, $00, 0, 0, 2, 4, $08)
     %spritemapEntry(1, $43F4, $00, 0, 0, 2, 4, $0A)
 
+%anchor($92AF69)
 SamusSpritemaps_AF69:
     dw $0002                                                             ;92AF69;
     %spritemapEntry(1, $4204, $00, 0, 0, 2, 4, $08)
     %spritemapEntry(1, $43FC, $00, 0, 0, 2, 4, $0A)
 
+%anchor($92AF75)
 SamusSpritemaps_AF75:
     dw $0004                                                             ;92AF75;
     %spritemapEntry(0, $1E8, $10, 0, 1, 2, 4, $0C)
@@ -4763,6 +5010,7 @@ SamusSpritemaps_AF75:
     %spritemapEntry(1, $43F0, $00, 0, 1, 2, 4, $08)
     %spritemapEntry(1, $4200, $00, 0, 1, 2, 4, $0A)
 
+%anchor($92AF8B)
 SamusSpritemaps_AF8B:
     dw $0004                                                             ;92AF8B;
     %spritemapEntry(0, $10, $10, 0, 0, 2, 4, $0C)
@@ -4770,22 +5018,26 @@ SamusSpritemaps_AF8B:
     %spritemapEntry(1, $4200, $00, 0, 0, 2, 4, $08)
     %spritemapEntry(1, $43F0, $00, 0, 0, 2, 4, $0A)
 
+%anchor($92AFA1)
 SamusSpritemaps_AFA1:
     dw $0003                                                             ;92AFA1;
     %spritemapEntry(1, $43FF, $10, 0, 1, 2, 4, $08)
     %spritemapEntry(1, $43F7, $10, 0, 1, 2, 4, $0A)
     %spritemapEntry(1, $43F7, $00, 0, 1, 2, 4, $0C)
 
+%anchor($92AFB2)
 SamusSpritemaps_AFB2:
     dw $0002                                                             ;92AFB2;
     %spritemapEntry(1, $43F4, $00, 0, 0, 2, 4, $08)
     %spritemapEntry(1, $43FC, $00, 0, 0, 2, 4, $0A)
 
+%anchor($92AFBE)
 SamusSpritemaps_AFBE:
     dw $0002                                                             ;92AFBE;
     %spritemapEntry(1, $43FC, $00, 0, 0, 2, 4, $08)
     %spritemapEntry(1, $43F4, $00, 0, 0, 2, 4, $0A)
 
+%anchor($92AFCA)
 SamusSpritemaps_AFCA:
     dw $0004                                                             ;92AFCA;
     %spritemapEntry(0, $1F0, $18, 0, 1, 2, 4, $0C)
@@ -4793,15 +5045,18 @@ SamusSpritemaps_AFCA:
     %spritemapEntry(1, $43F8, $10, 0, 1, 2, 4, $08)
     %spritemapEntry(1, $43F8, $00, 0, 1, 2, 4, $0A)
 
+%anchor($92AFE0)
 SamusSpritemaps_AFE0:
     dw $0002                                                             ;92AFE0;
     %spritemapEntry(1, $43F8, $00, 0, 0, 2, 4, $08)
     %spritemapEntry(1, $43F8, $10, 0, 0, 2, 4, $0A)
 
+%anchor($92AFEC)
 SamusSpritemaps_AFEC:
     dw $0001                                                             ;92AFEC;
     %spritemapEntry(1, $43F9, $00, 0, 0, 2, 4, $08)
 
+%anchor($92AFF3)
 SamusSpritemaps_AFF3:
     dw $0004                                                             ;92AFF3;
     %spritemapEntry(0, $1F2, $18, 0, 0, 2, 4, $0C)
@@ -4809,16 +5064,19 @@ SamusSpritemaps_AFF3:
     %spritemapEntry(1, $43FA, $10, 0, 0, 2, 4, $08)
     %spritemapEntry(1, $43FA, $00, 0, 0, 2, 4, $0A)
 
+%anchor($92B009)
 SamusSpritemaps_B009:
     dw $0002                                                             ;92B009;
     %spritemapEntry(1, $43FA, $0F, 0, 1, 2, 4, $08)
     %spritemapEntry(1, $43FA, $FF, 0, 1, 2, 4, $0A)
 
+%anchor($92B015)
 SamusSpritemaps_B015:
     dw $0002                                                             ;92B015;
     %spritemapEntry(1, $43FA, $0F, 0, 1, 2, 4, $08)
     %spritemapEntry(1, $43FA, $FF, 0, 1, 2, 4, $0A)
 
+%anchor($92B021)
 SamusSpritemaps_B021:
     dw $0004                                                             ;92B021;
     %spritemapEntry(0, $1F2, $15, 0, 0, 2, 4, $0C)
@@ -4826,6 +5084,7 @@ SamusSpritemaps_B021:
     %spritemapEntry(1, $43FA, $0D, 0, 0, 2, 4, $08)
     %spritemapEntry(1, $43FA, $FD, 0, 0, 2, 4, $0A)
 
+%anchor($92B037)
 SamusSpritemaps_B037:
     dw $0004                                                             ;92B037;
     %spritemapEntry(0, $06, $15, 0, 1, 2, 4, $0C)
@@ -4833,6 +5092,7 @@ SamusSpritemaps_B037:
     %spritemapEntry(1, $43F6, $0D, 0, 1, 2, 4, $08)
     %spritemapEntry(1, $43F6, $FD, 0, 1, 2, 4, $0A)
 
+%anchor($92B04D)
 SamusSpritemaps_B04D:
     dw $0006                                                             ;92B04D;
     %spritemapEntry(0, $08, $10, 0, 0, 2, 4, $0A)
@@ -4842,6 +5102,7 @@ SamusSpritemaps_B04D:
     %spritemapEntry(0, $08, $00, 0, 0, 2, 4, $0E)
     %spritemapEntry(1, $43F8, $00, 0, 0, 2, 4, $08)
 
+%anchor($92B06D)
 SamusSpritemaps_B06D:
     dw $0006                                                             ;92B06D;
     %spritemapEntry(0, $1F0, $10, 0, 1, 2, 4, $0A)
@@ -4851,28 +5112,33 @@ SamusSpritemaps_B06D:
     %spritemapEntry(0, $1F0, $00, 0, 1, 2, 4, $0E)
     %spritemapEntry(1, $43F8, $00, 0, 1, 2, 4, $08)
 
+%anchor($92B08D)
 SamusSpritemaps_B08D:
     dw $0003                                                             ;92B08D;
     %spritemapEntry(0, $09, $02, 0, 1, 2, 4, $0C)
     %spritemapEntry(1, $43F9, $08, 0, 1, 2, 4, $08)
     %spritemapEntry(1, $43F9, $00, 0, 1, 2, 4, $0A)
 
+%anchor($92B09E)
 SamusSpritemaps_B09E:
     dw $0003                                                             ;92B09E;
     %spritemapEntry(0, $1EF, $02, 0, 0, 2, 4, $0C)
     %spritemapEntry(1, $43F7, $08, 0, 0, 2, 4, $08)
     %spritemapEntry(1, $43F7, $00, 0, 0, 2, 4, $0A)
 
+%anchor($92B0AF)
 SamusSpritemaps_B0AF:
     dw $0002                                                             ;92B0AF;
     %spritemapEntry(1, $43FC, $10, 0, 1, 2, 4, $08)
     %spritemapEntry(1, $43FC, $00, 0, 1, 2, 4, $0A)
 
+%anchor($92B0BB)
 SamusSpritemaps_B0BB:
     dw $0002                                                             ;92B0BB;
     %spritemapEntry(1, $43F4, $10, 0, 0, 2, 4, $08)
     %spritemapEntry(1, $43F4, $00, 0, 0, 2, 4, $0A)
 
+%anchor($92B0C7)
 SamusSpritemaps_B0C7:
     dw $0005                                                             ;92B0C7;
     %spritemapEntry(0, $04, $0F, 0, 0, 2, 4, $0A)
@@ -4881,6 +5147,7 @@ SamusSpritemaps_B0C7:
     %spritemapEntry(0, $1FC, $0F, 0, 0, 2, 4, $0D)
     %spritemapEntry(1, $43FC, $FF, 0, 0, 2, 4, $08)
 
+%anchor($92B0E2)
 SamusSpritemaps_B0E2:
     dw $0005                                                             ;92B0E2;
     %spritemapEntry(0, $1F4, $0F, 0, 1, 2, 4, $0A)
@@ -4889,10 +5156,12 @@ SamusSpritemaps_B0E2:
     %spritemapEntry(0, $1FC, $0F, 0, 1, 2, 4, $0D)
     %spritemapEntry(1, $43F4, $FF, 0, 1, 2, 4, $08)
 
+%anchor($92B0FD)
 SamusSpritemaps_B0FD:
     dw $0001                                                             ;92B0FD;
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 6, $08)
 
+%anchor($92B104)
 SamusSpritemaps_B104:
     dw $0006                                                             ;92B104;
     %spritemapEntry(0, $1FA, $10, 0, 1, 2, 4, $0A)
@@ -4902,6 +5171,7 @@ SamusSpritemaps_B104:
     %spritemapEntry(0, $1F2, $00, 0, 1, 2, 4, $0E)
     %spritemapEntry(1, $43FA, $00, 0, 1, 2, 4, $08)
 
+%anchor($92B124)
 SamusSpritemaps_B124:
     dw $0006                                                             ;92B124;
     %spritemapEntry(0, $1FE, $10, 0, 0, 2, 4, $0A)
@@ -4911,6 +5181,7 @@ SamusSpritemaps_B124:
     %spritemapEntry(0, $06, $00, 0, 0, 2, 4, $0E)
     %spritemapEntry(1, $43F6, $00, 0, 0, 2, 4, $08)
 
+%anchor($92B144)
 SamusSpritemaps_B144:
     dw $0007                                                             ;92B144;
     %spritemapEntry(0, $0C, $01, 0, 0, 2, 4, $0A)
@@ -4921,6 +5192,7 @@ SamusSpritemaps_B144:
     %spritemapEntry(0, $0C, $00, 0, 0, 2, 4, $0F)
     %spritemapEntry(1, $43FC, $00, 0, 0, 2, 4, $08)
 
+%anchor($92B169)
 SamusSpritemaps_B169:
     dw $0005                                                             ;92B169;
     %spritemapEntry(0, $1FC, $10, 0, 1, 2, 4, $0A)
@@ -4929,30 +5201,35 @@ SamusSpritemaps_B169:
     %spritemapEntry(0, $1EC, $00, 0, 1, 2, 4, $0D)
     %spritemapEntry(1, $43F4, $00, 0, 1, 2, 4, $08)
 
+%anchor($92B184)
 SamusSpritemaps_B184:
     dw $0003                                                             ;92B184;
     %spritemapEntry(1, $43F8, $0F, 0, 0, 2, 4, $08)
     %spritemapEntry(0, $08, $0F, 0, 0, 2, 4, $0C)
     %spritemapEntry(1, $43F8, $FF, 0, 0, 2, 4, $0A)
 
+%anchor($92B195)
 SamusSpritemaps_B195:
     dw $0003                                                             ;92B195;
     %spritemapEntry(1, $43F8, $0F, 0, 0, 2, 4, $08)
     %spritemapEntry(0, $08, $0F, 0, 0, 2, 4, $0C)
     %spritemapEntry(1, $43F8, $FF, 0, 0, 2, 4, $0A)
 
+%anchor($92B1A6)
 SamusSpritemaps_B1A6:
     dw $0003                                                             ;92B1A6;
     %spritemapEntry(1, $43F8, $0F, 0, 1, 2, 4, $08)
     %spritemapEntry(0, $1F0, $0F, 0, 1, 2, 4, $0C)
     %spritemapEntry(1, $43F8, $FF, 0, 1, 2, 4, $0A)
 
+%anchor($92B1B7)
 SamusSpritemaps_B1B7:
     dw $0003                                                             ;92B1B7;
     %spritemapEntry(1, $43F8, $0F, 0, 1, 2, 4, $08)
     %spritemapEntry(0, $1F0, $0F, 0, 1, 2, 4, $0C)
     %spritemapEntry(1, $43F8, $FF, 0, 1, 2, 4, $0A)
 
+%anchor($92B1C8)
 SamusSpritemaps_B1C8:
     dw $0005                                                             ;92B1C8;
     %spritemapEntry(0, $1F6, $10, 0, 1, 2, 4, $0C)
@@ -4961,6 +5238,7 @@ SamusSpritemaps_B1C8:
     %spritemapEntry(1, $43FE, $08, 0, 1, 2, 4, $08)
     %spritemapEntry(1, $43FE, $00, 0, 1, 2, 4, $0A)
 
+%anchor($92B1E3)
 SamusSpritemaps_B1E3:
     dw $0005                                                             ;92B1E3;
     %spritemapEntry(0, $02, $10, 0, 0, 2, 4, $0C)
@@ -4969,6 +5247,7 @@ SamusSpritemaps_B1E3:
     %spritemapEntry(1, $43F2, $08, 0, 0, 2, 4, $08)
     %spritemapEntry(1, $43F2, $00, 0, 0, 2, 4, $0A)
 
+%anchor($92B1FE)
 SamusSpritemaps_B1FE:
     dw $0004                                                             ;92B1FE;
     %spritemapEntry(1, $43FD, $08, 0, 1, 2, 4, $08)
@@ -4976,6 +5255,7 @@ SamusSpritemaps_B1FE:
     %spritemapEntry(0, $1F5, $10, 0, 1, 2, 4, $0D)
     %spritemapEntry(1, $43FD, $00, 0, 1, 2, 4, $0A)
 
+%anchor($92B214)
 SamusSpritemaps_B214:
     dw $0004                                                             ;92B214;
     %spritemapEntry(1, $43F3, $08, 0, 0, 2, 4, $08)
@@ -4983,21 +5263,25 @@ SamusSpritemaps_B214:
     %spritemapEntry(0, $03, $10, 0, 0, 2, 4, $0D)
     %spritemapEntry(1, $43F3, $00, 0, 0, 2, 4, $0A)
 
+%anchor($92B22A)
 SamusSpritemaps_B22A:
     dw $0002                                                             ;92B22A;
     %spritemapEntry(1, $43FA, $10, 0, 1, 2, 4, $08)
     %spritemapEntry(1, $43FA, $00, 0, 1, 2, 4, $0A)
 
+%anchor($92B236)
 SamusSpritemaps_B236:
     dw $0002                                                             ;92B236;
     %spritemapEntry(0, $04, $08, 0, 0, 2, 4, $0A)
     %spritemapEntry(1, $43F4, $00, 0, 0, 2, 4, $08)
 
+%anchor($92B242)
 SamusSpritemaps_B242:
     dw $0002                                                             ;92B242;
     %spritemapEntry(0, $1F4, $08, 0, 1, 2, 4, $0A)
     %spritemapEntry(1, $43FC, $00, 0, 1, 2, 4, $08)
 
+%anchor($92B24E)
 SamusSpritemaps_B24E:
     dw $0006                                                             ;92B24E;
     %spritemapEntry(1, $43F1, $08, 0, 1, 3, 4, $08)
@@ -5007,6 +5291,7 @@ SamusSpritemaps_B24E:
     %spritemapEntry(1, $43F1, $E8, 0, 1, 3, 4, $0E)
     %spritemapEntry(1, $4200, $E8, 0, 0, 3, 4, $0E)
 
+%anchor($92B26E)
 SamusSpritemaps_B26E:
     dw $0006                                                             ;92B26E;
     %spritemapEntry(1, $43F1, $08, 0, 1, 3, 4, $08)
@@ -5016,10 +5301,12 @@ SamusSpritemaps_B26E:
     %spritemapEntry(1, $4200, $F8, 0, 0, 3, 4, $0E)
     %spritemapEntry(1, $4200, $E8, 0, 0, 3, 4, $0A)
 
+%anchor($92B28E)
 SamusSpritemaps_B28E:
     dw $0001                                                             ;92B28E;
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 0, $08)
 
+%anchor($92B295)
 SamusSpritemaps_B295:
     dw $0004                                                             ;92B295;
     %spritemapEntry(0, $1F1, $18, 0, 0, 2, 4, $0C)
@@ -5027,6 +5314,7 @@ SamusSpritemaps_B295:
     %spritemapEntry(1, $43F9, $10, 0, 0, 2, 4, $08)
     %spritemapEntry(1, $43F9, $00, 0, 0, 2, 4, $0A)
 
+%anchor($92B2AB)
 SamusSpritemaps_B2AB:
     dw $0004                                                             ;92B2AB;
     %spritemapEntry(0, $07, $18, 0, 1, 2, 4, $0C)
@@ -5034,11 +5322,13 @@ SamusSpritemaps_B2AB:
     %spritemapEntry(1, $43F7, $10, 0, 1, 2, 4, $08)
     %spritemapEntry(1, $43F7, $00, 0, 1, 2, 4, $0A)
 
+%anchor($92B2C1)
 SamusSpritemaps_B2C1:
     dw $0002                                                             ;92B2C1;
     %spritemapEntry(1, $43F8, $10, 0, 1, 2, 4, $08)
     %spritemapEntry(1, $43F8, $00, 0, 1, 2, 4, $0A)
 
+%anchor($92B2CD)
 SamusSpritemaps_B2CD:
     dw $0005                                                             ;92B2CD;
     %spritemapEntry(1, $43FD, $07, 0, 1, 2, 4, $08)
@@ -5047,6 +5337,7 @@ SamusSpritemaps_B2CD:
     %spritemapEntry(0, $05, $17, 0, 1, 2, 4, $0D)
     %spritemapEntry(0, $1F5, $0F, 0, 1, 2, 4, $0E)
 
+%anchor($92B2E8)
 SamusSpritemaps_B2E8:
     dw $0004                                                             ;92B2E8;
     %spritemapEntry(1, $4200, $FF, 0, 1, 2, 4, $08)
@@ -5054,11 +5345,13 @@ SamusSpritemaps_B2E8:
     %spritemapEntry(1, $43F8, $FF, 0, 1, 2, 4, $0C)
     %spritemapEntry(0, $1F0, $07, 0, 1, 2, 4, $0E)
 
+%anchor($92B2FE)
 SamusSpritemaps_B2FE:
     dw $0002                                                             ;92B2FE;
     %spritemapEntry(1, $43F9, $10, 0, 1, 2, 4, $08)
     %spritemapEntry(1, $43F9, $00, 0, 1, 2, 4, $0A)
 
+%anchor($92B30A)
 SamusSpritemaps_B30A:
     dw $0006                                                             ;92B30A;
     %spritemapEntry(1, $43FD, $07, 0, 1, 2, 4, $08)
@@ -5068,6 +5361,7 @@ SamusSpritemaps_B30A:
     %spritemapEntry(0, $05, $17, 0, 1, 2, 4, $0E)
     %spritemapEntry(0, $1F5, $0F, 0, 1, 2, 4, $0F)
 
+%anchor($92B32A)
 SamusSpritemaps_B32A:
     dw $0004                                                             ;92B32A;
     %spritemapEntry(1, $4201, $FF, 0, 1, 2, 4, $08)
@@ -5075,17 +5369,20 @@ SamusSpritemaps_B32A:
     %spritemapEntry(1, $43F9, $FF, 0, 1, 2, 4, $0C)
     %spritemapEntry(0, $01, $0F, 0, 1, 2, 4, $0E)
 
+%anchor($92B340)
 SamusSpritemaps_B340:
     dw $0003                                                             ;92B340;
     %spritemapEntry(1, $43FF, $10, 0, 1, 2, 4, $08)
     %spritemapEntry(1, $43F7, $10, 0, 1, 2, 4, $0A)
     %spritemapEntry(1, $43F7, $00, 0, 1, 2, 4, $0C)
 
+%anchor($92B351)
 SamusSpritemaps_B351:
     dw $0002                                                             ;92B351;
     %spritemapEntry(1, $4201, $00, 0, 1, 2, 4, $08)
     %spritemapEntry(1, $43F9, $00, 0, 1, 2, 4, $0A)
 
+%anchor($92B35D)
 SamusSpritemaps_B35D:
     dw $0004                                                             ;92B35D;
     %spritemapEntry(1, $43F5, $00, 0, 1, 2, 4, $08)
@@ -5093,6 +5390,7 @@ SamusSpritemaps_B35D:
     %spritemapEntry(0, $05, $08, 0, 1, 2, 4, $0C)
     %spritemapEntry(0, $1F5, $10, 0, 1, 2, 4, $0D)
 
+%anchor($92B373)
 SamusSpritemaps_B373:
     dw $0006                                                             ;92B373;
     %spritemapEntry(1, $43F1, $06, 0, 1, 2, 4, $08)
@@ -5102,6 +5400,7 @@ SamusSpritemaps_B373:
     %spritemapEntry(0, $09, $06, 0, 1, 2, 4, $0E)
     %spritemapEntry(0, $1F1, $16, 0, 1, 2, 4, $0F)
 
+%anchor($92B393)
 SamusSpritemaps_B393:
     dw $0004                                                             ;92B393;
     %spritemapEntry(0, $1FD, $18, 0, 1, 2, 4, $0C)
@@ -5109,6 +5408,7 @@ SamusSpritemaps_B393:
     %spritemapEntry(1, $43FD, $08, 0, 1, 2, 4, $0A)
     %spritemapEntry(0, $05, $18, 0, 1, 2, 4, $0D)
 
+%anchor($92B3A9)
 SamusSpritemaps_B3A9:
     dw $0006                                                             ;92B3A9;
     %spritemapEntry(1, $43F2, $06, 0, 1, 2, 4, $08)
@@ -5118,6 +5418,7 @@ SamusSpritemaps_B3A9:
     %spritemapEntry(0, $0A, $0E, 0, 1, 2, 4, $0E)
     %spritemapEntry(0, $0A, $06, 0, 1, 2, 4, $0F)
 
+%anchor($92B3C9)
 SamusSpritemaps_B3C9:
     dw $0004                                                             ;92B3C9;
     %spritemapEntry(0, $08, $18, 0, 0, 2, 4, $0C)
@@ -5125,14 +5426,17 @@ SamusSpritemaps_B3C9:
     %spritemapEntry(1, $43F8, $10, 0, 0, 2, 4, $08)
     %spritemapEntry(1, $43F8, $00, 0, 0, 2, 4, $0A)
 
+%anchor($92B3DF)
 SamusSpritemaps_B3DF:
     dw $0001                                                             ;92B3DF;
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 6, $08)
 
+%anchor($92B3E6)
 SamusSpritemaps_B3E6:
     dw $0001                                                             ;92B3E6;
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 6, $08)
 
+%anchor($92B3ED)
 SamusSpritemaps_B3ED:
     dw $0004                                                             ;92B3ED;
     %spritemapEntry(0, $06, $18, 0, 1, 2, 4, $0C)
@@ -5140,22 +5444,26 @@ SamusSpritemaps_B3ED:
     %spritemapEntry(1, $43F6, $10, 0, 1, 2, 4, $08)
     %spritemapEntry(1, $43F6, $00, 0, 1, 2, 4, $0A)
 
+%anchor($92B403)
 SamusSpritemaps_B403:
     dw $0002                                                             ;92B403;
     %spritemapEntry(1, $43F6, $0F, 0, 0, 2, 4, $08)
     %spritemapEntry(1, $43F6, $FF, 0, 0, 2, 4, $0A)
 
+%anchor($92B40F)
 SamusSpritemaps_B40F:
     dw $0002                                                             ;92B40F;
     %spritemapEntry(1, $43F6, $0F, 0, 0, 2, 4, $08)
     %spritemapEntry(1, $43F6, $FF, 0, 0, 2, 4, $0A)
 
+%anchor($92B41B)
 SamusSpritemaps_B41B:
     dw $0003                                                             ;92B41B;
     %spritemapEntry(0, $1E8, $04, 0, 0, 2, 4, $0A)
     %spritemapEntry(0, $1E8, $FC, 0, 0, 2, 4, $0B)
     %spritemapEntry(1, $43F0, $FC, 0, 0, 2, 4, $08)
 
+%anchor($92B42C)
 SamusSpritemaps_B42C:
     dw $0006                                                             ;92B42C;
     %spritemapEntry(0, $1E9, $0D, 0, 0, 2, 4, $0A)
@@ -5165,12 +5473,14 @@ SamusSpritemaps_B42C:
     %spritemapEntry(0, $1F1, $0D, 0, 0, 2, 4, $0E)
     %spritemapEntry(1, $43F1, $FD, 0, 0, 2, 4, $08)
 
+%anchor($92B44C)
 SamusSpritemaps_B44C:
     dw $0003                                                             ;92B44C;
     %spritemapEntry(1, $43E9, $07, 0, 0, 2, 4, $08)
     %spritemapEntry(0, $1E9, $FF, 0, 0, 2, 4, $0C)
     %spritemapEntry(1, $43F1, $FF, 0, 0, 2, 4, $0A)
 
+%anchor($92B45D)
 SamusSpritemaps_B45D:
     dw $0004                                                             ;92B45D;
     %spritemapEntry(0, $1F8, $10, 0, 0, 2, 4, $0A)
@@ -5178,6 +5488,7 @@ SamusSpritemaps_B45D:
     %spritemapEntry(0, $1F0, $08, 0, 0, 2, 4, $0C)
     %spritemapEntry(1, $43F8, $00, 0, 0, 2, 4, $08)
 
+%anchor($92B473)
 SamusSpritemaps_B473:
     dw $0005                                                             ;92B473;
     %spritemapEntry(0, $03, $10, 0, 0, 2, 4, $0A)
@@ -5186,6 +5497,7 @@ SamusSpritemaps_B473:
     %spritemapEntry(0, $1F3, $08, 0, 0, 2, 4, $0D)
     %spritemapEntry(1, $43FB, $00, 0, 0, 2, 4, $08)
 
+%anchor($92B48E)
 SamusSpritemaps_B48E:
     dw $0005                                                             ;92B48E;
     %spritemapEntry(0, $1F5, $08, 0, 0, 2, 4, $0A)
@@ -5194,12 +5506,14 @@ SamusSpritemaps_B48E:
     %spritemapEntry(0, $1F5, $10, 0, 0, 2, 4, $0D)
     %spritemapEntry(1, $43FD, $00, 0, 0, 2, 4, $08)
 
+%anchor($92B4A9)
 SamusSpritemaps_B4A9:
     dw $0003                                                             ;92B4A9;
     %spritemapEntry(0, $05, $10, 0, 0, 2, 4, $0A)
     %spritemapEntry(0, $1FD, $10, 0, 0, 2, 4, $0B)
     %spritemapEntry(1, $43FD, $00, 0, 0, 2, 4, $08)
 
+%anchor($92B4BA)
 SamusSpritemaps_B4BA:
     dw $0004                                                             ;92B4BA;
     %spritemapEntry(0, $0F, $0F, 0, 0, 2, 4, $0A)
@@ -5207,6 +5521,7 @@ SamusSpritemaps_B4BA:
     %spritemapEntry(0, $1FF, $FF, 0, 0, 2, 4, $0C)
     %spritemapEntry(1, $4207, $FF, 0, 0, 2, 4, $08)
 
+%anchor($92B4D0)
 SamusSpritemaps_B4D0:
     dw $0004                                                             ;92B4D0;
     %spritemapEntry(0, $07, $0B, 0, 0, 2, 4, $0A)
@@ -5214,6 +5529,7 @@ SamusSpritemaps_B4D0:
     %spritemapEntry(0, $0F, $03, 0, 0, 2, 4, $0C)
     %spritemapEntry(1, $43FF, $FB, 0, 0, 2, 4, $08)
 
+%anchor($92B4E6)
 SamusSpritemaps_B4E6:
     dw $0005                                                             ;92B4E6;
     %spritemapEntry(0, $08, $08, 0, 0, 2, 4, $0A)
@@ -5222,27 +5538,32 @@ SamusSpritemaps_B4E6:
     %spritemapEntry(0, $10, $00, 0, 0, 2, 4, $0D)
     %spritemapEntry(1, $4200, $F8, 0, 0, 2, 4, $08)
 
+%anchor($92B501)
 SamusSpritemaps_B501:
     dw $0003                                                             ;92B501;
     %spritemapEntry(0, $10, $08, 0, 0, 2, 0, $0C)
     %spritemapEntry(1, $4210, $F8, 0, 0, 2, 4, $08)
     %spritemapEntry(1, $4200, $F8, 0, 0, 2, 4, $0A)
 
+%anchor($92B512)
 SamusSpritemaps_B512:
     dw $0002                                                             ;92B512;
     %spritemapEntry(1, $43F8, $10, 0, 0, 2, 4, $08)
     %spritemapEntry(1, $43F8, $00, 0, 0, 2, 4, $0A)
 
+%anchor($92B51E)
 SamusSpritemaps_B51E:
     dw $0002                                                             ;92B51E;
     %spritemapEntry(1, $43F8, $10, 0, 0, 2, 4, $08)
     %spritemapEntry(1, $43F8, $00, 0, 0, 2, 4, $0A)
 
+%anchor($92B52A)
 SamusSpritemaps_B52A:
     dw $0002                                                             ;92B52A;
     %spritemapEntry(1, $43F0, $F9, 0, 0, 2, 4, $08)
     %spritemapEntry(1, $43E0, $F9, 0, 0, 2, 4, $0A)
 
+%anchor($92B536)
 SamusSpritemaps_B536:
     dw $0004                                                             ;92B536;
     %spritemapEntry(0, $1E1, $0F, 0, 0, 2, 4, $0A)
@@ -5250,16 +5571,19 @@ SamusSpritemaps_B536:
     %spritemapEntry(0, $1F9, $FF, 0, 0, 2, 4, $0C)
     %spritemapEntry(1, $43E9, $FF, 0, 0, 2, 4, $08)
 
+%anchor($92B54C)
 SamusSpritemaps_B54C:
     dw $0002                                                             ;92B54C;
     %spritemapEntry(1, $43E9, $07, 0, 0, 2, 4, $08)
     %spritemapEntry(1, $43F1, $FF, 0, 0, 2, 4, $0A)
 
+%anchor($92B558)
 SamusSpritemaps_B558:
     dw $0002                                                             ;92B558;
     %spritemapEntry(1, $43EB, $0F, 0, 0, 2, 4, $08)
     %spritemapEntry(1, $43F3, $FF, 0, 0, 2, 4, $0A)
 
+%anchor($92B564)
 SamusSpritemaps_B564:
     dw $0004                                                             ;92B564;
     %spritemapEntry(0, $1F3, $07, 0, 0, 2, 4, $0A)
@@ -5267,21 +5591,25 @@ SamusSpritemaps_B564:
     %spritemapEntry(0, $1FB, $07, 0, 0, 2, 4, $0B)
     %spritemapEntry(0, $1FB, $FF, 0, 0, 2, 4, $0C)
 
+%anchor($92B57A)
 SamusSpritemaps_B57A:
     dw $0002                                                             ;92B57A;
     %spritemapEntry(1, $43F9, $10, 0, 0, 2, 4, $08)
     %spritemapEntry(1, $43F9, $00, 0, 0, 2, 4, $0A)
 
+%anchor($92B586)
 SamusSpritemaps_B586:
     dw $0002                                                             ;92B586;
     %spritemapEntry(1, $43FD, $0E, 0, 0, 2, 4, $08)
     %spritemapEntry(1, $43FD, $FE, 0, 0, 2, 4, $0A)
 
+%anchor($92B592)
 SamusSpritemaps_B592:
     dw $0002                                                             ;92B592;
     %spritemapEntry(1, $4207, $0F, 0, 0, 2, 4, $08)
     %spritemapEntry(1, $43FF, $FF, 0, 0, 2, 4, $0A)
 
+%anchor($92B59E)
 SamusSpritemaps_B59E:
     dw $0004                                                             ;92B59E;
     %spritemapEntry(0, $18, $10, 0, 0, 2, 4, $0C)
@@ -5289,22 +5617,26 @@ SamusSpritemaps_B59E:
     %spritemapEntry(1, $4208, $08, 0, 0, 2, 4, $08)
     %spritemapEntry(1, $4200, $00, 0, 0, 2, 4, $0A)
 
+%anchor($92B5B4)
 SamusSpritemaps_B5B4:
     dw $0002                                                             ;92B5B4;
     %spritemapEntry(1, $420F, $04, 0, 0, 2, 4, $08)
     %spritemapEntry(1, $43FF, $FC, 0, 0, 2, 4, $0A)
 
+%anchor($92B5C0)
 SamusSpritemaps_B5C0:
     dw $0002                                                             ;92B5C0;
     %spritemapEntry(1, $4200, $F8, 1, 1, 2, 4, $08)
     %spritemapEntry(1, $4210, $F8, 1, 1, 2, 4, $0A)
 
+%anchor($92B5CC)
 SamusSpritemaps_B5CC:
     dw $0003                                                             ;92B5CC;
     %spritemapEntry(0, $10, $F4, 1, 1, 2, 4, $0A)
     %spritemapEntry(0, $10, $FC, 1, 1, 2, 4, $0B)
     %spritemapEntry(1, $4200, $F4, 1, 1, 2, 4, $08)
 
+%anchor($92B5DD)
 SamusSpritemaps_B5DD:
     dw $0006                                                             ;92B5DD;
     %spritemapEntry(0, $0F, $EB, 1, 1, 2, 4, $0A)
@@ -5314,12 +5646,14 @@ SamusSpritemaps_B5DD:
     %spritemapEntry(0, $07, $EB, 1, 1, 2, 4, $0E)
     %spritemapEntry(1, $43FF, $F3, 1, 1, 2, 4, $08)
 
+%anchor($92B5FD)
 SamusSpritemaps_B5FD:
     dw $0003                                                             ;92B5FD;
     %spritemapEntry(1, $4207, $E9, 1, 1, 2, 4, $08)
     %spritemapEntry(0, $0F, $F9, 1, 1, 2, 4, $0C)
     %spritemapEntry(1, $43FF, $F1, 1, 1, 2, 4, $0A)
 
+%anchor($92B60E)
 SamusSpritemaps_B60E:
     dw $0004                                                             ;92B60E;
     %spritemapEntry(0, $00, $E8, 1, 1, 2, 4, $0A)
@@ -5327,6 +5661,7 @@ SamusSpritemaps_B60E:
     %spritemapEntry(0, $08, $F0, 1, 1, 2, 4, $0C)
     %spritemapEntry(1, $43F8, $F0, 1, 1, 2, 4, $08)
 
+%anchor($92B624)
 SamusSpritemaps_B624:
     dw $0005                                                             ;92B624;
     %spritemapEntry(0, $1F5, $E8, 1, 1, 2, 4, $0A)
@@ -5335,6 +5670,7 @@ SamusSpritemaps_B624:
     %spritemapEntry(0, $05, $F0, 1, 1, 2, 4, $0D)
     %spritemapEntry(1, $43F5, $F0, 1, 1, 2, 4, $08)
 
+%anchor($92B63F)
 SamusSpritemaps_B63F:
     dw $0005                                                             ;92B63F;
     %spritemapEntry(0, $03, $F0, 1, 1, 2, 4, $0A)
@@ -5343,12 +5679,14 @@ SamusSpritemaps_B63F:
     %spritemapEntry(0, $03, $E8, 1, 1, 2, 4, $0D)
     %spritemapEntry(1, $43F3, $F0, 1, 1, 2, 4, $08)
 
+%anchor($92B65A)
 SamusSpritemaps_B65A:
     dw $0003                                                             ;92B65A;
     %spritemapEntry(0, $1F3, $E8, 1, 1, 2, 4, $0A)
     %spritemapEntry(0, $1FB, $E8, 1, 1, 2, 4, $0B)
     %spritemapEntry(1, $43F3, $F0, 1, 1, 2, 4, $08)
 
+%anchor($92B66B)
 SamusSpritemaps_B66B:
     dw $0004                                                             ;92B66B;
     %spritemapEntry(0, $1E9, $E9, 1, 1, 2, 4, $0A)
@@ -5356,6 +5694,7 @@ SamusSpritemaps_B66B:
     %spritemapEntry(0, $1F9, $F9, 1, 1, 2, 4, $0C)
     %spritemapEntry(1, $43E9, $F1, 1, 1, 2, 4, $08)
 
+%anchor($92B681)
 SamusSpritemaps_B681:
     dw $0004                                                             ;92B681;
     %spritemapEntry(0, $1F1, $ED, 1, 1, 2, 4, $0A)
@@ -5363,6 +5702,7 @@ SamusSpritemaps_B681:
     %spritemapEntry(0, $1E9, $F5, 1, 1, 2, 4, $0C)
     %spritemapEntry(1, $43F1, $F5, 1, 1, 2, 4, $08)
 
+%anchor($92B697)
 SamusSpritemaps_B697:
     dw $0005                                                             ;92B697;
     %spritemapEntry(0, $1F0, $F0, 1, 1, 2, 4, $0A)
@@ -5371,27 +5711,32 @@ SamusSpritemaps_B697:
     %spritemapEntry(0, $1E8, $F8, 1, 1, 2, 4, $0D)
     %spritemapEntry(1, $43F0, $F8, 1, 1, 2, 4, $08)
 
+%anchor($92B6B2)
 SamusSpritemaps_B6B2:
     dw $0003                                                             ;92B6B2;
     %spritemapEntry(0, $1E8, $F0, 1, 1, 2, 4, $0C)
     %spritemapEntry(1, $43E0, $F8, 1, 1, 2, 4, $08)
     %spritemapEntry(1, $43F0, $F8, 1, 1, 2, 4, $0A)
 
+%anchor($92B6C3)
 SamusSpritemaps_B6C3:
     dw $0002                                                             ;92B6C3;
     %spritemapEntry(1, $43F8, $E0, 1, 1, 2, 4, $08)
     %spritemapEntry(1, $43F8, $F0, 1, 1, 2, 4, $0A)
 
+%anchor($92B6CF)
 SamusSpritemaps_B6CF:
     dw $0002                                                             ;92B6CF;
     %spritemapEntry(1, $43F8, $E0, 1, 1, 2, 4, $08)
     %spritemapEntry(1, $43F8, $F0, 1, 1, 2, 4, $0A)
 
+%anchor($92B6DB)
 SamusSpritemaps_B6DB:
     dw $0002                                                             ;92B6DB;
     %spritemapEntry(1, $4200, $F7, 1, 1, 2, 4, $08)
     %spritemapEntry(1, $4210, $F7, 1, 1, 2, 4, $0A)
 
+%anchor($92B6E7)
 SamusSpritemaps_B6E7:
     dw $0004                                                             ;92B6E7;
     %spritemapEntry(0, $17, $E9, 1, 1, 2, 4, $0A)
@@ -5399,16 +5744,19 @@ SamusSpritemaps_B6E7:
     %spritemapEntry(0, $1FF, $F9, 1, 1, 2, 4, $0C)
     %spritemapEntry(1, $4207, $F1, 1, 1, 2, 4, $08)
 
+%anchor($92B6FD)
 SamusSpritemaps_B6FD:
     dw $0002                                                             ;92B6FD;
     %spritemapEntry(1, $4207, $E9, 1, 1, 2, 4, $08)
     %spritemapEntry(1, $43FF, $F1, 1, 1, 2, 4, $0A)
 
+%anchor($92B709)
 SamusSpritemaps_B709:
     dw $0002                                                             ;92B709;
     %spritemapEntry(1, $4205, $E1, 1, 1, 2, 4, $08)
     %spritemapEntry(1, $43FD, $F1, 1, 1, 2, 4, $0A)
 
+%anchor($92B715)
 SamusSpritemaps_B715:
     dw $0004                                                             ;92B715;
     %spritemapEntry(0, $05, $F1, 1, 1, 2, 4, $0A)
@@ -5416,37 +5764,44 @@ SamusSpritemaps_B715:
     %spritemapEntry(0, $1FD, $F1, 1, 1, 2, 4, $0B)
     %spritemapEntry(0, $1FD, $F9, 1, 1, 2, 4, $0C)
 
+%anchor($92B72B)
 SamusSpritemaps_B72B:
     dw $0002                                                             ;92B72B;
     %spritemapEntry(1, $43F7, $E0, 1, 1, 2, 4, $08)
     %spritemapEntry(1, $43F7, $F0, 1, 1, 2, 4, $0A)
 
+%anchor($92B737)
 SamusSpritemaps_B737:
     dw $0002                                                             ;92B737;
     %spritemapEntry(1, $43F3, $E2, 1, 1, 2, 4, $08)
     %spritemapEntry(1, $43F3, $F2, 1, 1, 2, 4, $0A)
 
+%anchor($92B743)
 SamusSpritemaps_B743:
     dw $0002                                                             ;92B743;
     %spritemapEntry(1, $43E9, $E1, 1, 1, 2, 4, $08)
     %spritemapEntry(1, $43F1, $F1, 1, 1, 2, 4, $0A)
 
+%anchor($92B74F)
 SamusSpritemaps_B74F:
     dw $0002                                                             ;92B74F;
     %spritemapEntry(1, $43E1, $EC, 1, 1, 2, 4, $08)
     %spritemapEntry(1, $43F1, $F4, 1, 1, 2, 4, $0A)
 
+%anchor($92B75B)
 SamusSpritemaps_B75B:
     dw $0002                                                             ;92B75B;
     %spritemapEntry(1, $43F0, $F8, 0, 0, 2, 4, $08)
     %spritemapEntry(1, $43E0, $F8, 0, 0, 2, 4, $0A)
 
+%anchor($92B767)
 SamusSpritemaps_B767:
     dw $0003                                                             ;92B767;
     %spritemapEntry(0, $10, $04, 0, 1, 2, 4, $0A)
     %spritemapEntry(0, $10, $FC, 0, 1, 2, 4, $0B)
     %spritemapEntry(1, $4200, $FC, 0, 1, 2, 4, $08)
 
+%anchor($92B778)
 SamusSpritemaps_B778:
     dw $0006                                                             ;92B778;
     %spritemapEntry(0, $0F, $0D, 0, 1, 2, 4, $0A)
@@ -5456,12 +5811,14 @@ SamusSpritemaps_B778:
     %spritemapEntry(0, $07, $0D, 0, 1, 2, 4, $0E)
     %spritemapEntry(1, $43FF, $FD, 0, 1, 2, 4, $08)
 
+%anchor($92B798)
 SamusSpritemaps_B798:
     dw $0003                                                             ;92B798;
     %spritemapEntry(1, $4207, $07, 0, 1, 2, 4, $08)
     %spritemapEntry(0, $0F, $FF, 0, 1, 2, 4, $0C)
     %spritemapEntry(1, $43FF, $FF, 0, 1, 2, 4, $0A)
 
+%anchor($92B7A9)
 SamusSpritemaps_B7A9:
     dw $0004                                                             ;92B7A9;
     %spritemapEntry(0, $00, $10, 0, 1, 2, 4, $0A)
@@ -5469,6 +5826,7 @@ SamusSpritemaps_B7A9:
     %spritemapEntry(0, $08, $08, 0, 1, 2, 4, $0C)
     %spritemapEntry(1, $43F8, $00, 0, 1, 2, 4, $08)
 
+%anchor($92B7BF)
 SamusSpritemaps_B7BF:
     dw $0005                                                             ;92B7BF;
     %spritemapEntry(0, $1F5, $10, 0, 1, 2, 4, $0A)
@@ -5477,6 +5835,7 @@ SamusSpritemaps_B7BF:
     %spritemapEntry(0, $05, $08, 0, 1, 2, 4, $0D)
     %spritemapEntry(1, $43F5, $00, 0, 1, 2, 4, $08)
 
+%anchor($92B7DA)
 SamusSpritemaps_B7DA:
     dw $0005                                                             ;92B7DA;
     %spritemapEntry(0, $03, $08, 0, 1, 2, 4, $0A)
@@ -5485,12 +5844,14 @@ SamusSpritemaps_B7DA:
     %spritemapEntry(0, $03, $10, 0, 1, 2, 4, $0D)
     %spritemapEntry(1, $43F3, $00, 0, 1, 2, 4, $08)
 
+%anchor($92B7F5)
 SamusSpritemaps_B7F5:
     dw $0003                                                             ;92B7F5;
     %spritemapEntry(0, $1F3, $10, 0, 1, 2, 4, $0A)
     %spritemapEntry(0, $1FB, $10, 0, 1, 2, 4, $0B)
     %spritemapEntry(1, $43F3, $00, 0, 1, 2, 4, $08)
 
+%anchor($92B806)
 SamusSpritemaps_B806:
     dw $0004                                                             ;92B806;
     %spritemapEntry(0, $1E9, $0F, 0, 1, 2, 4, $0A)
@@ -5498,6 +5859,7 @@ SamusSpritemaps_B806:
     %spritemapEntry(0, $1F9, $FF, 0, 1, 2, 4, $0C)
     %spritemapEntry(1, $43E9, $FF, 0, 1, 2, 4, $08)
 
+%anchor($92B81C)
 SamusSpritemaps_B81C:
     dw $0004                                                             ;92B81C;
     %spritemapEntry(0, $1F1, $0B, 0, 1, 2, 4, $0A)
@@ -5505,6 +5867,7 @@ SamusSpritemaps_B81C:
     %spritemapEntry(0, $1E9, $03, 0, 1, 2, 4, $0C)
     %spritemapEntry(1, $43F1, $FB, 0, 1, 2, 4, $08)
 
+%anchor($92B832)
 SamusSpritemaps_B832:
     dw $0005                                                             ;92B832;
     %spritemapEntry(0, $1F0, $08, 0, 1, 2, 4, $0A)
@@ -5513,27 +5876,32 @@ SamusSpritemaps_B832:
     %spritemapEntry(0, $1E8, $00, 0, 1, 2, 4, $0D)
     %spritemapEntry(1, $43F0, $F8, 0, 1, 2, 4, $08)
 
+%anchor($92B84D)
 SamusSpritemaps_B84D:
     dw $0003                                                             ;92B84D;
     %spritemapEntry(0, $1E8, $08, 0, 1, 2, 0, $0C)
     %spritemapEntry(1, $43E0, $F8, 0, 1, 2, 4, $08)
     %spritemapEntry(1, $43F0, $F8, 0, 1, 2, 4, $0A)
 
+%anchor($92B85E)
 SamusSpritemaps_B85E:
     dw $0002                                                             ;92B85E;
     %spritemapEntry(1, $43F8, $10, 0, 1, 2, 4, $08)
     %spritemapEntry(1, $43F8, $00, 0, 1, 2, 4, $0A)
 
+%anchor($92B86A)
 SamusSpritemaps_B86A:
     dw $0002                                                             ;92B86A;
     %spritemapEntry(1, $43F8, $10, 0, 1, 2, 4, $08)
     %spritemapEntry(1, $43F8, $00, 0, 1, 2, 4, $0A)
 
+%anchor($92B876)
 SamusSpritemaps_B876:
     dw $0002                                                             ;92B876;
     %spritemapEntry(1, $4200, $F9, 0, 1, 2, 4, $08)
     %spritemapEntry(1, $4210, $F9, 0, 1, 2, 4, $0A)
 
+%anchor($92B882)
 SamusSpritemaps_B882:
     dw $0004                                                             ;92B882;
     %spritemapEntry(0, $17, $0F, 0, 1, 2, 4, $0A)
@@ -5541,16 +5909,19 @@ SamusSpritemaps_B882:
     %spritemapEntry(0, $1FF, $FF, 0, 1, 2, 4, $0C)
     %spritemapEntry(1, $4207, $FF, 0, 1, 2, 4, $08)
 
+%anchor($92B898)
 SamusSpritemaps_B898:
     dw $0002                                                             ;92B898;
     %spritemapEntry(1, $4207, $07, 0, 1, 2, 4, $08)
     %spritemapEntry(1, $43FF, $FF, 0, 1, 2, 4, $0A)
 
+%anchor($92B8A4)
 SamusSpritemaps_B8A4:
     dw $0002                                                             ;92B8A4;
     %spritemapEntry(1, $4205, $0F, 0, 1, 2, 4, $08)
     %spritemapEntry(1, $43FD, $FF, 0, 1, 2, 4, $0A)
 
+%anchor($92B8B0)
 SamusSpritemaps_B8B0:
     dw $0004                                                             ;92B8B0;
     %spritemapEntry(0, $05, $07, 0, 1, 2, 4, $0A)
@@ -5558,21 +5929,25 @@ SamusSpritemaps_B8B0:
     %spritemapEntry(0, $1FD, $07, 0, 1, 2, 4, $0B)
     %spritemapEntry(0, $1FD, $FF, 0, 1, 2, 4, $0C)
 
+%anchor($92B8C6)
 SamusSpritemaps_B8C6:
     dw $0002                                                             ;92B8C6;
     %spritemapEntry(1, $43F7, $10, 0, 1, 2, 4, $08)
     %spritemapEntry(1, $43F7, $00, 0, 1, 2, 4, $0A)
 
+%anchor($92B8D2)
 SamusSpritemaps_B8D2:
     dw $0002                                                             ;92B8D2;
     %spritemapEntry(1, $43F3, $0E, 0, 1, 2, 4, $08)
     %spritemapEntry(1, $43F3, $FE, 0, 1, 2, 4, $0A)
 
+%anchor($92B8DE)
 SamusSpritemaps_B8DE:
     dw $0002                                                             ;92B8DE;
     %spritemapEntry(1, $43E9, $0F, 0, 1, 2, 4, $08)
     %spritemapEntry(1, $43F1, $FF, 0, 1, 2, 4, $0A)
 
+%anchor($92B8EA)
 SamusSpritemaps_B8EA:
     dw $0004                                                             ;92B8EA;
     %spritemapEntry(0, $1E0, $10, 0, 1, 2, 4, $0C)
@@ -5580,22 +5955,26 @@ SamusSpritemaps_B8EA:
     %spritemapEntry(1, $43E8, $08, 0, 1, 2, 4, $08)
     %spritemapEntry(1, $43F0, $00, 0, 1, 2, 4, $0A)
 
+%anchor($92B900)
 SamusSpritemaps_B900:
     dw $0002                                                             ;92B900;
     %spritemapEntry(1, $43E1, $04, 0, 1, 2, 4, $08)
     %spritemapEntry(1, $43F1, $FC, 0, 1, 2, 4, $0A)
 
+%anchor($92B90C)
 SamusSpritemaps_B90C:
     dw $0002                                                             ;92B90C;
     %spritemapEntry(1, $43F0, $F8, 1, 0, 2, 4, $08)
     %spritemapEntry(1, $43E0, $F8, 1, 0, 2, 4, $0A)
 
+%anchor($92B918)
 SamusSpritemaps_B918:
     dw $0003                                                             ;92B918;
     %spritemapEntry(0, $1E8, $F4, 1, 0, 2, 4, $0A)
     %spritemapEntry(0, $1E8, $FC, 1, 0, 2, 4, $0B)
     %spritemapEntry(1, $43F0, $F4, 1, 0, 2, 4, $08)
 
+%anchor($92B929)
 SamusSpritemaps_B929:
     dw $0006                                                             ;92B929;
     %spritemapEntry(0, $1E9, $EB, 1, 0, 2, 4, $0A)
@@ -5605,12 +5984,14 @@ SamusSpritemaps_B929:
     %spritemapEntry(0, $1F1, $EB, 1, 0, 2, 4, $0E)
     %spritemapEntry(1, $43F1, $F3, 1, 0, 2, 4, $08)
 
+%anchor($92B949)
 SamusSpritemaps_B949:
     dw $0003                                                             ;92B949;
     %spritemapEntry(1, $43E9, $E9, 1, 0, 2, 4, $08)
     %spritemapEntry(0, $1E9, $F9, 1, 0, 2, 4, $0C)
     %spritemapEntry(1, $43F1, $F1, 1, 0, 2, 4, $0A)
 
+%anchor($92B95A)
 SamusSpritemaps_B95A:
     dw $0004                                                             ;92B95A;
     %spritemapEntry(0, $1F8, $E8, 1, 0, 2, 4, $0A)
@@ -5618,6 +5999,7 @@ SamusSpritemaps_B95A:
     %spritemapEntry(0, $1F0, $F0, 1, 0, 2, 4, $0C)
     %spritemapEntry(1, $43F8, $F0, 1, 0, 2, 4, $08)
 
+%anchor($92B970)
 SamusSpritemaps_B970:
     dw $0005                                                             ;92B970;
     %spritemapEntry(0, $03, $E8, 1, 0, 2, 4, $0A)
@@ -5626,6 +6008,7 @@ SamusSpritemaps_B970:
     %spritemapEntry(0, $1F3, $F0, 1, 0, 2, 4, $0D)
     %spritemapEntry(1, $43FB, $F0, 1, 0, 2, 4, $08)
 
+%anchor($92B98B)
 SamusSpritemaps_B98B:
     dw $0005                                                             ;92B98B;
     %spritemapEntry(0, $1F5, $F0, 1, 0, 2, 4, $0A)
@@ -5634,12 +6017,14 @@ SamusSpritemaps_B98B:
     %spritemapEntry(0, $1F5, $E8, 1, 0, 2, 4, $0D)
     %spritemapEntry(1, $43FD, $F0, 1, 0, 2, 4, $08)
 
+%anchor($92B9A6)
 SamusSpritemaps_B9A6:
     dw $0003                                                             ;92B9A6;
     %spritemapEntry(0, $05, $E8, 1, 0, 2, 4, $0A)
     %spritemapEntry(0, $1FD, $E8, 1, 0, 2, 4, $0B)
     %spritemapEntry(1, $43FD, $F0, 1, 0, 2, 4, $08)
 
+%anchor($92B9B7)
 SamusSpritemaps_B9B7:
     dw $0004                                                             ;92B9B7;
     %spritemapEntry(0, $0F, $E9, 1, 0, 2, 4, $0A)
@@ -5647,6 +6032,7 @@ SamusSpritemaps_B9B7:
     %spritemapEntry(0, $1FF, $F9, 1, 0, 2, 4, $0C)
     %spritemapEntry(1, $4207, $F1, 1, 0, 2, 4, $08)
 
+%anchor($92B9CD)
 SamusSpritemaps_B9CD:
     dw $0004                                                             ;92B9CD;
     %spritemapEntry(0, $07, $ED, 1, 0, 2, 4, $0A)
@@ -5654,6 +6040,7 @@ SamusSpritemaps_B9CD:
     %spritemapEntry(0, $0F, $F5, 1, 0, 2, 4, $0C)
     %spritemapEntry(1, $43FF, $F5, 1, 0, 2, 4, $08)
 
+%anchor($92B9E3)
 SamusSpritemaps_B9E3:
     dw $0005                                                             ;92B9E3;
     %spritemapEntry(0, $08, $F0, 1, 0, 2, 4, $0A)
@@ -5662,27 +6049,32 @@ SamusSpritemaps_B9E3:
     %spritemapEntry(0, $10, $F8, 1, 0, 2, 4, $0D)
     %spritemapEntry(1, $4200, $F8, 1, 0, 2, 4, $08)
 
+%anchor($92B9FE)
 SamusSpritemaps_B9FE:
     dw $0003                                                             ;92B9FE;
     %spritemapEntry(0, $10, $F0, 1, 0, 2, 4, $0C)
     %spritemapEntry(1, $4210, $F8, 1, 0, 2, 4, $08)
     %spritemapEntry(1, $4200, $F8, 1, 0, 2, 4, $0A)
 
+%anchor($92BA0F)
 SamusSpritemaps_BA0F:
     dw $0002                                                             ;92BA0F;
     %spritemapEntry(1, $43F8, $E0, 1, 0, 2, 4, $08)
     %spritemapEntry(1, $43F8, $F0, 1, 0, 2, 4, $0A)
 
+%anchor($92BA1B)
 SamusSpritemaps_BA1B:
     dw $0002                                                             ;92BA1B;
     %spritemapEntry(1, $43F8, $E0, 1, 0, 2, 4, $08)
     %spritemapEntry(1, $43F8, $F0, 1, 0, 2, 4, $0A)
 
+%anchor($92BA27)
 SamusSpritemaps_BA27:
     dw $0002                                                             ;92BA27;
     %spritemapEntry(1, $43F0, $F7, 1, 0, 2, 4, $08)
     %spritemapEntry(1, $43E0, $F7, 1, 0, 2, 4, $0A)
 
+%anchor($92BA33)
 SamusSpritemaps_BA33:
     dw $0004                                                             ;92BA33;
     %spritemapEntry(0, $1E1, $E9, 1, 0, 2, 4, $0A)
@@ -5690,16 +6082,19 @@ SamusSpritemaps_BA33:
     %spritemapEntry(0, $1F9, $F9, 1, 0, 2, 4, $0C)
     %spritemapEntry(1, $43E9, $F1, 1, 0, 2, 4, $08)
 
+%anchor($92BA49)
 SamusSpritemaps_BA49:
     dw $0002                                                             ;92BA49;
     %spritemapEntry(1, $43E9, $E9, 1, 0, 2, 4, $08)
     %spritemapEntry(1, $43F1, $F1, 1, 0, 2, 4, $0A)
 
+%anchor($92BA55)
 SamusSpritemaps_BA55:
     dw $0002                                                             ;92BA55;
     %spritemapEntry(1, $43EB, $E1, 1, 0, 2, 4, $08)
     %spritemapEntry(1, $43F3, $F1, 1, 0, 2, 4, $0A)
 
+%anchor($92BA61)
 SamusSpritemaps_BA61:
     dw $0004                                                             ;92BA61;
     %spritemapEntry(0, $1F3, $F1, 1, 0, 2, 4, $0A)
@@ -5707,51 +6102,61 @@ SamusSpritemaps_BA61:
     %spritemapEntry(0, $1FB, $F1, 1, 0, 2, 4, $0B)
     %spritemapEntry(0, $1FB, $F9, 1, 0, 2, 4, $0C)
 
+%anchor($92BA77)
 SamusSpritemaps_BA77:
     dw $0002                                                             ;92BA77;
     %spritemapEntry(1, $43F9, $E0, 1, 0, 2, 4, $08)
     %spritemapEntry(1, $43F9, $F0, 1, 0, 2, 4, $0A)
 
+%anchor($92BA83)
 SamusSpritemaps_BA83:
     dw $0002                                                             ;92BA83;
     %spritemapEntry(1, $43FD, $E2, 1, 0, 2, 4, $08)
     %spritemapEntry(1, $43FD, $F2, 1, 0, 2, 4, $0A)
 
+%anchor($92BA8F)
 SamusSpritemaps_BA8F:
     dw $0002                                                             ;92BA8F;
     %spritemapEntry(1, $4207, $E1, 1, 0, 2, 4, $08)
     %spritemapEntry(1, $43FF, $F1, 1, 0, 2, 4, $0A)
 
+%anchor($92BA9B)
 SamusSpritemaps_BA9B:
     dw $0002                                                             ;92BA9B;
     %spritemapEntry(1, $420F, $EC, 1, 0, 2, 4, $08)
     %spritemapEntry(1, $43FF, $F4, 1, 0, 2, 4, $0A)
 
+%anchor($92BAA7)
 SamusSpritemaps_BAA7:
     dw $0002                                                             ;92BAA7;
     %spritemapEntry(1, $4200, $F8, 0, 1, 2, 4, $08)
     %spritemapEntry(1, $4210, $F8, 0, 1, 2, 4, $0A)
 
+%anchor($92BAB3)
 SamusSpritemaps_BAB3:
     dw $0002                                                             ;92BAB3;
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 4, $02)
     %spritemapEntry(1, $43F8, $F8, 0, 0, 2, 4, $00)
 
+%anchor($92BABF)
 SamusSpritemaps_BABF:
     dw $0002                                                             ;92BABF;
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 4, $02)
     %spritemapEntry(1, $43F8, $F8, 0, 1, 2, 4, $00)
 
+%anchor($92BACB)
 SamusSpritemaps_BACB:
     dw $0002                                                             ;92BACB;
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 4, $02)
     %spritemapEntry(1, $43F8, $F8, 1, 1, 2, 4, $00)
 
+%anchor($92BAD7)
 SamusSpritemaps_BAD7:
     dw $0002                                                             ;92BAD7;
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 4, $02)
     %spritemapEntry(1, $43F8, $F8, 1, 0, 2, 4, $00)
 
+%anchor($92BAE3)
 SamusSpritemaps_BAE3:
     dw $0005                                                             ;92BAE3;
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 4, $00)
@@ -5760,26 +6165,31 @@ SamusSpritemaps_BAE3:
     %spritemapEntry(0, $00, $F7, 0, 0, 2, 4, $03)
     %spritemapEntry(0, $1F8, $F7, 0, 0, 2, 4, $04)
 
+%anchor($92BAFE)
 SamusSpritemaps_BAFE:
     dw $0002                                                             ;92BAFE;
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 4, $02)
     %spritemapEntry(1, $43F8, $F9, 0, 0, 2, 4, $00)
 
+%anchor($92BB0A)
 SamusSpritemaps_BB0A:
     dw $0002                                                             ;92BB0A;
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 4, $02)
     %spritemapEntry(1, $43F8, $F7, 1, 0, 2, 4, $00)
 
+%anchor($92BB16)
 SamusSpritemaps_BB16:
     dw $0002                                                             ;92BB16;
     %spritemapEntry(0, $1F8, $F8, 0, 0, 2, 4, $02)
     %spritemapEntry(1, $43F8, $F9, 0, 1, 2, 4, $00)
 
+%anchor($92BB22)
 SamusSpritemaps_BB22:
     dw $0002                                                             ;92BB22;
     %spritemapEntry(1, $43F8, $00, 0, 0, 2, 4, $00)
     %spritemapEntry(1, $43F8, $F0, 0, 0, 2, 4, $02)
 
+%anchor($92BB2E)
 SamusSpritemaps_BB2E:
     dw $0004                                                             ;92BB2E;
     %spritemapEntry(1, $4200, $F1, 0, 0, 2, 4, $00)
@@ -5787,11 +6197,13 @@ SamusSpritemaps_BB2E:
     %spritemapEntry(1, $4200, $01, 0, 0, 2, 4, $04)
     %spritemapEntry(1, $43F0, $F1, 0, 0, 2, 4, $06)
 
+%anchor($92BB44)
 SamusSpritemaps_BB44:
     dw $0002                                                             ;92BB44;
     %spritemapEntry(1, $4200, $F8, 0, 0, 2, 4, $00)
     %spritemapEntry(1, $43F0, $F8, 0, 0, 2, 4, $02)
 
+%anchor($92BB50)
 SamusSpritemaps_BB50:
     dw $0004                                                             ;92BB50;
     %spritemapEntry(1, $4201, $01, 1, 1, 2, 4, $00)
@@ -5799,11 +6211,13 @@ SamusSpritemaps_BB50:
     %spritemapEntry(1, $43F1, $01, 1, 1, 2, 4, $04)
     %spritemapEntry(1, $4201, $F1, 1, 1, 2, 4, $06)
 
+%anchor($92BB66)
 SamusSpritemaps_BB66:
     dw $0002                                                             ;92BB66;
     %spritemapEntry(1, $43F8, $F0, 1, 1, 2, 4, $00)
     %spritemapEntry(1, $43F8, $00, 1, 1, 2, 4, $02)
 
+%anchor($92BB72)
 SamusSpritemaps_BB72:
     dw $0004                                                             ;92BB72;
     %spritemapEntry(1, $43F1, $FF, 1, 1, 2, 4, $00)
@@ -5811,11 +6225,13 @@ SamusSpritemaps_BB72:
     %spritemapEntry(1, $4201, $FF, 1, 1, 2, 4, $04)
     %spritemapEntry(1, $43F1, $EF, 1, 1, 2, 4, $06)
 
+%anchor($92BB88)
 SamusSpritemaps_BB88:
     dw $0002                                                             ;92BB88;
     %spritemapEntry(1, $43F0, $F8, 1, 1, 2, 4, $00)
     %spritemapEntry(1, $4200, $F8, 1, 1, 2, 4, $02)
 
+%anchor($92BB94)
 SamusSpritemaps_BB94:
     dw $0004                                                             ;92BB94;
     %spritemapEntry(1, $43EF, $EE, 0, 0, 2, 4, $00)
@@ -5823,6 +6239,7 @@ SamusSpritemaps_BB94:
     %spritemapEntry(1, $43EF, $FE, 0, 0, 2, 4, $04)
     %spritemapEntry(1, $43FF, $EE, 0, 0, 2, 4, $06)
 
+%anchor($92BBAA)
 SamusSpritemaps_BBAA:
     dw $000A                                                             ;92BBAA;
     %spritemapEntry(0, $1F8, $0A, 0, 0, 2, 4, $00)
@@ -5836,6 +6253,7 @@ SamusSpritemaps_BBAA:
     %spritemapEntry(0, $1F8, $EE, 0, 0, 2, 4, $10)
     %spritemapEntry(0, $1EE, $F0, 0, 0, 2, 4, $11)
 
+%anchor($92BBDE)
 SamusSpritemaps_BBDE:
     dw $000B                                                             ;92BBDE;
     %spritemapEntry(0, $00, $08, 0, 0, 2, 4, $00)
@@ -5850,6 +6268,7 @@ SamusSpritemaps_BBDE:
     %spritemapEntry(0, $1F8, $EE, 0, 0, 2, 4, $11)
     %spritemapEntry(0, $1F0, $EE, 0, 0, 2, 4, $12)
 
+%anchor($92BC17)
 SamusSpritemaps_BC17:
     dw $000B                                                             ;92BC17;
     %spritemapEntry(0, $0A, $08, 0, 0, 2, 4, $00)
@@ -5864,6 +6283,7 @@ SamusSpritemaps_BC17:
     %spritemapEntry(0, $1F8, $EE, 0, 0, 2, 4, $11)
     %spritemapEntry(0, $1F0, $EE, 0, 0, 2, 4, $12)
 
+%anchor($92BC50)
 SamusSpritemaps_BC50:
     dw $0008                                                             ;92BC50;
     %spritemapEntry(0, $08, $08, 0, 0, 2, 4, $00)
@@ -5875,30 +6295,36 @@ SamusSpritemaps_BC50:
     %spritemapEntry(0, $00, $F0, 0, 0, 2, 4, $06)
     %spritemapEntry(0, $1F0, $F0, 0, 0, 2, 4, $07)
 
+%anchor($92BC7A)
 SamusSpritemaps_BC7A:
     dw $0001                                                             ;92BC7A;
     %spritemapEntry(0, $1F8, $F8, 0, 0, 1, 0, $00)
 
+%anchor($92BC81)
 SamusSpritemaps_BC81:
     dw $0001                                                             ;92BC81;
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 4, $00)
 
+%anchor($92BC88)
 SamusSpritemaps_BC88:
     dw $0002                                                             ;92BC88;
     %spritemapEntry(0, $07, $FC, 0, 0, 2, 4, $02)
     %spritemapEntry(1, $43F7, $F9, 0, 0, 2, 4, $00)
 
+%anchor($92BC94)
 SamusSpritemaps_BC94:
     dw $0002                                                             ;92BC94;
     %spritemapEntry(0, $1FD, $07, 0, 0, 2, 4, $02)
     %spritemapEntry(1, $43F8, $F7, 0, 0, 2, 4, $00)
 
+%anchor($92BCA0)
 SamusSpritemaps_BCA0:
     dw $0003                                                             ;92BCA0;
     %spritemapEntry(0, $00, $05, 0, 0, 2, 4, $02)
     %spritemapEntry(0, $1F8, $05, 0, 0, 2, 4, $03)
     %spritemapEntry(1, $43F8, $F5, 0, 0, 2, 4, $00)
 
+%anchor($92BCB1)
 SamusSpritemaps_BCB1:
     dw $0005                                                             ;92BCB1;
     %spritemapEntry(0, $00, $0A, 0, 0, 2, 4, $02)
@@ -5907,12 +6333,14 @@ SamusSpritemaps_BCB1:
     %spritemapEntry(0, $1F8, $02, 0, 0, 2, 4, $05)
     %spritemapEntry(1, $43F8, $F2, 0, 0, 2, 4, $00)
 
+%anchor($92BCCC)
 SamusSpritemaps_BCCC:
     dw $0003                                                             ;92BCCC;
     %spritemapEntry(0, $1F8, $05, 0, 1, 2, 4, $02)
     %spritemapEntry(0, $00, $05, 0, 1, 2, 4, $03)
     %spritemapEntry(1, $43F8, $F5, 0, 1, 2, 4, $00)
 
+%anchor($92BCDD)
 SamusSpritemaps_BCDD:
     dw $0005                                                             ;92BCDD;
     %spritemapEntry(0, $1F8, $0A, 0, 1, 2, 4, $02)
@@ -5921,26 +6349,31 @@ SamusSpritemaps_BCDD:
     %spritemapEntry(0, $00, $02, 0, 1, 2, 4, $05)
     %spritemapEntry(1, $43F8, $F2, 0, 1, 2, 4, $00)
 
+%anchor($92BCF8)
 SamusSpritemaps_BCF8:
     dw $0002                                                             ;92BCF8;
     %spritemapEntry(0, $1F8, $F8, 0, 1, 2, 4, $02)
     %spritemapEntry(1, $43F8, $F8, 0, 1, 2, 4, $00)
 
+%anchor($92BD04)
 SamusSpritemaps_BD04:
     dw $0002                                                             ;92BD04;
     %spritemapEntry(0, $1F8, $F8, 0, 1, 2, 4, $02)
     %spritemapEntry(1, $43F8, $F8, 0, 0, 2, 4, $00)
 
+%anchor($92BD10)
 SamusSpritemaps_BD10:
     dw $0002                                                             ;92BD10;
     %spritemapEntry(0, $1F8, $F8, 0, 1, 2, 4, $02)
     %spritemapEntry(1, $43F8, $F8, 1, 0, 2, 4, $00)
 
+%anchor($92BD1C)
 SamusSpritemaps_BD1C:
     dw $0002                                                             ;92BD1C;
     %spritemapEntry(0, $1F8, $F8, 0, 1, 2, 4, $02)
     %spritemapEntry(1, $43F8, $F8, 1, 1, 2, 4, $00)
 
+%anchor($92BD28)
 SamusSpritemaps_BD28:
     dw $0005                                                             ;92BD28;
     %spritemapEntry(0, $1F8, $F8, 0, 1, 2, 4, $00)
@@ -5949,26 +6382,31 @@ SamusSpritemaps_BD28:
     %spritemapEntry(0, $1F8, $F7, 0, 1, 2, 4, $03)
     %spritemapEntry(0, $00, $F7, 0, 1, 2, 4, $04)
 
+%anchor($92BD43)
 SamusSpritemaps_BD43:
     dw $0002                                                             ;92BD43;
     %spritemapEntry(0, $1F8, $F8, 0, 1, 2, 4, $02)
     %spritemapEntry(1, $43F8, $F9, 0, 1, 2, 4, $00)
 
+%anchor($92BD4F)
 SamusSpritemaps_BD4F:
     dw $0002                                                             ;92BD4F;
     %spritemapEntry(0, $1F8, $F8, 0, 1, 2, 4, $02)
     %spritemapEntry(1, $43F8, $F7, 1, 1, 2, 4, $00)
 
+%anchor($92BD5B)
 SamusSpritemaps_BD5B:
     dw $0002                                                             ;92BD5B;
     %spritemapEntry(0, $1F8, $F8, 0, 1, 2, 4, $02)
     %spritemapEntry(1, $43F8, $F9, 0, 0, 2, 4, $00)
 
+%anchor($92BD67)
 SamusSpritemaps_BD67:
     dw $0002                                                             ;92BD67;
     %spritemapEntry(1, $43F8, $00, 0, 1, 2, 4, $00)
     %spritemapEntry(1, $43F8, $F0, 0, 1, 2, 4, $02)
 
+%anchor($92BD73)
 SamusSpritemaps_BD73:
     dw $0004                                                             ;92BD73;
     %spritemapEntry(1, $43F0, $F1, 0, 1, 2, 4, $00)
@@ -5976,11 +6414,13 @@ SamusSpritemaps_BD73:
     %spritemapEntry(1, $43F0, $01, 0, 1, 2, 4, $04)
     %spritemapEntry(1, $4200, $F1, 0, 1, 2, 4, $06)
 
+%anchor($92BD89)
 SamusSpritemaps_BD89:
     dw $0002                                                             ;92BD89;
     %spritemapEntry(1, $43F0, $F8, 0, 1, 2, 4, $00)
     %spritemapEntry(1, $4200, $F8, 0, 1, 2, 4, $02)
 
+%anchor($92BD95)
 SamusSpritemaps_BD95:
     dw $0004                                                             ;92BD95;
     %spritemapEntry(1, $43EF, $01, 1, 0, 2, 4, $00)
@@ -5988,11 +6428,13 @@ SamusSpritemaps_BD95:
     %spritemapEntry(1, $43FF, $01, 1, 0, 2, 4, $04)
     %spritemapEntry(1, $43EF, $F1, 1, 0, 2, 4, $06)
 
+%anchor($92BDAB)
 SamusSpritemaps_BDAB:
     dw $0002                                                             ;92BDAB;
     %spritemapEntry(1, $43F8, $F0, 1, 0, 2, 4, $00)
     %spritemapEntry(1, $43F8, $00, 1, 0, 2, 4, $02)
 
+%anchor($92BDB7)
 SamusSpritemaps_BDB7:
     dw $0004                                                             ;92BDB7;
     %spritemapEntry(1, $43FF, $FF, 1, 0, 2, 4, $00)
@@ -6000,11 +6442,13 @@ SamusSpritemaps_BDB7:
     %spritemapEntry(1, $43EF, $FF, 1, 0, 2, 4, $04)
     %spritemapEntry(1, $43FF, $EF, 1, 0, 2, 4, $06)
 
+%anchor($92BDCD)
 SamusSpritemaps_BDCD:
     dw $0002                                                             ;92BDCD;
     %spritemapEntry(1, $4200, $F8, 1, 0, 2, 4, $00)
     %spritemapEntry(1, $43F0, $F8, 1, 0, 2, 4, $02)
 
+%anchor($92BDD9)
 SamusSpritemaps_BDD9:
     dw $0004                                                             ;92BDD9;
     %spritemapEntry(1, $4201, $EE, 0, 1, 2, 4, $00)
@@ -6012,6 +6456,7 @@ SamusSpritemaps_BDD9:
     %spritemapEntry(1, $4201, $FE, 0, 1, 2, 4, $04)
     %spritemapEntry(1, $43F1, $EE, 0, 1, 2, 4, $06)
 
+%anchor($92BDEF)
 SamusSpritemaps_BDEF:
     dw $000A                                                             ;92BDEF;
     %spritemapEntry(0, $00, $0A, 0, 1, 2, 4, $00)
@@ -6025,6 +6470,7 @@ SamusSpritemaps_BDEF:
     %spritemapEntry(0, $00, $EE, 0, 1, 2, 4, $10)
     %spritemapEntry(0, $0A, $F0, 0, 1, 2, 4, $11)
 
+%anchor($92BE23)
 SamusSpritemaps_BE23:
     dw $000B                                                             ;92BE23;
     %spritemapEntry(0, $1F8, $08, 0, 1, 2, 4, $00)
@@ -6039,6 +6485,7 @@ SamusSpritemaps_BE23:
     %spritemapEntry(0, $00, $EE, 0, 1, 2, 4, $11)
     %spritemapEntry(0, $08, $EE, 0, 1, 2, 4, $12)
 
+%anchor($92BE5C)
 SamusSpritemaps_BE5C:
     dw $000B                                                             ;92BE5C;
     %spritemapEntry(0, $1EE, $08, 0, 1, 2, 4, $00)
@@ -6053,6 +6500,7 @@ SamusSpritemaps_BE5C:
     %spritemapEntry(0, $00, $EE, 0, 1, 2, 4, $11)
     %spritemapEntry(0, $08, $EE, 0, 1, 2, 4, $12)
 
+%anchor($92BE95)
 SamusSpritemaps_BE95:
     dw $0008                                                             ;92BE95;
     %spritemapEntry(0, $1F0, $08, 0, 1, 2, 4, $00)
@@ -6064,15 +6512,18 @@ SamusSpritemaps_BE95:
     %spritemapEntry(0, $1F8, $F0, 0, 1, 2, 4, $06)
     %spritemapEntry(0, $08, $F0, 0, 1, 2, 4, $07)
 
+%anchor($92BEBF)
 SamusSpritemaps_BEBF:
     dw $0001                                                             ;92BEBF;
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 0, $00)
 
+%anchor($92BEC6)
 SamusSpritemaps_BEC6:
     dw $0002                                                             ;92BEC6;
     %spritemapEntry(1, $4200, $00, 1, 1, 2, 4, $08)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 2, 4, $08)
 
+%anchor($92BED2)
 SamusSpritemaps_BED2:
     dw $0004                                                             ;92BED2;
     %spritemapEntry(1, $43F0, $F0, 0, 0, 2, 4, $08)
@@ -6080,11 +6531,13 @@ SamusSpritemaps_BED2:
     %spritemapEntry(1, $4200, $00, 1, 1, 2, 4, $08)
     %spritemapEntry(1, $43F0, $00, 1, 0, 2, 4, $0A)
 
+%anchor($92BEE8)
 SamusSpritemaps_BEE8:
     dw $0002                                                             ;92BEE8;
     %spritemapEntry(1, $43F0, $00, 1, 1, 2, 4, $08)
     %spritemapEntry(1, $4200, $F0, 0, 0, 2, 4, $08)
 
+%anchor($92BEF4)
 SamusSpritemaps_BEF4:
     dw $0004                                                             ;92BEF4;
     %spritemapEntry(1, $4200, $00, 0, 1, 2, 4, $08)
@@ -6092,11 +6545,13 @@ SamusSpritemaps_BEF4:
     %spritemapEntry(1, $43F0, $00, 1, 0, 2, 4, $0A)
     %spritemapEntry(1, $4200, $F0, 0, 1, 2, 4, $0A)
 
+%anchor($92BF0A)
 SamusSpritemaps_BF0A:
     dw $0002                                                             ;92BF0A;
     %spritemapEntry(1, $4200, $00, 1, 1, 2, 4, $08)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 2, 4, $08)
 
+%anchor($92BF16)
 SamusSpritemaps_BF16:
     dw $0004                                                             ;92BF16;
     %spritemapEntry(1, $4200, $F0, 0, 1, 2, 4, $08)
@@ -6104,11 +6559,13 @@ SamusSpritemaps_BF16:
     %spritemapEntry(1, $43F0, $F0, 0, 0, 2, 4, $0A)
     %spritemapEntry(1, $4200, $00, 1, 1, 2, 4, $0A)
 
+%anchor($92BF2C)
 SamusSpritemaps_BF2C:
     dw $0002                                                             ;92BF2C;
     %spritemapEntry(1, $43F0, $00, 1, 1, 2, 4, $08)
     %spritemapEntry(1, $4200, $F0, 0, 0, 2, 4, $08)
 
+%anchor($92BF38)
 SamusSpritemaps_BF38:
     dw $0004                                                             ;92BF38;
     %spritemapEntry(1, $43F0, $00, 1, 0, 2, 4, $08)
@@ -6116,6 +6573,7 @@ SamusSpritemaps_BF38:
     %spritemapEntry(1, $4200, $00, 0, 1, 2, 4, $0A)
     %spritemapEntry(1, $43F0, $F0, 1, 0, 2, 4, $0A)
 
+%anchor($92BF4E)
 SamusSpritemaps_BF4E:
     dw $0004                                                             ;92BF4E;
     %spritemapEntry(1, $4200, $00, 1, 1, 2, 4, $08)
@@ -6123,6 +6581,7 @@ SamusSpritemaps_BF4E:
     %spritemapEntry(1, $43F0, $00, 1, 0, 2, 4, $08)
     %spritemapEntry(1, $4200, $F0, 0, 1, 2, 4, $08)
 
+%anchor($92BF64)
 SamusSpritemaps_BF64:
     dw $0004                                                             ;92BF64;
     %spritemapEntry(1, $43F0, $00, 1, 0, 2, 4, $08)
@@ -6130,6 +6589,7 @@ SamusSpritemaps_BF64:
     %spritemapEntry(1, $4200, $00, 1, 1, 2, 4, $0A)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 2, 4, $0A)
 
+%anchor($92BF7A)
 SamusSpritemaps_BF7A:
     dw $0004                                                             ;92BF7A;
     %spritemapEntry(1, $43F0, $00, 1, 0, 2, 4, $08)
@@ -6137,6 +6597,7 @@ SamusSpritemaps_BF7A:
     %spritemapEntry(1, $4200, $00, 1, 1, 2, 4, $08)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 2, 4, $08)
 
+%anchor($92BF90)
 SamusSpritemaps_BF90:
     dw $0004                                                             ;92BF90;
     %spritemapEntry(1, $4200, $00, 1, 1, 2, 4, $08)
@@ -6144,6 +6605,7 @@ SamusSpritemaps_BF90:
     %spritemapEntry(1, $4200, $F0, 0, 1, 2, 4, $0A)
     %spritemapEntry(1, $43F0, $00, 1, 0, 2, 4, $0A)
 
+%anchor($92BFA6)
 SamusSpritemaps_BFA6:
     dw $0004                                                             ;92BFA6;
     %spritemapEntry(1, $4200, $00, 1, 1, 2, 4, $08)
@@ -6151,6 +6613,7 @@ SamusSpritemaps_BFA6:
     %spritemapEntry(1, $4200, $F0, 0, 1, 2, 4, $08)
     %spritemapEntry(1, $43F0, $00, 1, 0, 2, 4, $08)
 
+%anchor($92BFBC)
 SamusSpritemaps_BFBC:
     dw $0004                                                             ;92BFBC;
     %spritemapEntry(1, $4200, $F0, 0, 1, 2, 4, $08)
@@ -6158,6 +6621,7 @@ SamusSpritemaps_BFBC:
     %spritemapEntry(1, $4200, $00, 1, 1, 2, 4, $0A)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 2, 4, $0A)
 
+%anchor($92BFD2)
 SamusSpritemaps_BFD2:
     dw $0004                                                             ;92BFD2;
     %spritemapEntry(1, $43F0, $00, 1, 0, 2, 4, $08)
@@ -6165,6 +6629,7 @@ SamusSpritemaps_BFD2:
     %spritemapEntry(1, $43F0, $F0, 0, 0, 2, 4, $08)
     %spritemapEntry(1, $4200, $00, 1, 1, 2, 4, $08)
 
+%anchor($92BFE8)
 SamusSpritemaps_BFE8:
     dw $0004                                                             ;92BFE8;
     %spritemapEntry(1, $4200, $00, 1, 1, 2, 4, $08)
@@ -6172,6 +6637,7 @@ SamusSpritemaps_BFE8:
     %spritemapEntry(1, $4200, $F0, 0, 1, 2, 4, $0A)
     %spritemapEntry(1, $43F0, $00, 1, 0, 2, 4, $0A)
 
+%anchor($92BFFE)
 SamusSpritemaps_BFFE:
     dw $0004                                                             ;92BFFE;
     %spritemapEntry(1, $43F0, $F0, 0, 0, 2, 4, $08)
@@ -6179,11 +6645,13 @@ SamusSpritemaps_BFFE:
     %spritemapEntry(1, $43F0, $00, 1, 0, 2, 4, $0A)
     %spritemapEntry(1, $4200, $F0, 0, 1, 2, 4, $0A)
 
+%anchor($92C014)
 SamusSpritemaps_C014:
     dw $0002                                                             ;92C014;
     %spritemapEntry(1, $43F0, $00, 1, 0, 2, 4, $08)
     %spritemapEntry(1, $4200, $F0, 0, 1, 2, 4, $08)
 
+%anchor($92C020)
 SamusSpritemaps_C020:
     dw $0004                                                             ;92C020;
     %spritemapEntry(1, $4200, $F0, 0, 1, 2, 4, $08)
@@ -6191,11 +6659,13 @@ SamusSpritemaps_C020:
     %spritemapEntry(1, $43F0, $00, 1, 0, 2, 4, $08)
     %spritemapEntry(1, $4200, $00, 1, 1, 2, 4, $0A)
 
+%anchor($92C036)
 SamusSpritemaps_C036:
     dw $0002                                                             ;92C036;
     %spritemapEntry(1, $4200, $00, 1, 0, 2, 4, $08)
     %spritemapEntry(1, $43F0, $F0, 0, 1, 2, 4, $08)
 
+%anchor($92C042)
 SamusSpritemaps_C042:
     dw $0004                                                             ;92C042;
     %spritemapEntry(1, $43F0, $00, 0, 0, 2, 4, $08)
@@ -6203,11 +6673,13 @@ SamusSpritemaps_C042:
     %spritemapEntry(1, $4200, $00, 1, 1, 2, 4, $0A)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 2, 4, $0A)
 
+%anchor($92C058)
 SamusSpritemaps_C058:
     dw $0002                                                             ;92C058;
     %spritemapEntry(1, $43F0, $00, 1, 0, 2, 4, $08)
     %spritemapEntry(1, $4200, $F0, 0, 1, 2, 4, $08)
 
+%anchor($92C064)
 SamusSpritemaps_C064:
     dw $0004                                                             ;92C064;
     %spritemapEntry(1, $43F0, $F0, 0, 0, 2, 4, $08)
@@ -6215,11 +6687,13 @@ SamusSpritemaps_C064:
     %spritemapEntry(1, $4200, $F0, 0, 1, 2, 4, $0A)
     %spritemapEntry(1, $43F0, $00, 1, 0, 2, 4, $0A)
 
+%anchor($92C07A)
 SamusSpritemaps_C07A:
     dw $0002                                                             ;92C07A;
     %spritemapEntry(1, $4200, $00, 1, 0, 2, 4, $08)
     %spritemapEntry(1, $43F0, $F0, 0, 1, 2, 4, $08)
 
+%anchor($92C086)
 SamusSpritemaps_C086:
     dw $0004                                                             ;92C086;
     %spritemapEntry(1, $4200, $00, 1, 1, 2, 4, $08)
@@ -6227,6 +6701,7 @@ SamusSpritemaps_C086:
     %spritemapEntry(1, $43F0, $00, 0, 0, 2, 4, $0A)
     %spritemapEntry(1, $4200, $F0, 1, 1, 2, 4, $0A)
 
+%anchor($92C09C)
 SamusSpritemaps_C09C:
     dw $0004                                                             ;92C09C;
     %spritemapEntry(1, $43F0, $00, 1, 0, 2, 4, $08)
@@ -6234,6 +6709,7 @@ SamusSpritemaps_C09C:
     %spritemapEntry(1, $4200, $00, 1, 1, 2, 4, $08)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 2, 4, $08)
 
+%anchor($92C0B2)
 SamusSpritemaps_C0B2:
     dw $0004                                                             ;92C0B2;
     %spritemapEntry(1, $4200, $00, 1, 1, 2, 4, $08)
@@ -6241,6 +6717,7 @@ SamusSpritemaps_C0B2:
     %spritemapEntry(1, $43F0, $00, 1, 0, 2, 4, $0A)
     %spritemapEntry(1, $4200, $F0, 0, 1, 2, 4, $0A)
 
+%anchor($92C0C8)
 SamusSpritemaps_C0C8:
     dw $0004                                                             ;92C0C8;
     %spritemapEntry(1, $4200, $00, 1, 1, 2, 4, $08)
@@ -6248,6 +6725,7 @@ SamusSpritemaps_C0C8:
     %spritemapEntry(1, $43F0, $00, 1, 0, 2, 4, $08)
     %spritemapEntry(1, $4200, $F0, 0, 1, 2, 4, $08)
 
+%anchor($92C0DE)
 SamusSpritemaps_C0DE:
     dw $0004                                                             ;92C0DE;
     %spritemapEntry(1, $43F0, $00, 1, 0, 2, 4, $08)
@@ -6255,6 +6733,7 @@ SamusSpritemaps_C0DE:
     %spritemapEntry(1, $43F0, $F0, 0, 0, 2, 4, $0A)
     %spritemapEntry(1, $4200, $00, 1, 1, 2, 4, $0A)
 
+%anchor($92C0F4)
 SamusSpritemaps_C0F4:
     dw $0004                                                             ;92C0F4;
     %spritemapEntry(1, $43F0, $00, 1, 0, 2, 4, $08)
@@ -6262,6 +6741,7 @@ SamusSpritemaps_C0F4:
     %spritemapEntry(1, $43F0, $F0, 0, 0, 2, 4, $08)
     %spritemapEntry(1, $4200, $00, 1, 1, 2, 4, $08)
 
+%anchor($92C10A)
 SamusSpritemaps_C10A:
     dw $0004                                                             ;92C10A;
     %spritemapEntry(1, $43F0, $F0, 0, 0, 2, 4, $08)
@@ -6269,6 +6749,7 @@ SamusSpritemaps_C10A:
     %spritemapEntry(1, $43F0, $00, 1, 0, 2, 4, $0A)
     %spritemapEntry(1, $4200, $F0, 0, 1, 2, 4, $0A)
 
+%anchor($92C120)
 SamusSpritemaps_C120:
     dw $0004                                                             ;92C120;
     %spritemapEntry(1, $4200, $00, 1, 1, 2, 4, $08)
@@ -6276,6 +6757,7 @@ SamusSpritemaps_C120:
     %spritemapEntry(1, $4200, $F0, 0, 1, 2, 4, $08)
     %spritemapEntry(1, $43F0, $00, 1, 0, 2, 4, $08)
 
+%anchor($92C136)
 SamusSpritemaps_C136:
     dw $0004                                                             ;92C136;
     %spritemapEntry(1, $43F0, $00, 1, 0, 2, 4, $08)
@@ -6283,6 +6765,7 @@ SamusSpritemaps_C136:
     %spritemapEntry(1, $43F0, $F0, 0, 0, 2, 4, $0A)
     %spritemapEntry(1, $4200, $00, 1, 1, 2, 4, $0A)
 
+%anchor($92C14C)
 SamusSpritemaps_C14C:
     dw $0004                                                             ;92C14C;
     %spritemapEntry(1, $43F0, $F0, 0, 0, 2, 4, $08)
@@ -6290,6 +6773,7 @@ SamusSpritemaps_C14C:
     %spritemapEntry(1, $43F0, $00, 1, 0, 2, 4, $0A)
     %spritemapEntry(1, $4200, $F0, 0, 1, 2, 4, $0A)
 
+%anchor($92C162)
 SamusSpritemaps_C162:
     dw $0005                                                             ;92C162;
     %spritemapEntry(0, $00, $F8, 0, 0, 2, 4, $06)
@@ -6298,6 +6782,7 @@ SamusSpritemaps_C162:
     %spritemapEntry(1, $43F8, $F8, 0, 1, 2, 4, $02)
     %spritemapEntry(1, $43F8, $E8, 0, 0, 2, 4, $04)
 
+%anchor($92C17D)
 SamusSpritemaps_C17D:
     dw $0005                                                             ;92C17D;
     %spritemapEntry(0, $00, $F8, 0, 0, 2, 4, $06)
@@ -6306,6 +6791,7 @@ SamusSpritemaps_C17D:
     %spritemapEntry(1, $43F8, $F8, 0, 0, 2, 4, $02)
     %spritemapEntry(1, $43F8, $E8, 0, 0, 2, 4, $04)
 
+%anchor($92C198)
 SamusSpritemaps_C198:
     dw $0007                                                             ;92C198;
     %spritemapEntry(1, $43F8, $EC, 0, 0, 2, 6, $00)
@@ -6316,6 +6802,7 @@ SamusSpritemaps_C198:
     %spritemapEntry(0, $00, $FC, 0, 0, 2, 6, $06)
     %spritemapEntry(0, $1F8, $FC, 0, 0, 2, 6, $07)
 
+%anchor($92C1BD)
 SamusSpritemaps_C1BD:
     dw $0007                                                             ;92C1BD;
     %spritemapEntry(1, $43F8, $EB, 0, 0, 2, 6, $00)
@@ -6326,6 +6813,7 @@ SamusSpritemaps_C1BD:
     %spritemapEntry(0, $00, $FB, 0, 0, 2, 6, $06)
     %spritemapEntry(0, $1F8, $FB, 0, 0, 2, 6, $07)
 
+%anchor($92C1E2)
 SamusSpritemaps_C1E2:
     dw $0007                                                             ;92C1E2;
     %spritemapEntry(1, $43F8, $EA, 0, 0, 2, 6, $00)
@@ -6336,6 +6824,7 @@ SamusSpritemaps_C1E2:
     %spritemapEntry(0, $00, $FA, 0, 0, 2, 6, $06)
     %spritemapEntry(0, $1F8, $FA, 0, 0, 2, 6, $07)
 
+%anchor($92C207)
 SamusSpritemaps_C207:
     dw $0007                                                             ;92C207;
     %spritemapEntry(1, $43F8, $EC, 0, 1, 2, 6, $00)
@@ -6346,6 +6835,7 @@ SamusSpritemaps_C207:
     %spritemapEntry(0, $1F8, $FC, 0, 1, 2, 6, $06)
     %spritemapEntry(0, $00, $FC, 0, 1, 2, 6, $07)
 
+%anchor($92C22C)
 SamusSpritemaps_C22C:
     dw $0007                                                             ;92C22C;
     %spritemapEntry(1, $43F8, $EB, 0, 1, 2, 6, $00)
@@ -6356,6 +6846,7 @@ SamusSpritemaps_C22C:
     %spritemapEntry(0, $1F8, $FB, 0, 1, 2, 6, $06)
     %spritemapEntry(0, $00, $FB, 0, 1, 2, 6, $07)
 
+%anchor($92C251)
 SamusSpritemaps_C251:
     dw $0007                                                             ;92C251;
     %spritemapEntry(1, $43F8, $EA, 0, 1, 2, 6, $00)
@@ -6366,6 +6857,7 @@ SamusSpritemaps_C251:
     %spritemapEntry(0, $1F8, $FA, 0, 1, 2, 6, $06)
     %spritemapEntry(0, $00, $FA, 0, 1, 2, 6, $07)
 
+%anchor($92C276)
 SamusSpritemaps_C276:
     dw $0004                                                             ;92C276;
     %spritemapEntry(1, $4200, $00, 1, 1, 3, 6, $08)
@@ -6373,6 +6865,7 @@ SamusSpritemaps_C276:
     %spritemapEntry(1, $4200, $F0, 0, 1, 3, 6, $08)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 3, 6, $08)
 
+%anchor($92C28C)
 SamusSpritemaps_C28C:
     dw $0010                                                             ;92C28C;
     %spritemapEntry(1, $4200, $00, 1, 1, 3, 6, $08)
@@ -6392,6 +6885,7 @@ SamusSpritemaps_C28C:
     %spritemapEntry(1, $43F0, $E0, 0, 0, 3, 6, $0C)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 3, 6, $08)
 
+%anchor($92C2DE)
 SamusSpritemaps_C2DE:
     dw $0010                                                             ;92C2DE;
     %spritemapEntry(1, $4200, $00, 1, 1, 3, 6, $08)
@@ -6411,6 +6905,7 @@ SamusSpritemaps_C2DE:
     %spritemapEntry(1, $43F0, $E0, 0, 0, 3, 6, $0C)
     %spritemapEntry(1, $43E0, $E0, 0, 0, 3, 6, $0E)
 
+%anchor($92C330)
 SamusSpritemaps_C330:
     dw $0004                                                             ;92C330;
     %spritemapEntry(1, $4200, $F0, 0, 0, 2, 4, $08)
@@ -6418,6 +6913,7 @@ SamusSpritemaps_C330:
     %spritemapEntry(1, $43F8, $00, 0, 0, 2, 4, $0C)
     %spritemapEntry(1, $43F8, $F0, 0, 0, 2, 4, $0E)
 
+%anchor($92C346)
 SamusSpritemaps_C346:
     dw $000A                                                             ;92C346;
     %spritemapEntry(1, $4201, $04, 0, 0, 2, 4, $08)
@@ -6431,6 +6927,7 @@ SamusSpritemaps_C346:
     %spritemapEntry(0, $01, $F4, 0, 0, 2, 4, $1E)
     %spritemapEntry(0, $1F9, $04, 0, 0, 2, 4, $1F)
 
+%anchor($92C37A)
 SamusSpritemaps_C37A:
     dw $0004                                                             ;92C37A;
     %spritemapEntry(1, $4200, $00, 0, 0, 2, 4, $08)
@@ -6438,6 +6935,7 @@ SamusSpritemaps_C37A:
     %spritemapEntry(1, $43F0, $F8, 0, 0, 2, 4, $0C)
     %spritemapEntry(1, $4200, $F8, 0, 0, 2, 4, $0E)
 
+%anchor($92C390)
 SamusSpritemaps_C390:
     dw $000A                                                             ;92C390;
     %spritemapEntry(0, $1FC, $F0, 1, 1, 2, 4, $0C)
@@ -6451,6 +6949,7 @@ SamusSpritemaps_C390:
     %spritemapEntry(1, $43F4, $00, 1, 1, 2, 4, $08)
     %spritemapEntry(1, $4204, $F0, 1, 1, 2, 4, $0A)
 
+%anchor($92C3C4)
 SamusSpritemaps_C3C4:
     dw $0004                                                             ;92C3C4;
     %spritemapEntry(1, $43F0, $00, 1, 1, 2, 4, $08)
@@ -6458,6 +6957,7 @@ SamusSpritemaps_C3C4:
     %spritemapEntry(1, $43F8, $F0, 1, 1, 2, 4, $0C)
     %spritemapEntry(1, $43F8, $00, 1, 1, 2, 4, $0E)
 
+%anchor($92C3DA)
 SamusSpritemaps_C3DA:
     dw $000A                                                             ;92C3DA;
     %spritemapEntry(0, $1F0, $FC, 1, 1, 2, 4, $0C)
@@ -6471,6 +6971,7 @@ SamusSpritemaps_C3DA:
     %spritemapEntry(1, $43F0, $EC, 1, 1, 2, 4, $08)
     %spritemapEntry(1, $4200, $FC, 1, 1, 2, 4, $0A)
 
+%anchor($92C40E)
 SamusSpritemaps_C40E:
     dw $0004                                                             ;92C40E;
     %spritemapEntry(1, $43F0, $F0, 1, 1, 2, 4, $08)
@@ -6478,6 +6979,7 @@ SamusSpritemaps_C40E:
     %spritemapEntry(1, $4200, $F8, 1, 1, 2, 4, $0C)
     %spritemapEntry(1, $43F0, $F8, 1, 1, 2, 4, $0E)
 
+%anchor($92C424)
 SamusSpritemaps_C424:
     dw $000A                                                             ;92C424;
     %spritemapEntry(0, $1FC, $00, 0, 0, 2, 4, $0C)
@@ -6491,6 +6993,7 @@ SamusSpritemaps_C424:
     %spritemapEntry(1, $43FC, $F0, 0, 0, 2, 4, $08)
     %spritemapEntry(1, $43EC, $00, 0, 0, 2, 4, $0A)
 
+%anchor($92C458)
 SamusSpritemaps_C458:
     dw $0004                                                             ;92C458;
     %spritemapEntry(1, $43F0, $F0, 0, 1, 2, 4, $08)
@@ -6498,6 +7001,7 @@ SamusSpritemaps_C458:
     %spritemapEntry(1, $43F8, $00, 0, 1, 2, 4, $0C)
     %spritemapEntry(1, $43F8, $F0, 0, 1, 2, 4, $0E)
 
+%anchor($92C46E)
 SamusSpritemaps_C46E:
     dw $000A                                                             ;92C46E;
     %spritemapEntry(1, $43EF, $04, 0, 1, 2, 4, $08)
@@ -6511,6 +7015,7 @@ SamusSpritemaps_C46E:
     %spritemapEntry(0, $1F7, $F4, 0, 1, 2, 4, $1E)
     %spritemapEntry(0, $1FF, $04, 0, 1, 2, 4, $1F)
 
+%anchor($92C4A2)
 SamusSpritemaps_C4A2:
     dw $0004                                                             ;92C4A2;
     %spritemapEntry(1, $43F0, $00, 0, 1, 2, 4, $08)
@@ -6518,6 +7023,7 @@ SamusSpritemaps_C4A2:
     %spritemapEntry(1, $4200, $F8, 0, 1, 2, 4, $0C)
     %spritemapEntry(1, $43F0, $F8, 0, 1, 2, 4, $0E)
 
+%anchor($92C4B8)
 SamusSpritemaps_C4B8:
     dw $000A                                                             ;92C4B8;
     %spritemapEntry(0, $1FC, $F0, 1, 0, 2, 4, $0C)
@@ -6531,6 +7037,7 @@ SamusSpritemaps_C4B8:
     %spritemapEntry(1, $43FC, $00, 1, 0, 2, 4, $08)
     %spritemapEntry(1, $43EC, $F0, 1, 0, 2, 4, $0A)
 
+%anchor($92C4EC)
 SamusSpritemaps_C4EC:
     dw $0004                                                             ;92C4EC;
     %spritemapEntry(1, $4200, $00, 1, 0, 2, 4, $08)
@@ -6538,6 +7045,7 @@ SamusSpritemaps_C4EC:
     %spritemapEntry(1, $43F8, $F0, 1, 0, 2, 4, $0C)
     %spritemapEntry(1, $43F8, $00, 1, 0, 2, 4, $0E)
 
+%anchor($92C502)
 SamusSpritemaps_C502:
     dw $000A                                                             ;92C502;
     %spritemapEntry(0, $08, $FC, 1, 0, 2, 4, $0C)
@@ -6551,6 +7059,7 @@ SamusSpritemaps_C502:
     %spritemapEntry(1, $4200, $EC, 1, 0, 2, 4, $08)
     %spritemapEntry(1, $43F0, $FC, 1, 0, 2, 4, $0A)
 
+%anchor($92C536)
 SamusSpritemaps_C536:
     dw $0004                                                             ;92C536;
     %spritemapEntry(1, $4200, $F0, 1, 0, 2, 4, $08)
@@ -6558,6 +7067,7 @@ SamusSpritemaps_C536:
     %spritemapEntry(1, $43F0, $F8, 1, 0, 2, 4, $0C)
     %spritemapEntry(1, $4200, $F8, 1, 0, 2, 4, $0E)
 
+%anchor($92C54C)
 SamusSpritemaps_C54C:
     dw $000A                                                             ;92C54C;
     %spritemapEntry(0, $1FC, $00, 0, 1, 2, 4, $0C)
@@ -6571,6 +7081,7 @@ SamusSpritemaps_C54C:
     %spritemapEntry(1, $43F4, $F0, 0, 1, 2, 4, $08)
     %spritemapEntry(1, $4204, $00, 0, 1, 2, 4, $0A)
 
+%anchor($92C580)
 SamusSpritemaps_C580:
     dw $0009                                                             ;92C580;
     %spritemapEntry(0, $00, $10, 0, 0, 2, 4, $41)
@@ -6583,6 +7094,7 @@ SamusSpritemaps_C580:
     %spritemapEntry(1, $43F8, $00, 0, 0, 2, 4, $20)
     %spritemapEntry(1, $43F8, $F0, 0, 0, 2, 4, $00)
 
+%anchor($92C5AF)
 SamusSpritemaps_C5AF:
     dw $0016                                                             ;92C5AF;
     %spritemapEntry(0, $1FD, $F0, 0, 0, 2, 4, $1F)
@@ -6608,6 +7120,7 @@ SamusSpritemaps_C5AF:
     %spritemapEntry(1, $4200, $FA, 0, 0, 2, 7, $24)
     %spritemapEntry(1, $4200, $EA, 0, 0, 2, 7, $04)
 
+%anchor($92C61F)
 SamusSpritemaps_C61F:
     dw $001A                                                             ;92C61F;
     %spritemapEntry(0, $03, $E7, 0, 0, 2, 4, $1F)
@@ -6637,6 +7150,7 @@ SamusSpritemaps_C61F:
     %spritemapEntry(1, $43F8, $00, 0, 0, 2, 7, $46)
     %spritemapEntry(1, $43F8, $F0, 0, 0, 2, 7, $26)
 
+%anchor($92C6A3)
 SamusSpritemaps_C6A3:
     dw $0018                                                             ;92C6A3;
     %spritemapEntry(0, $0B, $DD, 0, 0, 2, 4, $3F)
@@ -6664,6 +7178,7 @@ SamusSpritemaps_C6A3:
     %spritemapEntry(1, $43F8, $F2, 0, 0, 2, 7, $29)
     %spritemapEntry(1, $43F8, $E2, 0, 0, 2, 7, $09)
 
+%anchor($92C71D)
 SamusSpritemaps_C71D:
     dw $0019                                                             ;92C71D;
     %spritemapEntry(0, $0C, $D8, 0, 0, 2, 4, $3F)
@@ -6692,6 +7207,7 @@ SamusSpritemaps_C71D:
     %spritemapEntry(1, $43F8, $F4, 0, 0, 2, 7, $2C)
     %spritemapEntry(1, $43F8, $E4, 0, 0, 2, 7, $0C)
 
+%anchor($92C79C)
 SamusSpritemaps_C79C:
     dw $0019                                                             ;92C79C;
     %spritemapEntry(0, $1DD, $E1, 0, 0, 2, 4, $7F)
@@ -6720,6 +7236,7 @@ SamusSpritemaps_C79C:
     %spritemapEntry(1, $43F8, $FC, 0, 0, 2, 7, $80)
     %spritemapEntry(1, $43F8, $EC, 0, 0, 2, 7, $60)
 
+%anchor($92C81B)
 SamusSpritemaps_C81B:
     dw $0008                                                             ;92C81B;
     %spritemapEntry(0, $0E, $F4, 0, 0, 2, 7, $9C)
@@ -6731,6 +7248,7 @@ SamusSpritemaps_C81B:
     %spritemapEntry(1, $43FE, $F4, 0, 0, 2, 7, $85)
     %spritemapEntry(1, $43FE, $E4, 0, 0, 2, 7, $65)
 
+%anchor($92C845)
 SamusSpritemaps_C845:
     dw $000B                                                             ;92C845;
     %spritemapEntry(0, $1F6, $F4, 0, 0, 2, 7, $98)
@@ -6745,6 +7263,7 @@ SamusSpritemaps_C845:
     %spritemapEntry(1, $43F6, $04, 0, 0, 2, 7, $78)
     %spritemapEntry(0, $1F6, $FC, 0, 0, 2, 7, $94)
 
+%anchor($92C87E)
 SamusSpritemaps_C87E:
     dw $000B                                                             ;92C87E;
     %spritemapEntry(0, $1FE, $FC, 0, 0, 2, 7, $95)
@@ -6759,6 +7278,7 @@ SamusSpritemaps_C87E:
     %spritemapEntry(1, $43F6, $04, 0, 0, 2, 7, $78)
     %spritemapEntry(0, $1F6, $FC, 0, 0, 2, 7, $94)
 
+%anchor($92C8B7)
 SamusSpritemaps_C8B7:
     dw $0009                                                             ;92C8B7;
     %spritemapEntry(0, $1F8, $10, 0, 1, 2, 4, $41)
@@ -6771,6 +7291,7 @@ SamusSpritemaps_C8B7:
     %spritemapEntry(1, $43F8, $00, 0, 1, 2, 4, $20)
     %spritemapEntry(1, $43F8, $F0, 0, 1, 2, 4, $00)
 
+%anchor($92C8E6)
 SamusSpritemaps_C8E6:
     dw $0016                                                             ;92C8E6;
     %spritemapEntry(0, $1FB, $F0, 0, 1, 2, 4, $1F)
@@ -6796,6 +7317,7 @@ SamusSpritemaps_C8E6:
     %spritemapEntry(1, $43F0, $FA, 0, 1, 2, 7, $24)
     %spritemapEntry(1, $43F0, $EA, 0, 1, 2, 7, $04)
 
+%anchor($92C956)
 SamusSpritemaps_C956:
     dw $001A                                                             ;92C956;
     %spritemapEntry(0, $1F5, $E7, 0, 1, 2, 4, $1F)
@@ -6825,6 +7347,7 @@ SamusSpritemaps_C956:
     %spritemapEntry(1, $43F8, $00, 0, 1, 2, 7, $46)
     %spritemapEntry(1, $43F8, $F0, 0, 1, 2, 7, $26)
 
+%anchor($92C9DA)
 SamusSpritemaps_C9DA:
     dw $0018                                                             ;92C9DA;
     %spritemapEntry(0, $1ED, $DD, 0, 1, 2, 4, $3F)
@@ -6852,6 +7375,7 @@ SamusSpritemaps_C9DA:
     %spritemapEntry(1, $43F8, $F2, 0, 1, 2, 7, $29)
     %spritemapEntry(1, $43F8, $E2, 0, 1, 2, 7, $09)
 
+%anchor($92CA54)
 SamusSpritemaps_CA54:
     dw $0019                                                             ;92CA54;
     %spritemapEntry(0, $1EC, $D8, 0, 1, 2, 4, $3F)
@@ -6880,6 +7404,7 @@ SamusSpritemaps_CA54:
     %spritemapEntry(1, $43F8, $F4, 0, 1, 2, 7, $2C)
     %spritemapEntry(1, $43F8, $E4, 0, 1, 2, 7, $0C)
 
+%anchor($92CAD3)
 SamusSpritemaps_CAD3:
     dw $0019                                                             ;92CAD3;
     %spritemapEntry(0, $1B, $E1, 0, 1, 2, 4, $7F)
@@ -6908,6 +7433,7 @@ SamusSpritemaps_CAD3:
     %spritemapEntry(1, $43F8, $FC, 0, 1, 2, 7, $80)
     %spritemapEntry(1, $43F8, $EC, 0, 1, 2, 7, $60)
 
+%anchor($92CB52)
 SamusSpritemaps_CB52:
     dw $0008                                                             ;92CB52;
     %spritemapEntry(0, $1EA, $F4, 0, 1, 2, 7, $9C)
@@ -6919,6 +7445,7 @@ SamusSpritemaps_CB52:
     %spritemapEntry(1, $43F2, $F4, 0, 1, 2, 7, $85)
     %spritemapEntry(1, $43F2, $E4, 0, 1, 2, 7, $65)
 
+%anchor($92CB7C)
 SamusSpritemaps_CB7C:
     dw $000B                                                             ;92CB7C;
     %spritemapEntry(0, $02, $F4, 0, 1, 2, 7, $98)
@@ -6933,6 +7460,7 @@ SamusSpritemaps_CB7C:
     %spritemapEntry(1, $43FA, $04, 0, 1, 2, 7, $78)
     %spritemapEntry(0, $02, $FC, 0, 1, 2, 7, $94)
 
+%anchor($92CBB5)
 SamusSpritemaps_CBB5:
     dw $000B                                                             ;92CBB5;
     %spritemapEntry(0, $1FA, $FC, 0, 1, 2, 7, $95)
@@ -6955,6 +7483,7 @@ SamusSpritemaps_CBB5:
 ;     n: Part 1 size, n = 0 means 10000h bytes are transferred
 ;     N: Part 2 size, N = 0 means no bytes are transferred
 
+%anchor($92CBEE)
 SamusTopTiles_Set0_CBEE:
 ; Actually used by:
 ;     9: Moving right - not aiming - frame 0
@@ -7037,6 +7566,7 @@ SamusTopTiles_Set0_CBEE:
 ;     EBh: Facing left  - Samus drained - standing - frame 4
     dl SamusTiles_Top_Set0_Entry0 : dw $0080,$0080                       ;92CBEE;
 
+%anchor($92CBF5)
 SamusTopTiles_Set0_CBF5:
 ; 9: Moving right - not aiming - frame 4
 ; 4Dh: Facing right - normal jump - not aiming - not moving - gun not extended - frame 4
@@ -7044,15 +7574,18 @@ SamusTopTiles_Set0_CBF5:
 ; F0h: Facing right - grabbed by Draygon - moving - frame 0
     dl SamusTiles_Top_Set0_Entry1 : dw $0080,$0080                       ;92CBF5;
 
+%anchor($92CBFC)
 SamusTopTiles_Set0_CBFC:
 ; 9: Moving right - not aiming - frame 2
 ; F0h: Facing right - grabbed by Draygon - moving - frame 1
     dl SamusTiles_Top_Set0_Entry2 : dw $00A0,$0080                       ;92CBFC;
 
+%anchor($92CC03)
 SamusTopTiles_Set0_CC03:
 ; 9: Moving right - not aiming - frame 3
     dl SamusTiles_Top_Set0_Entry3 : dw $00A0,$0080                       ;92CC03;
 
+%anchor($92CC0A)
 SamusTopTiles_Set0_CC0A:
 ; 9: Moving right - not aiming - frame 9
 ; 4Dh: Facing right - normal jump - not aiming - not moving - gun not extended - frame 0
@@ -7062,6 +7595,7 @@ SamusTopTiles_Set0_CC0A:
 ; F0h: Facing right - grabbed by Draygon - moving - frame 3
     dl SamusTiles_Top_Set0_Entry4 : dw $0080,$0080                       ;92CC0A;
 
+%anchor($92CC11)
 SamusTopTiles_Set0_CC11:
 ; 9: Moving right - not aiming - frame 7
 ; 4Dh: Facing right - normal jump - not aiming - not moving - gun not extended - frame 1
@@ -7069,6 +7603,7 @@ SamusTopTiles_Set0_CC11:
 ; F0h: Facing right - grabbed by Draygon - moving - frame 4
     dl SamusTiles_Top_Set0_Entry5 : dw $00C0,$00C0                       ;92CC11;
 
+%anchor($92CC18)
 SamusTopTiles_Set0_CC18:
 ; Ah: Moving left  - not aiming - frame 0
 ; Ah: Moving left  - not aiming - frame 5
@@ -7078,6 +7613,7 @@ SamusTopTiles_Set0_CC18:
 ; C8h: Facing left  - vertical shinespark windup - frame 3
     dl SamusTiles_Top_Set0_Entry6 : dw $0080,$0080                       ;92CC18;
 
+%anchor($92CC1F)
 SamusTopTiles_Set0_CC1F:
 ; Ah: Moving left  - not aiming - frame 4
 ; 4Eh: Facing left  - normal jump - not aiming - not moving - gun not extended - frame 4
@@ -7085,15 +7621,18 @@ SamusTopTiles_Set0_CC1F:
 ; C8h: Facing left  - vertical shinespark windup - frame 4
     dl SamusTiles_Top_Set0_Entry7 : dw $0080,$0080                       ;92CC1F;
 
+%anchor($92CC26)
 SamusTopTiles_Set0_CC26:
 ; Ah: Moving left  - not aiming - frame 2
 ; BEh: Facing left  - grabbed by Draygon - moving - frame 1
     dl SamusTiles_Top_Set0_Entry8 : dw $00C0,$00C0                       ;92CC26;
 
+%anchor($92CC2D)
 SamusTopTiles_Set0_CC2D:
 ; Ah: Moving left  - not aiming - frame 3
     dl SamusTiles_Top_Set0_Entry9 : dw $00C0,$00C0                       ;92CC2D;
 
+%anchor($92CC34)
 SamusTopTiles_Set0_CC34:
 ; Ah: Moving left  - not aiming - frame 9
 ; 4Eh: Facing left  - normal jump - not aiming - not moving - gun not extended - frame 0
@@ -7103,6 +7642,7 @@ SamusTopTiles_Set0_CC34:
 ; C8h: Facing left  - vertical shinespark windup - frame 2
     dl SamusTiles_Top_Set0_EntryA : dw $0080,$0080                       ;92CC34;
 
+%anchor($92CC3B)
 SamusTopTiles_Set0_CC3B:
 ; Ah: Moving left  - not aiming - frame 7
 ; 4Eh: Facing left  - normal jump - not aiming - not moving - gun not extended - frame 1
@@ -7110,6 +7650,7 @@ SamusTopTiles_Set0_CC3B:
 ; C8h: Facing left  - vertical shinespark windup - frame 1
     dl SamusTiles_Top_Set0_EntryB : dw $00A0,$0080                       ;92CC3B;
 
+%anchor($92CC42)
 SamusTopTiles_Set0_CC42:
 ; 11h: Moving right - aiming down-right - frames 0..1
 ; 11h: Moving right - aiming down-right - frames 5..6
@@ -7124,6 +7665,7 @@ SamusTopTiles_Set0_CC42:
 ; EFh: Facing right - grabbed by Draygon - not moving - aiming down-right - frame 0
     dl SamusTiles_Top_Set0_EntryC : dw $00E0,$0040                       ;92CC42;
 
+%anchor($92CC49)
 SamusTopTiles_Set0_CC49:
 ; 12h: Moving left  - aiming down-left - frames 0..1
 ; 12h: Moving left  - aiming down-left - frames 5..6
@@ -7138,6 +7680,7 @@ SamusTopTiles_Set0_CC49:
 ; BDh: Facing left  - grabbed by Draygon - not moving - aiming down-left - frame 0
     dl SamusTiles_Top_Set0_EntryD : dw $00E0,$0040                       ;92CC49;
 
+%anchor($92CC50)
 SamusTopTiles_Set0_CC50:
 ; 7: Facing right - aiming down-right - frame 0
 ; 59h: Facing right - normal jump transition - aiming down-right - frame 0
@@ -7150,6 +7693,7 @@ SamusTopTiles_Set0_CC50:
 ; FBh: Facing right - standing transition - aiming down-right - frame 0
     dl SamusTiles_Top_Set0_EntryE : dw $00E0,$0080                       ;92CC50;
 
+%anchor($92CC57)
 SamusTopTiles_Set0_CC57:
 ; 8: Facing left  - aiming down-left - frame 0
 ; 5Ah: Facing left  - normal jump transition - aiming down-left - frame 0
@@ -7162,6 +7706,7 @@ SamusTopTiles_Set0_CC57:
 ; FCh: Facing left  - standing transition - aiming down-left - frame 0
     dl SamusTiles_Top_Set0_EntryF : dw $00E0,$0080                       ;92CC57;
 
+%anchor($92CC5E)
 SamusTopTiles_Set0_CC5E:
 ; 13h: Facing right - normal jump - not aiming - not moving - gun extended - frames 0..1
 ; 35h: Facing right - crouching transition - frame 0
@@ -7184,6 +7729,7 @@ SamusTopTiles_Set0_CC5E:
 ; EEh: Facing right - grabbed by Draygon - firing - frame 0
     dl SamusTiles_Top_Set0_Entry10 : dw $00C0,$0040                      ;92CC5E;
 
+%anchor($92CC65)
 SamusTopTiles_Set0_CC65:
 ; 14h: Facing left  - normal jump - not aiming - not moving - gun extended - frames 0..1
 ; 36h: Facing left  - crouching transition - frame 0
@@ -7205,6 +7751,7 @@ SamusTopTiles_Set0_CC65:
 ; EBh: Facing left  - Samus drained - standing - frame 5
     dl SamusTiles_Top_Set0_Entry11 : dw $00C0,$0040                      ;92CC65;
 
+%anchor($92CC6C)
 SamusTopTiles_Set0_CC6C:
 ; 3: Facing right - aiming up - frame 0
 ; 5: Facing right - aiming up-right - frame 0
@@ -7219,6 +7766,7 @@ SamusTopTiles_Set0_CC6C:
 ; F9h: Facing right - standing transition - aiming up-right - frame 0
     dl SamusTiles_Top_Set0_Entry12 : dw $00C0,$0080                      ;92CC6C;
 
+%anchor($92CC73)
 SamusTopTiles_Set0_CC73:
 ; 4: Facing left  - aiming up - frame 0
 ; 6: Facing left  - aiming up-left - frame 0
@@ -7233,16 +7781,19 @@ SamusTopTiles_Set0_CC73:
 ; FAh: Facing left  - standing transition - aiming up-left - frame 0
     dl SamusTiles_Top_Set0_Entry13 : dw $00C0,$0080                      ;92CC73;
 
+%anchor($92CC7A)
 SamusTopTiles_Set0_CC7A:
 ; 4Dh: Facing right - normal jump - not aiming - not moving - gun not extended - frame 5
 ; C7h: Facing right - vertical shinespark windup - frame 5
     dl SamusTiles_Top_Set0_Entry14 : dw $00A0,$0080                      ;92CC7A;
 
+%anchor($92CC81)
 SamusTopTiles_Set0_CC81:
 ; 4Eh: Facing left  - normal jump - not aiming - not moving - gun not extended - frame 5
 ; C8h: Facing left  - vertical shinespark windup - frame 5
     dl SamusTiles_Top_Set0_Entry15 : dw $00C0,$00C0                      ;92CC81;
 
+%anchor($92CC88)
 SamusTopTiles_Set0_CC88:
 ; 3: Facing right - aiming up - frame 1
 ; Dh: Moving right - aiming up (unused) - frames 0..1
@@ -7256,6 +7807,7 @@ SamusTopTiles_Set0_CC88:
 ; F7h: Facing right - standing transition - aiming up - frame 0
     dl SamusTiles_Top_Set0_Entry16 : dw $00C0,$0040                      ;92CC88;
 
+%anchor($92CC8F)
 SamusTopTiles_Set0_CC8F:
 ; 4: Facing left  - aiming up - frame 1
 ; Eh: Moving left  - aiming up (unused) - frames 0..1
@@ -7269,14 +7821,17 @@ SamusTopTiles_Set0_CC8F:
 ; F8h: Facing left  - standing transition - aiming up - frame 0
     dl SamusTiles_Top_Set0_Entry17 : dw $00C0,$0040                      ;92CC8F;
 
+%anchor($92CC96)
 SamusTopTiles_Set0_CC96:
 ; 9: Moving right - not aiming - frame 8
     dl SamusTiles_Top_Set0_Entry18 : dw $00A0,$0080                      ;92CC96;
 
+%anchor($92CC9D)
 SamusTopTiles_Set0_CC9D:
 ; Ah: Moving left  - not aiming - frame 8
     dl SamusTiles_Top_Set0_Entry19 : dw $00A0,$0080                      ;92CC9D;
 
+%anchor($92CCA4)
 SamusTopTiles_Set0_CCA4:
 ; Fh: Moving right - aiming up-right - frames 0..1
 ; Fh: Moving right - aiming up-right - frames 5..6
@@ -7287,6 +7842,7 @@ SamusTopTiles_Set0_CCA4:
 ; EDh: Facing right - grabbed by Draygon - not moving - aiming up-right - frame 0
     dl SamusTiles_Top_Set0_Entry1A : dw $00C0,$0040                      ;92CCA4;
 
+%anchor($92CCAB)
 SamusTopTiles_Set0_CCAB:
 ; 10h: Moving left  - aiming up-left - frames 0..1
 ; 10h: Moving left  - aiming up-left - frames 5..6
@@ -7297,12 +7853,14 @@ SamusTopTiles_Set0_CCAB:
 ; BBh: Facing left  - grabbed by Draygon - not moving - aiming up-left - frame 0
     dl SamusTiles_Top_Set0_Entry1B : dw $00E0,$0040                      ;92CCAB;
 
+%anchor($92CCB2)
 SamusTopTiles_Set0_CCB2:
 ; 54h: Facing left  - knockback - frames 0..1
 ; D8h: Facing left  - crystal flash ending - frames 4..5
 ; E9h: Facing left  - Samus drained - crouching/falling - frames 2..6
     dl SamusTiles_Top_Set0_Entry1C : dw $0100,$00C0                      ;92CCB2;
 
+%anchor($92CCB9)
 SamusTopTiles_Set0_CCB9:
 ; 53h: Facing right - knockback - frames 0..1
 ; D7h: Facing right - crystal flash ending - frames 4..5
@@ -7310,21 +7868,26 @@ SamusTopTiles_Set0_CCB9:
     dl SamusTiles_Top_Set0_Entry1D : dw $0100,$00C0                      ;92CCB9;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($92CCC0)
 UNUSED_SamusTopTiles_Set0_92CCC0:
     dl SamusTiles_Top_Set0_Entry1E : dw $0100,$0040                      ;92CCC0;
 
+%anchor($92CCC7)
 UNUSED_SamusTopTiles_Set0_92CCC7:
     dl SamusTiles_Top_Set0_Entry1F : dw $0100,$0040                      ;92CCC7;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($92CCCE)
 UNUSED_SamusTopTiles_Set1_92CCCE:
     dl SamusTiles_Top_Set1_Entry0 : dw $00C0,$0080                       ;92CCCE;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($92CCD5)
 UNUSED_SamusTopTiles_Set1_92CCD5:
     dl SamusTiles_Top_Set1_Entry1 : dw $00C0,$0080                       ;92CCD5;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($92CCDC)
 SamusTopTiles_Set1_CCDC:
 ; 8Bh: Facing right - turning - standing - aiming up - frame 1
 ; 8Ch: Facing left  - turning - standing - aiming up - frame 1
@@ -7346,6 +7909,7 @@ SamusTopTiles_Set1_CCDC:
 ; C2h: Facing left  - moonwalking - turn/jump right - aiming up-left - frame 1
     dl SamusTiles_Top_Set1_Entry2 : dw $00E0,$00C0                       ;92CCDC;
 
+%anchor($92CCE3)
 SamusTopTiles_Set1_CCE3:
 ; 8Dh: Facing right - turning - standing - aiming down-right - frame 1
 ; 8Eh: Facing left  - turning - standing - aiming down-left - frame 1
@@ -7359,13 +7923,16 @@ SamusTopTiles_Set1_CCE3:
 ; C4h: Facing left  - moonwalking - turn/jump right - aiming down-left - frame 1
     dl SamusTiles_Top_Set1_Entry3 : dw $0100,$00C0                       ;92CCE3;
 
+%anchor($92CCEA)
 SamusTopTiles_Set1_CCEA:
     dl SamusTiles_Top_Set1_Entry4 : dw $0020,$0000                       ;92CCEA;
 
+%anchor($92CCF1)
 SamusTopTiles_Set1_CCF1:
 ; 9Bh: Facing forward - varia/gravity suit - frame 0
     dl SamusTiles_Top_Set1_Entry5 : dw $0040,$0040                       ;92CCF1;
 
+%anchor($92CCF8)
 SamusTopTiles_Set1_CCF8:
 ; 25h: Facing right - turning - standing - frame 2
 ; 26h: Facing left  - turning - standing - frame 0
@@ -7380,6 +7947,7 @@ SamusTopTiles_Set1_CCF8:
 ; C6h: Unused - frame 2
     dl SamusTiles_Top_Set1_Entry6 : dw $00C0,$0080                       ;92CCF8;
 
+%anchor($92CCFF)
 SamusTopTiles_Set1_CCFF:
 ; 25h: Facing right - turning - standing - frame 0
 ; 26h: Facing left  - turning - standing - frame 2
@@ -7394,6 +7962,7 @@ SamusTopTiles_Set1_CCFF:
 ; C6h: Unused - frame 0
     dl SamusTiles_Top_Set1_Entry7 : dw $00C0,$0080                       ;92CCFF;
 
+%anchor($92CD06)
 SamusTopTiles_Set1_CD06:
 ; 8Bh: Facing right - turning - standing - aiming up - frame 2
 ; 8Ch: Facing left  - turning - standing - aiming up - frame 0
@@ -7415,6 +7984,7 @@ SamusTopTiles_Set1_CD06:
 ; C2h: Facing left  - moonwalking - turn/jump right - aiming up-left - frame 0
     dl SamusTiles_Top_Set1_Entry8 : dw $00E0,$0040                       ;92CD06;
 
+%anchor($92CD0D)
 SamusTopTiles_Set1_CD0D:
 ; 8Bh: Facing right - turning - standing - aiming up - frame 0
 ; 8Ch: Facing left  - turning - standing - aiming up - frame 2
@@ -7436,6 +8006,7 @@ SamusTopTiles_Set1_CD0D:
 ; C2h: Facing left  - moonwalking - turn/jump right - aiming up-left - frame 2
     dl SamusTiles_Top_Set1_Entry9 : dw $00C0,$0040                       ;92CD0D;
 
+%anchor($92CD14)
 SamusTopTiles_Set1_CD14:
 ; 25h: Facing right - turning - standing - frame 1
 ; 26h: Facing left  - turning - standing - frame 1
@@ -7450,12 +8021,14 @@ SamusTopTiles_Set1_CD14:
 ; C6h: Unused - frame 1
     dl SamusTiles_Top_Set1_EntryA : dw $00E0,$00C0                       ;92CD14;
 
+%anchor($92CD1B)
 SamusTopTiles_Set1_CD1B:
 ; 5Ch: Unused - frame 0
 ; 64h: Unused. Related to movement type Dh - frame 1
 ; B9h: Facing right - grapple wall jump pose - frame 0
     dl SamusTiles_Top_Set1_EntryB : dw $0100,$0080                       ;92CD1B;
 
+%anchor($92CD22)
 SamusTopTiles_Set1_CD22:
 ; 45h: Unused - frame 0
 ; 46h: Unused - frame 0
@@ -7464,42 +8037,51 @@ SamusTopTiles_Set1_CD22:
 ; B8h: Facing left  - grapple wall jump pose - frame 0
     dl SamusTiles_Top_Set1_EntryC : dw $0100,$0080                       ;92CD22;
 
+%anchor($92CD29)
 SamusTopTiles_Set1_CD29:
 ; 9: Moving right - not aiming - frame 1
     dl SamusTiles_Top_Set1_EntryD : dw $0080,$0080                       ;92CD29;
 
+%anchor($92CD30)
 SamusTopTiles_Set1_CD30:
 ; 9: Moving right - not aiming - frame 6
     dl SamusTiles_Top_Set1_EntryE : dw $0080,$0080                       ;92CD30;
 
+%anchor($92CD37)
 SamusTopTiles_Set1_CD37:
 ; Ah: Moving left  - not aiming - frame 1
     dl SamusTiles_Top_Set1_EntryF : dw $0080,$0080                       ;92CD37;
 
+%anchor($92CD3E)
 SamusTopTiles_Set1_CD3E:
 ; Ah: Moving left  - not aiming - frame 6
     dl SamusTiles_Top_Set1_Entry10 : dw $0080,$0080                      ;92CD3E;
 
+%anchor($92CD45)
 SamusTopTiles_Set1_CD45:
 ; 0: Facing forward - power suit - frame 0
     dl SamusTiles_Top_Set1_Entry11 : dw $0080,$0080                      ;92CD45;
 
+%anchor($92CD4C)
 SamusTopTiles_Set1_CD4C:
 ; 65h: Unused. Related to movement type Dh - frame 0
 ; 83h: Facing right - wall jump - frame 0
     dl SamusTiles_Top_Set1_Entry12 : dw $0080,$0080                      ;92CD4C;
 
+%anchor($92CD53)
 SamusTopTiles_Set1_CD53:
 ; 66h: Unused. Related to movement type Dh - frame 0
 ; 84h: Facing left  - wall jump - frame 0
     dl SamusTiles_Top_Set1_Entry13 : dw $0080,$0080                      ;92CD53;
 
+%anchor($92CD5A)
 SamusTopTiles_Set1_CD5A:
 ; 63h: Unused. Related to movement type Dh - frame 0
 ; C9h: Facing right - shinespark - horizontal - frame 0
 ; CDh: Facing right - shinespark - diagonal - frame 0
     dl SamusTiles_Top_Set1_Entry14 : dw $0100,$00C0                      ;92CD5A;
 
+%anchor($92CD61)
 SamusTopTiles_Set1_CD61:
 ; 64h: Unused. Related to movement type Dh - frame 0
 ; CAh: Facing left  - shinespark - horizontal - frame 0
@@ -7507,13 +8089,16 @@ SamusTopTiles_Set1_CD61:
     dl SamusTiles_Top_Set1_Entry15 : dw $0100,$00C0                      ;92CD61;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($92CD68)
 UNUSED_SamusTopTiles_Set1_92CD68:
     dl SamusTiles_Top_Set1_Entry16 : dw $0020,$0000                      ;92CD68;
 
+%anchor($92CD6F)
 UNUSED_SamusTopTiles_Set1_92CD6F:
     dl SamusTiles_Top_Set1_Entry17 : dw $0020,$0000                      ;92CD6F;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($92CD76)
 SamusTopTiles_Set1_CD76:
 ; 8Dh: Facing right - turning - standing - aiming down-right - frame 2
 ; 8Eh: Facing left  - turning - standing - aiming down-left - frame 0
@@ -7527,6 +8112,7 @@ SamusTopTiles_Set1_CD76:
 ; C4h: Facing left  - moonwalking - turn/jump right - aiming down-left - frame 0
     dl SamusTiles_Top_Set1_Entry18 : dw $00E0,$0040                      ;92CD76;
 
+%anchor($92CD7D)
 SamusTopTiles_Set1_CD7D:
 ; 8Dh: Facing right - turning - standing - aiming down-right - frame 0
 ; 8Eh: Facing left  - turning - standing - aiming down-left - frame 2
@@ -7540,18 +8126,21 @@ SamusTopTiles_Set1_CD7D:
 ; C4h: Facing left  - moonwalking - turn/jump right - aiming down-left - frame 2
     dl SamusTiles_Top_Set1_Entry19 : dw $00E0,$0040                      ;92CD7D;
 
+%anchor($92CD84)
 SamusTopTiles_Set1_CD84:
 ; 17h: Facing right - normal jump - aiming down - frame 1
 ; 2Dh: Facing right - falling - aiming down - frame 1
 ; AEh: Unused. Facing right - grappling - in air - aiming down - frame 1
     dl SamusTiles_Top_Set1_Entry1A : dw $00C0,$0080                      ;92CD84;
 
+%anchor($92CD8B)
 SamusTopTiles_Set1_CD8B:
 ; 18h: Facing left  - normal jump - aiming down - frame 1
 ; 2Eh: Facing left  - falling - aiming down - frame 1
 ; AFh: Unused. Facing left  - grappling - in air - aiming down - frame 1
     dl SamusTiles_Top_Set1_Entry1B : dw $00C0,$0080                      ;92CD8B;
 
+%anchor($92CD92)
 SamusTopTiles_Set1_CD92:
 ; 19h: Facing right - spin jump - frame Bh
 ; 1Bh: Facing right - space jump - frame Bh
@@ -7568,18 +8157,21 @@ SamusTopTiles_Set1_CD92:
 ; 81h: Facing right - screw attack - frame 1Bh
     dl SamusTiles_Top_Set1_Entry1C : dw $00C0,$0080                      ;92CD92;
 
+%anchor($92CD99)
 SamusTopTiles_Set1_CD99:
 ; 1Ah: Facing left  - spin jump - frame Bh
 ; 1Ch: Facing left  - space jump - frame Bh
 ; 82h: Facing left  - screw attack - frame 1Bh
     dl SamusTiles_Top_Set1_Entry1D : dw $00C0,$0080                      ;92CD99;
 
+%anchor($92CDA0)
 SamusTopTiles_Set2_CDA0:
 ; 4Bh: Facing right - normal jump transition - frame 0
 ; A4h: Facing right - landing from normal jump - frame 0
 ; A6h: Facing right - landing from spin jump - frame 1
     dl SamusTiles_Top_Set2_Entry0 : dw $0080,$0040                       ;92CDA0;
 
+%anchor($92CDA7)
 SamusTopTiles_Set2_CDA7:
 ; 4Ch: Facing left  - normal jump transition - frame 0
 ; A5h: Facing left  - landing from normal jump - frame 0
@@ -7587,15 +8179,18 @@ SamusTopTiles_Set2_CDA7:
     dl SamusTiles_Top_Set2_Entry1 : dw $0080,$0080                       ;92CDA7;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($92CDAE)
 UNUSED_SamusTopTiles_Set2_92CDAE:
     dl SamusTiles_Top_Set2_Entry2 : dw $00C0,$0080                       ;92CDAE;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($92CDB5)
 SamusTopTiles_Set2_CDB5:
 ; E9h: Facing left  - Samus drained - crouching/falling - frame 10h
 ; E9h: Facing left  - Samus drained - crouching/falling - frame 15h
     dl SamusTiles_Top_Set2_Entry3 : dw $0080,$0080                       ;92CDB5;
 
+%anchor($92CDBC)
 SamusTopTiles_Set2_CDBC:
 ; 19h: Facing right - spin jump - frame 0
 ; 1Bh: Facing right - space jump - frame 0
@@ -7620,6 +8215,7 @@ SamusTopTiles_Set2_CDBC:
 ; ECh: Facing right - grabbed by Draygon - not moving - not aiming - frame 0
     dl SamusTiles_Top_Set2_Entry4 : dw $0080,$0040                       ;92CDBC;
 
+%anchor($92CDC3)
 SamusTopTiles_Set2_CDC3:
 ; 1Ah: Facing left  - spin jump - frame 0
 ; 1Ch: Facing left  - space jump - frame 0
@@ -7634,6 +8230,7 @@ SamusTopTiles_Set2_CDC3:
 ; BAh: Facing left  - grabbed by Draygon - not moving - not aiming - frame 0
     dl SamusTiles_Top_Set2_Entry5 : dw $0080,$0080                       ;92CDC3;
 
+%anchor($92CDCA)
 SamusTopTiles_Set2_CDCA:
 ; 11h: Moving right - aiming down-right - frame 2
 ; 11h: Moving right - aiming down-right - frame 4
@@ -7643,6 +8240,7 @@ SamusTopTiles_Set2_CDCA:
 ; 78h: Facing right - moonwalk - aiming down-right - frames 4..5
     dl SamusTiles_Top_Set2_Entry6 : dw $00E0,$0040                       ;92CDCA;
 
+%anchor($92CDD1)
 SamusTopTiles_Set2_CDD1:
 ; 12h: Moving left  - aiming down-left - frame 2
 ; 12h: Moving left  - aiming down-left - frame 4
@@ -7652,36 +8250,43 @@ SamusTopTiles_Set2_CDD1:
 ; 77h: Facing left  - moonwalk - aiming down-left - frames 4..5
     dl SamusTiles_Top_Set2_Entry7 : dw $00E0,$0040                       ;92CDD1;
 
+%anchor($92CDD8)
 SamusTopTiles_Set2_CDD8:
 ; D5h: Facing right - x-ray - standing - frame 1
 ; D9h: Facing right - x-ray - crouching - frame 1
     dl SamusTiles_Top_Set2_Entry8 : dw $00C0,$0040                       ;92CDD8;
 
+%anchor($92CDDF)
 SamusTopTiles_Set2_CDDF:
 ; D5h: Facing right - x-ray - standing - frame 0
 ; D9h: Facing right - x-ray - crouching - frame 0
     dl SamusTiles_Top_Set2_Entry9 : dw $00C0,$0040                       ;92CDDF;
 
+%anchor($92CDE6)
 SamusTopTiles_Set2_CDE6:
 ; D5h: Facing right - x-ray - standing - frame 3
 ; D9h: Facing right - x-ray - crouching - frame 3
     dl SamusTiles_Top_Set2_EntryA : dw $00C0,$0040                       ;92CDE6;
 
+%anchor($92CDED)
 SamusTopTiles_Set2_CDED:
 ; D5h: Facing right - x-ray - standing - frame 4
 ; D9h: Facing right - x-ray - crouching - frame 4
     dl SamusTiles_Top_Set2_EntryB : dw $00C0,$0040                       ;92CDED;
 
+%anchor($92CDF4)
 SamusTopTiles_Set2_CDF4:
 ; D6h: Facing left  - x-ray - standing - frame 1
 ; DAh: Facing left  - x-ray - crouching - frame 1
     dl SamusTiles_Top_Set2_EntryC : dw $00C0,$0040                       ;92CDF4;
 
+%anchor($92CDFB)
 SamusTopTiles_Set2_CDFB:
 ; D6h: Facing left  - x-ray - standing - frame 0
 ; DAh: Facing left  - x-ray - crouching - frame 0
     dl SamusTiles_Top_Set2_EntryD : dw $00C0,$0040                       ;92CDFB;
 
+%anchor($92CE02)
 SamusTopTiles_Set2_CE02:
 ; Dh: Moving right - aiming up (unused) - frame 2
 ; Dh: Moving right - aiming up (unused) - frame 4
@@ -7691,6 +8296,7 @@ SamusTopTiles_Set2_CE02:
 ; DAh: Facing left  - x-ray - crouching - frame 3
     dl SamusTiles_Top_Set2_EntryE : dw $00C0,$0040                       ;92CE02;
 
+%anchor($92CE09)
 SamusTopTiles_Set2_CE09:
 ; Eh: Moving left  - aiming up (unused) - frame 2
 ; Eh: Moving left  - aiming up (unused) - frame 4
@@ -7700,6 +8306,7 @@ SamusTopTiles_Set2_CE09:
 ; DAh: Facing left  - x-ray - crouching - frame 4
     dl SamusTiles_Top_Set2_EntryF : dw $00C0,$0040                       ;92CE09;
 
+%anchor($92CE10)
 SamusTopTiles_Set2_CE10:
 ; Fh: Moving right - aiming up-right - frame 2
 ; Fh: Moving right - aiming up-right - frame 4
@@ -7709,6 +8316,7 @@ SamusTopTiles_Set2_CE10:
 ; 76h: Facing right - moonwalk - aiming up-right - frames 4..5
     dl SamusTiles_Top_Set2_Entry10 : dw $00C0,$0040                      ;92CE10;
 
+%anchor($92CE17)
 SamusTopTiles_Set2_CE17:
 ; 10h: Moving left  - aiming up-left - frame 2
 ; 10h: Moving left  - aiming up-left - frame 4
@@ -7719,59 +8327,72 @@ SamusTopTiles_Set2_CE17:
     dl SamusTiles_Top_Set2_Entry11 : dw $00E0,$0040                      ;92CE17;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($92CE1E)
 UNUSED_SamusTopTiles_Set2_92CE1E:
     dl SamusTiles_Top_Set2_Entry12 : dw $0100,$0040                      ;92CE1E;
 
+%anchor($92CE25)
 UNUSED_SamusTopTiles_Set2_92CE25:
     dl SamusTiles_Top_Set2_Entry13 : dw $0100,$0040                      ;92CE25;
 
+%anchor($92CE2C)
 UNUSED_SamusTopTiles_Set2_92CE2C:
     dl SamusTiles_Top_Set2_Entry14 : dw $0100,$0040                      ;92CE2C;
 
+%anchor($92CE33)
 UNUSED_SamusTopTiles_Set2_92CE33:
     dl SamusTiles_Top_Set2_Entry15 : dw $0100,$0040                      ;92CE33;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($92CE3A)
 SamusTopTiles_Set2_CE3A:
 ; Fh: Moving right - aiming up-right - frame 3
 ; Fh: Moving right - aiming up-right - frame 8
     dl SamusTiles_Top_Set2_Entry16 : dw $00C0,$0040                      ;92CE3A;
 
+%anchor($92CE41)
 SamusTopTiles_Set2_CE41:
 ; 10h: Moving left  - aiming up-left - frame 3
 ; 10h: Moving left  - aiming up-left - frame 8
     dl SamusTiles_Top_Set2_Entry17 : dw $00E0,$0040                      ;92CE41;
 
+%anchor($92CE48)
 SamusTopTiles_Set2_CE48:
 ; 11h: Moving right - aiming down-right - frame 3
 ; 11h: Moving right - aiming down-right - frame 8
     dl SamusTiles_Top_Set2_Entry18 : dw $00E0,$0040                      ;92CE48;
 
+%anchor($92CE4F)
 SamusTopTiles_Set2_CE4F:
 ; 12h: Moving left  - aiming down-left - frame 3
 ; 12h: Moving left  - aiming down-left - frame 8
     dl SamusTiles_Top_Set2_Entry19 : dw $00E0,$0040                      ;92CE4F;
 
+%anchor($92CE56)
 SamusTopTiles_Set2_CE56:
 ; 4Ah: Facing right - moonwalk - frames 1..2
 ; 4Ah: Facing right - moonwalk - frames 4..5
     dl SamusTiles_Top_Set2_Entry1A : dw $00C0,$0040                      ;92CE56;
 
+%anchor($92CE5D)
 SamusTopTiles_Set2_CE5D:
 ; 49h: Facing left  - moonwalk - frames 1..2
 ; 49h: Facing left  - moonwalk - frames 4..5
     dl SamusTiles_Top_Set2_Entry1B : dw $00C0,$0040                      ;92CE5D;
 
+%anchor($92CE64)
 SamusTopTiles_Set2_CE64:
 ; 29h: Facing right - falling - frame 1
 ; 29h: Facing right - falling - frame 5
     dl SamusTiles_Top_Set2_Entry1C : dw $00E0,$0040                      ;92CE64;
 
+%anchor($92CE6B)
 SamusTopTiles_Set2_CE6B:
 ; 29h: Facing right - falling - frame 2
 ; 50h: Facing right - damage boost - frame 9
     dl SamusTiles_Top_Set2_Entry1D : dw $00C0,$0040                      ;92CE6B;
 
+%anchor($92CE72)
 SamusTopTiles_Set2_CE72:
 ; Dh: Moving right - aiming up (unused) - frame 3
 ; Dh: Moving right - aiming up (unused) - frame 8
@@ -7779,6 +8400,7 @@ SamusTopTiles_Set2_CE72:
 ; 2Ah: Facing left  - falling - frame 5
     dl SamusTiles_Top_Set2_Entry1E : dw $00C0,$0040                      ;92CE72;
 
+%anchor($92CE79)
 SamusTopTiles_Set2_CE79:
 ; Eh: Moving left  - aiming up (unused) - frame 3
 ; Eh: Moving left  - aiming up (unused) - frame 8
@@ -7786,6 +8408,7 @@ SamusTopTiles_Set2_CE79:
 ; 4Fh: Facing left  - damage boost - frame 9
     dl SamusTiles_Top_Set2_Entry1F : dw $00C0,$0040                      ;92CE79;
 
+%anchor($92CE80)
 SamusTopTiles_Set3_CE80:
 ; 5Dh: Unused - frame 18h
 ; 5Dh: Unused - frame 38h
@@ -7801,6 +8424,7 @@ SamusTopTiles_Set3_CE80:
 ; B2h: Facing clockwise     - grapple - in air - frame 38h
     dl SamusTiles_Top_Set3_Entry0 : dw $00C0,$0080                       ;92CE80;
 
+%anchor($92CE87)
 SamusTopTiles_Set3_CE87:
 ; 5Dh: Unused - frame 17h
 ; 5Dh: Unused - frame 37h
@@ -7816,6 +8440,7 @@ SamusTopTiles_Set3_CE87:
 ; B2h: Facing clockwise     - grapple - in air - frame 37h
     dl SamusTiles_Top_Set3_Entry1 : dw $00C0,$0080                       ;92CE87;
 
+%anchor($92CE8E)
 SamusTopTiles_Set3_CE8E:
 ; 5Dh: Unused - frame 16h
 ; 5Dh: Unused - frame 36h
@@ -7831,6 +8456,7 @@ SamusTopTiles_Set3_CE8E:
 ; B2h: Facing clockwise     - grapple - in air - frame 36h
     dl SamusTiles_Top_Set3_Entry2 : dw $00C0,$00C0                       ;92CE8E;
 
+%anchor($92CE95)
 SamusTopTiles_Set3_CE95:
 ; 5Dh: Unused - frame 15h
 ; 5Dh: Unused - frame 35h
@@ -7846,6 +8472,7 @@ SamusTopTiles_Set3_CE95:
 ; B2h: Facing clockwise     - grapple - in air - frame 35h
     dl SamusTiles_Top_Set3_Entry3 : dw $00C0,$00C0                       ;92CE95;
 
+%anchor($92CE9C)
 SamusTopTiles_Set3_CE9C:
 ; 5Dh: Unused - frame 14h
 ; 5Dh: Unused - frame 34h
@@ -7861,6 +8488,7 @@ SamusTopTiles_Set3_CE9C:
 ; B2h: Facing clockwise     - grapple - in air - frame 34h
     dl SamusTiles_Top_Set3_Entry4 : dw $00C0,$00C0                       ;92CE9C;
 
+%anchor($92CEA3)
 SamusTopTiles_Set3_CEA3:
 ; 5Dh: Unused - frame 13h
 ; 5Dh: Unused - frame 33h
@@ -7876,6 +8504,7 @@ SamusTopTiles_Set3_CEA3:
 ; B2h: Facing clockwise     - grapple - in air - frame 33h
     dl SamusTiles_Top_Set3_Entry5 : dw $00C0,$00C0                       ;92CEA3;
 
+%anchor($92CEAA)
 SamusTopTiles_Set3_CEAA:
 ; 5Dh: Unused - frame 12h
 ; 5Dh: Unused - frame 32h
@@ -7891,6 +8520,7 @@ SamusTopTiles_Set3_CEAA:
 ; B2h: Facing clockwise     - grapple - in air - frame 32h
     dl SamusTiles_Top_Set3_Entry6 : dw $00C0,$00C0                       ;92CEAA;
 
+%anchor($92CEB1)
 SamusTopTiles_Set3_CEB1:
 ; 5Dh: Unused - frame 11h
 ; 5Dh: Unused - frame 31h
@@ -7906,6 +8536,7 @@ SamusTopTiles_Set3_CEB1:
 ; B2h: Facing clockwise     - grapple - in air - frame 31h
     dl SamusTiles_Top_Set3_Entry7 : dw $00C0,$0080                       ;92CEB1;
 
+%anchor($92CEB8)
 SamusTopTiles_Set3_CEB8:
 ; 5Dh: Unused - frame 10h
 ; 5Dh: Unused - frame 30h
@@ -7927,6 +8558,7 @@ SamusTopTiles_Set3_CEB8:
 ; B2h: Facing clockwise     - grapple - in air - frames 40h..41h
     dl SamusTiles_Top_Set3_Entry8 : dw $00C0,$0080                       ;92CEB8;
 
+%anchor($92CEBF)
 SamusTopTiles_Set3_CEBF:
 ; 5Dh: Unused - frame Fh
 ; 5Dh: Unused - frame 2Fh
@@ -7942,6 +8574,7 @@ SamusTopTiles_Set3_CEBF:
 ; B2h: Facing clockwise     - grapple - in air - frame 2Fh
     dl SamusTiles_Top_Set3_Entry9 : dw $00C0,$0080                       ;92CEBF;
 
+%anchor($92CEC6)
 SamusTopTiles_Set3_CEC6:
 ; 5Dh: Unused - frame Eh
 ; 5Dh: Unused - frame 2Eh
@@ -7957,6 +8590,7 @@ SamusTopTiles_Set3_CEC6:
 ; B2h: Facing clockwise     - grapple - in air - frame 2Eh
     dl SamusTiles_Top_Set3_EntryA : dw $00C0,$00C0                       ;92CEC6;
 
+%anchor($92CECD)
 SamusTopTiles_Set3_CECD:
 ; 5Dh: Unused - frame Dh
 ; 5Dh: Unused - frame 2Dh
@@ -7972,6 +8606,7 @@ SamusTopTiles_Set3_CECD:
 ; B2h: Facing clockwise     - grapple - in air - frame 2Dh
     dl SamusTiles_Top_Set3_EntryB : dw $00C0,$00C0                       ;92CECD;
 
+%anchor($92CED4)
 SamusTopTiles_Set3_CED4:
 ; 5Dh: Unused - frame Ch
 ; 5Dh: Unused - frame 2Ch
@@ -7987,6 +8622,7 @@ SamusTopTiles_Set3_CED4:
 ; B2h: Facing clockwise     - grapple - in air - frame 2Ch
     dl SamusTiles_Top_Set3_EntryC : dw $00C0,$00C0                       ;92CED4;
 
+%anchor($92CEDB)
 SamusTopTiles_Set3_CEDB:
 ; 5Dh: Unused - frame Bh
 ; 5Dh: Unused - frame 2Bh
@@ -8002,6 +8638,7 @@ SamusTopTiles_Set3_CEDB:
 ; B2h: Facing clockwise     - grapple - in air - frame 2Bh
     dl SamusTiles_Top_Set3_EntryD : dw $00C0,$00C0                       ;92CEDB;
 
+%anchor($92CEE2)
 SamusTopTiles_Set3_CEE2:
 ; 5Dh: Unused - frame Ah
 ; 5Dh: Unused - frame 2Ah
@@ -8017,6 +8654,7 @@ SamusTopTiles_Set3_CEE2:
 ; B2h: Facing clockwise     - grapple - in air - frame 2Ah
     dl SamusTiles_Top_Set3_EntryE : dw $00C0,$00C0                       ;92CEE2;
 
+%anchor($92CEE9)
 SamusTopTiles_Set3_CEE9:
 ; 5Dh: Unused - frame 9
 ; 5Dh: Unused - frame 29h
@@ -8033,10 +8671,12 @@ SamusTopTiles_Set3_CEE9:
     dl SamusTiles_Top_Set3_EntryF : dw $00C0,$0080                       ;92CEE9;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($92CEF0)
 UNUSED_SamusTopTiles_Set3_92CEF0:
     dl SamusTiles_Top_Set3_Entry10 : dw $00C0,$0080                      ;92CEF0;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($92CEF7)
 SamusTopTiles_Set4_CEF7:
 ; 62h: Unused - frame 8
 ; 62h: Unused - frame 28h
@@ -8044,6 +8684,7 @@ SamusTopTiles_Set4_CEF7:
 ; B3h: Facing anticlockwise - grapple - in air - frame 28h
     dl SamusTiles_Top_Set4_Entry0 : dw $0100,$00C0                       ;92CEF7;
 
+%anchor($92CEFE)
 SamusTopTiles_Set4_CEFE:
 ; 62h: Unused - frame 9
 ; 62h: Unused - frame 29h
@@ -8051,6 +8692,7 @@ SamusTopTiles_Set4_CEFE:
 ; B3h: Facing anticlockwise - grapple - in air - frame 29h
     dl SamusTiles_Top_Set4_Entry1 : dw $0100,$00C0                       ;92CEFE;
 
+%anchor($92CF05)
 SamusTopTiles_Set4_CF05:
 ; 62h: Unused - frame Ah
 ; 62h: Unused - frame 2Ah
@@ -8058,6 +8700,7 @@ SamusTopTiles_Set4_CF05:
 ; B3h: Facing anticlockwise - grapple - in air - frame 2Ah
     dl SamusTiles_Top_Set4_Entry2 : dw $0100,$0100                       ;92CF05;
 
+%anchor($92CF0C)
 SamusTopTiles_Set4_CF0C:
 ; 62h: Unused - frame Bh
 ; 62h: Unused - frame 2Bh
@@ -8065,6 +8708,7 @@ SamusTopTiles_Set4_CF0C:
 ; B3h: Facing anticlockwise - grapple - in air - frame 2Bh
     dl SamusTiles_Top_Set4_Entry3 : dw $0100,$0100                       ;92CF0C;
 
+%anchor($92CF13)
 SamusTopTiles_Set4_CF13:
 ; 62h: Unused - frame Ch
 ; 62h: Unused - frame 2Ch
@@ -8072,6 +8716,7 @@ SamusTopTiles_Set4_CF13:
 ; B3h: Facing anticlockwise - grapple - in air - frame 2Ch
     dl SamusTiles_Top_Set4_Entry4 : dw $0100,$00E0                       ;92CF13;
 
+%anchor($92CF1A)
 SamusTopTiles_Set4_CF1A:
 ; 62h: Unused - frame Dh
 ; 62h: Unused - frame 2Dh
@@ -8079,6 +8724,7 @@ SamusTopTiles_Set4_CF1A:
 ; B3h: Facing anticlockwise - grapple - in air - frame 2Dh
     dl SamusTiles_Top_Set4_Entry5 : dw $0100,$00E0                       ;92CF1A;
 
+%anchor($92CF21)
 SamusTopTiles_Set4_CF21:
 ; 62h: Unused - frame Eh
 ; 62h: Unused - frame 2Eh
@@ -8086,6 +8732,7 @@ SamusTopTiles_Set4_CF21:
 ; B3h: Facing anticlockwise - grapple - in air - frame 2Eh
     dl SamusTiles_Top_Set4_Entry6 : dw $0100,$00E0                       ;92CF21;
 
+%anchor($92CF28)
 SamusTopTiles_Set4_CF28:
 ; 62h: Unused - frame Fh
 ; 62h: Unused - frame 2Fh
@@ -8093,6 +8740,7 @@ SamusTopTiles_Set4_CF28:
 ; B3h: Facing anticlockwise - grapple - in air - frame 2Fh
     dl SamusTiles_Top_Set4_Entry7 : dw $0100,$00C0                       ;92CF28;
 
+%anchor($92CF2F)
 SamusTopTiles_Set4_CF2F:
 ; 62h: Unused - frame 10h
 ; 62h: Unused - frame 30h
@@ -8102,6 +8750,7 @@ SamusTopTiles_Set4_CF2F:
 ; B3h: Facing anticlockwise - grapple - in air - frames 40h..41h
     dl SamusTiles_Top_Set4_Entry8 : dw $0100,$00C0                       ;92CF2F;
 
+%anchor($92CF36)
 SamusTopTiles_Set4_CF36:
 ; 62h: Unused - frame 11h
 ; 62h: Unused - frame 31h
@@ -8109,6 +8758,7 @@ SamusTopTiles_Set4_CF36:
 ; B3h: Facing anticlockwise - grapple - in air - frame 31h
     dl SamusTiles_Top_Set4_Entry9 : dw $0100,$00C0                       ;92CF36;
 
+%anchor($92CF3D)
 SamusTopTiles_Set4_CF3D:
 ; 62h: Unused - frame 12h
 ; 62h: Unused - frame 32h
@@ -8116,6 +8766,7 @@ SamusTopTiles_Set4_CF3D:
 ; B3h: Facing anticlockwise - grapple - in air - frame 32h
     dl SamusTiles_Top_Set4_EntryA : dw $0100,$00E0                       ;92CF3D;
 
+%anchor($92CF44)
 SamusTopTiles_Set4_CF44:
 ; 62h: Unused - frame 13h
 ; 62h: Unused - frame 33h
@@ -8123,6 +8774,7 @@ SamusTopTiles_Set4_CF44:
 ; B3h: Facing anticlockwise - grapple - in air - frame 33h
     dl SamusTiles_Top_Set4_EntryB : dw $0100,$0100                       ;92CF44;
 
+%anchor($92CF4B)
 SamusTopTiles_Set4_CF4B:
 ; 62h: Unused - frame 14h
 ; 62h: Unused - frame 34h
@@ -8130,6 +8782,7 @@ SamusTopTiles_Set4_CF4B:
 ; B3h: Facing anticlockwise - grapple - in air - frame 34h
     dl SamusTiles_Top_Set4_EntryC : dw $0100,$0100                       ;92CF4B;
 
+%anchor($92CF52)
 SamusTopTiles_Set4_CF52:
 ; 62h: Unused - frame 15h
 ; 62h: Unused - frame 35h
@@ -8137,6 +8790,7 @@ SamusTopTiles_Set4_CF52:
 ; B3h: Facing anticlockwise - grapple - in air - frame 35h
     dl SamusTiles_Top_Set4_EntryD : dw $0100,$0100                       ;92CF52;
 
+%anchor($92CF59)
 SamusTopTiles_Set4_CF59:
 ; 62h: Unused - frame 16h
 ; 62h: Unused - frame 36h
@@ -8144,6 +8798,7 @@ SamusTopTiles_Set4_CF59:
 ; B3h: Facing anticlockwise - grapple - in air - frame 36h
     dl SamusTiles_Top_Set4_EntryE : dw $0100,$0100                       ;92CF59;
 
+%anchor($92CF60)
 SamusTopTiles_Set4_CF60:
 ; 62h: Unused - frame 17h
 ; 62h: Unused - frame 37h
@@ -8152,10 +8807,12 @@ SamusTopTiles_Set4_CF60:
     dl SamusTiles_Top_Set4_EntryF : dw $0100,$00E0                       ;92CF60;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($92CF67)
 UNUSED_SamusTopTiles_Set4_92CF67:
     dl SamusTiles_Top_Set4_Entry10 : dw $0100,$00E0                      ;92CF67;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($92CF6E)
 SamusTopTiles_Set5_CF6E:
 ; 5Dh: Unused - frame 8
 ; 5Dh: Unused - frame 28h
@@ -8171,6 +8828,7 @@ SamusTopTiles_Set5_CF6E:
 ; B2h: Facing clockwise     - grapple - in air - frame 28h
     dl SamusTiles_Top_Set5_Entry0 : dw $00C0,$0080                       ;92CF6E;
 
+%anchor($92CF75)
 SamusTopTiles_Set5_CF75:
 ; 5Dh: Unused - frame 7
 ; 5Dh: Unused - frame 27h
@@ -8186,6 +8844,7 @@ SamusTopTiles_Set5_CF75:
 ; B2h: Facing clockwise     - grapple - in air - frame 27h
     dl SamusTiles_Top_Set5_Entry1 : dw $00C0,$0080                       ;92CF75;
 
+%anchor($92CF7C)
 SamusTopTiles_Set5_CF7C:
 ; 5Dh: Unused - frame 6
 ; 5Dh: Unused - frame 26h
@@ -8201,6 +8860,7 @@ SamusTopTiles_Set5_CF7C:
 ; B2h: Facing clockwise     - grapple - in air - frame 26h
     dl SamusTiles_Top_Set5_Entry2 : dw $00C0,$00C0                       ;92CF7C;
 
+%anchor($92CF83)
 SamusTopTiles_Set5_CF83:
 ; 5Dh: Unused - frame 5
 ; 5Dh: Unused - frame 25h
@@ -8216,6 +8876,7 @@ SamusTopTiles_Set5_CF83:
 ; B2h: Facing clockwise     - grapple - in air - frame 25h
     dl SamusTiles_Top_Set5_Entry3 : dw $00C0,$00C0                       ;92CF83;
 
+%anchor($92CF8A)
 SamusTopTiles_Set5_CF8A:
 ; 5Dh: Unused - frame 4
 ; 5Dh: Unused - frame 24h
@@ -8231,6 +8892,7 @@ SamusTopTiles_Set5_CF8A:
 ; B2h: Facing clockwise     - grapple - in air - frame 24h
     dl SamusTiles_Top_Set5_Entry4 : dw $00C0,$00C0                       ;92CF8A;
 
+%anchor($92CF91)
 SamusTopTiles_Set5_CF91:
 ; 5Dh: Unused - frame 3
 ; 5Dh: Unused - frame 23h
@@ -8246,6 +8908,7 @@ SamusTopTiles_Set5_CF91:
 ; B2h: Facing clockwise     - grapple - in air - frame 23h
     dl SamusTiles_Top_Set5_Entry5 : dw $00C0,$00C0                       ;92CF91;
 
+%anchor($92CF98)
 SamusTopTiles_Set5_CF98:
 ; 5Dh: Unused - frame 2
 ; 5Dh: Unused - frame 22h
@@ -8261,6 +8924,7 @@ SamusTopTiles_Set5_CF98:
 ; B2h: Facing clockwise     - grapple - in air - frame 22h
     dl SamusTiles_Top_Set5_Entry6 : dw $00C0,$00C0                       ;92CF98;
 
+%anchor($92CF9F)
 SamusTopTiles_Set5_CF9F:
 ; 5Dh: Unused - frame 1
 ; 5Dh: Unused - frame 21h
@@ -8276,6 +8940,7 @@ SamusTopTiles_Set5_CF9F:
 ; B2h: Facing clockwise     - grapple - in air - frame 21h
     dl SamusTiles_Top_Set5_Entry7 : dw $00C0,$0080                       ;92CF9F;
 
+%anchor($92CFA6)
 SamusTopTiles_Set5_CFA6:
 ; 5Dh: Unused - frame 0
 ; 5Dh: Unused - frame 20h
@@ -8291,6 +8956,7 @@ SamusTopTiles_Set5_CFA6:
 ; B2h: Facing clockwise     - grapple - in air - frame 20h
     dl SamusTiles_Top_Set5_Entry8 : dw $00C0,$0080                       ;92CFA6;
 
+%anchor($92CFAD)
 SamusTopTiles_Set5_CFAD:
 ; 5Dh: Unused - frame 1Fh
 ; 5Dh: Unused - frame 3Fh
@@ -8306,6 +8972,7 @@ SamusTopTiles_Set5_CFAD:
 ; B2h: Facing clockwise     - grapple - in air - frame 3Fh
     dl SamusTiles_Top_Set5_Entry9 : dw $00C0,$0080                       ;92CFAD;
 
+%anchor($92CFB4)
 SamusTopTiles_Set5_CFB4:
 ; 5Dh: Unused - frame 1Eh
 ; 5Dh: Unused - frame 3Eh
@@ -8321,6 +8988,7 @@ SamusTopTiles_Set5_CFB4:
 ; B2h: Facing clockwise     - grapple - in air - frame 3Eh
     dl SamusTiles_Top_Set5_EntryA : dw $00C0,$00C0                       ;92CFB4;
 
+%anchor($92CFBB)
 SamusTopTiles_Set5_CFBB:
 ; 5Dh: Unused - frame 1Dh
 ; 5Dh: Unused - frame 3Dh
@@ -8336,6 +9004,7 @@ SamusTopTiles_Set5_CFBB:
 ; B2h: Facing clockwise     - grapple - in air - frame 3Dh
     dl SamusTiles_Top_Set5_EntryB : dw $00C0,$00C0                       ;92CFBB;
 
+%anchor($92CFC2)
 SamusTopTiles_Set5_CFC2:
 ; 5Dh: Unused - frame 1Ch
 ; 5Dh: Unused - frame 3Ch
@@ -8351,6 +9020,7 @@ SamusTopTiles_Set5_CFC2:
 ; B2h: Facing clockwise     - grapple - in air - frame 3Ch
     dl SamusTiles_Top_Set5_EntryC : dw $00C0,$00C0                       ;92CFC2;
 
+%anchor($92CFC9)
 SamusTopTiles_Set5_CFC9:
 ; 5Dh: Unused - frame 1Bh
 ; 5Dh: Unused - frame 3Bh
@@ -8366,6 +9036,7 @@ SamusTopTiles_Set5_CFC9:
 ; B2h: Facing clockwise     - grapple - in air - frame 3Bh
     dl SamusTiles_Top_Set5_EntryD : dw $00C0,$00C0                       ;92CFC9;
 
+%anchor($92CFD0)
 SamusTopTiles_Set5_CFD0:
 ; 5Dh: Unused - frame 1Ah
 ; 5Dh: Unused - frame 3Ah
@@ -8381,6 +9052,7 @@ SamusTopTiles_Set5_CFD0:
 ; B2h: Facing clockwise     - grapple - in air - frame 3Ah
     dl SamusTiles_Top_Set5_EntryE : dw $00C0,$00C0                       ;92CFD0;
 
+%anchor($92CFD7)
 SamusTopTiles_Set5_CFD7:
 ; 5Dh: Unused - frame 19h
 ; 5Dh: Unused - frame 39h
@@ -8397,10 +9069,12 @@ SamusTopTiles_Set5_CFD7:
     dl SamusTiles_Top_Set5_EntryF : dw $00C0,$0080                       ;92CFD7;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($92CFDE)
 UNUSED_SamusTopTiles_Set5_92CFDE:
     dl SamusTiles_Top_Set5_Entry10 : dw $00C0,$0080                      ;92CFDE;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($92CFE5)
 SamusTopTiles_Set6_CFE5:
 ; 62h: Unused - frame 18h
 ; 62h: Unused - frame 38h
@@ -8408,6 +9082,7 @@ SamusTopTiles_Set6_CFE5:
 ; B3h: Facing anticlockwise - grapple - in air - frame 38h
     dl SamusTiles_Top_Set6_Entry0 : dw $0100,$00C0                       ;92CFE5;
 
+%anchor($92CFEC)
 SamusTopTiles_Set6_CFEC:
 ; 62h: Unused - frame 19h
 ; 62h: Unused - frame 39h
@@ -8415,6 +9090,7 @@ SamusTopTiles_Set6_CFEC:
 ; B3h: Facing anticlockwise - grapple - in air - frame 39h
     dl SamusTiles_Top_Set6_Entry1 : dw $0100,$00C0                       ;92CFEC;
 
+%anchor($92CFF3)
 SamusTopTiles_Set6_CFF3:
 ; 62h: Unused - frame 1Ah
 ; 62h: Unused - frame 3Ah
@@ -8422,6 +9098,7 @@ SamusTopTiles_Set6_CFF3:
 ; B3h: Facing anticlockwise - grapple - in air - frame 3Ah
     dl SamusTiles_Top_Set6_Entry2 : dw $0100,$0100                       ;92CFF3;
 
+%anchor($92CFFA)
 SamusTopTiles_Set6_CFFA:
 ; 62h: Unused - frame 1Bh
 ; 62h: Unused - frame 3Bh
@@ -8429,6 +9106,7 @@ SamusTopTiles_Set6_CFFA:
 ; B3h: Facing anticlockwise - grapple - in air - frame 3Bh
     dl SamusTiles_Top_Set6_Entry3 : dw $0100,$0100                       ;92CFFA;
 
+%anchor($92D001)
 SamusTopTiles_Set6_D001:
 ; 62h: Unused - frame 1Ch
 ; 62h: Unused - frame 3Ch
@@ -8436,6 +9114,7 @@ SamusTopTiles_Set6_D001:
 ; B3h: Facing anticlockwise - grapple - in air - frame 3Ch
     dl SamusTiles_Top_Set6_Entry4 : dw $0100,$00E0                       ;92D001;
 
+%anchor($92D008)
 SamusTopTiles_Set6_D008:
 ; 62h: Unused - frame 1Dh
 ; 62h: Unused - frame 3Dh
@@ -8443,6 +9122,7 @@ SamusTopTiles_Set6_D008:
 ; B3h: Facing anticlockwise - grapple - in air - frame 3Dh
     dl SamusTiles_Top_Set6_Entry5 : dw $0100,$00E0                       ;92D008;
 
+%anchor($92D00F)
 SamusTopTiles_Set6_D00F:
 ; 62h: Unused - frame 1Eh
 ; 62h: Unused - frame 3Eh
@@ -8450,6 +9130,7 @@ SamusTopTiles_Set6_D00F:
 ; B3h: Facing anticlockwise - grapple - in air - frame 3Eh
     dl SamusTiles_Top_Set6_Entry6 : dw $0100,$00E0                       ;92D00F;
 
+%anchor($92D016)
 SamusTopTiles_Set6_D016:
 ; 62h: Unused - frame 1Fh
 ; 62h: Unused - frame 3Fh
@@ -8457,6 +9138,7 @@ SamusTopTiles_Set6_D016:
 ; B3h: Facing anticlockwise - grapple - in air - frame 3Fh
     dl SamusTiles_Top_Set6_Entry7 : dw $0100,$00C0                       ;92D016;
 
+%anchor($92D01D)
 SamusTopTiles_Set6_D01D:
 ; 62h: Unused - frame 0
 ; 62h: Unused - frame 20h
@@ -8464,6 +9146,7 @@ SamusTopTiles_Set6_D01D:
 ; B3h: Facing anticlockwise - grapple - in air - frame 20h
     dl SamusTiles_Top_Set6_Entry8 : dw $0100,$00C0                       ;92D01D;
 
+%anchor($92D024)
 SamusTopTiles_Set6_D024:
 ; 62h: Unused - frame 1
 ; 62h: Unused - frame 21h
@@ -8471,6 +9154,7 @@ SamusTopTiles_Set6_D024:
 ; B3h: Facing anticlockwise - grapple - in air - frame 21h
     dl SamusTiles_Top_Set6_Entry9 : dw $0100,$00C0                       ;92D024;
 
+%anchor($92D02B)
 SamusTopTiles_Set6_D02B:
 ; 62h: Unused - frame 2
 ; 62h: Unused - frame 22h
@@ -8478,6 +9162,7 @@ SamusTopTiles_Set6_D02B:
 ; B3h: Facing anticlockwise - grapple - in air - frame 22h
     dl SamusTiles_Top_Set6_EntryA : dw $0100,$00E0                       ;92D02B;
 
+%anchor($92D032)
 SamusTopTiles_Set6_D032:
 ; 62h: Unused - frame 3
 ; 62h: Unused - frame 23h
@@ -8485,6 +9170,7 @@ SamusTopTiles_Set6_D032:
 ; B3h: Facing anticlockwise - grapple - in air - frame 23h
     dl SamusTiles_Top_Set6_EntryB : dw $0100,$0100                       ;92D032;
 
+%anchor($92D039)
 SamusTopTiles_Set6_D039:
 ; 62h: Unused - frame 4
 ; 62h: Unused - frame 24h
@@ -8492,6 +9178,7 @@ SamusTopTiles_Set6_D039:
 ; B3h: Facing anticlockwise - grapple - in air - frame 24h
     dl SamusTiles_Top_Set6_EntryC : dw $0100,$0100                       ;92D039;
 
+%anchor($92D040)
 SamusTopTiles_Set6_D040:
 ; 62h: Unused - frame 5
 ; 62h: Unused - frame 25h
@@ -8499,6 +9186,7 @@ SamusTopTiles_Set6_D040:
 ; B3h: Facing anticlockwise - grapple - in air - frame 25h
     dl SamusTiles_Top_Set6_EntryD : dw $0100,$0100                       ;92D040;
 
+%anchor($92D047)
 SamusTopTiles_Set6_D047:
 ; 62h: Unused - frame 6
 ; 62h: Unused - frame 26h
@@ -8506,6 +9194,7 @@ SamusTopTiles_Set6_D047:
 ; B3h: Facing anticlockwise - grapple - in air - frame 26h
     dl SamusTiles_Top_Set6_EntryE : dw $0100,$0100                       ;92D047;
 
+%anchor($92D04E)
 SamusTopTiles_Set6_D04E:
 ; 62h: Unused - frame 7
 ; 62h: Unused - frame 27h
@@ -8514,16 +9203,19 @@ SamusTopTiles_Set6_D04E:
     dl SamusTiles_Top_Set6_EntryF : dw $0100,$00E0                       ;92D04E;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($92D055)
 UNUSED_SamusTopTiles_Set6_92D055:
     dl SamusTiles_Top_Set6_Entry10 : dw $0100,$00E0                      ;92D055;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($92D05C)
 SamusTopTiles_Set7_D05C:
 ; E9h: Facing left  - Samus drained - crouching/falling - frame 8
 ; E9h: Facing left  - Samus drained - crouching/falling - frame 1Ah
 ; E9h: Facing left  - Samus drained - crouching/falling - frame 1Dh
     dl SamusTiles_Top_Set7_Entry0 : dw $00E0,$0040                       ;92D05C;
 
+%anchor($92D063)
 SamusTopTiles_Set7_D063:
 ; E9h: Facing left  - Samus drained - crouching/falling - frame 7
 ; E9h: Facing left  - Samus drained - crouching/falling - frame 9
@@ -8533,27 +9225,33 @@ SamusTopTiles_Set7_D063:
 ; E9h: Facing left  - Samus drained - crouching/falling - frame 17h
     dl SamusTiles_Top_Set7_Entry1 : dw $00E0,$0040                       ;92D063;
 
+%anchor($92D06A)
 SamusTopTiles_Set7_D06A:
 ; E9h: Facing left  - Samus drained - crouching/falling - frame Ah
     dl SamusTiles_Top_Set7_Entry2 : dw $00E0,$0040                       ;92D06A;
 
+%anchor($92D071)
 SamusTopTiles_Set7_D071:
 ; E8h: Facing right - Samus drained - crouching/falling - frame 8
     dl SamusTiles_Top_Set7_Entry3 : dw $0100,$0040                       ;92D071;
 
+%anchor($92D078)
 SamusTopTiles_Set7_D078:
 ; E8h: Facing right - Samus drained - crouching/falling - frame 9
 ; E8h: Facing right - Samus drained - crouching/falling - frame Bh
     dl SamusTiles_Top_Set7_Entry4 : dw $0100,$0040                       ;92D078;
 
+%anchor($92D07F)
 SamusTopTiles_Set7_D07F:
 ; E8h: Facing right - Samus drained - crouching/falling - frame Ah
     dl SamusTiles_Top_Set7_Entry5 : dw $0100,$0040                       ;92D07F;
 
+%anchor($92D086)
 SamusTopTiles_Set7_D086:
 ; EBh: Facing left  - Samus drained - standing - frame 0
     dl SamusTiles_Top_Set7_Entry6 : dw $00E0,$0040                       ;92D086;
 
+%anchor($92D08D)
 SamusTopTiles_Set7_D08D:
 ; E9h: Facing left  - Samus drained - crouching/falling - frame Fh
 ; E9h: Facing left  - Samus drained - crouching/falling - frame 14h
@@ -8562,23 +9260,28 @@ SamusTopTiles_Set7_D08D:
 ; EBh: Facing left  - Samus drained - standing - frame 3
     dl SamusTiles_Top_Set7_Entry7 : dw $00E0,$0040                       ;92D08D;
 
+%anchor($92D094)
 SamusTopTiles_Set7_D094:
 ; EBh: Facing left  - Samus drained - standing - frame 2
     dl SamusTiles_Top_Set7_Entry8 : dw $00E0,$0040                       ;92D094;
 
+%anchor($92D09B)
 SamusTopTiles_Set7_D09B:
 ; EAh: Facing right - Samus drained - standing - frame 0
     dl SamusTiles_Top_Set7_Entry9 : dw $0100,$0040                       ;92D09B;
 
+%anchor($92D0A2)
 SamusTopTiles_Set7_D0A2:
 ; EAh: Facing right - Samus drained - standing - frame 1
 ; EAh: Facing right - Samus drained - standing - frame 3
     dl SamusTiles_Top_Set7_EntryA : dw $0100,$0040                       ;92D0A2;
 
+%anchor($92D0A9)
 SamusTopTiles_Set7_D0A9:
 ; EAh: Facing right - Samus drained - standing - frame 2
     dl SamusTiles_Top_Set7_EntryB : dw $0100,$0040                       ;92D0A9;
 
+%anchor($92D0B0)
 SamusTopTiles_Set7_D0B0:
 ; 1: Facing right - normal - frame 0
 ; 1: Facing right - normal - frame 5
@@ -8594,6 +9297,7 @@ SamusTopTiles_Set7_D0B0:
 ; B4h: Facing right - grappling - crouching - frame 5
     dl SamusTiles_Top_Set7_EntryC : dw $00C0,$0080                       ;92D0B0;
 
+%anchor($92D0B7)
 SamusTopTiles_Set7_D0B7:
 ; 1: Facing right - normal - frame 1
 ; 1: Facing right - normal - frame 3
@@ -8621,6 +9325,7 @@ SamusTopTiles_Set7_D0B7:
 ; B4h: Facing right - grappling - crouching - frame 8
     dl SamusTiles_Top_Set7_EntryD : dw $00C0,$0080                       ;92D0B7;
 
+%anchor($92D0BE)
 SamusTopTiles_Set7_D0BE:
 ; 1: Facing right - normal - frame 2
 ; 27h: Facing right - crouching - frame 2
@@ -8630,6 +9335,7 @@ SamusTopTiles_Set7_D0BE:
 ; B4h: Facing right - grappling - crouching - frame 2
     dl SamusTiles_Top_Set7_EntryE : dw $00C0,$0080                       ;92D0BE;
 
+%anchor($92D0C5)
 SamusTopTiles_Set7_D0C5:
 ; 2: Facing left  - normal - frame 0
 ; 2: Facing left  - normal - frame 5
@@ -8645,6 +9351,7 @@ SamusTopTiles_Set7_D0C5:
 ; B5h: Facing left  - grappling - crouching - frame 5
     dl SamusTiles_Top_Set7_EntryF : dw $00C0,$0080                       ;92D0C5;
 
+%anchor($92D0CC)
 SamusTopTiles_Set7_D0CC:
 ; 2: Facing left  - normal - frame 1
 ; 2: Facing left  - normal - frame 3
@@ -8672,6 +9379,7 @@ SamusTopTiles_Set7_D0CC:
 ; B5h: Facing left  - grappling - crouching - frame 8
     dl SamusTiles_Top_Set7_Entry10 : dw $00C0,$0080                      ;92D0CC;
 
+%anchor($92D0D3)
 SamusTopTiles_Set7_D0D3:
 ; 2: Facing left  - normal - frame 2
 ; 28h: Facing left  - crouching - frame 2
@@ -8681,6 +9389,7 @@ SamusTopTiles_Set7_D0D3:
 ; B5h: Facing left  - grappling - crouching - frame 2
     dl SamusTiles_Top_Set7_Entry11 : dw $00C0,$0080                      ;92D0D3;
 
+%anchor($92D0DA)
 SamusTopTiles_Set7_D0DA:
 ; 1: Facing right - normal - frame 7
 ; 27h: Facing right - crouching - frame 7
@@ -8690,6 +9399,7 @@ SamusTopTiles_Set7_D0DA:
 ; B4h: Facing right - grappling - crouching - frame 7
     dl SamusTiles_Top_Set7_Entry12 : dw $00C0,$0040                      ;92D0DA;
 
+%anchor($92D0E1)
 SamusTopTiles_Set7_D0E1:
 ; 2: Facing left  - normal - frame 7
 ; 28h: Facing left  - crouching - frame 7
@@ -8699,6 +9409,7 @@ SamusTopTiles_Set7_D0E1:
 ; B5h: Facing left  - grappling - crouching - frame 7
     dl SamusTiles_Top_Set7_Entry13 : dw $00C0,$0040                      ;92D0E1;
 
+%anchor($92D0E8)
 SamusTopTiles_Set8_D0E8:
 ; 0: Facing forward - power suit - frame 3
 ; 0: Facing forward - power suit - frame 5
@@ -8797,10 +9508,12 @@ SamusTopTiles_Set8_D0E8:
     dl SamusTiles_Top_Set8_Entry0 : dw $0020,$0000                       ;92D0E8;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($92D0EF)
 UNUSED_SamusTopTiles_Set8_92D0EF:
     dl SamusTiles_Top_Set8_Entry1 : dw $0020,$0000                       ;92D0EF;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($92D0F6)
 SamusTopTiles_Set8_D0F6:
 ; 0: Facing forward - power suit - frame 2
 ; 0: Facing forward - power suit - frame 8
@@ -8830,6 +9543,7 @@ SamusTopTiles_Set8_D0F6:
 ; 9Bh: Facing forward - varia/gravity suit - frame 4Ah
     dl SamusTiles_Top_Set8_Entry2 : dw $0100,$0020                       ;92D0F6;
 
+%anchor($92D0FD)
 SamusTopTiles_Set8_D0FD:
 ; 0: Facing forward - power suit - frame 4
 ; 0: Facing forward - power suit - frame Ah
@@ -8859,6 +9573,7 @@ SamusTopTiles_Set8_D0FD:
 ; 9Bh: Facing forward - varia/gravity suit - frame 4Ch
     dl SamusTiles_Top_Set8_Entry3 : dw $00E0,$0000                       ;92D0FD;
 
+%anchor($92D104)
 SamusTopTiles_Set8_D104:
 ; 0: Facing forward - power suit - frame 6
 ; 0: Facing forward - power suit - frame Ch
@@ -8888,16 +9603,19 @@ SamusTopTiles_Set8_D104:
 ; 9Bh: Facing forward - varia/gravity suit - frame 4Eh
     dl SamusTiles_Top_Set8_Entry4 : dw $0100,$0060                       ;92D104;
 
+%anchor($92D10B)
 SamusTopTiles_Set8_D10B:
 ; 0: Facing forward - power suit - frame 50h
 ; 9Bh: Facing forward - varia/gravity suit - frame 50h
     dl SamusTiles_Top_Set8_Entry5 : dw $0100,$00E0                       ;92D10B;
 
+%anchor($92D112)
 SamusTopTiles_Set8_D112:
 ; 0: Facing forward - power suit - frame 52h
 ; 9Bh: Facing forward - varia/gravity suit - frame 52h
     dl SamusTiles_Top_Set8_Entry6 : dw $0100,$0000                       ;92D112;
 
+%anchor($92D119)
 SamusTopTiles_Set8_D119:
 ; 0: Facing forward - power suit - frame 54h
 ; 0: Facing forward - power suit - frame 5Ah
@@ -8905,6 +9623,7 @@ SamusTopTiles_Set8_D119:
 ; 9Bh: Facing forward - varia/gravity suit - frame 5Ah
     dl SamusTiles_Top_Set8_Entry7 : dw $0100,$0040                       ;92D119;
 
+%anchor($92D120)
 SamusTopTiles_Set8_D120:
 ; 0: Facing forward - power suit - frame 56h
 ; 0: Facing forward - power suit - frame 5Ch
@@ -8912,6 +9631,7 @@ SamusTopTiles_Set8_D120:
 ; 9Bh: Facing forward - varia/gravity suit - frame 5Ch
     dl SamusTiles_Top_Set8_Entry8 : dw $0100,$0060                       ;92D120;
 
+%anchor($92D127)
 SamusTopTiles_Set8_D127:
 ; 0: Facing forward - power suit - frame 58h
 ; 0: Facing forward - power suit - frame 5Eh
@@ -8919,74 +9639,91 @@ SamusTopTiles_Set8_D127:
 ; 9Bh: Facing forward - varia/gravity suit - frame 5Eh
     dl SamusTiles_Top_Set8_Entry9 : dw $00E0,$0000                       ;92D127;
 
+%anchor($92D12E)
 SamusTopTiles_Set9_D12E:
 ; Bh: Moving right - gun extended - frame 0
 ; Bh: Moving right - gun extended - frame 5
     dl SamusTiles_Top_Set9_Entry0 : dw $0080,$0040                       ;92D12E;
 
+%anchor($92D135)
 SamusTopTiles_Set9_D135:
 ; Bh: Moving right - gun extended - frame 4
     dl SamusTiles_Top_Set9_Entry1 : dw $0080,$0040                       ;92D135;
 
+%anchor($92D13C)
 SamusTopTiles_Set9_D13C:
 ; Bh: Moving right - gun extended - frame 2
     dl SamusTiles_Top_Set9_Entry2 : dw $00A0,$0040                       ;92D13C;
 
+%anchor($92D143)
 SamusTopTiles_Set9_D143:
 ; Bh: Moving right - gun extended - frame 3
     dl SamusTiles_Top_Set9_Entry3 : dw $00C0,$0040                       ;92D143;
 
+%anchor($92D14A)
 SamusTopTiles_Set9_D14A:
 ; Bh: Moving right - gun extended - frame 6
 ; Bh: Moving right - gun extended - frame 9
     dl SamusTiles_Top_Set9_Entry4 : dw $0080,$0040                       ;92D14A;
 
+%anchor($92D151)
 SamusTopTiles_Set9_D151:
 ; Bh: Moving right - gun extended - frame 7
     dl SamusTiles_Top_Set9_Entry5 : dw $00A0,$0040                       ;92D151;
 
+%anchor($92D158)
 SamusTopTiles_Set9_D158:
 ; Ch: Moving left  - gun extended - frame 0
 ; Ch: Moving left  - gun extended - frame 5
     dl SamusTiles_Top_Set9_Entry6 : dw $00C0,$0040                       ;92D158;
 
+%anchor($92D15F)
 SamusTopTiles_Set9_D15F:
 ; Ch: Moving left  - gun extended - frame 4
     dl SamusTiles_Top_Set9_Entry7 : dw $00C0,$0040                       ;92D15F;
 
+%anchor($92D166)
 SamusTopTiles_Set9_D166:
 ; Ch: Moving left  - gun extended - frame 3
     dl SamusTiles_Top_Set9_Entry8 : dw $00E0,$0040                       ;92D166;
 
+%anchor($92D16D)
 SamusTopTiles_Set9_D16D:
 ; Ch: Moving left  - gun extended - frame 2
     dl SamusTiles_Top_Set9_Entry9 : dw $00E0,$0040                       ;92D16D;
 
+%anchor($92D174)
 SamusTopTiles_Set9_D174:
 ; Ch: Moving left  - gun extended - frame 6
 ; Ch: Moving left  - gun extended - frame 9
     dl SamusTiles_Top_Set9_EntryA : dw $00C0,$0040                       ;92D174;
 
+%anchor($92D17B)
 SamusTopTiles_Set9_D17B:
 ; Ch: Moving left  - gun extended - frame 8
     dl SamusTiles_Top_Set9_EntryB : dw $0100,$0040                       ;92D17B;
 
+%anchor($92D182)
 SamusTopTiles_Set9_D182:
 ; Bh: Moving right - gun extended - frame 8
     dl SamusTiles_Top_Set9_EntryC : dw $00C0,$0040                       ;92D182;
 
+%anchor($92D189)
 SamusTopTiles_Set9_D189:
 ; Ch: Moving left  - gun extended - frame 7
     dl SamusTiles_Top_Set9_EntryD : dw $0100,$0040                       ;92D189;
 
+%anchor($92D190)
 SamusTopTiles_Set9_D190:
 ; Bh: Moving right - gun extended - frame 1
     dl SamusTiles_Top_Set9_EntryE : dw $0080,$0040                       ;92D190;
 
+%anchor($92D197)
 SamusTopTiles_Set9_D197:
 ; Ch: Moving left  - gun extended - frame 1
     dl SamusTiles_Top_Set9_EntryF : dw $00C0,$0040                       ;92D197;
 
+%anchor($92D19E)
 SamusBottomTiles_Set0_D19E:
 ; Actually used by:
 ;     9: Moving right - not aiming - frame 0
@@ -9085,6 +9822,7 @@ SamusBottomTiles_Set0_D19E:
 ;     EBh: Facing left  - Samus drained - standing - frame 4
     dl SamusTiles_Bottom_Set0_Entry0 : dw $0080,$0080                    ;92D19E;
 
+%anchor($92D1A5)
 SamusBottomTiles_Set0_D1A5:
 ; 9: Moving right - not aiming - frame 2
 ; Ah: Moving left  - not aiming - frame 2
@@ -9098,6 +9836,7 @@ SamusBottomTiles_Set0_D1A5:
 ; 12h: Moving left  - aiming down-left - frame 2
     dl SamusTiles_Bottom_Set0_Entry1 : dw $00E0,$0080                    ;92D1A5;
 
+%anchor($92D1AC)
 SamusBottomTiles_Set0_D1AC:
 ; 9: Moving right - not aiming - frame 4
 ; Ah: Moving left  - not aiming - frame 4
@@ -9111,6 +9850,7 @@ SamusBottomTiles_Set0_D1AC:
 ; 12h: Moving left  - aiming down-left - frame 4
     dl SamusTiles_Bottom_Set0_Entry2 : dw $00E0,$00C0                    ;92D1AC;
 
+%anchor($92D1B3)
 SamusBottomTiles_Set0_D1B3:
 ; 9: Moving right - not aiming - frame 5
 ; Ah: Moving left  - not aiming - frame 5
@@ -9128,6 +9868,7 @@ SamusBottomTiles_Set0_D1B3:
 ; C8h: Facing left  - vertical shinespark windup - frame 0
     dl SamusTiles_Bottom_Set0_Entry3 : dw $0080,$0080                    ;92D1B3;
 
+%anchor($92D1BA)
 SamusBottomTiles_Set0_D1BA:
 ; 9: Moving right - not aiming - frame 7
 ; Ah: Moving left  - not aiming - frame 7
@@ -9141,6 +9882,7 @@ SamusBottomTiles_Set0_D1BA:
 ; 12h: Moving left  - aiming down-left - frame 7
     dl SamusTiles_Bottom_Set0_Entry4 : dw $0100,$0080                    ;92D1BA;
 
+%anchor($92D1C1)
 SamusBottomTiles_Set0_D1C1:
 ; 9: Moving right - not aiming - frame 9
 ; Ah: Moving left  - not aiming - frame 9
@@ -9154,6 +9896,7 @@ SamusBottomTiles_Set0_D1C1:
 ; 12h: Moving left  - aiming down-left - frame 9
     dl SamusTiles_Bottom_Set0_Entry5 : dw $00E0,$00C0                    ;92D1C1;
 
+%anchor($92D1C8)
 SamusBottomTiles_Set0_D1C8:
 ; 1: Facing right - normal - frame 0
 ; 1: Facing right - normal - frame 5
@@ -9187,6 +9930,7 @@ SamusBottomTiles_Set0_D1C8:
 ; E7h: Facing left  - landing from normal jump - firing - frame 1
     dl SamusTiles_Bottom_Set0_Entry6 : dw $00C0,$00C0                    ;92D1C8;
 
+%anchor($92D1CF)
 SamusBottomTiles_Set0_D1CF:
 ; 27h: Facing right - crouching - frames 0..3
 ; 27h: Facing right - crouching - frames 5..8
@@ -9208,6 +9952,7 @@ SamusBottomTiles_Set0_D1CF:
 ; DAh: Facing left  - x-ray - crouching - frames 0..4
     dl SamusTiles_Bottom_Set0_Entry7 : dw $0080,$0080                    ;92D1CF;
 
+%anchor($92D1D6)
 SamusBottomTiles_Set0_D1D6:
 ; 9: Moving right - not aiming - frame 1
 ; Ah: Moving left  - not aiming - frame 1
@@ -9221,6 +9966,7 @@ SamusBottomTiles_Set0_D1D6:
 ; 12h: Moving left  - aiming down-left - frame 1
     dl SamusTiles_Bottom_Set0_Entry8 : dw $00C0,$0080                    ;92D1D6;
 
+%anchor($92D1DD)
 SamusBottomTiles_Set0_D1DD:
 ; 9: Moving right - not aiming - frame 3
 ; Ah: Moving left  - not aiming - frame 3
@@ -9234,6 +9980,7 @@ SamusBottomTiles_Set0_D1DD:
 ; 12h: Moving left  - aiming down-left - frame 3
     dl SamusTiles_Bottom_Set0_Entry9 : dw $0100,$0080                    ;92D1DD;
 
+%anchor($92D1E4)
 SamusBottomTiles_Set0_D1E4:
 ; 9: Moving right - not aiming - frame 6
 ; Ah: Moving left  - not aiming - frame 6
@@ -9247,6 +9994,7 @@ SamusBottomTiles_Set0_D1E4:
 ; 12h: Moving left  - aiming down-left - frame 6
     dl SamusTiles_Bottom_Set0_EntryA : dw $00C0,$0080                    ;92D1E4;
 
+%anchor($92D1EB)
 SamusBottomTiles_Set0_D1EB:
 ; 9: Moving right - not aiming - frame 8
 ; Ah: Moving left  - not aiming - frame 8
@@ -9260,14 +10008,17 @@ SamusBottomTiles_Set0_D1EB:
 ; 12h: Moving left  - aiming down-left - frame 8
     dl SamusTiles_Bottom_Set0_EntryB : dw $0100,$0080                    ;92D1EB;
 
+%anchor($92D1F2)
 SamusBottomTiles_Set0_D1F2:
 ; 0: Facing forward - power suit - frame 0
     dl SamusTiles_Bottom_Set0_EntryC : dw $0100,$00C0                    ;92D1F2;
 
+%anchor($92D1F9)
 SamusBottomTiles_Set0_D1F9:
 ; 9Bh: Facing forward - varia/gravity suit - frame 0
     dl SamusTiles_Bottom_Set0_EntryD : dw $0100,$00C0                    ;92D1F9;
 
+%anchor($92D200)
 SamusBottomTiles_Set0_D200:
 ; 1: Facing right - normal - frame 1
 ; 1: Facing right - normal - frame 3
@@ -9287,6 +10038,7 @@ SamusBottomTiles_Set0_D200:
 ; A8h: Facing right - grappling - frame 8
     dl SamusTiles_Bottom_Set0_EntryE : dw $00C0,$00C0                    ;92D200;
 
+%anchor($92D207)
 SamusBottomTiles_Set0_D207:
 ; 1: Facing right - normal - frame 2
 ; 1: Facing right - normal - frame 7
@@ -9298,6 +10050,7 @@ SamusBottomTiles_Set0_D207:
 ; A8h: Facing right - grappling - frame 7
     dl SamusTiles_Bottom_Set0_EntryF : dw $00C0,$00C0                    ;92D207;
 
+%anchor($92D20E)
 SamusBottomTiles_Set0_D20E:
 ; 2: Facing left  - normal - frame 1
 ; 2: Facing left  - normal - frame 3
@@ -9317,24 +10070,29 @@ SamusBottomTiles_Set0_D20E:
 ; A9h: Facing left  - grappling - frame 8
     dl SamusTiles_Bottom_Set0_Entry10 : dw $00C0,$00C0                   ;92D20E;
 
+%anchor($92D215)
 SamusBottomTiles_Set0_D215:
 ; 4Fh: Facing left  - damage boost - frame 0
     dl SamusTiles_Bottom_Set0_Entry11 : dw $00A0,$0040                   ;92D215;
 
+%anchor($92D21C)
 SamusBottomTiles_Set0_D21C:
 ; 50h: Facing right - damage boost - frame 0
     dl SamusTiles_Bottom_Set0_Entry12 : dw $00A0,$0040                   ;92D21C;
 
+%anchor($92D223)
 SamusBottomTiles_Set0_D223:
 ; 15h: Facing right - normal jump - aiming up - frame 1
 ; 69h: Facing right - normal jump - aiming up-right - frame 1
     dl SamusTiles_Bottom_Set0_Entry13 : dw $00A0,$0080                   ;92D223;
 
+%anchor($92D22A)
 SamusBottomTiles_Set0_D22A:
 ; 16h: Facing left  - normal jump - aiming up - frame 1
 ; 6Ah: Facing left  - normal jump - aiming up-left - frame 1
     dl SamusTiles_Bottom_Set0_Entry14 : dw $00A0,$0080                   ;92D22A;
 
+%anchor($92D231)
 SamusBottomTiles_Set0_D231:
 ; 25h: Facing right - turning - standing - frame 2
 ; 26h: Facing left  - turning - standing - frame 0
@@ -9353,6 +10111,7 @@ SamusBottomTiles_Set0_D231:
 ; C6h: Unused - frame 2
     dl SamusTiles_Bottom_Set0_Entry15 : dw $00A0,$0080                   ;92D231;
 
+%anchor($92D238)
 SamusBottomTiles_Set0_D238:
 ; 25h: Facing right - turning - standing - frame 0
 ; 26h: Facing left  - turning - standing - frame 2
@@ -9371,6 +10130,7 @@ SamusBottomTiles_Set0_D238:
 ; C6h: Unused - frame 0
     dl SamusTiles_Bottom_Set0_Entry16 : dw $00A0,$0080                   ;92D238;
 
+%anchor($92D23F)
 SamusBottomTiles_Set0_D23F:
 ; 2Fh: Facing right - turning - jumping - frame 2
 ; 30h: Facing left  - turning - jumping - frame 0
@@ -9398,6 +10158,7 @@ SamusBottomTiles_Set0_D23F:
 ; A3h: Facing left  - turning - crouching - aiming up-left - frame 0
     dl SamusTiles_Bottom_Set0_Entry17 : dw $0080,$0040                   ;92D23F;
 
+%anchor($92D246)
 SamusBottomTiles_Set0_D246:
 ; 2Fh: Facing right - turning - jumping - frame 0
 ; 30h: Facing left  - turning - jumping - frame 2
@@ -9425,12 +10186,14 @@ SamusBottomTiles_Set0_D246:
 ; A3h: Facing left  - turning - crouching - aiming up-left - frame 2
     dl SamusTiles_Bottom_Set0_Entry18 : dw $0080,$0040                   ;92D246;
 
+%anchor($92D24D)
 SamusBottomTiles_Set0_D24D:
 ; 5Ch: Unused - frame 0
 ; 64h: Unused. Related to movement type Dh - frame 1
 ; B9h: Facing right - grapple wall jump pose - frame 0
     dl SamusTiles_Bottom_Set0_Entry19 : dw $0080,$0080                   ;92D24D;
 
+%anchor($92D254)
 SamusBottomTiles_Set0_D254:
 ; 45h: Unused - frame 0
 ; 46h: Unused - frame 0
@@ -9439,16 +10202,19 @@ SamusBottomTiles_Set0_D254:
 ; B8h: Facing left  - grapple wall jump pose - frame 0
     dl SamusTiles_Bottom_Set0_Entry1A : dw $0080,$0080                   ;92D254;
 
+%anchor($92D25B)
 SamusBottomTiles_Set0_D25B:
 ; C9h: Facing right - shinespark - horizontal - frame 0
 ; CDh: Facing right - shinespark - diagonal - frame 0
     dl SamusTiles_Bottom_Set0_Entry1B : dw $00C0,$0080                   ;92D25B;
 
+%anchor($92D262)
 SamusBottomTiles_Set0_D262:
 ; CAh: Facing left  - shinespark - horizontal - frame 0
 ; CEh: Facing left  - shinespark - diagonal - frame 0
     dl SamusTiles_Bottom_Set0_Entry1C : dw $00C0,$0080                   ;92D262;
 
+%anchor($92D269)
 SamusBottomTiles_Set0_D269:
 ; 2: Facing left  - normal - frame 2
 ; 2: Facing left  - normal - frame 7
@@ -9460,6 +10226,7 @@ SamusBottomTiles_Set0_D269:
 ; A9h: Facing left  - grappling - frame 7
     dl SamusTiles_Bottom_Set0_Entry1D : dw $00C0,$00C0                   ;92D269;
 
+%anchor($92D270)
 SamusBottomTiles_Set0_D270:
 ; 19h: Facing right - spin jump - frame Bh
 ; 1Bh: Facing right - space jump - frame Bh
@@ -9476,12 +10243,14 @@ SamusBottomTiles_Set0_D270:
 ; 81h: Facing right - screw attack - frame 1Bh
     dl SamusTiles_Bottom_Set0_Entry1E : dw $0080,$0080                   ;92D270;
 
+%anchor($92D277)
 SamusBottomTiles_Set0_D277:
 ; 1Ah: Facing left  - spin jump - frame Bh
 ; 1Ch: Facing left  - space jump - frame Bh
 ; 82h: Facing left  - screw attack - frame 1Bh
     dl SamusTiles_Bottom_Set0_Entry1F : dw $0080,$0080                   ;92D277;
 
+%anchor($92D27E)
 SamusBottomTiles_Set1_D27E:
 ; 49h: Facing left  - moonwalk - frame 3
 ; 4Ah: Facing right - moonwalk - frame 3
@@ -9491,6 +10260,7 @@ SamusBottomTiles_Set1_D27E:
 ; 78h: Facing right - moonwalk - aiming down-right - frame 3
     dl SamusTiles_Bottom_Set1_Entry0 : dw $00C0,$0080                    ;92D27E;
 
+%anchor($92D285)
 SamusBottomTiles_Set1_D285:
 ; 25h: Facing right - turning - standing - frame 1
 ; 26h: Facing left  - turning - standing - frame 1
@@ -9509,6 +10279,7 @@ SamusBottomTiles_Set1_D285:
 ; C6h: Unused - frame 1
     dl SamusTiles_Bottom_Set1_Entry1 : dw $0080,$0080                    ;92D285;
 
+%anchor($92D28C)
 SamusBottomTiles_Set1_D28C:
 ; 2Fh: Facing right - turning - jumping - frame 1
 ; 30h: Facing left  - turning - jumping - frame 1
@@ -9536,6 +10307,7 @@ SamusBottomTiles_Set1_D28C:
 ; A3h: Facing left  - turning - crouching - aiming up-left - frame 1
     dl SamusTiles_Bottom_Set1_Entry2 : dw $0040,$0040                    ;92D28C;
 
+%anchor($92D293)
 SamusBottomTiles_Set1_D293:
 ; 49h: Facing left  - moonwalk - frame 0
 ; 4Ah: Facing right - moonwalk - frame 0
@@ -9545,6 +10317,7 @@ SamusBottomTiles_Set1_D293:
 ; 78h: Facing right - moonwalk - aiming down-right - frame 0
     dl SamusTiles_Bottom_Set1_Entry3 : dw $00C0,$0080                    ;92D293;
 
+%anchor($92D29A)
 SamusBottomTiles_Set1_D29A:
 ; 49h: Facing left  - moonwalk - frame 1
 ; 4Ah: Facing right - moonwalk - frame 1
@@ -9554,6 +10327,7 @@ SamusBottomTiles_Set1_D29A:
 ; 78h: Facing right - moonwalk - aiming down-right - frame 1
     dl SamusTiles_Bottom_Set1_Entry4 : dw $0080,$0080                    ;92D29A;
 
+%anchor($92D2A1)
 SamusBottomTiles_Set1_D2A1:
 ; 49h: Facing left  - moonwalk - frame 4
 ; 4Ah: Facing right - moonwalk - frame 4
@@ -9563,6 +10337,7 @@ SamusBottomTiles_Set1_D2A1:
 ; 78h: Facing right - moonwalk - aiming down-right - frame 4
     dl SamusTiles_Bottom_Set1_Entry5 : dw $0080,$0080                    ;92D2A1;
 
+%anchor($92D2A8)
 SamusBottomTiles_Set1_D2A8:
 ; 35h: Facing right - crouching transition - frame 0
 ; 3Bh: Facing right - standing transition - frame 0
@@ -9595,6 +10370,7 @@ SamusBottomTiles_Set1_D2A8:
 ; FBh: Facing right - standing transition - aiming down-right - frame 0
     dl SamusTiles_Bottom_Set1_Entry6 : dw $00C0,$0080                    ;92D2A8;
 
+%anchor($92D2AF)
 SamusBottomTiles_Set1_D2AF:
 ; 36h: Facing left  - crouching transition - frame 0
 ; 3Ch: Facing left  - standing transition - frame 0
@@ -9623,18 +10399,21 @@ SamusBottomTiles_Set1_D2AF:
 ; FCh: Facing left  - standing transition - aiming down-left - frame 0
     dl SamusTiles_Bottom_Set1_Entry7 : dw $00C0,$0080                    ;92D2AF;
 
+%anchor($92D2B6)
 SamusBottomTiles_Set1_D2B6:
 ; 4Dh: Facing right - normal jump - not aiming - not moving - gun not extended - frames 2..3
 ; C7h: Facing right - vertical shinespark windup - frames 2..3
 ; F0h: Facing right - grabbed by Draygon - moving - frame 5
     dl SamusTiles_Bottom_Set1_Entry8 : dw $00E0,$0040                    ;92D2B6;
 
+%anchor($92D2BD)
 SamusBottomTiles_Set1_D2BD:
 ; 4Eh: Facing left  - normal jump - not aiming - not moving - gun not extended - frames 2..3
 ; BEh: Facing left  - grabbed by Draygon - moving - frame 5
 ; C8h: Facing left  - vertical shinespark windup - frames 2..3
     dl SamusTiles_Bottom_Set1_Entry9 : dw $00E0,$0040                    ;92D2BD;
 
+%anchor($92D2C4)
 SamusBottomTiles_Set1_D2C4:
 ; 13h: Facing right - normal jump - not aiming - not moving - gun extended - frame 0
 ; 15h: Facing right - normal jump - aiming up - frame 0
@@ -9658,6 +10437,7 @@ SamusBottomTiles_Set1_D2C4:
 ; C7h: Facing right - vertical shinespark windup - frame 4
     dl SamusTiles_Bottom_Set1_EntryA : dw $00A0,$0080                    ;92D2C4;
 
+%anchor($92D2CB)
 SamusBottomTiles_Set1_D2CB:
 ; 14h: Facing left  - normal jump - not aiming - not moving - gun extended - frame 0
 ; 16h: Facing left  - normal jump - aiming up - frame 0
@@ -9681,6 +10461,7 @@ SamusBottomTiles_Set1_D2CB:
 ; C8h: Facing left  - vertical shinespark windup - frame 4
     dl SamusTiles_Bottom_Set1_EntryB : dw $00A0,$0080                    ;92D2CB;
 
+%anchor($92D2D2)
 SamusBottomTiles_Set1_D2D2:
 ; 29h: Facing right - falling - frames 1..2
 ; 2Bh: Facing right - falling - aiming up - frame 1
@@ -9696,6 +10477,7 @@ SamusBottomTiles_Set1_D2D2:
 ; F0h: Facing right - grabbed by Draygon - moving - frame 3
     dl SamusTiles_Bottom_Set1_EntryC : dw $0080,$0080                    ;92D2D2;
 
+%anchor($92D2D9)
 SamusBottomTiles_Set1_D2D9:
 ; 2Ah: Facing left  - falling - frames 1..2
 ; 2Ch: Facing left  - falling - aiming up - frame 1
@@ -9711,12 +10493,14 @@ SamusBottomTiles_Set1_D2D9:
 ; E9h: Facing left  - Samus drained - crouching/falling - frames 2..6
     dl SamusTiles_Bottom_Set1_EntryD : dw $0080,$0080                    ;92D2D9;
 
+%anchor($92D2E0)
 SamusBottomTiles_Set1_D2E0:
 ; 4Dh: Facing right - normal jump - not aiming - not moving - gun not extended - frame 1
 ; C7h: Facing right - vertical shinespark windup - frame 1
 ; F0h: Facing right - grabbed by Draygon - moving - frame 4
     dl SamusTiles_Bottom_Set1_EntryE : dw $00C0,$0040                    ;92D2E0;
 
+%anchor($92D2E7)
 SamusBottomTiles_Set1_D2E7:
 ; 4Eh: Facing left  - normal jump - not aiming - not moving - gun not extended - frame 1
 ; BEh: Facing left  - grabbed by Draygon - moving - frame 4
@@ -9724,42 +10508,50 @@ SamusBottomTiles_Set1_D2E7:
     dl SamusTiles_Bottom_Set1_EntryF : dw $00C0,$0040                    ;92D2E7;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($92D2EE)
 UNUSED_SamusBottomTiles_Set1_92D2EE:
     dl SamusTiles_Bottom_Set1_Entry10 : dw $0020,$0000                   ;92D2EE;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($92D2F5)
 SamusBottomTiles_Set1_D2F5:
 ; 17h: Facing right - normal jump - aiming down - frame 1
 ; 2Dh: Facing right - falling - aiming down - frame 1
 ; AEh: Unused. Facing right - grappling - in air - aiming down - frame 1
     dl SamusTiles_Bottom_Set1_Entry11 : dw $00E0,$0040                   ;92D2F5;
 
+%anchor($92D2FC)
 SamusBottomTiles_Set1_D2FC:
 ; 18h: Facing left  - normal jump - aiming down - frame 1
 ; 2Eh: Facing left  - falling - aiming down - frame 1
 ; AFh: Unused. Facing left  - grappling - in air - aiming down - frame 1
     dl SamusTiles_Bottom_Set1_Entry12 : dw $00E0,$0040                   ;92D2FC;
 
+%anchor($92D303)
 SamusBottomTiles_Set1_D303:
 ; 65h: Unused. Related to movement type Dh - frame 0
 ; 83h: Facing right - wall jump - frame 0
     dl SamusTiles_Bottom_Set1_Entry13 : dw $0100,$0040                   ;92D303;
 
+%anchor($92D30A)
 SamusBottomTiles_Set1_D30A:
 ; 66h: Unused. Related to movement type Dh - frame 0
 ; 84h: Facing left  - wall jump - frame 0
     dl SamusTiles_Bottom_Set1_Entry14 : dw $00C0,$0040                   ;92D30A;
 
+%anchor($92D311)
 SamusBottomTiles_Set1_D311:
 ; 49h: Facing left  - moonwalk - frame 2
 ; 63h: Unused. Related to movement type Dh - frame 0
     dl SamusTiles_Bottom_Set1_Entry15 : dw $00A0,$0080                   ;92D311;
 
+%anchor($92D318)
 SamusBottomTiles_Set1_D318:
 ; 49h: Facing left  - moonwalk - frame 5
 ; 64h: Unused. Related to movement type Dh - frame 0
     dl SamusTiles_Bottom_Set1_Entry16 : dw $00A0,$0080                   ;92D318;
 
+%anchor($92D31F)
 SamusBottomTiles_Set1_D31F:
 ; 4Ah: Facing right - moonwalk - frame 2
 ; 75h: Facing left  - moonwalk - aiming up-left - frame 2
@@ -9768,6 +10560,7 @@ SamusBottomTiles_Set1_D31F:
 ; 78h: Facing right - moonwalk - aiming down-right - frame 2
     dl SamusTiles_Bottom_Set1_Entry17 : dw $00A0,$0080                   ;92D31F;
 
+%anchor($92D326)
 SamusBottomTiles_Set1_D326:
 ; 4Ah: Facing right - moonwalk - frame 5
 ; 75h: Facing left  - moonwalk - aiming up-left - frame 5
@@ -9776,6 +10569,7 @@ SamusBottomTiles_Set1_D326:
 ; 78h: Facing right - moonwalk - aiming down-right - frame 5
     dl SamusTiles_Bottom_Set1_Entry18 : dw $00A0,$0080                   ;92D326;
 
+%anchor($92D32D)
 SamusBottomTiles_Set1_D32D:
 ; 13h: Facing right - normal jump - not aiming - not moving - gun extended - frame 1
 ; 19h: Facing right - spin jump - frame 0
@@ -9806,6 +10600,7 @@ SamusBottomTiles_Set1_D32D:
 ; F0h: Facing right - grabbed by Draygon - moving - frame 2
     dl SamusTiles_Bottom_Set1_Entry19 : dw $00E0,$0080                   ;92D32D;
 
+%anchor($92D334)
 SamusBottomTiles_Set1_D334:
 ; 14h: Facing left  - normal jump - not aiming - not moving - gun extended - frame 1
 ; 1Ah: Facing left  - spin jump - frame 0
@@ -9829,6 +10624,7 @@ SamusBottomTiles_Set1_D334:
 ; E9h: Facing left  - Samus drained - crouching/falling - frame 17h
     dl SamusTiles_Bottom_Set1_Entry1A : dw $00E0,$0080                   ;92D334;
 
+%anchor($92D33B)
 SamusBottomTiles_Set1_D33B:
 ; 53h: Facing right - knockback - frame 1
 ; D7h: Facing right - crystal flash ending - frame 5
@@ -9839,6 +10635,7 @@ SamusBottomTiles_Set1_D33B:
 ; F0h: Facing right - grabbed by Draygon - moving - frame 1
     dl SamusTiles_Bottom_Set1_Entry1B : dw $00C0,$0080                   ;92D33B;
 
+%anchor($92D342)
 SamusBottomTiles_Set1_D342:
 ; 54h: Facing left  - knockback - frame 1
 ; BAh: Facing left  - grabbed by Draygon - not moving - not aiming - frame 0
@@ -9850,10 +10647,12 @@ SamusBottomTiles_Set1_D342:
     dl SamusTiles_Bottom_Set1_Entry1C : dw $00C0,$0080                   ;92D342;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($92D349)
 UNUSED_SamusBottomTiles_Set1_92D349:
     dl SamusTiles_Bottom_Set1_Entry1D : dw $0080,$0080                   ;92D349;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($92D350)
 SamusBottomTiles_Set1_D350:
 ; E9h: Facing left  - Samus drained - crouching/falling - frames 8..Bh
 ; E9h: Facing left  - Samus drained - crouching/falling - frame 1Ah
@@ -9861,11 +10660,13 @@ SamusBottomTiles_Set1_D350:
 ; EBh: Facing left  - Samus drained - standing - frames 0..3
     dl SamusTiles_Bottom_Set1_Entry1E : dw $0060,$0040                   ;92D350;
 
+%anchor($92D357)
 SamusBottomTiles_Set1_D357:
 ; E8h: Facing right - Samus drained - crouching/falling - frames 8..Bh
 ; EAh: Facing right - Samus drained - standing - frames 0..3
     dl SamusTiles_Bottom_Set1_Entry1F : dw $0060,$0040                   ;92D357;
 
+%anchor($92D35E)
 SamusBottomTiles_Set2_D35E:
 ; 5Dh: Unused - frames 17h..19h
 ; 5Eh: Unused - frames 17h..19h
@@ -9875,6 +10676,7 @@ SamusBottomTiles_Set2_D35E:
 ; B2h: Facing clockwise     - grapple - in air - frames 17h..19h
     dl SamusTiles_Bottom_Set2_Entry0 : dw $0080,$0040                    ;92D35E;
 
+%anchor($92D365)
 SamusBottomTiles_Set2_D365:
 ; 5Dh: Unused - frames 15h..16h
 ; 5Eh: Unused - frames 15h..16h
@@ -9884,6 +10686,7 @@ SamusBottomTiles_Set2_D365:
 ; B2h: Facing clockwise     - grapple - in air - frames 15h..16h
     dl SamusTiles_Bottom_Set2_Entry1 : dw $00E0,$0040                    ;92D365;
 
+%anchor($92D36C)
 SamusBottomTiles_Set2_D36C:
 ; 5Dh: Unused - frames 13h..14h
 ; 5Eh: Unused - frames 13h..14h
@@ -9893,6 +10696,7 @@ SamusBottomTiles_Set2_D36C:
 ; B2h: Facing clockwise     - grapple - in air - frames 13h..14h
     dl SamusTiles_Bottom_Set2_Entry2 : dw $00A0,$0080                    ;92D36C;
 
+%anchor($92D373)
 SamusBottomTiles_Set2_D373:
 ; 5Dh: Unused - frame 12h
 ; 5Eh: Unused - frame 12h
@@ -9902,6 +10706,7 @@ SamusBottomTiles_Set2_D373:
 ; B2h: Facing clockwise     - grapple - in air - frame 12h
     dl SamusTiles_Bottom_Set2_Entry3 : dw $00A0,$0040                    ;92D373;
 
+%anchor($92D37A)
 SamusBottomTiles_Set2_D37A:
 ; 5Dh: Unused - frame 11h
 ; 5Eh: Unused - frame 11h
@@ -9911,6 +10716,7 @@ SamusBottomTiles_Set2_D37A:
 ; B2h: Facing clockwise     - grapple - in air - frame 11h
     dl SamusTiles_Bottom_Set2_Entry4 : dw $00C0,$0040                    ;92D37A;
 
+%anchor($92D381)
 SamusBottomTiles_Set2_D381:
 ; 5Dh: Unused - frame 10h
 ; 5Eh: Unused - frame 10h
@@ -9920,6 +10726,7 @@ SamusBottomTiles_Set2_D381:
 ; B2h: Facing clockwise     - grapple - in air - frame 10h
     dl SamusTiles_Bottom_Set2_Entry5 : dw $00C0,$0040                    ;92D381;
 
+%anchor($92D388)
 SamusBottomTiles_Set2_D388:
 ; 5Dh: Unused - frame Fh
 ; 5Eh: Unused - frame Fh
@@ -9929,6 +10736,7 @@ SamusBottomTiles_Set2_D388:
 ; B2h: Facing clockwise     - grapple - in air - frame Fh
     dl SamusTiles_Bottom_Set2_Entry6 : dw $0080,$0040                    ;92D388;
 
+%anchor($92D38F)
 SamusBottomTiles_Set2_D38F:
 ; 5Dh: Unused - frame Eh
 ; 5Eh: Unused - frame Eh
@@ -9938,6 +10746,7 @@ SamusBottomTiles_Set2_D38F:
 ; B2h: Facing clockwise     - grapple - in air - frame Eh
     dl SamusTiles_Bottom_Set2_Entry7 : dw $00A0,$0040                    ;92D38F;
 
+%anchor($92D396)
 SamusBottomTiles_Set2_D396:
 ; 5Dh: Unused - frames Ch..Dh
 ; 5Eh: Unused - frames Ch..Dh
@@ -9947,6 +10756,7 @@ SamusBottomTiles_Set2_D396:
 ; B2h: Facing clockwise     - grapple - in air - frames Ch..Dh
     dl SamusTiles_Bottom_Set2_Entry8 : dw $00A0,$0040                    ;92D396;
 
+%anchor($92D39D)
 SamusBottomTiles_Set2_D39D:
 ; 5Dh: Unused - frames Ah..Bh
 ; 5Eh: Unused - frames Ah..Bh
@@ -9957,10 +10767,12 @@ SamusBottomTiles_Set2_D39D:
     dl SamusTiles_Bottom_Set2_Entry9 : dw $00C0,$0040                    ;92D39D;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($92D3A4)
 UNUSED_SamusBottomTiles_Set2_92D3A4:
     dl SamusTiles_Bottom_Set2_EntryA : dw $00A0,$0080                    ;92D3A4;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($92D3AB)
 SamusBottomTiles_Set2_D3AB:
 ; 5Dh: Unused - frame 40h
 ; 5Eh: Unused - frame 40h
@@ -9970,6 +10782,7 @@ SamusBottomTiles_Set2_D3AB:
 ; B2h: Facing clockwise     - grapple - in air - frame 40h
     dl SamusTiles_Bottom_Set2_EntryB : dw $0080,$0080                    ;92D3AB;
 
+%anchor($92D3B2)
 SamusBottomTiles_Set2_D3B2:
 ; 5Dh: Unused - frame 41h
 ; 5Eh: Unused - frame 41h
@@ -9979,6 +10792,7 @@ SamusBottomTiles_Set2_D3B2:
 ; B2h: Facing clockwise     - grapple - in air - frame 41h
     dl SamusTiles_Bottom_Set2_EntryC : dw $0080,$0080                    ;92D3B2;
 
+%anchor($92D3B9)
 SamusBottomTiles_Set2_D3B9:
 ; 5Dh: Unused - frames 37h..39h
 ; 5Eh: Unused - frames 37h..39h
@@ -9988,6 +10802,7 @@ SamusBottomTiles_Set2_D3B9:
 ; B2h: Facing clockwise     - grapple - in air - frames 37h..39h
     dl SamusTiles_Bottom_Set2_EntryD : dw $0080,$0080                    ;92D3B9;
 
+%anchor($92D3C0)
 SamusBottomTiles_Set2_D3C0:
 ; 5Dh: Unused - frames 35h..36h
 ; 5Eh: Unused - frames 35h..36h
@@ -9997,6 +10812,7 @@ SamusBottomTiles_Set2_D3C0:
 ; B2h: Facing clockwise     - grapple - in air - frames 35h..36h
     dl SamusTiles_Bottom_Set2_EntryE : dw $00A0,$0040                    ;92D3C0;
 
+%anchor($92D3C7)
 SamusBottomTiles_Set2_D3C7:
 ; 5Dh: Unused - frames 33h..34h
 ; 5Eh: Unused - frames 33h..34h
@@ -10006,6 +10822,7 @@ SamusBottomTiles_Set2_D3C7:
 ; B2h: Facing clockwise     - grapple - in air - frames 33h..34h
     dl SamusTiles_Bottom_Set2_EntryF : dw $0080,$0080                    ;92D3C7;
 
+%anchor($92D3CE)
 SamusBottomTiles_Set2_D3CE:
 ; 5Dh: Unused - frame 32h
 ; 5Eh: Unused - frame 32h
@@ -10015,6 +10832,7 @@ SamusBottomTiles_Set2_D3CE:
 ; B2h: Facing clockwise     - grapple - in air - frame 32h
     dl SamusTiles_Bottom_Set2_Entry10 : dw $0080,$0080                   ;92D3CE;
 
+%anchor($92D3D5)
 SamusBottomTiles_Set2_D3D5:
 ; 5Dh: Unused - frame 31h
 ; 5Eh: Unused - frame 31h
@@ -10024,6 +10842,7 @@ SamusBottomTiles_Set2_D3D5:
 ; B2h: Facing clockwise     - grapple - in air - frame 31h
     dl SamusTiles_Bottom_Set2_Entry11 : dw $00A0,$0040                   ;92D3D5;
 
+%anchor($92D3DC)
 SamusBottomTiles_Set2_D3DC:
 ; 5Dh: Unused - frame 30h
 ; 5Eh: Unused - frame 30h
@@ -10033,6 +10852,7 @@ SamusBottomTiles_Set2_D3DC:
 ; B2h: Facing clockwise     - grapple - in air - frame 30h
     dl SamusTiles_Bottom_Set2_Entry12 : dw $0080,$0080                   ;92D3DC;
 
+%anchor($92D3E3)
 SamusBottomTiles_Set2_D3E3:
 ; 5Dh: Unused - frame 2Fh
 ; 5Eh: Unused - frame 2Fh
@@ -10042,6 +10862,7 @@ SamusBottomTiles_Set2_D3E3:
 ; B2h: Facing clockwise     - grapple - in air - frame 2Fh
     dl SamusTiles_Bottom_Set2_Entry13 : dw $0080,$0080                   ;92D3E3;
 
+%anchor($92D3EA)
 SamusBottomTiles_Set2_D3EA:
 ; 5Dh: Unused - frame 2Eh
 ; 5Eh: Unused - frame 2Eh
@@ -10051,6 +10872,7 @@ SamusBottomTiles_Set2_D3EA:
 ; B2h: Facing clockwise     - grapple - in air - frame 2Eh
     dl SamusTiles_Bottom_Set2_Entry14 : dw $0080,$0080                   ;92D3EA;
 
+%anchor($92D3F1)
 SamusBottomTiles_Set2_D3F1:
 ; 5Dh: Unused - frames 2Ch..2Dh
 ; 5Eh: Unused - frames 2Ch..2Dh
@@ -10060,6 +10882,7 @@ SamusBottomTiles_Set2_D3F1:
 ; B2h: Facing clockwise     - grapple - in air - frames 2Ch..2Dh
     dl SamusTiles_Bottom_Set2_Entry15 : dw $00C0,$0080                   ;92D3F1;
 
+%anchor($92D3F8)
 SamusBottomTiles_Set2_D3F8:
 ; 5Dh: Unused - frames 2Ah..2Bh
 ; 5Eh: Unused - frames 2Ah..2Bh
@@ -10070,10 +10893,12 @@ SamusBottomTiles_Set2_D3F8:
     dl SamusTiles_Bottom_Set2_Entry16 : dw $0080,$0080                   ;92D3F8;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($92D3FF)
 UNUSED_SamusBottomTiles_Set2_92D3FF:
     dl SamusTiles_Bottom_Set2_Entry17 : dw $0080,$0080                   ;92D3FF;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($92D406)
 SamusBottomTiles_Set4_D406:
 ; 5Dh: Unused - frames 7..9
 ; 5Eh: Unused - frames 7..9
@@ -10083,6 +10908,7 @@ SamusBottomTiles_Set4_D406:
 ; B2h: Facing clockwise     - grapple - in air - frames 7..9
     dl SamusTiles_Bottom_Set4_Entry0 : dw $0080,$0040                    ;92D406;
 
+%anchor($92D40D)
 SamusBottomTiles_Set4_D40D:
 ; 5Dh: Unused - frames 5..6
 ; 5Eh: Unused - frames 5..6
@@ -10092,6 +10918,7 @@ SamusBottomTiles_Set4_D40D:
 ; B2h: Facing clockwise     - grapple - in air - frames 5..6
     dl SamusTiles_Bottom_Set4_Entry1 : dw $00E0,$0040                    ;92D40D;
 
+%anchor($92D414)
 SamusBottomTiles_Set4_D414:
 ; 5Dh: Unused - frames 3..4
 ; 5Eh: Unused - frames 3..4
@@ -10101,6 +10928,7 @@ SamusBottomTiles_Set4_D414:
 ; B2h: Facing clockwise     - grapple - in air - frames 3..4
     dl SamusTiles_Bottom_Set4_Entry2 : dw $00A0,$0080                    ;92D414;
 
+%anchor($92D41B)
 SamusBottomTiles_Set4_D41B:
 ; 5Dh: Unused - frame 2
 ; 5Eh: Unused - frame 2
@@ -10110,6 +10938,7 @@ SamusBottomTiles_Set4_D41B:
 ; B2h: Facing clockwise     - grapple - in air - frame 2
     dl SamusTiles_Bottom_Set4_Entry3 : dw $00A0,$0040                    ;92D41B;
 
+%anchor($92D422)
 SamusBottomTiles_Set4_D422:
 ; 5Dh: Unused - frame 1
 ; 5Eh: Unused - frame 1
@@ -10119,6 +10948,7 @@ SamusBottomTiles_Set4_D422:
 ; B2h: Facing clockwise     - grapple - in air - frame 1
     dl SamusTiles_Bottom_Set4_Entry4 : dw $00C0,$0040                    ;92D422;
 
+%anchor($92D429)
 SamusBottomTiles_Set4_D429:
 ; 5Dh: Unused - frame 0
 ; 5Eh: Unused - frame 0
@@ -10128,6 +10958,7 @@ SamusBottomTiles_Set4_D429:
 ; B2h: Facing clockwise     - grapple - in air - frame 0
     dl SamusTiles_Bottom_Set4_Entry5 : dw $00C0,$0040                    ;92D429;
 
+%anchor($92D430)
 SamusBottomTiles_Set4_D430:
 ; 5Dh: Unused - frame 1Fh
 ; 5Eh: Unused - frame 1Fh
@@ -10137,6 +10968,7 @@ SamusBottomTiles_Set4_D430:
 ; B2h: Facing clockwise     - grapple - in air - frame 1Fh
     dl SamusTiles_Bottom_Set4_Entry6 : dw $0080,$0040                    ;92D430;
 
+%anchor($92D437)
 SamusBottomTiles_Set4_D437:
 ; 5Dh: Unused - frame 1Eh
 ; 5Eh: Unused - frame 1Eh
@@ -10146,6 +10978,7 @@ SamusBottomTiles_Set4_D437:
 ; B2h: Facing clockwise     - grapple - in air - frame 1Eh
     dl SamusTiles_Bottom_Set4_Entry7 : dw $00A0,$0040                    ;92D437;
 
+%anchor($92D43E)
 SamusBottomTiles_Set4_D43E:
 ; 5Dh: Unused - frames 1Ch..1Dh
 ; 5Eh: Unused - frames 1Ch..1Dh
@@ -10155,6 +10988,7 @@ SamusBottomTiles_Set4_D43E:
 ; B2h: Facing clockwise     - grapple - in air - frames 1Ch..1Dh
     dl SamusTiles_Bottom_Set4_Entry8 : dw $00A0,$0040                    ;92D43E;
 
+%anchor($92D445)
 SamusBottomTiles_Set4_D445:
 ; 5Dh: Unused - frames 1Ah..1Bh
 ; 5Eh: Unused - frames 1Ah..1Bh
@@ -10165,16 +10999,20 @@ SamusBottomTiles_Set4_D445:
     dl SamusTiles_Bottom_Set4_Entry9 : dw $00C0,$0040                    ;92D445;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($92D44C)
 UNUSED_SamusBottomTiles_Set4_92D44C:
     dl SamusTiles_Bottom_Set4_EntryA : dw $00A0,$0080                    ;92D44C;
 
+%anchor($92D453)
 UNUSED_SamusBottomTiles_Set4_92D453:
     dl SamusTiles_Bottom_Set4_EntryB : dw $0080,$0080                    ;92D453;
 
+%anchor($92D45A)
 UNUSED_SamusBottomTiles_Set4_92D45A:
     dl SamusTiles_Bottom_Set4_EntryC : dw $0080,$0080                    ;92D45A;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($92D461)
 SamusBottomTiles_Set4_D461:
 ; 5Dh: Unused - frames 27h..29h
 ; 5Eh: Unused - frames 27h..29h
@@ -10184,6 +11022,7 @@ SamusBottomTiles_Set4_D461:
 ; B2h: Facing clockwise     - grapple - in air - frames 27h..29h
     dl SamusTiles_Bottom_Set4_EntryD : dw $0080,$0080                    ;92D461;
 
+%anchor($92D468)
 SamusBottomTiles_Set4_D468:
 ; 5Dh: Unused - frames 25h..26h
 ; 5Eh: Unused - frames 25h..26h
@@ -10193,6 +11032,7 @@ SamusBottomTiles_Set4_D468:
 ; B2h: Facing clockwise     - grapple - in air - frames 25h..26h
     dl SamusTiles_Bottom_Set4_EntryE : dw $00A0,$0040                    ;92D468;
 
+%anchor($92D46F)
 SamusBottomTiles_Set4_D46F:
 ; 5Dh: Unused - frames 23h..24h
 ; 5Eh: Unused - frames 23h..24h
@@ -10202,6 +11042,7 @@ SamusBottomTiles_Set4_D46F:
 ; B2h: Facing clockwise     - grapple - in air - frames 23h..24h
     dl SamusTiles_Bottom_Set4_EntryF : dw $0080,$0080                    ;92D46F;
 
+%anchor($92D476)
 SamusBottomTiles_Set4_D476:
 ; 5Dh: Unused - frame 22h
 ; 5Eh: Unused - frame 22h
@@ -10211,6 +11052,7 @@ SamusBottomTiles_Set4_D476:
 ; B2h: Facing clockwise     - grapple - in air - frame 22h
     dl SamusTiles_Bottom_Set4_Entry10 : dw $0080,$0080                   ;92D476;
 
+%anchor($92D47D)
 SamusBottomTiles_Set4_D47D:
 ; 5Dh: Unused - frame 21h
 ; 5Eh: Unused - frame 21h
@@ -10220,6 +11062,7 @@ SamusBottomTiles_Set4_D47D:
 ; B2h: Facing clockwise     - grapple - in air - frame 21h
     dl SamusTiles_Bottom_Set4_Entry11 : dw $00A0,$0040                   ;92D47D;
 
+%anchor($92D484)
 SamusBottomTiles_Set4_D484:
 ; 5Dh: Unused - frame 20h
 ; 5Dh: Unused - frame 3Fh
@@ -10235,6 +11078,7 @@ SamusBottomTiles_Set4_D484:
 ; B2h: Facing clockwise     - grapple - in air - frame 3Fh
     dl SamusTiles_Bottom_Set4_Entry12 : dw $0080,$0080                   ;92D484;
 
+%anchor($92D48B)
 SamusBottomTiles_Set4_D48B:
 ; 5Dh: Unused - frame 3Eh
 ; 5Eh: Unused - frame 3Eh
@@ -10244,6 +11088,7 @@ SamusBottomTiles_Set4_D48B:
 ; B2h: Facing clockwise     - grapple - in air - frame 3Eh
     dl SamusTiles_Bottom_Set4_Entry13 : dw $0080,$0080                   ;92D48B;
 
+%anchor($92D492)
 SamusBottomTiles_Set4_D492:
 ; 5Dh: Unused - frames 3Ch..3Dh
 ; 5Eh: Unused - frames 3Ch..3Dh
@@ -10253,6 +11098,7 @@ SamusBottomTiles_Set4_D492:
 ; B2h: Facing clockwise     - grapple - in air - frames 3Ch..3Dh
     dl SamusTiles_Bottom_Set4_Entry14 : dw $0080,$0080                   ;92D492;
 
+%anchor($92D499)
 SamusBottomTiles_Set4_D499:
 ; 5Dh: Unused - frames 3Ah..3Bh
 ; 5Eh: Unused - frames 3Ah..3Bh
@@ -10263,256 +11109,308 @@ SamusBottomTiles_Set4_D499:
     dl SamusTiles_Bottom_Set4_Entry15 : dw $0080,$0080                   ;92D499;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($92D4A0)
 UNUSED_SamusBottomTiles_Set4_92D4A0:
     dl SamusTiles_Bottom_Set4_Entry16 : dw $0080,$0080                   ;92D4A0;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($92D4A7)
 SamusBottomTiles_Set5_D4A7:
 ; 62h: Unused - frames 7..9
 ; B3h: Facing anticlockwise - grapple - in air - frames 7..9
     dl SamusTiles_Bottom_Set5_Entry0 : dw $0080,$0040                    ;92D4A7;
 
+%anchor($92D4AE)
 SamusBottomTiles_Set5_D4AE:
 ; 62h: Unused - frames Ah..Bh
 ; B3h: Facing anticlockwise - grapple - in air - frames Ah..Bh
     dl SamusTiles_Bottom_Set5_Entry1 : dw $00E0,$0040                    ;92D4AE;
 
+%anchor($92D4B5)
 SamusBottomTiles_Set5_D4B5:
 ; 62h: Unused - frames Ch..Dh
 ; B3h: Facing anticlockwise - grapple - in air - frames Ch..Dh
     dl SamusTiles_Bottom_Set5_Entry2 : dw $00A0,$0080                    ;92D4B5;
 
+%anchor($92D4BC)
 SamusBottomTiles_Set5_D4BC:
 ; 62h: Unused - frame Eh
 ; B3h: Facing anticlockwise - grapple - in air - frame Eh
     dl SamusTiles_Bottom_Set5_Entry3 : dw $00A0,$0040                    ;92D4BC;
 
+%anchor($92D4C3)
 SamusBottomTiles_Set5_D4C3:
 ; 62h: Unused - frame Fh
 ; B3h: Facing anticlockwise - grapple - in air - frame Fh
     dl SamusTiles_Bottom_Set5_Entry4 : dw $00C0,$0040                    ;92D4C3;
 
+%anchor($92D4CA)
 SamusBottomTiles_Set5_D4CA:
 ; 62h: Unused - frame 10h
 ; B3h: Facing anticlockwise - grapple - in air - frame 10h
     dl SamusTiles_Bottom_Set5_Entry5 : dw $00C0,$0040                    ;92D4CA;
 
+%anchor($92D4D1)
 SamusBottomTiles_Set5_D4D1:
 ; 62h: Unused - frame 11h
 ; B3h: Facing anticlockwise - grapple - in air - frame 11h
     dl SamusTiles_Bottom_Set5_Entry6 : dw $0080,$0040                    ;92D4D1;
 
+%anchor($92D4D8)
 SamusBottomTiles_Set5_D4D8:
 ; 62h: Unused - frame 12h
 ; B3h: Facing anticlockwise - grapple - in air - frame 12h
     dl SamusTiles_Bottom_Set5_Entry7 : dw $00A0,$0040                    ;92D4D8;
 
+%anchor($92D4DF)
 SamusBottomTiles_Set5_D4DF:
 ; 62h: Unused - frames 13h..14h
 ; B3h: Facing anticlockwise - grapple - in air - frames 13h..14h
     dl SamusTiles_Bottom_Set5_Entry8 : dw $00A0,$0040                    ;92D4DF;
 
+%anchor($92D4E6)
 SamusBottomTiles_Set5_D4E6:
 ; 62h: Unused - frames 15h..16h
 ; B3h: Facing anticlockwise - grapple - in air - frames 15h..16h
     dl SamusTiles_Bottom_Set5_Entry9 : dw $00C0,$0040                    ;92D4E6;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($92D4ED)
 UNUSED_SamusBottomTiles_Set5_92D4ED:
     dl SamusTiles_Bottom_Set5_EntryA : dw $00A0,$0080                    ;92D4ED;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($92D4F4)
 SamusBottomTiles_Set5_D4F4:
 ; 62h: Unused - frame 40h
 ; B3h: Facing anticlockwise - grapple - in air - frame 40h
     dl SamusTiles_Bottom_Set5_EntryB : dw $0080,$0080                    ;92D4F4;
 
+%anchor($92D4FB)
 SamusBottomTiles_Set5_D4FB:
 ; 62h: Unused - frame 41h
 ; B3h: Facing anticlockwise - grapple - in air - frame 41h
     dl SamusTiles_Bottom_Set5_EntryC : dw $0080,$0080                    ;92D4FB;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($92D502)
 UNUSED_SamusBottomTiles_Set5_92D502:
 ; 62h: Unused - frames 27h..29h
 ; B3h: Facing anticlockwise - grapple - in air - frames 27h..29h
     dl SamusTiles_Bottom_Set5_EntryD : dw $0080,$0080                    ;92D502;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($92D509)
 SamusBottomTiles_Set5_D509:
 ; 62h: Unused - frames 2Ah..2Bh
 ; B3h: Facing anticlockwise - grapple - in air - frames 2Ah..2Bh
     dl SamusTiles_Bottom_Set5_EntryE : dw $00A0,$0040                    ;92D509;
 
+%anchor($92D510)
 SamusBottomTiles_Set5_D510:
 ; 62h: Unused - frames 2Ch..2Dh
 ; B3h: Facing anticlockwise - grapple - in air - frames 2Ch..2Dh
     dl SamusTiles_Bottom_Set5_EntryF : dw $0080,$0080                    ;92D510;
 
+%anchor($92D517)
 SamusBottomTiles_Set5_D517:
 ; 62h: Unused - frame 2Eh
 ; B3h: Facing anticlockwise - grapple - in air - frame 2Eh
     dl SamusTiles_Bottom_Set5_Entry10 : dw $0080,$0080                   ;92D517;
 
+%anchor($92D51E)
 SamusBottomTiles_Set5_D51E:
 ; 62h: Unused - frame 2Fh
 ; B3h: Facing anticlockwise - grapple - in air - frame 2Fh
     dl SamusTiles_Bottom_Set5_Entry11 : dw $00A0,$0040                   ;92D51E;
 
+%anchor($92D525)
 SamusBottomTiles_Set5_D525:
 ; 62h: Unused - frame 30h
 ; B3h: Facing anticlockwise - grapple - in air - frame 30h
     dl SamusTiles_Bottom_Set5_Entry12 : dw $0080,$0080                   ;92D525;
 
+%anchor($92D52C)
 SamusBottomTiles_Set5_D52C:
 ; 62h: Unused - frame 31h
 ; B3h: Facing anticlockwise - grapple - in air - frame 31h
     dl SamusTiles_Bottom_Set5_Entry13 : dw $0080,$0080                   ;92D52C;
 
+%anchor($92D533)
 SamusBottomTiles_Set5_D533:
 ; 62h: Unused - frame 32h
 ; B3h: Facing anticlockwise - grapple - in air - frame 32h
     dl SamusTiles_Bottom_Set5_Entry14 : dw $0080,$0080                   ;92D533;
 
+%anchor($92D53A)
 SamusBottomTiles_Set5_D53A:
 ; 62h: Unused - frames 33h..34h
 ; B3h: Facing anticlockwise - grapple - in air - frames 33h..34h
     dl SamusTiles_Bottom_Set5_Entry15 : dw $00C0,$0080                   ;92D53A;
 
+%anchor($92D541)
 SamusBottomTiles_Set5_D541:
 ; 62h: Unused - frames 35h..36h
 ; B3h: Facing anticlockwise - grapple - in air - frames 35h..36h
     dl SamusTiles_Bottom_Set5_Entry16 : dw $0080,$0080                   ;92D541;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($92D548)
 UNUSED_SamusBottomTiles_Set5_92D548:
     dl SamusTiles_Bottom_Set5_Entry17 : dw $0080,$0080                   ;92D548;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($92D54F)
 SamusBottomTiles_Set6_D54F:
 ; 62h: Unused - frames 17h..19h
 ; B3h: Facing anticlockwise - grapple - in air - frames 17h..19h
     dl SamusTiles_Bottom_Set6_Entry0 : dw $0080,$0040                    ;92D54F;
 
+%anchor($92D556)
 SamusBottomTiles_Set6_D556:
 ; 62h: Unused - frames 1Ah..1Bh
 ; B3h: Facing anticlockwise - grapple - in air - frames 1Ah..1Bh
     dl SamusTiles_Bottom_Set6_Entry1 : dw $00E0,$0040                    ;92D556;
 
+%anchor($92D55D)
 SamusBottomTiles_Set6_D55D:
 ; 62h: Unused - frames 1Ch..1Dh
 ; B3h: Facing anticlockwise - grapple - in air - frames 1Ch..1Dh
     dl SamusTiles_Bottom_Set6_Entry2 : dw $00A0,$0080                    ;92D55D;
 
+%anchor($92D564)
 SamusBottomTiles_Set6_D564:
 ; 62h: Unused - frame 1Eh
 ; B3h: Facing anticlockwise - grapple - in air - frame 1Eh
     dl SamusTiles_Bottom_Set6_Entry3 : dw $00A0,$0040                    ;92D564;
 
+%anchor($92D56B)
 SamusBottomTiles_Set6_D56B:
 ; 62h: Unused - frame 1Fh
 ; B3h: Facing anticlockwise - grapple - in air - frame 1Fh
     dl SamusTiles_Bottom_Set6_Entry4 : dw $00C0,$0040                    ;92D56B;
 
+%anchor($92D572)
 SamusBottomTiles_Set6_D572:
 ; 62h: Unused - frame 0
 ; B3h: Facing anticlockwise - grapple - in air - frame 0
     dl SamusTiles_Bottom_Set6_Entry5 : dw $00C0,$0040                    ;92D572;
 
+%anchor($92D579)
 SamusBottomTiles_Set6_D579:
 ; 62h: Unused - frame 1
 ; B3h: Facing anticlockwise - grapple - in air - frame 1
     dl SamusTiles_Bottom_Set6_Entry6 : dw $0080,$0040                    ;92D579;
 
+%anchor($92D580)
 SamusBottomTiles_Set6_D580:
 ; 62h: Unused - frame 2
 ; B3h: Facing anticlockwise - grapple - in air - frame 2
     dl SamusTiles_Bottom_Set6_Entry7 : dw $00A0,$0040                    ;92D580;
 
+%anchor($92D587)
 SamusBottomTiles_Set6_D587:
 ; 62h: Unused - frames 3..4
 ; B3h: Facing anticlockwise - grapple - in air - frames 3..4
     dl SamusTiles_Bottom_Set6_Entry8 : dw $00A0,$0040                    ;92D587;
 
+%anchor($92D58E)
 SamusBottomTiles_Set6_D58E:
 ; 62h: Unused - frames 5..6
 ; B3h: Facing anticlockwise - grapple - in air - frames 5..6
     dl SamusTiles_Bottom_Set6_Entry9 : dw $00C0,$0040                    ;92D58E;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($92D595)
 UNUSED_SamusBottomTiles_Set6_92D595:
     dl SamusTiles_Bottom_Set6_EntryA : dw $00A0,$0080                    ;92D595;
 
+%anchor($92D59C)
 UNUSED_SamusBottomTiles_Set6_92D59C:
     dl SamusTiles_Bottom_Set6_EntryB : dw $0080,$0080                    ;92D59C;
 
+%anchor($92D5A3)
 UNUSED_SamusBottomTiles_Set6_92D5A3:
     dl SamusTiles_Bottom_Set6_EntryC : dw $0080,$0080                    ;92D5A3;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($92D5AA)
 SamusBottomTiles_Set6_D5AA:
 ; 62h: Unused - frames 37h..39h
 ; B3h: Facing anticlockwise - grapple - in air - frames 37h..39h
     dl SamusTiles_Bottom_Set6_EntryD : dw $0080,$0080                    ;92D5AA;
 
+%anchor($92D5B1)
 SamusBottomTiles_Set6_D5B1:
 ; 62h: Unused - frames 3Ah..3Bh
 ; B3h: Facing anticlockwise - grapple - in air - frames 3Ah..3Bh
     dl SamusTiles_Bottom_Set6_EntryE : dw $00A0,$0040                    ;92D5B1;
 
+%anchor($92D5B8)
 SamusBottomTiles_Set6_D5B8:
 ; 62h: Unused - frames 3Ch..3Dh
 ; B3h: Facing anticlockwise - grapple - in air - frames 3Ch..3Dh
     dl SamusTiles_Bottom_Set6_EntryF : dw $0080,$0080                    ;92D5B8;
 
+%anchor($92D5BF)
 SamusBottomTiles_Set6_D5BF:
 ; 62h: Unused - frame 3Eh
 ; B3h: Facing anticlockwise - grapple - in air - frame 3Eh
     dl SamusTiles_Bottom_Set6_Entry10 : dw $0080,$0080                   ;92D5BF;
 
+%anchor($92D5C6)
 SamusBottomTiles_Set6_D5C6:
 ; 62h: Unused - frame 3Fh
 ; B3h: Facing anticlockwise - grapple - in air - frame 3Fh
     dl SamusTiles_Bottom_Set6_Entry11 : dw $00A0,$0040                   ;92D5C6;
 
+%anchor($92D5CD)
 SamusBottomTiles_Set6_D5CD:
 ; 62h: Unused - frame 20h
 ; B3h: Facing anticlockwise - grapple - in air - frame 20h
     dl SamusTiles_Bottom_Set6_Entry12 : dw $0080,$0080                   ;92D5CD;
 
+%anchor($92D5D4)
 SamusBottomTiles_Set6_D5D4:
 ; 62h: Unused - frame 21h
 ; B3h: Facing anticlockwise - grapple - in air - frame 21h
     dl SamusTiles_Bottom_Set6_Entry13 : dw $0080,$0080                   ;92D5D4;
 
+%anchor($92D5DB)
 SamusBottomTiles_Set6_D5DB:
 ; 62h: Unused - frame 22h
 ; B3h: Facing anticlockwise - grapple - in air - frame 22h
     dl SamusTiles_Bottom_Set6_Entry14 : dw $0080,$0080                   ;92D5DB;
 
+%anchor($92D5E2)
 SamusBottomTiles_Set6_D5E2:
 ; 62h: Unused - frames 23h..24h
 ; B3h: Facing anticlockwise - grapple - in air - frames 23h..24h
     dl SamusTiles_Bottom_Set6_Entry15 : dw $0080,$0080                   ;92D5E2;
 
+%anchor($92D5E9)
 SamusBottomTiles_Set6_D5E9:
 ; 62h: Unused - frames 25h..26h
 ; B3h: Facing anticlockwise - grapple - in air - frames 25h..26h
     dl SamusTiles_Bottom_Set6_Entry16 : dw $0080,$0080                   ;92D5E9;
 
+%anchor($92D5F0)
 SamusBottomTiles_Set8_D5F0:
 ; 0: Facing forward - power suit - frames 2..5Fh
     dl SamusTiles_Bottom_Set8_Entry0 : dw $0100,$0100                    ;92D5F0;
 
+%anchor($92D5F7)
 SamusBottomTiles_Set8_D5F7:
 ; 9Bh: Facing forward - varia/gravity suit - frames 2..5Fh
     dl SamusTiles_Bottom_Set8_Entry1 : dw $0100,$0100                    ;92D5F7;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($92D5FE)
 UNUSED_SamusBottomTiles_Set8_92D5FE:
     dl SamusTiles_Bottom_Set8_Entry2 : dw $0020,$0000                    ;92D5FE;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($92D605)
 SamusBottomTiles_SetA_D605:
 ; 3: Facing right - aiming up - frames 0..1
 ; 5: Facing right - aiming up-right - frame 0
@@ -10522,6 +11420,7 @@ SamusBottomTiles_SetA_D605:
 ; D1h: Facing right - ran into a wall - aiming down-right - frame 0
     dl SamusTiles_Bottom_SetA_Entry0 : dw $00C0,$0080                    ;92D605;
 
+%anchor($92D60C)
 SamusBottomTiles_SetA_D60C:
 ; 4: Facing left  - aiming up - frames 0..1
 ; 6: Facing left  - aiming up-left - frame 0
@@ -10533,6 +11432,7 @@ SamusBottomTiles_SetA_D60C:
 ; E9h: Facing left  - Samus drained - crouching/falling - frame 15h
     dl SamusTiles_Bottom_SetA_Entry1 : dw $00C0,$0080                    ;92D60C;
 
+%anchor($92D613)
 SamusTopTiles_SetA_D613:
 ; 1Dh: Facing right - morph ball - no springball - on ground - frame 0
 ; 1Eh: Moving right - morph ball - no springball - on ground - frame 0
@@ -10556,6 +11456,7 @@ SamusTopTiles_SetA_D613:
 ; E8h: Facing right - Samus drained - crouching/falling - frame 0
     dl SamusTiles_Top_SetA_Entry0 : dw $0060,$0040                       ;92D613;
 
+%anchor($92D61A)
 SamusTopTiles_SetA_D61A:
 ; 1Dh: Facing right - morph ball - no springball - on ground - frame 2
 ; 1Eh: Moving right - morph ball - no springball - on ground - frame 2
@@ -10577,6 +11478,7 @@ SamusTopTiles_SetA_D61A:
 ; DFh: Unused. Related to Draygon - frame 5
     dl SamusTiles_Top_SetA_Entry1 : dw $0060,$0040                       ;92D61A;
 
+%anchor($92D621)
 SamusTopTiles_SetA_D621:
 ; 1Dh: Facing right - morph ball - no springball - on ground - frame 4
 ; 1Eh: Moving right - morph ball - no springball - on ground - frame 4
@@ -10598,6 +11500,7 @@ SamusTopTiles_SetA_D621:
 ; DFh: Unused. Related to Draygon - frame 3
     dl SamusTiles_Top_SetA_Entry2 : dw $0060,$0040                       ;92D621;
 
+%anchor($92D628)
 SamusTopTiles_SetA_D628:
 ; 1Dh: Facing right - morph ball - no springball - on ground - frame 6
 ; 1Eh: Moving right - morph ball - no springball - on ground - frame 6
@@ -10619,6 +11522,7 @@ SamusTopTiles_SetA_D628:
 ; DFh: Unused. Related to Draygon - frame 1
     dl SamusTiles_Top_SetA_Entry3 : dw $0060,$0040                       ;92D628;
 
+%anchor($92D62F)
 SamusTopTiles_SetA_D62F:
 ; 1Dh: Facing right - morph ball - no springball - on ground - frame 1
 ; 1Eh: Moving right - morph ball - no springball - on ground - frame 1
@@ -10640,6 +11544,7 @@ SamusTopTiles_SetA_D62F:
 ; DFh: Unused. Related to Draygon - frame 6
     dl SamusTiles_Top_SetA_Entry4 : dw $00A0,$0000                       ;92D62F;
 
+%anchor($92D636)
 SamusTopTiles_SetA_D636:
 ; 1Dh: Facing right - morph ball - no springball - on ground - frame 3
 ; 1Eh: Moving right - morph ball - no springball - on ground - frame 3
@@ -10661,6 +11566,7 @@ SamusTopTiles_SetA_D636:
 ; DFh: Unused. Related to Draygon - frame 4
     dl SamusTiles_Top_SetA_Entry5 : dw $0060,$0040                       ;92D636;
 
+%anchor($92D63D)
 SamusTopTiles_SetA_D63D:
 ; 1Dh: Facing right - morph ball - no springball - on ground - frame 5
 ; 1Eh: Moving right - morph ball - no springball - on ground - frame 5
@@ -10682,6 +11588,7 @@ SamusTopTiles_SetA_D63D:
 ; DFh: Unused. Related to Draygon - frame 2
     dl SamusTiles_Top_SetA_Entry6 : dw $0060,$0040                       ;92D63D;
 
+%anchor($92D644)
 SamusTopTiles_SetA_D644:
 ; 1Dh: Facing right - morph ball - no springball - on ground - frame 7
 ; 1Eh: Moving right - morph ball - no springball - on ground - frame 7
@@ -10703,6 +11610,7 @@ SamusTopTiles_SetA_D644:
 ; DFh: Unused. Related to Draygon - frame 0
     dl SamusTiles_Top_SetA_Entry7 : dw $0060,$0040                       ;92D644;
 
+%anchor($92D64B)
 SamusTopTiles_SetA_D64B:
 ; 19h: Facing right - spin jump - frame 1
 ; 1Ah: Facing left  - spin jump - frame 1
@@ -10720,6 +11628,7 @@ SamusTopTiles_SetA_D64B:
 ; 84h: Facing left  - wall jump - frame 3
     dl SamusTiles_Top_SetA_Entry8 : dw $0080,$0080                       ;92D64B;
 
+%anchor($92D652)
 SamusTopTiles_SetA_D652:
 ; 19h: Facing right - spin jump - frame 2
 ; 1Ah: Facing left  - spin jump - frame 2
@@ -10739,6 +11648,7 @@ SamusTopTiles_SetA_D652:
 ; 84h: Facing left  - wall jump - frame 4
     dl SamusTiles_Top_SetA_Entry9 : dw $0100,$0100                       ;92D652;
 
+%anchor($92D659)
 SamusTopTiles_SetA_D659:
 ; 19h: Facing right - spin jump - frame 3
 ; 1Ah: Facing left  - spin jump - frame 3
@@ -10758,6 +11668,7 @@ SamusTopTiles_SetA_D659:
 ; 84h: Facing left  - wall jump - frame 5
     dl SamusTiles_Top_SetA_EntryA : dw $0080,$0080                       ;92D659;
 
+%anchor($92D660)
 SamusTopTiles_SetA_D660:
 ; 19h: Facing right - spin jump - frame 4
 ; 1Ah: Facing left  - spin jump - frame 4
@@ -10777,6 +11688,7 @@ SamusTopTiles_SetA_D660:
 ; 84h: Facing left  - wall jump - frame 6
     dl SamusTiles_Top_SetA_EntryB : dw $0100,$0100                       ;92D660;
 
+%anchor($92D667)
 SamusTopTiles_SetA_D667:
 ; 19h: Facing right - spin jump - frame 5
 ; 1Ah: Facing left  - spin jump - frame 5
@@ -10796,6 +11708,7 @@ SamusTopTiles_SetA_D667:
 ; 84h: Facing left  - wall jump - frame 7
     dl SamusTiles_Top_SetA_EntryC : dw $0080,$0080                       ;92D667;
 
+%anchor($92D66E)
 SamusTopTiles_SetA_D66E:
 ; 19h: Facing right - spin jump - frame 6
 ; 1Ah: Facing left  - spin jump - frame 6
@@ -10815,6 +11728,7 @@ SamusTopTiles_SetA_D66E:
 ; 84h: Facing left  - wall jump - frame 8
     dl SamusTiles_Top_SetA_EntryD : dw $0100,$0100                       ;92D66E;
 
+%anchor($92D675)
 SamusTopTiles_SetA_D675:
 ; 19h: Facing right - spin jump - frame 7
 ; 1Ah: Facing left  - spin jump - frame 7
@@ -10834,6 +11748,7 @@ SamusTopTiles_SetA_D675:
 ; 84h: Facing left  - wall jump - frame 9
     dl SamusTiles_Top_SetA_EntryE : dw $0080,$0080                       ;92D675;
 
+%anchor($92D67C)
 SamusTopTiles_SetA_D67C:
 ; 19h: Facing right - spin jump - frame 8
 ; 1Ah: Facing left  - spin jump - frame 8
@@ -10853,6 +11768,7 @@ SamusTopTiles_SetA_D67C:
 ; 84h: Facing left  - wall jump - frame Ah
     dl SamusTiles_Top_SetA_EntryF : dw $0100,$0100                       ;92D67C;
 
+%anchor($92D683)
 SamusTopTiles_SetA_D683:
 ; 65h: Unused. Related to movement type Dh - frame 1
 ; 66h: Unused. Related to movement type Dh - frame 1
@@ -10862,6 +11778,7 @@ SamusTopTiles_SetA_D683:
 ; 84h: Facing left  - wall jump - frames 17h..19h
     dl SamusTiles_Top_SetA_Entry10 : dw $0100,$0040                      ;92D683;
 
+%anchor($92D68A)
 SamusTopTiles_SetA_D68A:
 ; 65h: Unused. Related to movement type Dh - frame 2
 ; 66h: Unused. Related to movement type Dh - frame 2
@@ -10871,6 +11788,7 @@ SamusTopTiles_SetA_D68A:
 ; 84h: Facing left  - wall jump - frames 1Dh..1Fh
     dl SamusTiles_Top_SetA_Entry11 : dw $0100,$0060                      ;92D68A;
 
+%anchor($92D691)
 SamusTopTiles_SetA_D691:
 ; 65h: Unused. Related to movement type Dh - frame 3
 ; 66h: Unused. Related to movement type Dh - frame 3
@@ -10880,6 +11798,7 @@ SamusTopTiles_SetA_D691:
 ; 84h: Facing left  - wall jump - frames 23h..25h
     dl SamusTiles_Top_SetA_Entry12 : dw $0100,$0060                      ;92D691;
 
+%anchor($92D698)
 SamusTopTiles_SetA_D698:
 ; 65h: Unused. Related to movement type Dh - frame 4
 ; 66h: Unused. Related to movement type Dh - frame 4
@@ -10889,6 +11808,7 @@ SamusTopTiles_SetA_D698:
 ; 84h: Facing left  - wall jump - frames 29h..2Bh
     dl SamusTiles_Top_SetA_Entry13 : dw $0100,$0000                      ;92D698;
 
+%anchor($92D69F)
 SamusTopTiles_SetA_D69F:
 ; 1Bh: Facing right - space jump - frames 1..8
 ; 1Ch: Facing left  - space jump - frames 1..8
@@ -10914,9 +11834,11 @@ SamusTopTiles_SetA_D69F:
 ; 84h: Facing left  - wall jump - frames 2Ch..2Eh
     dl SamusTiles_Top_SetA_Entry14 : dw $0020,$0000                      ;92D69F;
 
+%anchor($92D6A6)
 UNUSED_SamusTopTiles_SetB_92D6A6:
     dl SamusTiles_Top_SetB_Entry0 : dw $0020,$0000                       ;92D6A6;
 
+%anchor($92D6AD)
 SamusTopTiles_SetB_D6AD:
 ; 1Dh: Facing right - morph ball - no springball - on ground - frame 9
 ; 1Eh: Moving right - morph ball - no springball - on ground - frame 9
@@ -10939,10 +11861,12 @@ SamusTopTiles_SetB_D6AD:
     dl SamusTiles_Top_SetB_Entry1 : dw $0060,$0040                       ;92D6AD;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($92D6B4)
 UNUSED_SamusTopTiles_SetB_92D6B4:
     dl SamusTiles_Top_SetB_Entry2 : dw $0060,$0040                       ;92D6B4;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($92D6BB)
 SamusTopTiles_SetB_D6BB:
 ; 38h: Facing left  - morphing transition - frame 1
 ; 3Eh: Facing left  - unmorphing transition - frame 0
@@ -10953,6 +11877,7 @@ SamusTopTiles_SetB_D6BB:
 ; E9h: Facing left  - Samus drained - crouching/falling - frame 0
     dl SamusTiles_Top_SetB_Entry3 : dw $0080,$0040                       ;92D6BB;
 
+%anchor($92D6C2)
 SamusTopTiles_SetB_D6C2:
 ; 38h: Facing left  - morphing transition - frame 0
 ; 3Eh: Facing left  - unmorphing transition - frame 1
@@ -10965,6 +11890,7 @@ SamusTopTiles_SetB_D6C2:
 ; E9h: Facing left  - Samus drained - crouching/falling - frame 1
     dl SamusTiles_Top_SetB_Entry4 : dw $00C0,$0040                       ;92D6C2;
 
+%anchor($92D6C9)
 SamusTopTiles_SetB_D6C9:
 ; 37h: Facing right - morphing transition - frame 1
 ; 3Dh: Facing right - unmorphing transition - frame 0
@@ -10975,6 +11901,7 @@ SamusTopTiles_SetB_D6C9:
 ; E8h: Facing right - Samus drained - crouching/falling - frame 1
     dl SamusTiles_Top_SetB_Entry5 : dw $0080,$0040                       ;92D6C9;
 
+%anchor($92D6D0)
 SamusTopTiles_SetB_D6D0:
 ; 37h: Facing right - morphing transition - frame 0
 ; 3Dh: Facing right - unmorphing transition - frame 1
@@ -10987,95 +11914,121 @@ SamusTopTiles_SetB_D6D0:
 ; E8h: Facing right - Samus drained - crouching/falling - frame 2
     dl SamusTiles_Top_SetB_Entry6 : dw $00C0,$0040                       ;92D6D0;
 
+%anchor($92D6D7)
 UNUSED_SamusBottomTiles_Set3_92D6D7:
     dl UNUSED_SamusTiles_Bottom_Set3_Entry0_9EE9C0 : dw $0040,$0040      ;92D6D7;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($92D6DE)
 UNUSED_SamusBottomTiles_Set3_92D6DE:
     dl UNUSED_SamusTiles_Bottom_Set3_Entry1_9EEA40 : dw $0080,$0080      ;92D6DE;
 
+%anchor($92D6E5)
 UNUSED_SamusBottomTiles_Set3_92D6E5:
     dl UNUSED_SamusTiles_Bottom_Set3_Entry2_9EEB40 : dw $0040,$0040      ;92D6E5;
 
+%anchor($92D6EC)
 UNUSED_SamusBottomTiles_Set3_92D6EC:
     dl UNUSED_SamusTiles_Bottom_Set3_Entry3_9EEBC0 : dw $0080,$0080      ;92D6EC;
 
+%anchor($92D6F3)
 UNUSED_SamusBottomTiles_Set3_92D6F3:
     dl UNUSED_SamusTiles_Bottom_Set3_Entry4_9EECC0 : dw $0040,$0040      ;92D6F3;
 
+%anchor($92D6FA)
 UNUSED_SamusBottomTiles_Set3_92D6FA:
     dl UNUSED_SamusTiles_Bottom_Set3_Entry5_9EED40 : dw $0080,$0080      ;92D6FA;
 
+%anchor($92D701)
 UNUSED_SamusBottomTiles_Set3_92D701:
     dl UNUSED_SamusTiles_Bottom_Set3_Entry6_9EEE40 : dw $0040,$0040      ;92D701;
 
+%anchor($92D708)
 UNUSED_SamusBottomTiles_Set3_92D708:
     dl UNUSED_SamusTiles_Bottom_Set3_Entry7_9EEEC0 : dw $0080,$0080      ;92D708;
 
+%anchor($92D70F)
 UNUSED_SamusBottomTiles_Set3_92D70F:
     dl UNUSED_SamusTiles_Bottom_Set3_Entry8_9EEFC0 : dw $0040,$0040      ;92D70F;
 
+%anchor($92D716)
 UNUSED_SamusBottomTiles_Set3_92D716:
     dl UNUSED_SamusTiles_Bottom_Set3_Entry9_9EF040 : dw $0080,$0080      ;92D716;
 
+%anchor($92D71D)
 UNUSED_SamusBottomTiles_Set3_92D71D:
     dl UNUSED_SamusTiles_Bottom_Set3_EntryA_9EF140 : dw $0040,$0040      ;92D71D;
 
+%anchor($92D724)
 UNUSED_SamusBottomTiles_Set3_92D724:
     dl UNUSED_SamusTiles_Bottom_Set3_EntryB_9EF1C0 : dw $0080,$0080      ;92D724;
 
+%anchor($92D72B)
 UNUSED_SamusBottomTiles_Set3_92D72B:
     dl UNUSED_SamusTiles_Bottom_Set3_EntryC_9EF2C0 : dw $0040,$0040      ;92D72B;
 
+%anchor($92D732)
 UNUSED_SamusBottomTiles_Set3_92D732:
     dl UNUSED_SamusTiles_Bottom_Set3_EntryD_9EF340 : dw $0080,$0080      ;92D732;
 
+%anchor($92D739)
 UNUSED_SamusBottomTiles_Set3_92D739:
     dl UNUSED_SamusTiles_Bottom_Set3_EntryE_9EF440 : dw $0040,$0040      ;92D739;
 
+%anchor($92D740)
 UNUSED_SamusBottomTiles_Set3_92D740:
     dl UNUSED_SamusTiles_Bottom_Set3_EntryF_9EF4C0 : dw $0080,$0080      ;92D740;
 
+%anchor($92D747)
 UNUSED_SamusBottomTiles_Set3_92D747:
     dl UNUSED_SamusTiles_Bottom_Set3_Entry10_9EF5C0 : dw $0080,$0080     ;92D747;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($92D74E)
 SamusTopTiles_SetC_D74E:
 ; CBh: Facing right - shinespark - vertical - frame 0
     dl SamusTiles_Top_SetC_Entry0 : dw $0100,$00C0                       ;92D74E;
 
+%anchor($92D755)
 SamusTopTiles_SetC_D755:
 ; CCh: Facing left  - shinespark - vertical - frame 0
     dl SamusTiles_Top_SetC_Entry1 : dw $0100,$00C0                       ;92D755;
 
+%anchor($92D75C)
 SamusTopTiles_SetC_D75C:
 ; D4h: Facing left  - crystal flash - frame 2
 ; D4h: Facing left  - crystal flash - frame 6
     dl SamusTiles_Top_SetC_Entry2 : dw $0100,$0040                       ;92D75C;
 
+%anchor($92D763)
 SamusTopTiles_SetC_D763:
 ; D4h: Facing left  - crystal flash - frame 7
 ; D4h: Facing left  - crystal flash - frame 9
     dl SamusTiles_Top_SetC_Entry3 : dw $0100,$0040                       ;92D763;
 
+%anchor($92D76A)
 SamusTopTiles_SetC_D76A:
 ; D4h: Facing left  - crystal flash - frame 8
     dl SamusTiles_Top_SetC_Entry4 : dw $0100,$0040                       ;92D76A;
 
+%anchor($92D771)
 SamusTopTiles_SetC_D771:
 ; D3h: Facing right - crystal flash - frame 2
 ; D3h: Facing right - crystal flash - frame 6
     dl SamusTiles_Top_SetC_Entry5 : dw $0100,$0040                       ;92D771;
 
+%anchor($92D778)
 SamusTopTiles_SetC_D778:
 ; D3h: Facing right - crystal flash - frame 7
 ; D3h: Facing right - crystal flash - frame 9
     dl SamusTiles_Top_SetC_Entry6 : dw $0100,$0040                       ;92D778;
 
+%anchor($92D77F)
 SamusTopTiles_SetC_D77F:
 ; D3h: Facing right - crystal flash - frame 8
     dl SamusTiles_Top_SetC_Entry7 : dw $0100,$0040                       ;92D77F;
 
+%anchor($92D786)
 SamusBottomTiles_Set7_D786:
 ; D3h: Facing right - crystal flash - frame 0
 ; D3h: Facing right - crystal flash - frame Dh
@@ -11083,6 +12036,7 @@ SamusBottomTiles_Set7_D786:
 ; D4h: Facing left  - crystal flash - frame Dh
     dl SamusTiles_Bottom_Set7_Entry0 : dw $0040,$0040                    ;92D786;
 
+%anchor($92D78D)
 SamusBottomTiles_Set7_D78D:
 ; D3h: Facing right - crystal flash - frame 1
 ; D3h: Facing right - crystal flash - frame Ch
@@ -11090,6 +12044,7 @@ SamusBottomTiles_Set7_D78D:
 ; D4h: Facing left  - crystal flash - frame Ch
     dl SamusTiles_Bottom_Set7_Entry1 : dw $0100,$0100                    ;92D78D;
 
+%anchor($92D794)
 SamusBottomTiles_Set7_D794:
 ; D3h: Facing right - crystal flash - frames 2..3
 ; D3h: Facing right - crystal flash - frames 6..9
@@ -11097,6 +12052,7 @@ SamusBottomTiles_Set7_D794:
 ; D4h: Facing left  - crystal flash - frames 6..9
     dl SamusTiles_Bottom_Set7_Entry2 : dw $0100,$0100                    ;92D794;
 
+%anchor($92D79B)
 SamusBottomTiles_Set9_D79B:
 ; 1Bh: Facing right - space jump - frame 1
 ; 1Ch: Facing left  - space jump - frame 1
@@ -11116,6 +12072,7 @@ SamusBottomTiles_Set9_D79B:
 ; 84h: Facing left  - wall jump - frame 27h
     dl SamusTiles_Bottom_Set9_Entry0 : dw $0100,$0100                    ;92D79B;
 
+%anchor($92D7A2)
 SamusBottomTiles_Set9_D7A2:
 ; 1Bh: Facing right - space jump - frame 2
 ; 1Ch: Facing left  - space jump - frame 2
@@ -11135,6 +12092,7 @@ SamusBottomTiles_Set9_D7A2:
 ; 84h: Facing left  - wall jump - frame 28h
     dl SamusTiles_Bottom_Set9_Entry1 : dw $0100,$0100                    ;92D7A2;
 
+%anchor($92D7A9)
 SamusBottomTiles_Set9_D7A9:
 ; 1Bh: Facing right - space jump - frame 3
 ; 1Ch: Facing left  - space jump - frame 3
@@ -11154,6 +12112,7 @@ SamusBottomTiles_Set9_D7A9:
 ; 84h: Facing left  - wall jump - frame 29h
     dl SamusTiles_Bottom_Set9_Entry2 : dw $0100,$0100                    ;92D7A9;
 
+%anchor($92D7B0)
 SamusBottomTiles_Set9_D7B0:
 ; 1Bh: Facing right - space jump - frame 4
 ; 1Ch: Facing left  - space jump - frame 4
@@ -11173,6 +12132,7 @@ SamusBottomTiles_Set9_D7B0:
 ; 84h: Facing left  - wall jump - frame 2Ah
     dl SamusTiles_Bottom_Set9_Entry3 : dw $0100,$0100                    ;92D7B0;
 
+%anchor($92D7B7)
 SamusBottomTiles_Set9_D7B7:
 ; 1Bh: Facing right - space jump - frame 5
 ; 1Ch: Facing left  - space jump - frame 5
@@ -11192,6 +12152,7 @@ SamusBottomTiles_Set9_D7B7:
 ; 84h: Facing left  - wall jump - frame 2Bh
     dl SamusTiles_Bottom_Set9_Entry4 : dw $0100,$0100                    ;92D7B7;
 
+%anchor($92D7BE)
 SamusBottomTiles_Set9_D7BE:
 ; 1Bh: Facing right - space jump - frame 6
 ; 1Ch: Facing left  - space jump - frame 6
@@ -11211,6 +12172,7 @@ SamusBottomTiles_Set9_D7BE:
 ; 84h: Facing left  - wall jump - frame 2Ch
     dl SamusTiles_Bottom_Set9_Entry5 : dw $0100,$0100                    ;92D7BE;
 
+%anchor($92D7C5)
 SamusBottomTiles_Set9_D7C5:
 ; 1Bh: Facing right - space jump - frame 7
 ; 1Ch: Facing left  - space jump - frame 7
@@ -11230,6 +12192,7 @@ SamusBottomTiles_Set9_D7C5:
 ; 84h: Facing left  - wall jump - frame 2Dh
     dl SamusTiles_Bottom_Set9_Entry6 : dw $0100,$0100                    ;92D7C5;
 
+%anchor($92D7CC)
 SamusBottomTiles_Set9_D7CC:
 ; 1Bh: Facing right - space jump - frame 8
 ; 1Ch: Facing left  - space jump - frame 8
@@ -11249,68 +12212,80 @@ SamusBottomTiles_Set9_D7CC:
 ; 84h: Facing left  - wall jump - frame 2Eh
     dl SamusTiles_Bottom_Set9_Entry7 : dw $0100,$0100                    ;92D7CC;
 
+%anchor($92D7D3)
 SamusSpritemaps_AtmosphericGraphics_Bubbles_0:
     dw $0002                                                             ;92D7D3;
     %spritemapEntry(0, $1FC, $FE, 0, 0, 3, 5, $25)
     %spritemapEntry(0, $1FD, $FC, 0, 0, 3, 5, $43)
 
+%anchor($92D7DF)
 SamusSpritemaps_AtmosphericGraphics_Bubbles_1:
     dw $0003                                                             ;92D7DF;
     %spritemapEntry(0, $1FF, $FA, 0, 0, 3, 5, $43)
     %spritemapEntry(0, $1FB, $F8, 1, 0, 3, 5, $25)
     %spritemapEntry(0, $1FC, $FD, 0, 0, 3, 5, $25)
 
+%anchor($92D7F0)
 SamusSpritemaps_AtmosphericGraphics_Bubbles_2:
     dw $0003                                                             ;92D7F0;
     %spritemapEntry(0, $1FA, $F6, 0, 0, 3, 5, $43)
     %spritemapEntry(0, $00, $F8, 0, 0, 3, 5, $25)
     %spritemapEntry(0, $1FD, $FB, 0, 0, 3, 5, $25)
 
+%anchor($92D801)
 SamusSpritemaps_AtmosphericGraphics_Bubbles_3:
     dw $0003                                                             ;92D801;
     %spritemapEntry(0, $00, $F7, 0, 0, 3, 5, $43)
     %spritemapEntry(0, $1FC, $FA, 0, 0, 3, 5, $43)
     %spritemapEntry(0, $1FA, $F3, 0, 0, 3, 5, $43)
 
+%anchor($92D812)
 SamusSpritemaps_AtmosphericGraphics_Bubbles_4:
     dw $0003                                                             ;92D812;
     %spritemapEntry(0, $00, $F3, 0, 0, 3, 5, $40)
     %spritemapEntry(0, $1FA, $F1, 0, 0, 3, 5, $40)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 3, 5, $43)
 
+%anchor($92D823)
 SamusSpritemaps_AtmosphericGraphics_Bubbles_5:
     dw $0003                                                             ;92D823;
     %spritemapEntry(0, $01, $F1, 0, 0, 3, 5, $40)
     %spritemapEntry(0, $1FC, $F6, 0, 0, 3, 5, $40)
     %spritemapEntry(0, $1FA, $EF, 0, 0, 3, 5, $40)
 
+%anchor($92D834)
 SamusSpritemaps_AtmosphericGraphics_Bubbles_6:
     dw $0003                                                             ;92D834;
     %spritemapEntry(0, $01, $EF, 0, 1, 3, 5, $40)
     %spritemapEntry(0, $1FC, $F4, 0, 0, 3, 5, $40)
     %spritemapEntry(0, $1F9, $EC, 0, 0, 3, 5, $40)
 
+%anchor($92D845)
 SamusSpritemaps_AtmosphericGraphics_Bubbles_7:
     dw $0002                                                             ;92D845;
     %spritemapEntry(0, $02, $EC, 0, 1, 3, 5, $40)
     %spritemapEntry(0, $1FC, $F0, 0, 0, 3, 5, $40)
 
+%anchor($92D851)
 SamusSpritemaps_AtmosphericGraphics_Bubbles_8:
     dw $0001                                                             ;92D851;
     %spritemapEntry(0, $1FC, $EC, 1, 0, 3, 5, $40)
 
+%anchor($92D858)
 SamusSpritemaps_AtmosphericGraphics_DivingSplash_0:
     dw $0003                                                             ;92D858;
     dw $C3F8 : db $00 : dw $3A9A
     %spritemapEntry(0, $04, $F8, 0, 0, 3, 5, $5E)
     %spritemapEntry(0, $1F4, $F8, 0, 0, 3, 5, $5E)
 
+%anchor($92D869)
 SamusSpritemaps_AtmosphericGraphics_DivingSplash_1:
     dw $0003                                                             ;92D869;
     dw $C3F8 : db $04 : dw $7A9A
     %spritemapEntry(0, $02, $F8, 0, 0, 3, 5, $BA)
     %spritemapEntry(0, $1F6, $F8, 0, 0, 3, 5, $BA)
 
+%anchor($92D87A)
 SamusSpritemaps_AtmosphericGraphics_DivingSplash_2:
     dw $0005                                                             ;92D87A;
     dw $C3F8 : db $04 : dw $BA9A
@@ -11319,6 +12294,7 @@ SamusSpritemaps_AtmosphericGraphics_DivingSplash_2:
     %spritemapEntry(0, $00, $F8, 0, 0, 3, 5, $CA)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 5, $CA)
 
+%anchor($92D895)
 SamusSpritemaps_AtmosphericGraphics_DivingSplash_3:
     dw $0005                                                             ;92D895;
     dw $C3F8 : db $03 : dw $3A9C
@@ -11327,6 +12303,7 @@ SamusSpritemaps_AtmosphericGraphics_DivingSplash_3:
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 5, $CA)
     %spritemapEntry(0, $1F8, $F0, 0, 0, 3, 5, $BA)
 
+%anchor($92D8B0)
 SamusSpritemaps_AtmosphericGraphics_DivingSplash_4:
     dw $0007                                                             ;92D8B0;
     dw $C3F8 : db $01 : dw $BA9C
@@ -11337,6 +12314,7 @@ SamusSpritemaps_AtmosphericGraphics_DivingSplash_4:
     %spritemapEntry(0, $00, $F8, 0, 0, 3, 5, $CA)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 5, $CA)
 
+%anchor($92D8D5)
 SamusSpritemaps_AtmosphericGraphics_DivingSplash_5:
     dw $0005                                                             ;92D8D5;
     dw $C3F8 : db $00 : dw $7A9C
@@ -11345,6 +12323,7 @@ SamusSpritemaps_AtmosphericGraphics_DivingSplash_5:
     %spritemapEntry(0, $01, $F9, 0, 0, 3, 5, $BA)
     %spritemapEntry(0, $1F7, $F8, 0, 0, 3, 5, $BA)
 
+%anchor($92D8F0)
 SamusSpritemaps_AtmosphericGraphics_DivingSplash_6:
     dw $0004                                                             ;92D8F0;
     %spritemapEntry(0, $1F8, $F2, 0, 0, 3, 5, $C7)
@@ -11352,16 +12331,19 @@ SamusSpritemaps_AtmosphericGraphics_DivingSplash_6:
     %spritemapEntry(0, $02, $F8, 0, 0, 3, 5, $5E)
     %spritemapEntry(0, $1F6, $F9, 0, 0, 3, 5, $5E)
 
+%anchor($92D906)
 SamusSpritemaps_AtmosphericGraphics_DivingSplash_7:
     dw $0002                                                             ;92D906;
     %spritemapEntry(0, $00, $F6, 0, 0, 3, 5, $C7)
     %spritemapEntry(0, $1F8, $F6, 0, 0, 3, 5, $C7)
 
+%anchor($92D912)
 SamusSpritemaps_AtmosphericGraphics_DivingSplash_8:
     dw $0002                                                             ;92D912;
     %spritemapEntry(0, $00, $FC, 0, 0, 3, 5, $C7)
     %spritemapEntry(0, $1F8, $FA, 0, 0, 3, 5, $C7)
 
+%anchor($92D91E)
 SamusTopHalfTilesAnimation_TilesDefinitionPointers:
 ; Indexed by first byte of animation definition
 ; Pointers to lists of DMA entries, sub-indexed by second byte of animation definition
@@ -11379,6 +12361,7 @@ SamusTopHalfTilesAnimation_TilesDefinitionPointers:
     dw UNUSED_SamusTopTiles_SetB_92D6A6                                  ;92D934;
     dw SamusTopTiles_SetC_D74E                                           ;92D936;
 
+%anchor($92D938)
 SamusBottomHalfTilesAnimation_TilesDefinitionPointers:
 ; Indexed by third byte of animation definition
 ; Pointers to lists of DMA entries, sub-indexed by fourth byte of animation definition
@@ -11394,6 +12377,7 @@ SamusBottomHalfTilesAnimation_TilesDefinitionPointers:
     dw SamusBottomTiles_Set9_D79B                                        ;92D94A;
     dw SamusBottomTiles_SetA_D605                                        ;92D94C;
 
+%anchor($92D94E)
 SamusTilesAnimation_AnimationDefinitionPointers:
 ; Indexed by [Samus pose]
     dw SamusTilesAnimation_AnimationDefinitions_EA24                     ;92D94E;
@@ -11655,6 +12639,7 @@ SamusTilesAnimation_AnimationDefinitionPointers:
 ; First byte indexes the top half tiles definitions pointer table ($D91E) for a pointer to a list of DMA entries that is indexed by the second byte
 ; Third byte indexes the bottom half tiles definitions pointer table ($D938) for a pointer to a list of DMA entries that is indexed by the fourth byte
 
+%anchor($92DB48)
 SamusTilesAnimation_AnimationDefinitions_DB48:
 ; 01: Facing right - normal
 ; 47: Unused
@@ -11664,6 +12649,7 @@ SamusTilesAnimation_AnimationDefinitions_DB48:
     db $00,$00,$00,$00, $07,$0C,$00,$06, $07,$0D,$00,$0E, $07,$12,$00,$0F ;92DB58;
     db $07,$0D,$00,$0E                                                   ;92DB68;
 
+%anchor($92DB6C)
 SamusTilesAnimation_AnimationDefinitions_DB6C:
 ; 02: Facing left  - normal
 ; 48: Unused
@@ -11673,230 +12659,277 @@ SamusTilesAnimation_AnimationDefinitions_DB6C:
     db $00,$00,$00,$00, $07,$0F,$00,$06, $07,$10,$00,$10, $07,$13,$00,$1D ;92DB7C;
     db $07,$10,$00,$10                                                   ;92DB8C;
 
+%anchor($92DB90)
 SamusTilesAnimation_AnimationDefinitions_DB90:
 ; A4: Facing right - landing from normal jump
     db $02,$00,$01,$06, $02,$04,$00,$06                                  ;92DB90;
 
+%anchor($92DB98)
 SamusTilesAnimation_AnimationDefinitions_DB98:
 ; A5: Facing left  - landing from normal jump
     db $02,$01,$01,$07, $02,$05,$00,$06                                  ;92DB98;
 
+%anchor($92DBA0)
 SamusTilesAnimation_AnimationDefinitions_DBA0:
 ; A6: Facing right - landing from spin jump
     db $02,$04,$01,$19, $02,$00,$01,$06, $02,$04,$00,$06                 ;92DBA0;
 
+%anchor($92DBAC)
 SamusTilesAnimation_AnimationDefinitions_DBAC:
 ; A7: Facing left  - landing from spin jump
     db $02,$05,$01,$1A, $02,$01,$01,$07, $02,$05,$00,$06                 ;92DBAC;
 
+%anchor($92DBB8)
 SamusTilesAnimation_AnimationDefinitions_DBB8:
 ; E0: Facing right - landing from normal jump - aiming up
     db $00,$16,$01,$06, $00,$16,$00,$06                                  ;92DBB8;
 
+%anchor($92DBC0)
 SamusTilesAnimation_AnimationDefinitions_DBC0:
 ; E1: Facing left  - landing from normal jump - aiming up
     db $00,$17,$01,$07, $00,$17,$00,$06                                  ;92DBC0;
 
+%anchor($92DBC8)
 SamusTilesAnimation_AnimationDefinitions_DBC8:
 ; E2: Facing right - landing from normal jump - aiming up-right
     db $00,$12,$01,$06, $00,$12,$00,$06                                  ;92DBC8;
 
+%anchor($92DBD0)
 SamusTilesAnimation_AnimationDefinitions_DBD0:
 ; E3: Facing left  - landing from normal jump - aiming up-left
     db $00,$13,$01,$07, $00,$13,$00,$06                                  ;92DBD0;
 
+%anchor($92DBD8)
 SamusTilesAnimation_AnimationDefinitions_DBD8:
 ; E4: Facing right - landing from normal jump - aiming down-right
     db $00,$0E,$01,$06, $00,$0E,$00,$06                                  ;92DBD8;
 
+%anchor($92DBE0)
 SamusTilesAnimation_AnimationDefinitions_DBE0:
 ; E5: Facing left  - landing from normal jump - aiming down-left
     db $00,$0F,$01,$07, $00,$0F,$00,$06                                  ;92DBE0;
 
+%anchor($92DBE8)
 SamusTilesAnimation_AnimationDefinitions_DBE8:
 ; E6: Facing right - landing from normal jump - firing
     db $00,$10,$01,$06, $00,$10,$00,$06                                  ;92DBE8;
 
+%anchor($92DBF0)
 SamusTilesAnimation_AnimationDefinitions_DBF0:
 ; E7: Facing left  - landing from normal jump - firing
     db $00,$11,$01,$07, $00,$11,$00,$06                                  ;92DBF0;
 
+%anchor($92DBF8)
 SamusTilesAnimation_AnimationDefinitions_DBF8:
 ; D5: Facing right - x-ray - standing
     db $02,$09,$00,$06, $02,$08,$00,$06, $00,$10,$00,$06, $02,$0A,$00,$06 ;92DBF8;
     db $02,$0B,$00,$06                                                   ;92DC08;
 
+%anchor($92DC0C)
 SamusTilesAnimation_AnimationDefinitions_DC0C:
 ; D6: Facing left  - x-ray - standing
     db $02,$0D,$00,$06, $02,$0C,$00,$06, $00,$11,$00,$06, $02,$0E,$00,$06 ;92DC0C;
     db $02,$0F,$00,$06                                                   ;92DC1C;
 
+%anchor($92DC20)
 SamusTilesAnimation_AnimationDefinitions_DC20:
 ; D9: Facing right - x-ray - crouching
     db $02,$09,$00,$07, $02,$08,$00,$07, $00,$10,$00,$07, $02,$0A,$00,$07 ;92DC20;
     db $02,$0B,$00,$07                                                   ;92DC30;
 
+%anchor($92DC34)
 SamusTilesAnimation_AnimationDefinitions_DC34:
 ; DA: Facing left  - x-ray - crouching
     db $02,$0D,$00,$07, $02,$0C,$00,$07, $00,$11,$00,$07, $02,$0E,$00,$07 ;92DC34;
     db $02,$0F,$00,$07                                                   ;92DC44;
 
+%anchor($92DC48)
 SamusTilesAnimation_AnimationDefinitions_DC48:
 ; 09: Moving right - not aiming
     db $00,$00,$00,$00, $01,$0D,$00,$08, $00,$02,$00,$01, $00,$03,$00,$09 ;92DC48;
     db $00,$01,$00,$02, $00,$00,$00,$03, $01,$0E,$00,$0A, $00,$05,$00,$04 ;92DC58;
     db $00,$18,$00,$0B, $00,$04,$00,$05                                  ;92DC68;
 
+%anchor($92DC70)
 SamusTilesAnimation_AnimationDefinitions_DC70:
 ; 0A: Moving left  - not aiming
     db $00,$06,$00,$00, $01,$0F,$00,$08, $00,$08,$00,$01, $00,$09,$00,$09 ;92DC70;
     db $00,$07,$00,$02, $00,$06,$00,$03, $01,$10,$00,$0A, $00,$0B,$00,$04 ;92DC80;
     db $00,$19,$00,$0B, $00,$0A,$00,$05                                  ;92DC90;
 
+%anchor($92DC98)
 SamusTilesAnimation_AnimationDefinitions_DC98:
 ; 0B: Moving right - gun extended
     db $09,$00,$00,$00, $09,$0E,$00,$08, $09,$02,$00,$01, $09,$03,$00,$09 ;92DC98;
     db $09,$01,$00,$02, $09,$00,$00,$03, $09,$04,$00,$0A, $09,$05,$00,$04 ;92DCA8;
     db $09,$0C,$00,$0B, $09,$04,$00,$05                                  ;92DCB8;
 
+%anchor($92DCC0)
 SamusTilesAnimation_AnimationDefinitions_DCC0:
 ; 0C: Moving left  - gun extended
     db $09,$06,$00,$00, $09,$0F,$00,$08, $09,$09,$00,$01, $09,$08,$00,$09 ;92DCC0;
     db $09,$07,$00,$02, $09,$06,$00,$03, $09,$0A,$00,$0A, $09,$0D,$00,$04 ;92DCD0;
     db $09,$0B,$00,$0B, $09,$0A,$00,$05                                  ;92DCE0;
 
+%anchor($92DCE8)
 SamusTilesAnimation_AnimationDefinitions_DCE8:
 ; 49: Facing left  - moonwalk
     db $00,$11,$01,$03, $02,$1B,$01,$04, $02,$1B,$01,$15, $00,$11,$01,$00 ;92DCE8;
     db $02,$1B,$01,$05, $02,$1B,$01,$16                                  ;92DCF8;
 
+%anchor($92DD00)
 SamusTilesAnimation_AnimationDefinitions_DD00:
 ; 4A: Facing right - moonwalk
     db $00,$10,$01,$03, $02,$1A,$01,$04, $02,$1A,$01,$17, $00,$10,$01,$00 ;92DD00;
     db $02,$1A,$01,$05, $02,$1A,$01,$18                                  ;92DD10;
 
+%anchor($92DD18)
 SamusTilesAnimation_AnimationDefinitions_DD18:
 ; 17: Facing right - normal jump - aiming down
 ; AE: Unused
     db $00,$0C,$01,$0A, $01,$1A,$01,$11                                  ;92DD18;
 
+%anchor($92DD20)
 SamusTilesAnimation_AnimationDefinitions_DD20:
 ; 18: Facing left  - normal jump - aiming down
 ; AF: Unused
     db $00,$0D,$01,$0B, $01,$1B,$01,$12                                  ;92DD20;
 
+%anchor($92DD28)
 SamusTilesAnimation_AnimationDefinitions_DD28:
 ; 13: Facing right - normal jump - not aiming - not moving - gun extended
 ; AC: Unused
     db $00,$10,$01,$0A, $00,$10,$01,$19                                  ;92DD28;
 
+%anchor($92DD30)
 SamusTilesAnimation_AnimationDefinitions_DD30:
 ; 14: Facing left  - normal jump - not aiming - not moving - gun extended
 ; AD: Unused
     db $00,$11,$01,$0B, $00,$11,$01,$1A                                  ;92DD30;
 
+%anchor($92DD38)
 SamusTilesAnimation_AnimationDefinitions_DD38:
 ; 15: Facing right - normal jump - aiming up
     db $00,$12,$01,$0A, $00,$16,$00,$13                                  ;92DD38;
 
+%anchor($92DD40)
 SamusTilesAnimation_AnimationDefinitions_DD40:
 ; 16: Facing left  - normal jump - aiming up
     db $00,$13,$01,$0B, $00,$17,$00,$14                                  ;92DD40;
 
+%anchor($92DD48)
 SamusTilesAnimation_AnimationDefinitions_DD48:
 ; 51: Facing right - normal jump - not aiming - moving forward
     db $00,$10,$01,$0A, $00,$10,$01,$19                                  ;92DD48;
 
+%anchor($92DD50)
 SamusTilesAnimation_AnimationDefinitions_DD50:
 ; 52: Facing left  - normal jump - not aiming - moving forward
     db $00,$11,$01,$0B, $00,$11,$01,$1A                                  ;92DD50;
 
+%anchor($92DD58)
 SamusTilesAnimation_AnimationDefinitions_DD58:
 ; 69: Facing right - normal jump - aiming up-right
     db $00,$1A,$01,$0A, $00,$1A,$00,$13                                  ;92DD58;
 
+%anchor($92DD60)
 SamusTilesAnimation_AnimationDefinitions_DD60:
 ; 6A: Facing left  - normal jump - aiming up-left
     db $00,$1B,$01,$0B, $00,$1B,$00,$14                                  ;92DD60;
 
+%anchor($92DD68)
 SamusTilesAnimation_AnimationDefinitions_DD68:
 ; 6B: Facing right - normal jump - aiming down-right
 ; B0: Unused
     db $00,$0C,$01,$0A, $00,$0C,$01,$19                                  ;92DD68;
 
+%anchor($92DD70)
 SamusTilesAnimation_AnimationDefinitions_DD70:
 ; 6C: Facing left  - normal jump - aiming down-left
 ; B1: Unused
     db $00,$0D,$01,$0B, $00,$0D,$01,$1A                                  ;92DD70;
 
+%anchor($92DD78)
 SamusTilesAnimation_AnimationDefinitions_DD78:
 ; 4B: Facing right - normal jump transition
     db $02,$00,$01,$06                                                   ;92DD78;
 
+%anchor($92DD7C)
 SamusTilesAnimation_AnimationDefinitions_DD7C:
 ; 4C: Facing left  - normal jump transition
     db $02,$01,$01,$07                                                   ;92DD7C;
 
+%anchor($92DD80)
 SamusTilesAnimation_AnimationDefinitions_DD80:
 ; 55: Facing right - normal jump transition - aiming up
 ; F1: Facing right - crouching transition - aiming up
 ; F7: Facing right - standing transition - aiming up
     db $00,$16,$01,$06                                                   ;92DD80;
 
+%anchor($92DD84)
 SamusTilesAnimation_AnimationDefinitions_DD84:
 ; 56: Facing left  - normal jump transition - aiming up
 ; F2: Facing left  - crouching transition - aiming up
 ; F8: Facing left  - standing transition - aiming up
     db $00,$17,$01,$07                                                   ;92DD84;
 
+%anchor($92DD88)
 SamusTilesAnimation_AnimationDefinitions_DD88:
 ; 57: Facing right - normal jump transition - aiming up-right
 ; F3: Facing right - crouching transition - aiming up-right
 ; F9: Facing right - standing transition - aiming up-right
     db $00,$12,$01,$06                                                   ;92DD88;
 
+%anchor($92DD8C)
 SamusTilesAnimation_AnimationDefinitions_DD8C:
 ; 58: Facing left  - normal jump transition - aiming up-left
 ; F4: Facing left  - crouching transition - aiming up-left
 ; FA: Facing left  - standing transition - aiming up-left
     db $00,$13,$01,$07                                                   ;92DD8C;
 
+%anchor($92DD90)
 SamusTilesAnimation_AnimationDefinitions_DD90:
 ; 59: Facing right - normal jump transition - aiming down-right
 ; F5: Facing right - crouching transition - aiming down-right
 ; FB: Facing right - standing transition - aiming down-right
     db $00,$0E,$01,$06                                                   ;92DD90;
 
+%anchor($92DD94)
 SamusTilesAnimation_AnimationDefinitions_DD94:
 ; 5A: Facing left  - normal jump transition - aiming down-left
 ; F6: Facing left  - crouching transition - aiming down-left
 ; FC: Facing left  - standing transition - aiming down-left
     db $00,$0F,$01,$07                                                   ;92DD94;
 
+%anchor($92DD98)
 SamusTilesAnimation_AnimationDefinitions_DD98:
 ; 4D: Facing right - normal jump - not aiming - not moving - gun not extended
 ; C7: Facing right - vertical shinespark windup
     db $00,$04,$00,$03, $00,$05,$01,$0E, $00,$04,$01,$08, $00,$00,$01,$08 ;92DD98;
     db $00,$01,$01,$0A, $00,$14,$01,$0C                                  ;92DDA8;
 
+%anchor($92DDB0)
 SamusTilesAnimation_AnimationDefinitions_DDB0:
 ; 4E: Facing left  - normal jump - not aiming - not moving - gun not extended
 ; C8: Facing left  - vertical shinespark windup
     db $00,$0A,$00,$03, $00,$0B,$01,$0F, $00,$0A,$01,$09, $00,$06,$01,$09 ;92DDB0;
     db $00,$07,$01,$0B, $00,$15,$01,$0D                                  ;92DDC0;
 
+%anchor($92DDC8)
 SamusTilesAnimation_AnimationDefinitions_DDC8:
 ; 4F: Facing left  - damage boost
     db $02,$05,$00,$11, $02,$05,$01,$0B, $0A,$0F,$00,$00, $0A,$0E,$00,$00 ;92DDC8;
     db $0A,$0D,$00,$00, $0A,$0C,$00,$00, $0A,$0B,$00,$00, $0A,$0A,$00,$00 ;92DDD8;
     db $0A,$09,$00,$00, $02,$1F,$01,$1A                                  ;92DDE8;
 
+%anchor($92DDF0)
 SamusTilesAnimation_AnimationDefinitions_DDF0:
 ; 50: Facing right - damage boost
     db $02,$04,$00,$12, $02,$04,$01,$0A, $0A,$0F,$00,$00, $0A,$0E,$00,$00 ;92DDF0;
     db $0A,$0D,$00,$00, $0A,$0C,$00,$00, $0A,$0B,$00,$00, $0A,$0A,$00,$00 ;92DE00;
     db $0A,$09,$00,$00, $02,$1D,$01,$19                                  ;92DE10;
 
+%anchor($92DE18)
 SamusTilesAnimation_AnimationDefinitions_DE18:
 ; 27: Facing right - crouching
 ; B4: Unused
@@ -11904,6 +12937,7 @@ SamusTilesAnimation_AnimationDefinitions_DE18:
     db $00,$00,$00,$00, $07,$0C,$00,$07, $07,$0D,$00,$07, $07,$12,$00,$07 ;92DE28;
     db $07,$0D,$00,$07                                                   ;92DE38;
 
+%anchor($92DE3C)
 SamusTilesAnimation_AnimationDefinitions_DE3C:
 ; 28: Facing left  - crouching
 ; B5: Unused
@@ -11911,132 +12945,159 @@ SamusTilesAnimation_AnimationDefinitions_DE3C:
     db $00,$00,$00,$00, $07,$0F,$00,$07, $07,$10,$00,$07, $07,$13,$00,$07 ;92DE4C;
     db $07,$10,$00,$07                                                   ;92DE5C;
 
+%anchor($92DE60)
 SamusTilesAnimation_AnimationDefinitions_DE60:
 ; 29: Facing right - falling
     db $02,$04,$01,$0A, $02,$1C,$01,$0C, $02,$1D,$01,$0C, $00,$00,$00,$00 ;92DE60;
     db $00,$00,$00,$00, $02,$1C,$01,$0A, $02,$04,$01,$19                 ;92DE70;
 
+%anchor($92DE7C)
 SamusTilesAnimation_AnimationDefinitions_DE7C:
 ; 2A: Facing left  - falling
     db $02,$05,$01,$0B, $02,$1E,$01,$0D, $02,$1F,$01,$0D, $00,$00,$00,$00 ;92DE7C;
     db $00,$00,$00,$00, $02,$1E,$01,$0B, $02,$05,$01,$1A                 ;92DE8C;
 
+%anchor($92DE98)
 SamusTilesAnimation_AnimationDefinitions_DE98:
 ; 2B: Facing right - falling - aiming up
     db $00,$12,$01,$0A, $00,$16,$01,$0C, $00,$16,$01,$19                 ;92DE98;
 
+%anchor($92DEA4)
 SamusTilesAnimation_AnimationDefinitions_DEA4:
 ; 2C: Facing left  - falling - aiming up
     db $00,$13,$01,$0B, $00,$17,$01,$0D, $00,$17,$01,$1A                 ;92DEA4;
 
+%anchor($92DEB0)
 SamusTilesAnimation_AnimationDefinitions_DEB0:
 ; 2D: Facing right - falling - aiming down
     db $00,$0C,$01,$0A, $01,$1A,$01,$11                                  ;92DEB0;
 
+%anchor($92DEB8)
 SamusTilesAnimation_AnimationDefinitions_DEB8:
 ; 2E: Facing left  - falling - aiming down
     db $00,$0D,$01,$0B, $01,$1B,$01,$12                                  ;92DEB8;
 
+%anchor($92DEC0)
 SamusTilesAnimation_AnimationDefinitions_DEC0:
 ; 67: Facing right - falling - gun extended
     db $00,$10,$01,$0A, $00,$10,$01,$0C, $00,$10,$01,$0C, $00,$00,$00,$00 ;92DEC0;
     db $00,$00,$00,$00, $00,$10,$01,$0A, $00,$10,$01,$19                 ;92DED0;
 
+%anchor($92DEDC)
 SamusTilesAnimation_AnimationDefinitions_DEDC:
 ; 68: Facing left  - falling - gun extended
     db $00,$11,$01,$0B, $00,$11,$01,$0D, $00,$11,$01,$0D, $00,$00,$00,$00 ;92DEDC;
     db $00,$00,$00,$00, $00,$11,$01,$0B, $00,$11,$01,$1A                 ;92DEEC;
 
+%anchor($92DEF8)
 SamusTilesAnimation_AnimationDefinitions_DEF8:
 ; 6D: Facing right - falling - aiming up-right
     db $00,$1A,$01,$0A, $00,$1A,$01,$0C, $00,$1A,$01,$19                 ;92DEF8;
 
+%anchor($92DF04)
 SamusTilesAnimation_AnimationDefinitions_DF04:
 ; 6E: Facing left  - falling - aiming up-left
     db $00,$1B,$01,$0B, $00,$1B,$01,$0D, $00,$1B,$01,$1A                 ;92DF04;
 
+%anchor($92DF10)
 SamusTilesAnimation_AnimationDefinitions_DF10:
 ; 6F: Facing right - falling - aiming down-right
     db $00,$0C,$01,$0A, $00,$0C,$01,$0C, $00,$0C,$01,$19                 ;92DF10;
 
+%anchor($92DF1C)
 SamusTilesAnimation_AnimationDefinitions_DF1C:
 ; 70: Facing left  - falling - aiming down-left
     db $00,$0D,$01,$0B, $00,$0D,$01,$0D, $00,$0D,$01,$1A                 ;92DF1C;
 
+%anchor($92DF28)
 SamusTilesAnimation_AnimationDefinitions_DF28:
 ; 0D: Moving right - aiming up (unused)
     db $00,$16,$00,$00, $00,$16,$00,$08, $02,$0E,$00,$01, $02,$1E,$00,$09 ;92DF28;
     db $02,$0E,$00,$02, $00,$16,$00,$03, $00,$16,$00,$0A, $02,$0E,$00,$04 ;92DF38;
     db $02,$1E,$00,$0B, $02,$0E,$00,$05                                  ;92DF48;
 
+%anchor($92DF50)
 SamusTilesAnimation_AnimationDefinitions_DF50:
 ; 0E: Moving left  - aiming up (unused)
     db $00,$17,$00,$00, $00,$17,$00,$08, $02,$0F,$00,$01, $02,$1F,$00,$09 ;92DF50;
     db $02,$0F,$00,$02, $00,$17,$00,$03, $00,$17,$00,$0A, $02,$0F,$00,$04 ;92DF60;
     db $02,$1F,$00,$0B, $02,$0F,$00,$05                                  ;92DF70;
 
+%anchor($92DF78)
 SamusTilesAnimation_AnimationDefinitions_DF78:
 ; 0F: Moving right - aiming up-right
     db $00,$1A,$00,$00, $00,$1A,$00,$08, $02,$10,$00,$01, $02,$16,$00,$09 ;92DF78;
     db $02,$10,$00,$02, $00,$1A,$00,$03, $00,$1A,$00,$0A, $02,$10,$00,$04 ;92DF88;
     db $02,$16,$00,$0B, $02,$10,$00,$05                                  ;92DF98;
 
+%anchor($92DFA0)
 SamusTilesAnimation_AnimationDefinitions_DFA0:
 ; 10: Moving left  - aiming up-left
     db $00,$1B,$00,$00, $00,$1B,$00,$08, $02,$11,$00,$01, $02,$17,$00,$09 ;92DFA0;
     db $02,$11,$00,$02, $00,$1B,$00,$03, $00,$1B,$00,$0A, $02,$11,$00,$04 ;92DFB0;
     db $02,$17,$00,$0B, $02,$11,$00,$05                                  ;92DFC0;
 
+%anchor($92DFC8)
 SamusTilesAnimation_AnimationDefinitions_DFC8:
 ; 11: Moving right - aiming down-right
     db $00,$0C,$00,$00, $00,$0C,$00,$08, $02,$06,$00,$01, $02,$18,$00,$09 ;92DFC8;
     db $02,$06,$00,$02, $00,$0C,$00,$03, $00,$0C,$00,$0A, $02,$06,$00,$04 ;92DFD8;
     db $02,$18,$00,$0B, $02,$06,$00,$05                                  ;92DFE8;
 
+%anchor($92DFF0)
 SamusTilesAnimation_AnimationDefinitions_DFF0:
 ; 12: Moving left  - aiming down-left
     db $00,$0D,$00,$00, $00,$0D,$00,$08, $02,$07,$00,$01, $02,$19,$00,$09 ;92DFF0;
     db $02,$07,$00,$02, $00,$0D,$00,$03, $00,$0D,$00,$0A, $02,$07,$00,$04 ;92E000;
     db $02,$19,$00,$0B, $02,$07,$00,$05                                  ;92E010;
 
+%anchor($92E018)
 SamusTilesAnimation_AnimationDefinitions_E018:
 ; 03: Facing right - aiming up
     db $00,$12,$0A,$00, $00,$16,$0A,$00                                  ;92E018;
 
+%anchor($92E020)
 SamusTilesAnimation_AnimationDefinitions_E020:
 ; 04: Facing left  - aiming up
     db $00,$13,$0A,$01, $00,$17,$0A,$01                                  ;92E020;
 
+%anchor($92E028)
 SamusTilesAnimation_AnimationDefinitions_E028:
 ; 05: Facing right - aiming up-right
 ; CF: Facing right - ran into a wall - aiming up-right
     db $00,$12,$0A,$00                                                   ;92E028;
 
+%anchor($92E02C)
 SamusTilesAnimation_AnimationDefinitions_E02C:
 ; 06: Facing left  - aiming up-left
 ; D0: Facing left  - ran into a wall - aiming up-left
     db $00,$13,$0A,$01                                                   ;92E02C;
 
+%anchor($92E030)
 SamusTilesAnimation_AnimationDefinitions_E030:
 ; 07: Facing right - aiming down-right
 ; AA: Unused
 ; D1: Facing right - ran into a wall - aiming down-right
     db $00,$0E,$0A,$00                                                   ;92E030;
 
+%anchor($92E034)
 SamusTilesAnimation_AnimationDefinitions_E034:
 ; 08: Facing left  - aiming down-left
 ; AB: Unused
 ; D2: Facing left  - ran into a wall - aiming down-left
     db $00,$0F,$0A,$01                                                   ;92E034;
 
+%anchor($92E038)
 SamusTilesAnimation_AnimationDefinitions_E038:
 ; 53: Facing right - knockback
     db $00,$1D,$01,$0C, $00,$1D,$01,$1B                                  ;92E038;
 
+%anchor($92E040)
 SamusTilesAnimation_AnimationDefinitions_E040:
 ; 54: Facing left  - knockback
     db $00,$1C,$01,$0D, $00,$1C,$01,$1C                                  ;92E040;
 
+%anchor($92E048)
 SamusTilesAnimation_AnimationDefinitions_E048:
 ; 45: Unused
 ; 46: Unused
@@ -12044,11 +13105,13 @@ SamusTilesAnimation_AnimationDefinitions_E048:
 ; B8: Facing left  - grapple wall jump pose
     db $01,$0C,$00,$1A                                                   ;92E048;
 
+%anchor($92E04C)
 SamusTilesAnimation_AnimationDefinitions_E04C:
 ; 5C: Unused
 ; B9: Facing right - grapple wall jump pose
     db $01,$0B,$00,$19                                                   ;92E04C;
 
+%anchor($92E050)
 SamusTilesAnimation_AnimationDefinitions_E050:
 ; 5D: Unused
 ; 5E: Unused
@@ -12074,6 +13137,7 @@ SamusTilesAnimation_AnimationDefinitions_E050:
     db $05,$0C,$04,$14, $05,$0B,$04,$14, $05,$0A,$04,$13, $05,$09,$04,$12 ;92E140;
     db $03,$08,$02,$0B, $03,$08,$02,$0C                                  ;92E150;
 
+%anchor($92E158)
 SamusTilesAnimation_AnimationDefinitions_E158:
 ; 62: Unused
 ; B3: Facing anticlockwise - grapple
@@ -12095,26 +13159,31 @@ SamusTilesAnimation_AnimationDefinitions_E158:
     db $06,$04,$06,$0F, $06,$05,$06,$0F, $06,$06,$06,$10, $06,$07,$06,$11 ;92E248;
     db $04,$08,$05,$0B, $04,$08,$05,$0C                                  ;92E258;
 
+%anchor($92E260)
 UNUSED_SamusTilesAnimation_AnimationDefinitions_92E260:
 ; 63: Unused
     db $01,$14,$01,$15,$01,$0C,$00,$1A                                   ;92E260;
 
+%anchor($92E268)
 UNUSED_SamusTilesAnimation_AnimationDefinitions_92E268:
 ; 64: Unused
     db $01,$15,$01,$16, $01,$0B,$00,$19                                  ;92E268;
 
+%anchor($92E270)
 UNUSED_SamusTilesAnimation_AnimationDefinitions_92E270:
 ; 65: Unused
     db $01,$12,$01,$13, $0A,$10,$00,$00, $0A,$11,$00,$00, $0A,$12,$00,$00 ;92E270;
     db $0A,$13,$00,$00, $0A,$14,$00,$00, $0A,$15,$00,$00, $0A,$16,$00,$00 ;92E280;
     db $0A,$17,$00,$00                                                   ;92E290;
 
+%anchor($92E294)
 UNUSED_SamusTilesAnimation_AnimationDefinitions_92E294:
 ; 66: Unused
     db $01,$13,$01,$14, $0A,$10,$00,$00, $0A,$11,$00,$00, $0A,$12,$00,$00 ;92E294;
     db $0A,$13,$00,$00, $0A,$14,$00,$00, $0A,$15,$00,$00, $0A,$16,$00,$00 ;92E2A4;
     db $0A,$17,$00,$00                                                   ;92E2B4;
 
+%anchor($92E2B8)
 SamusTilesAnimation_AnimationDefinitions_E2B8:
 ; 83: Facing right - wall jump
     db $01,$12,$01,$13, $02,$04,$01,$19, $00,$00,$00,$00, $0A,$08,$00,$00 ;92E2B8;
@@ -12130,6 +13199,7 @@ SamusTilesAnimation_AnimationDefinitions_E2B8:
     db $0A,$14,$09,$01, $0A,$13,$09,$02, $0A,$13,$09,$03, $0A,$13,$09,$04 ;92E358;
     db $0A,$14,$09,$05, $0A,$14,$09,$06, $0A,$14,$09,$07                 ;92E368;
 
+%anchor($92E374)
 SamusTilesAnimation_AnimationDefinitions_E374:
 ; 84: Facing left  - wall jump
     db $01,$13,$01,$14, $02,$05,$01,$1A, $00,$00,$00,$00, $0A,$08,$00,$00 ;92E374;
@@ -12145,94 +13215,115 @@ SamusTilesAnimation_AnimationDefinitions_E374:
     db $0A,$14,$09,$01, $0A,$13,$09,$02, $0A,$13,$09,$03, $0A,$13,$09,$04 ;92E414;
     db $0A,$14,$09,$05, $0A,$14,$09,$06, $0A,$14,$09,$07                 ;92E424;
 
+%anchor($92E430)
 SamusTilesAnimation_AnimationDefinitions_E430:
 ; 71: Facing right - crouching - aiming up-right
     db $00,$12,$00,$07                                                   ;92E430;
 
+%anchor($92E434)
 SamusTilesAnimation_AnimationDefinitions_E434:
 ; 72: Facing left  - crouching - aiming up-left
     db $00,$13,$00,$07                                                   ;92E434;
 
+%anchor($92E438)
 SamusTilesAnimation_AnimationDefinitions_E438:
 ; 73: Facing right - crouching - aiming down-right
 ; B6: Unused
     db $00,$0E,$00,$07                                                   ;92E438;
 
+%anchor($92E43C)
 SamusTilesAnimation_AnimationDefinitions_E43C:
 ; 74: Facing left  - crouching - aiming down-left
 ; B7: Unused
     db $00,$0F,$00,$07                                                   ;92E43C;
 
+%anchor($92E440)
 SamusTilesAnimation_AnimationDefinitions_E440:
 ; 85: Facing right - crouching - aiming up
     db $00,$12,$00,$07, $00,$16,$00,$07                                  ;92E440;
 
+%anchor($92E448)
 SamusTilesAnimation_AnimationDefinitions_E448:
 ; 86: Facing left  - crouching - aiming up
     db $00,$13,$00,$07, $00,$17,$00,$07                                  ;92E448;
 
+%anchor($92E450)
 SamusTilesAnimation_AnimationDefinitions_E450:
 ; 75: Facing left  - moonwalk - aiming up-left
     db $00,$1B,$01,$03, $02,$11,$01,$04, $02,$11,$01,$17, $00,$1B,$01,$00 ;92E450;
     db $02,$11,$01,$05, $02,$11,$01,$18                                  ;92E460;
 
+%anchor($92E468)
 SamusTilesAnimation_AnimationDefinitions_E468:
 ; 76: Facing right - moonwalk - aiming up-right
     db $00,$1A,$01,$03, $02,$10,$01,$04, $02,$10,$01,$17, $00,$1A,$01,$00 ;92E468;
     db $02,$10,$01,$05, $02,$10,$01,$18                                  ;92E478;
 
+%anchor($92E480)
 SamusTilesAnimation_AnimationDefinitions_E480:
 ; 77: Facing left  - moonwalk - aiming down-left
     db $00,$0D,$01,$03, $02,$07,$01,$04, $02,$07,$01,$17, $00,$0D,$01,$00 ;92E480;
     db $02,$07,$01,$05, $02,$07,$01,$18                                  ;92E490;
 
+%anchor($92E498)
 SamusTilesAnimation_AnimationDefinitions_E498:
 ; 78: Facing right - moonwalk - aiming down-right
     db $00,$0C,$01,$03, $02,$06,$01,$04, $02,$06,$01,$17, $00,$0C,$01,$00 ;92E498;
     db $02,$06,$01,$05, $02,$06,$01,$18                                  ;92E4A8;
 
+%anchor($92E4B0)
 SamusTilesAnimation_AnimationDefinitions_E4B0:
 ; 35: Facing right - crouching transition
 ; 3B: Facing right - standing transition
     db $00,$10,$01,$06                                                   ;92E4B0;
 
+%anchor($92E4B4)
 SamusTilesAnimation_AnimationDefinitions_E4B4:
 ; 36: Facing left  - crouching transition
 ; 3C: Facing left  - standing transition
     db $00,$11,$01,$07                                                   ;92E4B4;
 
+%anchor($92E4B8)
 SamusTilesAnimation_AnimationDefinitions_E4B8:
 ; 37: Facing right - morphing transition
     db $0B,$06,$00,$00, $0B,$05,$00,$00                                  ;92E4B8;
 
+%anchor($92E4C0)
 SamusTilesAnimation_AnimationDefinitions_E4C0:
 ; 38: Facing left  - morphing transition
     db $0B,$04,$00,$00, $0B,$03,$00,$00                                  ;92E4C0;
 
+%anchor($92E4C8)
 SamusTilesAnimation_AnimationDefinitions_E4C8:
 ; 3D: Facing right - unmorphing transition
     db $0B,$05,$00,$00, $0B,$06,$00,$00                                  ;92E4C8;
 
+%anchor($92E4D0)
 SamusTilesAnimation_AnimationDefinitions_E4D0:
 ; 3E: Facing left  - unmorphing transition
     db $0B,$03,$00,$00, $0B,$04,$00,$00                                  ;92E4D0;
 
+%anchor($92E4D8)
 UNUSED_SamusTilesAnimation_AnimationDefinitions_92E4D8:
 ; DB: Unused
     db $00,$10,$01,$06, $0B,$06,$00,$00, $0B,$05,$00,$00                 ;92E4D8;
 
+%anchor($92E4E4)
 UNUSED_SamusTilesAnimation_AnimationDefinitions_92E4E4:
 ; DC: Unused
     db $00,$11,$01,$06, $0B,$04,$00,$00, $0B,$03,$00,$00                 ;92E4E4;
 
+%anchor($92E4F0)
 UNUSED_SamusTilesAnimation_AnimationDefinitions_92E4F0:
 ; DD: Unused
     db $0B,$05,$00,$00, $0B,$06,$00,$00, $00,$10,$01,$06                 ;92E4F0;
 
+%anchor($92E4FC)
 UNUSED_SamusTilesAnimation_AnimationDefinitions_92E4FC:
 ; DE: Unused
     db $0B,$03,$00,$00, $0B,$04,$00,$00, $00,$11,$01,$06                 ;92E4FC;
 
+%anchor($92E508)
 SamusTilesAnimation_AnimationDefinitions_E508:
 ; 1D: Facing right - morph ball - no springball - on ground
 ; 31: Facing right - morph ball - no springball - in air
@@ -12243,6 +13334,7 @@ SamusTilesAnimation_AnimationDefinitions_E508:
     db $0A,$02,$00,$00, $0A,$06,$00,$00, $0A,$03,$00,$00, $0A,$07,$00,$00 ;92E518;
     db $00,$00,$00,$00, $0B,$01,$00,$00                                  ;92E528;
 
+%anchor($92E530)
 SamusTilesAnimation_AnimationDefinitions_E530:
 ; 41: Facing left  - morph ball - no springball - on ground
 ; C5: Unused
@@ -12251,18 +13343,21 @@ SamusTilesAnimation_AnimationDefinitions_E530:
     db $0A,$05,$00,$00, $0A,$01,$00,$00, $0A,$04,$00,$00, $0A,$00,$00,$00 ;92E540;
     db $00,$00,$00,$00, $0B,$01,$00,$00                                  ;92E550;
 
+%anchor($92E558)
 SamusTilesAnimation_AnimationDefinitions_E558:
 ; 1E: Moving right - morph ball - no springball - on ground
     db $0A,$00,$00,$00, $0A,$04,$00,$00, $0A,$01,$00,$00, $0A,$05,$00,$00 ;92E558;
     db $0A,$02,$00,$00, $0A,$06,$00,$00, $0A,$03,$00,$00, $0A,$07,$00,$00 ;92E568;
     db $00,$00,$00,$00, $0B,$01,$00,$00                                  ;92E578;
 
+%anchor($92E580)
 SamusTilesAnimation_AnimationDefinitions_E580:
 ; 1F: Moving left  - morph ball - no springball - on ground
     db $0A,$07,$00,$00, $0A,$03,$00,$00, $0A,$06,$00,$00, $0A,$02,$00,$00 ;92E580;
     db $0A,$05,$00,$00, $0A,$01,$00,$00, $0A,$04,$00,$00, $0A,$00,$00,$00 ;92E590;
     db $00,$00,$00,$00, $0B,$01,$00,$00                                  ;92E5A0;
 
+%anchor($92E5A8)
 SamusTilesAnimation_AnimationDefinitions_E5A8:
 ; 79: Facing right - morph ball - spring ball - on ground
 ; 7B: Moving right - morph ball - spring ball - on ground
@@ -12272,6 +13367,7 @@ SamusTilesAnimation_AnimationDefinitions_E5A8:
     db $0A,$02,$00,$00, $0A,$06,$00,$00, $0A,$03,$00,$00, $0A,$07,$00,$00 ;92E5B8;
     db $00,$00,$00,$00, $0B,$01,$00,$00                                  ;92E5C8;
 
+%anchor($92E5D0)
 SamusTilesAnimation_AnimationDefinitions_E5D0:
 ; 7A: Facing left  - morph ball - spring ball - on ground
 ; 7C: Moving left  - morph ball - spring ball - on ground
@@ -12281,6 +13377,7 @@ SamusTilesAnimation_AnimationDefinitions_E5D0:
     db $0A,$05,$00,$00, $0A,$01,$00,$00, $0A,$04,$00,$00, $0A,$00,$00,$00 ;92E5E0;
     db $00,$00,$00,$00, $0B,$01,$00,$00                                  ;92E5F0;
 
+%anchor($92E5F8)
 SamusTilesAnimation_AnimationDefinitions_E5F8:
 ; 19: Facing right - spin jump
 ; 20: Unused
@@ -12297,24 +13394,28 @@ SamusTilesAnimation_AnimationDefinitions_E5F8:
     db $0A,$0B,$00,$00, $0A,$0C,$00,$00, $0A,$0D,$00,$00, $0A,$0E,$00,$00 ;92E608;
     db $0A,$0F,$00,$00, $00,$00,$00,$00, $00,$00,$00,$00, $01,$1C,$00,$1E ;92E618;
 
+%anchor($92E628)
 SamusTilesAnimation_AnimationDefinitions_E628:
 ; 1A: Facing left  - spin jump
     db $02,$05,$01,$1A, $0A,$08,$00,$00, $0A,$09,$00,$00, $0A,$0A,$00,$00 ;92E628;
     db $0A,$0B,$00,$00, $0A,$0C,$00,$00, $0A,$0D,$00,$00, $0A,$0E,$00,$00 ;92E638;
     db $0A,$0F,$00,$00, $00,$00,$00,$00, $00,$00,$00,$00, $01,$1D,$00,$1F ;92E648;
 
+%anchor($92E658)
 SamusTilesAnimation_AnimationDefinitions_E658:
 ; 1B: Facing right - space jump
     db $02,$04,$01,$19, $0A,$14,$09,$00, $0A,$14,$09,$01, $0A,$14,$09,$02 ;92E658;
     db $0A,$14,$09,$03, $0A,$14,$09,$04, $0A,$14,$09,$05, $0A,$14,$09,$06 ;92E668;
     db $0A,$14,$09,$07, $00,$00,$00,$00, $00,$00,$00,$00, $01,$1C,$00,$1E ;92E678;
 
+%anchor($92E688)
 SamusTilesAnimation_AnimationDefinitions_E688:
 ; 1C: Facing left  - space jump
     db $02,$05,$01,$1A, $0A,$14,$09,$00, $0A,$14,$09,$01, $0A,$14,$09,$02 ;92E688;
     db $0A,$14,$09,$03, $0A,$14,$09,$04, $0A,$14,$09,$05, $0A,$14,$09,$06 ;92E698;
     db $0A,$14,$09,$07, $00,$00,$00,$00, $00,$00,$00,$00, $01,$1D,$00,$1F ;92E6A8;
 
+%anchor($92E6B8)
 SamusTilesAnimation_AnimationDefinitions_E6B8:
 ; 81: Facing right - screw attack
     db $02,$04,$01,$19, $0A,$10,$09,$00, $0A,$10,$09,$01, $0A,$10,$09,$02 ;92E6B8;
@@ -12325,6 +13426,7 @@ SamusTilesAnimation_AnimationDefinitions_E6B8:
     db $0A,$13,$09,$03, $0A,$13,$09,$04, $0A,$14,$09,$05, $0A,$14,$09,$06 ;92E708;
     db $0A,$14,$09,$07, $00,$00,$00,$00, $00,$00,$00,$00, $01,$1C,$00,$1E ;92E718;
 
+%anchor($92E728)
 SamusTilesAnimation_AnimationDefinitions_E728:
 ; 82: Facing left  - screw attack
     db $02,$05,$01,$1A, $0A,$10,$09,$00, $0A,$10,$09,$01, $0A,$10,$09,$02 ;92E728;
@@ -12335,51 +13437,60 @@ SamusTilesAnimation_AnimationDefinitions_E728:
     db $0A,$13,$09,$03, $0A,$13,$09,$04, $0A,$14,$09,$05, $0A,$14,$09,$06 ;92E778;
     db $0A,$14,$09,$07, $00,$00,$00,$00, $00,$00,$00,$00, $01,$1D,$00,$1F ;92E788;
 
+%anchor($92E798)
 SamusTilesAnimation_AnimationDefinitions_E798:
 ; 25: Facing right - turning - standing
 ; BF: Facing right - moonwalking - turn/jump left
 ; C6: Unused
     db $01,$07,$00,$16, $01,$0A,$01,$01, $01,$06,$00,$15                 ;92E798;
 
+%anchor($92E7A4)
 SamusTilesAnimation_AnimationDefinitions_E7A4:
 ; 26: Facing left  - turning - standing
 ; C0: Facing left  - moonwalking - turn/jump right
     db $01,$06,$00,$15, $01,$0A,$01,$01, $01,$07,$00,$16                 ;92E7A4;
 
+%anchor($92E7B0)
 SamusTilesAnimation_AnimationDefinitions_E7B0:
 ; 8B: Facing right - turning - standing - aiming up
 ; 9C: Facing right - turning - standing - aiming up-right
 ; C1: Facing right - moonwalking - turn/jump left  - aiming up-right
     db $01,$09,$00,$16, $01,$02,$01,$01, $01,$08,$00,$15                 ;92E7B0;
 
+%anchor($92E7BC)
 SamusTilesAnimation_AnimationDefinitions_E7BC:
 ; 8C: Facing left  - turning - standing - aiming up
 ; 9D: Facing left  - turning - standing - aiming up-left
 ; C2: Facing left  - moonwalking - turn/jump right - aiming up-left
     db $01,$08,$00,$15, $01,$02,$01,$01, $01,$09,$00,$16                 ;92E7BC;
 
+%anchor($92E7C8)
 SamusTilesAnimation_AnimationDefinitions_E7C8:
 ; 8D: Facing right - turning - standing - aiming down-right
 ; C3: Facing right - moonwalking - turn/jump left  - aiming down-right
     db $01,$19,$00,$16, $01,$03,$01,$01, $01,$18,$00,$15                 ;92E7C8;
 
+%anchor($92E7D4)
 SamusTilesAnimation_AnimationDefinitions_E7D4:
 ; 8E: Facing left  - turning - standing - aiming down-left
 ; C4: Facing left  - moonwalking - turn/jump right - aiming down-left
     db $01,$18,$00,$15, $01,$03,$01,$01, $01,$19,$00,$16                 ;92E7D4;
 
+%anchor($92E7E0)
 SamusTilesAnimation_AnimationDefinitions_E7E0:
 ; 2F: Facing right - turning - jumping
 ; 43: Facing right - turning - crouching
 ; 87: Facing right - turning - falling
     db $01,$07,$00,$18, $01,$0A,$01,$02, $01,$06,$00,$17                 ;92E7E0;
 
+%anchor($92E7EC)
 SamusTilesAnimation_AnimationDefinitions_E7EC:
 ; 30: Facing left  - turning - jumping
 ; 44: Facing left  - turning - crouching
 ; 88: Facing left  - turning - falling
     db $01,$06,$00,$17, $01,$0A,$01,$02, $01,$07,$00,$18                 ;92E7EC;
 
+%anchor($92E7F8)
 SamusTilesAnimation_AnimationDefinitions_E7F8:
 ; 8F: Facing right - turning - in air - aiming up
 ; 93: Facing right - turning - falling - aiming up
@@ -12389,6 +13500,7 @@ SamusTilesAnimation_AnimationDefinitions_E7F8:
 ; A2: Facing right - turning - crouching - aiming up-right
     db $01,$09,$00,$18, $01,$02,$01,$02, $01,$08,$00,$17                 ;92E7F8;
 
+%anchor($92E804)
 SamusTilesAnimation_AnimationDefinitions_E804:
 ; 90: Facing left  - turning - in air - aiming up
 ; 94: Facing left  - turning - falling - aiming up
@@ -12398,84 +13510,103 @@ SamusTilesAnimation_AnimationDefinitions_E804:
 ; A3: Facing left  - turning - crouching - aiming up-left
     db $01,$08,$00,$17, $01,$02,$01,$02, $01,$09,$00,$18                 ;92E804;
 
+%anchor($92E810)
 SamusTilesAnimation_AnimationDefinitions_E810:
 ; 91: Facing right - turning - in air - aiming down/down-right
 ; 95: Facing right - turning - falling - aiming down/down-right
 ; 99: Facing right - turning - crouching - aiming down/down-right
     db $01,$19,$00,$18, $01,$03,$01,$02, $01,$18,$00,$17                 ;92E810;
 
+%anchor($92E81C)
 SamusTilesAnimation_AnimationDefinitions_E81C:
 ; 92: Facing left  - turning - in air - aiming down/down-left
 ; 96: Facing left  - turning - falling - aiming down/down-left
 ; 9A: Facing left  - turning - crouching - aiming down/down-left
     db $01,$18,$00,$17, $01,$03,$01,$02, $01,$19,$00,$18                 ;92E81C;
 
+%anchor($92E828)
 SamusTilesAnimation_AnimationDefinitions_E828:
 ; EC: Facing right - grabbed by Draygon - not moving - not aiming
     db $02,$04,$01,$1B                                                   ;92E828;
 
+%anchor($92E82C)
 SamusTilesAnimation_AnimationDefinitions_E82C:
 ; ED: Facing right - grabbed by Draygon - not moving - aiming up-right
     db $00,$1A,$01,$1B                                                   ;92E82C;
 
+%anchor($92E830)
 SamusTilesAnimation_AnimationDefinitions_E830:
 ; EE: Facing right - grabbed by Draygon - firing
     db $00,$10,$01,$1B                                                   ;92E830;
 
+%anchor($92E834)
 SamusTilesAnimation_AnimationDefinitions_E834:
 ; EF: Facing right - grabbed by Draygon - not moving - aiming down-right
     db $00,$0C,$01,$1B                                                   ;92E834;
 
+%anchor($92E838)
 SamusTilesAnimation_AnimationDefinitions_E838:
 ; BA: Facing left  - grabbed by Draygon - not moving - not aiming
     db $02,$05,$01,$1C                                                   ;92E838;
 
+%anchor($92E83C)
 SamusTilesAnimation_AnimationDefinitions_E83C:
 ; BB: Facing left  - grabbed by Draygon - not moving - aiming up-left
     db $00,$1B,$01,$1C                                                   ;92E83C;
 
+%anchor($92E840)
 SamusTilesAnimation_AnimationDefinitions_E840:
 ; BC: Facing left  - grabbed by Draygon - firing
     db $00,$11,$01,$1C                                                   ;92E840;
 
+%anchor($92E844)
 SamusTilesAnimation_AnimationDefinitions_E844:
 ; BD: Facing left  - grabbed by Draygon - not moving - aiming down-left
     db $00,$0D,$01,$1C                                                   ;92E844;
 
+%anchor($92E848)
 SamusTilesAnimation_AnimationDefinitions_E848:
 ; F0: Facing right - grabbed by Draygon - moving
     db $00,$01,$01,$0C, $00,$02,$01,$1B, $00,$00,$01,$19, $00,$04,$01,$0C ;92E848;
     db $00,$05,$01,$0E, $00,$00,$01,$08                                  ;92E858;
 
+%anchor($92E860)
 SamusTilesAnimation_AnimationDefinitions_E860:
 ; BE: Facing left  - grabbed by Draygon - moving
     db $00,$07,$01,$0D, $00,$08,$01,$1C, $00,$06,$01,$1A, $00,$0A,$01,$0D ;92E860;
     db $00,$0B,$01,$0F, $00,$06,$01,$09                                  ;92E870;
 
+%anchor($92E878)
 SamusTilesAnimation_AnimationDefinitions_E878:
 ; CB: Facing right - shinespark - vertical
     db $0C,$00,$00,$00                                                   ;92E878;
 
+%anchor($92E87C)
 SamusTilesAnimation_AnimationDefinitions_E87C:
 ; CC: Facing left  - shinespark - vertical
     db $0C,$01,$00,$00                                                   ;92E87C;
 
+%anchor($92E880)
 SamusTilesAnimation_AnimationDefinitions_E880:
 ; C9: Facing right - shinespark - horizontal
     db $01,$14,$00,$1B                                                   ;92E880;
 
+%anchor($92E884)
 SamusTilesAnimation_AnimationDefinitions_E884:
 ; CA: Facing left  - shinespark - horizontal
     db $01,$15,$00,$1C                                                   ;92E884;
 
+%anchor($92E888)
 SamusTilesAnimation_AnimationDefinitions_E888:
 ; CD: Facing right - shinespark - diagonal
     db $01,$14,$00,$1B                                                   ;92E888;
 
+%anchor($92E88C)
 SamusTilesAnimation_AnimationDefinitions_E88C:
 ; CE: Facing left  - shinespark - diagonal
     db $01,$15,$00,$1C                                                   ;92E88C;
 
+%anchor($92E890)
 SamusTilesAnimation_AnimationDefinitions_E890:
 ; D3: Facing right - crystal flash
     db $0B,$05,$07,$00, $0B,$06,$07,$01, $0C,$05,$07,$02, $0B,$06,$07,$02 ;92E890;
@@ -12483,6 +13614,7 @@ SamusTilesAnimation_AnimationDefinitions_E890:
     db $0C,$07,$07,$02, $0C,$06,$07,$02, $00,$00,$00,$00, $00,$00,$00,$00 ;92E8B0;
     db $0B,$06,$07,$01, $0B,$06,$07,$00, $00,$10,$01,$06                 ;92E8C0;
 
+%anchor($92E8CC)
 SamusTilesAnimation_AnimationDefinitions_E8CC:
 ; D4: Facing left  - crystal flash
     db $0B,$03,$07,$00, $0B,$04,$07,$01, $0C,$02,$07,$02, $0B,$04,$07,$02 ;92E8CC;
@@ -12490,16 +13622,19 @@ SamusTilesAnimation_AnimationDefinitions_E8CC:
     db $0C,$04,$07,$02, $0C,$03,$07,$02, $00,$00,$00,$00, $00,$00,$00,$00 ;92E8EC;
     db $0B,$04,$07,$01, $0B,$04,$07,$00, $00,$11,$01,$07                 ;92E8FC;
 
+%anchor($92E908)
 SamusTilesAnimation_AnimationDefinitions_E908:
 ; D7: Facing right - crystal flash ending
     db $0A,$00,$01,$06, $0B,$05,$01,$06, $0B,$06,$01,$06, $00,$10,$01,$06 ;92E908;
     db $00,$1D,$01,$0C, $00,$1D,$01,$1B                                  ;92E918;
 
+%anchor($92E920)
 SamusTilesAnimation_AnimationDefinitions_E920:
 ; D8: Facing left  - crystal flash ending
     db $0A,$1F,$01,$06, $0B,$03,$01,$06, $0B,$04,$01,$06, $00,$11,$01,$07 ;92E920;
     db $00,$1C,$01,$0D, $00,$1C,$01,$1C                                  ;92E930;
 
+%anchor($92E938)
 SamusTilesAnimation_AnimationDefinitions_E938:
 ; E8: Facing right - Samus drained - crouching
     db $0A,$00,$01,$06, $0B,$05,$01,$06, $0B,$06,$01,$06, $00,$1D,$01,$0C ;92E938;
@@ -12507,6 +13642,7 @@ SamusTilesAnimation_AnimationDefinitions_E938:
     db $07,$03,$01,$1F, $07,$04,$01,$1F, $07,$05,$01,$1F, $07,$04,$01,$1F ;92E958;
     db $00,$00,$00,$00, $00,$00,$00,$00, $00,$10,$01,$06                 ;92E968;
 
+%anchor($92E974)
 SamusTilesAnimation_AnimationDefinitions_E974:
 ; E9: Facing left  - Samus drained - crouching
     db $0B,$03,$01,$06, $0B,$04,$01,$06, $00,$1C,$01,$0D, $00,$1C,$01,$0D ;92E974;
@@ -12518,16 +13654,19 @@ SamusTilesAnimation_AnimationDefinitions_E974:
     db $00,$00,$00,$00, $00,$00,$00,$00, $07,$00,$01,$1E, $00,$00,$00,$00 ;92E9D4;
     db $00,$00,$00,$00, $07,$00,$01,$1E, $00,$00,$00,$00, $00,$00,$00,$00 ;92E9E4;
 
+%anchor($92E9F4)
 SamusTilesAnimation_AnimationDefinitions_E9F4:
 ; EA: Facing right - Samus drained - standing
     db $07,$09,$01,$1F, $07,$0A,$01,$1F, $07,$0B,$01,$1F, $07,$0A,$01,$1F ;92E9F4;
     db $00,$00,$00,$00, $00,$10,$01,$06                                  ;92EA04;
 
+%anchor($92EA0C)
 SamusTilesAnimation_AnimationDefinitions_EA0C:
 ; EB: Facing left  - Samus drained - standing
     db $07,$06,$01,$1E, $07,$07,$01,$1E, $07,$08,$01,$1E, $07,$07,$01,$1E ;92EA0C;
     db $00,$00,$00,$00, $00,$11,$01,$07                                  ;92EA1C;
 
+%anchor($92EA24)
 SamusTilesAnimation_AnimationDefinitions_EA24:
 ; 00: Facing forward - power suit
     db $01,$11,$00,$0C, $00,$00,$00,$00, $08,$02,$08,$00, $08,$00,$08,$00 ;92EA24;
@@ -12555,6 +13694,7 @@ SamusTilesAnimation_AnimationDefinitions_EA24:
     db $08,$09,$08,$00, $08,$00,$08,$00, $08,$07,$08,$00, $08,$00,$08,$00 ;92EB84;
     db $08,$08,$08,$00, $08,$00,$08,$00, $08,$09,$08,$00, $08,$00,$08,$00 ;92EB94;
 
+%anchor($92EBA4)
 SamusTilesAnimation_AnimationDefinitions_EBA4:
 ; 9B: Facing forward - varia/gravity suit
     db $01,$05,$00,$0D, $00,$00,$00,$00, $08,$02,$08,$01, $08,$00,$08,$01 ;92EBA4;
@@ -12582,6 +13722,7 @@ SamusTilesAnimation_AnimationDefinitions_EBA4:
     db $08,$09,$08,$01, $08,$00,$08,$01, $08,$07,$08,$01, $08,$00,$08,$01 ;92ED04;
     db $08,$08,$08,$01, $08,$00,$08,$01, $08,$09,$08,$01, $08,$00,$08,$01 ;92ED14;
 
+%anchor($92ED24)
 PlaySamusFanfare:
     PHP                                                                  ;92ED24;
     PHB                                                                  ;92ED25;
@@ -12636,6 +13777,7 @@ PlaySamusFanfare:
     RTL                                                                  ;92ED79;
 
 
+%anchor($92ED7A)
 Debug_SamusTileViewer:
     PHP                                                                  ;92ED7A;
     PHB                                                                  ;92ED7B;
@@ -12668,6 +13810,7 @@ Debug_SamusTileViewer:
     RTL                                                                  ;92EDBD;
 
 
+%anchor($92EDBE)
 DrawSamusSuitExploding:
     PHP                                                                  ;92EDBE;
     PHB                                                                  ;92EDBF;
@@ -12702,5 +13845,6 @@ DrawSamusSuitExploding:
     RTL                                                                  ;92EDF3;
 
 
+%anchor($92EDF4)
 Freespace_Bank92_EDF4:                                                   ;92EDF4;
 ; $120C bytes

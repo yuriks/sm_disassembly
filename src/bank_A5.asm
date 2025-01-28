@@ -2,111 +2,134 @@
 org $A58000
 
 
+%anchor($A58000)
 CommonA5_GrappleAI_NoInteraction:
     JSL.L GrappleAI_SwitchEnemyAIToMainAI                                ;A58000;
     RTL                                                                  ;A58004;
 
 
+%anchor($A58005)
 CommonA5_GrappleAI_SamusLatchesOn:
     JSL.L GrappleAI_SamusLatchesOnWithGrapple                            ;A58005;
     RTL                                                                  ;A58009;
 
 
+%anchor($A5800A)
 CommonA5_GrappleAI_KillEnemy:
     JSL.L GrappleAI_EnemyGrappleDeath                                    ;A5800A;
     RTL                                                                  ;A5800E;
 
 
+%anchor($A5800F)
 CommonA5_GrappleAI_CancelGrappleBeam:
     JSL.L GrappleAI_SwitchToFrozenAI                                     ;A5800F;
     RTL                                                                  ;A58013;
 
 
+%anchor($A58014)
 CommonA5_GrappleAI_SamusLatchesOn_NoInvincibility:
     JSL.L GrappleAI_SamusLatchesOnWithGrapple_NoInvincibility            ;A58014;
     RTL                                                                  ;A58018;
 
 
+%anchor($A58019)
 UNUSED_CommonA5_GrappleAI_SamusLatchesOn_ParalyzeEnemy_A58019:
     JSL.L GrappleAI_SamusLatchesOnWithGrapple_ParalyzeEnemy              ;A58019;
     RTL                                                                  ;A5801D;
 
 
+%anchor($A5801E)
 CommonA5_GrappleAI_HurtSamus:
     JSL.L GrappleAI_SwitchToFrozenAI_duplicate                           ;A5801E;
     RTL                                                                  ;A58022;
 
 
+%anchor($A58023)
 CommonA5_NormalEnemyTouchAI:
     JSL.L NormalEnemyTouchAI                                             ;A58023;
     RTL                                                                  ;A58027;
 
 
+%anchor($A58028)
 CommonA5_NormalTouchAI_NoDeathCheck:
     JSL.L NormalEnemyTouchAI_NoDeathCheck_External                       ;A58028;
     RTL                                                                  ;A5802C;
 
 
+%anchor($A5802D)
 CommonA5_NormalEnemyShotAI:
     JSL.L NormalEnemyShotAI                                              ;A5802D;
     RTL                                                                  ;A58031;
 
 
+%anchor($A58032)
 CommonA5_NormalEnemyShotAI_NoDeathCheck_NoEnemyShotGraphic:
     JSL.L NormalEnemyShotAI_NoDeathCheck_NoEnemyShotGraphic_External     ;A58032;
     RTL                                                                  ;A58036;
 
 
+%anchor($A58037)
 CommonA5_NormalEnemyPowerBombAI:
     JSL.L NormalEnemyPowerBombAI                                         ;A58037;
     RTL                                                                  ;A5803B;
 
 
+%anchor($A5803C)
 CommonA5_NormalEnemyPowerBombAI_NoDeathCheck:
     JSL.L NormalEnemyPowerBombAI_NoDeathCheck_External                   ;A5803C;
     RTL                                                                  ;A58040;
 
 
+%anchor($A58041)
 CommonA5_NormalEnemyFrozenAI:
     JSL.L NormalEnemyFrozenAI                                            ;A58041;
     RTL                                                                  ;A58045;
 
 
+%anchor($A58046)
 CommonA5_CreateADudShot:
     JSL.L CreateADudShot                                                 ;A58046;
     RTL                                                                  ;A5804A;
 
 
+%anchor($A5804B)
 RTS_A5804B:
     RTS                                                                  ;A5804B;
 
 
+%anchor($A5804C)
 RTL_A5804C:
     RTL                                                                  ;A5804C;
 
 
+%anchor($A5804D)
 Spritemap_CommonA5_Nothing:
     dw $0000                                                             ;A5804D;
 
+%anchor($A5804F)
 ExtendedSpritemap_CommonA5_Nothing:
     dw $0001                                                             ;A5804F;
     dw $0000,$0000                                                 
     dw Spritemap_CommonA5_Nothing                                        ;A58055;
     dw Hitbox_CommonA5_Nothing                                           ;A58057;
 
+%anchor($A58059)
 Hitbox_CommonA5_Nothing:
     dw $0001                                                             ;A58059;
     dw $0000,$0000,$0000,$0000                                     
     dw CommonA5_NormalEnemyTouchAI                                       ;A58063;
     dw CommonA5_NormalEnemyShotAI                                        ;A58065;
 
+%anchor($A58067)
 InstList_CommonA5_DeleteEnemy:
     dw Instruction_CommonA5_DeleteEnemy                                  ;A58067;
 
+%anchor($A58069)
 NOPNOP_A58069:
     NOP                                                                  ;A58069;
     NOP                                                                  ;A5806A;
 
+%anchor($A5806B)
 Instruction_CommonA5_Enemy0FB2_InY:
     LDA.W $0000,Y                                                        ;A5806B;
     STA.W $0FB2,X                                                        ;A5806E;
@@ -115,16 +138,19 @@ Instruction_CommonA5_Enemy0FB2_InY:
     RTL                                                                  ;A58073;
 
 
+%anchor($A58074)
 Instruction_CommonA5_SetEnemy0FB2ToRTS:
     LDA.W #RTS_A5807B                                                    ;A58074;
     STA.W $0FB2,X                                                        ;A58077;
     RTL                                                                  ;A5807A;
 
 
+%anchor($A5807B)
 RTS_A5807B:
     RTS                                                                  ;A5807B;
 
 
+%anchor($A5807C)
 Instruction_CommonA5_DeleteEnemy:
     LDA.W $0F86,X                                                        ;A5807C;
     ORA.W #$0200                                                         ;A5807F;
@@ -134,6 +160,7 @@ Instruction_CommonA5_DeleteEnemy:
     RTL                                                                  ;A58089;
 
 
+%anchor($A5808A)
 Instruction_CommonA5_CallFunctionInY:
     LDA.W $0000,Y                                                        ;A5808A;
     STA.B $12                                                            ;A5808D;
@@ -151,6 +178,7 @@ Instruction_CommonA5_CallFunctionInY:
     RTL                                                                  ;A5809B;
 
 
+%anchor($A5809C)
 Instruction_CommonA5_CallFunctionInY_WithA:
     LDA.W $0000,Y                                                        ;A5809C;
     STA.B $12                                                            ;A5809F;
@@ -172,6 +200,7 @@ Instruction_CommonA5_CallFunctionInY_WithA:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A580B5)
 UNUSED_Instruction_CommonA5_CallExternalFunctionInY_A580B5:
     LDA.W $0000,Y                                                        ;A580B5;
     STA.B $12                                                            ;A580B8;
@@ -192,6 +221,7 @@ UNUSED_Instruction_CommonA5_CallExternalFunctionInY_A580B5:
     JML.W [$0012]                                                        ;A580CB;
 
 
+%anchor($A580CE)
 UNUSED_Inst_CommonA5_CallExternalFunctionInY_WithA_A580CE:
     LDA.W $0000,Y                                                        ;A580CE;
     STA.B $12                                                            ;A580D1;
@@ -215,12 +245,14 @@ UNUSED_Inst_CommonA5_CallExternalFunctionInY_WithA_A580CE:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($A580ED)
 Instruction_CommonA5_GotoY:
     LDA.W $0000,Y                                                        ;A580ED;
     TAY                                                                  ;A580F0;
     RTL                                                                  ;A580F1;
 
 
+%anchor($A580F2)
 Instruction_CommonA5_GotoY_PlusY:
     STY.B $12                                                            ;A580F2;
     DEY                                                                  ;A580F4;
@@ -240,6 +272,7 @@ Instruction_CommonA5_GotoY_PlusY:
     RTL                                                                  ;A58107;
 
 
+%anchor($A58108)
 Instruction_CommonA5_DecrementTimer_GotoYIfNonZero:
     DEC.W $0F90,X                                                        ;A58108;
     BNE Instruction_CommonA5_GotoY                                       ;A5810B;
@@ -248,6 +281,7 @@ Instruction_CommonA5_DecrementTimer_GotoYIfNonZero:
     RTL                                                                  ;A5810F;
 
 
+%anchor($A58110)
 Instruction_CommonA5_DecrementTimer_GotoYIfNonZero_duplicate:
     DEC.W $0F90,X                                                        ;A58110;
     BNE Instruction_CommonA5_GotoY                                       ;A58113;
@@ -256,6 +290,7 @@ Instruction_CommonA5_DecrementTimer_GotoYIfNonZero_duplicate:
     RTL                                                                  ;A58117;
 
 
+%anchor($A58118)
 Instruction_CommonA5_DecrementTimer_GotoY_PlusY_IfNonZero:
     SEP #$20                                                             ;A58118;
     DEC.W $0F90,X                                                        ;A5811A;
@@ -265,6 +300,7 @@ Instruction_CommonA5_DecrementTimer_GotoY_PlusY_IfNonZero:
     RTL                                                                  ;A58122;
 
 
+%anchor($A58123)
 Instruction_CommonA5_TimerInY:
     LDA.W $0000,Y                                                        ;A58123;
     STA.W $0F90,X                                                        ;A58126;
@@ -273,12 +309,14 @@ Instruction_CommonA5_TimerInY:
     RTL                                                                  ;A5812B;
 
 
+%anchor($A5812C)
 Instruction_CommonA5_SkipNextInstruction:
     INY                                                                  ;A5812C;
     INY                                                                  ;A5812D;
     RTL                                                                  ;A5812E;
 
 
+%anchor($A5812F)
 Instruction_CommonA5_Sleep:
     DEY                                                                  ;A5812F;
     DEY                                                                  ;A58130;
@@ -289,6 +327,7 @@ Instruction_CommonA5_Sleep:
     RTL                                                                  ;A58139;
 
 
+%anchor($A5813A)
 Instruction_CommonA5_WaitYFrames:
     LDA.W $0000,Y                                                        ;A5813A;
     STA.W $0F94,X                                                        ;A5813D;
@@ -301,6 +340,7 @@ Instruction_CommonA5_WaitYFrames:
     RTL                                                                  ;A5814A;
 
 
+%anchor($A5814B)
 Instruction_CommonA5_TransferYBytesInYToVRAM:
     PHX                                                                  ;A5814B;
     LDX.W $0330                                                          ;A5814C;
@@ -324,6 +364,7 @@ Instruction_CommonA5_TransferYBytesInYToVRAM:
     RTL                                                                  ;A58172;
 
 
+%anchor($A58173)
 Instruction_CommonA5_EnableOffScreenProcessing:
     LDA.W $0F86,X                                                        ;A58173;
     ORA.W #$0800                                                         ;A58176;
@@ -331,6 +372,7 @@ Instruction_CommonA5_EnableOffScreenProcessing:
     RTL                                                                  ;A5817C;
 
 
+%anchor($A5817D)
 Instruction_CommonA5_DisableOffScreenProcessing:
     LDA.W $0F86,X                                                        ;A5817D;
     AND.W #$F7FF                                                         ;A58180;
@@ -343,6 +385,7 @@ Instruction_CommonA5_DisableOffScreenProcessing:
 ;       |     |      _________ Negated speed
 ;       |     |     |      ___ Negated subspeed
 ;       |     |     |     |
+%anchor($A58187)
 CommonA5EnemySpeeds_LinearlyIncreasing:
   .speed:
     dw $0000                                                             ;A58187;
@@ -423,6 +466,7 @@ CommonA5EnemySpeeds_LinearlyIncreasing:
 ;       |     |      _________ Negated subspeed
 ;       |     |     |      ___ Negated speed
 ;       |     |     |     |
+%anchor($A5838F)
 CommonA5EnemySpeeds_QuadraticallyIncreasing:
 ; I.e. gravity
 ; Used by e.g. Botwoon when dying and falling to the floor
@@ -530,6 +574,7 @@ CommonA5EnemySpeeds_QuadraticallyIncreasing:
     dw $74F9,$0011,$8B07,$FFEE
 
 
+%anchor($A58687)
 InitAI_DraygonBody:
     LDX.W #$0030                                                         ;A58687;
 
@@ -579,6 +624,7 @@ InitAI_DraygonBody:
     RTL                                                                  ;A586FB;
 
 
+%anchor($A586FC)
 MainAI_DraygonBody:
     LDX.W $0E54                                                          ;A586FC;
     JSR.W ($0FA8,X)                                                      ;A586FF;
@@ -593,6 +639,7 @@ MainAI_DraygonBody:
     RTL                                                                  ;A5871A;
 
 
+%anchor($A5871B)
 Function_DraygonBody_FightIntro_InitialDelay:
     JSR.W HandleFiringWallTurret                                         ;A5871B;
     LDX.W $0E54                                                          ;A5871E; >.<
@@ -641,6 +688,7 @@ Function_DraygonBody_FightIntro_InitialDelay:
     RTS                                                                  ;A5878A;
 
 
+%anchor($A5878B)
 Function_DraygonBody_FightIntro_Dance:
     JSR.W HandleFiringWallTurret                                         ;A5878B;
     LDX.W $0E54                                                          ;A5878E; >.<
@@ -659,6 +707,7 @@ Function_DraygonBody_FightIntro_Dance:
     RTS                                                                  ;A587A9;
 
 
+%anchor($A587AA)
 HandleFiringWallTurret:
     LDA.W $05B6                                                          ;A587AA;
     AND.W #$003F                                                         ;A587AD;
@@ -696,6 +745,7 @@ HandleFiringWallTurret:
     dw $01BC,$0188
 
 
+%anchor($A587F4)
 Function_DraygonBody_SwoopRight_Setup:
     JSR.W HandleFiringWallTurret                                         ;A587F4;
     LDX.W $0E54                                                          ;A587F7; >.<
@@ -711,6 +761,7 @@ Function_DraygonBody_SwoopRight_Setup:
     RTS                                                                  ;A58816;
 
 
+%anchor($A58817)
 CalculateDraygonSwoopYPositions:
     LDA.W #$0180                                                         ;A58817;
     STA.W $0E28                                                          ;A5881A;
@@ -782,6 +833,7 @@ CalculateDraygonSwoopYPositions:
     RTS                                                                  ;A588B0;
 
 
+%anchor($A588B1)
 Function_DraygonBody_SwoopRight_Descending:
     JSR.W HandleFiringWallTurret                                         ;A588B1;
     JSR.W HandleShortDraygonBreathBubbles                                ;A588B4;
@@ -820,6 +872,7 @@ Function_DraygonBody_SwoopRight_Descending:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A58901)
 UNUSED_Draygon_FireGoop_A58901:
     LDA.W $05B6                                                          ;A58901;
     AND.W #$000F                                                         ;A58904;
@@ -840,6 +893,7 @@ UNUSED_Draygon_FireGoop_A58901:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($A58922)
 Function_DraygonBody_SwoopRight_Apex:
     JSR.W HandleFiringWallTurret                                         ;A58922;
     LDX.W $0E54                                                          ;A58925; >.<
@@ -863,6 +917,7 @@ Function_DraygonBody_SwoopRight_Apex:
     RTS                                                                  ;A58950;
 
 
+%anchor($A58951)
 Function_DraygonBody_SwoopRight_Ascending:
     JSR.W HandleFiringWallTurret                                         ;A58951;
     LDY.W $0E54                                                          ;A58954;
@@ -909,6 +964,7 @@ Function_DraygonBody_SwoopRight_Ascending:
     RTS                                                                  ;A589B2;
 
 
+%anchor($A589B3)
 Function_DraygonBody_SwoopLeft_Setup:
     JSR.W HandleFiringWallTurret                                         ;A589B3;
     LDX.W $0E54                                                          ;A589B6; >.<
@@ -941,6 +997,7 @@ Function_DraygonBody_SwoopLeft_Setup:
     RTS                                                                  ;A589FF;
 
 
+%anchor($A58A00)
 Function_DraygonBody_SwoopLeft_Descending:
     JSR.W HandleFiringWallTurret                                         ;A58A00;
     JSR.W HandleShortDraygonBreathBubbles                                ;A58A03;
@@ -978,6 +1035,7 @@ Function_DraygonBody_SwoopLeft_Descending:
     RTS                                                                  ;A58A4F;
 
 
+%anchor($A58A50)
 Function_DraygonBody_SwoopLeft_Apex:
     JSR.W HandleFiringWallTurret                                         ;A58A50;
     LDX.W $0E54                                                          ;A58A53; >.<
@@ -1012,6 +1070,7 @@ Function_DraygonBody_SwoopLeft_Apex:
     RTS                                                                  ;A58A8F;
 
 
+%anchor($A58A90)
 Function_DraygonBody_SwoopLeft_Ascending:
     JSR.W HandleFiringWallTurret                                         ;A58A90;
     JSR.W HandleShortDraygonBreathBubbles                                ;A58A93;
@@ -1065,6 +1124,7 @@ Function_DraygonBody_SwoopLeft_Ascending:
     RTS                                                                  ;A58B09;
 
 
+%anchor($A58B0A)
 Function_DraygonBody_GoopRight_Setup:
     JSR.W HandleFiringWallTurret                                         ;A58B0A;
     LDA.W #$FFB0                                                         ;A58B0D;
@@ -1092,6 +1152,7 @@ Function_DraygonBody_GoopRight_Setup:
     RTS                                                                  ;A58B51;
 
 
+%anchor($A58B52)
 Function_DraygonBody_GoopRight_MoveUntilSamusInRange:
     JSR.W HandleFiringWallTurret                                         ;A58B52;
     JSR.W HandleShortDraygonBreathBubbles                                ;A58B55;
@@ -1131,6 +1192,7 @@ Function_DraygonBody_GoopRight_MoveUntilSamusInRange:
     RTS                                                                  ;A58BAD;
 
 
+%anchor($A58BAE)
 Function_DraygonBody_GoopRight_FiringGoops:
     JSR.W HandleFiringWallTurret                                         ;A58BAE;
     LDA.W $0A66                                                          ;A58BB1;
@@ -1195,6 +1257,7 @@ Function_DraygonBody_GoopRight_FiringGoops:
     RTS                                                                  ;A58C32;
 
 
+%anchor($A58C33)
 Function_DraygonBody_GoopRight_MoveUntilOffScreen:
     JSR.W HandleShortDraygonBreathBubbles                                ;A58C33;
     LDA.W #$0020                                                         ;A58C36;
@@ -1236,6 +1299,7 @@ Function_DraygonBody_GoopRight_MoveUntilOffScreen:
     RTS                                                                  ;A58C8D;
 
 
+%anchor($A58C8E)
 Function_DraygonBody_GoopLeft_Setup:
     LDA.L $7E7804                                                        ;A58C8E;
     STA.W $0F7A                                                          ;A58C92;
@@ -1262,6 +1326,7 @@ Function_DraygonBody_GoopLeft_Setup:
     RTS                                                                  ;A58CD3;
 
 
+%anchor($A58CD4)
 Function_DraygonBody_GoopLeft_MoveUntilSamusInRange:
     JSR.W HandleFiringWallTurret                                         ;A58CD4;
     JSR.W HandleShortDraygonBreathBubbles                                ;A58CD7;
@@ -1301,6 +1366,7 @@ Function_DraygonBody_GoopLeft_MoveUntilSamusInRange:
     RTS                                                                  ;A58D2F;
 
 
+%anchor($A58D30)
 Function_DraygonBody_GoopLeft_FiringGoops:
     LDA.W $0A66                                                          ;A58D30;
     BNE .SamusGooped                                                     ;A58D33;
@@ -1364,6 +1430,7 @@ Function_DraygonBody_GoopLeft_FiringGoops:
     RTS                                                                  ;A58DB1;
 
 
+%anchor($A58DB2)
 Function_DraygonBody_GoopLeft_MoveUntilOffScreen:
     JSR.W HandleShortDraygonBreathBubbles                                ;A58DB2;
     LDA.W $0A66                                                          ;A58DB5;
@@ -1413,6 +1480,7 @@ Function_DraygonBody_GoopLeft_MoveUntilOffScreen:
     RTS                                                                  ;A58E18;
 
 
+%anchor($A58E19)
 Function_DraygonBody_ChaseSamus:
     JSR.W HandleFiringWallTurret                                         ;A58E19;
     LDA.W $0A66                                                          ;A58E1C;
@@ -1525,6 +1593,7 @@ Function_DraygonBody_ChaseSamus:
     RTS                                                                  ;A58F0F;
 
 
+%anchor($A58F10)
 Function_DraygonBody_RepelledByGrapple:
     LDA.W #GrappleBeamFunction_Dropped                                   ;A58F10;
     STA.W $0D32                                                          ;A58F13;
@@ -1533,10 +1602,12 @@ Function_DraygonBody_RepelledByGrapple:
     RTS                                                                  ;A58F1C;
 
 
+%anchor($A58F1D)
 RTS_A58F1D:
     RTS                                                                  ;A58F1D;
 
 
+%anchor($A58F1E)
 Function_DraygonBody_GrabbedSamus_MovingToTargetPosition:
     LDA.W $0A64                                                          ;A58F1E;
     BIT.W #$0001                                                         ;A58F21;
@@ -1623,6 +1694,7 @@ Function_DraygonBody_GrabbedSamus_MovingToTargetPosition:
     RTS                                                                  ;A58FD5;
 
 
+%anchor($A58FD6)
 Function_DraygonBody_GrabbedSamus_RisingSpiralMovement:
     LDA.W $0A64                                                          ;A58FD6;
     BIT.W #$0001                                                         ;A58FD9;
@@ -1731,6 +1803,7 @@ Function_DraygonBody_GrabbedSamus_RisingSpiralMovement:
     RTS                                                                  ;A590D3;
 
 
+%anchor($A590D4)
 Function_DraygonBody_GrabbedSamus_TailWhip:
     JSR.W MoveSamusWithDraygon                                           ;A590D4;
     LDA.L $7E7818                                                        ;A590D7;
@@ -1759,6 +1832,7 @@ Function_DraygonBody_GrabbedSamus_TailWhip:
     RTS                                                                  ;A59104;
 
 
+%anchor($A59105)
 Function_DraygonBody_GrabbedSamus_FinalSpanking_Start:
     JSR.W MoveSamusWithDraygon                                           ;A59105;
     LDY.W #InstList_DraygonTail_FacingLeft_FinalTailWhips_0              ;A59108;
@@ -1775,11 +1849,13 @@ Function_DraygonBody_GrabbedSamus_FinalSpanking_Start:
     RTS                                                                  ;A59123;
 
 
+%anchor($A59124)
 Function_DraygonBody_GrabbedSamus_FinalSpanking_Ongoing:
     JSR.W MoveSamusWithDraygon                                           ;A59124;
     RTS                                                                  ;A59127;
 
 
+%anchor($A59128)
 Function_DraygonBody_GrabbedSamus_FlailTail_FlyStraightUp:
     JSL.L ReleaseSamusFromDraygon_external                               ;A59128;
     STZ.W $0A64                                                          ;A5912C;
@@ -1800,6 +1876,7 @@ Function_DraygonBody_GrabbedSamus_FlailTail_FlyStraightUp:
     RTS                                                                  ;A59153;
 
 
+%anchor($A59154)
 Function_DraygonBody_GrabbedSamus_FlyStraightUp:
     JSR.W HandleFiringWallTurret                                         ;A59154;
     LDA.W $0F7E                                                          ;A59157;
@@ -1824,6 +1901,7 @@ Function_DraygonBody_GrabbedSamus_FlyStraightUp:
     RTS                                                                  ;A59184;
 
 
+%anchor($A59185)
 Function_DraygonBody_DeathSequence_DriftToDeathSpot:
     LDX.W $0E54                                                          ;A59185; >.<
     LDA.W $0FA4,X                                                        ;A59188;
@@ -1947,6 +2025,7 @@ Function_DraygonBody_DeathSequence_DriftToDeathSpot:
     RTS                                                                  ;A59293;
 
 
+%anchor($A59294)
 Function_DraygonBody_DeathSequence_WaitForEvirs:
     JSR.W HandleDyingDraygonSmoke                                        ;A59294;
     DEC.W $0FAA                                                          ;A59297;
@@ -1964,6 +2043,7 @@ Function_DraygonBody_DeathSequence_WaitForEvirs:
     RTS                                                                  ;A592AA;
 
 
+%anchor($A592AB)
 Function_DraygonBody_DeathSequence_BuriedByEvirs:
     JSR.W HandleDyingDraygonSmoke                                        ;A592AB;
     JSR.W HandleDeathSequenceEvirMovement                                ;A592AE;
@@ -1990,6 +2070,7 @@ Function_DraygonBody_DeathSequence_BuriedByEvirs:
     RTS                                                                  ;A592E9;
 
 
+%anchor($A592EA)
 HandleDyingDraygonSmoke:
     PHY                                                                  ;A592EA;
     PHX                                                                  ;A592EB;
@@ -2018,6 +2099,7 @@ HandleDyingDraygonSmoke:
     RTS                                                                  ;A5931B;
 
 
+%anchor($A5931C)
 HandleShortDraygonBreathBubbles:
     LDA.W $0FA4,X                                                        ;A5931C;
     AND.W #$007F                                                         ;A5931F;
@@ -2039,6 +2121,7 @@ HandleShortDraygonBreathBubbles:
     RTS                                                                  ;A59341;
 
 
+%anchor($A59342)
 EnemyGraphicsDrawnHook_Draygon_SetBG2XYScroll:
     LDA.W $0911                                                          ;A59342;
     SEC                                                                  ;A59345;
@@ -2059,6 +2142,7 @@ EnemyGraphicsDrawnHook_Draygon_SetBG2XYScroll:
     RTL                                                                  ;A59366;
 
 
+%anchor($A59367)
 Debug_DraygonController2InputHandling:
     LDX.W #$0000                                                         ;A59367;
     LDA.B $8D                                                            ;A5936A;
@@ -2125,6 +2209,7 @@ Debug_DraygonController2InputHandling:
     RTL                                                                  ;A593D9;
 
 
+%anchor($A593DA)
 Debug_MoveDraygonWithDpad_Slow:
     LDA.B $8D                                                            ;A593DA;
     BIT.W #$0200                                                         ;A593DC;
@@ -2171,6 +2256,7 @@ Debug_MoveDraygonWithDpad_Slow:
     RTL                                                                  ;A5942F;
 
 
+%anchor($A59430)
 Debug_MoveDraygonWithDpad_Fast:
     LDA.B $8D                                                            ;A59430;
     BIT.W #$0200                                                         ;A59432;
@@ -2232,6 +2318,7 @@ Debug_MoveDraygonWithDpad_Fast:
     RTL                                                                  ;A594A8;
 
 
+%anchor($A594A9)
 MoveSamusWithDraygon:
     LDY.W #$0008                                                         ;A594A9;
     LDA.L $7E8000,X                                                      ;A594AC;
@@ -2259,6 +2346,7 @@ MoveSamusWithDraygon:
     RTS                                                                  ;A594DC;
 
 
+%anchor($A594DD)
 Instruction_Draygon_SetInstList_Body_Eye_Tail_Arms:
     PHY                                                                  ;A594DD;
     LDA.W $0000,Y                                                        ;A594DE;
@@ -2283,6 +2371,7 @@ Instruction_Draygon_SetInstList_Body_Eye_Tail_Arms:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A5950D)
 Unused_DraygonInstListPointers_A5950D:
 ; Not an exhaustive list of pointers. Assuming they were used for some unknown debug purpose
     ; Draygon arms
@@ -2323,6 +2412,7 @@ Unused_DraygonInstListPointers_A5950D:
     dw $0000                                                             ;A5954B;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A5954D)
 HurtAI_Draygon:
     LDY.W #Palette_Draygon_BG12_5                                        ;A5954D;
     LDX.W $0E54                                                          ;A59550;
@@ -2407,11 +2497,13 @@ HurtAI_Draygon:
     RTL                                                                  ;A595E9;
 
 
+%anchor($A595EA)
 EnemyTouch_Draygon:
     JSL.L NormalEnemyTouchAI_NoDeathCheck_External                       ;A595EA;
     BRA DraygonReaction_Common                                           ;A595EE;
 
 
+%anchor($A595F0)
 EnemyShot_Draygon:
     LDA.L $7E781E                                                        ;A595F0;
     CLC                                                                  ;A595F4;
@@ -2424,11 +2516,13 @@ EnemyShot_Draygon:
     BRA DraygonReaction_Common                                           ;A59605;
 
 
+%anchor($A59607)
 PowerBombReaction_Draygon:
     JSL.L NormalEnemyPowerBombAI_NoDeathCheck_External                   ;A59607;
     BRA DraygonReaction_Common                                           ;A5960B; >.<
 
 
+%anchor($A5960D)
 DraygonReaction_Common:
     LDX.W $0E54                                                          ;A5960D;
     LDA.W $0F8C,X                                                        ;A59610;
@@ -2499,6 +2593,7 @@ DraygonReaction_Common:
     RTL                                                                  ;A596AE;
 
 
+%anchor($A596AF)
 DraygonHealthBasedPaletteTable:                                          ;A596AF;
 ; Colours 1..4
     dw $0319,$0254,$018F,$00CA ; Health >= 5250
@@ -2510,6 +2605,7 @@ DraygonHealthBasedPaletteTable:                                          ;A596AF
     dw $007E,$0077,$0050,$0028 ; Health >= 750
     dw $001F,$0017,$0010,$0008 ; Health < 750
 
+%anchor($A596EF)
 DraygonHealthBasedPaletteThresholds:                                     ;A596EF;
     dw $1482 ; 5250
     dw $1194 ; 4500
@@ -2521,6 +2617,7 @@ DraygonHealthBasedPaletteThresholds:                                     ;A596EF
     dw $0000 ; 0
     dw $FFFF ; Terminator
 
+%anchor($A59701)
 DraygonHealthBasedPaletteHandling:
     LDX.W #$0000                                                         ;A59701;
 
@@ -2558,6 +2655,7 @@ DraygonHealthBasedPaletteHandling:
     RTS                                                                  ;A59735;
 
 
+%anchor($A59736)
 Instruction_Draygon_FunctionInY:
     LDA.W $0000,Y                                                        ;A59736;
     STA.W $0FA8,X                                                        ;A59739;
@@ -2566,6 +2664,7 @@ Instruction_Draygon_FunctionInY:
     RTL                                                                  ;A5973E;
 
 
+%anchor($A5973F)
 Inst_Draygon_SpawnDyingDraygonSpriteObject_BigDustCloud:
     PHY                                                                  ;A5973F;
     PHX                                                                  ;A59740;
@@ -2579,6 +2678,7 @@ Inst_Draygon_SpawnDyingDraygonSpriteObject_BigDustCloud:
     RTL                                                                  ;A59751;
 
 
+%anchor($A59752)
 Inst_Draygon_SpawnDyingDraygonSpriteObject_SmallExplosion:
     PHY                                                                  ;A59752;
     PHX                                                                  ;A59753;
@@ -2592,6 +2692,7 @@ Inst_Draygon_SpawnDyingDraygonSpriteObject_SmallExplosion:
     RTL                                                                  ;A59764;
 
 
+%anchor($A59765)
 Inst_Draygon_SpawnDyingDraygonSpriteObject_BigExplosion:
     PHY                                                                  ;A59765;
     PHX                                                                  ;A59766;
@@ -2605,6 +2706,7 @@ Inst_Draygon_SpawnDyingDraygonSpriteObject_BigExplosion:
     RTL                                                                  ;A59777;
 
 
+%anchor($A59778)
 Inst_Draygon_SpawnDyingDraygonSpriteObject_BreathBubbles:
     PHY                                                                  ;A59778;
     PHX                                                                  ;A59779;
@@ -2618,6 +2720,7 @@ Inst_Draygon_SpawnDyingDraygonSpriteObject_BreathBubbles:
     RTL                                                                  ;A5978A;
 
 
+%anchor($A5978B)
 GenerateRandomDyingDraygonSpriteObjectPosition:
     JSL.L GenerateRandomNumber                                           ;A5978B;
     LDA.W $05E5                                                          ;A5978F;
@@ -2642,9 +2745,11 @@ GenerateRandomDyingDraygonSpriteObjectPosition:
     RTS                                                                  ;A597B8;
 
 
+%anchor($A597B9)
 InstList_Draygon_Sleep:
     dw Instruction_Common_Sleep                                          ;A597B9;
 
+%anchor($A597BB)
 InstList_DraygonBody_FacingLeft_Reset:
     dw Instruction_Draygon_SetInstList_Body_Eye_Tail_Arms                ;A597BB;
     dw InstList_DraygonBody_FacingLeft_Idle                              ;A597BD;
@@ -2657,6 +2762,7 @@ InstList_DraygonBody_FacingLeft_Reset:
     dw $0001,ExtendedSpritemap_Draygon_1A                                ;A597CB;
     dw Instruction_Common_Sleep                                          ;A597CF;
 
+%anchor($A597D1)
 InstList_DraygonBody_FacingRight_Reset:
     dw Instruction_Draygon_SetInstList_Body_Eye_Tail_Arms                ;A597D1;
     dw InstList_DraygonBody_FacingRight_Idle                             ;A597D3;
@@ -2669,6 +2775,7 @@ InstList_DraygonBody_FacingRight_Reset:
     dw $0001,ExtendedSpritemap_Draygon_4A                                ;A597E1;
     dw Instruction_Common_Sleep                                          ;A597E5;
 
+%anchor($A597E7)
 InstList_DraygonArms_FacingLeft_Idle_0:
     dw $0005,ExtendedSpritemap_Draygon_4                                 ;A597E7;
     dw $0005,ExtendedSpritemap_Draygon_5                                 ;A597EB;
@@ -2679,10 +2786,12 @@ InstList_DraygonArms_FacingLeft_Idle_0:
     dw Instruction_Common_GotoY                                          ;A597FF;
     dw InstList_DraygonArms_FacingLeft_Idle_0                            ;A59801;
 
+%anchor($A59803)
 InstList_DraygonArms_FacingLeft_Idle_1:
     dw Instruction_Common_Sleep                                          ;A59803;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A59805)
 UNUSED_InstList_DraygonArms_A59805:
     dw $0001,ExtendedSpritemap_Draygon_1D                                ;A59805;
     dw $0001,ExtendedSpritemap_Draygon_1C                                ;A59809;
@@ -2690,6 +2799,7 @@ UNUSED_InstList_DraygonArms_A59805:
     dw Instruction_Common_Sleep                                          ;A59811;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A59813)
 InstList_DraygonArms_FacingLeft_NearSwoopApex:
     dw $0001,ExtendedSpritemap_Draygon_1B                                ;A59813;
     dw $0001,ExtendedSpritemap_Draygon_1C                                ;A59817;
@@ -2697,6 +2807,7 @@ InstList_DraygonArms_FacingLeft_NearSwoopApex:
     dw $0040,ExtendedSpritemap_Draygon_1E                                ;A5981F;
     dw Instruction_Common_Sleep                                          ;A59823;
 
+%anchor($A59825)
 Debug_InstList_DraygonArms_FacingLeft_FakeGrab:
     dw $0001,ExtendedSpritemap_Draygon_1B                                ;A59825;
     dw $0001,ExtendedSpritemap_Draygon_1C                                ;A59829;
@@ -2708,6 +2819,7 @@ Debug_InstList_DraygonArms_FacingLeft_FakeGrab:
     dw Instruction_Common_GotoY                                          ;A59841;
     dw InstList_DraygonArms_FacingLeft_Idle_0                            ;A59843;
 
+%anchor($A59845)
 InstList_DraygonArms_FacingLeft_Grab:
     dw $0001,ExtendedSpritemap_Draygon_1B                                ;A59845;
     dw $0001,ExtendedSpritemap_Draygon_1C                                ;A59849;
@@ -2719,6 +2831,7 @@ InstList_DraygonArms_FacingLeft_Grab:
     dw $0001,ExtendedSpritemap_Draygon_1C                                ;A59861;
     dw Instruction_Common_Sleep                                          ;A59865;
 
+%anchor($A59867)
 InstList_DraygonArms_FacingLeft_Dying:
     dw $0005,ExtendedSpritemap_Draygon_A                                 ;A59867;
     dw $0005,ExtendedSpritemap_Draygon_B                                 ;A5986B;
@@ -2728,6 +2841,7 @@ InstList_DraygonArms_FacingLeft_Dying:
     dw InstList_DraygonBody_Dying_0                                      ;A59879;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A5987B)
 UNUSED_InstList_DraygonBody_A5987B:
     dw $0005,ExtendedSpritemap_Draygon_C                                 ;A5987B;
     dw $0005,ExtendedSpritemap_Draygon_B                                 ;A5987F;
@@ -2735,6 +2849,7 @@ UNUSED_InstList_DraygonBody_A5987B:
     dw Instruction_Common_Sleep                                          ;A59887;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A59889)
 InstList_DraygonBody_FacingLeft_Idle:
     dw Instruction_Draygon_RoomLoadingInterruptCmd_BeginHUDDraw          ;A59889;
     dw Instruction_Draygon_EyeFunctionInY                                ;A5988B;
@@ -2742,17 +2857,20 @@ InstList_DraygonBody_FacingLeft_Idle:
     dw $0001,ExtendedSpritemap_Draygon_1A                                ;A5988F;
     dw Instruction_Common_Sleep                                          ;A59893;
 
+%anchor($A59895)
 Instruction_Draygon_RoomLoadingInterruptCmd_BeginHUDDraw:
     LDA.W #$000C                                                         ;A59895;
     STA.B $A9                                                            ;A59898;
     RTL                                                                  ;A5989A;
 
 
+%anchor($A5989B)
 InstList_DraygonBody_Dying_0:
     dw Instruction_Draygon_QueueSFXInY_Lib3_Max6,$001B                   ;A5989B;
     dw Instruction_DraygonBody_SetAsIntangible                           ;A5989F;
     dw Instruction_Common_TimerInY,$0008                                 ;A598A1;
 
+%anchor($A598A5)
 InstList_DraygonBody_Dying_1:
     dw Instruction_Common_WaitYFrames,$000C                              ;A598A5;
     dw Inst_Draygon_SpawnDyingDraygonSpriteObject_BigExplosion           ;A598A9;
@@ -2765,6 +2883,7 @@ InstList_DraygonBody_Dying_1:
     dw Instruction_Common_WaitYFrames,$0001                              ;A598B9;
     dw Instruction_Draygon_ParalyseDraygonTailAndArms                    ;A598BD;
 
+%anchor($A598BF)
 InstList_DraygonBody_Dying_2:
     dw Instruction_Common_WaitYFrames,$0010                              ;A598BF;
     dw Inst_Draygon_SpawnDyingDraygonSpriteObject_BigExplosion           ;A598C3;
@@ -2775,6 +2894,7 @@ InstList_DraygonBody_Dying_2:
     dw Instruction_Common_GotoY                                          ;A598CF;
     dw InstList_DraygonBody_Dying_2                                      ;A598D1;
 
+%anchor($A598D3)
 Instruction_Draygon_ParalyseDraygonTailAndArms:
     PHX                                                                  ;A598D3;
     PHY                                                                  ;A598D4;
@@ -2790,9 +2910,11 @@ Instruction_Draygon_ParalyseDraygonTailAndArms:
     RTL                                                                  ;A598EC;
 
 
+%anchor($A598ED)
 InstList_Draygon_Delete:
     dw Instruction_Common_DeleteEnemy                                    ;A598ED;
 
+%anchor($A598EF)
 Instruction_DraygonBody_SetAsIntangible:
     PHX                                                                  ;A598EF;
     LDX.W $0E54                                                          ;A598F0;
@@ -2803,6 +2925,7 @@ Instruction_DraygonBody_SetAsIntangible:
     RTL                                                                  ;A598FD;
 
 
+%anchor($A598FE)
 InstList_DraygonBody_FacingLeft_FireGoop:
     dw $0001,ExtendedSpritemap_Draygon_E                                 ;A598FE;
     dw $0002,ExtendedSpritemap_Draygon_F                                 ;A59902;
@@ -2815,6 +2938,7 @@ InstList_DraygonBody_FacingLeft_FireGoop:
     dw $0001,ExtendedSpritemap_Draygon_E                                 ;A5991C;
     dw Instruction_Common_Sleep                                          ;A59920;
 
+%anchor($A59922)
 InstList_DraygonBody_FacingLeft_Roar:
     dw Instruction_Draygon_QueueSFXInY_Lib2_Max6,$0073                   ;A59922;
     dw $0006,ExtendedSpritemap_Draygon_E                                 ;A59924;
@@ -2826,6 +2950,7 @@ InstList_DraygonBody_FacingLeft_Roar:
     dw $0006,ExtendedSpritemap_Draygon_E                                 ;A5993E;
     dw Instruction_Common_Sleep                                          ;A59942;
 
+%anchor($A59944)
 InstList_DraygonEye_FacingLeft_Idle:
     dw $0015,ExtendedSpritemap_Draygon_12                                ;A59944;
     dw $0005,ExtendedSpritemap_Draygon_13                                ;A59948;
@@ -2843,9 +2968,11 @@ InstList_DraygonEye_FacingLeft_Idle:
     dw Function_DraygonEye_FacingLeft                                    ;A59976;
     dw Instruction_Common_Sleep                                          ;A59978;
 
+%anchor($A5997A)
 InstList_DraygonEye_FacingLeft_Dying_0:
     dw Instruction_Common_TimerInY,$0004                                 ;A5997A;
 
+%anchor($A5997E)
 InstList_DraygonEye_FacingLeft_Dying_1:
     dw $0004,ExtendedSpritemap_Draygon_16                                ;A5997E;
     dw $0004,ExtendedSpritemap_Draygon_18                                ;A59982;
@@ -2857,6 +2984,7 @@ InstList_DraygonEye_FacingLeft_Dying_1:
     dw $0010,ExtendedSpritemap_Draygon_14                                ;A59996;
     dw Instruction_Common_Sleep                                          ;A5999A;
 
+%anchor($A5999C)
 InstList_DraygonEye_FacingLeft_Dead:
     dw $0020,ExtendedSpritemap_Draygon_15                                ;A5999C;
     dw $0020,ExtendedSpritemap_Draygon_14                                ;A599A0;
@@ -2864,22 +2992,27 @@ InstList_DraygonEye_FacingLeft_Dead:
     dw $0001,ExtendedSpritemap_Draygon_12                                ;A599A8;
     dw Instruction_Common_Sleep                                          ;A599AC;
 
+%anchor($A599AE)
 InstList_DraygonEye_FacingLeft_LookingLeft:
     dw $0001,ExtendedSpritemap_Draygon_16                                ;A599AE;
     dw Instruction_Common_Sleep                                          ;A599B2;
 
+%anchor($A599B4)
 InstList_DraygonEye_FacingLeft_LookingRight:
     dw $0001,ExtendedSpritemap_Draygon_17                                ;A599B4;
     dw Instruction_Common_Sleep                                          ;A599B8;
 
+%anchor($A599BA)
 InstList_DraygonEye_FacingLeft_LookingUp:
     dw $0001,ExtendedSpritemap_Draygon_18                                ;A599BA;
     dw Instruction_Common_Sleep                                          ;A599BE;
 
+%anchor($A599C0)
 InstList_DraygonEye_FacingLeft_LookingDown:
     dw $0001,ExtendedSpritemap_Draygon_19                                ;A599C0;
     dw Instruction_Common_Sleep                                          ;A599C4;
 
+%anchor($A599C6)
 InstList_DraygonTail_FacingLeft_Idle_0:
     dw $0008,ExtendedSpritemap_Draygon_22                                ;A599C6;
     dw $0007,ExtendedSpritemap_Draygon_23                                ;A599CA;
@@ -2896,9 +3029,11 @@ InstList_DraygonTail_FacingLeft_Idle_0:
     dw Instruction_Common_GotoY                                          ;A599F6;
     dw InstList_DraygonTail_FacingLeft_Idle_0                            ;A599F8;
 
+%anchor($A599FA)
 InstList_DraygonTail_FacingLeft_Idle_1:
     dw Instruction_Common_Sleep                                          ;A599FA;
 
+%anchor($A599FC)
 InstList_DraygonTail_FacingLeft_FakeTailWhip:
     dw Instruction_DraygonBody_DisplaceGraphics,$FFFF,$FFFF              ;A599FC;
     dw $0010,ExtendedSpritemap_Draygon_24                                ;A599FE;
@@ -2925,9 +3060,11 @@ InstList_DraygonTail_FacingLeft_FakeTailWhip:
     dw Instruction_Common_GotoY                                          ;A59A64;
     dw InstList_DraygonTail_FacingLeft_Idle_0                            ;A59A66;
 
+%anchor($A59A68)
 InstList_DraygonTail_FacingLeft_FinalTailWhips_0:
     dw Instruction_Common_TimerInY,$0004                                 ;A59A68;
 
+%anchor($A59A6C)
 InstList_DraygonTail_FacingLeft_FinalTailWhips_1:
     dw Instruction_DraygonBody_DisplaceGraphics,$FFFF,$FFFF              ;A59A6C;
     dw $0002,ExtendedSpritemap_Draygon_24                                ;A59A6E;
@@ -2960,9 +3097,11 @@ InstList_DraygonTail_FacingLeft_FinalTailWhips_1:
     dw Instruction_Common_GotoY                                          ;A59AE2;
     dw InstList_DraygonTail_FacingLeft_Idle_0                            ;A59AE4;
 
+%anchor($A59AE6)
 InstList_DraygonTail_FacingLeft_FinalTailWhips_2:
     dw Instruction_Common_Sleep                                          ;A59AE6;
 
+%anchor($A59AE8)
 InstList_DraygonTail_FacingLeft_TailWhip:
     dw Instruction_DraygonBody_DisplaceGraphics,$FFFF,$FFFF              ;A59AE8;
     dw $0002,ExtendedSpritemap_Draygon_24                                ;A59AEA;
@@ -2991,6 +3130,7 @@ InstList_DraygonTail_FacingLeft_TailWhip:
     dw Instruction_Common_GotoY                                          ;A59B56;
     dw InstList_DraygonTail_FacingLeft_Idle_0                            ;A59B58;
 
+%anchor($A59B5A)
 InstList_DraygonTail_FacingLeft_TailFlail:
     dw $0002,ExtendedSpritemap_Draygon_24                                ;A59B5A;
     dw $0006,ExtendedSpritemap_Draygon_29                                ;A59B5E;
@@ -3010,6 +3150,7 @@ InstList_DraygonTail_FacingLeft_TailFlail:
     dw Instruction_Common_GotoY                                          ;A59B96;
     dw InstList_DraygonTail_FacingLeft_Idle_0                            ;A59B98;
 
+%anchor($A59B9A)
 Instruction_DraygonTail_TailWhipHit:
     PHX                                                                  ;A59B9A;
     PHY                                                                  ;A59B9B;
@@ -3038,6 +3179,7 @@ Instruction_DraygonTail_TailWhipHit:
     RTL                                                                  ;A59BD9;
 
 
+%anchor($A59BDA)
 InstList_DraygonArms_FacingRight_Idle_0:
     dw $0005,ExtendedSpritemap_Draygon_34                                ;A59BDA;
     dw $0005,ExtendedSpritemap_Draygon_35                                ;A59BDE;
@@ -3048,10 +3190,12 @@ InstList_DraygonArms_FacingRight_Idle_0:
     dw Instruction_Common_GotoY                                          ;A59BF2;
     dw InstList_DraygonArms_FacingRight_Idle_0                           ;A59BF4;
 
+%anchor($A59BF6)
 InstList_DraygonArms_FacingRight_Idle_1:
     dw Instruction_Common_Sleep                                          ;A59BF6;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A59BF8)
 UNUSED_InstList_DraygonArms_A59BF8:
     dw $0001,ExtendedSpritemap_Draygon_4D                                ;A59BF8;
     dw $0001,ExtendedSpritemap_Draygon_4C                                ;A59BFC;
@@ -3059,6 +3203,7 @@ UNUSED_InstList_DraygonArms_A59BF8:
     dw Instruction_Common_Sleep                                          ;A59C04;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A59C06)
 InstList_DraygonArms_FacingRight_NearSwoopApex:
     dw $0001,ExtendedSpritemap_Draygon_4B                                ;A59C06;
     dw $0001,ExtendedSpritemap_Draygon_4C                                ;A59C0A;
@@ -3066,6 +3211,7 @@ InstList_DraygonArms_FacingRight_NearSwoopApex:
     dw $0040,ExtendedSpritemap_Draygon_4E                                ;A59C12;
     dw Instruction_Common_Sleep                                          ;A59C16;
 
+%anchor($A59C18)
 Debug_InstList_DraygonArms_FacingRight_FakeGrab:
     dw $0001,ExtendedSpritemap_Draygon_4B                                ;A59C18;
     dw $0001,ExtendedSpritemap_Draygon_4C                                ;A59C1C;
@@ -3077,6 +3223,7 @@ Debug_InstList_DraygonArms_FacingRight_FakeGrab:
     dw Instruction_Common_GotoY                                          ;A59C34;
     dw InstList_DraygonArms_FacingRight_Idle_0                           ;A59C36;
 
+%anchor($A59C38)
 InstList_DraygonArms_FacingRight_Grab:
     dw $0001,ExtendedSpritemap_Draygon_4B                                ;A59C38;
     dw $0001,ExtendedSpritemap_Draygon_4C                                ;A59C3C;
@@ -3088,6 +3235,7 @@ InstList_DraygonArms_FacingRight_Grab:
     dw $0001,ExtendedSpritemap_Draygon_4C                                ;A59C54;
     dw Instruction_Common_Sleep                                          ;A59C58;
 
+%anchor($A59C5A)
 InstList_DraygonArms_FacingRight_Dying_0:
     dw $0005,ExtendedSpritemap_Draygon_3A                                ;A59C5A;
     dw $0005,ExtendedSpritemap_Draygon_3B                                ;A59C5E;
@@ -3096,10 +3244,12 @@ InstList_DraygonArms_FacingRight_Dying_0:
     dw Instruction_Common_GotoY                                          ;A59C6A;
     dw InstList_DraygonBody_Dying_0                                      ;A59C6C;
 
+%anchor($A59C6E)
 InstList_DraygonBody_FacingRight_Dying_1:
     dw Instruction_Common_Sleep                                          ;A59C6E;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A59C70)
 UNUSED_InstList_DraygonBody_A59C70:
     dw $0005,ExtendedSpritemap_Draygon_3C                                ;A59C70;
     dw $0005,ExtendedSpritemap_Draygon_3B                                ;A59C74;
@@ -3107,6 +3257,7 @@ UNUSED_InstList_DraygonBody_A59C70:
     dw Instruction_Common_Sleep                                          ;A59C7C;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A59C7E)
 InstList_DraygonBody_FacingRight_Idle:
     dw Instruction_Draygon_RoomLoadingInterruptCmd_BeginHUDDraw_dup      ;A59C7E;
     dw Instruction_Draygon_EyeFunctionInY                                ;A59C80;
@@ -3114,12 +3265,14 @@ InstList_DraygonBody_FacingRight_Idle:
     dw $0001,ExtendedSpritemap_Draygon_4A                                ;A59C84;
     dw Instruction_Common_Sleep                                          ;A59C88;
 
+%anchor($A59C8A)
 Instruction_Draygon_RoomLoadingInterruptCmd_BeginHUDDraw_dup:
     LDA.W #$000C                                                         ;A59C8A;
     STA.B $A9                                                            ;A59C8D;
     RTL                                                                  ;A59C8F;
 
 
+%anchor($A59C90)
 InstList_DraygonBody_FacingRight_FireGoop:
     dw $0001,ExtendedSpritemap_Draygon_3E                                ;A59C90;
     dw $0002,ExtendedSpritemap_Draygon_3F                                ;A59C94;
@@ -3132,6 +3285,7 @@ InstList_DraygonBody_FacingRight_FireGoop:
     dw $0001,ExtendedSpritemap_Draygon_3E                                ;A59CAE;
     dw Instruction_Common_Sleep                                          ;A59CB2;
 
+%anchor($A59CB4)
 InstList_DraygonBody_FacingRight_Roar:
     dw Instruction_Draygon_QueueSFXInY_Lib2_Max6,$0073                   ;A59CB4;
     dw $0006,ExtendedSpritemap_Draygon_3E                                ;A59CB6;
@@ -3143,6 +3297,7 @@ InstList_DraygonBody_FacingRight_Roar:
     dw $0006,ExtendedSpritemap_Draygon_3E                                ;A59CD0;
     dw Instruction_Common_Sleep                                          ;A59CD4;
 
+%anchor($A59CD6)
 InstList_DraygonEye_FacingRight_Idle:
     dw $0015,ExtendedSpritemap_Draygon_42                                ;A59CD6;
     dw $0005,ExtendedSpritemap_Draygon_43                                ;A59CDA;
@@ -3161,6 +3316,7 @@ InstList_DraygonEye_FacingRight_Idle:
     dw Instruction_Common_Sleep                                          ;A59D0A;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A59D0C)
 UNUSED_InstList_DraygonEye_A59D0C:
     dw $0015,ExtendedSpritemap_Draygon_42                                ;A59D0C;
     dw $0005,ExtendedSpritemap_Draygon_43                                ;A59D10;
@@ -3168,9 +3324,11 @@ UNUSED_InstList_DraygonEye_A59D0C:
     dw $000A,ExtendedSpritemap_Draygon_45                                ;A59D18;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A59D1C)
 InstList_DraygonEye_FacingRight_Dying_0:
     dw Instruction_Common_TimerInY,$0004                                 ;A59D1C;
 
+%anchor($A59D20)
 InstList_DraygonEye_FacingRight_Dying_1:
     dw $0004,ExtendedSpritemap_Draygon_46                                ;A59D20;
     dw $0004,ExtendedSpritemap_Draygon_48                                ;A59D24;
@@ -3182,6 +3340,7 @@ InstList_DraygonEye_FacingRight_Dying_1:
     dw $0010,ExtendedSpritemap_Draygon_44                                ;A59D38;
     dw Instruction_Common_Sleep                                          ;A59D3C;
 
+%anchor($A59D3E)
 InstList_DraygonEye_FacingRight_Dead:
     dw $0020,ExtendedSpritemap_Draygon_45                                ;A59D3E;
     dw $0020,ExtendedSpritemap_Draygon_44                                ;A59D42;
@@ -3189,22 +3348,27 @@ InstList_DraygonEye_FacingRight_Dead:
     dw $0001,ExtendedSpritemap_Draygon_42                                ;A59D4A;
     dw Instruction_Common_Sleep                                          ;A59D4E;
 
+%anchor($A59D50)
 InstList_DraygonEye_FacingRight_LookingRight:
     dw $0001,ExtendedSpritemap_Draygon_46                                ;A59D50;
     dw Instruction_Common_Sleep                                          ;A59D54;
 
+%anchor($A59D56)
 InstList_DraygonEye_FacingRight_LookingLeft:
     dw $0001,ExtendedSpritemap_Draygon_47                                ;A59D56;
     dw Instruction_Common_Sleep                                          ;A59D5A;
 
+%anchor($A59D5C)
 InstList_DraygonEye_FacingRight_LookingUp:
     dw $0001,ExtendedSpritemap_Draygon_48                                ;A59D5C;
     dw Instruction_Common_Sleep                                          ;A59D60;
 
+%anchor($A59D62)
 InstList_DraygonEye_FacingRight_LookingDown:
     dw $0001,ExtendedSpritemap_Draygon_49                                ;A59D62;
     dw Instruction_Common_Sleep                                          ;A59D66;
 
+%anchor($A59D68)
 InstList_DraygonTail_FacingRight_Idle_0:
     dw $0008,ExtendedSpritemap_Draygon_59                                ;A59D68;
     dw $0007,ExtendedSpritemap_Draygon_5A                                ;A59D6C;
@@ -3221,9 +3385,11 @@ InstList_DraygonTail_FacingRight_Idle_0:
     dw Instruction_Common_GotoY                                          ;A59D98;
     dw InstList_DraygonTail_FacingRight_Idle_0                           ;A59D9A;
 
+%anchor($A59D9C)
 InstList_DraygonTail_FacingRight_Idle_1:
     dw Instruction_Common_Sleep                                          ;A59D9C;
 
+%anchor($A59D9E)
 Debug_InstList_DraygonTail_FacingRight_FakeTailWhip:
     dw Instruction_DraygonBody_DisplaceGraphics,$0001,$FFFF              ;A59D9E;
     dw $0010,ExtendedSpritemap_Draygon_5B                                ;A59DA0;
@@ -3250,6 +3416,7 @@ Debug_InstList_DraygonTail_FacingRight_FakeTailWhip:
     dw Instruction_Common_GotoY                                          ;A59E06;
     dw InstList_DraygonTail_FacingRight_Idle_0                           ;A59E08;
 
+%anchor($A59E0A)
 Instruction_DraygonBody_DisplaceGraphics:
     PHX                                                                  ;A59E0A;
     PHY                                                                  ;A59E0B;
@@ -3266,9 +3433,11 @@ Instruction_DraygonBody_DisplaceGraphics:
     RTL                                                                  ;A59E20;
 
 
+%anchor($A59E21)
 InstList_DraygonTail_FacingRight_FinalTailWhips_0:
     dw Instruction_Common_TimerInY,$0004                                 ;A59E21;
 
+%anchor($A59E25)
 InstList_DraygonTail_FacingRight_FinalTailWhips_1:
     dw Instruction_DraygonBody_DisplaceGraphics,$0001,$FFFF              ;A59E25;
     dw $0002,ExtendedSpritemap_Draygon_5B                                ;A59E27;
@@ -3301,9 +3470,11 @@ InstList_DraygonTail_FacingRight_FinalTailWhips_1:
     dw Instruction_Common_GotoY                                          ;A59E9B;
     dw InstList_DraygonTail_FacingRight_Idle_0                           ;A59E9D;
 
+%anchor($A59E9F)
 InstList_DraygonTail_FacingRight_FinalTailWhips_2:
     dw Instruction_Common_Sleep                                          ;A59E9F;
 
+%anchor($A59EA1)
 InstList_DraygonTail_FacingRight_TailWhip_0:
     dw Instruction_DraygonBody_DisplaceGraphics,$0001,$FFFF              ;A59EA1;
     dw $0002,ExtendedSpritemap_Draygon_5B                                ;A59EA3;
@@ -3332,9 +3503,11 @@ InstList_DraygonTail_FacingRight_TailWhip_0:
     dw Instruction_Common_GotoY                                          ;A59F0F;
     dw InstList_DraygonTail_FacingRight_Idle_0                           ;A59F11;
 
+%anchor($A59F13)
 InstList_DraygonTail_FacingRight_TailWhip_1:
     dw Instruction_Common_Sleep                                          ;A59F13;
 
+%anchor($A59F15)
 InstList_DraygonTail_FacingRight_TailFlail_0:
     dw $0002,ExtendedSpritemap_Draygon_5B                                ;A59F15;
     dw $0006,ExtendedSpritemap_Draygon_60                                ;A59F19;
@@ -3354,9 +3527,11 @@ InstList_DraygonTail_FacingRight_TailFlail_0:
     dw Instruction_Common_GotoY                                          ;A59F51;
     dw InstList_DraygonTail_FacingRight_Idle_0                           ;A59F53;
 
+%anchor($A59F55)
 InstList_DraygonTail_FacingRight_TailFlail_1:
     dw Instruction_Common_Sleep                                          ;A59F55;
 
+%anchor($A59F57)
 Instruction_Draygon_BodyFunctionInY:
     LDA.W $0000,Y                                                        ;A59F57;
     STA.W $0FA8                                                          ;A59F5A;
@@ -3365,6 +3540,7 @@ Instruction_Draygon_BodyFunctionInY:
     RTL                                                                  ;A59F5F;
 
 
+%anchor($A59F60)
 Instruction_Draygon_QueueSFXInY_Lib2_Max6:
     PHX                                                                  ;A59F60;
     PHY                                                                  ;A59F61;
@@ -3377,6 +3553,7 @@ Instruction_Draygon_QueueSFXInY_Lib2_Max6:
     RTL                                                                  ;A59F6D;
 
 
+%anchor($A59F6E)
 Instruction_Draygon_QueueSFXInY_Lib3_Max6:
     PHX                                                                  ;A59F6E;
     PHY                                                                  ;A59F6F;
@@ -3389,6 +3566,7 @@ Instruction_Draygon_QueueSFXInY_Lib3_Max6:
     RTL                                                                  ;A59F7B;
 
 
+%anchor($A59F7C)
 Instruction_Draygon_SpawnGoop_Leftwards:
     PHX                                                                  ;A59F7C;
     PHY                                                                  ;A59F7D;
@@ -3414,6 +3592,7 @@ Instruction_Draygon_SpawnGoop_Leftwards:
     RTL                                                                  ;A59FAD;
 
 
+%anchor($A59FAE)
 Instruction_Draygon_SpawnGoop_Rightwards:
     PHX                                                                  ;A59FAE;
     PHY                                                                  ;A59FAF;
@@ -3439,6 +3618,7 @@ Instruction_Draygon_SpawnGoop_Rightwards:
     RTL                                                                  ;A59FDF;
 
 
+%anchor($A59FE0)
 HandleDeathSequenceEvirMovement:
     PHY                                                                  ;A59FE0;
     LDX.W #$003E                                                         ;A59FE1;
@@ -3508,6 +3688,7 @@ HandleDeathSequenceEvirMovement:
     JMP.W .loop                                                          ;A5A069;
 
 
+%anchor($A5A06C)
 SpawnDeathSequenceEvirSpriteObjects:
     PHX                                                                  ;A5A06C;
     PHY                                                                  ;A5A06D;
@@ -3522,6 +3703,7 @@ SpawnDeathSequenceEvirSpriteObjects:
     LDX.W #$0002                                                         ;A5A07C;
     LDY.W #$0014                                                         ;A5A07F;
 
+%anchor($A5A082)
 loopLeft:
     LDA.W DraygonDeathSequenceEvirSpawnPositions_X,Y                     ;A5A082;
     STA.B $12                                                            ;A5A085;
@@ -3561,6 +3743,7 @@ loopLeft:
     RTS                                                                  ;A5A0C5;
 
 
+%anchor($A5A0C6)
 Draygon_ClearSpriteObjects:
     PHX                                                                  ;A5A0C6;
     PHY                                                                  ;A5A0C7;
@@ -3577,6 +3760,7 @@ Draygon_ClearSpriteObjects:
     RTS                                                                  ;A5A0D8;
 
 
+%anchor($A5A0D9)
 SpawnFightIntroEvirSpriteObjects:
     PHX                                                                  ;A5A0D9;
     PHY                                                                  ;A5A0DA;
@@ -3621,6 +3805,7 @@ SpawnFightIntroEvirSpriteObjects:
     RTS                                                                  ;A5A13D;
 
 
+%anchor($A5A13E)
 HandleDraygonFightIntroDance:
     PHY                                                                  ;A5A13E;
     LDX.W #$003E                                                         ;A5A13F;
@@ -3672,15 +3857,18 @@ HandleDraygonFightIntroDance:
     BRA .next                                                            ;A5A19D;
 
 
+%anchor($A5A19F)
 MovementLatencyForEachEvirSpriteObject:
 ; Movement latency for each evir sprite object (each evir moves 80h bytes later in the movement table than the next)
     dw $FC80,$FD00,$FD80,$FE00                                           ;A5A19F;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A5A1A7)
 UNUSED_MovementLatencyForEachEvirSpriteObject_A5A1A7:
     dw $FE80,$FF00,$FF80,$0000                                           ;A5A1A7;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A5A1AF)
 DraygonDeathSequenceEvirSubSpeeds:
 ;        _________ X subspeed
 ;       |      ___ Y subspeed
@@ -3695,6 +3883,7 @@ DraygonDeathSequenceEvirSubSpeeds:
     dw $8E39,$D4DA ;  0xFFFF * cos(28h * pi / 80h), 0xFFFF * sin(28h * pi / 80h)
     dw $D4DA,$8E39 ;  0xFFFF * cos(18h * pi / 80h), 0xFFFF * sin(18h * pi / 80h)
 
+%anchor($A5A1C7)
 DraygonDeathSequenceEvirSpawnPositions:
 ;        _________ X position
 ;       |      ___ Y position
@@ -3709,6 +3898,7 @@ DraygonDeathSequenceEvirSpawnPositions:
     dw $021A,$0059
     dw $02A6,$00E5
 
+%anchor($A5A1DF)
 DraygonDeathSequenceEvirAngles:
 ; Used *only* to decide the sign of the X/Y subspeeds at DraygonDeathSequenceEvirSubSpeeds
 ; 0 = left(!), positive = clockwise
@@ -3719,216 +3909,257 @@ DraygonDeathSequenceEvirAngles:
     dw $0028,$0000
     dw $0018,$0000
 
+%anchor($A5A1F7)
 Palette_Draygon_Sprite7:
 ; Sprite palette 7
     dw $3800,$3F57,$2E4D,$00E2,$0060,$3AB0,$220B,$1166                   ;A5A1F7;
     dw $0924,$0319,$0254,$018F,$00CA,$581B,$1892,$0145                   ;A5A207;
 
+%anchor($A5A217)
 Palette_Draygon_Sprite1:
 ; Sprite palette 1
     dw $3800,$3F57,$2E4D,$00E2,$0060,$3AB0,$220B,$1166                   ;A5A217;
     dw $0924,$0319,$0254,$018F,$00CA,$581B,$1892,$0145                   ;A5A227;
 
+%anchor($A5A237)
 Palette_Draygon_Sprite2:
 ; Sprite palette 2
     dw $3800,$6B5A,$5652,$28E7,$1863,$62B5,$4A10,$396B                   ;A5A237;
     dw $3129,$43FF,$0113,$000F,$175C,$0299,$01D6,$03E0                   ;A5A247;
 
+%anchor($A5A257)
 Palette_Draygon_Sprite3:
 ; Sprite palette 3
     dw $3800,$4B9C,$3694,$0929,$0042,$42F7,$2A52,$19AD                   ;A5A257;
     dw $116B,$1420,$1420,$1420,$1420,$1420,$1420,$1420                   ;A5A267;
 
+%anchor($A5A277)
 Palette_Draygon_BG12_5:
 ; BG1/2 palette 5
     dw $3800,$3F57,$2E4D,$00E2,$0060,$3AB0,$220B,$1166                   ;A5A277;
     dw $0924,$0319,$0254,$018F,$00CA,$581B,$1892,$0145                   ;A5A287;
 
+%anchor($A5A297)
 Palette_Draygon_WhiteFlash:
 ; Flash
     dw $3800,$7FFF,$7FFF,$7FFF,$7FFF,$7FFF,$7FFF,$7FFF                   ;A5A297;
     dw $7FFF,$7FFF,$7FFF,$7FFF,$7FFF,$7FFF,$7FFF,$7FFF                   ;A5A2A7;
 
+%anchor($A5A2B7)
 ExtendedSpritemap_Draygon_0:
     dw $0001
     dw $0000,$0000                                                 ;A5A2B7;
     dw Spritemap_Draygon_0                                               ;A5A2BD;
     dw Hitbox_Draygon_1B                                                 ;A5A2BF;
 
+%anchor($A5A2C1)
 ExtendedSpritemap_Draygon_1:
     dw $0001
     dw $0000,$0000                                                 ;A5A2C1;
     dw Spritemap_Draygon_0                                               ;A5A2C7;
     dw Hitbox_Draygon_1B                                                 ;A5A2C9;
 
+%anchor($A5A2CB)
 ExtendedSpritemap_Draygon_2:
     dw $0001
     dw $0000,$0000                                                 ;A5A2CB;
     dw Spritemap_Draygon_0                                               ;A5A2D1;
     dw Hitbox_Draygon_1B                                                 ;A5A2D3;
 
+%anchor($A5A2D5)
 ExtendedSpritemap_Draygon_3:
     dw $0001
     dw $0000,$0000                                                 ;A5A2D5;
     dw Spritemap_Draygon_0                                               ;A5A2DB;
     dw Hitbox_Draygon_1B                                                 ;A5A2DD;
 
+%anchor($A5A2DF)
 ExtendedSpritemap_Draygon_4:
     dw $0001
     dw $0000,$0001                                                 ;A5A2DF;
     dw Spritemap_Draygon_B                                               ;A5A2E5;
     dw Hitbox_Draygon_1B                                                 ;A5A2E7;
 
+%anchor($A5A2E9)
 ExtendedSpritemap_Draygon_5:
     dw $0001
     dw $0000,$0001                                                 ;A5A2E9;
     dw Spritemap_Draygon_C                                               ;A5A2EF;
     dw Hitbox_Draygon_1B                                                 ;A5A2F1;
 
+%anchor($A5A2F3)
 ExtendedSpritemap_Draygon_6:
     dw $0001
     dw $0000,$0001                                                 ;A5A2F3;
     dw Spritemap_Draygon_D                                               ;A5A2F9;
     dw Hitbox_Draygon_1B                                                 ;A5A2FB;
 
+%anchor($A5A2FD)
 ExtendedSpritemap_Draygon_7:
     dw $0001
     dw $0000,$0001                                                 ;A5A2FD;
     dw Spritemap_Draygon_E                                               ;A5A303;
     dw Hitbox_Draygon_1B                                                 ;A5A305;
 
+%anchor($A5A307)
 ExtendedSpritemap_Draygon_8:
     dw $0001
     dw $0000,$0001                                                 ;A5A307;
     dw Spritemap_Draygon_F                                               ;A5A30D;
     dw Hitbox_Draygon_1B                                                 ;A5A30F;
 
+%anchor($A5A311)
 ExtendedSpritemap_Draygon_9:
     dw $0001
     dw $0000,$0001                                                 ;A5A311;
     dw Spritemap_Draygon_10                                              ;A5A317;
     dw Hitbox_Draygon_1B                                                 ;A5A319;
 
+%anchor($A5A31B)
 ExtendedSpritemap_Draygon_A:
     dw $0001,$0000,$0000                                                 ;A5A31B;
     dw ExtendedTilemap_Draygon_B                                         ;A5A321;
     dw Hitbox_Draygon_1A                                                 ;A5A323;
 
+%anchor($A5A325)
 ExtendedSpritemap_Draygon_B:
     dw $0001,$0000,$0000                                                 ;A5A325;
     dw ExtendedTilemap_Draygon_C                                         ;A5A32B;
     dw Hitbox_Draygon_1A                                                 ;A5A32D;
 
+%anchor($A5A32F)
 ExtendedSpritemap_Draygon_C:
     dw $0001,$0000,$0000                                                 ;A5A32F;
     dw ExtendedTilemap_Draygon_D                                         ;A5A335;
     dw Hitbox_Draygon_1A                                                 ;A5A337;
 
+%anchor($A5A339)
 ExtendedSpritemap_Draygon_D:
     dw $0001,$0000,$0000                                                 ;A5A339;
     dw ExtendedTilemap_Draygon_E                                         ;A5A33F;
     dw Hitbox_Draygon_1A                                                 ;A5A341;
 
+%anchor($A5A343)
 ExtendedSpritemap_Draygon_E:
     dw $0001,$0000,$0000                                                 ;A5A343;
     dw ExtendedTilemap_Draygon_7                                         ;A5A349;
     dw Hitbox_Draygon_1A                                                 ;A5A34B;
 
+%anchor($A5A34D)
 ExtendedSpritemap_Draygon_F:
     dw $0001,$0000,$0000                                                 ;A5A34D;
     dw ExtendedTilemap_Draygon_8                                         ;A5A353;
     dw Hitbox_Draygon_1A                                                 ;A5A355;
 
+%anchor($A5A357)
 ExtendedSpritemap_Draygon_10:
     dw $0001,$0000,$0000                                                 ;A5A357;
     dw ExtendedTilemap_Draygon_9                                         ;A5A35D;
     dw Hitbox_Draygon_1A                                                 ;A5A35F;
 
+%anchor($A5A361)
 ExtendedSpritemap_Draygon_11:
     dw $0001,$0000,$0000                                                 ;A5A361;
     dw ExtendedTilemap_Draygon_A                                         ;A5A367;
     dw Hitbox_Draygon_1A                                                 ;A5A369;
 
+%anchor($A5A36B)
 ExtendedSpritemap_Draygon_12:
     dw $0001,$0000,$0000                                                 ;A5A36B;
     dw ExtendedTilemap_Draygon_F                                         ;A5A371;
     dw Hitbox_Draygon_1B                                                 ;A5A373;
 
+%anchor($A5A375)
 ExtendedSpritemap_Draygon_13:
     dw $0001,$0000,$0000                                                 ;A5A375;
     dw ExtendedTilemap_Draygon_10                                        ;A5A37B;
     dw Hitbox_Draygon_1B                                                 ;A5A37D;
 
+%anchor($A5A37F)
 ExtendedSpritemap_Draygon_14:
     dw $0001,$0000,$0000                                                 ;A5A37F;
     dw ExtendedTilemap_Draygon_11                                        ;A5A385;
     dw Hitbox_Draygon_1B                                                 ;A5A387;
 
+%anchor($A5A389)
 ExtendedSpritemap_Draygon_15:
     dw $0001,$0000,$0000                                                 ;A5A389;
     dw ExtendedTilemap_Draygon_12                                        ;A5A38F;
     dw Hitbox_Draygon_1B                                                 ;A5A391;
 
+%anchor($A5A393)
 ExtendedSpritemap_Draygon_16:
     dw $0001,$0000,$0000                                                 ;A5A393;
     dw ExtendedTilemap_Draygon_13                                        ;A5A399;
     dw Hitbox_Draygon_1B                                                 ;A5A39B;
 
+%anchor($A5A39D)
 ExtendedSpritemap_Draygon_17:
     dw $0001,$0000,$0000                                                 ;A5A39D;
     dw ExtendedTilemap_Draygon_14                                        ;A5A3A3;
     dw Hitbox_Draygon_1B                                                 ;A5A3A5;
 
+%anchor($A5A3A7)
 ExtendedSpritemap_Draygon_18:
     dw $0001,$0000,$0000                                                 ;A5A3A7;
     dw ExtendedTilemap_Draygon_15                                        ;A5A3AD;
     dw Hitbox_Draygon_1B                                                 ;A5A3AF;
 
+%anchor($A5A3B1)
 ExtendedSpritemap_Draygon_19:
     dw $0001,$0000,$0000                                                 ;A5A3B1;
     dw ExtendedTilemap_Draygon_16                                        ;A5A3B7;
     dw Hitbox_Draygon_1B                                                 ;A5A3B9;
 
+%anchor($A5A3BB)
 ExtendedSpritemap_Draygon_1A:
     dw $0001,$0000,$0000                                                 ;A5A3BB;
     dw ExtendedTilemap_Draygon_17                                        ;A5A3C1;
     dw Hitbox_Draygon_1A                                                 ;A5A3C3;
 
+%anchor($A5A3C5)
 ExtendedSpritemap_Draygon_1B:
     dw $0001,$0000,$0001                                                 ;A5A3C5;
     dw Spritemap_Draygon_3                                               ;A5A3CB;
     dw Hitbox_Draygon_1B                                                 ;A5A3CD;
 
+%anchor($A5A3CF)
 ExtendedSpritemap_Draygon_1C:
     dw $0001,$0000,$0001                                                 ;A5A3CF;
     dw Spritemap_Draygon_4                                               ;A5A3D5;
     dw Hitbox_Draygon_1B                                                 ;A5A3D7;
 
+%anchor($A5A3D9)
 ExtendedSpritemap_Draygon_1D:
     dw $0001,$0000,$0001                                                 ;A5A3D9;
     dw Spritemap_Draygon_5                                               ;A5A3DF;
     dw Hitbox_Draygon_1B                                                 ;A5A3E1;
 
+%anchor($A5A3E3)
 ExtendedSpritemap_Draygon_1E:
     dw $0001,$0000,$0001                                                 ;A5A3E3;
     dw Spritemap_Draygon_6                                               ;A5A3E9;
     dw Hitbox_Draygon_1B                                                 ;A5A3EB;
 
+%anchor($A5A3ED)
 ExtendedSpritemap_Draygon_1F:
     dw $0001,$0029,$0001                                                 ;A5A3ED;
     dw Spritemap_Draygon_0                                               ;A5A3F3;
     dw Hitbox_Draygon_1B                                                 ;A5A3F5;
 
+%anchor($A5A3F7)
 ExtendedSpritemap_Draygon_20:
     dw $0001,$0000,$0000                                                 ;A5A3F7;
     dw ExtendedTilemap_Draygon_5                                         ;A5A3FD;
     dw Hitbox_Draygon_12                                                 ;A5A3FF;
 
+%anchor($A5A401)
 ExtendedSpritemap_Draygon_21:
     dw $0001,$0000,$0000                                                 ;A5A401;
     dw ExtendedTilemap_Draygon_6                                         ;A5A407;
     dw Hitbox_Draygon_12                                                 ;A5A409;
 
+%anchor($A5A40B)
 ExtendedSpritemap_Draygon_22:
     dw $0002,$001B,$003F                                                 ;A5A40B;
     dw Spritemap_Draygon_1A                                              ;A5A411;
@@ -3937,6 +4168,7 @@ ExtendedSpritemap_Draygon_22:
     dw Spritemap_Draygon_7                                               ;A5A419;
     dw Hitbox_Draygon_1B                                                 ;A5A41B;
 
+%anchor($A5A41D)
 ExtendedSpritemap_Draygon_23:
     dw $0002,$0017,$003D                                                 ;A5A41D;
     dw Spritemap_Draygon_19                                              ;A5A423;
@@ -3945,6 +4177,7 @@ ExtendedSpritemap_Draygon_23:
     dw Spritemap_Draygon_7                                               ;A5A42B;
     dw Hitbox_Draygon_1B                                                 ;A5A42D;
 
+%anchor($A5A42F)
 ExtendedSpritemap_Draygon_24:
     dw $0002,$0013,$003A                                                 ;A5A42F;
     dw Spritemap_Draygon_18                                              ;A5A435;
@@ -3953,6 +4186,7 @@ ExtendedSpritemap_Draygon_24:
     dw Spritemap_Draygon_8                                               ;A5A43D;
     dw Hitbox_Draygon_1B                                                 ;A5A43F;
 
+%anchor($A5A441)
 ExtendedSpritemap_Draygon_25:
     dw $0002,$000E,$0035                                                 ;A5A441;
     dw Spritemap_Draygon_17                                              ;A5A447;
@@ -3961,6 +4195,7 @@ ExtendedSpritemap_Draygon_25:
     dw Spritemap_Draygon_8                                               ;A5A44F;
     dw Hitbox_Draygon_1B                                                 ;A5A451;
 
+%anchor($A5A453)
 ExtendedSpritemap_Draygon_26:
     dw $0002,$000C,$002E                                                 ;A5A453;
     dw Spritemap_Draygon_16                                              ;A5A459;
@@ -3969,6 +4204,7 @@ ExtendedSpritemap_Draygon_26:
     dw Spritemap_Draygon_9                                               ;A5A461;
     dw Hitbox_Draygon_1B                                                 ;A5A463;
 
+%anchor($A5A465)
 ExtendedSpritemap_Draygon_27:
     dw $0002,$000E,$002D                                                 ;A5A465;
     dw Spritemap_Draygon_15                                              ;A5A46B;
@@ -3977,6 +4213,7 @@ ExtendedSpritemap_Draygon_27:
     dw Spritemap_Draygon_9                                               ;A5A473;
     dw Hitbox_Draygon_1B                                                 ;A5A475;
 
+%anchor($A5A477)
 ExtendedSpritemap_Draygon_28:
     dw $0002,$0011,$0028                                                 ;A5A477;
     dw Spritemap_Draygon_14                                              ;A5A47D;
@@ -3985,6 +4222,7 @@ ExtendedSpritemap_Draygon_28:
     dw Spritemap_Draygon_A                                               ;A5A485;
     dw Hitbox_Draygon_1B                                                 ;A5A487;
 
+%anchor($A5A489)
 ExtendedSpritemap_Draygon_29:
     dw $0003,$000B,$003C                                                 ;A5A489;
     dw Spritemap_Draygon_18                                              ;A5A48F;
@@ -3996,6 +4234,7 @@ ExtendedSpritemap_Draygon_29:
     dw Spritemap_Draygon_7                                               ;A5A49F;
     dw Hitbox_Draygon_1B                                                 ;A5A4A1;
 
+%anchor($A5A4A3)
 ExtendedSpritemap_Draygon_2A:
     dw $0004,$0008,$0043                                                 ;A5A4A3;
     dw Spritemap_Draygon_18                                              ;A5A4A9;
@@ -4010,6 +4249,7 @@ ExtendedSpritemap_Draygon_2A:
     dw Spritemap_Draygon_7                                               ;A5A4C1;
     dw Hitbox_Draygon_1B                                                 ;A5A4C3;
 
+%anchor($A5A4C5)
 ExtendedSpritemap_Draygon_2B:
     dw $0005,$0009,$004D                                                 ;A5A4C5;
     dw Spritemap_Draygon_19                                              ;A5A4CB;
@@ -4027,6 +4267,7 @@ ExtendedSpritemap_Draygon_2B:
     dw Spritemap_Draygon_8                                               ;A5A4EB;
     dw Hitbox_Draygon_1B                                                 ;A5A4ED;
 
+%anchor($A5A4EF)
 ExtendedSpritemap_Draygon_2C:
     dw $0006,$FFF8,$004D                                                 ;A5A4EF;
     dw Spritemap_Draygon_18                                              ;A5A4F5;
@@ -4047,6 +4288,7 @@ ExtendedSpritemap_Draygon_2C:
     dw Spritemap_Draygon_9                                               ;A5A51D;
     dw Hitbox_Draygon_1B                                                 ;A5A51F;
 
+%anchor($A5A521)
 ExtendedSpritemap_Draygon_2D:
     dw $0007,$FFEC,$0037                                                 ;A5A521;
     dw Spritemap_Draygon_15                                              ;A5A527;
@@ -4070,6 +4312,7 @@ ExtendedSpritemap_Draygon_2D:
     dw Spritemap_Draygon_A                                               ;A5A557;
     dw Hitbox_Draygon_1B                                                 ;A5A559;
 
+%anchor($A5A55B)
 ExtendedSpritemap_Draygon_2E:
     dw $0008,$FFED,$002E                                                 ;A5A55B;
     dw Spritemap_Draygon_14                                              ;A5A561;
@@ -4096,6 +4339,7 @@ ExtendedSpritemap_Draygon_2E:
     dw Spritemap_Draygon_A                                               ;A5A599;
     dw Hitbox_Draygon_1B                                                 ;A5A59B;
 
+%anchor($A5A59D)
 ExtendedSpritemap_Draygon_2F:
     dw $0008,$FFF7,$0025                                                 ;A5A59D;
     dw Spritemap_Draygon_12                                              ;A5A5A3;
@@ -4122,211 +4366,253 @@ ExtendedSpritemap_Draygon_2F:
     dw Spritemap_Draygon_A                                               ;A5A5DB;
     dw Hitbox_Draygon_1B                                                 ;A5A5DD;
 
+%anchor($A5A5DF)
 ExtendedSpritemap_Draygon_30:
     dw $0001,$0000,$0000                                                 ;A5A5DF;
     dw Spritemap_Draygon_28                                              ;A5A5E5;
     dw Hitbox_Draygon_1B                                                 ;A5A5E7;
 
+%anchor($A5A5E9)
 ExtendedSpritemap_Draygon_31:
     dw $0001,$0000,$0000                                                 ;A5A5E9;
     dw Spritemap_Draygon_28                                              ;A5A5EF;
     dw Hitbox_Draygon_1B                                                 ;A5A5F1;
 
+%anchor($A5A5F3)
 ExtendedSpritemap_Draygon_32:
     dw $0001,$0000,$0000                                                 ;A5A5F3;
     dw Spritemap_Draygon_28                                              ;A5A5F9;
     dw Hitbox_Draygon_1B                                                 ;A5A5FB;
 
+%anchor($A5A5FD)
 ExtendedSpritemap_Draygon_33:
     dw $0001,$0000,$0000                                                 ;A5A5FD;
     dw Spritemap_Draygon_28                                              ;A5A603;
     dw Hitbox_Draygon_1B                                                 ;A5A605;
 
+%anchor($A5A607)
 ExtendedSpritemap_Draygon_34:
     dw $0001,$0000,$0001                                                 ;A5A607;
     dw Spritemap_Draygon_41                                              ;A5A60D;
     dw Hitbox_Draygon_1B                                                 ;A5A60F;
 
+%anchor($A5A611)
 ExtendedSpritemap_Draygon_35:
     dw $0001,$0000,$0001                                                 ;A5A611;
     dw Spritemap_Draygon_42                                              ;A5A617;
     dw Hitbox_Draygon_1B                                                 ;A5A619;
 
+%anchor($A5A61B)
 ExtendedSpritemap_Draygon_36:
     dw $0001,$0000,$0001                                                 ;A5A61B;
     dw Spritemap_Draygon_43                                              ;A5A621;
     dw Hitbox_Draygon_1B                                                 ;A5A623;
 
+%anchor($A5A625)
 ExtendedSpritemap_Draygon_37:
     dw $0001,$0000,$0001                                                 ;A5A625;
     dw Spritemap_Draygon_44                                              ;A5A62B;
     dw Hitbox_Draygon_1B                                                 ;A5A62D;
 
+%anchor($A5A62F)
 ExtendedSpritemap_Draygon_38:
     dw $0001,$0000,$0001                                                 ;A5A62F;
     dw Spritemap_Draygon_45                                              ;A5A635;
     dw Hitbox_Draygon_1B                                                 ;A5A637;
 
+%anchor($A5A639)
 ExtendedSpritemap_Draygon_39:
     dw $0001,$0000,$0001                                                 ;A5A639;
     dw Spritemap_Draygon_46                                              ;A5A63F;
     dw Hitbox_Draygon_1B                                                 ;A5A641;
 
+%anchor($A5A643)
 ExtendedSpritemap_Draygon_3A:
     dw $0001,$0000,$0000                                                 ;A5A643;
     dw ExtendedTilemap_Draygon_23                                        ;A5A649;
     dw Hitbox_Draygon_2D                                                 ;A5A64B;
 
+%anchor($A5A64D)
 ExtendedSpritemap_Draygon_3B:
     dw $0001,$0000,$0000                                                 ;A5A64D;
     dw ExtendedTilemap_Draygon_24                                        ;A5A653;
     dw Hitbox_Draygon_2D                                                 ;A5A655;
 
+%anchor($A5A657)
 ExtendedSpritemap_Draygon_3C:
     dw $0001,$0000,$0000                                                 ;A5A657;
     dw ExtendedTilemap_Draygon_25                                        ;A5A65D;
     dw Hitbox_Draygon_2D                                                 ;A5A65F;
 
+%anchor($A5A661)
 ExtendedSpritemap_Draygon_3D:
     dw $0001,$0000,$0000                                                 ;A5A661;
     dw ExtendedTilemap_Draygon_26                                        ;A5A667;
     dw Hitbox_Draygon_2D                                                 ;A5A669;
 
+%anchor($A5A66B)
 ExtendedSpritemap_Draygon_3E:
     dw $0001,$0000,$0000                                                 ;A5A66B;
     dw ExtendedTilemap_Draygon_1F                                        ;A5A671;
     dw Hitbox_Draygon_2D                                                 ;A5A673;
 
+%anchor($A5A675)
 ExtendedSpritemap_Draygon_3F:
     dw $0001,$0000,$0000                                                 ;A5A675;
     dw ExtendedTilemap_Draygon_20                                        ;A5A67B;
     dw Hitbox_Draygon_2D                                                 ;A5A67D;
 
+%anchor($A5A67F)
 ExtendedSpritemap_Draygon_40:
     dw $0001,$0000,$0000                                                 ;A5A67F;
     dw ExtendedTilemap_Draygon_21                                        ;A5A685;
     dw Hitbox_Draygon_2D                                                 ;A5A687;
 
+%anchor($A5A689)
 ExtendedSpritemap_Draygon_41:
     dw $0001,$0000,$0000                                                 ;A5A689;
     dw ExtendedTilemap_Draygon_22                                        ;A5A68F;
     dw Hitbox_Draygon_2D                                                 ;A5A691;
 
+%anchor($A5A693)
 ExtendedSpritemap_Draygon_42:
     dw $0001,$0000,$0000                                                 ;A5A693;
     dw ExtendedTilemap_Draygon_27                                        ;A5A699;
     dw Hitbox_Draygon_1B                                                 ;A5A69B;
 
+%anchor($A5A69D)
 ExtendedSpritemap_Draygon_43:
     dw $0001,$0000,$0000                                                 ;A5A69D;
     dw ExtendedTilemap_Draygon_28                                        ;A5A6A3;
     dw Hitbox_Draygon_1B                                                 ;A5A6A5;
 
+%anchor($A5A6A7)
 ExtendedSpritemap_Draygon_44:
     dw $0001,$0000,$0000                                                 ;A5A6A7;
     dw ExtendedTilemap_Draygon_29                                        ;A5A6AD;
     dw Hitbox_Draygon_1B                                                 ;A5A6AF;
 
+%anchor($A5A6B1)
 ExtendedSpritemap_Draygon_45:
     dw $0001,$0000,$0000                                                 ;A5A6B1;
     dw ExtendedTilemap_Draygon_2A                                        ;A5A6B7;
     dw Hitbox_Draygon_1B                                                 ;A5A6B9;
 
+%anchor($A5A6BB)
 ExtendedSpritemap_Draygon_46:
     dw $0001,$0000,$0000                                                 ;A5A6BB;
     dw ExtendedTilemap_Draygon_2B                                        ;A5A6C1;
     dw Hitbox_Draygon_1B                                                 ;A5A6C3;
 
+%anchor($A5A6C5)
 ExtendedSpritemap_Draygon_47:
     dw $0001,$0000,$0000                                                 ;A5A6C5;
     dw ExtendedTilemap_Draygon_2C                                        ;A5A6CB;
     dw Hitbox_Draygon_1B                                                 ;A5A6CD;
 
+%anchor($A5A6CF)
 ExtendedSpritemap_Draygon_48:
     dw $0001,$0000,$0000                                                 ;A5A6CF;
     dw ExtendedTilemap_Draygon_2D                                        ;A5A6D5;
     dw Hitbox_Draygon_1B                                                 ;A5A6D7;
 
+%anchor($A5A6D9)
 ExtendedSpritemap_Draygon_49:
     dw $0001,$0000,$0000                                                 ;A5A6D9;
     dw ExtendedTilemap_Draygon_2E                                        ;A5A6DF;
     dw Hitbox_Draygon_1B                                                 ;A5A6E1;
 
+%anchor($A5A6E3)
 ExtendedSpritemap_Draygon_4A:
     dw $0001,$0000,$0000                                                 ;A5A6E3;
     dw ExtendedTilemap_Draygon_2F                                        ;A5A6E9;
     dw Hitbox_Draygon_2D                                                 ;A5A6EB;
 
+%anchor($A5A6ED)
 ExtendedSpritemap_Draygon_4B:
     dw $0001,$0000,$0001                                                 ;A5A6ED;
     dw Spritemap_Draygon_2B                                              ;A5A6F3;
     dw Hitbox_Draygon_1B                                                 ;A5A6F5;
 
+%anchor($A5A6F7)
 ExtendedSpritemap_Draygon_4C:
     dw $0001,$0000,$0001                                                 ;A5A6F7;
     dw Spritemap_Draygon_2C                                              ;A5A6FD;
     dw Hitbox_Draygon_1B                                                 ;A5A6FF;
 
+%anchor($A5A701)
 ExtendedSpritemap_Draygon_4D:
     dw $0001,$0000,$0001                                                 ;A5A701;
     dw Spritemap_Draygon_2D                                              ;A5A707;
     dw Hitbox_Draygon_1B                                                 ;A5A709;
 
+%anchor($A5A70B)
 ExtendedSpritemap_Draygon_4E:
     dw $0001,$0000,$0001                                                 ;A5A70B;
     dw Spritemap_Draygon_2E                                              ;A5A711;
     dw Hitbox_Draygon_1B                                                 ;A5A713;
 
+%anchor($A5A715)
 ExtendedSpritemap_Draygon_4F:
     dw $0001,$0000,$0000                                                 ;A5A715;
     dw Spritemap_Draygon_28                                              ;A5A71B;
     dw Hitbox_Draygon_1B                                                 ;A5A71D;
 
+%anchor($A5A71F)
 ExtendedSpritemap_Draygon_50:
     dw $0001,$0000,$0000                                                 ;A5A71F;
     dw Spritemap_Draygon_28                                              ;A5A725;
     dw Hitbox_Draygon_1B                                                 ;A5A727;
 
+%anchor($A5A729)
 ExtendedSpritemap_Draygon_51:
     dw $0001,$0000,$0000                                                 ;A5A729;
     dw Spritemap_Draygon_28                                              ;A5A72F;
     dw Hitbox_Draygon_1B                                                 ;A5A731;
 
+%anchor($A5A733)
 ExtendedSpritemap_Draygon_52:
     dw $0001,$0000,$0000                                                 ;A5A733;
     dw Spritemap_Draygon_28                                              ;A5A739;
     dw Hitbox_Draygon_1B                                                 ;A5A73B;
 
+%anchor($A5A73D)
 ExtendedSpritemap_Draygon_53:
     dw $0001,$0000,$0000                                                 ;A5A73D;
     dw Spritemap_Draygon_28                                              ;A5A743;
     dw Hitbox_Draygon_1B                                                 ;A5A745;
 
+%anchor($A5A747)
 ExtendedSpritemap_Draygon_54:
     dw $0001,$0000,$0000                                                 ;A5A747;
     dw Spritemap_Draygon_28                                              ;A5A74D;
     dw Hitbox_Draygon_1B                                                 ;A5A74F;
 
+%anchor($A5A751)
 ExtendedSpritemap_Draygon_55:
     dw $0001,$0000,$0000                                                 ;A5A751;
     dw Spritemap_Draygon_28                                              ;A5A757;
     dw Hitbox_Draygon_1B                                                 ;A5A759;
 
+%anchor($A5A75B)
 ExtendedSpritemap_Draygon_56:
     dw $0001,$0000,$0000                                                 ;A5A75B;
     dw Spritemap_Draygon_28                                              ;A5A761;
     dw Hitbox_Draygon_1B                                                 ;A5A763;
 
+%anchor($A5A765)
 ExtendedSpritemap_Draygon_57:
     dw $0001,$0000,$0000                                                 ;A5A765;
     dw ExtendedTilemap_Draygon_1D                                        ;A5A76B;
     dw Hitbox_Draygon_29                                                 ;A5A76D;
 
+%anchor($A5A76F)
 ExtendedSpritemap_Draygon_58:
     dw $0001,$0000,$0000                                                 ;A5A76F;
     dw ExtendedTilemap_Draygon_1E                                        ;A5A775;
     dw Hitbox_Draygon_29                                                 ;A5A777;
 
+%anchor($A5A779)
 ExtendedSpritemap_Draygon_59:
     dw $0002,$FFE5,$003F                                                 ;A5A779;
     dw Spritemap_Draygon_50                                              ;A5A77F;
@@ -4335,6 +4621,7 @@ ExtendedSpritemap_Draygon_59:
     dw Spritemap_Draygon_34                                              ;A5A787;
     dw Hitbox_Draygon_1B                                                 ;A5A789;
 
+%anchor($A5A78B)
 ExtendedSpritemap_Draygon_5A:
     dw $0002,$FFE9,$003D                                                 ;A5A78B;
     dw Spritemap_Draygon_4F                                              ;A5A791;
@@ -4343,6 +4630,7 @@ ExtendedSpritemap_Draygon_5A:
     dw Spritemap_Draygon_34                                              ;A5A799;
     dw Hitbox_Draygon_1B                                                 ;A5A79B;
 
+%anchor($A5A79D)
 ExtendedSpritemap_Draygon_5B:
     dw $0002,$FFED,$003A                                                 ;A5A79D;
     dw Spritemap_Draygon_4E                                              ;A5A7A3;
@@ -4351,6 +4639,7 @@ ExtendedSpritemap_Draygon_5B:
     dw Spritemap_Draygon_35                                              ;A5A7AB;
     dw Hitbox_Draygon_1B                                                 ;A5A7AD;
 
+%anchor($A5A7AF)
 ExtendedSpritemap_Draygon_5C:
     dw $0002,$FFF2,$0035                                                 ;A5A7AF;
     dw Spritemap_Draygon_4D                                              ;A5A7B5;
@@ -4359,6 +4648,7 @@ ExtendedSpritemap_Draygon_5C:
     dw Spritemap_Draygon_35                                              ;A5A7BD;
     dw Hitbox_Draygon_1B                                                 ;A5A7BF;
 
+%anchor($A5A7C1)
 ExtendedSpritemap_Draygon_5D:
     dw $0002,$FFF4,$002E                                                 ;A5A7C1;
     dw Spritemap_Draygon_4C                                              ;A5A7C7;
@@ -4367,6 +4657,7 @@ ExtendedSpritemap_Draygon_5D:
     dw Spritemap_Draygon_3F                                              ;A5A7CF;
     dw Hitbox_Draygon_1B                                                 ;A5A7D1;
 
+%anchor($A5A7D3)
 ExtendedSpritemap_Draygon_5E:
     dw $0002,$FFF2,$002D                                                 ;A5A7D3;
     dw Spritemap_Draygon_4B                                              ;A5A7D9;
@@ -4375,6 +4666,7 @@ ExtendedSpritemap_Draygon_5E:
     dw Spritemap_Draygon_3F                                              ;A5A7E1;
     dw Hitbox_Draygon_1B                                                 ;A5A7E3;
 
+%anchor($A5A7E5)
 ExtendedSpritemap_Draygon_5F:
     dw $0002,$FFEF,$0028                                                 ;A5A7E5;
     dw Spritemap_Draygon_4A                                              ;A5A7EB;
@@ -4383,6 +4675,7 @@ ExtendedSpritemap_Draygon_5F:
     dw Spritemap_Draygon_40                                              ;A5A7F3;
     dw Hitbox_Draygon_1B                                                 ;A5A7F5;
 
+%anchor($A5A7F7)
 ExtendedSpritemap_Draygon_60:
     dw $0003,$FFF5,$003C                                                 ;A5A7F7;
     dw Spritemap_Draygon_4E                                              ;A5A7FD;
@@ -4394,6 +4687,7 @@ ExtendedSpritemap_Draygon_60:
     dw Spritemap_Draygon_34                                              ;A5A80D;
     dw Hitbox_Draygon_1B                                                 ;A5A80F;
 
+%anchor($A5A811)
 ExtendedSpritemap_Draygon_61:
     dw $0004,$FFF8,$0043                                                 ;A5A811;
     dw Spritemap_Draygon_4E                                              ;A5A817;
@@ -4408,6 +4702,7 @@ ExtendedSpritemap_Draygon_61:
     dw Spritemap_Draygon_34                                              ;A5A82F;
     dw Hitbox_Draygon_1B                                                 ;A5A831;
 
+%anchor($A5A833)
 ExtendedSpritemap_Draygon_62:
     dw $0005,$FFF7,$004D                                                 ;A5A833;
     dw Spritemap_Draygon_4F                                              ;A5A839;
@@ -4425,6 +4720,7 @@ ExtendedSpritemap_Draygon_62:
     dw Spritemap_Draygon_35                                              ;A5A859;
     dw Hitbox_Draygon_1B                                                 ;A5A85B;
 
+%anchor($A5A85D)
 ExtendedSpritemap_Draygon_63:
     dw $0006,$0008,$004D                                                 ;A5A85D;
     dw Spritemap_Draygon_4E                                              ;A5A863;
@@ -4445,6 +4741,7 @@ ExtendedSpritemap_Draygon_63:
     dw Spritemap_Draygon_35                                              ;A5A88B;
     dw Hitbox_Draygon_1B                                                 ;A5A88D;
 
+%anchor($A5A88F)
 ExtendedSpritemap_Draygon_64:
     dw $0007,$0014,$0037                                                 ;A5A88F;
     dw Spritemap_Draygon_4B                                              ;A5A895;
@@ -4468,6 +4765,7 @@ ExtendedSpritemap_Draygon_64:
     dw Spritemap_Draygon_3F                                              ;A5A8C5;
     dw Hitbox_Draygon_1B                                                 ;A5A8C7;
 
+%anchor($A5A8C9)
 ExtendedSpritemap_Draygon_65:
     dw $0008,$0013,$002E                                                 ;A5A8C9;
     dw Spritemap_Draygon_4A                                              ;A5A8CF;
@@ -4494,6 +4792,7 @@ ExtendedSpritemap_Draygon_65:
     dw Spritemap_Draygon_3F                                              ;A5A907;
     dw Hitbox_Draygon_1B                                                 ;A5A909;
 
+%anchor($A5A90B)
 ExtendedSpritemap_Draygon_66:
     dw $0008,$0009,$0025                                                 ;A5A90B;
     dw Spritemap_Draygon_48                                              ;A5A911;
@@ -4520,130 +4819,157 @@ ExtendedSpritemap_Draygon_66:
     dw Spritemap_Draygon_40                                              ;A5A949;
     dw Hitbox_Draygon_1B                                                 ;A5A94B;
 
+%anchor($A5A94D)
 Hitbox_Draygon_0:
     dw $0001,$0000,$0000,$0017,$001F                                     ;A5A94D;
     dw EnemyTouch_Draygon                                                ;A5A957;
     dw CommonA5_NormalEnemyShotAI                                        ;A5A959;
 
+%anchor($A5A95B)
 Hitbox_Draygon_1:
     dw $0001,$0000,$0000,$0015,$001F                                     ;A5A95B;
     dw EnemyTouch_Draygon                                                ;A5A965;
     dw CommonA5_NormalEnemyShotAI                                        ;A5A967;
 
+%anchor($A5A969)
 Hitbox_Draygon_2:
     dw $0001,$0000,$0000,$000C,$0021                                     ;A5A969;
     dw EnemyTouch_Draygon                                                ;A5A973;
     dw CommonA5_NormalEnemyShotAI                                        ;A5A975;
 
+%anchor($A5A977)
 Hitbox_Draygon_3:
     dw $0001,$FFF9,$FFF8,$0006,$0006                                     ;A5A977;
     dw EnemyTouch_Draygon                                                ;A5A981;
     dw CommonA5_NormalEnemyShotAI                                        ;A5A983;
 
+%anchor($A5A985)
 Hitbox_Draygon_4:
     dw $0001,$FFF7,$FFF6,$0009,$0008                                     ;A5A985;
     dw EnemyTouch_Draygon                                                ;A5A98F;
     dw CommonA5_NormalEnemyShotAI                                        ;A5A991;
 
+%anchor($A5A993)
 Hitbox_Draygon_5:
     dw $0001,$FFF9,$FFF8,$0007,$0007                                     ;A5A993;
     dw EnemyTouch_Draygon                                                ;A5A99D;
     dw CommonA5_NormalEnemyShotAI                                        ;A5A99F;
 
+%anchor($A5A9A1)
 Hitbox_Draygon_6:
     dw $0001,$FFF8,$FFF8,$0006,$0006                                     ;A5A9A1;
     dw EnemyTouch_Draygon                                                ;A5A9AB;
     dw CommonA5_NormalEnemyShotAI                                        ;A5A9AD;
 
+%anchor($A5A9AF)
 Hitbox_Draygon_7:
     dw $0001,$FFF7,$FFF7,$0004,$0007                                     ;A5A9AF;
     dw RTL_A5804C                                                        ;A5A9B9;
     dw RTL_A5804C                                                        ;A5A9BB;
 
+%anchor($A5A9BD)
 Hitbox_Draygon_8:
     dw $0000                                                             ;A5A9BD;
 
+%anchor($A5A9BF)
 Hitbox_Draygon_9:
     dw $0000                                                             ;A5A9BF;
 
+%anchor($A5A9C1)
 Hitbox_Draygon_A:
     dw $0001,$FFFB,$FFFB,$0004,$0004                                     ;A5A9C1;
     dw EnemyTouch_Draygon                                                ;A5A9CB;
     dw CommonA5_NormalEnemyShotAI                                        ;A5A9CD;
 
+%anchor($A5A9CF)
 Hitbox_Draygon_B:
     dw $0001,$FFFB,$FFFB,$0003,$0005                                     ;A5A9CF;
     dw EnemyTouch_Draygon                                                ;A5A9D9;
     dw CommonA5_NormalEnemyShotAI                                        ;A5A9DB;
 
+%anchor($A5A9DD)
 Hitbox_Draygon_C:
     dw $0001,$FFFB,$FFFB,$0004,$0004                                     ;A5A9DD;
     dw EnemyTouch_Draygon                                                ;A5A9E7;
     dw CommonA5_NormalEnemyShotAI                                        ;A5A9E9;
 
+%anchor($A5A9EB)
 Hitbox_Draygon_D:
     dw $0001,$FFF9,$FFF9,$0007,$0006                                     ;A5A9EB;
     dw EnemyTouch_Draygon                                                ;A5A9F5;
     dw CommonA5_NormalEnemyShotAI                                        ;A5A9F7;
 
+%anchor($A5A9F9)
 Hitbox_Draygon_E:
     dw $0001,$FFFB,$FFFB,$0004,$0004                                     ;A5A9F9;
     dw EnemyTouch_Draygon                                                ;A5AA03;
     dw CommonA5_NormalEnemyShotAI                                        ;A5AA05;
 
+%anchor($A5AA07)
 Hitbox_Draygon_F:
     dw $0001,$FFFB,$FFFC,$0004,$0004                                     ;A5AA07;
     dw EnemyTouch_Draygon                                                ;A5AA11;
     dw CommonA5_NormalEnemyShotAI                                        ;A5AA13;
 
+%anchor($A5AA15)
 Hitbox_Draygon_10:
     dw $0001,$FFFB,$FFFB,$0004,$0004                                     ;A5AA15;
     dw EnemyTouch_Draygon                                                ;A5AA1F;
     dw CommonA5_NormalEnemyShotAI                                        ;A5AA21;
 
+%anchor($A5AA23)
 Hitbox_Draygon_11:
     dw $0000                                                             ;A5AA23;
 
+%anchor($A5AA25)
 Hitbox_Draygon_12:
     dw $0001,$FFE2,$FFE6,$FFF2,$FFF5                                     ;A5AA25;
     dw EnemyTouch_Draygon                                                ;A5AA2F;
     dw CommonA5_NormalEnemyShotAI                                        ;A5AA31;
 
+%anchor($A5AA33)
 Hitbox_Draygon_13:
     dw $0001,$FFE1,$FFE6,$FFF2,$FFF6                                     ;A5AA33;
     dw EnemyTouch_Draygon                                                ;A5AA3D;
     dw CommonA5_NormalEnemyShotAI                                        ;A5AA3F;
 
+%anchor($A5AA41)
 Hitbox_Draygon_14:
     dw $0001,$FFE1,$FFE6,$FFF2,$FFF6                                     ;A5AA41;
     dw EnemyTouch_Draygon                                                ;A5AA4B;
     dw CommonA5_NormalEnemyShotAI                                        ;A5AA4D;
 
+%anchor($A5AA4F)
 Hitbox_Draygon_15:
     dw $0001,$FFE1,$FFE6,$FFF2,$FFF7                                     ;A5AA4F;
     dw EnemyTouch_Draygon                                                ;A5AA59;
     dw CommonA5_NormalEnemyShotAI                                        ;A5AA5B;
 
+%anchor($A5AA5D)
 Hitbox_Draygon_16:
     dw $0001,$FFF3,$0000,$000A,$0017                                     ;A5AA5D;
     dw EnemyTouch_Draygon                                                ;A5AA67;
     dw CommonA5_NormalEnemyShotAI                                        ;A5AA69;
 
+%anchor($A5AA6B)
 Hitbox_Draygon_17:
     dw $0001,$FFF3,$0000,$000A,$0017                                     ;A5AA6B;
     dw EnemyTouch_Draygon                                                ;A5AA75;
     dw CommonA5_NormalEnemyShotAI                                        ;A5AA77;
 
+%anchor($A5AA79)
 Hitbox_Draygon_18:
     dw $0001,$FFF3,$0000,$000A,$0017                                     ;A5AA79;
     dw EnemyTouch_Draygon                                                ;A5AA83;
     dw CommonA5_NormalEnemyShotAI                                        ;A5AA85;
 
+%anchor($A5AA87)
 Hitbox_Draygon_19:
     dw $0001,$FFF3,$0000,$000A,$0017                                     ;A5AA87;
     dw EnemyTouch_Draygon                                                ;A5AA91;
     dw CommonA5_NormalEnemyShotAI                                        ;A5AA93;
 
+%anchor($A5AA95)
 Hitbox_Draygon_1A:
     dw $0004,$FFEF,$FFF0,$0012,$001E                                     ;A5AA95;
     dw RTL_A5804C                                                        ;A5AA9F;
@@ -4658,92 +4984,111 @@ Hitbox_Draygon_1A:
     dw EnemyTouch_Draygon                                                ;A5AAC3;
     dw CommonA5_CreateADudShot                                           ;A5AAC5;
 
+%anchor($A5AAC7)
 Hitbox_Draygon_1B:
     dw $0000                                                             ;A5AAC7;
 
+%anchor($A5AAC9)
 Hitbox_Draygon_1C:
     dw $0001,$FFF9,$FFF8,$0006,$0006                                     ;A5AAC9;
     dw EnemyTouch_Draygon                                                ;A5AAD3;
     dw CommonA5_NormalEnemyShotAI                                        ;A5AAD5;
 
+%anchor($A5AAD7)
 Hitbox_Draygon_1D:
     dw $0001,$FFF7,$FFF6,$0009,$0008                                     ;A5AAD7;
     dw EnemyTouch_Draygon                                                ;A5AAE1;
     dw CommonA5_NormalEnemyShotAI                                        ;A5AAE3;
 
+%anchor($A5AAE5)
 Hitbox_Draygon_1E:
     dw $0001,$FFF9,$FFF8,$0007,$0007                                     ;A5AAE5;
     dw EnemyTouch_Draygon                                                ;A5AAEF;
     dw CommonA5_NormalEnemyShotAI                                        ;A5AAF1;
 
+%anchor($A5AAF3)
 Hitbox_Draygon_1F:
     dw $0001,$FFF8,$FFF8,$0006,$0006                                     ;A5AAF3;
     dw EnemyTouch_Draygon                                                ;A5AAFD;
     dw CommonA5_NormalEnemyShotAI                                        ;A5AAFF;
 
+%anchor($A5AB01)
 Hitbox_Draygon_20:
     dw $0001,$FFFB,$FFF7,$0007,$0007                                     ;A5AB01;
     dw RTL_A5804C                                                        ;A5AB0B;
     dw RTL_A5804C                                                        ;A5AB0D;
 
+%anchor($A5AB0F)
 Hitbox_Draygon_21:
     dw $0001,$FFFB,$FFFB,$0004,$0004                                     ;A5AB0F;
     dw EnemyTouch_Draygon                                                ;A5AB19;
     dw CommonA5_NormalEnemyShotAI                                        ;A5AB1B;
 
+%anchor($A5AB1D)
 Hitbox_Draygon_22:
     dw $0001,$FFFB,$FFFB,$0003,$0005                                     ;A5AB1D;
     dw EnemyTouch_Draygon                                                ;A5AB27;
     dw CommonA5_NormalEnemyShotAI                                        ;A5AB29;
 
+%anchor($A5AB2B)
 Hitbox_Draygon_23:
     dw $0001,$FFFB,$FFFB,$0004,$0004                                     ;A5AB2B;
     dw EnemyTouch_Draygon                                                ;A5AB35;
     dw CommonA5_NormalEnemyShotAI                                        ;A5AB37;
 
+%anchor($A5AB39)
 Hitbox_Draygon_24:
     dw $0001,$FFF9,$FFF9,$0007,$0006                                     ;A5AB39;
     dw EnemyTouch_Draygon                                                ;A5AB43;
     dw CommonA5_NormalEnemyShotAI                                        ;A5AB45;
 
+%anchor($A5AB47)
 Hitbox_Draygon_25:
     dw $0001,$FFFB,$FFFB,$0004,$0004                                     ;A5AB47;
     dw EnemyTouch_Draygon                                                ;A5AB51;
     dw CommonA5_NormalEnemyShotAI                                        ;A5AB53;
 
+%anchor($A5AB55)
 Hitbox_Draygon_26:
     dw $0001,$FFFB,$FFFC,$0004,$0004                                     ;A5AB55;
     dw EnemyTouch_Draygon                                                ;A5AB5F;
     dw CommonA5_NormalEnemyShotAI                                        ;A5AB61;
 
+%anchor($A5AB63)
 Hitbox_Draygon_27:
     dw $0001,$FFFB,$FFFB,$0004,$0004                                     ;A5AB63;
     dw EnemyTouch_Draygon                                                ;A5AB6D;
     dw CommonA5_NormalEnemyShotAI                                        ;A5AB6F;
 
+%anchor($A5AB71)
 Hitbox_Draygon_28:
     dw $0000                                                             ;A5AB71;
 
+%anchor($A5AB73)
 Hitbox_Draygon_29:
     dw $0001,$FFFA,$0000,$0010,$0017                                     ;A5AB73;
     dw EnemyTouch_Draygon                                                ;A5AB7D;
     dw CommonA5_NormalEnemyShotAI                                        ;A5AB7F;
 
+%anchor($A5AB81)
 Hitbox_Draygon_2A:
     dw $0001,$FFFA,$0000,$0010,$0017                                     ;A5AB81;
     dw EnemyTouch_Draygon                                                ;A5AB8B;
     dw CommonA5_NormalEnemyShotAI                                        ;A5AB8D;
 
+%anchor($A5AB8F)
 Hitbox_Draygon_2B:
     dw $0001,$FFFA,$0000,$0010,$0017                                     ;A5AB8F;
     dw EnemyTouch_Draygon                                                ;A5AB99;
     dw CommonA5_NormalEnemyShotAI                                        ;A5AB9B;
 
+%anchor($A5AB9D)
 Hitbox_Draygon_2C:
     dw $0001,$FFFA,$0000,$0010,$0017                                     ;A5AB9D;
     dw EnemyTouch_Draygon                                                ;A5ABA7;
     dw CommonA5_NormalEnemyShotAI                                        ;A5ABA9;
 
+%anchor($A5ABAB)
 Hitbox_Draygon_2D:
     dw $0004,$FFEE,$FFF9,$0012,$001E                                     ;A5ABAB;
     dw RTL_A5804C                                                        ;A5ABB5;
@@ -4758,9 +5103,11 @@ Hitbox_Draygon_2D:
     dw EnemyTouch_Draygon                                                ;A5ABD9;
     dw CommonA5_CreateADudShot                                           ;A5ABDB;
 
+%anchor($A5ABDD)
 Hitbox_Draygon_2E:
     dw $0000                                                             ;A5ABDD;
 
+%anchor($A5ABDF)
 Spritemap_Draygon_0:
     dw $0004,$8008                                                       ;A5ABDF;
     db $10                                                               ;A5ABE3;
@@ -4772,6 +5119,7 @@ Spritemap_Draygon_0:
     db $00                                                               ;A5ABF2;
     dw $0700                                                             ;A5ABF3;
 
+%anchor($A5ABF5)
 Spritemap_Draygon_1:
     dw $0004,$0000                                                       ;A5ABF5;
     db $10                                                               ;A5ABF9;
@@ -4783,6 +5131,7 @@ Spritemap_Draygon_1:
     db $00                                                               ;A5AC08;
     dw $2704                                                             ;A5AC09;
 
+%anchor($A5AC0B)
 Spritemap_Draygon_2:
     dw $0002,$8000                                                       ;A5AC0B;
     db $10                                                               ;A5AC0F;
@@ -4790,6 +5139,7 @@ Spritemap_Draygon_2:
     db $00                                                               ;A5AC14;
     dw $2706                                                             ;A5AC15;
 
+%anchor($A5AC17)
 Spritemap_Draygon_3:
     dw $0018,$81E5                                                       ;A5AC17;
     db $02                                                               ;A5AC1B;
@@ -4841,6 +5191,7 @@ Spritemap_Draygon_3:
     db $0D                                                               ;A5AC8E;
     dw $2760                                                             ;A5AC8F;
 
+%anchor($A5AC91)
 Spritemap_Draygon_4:
     dw $0014,$81F8                                                       ;A5AC91;
     db $F9                                                               ;A5AC95;
@@ -4884,6 +5235,7 @@ Spritemap_Draygon_4:
     db $FD                                                               ;A5ACF4;
     dw $2743                                                             ;A5ACF5;
 
+%anchor($A5ACF7)
 Spritemap_Draygon_5:
     dw $0010,$81F9                                                       ;A5ACF7;
     db $F9                                                               ;A5ACFB;
@@ -4919,6 +5271,7 @@ Spritemap_Draygon_5:
     db $F9                                                               ;A5AD46;
     dw $2745                                                             ;A5AD47;
 
+%anchor($A5AD49)
 Spritemap_Draygon_6:
     dw $0010,$8000                                                       ;A5AD49;
     db $F4                                                               ;A5AD4D;
@@ -4954,6 +5307,7 @@ Spritemap_Draygon_6:
     db $FA                                                               ;A5AD98;
     dw $2708                                                             ;A5AD99;
 
+%anchor($A5AD9B)
 Spritemap_Draygon_7:
     dw $000A,$81FC                                                       ;A5AD9B;
     db $F0                                                               ;A5AD9F;
@@ -4977,6 +5331,7 @@ Spritemap_Draygon_7:
     db $04                                                               ;A5ADCC;
     dw $2706                                                             ;A5ADCD;
 
+%anchor($A5ADCF)
 Spritemap_Draygon_8:
     dw $000A,$81FB                                                       ;A5ADCF;
     db $F0                                                               ;A5ADD3;
@@ -5000,6 +5355,7 @@ Spritemap_Draygon_8:
     db $04                                                               ;A5AE00;
     dw $2706                                                             ;A5AE01;
 
+%anchor($A5AE03)
 Spritemap_Draygon_9:
     dw $000A,$81FB                                                       ;A5AE03;
     db $F0                                                               ;A5AE07;
@@ -5023,6 +5379,7 @@ Spritemap_Draygon_9:
     db $04                                                               ;A5AE34;
     dw $2706                                                             ;A5AE35;
 
+%anchor($A5AE37)
 Spritemap_Draygon_A:
     dw $000A,$81FB                                                       ;A5AE37;
     db $F0                                                               ;A5AE3B;
@@ -5046,6 +5403,7 @@ Spritemap_Draygon_A:
     db $04                                                               ;A5AE68;
     dw $2706                                                             ;A5AE69;
 
+%anchor($A5AE6B)
 Spritemap_Draygon_B:
     dw $0013,$81E5                                                       ;A5AE6B;
     db $02                                                               ;A5AE6F;
@@ -5087,6 +5445,7 @@ Spritemap_Draygon_B:
     db $FC                                                               ;A5AEC9;
     dw $2708                                                             ;A5AECA;
 
+%anchor($A5AECC)
 Spritemap_Draygon_C:
     dw $0011,$81F8                                                       ;A5AECC;
     db $F9                                                               ;A5AED0;
@@ -5124,6 +5483,7 @@ Spritemap_Draygon_C:
     db $FC                                                               ;A5AF20;
     dw $2745                                                             ;A5AF21;
 
+%anchor($A5AF23)
 Spritemap_Draygon_D:
     dw $0011,$81F9                                                       ;A5AF23;
     db $F9                                                               ;A5AF27;
@@ -5161,6 +5521,7 @@ Spritemap_Draygon_D:
     db $FC                                                               ;A5AF77;
     dw $2743                                                             ;A5AF78;
 
+%anchor($A5AF7A)
 Spritemap_Draygon_E:
     dw $0013,$8000                                                       ;A5AF7A;
     db $F4                                                               ;A5AF7E;
@@ -5202,6 +5563,7 @@ Spritemap_Draygon_E:
     db $0C                                                               ;A5AFD8;
     dw $2760                                                             ;A5AFD9;
 
+%anchor($A5AFDB)
 Spritemap_Draygon_F:
     dw $0014,$81F9                                                       ;A5AFDB;
     db $F9                                                               ;A5AFDF;
@@ -5245,6 +5607,7 @@ Spritemap_Draygon_F:
     db $FC                                                               ;A5B03E;
     dw $2743                                                             ;A5B03F;
 
+%anchor($A5B041)
 Spritemap_Draygon_10:
     dw $0014,$81F8                                                       ;A5B041;
     db $F9                                                               ;A5B045;
@@ -5288,6 +5651,7 @@ Spritemap_Draygon_10:
     db $FC                                                               ;A5B0A4;
     dw $2745                                                             ;A5B0A5;
 
+%anchor($A5B0A7)
 Spritemap_Draygon_11:
     dw $0013,$81BB                                                       ;A5B0A7;
     db $E5                                                               ;A5B0AB;
@@ -5329,6 +5693,7 @@ Spritemap_Draygon_11:
     db $D8                                                               ;A5B105;
     dw $2743                                                             ;A5B106;
 
+%anchor($A5B108)
 ExtendedTilemap_Draygon_0:
     dw $FFFE,$2316,$0002,$159F,$15A0,$2356,$0002,$15AC                   ;A5B108;
     dw $15AD,$2394,$0003,$15B9,$15BA,$15BB,$23D4,$0003                   ;A5B118;
@@ -5336,6 +5701,7 @@ ExtendedTilemap_Draygon_0:
     dw $2454,$0003,$15DF,$15E0,$1547,$2496,$0002,$1547                   ;A5B138;
     dw $1547,$FFFF                                                       ;A5B148;
 
+%anchor($A5B14C)
 ExtendedTilemap_Draygon_1:
     dw $FFFE,$2316,$0002,$1559,$155A,$2356,$0002,$1569                   ;A5B14C;
     dw $156A,$2394,$0003,$1576,$1577,$1578,$23D2,$0004                   ;A5B15C;
@@ -5343,6 +5709,7 @@ ExtendedTilemap_Draygon_1:
     dw $1594,$1595,$2452,$0004,$15A1,$15A2,$15A3,$0147                   ;A5B17C;
     dw $2496,$0002,$0147,$0147,$FFFF                                     ;A5B18C;
 
+%anchor($A5B196)
 ExtendedTilemap_Draygon_2:
     dw $FFFE,$2316,$0002,$1596,$1597,$2356,$0002,$15A4                   ;A5B196;
     dw $15A5,$2390,$0005,$15AE,$15AF,$15B0,$15B1,$15B2                   ;A5B1A6;
@@ -5350,6 +5717,7 @@ ExtendedTilemap_Draygon_2:
     dw $240E,$0006,$15CB,$15CC,$15CD,$15CE,$15CF,$15D0                   ;A5B1C6;
     dw $2452,$0003,$0147,$0147,$0147,$FFFF                               ;A5B1D6;
 
+%anchor($A5B1E2)
 ExtendedTilemap_Draygon_3:
     dw $FFFE,$230A,$0003,$15DA,$15DB,$1547,$2316,$0002                   ;A5B1E2;
     dw $15DC,$15DD,$234C,$0003,$15E1,$15E2,$15E3,$2354                   ;A5B1F2;
@@ -5358,6 +5726,7 @@ ExtendedTilemap_Draygon_3:
     dw $15F4,$15F5,$15F6,$15F7,$15F8,$15F9,$240E,$0005                   ;A5B222;
     dw $1600,$1601,$1602,$1603,$1604,$FFFF                               ;A5B232;
 
+%anchor($A5B23E)
 ExtendedTilemap_Draygon_4:
     dw $FFFE,$230A,$0003,$0147,$0147,$0147,$2316,$0002                   ;A5B23E;
     dw $1596,$1597,$234C,$0003,$0147,$0147,$0147,$2354                   ;A5B24E;
@@ -5366,6 +5735,7 @@ ExtendedTilemap_Draygon_4:
     dw $15BC,$15BD,$15BE,$15BF,$15C0,$15C1,$240E,$0005                   ;A5B27E;
     dw $15CB,$15CC,$15CD,$15CE,$15CF,$FFFF                               ;A5B28E;
 
+%anchor($A5B29A)
 ExtendedTilemap_Draygon_5:
     dw $FFFE,$2316,$0002,$1559,$155A,$2356,$0002,$1569                   ;A5B29A;
     dw $156A,$2390,$0005,$0147,$0147,$1576,$1577,$1578                   ;A5B2AA;
@@ -5373,6 +5743,7 @@ ExtendedTilemap_Draygon_5:
     dw $240E,$0006,$0147,$0147,$1592,$1593,$1594,$1595                   ;A5B2CA;
     dw $2452,$0003,$15A1,$15A2,$15A3,$FFFF                               ;A5B2DA;
 
+%anchor($A5B2E6)
 ExtendedTilemap_Draygon_6:
     dw $FFFE,$2316,$0002,$159F,$15A0,$2356,$0002,$15AC                   ;A5B2E6;
     dw $15AD,$2394,$0003,$15B9,$15BA,$15BB,$23D2,$0004                   ;A5B2F6;
@@ -5380,73 +5751,90 @@ ExtendedTilemap_Draygon_6:
     dw $15D8,$15D9,$2452,$0004,$0147,$15DF,$15E0,$1547                   ;A5B316;
     dw $2496,$0002,$1547,$1547,$FFFF                                     ;A5B326;
 
+%anchor($A5B330)
 ExtendedTilemap_Draygon_7:
     dw $FFFE,$2148,$0002,$1554,$1555,$2188,$0002,$1564                   ;A5B330;
     dw $1565,$FFFF                                                       ;A5B340;
 
+%anchor($A5B344)
 ExtendedTilemap_Draygon_8:
     dw $FFFE,$2148,$0002,$1580,$1581,$2188,$0002,$1590                   ;A5B344;
     dw $1591,$FFFF                                                       ;A5B354;
 
+%anchor($A5B358)
 ExtendedTilemap_Draygon_9:
     dw $FFFE,$2148,$0002,$1582,$1583,$2188,$0002,$1592                   ;A5B358;
     dw $1593,$FFFF                                                       ;A5B368;
 
+%anchor($A5B36C)
 ExtendedTilemap_Draygon_A:
     dw $FFFE,$2148,$0002,$1562,$1563,$2188,$0002,$1572                   ;A5B36C;
     dw $1573,$FFFF                                                       ;A5B37C;
 
+%anchor($A5B380)
 ExtendedTilemap_Draygon_B:
     dw $FFFE,$220C,$0003,$1586,$159E,$159F,$224C,$0003                   ;A5B380;
     dw $1596,$1597,$1598,$228C,$0003,$15A6,$15A7,$15A8                   ;A5B390;
     dw $FFFF                                                             ;A5B3A0;
 
+%anchor($A5B3A2)
 ExtendedTilemap_Draygon_C:
     dw $FFFE,$220C,$0001,$159D,$224C,$0003,$15AD,$15AE                   ;A5B3A2;
     dw $15AF,$228C,$0003,$15BD,$15BE,$15BF,$FFFF                         ;A5B3B2;
 
+%anchor($A5B3C0)
 ExtendedTilemap_Draygon_D:
     dw $FFFE,$220C,$0003,$15A0,$15A1,$15A2,$224C,$0003                   ;A5B3C0;
     dw $15B0,$15B1,$15B2,$228C,$0003,$15B4,$15B5,$15B6                   ;A5B3D0;
     dw $FFFF                                                             ;A5B3E0;
 
+%anchor($A5B3E2)
 ExtendedTilemap_Draygon_E:
     dw $FFFE,$220C,$0003,$15A3,$1584,$1585,$224C,$0003                   ;A5B3E2;
     dw $15B3,$1594,$1595,$228C,$0003,$1574,$15A4,$15A5                   ;A5B3F2;
     dw $FFFF                                                             ;A5B402;
 
+%anchor($A5B404)
 ExtendedTilemap_Draygon_F:
     dw $FFFE,$20C8,$0002,$1540,$1541,$2108,$0002,$1550                   ;A5B404;
     dw $1551,$FFFF                                                       ;A5B414;
 
+%anchor($A5B418)
 ExtendedTilemap_Draygon_10:
     dw $FFFE,$20C8,$0002,$1560,$1561,$2108,$0002,$1570                   ;A5B418;
     dw $1571,$FFFF                                                       ;A5B428;
 
+%anchor($A5B42C)
 ExtendedTilemap_Draygon_11:
     dw $FFFE,$20C8,$0002,$150A,$150B,$2108,$0002,$151A                   ;A5B42C;
     dw $151B,$FFFF                                                       ;A5B43C;
 
+%anchor($A5B440)
 ExtendedTilemap_Draygon_12:
     dw $FFFE,$20C8,$0002,$150C,$150D,$2108,$0002,$151C                   ;A5B440;
     dw $151D,$FFFF                                                       ;A5B450;
 
+%anchor($A5B454)
 ExtendedTilemap_Draygon_13:
     dw $FFFE,$20C8,$0002,$1534,$1535,$2108,$0002,$1544                   ;A5B454;
     dw $1545,$FFFF                                                       ;A5B464;
 
+%anchor($A5B468)
 ExtendedTilemap_Draygon_14:
     dw $FFFE,$20C8,$0002,$150E,$150F,$2108,$0002,$151E                   ;A5B468;
     dw $151F,$FFFF                                                       ;A5B478;
 
+%anchor($A5B47C)
 ExtendedTilemap_Draygon_15:
     dw $FFFE,$20C8,$0002,$152C,$152D,$2108,$0002,$153C                   ;A5B47C;
     dw $153D,$FFFF                                                       ;A5B48C;
 
+%anchor($A5B490)
 ExtendedTilemap_Draygon_16:
     dw $FFFE,$20C8,$0002,$152E,$152F,$2108,$0002,$153E                   ;A5B490;
     dw $153F,$FFFF                                                       ;A5B4A0;
 
+%anchor($A5B4A4)
 ExtendedTilemap_Draygon_17:
     dw $FFFE,$2000,$0010,$1500,$1501,$1502,$1503,$1504                   ;A5B4A4;
     dw $1505,$1506,$1507,$0338,$0338,$0338,$0338,$0338                   ;A5B4B4;
@@ -5483,6 +5871,7 @@ ExtendedTilemap_Draygon_17:
     dw $8338,$8338,$8338,$8338,$8338,$8338,$8338,$8338                   ;A5B6A4;
     dw $8338,$8338,$152A,$152B,$8338,$8338,$8338,$FFFF                   ;A5B6B4;
 
+%anchor($A5B6C4)
 Spritemap_Draygon_12:
     dw $0003,$01F8                                                       ;A5B6C4;
     db $F8                                                               ;A5B6C8;
@@ -5492,6 +5881,7 @@ Spritemap_Draygon_12:
     db $00                                                               ;A5B6D2;
     dw $27A9                                                             ;A5B6D3;
 
+%anchor($A5B6D5)
 Spritemap_Draygon_13:
     dw $0003,$01F8                                                       ;A5B6D5;
     db $F8                                                               ;A5B6D9;
@@ -5501,6 +5891,7 @@ Spritemap_Draygon_13:
     db $00                                                               ;A5B6E3;
     dw $27A7                                                             ;A5B6E4;
 
+%anchor($A5B6E6)
 Spritemap_Draygon_14:
     dw $0004,$01F4                                                       ;A5B6E6;
     db $F4                                                               ;A5B6EA;
@@ -5512,6 +5903,7 @@ Spritemap_Draygon_14:
     db $FC                                                               ;A5B6F9;
     dw $27A5                                                             ;A5B6FA;
 
+%anchor($A5B6FC)
 Spritemap_Draygon_15:
     dw $0002,$81F0                                                       ;A5B6FC;
     db $F8                                                               ;A5B700;
@@ -5519,6 +5911,7 @@ Spritemap_Draygon_15:
     db $F8                                                               ;A5B705;
     dw $27A2                                                             ;A5B706;
 
+%anchor($A5B708)
 Spritemap_Draygon_16:
     dw $0003,$01F8                                                       ;A5B708;
     db $00                                                               ;A5B70C;
@@ -5528,6 +5921,7 @@ Spritemap_Draygon_16:
     db $F8                                                               ;A5B716;
     dw $27AE                                                             ;A5B717;
 
+%anchor($A5B719)
 Spritemap_Draygon_17:
     dw $0003,$01F8                                                       ;A5B719;
     db $00                                                               ;A5B71D;
@@ -5537,6 +5931,7 @@ Spritemap_Draygon_17:
     db $F8                                                               ;A5B727;
     dw $27C2                                                             ;A5B728;
 
+%anchor($A5B72A)
 Spritemap_Draygon_18:
     dw $0003,$01FC                                                       ;A5B72A;
     db $04                                                               ;A5B72E;
@@ -5546,6 +5941,7 @@ Spritemap_Draygon_18:
     db $F4                                                               ;A5B738;
     dw $27C4                                                             ;A5B739;
 
+%anchor($A5B73B)
 Spritemap_Draygon_19:
     dw $0002,$81F8                                                       ;A5B73B;
     db $00                                                               ;A5B73F;
@@ -5553,6 +5949,7 @@ Spritemap_Draygon_19:
     db $F0                                                               ;A5B744;
     dw $27C6                                                             ;A5B745;
 
+%anchor($A5B747)
 Spritemap_Draygon_1A:
     dw $0003,$0000                                                       ;A5B747;
     db $00                                                               ;A5B74B;
@@ -5562,6 +5959,7 @@ Spritemap_Draygon_1A:
     db $F0                                                               ;A5B755;
     dw $21C8                                                             ;A5B756;
 
+%anchor($A5B758)
 Spritemap_Draygon_1B:
     dw $0003,$0000                                                       ;A5B758;
     db $00                                                               ;A5B75C;
@@ -5571,6 +5969,7 @@ Spritemap_Draygon_1B:
     db $F0                                                               ;A5B766;
     dw $E7A7                                                             ;A5B767;
 
+%anchor($A5B769)
 Spritemap_Draygon_1C:
     dw $0004,$0004                                                       ;A5B769;
     db $04                                                               ;A5B76D;
@@ -5582,6 +5981,7 @@ Spritemap_Draygon_1C:
     db $F4                                                               ;A5B77C;
     dw $E7A5                                                             ;A5B77D;
 
+%anchor($A5B77F)
 Spritemap_Draygon_1D:
     dw $0002,$8000                                                       ;A5B77F;
     db $F8                                                               ;A5B783;
@@ -5589,6 +5989,7 @@ Spritemap_Draygon_1D:
     db $F8                                                               ;A5B788;
     dw $E7A2                                                             ;A5B789;
 
+%anchor($A5B78B)
 Spritemap_Draygon_1E:
     dw $0003,$0000                                                       ;A5B78B;
     db $F8                                                               ;A5B78F;
@@ -5598,6 +5999,7 @@ Spritemap_Draygon_1E:
     db $F8                                                               ;A5B799;
     dw $E7AE                                                             ;A5B79A;
 
+%anchor($A5B79C)
 Spritemap_Draygon_1F:
     dw $0003,$0000                                                       ;A5B79C;
     db $F8                                                               ;A5B7A0;
@@ -5607,6 +6009,7 @@ Spritemap_Draygon_1F:
     db $F8                                                               ;A5B7AA;
     dw $E7C2                                                             ;A5B7AB;
 
+%anchor($A5B7AD)
 Spritemap_Draygon_20:
     dw $0003,$01FC                                                       ;A5B7AD;
     db $F4                                                               ;A5B7B1;
@@ -5616,6 +6019,7 @@ Spritemap_Draygon_20:
     db $FC                                                               ;A5B7BB;
     dw $E7C4                                                             ;A5B7BC;
 
+%anchor($A5B7BE)
 Spritemap_Draygon_21:
     dw $0002,$81F8                                                       ;A5B7BE;
     db $F0                                                               ;A5B7C2;
@@ -5623,36 +6027,43 @@ Spritemap_Draygon_21:
     db $00                                                               ;A5B7C7;
     dw $E7C6                                                             ;A5B7C8;
 
+%anchor($A5B7CA)
 Spritemap_Draygon_22:
     dw $0001,$81F8                                                       ;A5B7CA;
     db $F8                                                               ;A5B7CE;
     dw $2784                                                             ;A5B7CF;
 
+%anchor($A5B7D1)
 Spritemap_Draygon_23:
     dw $0001,$81F8                                                       ;A5B7D1;
     db $F8                                                               ;A5B7D5;
     dw $2782                                                             ;A5B7D6;
 
+%anchor($A5B7D8)
 Spritemap_Draygon_24:
     dw $0001,$81F8                                                       ;A5B7D8;
     db $F8                                                               ;A5B7DC;
     dw $2780                                                             ;A5B7DD;
 
+%anchor($A5B7DF)
 Spritemap_Draygon_25:
     dw $0001,$81F8                                                       ;A5B7DF;
     db $F8                                                               ;A5B7E3;
     dw $6784                                                             ;A5B7E4;
 
+%anchor($A5B7E6)
 Spritemap_Draygon_26:
     dw $0001,$81F8                                                       ;A5B7E6;
     db $F8                                                               ;A5B7EA;
     dw $6782                                                             ;A5B7EB;
 
+%anchor($A5B7ED)
 Spritemap_Draygon_27:
     dw $0001,$81F8                                                       ;A5B7ED;
     db $F8                                                               ;A5B7F1;
     dw $6780                                                             ;A5B7F2;
 
+%anchor($A5B7F4)
 Spritemap_Draygon_28:
     dw $0004,$81E8                                                       ;A5B7F4;
     db $10                                                               ;A5B7F8;
@@ -5664,6 +6075,7 @@ Spritemap_Draygon_28:
     db $00                                                               ;A5B807;
     dw $6700                                                             ;A5B808;
 
+%anchor($A5B80A)
 Spritemap_Draygon_29:
     dw $0004,$01F8                                                       ;A5B80A;
     db $10                                                               ;A5B80E;
@@ -5675,6 +6087,7 @@ Spritemap_Draygon_29:
     db $00                                                               ;A5B81D;
     dw $6704                                                             ;A5B81E;
 
+%anchor($A5B820)
 Spritemap_Draygon_2A:
     dw $0002,$81F0                                                       ;A5B820;
     db $10                                                               ;A5B824;
@@ -5682,6 +6095,7 @@ Spritemap_Draygon_2A:
     db $00                                                               ;A5B829;
     dw $6706                                                             ;A5B82A;
 
+%anchor($A5B82C)
 Spritemap_Draygon_2B:
     dw $0018,$800B                                                       ;A5B82C;
     db $02                                                               ;A5B830;
@@ -5733,6 +6147,7 @@ Spritemap_Draygon_2B:
     db $0D                                                               ;A5B8A3;
     dw $6760                                                             ;A5B8A4;
 
+%anchor($A5B8A6)
 Spritemap_Draygon_2C:
     dw $0014,$81F8                                                       ;A5B8A6;
     db $F9                                                               ;A5B8AA;
@@ -5776,6 +6191,7 @@ Spritemap_Draygon_2C:
     db $FD                                                               ;A5B909;
     dw $6743                                                             ;A5B90A;
 
+%anchor($A5B90C)
 Spritemap_Draygon_2D:
     dw $0010,$81F7                                                       ;A5B90C;
     db $F9                                                               ;A5B910;
@@ -5811,6 +6227,7 @@ Spritemap_Draygon_2D:
     db $F9                                                               ;A5B95B;
     dw $6745                                                             ;A5B95C;
 
+%anchor($A5B95E)
 Spritemap_Draygon_2E:
     dw $0010,$81F0                                                       ;A5B95E;
     db $F4                                                               ;A5B962;
@@ -5846,31 +6263,37 @@ Spritemap_Draygon_2E:
     db $FA                                                               ;A5B9AD;
     dw $6708                                                             ;A5B9AE;
 
+%anchor($A5B9B0)
 Spritemap_Draygon_2F:
     dw $0001,$81F8                                                       ;A5B9B0;
     db $F8                                                               ;A5B9B4;
     dw $2764                                                             ;A5B9B5;
 
+%anchor($A5B9B7)
 Spritemap_Draygon_30:
     dw $0001,$81F8                                                       ;A5B9B7;
     db $F8                                                               ;A5B9BB;
     dw $276A                                                             ;A5B9BC;
 
+%anchor($A5B9BE)
 Spritemap_Draygon_31:
     dw $0001,$81F8                                                       ;A5B9BE;
     db $F8                                                               ;A5B9C2;
     dw $275E                                                             ;A5B9C3;
 
+%anchor($A5B9C5)
 Spritemap_Draygon_32:
     dw $0001,$81F8                                                       ;A5B9C5;
     db $F8                                                               ;A5B9C9;
     dw $275C                                                             ;A5B9CA;
 
+%anchor($A5B9CC)
 Spritemap_Draygon_33:
     dw $0001,$81F8                                                       ;A5B9CC;
     db $F8                                                               ;A5B9D0;
     dw $274A                                                             ;A5B9D1;
 
+%anchor($A5B9D3)
 Spritemap_Draygon_34:
     dw $000A,$81F4                                                       ;A5B9D3;
     db $F0                                                               ;A5B9D7;
@@ -5894,6 +6317,7 @@ Spritemap_Draygon_34:
     db $04                                                               ;A5BA04;
     dw $6706                                                             ;A5BA05;
 
+%anchor($A5BA07)
 Spritemap_Draygon_35:
     dw $000A,$81F5                                                       ;A5BA07;
     db $F0                                                               ;A5BA0B;
@@ -5917,51 +6341,61 @@ Spritemap_Draygon_35:
     db $04                                                               ;A5BA38;
     dw $6706                                                             ;A5BA39;
 
+%anchor($A5BA3B)
 Spritemap_Draygon_36:
     dw $0001,$01FC                                                       ;A5BA3B;
     db $FC                                                               ;A5BA3F;
     dw $277E                                                             ;A5BA40;
 
+%anchor($A5BA42)
 Spritemap_Draygon_37:
     dw $0001,$01FC                                                       ;A5BA42;
     db $FC                                                               ;A5BA46;
     dw $277D                                                             ;A5BA47;
 
+%anchor($A5BA49)
 Spritemap_Draygon_38:
     dw $0001,$01FC                                                       ;A5BA49;
     db $FC                                                               ;A5BA4D;
     dw $277C                                                             ;A5BA4E;
 
+%anchor($A5BA50)
 Spritemap_Draygon_39:
     dw $0001,$81F8                                                       ;A5BA50;
     db $F8                                                               ;A5BA54;
     dw $278A                                                             ;A5BA55;
 
+%anchor($A5BA57)
 Spritemap_Draygon_3A:
     dw $0001,$01FC                                                       ;A5BA57;
     db $FC                                                               ;A5BA5B;
     dw $277F                                                             ;A5BA5C;
 
+%anchor($A5BA5E)
 Spritemap_Draygon_3B:
     dw $0001,$01FC                                                       ;A5BA5E;
     db $FC                                                               ;A5BA62;
     dw $2777                                                             ;A5BA63;
 
+%anchor($A5BA65)
 Spritemap_Draygon_3C:
     dw $0001,$01FC                                                       ;A5BA65;
     db $FC                                                               ;A5BA69;
     dw $2776                                                             ;A5BA6A;
 
+%anchor($A5BA6C)
 Spritemap_Draygon_3D:
     dw $0001,$81F8                                                       ;A5BA6C;
     db $F8                                                               ;A5BA70;
     dw $278C                                                             ;A5BA71;
 
+%anchor($A5BA73)
 Spritemap_Draygon_3E:
     dw $0001,$81F8                                                       ;A5BA73;
     db $F8                                                               ;A5BA77;
     dw $278E                                                             ;A5BA78;
 
+%anchor($A5BA7A)
 Spritemap_Draygon_3F:
     dw $000A,$81F5                                                       ;A5BA7A;
     db $F0                                                               ;A5BA7E;
@@ -5985,6 +6419,7 @@ Spritemap_Draygon_3F:
     db $04                                                               ;A5BAAB;
     dw $6706                                                             ;A5BAAC;
 
+%anchor($A5BAAE)
 Spritemap_Draygon_40:
     dw $000A,$81F5                                                       ;A5BAAE;
     db $F0                                                               ;A5BAB2;
@@ -6008,6 +6443,7 @@ Spritemap_Draygon_40:
     db $04                                                               ;A5BADF;
     dw $6706                                                             ;A5BAE0;
 
+%anchor($A5BAE2)
 Spritemap_Draygon_41:
     dw $0013,$800B                                                       ;A5BAE2;
     db $02                                                               ;A5BAE6;
@@ -6049,6 +6485,7 @@ Spritemap_Draygon_41:
     db $FC                                                               ;A5BB40;
     dw $6708                                                             ;A5BB41;
 
+%anchor($A5BB43)
 Spritemap_Draygon_42:
     dw $0011,$81F8                                                       ;A5BB43;
     db $F9                                                               ;A5BB47;
@@ -6086,6 +6523,7 @@ Spritemap_Draygon_42:
     db $FC                                                               ;A5BB97;
     dw $6745                                                             ;A5BB98;
 
+%anchor($A5BB9A)
 Spritemap_Draygon_43:
     dw $0011,$81F7                                                       ;A5BB9A;
     db $F9                                                               ;A5BB9E;
@@ -6123,6 +6561,7 @@ Spritemap_Draygon_43:
     db $FC                                                               ;A5BBEE;
     dw $6743                                                             ;A5BBEF;
 
+%anchor($A5BBF1)
 Spritemap_Draygon_44:
     dw $0013,$81F0                                                       ;A5BBF1;
     db $F4                                                               ;A5BBF5;
@@ -6164,6 +6603,7 @@ Spritemap_Draygon_44:
     db $0C                                                               ;A5BC4F;
     dw $6760                                                             ;A5BC50;
 
+%anchor($A5BC52)
 Spritemap_Draygon_45:
     dw $0014,$81F7                                                       ;A5BC52;
     db $F9                                                               ;A5BC56;
@@ -6207,6 +6647,7 @@ Spritemap_Draygon_45:
     db $FC                                                               ;A5BCB5;
     dw $6743                                                             ;A5BCB6;
 
+%anchor($A5BCB8)
 Spritemap_Draygon_46:
     dw $0014,$81F8                                                       ;A5BCB8;
     db $F9                                                               ;A5BCBC;
@@ -6250,6 +6691,7 @@ Spritemap_Draygon_46:
     db $FC                                                               ;A5BD1B;
     dw $6745                                                             ;A5BD1C;
 
+%anchor($A5BD1E)
 Spritemap_Draygon_47:
     dw $0013,$8035                                                       ;A5BD1E;
     db $E5                                                               ;A5BD22;
@@ -6291,6 +6733,7 @@ Spritemap_Draygon_47:
     db $D8                                                               ;A5BD7C;
     dw $6743                                                             ;A5BD7D;
 
+%anchor($A5BD7F)
 ExtendedTilemap_Draygon_18:
     dw $FFFE,$2316,$0002,$159F,$15A0,$2356,$0002,$15AC                   ;A5BD7F;
     dw $15AD,$2394,$0003,$15B9,$15BA,$15BB,$23D4,$0003                   ;A5BD8F;
@@ -6298,6 +6741,7 @@ ExtendedTilemap_Draygon_18:
     dw $2454,$0003,$15DF,$15E0,$1547,$2496,$0002,$1547                   ;A5BDAF;
     dw $1547,$FFFF                                                       ;A5BDBF;
 
+%anchor($A5BDC3)
 ExtendedTilemap_Draygon_19:
     dw $FFFE,$2316,$0002,$1559,$155A,$2356,$0002,$1569                   ;A5BDC3;
     dw $156A,$2394,$0003,$1576,$1577,$1578,$23D2,$0004                   ;A5BDD3;
@@ -6305,6 +6749,7 @@ ExtendedTilemap_Draygon_19:
     dw $1594,$1595,$2452,$0004,$15A1,$15A2,$15A3,$0147                   ;A5BDF3;
     dw $2496,$0002,$0147,$0147,$FFFF                                     ;A5BE03;
 
+%anchor($A5BE0D)
 ExtendedTilemap_Draygon_1A:
     dw $FFFE,$2316,$0002,$1596,$1597,$2356,$0002,$15A4                   ;A5BE0D;
     dw $15A5,$2390,$0005,$15AE,$15AF,$15B0,$15B1,$15B2                   ;A5BE1D;
@@ -6312,6 +6757,7 @@ ExtendedTilemap_Draygon_1A:
     dw $240E,$0006,$15CB,$15CC,$15CD,$15CE,$15CF,$15D0                   ;A5BE3D;
     dw $2452,$0003,$0147,$0147,$0147,$FFFF                               ;A5BE4D;
 
+%anchor($A5BE59)
 ExtendedTilemap_Draygon_1B:
     dw $FFFE,$230A,$0003,$15DA,$15DB,$1547,$2316,$0002                   ;A5BE59;
     dw $15DC,$15DD,$234C,$0003,$15E1,$15E2,$15E3,$2354                   ;A5BE69;
@@ -6320,6 +6766,7 @@ ExtendedTilemap_Draygon_1B:
     dw $15F4,$15F5,$15F6,$15F7,$15F8,$15F9,$240E,$0005                   ;A5BE99;
     dw $1600,$1601,$1602,$1603,$1604,$FFFF                               ;A5BEA9;
 
+%anchor($A5BEB5)
 ExtendedTilemap_Draygon_1C:
     dw $FFFE,$230A,$0003,$0147,$0147,$0147,$2316,$0002                   ;A5BEB5;
     dw $1596,$1597,$234C,$0003,$0147,$0147,$0147,$2354                   ;A5BEC5;
@@ -6328,6 +6775,7 @@ ExtendedTilemap_Draygon_1C:
     dw $15BC,$15BD,$15BE,$15BF,$15C0,$15C1,$240E,$0005                   ;A5BEF5;
     dw $15CB,$15CC,$15CD,$15CE,$15CF,$FFFF                               ;A5BF05;
 
+%anchor($A5BF11)
 ExtendedTilemap_Draygon_1D:
     dw $FFFE,$2316,$0002,$1559,$155A,$2356,$0002,$1569                   ;A5BF11;
     dw $156A,$2390,$0005,$0147,$0147,$1576,$1577,$1578                   ;A5BF21;
@@ -6335,6 +6783,7 @@ ExtendedTilemap_Draygon_1D:
     dw $240E,$0006,$0147,$0147,$1592,$1593,$1594,$1595                   ;A5BF41;
     dw $2452,$0003,$15A1,$15A2,$15A3,$FFFF                               ;A5BF51;
 
+%anchor($A5BF5D)
 ExtendedTilemap_Draygon_1E:
     dw $FFFE,$2316,$0002,$159F,$15A0,$2356,$0002,$15AC                   ;A5BF5D;
     dw $15AD,$2394,$0003,$15B9,$15BA,$15BB,$23D2,$0004                   ;A5BF6D;
@@ -6342,73 +6791,90 @@ ExtendedTilemap_Draygon_1E:
     dw $15D8,$15D9,$2452,$0004,$0147,$15DF,$15E0,$1547                   ;A5BF8D;
     dw $2496,$0002,$1547,$1547,$FFFF                                     ;A5BF9D;
 
+%anchor($A5BFA7)
 ExtendedTilemap_Draygon_1F:
     dw $FFFE,$2154,$0002,$5555,$5554,$2194,$0002,$5565                   ;A5BFA7;
     dw $5564,$FFFF                                                       ;A5BFB7;
 
+%anchor($A5BFBB)
 ExtendedTilemap_Draygon_20:
     dw $FFFE,$2154,$0002,$5581,$5580,$2194,$0002,$5591                   ;A5BFBB;
     dw $5590,$FFFF                                                       ;A5BFCB;
 
+%anchor($A5BFCF)
 ExtendedTilemap_Draygon_21:
     dw $FFFE,$2154,$0002,$5583,$5582,$2194,$0002,$5593                   ;A5BFCF;
     dw $5592,$FFFF                                                       ;A5BFDF;
 
+%anchor($A5BFE3)
 ExtendedTilemap_Draygon_22:
     dw $FFFE,$2154,$0002,$5563,$5562,$2194,$0002,$5573                   ;A5BFE3;
     dw $5572,$FFFF                                                       ;A5BFF3;
 
+%anchor($A5BFF7)
 ExtendedTilemap_Draygon_23:
     dw $FFFE,$220E,$0003,$559F,$559E,$5586,$224E,$0003                   ;A5BFF7;
     dw $5598,$5597,$5596,$228E,$0003,$55A8,$55A7,$55A6                   ;A5C007;
     dw $FFFF                                                             ;A5C017;
 
+%anchor($A5C019)
 ExtendedTilemap_Draygon_24:
     dw $FFFE,$2212,$0001,$559D,$224E,$0003,$55AF,$55AE                   ;A5C019;
     dw $55AD,$228E,$0003,$55BF,$55BE,$55BD,$FFFF                         ;A5C029;
 
+%anchor($A5C037)
 ExtendedTilemap_Draygon_25:
     dw $FFFE,$220E,$0003,$55A2,$55A1,$55A0,$224E,$0003                   ;A5C037;
     dw $55B2,$55B1,$55B0,$228E,$0003,$55B6,$55B5,$55B4                   ;A5C047;
     dw $FFFF                                                             ;A5C057;
 
+%anchor($A5C059)
 ExtendedTilemap_Draygon_26:
     dw $FFFE,$220E,$0003,$5585,$5584,$55A3,$224E,$0003                   ;A5C059;
     dw $5595,$5594,$55B3,$228E,$0003,$55A5,$55A4,$5574                   ;A5C069;
     dw $FFFF                                                             ;A5C079;
 
+%anchor($A5C07B)
 ExtendedTilemap_Draygon_27:
     dw $FFFE,$20D4,$0002,$5541,$5540,$2114,$0002,$5551                   ;A5C07B;
     dw $5550,$FFFF                                                       ;A5C08B;
 
+%anchor($A5C08F)
 ExtendedTilemap_Draygon_28:
     dw $FFFE,$20D4,$0002,$5561,$5560,$2114,$0002,$5571                   ;A5C08F;
     dw $5570,$FFFF                                                       ;A5C09F;
 
+%anchor($A5C0A3)
 ExtendedTilemap_Draygon_29:
     dw $FFFE,$20D4,$0002,$550B,$550A,$2114,$0002,$551B                   ;A5C0A3;
     dw $551A,$FFFF                                                       ;A5C0B3;
 
+%anchor($A5C0B7)
 ExtendedTilemap_Draygon_2A:
     dw $FFFE,$20D4,$0002,$550D,$550C,$2114,$0002,$551D                   ;A5C0B7;
     dw $551C,$FFFF                                                       ;A5C0C7;
 
+%anchor($A5C0CB)
 ExtendedTilemap_Draygon_2B:
     dw $FFFE,$20D4,$0002,$5535,$5534,$2114,$0002,$5545                   ;A5C0CB;
     dw $5544,$FFFF                                                       ;A5C0DB;
 
+%anchor($A5C0DF)
 ExtendedTilemap_Draygon_2C:
     dw $FFFE,$20D4,$0002,$550F,$550E,$2114,$0002,$551F                   ;A5C0DF;
     dw $551E,$FFFF                                                       ;A5C0EF;
 
+%anchor($A5C0F3)
 ExtendedTilemap_Draygon_2D:
     dw $FFFE,$20D4,$0002,$552D,$552C,$2114,$0002,$553D                   ;A5C0F3;
     dw $553C,$FFFF                                                       ;A5C103;
 
+%anchor($A5C107)
 ExtendedTilemap_Draygon_2E:
     dw $FFFE,$20D4,$0002,$552F,$552E,$2114,$0002,$553F                   ;A5C107;
     dw $553E,$FFFF                                                       ;A5C117;
 
+%anchor($A5C11B)
 ExtendedTilemap_Draygon_2F:
     dw $FFFE,$2000,$0010,$4338,$4338,$4338,$4338,$4338                   ;A5C11B;
     dw $4338,$4338,$4338,$5507,$5506,$5505,$5504,$5503                   ;A5C12B;
@@ -6445,6 +6911,7 @@ ExtendedTilemap_Draygon_2F:
     dw $C338,$C338,$552B,$552A,$C338,$C338,$C338,$C338                   ;A5C31B;
     dw $C338,$C338,$C338,$C338,$C338,$C338,$C338,$FFFF                   ;A5C32B;
 
+%anchor($A5C33B)
 Spritemap_Draygon_48:
     dw $0003,$0000                                                       ;A5C33B;
     db $F8                                                               ;A5C33F;
@@ -6454,6 +6921,7 @@ Spritemap_Draygon_48:
     db $00                                                               ;A5C349;
     dw $67A9                                                             ;A5C34A;
 
+%anchor($A5C34C)
 Spritemap_Draygon_49:
     dw $0003,$0000                                                       ;A5C34C;
     db $F8                                                               ;A5C350;
@@ -6463,6 +6931,7 @@ Spritemap_Draygon_49:
     db $00                                                               ;A5C35A;
     dw $67A7                                                             ;A5C35B;
 
+%anchor($A5C35D)
 Spritemap_Draygon_4A:
     dw $0004,$0004                                                       ;A5C35D;
     db $F4                                                               ;A5C361;
@@ -6474,6 +6943,7 @@ Spritemap_Draygon_4A:
     db $FC                                                               ;A5C370;
     dw $67A5                                                             ;A5C371;
 
+%anchor($A5C373)
 Spritemap_Draygon_4B:
     dw $0002,$8000                                                       ;A5C373;
     db $F8                                                               ;A5C377;
@@ -6481,6 +6951,7 @@ Spritemap_Draygon_4B:
     db $F8                                                               ;A5C37C;
     dw $67A2                                                             ;A5C37D;
 
+%anchor($A5C37F)
 Spritemap_Draygon_4C:
     dw $0003,$0000                                                       ;A5C37F;
     db $00                                                               ;A5C383;
@@ -6490,6 +6961,7 @@ Spritemap_Draygon_4C:
     db $F8                                                               ;A5C38D;
     dw $67AE                                                             ;A5C38E;
 
+%anchor($A5C390)
 Spritemap_Draygon_4D:
     dw $0003,$0000                                                       ;A5C390;
     db $00                                                               ;A5C394;
@@ -6499,6 +6971,7 @@ Spritemap_Draygon_4D:
     db $F8                                                               ;A5C39E;
     dw $67C2                                                             ;A5C39F;
 
+%anchor($A5C3A1)
 Spritemap_Draygon_4E:
     dw $0003,$01FC                                                       ;A5C3A1;
     db $04                                                               ;A5C3A5;
@@ -6508,6 +6981,7 @@ Spritemap_Draygon_4E:
     db $F4                                                               ;A5C3AF;
     dw $67C4                                                             ;A5C3B0;
 
+%anchor($A5C3B2)
 Spritemap_Draygon_4F:
     dw $0002,$81F8                                                       ;A5C3B2;
     db $00                                                               ;A5C3B6;
@@ -6515,6 +6989,7 @@ Spritemap_Draygon_4F:
     db $F0                                                               ;A5C3BB;
     dw $67C6                                                             ;A5C3BC;
 
+%anchor($A5C3BE)
 Spritemap_Draygon_50:
     dw $0003,$0000                                                       ;A5C3BE;
     db $00                                                               ;A5C3C2;
@@ -6524,6 +6999,7 @@ Spritemap_Draygon_50:
     db $F0                                                               ;A5C3CC;
     dw $21C8                                                             ;A5C3CD;
 
+%anchor($A5C3CF)
 Spritemap_Draygon_51:
     dw $0003,$01F8                                                       ;A5C3CF;
     db $00                                                               ;A5C3D3;
@@ -6533,6 +7009,7 @@ Spritemap_Draygon_51:
     db $F0                                                               ;A5C3DD;
     dw $A7A7                                                             ;A5C3DE;
 
+%anchor($A5C3E0)
 Spritemap_Draygon_52:
     dw $0004,$01F4                                                       ;A5C3E0;
     db $04                                                               ;A5C3E4;
@@ -6544,6 +7021,7 @@ Spritemap_Draygon_52:
     db $F4                                                               ;A5C3F3;
     dw $A7A5                                                             ;A5C3F4;
 
+%anchor($A5C3F6)
 Spritemap_Draygon_53:
     dw $0002,$81F0                                                       ;A5C3F6;
     db $F8                                                               ;A5C3FA;
@@ -6551,6 +7029,7 @@ Spritemap_Draygon_53:
     db $F8                                                               ;A5C3FF;
     dw $A7A2                                                             ;A5C400;
 
+%anchor($A5C402)
 Spritemap_Draygon_54:
     dw $0003,$01F8                                                       ;A5C402;
     db $F8                                                               ;A5C406;
@@ -6560,6 +7039,7 @@ Spritemap_Draygon_54:
     db $F8                                                               ;A5C410;
     dw $A7AE                                                             ;A5C411;
 
+%anchor($A5C413)
 Spritemap_Draygon_55:
     dw $0003,$01F8                                                       ;A5C413;
     db $F8                                                               ;A5C417;
@@ -6569,6 +7049,7 @@ Spritemap_Draygon_55:
     db $F8                                                               ;A5C421;
     dw $A7C2                                                             ;A5C422;
 
+%anchor($A5C424)
 Spritemap_Draygon_56:
     dw $0003,$01FC                                                       ;A5C424;
     db $F4                                                               ;A5C428;
@@ -6578,6 +7059,7 @@ Spritemap_Draygon_56:
     db $FC                                                               ;A5C432;
     dw $A7C4                                                             ;A5C433;
 
+%anchor($A5C435)
 Spritemap_Draygon_57:
     dw $0002,$81F8                                                       ;A5C435;
     db $F0                                                               ;A5C439;
@@ -6585,36 +7067,43 @@ Spritemap_Draygon_57:
     db $00                                                               ;A5C43E;
     dw $A7C6                                                             ;A5C43F;
 
+%anchor($A5C441)
 Spritemap_Draygon_58:
     dw $0001,$81F8                                                       ;A5C441;
     db $F8                                                               ;A5C445;
     dw $6784                                                             ;A5C446;
 
+%anchor($A5C448)
 Spritemap_Draygon_59:
     dw $0001,$81F8                                                       ;A5C448;
     db $F8                                                               ;A5C44C;
     dw $6782                                                             ;A5C44D;
 
+%anchor($A5C44F)
 Spritemap_Draygon_5A:
     dw $0001,$81F8                                                       ;A5C44F;
     db $F8                                                               ;A5C453;
     dw $6780                                                             ;A5C454;
 
+%anchor($A5C456)
 Spritemap_Draygon_5B:
     dw $0001,$81F8                                                       ;A5C456;
     db $F8                                                               ;A5C45A;
     dw $2784                                                             ;A5C45B;
 
+%anchor($A5C45D)
 Spritemap_Draygon_5C:
     dw $0001,$81F8                                                       ;A5C45D;
     db $F8                                                               ;A5C461;
     dw $2782                                                             ;A5C462;
 
+%anchor($A5C464)
 Spritemap_Draygon_5D:
     dw $0001,$81F8                                                       ;A5C464;
     db $F8                                                               ;A5C468;
     dw $2780                                                             ;A5C469;
 
+%anchor($A5C46B)
 InitAI_DraygonEye:
     LDX.W $0E54                                                          ;A5C46B;
     LDA.W #InstList_DraygonEye_FacingLeft_Idle                           ;A5C46E;
@@ -6624,6 +7113,7 @@ InitAI_DraygonEye:
     RTL                                                                  ;A5C47A;
 
 
+%anchor($A5C47B)
 Instruction_Draygon_EyeFunctionInY:
     PHY                                                                  ;A5C47B;
     LDA.W $0000,Y                                                        ;A5C47C;
@@ -6634,12 +7124,14 @@ Instruction_Draygon_EyeFunctionInY:
     RTL                                                                  ;A5C485;
 
 
+%anchor($A5C486)
 MainAI_DraygonEye:
     LDX.W $0E54                                                          ;A5C486;
     JSR.W ($0FA8,X)                                                      ;A5C489;
     RTL                                                                  ;A5C48C;
 
 
+%anchor($A5C48D)
 Function_DraygonEye_FacingLeft:
     LDA.W $0FA4,X                                                        ;A5C48D;
     AND.W #$007F                                                         ;A5C490;
@@ -6703,6 +7195,7 @@ Function_DraygonEye_FacingLeft:
     RTS                                                                  ;A5C512;
 
 
+%anchor($A5C513)
 Function_DraygonEye_FacingRight:
     LDA.W $0FA4,X                                                        ;A5C513;
     AND.W #$007F                                                         ;A5C516;
@@ -6766,6 +7259,7 @@ Function_DraygonEye_FacingRight:
     RTS                                                                  ;A5C598;
 
 
+%anchor($A5C599)
 InitAI_DraygonTail:
     LDX.W $0E54                                                          ;A5C599;
     LDA.W #InstList_DraygonTail_FacingLeft_FakeTailWhip                  ;A5C59C;
@@ -6776,18 +7270,22 @@ InitAI_DraygonTail:
     RTL                                                                  ;A5C5A9;
 
 
+%anchor($A5C5AA)
 RTL_A5C5AA:
     RTL                                                                  ;A5C5AA;
 
 
+%anchor($A5C5AB)
 RTL_A5C5AB:
     RTL                                                                  ;A5C5AB;
 
 
+%anchor($A5C5AC)
 RTL_A5C5AC:
     RTL                                                                  ;A5C5AC;
 
 
+%anchor($A5C5AD)
 InitAI_DraygonArms:
     LDX.W $0E54                                                          ;A5C5AD;
     LDA.W #InstList_DraygonArms_FacingLeft_Idle_0                        ;A5C5B0;
@@ -6800,19 +7298,23 @@ InitAI_DraygonArms:
     RTL                                                                  ;A5C5C3;
 
 
+%anchor($A5C5C4)
 RTL_A5C5C4:
     RTL                                                                  ;A5C5C4;
 
 
+%anchor($A5C5C5)
 RTL_A5C5C5:
     RTL                                                                  ;A5C5C5;
 
 
+%anchor($A5C5C6)
 RTL_A5C5C6:
     RTL                                                                  ;A5C5C6;
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A5C5C7)
 UNUSED_DraygonFightIntroDanceData_KeikoLove_A5C5C7:
     db $01,$FF,$01,$00,$00,$FF,$01,$00,$01,$FF,$01,$00,$00,$FF,$01,$00   ;A5C5C7;
     db $01,$FF,$01,$00,$00,$FF,$01,$00,$01,$FF,$00,$FF,$01,$00,$01,$FF   ;A5C5D7;
@@ -6948,6 +7450,7 @@ UNUSED_DraygonFightIntroDanceData_KeikoLove_A5C5C7:
     db $01,$00,$01,$FF,$01,$FF,$01,$00,$01,$FF,$01,$00,$01,$FF,$01,$00   ;A5CDF7;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A5CE07)
 DraygonFightIntroDanceData_KeikoLove:
     db $03,$00,$03,$00,$03,$00,$02,$FF,$03,$00,$03,$FF,$03,$00,$02,$FF   ;A5CE07;
     db $03,$FF,$02,$FE,$02,$FF,$02,$FE,$02,$FE,$02,$FD,$02,$FE,$01,$FD   ;A5CE17;
@@ -7202,6 +7705,7 @@ DraygonFightIntroDanceData_KeikoLove:
     db $00,$01,$01,$01,$00,$01,$00,$01,$01,$01,$00,$01,$01,$01,$00,$01   ;A5DDA7;
     db $01,$01,$01,$00,$00,$01,$01,$01,$80,$80,$80,$80,$80,$80,$80,$80   ;A5DDB7;
 
+%anchor($A5DDC7)
 DraygonFightIntroDanceData_KeikoLove_EvirsAlreadyDeleted:
     db $01,$FF,$02,$FE,$01,$FF,$02,$FE,$01,$FF,$01,$FE,$02,$FF,$01,$FE   ;A5DDC7;
     db $02,$FF,$01,$FE,$01,$FF,$02,$FE,$01,$FE,$01,$FF,$02,$FE,$01,$FE   ;A5DDD7;
@@ -7229,6 +7733,7 @@ DraygonFightIntroDanceData_KeikoLove_EvirsAlreadyDeleted:
     db $01,$02,$00,$02,$02,$02,$01,$01,$01,$02,$01,$02,$02,$02,$02,$01   ;A5DF37;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A5DF47)
 UNUSED_DraygonFightIntroDanceData_KeikoLove_A5DF47:
     db $01,$02,$02,$02,$02,$01,$01,$02,$02,$02,$02,$01,$02,$02,$02,$01   ;A5DF47;
     db $02,$02,$02,$02,$02,$01,$02,$02,$01,$02,$02,$01,$02,$02,$02,$02   ;A5DF57;
@@ -7298,114 +7803,142 @@ UNUSED_DraygonFightIntroDanceData_KeikoLove_A5DF47:
     db $02,$00                                                           ;A5E357;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A5E359)
 Palette_SporeSpawn:
     dw $0000,$3F57,$2E4D,$00E2,$0060,$3AB0,$220B,$1166                   ;A5E359;
     dw $0924,$57FF,$3AB5,$1DCE,$00E7,$03FF,$0216,$00B0                   ;A5E369;
 
+%anchor($A5E379)
 Palette_SporeSpawn_HealthBased_0:
     dw $0000,$3F57,$2E4D,$00E2,$0060,$3AB0,$220B,$1166                   ;A5E379;
     dw $0924,$57FF,$3AB5,$1DCE,$00E7,$03FF,$0216,$00B0                   ;A5E389;
 
+%anchor($A5E399)
 Palette_SporeSpawn_HealthBased_1:
     dw $3800,$2A92,$21CC,$00C4,$0062,$260E,$15AA,$0D27                   ;A5E399;
     dw $04E5,$475A,$2E52,$198C,$00C6,$033F,$01B6,$008F                   ;A5E3A9;
 
+%anchor($A5E3B9)
 Palette_SporeSpawn_HealthBased_2:
     dw $3800,$15EF,$156B,$00A5,$0063,$15AC,$0D49,$0907                   ;A5E3B9;
     dw $04C6,$36D6,$21D0,$114B,$00A6,$025F,$0137,$008D                   ;A5E3C9;
 
+%anchor($A5E3D9)
 Palette_SporeSpawn_HealthBased_3:
     dw $3800,$094A,$0908,$0463,$0000,$0929,$04C6,$04A5                   ;A5E3D9;
     dw $0484,$2631,$156D,$0D09,$0085,$019F,$00D7,$006C                   ;A5E3E9;
 
+%anchor($A5E3F9)
 Palette_SporeSpawn_DeathSequence_0:
     dw $3800,$094A,$0908,$0463,$0000,$0929,$04C6,$04A5                   ;A5E3F9;
     dw $0484,$2631,$156D,$0D09,$0085,$019F,$00D7,$006C                   ;A5E409;
 
+%anchor($A5E419)
 Palette_SporeSpawn_DeathSequence_1:
     dw $3800,$118C,$0D2A,$0464,$0000,$0D4B,$08E8,$04A6                   ;A5E419;
     dw $0485,$2A53,$156E,$0D09,$0065,$09DF,$04F6,$006C                   ;A5E429;
 
+%anchor($A5E439)
 Palette_SporeSpawn_DeathSequence_2:
     dw $3800,$15AF,$114B,$0465,$0001,$156D,$0D09,$08C7                   ;A5E439;
     dw $04A6,$2A74,$158E,$08EA,$0065,$11FE,$0916,$008C                   ;A5E449;
 
+%anchor($A5E459)
 Palette_SporeSpawn_DeathSequence_3:
     dw $3800,$1DF1,$156D,$0466,$0001,$198F,$112B,$08C8                   ;A5E459;
     dw $04A7,$2E96,$158F,$08EA,$0045,$1A3E,$0D35,$008C                   ;A5E469;
 
+%anchor($A5E479)
 Palette_SporeSpawn_DeathSequence_4:
     dw $3800,$2213,$1D8F,$0086,$0001,$21D0,$114D,$08EA                   ;A5E479;
     dw $04A8,$2E97,$1990,$04EA,$0044,$1E5D,$0D54,$00AB                   ;A5E489;
 
+%anchor($A5E499)
 Palette_SporeSpawn_DeathSequence_5:
     dw $3800,$2A55,$21B1,$0087,$0001,$25F2,$156F,$08EB                   ;A5E499;
     dw $04A9,$32B9,$1991,$04EA,$0024,$269D,$1173,$00AB                   ;A5E4A9;
 
+%anchor($A5E4B9)
 Palette_SporeSpawn_DeathSequence_6:
     dw $3800,$2E78,$25D2,$0088,$0002,$2E14,$1990,$0D0C                   ;A5E4B9;
     dw $04CA,$32DA,$19B1,$00CB,$0024,$2EBC,$1593,$00CB                   ;A5E4C9;
 
+%anchor($A5E4D9)
 Palette_SporeSpawn_DeathSequence_7:
     dw $3800,$36BA,$29F4,$0089,$0002,$3236,$1DB2,$0D0D                   ;A5E4D9;
     dw $04CB,$36FC,$19B2,$00CB,$0004,$36FC,$19B2,$00CB                   ;A5E4E9;
 
+%anchor($A5E4F9)
 Palette_SporeSpawn_DeathSequence_Level_0:
     dw $2003,$6318,$6318,$1CE1,$1DA9,$2923,$24A1,$1400                   ;A5E4F9;
     dw $2269,$21C9,$1544,$0420,$268B,$04C5,$2731,$0000                   ;A5E509;
 
+%anchor($A5E519)
 Palette_SporeSpawn_DeathSequence_Level_1:
     dw $2003,$6318,$6318,$18C3,$1DAA,$2524,$1CA3,$1000                   ;A5E519;
     dw $1E2A,$1D8A,$1145,$0000,$2A8D,$0CE7,$22F1,$0001                   ;A5E529;
 
+%anchor($A5E539)
 Palette_SporeSpawn_DeathSequence_Level_2:
     dw $0000,$6318,$6318,$14C4,$1DAC,$2126,$18A4,$0C00                   ;A5E539;
     dw $19EA,$196A,$1147,$0001,$2A6F,$112A,$22B1,$0001                   ;A5E549;
 
+%anchor($A5E559)
 Palette_SporeSpawn_DeathSequence_Level_3:
     dw $0000,$6318,$6318,$0CA5,$19AD,$1908,$1085,$0400                   ;A5E559;
     dw $118A,$114A,$0D29,$0001,$2E70,$194C,$1E72,$0002                   ;A5E569;
 
+%anchor($A5E579)
 Palette_SporeSpawn_DeathSequence_Level_4:
     dw $0000,$6318,$6318,$08A6,$19AF,$150A,$0C86,$0000                   ;A5E579;
     dw $0D4A,$0D2A,$0D2B,$0002,$2E52,$1D8F,$1E32,$0002                   ;A5E589;
 
+%anchor($A5E599)
 Palette_SporeSpawn_DeathSequence_Level_5:
     dw $0000,$6318,$6318,$0488,$19B0,$110B,$0488,$0001                   ;A5E599;
     dw $090B,$08EB,$092C,$0003,$3254,$25B1,$19F2,$0002                   ;A5E5A9;
 
+%anchor($A5E5B9)
 Palette_SporeSpawn_DeathSequence_Level_6:
     dw $0000,$6318,$6318,$0089,$19B2,$0D0D,$0089,$0002                   ;A5E5B9;
     dw $04CB,$04CB,$092E,$0004,$3236,$29F4,$19B2,$0002                   ;A5E5C9;
 
+%anchor($A5E5D9)
 Palette_SporeSpawn_DeathSequence_Background_0:
     dw $3800,$5544,$3C84,$1441,$24E3,$18A2,$1081,$0C40                   ;A5E5D9;
     dw $129C,$11B5,$14EE,$1066,$7FFF,$7FFF,$16BD,$0800                   ;A5E5E9;
 
+%anchor($A5E5F9)
 Palette_SporeSpawn_DeathSequence_Background_1:
     dw $3800,$4947,$3486,$1063,$2105,$18C4,$1083,$0C21                   ;A5E5F9;
     dw $1239,$1194,$110E,$1065,$7FFF,$7FFF,$167B,$0401                   ;A5E609;
 
+%anchor($A5E619)
 Palette_SporeSpawn_DeathSequence_Background_2:
     dw $3800,$4169,$2CA7,$0C64,$2128,$14C6,$0C84,$0821                   ;A5E619;
     dw $0DF6,$0D72,$110E,$0C45,$7FFF,$7FFF,$1659,$0401                   ;A5E629;
 
+%anchor($A5E639)
 Palette_SporeSpawn_DeathSequence_Background_3:
     dw $3800,$356B,$24C9,$0C65,$1D4A,$14E7,$0885,$0821                   ;A5E639;
     dw $0DB4,$0D30,$0D0E,$0845,$7FFF,$7FFF,$1A38,$0401                   ;A5E649;
 
+%anchor($A5E659)
 Palette_SporeSpawn_DeathSequence_Background_4:
     dw $3800,$2D8D,$1CEA,$0866,$1D6D,$10E9,$0486,$0421                   ;A5E659;
     dw $0971,$090E,$0D0E,$0425,$7FFF,$7FFF,$1A16,$0401                   ;A5E669;
 
+%anchor($A5E679)
 Palette_SporeSpawn_DeathSequence_Background_5:
     dw $3800,$2190,$14EC,$0488,$198F,$110B,$0488,$0402                   ;A5E679;
     dw $090E,$08ED,$092E,$0424,$7FFF,$7FFF,$19D4,$0002                   ;A5E689;
 
+%anchor($A5E699)
 Palette_SporeSpawn_DeathSequence_Background_6:
     dw $3800,$19B2,$0D0D,$0089,$19B2,$0D0D,$0089,$0002                   ;A5E699;
     dw $04CB,$04CB,$092E,$0004,$7FFF,$7FFF,$19B2,$0002                   ;A5E6A9;
 
+%anchor($A5E6B9)
 InstList_SporeSpawn_Initial_Dead:
     dw Instruction_SporeSpawn_LoadDeathSequenceTargetPalette             ;A5E6B9;
     dw $00C0                                                             ;A5E6BB;
@@ -7415,6 +7948,7 @@ InstList_SporeSpawn_Initial_Dead:
     dw ExtendedSpritemap_SporeSpawn_Dead                                 ;A5E6C3;
     dw Instruction_Common_Sleep                                          ;A5E6C5;
 
+%anchor($A5E6C7)
 InstList_SporeSpawn_Initial_Alive:
     dw $0100                                                             ;A5E6C7;
     dw ExtendedSpritemap_SporeSpawn_Closed_Closing_Opening_0             ;A5E6C9;
@@ -7424,6 +7958,7 @@ InstList_SporeSpawn_Initial_Alive:
     dw ExtendedSpritemap_SporeSpawn_Closed_Closing_Opening_0             ;A5E6D1;
     dw Instruction_Common_Sleep                                          ;A5E6D3;
 
+%anchor($A5E6D5)
 InstList_SporeSpawn_FightHasStarted:
     dw Instruction_SporeSpawn_SetMaxXRadiusAndAngleDelta                 ;A5E6D5;
     dw $0040,$0001                                                       ;A5E6D7;
@@ -7432,6 +7967,7 @@ InstList_SporeSpawn_FightHasStarted:
     dw $0300                                                             ;A5E6DF;
     dw ExtendedSpritemap_SporeSpawn_Closed_Closing_Opening_0             ;A5E6E1;
 
+%anchor($A5E6E3)
 InstList_SporeSpawn_OpenAndStop_0:
     dw Instruction_SporeSpawn_SporeGenerationFlagInY                     ;A5E6E3;
     dw $0001                                                             ;A5E6E5;
@@ -7458,6 +7994,7 @@ InstList_SporeSpawn_OpenAndStop_0:
     dw Instruction_Common_TimerInY                                       ;A5E711;
     dw $0005                                                             ;A5E713;
 
+%anchor($A5E715)
 InstList_SporeSpawn_OpenAndStop_1:
     dw $0008                                                             ;A5E715;
     dw ExtendedSpritemap_SporeSpawn_FullyOpen_0                          ;A5E717;
@@ -7470,6 +8007,7 @@ InstList_SporeSpawn_OpenAndStop_1:
     dw Instruction_Common_DecrementTimer_GotoYIfNonZero_duplicate        ;A5E725;
     dw InstList_SporeSpawn_OpenAndStop_1                                 ;A5E727;
 
+%anchor($A5E729)
 InstList_SporeSpawn_CloseAndMove:
     dw $0008                                                             ;A5E729;
     dw ExtendedSpritemap_SporeSpawn_Closed_Closing_Opening_6             ;A5E72B;
@@ -7498,6 +8036,7 @@ InstList_SporeSpawn_CloseAndMove:
     dw Instruction_Common_GotoY                                          ;A5E75B;
     dw InstList_SporeSpawn_OpenAndStop_0                                 ;A5E75D;
 
+%anchor($A5E75F)
 Instruction_SporeSpawn_IncreaseMaxXRadius:
     LDA.L $7E7816                                                        ;A5E75F;
     CLC                                                                  ;A5E763;
@@ -7510,6 +8049,7 @@ Instruction_SporeSpawn_IncreaseMaxXRadius:
     RTL                                                                  ;A5E770;
 
 
+%anchor($A5E771)
 Instruction_SporeSpawn_ClearDamagedFlag:
     PHX                                                                  ;A5E771;
     PHY                                                                  ;A5E772;
@@ -7520,6 +8060,7 @@ Instruction_SporeSpawn_ClearDamagedFlag:
     RTL                                                                  ;A5E77C;
 
 
+%anchor($A5E77D)
 InstList_SporeSpawn_DeathSequence_0:
     dw Instruction_SporeSpawn_FunctionInY                                ;A5E77D;
     dw Function_SporeSpawn_SetupDeath                                    ;A5E77F;
@@ -7530,6 +8071,7 @@ InstList_SporeSpawn_DeathSequence_0:
     dw Instruction_Common_TimerInY                                       ;A5E789;
     dw $000A                                                             ;A5E78B;
 
+%anchor($A5E78D)
 InstList_SporeSpawn_DeathSequence_1:
     dw $0001                                                             ;A5E78D;
     dw ExtendedSpritemap_SporeSpawn_Closed_Closing_Opening_6             ;A5E78F;
@@ -7556,6 +8098,7 @@ InstList_SporeSpawn_DeathSequence_1:
     dw Instruction_Common_TimerInY                                       ;A5E7B9;
     dw $000A                                                             ;A5E7BB;
 
+%anchor($A5E7BD)
 InstList_SporeSpawn_DeathSequence_2:
     dw Instruction_SporeSpawn_SpawnHardeningDustCloud                    ;A5E7BD;
     dw Instruction_Common_WaitYFrames                                    ;A5E7BF;
@@ -7601,6 +8144,7 @@ InstList_SporeSpawn_DeathSequence_2:
     dw Instruction_Common_Sleep                                          ;A5E80F;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A5E811)
 UNUSED_Instruction_SporeSpawn_SetMaxXRadiusAndAngles_A5E811:
     LDA.W $0000,Y                                                        ;A5E811;
     STA.L $7E7816                                                        ;A5E814;
@@ -7616,6 +8160,7 @@ UNUSED_Instruction_SporeSpawn_SetMaxXRadiusAndAngles_A5E811:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($A5E82D)
 Instruction_SporeSpawn_SetMaxXRadiusAndAngleDelta:
     LDA.W $0000,Y                                                        ;A5E82D;
     STA.L $7E7816                                                        ;A5E830;
@@ -7629,6 +8174,7 @@ Instruction_SporeSpawn_SetMaxXRadiusAndAngleDelta:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A5E840)
 UNUSED_Instruction_SporeSpawn_MaxXRadiusInY_A5E840:
     LDA.W $0000,Y                                                        ;A5E840;
     STA.L $7E7816                                                        ;A5E843;
@@ -7637,6 +8183,7 @@ UNUSED_Instruction_SporeSpawn_MaxXRadiusInY_A5E840:
     RTL                                                                  ;A5E849;
 
 
+%anchor($A5E84A)
 UNUSED_Instruction_SporeSpawn_AngleDeltaInY_A5E84A:
     LDA.W $0000,Y                                                        ;A5E84A;
     STA.L $7E7818                                                        ;A5E84D;
@@ -7645,6 +8192,7 @@ UNUSED_Instruction_SporeSpawn_AngleDeltaInY_A5E84A:
     RTL                                                                  ;A5E853;
 
 
+%anchor($A5E854)
 UNUSED_Instruction_SporeSpawn_MaxXRadiusPlusY_A5E854:
     LDA.L $7E7816                                                        ;A5E854;
     CLC                                                                  ;A5E858;
@@ -7655,6 +8203,7 @@ UNUSED_Instruction_SporeSpawn_MaxXRadiusPlusY_A5E854:
     RTL                                                                  ;A5E862;
 
 
+%anchor($A5E863)
 UNUSED_Instruction_SporeSpawn_AngleDeltaPlusY_A5E863:
     LDA.L $7E7818                                                        ;A5E863;
     CLC                                                                  ;A5E867;
@@ -7666,6 +8215,7 @@ UNUSED_Instruction_SporeSpawn_AngleDeltaPlusY_A5E863:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($A5E872)
 Instruction_SporeSpawn_SporeGenerationFlagInY:
     LDA.W $0000,Y                                                        ;A5E872;
     STA.L $7E9000                                                        ;A5E875;
@@ -7674,6 +8224,7 @@ Instruction_SporeSpawn_SporeGenerationFlagInY:
     RTL                                                                  ;A5E87B;
 
 
+%anchor($A5E87C)
 Instruction_SporeSpawn_Harden:
     LDA.W #$0080                                                         ;A5E87C;
     STA.W $0F7A                                                          ;A5E87F;
@@ -7686,6 +8237,7 @@ Instruction_SporeSpawn_Harden:
     RTL                                                                  ;A5E894;
 
 
+%anchor($A5E895)
 Instruction_SporeSpawn_QueueSFXInY_Lib2_Max6:
     PHX                                                                  ;A5E895;
     PHY                                                                  ;A5E896;
@@ -7698,6 +8250,7 @@ Instruction_SporeSpawn_QueueSFXInY_Lib2_Max6:
     RTL                                                                  ;A5E8A2;
 
 
+%anchor($A5E8A3)
 Instruction_SporeSpawn_QueueSFXInY_Lib3_Max6:
     PHX                                                                  ;A5E8A3;
     PHY                                                                  ;A5E8A4;
@@ -7710,6 +8263,7 @@ Instruction_SporeSpawn_QueueSFXInY_Lib3_Max6:
     RTL                                                                  ;A5E8B0;
 
 
+%anchor($A5E8B1)
 Instruction_SporeSpawn_CallSporeSpawnDeathItemDropRoutine:
     PHX                                                                  ;A5E8B1;
     PHY                                                                  ;A5E8B2;
@@ -7719,6 +8273,7 @@ Instruction_SporeSpawn_CallSporeSpawnDeathItemDropRoutine:
     RTL                                                                  ;A5E8B9;
 
 
+%anchor($A5E8BA)
 Instruction_SporeSpawn_FunctionInY:
     PHY                                                                  ;A5E8BA;
     PHX                                                                  ;A5E8BB;
@@ -7732,6 +8287,7 @@ Instruction_SporeSpawn_FunctionInY:
     RTL                                                                  ;A5E8C9;
 
 
+%anchor($A5E8CA)
 Instruction_SporeSpawn_LoadDeathSequencePalette:
     PHY                                                                  ;A5E8CA;
     PHX                                                                  ;A5E8CB;
@@ -7784,6 +8340,7 @@ Instruction_SporeSpawn_.loopBG12Palette7:
     RTL                                                                  ;A5E91B;
 
 
+%anchor($A5E91C)
 Instruction_SporeSpawn_LoadDeathSequenceTargetPalette:
     PHY                                                                  ;A5E91C;
     PHX                                                                  ;A5E91D;
@@ -7836,6 +8393,7 @@ Instruction_SporeSpawn_LoadDeathSequenceTargetPalette:
     RTL                                                                  ;A5E96D;
 
 
+%anchor($A5E96E)
 Instruction_SporeSpawn_SpawnHardeningDustCloud:
     PHY                                                                  ;A5E96E;
     PHX                                                                  ;A5E96F;
@@ -7869,6 +8427,7 @@ Instruction_SporeSpawn_SpawnHardeningDustCloud:
     RTL                                                                  ;A5E9B0;
 
 
+%anchor($A5E9B1)
 Instruction_SporeSpawn_SpawnDyingExplosion:
     PHY                                                                  ;A5E9B1;
     PHX                                                                  ;A5E9B2;
@@ -7903,6 +8462,7 @@ Instruction_SporeSpawn_SpawnDyingExplosion:
     RTL                                                                  ;A5E9F4;
 
 
+%anchor($A5E9F5)
 SpawnSporeSpawnCeilingDustCloud:
     PHY                                                                  ;A5E9F5;
     PHX                                                                  ;A5E9F6;
@@ -7932,6 +8492,7 @@ SpawnSporeSpawnCeilingDustCloud:
     RTL                                                                  ;A5EA29;
 
 
+%anchor($A5EA2A)
 InitAI_SporeSpawn:
     LDY.W #$0000                                                         ;A5EA2A;
     LDX.W #$0000                                                         ;A5EA2D;
@@ -8020,16 +8581,19 @@ InitAI_SporeSpawn:
     RTL                                                                  ;A5EB12;
 
 
+%anchor($A5EB13)
 MainAI_SporeSpawn:
     LDX.W $0E54                                                          ;A5EB13;
     JSR.W ($0FA8,X)                                                      ;A5EB16;
     RTL                                                                  ;A5EB19;
 
 
+%anchor($A5EB1A)
 RTS_A5EB1A:
     RTS                                                                  ;A5EB1A;
 
 
+%anchor($A5EB1B)
 Function_SporeSpawn_Descent:
     JSR.W UpdateSporeSpawnStalkSegmentPositions                          ;A5EB1B;
     LDX.W $0E54                                                          ;A5EB1E;
@@ -8054,6 +8618,7 @@ Function_SporeSpawn_Descent:
     RTS                                                                  ;A5EB51;
 
 
+%anchor($A5EB52)
 Function_SporeSpawn_Moving:
     JSR.W UpdateSporeSpawnStalkSegmentPositions                          ;A5EB52;
     LDA.L $7E7816                                                        ;A5EB55;
@@ -8083,6 +8648,7 @@ Function_SporeSpawn_Moving:
     RTS                                                                  ;A5EB9A;
 
 
+%anchor($A5EB9B)
 Function_SporeSpawn_SetupDeath:
     LDX.W $0E54                                                          ;A5EB9B;
     LDA.W #$0080                                                         ;A5EB9E;
@@ -8117,6 +8683,7 @@ Function_SporeSpawn_SetupDeath:
     RTS                                                                  ;A5EBED;
 
 
+%anchor($A5EBEE)
 Function_SporeSpawn_Dying:
     LDX.W $0E54                                                          ;A5EBEE;
     LDA.L $7E8010,X                                                      ;A5EBF1;
@@ -8152,6 +8719,7 @@ Function_SporeSpawn_Dying:
     RTS                                                                  ;A5EC48;
 
 
+%anchor($A5EC49)
 UpdateSporeSpawnStalkSegmentPositions:
     LDA.W $0F7A                                                          ;A5EC49;
     SEC                                                                  ;A5EC4C;
@@ -8278,6 +8846,7 @@ UpdateSporeSpawnStalkSegmentPositions:
     RTS                                                                  ;A5ED59;
 
 
+%anchor($A5ED5A)
 EnemyShot_SporeSpawn_Vulnerable:
     LDA.W $18A6                                                          ;A5ED5A;
     ASL A                                                                ;A5ED5D;
@@ -8343,19 +8912,23 @@ EnemyShot_SporeSpawn_Vulnerable:
     TYA                                                                  ;A5EDE5;
     JSL.L LoadSporeSpawnHealthBasedPalette                               ;A5EDE6;
 
+%anchor($A5EDEA)
 EnemyShot_SporeSpawn:
     BRA SporeSpawnReaction_Common                                        ;A5EDEA;
 
 
+%anchor($A5EDEC)
 EnemyTouch_SporeSpawn:
     JSL.L NormalEnemyTouchAI_NoDeathCheck_External                       ;A5EDEC;
     BRA SporeSpawnReaction_Common                                        ;A5EDF0;
 
 
+%anchor($A5EDF2)
 PowerBombReaction_SporeSpawn:
     RTL                                                                  ;A5EDF2; >.<
 
 
+%anchor($A5EDF3)
 SporeSpawnReaction_Common:
     LDX.W $0E54                                                          ;A5EDF3;
     LDA.W $0F8C,X                                                        ;A5EDF6;
@@ -8394,6 +8967,7 @@ SporeSpawnReaction_Common:
     RTL                                                                  ;A5EE49;
 
 
+%anchor($A5EE4A)
 LoadSporeSpawnHealthBasedPalette:
     PHY                                                                  ;A5EE4A;
     PHX                                                                  ;A5EE4B;
@@ -8415,17 +8989,20 @@ LoadSporeSpawnHealthBasedPalette:
     RTL                                                                  ;A5EE64;
 
 
+%anchor($A5EE65)
 ExtendedSpritemap_SporeSpawn_Dead:
     dw $0001                                                             ;A5EE65;
     dw $0000,$0000                                                       ;A5EE67;
     dw Spritemap_SporeSpawn_0                                            ;A5EE6B;
     dw Hitbox_SporeSpawn_0                                               ;A5EE6D;
 
+%anchor($A5EE6F)
 ExtendedSpritemap_SporeSpawn_Closed_Closing_Opening_0:
     dw $0001,$0000,$0000                                                 ;A5EE6F;
     dw Spritemap_SporeSpawn_0                                            ;A5EE75;
     dw Hitbox_SporeSpawn_1                                               ;A5EE77;
 
+%anchor($A5EE79)
 ExtendedSpritemap_SporeSpawn_Closed_Closing_Opening_1:
     dw $0002,$0000,$0000                                                 ;A5EE79;
     dw Spritemap_SporeSpawn_1                                            ;A5EE7F;
@@ -8434,6 +9011,7 @@ ExtendedSpritemap_SporeSpawn_Closed_Closing_Opening_1:
     dw Spritemap_SporeSpawn_B                                            ;A5EE87;
     dw Hitbox_SporeSpawn_B                                               ;A5EE89;
 
+%anchor($A5EE8B)
 ExtendedSpritemap_SporeSpawn_Closed_Closing_Opening_2:
     dw $0002,$0000,$0000                                                 ;A5EE8B;
     dw Spritemap_SporeSpawn_2                                            ;A5EE91;
@@ -8442,6 +9020,7 @@ ExtendedSpritemap_SporeSpawn_Closed_Closing_Opening_2:
     dw Spritemap_SporeSpawn_C                                            ;A5EE99;
     dw Hitbox_SporeSpawn_C                                               ;A5EE9B;
 
+%anchor($A5EE9D)
 ExtendedSpritemap_SporeSpawn_Closed_Closing_Opening_3:
     dw $0002,$0000,$0000                                                 ;A5EE9D;
     dw Spritemap_SporeSpawn_3                                            ;A5EEA3;
@@ -8450,6 +9029,7 @@ ExtendedSpritemap_SporeSpawn_Closed_Closing_Opening_3:
     dw Spritemap_SporeSpawn_D                                            ;A5EEAB;
     dw Hitbox_SporeSpawn_D                                               ;A5EEAD;
 
+%anchor($A5EEAF)
 ExtendedSpritemap_SporeSpawn_Closed_Closing_Opening_4:
     dw $0002,$0000,$0000                                                 ;A5EEAF;
     dw Spritemap_SporeSpawn_4                                            ;A5EEB5;
@@ -8458,6 +9038,7 @@ ExtendedSpritemap_SporeSpawn_Closed_Closing_Opening_4:
     dw Spritemap_SporeSpawn_C                                            ;A5EEBD;
     dw Hitbox_SporeSpawn_C                                               ;A5EEBF;
 
+%anchor($A5EEC1)
 ExtendedSpritemap_SporeSpawn_Closed_Closing_Opening_5:
     dw $0002,$0000,$0000                                                 ;A5EEC1;
     dw Spritemap_SporeSpawn_5                                            ;A5EEC7;
@@ -8466,6 +9047,7 @@ ExtendedSpritemap_SporeSpawn_Closed_Closing_Opening_5:
     dw Spritemap_SporeSpawn_B                                            ;A5EECF;
     dw Hitbox_SporeSpawn_B                                               ;A5EED1;
 
+%anchor($A5EED3)
 ExtendedSpritemap_SporeSpawn_Closed_Closing_Opening_6:
     dw $0002,$0000,$0000                                                 ;A5EED3;
     dw Spritemap_SporeSpawn_15                                           ;A5EED9;
@@ -8474,6 +9056,7 @@ ExtendedSpritemap_SporeSpawn_Closed_Closing_Opening_6:
     dw Spritemap_SporeSpawn_C                                            ;A5EEE1;
     dw Hitbox_SporeSpawn_C                                               ;A5EEE3;
 
+%anchor($A5EEE5)
 ExtendedSpritemap_SporeSpawn_Closed_Closing_Opening_7:
     dw $0002,$0000,$0000                                                 ;A5EEE5;
     dw Spritemap_SporeSpawn_16                                           ;A5EEEB;
@@ -8483,42 +9066,50 @@ ExtendedSpritemap_SporeSpawn_Closed_Closing_Opening_7:
     dw Hitbox_SporeSpawn_D                                               ;A5EEF5;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($A5EEF7)
 UNUSED_ExtendedSpritemap_SporeSpawn_A5EEF7:
     dw $0001,$0000,$0000                                                 ;A5EEF7;
     dw Spritemap_SporeSpawn_F                                            ;A5EEFD;
     dw Hitbox_SporeSpawn_F                                               ;A5EEFF;
 
+%anchor($A5EF01)
 UNUSED_ExtendedSpritemap_SporeSpawn_A5EF01:
     dw $0001,$0000,$0000                                                 ;A5EF01;
     dw Spritemap_SporeSpawn_10                                           ;A5EF07;
     dw Hitbox_SporeSpawn_10                                              ;A5EF09;
 
+%anchor($A5EF0B)
 UNUSED_ExtendedSpritemap_SporeSpawn_A5EF0B:
     dw $0001,$0000,$0000                                                 ;A5EF0B;
     dw Spritemap_SporeSpawn_11                                           ;A5EF11;
     dw Hitbox_SporeSpawn_11                                              ;A5EF13;
 
+%anchor($A5EF15)
 UNUSED_ExtendedSpritemap_SporeSpawn_A5EF15:
     dw $0001,$0000,$0000                                                 ;A5EF15;
     dw Spritemap_SporeSpawn_12                                           ;A5EF1B;
     dw Hitbox_SporeSpawn_12                                              ;A5EF1D;
 
+%anchor($A5EF1F)
 UNUSED_ExtendedSpritemap_SporeSpawn_A5EF1F:
     dw $0001,$0000,$0000                                                 ;A5EF1F;
     dw Spritemap_SporeSpawn_13                                           ;A5EF25;
     dw Hitbox_SporeSpawn_13                                              ;A5EF27;
 
+%anchor($A5EF29)
 UNUSED_ExtendedSpritemap_SporeSpawn_A5EF29:
     dw $0001,$0000,$0000                                                 ;A5EF29;
     dw Spritemap_SporeSpawn_14                                           ;A5EF2F;
     dw Hitbox_SporeSpawn_13                                              ;A5EF31;
 
+%anchor($A5EF33)
 UNUSED_ExtendedSpritemap_SporeSpawn_A5EF33:
     dw $0001,$0000,$0000                                                 ;A5EF33;
     dw Spritemap_SporeSpawn_E                                            ;A5EF39;
     dw Hitbox_SporeSpawn_E                                               ;A5EF3B;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($A5EF3D)
 ExtendedSpritemap_SporeSpawn_FullyOpen_0:
     dw $0002,$0000,$0000                                                 ;A5EF3D;
     dw Spritemap_SporeSpawn_16                                           ;A5EF43;
@@ -8527,6 +9118,7 @@ ExtendedSpritemap_SporeSpawn_FullyOpen_0:
     dw Spritemap_SporeSpawn_B                                            ;A5EF4B;
     dw Hitbox_SporeSpawn_B                                               ;A5EF4D;
 
+%anchor($A5EF4F)
 ExtendedSpritemap_SporeSpawn_FullyOpen_1:
     dw $0002,$0000,$0000                                                 ;A5EF4F;
     dw Spritemap_SporeSpawn_16                                           ;A5EF55;
@@ -8535,6 +9127,7 @@ ExtendedSpritemap_SporeSpawn_FullyOpen_1:
     dw Spritemap_SporeSpawn_C                                            ;A5EF5D;
     dw Hitbox_SporeSpawn_C                                               ;A5EF5F;
 
+%anchor($A5EF61)
 ExtendedSpritemap_SporeSpawn_FullyOpen_2:
     dw $0002,$0000,$0000                                                 ;A5EF61;
     dw Spritemap_SporeSpawn_16                                           ;A5EF67;
@@ -8543,6 +9136,7 @@ ExtendedSpritemap_SporeSpawn_FullyOpen_2:
     dw Spritemap_SporeSpawn_D                                            ;A5EF6F;
     dw Hitbox_SporeSpawn_D                                               ;A5EF71;
 
+%anchor($A5EF73)
 Hitbox_SporeSpawn_0:
     dw $0002,$FFD7,$FFE2,$0029,$001E                                     ;A5EF73;
     dw RTL_A5804C                                                        ;A5EF7D;
@@ -8551,6 +9145,7 @@ Hitbox_SporeSpawn_0:
     dw RTL_A5804C                                                        ;A5EF89;
     dw CommonA5_CreateADudShot                                           ;A5EF8B;
 
+%anchor($A5EF8D)
 Hitbox_SporeSpawn_1:
     dw $0002,$FFD7,$FFE2,$0029,$001E                                     ;A5EF8D;
     dw EnemyTouch_SporeSpawn                                             ;A5EF97;
@@ -8559,6 +9154,7 @@ Hitbox_SporeSpawn_1:
     dw EnemyTouch_SporeSpawn                                             ;A5EFA3;
     dw CommonA5_CreateADudShot                                           ;A5EFA5;
 
+%anchor($A5EFA7)
 Hitbox_SporeSpawn_2:
     dw $0002,$FFD4,$FFDD,$002B,$0021                                     ;A5EFA7;
     dw EnemyTouch_SporeSpawn                                             ;A5EFB1;
@@ -8567,6 +9163,7 @@ Hitbox_SporeSpawn_2:
     dw EnemyTouch_SporeSpawn                                             ;A5EFBD;
     dw CommonA5_CreateADudShot                                           ;A5EFBF;
 
+%anchor($A5EFC1)
 Hitbox_SporeSpawn_3:
     dw $0004,$FFD3,$FFDA,$002C,$FFF7                                     ;A5EFC1;
     dw EnemyTouch_SporeSpawn                                             ;A5EFCB;
@@ -8581,6 +9178,7 @@ Hitbox_SporeSpawn_3:
     dw EnemyTouch_SporeSpawn                                             ;A5EFEF;
     dw CommonA5_CreateADudShot                                           ;A5EFF1;
 
+%anchor($A5EFF3)
 Hitbox_SporeSpawn_4:
     dw $0004,$FFD5,$FFD4,$002A,$FFF3                                     ;A5EFF3;
     dw EnemyTouch_SporeSpawn                                             ;A5EFFD;
@@ -8595,6 +9193,7 @@ Hitbox_SporeSpawn_4:
     dw EnemyTouch_SporeSpawn                                             ;A5F021;
     dw CommonA5_CreateADudShot                                           ;A5F023;
 
+%anchor($A5F025)
 Hitbox_SporeSpawn_5:
     dw $0004,$FFD3,$FFD1,$002C,$FFEF                                     ;A5F025;
     dw EnemyTouch_SporeSpawn                                             ;A5F02F;
@@ -8609,6 +9208,7 @@ Hitbox_SporeSpawn_5:
     dw EnemyTouch_SporeSpawn                                             ;A5F053;
     dw CommonA5_CreateADudShot                                           ;A5F055;
 
+%anchor($A5F057)
 Hitbox_SporeSpawn_6:
     dw $0004,$FFD4,$FFCE,$002D,$FFEB                                     ;A5F057;
     dw EnemyTouch_SporeSpawn                                             ;A5F061;
@@ -8623,6 +9223,7 @@ Hitbox_SporeSpawn_6:
     dw EnemyTouch_SporeSpawn                                             ;A5F085;
     dw CommonA5_CreateADudShot                                           ;A5F087;
 
+%anchor($A5F089)
 Hitbox_SporeSpawn_7:
     dw $0002,$FFD2,$FFDD,$002C,$0023                                     ;A5F089;
     dw EnemyTouch_SporeSpawn                                             ;A5F093;
@@ -8631,6 +9232,7 @@ Hitbox_SporeSpawn_7:
     dw EnemyTouch_SporeSpawn                                             ;A5F09F;
     dw CommonA5_CreateADudShot                                           ;A5F0A1;
 
+%anchor($A5F0A3)
 Hitbox_SporeSpawn_8:
     dw $0004,$FFD3,$FFD9,$002D,$FFF7                                     ;A5F0A3;
     dw EnemyTouch_SporeSpawn                                             ;A5F0AD;
@@ -8645,6 +9247,7 @@ Hitbox_SporeSpawn_8:
     dw EnemyTouch_SporeSpawn                                             ;A5F0D1;
     dw CommonA5_CreateADudShot                                           ;A5F0D3;
 
+%anchor($A5F0D5)
 Hitbox_SporeSpawn_9:
     dw $0004,$FFD3,$FFD4,$002D,$FFF3                                     ;A5F0D5;
     dw EnemyTouch_SporeSpawn                                             ;A5F0DF;
@@ -8659,6 +9262,7 @@ Hitbox_SporeSpawn_9:
     dw EnemyTouch_SporeSpawn                                             ;A5F103;
     dw CommonA5_CreateADudShot                                           ;A5F105;
 
+%anchor($A5F107)
 Hitbox_SporeSpawn_A:
     dw $0004,$FFD4,$FFD1,$0029,$FFEF                                     ;A5F107;
     dw EnemyTouch_SporeSpawn                                             ;A5F111;
@@ -8673,46 +9277,55 @@ Hitbox_SporeSpawn_A:
     dw EnemyTouch_SporeSpawn                                             ;A5F135;
     dw CommonA5_CreateADudShot                                           ;A5F137;
 
+%anchor($A5F139)
 Hitbox_SporeSpawn_B:
     dw $0001,$FFF1,$FFE8,$000E,$0017                                     ;A5F139;
     dw EnemyTouch_SporeSpawn                                             ;A5F143;
     dw EnemyShot_SporeSpawn_Vulnerable                                   ;A5F145;
 
+%anchor($A5F147)
 Hitbox_SporeSpawn_C:
     dw $0001,$FFF1,$FFE8,$000E,$0017                                     ;A5F147;
     dw EnemyTouch_SporeSpawn                                             ;A5F151;
     dw EnemyShot_SporeSpawn_Vulnerable                                   ;A5F153;
 
+%anchor($A5F155)
 Hitbox_SporeSpawn_D:
     dw $0001,$FFF1,$FFE8,$000E,$0017                                     ;A5F155;
     dw EnemyTouch_SporeSpawn                                             ;A5F15F;
     dw CommonA5_CreateADudShot                                           ;A5F161;
 
+%anchor($A5F163)
 Hitbox_SporeSpawn_E:
     dw $0001,$FFF8,$FFF8,$0007,$0007                                     ;A5F163;
     dw EnemyTouch_SporeSpawn                                             ;A5F16D;
     dw CommonA5_CreateADudShot                                           ;A5F16F;
 
+%anchor($A5F171)
 Hitbox_SporeSpawn_F:
     dw $0001,$FFF8,$FFF8,$0007,$0006                                     ;A5F171;
     dw EnemyTouch_SporeSpawn                                             ;A5F17B;
     dw CommonA5_CreateADudShot                                           ;A5F17D;
 
+%anchor($A5F17F)
 Hitbox_SporeSpawn_10:
     dw $0001,$FFF8,$FFF8,$0007,$0006                                     ;A5F17F;
     dw EnemyTouch_SporeSpawn                                             ;A5F189;
     dw CommonA5_CreateADudShot                                           ;A5F18B;
 
+%anchor($A5F18D)
 Hitbox_SporeSpawn_11:
     dw $0001,$FFF8,$FFF8,$0007,$0006                                     ;A5F18D;
     dw EnemyTouch_SporeSpawn                                             ;A5F197;
     dw EnemyShot_SporeSpawn_Vulnerable                                   ;A5F199;
 
+%anchor($A5F19B)
 Hitbox_SporeSpawn_12:
     dw $0001,$FFFC,$FFFC,$0003,$0003                                     ;A5F19B;
     dw EnemyTouch_SporeSpawn                                             ;A5F1A5;
     dw EnemyShot_SporeSpawn_Vulnerable                                   ;A5F1A7;
 
+%anchor($A5F1A9)
 Hitbox_SporeSpawn_13:
     dw $0004,$FFD4,$FFCB,$002C,$FFE9                                     ;A5F1A9;
     dw EnemyTouch_SporeSpawn                                             ;A5F1B3;
@@ -8727,6 +9340,7 @@ Hitbox_SporeSpawn_13:
     dw EnemyTouch_SporeSpawn                                             ;A5F1D7;
     dw CommonA5_CreateADudShot                                           ;A5F1D9;
 
+%anchor($A5F1DB)
 Hitbox_SporeSpawn_14:
     dw $0004,$FFD4,$FFC9,$002B,$FFE7                                     ;A5F1DB;
     dw EnemyTouch_SporeSpawn                                             ;A5F1E5;
@@ -8741,6 +9355,7 @@ Hitbox_SporeSpawn_14:
     dw EnemyTouch_SporeSpawn                                             ;A5F209;
     dw CommonA5_CreateADudShot                                           ;A5F20B;
 
+%anchor($A5F20D)
 Spritemap_SporeSpawn_0:
     dw $001A,$8000                                                       ;A5F20D;
     db $F0                                                               ;A5F211;
@@ -8796,6 +9411,7 @@ Spritemap_SporeSpawn_0:
     db $00                                                               ;A5F28E;
     dw $2144                                                             ;A5F28F;
 
+%anchor($A5F291)
 Spritemap_SporeSpawn_1:
     dw $001E,$8000                                                       ;A5F291;
     db $EC                                                               ;A5F295;
@@ -8859,6 +9475,7 @@ Spritemap_SporeSpawn_1:
     db $FC                                                               ;A5F326;
     dw $213F                                                             ;A5F327;
 
+%anchor($A5F329)
 Spritemap_SporeSpawn_2:
     dw $0022,$8000                                                       ;A5F329;
     db $E8                                                               ;A5F32D;
@@ -8930,6 +9547,7 @@ Spritemap_SporeSpawn_2:
     db $08                                                               ;A5F3D2;
     dw $2144                                                             ;A5F3D3;
 
+%anchor($A5F3D5)
 Spritemap_SporeSpawn_3:
     dw $0022,$8000                                                       ;A5F3D5;
     db $E4                                                               ;A5F3D9;
@@ -9001,6 +9619,7 @@ Spritemap_SporeSpawn_3:
     db $0C                                                               ;A5F47E;
     dw $2144                                                             ;A5F47F;
 
+%anchor($A5F481)
 Spritemap_SporeSpawn_4:
     dw $0022,$8000                                                       ;A5F481;
     db $D0                                                               ;A5F485;
@@ -9072,6 +9691,7 @@ Spritemap_SporeSpawn_4:
     db $10                                                               ;A5F52A;
     dw $2144                                                             ;A5F52B;
 
+%anchor($A5F52D)
 Spritemap_SporeSpawn_5:
     dw $001A,$8000                                                       ;A5F52D;
     db $CC                                                               ;A5F531;
@@ -9127,6 +9747,7 @@ Spritemap_SporeSpawn_5:
     db $DC                                                               ;A5F5AE;
     dw $2120                                                             ;A5F5AF;
 
+%anchor($A5F5B1)
 Spritemap_SporeSpawn_6:
     dw $001A,$8000                                                       ;A5F5B1;
     db $DC                                                               ;A5F5B5;
@@ -9182,6 +9803,7 @@ Spritemap_SporeSpawn_6:
     db $EC                                                               ;A5F632;
     dw $2120                                                             ;A5F633;
 
+%anchor($A5F635)
 Spritemap_SporeSpawn_7:
     dw $001A,$8000                                                       ;A5F635;
     db $D8                                                               ;A5F639;
@@ -9237,6 +9859,7 @@ Spritemap_SporeSpawn_7:
     db $E8                                                               ;A5F6B6;
     dw $2120                                                             ;A5F6B7;
 
+%anchor($A5F6B9)
 Spritemap_SporeSpawn_8:
     dw $001A,$8000                                                       ;A5F6B9;
     db $E4                                                               ;A5F6BD;
@@ -9292,6 +9915,7 @@ Spritemap_SporeSpawn_8:
     db $0C                                                               ;A5F73A;
     dw $2144                                                             ;A5F73B;
 
+%anchor($A5F73D)
 Spritemap_SporeSpawn_A:
     dw $001A,$8000                                                       ;A5F73D;
     db $E0                                                               ;A5F741;
@@ -9347,6 +9971,7 @@ Spritemap_SporeSpawn_A:
     db $10                                                               ;A5F7BE;
     dw $2144                                                             ;A5F7BF;
 
+%anchor($A5F7C1)
 Spritemap_SporeSpawn_B:
     dw $0006,$8000                                                       ;A5F7C1;
     db $F8                                                               ;A5F7C5;
@@ -9362,6 +9987,7 @@ Spritemap_SporeSpawn_B:
     db $08                                                               ;A5F7DE;
     dw $2126                                                             ;A5F7DF;
 
+%anchor($A5F7E1)
 Spritemap_SporeSpawn_C:
     dw $0006,$8000                                                       ;A5F7E1;
     db $F8                                                               ;A5F7E5;
@@ -9377,6 +10003,7 @@ Spritemap_SporeSpawn_C:
     db $08                                                               ;A5F7FE;
     dw $2128                                                             ;A5F7FF;
 
+%anchor($A5F801)
 Spritemap_SporeSpawn_D:
     dw $0006,$8000                                                       ;A5F801;
     db $F8                                                               ;A5F805;
@@ -9392,41 +10019,49 @@ Spritemap_SporeSpawn_D:
     db $08                                                               ;A5F81E;
     dw $212A                                                             ;A5F81F;
 
+%anchor($A5F821)
 Spritemap_SporeSpawn_E:
     dw $0001,$81F8                                                       ;A5F821;
     db $F8                                                               ;A5F825;
     dw $2140                                                             ;A5F826;
 
+%anchor($A5F828)
 Spritemap_SporeSpawn_F:
     dw $0001,$81F8                                                       ;A5F828;
     db $F8                                                               ;A5F82C;
     dw $210C                                                             ;A5F82D;
 
+%anchor($A5F82F)
 Spritemap_SporeSpawn_10:
     dw $0001,$81F8                                                       ;A5F82F;
     db $F8                                                               ;A5F833;
     dw $210E                                                             ;A5F834;
 
+%anchor($A5F836)
 Spritemap_SporeSpawn_11:
     dw $0001,$81F8                                                       ;A5F836;
     db $F8                                                               ;A5F83A;
     dw $212C                                                             ;A5F83B;
 
+%anchor($A5F83D)
 Spritemap_SporeSpawn_12:
     dw $0001,$01FC                                                       ;A5F83D;
     db $FC                                                               ;A5F841;
     dw $213E                                                             ;A5F842;
 
+%anchor($A5F844)
 Spritemap_SporeSpawn_13:
     dw $0001,$01FC                                                       ;A5F844;
     db $FC                                                               ;A5F848;
     dw $212F                                                             ;A5F849;
 
+%anchor($A5F84B)
 Spritemap_SporeSpawn_14:
     dw $0001,$01FC                                                       ;A5F84B;
     db $FC                                                               ;A5F84F;
     dw $212E                                                             ;A5F850;
 
+%anchor($A5F852)
 Spritemap_SporeSpawn_15:
     dw $001A,$8000                                                       ;A5F852;
     db $DA                                                               ;A5F856;
@@ -9482,6 +10117,7 @@ Spritemap_SporeSpawn_15:
     db $16                                                               ;A5F8D3;
     dw $2144                                                             ;A5F8D4;
 
+%anchor($A5F8D6)
 Spritemap_SporeSpawn_16:
     dw $001A,$8000                                                       ;A5F8D6;
     db $C8                                                               ;A5F8DA;
@@ -9537,5 +10173,6 @@ Spritemap_SporeSpawn_16:
     db $D8                                                               ;A5F957;
     dw $2120                                                             ;A5F958;
 
+%anchor($A5F95A)
 Freespace_BankA5_F95A:                                                   ;A5F95A;
 ; $6A6 bytes

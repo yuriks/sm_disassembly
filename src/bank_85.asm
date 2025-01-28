@@ -2,18 +2,21 @@
 org $858000
 
 
+%anchor($858000)
 Large_MessageBox_TopBottomBorder_Tilemap:
     dw $000E,$000E,$000E,$284E,$284E,$284E,$284E,$284E                   ;858000;
     dw $284E,$280F,$280F,$280F,$280F,$280F,$280F,$280F                   ;858010;
     dw $280F,$280F,$280F,$280F,$280F,$280F,$280F,$280F                   ;858020;
     dw $280F,$280F,$280F,$284E,$284E,$000E,$000E,$000E                   ;858030;
 
+%anchor($858040)
 Small_MessageBox_TopBottomBorder_Tilemap:
     dw $000E,$000E,$000E,$000E,$000E,$000E,$284E,$284E                   ;858040;
     dw $284E,$284E,$284E,$284E,$284E,$284E,$284E,$284E                   ;858050;
     dw $284E,$284E,$284E,$284E,$284E,$284E,$284E,$284E                   ;858060;
     dw $284E,$000E,$000E,$000E,$000E,$000E,$000E,$000E                   ;858070;
 
+%anchor($858080)
 MessageBox_Routine:
 ; Parameter:
 ;     A: Message index
@@ -105,6 +108,7 @@ MessageBox_Routine:
     BRA .return                                                          ;8580F8;
 
 
+%anchor($8580FA)
 MaybeTriggerPauseScreen_or_ReturnSaveConfirmationSelection:
     REP #$30                                                             ;8580FA;
     LDA.W $1C1F                                                          ;8580FC;
@@ -128,6 +132,7 @@ MaybeTriggerPauseScreen_or_ReturnSaveConfirmationSelection:
     RTS                                                                  ;858118;
 
 
+%anchor($858119)
 Play_Saving_Sound_Effect:
     REP #$30                                                             ;858119;
     LDA.W #$002E                                                         ;85811B;
@@ -145,6 +150,7 @@ Play_Saving_Sound_Effect:
     RTS                                                                  ;858135;
 
 
+%anchor($858136)
 Wait_for_Lag_Frame:
     PHP                                                                  ;858136;
     SEP #$20                                                             ;858137;
@@ -157,6 +163,7 @@ Wait_for_Lag_Frame:
     RTS                                                                  ;858142;
 
 
+%anchor($858143)
 Initialise_PPU_for_MessageBoxes:
     REP #$20                                                             ;858143;
     STZ.W $05F9                                                          ;858145;
@@ -229,6 +236,7 @@ Initialise_PPU_for_MessageBoxes:
     RTS                                                                  ;8581F2;
 
 
+%anchor($8581F3)
 Clear_MessageBox_BG3Tilemap:
     REP #$30                                                             ;8581F3;
     LDX.W #$06FE                                                         ;8581F5;
@@ -265,6 +273,7 @@ Clear_MessageBox_BG3Tilemap:
 .blankTile:
     dw $000E                                                             ;85823F;
 
+%anchor($858241)
 Initialise_MessageBox:
     REP #$30                                                             ;858241;
     LDA.W $1C1F                                                          ;858243;
@@ -283,10 +292,12 @@ Initialise_MessageBox:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($858258)
 UNUSED_REP30_858258:
     REP #$30                                                             ;858258;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($85825A)
 Write_Large_MessageBox_Tilemap:
     LDX.W #$0000                                                         ;85825A;
 
@@ -315,6 +326,7 @@ Write_Large_MessageBox_Tilemap:
     RTS                                                                  ;858288;
 
 
+%anchor($858289)
 Write_Small_MessageBox_Tilemap:
     LDY.W #$0000                                                         ;858289;
     LDX.W #$0000                                                         ;85828C;
@@ -343,6 +355,7 @@ Write_Small_MessageBox_Tilemap:
     RTS                                                                  ;8582B7;
 
 
+%anchor($8582B8)
 Write_Message_Tilemap:
     JSR.W Wait_for_Lag_Frame                                             ;8582B8;
     JSL.L HandleMusicQueue                                               ;8582BB;
@@ -397,6 +410,7 @@ Write_Message_Tilemap:
     RTS                                                                  ;85831D;
 
 
+%anchor($85831E)
 Setup_PPU_for_Active_MessageBox:
     JSR.W Setup_MessageBox_BG3_Yscroll_HDMA                              ;85831E;
     JSR.W Wait_for_Lag_Frame                                             ;858321;
@@ -426,6 +440,7 @@ Setup_PPU_for_Active_MessageBox:
     RTS                                                                  ;858362;
 
 
+%anchor($858363)
 Setup_MessageBox_BG3_Yscroll_HDMA:
     SEP #$20                                                             ;858363;
     LDA.B #$FF                                                           ;858365;
@@ -465,16 +480,19 @@ Setup_MessageBox_BG3_Yscroll_HDMA:
     RTS                                                                  ;8583C4;
 
 
+%anchor($8583C5)
 DrawShootButton_SetupPPUForLargeMessageBox:
     REP #$30                                                             ;8583C5;
     LDA.W $09B2                                                          ;8583C7;
     BRA DrawSpecialButton_SetupPPUForLargeMessageBox                     ;8583CA;
 
 
+%anchor($8583CC)
 DrawRunButton_SetupPPUForLargeMessageBox:
     REP #$30                                                             ;8583CC;
     LDA.W $09B6                                                          ;8583CE;
 
+%anchor($8583D1)
 DrawSpecialButton_SetupPPUForLargeMessageBox:
     LDY.W #$0000                                                         ;8583D1;
     BIT.W #$0080                                                         ;8583D4;
@@ -524,6 +542,7 @@ DrawSpecialButton_SetupPPUForLargeMessageBox:
     dw $38F1 ; R
     dw $284E ; Blank
 
+%anchor($858436)
 Setup_PPU_for_Small_MessageBox:
     REP #$30                                                             ;858436;
     LDA.W #$01C0                                                         ;858438;
@@ -532,6 +551,7 @@ Setup_PPU_for_Small_MessageBox:
     RTS                                                                  ;858440;
 
 
+%anchor($858441)
 Setup_PPU_for_Large_MessageBox:
     REP #$30                                                             ;858441;
     LDA.W #$01A0                                                         ;858443;
@@ -540,6 +560,7 @@ Setup_PPU_for_Large_MessageBox:
     RTS                                                                  ;85844B;
 
 
+%anchor($85844C)
 Open_MessageBox:
     REP #$30                                                             ;85844C;
     STZ.W $05A2                                                          ;85844E;
@@ -558,6 +579,7 @@ Open_MessageBox:
     RTS                                                                  ;85846C;
 
 
+%anchor($85846D)
 Handle_MessageBox_Interaction:
     SEP #$20                                                             ;85846D;
     LDA.W $1C1F                                                          ;85846F;
@@ -649,6 +671,7 @@ Handle_MessageBox_Interaction:
     BRA .return                                                          ;858505;
 
 
+%anchor($858507)
 Toggle_Save_Confirmation_Selection:
     LDA.W $05F9                                                          ;858507;
     EOR.W #$0002                                                         ;85850A;
@@ -697,6 +720,7 @@ Toggle_Save_Confirmation_Selection:
     RTS                                                                  ;858573;
 
 
+%anchor($858574)
 Play_2_Lag_Frames_of_Music_and_Sound_Effects:
     SEP #$30                                                             ;858574;
     LDX.B #$02                                                           ;858576;
@@ -712,6 +736,7 @@ Play_2_Lag_Frames_of_Music_and_Sound_Effects:
     RTS                                                                  ;858588;
 
 
+%anchor($858589)
 Close_MessageBox:
     REP #$30                                                             ;858589;
 
@@ -725,6 +750,7 @@ Close_MessageBox:
     RTS                                                                  ;85859A;
 
 
+%anchor($85859B)
 Write_MessageBox_BG3_Yscroll_HDMA_DataTable:
     PHP                                                                  ;85859B;
     JSR.W Wait_for_Lag_Frame                                             ;85859C;
@@ -787,6 +813,7 @@ Write_MessageBox_BG3_Yscroll_HDMA_DataTable:
     RTS                                                                  ;858619;
 
 
+%anchor($85861A)
 Restore_PPU:
     REP #$20                                                             ;85861A;
     JSR.W Wait_for_Lag_Frame                                             ;85861C;
@@ -836,6 +863,7 @@ Restore_PPU:
     RTS                                                                  ;85869A;
 
 
+%anchor($85869B)
 MessageDefinitionsPointers:
   .modifyMessageBox:
     dw Setup_PPU_for_Small_MessageBox                                    ;85869B; 1: Energy tank
@@ -929,6 +957,7 @@ MessageDefinitionsPointers:
     dw Write_Small_MessageBox_Tilemap                                    ;858745;
     dw MessageTilemaps_saveCompleted                                     ;858747;
 
+%anchor($858749)
 Special_Button_Tilemap_Offsets:                                          ;858749;
     dw $0000 ; 1: Energy tank
     dw $012A ; 2: Missile
@@ -958,6 +987,7 @@ Special_Button_Tilemap_Offsets:                                          ;858749
     dw $0000 ; 1Ah: Gravity suit
     dw $0000 ; 1Bh: Dummy
 
+%anchor($85877F)
 MessageTilemaps:
   .energyTank:
 ; '    ENERGY TANK    '
@@ -1294,6 +1324,7 @@ MessageTilemaps:
   .Terminator:
     dw $0000                                                             ;85957F;
 
+%anchor($859581)
 UNUSED_MessageTilemaps_YES_859581:
 ; '  =>YES      NO    ' (unused)
     dw $000E,$000E,$000E,$000E,$000E,$000E,$3C4E,$3C4E                   ;859581;
@@ -1301,6 +1332,7 @@ UNUSED_MessageTilemaps_YES_859581:
     dw $3C4E,$3C4E,$3C4E,$2CED,$2CEE,$3C4E,$3C4E,$3C4E                   ;8595A1;
     dw $3C4E,$000E,$000E,$000E,$000E,$000E,$000E,$000E                   ;8595B1;
 
+%anchor($8595C1)
 MessageTilemaps_YES:
 ; '  =>YES      NO    '
     dw $000E,$000E,$000E,$000E,$000E,$000E,$3C4E,$3C4E                   ;8595C1;
@@ -1308,6 +1340,7 @@ MessageTilemaps_YES:
     dw $3C4E,$3C4E,$3C4E,$2CED,$2CEE,$3C4E,$3C4E,$3C4E                   ;8595E1;
     dw $3C4E,$000E,$000E,$000E,$000E,$000E,$000E,$000E                   ;8595F1;
 
+%anchor($859601)
 MessageTilemaps_NO:
 ; '    YES    =>NO    '
     dw $000E,$000E,$000E,$000E,$000E,$000E,$3C4E,$3C4E                   ;859601;
@@ -1317,5 +1350,6 @@ MessageTilemaps_NO:
 
     dw $0000                                                             ;859641;
 
+%anchor($859643)
 Freespace_Bank85_9643:                                                   ;859643;
 ; $69BD bytes

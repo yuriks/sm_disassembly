@@ -2,21 +2,27 @@
 org $808000
 
 
+%anchor($808000)
 Debug_RegionSRAM:
     dw $0000                                                             ;808000; Skip NTSC/PAL and SRAM mapping check ($85F6)
 
+%anchor($808002)
 DebugConst_DemoRecorder:
     dw $0000                                                             ;808002; Demo recorder ($90:E759)
 
+%anchor($808004)
 DebugConst_DebugMode:
     dw $0000                                                             ;808004; Debug mode, written to $05D1 on boot
 
+%anchor($808006)
 DebugConst_DebugScrolling:
     dw $0000                                                             ;808006; Debug scrolling ($82:8B44: game state 8 - main gameplay)
 
+%anchor($808008)
 DebugConst_DisableAudio:
     dw $0000                                                             ;808008; Disable audio ($80:8024)
 
+%anchor($80800A)
 UploadToAPU_Hardcoded:
     LDA.B $02,S                                                          ;80800A;
     STA.B $04                                                            ;80800C;
@@ -32,11 +38,13 @@ UploadToAPU_Hardcoded:
     LDA.B [$03],Y                                                        ;808020;
     STA.B $01                                                            ;808022; $00 = [(return address) + 1] (parameter address)
 
+%anchor($808024)
 UploadToAPU_long:
     JSR.W UploadToAPU                                                    ;808024;
     RTL                                                                  ;808027;
 
 
+%anchor($808028)
 UploadToAPU:
     LDA.L DebugConst_DisableAudio                                        ;808028;
     BEQ .upload                                                          ;80802C; If [DebugConst_DisableAudio] != 0:
@@ -66,6 +74,7 @@ UploadToAPU:
     RTS                                                                  ;808058;
 
 
+%anchor($808059)
 SendAPUData:
     PHP                                                                  ;808059;
     REP #$30                                                             ;80805A;
@@ -170,16 +179,19 @@ SendAPUData:
     RTS                                                                  ;8080FF;
 
 
+%anchor($808100)
 IncYTwice_OverflowCheck:
     INY                                                                  ;808100;
     BEQ IncY_OverflowCheck_overflow                                      ;808101;
 
+%anchor($808103)
 IncY_OverflowCheck:
     INY                                                                  ;808103;
     BEQ IncY_OverflowCheck_overflow                                      ;808104;
     RTS                                                                  ;808106;
 
 
+%anchor($808107)
 IncY_OverflowCheck_overflow:
     INC.B $02                                                            ;808107; Increment $02
     PEI.B ($01)                                                          ;808109;
@@ -189,6 +201,7 @@ IncY_OverflowCheck_overflow:
     RTS                                                                  ;808110;
 
 
+%anchor($808111)
 GenerateRandomNumber:
     SEP #$20                                                             ;808111;
     LDA.W $05E5                                                          ;808113;
@@ -217,6 +230,7 @@ GenerateRandomNumber:
     RTL                                                                  ;808145;
 
 
+%anchor($808146)
 UpdateHeldInput:
     PHP                                                                  ;808146;
     PHB                                                                  ;808147;
@@ -260,6 +274,7 @@ UpdateHeldInput:
     RTL                                                                  ;80818D;
 
 
+%anchor($80818E)
 BitIndexToByteIndexAndBitmask:
     TAX                                                                  ;80818E;
     BPL .dontCrash                                                       ;80818F;
@@ -283,6 +298,7 @@ BitIndexToByteIndexAndBitmask:
     RTL                                                                  ;8081A5;
 
 
+%anchor($8081A6)
 SetBossBitsInAForCurrentArea:
     PHX                                                                  ;8081A6;
     PHY                                                                  ;8081A7;
@@ -300,6 +316,7 @@ SetBossBitsInAForCurrentArea:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($8081C0)
 UNUSED_ClearBossBitsInAForCurrentArea_8081C0:
     PHX                                                                  ;8081C0;
     PHY                                                                  ;8081C1;
@@ -318,6 +335,7 @@ UNUSED_ClearBossBitsInAForCurrentArea_8081C0:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($8081DC)
 CheckIfBossBitsForCurrentAreaMatchAnyBitsInA:
     PHX                                                                  ;8081DC;
     PHY                                                                  ;8081DD;
@@ -343,6 +361,7 @@ CheckIfBossBitsForCurrentAreaMatchAnyBitsInA:
     RTL                                                                  ;8081F9;
 
 
+%anchor($8081FA)
 MarkEvent_inA:
     PHX                                                                  ;8081FA;
     PHY                                                                  ;8081FB;
@@ -358,6 +377,7 @@ MarkEvent_inA:
     RTL                                                                  ;808211;
 
 
+%anchor($808212)
 UnmarkEvent_inA:
     PHX                                                                  ;808212;
     PHY                                                                  ;808213;
@@ -376,6 +396,7 @@ UnmarkEvent_inA:
     RTL                                                                  ;808232;
 
 
+%anchor($808233)
 CheckIfEvent_inA_HasHappened:
     PHX                                                                  ;808233;
     PHY                                                                  ;808234;
@@ -400,6 +421,7 @@ CheckIfEvent_inA_HasHappened:
     RTL                                                                  ;80824E;
 
 
+%anchor($80824F)
 Write_supermetroid_ToSRAM:
     PHX                                                                  ;80824F;
     LDX.W #$000A                                                         ;808250;
@@ -414,6 +436,7 @@ Write_supermetroid_ToSRAM:
     RTL                                                                  ;808260;
 
 
+%anchor($808261)
 CheckForNonCorruptSRAM:
     PHX                                                                  ;808261;
     LDA.W #$0003                                                         ;808262;
@@ -457,12 +480,15 @@ CheckForNonCorruptSRAM:
     RTL                                                                  ;8082AC;
 
 
+%anchor($8082AD)
 Text_madadameyohn:
     db "madadameyohn"                                                    ;8082AD; 'madadameyohn'
 
+%anchor($8082B9)
 Text_supermetroid:
     db "supermetroid"                                                    ;8082B9; 'supermetroid'
 
+%anchor($8082C5)
 WaitUntilTheEndOfAVBlank:
     PHA                                                                  ;8082C5;
     PHP                                                                  ;8082C6;
@@ -480,6 +506,7 @@ WaitUntilTheEndOfAVBlank:
     RTL                                                                  ;8082D5;
 
 
+%anchor($8082D6)
 A_Y_16bit_UnsignedMultiplication:
     PHX                                                                  ;8082D6;
     STA.W $05E9                                                          ;8082D7; Let $05E9 = a + b * 100h
@@ -525,6 +552,7 @@ A_Y_16bit_UnsignedMultiplication:
     RTL                                                                  ;808337;
 
 
+%anchor($808338)
 WaitForNMI:
     PHP                                                                  ;808338;
     PHB                                                                  ;808339;
@@ -542,6 +570,7 @@ WaitForNMI:
     RTL                                                                  ;80834A;
 
 
+%anchor($80834B)
 EnableNMI:
     PHP                                                                  ;80834B;
     PHB                                                                  ;80834C;
@@ -557,6 +586,7 @@ EnableNMI:
     RTL                                                                  ;80835C;
 
 
+%anchor($80835D)
 DisableNMI:
     PHP                                                                  ;80835D;
     PHB                                                                  ;80835E;
@@ -572,6 +602,7 @@ DisableNMI:
     RTL                                                                  ;80836E;
 
 
+%anchor($80836F)
 SetForceBlankAndWaitForNMI:
     PHP                                                                  ;80836F;
     PHB                                                                  ;808370;
@@ -587,6 +618,7 @@ SetForceBlankAndWaitForNMI:
     RTL                                                                  ;808381;
 
 
+%anchor($808382)
 ClearForceBlankAndWaitForNMI:
     PHP                                                                  ;808382;
     PHB                                                                  ;808383;
@@ -603,6 +635,7 @@ ClearForceBlankAndWaitForNMI:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($808395)
 UNUSED_UpdateCGRAM_808395:
     PHP                                                                  ;808395;
     SEP #$10                                                             ;808396;
@@ -623,6 +656,7 @@ UNUSED_UpdateCGRAM_808395:
     RTL                                                                  ;8083BC;
 
 
+%anchor($8083BD)
 UNUSED_WriteYBytesOfATo_000000_X_8bit_8083BD:
     PHP                                                                  ;8083BD;
     PHB                                                                  ;8083BE;
@@ -641,6 +675,7 @@ UNUSED_WriteYBytesOfATo_000000_X_8bit_8083BD:
     RTL                                                                  ;8083CF;
 
 
+%anchor($8083D0)
 UNUSED_WriteYBytesOfATo_000000_X_16bit_8083D0:
     PHP                                                                  ;8083D0;
     PHB                                                                  ;8083D1;
@@ -660,6 +695,7 @@ UNUSED_WriteYBytesOfATo_000000_X_16bit_8083D0:
     RTL                                                                  ;8083E2;
 
 
+%anchor($8083E3)
 UNUSED_WriteYBytesOfATo_7E0000_X_8bit_8083E3:
     PHP                                                                  ;8083E3;
     PHB                                                                  ;8083E4;
@@ -679,6 +715,7 @@ UNUSED_WriteYBytesOfATo_7E0000_X_8bit_8083E3:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($8083F6)
 WriteYBytesOfATo_7E0000_X_16bit:
     PHP                                                                  ;8083F6;
     PHB                                                                  ;8083F7;
@@ -698,6 +735,7 @@ WriteYBytesOfATo_7E0000_X_16bit:
     RTL                                                                  ;808408;
 
 
+%anchor($808409)
 WriteYBytesOfATo_7F0000_X_16bit:
     PHP                                                                  ;808409;
     PHB                                                                  ;80840A;
@@ -717,6 +755,7 @@ WriteYBytesOfATo_7F0000_X_16bit:
     RTL                                                                  ;80841B;
 
 
+%anchor($80841C)
 Boot:
     SEI                                                                  ;80841C; Disable IRQ
     CLC                                                                  ;80841D;
@@ -762,6 +801,7 @@ Boot:
     BRA CommonBootSection                                                ;808460; Go to common boot section
 
 
+%anchor($808462)
 SoftReset:
     SEI                                                                  ;808462; Disable IRQ
     CLC                                                                  ;808463;
@@ -786,6 +826,7 @@ SoftReset:
     DEX                                                                  ;80847F;
     BNE .wait                                                            ;808480;
 
+%anchor($808482)
 CommonBootSection:
     SEP #$20                                                             ;808482;
     LDA.B #$8F                                                           ;808484;
@@ -885,11 +926,13 @@ CommonBootSection:
 
     db $00                                                               ;808572; BRK with no operand
 
+%anchor($808573)
 Crash_Handler:
     JML.L Crash_Handler                                                  ;808573; Crash handler, jump to self
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($808577)
 UNUSED_WaitAFrames_808577:
     PHP                                                                  ;808577;
     PHB                                                                  ;808578;
@@ -908,6 +951,7 @@ UNUSED_WaitAFrames_808577:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($80858C)
 LoadMirrorOfCurrentAreasMapExplored:
     PHP                                                                  ;80858C;
     REP #$30                                                             ;80858D;
@@ -934,10 +978,12 @@ LoadMirrorOfCurrentAreasMapExplored:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($8085B6)
 UNUSED_Generic_Bitmasks:
     dw $0001,$0002,$0004,$0008,$0010,$0020,$0040,$0080                   ;8085B6;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($8085C6)
 MirrorCurrentAreasMapExplored:
     PHP                                                                  ;8085C6;
     REP #$30                                                             ;8085C7;
@@ -967,6 +1013,7 @@ MirrorCurrentAreasMapExplored:
     RTL                                                                  ;8085F5;
 
 
+%anchor($8085F6)
 NTSC_PAL_SRAM_MappingCheck:
     PHP                                                                  ;8085F6;
     SEP #$30                                                             ;8085F7;
@@ -1144,6 +1191,7 @@ NTSC_PAL_SRAM_MappingCheck:
     BRA .crash                                                           ;80875B; Crash
 
 
+%anchor($80875D)
 Initialise_CPU_IO_Registers:
     LDA.B #$01                                                           ;80875D;
     STA.W $4200                                                          ;80875F; Enable auto-joypad read
@@ -1167,6 +1215,7 @@ Initialise_CPU_IO_Registers:
     RTS                                                                  ;808791;
 
 
+%anchor($808792)
 InitialisePPURegisters:
     LDA.B #$8F                                                           ;808792;
     STA.W $2100                                                          ;808794; Enable forced blank
@@ -1287,6 +1336,7 @@ InitialisePPURegisters:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($8088B4)
 UNUSED_ClearHighRAM_8088B4:
     REP #$30                                                             ;8088B4;
     LDA.W #$0000                                                         ;8088B6;
@@ -1302,6 +1352,7 @@ UNUSED_ClearHighRAM_8088B4:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($8088D1)
 WriteALoadOf_1C2F:
     REP #$30                                                             ;8088D1;
     LDA.W #$1C2F                                                         ;8088D3;
@@ -1314,6 +1365,7 @@ WriteALoadOf_1C2F:
     RTS                                                                  ;8088EA;
 
 
+%anchor($8088EB)
 Write_800h_Bytes_Of_A_To_7E3000:
     PHP                                                                  ;8088EB;
     PHB                                                                  ;8088EC;
@@ -1328,6 +1380,7 @@ Write_800h_Bytes_Of_A_To_7E3000:
     RTL                                                                  ;8088FD;
 
 
+%anchor($8088FE)
 Write_800h_Bytes_Of_A_To_7E4000:
     PHP                                                                  ;8088FE;
     PHB                                                                  ;8088FF;
@@ -1342,6 +1395,7 @@ Write_800h_Bytes_Of_A_To_7E4000:
     RTL                                                                  ;808910;
 
 
+%anchor($808911)
 Write_800h_Bytes_Of_A_To_7E6000:
     PHP                                                                  ;808911;
     PHB                                                                  ;808912;
@@ -1356,6 +1410,7 @@ Write_800h_Bytes_Of_A_To_7E6000:
     RTL                                                                  ;808923;
 
 
+%anchor($808924)
 HandleFadingOut:
     PHP                                                                  ;808924;
     REP #$20                                                             ;808925;
@@ -1388,6 +1443,7 @@ HandleFadingOut:
     RTL                                                                  ;80894C;
 
 
+%anchor($80894D)
 HandleFadingIn:
     PHP                                                                  ;80894D;
     REP #$20                                                             ;80894E;
@@ -1413,6 +1469,7 @@ HandleFadingIn:
     RTL                                                                  ;80896D;
 
 
+%anchor($80896E)
 Finalise_OAM:
     PHP                                                                  ;80896E;
     REP #$30                                                             ;80896F;
@@ -1572,6 +1629,7 @@ Finalise_OAM:
     RTL                                                                  ;808B19;
 
 
+%anchor($808B1A)
 ClearHighOAM:
     PHP                                                                  ;808B1A;
     REP #$30                                                             ;808B1B;
@@ -1595,6 +1653,7 @@ ClearHighOAM:
     RTL                                                                  ;808B4E;
 
 
+%anchor($808B4F)
 QueueMode7Transfers:
     PHX                                                                  ;808B4F;
     PHY                                                                  ;808B50;
@@ -1655,6 +1714,7 @@ QueueMode7Transfers:
     BRA .loop                                                            ;808BB8;
 
 
+%anchor($808BBA)
 HandleMode7Transfers:
     PHP                                                                  ;808BBA;
     REP #$10                                                             ;808BBB;
@@ -1671,6 +1731,7 @@ HandleMode7Transfers:
     RTL                                                                  ;808BD2;
 
 
+%anchor($808BD3)
 ProcessMode7Transfers:
     PHP                                                                  ;808BD3;
 
@@ -1759,6 +1820,7 @@ ProcessMode7Transfers:
     JMP.W .loop                                                          ;808C80;
 
 
+%anchor($808C83)
 HandleVRAMWriteTable_ScrollingDMAs:
     PHP                                                                  ;808C83;
     REP #$30                                                             ;808C84;
@@ -1806,6 +1868,7 @@ HandleVRAMWriteTable_ScrollingDMAs:
     RTL                                                                  ;808CD7;
 
 
+%anchor($808CD8)
 ExecuteHorizontalScrollingDMAs:
     LDA.B #$81                                                           ;808CD8;
     STA.W $2115                                                          ;808CDA;
@@ -1892,6 +1955,7 @@ ExecuteHorizontalScrollingDMAs:
     RTS                                                                  ;808DAB;
 
 
+%anchor($808DAC)
 ExecuteVerticalScrollingDMAs:
     LDA.B #$80                                                           ;808DAC;
     STA.W $2115                                                          ;808DAE;
@@ -1998,6 +2062,7 @@ ExecuteVerticalScrollingDMAs:
     RTS                                                                  ;808EA1;
 
 
+%anchor($808EA2)
 HandleVRAMReadTable:
     PHP                                                                  ;808EA2;
     SEP #$30                                                             ;808EA3;
@@ -2045,6 +2110,7 @@ HandleVRAMReadTable:
     RTL                                                                  ;808EF3;
 
 
+%anchor($808EF4)
 CheckIfMusicIsQueued:
     PHP                                                                  ;808EF4;
     REP #$30                                                             ;808EF5;
@@ -2070,6 +2136,7 @@ CheckIfMusicIsQueued:
     RTL                                                                  ;808F0B;
 
 
+%anchor($808F0C)
 HandleMusicQueue:
     PHP                                                                  ;808F0C;
     REP #$20                                                             ;808F0D;
@@ -2150,6 +2217,7 @@ HandleMusicQueue:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($808FA3)
 UNUSED_QueueMusicDataOrTrack_808FA3:
     PHP                                                                  ;808FA3;
     REP #$30                                                             ;808FA4;
@@ -2171,6 +2239,7 @@ UNUSED_QueueMusicDataOrTrack_808FA3:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($808FC1)
 QueueMusicDataOrTrack_8FrameDelay:
     PHP                                                                  ;808FC1;
     REP #$30                                                             ;808FC2;
@@ -2205,6 +2274,7 @@ QueueMusicDataOrTrack_8FrameDelay:
     RTL                                                                  ;808FF6;
 
 
+%anchor($808FF7)
 QueueMusicDataOrTrack_YFrameDelay:
     PHP                                                                  ;808FF7;
     REP #$30                                                             ;808FF8;
@@ -2233,6 +2303,7 @@ QueueMusicDataOrTrack_YFrameDelay:
     RTL                                                                  ;809020;
 
 
+%anchor($809021)
 QueueSound:
     PHX                                                                  ;809021;
     PHY                                                                  ;809022;
@@ -2243,6 +2314,7 @@ QueueSound:
     BRA QueueSound_Lib1                                                  ;809029;
 
 
+%anchor($80902B)
 QueueSound_Lib1_Max9:
     PHX                                                                  ;80902B;
     PHY                                                                  ;80902C;
@@ -2253,6 +2325,7 @@ QueueSound_Lib1_Max9:
     BRA QueueSound_Lib1                                                  ;809033;
 
 
+%anchor($809035)
 QueueSound_Lib1_Max3:
     PHX                                                                  ;809035;
     PHY                                                                  ;809036;
@@ -2263,6 +2336,7 @@ QueueSound_Lib1_Max3:
     BRA QueueSound_Lib1                                                  ;80903D;
 
 
+%anchor($80903F)
 QueueSound_Lib1_Max1:
     PHX                                                                  ;80903F;
     PHY                                                                  ;809040;
@@ -2273,6 +2347,7 @@ QueueSound_Lib1_Max1:
     BRA QueueSound_Lib1                                                  ;809047;
 
 
+%anchor($809049)
 QueueSound_Lib1_Max6:
     PHX                                                                  ;809049;
     PHY                                                                  ;80904A;
@@ -2281,6 +2356,7 @@ QueueSound_Lib1_Max6:
     XBA                                                                  ;80904E;
     LDA.B #$06                                                           ;80904F;
 
+%anchor($809051)
 QueueSound_Lib1:
     STA.W $0653                                                          ;809051;
     LDA.W $0646                                                          ;809054;
@@ -2328,6 +2404,7 @@ QueueSound_Lib1:
     BRA .return                                                          ;8090A1;
 
 
+%anchor($8090A3)
 QueueSound_Lib2_Max15:
     PHX                                                                  ;8090A3;
     PHY                                                                  ;8090A4;
@@ -2338,6 +2415,7 @@ QueueSound_Lib2_Max15:
     BRA QueueSound_Lib2                                                  ;8090AB;
 
 
+%anchor($8090AD)
 QueueSound_Lib2_Max9:
     PHX                                                                  ;8090AD;
     PHY                                                                  ;8090AE;
@@ -2348,6 +2426,7 @@ QueueSound_Lib2_Max9:
     BRA QueueSound_Lib2                                                  ;8090B5;
 
 
+%anchor($8090B7)
 QueueSound_Lib2_Max3:
     PHX                                                                  ;8090B7;
     PHY                                                                  ;8090B8;
@@ -2358,6 +2437,7 @@ QueueSound_Lib2_Max3:
     BRA QueueSound_Lib2                                                  ;8090BF;
 
 
+%anchor($8090C1)
 QueueSound_Lib2_Max1:
     PHX                                                                  ;8090C1;
     PHY                                                                  ;8090C2;
@@ -2368,6 +2448,7 @@ QueueSound_Lib2_Max1:
     BRA QueueSound_Lib2                                                  ;8090C9;
 
 
+%anchor($8090CB)
 QueueSound_Lib2_Max6:
     PHX                                                                  ;8090CB;
     PHY                                                                  ;8090CC;
@@ -2376,6 +2457,7 @@ QueueSound_Lib2_Max6:
     XBA                                                                  ;8090D0;
     LDA.B #$06                                                           ;8090D1;
 
+%anchor($8090D3)
 QueueSound_Lib2:
     STA.W $0654                                                          ;8090D3;
     LDA.W $0647                                                          ;8090D6;
@@ -2423,6 +2505,7 @@ QueueSound_Lib2:
     BRA .return                                                          ;809123;
 
 
+%anchor($809125)
 QueueSound_Lib3_Max15:
     PHX                                                                  ;809125;
     PHY                                                                  ;809126;
@@ -2433,6 +2516,7 @@ QueueSound_Lib3_Max15:
     BRA QueueSound_Lib3                                                  ;80912D;
 
 
+%anchor($80912F)
 QueueSound_Lib3_Max9:
     PHX                                                                  ;80912F;
     PHY                                                                  ;809130;
@@ -2443,6 +2527,7 @@ QueueSound_Lib3_Max9:
     BRA QueueSound_Lib3                                                  ;809137;
 
 
+%anchor($809139)
 QueueSound_Lib3_Max3:
     PHX                                                                  ;809139;
     PHY                                                                  ;80913A;
@@ -2453,6 +2538,7 @@ QueueSound_Lib3_Max3:
     BRA QueueSound_Lib3                                                  ;809141;
 
 
+%anchor($809143)
 QueueSound_Lib3_Max1:
     PHX                                                                  ;809143;
     PHY                                                                  ;809144;
@@ -2463,6 +2549,7 @@ QueueSound_Lib3_Max1:
     BRA QueueSound_Lib3                                                  ;80914B;
 
 
+%anchor($80914D)
 QueueSound_Lib3_Max6:
     PHX                                                                  ;80914D;
     PHY                                                                  ;80914E;
@@ -2471,6 +2558,7 @@ QueueSound_Lib3_Max6:
     XBA                                                                  ;809152;
     LDA.B #$06                                                           ;809153;
 
+%anchor($809155)
 QueueSound_Lib3:
     STA.W $0655                                                          ;809155;
     LDA.W $0648                                                          ;809158;
@@ -2518,11 +2606,13 @@ QueueSound_Lib3:
     BRA .return                                                          ;8091A5;
 
 
+%anchor($8091A7)
 NOPRTS_8091A7:
     NOP                                                                  ;8091A7;
     RTS                                                                  ;8091A8;
 
 
+%anchor($8091A9)
 SetupHDMATransfer:
     PHP                                                                  ;8091A9;
     PHB                                                                  ;8091AA;
@@ -2559,6 +2649,7 @@ SetupHDMATransfer:
 .table:
     db $00,$10,$20,$30,$40,$50,$60,$70                                   ;8091E6;
 
+%anchor($8091EE)
 Update_IO_Registers:
     LDX.B $84                                                            ;8091EE;
     STX.W $4200                                                          ;8091F0;
@@ -2700,6 +2791,7 @@ Update_IO_Registers:
     RTS                                                                  ;809339;
 
 
+%anchor($80933A)
 UpdateOAM_CGRAM:
     LDA.W #$0400                                                         ;80933A;
     STA.W $4300                                                          ;80933D;
@@ -2725,6 +2817,7 @@ UpdateOAM_CGRAM:
     RTS                                                                  ;809375;
 
 
+%anchor($809376)
 TransferSamusTilesToVRAM:
     PHB                                                                  ;809376;
     LDX.B #$92                                                           ;809377;
@@ -2803,6 +2896,7 @@ TransferSamusTilesToVRAM:
     RTS                                                                  ;809415;
 
 
+%anchor($809416)
 ProcessAnimatedTilesObjectVRAMTransfers:
     PHB                                                                  ;809416;
     LDX.B #$87                                                           ;809417;
@@ -2842,6 +2936,7 @@ ProcessAnimatedTilesObjectVRAMTransfers:
     RTS                                                                  ;809458;
 
 
+%anchor($809459)
 ReadControllerInput:
     PHP                                                                  ;809459;
     SEP #$20                                                             ;80945A;
@@ -3009,6 +3104,7 @@ ReadControllerInput:
     RTL                                                                  ;809582;
 
 
+%anchor($809583)
 NMI:
     REP #$30                                                             ;809583;
     JML.L .bank80                                                        ;809585;
@@ -3094,6 +3190,7 @@ NMI:
     BRA .return                                                          ;809614;
 
 
+%anchor($809616)
 InterruptCommandPointers:
     dw Interrupt_Cmd0                                                    ;809616;
     dw Interrupt_Cmd2_DisableHVCounterInterrupts                         ;809618;
@@ -3110,6 +3207,7 @@ InterruptCommandPointers:
     dw Interrupt_Cmd18_HorizontalDoorTransition_EndHUDDrawing            ;80962E;
     dw Interrupt_Cmd1A_HorizontalDoorTransition_EndDrawing               ;809630;
 
+%anchor($809632)
 ExecuteDoorTransitionVRAMUpdate:
     SEP #$20                                                             ;809632;
     LDA.B #$80                                                           ;809634;
@@ -3136,6 +3234,7 @@ ExecuteDoorTransitionVRAMUpdate:
     RTS                                                                  ;80966D;
 
 
+%anchor($80966E)
 Interrupt_Cmd0:
     LDA.B $A7                                                            ;80966E;
     BEQ .returnZero                                                      ;809670;
@@ -3152,6 +3251,7 @@ Interrupt_Cmd0:
     RTS                                                                  ;80967F;
 
 
+%anchor($809680)
 Interrupt_Cmd2_DisableHVCounterInterrupts:
     LDA.W #$0030                                                         ;809680;
     TRB.B $84                                                            ;809683;
@@ -3161,6 +3261,7 @@ Interrupt_Cmd2_DisableHVCounterInterrupts:
     RTS                                                                  ;80968A;
 
 
+%anchor($80968B)
 Interrupt_Cmd4_MainGameplay_BeginHUDDrawing:
     SEP #$20                                                             ;80968B;
     LDA.B #$5A                                                           ;80968D;
@@ -3176,6 +3277,7 @@ Interrupt_Cmd4_MainGameplay_BeginHUDDrawing:
     RTS                                                                  ;8096A8;
 
 
+%anchor($8096A9)
 Interrupt_Cmd6_MainGameplay_EndHUDDrawing:
     SEP #$20                                                             ;8096A9;
     LDA.B $70                                                            ;8096AB;
@@ -3202,6 +3304,7 @@ Interrupt_Cmd6_MainGameplay_EndHUDDrawing:
     RTS                                                                  ;8096D2;
 
 
+%anchor($8096D3)
 Interrupt_Cmd8_StartDoorTransition_BeginHUDDrawing:
     SEP #$20                                                             ;8096D3;
     LDA.B #$5A                                                           ;8096D5;
@@ -3217,6 +3320,7 @@ Interrupt_Cmd8_StartDoorTransition_BeginHUDDrawing:
     RTS                                                                  ;8096F0;
 
 
+%anchor($8096F1)
 Interrupt_CmdA_StartDoorTransition_EndHUDDrawing:
     SEP #$20                                                             ;8096F1;
     LDA.W $07B3                                                          ;8096F3;
@@ -3248,6 +3352,7 @@ Interrupt_CmdA_StartDoorTransition_EndHUDDrawing:
     RTS                                                                  ;809719;
 
 
+%anchor($80971A)
 Interrupt_CmdC_Draygon_BeginHUDDrawing:
     SEP #$20                                                             ;80971A;
     LDA.B #$04                                                           ;80971C;
@@ -3261,6 +3366,7 @@ Interrupt_CmdC_Draygon_BeginHUDDrawing:
     RTS                                                                  ;809732;
 
 
+%anchor($809733)
 Interrupt_CmdE_Draygon_EndHUDDrawing:
     SEP #$20                                                             ;809733;
     LDA.B $5B                                                            ;809735;
@@ -3285,6 +3391,7 @@ Interrupt_CmdE_Draygon_EndHUDDrawing:
     RTS                                                                  ;809757;
 
 
+%anchor($809758)
 Interrupt_Cmd10_VerticalDoorTransition_BeginHUDDrawing:
     SEP #$20                                                             ;809758;
     LDA.B #$04                                                           ;80975A;
@@ -3298,6 +3405,7 @@ Interrupt_Cmd10_VerticalDoorTransition_BeginHUDDrawing:
     RTS                                                                  ;809770;
 
 
+%anchor($809771)
 Interrupt_Cmd12_VerticalDoorTransition_EndHUDDrawing:
     SEP #$20                                                             ;809771;
     LDA.W $07B3                                                          ;809773;
@@ -3332,6 +3440,7 @@ Interrupt_Cmd12_VerticalDoorTransition_EndHUDDrawing:
     RTS                                                                  ;8097A8;
 
 
+%anchor($8097A9)
 Interrupt_Cmd14_VerticalDoorTransition_EndDrawing:
     LDA.B $A7                                                            ;8097A9;
     BEQ .command10                                                       ;8097AB;
@@ -3350,6 +3459,7 @@ Interrupt_Cmd14_VerticalDoorTransition_EndDrawing:
     RTS                                                                  ;8097C0;
 
 
+%anchor($8097C1)
 Interrupt_Cmd16_HorizontalDoorTransition_BeginHUDDrawing:
     SEP #$20                                                             ;8097C1;
     LDA.B #$04                                                           ;8097C3;
@@ -3363,6 +3473,7 @@ Interrupt_Cmd16_HorizontalDoorTransition_BeginHUDDrawing:
     RTS                                                                  ;8097D9;
 
 
+%anchor($8097DA)
 Interrupt_Cmd18_HorizontalDoorTransition_EndHUDDrawing:
     SEP #$20                                                             ;8097DA;
     LDA.W $07B3                                                          ;8097DC;
@@ -3392,6 +3503,7 @@ Interrupt_Cmd18_HorizontalDoorTransition_EndHUDDrawing:
     RTS                                                                  ;809809;
 
 
+%anchor($80980A)
 Interrupt_Cmd1A_HorizontalDoorTransition_EndDrawing:
     LDX.W $05BC                                                          ;80980A;
     BPL .nextCommand                                                     ;80980D;
@@ -3415,6 +3527,7 @@ Interrupt_Cmd1A_HorizontalDoorTransition_EndDrawing:
     RTS                                                                  ;809829;
 
 
+%anchor($80982A)
 EnableHVCounterInterrupts:
     PHP                                                                  ;80982A;
     REP #$30                                                             ;80982B;
@@ -3429,6 +3542,7 @@ EnableHVCounterInterrupts:
     RTL                                                                  ;809840;
 
 
+%anchor($809841)
 EnableHVCounterInterruptsNow:
     PHP                                                                  ;809841;
     REP #$30                                                             ;809842;
@@ -3446,6 +3560,7 @@ EnableHVCounterInterruptsNow:
     RTL                                                                  ;80985E;
 
 
+%anchor($80985F)
 DisableHVCounterInterrupts:
     PHP                                                                  ;80985F;
     REP #$30                                                             ;809860;
@@ -3456,6 +3571,7 @@ DisableHVCounterInterrupts:
     RTL                                                                  ;809869;
 
 
+%anchor($80986A)
 IRQ:
     REP #$30                                                             ;80986A;
     JML.L .bank80                                                        ;80986C;
@@ -3481,6 +3597,7 @@ IRQ:
     RTI                                                                  ;80988A;
 
 
+%anchor($80988B)
 Tilemap_HUD:
   .topRow:
     dw $2C0F,$2C0F,$2C0F,$2C0F,$2C0F,$2C0F,$2C0F,$2C0F                   ;80988B;
@@ -3534,6 +3651,7 @@ Tilemap_HUD:
     dw $343A,$743A                                                       ;8099C7;
     dw $343B,$743B                                                       ;8099CB;
 
+%anchor($8099CF)
 AddMissilesToHUDTilemap:
     PHP                                                                  ;8099CF;
     PHB                                                                  ;8099D0;
@@ -3563,6 +3681,7 @@ AddMissilesToHUDTilemap:
     RTL                                                                  ;809A0D;
 
 
+%anchor($809A0E)
 AddSuperMissilesToHUDTilemap:
     PHP                                                                  ;809A0E;
     PHX                                                                  ;809A0F;
@@ -3576,6 +3695,7 @@ AddSuperMissilesToHUDTilemap:
     BRA Write2x2TileIconToHUDTilemap                                     ;809A1C;
 
 
+%anchor($809A1E)
 AddPowerBombsToHUDTilemap:
     PHP                                                                  ;809A1E;
     PHX                                                                  ;809A1F;
@@ -3589,6 +3709,7 @@ AddPowerBombsToHUDTilemap:
     BRA Write2x2TileIconToHUDTilemap                                     ;809A2C;
 
 
+%anchor($809A2E)
 AddGrappleToHUDTilemap:
     PHP                                                                  ;809A2E;
     PHX                                                                  ;809A2F;
@@ -3602,6 +3723,7 @@ AddGrappleToHUDTilemap:
     BRA Write2x2TileIconToHUDTilemap                                     ;809A3C;
 
 
+%anchor($809A3E)
 AddXrayToHUDTilemap:
     PHP                                                                  ;809A3E;
     PHX                                                                  ;809A3F;
@@ -3613,6 +3735,7 @@ AddXrayToHUDTilemap:
     LDY.W #Tilemap_HUD_xray                                              ;809A46;
     LDX.W #$002E                                                         ;809A49;
 
+%anchor($809A4C)
 Write2x2TileIconToHUDTilemap:
     LDA.L $7EC608,X                                                      ;809A4C;
     AND.W #$03FF                                                         ;809A50;
@@ -3635,6 +3758,7 @@ Write2x2TileIconToHUDTilemap:
     RTL                                                                  ;809A78;
 
 
+%anchor($809A79)
 InitialiseHUD_GameLoading:
     PHP                                                                  ;809A79;
     PHB                                                                  ;809A7A;
@@ -3732,6 +3856,7 @@ InitialiseHUD_GameLoading:
     RTL                                                                  ;809B43;
 
 
+%anchor($809B44)
 HandleHUDTilemap_PausedAndRunning:
     PHP                                                                  ;809B44;
     PHB                                                                  ;809B45;
@@ -3924,6 +4049,7 @@ HandleHUDTilemap_PausedAndRunning:
     dw $0042,$0044,$0046,$0048,$004A,$004C,$004E                         ;809CCE; bottom (first) row
     dw $0002,$0004,$0006,$0008,$000A,$000C,$000E                         ;809CDE; top (second) row
 
+%anchor($809CEA)
 ToggleHUDItemHighlight:
     STX.W $077C                                                          ;809CEA;
     DEC A                                                                ;809CED;
@@ -3994,6 +4120,7 @@ ToggleHUDItemHighlight:
     dw $0028                                                             ;809D74; Grapple beam
     dw $002E                                                             ;809D76; X-ray
 
+%anchor($809D78)
 DrawThreeHUDDigits:
     STA.W $4204                                                          ;809D78;
     SEP #$20                                                             ;809D7B;
@@ -4013,6 +4140,7 @@ DrawThreeHUDDigits:
     INX                                                                  ;809D94;
     LDA.W $4216                                                          ;809D95;
 
+%anchor($809D98)
 DrawTwoHUDDigits:
     STA.W $4204                                                          ;809D98;
     SEP #$20                                                             ;809D9B;
@@ -4036,6 +4164,7 @@ DrawTwoHUDDigits:
     RTS                                                                  ;809DBE;
 
 
+%anchor($809DBF)
 Tilemap_HUDDigits:
   .health:
     dw $2C09,$2C00,$2C01,$2C02,$2C03,$2C04,$2C05,$2C06                   ;809DBF;
@@ -4045,6 +4174,7 @@ Tilemap_HUDDigits:
     dw $2C09,$2C00,$2C01,$2C02,$2C03,$2C04,$2C05,$2C06                   ;809DD3;
     dw $2C07,$2C08                                                       ;809DE3;
 
+%anchor($809DE7)
 ProcessTimer:
     PHB                                                                  ;809DE7;
     PHK                                                                  ;809DE8;
@@ -4071,6 +4201,7 @@ ProcessTimer:
     dw ProcessTimer_RunningMovingIntoPlace                               ;809E05;
     dw ProcessTimer_RunningMovingIntoPlace_return                        ;809E07;
 
+%anchor($809E09)
 ProcessTimer_CeresStart:
     JSL.L ClearTimerRAM                                                  ;809E09;
     LDA.W #$0100                                                         ;809E0D;
@@ -4078,11 +4209,13 @@ ProcessTimer_CeresStart:
     LDA.W #$8003                                                         ;809E14;
     STA.W $0943                                                          ;809E17;
 
+%anchor($809E1A)
 ProcessTimer_Inactive:
     CLC                                                                  ;809E1A;
     RTS                                                                  ;809E1B;
 
 
+%anchor($809E1C)
 ProcessTimer_MotherBrainStart:
     JSL.L ClearTimerRAM                                                  ;809E1C;
     LDA.W #$0300                                                         ;809E20;
@@ -4093,6 +4226,7 @@ ProcessTimer_MotherBrainStart:
     RTS                                                                  ;809E2E;
 
 
+%anchor($809E2F)
 ProcessTimer_InitialDelay:
     SEP #$20                                                             ;809E2F;
     INC.W $0948                                                          ;809E31;
@@ -4106,6 +4240,7 @@ ProcessTimer_InitialDelay:
     RTS                                                                  ;809E40;
 
 
+%anchor($809E41)
 ProcessTimer_RunningMovementDelayed:
     SEP #$20                                                             ;809E41;
     INC.W $0948                                                          ;809E43;
@@ -4120,6 +4255,7 @@ ProcessTimer_RunningMovementDelayed:
     JMP.W DecrementTimer                                                 ;809E55;
 
 
+%anchor($809E58)
 ProcessTimer_RunningMovingIntoPlace:
     LDY.W #$0000                                                         ;809E58;
     LDA.W #$00E0                                                         ;809E5B;
@@ -4146,16 +4282,19 @@ ProcessTimer_RunningMovingIntoPlace:
     BNE ProcessTimer_RunningMovingIntoPlace_return                       ;809E84;
     INC.W $0943                                                          ;809E86;
 
+%anchor($809E89)
 ProcessTimer_RunningMovingIntoPlace_return:
     JMP.W DecrementTimer                                                 ;809E89;
 
 
+%anchor($809E8C)
 SetTimer:
     STZ.W $0945                                                          ;809E8C;
     STA.W $0946                                                          ;809E8F;
     RTL                                                                  ;809E92;
 
 
+%anchor($809E93)
 ClearTimerRAM:
     LDA.W #$8000                                                         ;809E93;
     STA.W $0948                                                          ;809E96;
@@ -4167,6 +4306,7 @@ ClearTimerRAM:
     RTL                                                                  ;809EA8;
 
 
+%anchor($809EA9)
 DecrementTimer:
     SEP #$39                                                             ;809EA9; Set carry and decimal
     LDA.W $05B6                                                          ;809EAB;
@@ -4215,6 +4355,7 @@ DecrementTimer:
     db $01,$02,$02,$01,$02,$02,$01,$02,$02,$01,$02,$02,$02,$01,$02,$02   ;809F4C;
     db $01,$02,$02,$01,$02,$02,$01,$02,$02,$01,$02,$02,$02,$01,$02,$02   ;809F5C;
 
+%anchor($809F6C)
 DrawTimer:
     PHB                                                                  ;809F6C;
     PHK                                                                  ;809F6D;
@@ -4235,6 +4376,7 @@ DrawTimer:
     RTL                                                                  ;809F94;
 
 
+%anchor($809F95)
 DrawTwoTimerDigits:
     PHX                                                                  ;809F95;
     PHA                                                                  ;809F96;
@@ -4254,6 +4396,7 @@ DrawTwoTimerDigits:
     PLA                                                                  ;809FAF;
     ADC.W #$0008                                                         ;809FB0;
 
+%anchor($809FB3)
 DrawTimerSpritemap:
     STA.B $14                                                            ;809FB3;
     LDA.W $0948                                                          ;809FB5;
@@ -4272,6 +4415,7 @@ DrawTimerSpritemap:
     RTS                                                                  ;809FD3;
 
 
+%anchor($809FD4)
 TimerDigitsSpritemapPointers:
     dw Spritemap_TimerDigits_0                                           ;809FD4;
     dw Spritemap_TimerDigits_1                                           ;809FD6;
@@ -4284,56 +4428,67 @@ TimerDigitsSpritemapPointers:
     dw Spritemap_TimerDigits_8                                           ;809FE4;
     dw Spritemap_TimerDigits_9                                           ;809FE6;
 
+%anchor($809FE8)
 Spritemap_TimerDigits_0:
     dw $0002                                                             ;809FE8;
     %spritemapEntry(0, $1FC, $00, 0, 0, 3, 5, $1EA)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 3, 5, $1E0)
 
+%anchor($809FF4)
 Spritemap_TimerDigits_1:
     dw $0002                                                             ;809FF4;
     %spritemapEntry(0, $1FC, $00, 0, 0, 3, 5, $1EB)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 3, 5, $1E1)
 
+%anchor($80A000)
 Spritemap_TimerDigits_2:
     dw $0002                                                             ;80A000;
     %spritemapEntry(0, $1FC, $00, 0, 0, 3, 5, $1EC)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 3, 5, $1E2)
 
+%anchor($80A00C)
 Spritemap_TimerDigits_3:
     dw $0002                                                             ;80A00C;
     %spritemapEntry(0, $1FC, $00, 0, 0, 3, 5, $1ED)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 3, 5, $1E3)
 
+%anchor($80A018)
 Spritemap_TimerDigits_4:
     dw $0002                                                             ;80A018;
     %spritemapEntry(0, $1FC, $00, 0, 0, 3, 5, $1EE)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 3, 5, $1E4)
 
+%anchor($80A024)
 Spritemap_TimerDigits_5:
     dw $0002                                                             ;80A024;
     %spritemapEntry(0, $1FC, $00, 0, 0, 3, 5, $1EF)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 3, 5, $1E5)
 
+%anchor($80A030)
 Spritemap_TimerDigits_6:
     dw $0002                                                             ;80A030;
     %spritemapEntry(0, $1FC, $00, 0, 0, 3, 5, $1F0)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 3, 5, $1E6)
 
+%anchor($80A03C)
 Spritemap_TimerDigits_7:
     dw $0002                                                             ;80A03C;
     %spritemapEntry(0, $1FC, $00, 0, 0, 3, 5, $1F1)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 3, 5, $1E7)
 
+%anchor($80A048)
 Spritemap_TimerDigits_8:
     dw $0002                                                             ;80A048;
     %spritemapEntry(0, $1FC, $00, 0, 0, 3, 5, $1F2)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 3, 5, $1E8)
 
+%anchor($80A054)
 Spritemap_TimerDigits_9:
     dw $0002                                                             ;80A054;
     %spritemapEntry(0, $1FC, $00, 0, 0, 3, 5, $1F3)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 3, 5, $1E9)
 
+%anchor($80A060)
 Spritemap_Timer_TIME:
     dw $0005                                                             ;80A060;
     %spritemapEntry(0, $1F0, $F0, 0, 0, 3, 5, $1F8)
@@ -4342,6 +4497,7 @@ Spritemap_Timer_TIME:
     %spritemapEntry(0, $008, $F8, 0, 0, 3, 5, $1F5)
     %spritemapEntry(0, $1F0, $F8, 0, 0, 3, 5, $1F4)
 
+%anchor($80A07B)
 StartGameplay:
     PHP                                                                  ;80A07B;
     PHB                                                                  ;80A07C;
@@ -4405,6 +4561,7 @@ StartGameplay:
     RTL                                                                  ;80A12A;
 
 
+%anchor($80A12B)
 HandleMusicQueueFor20Frames:
     PHP                                                                  ;80A12B;
     SEP #$30                                                             ;80A12C;
@@ -4425,6 +4582,7 @@ HandleMusicQueueFor20Frames:
     RTS                                                                  ;80A148;
 
 
+%anchor($80A149)
 ResumeGameplay:
     PHP                                                                  ;80A149;
     PHB                                                                  ;80A14A;
@@ -4446,6 +4604,7 @@ ResumeGameplay:
     RTL                                                                  ;80A175;
 
 
+%anchor($80A176)
 DisplayViewablePartOfRoom:
     PHP                                                                  ;80A176;
     SEP #$20                                                             ;80A177;
@@ -4498,6 +4657,7 @@ DisplayViewablePartOfRoom:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($80A1E3)
 UNUSED_QueueClearingOfBG2Tilemap_80A1E3:
     LDX.W #$0FFE                                                         ;80A1E3;
     LDA.W #$0338                                                         ;80A1E6;
@@ -4524,6 +4684,7 @@ UNUSED_QueueClearingOfBG2Tilemap_80A1E3:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($80A211)
 QueueClearingOfFXTilemap:
     LDX.W #$0EFE                                                         ;80A211;
     LDA.W #$184E                                                         ;80A214;
@@ -4549,6 +4710,7 @@ QueueClearingOfFXTilemap:
     RTL                                                                  ;80A23E;
 
 
+%anchor($80A23F)
 ClearBG2Tilemap:
     PHP                                                                  ;80A23F;
     REP #$20                                                             ;80A240;
@@ -4590,6 +4752,7 @@ ClearBG2Tilemap:
 .addr:
     dw $0338                                                             ;80A29A;
 
+%anchor($80A29C)
 ClearFXTilemap:
     PHP                                                                  ;80A29C;
     REP #$20                                                             ;80A29D;
@@ -4631,6 +4794,7 @@ ClearFXTilemap:
 .addr:
     dw $184E                                                             ;80A2F7;
 
+%anchor($80A2F9)
 CalculateLayer2XPosition:
     PHP                                                                  ;80A2F9;
     LDY.W $0911                                                          ;80A2FA;
@@ -4671,6 +4835,7 @@ CalculateLayer2XPosition:
     RTS                                                                  ;80A339;
 
 
+%anchor($80A33A)
 CalculateLayer2YPosition:
     PHP                                                                  ;80A33A;
     LDY.W $0915                                                          ;80A33B;
@@ -4711,6 +4876,7 @@ CalculateLayer2YPosition:
     RTS                                                                  ;80A37A;
 
 
+%anchor($80A37B)
 CalculateBGScrolls:
     LDA.W $0911                                                          ;80A37B;
     CLC                                                                  ;80A37E;
@@ -4731,6 +4897,7 @@ CalculateBGScrolls:
     RTS                                                                  ;80A39F;
 
 
+%anchor($80A3A0)
 CalculateBGScrolls_UpdateBGGraphics_WhenScrolling:
     PHP                                                                  ;80A3A0;
     PHB                                                                  ;80A3A1;
@@ -4741,6 +4908,7 @@ CalculateBGScrolls_UpdateBGGraphics_WhenScrolling:
     BRA UpdateBGGraphics_WhenScrolling                                   ;80A3A9;
 
 
+%anchor($80A3AB)
 Calc_Layer2Position_BGScrolls_UpdateBGGraphics_WhenScrolling:
     LDA.W $0A78                                                          ;80A3AB;
     BEQ .continue                                                        ;80A3AE;
@@ -4774,6 +4942,7 @@ Calc_Layer2Position_BGScrolls_UpdateBGGraphics_WhenScrolling:
     ADC.W $0923                                                          ;80A3DA;
     STA.B $B7                                                            ;80A3DD;
 
+%anchor($80A3DF)
 UpdateBGGraphics_WhenScrolling:
     REP #$20                                                             ;80A3DF;
     JSR.W Calculate_BGScroll_LayerPositionBlocks                         ;80A3E1;
@@ -4883,6 +5052,7 @@ UpdateBGGraphics_WhenScrolling:
     RTL                                                                  ;80A4BA;
 
 
+%anchor($80A4BB)
 Calculate_BGScroll_LayerPositionBlocks:
     LDA.B $B1                                                            ;80A4BB;
     LSR A                                                                ;80A4BD;
@@ -4951,6 +5121,7 @@ Calculate_BGScroll_LayerPositionBlocks:
     RTS                                                                  ;80A527;
 
 
+%anchor($80A528)
 HandleScrollZones_HorizontalAutoscrolling:
     PHP                                                                  ;80A528;
     PHB                                                                  ;80A529;
@@ -5094,6 +5265,7 @@ HandleScrollZones_HorizontalAutoscrolling:
     RTL                                                                  ;80A640;
 
 
+%anchor($80A641)
 HandleScrollZones_ScrollingRight:
     PHP                                                                  ;80A641;
     PHB                                                                  ;80A642;
@@ -5156,6 +5328,7 @@ HandleScrollZones_ScrollingRight:
     RTL                                                                  ;80A6BA;
 
 
+%anchor($80A6BB)
 HandleScrollZones_ScrollingLeft:
     PHP                                                                  ;80A6BB;
     PHB                                                                  ;80A6BC;
@@ -5216,6 +5389,7 @@ HandleScrollZones_ScrollingLeft:
     RTL                                                                  ;80A730;
 
 
+%anchor($80A731)
 HandleScrollZones_VerticalAutoscrolling:
     PHP                                                                  ;80A731;
     PHB                                                                  ;80A732;
@@ -5391,6 +5565,7 @@ HandleScrollZones_VerticalAutoscrolling:
     RTL                                                                  ;80A892;
 
 
+%anchor($80A893)
 HandleScrollZones_ScrollingDown:
     PHP                                                                  ;80A893;
     PHB                                                                  ;80A894;
@@ -5471,6 +5646,7 @@ HandleScrollZones_ScrollingDown:
     RTL                                                                  ;80A935;
 
 
+%anchor($80A936)
 HandleScrollZones_ScrollingUp:
     PHP                                                                  ;80A936;
     PHB                                                                  ;80A937;
@@ -5531,6 +5707,7 @@ HandleScrollZones_ScrollingUp:
     RTL                                                                  ;80A9AB;
 
 
+%anchor($80A9AC)
 Debug_Layer1Position_Saving_Loading:
     LDA.B $91                                                            ;80A9AC;
     AND.W #$0040                                                         ;80A9AE;
@@ -5554,14 +5731,17 @@ Debug_Layer1Position_Saving_Loading:
     RTL                                                                  ;80A9D5;
 
 
+%anchor($80A9D6)
 UpdateBackgroundDataColumn:
     LDX.W #$001C                                                         ;80A9D6;
     BRA UpdateLevelBackgroundDataColumn                                  ;80A9D9;
 
 
+%anchor($80A9DB)
 UpdateLevelDataColumn:
     LDX.W #$0000                                                         ;80A9DB;
 
+%anchor($80A9DE)
 UpdateLevelBackgroundDataColumn:
     LDA.W $0783                                                          ;80A9DE;
     BEQ +                                                                ;80A9E1;
@@ -5751,14 +5931,17 @@ UpdateLevelBackgroundDataColumn:
     RTS                                                                  ;80AB6F;
 
 
+%anchor($80AB70)
 UpdateBackgroundDataRow:
     LDX.W #$001C                                                         ;80AB70;
     BRA UpdateBackgroundLevelDataRow                                     ;80AB73;
 
 
+%anchor($80AB75)
 UpdateLevelDataRow:
     LDX.W #$0000                                                         ;80AB75;
 
+%anchor($80AB78)
 UpdateBackgroundLevelDataRow:
     LDA.W $0783                                                          ;80AB78;
     BEQ +                                                                ;80AB7B;
@@ -5959,6 +6142,7 @@ UpdateBackgroundLevelDataRow:
     RTS                                                                  ;80AD1C;
 
 
+%anchor($80AD1D)
 DrawTopRowOfScreenForUpwardsDoorTransition:
     STZ.W $0925                                                          ;80AD1D;
     JSR.W Calculate_BGScroll_LayerPositionBlocks                         ;80AD20;
@@ -5969,6 +6153,7 @@ DrawTopRowOfScreenForUpwardsDoorTransition:
     RTL                                                                  ;80AD2F;
 
 
+%anchor($80AD30)
 DoorTransitionScrollingSetup:
     REP #$30                                                             ;80AD30;
     LDA.W $0927                                                          ;80AD32;
@@ -5983,6 +6168,7 @@ DoorTransitionScrollingSetup:
     RTL                                                                  ;80AD49;
 
 
+%anchor($80AD4A)
 DoorTransitionScrollingSetup_Right:
     JSR.W CalculateLayer2XPosition                                       ;80AD4A;
     SEC                                                                  ;80AD4D;
@@ -6002,6 +6188,7 @@ DoorTransitionScrollingSetup_Right:
     RTS                                                                  ;80AD73;
 
 
+%anchor($80AD74)
 DoorTransitionScrollingSetup_Left:
     JSR.W CalculateLayer2XPosition                                       ;80AD74;
     CLC                                                                  ;80AD77;
@@ -6021,6 +6208,7 @@ DoorTransitionScrollingSetup_Left:
     RTS                                                                  ;80AD9D;
 
 
+%anchor($80AD9E)
 DoorTransitionScrollingSetup_Down:
     JSR.W CalculateLayer2XPosition                                       ;80AD9E;
     JSR.W CalculateLayer2YPosition                                       ;80ADA1;
@@ -6040,6 +6228,7 @@ DoorTransitionScrollingSetup_Down:
     RTS                                                                  ;80ADC7;
 
 
+%anchor($80ADC8)
 DoorTransitionScrollingSetup_Up:
     JSR.W CalculateLayer2XPosition                                       ;80ADC8;
     LDA.W $0915                                                          ;80ADCB;
@@ -6069,12 +6258,14 @@ DoorTransitionScrollingSetup_Up:
     RTS                                                                  ;80AE07;
 
 
+%anchor($80AE08)
 Door_Transition_Scrolling_Setup_Pointers:
     dw DoorTransitionScrollingSetup_Right                                ;80AE08;
     dw DoorTransitionScrollingSetup_Left                                 ;80AE0A;
     dw DoorTransitionScrollingSetup_Down                                 ;80AE0C;
     dw DoorTransitionScrollingSetup_Up                                   ;80AE0E;
 
+%anchor($80AE10)
 UpdatePreviousLayerBlocks:
     LDA.W $08F7                                                          ;80AE10;
     STA.W $08FF                                                          ;80AE13;
@@ -6087,6 +6278,7 @@ UpdatePreviousLayerBlocks:
     RTS                                                                  ;80AE28;
 
 
+%anchor($80AE29)
 UpdateBGScrollOffsets:
     LDA.B $B1                                                            ;80AE29;
     SEC                                                                  ;80AE2B;
@@ -6107,6 +6299,7 @@ UpdateBGScrollOffsets:
     RTS                                                                  ;80AE4D;
 
 
+%anchor($80AE4E)
 DoorTransitionScrolling:
     PHP                                                                  ;80AE4E;
     PHB                                                                  ;80AE4F;
@@ -6138,6 +6331,7 @@ DoorTransitionScrolling:
     dw DoorTransitionScrolling_Down                                      ;80AE7A;
     dw DoorTransitionScrolling_Up                                        ;80AE7C;
 
+%anchor($80AE7E)
 DoorTransitionScrolling_Right:
     LDX.W $0925                                                          ;80AE7E;
     PHX                                                                  ;80AE81;
@@ -6172,6 +6366,7 @@ DoorTransitionScrolling_Right:
     RTS                                                                  ;80AEC1;
 
 
+%anchor($80AEC2)
 DoorTransitionScrolling_Left:
     LDX.W $0925                                                          ;80AEC2;
     PHX                                                                  ;80AEC5;
@@ -6205,6 +6400,7 @@ DoorTransitionScrolling_Left:
     RTS                                                                  ;80AF01;
 
 
+%anchor($80AF02)
 DoorTransitionScrolling_Down:
     LDX.W $0925                                                          ;80AF02;
     PHX                                                                  ;80AF05;
@@ -6274,6 +6470,7 @@ DoorTransitionScrolling_Down:
     RTS                                                                  ;80AF88;
 
 
+%anchor($80AF89)
 DoorTransitionScrolling_Up:
     LDX.W $0925                                                          ;80AF89;
     PHX                                                                  ;80AF8C;
@@ -6362,6 +6559,7 @@ DoorTransitionScrolling_Up:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($80B032)
 UNUSED_SetupRotatingMode7Background_80B032:
     LDA.W #$0001                                                         ;80B032;
     STA.W $0783                                                          ;80B035;
@@ -6434,6 +6632,7 @@ UNUSED_SetupRotatingMode7Background_80B032:
     RTL                                                                  ;80B0C1;
 
 
+%anchor($80B0C2)
 UNUSED_ConfigureMode7RotationMatrix_80B0C2:
     PHP                                                                  ;80B0C2;
     REP #$30                                                             ;80B0C3;
@@ -6468,6 +6667,7 @@ UNUSED_ConfigureMode7RotationMatrix_80B0C2:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($80B0FF)
 Decompression_HardcodedDestination:
     LDA.B $02,S                                                          ;80B0FF;
     STA.B $45                                                            ;80B101;
@@ -6483,6 +6683,7 @@ Decompression_HardcodedDestination:
     LDA.B [$44],Y                                                        ;80B115;
     STA.B $4D                                                            ;80B117;
 
+%anchor($80B119)
 Decompression_VariableDestination:
     PHP                                                                  ;80B119;
     PHB                                                                  ;80B11A;
@@ -6722,6 +6923,7 @@ Decompression_VariableDestination:
     BRA .dictionaryCopy                                                  ;80B264;
 
 
+%anchor($80B266)
 SourceBankOverflowCorrection:
     LDX.W #$8000                                                         ;80B266;
     PHA                                                                  ;80B269;
@@ -6734,6 +6936,7 @@ SourceBankOverflowCorrection:
     RTS                                                                  ;80B270;
 
 
+%anchor($80B271)
 DecompressionToVRAM:
     PHP                                                                  ;80B271;
     PHB                                                                  ;80B272;
@@ -7062,6 +7265,7 @@ DecompressionToVRAM:
     BRA .loopDictionaryCopy                                              ;80B435;
 
 
+%anchor($80B437)
 Tilemap_FailedRegionCheck:
     dw $000F,$000F,$000F,$000F,$000F,$000F,$000F,$000F                   ;80B437;
     dw $000F,$000F,$000F,$000F,$000F,$000F,$000F,$000F                   ;80B447;
@@ -7192,6 +7396,7 @@ Tilemap_FailedRegionCheck:
     dw $000F,$000F,$000F,$000F,$000F,$000F,$000F,$000F                   ;80BC17;
     dw $000F,$000F,$000F,$000F,$000F,$000F,$000F,$000F                   ;80BC27;
 
+%anchor($80BC37)
 Tilemap_FailedSRAMMappingCheck:
     dw $000F,$000F,$000F,$000F,$000F,$000F,$000F,$000F                   ;80BC37;
     dw $000F,$000F,$000F,$000F,$000F,$000F,$000F,$000F                   ;80BC47;
@@ -7322,6 +7527,7 @@ Tilemap_FailedSRAMMappingCheck:
     dw $000F,$000F,$000F,$000F,$000F,$000F,$000F,$000F                   ;80C417;
     dw $000F,$000F,$000F,$000F,$000F,$000F,$000F,$000F                   ;80C427;
 
+%anchor($80C437)
 LoadFromLoadStation:
     PHP                                                                  ;80C437;
     PHB                                                                  ;80C438;
@@ -7382,6 +7588,7 @@ LoadFromLoadStation:
     RTL                                                                  ;80C4B4;
 
 
+%anchor($80C4B5)
 LoadStationListPointers:
     dw LoadStations_Crateria                                             ;80C4B5;
     dw LoadStations_Brinstar                                             ;80C4B7;
@@ -7392,6 +7599,7 @@ LoadStationListPointers:
     dw LoadStations_Ceres                                                ;80C4C1;
     dw LoadStations_Debug                                                ;80C4C3;
 
+%anchor($80C4C5)
 LoadStations_Crateria:
     dw RoomHeader_LandingSite                                            ;80C4C5;
     dw Door_Parlor_1                                                     ;80C4C7;
@@ -7470,6 +7678,7 @@ LoadStations_Crateria:
     dw $0000,$0400,$0000,$0080,$0000                                     ;80C5C5;
 
 
+%anchor($80C5CF)
 LoadStations_Brinstar:
     dw RoomHeader_BigPinkSaveRoom                                        ;80C5CF;
     dw Door_BigPink_4                                                    ;80C5D1;
@@ -7548,6 +7757,7 @@ LoadStations_Brinstar:
     dw $0000,$0300,$0000,$0080,$0000                                     ;80C6CF;
 
 
+%anchor($80C6D9)
 LoadStations_Norfair:
     dw RoomHeader_PostCrocSave                                           ;80C6D9;
     dw Door_PostCrocFarming_3                                            ;80C6DB;
@@ -7642,6 +7852,7 @@ LoadStations_Norfair:
     dw $0000,$0000,$0000,$0080,$0000                                     ;80C811;
 
 
+%anchor($80C81B)
 LoadStations_WreckedShip:
     dw RoomHeader_WreckedShipSave                                        ;80C81B;
     dw Door_WreckedShipMainShaft_6                                       ;80C81D;
@@ -7716,6 +7927,7 @@ LoadStations_WreckedShip:
     dw $0000,$0400,$0000,$0080,$0000                                     ;80C90D;
 
 
+%anchor($80C917)
 LoadStations_Maridia:
     dw RoomHeader_GlassTunnelSave                                        ;80C917;
     dw Door_GlassTunnel_3                                                ;80C919;
@@ -7798,6 +8010,7 @@ LoadStations_Maridia:
     dw $0000,$0000,$0100,$0080,$0000                                     ;80CA25;
 
 
+%anchor($80CA2F)
 LoadStations_Tourian:
     dw RoomHeader_MotherBrainSave                                        ;80CA2F;
     dw Door_RinkaShaft_1                                                 ;80CA31;
@@ -7872,6 +8085,7 @@ LoadStations_Tourian:
     dw $0000,$0000,$0000,$0080,$0000                                     ;80CB21;
 
 
+%anchor($80CB2B)
 LoadStations_Ceres:
     dw RoomHeader_CeresElev                                              ;80CB2B;
     dw Door_FallingTile_0                                                ;80CB2D;
@@ -7942,6 +8156,7 @@ LoadStations_Ceres:
     dw $0000,$0000,$0000,$0040,$0000                                     ;80CC0F;
 
 
+%anchor($80CC19)
 LoadStations_Debug:
     dw RoomHeader_Debug                                                  ;80CC19;
     dw UNUSED_Door_Debug_0_83ABC4                                        ;80CC1B;
@@ -8012,6 +8227,7 @@ LoadStations_Debug:
     dw $0000,$0000,$0000,$00B0,$0000                                     ;80CCFD;
 
 
+%anchor($80CD07)
 SetDebugElevatorAsUsed:
     PHP                                                                  ;80CD07;
     PHB                                                                  ;80CD08;
@@ -8087,12 +8303,14 @@ SetDebugElevatorAsUsed:
     db $00,$00,$00,$00                                                   ;80CD8A;
 
 
+%anchor($80CD8E)
 Freespace_Bank80_CD8E:                                                   ;80CD8E;
 ; $2F32 bytes
 
 
 warnpc $80FFC0
 ORG $80FFC0
+%anchor($80FFC0)
 ROM_HEADER:
     db "Super Metroid        "                                           ;80FFC0;
 
@@ -8126,41 +8344,53 @@ ROM_HEADER:
     dw Crash_Handler                                                     ;80FFE0;
     dw Crash_Handler                                                     ;80FFE2;
 
+%anchor($80FFE4)
 Native_COP:
     dw Crash_Handler                                                     ;80FFE4;
 
+%anchor($80FFE6)
 Native_BRK:
     dw Crash_Handler                                                     ;80FFE6;
 
+%anchor($80FFE8)
 Native_ABORT:
     dw Crash_Handler                                                     ;80FFE8;
 
+%anchor($80FFEA)
 Native_NMI:
     dw NMI                                                               ;80FFEA;
 
+%anchor($80FFEC)
 Native_RESET:
     dw Crash_Handler                                                     ;80FFEC;
 
+%anchor($80FFEE)
 Native_IRQ:
     dw IRQ                                                               ;80FFEE;
 
     dw Crash_Handler                                                     ;80FFF0;
     dw Crash_Handler                                                     ;80FFF2;
 
+%anchor($80FFF4)
 Emulation_COP:
     dw Crash_Handler                                                     ;80FFF4;
 
+%anchor($80FFF6)
 Emulation_BRK:
     dw Crash_Handler                                                     ;80FFF6;
 
+%anchor($80FFF8)
 Emulation_ABORT:
     dw Crash_Handler                                                     ;80FFF8;
 
+%anchor($80FFFA)
 Emulation_NMI:
     dw Crash_Handler                                                     ;80FFFA;
 
+%anchor($80FFFC)
 Emulation_RESET:
     dw Boot                                                              ;80FFFC;
 
+%anchor($80FFFE)
 Emulation_IRQBRK:
     dw Crash_Handler                                                     ;80FFFE;

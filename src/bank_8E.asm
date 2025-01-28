@@ -2,12 +2,15 @@
 org $8E8000
 
 
+%anchor($8E8000)
 Tiles_Menu_BG1_BG2:
 incbin "../data/Tiles_Menu_BG1_BG2.bin" ; $5600 bytes
 
+%anchor($8ED600)
 Tiles_Beta_Minimap_Area_Select_BG3:
 incbin "../data/Tiles_Beta_Minimap_Area_Select_BG3.bin" ; $600 bytes
 
+%anchor($8EDC00)
 Zebes_and_Stars_Tilemap:
     dw $000F,$000F,$000F,$000F,$000F,$000F,$000F,$000F                   ;8EDC00;
     dw $000F,$000F,$000F,$000F,$000F,$000F,$000F,$000F                   ;8EDC10;
@@ -138,6 +141,7 @@ Zebes_and_Stars_Tilemap:
     dw $000F,$000F,$000F,$000F,$000F,$000F,$000F,$000F                   ;8EE3E0;
     dw $000F,$000F,$000F,$000F,$000F,$000F,$000F,$000F                   ;8EE3F0;
 
+%anchor($8EE400)
 Menu_Palettes:
     dw $0000,$7FFF,$4BFF,$13FF,$129F,$111F,$0CB5,$046A                   ;8EE400;
     dw $0000,$3DB3,$292E,$48FB,$1849,$44E5,$7FFF,$0000                   ;8EE400;
@@ -172,5 +176,6 @@ Menu_Palettes:
     dw $3800,$2FE0,$1A80,$0120,$6B37,$4588,$2D05,$1062                   ;8EE5D0;
     dw $37FF,$1E3F,$047F,$0456,$004C,$0023,$7FFF,$0000                   ;8EE5E0;
 
+%anchor($8EE600)
 Freespace_Bank8E_E600:                                                   ;8EE600;
 ; $1A00 bytes

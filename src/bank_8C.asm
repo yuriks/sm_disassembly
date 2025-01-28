@@ -3,6 +3,7 @@ org $8C8000
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($8C8000)
 UNUSED_TitleSequenceSpritemaps_BetaMetroidLogo_8C8000:
     dw $0025                                                             ;8C8000;
     %spritemapEntry(0, $50, $E8, 0, 0, 3, 0, $1C0)
@@ -44,6 +45,7 @@ UNUSED_TitleSequenceSpritemaps_BetaMetroidLogo_8C8000:
     %spritemapEntry(1, $43A0, $F8, 0, 0, 3, 0, $120)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($8C80BB)
 TitleSequenceSpritemaps_NintendoBootLogo:
     dw $000E                                                             ;8C80BB;
     %spritemapEntry(1, $4230, $00, 0, 0, 3, 0, $CC)
@@ -61,6 +63,7 @@ TitleSequenceSpritemaps_NintendoBootLogo:
     %spritemapEntry(1, $43E0, $F0, 0, 0, 3, 0, $A2)
     %spritemapEntry(1, $43D0, $F0, 0, 0, 3, 0, $A0)
 
+%anchor($8C8103)
 TitleSequenceSpritemaps_NintendoCopyright:
     dw $000A                                                             ;8C8103;
     %spritemapEntry(0, $20, $FC, 0, 0, 3, 0, $1CA)
@@ -75,6 +78,7 @@ TitleSequenceSpritemaps_NintendoCopyright:
     %spritemapEntry(0, $1D8, $FC, 0, 0, 3, 0, $1C1)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($8C8137)
 UNUSED_TitleSequenceSpritemaps_1993RandD1Produce_8C8137:
     dw $001E                                                             ;8C8137;
     %spritemapEntry(0, $1D4, $00, 0, 0, 3, 1, $111)
@@ -108,6 +112,7 @@ UNUSED_TitleSequenceSpritemaps_1993RandD1Produce_8C8137:
     %spritemapEntry(0, $1BC, $00, 0, 0, 3, 1, $110)
     %spritemapEntry(0, $1BC, $F8, 0, 0, 3, 1, $100)
 
+%anchor($8C81CF)
 UNUSED_TitleSequenceSpritemaps_ProjectSamusFeaturedIn_8C81CF:
     dw $002C                                                             ;8C81CF;
     %spritemapEntry(0, $4F, $F8, 0, 0, 3, 1, $17A)
@@ -155,6 +160,7 @@ UNUSED_TitleSequenceSpritemaps_ProjectSamusFeaturedIn_8C81CF:
     %spritemapEntry(0, $1AF, $F8, 0, 0, 3, 1, $19D)
     %spritemapEntry(0, $1AF, $F0, 0, 0, 3, 1, $18D)
 
+%anchor($8C82AD)
 UNUSED_TitleSequenceSpritemaps_Metroid3_8C82AD:
     dw $0010                                                             ;8C82AD;
     %spritemapEntry(0, $18, $00, 0, 0, 3, 1, $111)
@@ -174,6 +180,7 @@ UNUSED_TitleSequenceSpritemaps_Metroid3_8C82AD:
     %spritemapEntry(0, $1DE, $00, 0, 0, 3, 1, $19A)
     %spritemapEntry(0, $1DE, $F8, 0, 0, 3, 1, $18A)
 
+%anchor($8C82FF)
 UNUSED_TitleSequenceSpritemaps_NintendoPresents:
     dw $000C                                                             ;8C82FF;
     %spritemapEntry(0, $18, $F8, 0, 0, 3, 0, $1CF)
@@ -189,6 +196,7 @@ UNUSED_TitleSequenceSpritemaps_NintendoPresents:
     %spritemapEntry(0, $1F0, $F8, 0, 0, 3, 0, $1C6)
     %spritemapEntry(0, $1E8, $F8, 0, 0, 3, 0, $1C5)
 
+%anchor($8C833D)
 UNUSED_TitleSequenceSpritemaps_IncompleteTitleLogo_8C833D:
     dw $0026                                                             ;8C833D;
     %spritemapEntry(1, $4248, $F0, 0, 0, 3, 2, $0E)
@@ -230,6 +238,7 @@ UNUSED_TitleSequenceSpritemaps_IncompleteTitleLogo_8C833D:
     %spritemapEntry(1, $43E0, $E0, 0, 0, 3, 2, $02)
     %spritemapEntry(1, $43D0, $E0, 0, 0, 3, 2, $00)
 
+%anchor($8C83FD)
 UNUSED_TitleSequenceSpritemaps_2x2TileRegion_8C83FD:
     dw $0004                                                             ;8C83FD;
     %spritemapEntry(0, $00, $00, 0, 0, 3, 3, $F1)
@@ -237,6 +246,7 @@ UNUSED_TitleSequenceSpritemaps_2x2TileRegion_8C83FD:
     %spritemapEntry(0, $00, $F8, 0, 0, 3, 3, $E1)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 3, $E0)
 
+%anchor($8C8413)
 UNUSED_TitleSequenceSpritemaps_2x2TileRegion_8C8413:
     dw $0004                                                             ;8C8413;
     %spritemapEntry(0, $00, $00, 0, 0, 3, 3, $F3)
@@ -244,6 +254,7 @@ UNUSED_TitleSequenceSpritemaps_2x2TileRegion_8C8413:
     %spritemapEntry(0, $00, $F8, 0, 0, 3, 3, $E3)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 3, $E2)
 
+%anchor($8C8429)
 UNUSED_TitleSequenceSpritemaps_2x2TileRegio_8C8429:
     dw $0004                                                             ;8C8429;
     %spritemapEntry(0, $00, $00, 0, 0, 3, 3, $F5)
@@ -251,6 +262,7 @@ UNUSED_TitleSequenceSpritemaps_2x2TileRegio_8C8429:
     %spritemapEntry(0, $00, $F8, 0, 0, 3, 3, $E5)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 3, $E4)
 
+%anchor($8C843F)
 UNUSED_TitleSequenceSpritemaps_5x5TileRegion_8C843F:
     dw $0019                                                             ;8C843F;
     %spritemapEntry(0, $10, $08, 0, 0, 3, 2, $FB)
@@ -279,6 +291,7 @@ UNUSED_TitleSequenceSpritemaps_5x5TileRegion_8C843F:
     %spritemapEntry(0, $1F8, $E8, 0, 0, 3, 2, $B8)
     %spritemapEntry(0, $1F0, $E8, 0, 0, 3, 2, $B7)
 
+%anchor($8C84BE)
 UNUSED_TitleSequenceSpritemaps_4x5TileRegion_8C84BE:
     dw $0014                                                             ;8C84BE;
     %spritemapEntry(0, $08, $08, 0, 0, 3, 2, $FF)
@@ -302,6 +315,7 @@ UNUSED_TitleSequenceSpritemaps_4x5TileRegion_8C84BE:
     %spritemapEntry(0, $1F8, $E8, 0, 0, 3, 2, $BD)
     %spritemapEntry(0, $1F0, $E8, 0, 0, 3, 2, $BC)
 
+%anchor($8C8524)
 UNUSED_TitleSequenceSpritemaps_4x4TileRegion:
     dw $0010                                                             ;8C8524;
     %spritemapEntry(0, $08, $08, 0, 0, 3, 2, $93)
@@ -321,6 +335,7 @@ UNUSED_TitleSequenceSpritemaps_4x4TileRegion:
     %spritemapEntry(0, $1F8, $F0, 0, 0, 3, 2, $61)
     %spritemapEntry(0, $1F0, $F0, 0, 0, 3, 2, $60)
 
+%anchor($8C8576)
 UNUSED_TitleSequenceSpritemaps_4x4TileRegion_8C8576:
     dw $0010                                                             ;8C8576;
     %spritemapEntry(0, $08, $08, 0, 0, 3, 2, $D3)
@@ -341,6 +356,7 @@ UNUSED_TitleSequenceSpritemaps_4x4TileRegion_8C8576:
     %spritemapEntry(0, $1F0, $F0, 0, 0, 3, 2, $A0)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($8C85C8)
 TitleSequenceSpritemaps_METR:
     dw $0008                                                             ;8C85C8;
     %spritemapEntry(0, $1C, $00, 0, 0, 3, 1, $19F)
@@ -352,6 +368,7 @@ TitleSequenceSpritemaps_METR:
     %spritemapEntry(0, $04, $00, 0, 0, 3, 1, $19A)
     %spritemapEntry(0, $04, $F8, 0, 0, 3, 1, $18A)
 
+%anchor($8C85F2)
 TitleSequenceSpritemaps_METRO:
     dw $000A                                                             ;8C85F2;
     %spritemapEntry(0, $1C, $00, 0, 0, 3, 1, $19C)
@@ -366,6 +383,7 @@ TitleSequenceSpritemaps_METRO:
     %spritemapEntry(0, $1FC, $F8, 0, 0, 3, 1, $18A)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($8C8626)
 UNUSED_TitleSequenceSpritemaps_DebugNintendoCopyright:
     dw $0011                                                             ;8C8626;
     %spritemapEntry(0, $03, $08, 0, 0, 3, 0, $1F6)
@@ -387,6 +405,7 @@ UNUSED_TitleSequenceSpritemaps_DebugNintendoCopyright:
     %spritemapEntry(0, $1D8, $FC, 0, 0, 3, 0, $1C1)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($8C867D)
 TitleSequenceSpritemaps_METROI:
     dw $000C                                                             ;8C867D;
     %spritemapEntry(0, $1C, $00, 0, 0, 3, 1, $17F)
@@ -402,6 +421,7 @@ TitleSequenceSpritemaps_METROI:
     %spritemapEntry(0, $1F4, $00, 0, 0, 3, 1, $19A)
     %spritemapEntry(0, $1F4, $F8, 0, 0, 3, 1, $18A)
 
+%anchor($8C86BB)
 TitleSequenceSpritemaps_METROID:
     dw $000E                                                             ;8C86BB;
     %spritemapEntry(0, $1C, $00, 0, 0, 3, 1, $17A)
@@ -419,6 +439,7 @@ TitleSequenceSpritemaps_METROID:
     %spritemapEntry(0, $1EC, $00, 0, 0, 3, 1, $19A)
     %spritemapEntry(0, $1EC, $F8, 0, 0, 3, 1, $18A)
 
+%anchor($8C8703)
 TitleSequenceSpritemaps_METROID_:
     dw $000E                                                             ;8C8703;
     %spritemapEntry(0, $14, $00, 0, 0, 3, 1, $17A)
@@ -436,6 +457,7 @@ TitleSequenceSpritemaps_METROID_:
     %spritemapEntry(0, $1E4, $00, 0, 0, 3, 1, $19A)
     %spritemapEntry(0, $1E4, $F8, 0, 0, 3, 1, $18A)
 
+%anchor($8C874B)
 TitleSequenceSpritemaps_METROID3:
     dw $0010                                                             ;8C874B;
     %spritemapEntry(0, $1C, $00, 0, 0, 3, 1, $111)
@@ -455,6 +477,7 @@ TitleSequenceSpritemaps_METROID3:
     %spritemapEntry(0, $1DC, $00, 0, 0, 3, 1, $19A)
     %spritemapEntry(0, $1DC, $F8, 0, 0, 3, 1, $18A)
 
+%anchor($8C879D)
 TitleSequenceSpritemaps_SuperMetroidTitleLogo:
     dw $0027                                                             ;8C879D;
     %spritemapEntry(0, $58, $18, 0, 0, 3, 2, $9C)
@@ -497,11 +520,13 @@ TitleSequenceSpritemaps_SuperMetroidTitleLogo:
     %spritemapEntry(1, $43E0, $E0, 0, 0, 3, 2, $02)
     %spritemapEntry(1, $43D0, $E0, 0, 0, 3, 2, $00)
 
+%anchor($8C8862)
 TitleSequenceSpritemaps_1:
     dw $0002                                                             ;8C8862;
     %spritemapEntry(0, $08, $00, 0, 0, 3, 1, $110)
     %spritemapEntry(0, $08, $F8, 0, 0, 3, 1, $100)
 
+%anchor($8C886E)
 TitleSequenceSpritemaps_19:
     dw $0004                                                             ;8C886E;
     %spritemapEntry(0, $08, $00, 0, 0, 3, 1, $176)
@@ -509,6 +534,7 @@ TitleSequenceSpritemaps_19:
     %spritemapEntry(0, $00, $00, 0, 0, 3, 1, $110)
     %spritemapEntry(0, $00, $F8, 0, 0, 3, 1, $100)
 
+%anchor($8C8884)
 TitleSequenceSpritemaps_199:
     dw $0006                                                             ;8C8884;
     %spritemapEntry(0, $1F8, $00, 0, 0, 3, 1, $110)
@@ -518,6 +544,7 @@ TitleSequenceSpritemaps_199:
     %spritemapEntry(0, $08, $00, 0, 0, 3, 1, $176)
     %spritemapEntry(0, $08, $F8, 0, 0, 3, 1, $166)
 
+%anchor($8C88A4)
 TitleSequenceSpritemaps_1994:
     dw $0008                                                             ;8C88A4;
     %spritemapEntry(0, $08, $00, 0, 0, 3, 1, $130)
@@ -529,11 +556,13 @@ TitleSequenceSpritemaps_1994:
     %spritemapEntry(0, $00, $00, 0, 0, 3, 1, $176)
     %spritemapEntry(0, $00, $F8, 0, 0, 3, 1, $166)
 
+%anchor($8C88CE)
 TitleSequenceSpritemaps_N:
     dw $0002                                                             ;8C88CE;
     %spritemapEntry(0, $18, $00, 0, 0, 3, 1, $19B)
     %spritemapEntry(0, $18, $F8, 0, 0, 3, 1, $18B)
 
+%anchor($8C88DA)
 TitleSequenceSpritemaps_NI:
     dw $0004                                                             ;8C88DA;
     %spritemapEntry(0, $18, $00, 0, 0, 3, 1, $17F)
@@ -541,6 +570,7 @@ TitleSequenceSpritemaps_NI:
     %spritemapEntry(0, $10, $00, 0, 0, 3, 1, $19B)
     %spritemapEntry(0, $10, $F8, 0, 0, 3, 1, $18B)
 
+%anchor($8C88F0)
 TitleSequenceSpritemaps_NIN:
     dw $0006                                                             ;8C88F0;
     %spritemapEntry(0, $18, $00, 0, 0, 3, 1, $19B)
@@ -550,6 +580,7 @@ TitleSequenceSpritemaps_NIN:
     %spritemapEntry(0, $08, $00, 0, 0, 3, 1, $19B)
     %spritemapEntry(0, $08, $F8, 0, 0, 3, 1, $18B)
 
+%anchor($8C8910)
 TitleSequenceSpritemaps_NINT:
     dw $0008                                                             ;8C8910;
     %spritemapEntry(0, $18, $00, 0, 0, 3, 1, $1B8)
@@ -561,6 +592,7 @@ TitleSequenceSpritemaps_NINT:
     %spritemapEntry(0, $00, $00, 0, 0, 3, 1, $19B)
     %spritemapEntry(0, $00, $F8, 0, 0, 3, 1, $18B)
 
+%anchor($8C893A)
 TitleSequenceSpritemaps_NINTE:
     dw $000A                                                             ;8C893A;
     %spritemapEntry(0, $18, $00, 0, 0, 3, 1, $17B)
@@ -574,6 +606,7 @@ TitleSequenceSpritemaps_NINTE:
     %spritemapEntry(0, $1F8, $00, 0, 0, 3, 1, $19B)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 1, $18B)
 
+%anchor($8C896E)
 TitleSequenceSpritemaps_NINTEN:
     dw $000C                                                             ;8C896E;
     %spritemapEntry(0, $18, $00, 0, 0, 3, 1, $19B)
@@ -589,6 +622,7 @@ TitleSequenceSpritemaps_NINTEN:
     %spritemapEntry(0, $1F0, $00, 0, 0, 3, 1, $19B)
     %spritemapEntry(0, $1F0, $F8, 0, 0, 3, 1, $18B)
 
+%anchor($8C89AC)
 TitleSequenceSpritemaps_NINTEND:
     dw $000E                                                             ;8C89AC;
     %spritemapEntry(0, $18, $00, 0, 0, 3, 1, $17A)
@@ -606,6 +640,7 @@ TitleSequenceSpritemaps_NINTEND:
     %spritemapEntry(0, $1E8, $00, 0, 0, 3, 1, $19B)
     %spritemapEntry(0, $1E8, $F8, 0, 0, 3, 1, $18B)
 
+%anchor($8C89F4)
 TitleSequenceSpritemaps_NINTENDO:
     dw $0010                                                             ;8C89F4;
     %spritemapEntry(0, $18, $00, 0, 0, 3, 1, $19C)
@@ -625,11 +660,13 @@ TitleSequenceSpritemaps_NINTENDO:
     %spritemapEntry(0, $1E0, $00, 0, 0, 3, 1, $19B)
     %spritemapEntry(0, $1E0, $F8, 0, 0, 3, 1, $18B)
 
+%anchor($8C8A46)
 TitleSequenceSpritemaps_P:
     dw $0002                                                             ;8C8A46;
     %spritemapEntry(0, $18, $00, 0, 0, 3, 1, $19D)
     %spritemapEntry(0, $18, $F8, 0, 0, 3, 1, $18D)
 
+%anchor($8C8A52)
 TitleSequenceSpritemaps_PR:
     dw $0004                                                             ;8C8A52;
     %spritemapEntry(0, $18, $00, 0, 0, 3, 1, $19F)
@@ -637,6 +674,7 @@ TitleSequenceSpritemaps_PR:
     %spritemapEntry(0, $10, $00, 0, 0, 3, 1, $19D)
     %spritemapEntry(0, $10, $F8, 0, 0, 3, 1, $18D)
 
+%anchor($8C8A68)
 TitleSequenceSpritemaps_PRE:
     dw $0006                                                             ;8C8A68;
     %spritemapEntry(0, $18, $00, 0, 0, 3, 1, $17B)
@@ -646,6 +684,7 @@ TitleSequenceSpritemaps_PRE:
     %spritemapEntry(0, $08, $00, 0, 0, 3, 1, $19D)
     %spritemapEntry(0, $08, $F8, 0, 0, 3, 1, $18D)
 
+%anchor($8C8A88)
 TitleSequenceSpritemaps_PRES:
     dw $0008                                                             ;8C8A88;
     %spritemapEntry(0, $18, $00, 0, 0, 3, 1, $1B7)
@@ -657,6 +696,7 @@ TitleSequenceSpritemaps_PRES:
     %spritemapEntry(0, $00, $00, 0, 0, 3, 1, $19D)
     %spritemapEntry(0, $00, $F8, 0, 0, 3, 1, $18D)
 
+%anchor($8C8AB2)
 TitleSequenceSpritemaps_PRESE:
     dw $000A                                                             ;8C8AB2;
     %spritemapEntry(0, $18, $00, 0, 0, 3, 1, $17B)
@@ -670,6 +710,7 @@ TitleSequenceSpritemaps_PRESE:
     %spritemapEntry(0, $1F8, $00, 0, 0, 3, 1, $19D)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 1, $18D)
 
+%anchor($8C8AE6)
 TitleSequenceSpritemaps_PRESEN:
     dw $000C                                                             ;8C8AE6;
     %spritemapEntry(0, $18, $00, 0, 0, 3, 1, $19B)
@@ -685,6 +726,7 @@ TitleSequenceSpritemaps_PRESEN:
     %spritemapEntry(0, $1F0, $00, 0, 0, 3, 1, $19D)
     %spritemapEntry(0, $1F0, $F8, 0, 0, 3, 1, $18D)
 
+%anchor($8C8B24)
 TitleSequenceSpritemaps_PRESENT:
     dw $000E                                                             ;8C8B24;
     %spritemapEntry(0, $18, $00, 0, 0, 3, 1, $1B8)
@@ -702,6 +744,7 @@ TitleSequenceSpritemaps_PRESENT:
     %spritemapEntry(0, $1E8, $00, 0, 0, 3, 1, $19D)
     %spritemapEntry(0, $1E8, $F8, 0, 0, 3, 1, $18D)
 
+%anchor($8C8B6C)
 TitleSequenceSpritemaps_PRESENTS:
     dw $0010                                                             ;8C8B6C;
     %spritemapEntry(0, $18, $00, 0, 0, 3, 1, $1B7)
@@ -721,11 +764,13 @@ TitleSequenceSpritemaps_PRESENTS:
     %spritemapEntry(0, $1E0, $00, 0, 0, 3, 1, $19D)
     %spritemapEntry(0, $1E0, $F8, 0, 0, 3, 1, $18D)
 
+%anchor($8C8BBE)
 TitleSequenceSpritemaps_M:
     dw $0002                                                             ;8C8BBE;
     %spritemapEntry(0, $1C, $00, 0, 0, 3, 1, $19A)
     %spritemapEntry(0, $1C, $F8, 0, 0, 3, 1, $18A)
 
+%anchor($8C8BCA)
 TitleSequenceSpritemaps_ME:
     dw $0004                                                             ;8C8BCA;
     %spritemapEntry(0, $1C, $00, 0, 0, 3, 1, $17B)
@@ -733,6 +778,7 @@ TitleSequenceSpritemaps_ME:
     %spritemapEntry(0, $14, $00, 0, 0, 3, 1, $19A)
     %spritemapEntry(0, $14, $F8, 0, 0, 3, 1, $18A)
 
+%anchor($8C8BE0)
 TitleSequenceSpritemaps_MET:
     dw $0006                                                             ;8C8BE0;
     %spritemapEntry(0, $1C, $00, 0, 0, 3, 1, $1B8)
@@ -742,6 +788,7 @@ TitleSequenceSpritemaps_MET:
     %spritemapEntry(0, $0C, $00, 0, 0, 3, 1, $19A)
     %spritemapEntry(0, $0C, $F8, 0, 0, 3, 1, $18A)
 
+%anchor($8C8C00)
 IntroCeresExplosionSpritemaps_MotherBrainFrame1:
     dw $0009                                                             ;8C8C00;
     %spritemapEntry(1, $4208, $08, 0, 0, 3, 7, $194)
@@ -754,6 +801,7 @@ IntroCeresExplosionSpritemaps_MotherBrainFrame1:
     %spritemapEntry(1, $43F8, $E8, 0, 0, 3, 7, $152)
     %spritemapEntry(1, $43E8, $E8, 0, 0, 3, 7, $150)
 
+%anchor($8C8C2F)
 IntroCeresExplosionSpritemaps_MotherBrainFrame2:
     dw $0009                                                             ;8C8C2F;
     %spritemapEntry(1, $4208, $F8, 0, 0, 3, 7, $17A)
@@ -766,6 +814,7 @@ IntroCeresExplosionSpritemaps_MotherBrainFrame2:
     %spritemapEntry(1, $43E8, $08, 0, 0, 3, 7, $190)
     %spritemapEntry(1, $43F8, $F8, 0, 0, 3, 7, $172)
 
+%anchor($8C8C5E)
 IntroCeresExplosionSpritemaps_MotherBrainFrame3:
     dw $0009                                                             ;8C8C5E;
     %spritemapEntry(1, $4208, $E8, 0, 0, 3, 7, $178)
@@ -778,6 +827,7 @@ IntroCeresExplosionSpritemaps_MotherBrainFrame3:
     %spritemapEntry(1, $43E8, $08, 0, 0, 3, 7, $190)
     %spritemapEntry(1, $43F8, $F8, 0, 0, 3, 7, $172)
 
+%anchor($8C8C8D)
 IntroCeresExplosionSpritemaps_RinkaFrame1:
     dw $0004                                                             ;8C8C8D;
     %spritemapEntry(0, $00, $00, 1, 1, 3, 7, $196)
@@ -785,6 +835,7 @@ IntroCeresExplosionSpritemaps_RinkaFrame1:
     %spritemapEntry(0, $00, $F8, 0, 1, 3, 7, $196)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 7, $196)
 
+%anchor($8C8CA3)
 IntroCeresExplosionSpritemaps_RinkaFrame2:
     dw $0004                                                             ;8C8CA3;
     %spritemapEntry(0, $00, $00, 1, 1, 3, 7, $197)
@@ -792,6 +843,7 @@ IntroCeresExplosionSpritemaps_RinkaFrame2:
     %spritemapEntry(0, $00, $F8, 0, 1, 3, 7, $197)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 7, $197)
 
+%anchor($8C8CB9)
 IntroCeresExplosionSpritemaps_RinkaFrame3:
     dw $0004                                                             ;8C8CB9;
     %spritemapEntry(0, $00, $00, 1, 1, 3, 7, $198)
@@ -799,21 +851,25 @@ IntroCeresExplosionSpritemaps_RinkaFrame3:
     %spritemapEntry(0, $00, $F8, 0, 1, 3, 7, $198)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 7, $198)
 
+%anchor($8C8CCF)
 IntroCeresExplosionSpritemaps_JapanTextNextPageArrowFrame1:
     dw $0002                                                             ;8C8CCF;
     %spritemapEntry(0, $1FF, $00, 0, 1, 3, 6, $1A8)
     %spritemapEntry(0, $1F8, $00, 0, 0, 3, 6, $1A8)
 
+%anchor($8C8CDB)
 IntroCeresExplosionSpritemaps_JapanTextNextPageArrowFrame2:
     dw $0002                                                             ;8C8CDB;
     %spritemapEntry(0, $1FF, $00, 0, 1, 3, 6, $19F)
     %spritemapEntry(0, $1F8, $00, 0, 0, 3, 6, $19F)
 
+%anchor($8C8CE7)
 IntroCeresExplosionSpritemaps_JapanTextNextPageArrowFrame3:
     dw $0002                                                             ;8C8CE7;
     %spritemapEntry(0, $1FF, $00, 0, 1, 3, 6, $1AF)
     %spritemapEntry(0, $1F8, $00, 0, 0, 3, 6, $1AF)
 
+%anchor($8C8CF3)
 IntroCeresExplosionSpritemaps_BabyMetroidDeliveredFrame1:
     dw $0006                                                             ;8C8CF3;
     %spritemapEntry(0, $04, $F4, 0, 0, 3, 6, $EB)
@@ -823,6 +879,7 @@ IntroCeresExplosionSpritemaps_BabyMetroidDeliveredFrame1:
     %spritemapEntry(0, $04, $FC, 0, 0, 3, 6, $E2)
     %spritemapEntry(1, $43F4, $FC, 0, 0, 3, 6, $E0)
 
+%anchor($8C8D13)
 IntroCeresExplosionSpritemaps_BabyMetroidDeliveredFrame2:
     dw $0006                                                             ;8C8D13;
     %spritemapEntry(0, $04, $F4, 0, 0, 3, 6, $EE)
@@ -832,6 +889,7 @@ IntroCeresExplosionSpritemaps_BabyMetroidDeliveredFrame2:
     %spritemapEntry(0, $1F4, $FC, 0, 0, 3, 6, $E3)
     %spritemapEntry(1, $43FC, $FC, 0, 0, 3, 6, $E4)
 
+%anchor($8C8D33)
 IntroCeresExplosionSpritemaps_BabyMetroidDeliveredFrame3:
     dw $0006                                                             ;8C8D33;
     %spritemapEntry(0, $04, $F4, 0, 0, 3, 6, $FB)
@@ -841,22 +899,27 @@ IntroCeresExplosionSpritemaps_BabyMetroidDeliveredFrame3:
     %spritemapEntry(0, $04, $FC, 0, 0, 3, 6, $E8)
     %spritemapEntry(1, $43F4, $FC, 0, 0, 3, 6, $E6)
 
+%anchor($8C8D53)
 IntroCeresExplosionSpritemaps_BabyMetroidExaminedFrame1:
     dw $0001                                                             ;8C8D53;
     %spritemapEntry(1, $43F8, $F8, 0, 0, 3, 6, $199)
 
+%anchor($8C8D5A)
 IntroCeresExplosionSpritemaps_BabyMetroidExaminedFrame2:
     dw $0001                                                             ;8C8D5A;
     %spritemapEntry(1, $43F8, $F8, 0, 0, 3, 6, $19B)
 
+%anchor($8C8D61)
 IntroCeresExplosionSpritemaps_BabyMetroidExaminedFrame3:
     dw $0001                                                             ;8C8D61;
     %spritemapEntry(1, $43F8, $F8, 0, 0, 3, 6, $19D)
 
+%anchor($8C8D68)
 IntroCeresExplosionSpritemaps_BlinkingTypewriterBlock:
     dw $0001                                                             ;8C8D68;
     %spritemapEntry(0, $00, $FF, 0, 0, 3, 6, $FC)
 
+%anchor($8C8D6F)
 IntroCeresExplosionSpritemaps_MetroidEggHatchingFrame1:
     dw $0006                                                             ;8C8D6F;
     %spritemapEntry(0, $04, $F4, 0, 0, 3, 7, $124)
@@ -866,6 +929,7 @@ IntroCeresExplosionSpritemaps_MetroidEggHatchingFrame1:
     %spritemapEntry(0, $04, $04, 0, 0, 3, 7, $101)
     %spritemapEntry(0, $04, $FC, 0, 0, 3, 7, $100)
 
+%anchor($8C8D8F)
 IntroCeresExplosionSpritemaps_MetroidEggHatchingFrame2:
     dw $0009                                                             ;8C8D8F;
     %spritemapEntry(0, $01, $F4, 0, 0, 3, 7, $124)
@@ -878,6 +942,7 @@ IntroCeresExplosionSpritemaps_MetroidEggHatchingFrame2:
     %spritemapEntry(0, $1FA, $FC, 0, 0, 3, 7, $111)
     %spritemapEntry(0, $1F2, $FC, 0, 0, 3, 7, $110)
 
+%anchor($8C8DBE)
 IntroCeresExplosionSpritemaps_MetroidEggHatchingFrame3:
     dw $0009                                                             ;8C8DBE;
     %spritemapEntry(0, $07, $F4, 0, 0, 3, 7, $124)
@@ -890,6 +955,7 @@ IntroCeresExplosionSpritemaps_MetroidEggHatchingFrame3:
     %spritemapEntry(0, $1FE, $FC, 0, 0, 3, 7, $111)
     %spritemapEntry(0, $1F6, $FC, 0, 0, 3, 7, $110)
 
+%anchor($8C8DED)
 IntroCeresExplosionSpritemaps_MetroidEggHatchingFrame4:
     dw $0009                                                             ;8C8DED;
     %spritemapEntry(0, $1F4, $F4, 0, 0, 3, 7, $102)
@@ -902,6 +968,7 @@ IntroCeresExplosionSpritemaps_MetroidEggHatchingFrame4:
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 7, $111)
     %spritemapEntry(0, $1F4, $FC, 0, 0, 3, 7, $110)
 
+%anchor($8C8E1C)
 IntroCeresExplosionSpritemaps_MetroidEggHatchingFrame5:
     dw $0009                                                             ;8C8E1C;
     %spritemapEntry(0, $1F4, $F4, 0, 0, 3, 7, $102)
@@ -914,6 +981,7 @@ IntroCeresExplosionSpritemaps_MetroidEggHatchingFrame5:
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 7, $111)
     %spritemapEntry(0, $1F4, $FC, 0, 0, 3, 7, $110)
 
+%anchor($8C8E4B)
 IntroCeresExplosionSpritemaps_MetroidEggHatchingFrame6:
     dw $0009                                                             ;8C8E4B;
     %spritemapEntry(0, $1F4, $FC, 0, 0, 3, 7, $112)
@@ -926,6 +994,7 @@ IntroCeresExplosionSpritemaps_MetroidEggHatchingFrame6:
     %spritemapEntry(0, $1F4, $04, 0, 0, 3, 7, $120)
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 7, $111)
 
+%anchor($8C8E7A)
 IntroCeresExplosionSpritemaps_MetroidEggHatchingFrame7:
     dw $0009                                                             ;8C8E7A;
     %spritemapEntry(0, $04, $F4, 0, 0, 3, 7, $104)
@@ -938,6 +1007,7 @@ IntroCeresExplosionSpritemaps_MetroidEggHatchingFrame7:
     %spritemapEntry(0, $1F4, $04, 0, 0, 3, 7, $120)
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 7, $111)
 
+%anchor($8C8EA9)
 IntroCeresExplosionSpritemaps_MetroidEggHatchingFrame8:
     dw $0009                                                             ;8C8EA9;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 7, $111)
@@ -950,6 +1020,7 @@ IntroCeresExplosionSpritemaps_MetroidEggHatchingFrame8:
     %spritemapEntry(0, $1FC, $04, 0, 0, 3, 7, $121)
     %spritemapEntry(0, $1F4, $04, 0, 0, 3, 7, $120)
 
+%anchor($8C8ED8)
 IntroCeresExplosionSpritemaps_MetroidEggHatchingFrame9:
     dw $0009                                                             ;8C8ED8;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 7, $113)
@@ -962,108 +1033,131 @@ IntroCeresExplosionSpritemaps_MetroidEggHatchingFrame9:
     %spritemapEntry(0, $1FC, $04, 0, 0, 3, 7, $121)
     %spritemapEntry(0, $1F4, $04, 0, 0, 3, 7, $120)
 
+%anchor($8C8F07)
 IntroCeresExplosionSpritemaps_MetroidEggHatchedFrame1:
     dw $0003                                                             ;8C8F07;
     %spritemapEntry(0, $04, $04, 0, 0, 3, 7, $108)
     %spritemapEntry(0, $04, $FC, 0, 0, 3, 7, $107)
     %spritemapEntry(1, $43F4, $FC, 0, 0, 3, 7, $117)
 
+%anchor($8C8F18)
 IntroCeresExplosionSpritemaps_MetroidEggHatchedFrame2:
     dw $0003                                                             ;8C8F18;
     %spritemapEntry(0, $04, $04, 0, 0, 3, 7, $108)
     %spritemapEntry(0, $04, $FC, 0, 0, 3, 7, $109)
     %spritemapEntry(1, $43F4, $FC, 0, 0, 3, 7, $119)
 
+%anchor($8C8F29)
 IntroCeresExplosionSpritemaps_MetroidEggHatchedFrame3:
     dw $0003                                                             ;8C8F29;
     %spritemapEntry(0, $04, $04, 0, 0, 3, 7, $10C)
     %spritemapEntry(0, $04, $FC, 0, 0, 3, 7, $10B)
     %spritemapEntry(1, $43F4, $FC, 0, 0, 3, 7, $11B)
 
+%anchor($8C8F3A)
 IntroCeresExplosionSpritemaps_MetroidEggHatchedFrame4:
     dw $0003                                                             ;8C8F3A;
     %spritemapEntry(0, $04, $04, 0, 0, 3, 7, $142)
     %spritemapEntry(0, $04, $FC, 0, 0, 3, 7, $132)
     %spritemapEntry(1, $43F4, $FC, 0, 0, 3, 7, $130)
 
+%anchor($8C8F4B)
 IntroCeresExplosionSpritemaps_MetroidEggHatchedFrame5:
     dw $0003                                                             ;8C8F4B;
     %spritemapEntry(0, $04, $04, 0, 0, 3, 7, $145)
     %spritemapEntry(0, $04, $FC, 0, 0, 3, 7, $135)
     %spritemapEntry(1, $43F4, $FC, 0, 0, 3, 7, $133)
 
+%anchor($8C8F5C)
 IntroCeresExplosionSpritemaps_MetroidEggHatchedFrame6:
     dw $0003                                                             ;8C8F5C;
     %spritemapEntry(0, $04, $04, 0, 0, 3, 7, $148)
     %spritemapEntry(0, $04, $FC, 0, 0, 3, 7, $138)
     %spritemapEntry(1, $43F4, $FC, 0, 0, 3, 7, $136)
 
+%anchor($8C8F6D)
 IntroCeresExplosionSpritemaps_MetroidEggHatchedFrame7:
     dw $0003                                                             ;8C8F6D;
     %spritemapEntry(0, $04, $04, 0, 0, 3, 7, $14B)
     %spritemapEntry(0, $04, $FC, 0, 0, 3, 7, $13B)
     %spritemapEntry(1, $43F4, $FC, 0, 0, 3, 7, $139)
 
+%anchor($8C8F7E)
 IntroCeresExplosionSpritemaps_MetroidEggsParticle1:
     dw $0001                                                             ;8C8F7E;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 7, $105)
 
+%anchor($8C8F85)
 IntroCeresExplosionSpritemaps_MetroidEggsParticle2:
     dw $0001                                                             ;8C8F85;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 7, $106)
 
+%anchor($8C8F8C)
 IntroCeresExplosionSpritemaps_MetroidEggsParticle3:
     dw $0001                                                             ;8C8F8C;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 7, $115)
 
+%anchor($8C8F93)
 IntroCeresExplosionSpritemaps_MetroidEggsParticle4:
     dw $0001                                                             ;8C8F93;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 7, $116)
 
+%anchor($8C8F9A)
 IntroCeresExplosionSpritemaps_MetroidEggsParticle5:
     dw $0001                                                             ;8C8F9A;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 7, $125)
 
+%anchor($8C8FA1)
 IntroCeresExplosionSpritemaps_MetroidEggsParticle6:
     dw $0001                                                             ;8C8FA1;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 7, $126)
 
+%anchor($8C8FA8)
 IntroCeresExplosionSpritemaps_MetroidEggsSlimeDropsFrame1:
     dw $0001                                                             ;8C8FA8;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 7, $10D)
 
+%anchor($8C8FAF)
 IntroCeresExplosionSpritemaps_MetroidEggsSlimeDropsFrame2:
     dw $0001                                                             ;8C8FAF;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 7, $10E)
 
+%anchor($8C8FB6)
 IntroCeresExplosionSpritemaps_MetroidEggsSlimeDropsFrame3:
     dw $0001                                                             ;8C8FB6;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 7, $10F)
 
+%anchor($8C8FBD)
 IntroCeresExplosionSpritemaps_MetroidEggsSlimeDropsFrame4:
     dw $0001                                                             ;8C8FBD;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 7, $11D)
 
+%anchor($8C8FC4)
 IntroCeresExplosionSpritemaps_MetroidEggsSlimeDropsFrame5:
     dw $0001                                                             ;8C8FC4;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 7, $12D)
 
+%anchor($8C8FCB)
 IntroCeresExplosionSpritemaps_ConfusedBabyMetroidFrame1:
     dw $0001                                                             ;8C8FCB;
     %spritemapEntry(1, $43F8, $F8, 0, 0, 3, 7, $11E)
 
+%anchor($8C8FD2)
 IntroCeresExplosionSpritemaps_ConfusedBabyMetroidFrame2:
     dw $0001                                                             ;8C8FD2;
     %spritemapEntry(1, $43F8, $F8, 0, 0, 3, 7, $13C)
 
+%anchor($8C8FD9)
 IntroCeresExplosionSpritemaps_ConfusedBabyMetroidFrame3:
     dw $0001                                                             ;8C8FD9;
     %spritemapEntry(1, $43F8, $F8, 0, 0, 3, 7, $13E)
 
+%anchor($8C8FE0)
 IntroCeresExplosionSpritemaps_MetroidEggProjectile:
     dw $0001                                                             ;8C8FE0;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 7, $10A)
 
+%anchor($8C8FE7)
 SpaceSpritemaps_CeresPurpleVortexFrame1:
     dw $0024                                                             ;8C8FE7;
     %spritemapEntry(0, $6E, $E0, 0, 0, 0, 4, $1E6)
@@ -1103,6 +1197,7 @@ SpaceSpritemaps_CeresPurpleVortexFrame1:
     %spritemapEntry(0, $03, $CD, 0, 0, 0, 4, $1EA)
     %spritemapEntry(0, $1B1, $E2, 0, 0, 0, 4, $1E8)
 
+%anchor($8C909D)
 SpaceSpritemaps_CeresUnderAttackLargeAsteroids:
     dw $0013                                                             ;8C909D;
     %spritemapEntry(1, $43A7, $CF, 0, 0, 3, 4, $183)
@@ -1125,6 +1220,7 @@ SpaceSpritemaps_CeresUnderAttackLargeAsteroids:
     %spritemapEntry(1, $4210, $08, 0, 0, 3, 4, $167)
     %spritemapEntry(1, $4200, $08, 0, 0, 3, 4, $165)
 
+%anchor($8C90FE)
 SpaceSpritemaps_CeresSmallAsteroids:
     dw $0010                                                             ;8C90FE;
     %spritemapEntry(1, $4380, $E2, 1, 0, 0, 4, $17E)
@@ -1144,6 +1240,7 @@ SpaceSpritemaps_CeresSmallAsteroids:
     %spritemapEntry(1, $421E, $E7, 1, 0, 0, 4, $19E)
     %spritemapEntry(1, $4216, $DF, 1, 0, 0, 4, $1AD)
 
+%anchor($8C9150)
 SpaceSpritemaps_CeresUnderAttack:
     dw $0029                                                             ;8C9150;
     %spritemapEntry(0, $1E6, $D8, 0, 0, 0, 6, $F4)
@@ -1189,6 +1286,7 @@ SpaceSpritemaps_CeresUnderAttack:
     %spritemapEntry(1, $43F6, $D0, 0, 0, 0, 6, $E6)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($8C921F)
 UNUSED_SpaceSpritemaps_SPACECOLONY_8C921F:
     dw $000B                                                             ;8C921F;
     %spritemapEntry(0, $28, $FC, 0, 0, 3, 0, $1B9)
@@ -1203,6 +1301,7 @@ UNUSED_SpaceSpritemaps_SPACECOLONY_8C921F:
     %spritemapEntry(0, $1D8, $FC, 0, 0, 3, 0, $1EE)
     %spritemapEntry(0, $1D0, $FC, 0, 0, 3, 0, $1ED)
 
+%anchor($8C9258)
 UNUSED_SpaceSpritemaps_JapanText_SPACECOLONY_8C9258:
     dw $0010                                                             ;8C9258;
     %spritemapEntry(0, $1FC, $00, 0, 0, 3, 0, $E2)
@@ -1222,21 +1321,25 @@ UNUSED_SpaceSpritemaps_JapanText_SPACECOLONY_8C9258:
     %spritemapEntry(0, $1EC, $F8, 0, 0, 3, 0, $1BB)
     %spritemapEntry(0, $1E4, $F8, 0, 0, 3, 0, $1BA)
 
+%anchor($8C92AA)
 UNUSED_SpaceSpritemaps_S_8C92AA:
     dw $0001                                                             ;8C92AA;
     %spritemapEntry(0, $1D0, $FC, 0, 0, 3, 0, $1ED)
 
+%anchor($8C92B1)
 UNUSED_SpaceSpritemaps_SP_8C92B1:
     dw $0002                                                             ;8C92B1;
     %spritemapEntry(0, $1D8, $FC, 0, 0, 3, 0, $1EE)
     %spritemapEntry(0, $1D0, $FC, 0, 0, 3, 0, $1ED)
 
+%anchor($8C92BD)
 UNUSED_SpaceSpritemaps_SPA_8C92BD:
     dw $0003                                                             ;8C92BD;
     %spritemapEntry(0, $1E0, $FC, 0, 0, 3, 0, $1EF)
     %spritemapEntry(0, $1D8, $FC, 0, 0, 3, 0, $1EE)
     %spritemapEntry(0, $1D0, $FC, 0, 0, 3, 0, $1ED)
 
+%anchor($8C92CE)
 UNUSED_SpaceSpritemaps_SPAC_8C92CE:
     dw $0004                                                             ;8C92CE;
     %spritemapEntry(0, $1E8, $FC, 0, 0, 3, 0, $1F7)
@@ -1244,6 +1347,7 @@ UNUSED_SpaceSpritemaps_SPAC_8C92CE:
     %spritemapEntry(0, $1D8, $FC, 0, 0, 3, 0, $1EE)
     %spritemapEntry(0, $1D0, $FC, 0, 0, 3, 0, $1ED)
 
+%anchor($8C92E4)
 UNUSED_SpaceSpritemaps_SPACE_8C92E4:
     dw $0005                                                             ;8C92E4;
     %spritemapEntry(0, $1F0, $FC, 0, 0, 3, 0, $1F8)
@@ -1252,6 +1356,7 @@ UNUSED_SpaceSpritemaps_SPACE_8C92E4:
     %spritemapEntry(0, $1D8, $FC, 0, 0, 3, 0, $1EE)
     %spritemapEntry(0, $1D0, $FC, 0, 0, 3, 0, $1ED)
 
+%anchor($8C92FF)
 UNUSED_SpaceSpritemaps_SPACEC_8C92FF:
     dw $0006                                                             ;8C92FF;
     %spritemapEntry(0, $00, $FC, 0, 0, 3, 0, $1F7)
@@ -1261,6 +1366,7 @@ UNUSED_SpaceSpritemaps_SPACEC_8C92FF:
     %spritemapEntry(0, $1D8, $FC, 0, 0, 3, 0, $1EE)
     %spritemapEntry(0, $1D0, $FC, 0, 0, 3, 0, $1ED)
 
+%anchor($8C931F)
 UNUSED_SpaceSpritemaps_SPACECO_8C931F:
     dw $0007                                                             ;8C931F;
     %spritemapEntry(0, $08, $FC, 0, 0, 3, 0, $1F9)
@@ -1271,6 +1377,7 @@ UNUSED_SpaceSpritemaps_SPACECO_8C931F:
     %spritemapEntry(0, $1D8, $FC, 0, 0, 3, 0, $1EE)
     %spritemapEntry(0, $1D0, $FC, 0, 0, 3, 0, $1ED)
 
+%anchor($8C9344)
 UNUSED_SpaceSpritemaps_SPACECOL_8C9344:
     dw $0008                                                             ;8C9344;
     %spritemapEntry(0, $10, $FC, 0, 0, 3, 0, $1FA)
@@ -1282,6 +1389,7 @@ UNUSED_SpaceSpritemaps_SPACECOL_8C9344:
     %spritemapEntry(0, $1D8, $FC, 0, 0, 3, 0, $1EE)
     %spritemapEntry(0, $1D0, $FC, 0, 0, 3, 0, $1ED)
 
+%anchor($8C936E)
 UNUSED_SpaceSpritemaps_SPACECOLO_9C936E:
     dw $0009                                                             ;8C936E;
     %spritemapEntry(0, $18, $FC, 0, 0, 3, 0, $1F9)
@@ -1294,6 +1402,7 @@ UNUSED_SpaceSpritemaps_SPACECOLO_9C936E:
     %spritemapEntry(0, $1D8, $FC, 0, 0, 3, 0, $1EE)
     %spritemapEntry(0, $1D0, $FC, 0, 0, 3, 0, $1ED)
 
+%anchor($8C939D)
 UNUSED_SpaceSpritemaps_SPACECOLON_8C939D:
     dw $000A                                                             ;8C939D;
     %spritemapEntry(0, $20, $FC, 0, 0, 3, 0, $1FB)
@@ -1308,6 +1417,7 @@ UNUSED_SpaceSpritemaps_SPACECOLON_8C939D:
     %spritemapEntry(0, $1D0, $FC, 0, 0, 3, 0, $1ED)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($8C93D1)
 SpaceSpritemaps_CeresPurpleVortexFrame2:
     dw $0021                                                             ;8C93D1;
     %spritemapEntry(0, $10, $E4, 0, 0, 0, 4, $1E8)
@@ -1344,6 +1454,7 @@ SpaceSpritemaps_CeresPurpleVortexFrame2:
     %spritemapEntry(0, $1D0, $24, 0, 0, 0, 4, $1EA)
     %spritemapEntry(0, $1E0, $04, 0, 0, 0, 4, $1E9)
 
+%anchor($8C9478)
 SpaceSpritemaps_CeresStars:
     dw $0019                                                             ;8C9478;
     %spritemapEntry(0, $192, $D0, 0, 1, 0, 4, $1EB)
@@ -1372,6 +1483,7 @@ SpaceSpritemaps_CeresStars:
     %spritemapEntry(0, $1F5, $CD, 0, 1, 0, 4, $1EA)
     %spritemapEntry(0, $47, $E2, 0, 1, 0, 4, $1E8)
 
+%anchor($8C94F7)
 SpaceSpritemaps_CeresExplosionLargeAsteroids:
     dw $0013                                                             ;8C94F7;
     %spritemapEntry(1, $43A7, $CF, 0, 0, 0, 4, $183)
@@ -1394,6 +1506,7 @@ SpaceSpritemaps_CeresExplosionLargeAsteroids:
     %spritemapEntry(1, $4210, $08, 0, 0, 0, 4, $167)
     %spritemapEntry(1, $4200, $08, 0, 0, 0, 4, $165)
 
+%anchor($8C9558)
 SpaceSpritemaps_Zebes:
     dw $0032                                                             ;8C9558;
     %spritemapEntry(0, $1C8, $10, 0, 0, 0, 7, $6D)
@@ -1447,6 +1560,7 @@ SpaceSpritemaps_Zebes:
     %spritemapEntry(1, $43F0, $C0, 0, 0, 0, 7, $04)
     %spritemapEntry(1, $43E0, $C0, 0, 0, 0, 7, $02)
 
+%anchor($8C9654)
 SpaceSpritemaps_PlanetZebes:
     dw $000B                                                             ;8C9654;
     %spritemapEntry(0, $28, $F8, 0, 0, 0, 0, $9E)
@@ -1461,6 +1575,7 @@ SpaceSpritemaps_PlanetZebes:
     %spritemapEntry(0, $1D8, $F8, 0, 0, 0, 0, $97)
     %spritemapEntry(0, $1D0, $F8, 0, 0, 0, 0, $8F)
 
+%anchor($8C968D)
 SpaceSpritemaps_JapanText_PlanetZebes:
     dw $000C                                                             ;8C968D;
     %spritemapEntry(0, $10, $00, 0, 0, 0, 0, $AA)
@@ -1477,6 +1592,7 @@ SpaceSpritemaps_JapanText_PlanetZebes:
     %spritemapEntry(0, $1E8, $F8, 0, 0, 0, 0, $9F)
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($8C96CB)
 UNUSED_SpaceSpritemaps_ZebesStars1_8C96CB:
     dw $001D                                                             ;8C96CB;
     %spritemapEntry(0, $1F0, $38, 0, 0, 0, 4, $09)
@@ -1510,6 +1626,7 @@ UNUSED_SpaceSpritemaps_ZebesStars1_8C96CB:
     %spritemapEntry(0, $190, $88, 0, 0, 0, 4, $00)
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($8C975E)
 SpaceSpritemaps_ZebesStars2:
     dw $000C                                                             ;8C975E;
     %spritemapEntry(0, $38, $D8, 0, 0, 0, 4, $40)
@@ -1525,6 +1642,7 @@ SpaceSpritemaps_ZebesStars2:
     %spritemapEntry(0, $1D8, $00, 0, 0, 0, 4, $09)
     %spritemapEntry(0, $1E0, $D8, 0, 0, 0, 4, $00)
 
+%anchor($8C979C)
 SpaceSpritemaps_ZebesStars3:
     dw $0006                                                             ;8C979C;
     %spritemapEntry(0, $00, $40, 0, 0, 0, 4, $40)
@@ -1534,6 +1652,7 @@ SpaceSpritemaps_ZebesStars3:
     %spritemapEntry(0, $1F8, $D8, 0, 0, 0, 4, $00)
     %spritemapEntry(0, $20, $D8, 0, 0, 0, 4, $09)
 
+%anchor($8C97BC)
 SpaceSpritemaps_ZebesStars4:
     dw $0004                                                             ;8C97BC;
     %spritemapEntry(0, $40, $E8, 0, 0, 0, 4, $09)
@@ -1541,6 +1660,7 @@ SpaceSpritemaps_ZebesStars4:
     %spritemapEntry(0, $1E0, $E8, 0, 0, 0, 4, $09)
     %spritemapEntry(0, $1D8, $C0, 0, 0, 0, 4, $00)
 
+%anchor($8C97D2)
 SpaceSpritemaps_ZebesStars5:
     dw $0007                                                             ;8C97D2;
     %spritemapEntry(0, $1B0, $00, 0, 0, 0, 4, $09)
@@ -1551,14 +1671,17 @@ SpaceSpritemaps_ZebesStars5:
     %spritemapEntry(0, $20, $D8, 0, 0, 0, 4, $00)
     %spritemapEntry(0, $20, $C0, 0, 0, 0, 4, $08)
 
+%anchor($8C97F7)
 SpaceSpritemaps_IntroMotherBrainExplosionSmallFrame1:
     dw $0001                                                             ;8C97F7;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 5, $53)
 
+%anchor($8C97FE)
 SpaceSpritemaps_IntroMotherBrainExplosionSmallFrame2:
     dw $0001                                                             ;8C97FE;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 5, $51)
 
+%anchor($8C9805)
 SpaceSpritemaps_IntroMotherBrainExplosionSmallFrame3:
     dw $0004                                                             ;8C9805;
     %spritemapEntry(0, $00, $00, 1, 1, 3, 5, $60)
@@ -1566,6 +1689,7 @@ SpaceSpritemaps_IntroMotherBrainExplosionSmallFrame3:
     %spritemapEntry(0, $1F8, $00, 1, 0, 3, 5, $60)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 5, $60)
 
+%anchor($8C981B)
 SpaceSpritemaps_IntroMotherBrainExplosionSmallFrame4:
     dw $0004                                                             ;8C981B;
     %spritemapEntry(0, $00, $00, 1, 1, 3, 5, $61)
@@ -1573,6 +1697,7 @@ SpaceSpritemaps_IntroMotherBrainExplosionSmallFrame4:
     %spritemapEntry(0, $1F8, $00, 1, 0, 3, 5, $61)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 5, $61)
 
+%anchor($8C9831)
 SpaceSpritemaps_IntroMotherBrainExplosionSmallFrame5:
     dw $0004                                                             ;8C9831;
     %spritemapEntry(0, $00, $00, 1, 1, 3, 5, $62)
@@ -1580,6 +1705,7 @@ SpaceSpritemaps_IntroMotherBrainExplosionSmallFrame5:
     %spritemapEntry(0, $1F8, $00, 1, 0, 3, 5, $62)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 5, $62)
 
+%anchor($8C9847)
 SpaceSpritemaps_IntroMotherBrainExplosionSmallFrame6:
     dw $0004                                                             ;8C9847;
     %spritemapEntry(0, $00, $00, 1, 1, 3, 5, $63)
@@ -1587,10 +1713,12 @@ SpaceSpritemaps_IntroMotherBrainExplosionSmallFrame6:
     %spritemapEntry(0, $1F8, $00, 1, 0, 3, 5, $63)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 5, $63)
 
+%anchor($8C985D)
 SpaceSpritemaps_IntroMotherBrainExplosionBigFrame1:
     dw $0001                                                             ;8C985D;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 5, $5F)
 
+%anchor($8C9864)
 SpaceSpritemaps_IntroMotherBrainExplosionBigFrame2:
     dw $0004                                                             ;8C9864;
     %spritemapEntry(0, $00, $00, 1, 1, 3, 5, $8A)
@@ -1598,6 +1726,7 @@ SpaceSpritemaps_IntroMotherBrainExplosionBigFrame2:
     %spritemapEntry(0, $00, $F8, 0, 1, 3, 5, $8A)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 5, $8A)
 
+%anchor($8C987A)
 SpaceSpritemaps_IntroMotherBrainExplosionBigFrame3:
     dw $0004                                                             ;8C987A;
     %spritemapEntry(1, $4200, $00, 1, 1, 3, 5, $90)
@@ -1605,6 +1734,7 @@ SpaceSpritemaps_IntroMotherBrainExplosionBigFrame3:
     %spritemapEntry(1, $4200, $F0, 0, 1, 3, 5, $90)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 3, 5, $90)
 
+%anchor($8C9890)
 SpaceSpritemaps_IntroMotherBrainExplosionBigFrame4:
     dw $0004                                                             ;8C9890;
     %spritemapEntry(1, $4200, $00, 1, 1, 3, 5, $92)
@@ -1612,6 +1742,7 @@ SpaceSpritemaps_IntroMotherBrainExplosionBigFrame4:
     %spritemapEntry(1, $4200, $F0, 0, 1, 3, 5, $92)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 3, 5, $92)
 
+%anchor($8C98A6)
 SpaceSpritemaps_IntroMotherBrainExplosionBigFrame5:
     dw $0004                                                             ;8C98A6;
     %spritemapEntry(1, $4200, $00, 1, 1, 3, 5, $94)
@@ -1619,6 +1750,7 @@ SpaceSpritemaps_IntroMotherBrainExplosionBigFrame5:
     %spritemapEntry(1, $4200, $F0, 0, 1, 3, 5, $94)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 3, 5, $94)
 
+%anchor($8C98BC)
 SpaceSpritemaps_IntroMotherBrainExplosionBigFrame6:
     dw $0004                                                             ;8C98BC;
     %spritemapEntry(1, $4200, $00, 1, 1, 3, 5, $96)
@@ -1626,22 +1758,27 @@ SpaceSpritemaps_IntroMotherBrainExplosionBigFrame6:
     %spritemapEntry(1, $4200, $F0, 0, 1, 3, 5, $96)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 3, 5, $96)
 
+%anchor($8C98D2)
 SpaceSpritemaps_CeresExplosionFrame1:
     dw $0001                                                             ;8C98D2;
     %spritemapEntry(1, $43F8, $F6, 0, 0, 3, 5, $76)
 
+%anchor($8C98D9)
 SpaceSpritemaps_CeresExplosionFrame2:
     dw $0001                                                             ;8C98D9;
     %spritemapEntry(1, $43F8, $F4, 0, 0, 3, 5, $78)
 
+%anchor($8C98E0)
 SpaceSpritemaps_CeresExplosionFrame3:
     dw $0001                                                             ;8C98E0;
     %spritemapEntry(1, $43F8, $F2, 0, 0, 3, 5, $98)
 
+%anchor($8C98E7)
 SpaceSpritemaps_CeresExplosionFrame4:
     dw $0001                                                             ;8C98E7;
     %spritemapEntry(1, $43F8, $F0, 0, 0, 3, 5, $9E)
 
+%anchor($8C98EE)
 SpaceSpritemaps_CeresFinalExplosionFrame1:
     dw $0004                                                             ;8C98EE;
     %spritemapEntry(0, $00, $00, 1, 1, 3, 5, $8A)
@@ -1649,6 +1786,7 @@ SpaceSpritemaps_CeresFinalExplosionFrame1:
     %spritemapEntry(0, $00, $F8, 0, 1, 3, 5, $8A)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 5, $8A)
 
+%anchor($8C9904)
 SpaceSpritemaps_CeresFinalExplosionFrame2:
     dw $0004                                                             ;8C9904;
     %spritemapEntry(1, $4200, $00, 1, 1, 3, 5, $90)
@@ -1656,6 +1794,7 @@ SpaceSpritemaps_CeresFinalExplosionFrame2:
     %spritemapEntry(1, $43F0, $00, 1, 0, 3, 5, $90)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 3, 5, $90)
 
+%anchor($8C991A)
 SpaceSpritemaps_CeresFinalExplosionFrame3:
     dw $0004                                                             ;8C991A;
     %spritemapEntry(1, $4200, $00, 1, 1, 3, 5, $92)
@@ -1663,6 +1802,7 @@ SpaceSpritemaps_CeresFinalExplosionFrame3:
     %spritemapEntry(1, $4200, $F0, 0, 1, 3, 5, $92)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 3, 5, $92)
 
+%anchor($8C9930)
 SpaceSpritemaps_CeresFinalExplosionFrame4:
     dw $000C                                                             ;8C9930;
     %spritemapEntry(0, $10, $00, 1, 1, 3, 5, $C2)
@@ -1678,6 +1818,7 @@ SpaceSpritemaps_CeresFinalExplosionFrame4:
     %spritemapEntry(1, $43F0, $00, 1, 0, 3, 5, $B0)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 3, 5, $B0)
 
+%anchor($8C996E)
 SpaceSpritemaps_CeresFinalExplosionFrame5:
     dw $0008                                                             ;8C996E;
     %spritemapEntry(1, $4208, $00, 1, 1, 3, 5, $B5)
@@ -1689,6 +1830,7 @@ SpaceSpritemaps_CeresFinalExplosionFrame5:
     %spritemapEntry(1, $43E8, $F0, 0, 0, 3, 5, $B5)
     %spritemapEntry(1, $43F0, $E8, 0, 0, 3, 5, $B3)
 
+%anchor($8C9998)
 SpaceSpritemaps_CeresFinalExplosionFrame6:
     dw $000C                                                             ;8C9998;
     %spritemapEntry(0, $00, $10, 1, 1, 3, 5, $BB)
@@ -1704,6 +1846,7 @@ SpaceSpritemaps_CeresFinalExplosionFrame6:
     %spritemapEntry(1, $4208, $E8, 0, 1, 3, 5, $B8)
     %spritemapEntry(1, $43E8, $E8, 0, 0, 3, 5, $B8)
 
+%anchor($8C99D6)
 EndingSequenceSpritemaps_LargeSamusFromEndingStanding:
     dw $0022                                                             ;8C99D6;
     %spritemapEntry(1, $4210, $08, 0, 0, 3, 6, $BE)
@@ -1741,6 +1884,7 @@ EndingSequenceSpritemaps_LargeSamusFromEndingStanding:
     %spritemapEntry(1, $43F8, $C8, 0, 0, 3, 6, $02)
     %spritemapEntry(1, $43E8, $C8, 0, 0, 3, 6, $00)
 
+%anchor($8C9A82)
 EndingSequenceSpritemaps_LargeSamusFromEndingPreparingToJump:
     dw $0016                                                             ;8C9A82;
     %spritemapEntry(0, $1DA, $DD, 0, 0, 3, 6, $100)
@@ -1766,6 +1910,7 @@ EndingSequenceSpritemaps_LargeSamusFromEndingPreparingToJump:
     %spritemapEntry(1, $43F2, $DD, 0, 0, 3, 6, $103)
     %spritemapEntry(1, $43E2, $DD, 0, 0, 3, 6, $101)
 
+%anchor($8C9AF2)
 EndingSequenceSpritemaps_LargeSamusFromEndingJumping:
     dw $0014                                                             ;8C9AF2;
     %spritemapEntry(1, $43FC, $CB, 0, 0, 3, 6, $1B)
@@ -1789,6 +1934,7 @@ EndingSequenceSpritemaps_LargeSamusFromEndingJumping:
     %spritemapEntry(1, $4200, $F3, 0, 0, 3, 6, $6C)
     %spritemapEntry(1, $43F0, $F3, 0, 0, 3, 6, $6A)
 
+%anchor($8C9B58)
 EndingSequenceSpritemaps_LargeSamusHelmetFromEndingFrame1:
     dw $0005                                                             ;8C9B58;
     %spritemapEntry(0, $04, $03, 0, 0, 3, 6, $98)
@@ -1797,6 +1943,7 @@ EndingSequenceSpritemaps_LargeSamusHelmetFromEndingFrame1:
     %spritemapEntry(1, $43F4, $F3, 0, 0, 3, 6, $76)
     %spritemapEntry(1, $43FC, $F3, 0, 0, 3, 6, $77)
 
+%anchor($8C9B73)
 EndingSequenceSpritemaps_LargeSamusHelmetFromEndingFrame2:
     dw $0005                                                             ;8C9B73;
     %spritemapEntry(1, $43FC, $FA, 0, 0, 3, 6, $57)
@@ -1805,12 +1952,14 @@ EndingSequenceSpritemaps_LargeSamusHelmetFromEndingFrame2:
     %spritemapEntry(0, $1F4, $F2, 0, 0, 3, 6, $46)
     %spritemapEntry(1, $43F4, $FA, 0, 0, 3, 6, $56)
 
+%anchor($8C9B8E)
 EndingSequenceSpritemaps_JumpingSamusHeadFromEnding:
     dw $0003                                                             ;8C9B8E;
     %spritemapEntry(0, $00, $F2, 0, 0, 3, 5, $148)
     %spritemapEntry(0, $1F8, $F2, 0, 0, 3, 5, $147)
     %spritemapEntry(1, $43F8, $FA, 0, 0, 3, 5, $157)
 
+%anchor($8C9B9F)
 EndingSequenceSpritemaps_SamusArmFromEndingFrame1:
     dw $0005                                                             ;8C9B9F;
     %spritemapEntry(1, $420C, $F5, 0, 0, 3, 6, $EE)
@@ -1819,6 +1968,7 @@ EndingSequenceSpritemaps_SamusArmFromEndingFrame1:
     %spritemapEntry(0, $18, $D6, 0, 0, 3, 6, $14A)
     %spritemapEntry(0, $10, $D6, 0, 0, 3, 6, $149)
 
+%anchor($8C9BBA)
 EndingSequenceSpritemaps_SamusArmFromEndingFrame2:
     dw $0006                                                             ;8C9BBA;
     %spritemapEntry(0, $08, $F4, 0, 0, 3, 6, $11D)
@@ -1828,6 +1978,7 @@ EndingSequenceSpritemaps_SamusArmFromEndingFrame2:
     %spritemapEntry(0, $18, $D7, 0, 0, 3, 6, $14A)
     %spritemapEntry(0, $10, $D7, 0, 0, 3, 6, $149)
 
+%anchor($8C9BDA)
 EndingSequenceSpritemaps_SamusArmFromEndingFrame3:
     dw $0005                                                             ;8C9BDA;
     %spritemapEntry(1, $4209, $E8, 0, 0, 3, 6, $129)
@@ -1836,6 +1987,7 @@ EndingSequenceSpritemaps_SamusArmFromEndingFrame3:
     %spritemapEntry(0, $18, $D7, 0, 0, 3, 6, $14A)
     %spritemapEntry(0, $10, $D7, 0, 0, 3, 6, $149)
 
+%anchor($8C9BF5)
 EndingSequenceSpritemaps_SamusArmFromEndingFrame4:
     dw $0005                                                             ;8C9BF5;
     %spritemapEntry(1, $420A, $E6, 0, 0, 3, 6, $129)
@@ -1844,6 +1996,7 @@ EndingSequenceSpritemaps_SamusArmFromEndingFrame4:
     %spritemapEntry(0, $19, $D7, 0, 0, 3, 6, $14A)
     %spritemapEntry(0, $11, $D7, 0, 0, 3, 6, $149)
 
+%anchor($8C9C10)
 EndingSequenceSpritemaps_SamusArmFromEndingFrame5:
     dw $0005                                                             ;8C9C10;
     %spritemapEntry(1, $420D, $E5, 0, 0, 3, 6, $129)
@@ -1852,6 +2005,7 @@ EndingSequenceSpritemaps_SamusArmFromEndingFrame5:
     %spritemapEntry(0, $19, $D7, 0, 0, 3, 6, $14A)
     %spritemapEntry(0, $11, $D7, 0, 0, 3, 6, $149)
 
+%anchor($8C9C2B)
 EndingSequenceSpritemaps_SamusArmFromEndingFrame6:
     dw $0005                                                             ;8C9C2B;
     %spritemapEntry(1, $420E, $E4, 0, 0, 3, 6, $12B)
@@ -1860,6 +2014,7 @@ EndingSequenceSpritemaps_SamusArmFromEndingFrame6:
     %spritemapEntry(0, $19, $D7, 0, 0, 3, 6, $14A)
     %spritemapEntry(0, $11, $D7, 0, 0, 3, 6, $149)
 
+%anchor($8C9C46)
 EndingSequenceSpritemaps_SamusArmFromEndingFrame7:
     dw $0005                                                             ;8C9C46;
     %spritemapEntry(1, $420E, $E8, 0, 0, 3, 6, $12B)
@@ -1868,6 +2023,7 @@ EndingSequenceSpritemaps_SamusArmFromEndingFrame7:
     %spritemapEntry(0, $19, $D7, 0, 0, 3, 6, $14A)
     %spritemapEntry(0, $11, $D7, 0, 0, 3, 6, $149)
 
+%anchor($8C9C61)
 EndingSequenceSpritemaps_SamusArmFromEndingFrame8:
     dw $0005                                                             ;8C9C61;
     %spritemapEntry(1, $420E, $E9, 0, 0, 3, 6, $12B)
@@ -1876,26 +2032,31 @@ EndingSequenceSpritemaps_SamusArmFromEndingFrame8:
     %spritemapEntry(0, $19, $D7, 0, 0, 3, 6, $14A)
     %spritemapEntry(0, $11, $D7, 0, 0, 3, 6, $149)
 
+%anchor($8C9C7C)
 EndingSequenceSpritemaps_SamusHeadFromEndingFrame1:
     dw $0002                                                             ;8C9C7C;
     %spritemapEntry(1, $43F8, $F8, 0, 0, 3, 5, $188)
     %spritemapEntry(1, $43F8, $F0, 0, 0, 3, 5, $178)
 
+%anchor($8C9C88)
 EndingSequenceSpritemaps_SamusHeadFromEndingFrame2:
     dw $0002                                                             ;8C9C88;
     %spritemapEntry(1, $43F8, $F8, 0, 0, 3, 5, $18A)
     %spritemapEntry(1, $43F8, $F0, 0, 0, 3, 5, $178)
 
+%anchor($8C9C94)
 EndingSequenceSpritemaps_SamusHeadFromEndingFrame3:
     dw $0002                                                             ;8C9C94;
     %spritemapEntry(1, $43F8, $F8, 0, 0, 3, 5, $18C)
     %spritemapEntry(1, $43F8, $F0, 0, 0, 3, 5, $178)
 
+%anchor($8C9CA0)
 EndingSequenceSpritemaps_SamusHeadFromEndingFrame4:
     dw $0002                                                             ;8C9CA0;
     %spritemapEntry(1, $43F8, $F8, 0, 0, 3, 5, $18E)
     %spritemapEntry(1, $43F8, $F0, 0, 0, 3, 5, $178)
 
+%anchor($8C9CAC)
 EndingSequenceSpritemaps_SamusHeadWithHelmetFromEnding:
     dw $0004                                                             ;8C9CAC;
     %spritemapEntry(0, $1FC, $04, 0, 0, 3, 6, $1C9)
@@ -1903,6 +2064,7 @@ EndingSequenceSpritemaps_SamusHeadWithHelmetFromEnding:
     %spritemapEntry(1, $43FC, $F4, 0, 0, 3, 6, $1A9)
     %spritemapEntry(1, $43F4, $F4, 0, 0, 3, 6, $1A8)
 
+%anchor($8C9CC2)
 EndingSequenceSpritemaps_HeadlessArmlessSuitedSamus:
     dw $001E                                                             ;8C9CC2;
     %spritemapEntry(0, $18, $38, 0, 0, 3, 6, $E6)
@@ -1936,6 +2098,7 @@ EndingSequenceSpritemaps_HeadlessArmlessSuitedSamus:
     %spritemapEntry(1, $43F8, $C8, 0, 0, 3, 6, $02)
     %spritemapEntry(1, $43E8, $C8, 0, 0, 3, 6, $00)
 
+%anchor($8C9D5A)
 EndingSequenceSpritemaps_SamusFalling:
     dw $000F                                                             ;8C9D5A;
     %spritemapEntry(0, $08, $08, 0, 0, 0, 6, $54)
@@ -1954,6 +2117,7 @@ EndingSequenceSpritemaps_SamusFalling:
     %spritemapEntry(1, $43F8, $F0, 0, 0, 0, 6, $22)
     %spritemapEntry(1, $43F8, $E0, 0, 0, 0, 6, $02)
 
+%anchor($8C9DA7)
 EndingSequenceSpritemaps_SamusLanding:
     dw $000D                                                             ;8C9DA7;
     %spritemapEntry(0, $1F8, $17, 0, 0, 0, 6, $78)
@@ -1970,6 +2134,7 @@ EndingSequenceSpritemaps_SamusLanding:
     %spritemapEntry(1, $43F8, $F7, 0, 0, 0, 6, $38)
     %spritemapEntry(1, $43F8, $E7, 0, 0, 0, 6, $18)
 
+%anchor($8C9DEA)
 EndingSequenceSpritemaps_SamusLanded:
     dw $0015                                                             ;8C9DEA;
     %spritemapEntry(0, $1E8, $E8, 0, 0, 0, 6, $B0)
@@ -1994,6 +2159,7 @@ EndingSequenceSpritemaps_SamusLanded:
     %spritemapEntry(1, $4200, $D8, 0, 0, 0, 6, $93)
     %spritemapEntry(1, $43F0, $D8, 0, 0, 0, 6, $91)
 
+%anchor($8C9E55)
 EndingSequenceSpritemaps_SamusShooting:
     dw $000F                                                             ;8C9E55;
     %spritemapEntry(0, $14, $20, 0, 0, 0, 6, $12C)
@@ -2012,6 +2178,7 @@ EndingSequenceSpritemaps_SamusShooting:
     %spritemapEntry(1, $43FC, $E0, 0, 0, 0, 6, $A9)
     %spritemapEntry(1, $43EC, $E0, 0, 0, 0, 6, $A7)
 
+%anchor($8C9EA2)
 EndingSequenceSpritemaps_SuitlessSamusStanding:
     dw $001C                                                             ;8C9EA2;
     %spritemapEntry(0, $10, $28, 0, 0, 3, 1, $A4)
@@ -2043,6 +2210,7 @@ EndingSequenceSpritemaps_SuitlessSamusStanding:
     %spritemapEntry(1, $43F8, $E8, 0, 0, 3, 1, $21)
     %spritemapEntry(1, $43F8, $D8, 0, 0, 3, 1, $01)
 
+%anchor($8C9F30)
 EndingSequenceSpritemaps_SuitlessSamusPreparingToJump:
     dw $0014                                                             ;8C9F30;
     %spritemapEntry(0, $1F0, $08, 0, 0, 3, 1, $56)
@@ -2066,6 +2234,7 @@ EndingSequenceSpritemaps_SuitlessSamusPreparingToJump:
     %spritemapEntry(1, $43F8, $F0, 0, 0, 3, 1, $27)
     %spritemapEntry(1, $43F8, $E0, 0, 0, 3, 1, $07)
 
+%anchor($8C9F96)
 EndingSequenceSpritemaps_SuitlessSamusJumping:
     dw $0013                                                             ;8C9F96;
     %spritemapEntry(0, $10, $F0, 0, 0, 3, 1, $BB)
@@ -2088,6 +2257,7 @@ EndingSequenceSpritemaps_SuitlessSamusJumping:
     %spritemapEntry(1, $4200, $D8, 0, 0, 3, 1, $0E)
     %spritemapEntry(1, $43F0, $D8, 0, 0, 3, 1, $0C)
 
+%anchor($8C9FF7)
 EndingSequenceSpritemaps_SuitlessSamusStandingArmsStraight:
     dw $001C                                                             ;8C9FF7;
     %spritemapEntry(0, $09, $E0, 0, 0, 3, 1, $193)
@@ -2119,6 +2289,7 @@ EndingSequenceSpritemaps_SuitlessSamusStandingArmsStraight:
     %spritemapEntry(1, $43F1, $F0, 0, 0, 3, 1, $1B0)
     %spritemapEntry(1, $43F9, $D8, 0, 0, 3, 1, $181)
 
+%anchor($8CA085)
 EndingSequenceSpritemaps_SuitlessSamusOpeningHairFrame1:
     dw $0009                                                             ;8CA085;
     %spritemapEntry(0, $09, $E0, 0, 0, 3, 1, $193)
@@ -2131,6 +2302,7 @@ EndingSequenceSpritemaps_SuitlessSamusOpeningHairFrame1:
     %spritemapEntry(1, $4200, $F0, 0, 0, 3, 1, $188)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 3, 1, $186)
 
+%anchor($8CA0B4)
 EndingSequenceSpritemaps_SuitlessSamusOpeningHairFrame2:
     dw $000A                                                             ;8CA0B4;
     %spritemapEntry(1, $43F8, $D8, 0, 0, 3, 1, $E1)
@@ -2144,6 +2316,7 @@ EndingSequenceSpritemaps_SuitlessSamusOpeningHairFrame2:
     %spritemapEntry(0, $00, $F8, 0, 0, 3, 1, $122)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 1, $121)
 
+%anchor($8CA0E8)
 EndingSequenceSpritemaps_SuitlessSamusOpeningHairFrame3:
     dw $000A                                                             ;8CA0E8;
     %spritemapEntry(0, $08, $E0, 0, 0, 3, 1, $F3)
@@ -2157,6 +2330,7 @@ EndingSequenceSpritemaps_SuitlessSamusOpeningHairFrame3:
     %spritemapEntry(0, $00, $F8, 0, 0, 3, 1, $122)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 1, $121)
 
+%anchor($8CA11C)
 EndingSequenceSpritemaps_SuitlessSamusOpeningHairFrame4:
     dw $000A                                                             ;8CA11C;
     %spritemapEntry(1, $43F8, $D8, 0, 0, 3, 1, $E1)
@@ -2170,6 +2344,7 @@ EndingSequenceSpritemaps_SuitlessSamusOpeningHairFrame4:
     %spritemapEntry(0, $00, $F8, 0, 0, 3, 1, $122)
     %spritemapEntry(0, $1F8, $F8, 0, 0, 3, 1, $121)
 
+%anchor($8CA150)
 EndingSequenceSpritemaps_SuitlessSamusOpeningHairFrame5:
     dw $0009                                                             ;8CA150;
     %spritemapEntry(0, $1F0, $E8, 0, 0, 3, 1, $104)
@@ -2182,6 +2357,7 @@ EndingSequenceSpritemaps_SuitlessSamusOpeningHairFrame5:
     %spritemapEntry(1, $43F8, $E8, 0, 0, 3, 1, $105)
     %spritemapEntry(1, $43F8, $D8, 0, 0, 3, 1, $E5)
 
+%anchor($8CA17F)
 EndingSequenceSpritemaps_SuitlessSamusOpeningHairFrame6:
     dw $000A                                                             ;8CA17F;
     %spritemapEntry(0, $1F0, $00, 0, 0, 3, 1, $129)
@@ -2195,6 +2371,7 @@ EndingSequenceSpritemaps_SuitlessSamusOpeningHairFrame6:
     %spritemapEntry(1, $43F8, $F0, 0, 0, 3, 1, $10A)
     %spritemapEntry(1, $43F8, $E0, 0, 0, 3, 1, $EA)
 
+%anchor($8CA1B3)
 EndingSequenceSpritemaps_SuitlessSamusOpeningHairFrame7:
     dw $000F                                                             ;8CA1B3;
     %spritemapEntry(0, $1F0, $18, 0, 0, 3, 1, $15D)
@@ -2213,6 +2390,7 @@ EndingSequenceSpritemaps_SuitlessSamusOpeningHairFrame7:
     %spritemapEntry(1, $4200, $E0, 0, 0, 3, 1, $142)
     %spritemapEntry(1, $43F0, $E0, 0, 0, 3, 1, $140)
 
+%anchor($8CA200)
 EndingSequenceSpritemaps_SuitlessSamusOpeningHairFrame8:
     dw $000D                                                             ;8CA200;
     %spritemapEntry(0, $1F0, $18, 0, 0, 3, 1, $15D)
@@ -2229,6 +2407,7 @@ EndingSequenceSpritemaps_SuitlessSamusOpeningHairFrame8:
     %spritemapEntry(1, $4200, $E0, 0, 0, 3, 1, $149)
     %spritemapEntry(1, $43F0, $E0, 0, 0, 3, 1, $147)
 
+%anchor($8CA243)
 EndingSequenceSpritemaps_SuitlessSamusLowerBody:
     dw $000E                                                             ;8CA243;
     %spritemapEntry(0, $08, $00, 0, 0, 3, 1, $53)
@@ -2246,6 +2425,7 @@ EndingSequenceSpritemaps_SuitlessSamusLowerBody:
     %spritemapEntry(1, $43F8, $10, 0, 0, 3, 1, $71)
     %spritemapEntry(1, $43F8, $00, 0, 0, 3, 1, $51)
 
+%anchor($8CA28B)
 EndingSequenceSpritemaps_ZebesBoomStarryBackground:
     dw $0035                                                             ;8CA28B;
     %spritemapEntry(1, $43AB, $3C, 0, 0, 0, 7, $ED)
@@ -2302,6 +2482,7 @@ EndingSequenceSpritemaps_ZebesBoomStarryBackground:
     %spritemapEntry(0, $03, $CD, 0, 0, 0, 7, $FA)
     %spritemapEntry(0, $1B1, $E2, 0, 0, 0, 7, $F8)
 
+%anchor($8CA396)
 EndingSequenceSpritemaps_ExplodingPlanetZebesFrame1:
     dw $0004                                                             ;8CA396;
     %spritemapEntry(1, $4200, $00, 0, 0, 0, 7, $22)
@@ -2309,6 +2490,7 @@ EndingSequenceSpritemaps_ExplodingPlanetZebesFrame1:
     %spritemapEntry(1, $4200, $F0, 0, 0, 0, 7, $02)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 0, 7, $00)
 
+%anchor($8CA3AC)
 EndingSequenceSpritemaps_ExplodingPlanetZebesFrame2:
     dw $0004                                                             ;8CA3AC;
     %spritemapEntry(1, $4200, $00, 0, 0, 0, 7, $26)
@@ -2316,6 +2498,7 @@ EndingSequenceSpritemaps_ExplodingPlanetZebesFrame2:
     %spritemapEntry(1, $4200, $F0, 0, 0, 0, 7, $06)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 0, 7, $04)
 
+%anchor($8CA3C2)
 EndingSequenceSpritemaps_ExplodingPlanetZebesFrame3:
     dw $0004                                                             ;8CA3C2;
     %spritemapEntry(1, $4200, $00, 0, 0, 0, 7, $2A)
@@ -2323,6 +2506,7 @@ EndingSequenceSpritemaps_ExplodingPlanetZebesFrame3:
     %spritemapEntry(1, $4200, $F0, 0, 0, 0, 7, $0A)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 0, 7, $08)
 
+%anchor($8CA3D8)
 EndingSequenceSpritemaps_ExplodingPlanetZebesFrame4:
     dw $0004                                                             ;8CA3D8;
     %spritemapEntry(1, $4200, $00, 0, 0, 0, 7, $2E)
@@ -2330,6 +2514,7 @@ EndingSequenceSpritemaps_ExplodingPlanetZebesFrame4:
     %spritemapEntry(1, $4200, $F0, 0, 0, 0, 7, $0E)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 0, 7, $0C)
 
+%anchor($8CA3EE)
 EndingSequenceSpritemaps_ExplodingPlanetZebesFrame5:
     dw $0004                                                             ;8CA3EE;
     %spritemapEntry(1, $4200, $00, 0, 0, 0, 7, $62)
@@ -2337,6 +2522,7 @@ EndingSequenceSpritemaps_ExplodingPlanetZebesFrame5:
     %spritemapEntry(1, $4200, $F0, 0, 0, 0, 7, $42)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 0, 7, $40)
 
+%anchor($8CA404)
 EndingSequenceSpritemaps_ExplodingPlanetZebesFrame6:
     dw $0004                                                             ;8CA404;
     %spritemapEntry(1, $4200, $00, 0, 0, 0, 7, $66)
@@ -2344,6 +2530,7 @@ EndingSequenceSpritemaps_ExplodingPlanetZebesFrame6:
     %spritemapEntry(1, $4200, $F0, 0, 0, 0, 7, $46)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 0, 7, $44)
 
+%anchor($8CA41A)
 EndingSequenceSpritemaps_ExplodingPlanetZebesFrame7:
     dw $0004                                                             ;8CA41A;
     %spritemapEntry(1, $4200, $00, 0, 0, 0, 7, $6A)
@@ -2351,6 +2538,7 @@ EndingSequenceSpritemaps_ExplodingPlanetZebesFrame7:
     %spritemapEntry(1, $4200, $F0, 0, 0, 0, 7, $4A)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 0, 7, $48)
 
+%anchor($8CA430)
 EndingSequenceSpritemaps_ExplodingPlanetZebesFrame8:
     dw $0004                                                             ;8CA430;
     %spritemapEntry(1, $4200, $00, 0, 0, 0, 7, $6E)
@@ -2358,6 +2546,7 @@ EndingSequenceSpritemaps_ExplodingPlanetZebesFrame8:
     %spritemapEntry(1, $4200, $F0, 0, 0, 0, 7, $4E)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 0, 7, $4C)
 
+%anchor($8CA446)
 EndingSequenceSpritemaps_ExplodingPlanetZebesCoreFrame1:
     dw $0004                                                             ;8CA446;
     %spritemapEntry(1, $4200, $00, 1, 1, 0, 5, $99)
@@ -2365,6 +2554,7 @@ EndingSequenceSpritemaps_ExplodingPlanetZebesCoreFrame1:
     %spritemapEntry(1, $4200, $F0, 0, 1, 0, 5, $99)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 0, 5, $99)
 
+%anchor($8CA45C)
 EndingSequenceSpritemaps_ExplodingPlanetZebesCoreFrame2:
     dw $0004                                                             ;8CA45C;
     %spritemapEntry(1, $4200, $00, 1, 1, 0, 5, $9B)
@@ -2372,6 +2562,7 @@ EndingSequenceSpritemaps_ExplodingPlanetZebesCoreFrame2:
     %spritemapEntry(1, $43F0, $00, 1, 0, 0, 5, $9B)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 0, 5, $9B)
 
+%anchor($8CA472)
 EndingSequenceSpritemaps_ExplodingPlanetZebesGlow:
     dw $000C                                                             ;8CA472;
     %spritemapEntry(1, $4200, $E8, 0, 1, 0, 7, $81)
@@ -2387,6 +2578,7 @@ EndingSequenceSpritemaps_ExplodingPlanetZebesGlow:
     %spritemapEntry(1, $43E8, $F0, 0, 0, 0, 7, $90)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 0, 7, $91)
 
+%anchor($8CA4B0)
 EndingSequenceSpritemaps_ZebesSupernovaPart1:
     dw $0014                                                             ;8CA4B0;
     %spritemapEntry(0, $10, $F8, 0, 1, 0, 7, $A3)
@@ -2410,6 +2602,7 @@ EndingSequenceSpritemaps_ZebesSupernovaPart1:
     %spritemapEntry(0, $1F0, $E8, 0, 0, 0, 7, $84)
     %spritemapEntry(1, $43F0, $F0, 0, 0, 0, 7, $94)
 
+%anchor($8CA516)
 EndingSequenceSpritemaps_ZebesSupernovaPart2:
     dw $0014                                                             ;8CA516;
     %spritemapEntry(0, $1E8, $F8, 0, 0, 0, 7, $A6)
@@ -2433,6 +2626,7 @@ EndingSequenceSpritemaps_ZebesSupernovaPart2:
     %spritemapEntry(0, $1F0, $10, 1, 0, 0, 7, $87)
     %spritemapEntry(1, $43F0, $00, 1, 0, 0, 7, $97)
 
+%anchor($8CA57C)
 EndingSequenceSpritemaps_ZebesSupernovaPart3:
     dw $0014                                                             ;8CA57C;
     %spritemapEntry(1, $4200, $08, 0, 0, 3, 5, $CC)
@@ -2456,6 +2650,7 @@ EndingSequenceSpritemaps_ZebesSupernovaPart3:
     %spritemapEntry(1, $43F0, $D8, 0, 0, 3, 5, $B2)
     %spritemapEntry(1, $43E0, $D8, 0, 0, 3, 5, $B0)
 
+%anchor($8CA5E2)
 EndingSequenceSpritemaps_ZebesSupernovaPart4:
     dw $0025                                                             ;8CA5E2;
     %spritemapEntry(0, $1F0, $20, 0, 0, 0, 6, $18C)
@@ -2496,11 +2691,13 @@ EndingSequenceSpritemaps_ZebesSupernovaPart4:
     %spritemapEntry(1, $43D0, $F8, 0, 0, 0, 6, $1A2)
     %spritemapEntry(1, $43C0, $F8, 0, 0, 0, 6, $1A0)
 
+%anchor($8CA69D)
 EndingSequenceSpritemaps_T:
     dw $0002                                                             ;8CA69D;
     %spritemapEntry(0, $1B8, $00, 0, 0, 3, 0, $153)
     %spritemapEntry(0, $1B8, $F8, 0, 0, 3, 0, $143)
 
+%anchor($8CA6A9)
 EndingSequenceSpritemaps_TH:
     dw $0004                                                             ;8CA6A9;
     %spritemapEntry(0, $1C0, $00, 0, 0, 3, 0, $137)
@@ -2508,6 +2705,7 @@ EndingSequenceSpritemaps_TH:
     %spritemapEntry(0, $1B8, $00, 0, 0, 3, 0, $153)
     %spritemapEntry(0, $1B8, $F8, 0, 0, 3, 0, $143)
 
+%anchor($8CA6BF)
 EndingSequenceSpritemaps_THE:
     dw $0006                                                             ;8CA6BF;
     %spritemapEntry(0, $1C8, $00, 0, 0, 3, 0, $134)
@@ -2517,6 +2715,7 @@ EndingSequenceSpritemaps_THE:
     %spritemapEntry(0, $1B8, $00, 0, 0, 3, 0, $153)
     %spritemapEntry(0, $1B8, $F8, 0, 0, 3, 0, $143)
 
+%anchor($8CA6DF)
 EndingSequenceSpritemaps_THEO:
     dw $0008                                                             ;8CA6DF;
     %spritemapEntry(0, $1D8, $00, 0, 0, 3, 0, $13E)
@@ -2528,6 +2727,7 @@ EndingSequenceSpritemaps_THEO:
     %spritemapEntry(0, $1B8, $00, 0, 0, 3, 0, $153)
     %spritemapEntry(0, $1B8, $F8, 0, 0, 3, 0, $143)
 
+%anchor($8CA709)
 EndingSequenceSpritemaps_THEOP:
     dw $000A                                                             ;8CA709;
     %spritemapEntry(0, $1E0, $00, 0, 0, 3, 0, $13F)
@@ -2541,6 +2741,7 @@ EndingSequenceSpritemaps_THEOP:
     %spritemapEntry(0, $1B8, $00, 0, 0, 3, 0, $153)
     %spritemapEntry(0, $1B8, $F8, 0, 0, 3, 0, $143)
 
+%anchor($8CA73D)
 EndingSequenceSpritemaps_THEOPE:
     dw $000C                                                             ;8CA73D;
     %spritemapEntry(0, $1E8, $00, 0, 0, 3, 0, $134)
@@ -2556,6 +2757,7 @@ EndingSequenceSpritemaps_THEOPE:
     %spritemapEntry(0, $1B8, $00, 0, 0, 3, 0, $153)
     %spritemapEntry(0, $1B8, $F8, 0, 0, 3, 0, $143)
 
+%anchor($8CA77B)
 EndingSequenceSpritemaps_THEOPER:
     dw $000E                                                             ;8CA77B;
     %spritemapEntry(0, $1F0, $00, 0, 0, 3, 0, $151)
@@ -2573,6 +2775,7 @@ EndingSequenceSpritemaps_THEOPER:
     %spritemapEntry(0, $1B8, $00, 0, 0, 3, 0, $153)
     %spritemapEntry(0, $1B8, $F8, 0, 0, 3, 0, $143)
 
+%anchor($8CA7C3)
 EndingSequenceSpritemaps_THEOPERA:
     dw $0010                                                             ;8CA7C3;
     %spritemapEntry(0, $1F8, $00, 0, 0, 3, 0, $130)
@@ -2592,6 +2795,7 @@ EndingSequenceSpritemaps_THEOPERA:
     %spritemapEntry(0, $1B8, $00, 0, 0, 3, 0, $153)
     %spritemapEntry(0, $1B8, $F8, 0, 0, 3, 0, $143)
 
+%anchor($8CA815)
 EndingSequenceSpritemaps_THEOPERAT:
     dw $0012                                                             ;8CA815;
     %spritemapEntry(0, $00, $00, 0, 0, 3, 0, $153)
@@ -2613,6 +2817,7 @@ EndingSequenceSpritemaps_THEOPERAT:
     %spritemapEntry(0, $1B8, $00, 0, 0, 3, 0, $153)
     %spritemapEntry(0, $1B8, $F8, 0, 0, 3, 0, $143)
 
+%anchor($8CA871)
 EndingSequenceSpritemaps_THEOPERATI:
     dw $0014                                                             ;8CA871;
     %spritemapEntry(0, $08, $00, 0, 0, 3, 0, $138)
@@ -2636,6 +2841,7 @@ EndingSequenceSpritemaps_THEOPERATI:
     %spritemapEntry(0, $1B8, $00, 0, 0, 3, 0, $153)
     %spritemapEntry(0, $1B8, $F8, 0, 0, 3, 0, $143)
 
+%anchor($8CA8D7)
 EndingSequenceSpritemaps_THEOPERATIO:
     dw $0016                                                             ;8CA8D7;
     %spritemapEntry(0, $10, $00, 0, 0, 3, 0, $13E)
@@ -2661,6 +2867,7 @@ EndingSequenceSpritemaps_THEOPERATIO:
     %spritemapEntry(0, $1B8, $00, 0, 0, 3, 0, $153)
     %spritemapEntry(0, $1B8, $F8, 0, 0, 3, 0, $143)
 
+%anchor($8CA947)
 EndingSequenceSpritemaps_THEOPERATION:
     dw $0018                                                             ;8CA947;
     %spritemapEntry(0, $18, $00, 0, 0, 3, 0, $13D)
@@ -2688,6 +2895,7 @@ EndingSequenceSpritemaps_THEOPERATION:
     %spritemapEntry(0, $1B8, $00, 0, 0, 3, 0, $153)
     %spritemapEntry(0, $1B8, $F8, 0, 0, 3, 0, $143)
 
+%anchor($8CA9C1)
 EndingSequenceSpritemaps_THEOPERATIONW:
     dw $001A                                                             ;8CA9C1;
     %spritemapEntry(0, $28, $00, 0, 0, 3, 0, $156)
@@ -2717,6 +2925,7 @@ EndingSequenceSpritemaps_THEOPERATIONW:
     %spritemapEntry(0, $1B8, $00, 0, 0, 3, 0, $153)
     %spritemapEntry(0, $1B8, $F8, 0, 0, 3, 0, $143)
 
+%anchor($8CAA45)
 EndingSequenceSpritemaps_THEOPERATIONWA:
     dw $001C                                                             ;8CAA45;
     %spritemapEntry(0, $30, $00, 0, 0, 3, 0, $130)
@@ -2748,6 +2957,7 @@ EndingSequenceSpritemaps_THEOPERATIONWA:
     %spritemapEntry(0, $1B8, $00, 0, 0, 3, 0, $153)
     %spritemapEntry(0, $1B8, $F8, 0, 0, 3, 0, $143)
 
+%anchor($8CAAD3)
 EndingSequenceSpritemaps_THEOPERATIONWAS:
     dw $001E                                                             ;8CAAD3;
     %spritemapEntry(0, $38, $00, 0, 0, 3, 0, $152)
@@ -2781,11 +2991,13 @@ EndingSequenceSpritemaps_THEOPERATIONWAS:
     %spritemapEntry(0, $1B8, $00, 0, 0, 3, 0, $153)
     %spritemapEntry(0, $1B8, $F8, 0, 0, 3, 0, $143)
 
+%anchor($8CAB6B)
 EndingSequenceSpritemaps_C_ompleted:
     dw $0002                                                             ;8CAB6B;
     %spritemapEntry(0, $1A8, $18, 0, 0, 3, 0, $132)
     %spritemapEntry(0, $1A8, $10, 0, 0, 3, 0, $122)
 
+%anchor($8CAB77)
 EndingSequenceSpritemaps_CO:
     dw $0004                                                             ;8CAB77;
     %spritemapEntry(0, $1B0, $18, 0, 0, 3, 0, $13E)
@@ -2793,6 +3005,7 @@ EndingSequenceSpritemaps_CO:
     %spritemapEntry(0, $1A8, $18, 0, 0, 3, 0, $132)
     %spritemapEntry(0, $1A8, $10, 0, 0, 3, 0, $122)
 
+%anchor($8CAB8D)
 EndingSequenceSpritemaps_COM:
     dw $0006                                                             ;8CAB8D;
     %spritemapEntry(0, $1B8, $18, 0, 0, 3, 0, $13C)
@@ -2802,6 +3015,7 @@ EndingSequenceSpritemaps_COM:
     %spritemapEntry(0, $1A8, $18, 0, 0, 3, 0, $132)
     %spritemapEntry(0, $1A8, $10, 0, 0, 3, 0, $122)
 
+%anchor($8CABAD)
 EndingSequenceSpritemaps_COMP:
     dw $0008                                                             ;8CABAD;
     %spritemapEntry(0, $1C0, $18, 0, 0, 3, 0, $13F)
@@ -2813,6 +3027,7 @@ EndingSequenceSpritemaps_COMP:
     %spritemapEntry(0, $1A8, $18, 0, 0, 3, 0, $132)
     %spritemapEntry(0, $1A8, $10, 0, 0, 3, 0, $122)
 
+%anchor($8CABD7)
 EndingSequenceSpritemaps_COMPL:
     dw $000A                                                             ;8CABD7;
     %spritemapEntry(0, $1C8, $18, 0, 0, 3, 0, $13B)
@@ -2826,6 +3041,7 @@ EndingSequenceSpritemaps_COMPL:
     %spritemapEntry(0, $1A8, $18, 0, 0, 3, 0, $132)
     %spritemapEntry(0, $1A8, $10, 0, 0, 3, 0, $122)
 
+%anchor($8CAC0B)
 EndingSequenceSpritemaps_COMPLE:
     dw $000C                                                             ;8CAC0B;
     %spritemapEntry(0, $1D0, $18, 0, 0, 3, 0, $134)
@@ -2841,6 +3057,7 @@ EndingSequenceSpritemaps_COMPLE:
     %spritemapEntry(0, $1A8, $18, 0, 0, 3, 0, $132)
     %spritemapEntry(0, $1A8, $10, 0, 0, 3, 0, $122)
 
+%anchor($8CAC49)
 EndingSequenceSpritemaps_COMPLET:
     dw $000E                                                             ;8CAC49;
     %spritemapEntry(0, $1D8, $18, 0, 0, 3, 0, $153)
@@ -2858,6 +3075,7 @@ EndingSequenceSpritemaps_COMPLET:
     %spritemapEntry(0, $1A8, $18, 0, 0, 3, 0, $132)
     %spritemapEntry(0, $1A8, $10, 0, 0, 3, 0, $122)
 
+%anchor($8CAC91)
 EndingSequenceSpritemaps_COMPLETE:
     dw $0010                                                             ;8CAC91;
     %spritemapEntry(0, $1E0, $18, 0, 0, 3, 0, $134)
@@ -2877,6 +3095,7 @@ EndingSequenceSpritemaps_COMPLETE:
     %spritemapEntry(0, $1A8, $18, 0, 0, 3, 0, $132)
     %spritemapEntry(0, $1A8, $10, 0, 0, 3, 0, $122)
 
+%anchor($8CACE3)
 EndingSequenceSpritemaps_COMPLETED:
     dw $0012                                                             ;8CACE3;
     %spritemapEntry(0, $1E8, $18, 0, 0, 3, 0, $133)
@@ -2898,6 +3117,7 @@ EndingSequenceSpritemaps_COMPLETED:
     %spritemapEntry(0, $1A8, $18, 0, 0, 3, 0, $132)
     %spritemapEntry(0, $1A8, $10, 0, 0, 3, 0, $122)
 
+%anchor($8CAD3F)
 EndingSequenceSpritemaps_COMPLETEDS:
     dw $0014                                                             ;8CAD3F;
     %spritemapEntry(0, $1F8, $18, 0, 0, 3, 0, $152)
@@ -2922,6 +3142,7 @@ EndingSequenceSpritemaps_COMPLETEDS:
     %spritemapEntry(0, $1A8, $10, 0, 0, 3, 0, $122)
 
 
+%anchor($8CADA5)
 EndingSequenceSpritemaps_COMPLETEDSU:
     dw $0016                                                             ;8CADA5;
     %spritemapEntry(0, $00, $18, 0, 0, 3, 0, $154)
@@ -2947,6 +3168,7 @@ EndingSequenceSpritemaps_COMPLETEDSU:
     %spritemapEntry(0, $1A8, $18, 0, 0, 3, 0, $132)
     %spritemapEntry(0, $1A8, $10, 0, 0, 3, 0, $122)
 
+%anchor($8CAE15)
 EndingSequenceSpritemaps_COMPLETEDSUC:
     dw $0018                                                             ;8CAE15;
     %spritemapEntry(0, $08, $18, 0, 0, 3, 0, $132)
@@ -2974,6 +3196,7 @@ EndingSequenceSpritemaps_COMPLETEDSUC:
     %spritemapEntry(0, $1A8, $18, 0, 0, 3, 0, $132)
     %spritemapEntry(0, $1A8, $10, 0, 0, 3, 0, $122)
 
+%anchor($8CAE8F)
 EndingSequenceSpritemaps_COMPLETEDSUCC:
     dw $001A                                                             ;8CAE8F;
     %spritemapEntry(0, $10, $18, 0, 0, 3, 0, $132)
@@ -3003,6 +3226,7 @@ EndingSequenceSpritemaps_COMPLETEDSUCC:
     %spritemapEntry(0, $1A8, $18, 0, 0, 3, 0, $132)
     %spritemapEntry(0, $1A8, $10, 0, 0, 3, 0, $122)
 
+%anchor($8CAF13)
 EndingSequenceSpritemaps_COMPLETEDSUCCE:
     dw $001C                                                             ;8CAF13;
     %spritemapEntry(0, $18, $18, 0, 0, 3, 0, $134)
@@ -3034,6 +3258,7 @@ EndingSequenceSpritemaps_COMPLETEDSUCCE:
     %spritemapEntry(0, $1A8, $18, 0, 0, 3, 0, $132)
     %spritemapEntry(0, $1A8, $10, 0, 0, 3, 0, $122)
 
+%anchor($8CAFA1)
 EndingSequenceSpritemaps_COMPLETEDSUCCES:
     dw $001E                                                             ;8CAFA1;
     %spritemapEntry(0, $20, $18, 0, 0, 3, 0, $152)
@@ -3067,6 +3292,7 @@ EndingSequenceSpritemaps_COMPLETEDSUCCES:
     %spritemapEntry(0, $1A8, $18, 0, 0, 3, 0, $132)
     %spritemapEntry(0, $1A8, $10, 0, 0, 3, 0, $122)
 
+%anchor($8CB039)
 EndingSequenceSpritemaps_COMPLETEDSUCCESS:
     dw $0020                                                             ;8CB039;
     %spritemapEntry(0, $28, $18, 0, 0, 3, 0, $152)
@@ -3102,6 +3328,7 @@ EndingSequenceSpritemaps_COMPLETEDSUCCESS:
     %spritemapEntry(0, $1A8, $18, 0, 0, 3, 0, $132)
     %spritemapEntry(0, $1A8, $10, 0, 0, 3, 0, $122)
 
+%anchor($8CB0DB)
 EndingSequenceSpritemaps_COMPLETEDSUCCESSF:
     dw $0022                                                             ;8CB0DB;
     %spritemapEntry(0, $30, $18, 0, 0, 3, 0, $135)
@@ -3139,6 +3366,7 @@ EndingSequenceSpritemaps_COMPLETEDSUCCESSF:
     %spritemapEntry(0, $1A8, $18, 0, 0, 3, 0, $132)
     %spritemapEntry(0, $1A8, $10, 0, 0, 3, 0, $122)
 
+%anchor($8CB187)
 EndingSequenceSpritemaps_COMPLETEDSUCCESSFU:
     dw $0024                                                             ;8CB187;
     %spritemapEntry(0, $38, $18, 0, 0, 3, 0, $154)
@@ -3178,6 +3406,7 @@ EndingSequenceSpritemaps_COMPLETEDSUCCESSFU:
     %spritemapEntry(0, $1A8, $18, 0, 0, 3, 0, $132)
     %spritemapEntry(0, $1A8, $10, 0, 0, 3, 0, $122)
 
+%anchor($8CB23D)
 EndingSequenceSpritemaps_COMPLETEDSUCCESSFUL:
     dw $0026                                                             ;8CB23D;
     %spritemapEntry(0, $40, $18, 0, 0, 3, 0, $13B)
@@ -3219,6 +3448,7 @@ EndingSequenceSpritemaps_COMPLETEDSUCCESSFUL:
     %spritemapEntry(0, $1A8, $18, 0, 0, 3, 0, $132)
     %spritemapEntry(0, $1A8, $10, 0, 0, 3, 0, $122)
 
+%anchor($8CB2FD)
 EndingSequenceSpritemaps_COMPLETEDSUCCESSFULL:
     dw $0028                                                             ;8CB2FD;
     %spritemapEntry(0, $48, $18, 0, 0, 3, 0, $13B)
@@ -3262,6 +3492,7 @@ EndingSequenceSpritemaps_COMPLETEDSUCCESSFULL:
     %spritemapEntry(0, $1A8, $18, 0, 0, 3, 0, $132)
     %spritemapEntry(0, $1A8, $10, 0, 0, 3, 0, $122)
 
+%anchor($8CB3C7)
 EndingSequenceSpritemaps_COMPLETEDSUCCESSFULLY:
     dw $002A                                                             ;8CB3C7;
     %spritemapEntry(0, $50, $18, 0, 0, 3, 0, $158)
@@ -3307,11 +3538,13 @@ EndingSequenceSpritemaps_COMPLETEDSUCCESSFULLY:
     %spritemapEntry(0, $1A8, $18, 0, 0, 3, 0, $132)
     %spritemapEntry(0, $1A8, $10, 0, 0, 3, 0, $122)
 
+%anchor($8CB49B)
 EndingSequenceSpritemaps_C_lear:
     dw $0002                                                             ;8CB49B;
     %spritemapEntry(0, $1C0, $00, 0, 0, 3, 0, $132)
     %spritemapEntry(0, $1C0, $F8, 0, 0, 3, 0, $122)
 
+%anchor($8CB4A7)
 EndingSequenceSpritemaps_CL:
     dw $0004                                                             ;8CB4A7;
     %spritemapEntry(0, $1C8, $00, 0, 0, 3, 0, $13B)
@@ -3319,6 +3552,7 @@ EndingSequenceSpritemaps_CL:
     %spritemapEntry(0, $1C0, $00, 0, 0, 3, 0, $132)
     %spritemapEntry(0, $1C0, $F8, 0, 0, 3, 0, $122)
 
+%anchor($8CB4BD)
 EndingSequenceSpritemaps_CLE:
     dw $0006                                                             ;8CB4BD;
     %spritemapEntry(0, $1D0, $00, 0, 0, 3, 0, $134)
@@ -3328,6 +3562,7 @@ EndingSequenceSpritemaps_CLE:
     %spritemapEntry(0, $1C0, $00, 0, 0, 3, 0, $132)
     %spritemapEntry(0, $1C0, $F8, 0, 0, 3, 0, $122)
 
+%anchor($8CB4DD)
 EndingSequenceSpritemaps_CLEA:
     dw $0008                                                             ;8CB4DD;
     %spritemapEntry(0, $1D8, $00, 0, 0, 3, 0, $130)
@@ -3339,6 +3574,7 @@ EndingSequenceSpritemaps_CLEA:
     %spritemapEntry(0, $1C0, $00, 0, 0, 3, 0, $132)
     %spritemapEntry(0, $1C0, $F8, 0, 0, 3, 0, $122)
 
+%anchor($8CB507)
 EndingSequenceSpritemaps_CLEAR:
     dw $000A                                                             ;8CB507;
     %spritemapEntry(0, $1E0, $00, 0, 0, 3, 0, $151)
@@ -3352,6 +3588,7 @@ EndingSequenceSpritemaps_CLEAR:
     %spritemapEntry(0, $1C0, $00, 0, 0, 3, 0, $132)
     %spritemapEntry(0, $1C0, $F8, 0, 0, 3, 0, $122)
 
+%anchor($8CB53B)
 EndingSequenceSpritemaps_CLEART:
     dw $000C                                                             ;8CB53B;
     %spritemapEntry(0, $1F0, $00, 0, 0, 3, 0, $153)
@@ -3367,6 +3604,7 @@ EndingSequenceSpritemaps_CLEART:
     %spritemapEntry(0, $1C0, $00, 0, 0, 3, 0, $132)
     %spritemapEntry(0, $1C0, $F8, 0, 0, 3, 0, $122)
 
+%anchor($8CB579)
 EndingSequenceSpritemaps_CLEARTI:
     dw $000E                                                             ;8CB579;
     %spritemapEntry(0, $1F8, $00, 0, 0, 3, 0, $138)
@@ -3384,6 +3622,7 @@ EndingSequenceSpritemaps_CLEARTI:
     %spritemapEntry(0, $1C0, $00, 0, 0, 3, 0, $132)
     %spritemapEntry(0, $1C0, $F8, 0, 0, 3, 0, $122)
 
+%anchor($8CB5C1)
 EndingSequenceSpritemaps_CLEARTIM:
     dw $0010                                                             ;8CB5C1;
     %spritemapEntry(0, $00, $00, 0, 0, 3, 0, $13C)
@@ -3403,6 +3642,7 @@ EndingSequenceSpritemaps_CLEARTIM:
     %spritemapEntry(0, $1C0, $00, 0, 0, 3, 0, $132)
     %spritemapEntry(0, $1C0, $F8, 0, 0, 3, 0, $122)
 
+%anchor($8CB613)
 EndingSequenceSpritemaps_CLEARTIME:
     dw $0012                                                             ;8CB613;
     %spritemapEntry(0, $08, $00, 0, 0, 3, 0, $134)
@@ -3424,61 +3664,73 @@ EndingSequenceSpritemaps_CLEARTIME:
     %spritemapEntry(0, $1C0, $00, 0, 0, 3, 0, $132)
     %spritemapEntry(0, $1C0, $F8, 0, 0, 3, 0, $122)
 
+%anchor($8CB66F)
 EndingSequenceSpritemaps_Colon:
     dw $0002                                                             ;8CB66F;
     %spritemapEntry(0, $1FC, $00, 1, 0, 3, 0, $15A)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 3, 0, $15A)
 
+%anchor($8CB67B)
 EndingSequenceSpritemaps_0:
     dw $0002                                                             ;8CB67B;
     %spritemapEntry(0, $1FC, $00, 0, 0, 3, 0, $170)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 3, 0, $160)
 
+%anchor($8CB687)
 EndingSequenceSpritemaps_1:
     dw $0002                                                             ;8CB687;
     %spritemapEntry(0, $1FC, $00, 0, 0, 3, 0, $171)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 3, 0, $161)
 
+%anchor($8CB693)
 EndingSequenceSpritemaps_2:
     dw $0002                                                             ;8CB693;
     %spritemapEntry(0, $1FC, $00, 0, 0, 3, 0, $172)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 3, 0, $162)
 
+%anchor($8CB69F)
 EndingSequenceSpritemaps_3:
     dw $0002                                                             ;8CB69F;
     %spritemapEntry(0, $1FC, $00, 0, 0, 3, 0, $173)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 3, 0, $163)
 
+%anchor($8CB6AB)
 EndingSequenceSpritemaps_4:
     dw $0002                                                             ;8CB6AB;
     %spritemapEntry(0, $1FC, $00, 0, 0, 3, 0, $174)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 3, 0, $164)
 
+%anchor($8CB6B7)
 EndingSequenceSpritemaps_5:
     dw $0002                                                             ;8CB6B7;
     %spritemapEntry(0, $1FC, $00, 0, 0, 3, 0, $175)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 3, 0, $165)
 
+%anchor($8CB6C3)
 EndingSequenceSpritemaps_6:
     dw $0002                                                             ;8CB6C3;
     %spritemapEntry(0, $1FC, $00, 0, 0, 3, 0, $176)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 3, 0, $166)
 
+%anchor($8CB6CF)
 EndingSequenceSpritemaps_7:
     dw $0002                                                             ;8CB6CF;
     %spritemapEntry(0, $1FC, $00, 0, 0, 3, 0, $177)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 3, 0, $167)
 
+%anchor($8CB6DB)
 EndingSequenceSpritemaps_8:
     dw $0002                                                             ;8CB6DB;
     %spritemapEntry(0, $1FC, $00, 0, 0, 3, 0, $178)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 3, 0, $168)
 
+%anchor($8CB6E7)
 EndingSequenceSpritemaps_9:
     dw $0002                                                             ;8CB6E7;
     %spritemapEntry(0, $1FC, $00, 0, 0, 3, 0, $179)
     %spritemapEntry(0, $1FC, $F8, 0, 0, 3, 0, $169)
 
+%anchor($8CB6F3)
 EndingSequenceSpritemaps_EndingCutsceneBottomCloudsPattern:
     dw $0010                                                             ;8CB6F3;
     %spritemapEntry(0, $60, $00, 0, 0, 3, 5, $CC)
@@ -3498,6 +3750,7 @@ EndingSequenceSpritemaps_EndingCutsceneBottomCloudsPattern:
     %spritemapEntry(0, $1A0, $E0, 0, 0, 3, 5, $84)
     %spritemapEntry(0, $180, $E0, 0, 0, 3, 5, $80)
 
+%anchor($8CB745)
 EndingSequenceSpritemaps_EndingCutsceneTopCloudsPattern:
     dw $0010                                                             ;8CB745;
     %spritemapEntry(0, $180, $E0, 1, 1, 3, 5, $CC)
@@ -3517,6 +3770,7 @@ EndingSequenceSpritemaps_EndingCutsceneTopCloudsPattern:
     %spritemapEntry(0, $40, $00, 1, 1, 3, 5, $84)
     %spritemapEntry(0, $60, $00, 1, 1, 3, 5, $80)
 
+%anchor($8CB797)
 EndingSequenceSpritemaps_EndingCutsceneBottomCloudsEdge:
     dw $0010                                                             ;8CB797;
     %spritemapEntry(0, $60, $00, 0, 0, 3, 5, $4C)
@@ -3536,6 +3790,7 @@ EndingSequenceSpritemaps_EndingCutsceneBottomCloudsEdge:
     %spritemapEntry(0, $1A0, $E0, 0, 0, 3, 5, $04)
     %spritemapEntry(0, $180, $E0, 0, 0, 3, 5, $00)
 
+%anchor($8CB7E9)
 EndingSequenceSpritemaps_EndingCutsceneTopCloudsEdge:
     dw $0010                                                             ;8CB7E9;
     %spritemapEntry(0, $180, $E0, 1, 1, 3, 5, $4C)
@@ -3555,6 +3810,7 @@ EndingSequenceSpritemaps_EndingCutsceneTopCloudsEdge:
     %spritemapEntry(0, $40, $00, 1, 1, 3, 5, $04)
     %spritemapEntry(0, $60, $00, 1, 1, 3, 5, $00)
 
+%anchor($8CB83B)
 EndingSequenceSpritemaps_EndingCutsceneRightClouds:
     dw $0020                                                             ;8CB83B;
     %spritemapEntry(0, $60, $60, 0, 0, 3, 5, $1CC)
@@ -3590,6 +3846,7 @@ EndingSequenceSpritemaps_EndingCutsceneRightClouds:
     %spritemapEntry(0, $20, $80, 0, 0, 3, 5, $104)
     %spritemapEntry(0, $00, $80, 0, 0, 3, 5, $100)
 
+%anchor($8CB8DD)
 EndingSequenceSpritemaps_EndingCutsceneLeftClouds:
     dw $0020                                                             ;8CB8DD;
     %spritemapEntry(0, $180, $60, 0, 1, 3, 5, $1CC)
@@ -3625,6 +3882,7 @@ EndingSequenceSpritemaps_EndingCutsceneLeftClouds:
     %spritemapEntry(0, $1C0, $80, 0, 1, 3, 5, $104)
     %spritemapEntry(0, $1E0, $80, 0, 1, 3, 5, $100)
 
+%anchor($8CB97F)
 EndingSequenceSpritemaps_ScrewAttackSymbolUpperPart:
     dw $000E                                                             ;8CB97F;
     %spritemapEntry(1, $43EA, $09, 0, 0, 3, 7, $64)
@@ -3642,6 +3900,7 @@ EndingSequenceSpritemaps_ScrewAttackSymbolUpperPart:
     %spritemapEntry(1, $43DA, $F9, 0, 0, 3, 7, $60)
     %spritemapEntry(1, $43DA, $E9, 0, 0, 3, 7, $40)
 
+%anchor($8CB9C7)
 EndingSequenceSpritemaps_ScrewAttackSymbolLowerPart:
     dw $000E                                                             ;8CB9C7;
     %spritemapEntry(1, $4206, $E7, 1, 1, 3, 7, $64)
@@ -3659,6 +3918,7 @@ EndingSequenceSpritemaps_ScrewAttackSymbolLowerPart:
     %spritemapEntry(1, $4216, $F7, 1, 1, 3, 7, $60)
     %spritemapEntry(1, $4216, $07, 1, 1, 3, 7, $40)
 
+%anchor($8CBA0F)
 EndingSequenceSpritemaps_ScrewAttackSymbolRightWrapFrame1:
     dw $000C                                                             ;8CBA0F;
     %spritemapEntry(1, $4218, $E0, 0, 0, 3, 7, $49)
@@ -3674,6 +3934,7 @@ EndingSequenceSpritemaps_ScrewAttackSymbolRightWrapFrame1:
     %spritemapEntry(0, $28, $F0, 0, 0, 3, 7, $69)
     %spritemapEntry(0, $20, $F0, 0, 0, 3, 7, $68)
 
+%anchor($8CBA4D)
 EndingSequenceSpritemaps_ScrewAttackSymbolRightWrapFrame2:
     dw $0012                                                             ;8CBA4D;
     %spritemapEntry(1, $4218, $E0, 0, 0, 3, 7, $49)
@@ -3695,6 +3956,7 @@ EndingSequenceSpritemaps_ScrewAttackSymbolRightWrapFrame2:
     %spritemapEntry(1, $4220, $08, 0, 0, 3, 7, $6D)
     %spritemapEntry(1, $4220, $F8, 0, 0, 3, 7, $01)
 
+%anchor($8CBAA9)
 EndingSequenceSpritemaps_ScrewAttackSymbolRightWrapFrame3:
     dw $0019                                                             ;8CBAA9;
     %spritemapEntry(0, $07, $21, 1, 1, 3, 7, $2C)
@@ -3723,6 +3985,7 @@ EndingSequenceSpritemaps_ScrewAttackSymbolRightWrapFrame3:
     %spritemapEntry(1, $4220, $08, 0, 0, 3, 7, $6D)
     %spritemapEntry(1, $4220, $F8, 0, 0, 3, 7, $01)
 
+%anchor($8CBB28)
 EndingSequenceSpritemaps_ScrewAttackSymbolLeftWrapFrame1:
     dw $000C                                                             ;8CBB28;
     %spritemapEntry(1, $43D8, $10, 1, 1, 3, 7, $49)
@@ -3738,6 +4001,7 @@ EndingSequenceSpritemaps_ScrewAttackSymbolLeftWrapFrame1:
     %spritemapEntry(0, $1D0, $08, 1, 1, 3, 7, $69)
     %spritemapEntry(0, $1D8, $08, 1, 1, 3, 7, $68)
 
+%anchor($8CBB66)
 EndingSequenceSpritemaps_ScrewAttackSymbolLeftWrapFrame2:
     dw $0012                                                             ;8CBB66;
     %spritemapEntry(1, $43D8, $10, 1, 1, 3, 7, $49)
@@ -3759,6 +4023,7 @@ EndingSequenceSpritemaps_ScrewAttackSymbolLeftWrapFrame2:
     %spritemapEntry(1, $43D0, $E8, 1, 1, 3, 7, $6D)
     %spritemapEntry(1, $43D0, $F8, 1, 1, 3, 7, $01)
 
+%anchor($8CBBC2)
 EndingSequenceSpritemaps_ScrewAttackSymbolLeftWrapFrame3:
     dw $0019                                                             ;8CBBC2;
     %spritemapEntry(0, $1F1, $D7, 0, 0, 3, 7, $2C)
@@ -3787,22 +4052,27 @@ EndingSequenceSpritemaps_ScrewAttackSymbolLeftWrapFrame3:
     %spritemapEntry(1, $43D0, $E8, 1, 1, 3, 7, $6D)
     %spritemapEntry(1, $43D0, $F8, 1, 1, 3, 7, $01)
 
+%anchor($8CBC41)
 EndingSequenceSpritemaps_CrittersEscapePodFrame1:
     dw $0001                                                             ;8CBC41;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 7, $1E0)
 
+%anchor($8CBC48)
 EndingSequenceSpritemaps_CrittersEscapePodFrame2:
     dw $0001                                                             ;8CBC48;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 7, $1E1)
 
+%anchor($8CBC4F)
 EndingSequenceSpritemaps_CrittersEscapePodFrame3:
     dw $0001                                                             ;8CBC4F;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 7, $1E2)
 
+%anchor($8CBC56)
 EndingSequenceSpritemaps_CrittersEscapePodFrame4:
     dw $0001                                                             ;8CBC56;
     %spritemapEntry(0, $1FC, $FC, 0, 0, 3, 7, $1E3)
 
+%anchor($8CBC5D)
 TitleSequenceHDMATables:
     dw TitleSequenceHDMATables_0                                         ;8CBC5D;
     dw TitleSequenceHDMATables_0                                         ;8CBC5F;
@@ -3821,6 +4091,7 @@ TitleSequenceHDMATables:
     dw TitleSequenceHDMATables_B                                         ;8CBC79;
     dw TitleSequenceHDMATables_C                                         ;8CBC7B;
 
+%anchor($8CBC7D)
 TitleSequenceHDMATables_0:
     db $04,$EF,$04,$EE,$04,$ED,$04,$EC,$04,$EB,$04,$EA,$04,$E9,$04,$E8   ;8CBC7D;
     db $04,$E7,$04,$E6,$05,$E5,$06,$E4,$08,$E3,$09,$E2,$09,$E1,$33,$E0   ;8CBC8D;
@@ -3828,68 +4099,81 @@ TitleSequenceHDMATables_0:
     db $05,$C8,$05,$C9,$06,$CA,$05,$CB,$05,$CC,$05,$CD,$05,$CE,$01,$CF   ;8CBCAD;
     db $00,$00                                                           ;8CBCBD;
 
+%anchor($8CBCBF)
 TitleSequenceHDMATables_1:
     db $40,$C0,$40,$C0,$10,$C0,$30,$C1,$28,$C2,$28,$C3,$1C,$C4,$18,$C5   ;8CBCBF;
     db $14,$C6,$14,$C7,$14,$C8,$14,$C9,$18,$CA,$14,$CB,$14,$CC,$14,$CD   ;8CBCCF;
     db $14,$CE,$04,$CF,$00,$00                                           ;8CBCDF;
 
+%anchor($8CBCE5)
 TitleSequenceHDMATables_2:
     db $40,$C0,$40,$C0,$0E,$C0,$2A,$C1,$23,$C2,$23,$C3,$19,$C4,$15,$C5   ;8CBCE5;
     db $12,$C6,$12,$C7,$12,$C8,$12,$C9,$15,$CA,$12,$CB,$12,$CC,$12,$CD   ;8CBCF5;
     db $12,$CE,$04,$CF,$00,$00                                           ;8CBD05;
 
+%anchor($8CBD0B)
 TitleSequenceHDMATables_3:
     db $40,$C0,$40,$C0,$0C,$C0,$24,$C1,$1E,$C2,$1E,$C3,$15,$C4,$12,$C5   ;8CBD0B;
     db $0F,$C6,$0F,$C7,$0F,$C8,$0F,$C9,$12,$CA,$0F,$CB,$0F,$CC,$0F,$CD   ;8CBD1B;
     db $0F,$CE,$03,$CF,$00,$00                                           ;8CBD2B;
 
+%anchor($8CBD31)
 TitleSequenceHDMATables_4:
     db $40,$C0,$40,$C0,$0A,$C0,$1E,$C1,$19,$C2,$19,$C3,$12,$C4,$0F,$C5   ;8CBD31;
     db $0D,$C6,$0D,$C7,$0D,$C8,$0D,$C9,$0F,$CA,$0D,$CB,$0D,$CC,$0D,$CD   ;8CBD41;
     db $0D,$CE,$03,$CF,$00,$00                                           ;8CBD51;
 
+%anchor($8CBD57)
 TitleSequenceHDMATables_5:
     db $08,$E2,$12,$E1,$64,$E0,$02,$E0,$08,$C0,$18,$C1,$14,$C2,$14,$C3   ;8CBD57;
     db $0E,$C4,$0C,$C5,$0A,$C6,$0A,$C7,$0A,$C8,$0A,$C9,$0C,$CA,$0A,$CB   ;8CBD67;
     db $0A,$CC,$0A,$CD,$0A,$CE,$02,$CF,$00,$00                           ;8CBD77;
 
+%anchor($8CBD81)
 TitleSequenceHDMATables_6:
     db $08,$E2,$12,$E1,$64,$E0,$02,$E0,$08,$C0,$17,$C1,$13,$C2,$13,$C3   ;8CBD81;
     db $0E,$C4,$0C,$C5,$0A,$C6,$0A,$C7,$0A,$C8,$0A,$C9,$0C,$CA,$0A,$CB   ;8CBD91;
     db $0A,$CC,$0A,$CD,$0A,$CE,$02,$CF,$00,$00                           ;8CBDA1;
 
+%anchor($8CBDAB)
 TitleSequenceHDMATables_7:
     db $06,$E3,$10,$E2,$10,$E1,$5A,$E0,$07,$C0,$15,$C1,$12,$C2,$12,$C3   ;8CBDAB;
     db $0D,$C4,$0B,$C5,$09,$C6,$09,$C7,$09,$C8,$09,$C9,$0B,$CA,$09,$CB   ;8CBDBB;
     db $09,$CC,$09,$CD,$09,$CE,$02,$CF,$00,$00                           ;8CBDCB;
 
+%anchor($8CBDD5)
 TitleSequenceHDMATables_8:
     db $06,$E3,$10,$E2,$10,$E1,$5A,$E0,$07,$C0,$14,$C1,$11,$C2,$11,$C3   ;8CBDD5;
     db $0C,$C4,$0A,$C5,$09,$C6,$09,$C7,$09,$C8,$09,$C9,$0A,$CA,$09,$CB   ;8CBDE5;
     db $09,$CC,$09,$CD,$09,$CE,$02,$CF,$00,$00                           ;8CBDF5;
 
+%anchor($8CBDFF)
 TitleSequenceHDMATables_9:
     db $02,$E5,$09,$E4,$0C,$E3,$0E,$E2,$0E,$E1,$4D,$E0,$06,$C0,$12,$C1   ;8CBDFF;
     db $0F,$C2,$0F,$C3,$0B,$C4,$09,$C5,$08,$C6,$08,$C7,$08,$C8,$08,$C9   ;8CBE0F;
     db $09,$CA,$08,$CB,$08,$CC,$08,$CD,$08,$CE,$02,$CF,$00,$00           ;8CBE1F;
 
+%anchor($8CBE2D)
 TitleSequenceHDMATables_A:
     db $02,$E5,$09,$E4,$0C,$E3,$0E,$E2,$0E,$E1,$4D,$E0,$06,$C0,$11,$C1   ;8CBE2D;
     db $0E,$C2,$0E,$C3,$0A,$C4,$09,$C5,$08,$C6,$08,$C7,$08,$C8,$08,$C9   ;8CBE3D;
     db $09,$CA,$08,$CB,$08,$CC,$08,$CD,$08,$CE,$02,$CF,$00,$00           ;8CBE4D;
 
+%anchor($8CBE5B)
 TitleSequenceHDMATables_B:
     db $05,$E8,$05,$E7,$05,$E6,$07,$E5,$08,$E4,$0A,$E3,$0C,$E2,$0C,$E1   ;8CBE5B;
     db $40,$E0,$05,$C0,$0F,$C1,$0D,$C2,$0D,$C3,$09,$C4,$08,$C5,$07,$C6   ;8CBE6B;
     db $07,$C7,$07,$C8,$07,$C9,$08,$CA,$07,$CB,$07,$CC,$07,$CD,$07,$CE   ;8CBE7B;
     db $02,$CF,$00,$00                                                   ;8CBE8B;
 
+%anchor($8CBE8F)
 TitleSequenceHDMATables_C:
     db $05,$E8,$05,$E7,$05,$E6,$07,$E5,$08,$E4,$0A,$E3,$0C,$E2,$0C,$E1   ;8CBE8F;
     db $40,$E0,$05,$C0,$0E,$C1,$0C,$C2,$0C,$C3,$08,$C4,$07,$C5,$06,$C6   ;8CBE9F;
     db $06,$C7,$06,$C8,$06,$C9,$07,$CA,$06,$CB,$06,$CC,$06,$CD,$06,$CE   ;8CBEAF;
     db $02,$CF,$00,$00                                                   ;8CBEBF;
 
+%anchor($8CBEC3)
 LevelData_OldMotherBrainRoomFromCutscene:
     dw $0000,$0000,$0000,$0000,$0000,$0000,$0000,$0000                   ;8CBEC3;
     dw $0000,$0000,$0000,$0000,$0000,$0000,$0000,$0000                   ;8CBED3;
@@ -3920,6 +4204,7 @@ LevelData_OldMotherBrainRoomFromCutscene:
     dw $8000,$8000,$8000,$8000,$8000,$8000,$8000,$8000                   ;8CC063;
     dw $8000,$8000,$8000,$8000,$8000,$8000,$8000,$8000                   ;8CC073;
 
+%anchor($8CC083)
 LevelData_RoomWithBabyMetroidHatchingFromCutscene:
     dw $0000,$0000,$0000,$0000,$0000,$0000,$0000,$0000                   ;8CC083;
     dw $0000,$0000,$0000,$0000,$0000,$0000,$0000,$0000                   ;8CC093;
@@ -3970,6 +4255,7 @@ LevelData_RoomWithBabyMetroidHatchingFromCutscene:
     dw $8000,$8000,$8000,$8000,$8000,$8000,$8000,$8000                   ;8CC363;
     dw $8000,$8000,$8000,$8000,$8000,$8000,$8000,$8000                   ;8CC373;
 
+%anchor($8CC383)
 CinematicBGObjectInstLists_IntroTextPage1:
     dw Instruction_HandleCreatingJapanText_Page1                         ;8CC383;
     dw $0001                                                             ;8CC385;
@@ -4494,6 +4780,7 @@ CinematicBGObjectInstLists_IntroTextPage1:
     dw Instruction_SpawnBlinkingMarkers_WaitForInput_Page1               ;8CC793;
     dw CinematicBGObject_Instruction_Delete                              ;8CC795;
 
+%anchor($8CC797)
 CinematicBGObjectInstLists_IntroTextPage2:
     dw Instruction_HandleCreatingJapanText_Page2                         ;8CC797;
     dw $0001                                                             ;8CC799;
@@ -4967,6 +5254,7 @@ CinematicBGObjectInstLists_IntroTextPage2:
     dw Instruction_SpawnBlinkingMarkers_WaitForInput_Page2               ;8CCB41;
     dw CinematicBGObject_Instruction_Delete                              ;8CCB43;
 
+%anchor($8CCB45)
 CinematicBGObjectInstLists_IntroTextPage3:
     dw Instruction_HandleCreatingJapanText_Page3                         ;8CCB45;
     dw $0001                                                             ;8CCB47;
@@ -5344,6 +5632,7 @@ CinematicBGObjectInstLists_IntroTextPage3:
     dw Instruction_SpawnBlinkingMarkers_WaitForInput_Page3               ;8CCE2F;
     dw CinematicBGObject_Instruction_Delete                              ;8CCE31;
 
+%anchor($8CCE33)
 CinematicBGObjectInstLists_IntroTextPage4:
     dw Instruction_HandleCreatingJapanText_Page4                         ;8CCE33;
     dw $0001                                                             ;8CCE35;
@@ -5751,6 +6040,7 @@ CinematicBGObjectInstLists_IntroTextPage4:
     dw Instruction_SpawnBlinkingMarkers_WaitForInput_Page4               ;8CD159;
     dw CinematicBGObject_Instruction_Delete                              ;8CD15B;
 
+%anchor($8CD15D)
 CinematicBGObjectInstLists_IntroTextPage5:
     dw Instruction_HandleCreatingJapanText_Page5                         ;8CD15D;
     dw $0001                                                             ;8CD15F;
@@ -6227,6 +6517,7 @@ CinematicBGObjectInstLists_IntroTextPage5:
     dw Instruction_SpawnBlinkingMarkers_WaitForInput_Page5               ;8CD50D;
     dw CinematicBGObject_Instruction_Delete                              ;8CD50F;
 
+%anchor($8CD511)
 CinematicBGObjectInstLists_IntroTextPage6:
     dw Instruction_HandleCreatingJapanText_Page6                         ;8CD511;
     dw $0001                                                             ;8CD513;
@@ -6332,6 +6623,7 @@ CinematicBGObjectInstLists_IntroTextPage6:
     dw Instruction_FinishIntro                                           ;8CD5DB;
     dw CinematicBGObject_Instruction_Delete                              ;8CD5DD;
 
+%anchor($8CD5DF)
 CinematicBGObjectInstLists_SamusBlinking:
     dw $0080                                                             ;8CD5DF;
     db $11,$0D                                                           ;8CD5E1;
@@ -6360,6 +6652,7 @@ CinematicBGObjectInstLists_SamusBlinking:
     dw CinematicBGObject_Instruction_GotoY                               ;8CD60F;
     dw CinematicBGObjectInstLists_SamusBlinking                          ;8CD611;
 
+%anchor($8CD613)
 CinematicBGObjectInstLists_SamusBlinkingPage6:
     dw $0040                                                             ;8CD613;
     db $11,$0D                                                           ;8CD615;
@@ -6368,6 +6661,7 @@ CinematicBGObjectInstLists_SamusBlinkingPage6:
     db $11,$0D                                                           ;8CD61B;
     dw IndirectInstructions_IntroText_SamusEyesHalfOpen                  ;8CD61D;
 
+%anchor($8CD61F)
 CinematicBGObjectInstLists_SamusBlinkingDeadpan:
     dw $0010                                                             ;8CD61F;
     db $11,$0D                                                           ;8CD621;
@@ -6375,6 +6669,7 @@ CinematicBGObjectInstLists_SamusBlinkingDeadpan:
     dw CinematicBGObject_Instruction_GotoY                               ;8CD625;
     dw CinematicBGObjectInstLists_SamusBlinkingDeadpan                   ;8CD627;
 
+%anchor($8CD629)
 CinematicBGObjectInstLists_SpaceColony:
     dw $0010                                                             ;8CD629;
     db $0A,$18                                                           ;8CD62B;
@@ -6419,295 +6714,354 @@ CinematicBGObjectInstLists_SpaceColony:
     dw Instruction_FinishFlyToCeres                                      ;8CD679;
     dw CinematicBGObject_Instruction_Delete                              ;8CD67B;
 
+%anchor($8CD67D)
 IndirectInstructions_IntroText_Space:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD67D;
     db $01,$01                                                           ;8CD67F;
     dw $002F                                                             ;8CD681;
 
+%anchor($8CD683)
 IndirectInstructions_IntroText_Nothing:
     dw IndirectInstructionFunction_Nothing                               ;8CD683;
 
+%anchor($8CD685)
 IndirectInstructions_IntroText_A:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD685;
     db $01,$01                                                           ;8CD687;
     dw $2000                                                             ;8CD689;
 
+%anchor($8CD68B)
 IndirectInstructions_IntroText_B:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD68B;
     db $01,$01                                                           ;8CD68D;
     dw $2001                                                             ;8CD68F;
 
+%anchor($8CD691)
 IndirectInstructions_IntroText_C:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD691;
     db $01,$01                                                           ;8CD693;
     dw $2002                                                             ;8CD695;
 
+%anchor($8CD697)
 IndirectInstructions_IntroText_D:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD697;
     db $01,$01                                                           ;8CD699;
     dw $2003                                                             ;8CD69B;
 
+%anchor($8CD69D)
 IndirectInstructions_IntroText_E:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD69D;
     db $01,$01                                                           ;8CD69F;
     dw $2004                                                             ;8CD6A1;
 
+%anchor($8CD6A3)
 IndirectInstructions_IntroText_F:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD6A3;
     db $01,$01                                                           ;8CD6A5;
     dw $2005                                                             ;8CD6A7;
 
+%anchor($8CD6A9)
 IndirectInstructions_IntroText_G:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD6A9;
     db $01,$01                                                           ;8CD6AB;
     dw $2006                                                             ;8CD6AD;
 
+%anchor($8CD6AF)
 IndirectInstructions_IntroText_H:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD6AF;
     db $01,$01                                                           ;8CD6B1;
     dw $2007                                                             ;8CD6B3;
 
+%anchor($8CD6B5)
 IndirectInstructions_IntroText_I:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD6B5;
     db $01,$01                                                           ;8CD6B7;
     dw $2008                                                             ;8CD6B9;
 
+%anchor($8CD6BB)
 IndirectInstructions_IntroText_J:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD6BB;
     db $01,$01                                                           ;8CD6BD;
     dw $2009                                                             ;8CD6BF;
 
+%anchor($8CD6C1)
 IndirectInstructions_IntroText_K:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD6C1;
     db $01,$01                                                           ;8CD6C3;
     dw $200A                                                             ;8CD6C5;
 
+%anchor($8CD6C7)
 IndirectInstructions_IntroText_L:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD6C7;
     db $01,$01                                                           ;8CD6C9;
     dw $200B                                                             ;8CD6CB;
 
+%anchor($8CD6CD)
 IndirectInstructions_IntroText_M:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD6CD;
     db $01,$01                                                           ;8CD6CF;
     dw $200C                                                             ;8CD6D1;
 
+%anchor($8CD6D3)
 IndirectInstructions_IntroText_N:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD6D3;
     db $01,$01                                                           ;8CD6D5;
     dw $200D                                                             ;8CD6D7;
 
+%anchor($8CD6D9)
 IndirectInstructions_IntroText_O:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD6D9;
     db $01,$01                                                           ;8CD6DB;
     dw $200E                                                             ;8CD6DD;
 
+%anchor($8CD6DF)
 IndirectInstructions_IntroText_P:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD6DF;
     db $01,$01                                                           ;8CD6E1;
     dw $200F                                                             ;8CD6E3;
 
+%anchor($8CD6E5)
 IndirectInstructions_IntroText_Q:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD6E5;
     db $01,$01                                                           ;8CD6E7;
     dw $2010                                                             ;8CD6E9;
 
+%anchor($8CD6EB)
 IndirectInstructions_IntroText_R:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD6EB;
     db $01,$01                                                           ;8CD6ED;
     dw $2011                                                             ;8CD6EF;
 
+%anchor($8CD6F1)
 IndirectInstructions_IntroText_S:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD6F1;
     db $01,$01                                                           ;8CD6F3;
     dw $2012                                                             ;8CD6F5;
 
+%anchor($8CD6F7)
 IndirectInstructions_IntroText_T:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD6F7;
     db $01,$01                                                           ;8CD6F9;
     dw $2013                                                             ;8CD6FB;
 
+%anchor($8CD6FD)
 IndirectInstructions_IntroText_U:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD6FD;
     db $01,$01                                                           ;8CD6FF;
     dw $2014                                                             ;8CD701;
 
+%anchor($8CD703)
 IndirectInstructions_IntroText_V:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD703;
     db $01,$01                                                           ;8CD705;
     dw $2015                                                             ;8CD707;
 
+%anchor($8CD709)
 IndirectInstructions_IntroText_W:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD709;
     db $01,$01                                                           ;8CD70B;
     dw $2016                                                             ;8CD70D;
 
+%anchor($8CD70F)
 IndirectInstructions_IntroText_X:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD70F;
     db $01,$01                                                           ;8CD711;
     dw $2017                                                             ;8CD713;
 
+%anchor($8CD715)
 IndirectInstructions_IntroText_Y:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD715;
     db $01,$01                                                           ;8CD717;
     dw $2018                                                             ;8CD719;
 
+%anchor($8CD71B)
 IndirectInstructions_IntroText_Z:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD71B;
     db $01,$01                                                           ;8CD71D;
     dw $2019                                                             ;8CD71F;
 
+%anchor($8CD721)
 IndirectInstructions_IntroText_0:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD721;
     db $01,$01                                                           ;8CD723;
     dw $201A                                                             ;8CD725;
 
+%anchor($8CD727)
 IndirectInstructions_IntroText_1:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD727;
     db $01,$01                                                           ;8CD729;
     dw $201B                                                             ;8CD72B;
 
+%anchor($8CD72D)
 IndirectInstructions_IntroText_2:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD72D;
     db $01,$01                                                           ;8CD72F;
     dw $201C                                                             ;8CD731;
 
+%anchor($8CD733)
 IndirectInstructions_IntroText_3:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD733;
     db $01,$01                                                           ;8CD735;
     dw $201D                                                             ;8CD737;
 
+%anchor($8CD739)
 IndirectInstructions_IntroText_4:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD739;
     db $01,$01                                                           ;8CD73B;
     dw $201E                                                             ;8CD73D;
 
+%anchor($8CD73F)
 IndirectInstructions_IntroText_5:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD73F;
     db $01,$01                                                           ;8CD741;
     dw $201F                                                             ;8CD743;
 
+%anchor($8CD745)
 IndirectInstructions_IntroText_6:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD745;
     db $01,$01                                                           ;8CD747;
     dw $2020                                                             ;8CD749;
 
+%anchor($8CD74B)
 IndirectInstructions_IntroText_7:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD74B;
     db $01,$01                                                           ;8CD74D;
     dw $2021                                                             ;8CD74F;
 
+%anchor($8CD751)
 IndirectInstructions_IntroText_8:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD751;
     db $01,$01                                                           ;8CD753;
     dw $2022                                                             ;8CD755;
 
+%anchor($8CD757)
 IndirectInstructions_IntroText_9:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD757;
     db $01,$01                                                           ;8CD759;
     dw $2023                                                             ;8CD75B;
 
+%anchor($8CD75D)
 IndirectInstructions_IntroText_Period:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD75D;
     db $01,$01                                                           ;8CD75F;
     dw $2024                                                             ;8CD761;
 
+%anchor($8CD763)
 IndirectInstructions_IntroText_Comma:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD763;
     db $01,$01                                                           ;8CD765;
     dw $2025                                                             ;8CD767;
 
+%anchor($8CD769)
 IndirectInstructions_IntroText_DecimalPoint:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD769;
     db $01,$01                                                           ;8CD76B;
     dw $2026                                                             ;8CD76D;
 
+%anchor($8CD76F)
 IndirectInstructions_IntroText_Apostrophe:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD76F;
     db $01,$01                                                           ;8CD771;
     dw $2027                                                             ;8CD773;
 
+%anchor($8CD775)
 IndirectInstructions_IntroText_Colon:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD775;
     db $01,$01                                                           ;8CD777;
     dw $2028                                                             ;8CD779;
 
+%anchor($8CD77B)
 IndirectInstructions_IntroText_ExclamationPoint:
     dw IndirectInstructionFunction_DrawTextCharacter                     ;8CD77B;
     db $01,$01                                                           ;8CD77D;
     dw $202A                                                             ;8CD77F;
 
+%anchor($8CD781)
 IndirectInstructions_IntroText_SamusEyesOpen:
     dw IndirectInstructionFunction_DrawSamusEyesToTilemap                ;8CD781;
     db $03,$02                                                           ;8CD783;
     dw $0F89,$0F8A,$0F8B,$0F99,$0F9A,$0F9B                               ;8CD785;
 
+%anchor($8CD791)
 IndirectInstructions_IntroText_SamusEyesHalfOpen:
     dw IndirectInstructionFunction_DrawSamusEyesToTilemap                ;8CD791;
     db $03,$02                                                           ;8CD793;
     dw $0F1D,$0F1E,$0F1F,$0F2D,$0F2E,$0F2F                               ;8CD795;
 
+%anchor($8CD7A1)
 IndirectInstructions_IntroText_SamusEyesClosed:
     dw IndirectInstructionFunction_DrawSamusEyesToTilemap                ;8CD7A1;
     db $03,$02                                                           ;8CD7A3;
     dw $0F3A,$0F3B,$0F3C,$0F4A,$0F4B,$0F4C                               ;8CD7A5;
 
+%anchor($8CD7B1)
 IndirectInstructions_IntroText_SamusEyesDeadpan:
     dw IndirectInstructionFunction_DrawSamusEyesToTilemap                ;8CD7B1;
     db $03,$02                                                           ;8CD7B3;
     dw $0F3D,$0F3E,$0F3F,$0F4D,$0F4E,$0F4F                               ;8CD7B5;
 
+%anchor($8CD7C1)
 IndirectInstructions_IntroText_SpaceColony_S:
     dw IndirectInstructionFunction_DrawTextToTilemap                     ;8CD7C1;
     db $01,$01                                                           ;8CD7C3;
     dw $21ED                                                             ;8CD7C5;
 
+%anchor($8CD7C7)
 IndirectInstructions_IntroText_SpaceColony_P:
     dw IndirectInstructionFunction_DrawTextToTilemap                     ;8CD7C7;
     db $01,$01                                                           ;8CD7C9;
     dw $21EE                                                             ;8CD7CB;
 
+%anchor($8CD7CD)
 IndirectInstructions_IntroText_SpaceColony_A:
     dw IndirectInstructionFunction_DrawTextToTilemap                     ;8CD7CD;
     db $01,$01                                                           ;8CD7CF;
     dw $21EF                                                             ;8CD7D1;
 
+%anchor($8CD7D3)
 IndirectInstructions_IntroText_SpaceColony_C:
     dw IndirectInstructionFunction_DrawTextToTilemap                     ;8CD7D3;
     db $01,$01                                                           ;8CD7D5;
     dw $21F7                                                             ;8CD7D7;
 
+%anchor($8CD7D9)
 IndirectInstructions_IntroText_SpaceColony_E:
     dw IndirectInstructionFunction_DrawTextToTilemap                     ;8CD7D9;
     db $01,$01                                                           ;8CD7DB;
     dw $21F8                                                             ;8CD7DD;
 
+%anchor($8CD7DF)
 IndirectInstructions_IntroText_SpaceColony_O:
     dw IndirectInstructionFunction_DrawTextToTilemap                     ;8CD7DF;
     db $01,$01                                                           ;8CD7E1;
     dw $21F9                                                             ;8CD7E3;
 
+%anchor($8CD7E5)
 IndirectInstructions_IntroText_SpaceColony_L:
     dw IndirectInstructionFunction_DrawTextToTilemap                     ;8CD7E5;
     db $01,$01                                                           ;8CD7E7;
     dw $21FA                                                             ;8CD7E9;
 
+%anchor($8CD7EB)
 IndirectInstructions_IntroText_SpaceColony_N:
     dw IndirectInstructionFunction_DrawTextToTilemap                     ;8CD7EB;
     db $01,$01                                                           ;8CD7ED;
     dw $21FB                                                             ;8CD7EF;
 
+%anchor($8CD7F1)
 IndirectInstructions_IntroText_SpaceColony_Y:
     dw IndirectInstructionFunction_DrawTextToTilemap                     ;8CD7F1;
     db $01,$01                                                           ;8CD7F3;
     dw $21B9                                                             ;8CD7F5;
 
+%anchor($8CD7F7)
 IndirectInstructions_IntroText_JapanText_SpaceColony:
     dw IndirectInstructionFunction_DrawTextToTilemap                     ;8CD7F7;
     db $08,$02                                                           ;8CD7F9;
     dw $21BA,$21BB,$21B3,$21BA,$21BC,$20E0,$20E1,$21B3                   ;8CD7FB;
     dw $20E2,$20E3,$21B4,$20E2,$20E4,$21A3,$21A4,$21B4                   ;8CD80B;
 
+%anchor($8CD81B)
 InitialIntroJapanTextTilemap:
     dw $002F,$002F,$002F,$002F,$002F,$002F,$002F,$002F                   ;8CD81B;
     dw $002F,$105A,$105B,$105C,$105D,$105E,$105F,$1070                   ;8CD82B;
@@ -6726,10 +7080,12 @@ InitialIntroJapanTextTilemap:
     dw $1082,$108E,$1086,$108F,$1026,$1026,$1026,$002F                   ;8CD8FB;
     dw $002F,$002F,$002F,$002F,$002F,$002F,$002F,$002F                   ;8CD90B;
 
+%anchor($8CD91B)
 InstList_Credits_Start:
     dw Instruction_CreditsObject_TimerInY                                ;8CD91B;
     dw $0008                                                             ;8CD91D;
 
+%anchor($8CD91F)
 InstList_Credits_SuperMetroidStaff:
     dw $0000,$1FC0                                                       ;8CD91F;
     dw Instruction_CreditsObject_DecrementTimer_GotoYIfNonZero           ;8CD923;
@@ -6738,6 +7094,7 @@ InstList_Credits_SuperMetroidStaff:
     dw Instruction_CreditsObject_TimerInY                                ;8CD92B;
     dw $0010                                                             ;8CD92D;
 
+%anchor($8CD92F)
 InstList_Credits_Producer:
     dw $0000,$1FC0                                                       ;8CD92F;
     dw Instruction_CreditsObject_DecrementTimer_GotoYIfNonZero           ;8CD933;
@@ -6746,6 +7103,7 @@ InstList_Credits_Producer:
     dw Instruction_CreditsObject_TimerInY                                ;8CD947;
     dw $0010                                                             ;8CD949;
 
+%anchor($8CD94B)
 InstList_Credits_Director:
     dw $0000,$1FC0                                                       ;8CD94B;
     dw Instruction_CreditsObject_DecrementTimer_GotoYIfNonZero           ;8CD94F;
@@ -6754,6 +7112,7 @@ InstList_Credits_Director:
     dw Instruction_CreditsObject_TimerInY                                ;8CD963;
     dw $0010                                                             ;8CD965;
 
+%anchor($8CD967)
 InstList_Credits_BackgroundDesigners:
     dw $0000,$1FC0                                                       ;8CD967;
     dw Instruction_CreditsObject_DecrementTimer_GotoYIfNonZero           ;8CD96B;
@@ -6764,6 +7123,7 @@ InstList_Credits_BackgroundDesigners:
     dw Instruction_CreditsObject_TimerInY                                ;8CD997;
     dw $0010                                                             ;8CD999;
 
+%anchor($8CD99B)
 InstList_Credits_ObjectDesigners:
     dw $0000,$1FC0                                                       ;8CD99B;
     dw Instruction_CreditsObject_DecrementTimer_GotoYIfNonZero           ;8CD99F;
@@ -6773,6 +7133,7 @@ InstList_Credits_ObjectDesigners:
     dw Instruction_CreditsObject_TimerInY                                ;8CD9BF;
     dw $0010                                                             ;8CD9C1;
 
+%anchor($8CD9C3)
 InstList_Credits_SamusOriginalDesigner:
     dw $0000,$1FC0                                                       ;8CD9C3;
     dw Instruction_CreditsObject_DecrementTimer_GotoYIfNonZero           ;8CD9C7;
@@ -6781,6 +7142,7 @@ InstList_Credits_SamusOriginalDesigner:
     dw Instruction_CreditsObject_TimerInY                                ;8CD9DB;
     dw $0010                                                             ;8CD9DD;
 
+%anchor($8CD9DF)
 InstList_Credits_SamusDesigner:
     dw $0000,$1FC0                                                       ;8CD9DF;
     dw Instruction_CreditsObject_DecrementTimer_GotoYIfNonZero           ;8CD9E3;
@@ -6789,6 +7151,7 @@ InstList_Credits_SamusDesigner:
     dw Instruction_CreditsObject_TimerInY                                ;8CD9F7;
     dw $0010                                                             ;8CD9F9;
 
+%anchor($8CD9FB)
 InstList_Credits_SoundProgram:
     dw $0000,$1FC0                                                       ;8CD9FB;
     dw Instruction_CreditsObject_DecrementTimer_GotoYIfNonZero           ;8CD9FF;
@@ -6798,6 +7161,7 @@ InstList_Credits_SoundProgram:
     dw Instruction_CreditsObject_TimerInY                                ;8CDA17;
     dw $0010                                                             ;8CDA19;
 
+%anchor($8CDA1B)
 InstList_Credits_MusicComposers:
     dw $0000,$1FC0                                                       ;8CDA1B;
     dw Instruction_CreditsObject_DecrementTimer_GotoYIfNonZero           ;8CDA1F;
@@ -6807,6 +7171,7 @@ InstList_Credits_MusicComposers:
     dw Instruction_CreditsObject_TimerInY                                ;8CDA3F;
     dw $0010                                                             ;8CDA41;
 
+%anchor($8CDA43)
 InstList_Credits_ProgramDirector:
     dw $0000,$1FC0                                                       ;8CDA43;
     dw Instruction_CreditsObject_DecrementTimer_GotoYIfNonZero           ;8CDA47;
@@ -6815,6 +7180,7 @@ InstList_Credits_ProgramDirector:
     dw Instruction_CreditsObject_TimerInY                                ;8CDA5B;
     dw $0010                                                             ;8CDA5D;
 
+%anchor($8CDA5F)
 InstList_Credits_SystemCoordinator:
     dw $0000,$1FC0                                                       ;8CDA5F;
     dw Instruction_CreditsObject_DecrementTimer_GotoYIfNonZero           ;8CDA63;
@@ -6823,6 +7189,7 @@ InstList_Credits_SystemCoordinator:
     dw Instruction_CreditsObject_TimerInY                                ;8CDA77;
     dw $0010                                                             ;8CDA79;
 
+%anchor($8CDA7B)
 InstList_Credits_SystemProgrammer:
     dw $0000,$1FC0                                                       ;8CDA7B;
     dw Instruction_CreditsObject_DecrementTimer_GotoYIfNonZero           ;8CDA7F;
@@ -6831,6 +7198,7 @@ InstList_Credits_SystemProgrammer:
     dw Instruction_CreditsObject_TimerInY                                ;8CDA93;
     dw $0010                                                             ;8CDA95;
 
+%anchor($8CDA97)
 InstList_Credits_SamusProgrammer:
     dw $0000,$1FC0                                                       ;8CDA97;
     dw Instruction_CreditsObject_DecrementTimer_GotoYIfNonZero           ;8CDA9B;
@@ -6839,6 +7207,7 @@ InstList_Credits_SamusProgrammer:
     dw Instruction_CreditsObject_TimerInY                                ;8CDAAF;
     dw $0010                                                             ;8CDAB1;
 
+%anchor($8CDAB3)
 InstList_Credits_EventProgrammer:
     dw $0000,$1FC0                                                       ;8CDAB3;
     dw Instruction_CreditsObject_DecrementTimer_GotoYIfNonZero           ;8CDAB7;
@@ -6847,6 +7216,7 @@ InstList_Credits_EventProgrammer:
     dw Instruction_CreditsObject_TimerInY                                ;8CDACB;
     dw $0010                                                             ;8CDACD;
 
+%anchor($8CDACF)
 InstList_Credits_EnemyProgrammer:
     dw $0000,$1FC0                                                       ;8CDACF;
     dw Instruction_CreditsObject_DecrementTimer_GotoYIfNonZero           ;8CDAD3;
@@ -6855,6 +7225,7 @@ InstList_Credits_EnemyProgrammer:
     dw Instruction_CreditsObject_TimerInY                                ;8CDAE7;
     dw $0010                                                             ;8CDAE9;
 
+%anchor($8CDAEB)
 InstList_Credits_MapProgrammer:
     dw $0000,$1FC0                                                       ;8CDAEB;
     dw Instruction_CreditsObject_DecrementTimer_GotoYIfNonZero           ;8CDAEF;
@@ -6863,6 +7234,7 @@ InstList_Credits_MapProgrammer:
     dw Instruction_CreditsObject_TimerInY                                ;8CDB03;
     dw $0010                                                             ;8CDB05;
 
+%anchor($8CDB07)
 InstList_Credits_AssistantProgrammer:
     dw $0000,$1FC0                                                       ;8CDB07;
     dw Instruction_CreditsObject_DecrementTimer_GotoYIfNonZero           ;8CDB0B;
@@ -6871,6 +7243,7 @@ InstList_Credits_AssistantProgrammer:
     dw Instruction_CreditsObject_TimerInY                                ;8CDB1F;
     dw $0010                                                             ;8CDB21;
 
+%anchor($8CDB23)
 InstList_Credits_Coordinators:
     dw $0000,$1FC0                                                       ;8CDB23;
     dw Instruction_CreditsObject_DecrementTimer_GotoYIfNonZero           ;8CDB27;
@@ -6880,6 +7253,7 @@ InstList_Credits_Coordinators:
     dw Instruction_CreditsObject_TimerInY                                ;8CDB47;
     dw $0010                                                             ;8CDB49;
 
+%anchor($8CDB4B)
 InstList_Credits_PrintedArtWork:
     dw $0000,$1FC0                                                       ;8CDB4B;
     dw Instruction_CreditsObject_DecrementTimer_GotoYIfNonZero           ;8CDB4F;
@@ -6892,6 +7266,7 @@ InstList_Credits_PrintedArtWork:
     dw Instruction_CreditsObject_TimerInY                                ;8CDB9F;
     dw $0010                                                             ;8CDBA1;
 
+%anchor($8CDBA3)
 InstList_Credits_SpecialThanksTo:
     dw $0000,$1FC0                                                       ;8CDBA3;
     dw Instruction_CreditsObject_DecrementTimer_GotoYIfNonZero           ;8CDBA7;
@@ -6912,6 +7287,7 @@ InstList_Credits_SpecialThanksTo:
     dw Instruction_CreditsObject_TimerInY                                ;8CDC6F;
     dw $0010                                                             ;8CDC71;
 
+%anchor($8CDC73)
 InstList_Credits_GeneralManager:
     dw $0000,$1FC0                                                       ;8CDC73;
     dw Instruction_CreditsObject_DecrementTimer_GotoYIfNonZero           ;8CDC77;
@@ -6920,6 +7296,7 @@ InstList_Credits_GeneralManager:
     dw Instruction_CreditsObject_TimerInY                                ;8CDC8B;
     dw $0023                                                             ;8CDC8D;
 
+%anchor($8CDC8F)
 InstList_Credits_End:
     dw $0000,$1FC0                                                       ;8CDC8F;
     dw Instruction_CreditsObject_DecrementTimer_GotoYIfNonZero           ;8CDC93;
@@ -6927,6 +7304,7 @@ InstList_Credits_End:
     dw Instruction_EndCredits                                            ;8CDC97;
     dw Instruction_CreditsObject_Delete                                  ;8CDC99;
 
+%anchor($8CDC9B)
 Tilemap_PostCredits_DeeRForCe:
     dw $004F,$004F,$004F,$004F,$004F,$004F,$004F,$004F                   ;8CDC9B;
     dw $004F,$004F,$000F,$0011,$000E,$0003,$0014,$0002                   ;8CDCAB;
@@ -6965,6 +7343,7 @@ Tilemap_PostCredits_DeeRForCe:
     dw $1C38,$1C3A,$1C30,$1C3C,$1C30,$1C51,$1C54,$004F                   ;8CDEBB;
     dw $004F,$004F,$004F,$004F,$004F,$004F,$004F,$004F                   ;8CDECB;
 
+%anchor($8CDEDB)
 Tilemap_PostCredits_1994Nintendo:
     dw $007F,$007F,$007F,$007F,$007F,$007F,$007F,$007F                   ;8CDEDB;
     dw $007F,$0061,$0069,$0069,$0064,$007F,$007F,$002D                   ;8CDEEB;
@@ -6975,6 +7354,7 @@ Tilemap_PostCredits_1994Nintendo:
     dw $0038,$003D,$0053,$0034,$003D,$0033,$003E,$007F                   ;8CDF3B;
     dw $007F,$007F,$007F,$007F,$007F,$007F,$007F,$007F                   ;8CDF4B;
 
+%anchor($8CDF5B)
 Tilemap_PostCredits_ItemPercentageJapanText:
     dw $004F,$004F,$004F,$004F,$004F,$004F,$004F,$004F                   ;8CDF5B;
     dw $004F,$005B,$005C,$005D,$005E,$005F,$0080,$0081                   ;8CDF6B;
@@ -6985,6 +7365,7 @@ Tilemap_PostCredits_ItemPercentageJapanText:
     dw $0092,$0093,$0094,$0095,$0096,$0097,$004F,$004F                   ;8CDFBB;
     dw $004F,$004F,$004F,$004F,$004F,$004F,$004F,$004F                   ;8CDFCB;
 
+%anchor($8CDFDB)
 CinematicBGObjectInstLists_Ending_ItemPercentage:
     dw $0040                                                             ;8CDFDB;
     db $00,$00                                                           ;8CDFDD;
@@ -7093,6 +7474,7 @@ CinematicBGObjectInstLists_Ending_ItemPercentage:
     dw Instruction_ClearItemPercentageJapanText                          ;8CE0AB;
     dw CinematicBGObject_Instruction_Delete                              ;8CE0AD;
 
+%anchor($8CE0AF)
 CinematicBGObjectInstLists_Ending_SeeYouNextMission:
     dw $0040                                                             ;8CE0AF;
     db $00,$00                                                           ;8CE0B1;
@@ -7159,144 +7541,173 @@ CinematicBGObjectInstLists_Ending_SeeYouNextMission:
     dw IndirectInstructions_Ending_N                                     ;8CE12B;
     dw CinematicBGObject_Instruction_Delete                              ;8CE12D;
 
+%anchor($8CE12F)
 IndirectInstructions_Ending_Nothing:
     dw IndirectInstructionFunction_Nothing                               ;8CE12F;
 
+%anchor($8CE131)
 IndirectInstructions_Ending_Space:
     dw IndirectInstructionFunction_DrawTextToTilemap                     ;8CE131;
     db $01,$02                                                           ;8CE133;
     dw $207F,$207F                                                       ;8CE135;
 
+%anchor($8CE139)
 IndirectInstructions_Ending_S:
     dw IndirectInstructionFunction_DrawTextToTilemap                     ;8CE139;
     db $01,$02                                                           ;8CE13B;
     dw $2042,$2052                                                       ;8CE13D;
 
+%anchor($8CE141)
 IndirectInstructions_Ending_E:
     dw IndirectInstructionFunction_DrawTextToTilemap                     ;8CE141;
     db $01,$02                                                           ;8CE143;
     dw $2024,$2034                                                       ;8CE145;
 
+%anchor($8CE149)
 IndirectInstructions_Ending_Y:
     dw IndirectInstructionFunction_DrawTextToTilemap                     ;8CE149;
     db $01,$02                                                           ;8CE14B;
     dw $2048,$2058                                                       ;8CE14D;
 
+%anchor($8CE151)
 IndirectInstructions_Ending_O:
     dw IndirectInstructionFunction_DrawTextToTilemap                     ;8CE151;
     db $01,$02                                                           ;8CE153;
     dw $202E,$203E                                                       ;8CE155;
 
+%anchor($8CE159)
 IndirectInstructions_Ending_U:
     dw IndirectInstructionFunction_DrawTextToTilemap                     ;8CE159;
     db $01,$02                                                           ;8CE15B;
     dw $2044,$2054                                                       ;8CE15D;
 
+%anchor($8CE161)
 IndirectInstructions_Ending_N:
     dw IndirectInstructionFunction_DrawTextToTilemap                     ;8CE161;
     db $01,$02                                                           ;8CE163;
     dw $202D,$203D                                                       ;8CE165;
 
+%anchor($8CE169)
 IndirectInstructions_Ending_X:
     dw IndirectInstructionFunction_DrawTextToTilemap                     ;8CE169;
     db $01,$02                                                           ;8CE16B;
     dw $2047,$2057                                                       ;8CE16D;
 
+%anchor($8CE171)
 IndirectInstructions_Ending_T:
     dw IndirectInstructionFunction_DrawTextToTilemap                     ;8CE171;
     db $01,$02                                                           ;8CE173;
     dw $2043,$2053                                                       ;8CE175;
 
+%anchor($8CE179)
 IndirectInstructions_Ending_M:
     dw IndirectInstructionFunction_DrawTextToTilemap                     ;8CE179;
     db $01,$02                                                           ;8CE17B;
     dw $202C,$203C                                                       ;8CE17D;
 
+%anchor($8CE181)
 IndirectInstructions_Ending_I:
     dw IndirectInstructionFunction_DrawTextToTilemap                     ;8CE181;
     db $01,$02                                                           ;8CE183;
     dw $2028,$2038                                                       ;8CE185;
 
+%anchor($8CE189)
 IndirectInstructions_EndingSmall_A:
     dw IndirectInstructionFunction_DrawTextToTilemap                     ;8CE189;
     db $01,$01                                                           ;8CE18B;
     dw $3C00                                                             ;8CE18D;
 
+%anchor($8CE18F)
 IndirectInstructions_EndingSmall_C:
     dw IndirectInstructionFunction_DrawTextToTilemap                     ;8CE18F;
     db $01,$01                                                           ;8CE191;
     dw $3C02                                                             ;8CE193;
 
+%anchor($8CE195)
 IndirectInstructions_EndingSmall_E:
     dw IndirectInstructionFunction_DrawTextToTilemap                     ;8CE195;
     db $01,$01                                                           ;8CE197;
     dw $3C04                                                             ;8CE199;
 
+%anchor($8CE19B)
 IndirectInstructions_EndingSmall_F:
     dw IndirectInstructionFunction_DrawTextToTilemap                     ;8CE19B;
     db $01,$01                                                           ;8CE19D;
     dw $3C05                                                             ;8CE19F;
 
+%anchor($8CE1A1)
 IndirectInstructions_EndingSmall_G:
     dw IndirectInstructionFunction_DrawTextToTilemap                     ;8CE1A1;
     db $01,$01                                                           ;8CE1A3;
     dw $3C06                                                             ;8CE1A5;
 
+%anchor($8CE1A7)
 IndirectInstructions_EndingSmall_I:
     dw IndirectInstructionFunction_DrawTextToTilemap                     ;8CE1A7;
     db $01,$01                                                           ;8CE1A9;
     dw $3C08                                                             ;8CE1AB;
 
+%anchor($8CE1AD)
 IndirectInstructions_EndingSmall_L:
     dw IndirectInstructionFunction_DrawTextToTilemap                     ;8CE1AD;
     db $01,$01                                                           ;8CE1AF;
     dw $3C0B                                                             ;8CE1B1;
 
+%anchor($8CE1B3)
 IndirectInstructions_EndingSmall_M:
     dw IndirectInstructionFunction_DrawTextToTilemap                     ;8CE1B3;
     db $01,$01                                                           ;8CE1B5;
     dw $3C0C                                                             ;8CE1B7;
 
+%anchor($8CE1B9)
 IndirectInstructions_EndingSmall_N:
     dw IndirectInstructionFunction_DrawTextToTilemap                     ;8CE1B9;
     db $01,$01                                                           ;8CE1BB;
     dw $3C0D                                                             ;8CE1BD;
 
+%anchor($8CE1BF)
 IndirectInstructions_EndingSmall_O:
     dw IndirectInstructionFunction_DrawTextToTilemap                     ;8CE1BF;
     db $01,$01                                                           ;8CE1C1;
     dw $3C0E                                                             ;8CE1C3;
 
+%anchor($8CE1C5)
 IndirectInstructions_EndingSmall_R:
     dw IndirectInstructionFunction_DrawTextToTilemap                     ;8CE1C5;
     db $01,$01                                                           ;8CE1C7;
     dw $3C11                                                             ;8CE1C9;
 
+%anchor($8CE1CB)
 IndirectInstructions_EndingSmall_S:
     dw IndirectInstructionFunction_DrawTextToTilemap                     ;8CE1CB;
     db $01,$01                                                           ;8CE1CD;
     dw $3C12                                                             ;8CE1CF;
 
+%anchor($8CE1D1)
 IndirectInstructions_EndingSmall_T:
     dw IndirectInstructionFunction_DrawTextToTilemap                     ;8CE1D1;
     db $01,$01                                                           ;8CE1D3;
     dw $3C13                                                             ;8CE1D5;
 
+%anchor($8CE1D7)
 IndirectInstructions_EndingSmall_U:
     dw IndirectInstructionFunction_DrawTextToTilemap                     ;8CE1D7;
     db $01,$01                                                           ;8CE1D9;
     dw $3C14                                                             ;8CE1DB;
 
+%anchor($8CE1DD)
 IndirectInstructions_EndingSmall_Y:
     dw IndirectInstructionFunction_DrawTextToTilemap                     ;8CE1DD;
     db $01,$01                                                           ;8CE1DF;
     dw $3C18                                                             ;8CE1E1;
 
+%anchor($8CE1E3)
 IndirectInstructions_EndingSmall_Space:
     dw IndirectInstructionFunction_DrawTextToTilemap                     ;8CE1E3;
     db $01,$01                                                           ;8CE1E5;
     dw $207F                                                             ;8CE1E7;
 
+%anchor($8CE1E9)
 Palettes_TitleScreen:
     dw $0000,$02DF,$01D7,$00AC,$5EBB,$3DB3,$292E,$1486                   ;8CE1E9;
     dw $48FB,$48FB,$7FFF,$0000,$7FFF,$44E5,$7FFF,$0000                   ;8CE1F9;
@@ -7331,17 +7742,21 @@ Palettes_TitleScreen:
     dw $1000,$033B,$001F,$0174,$080A,$7FFF,$0D66,$00E2                   ;8CE3C9;
     dw $0299,$0000,$0000,$0000,$0000,$0000,$7FFF,$0000                   ;8CE3D9;
 
+%anchor($8CE3E9)
 Palettes_Intro:
     dw $0000,$03E0,$6318,$0340,$3BE0,$03E0,$6318,$0280                   ;8CE3E9;
     dw $2680,$03E0,$6318,$0200,$1580,$03E0,$6318,$0160                   ;8CE3F9;
     dw $0000                                                             ;8CE409;
 
+%anchor($8CE40B)
 Palettes_Intro_nonExistentIntroText1:
     dw $7FFF                                                             ;8CE40B;
 
+%anchor($8CE40D)
 Palettes_Intro_nonExistentIntroText2:
     dw $0000                                                             ;8CE40D;
 
+%anchor($8CE40F)
 Palettes_Intro_nonExistentIntroText3:
     dw $294A,$7FFF,$6318,$294A,$6318,$6318,$6318,$6318                   ;8CE40F;
     dw $6318,$6318,$6318,$0000,$6318,$0000,$77FF,$677B                   ;8CE41F;
@@ -7370,14 +7785,17 @@ Palettes_Intro_nonExistentIntroText3:
     dw $2DCE,$1908,$4294,$2DCE,$1908,$4294,$2DCE,$1908                   ;8CE58F;
     dw $4294,$2DCE,$1908,$1084,$77FF                                     ;8CE59F;
 
+%anchor($8CE5A9)
 Palettes_Intro_CrossFade:
     dw $3800,$77FF,$677B,$52D6,$4252,$2DAD,$1908,$10C6                   ;8CE5A9;
     dw $0884,$7C00,$5800,$3400,$1000,$03E0,$15C0,$0000                   ;8CE5B9;
 
+%anchor($8CE5C9)
 Palettes_Intro_MotherBrain:
     dw $3800,$77FF,$4252,$1084,$0842,$5739,$2DCE,$2108                   ;8CE5C9;
     dw $14A5,$5318,$2DEF,$194A,$10C6,$77FF,$77FF,$0000                   ;8CE5D9;
 
+%anchor($8CE5E9)
 Palettes_SpaceGunshipCeres:
     dw $0000,$7FFF,$6318,$294A,$6318,$6318,$6318,$6318                   ;8CE5E9;
     dw $6318,$6318,$6318,$6318,$6318,$6318,$6318,$6318                   ;8CE5F9;
@@ -7412,6 +7830,7 @@ Palettes_SpaceGunshipCeres:
     dw $3800,$233F,$1A9E,$1A3B,$11D8,$0933,$00AE,$004A                   ;8CE7C9;
     dw $0001,$7F20,$75A0,$5500,$3840,$2020,$0404,$0000                   ;8CE7D9;
 
+%anchor($8CE7E9)
 Palettes_PostCredits:
     dw $0420,$7FFF,$7FFF,$7FFF,$7FFF,$03E0,$001F,$7C00                   ;8CE7E9;
     dw $7FFF,$7FFF,$7FFF,$7FFF,$7FFF,$7FFF,$7FFF,$7FFF                   ;8CE7F9;
@@ -7446,6 +7865,7 @@ Palettes_PostCredits:
     dw $3800,$28E7,$76F7,$1405,$63E0,$28E7,$579F,$66D6                   ;8CE9C9;
     dw $4D8C,$62B5,$454A,$1C84,$6273,$28E7,$354A,$1C84                   ;8CE9D9;
 
+%anchor($8CE9E9)
 Palettes_Credits:
     dw $0000,$739C,$28C6,$6318,$6318,$6318,$6318,$6318                   ;8CE9E9;
     dw $6318,$6318,$6318,$6318,$6318,$6318,$6318,$6318                   ;8CE9F9;
@@ -7480,6 +7900,7 @@ Palettes_Credits:
     dw $3800,$77FF,$4252,$1084,$0842,$5739,$2DCE,$2108                   ;8CEBC9;
     dw $14A5,$5318,$2DEF,$194A,$10C6,$77FF,$77FF,$0000                   ;8CEBD9;
 
+%anchor($8CEBE9)
 Palettes_ZebesExplosionScene:
     dw $0000,$7FFF,$77BD,$6F7B,$6318,$5AD6,$5294,$4A52                   ;8CEBE9;
     dw $4210,$35AD,$2D6B,$2529,$1CE7,$14A5,$0842,$0000                   ;8CEBF9;
@@ -7514,6 +7935,7 @@ Palettes_ZebesExplosionScene:
     dw $3800,$233F,$1A9E,$1A3B,$11D8,$0933,$00AE,$004A                   ;8CEDC9;
     dw $0001,$7DFF,$6819,$5413,$340A,$2004,$1403,$0000                   ;8CEDD9;
 
+%anchor($8CEDE9)
 Palettes_CloudSpritesInZebesExplosionScene:
     dw $0000,$0000,$0000,$0000,$0000,$0000,$0000,$0000                   ;8CEDE9;
     dw $0000,$0000,$0000,$0000,$0000,$0000,$0000,$0000                   ;8CEDF9;
@@ -7548,139 +7970,174 @@ Palettes_CloudSpritesInZebesExplosionScene:
     dw $3800,$233F,$1A9E,$1A3B,$11D8,$0933,$00AE,$004A                   ;8CEFC9;
     dw $0001,$7DFF,$6819,$5413,$340A,$2004,$1403,$0000                   ;8CEFD9;
 
+%anchor($8CEFE9)
 Palettes_EndingSuperMetroidIconFadingToGrey_Sprite_0:
     dw $0000,$013F,$0030,$0005,$025F,$00F2,$0029,$035F                   ;8CEFE9;
     dw $0192,$0089,$7BE0,$7980,$4400,$43FF,$03FF                         ;8CEFF9;
 
+%anchor($8CF007)
 Palettes_EndingSuperMetroidIconFadingToGrey_Sprite_1:
     dw $1C84,$0000,$011D,$002F,$0004,$021D,$00D0,$0028                   ;8CF007;
     dw $031D,$0170,$0068,$73A0,$7160,$3C00,$3FBD,$03BD                   ;8CF017;
 
+%anchor($8CF027)
 Palettes_EndingSuperMetroidIconFadingToGrey_Sprite_2:
     dw $1863,$0000,$00FA,$000D,$0004,$01FA,$00CF,$0007                   ;8CF027;
     dw $02DA,$014F,$0067,$6B40,$6940,$3800,$375A,$035A                   ;8CF037;
 
+%anchor($8CF047)
 Palettes_EndingSuperMetroidIconFadingToGrey_Sprite_3:
     dw $1863,$0000,$00F8,$000C,$0004,$01D8,$00AE,$0007                   ;8CF047;
     dw $0298,$012E,$0067,$6300,$6120,$3400,$3318,$0318                   ;8CF057;
 
+%anchor($8CF067)
 Palettes_EndingSuperMetroidIconFadingToGrey_Sprite_4:
     dw $1463,$0000,$00D6,$000B,$0003,$01B6,$00AD,$0006                   ;8CF067;
     dw $0276,$010D,$0066,$5AC0,$5900,$3000,$2ED6,$02D6                   ;8CF077;
 
+%anchor($8CF087)
 Palettes_EndingSuperMetroidIconFadingToGrey_Sprite_5:
     dw $1463,$0000,$00D4,$000A,$0003,$0194,$008C,$0006                   ;8CF087;
     dw $0234,$010C,$0046,$5280,$5100,$2C00,$2A94,$0294                   ;8CF097;
 
+%anchor($8CF0A7)
 Palettes_EndingSuperMetroidIconFadingToGrey_Sprite_6:
     dw $1042,$0000,$00B2,$0009,$0003,$0152,$008A,$0005                   ;8CF0A7;
     dw $01F2,$00EA,$0045,$4A40,$48E0,$2800,$2652,$0252                   ;8CF0B7;
 
+%anchor($8CF0C7)
 Palettes_EndingSuperMetroidIconFadingToGrey_Sprite_7:
     dw $1042,$0000,$0090,$0008,$0002,$0130,$0069,$0004                   ;8CF0C7;
     dw $01B0,$00C9,$0044,$4200,$40C0,$2400,$2210,$0210                   ;8CF0D7;
 
+%anchor($8CF0E7)
 Palettes_EndingSuperMetroidIconFadingToGrey_Sprite_8:
     dw $0C42,$0000,$008E,$0007,$0002,$010E,$0068,$0004                   ;8CF0E7;
     dw $018E,$00A8,$0024,$39C0,$38A0,$2000,$1DCE,$01CE                   ;8CF0F7;
 
+%anchor($8CF107)
 Palettes_EndingSuperMetroidIconFadingToGrey_Sprite_9:
     dw $0C21,$0000,$006C,$0006,$0002,$00EC,$0047,$0003                   ;8CF107;
     dw $014C,$0087,$0023,$3180,$3080,$1800,$198C,$018C                   ;8CF117;
 
+%anchor($8CF127)
 Palettes_EndingSuperMetroidIconFadingToGrey_Sprite_A:
     dw $0821,$0000,$006A,$0005,$0001,$00CA,$0046,$0003                   ;8CF127;
     dw $010A,$0086,$0023,$2940,$2880,$1400,$154A,$014A                   ;8CF137;
 
+%anchor($8CF147)
 Palettes_EndingSuperMetroidIconFadingToGrey_Sprite_B:
     dw $0821,$0000,$0048,$0004,$0001,$0088,$0024,$0002                   ;8CF147;
     dw $00E8,$0064,$0022,$2100,$2060,$1000,$1108,$0108                   ;8CF157;
 
+%anchor($8CF167)
 Palettes_EndingSuperMetroidIconFadingToGrey_Sprite_C:
     dw $0421,$0000,$0026,$0003,$0001,$0066,$0023,$0001                   ;8CF167;
     dw $00A6,$0043,$0001,$18C0,$1840,$0C00,$0CC6,$00C6                   ;8CF177;
 
+%anchor($8CF187)
 Palettes_EndingSuperMetroidIconFadingToGrey_Sprite_D:
     dw $0400,$0000,$0024,$0002,$0000,$0044,$0022,$0001                   ;8CF187;
     dw $0064,$0022,$0001,$1080,$1020,$0800,$0884,$0084                   ;8CF197;
 
+%anchor($8CF1A7)
 Palettes_EndingSuperMetroidIconFadingToGrey_Sprite_E:
     dw $0400,$0000,$0002,$0001,$0000,$0022,$0001,$0000                   ;8CF1A7;
     dw $0022,$0001,$0000,$0840,$0800,$0400,$0442,$0042                   ;8CF1B7;
 
+%anchor($8CF1C7)
 Palettes_EndingSuperMetroidIconFadingToGrey_Sprite_F:
     dw $0000,$0000,$0000,$0000,$0000,$0000,$0000,$0000                   ;8CF1C7;
     dw $0000,$0000,$0000,$0000,$0000,$0000,$0000,$0000                   ;8CF1D7;
 
+%anchor($8CF1E7)
 Palettes_EndingSuperMetroidIconFadingToGrey_Sprite_10:
     dw $0000                                                             ;8CF1E7;
 
+%anchor($8CF1E9)
 Palettes_EndingSuperMetroidIconFadingToGrey_BG_0:
     dw $0000,$6B5A,$5EF7,$5294,$4631,$35AD,$294A,$1CE7                   ;8CF1E9;
     dw $1084,$0000,$0000,$0000,$0000,$0000,$0000                         ;8CF1F9;
 
+%anchor($8CF207)
 Palettes_EndingSuperMetroidIconFadingToGrey_BG_1:
     dw $0000,$0000,$6318,$56B5,$4A52,$3DEF,$318C,$2529                   ;8CF207;
     dw $18C6,$0C63,$0000,$0000,$0000,$0000,$0000,$0000                   ;8CF217;
 
+%anchor($8CF227)
 Palettes_EndingSuperMetroidIconFadingToGrey_BG_2:
     dw $0000,$0000,$5AD6,$5294,$4631,$39CE,$2D6B,$2108                   ;8CF227;
     dw $18C6,$0C63,$0000,$0000,$0000,$0000,$0000,$0000                   ;8CF237;
 
+%anchor($8CF247)
 Palettes_EndingSuperMetroidIconFadingToGrey_BG_3:
     dw $0000,$0000,$5294,$4A52,$4210,$35AD,$294A,$2108                   ;8CF247;
     dw $14A5,$0C63,$0000,$0000,$0000,$0000,$0000,$0000                   ;8CF257;
 
+%anchor($8CF267)
 Palettes_EndingSuperMetroidIconFadingToGrey_BG_4:
     dw $0000,$0000,$4E73,$4210,$39CE,$318C,$2529,$1CE7                   ;8CF267;
     dw $14A5,$0C63,$0000,$0000,$0000,$0000,$0000,$0000                   ;8CF277;
 
+%anchor($8CF287)
 Palettes_EndingSuperMetroidIconFadingToGrey_BG_5:
     dw $0000,$0000,$4631,$3DEF,$35AD,$2D6B,$2108,$18C6                   ;8CF287;
     dw $1084,$0842,$0000,$0000,$0000,$0000,$0000,$0000                   ;8CF297;
 
+%anchor($8CF2A7)
 Palettes_EndingSuperMetroidIconFadingToGrey_BG_6:
     dw $0000,$0000,$3DEF,$35AD,$318C,$294A,$1CE7,$18C6                   ;8CF2A7;
     dw $1084,$0842,$0000,$0000,$0000,$0000,$0000,$0000                   ;8CF2B7;
 
+%anchor($8CF2C7)
 Palettes_EndingSuperMetroidIconFadingToGrey_BG_7:
     dw $0000,$0000,$35AD,$318C,$294A,$2529,$1CE7,$14A5                   ;8CF2C7;
     dw $0C63,$0842,$0000,$0000,$0000,$0000,$0000,$0000                   ;8CF2D7;
 
+%anchor($8CF2E7)
 Palettes_EndingSuperMetroidIconFadingToGrey_BG_8:
     dw $0000,$0000,$318C,$294A,$2529,$2108,$18C6,$1084                   ;8CF2E7;
     dw $0C63,$0421,$0000,$0000,$0000,$0000,$0000,$0000                   ;8CF2F7;
 
+%anchor($8CF307)
 Palettes_EndingSuperMetroidIconFadingToGrey_BG_9:
     dw $0000,$0000,$294A,$2529,$2108,$18C6,$14A5,$1084                   ;8CF307;
     dw $0842,$0421,$0000,$0000,$0000,$0000,$0000,$0000                   ;8CF317;
 
+%anchor($8CF327)
 Palettes_EndingSuperMetroidIconFadingToGrey_BG_A:
     dw $0000,$0000,$2108,$1CE7,$18C6,$14A5,$1084,$0C63                   ;8CF327;
     dw $0842,$0421,$0000,$0000,$0000,$0000,$0000,$0000                   ;8CF337;
 
+%anchor($8CF347)
 Palettes_EndingSuperMetroidIconFadingToGrey_BG_B:
     dw $0000,$0000,$1CE7,$18C6,$14A5,$1084,$0C63,$0842                   ;8CF347;
     dw $0421,$0421,$0000,$0000,$0000,$0000,$0000,$0000                   ;8CF357;
 
+%anchor($8CF367)
 Palettes_EndingSuperMetroidIconFadingToGrey_BG_C:
     dw $0000,$0000,$14A5,$1084,$1084,$0C63,$0842,$0842                   ;8CF367;
     dw $0421,$0000,$0000,$0000,$0000,$0000,$0000,$0000                   ;8CF377;
 
+%anchor($8CF387)
 Palettes_EndingSuperMetroidIconFadingToGrey_BG_D:
     dw $0000,$0000,$0C63,$0C63,$0842,$0842,$0421,$0421                   ;8CF387;
     dw $0421,$0000,$0000,$0000,$0000,$0000,$0000,$0000                   ;8CF397;
 
+%anchor($8CF3A7)
 Palettes_EndingSuperMetroidIconFadingToGrey_BG_E:
     dw $0000,$0000,$0421,$0421,$0421,$0421,$0000,$0000                   ;8CF3A7;
     dw $0000,$0000,$0000,$0000,$0000,$0000,$0000,$0000                   ;8CF3B7;
 
+%anchor($8CF3C7)
 Palettes_EndingSuperMetroidIconFadingToGrey_BG_F:
     dw $0000,$0000,$0000,$0000,$0000,$0000,$0000,$0000                   ;8CF3C7;
     dw $0000,$0000,$0000,$0000,$0000,$0000,$0000,$0000                   ;8CF3D7;
 
+%anchor($8CF3E7)
 Palettes_EndingSuperMetroidIconFadingToGrey_BG_10:
     dw $0000                                                             ;8CF3E7;
 
+%anchor($8CF3E9)
 Freespace_Bank8C_F3E9:                                                   ;8CF3E9;
 ; $C17 bytes

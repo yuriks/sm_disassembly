@@ -2,6 +2,7 @@
 org $908000
 
 
+%anchor($908000)
 AnimateSamus:
     PHP                                                                  ;908000;
     REP #$30                                                             ;908001;
@@ -69,10 +70,12 @@ AnimateSamus:
     dw RTS_908077                                                        ;908073;
     dw RTS_908077                                                        ;908075;
 
+%anchor($908077)
 RTS_908077:
     RTS                                                                  ;908077;
 
 
+%anchor($908078)
 AnimateSamus_FX_None:
     LDA.W $0A66                                                          ;908078;
     STA.W $0A9C                                                          ;90807B;
@@ -108,6 +111,7 @@ AnimateSamus_FX_None:
     RTS                                                                  ;9080B7;
 
 
+%anchor($9080B8)
 AnimateSamus_FX_Water:
     LDA.W $195E                                                          ;9080B8;
     BMI AnimateSamus_FX_None                                             ;9080BB;
@@ -129,6 +133,7 @@ AnimateSamus_FX_Water:
     LDA.W #$000D                                                         ;9080DF;
     JSL.L QueueSound_Lib2_Max6                                           ;9080E2;
 
+%anchor($9080E6)
 Spawn_WaterSplash_AirBubbles:
     LDA.W $0A1F                                                          ;9080E6;
     AND.W #$00FF                                                         ;9080E9;
@@ -167,6 +172,7 @@ Spawn_WaterSplash_AirBubbles:
     STA.W $0AE4                                                          ;908138;
     STA.W $0AE6                                                          ;90813B;
 
+%anchor($90813E)
 Spawn_AirBubbles:
     LDA.B $14                                                            ;90813E;
     SEC                                                                  ;908140;
@@ -220,6 +226,7 @@ Spawn_AirBubbles:
     RTS                                                                  ;9081A3;
 
 
+%anchor($9081A4)
 WaterSplash_TypeTable:                                                   ;9081A4;
 ; 0: diving splash, else footstep splashes
     db $01 ;* 0: Standing
@@ -251,6 +258,7 @@ WaterSplash_TypeTable:                                                   ;9081A4
     db $00 ; 1Ah: Grabbed by Draygon
     db $00 ; 1Bh: Shinespark / crystal flash / drained by metroid / damaged by MB's attacks
 
+%anchor($9081C0)
 AnimateSamus_FX_Lava:
     LDA.W $1962                                                          ;9081C0;
     BMI .goto_AnimateSamus_FX_None                                       ;9081C3;
@@ -297,6 +305,7 @@ AnimateSamus_FX_Lava:
     RTS                                                                  ;908218;
 
 
+%anchor($908219)
 AnimateSamus_FX_Acid:
     LDA.W $1962                                                          ;908219;
     BMI AnimateSamus_FX_Lava_goto_AnimateSamus_FX_None                   ;90821C;
@@ -319,6 +328,7 @@ AnimateSamus_FX_Acid:
     ADC.W SamusPhysicsConstants_AcidDamagePerFrame                       ;908246;
     STA.W $0A50                                                          ;908249;
 
+%anchor($90824C)
 AnimateSamus_SubmergedInLavaAcid:
     LDA.W SamusPhysicsConstants_AnimationDelayInLavaAcid                 ;90824C;
     STA.W $0A9C                                                          ;90824F;
@@ -380,6 +390,7 @@ AnimateSamus_SubmergedInLavaAcid:
     RTS                                                                  ;9082DB;
 
 
+%anchor($9082DC)
 Handle_Samus_AnimationDelay:
     PHP                                                                  ;9082DC;
     SEP #$20                                                             ;9082DD;
@@ -441,11 +452,13 @@ Handle_Samus_AnimationDelay:
     dw AnimDelay_E_GotoY                                                 ;908340;
     dw AnimDelay_F_GotoBeginning                                         ;908342;
 
+%anchor($908344)
 CLCRTS_908344:
     CLC                                                                  ;908344;
     RTS                                                                  ;908345;
 
 
+%anchor($908346)
 AnimDelay_6_GotoBeginningIfSamusNotLowEnergy:
     LDA.W $09C2                                                          ;908346;
     CMP.W #$001E                                                         ;908349;
@@ -465,6 +478,7 @@ AnimDelay_6_GotoBeginningIfSamusNotLowEnergy:
     RTS                                                                  ;90835F;
 
 
+%anchor($908360)
 AnimDelay_7_SetDrainedSamusMovementHandler:
     LDA.W #SamusMovementHandler_SamusDrained_Falling                     ;908360;
     STA.W $0A58                                                          ;908363;
@@ -476,6 +490,7 @@ AnimDelay_7_SetDrainedSamusMovementHandler:
     RTS                                                                  ;90836F;
 
 
+%anchor($908370)
 AnimDelay_8_EnableAutoJumpHack_TransitionToPoseIfNotJumping:
     LDA.W $0A60                                                          ;908370;
     CMP.W #SamusPoseInputHandler_Demo                                    ;908373;
@@ -501,6 +516,7 @@ AnimDelay_8_EnableAutoJumpHack_TransitionToPoseIfNotJumping:
     RTS                                                                  ;908399;
 
 
+%anchor($90839A)
 AnimDelay_9_TransitionToPoseDependingOnItemEquippedAndYSpeed:
     INY                                                                  ;90839A;
     LDA.B [$00],Y                                                        ;90839B;
@@ -560,6 +576,7 @@ AnimDelay_9_TransitionToPoseDependingOnItemEquippedAndYSpeed:
     RTS                                                                  ;9083F5;
 
 
+%anchor($9083F6)
 UNUSED_AnimDelay_A_TransitionToPoseDependingOnYSpeed_9083F6:
     LDA.W $0B2E                                                          ;9083F6;
     BNE .nonZeroYSpeed                                                   ;9083F9;
@@ -585,6 +602,7 @@ UNUSED_AnimDelay_A_TransitionToPoseDependingOnYSpeed_9083F6:
     RTS                                                                  ;90841C;
 
 
+%anchor($90841D)
 AnimDelay_B_SelectAnimDelaySequenceForWallJump:
     LDA.W $09A2                                                          ;90841D;
     BIT.W #$0020                                                         ;908420;
@@ -648,6 +666,7 @@ AnimDelay_B_SelectAnimDelaySequenceForWallJump:
     RTS                                                                  ;90848A;
 
 
+%anchor($90848B)
 UNUSED_AnimDelay_C_TransToPoseDependingOnItemEquipped_90848B:
     INY                                                                  ;90848B;
     LDA.B [$00],Y                                                        ;90848C;
@@ -678,6 +697,7 @@ UNUSED_AnimDelay_C_TransToPoseDependingOnItemEquipped_90848B:
     RTS                                                                  ;9084B5;
 
 
+%anchor($9084B6)
 AnimDelay_D_TransitionToPose:
     INY                                                                  ;9084B6;
     LDA.B [$00],Y                                                        ;9084B7;
@@ -689,6 +709,7 @@ AnimDelay_D_TransitionToPose:
     RTS                                                                  ;9084C6;
 
 
+%anchor($9084C7)
 AnimDelay_E_GotoY:
     INY                                                                  ;9084C7;
     LDA.B [$00],Y                                                        ;9084C8;
@@ -703,6 +724,7 @@ AnimDelay_E_GotoY:
     RTS                                                                  ;9084DA;
 
 
+%anchor($9084DB)
 AnimDelay_F_GotoBeginning:
     LDY.W #$0000                                                         ;9084DB;
     STY.W $0A96                                                          ;9084DE;
@@ -710,6 +732,7 @@ AnimDelay_F_GotoBeginning:
     RTS                                                                  ;9084E2;
 
 
+%anchor($9084E3)
 Handle_NormalAnimationDelay:
     PHP                                                                  ;9084E3;
     SEP #$20                                                             ;9084E4;
@@ -752,6 +775,7 @@ Handle_NormalAnimationDelay:
     RTS                                                                  ;90852B;
 
 
+%anchor($90852C)
 Handle_SpeedBooster_AnimationDelay:
     PHP                                                                  ;90852C;
     SEP #$20                                                             ;90852D;
@@ -848,6 +872,7 @@ Handle_SpeedBooster_AnimationDelay:
     RTS                                                                  ;9085E1;
 
 
+%anchor($9085E2)
 Draw_Samus:
     PHP                                                                  ;9085E2;
     PHB                                                                  ;9085E3;
@@ -904,6 +929,7 @@ Draw_Samus:
     RTS                                                                  ;90864D;
 
 
+%anchor($90864E)
 Draw_Samus_pointers:
     dw DetermineIf_SamusBottomHalf_IsDrawn_Standing                      ;90864E; 0: Standing
     dw Flag_SamusBottomHalfIsDrawn                                       ;908650; 1: Running
@@ -934,17 +960,20 @@ Draw_Samus_pointers:
     dw Flag_SamusBottomHalfIsDrawn                                       ;908682; 1Ah: Grabbed by Draygon
     dw DetermineIf_SamusBottomHalf_IsDrawn_Shinespark_CF_Drained         ;908684; 1Bh: Shinespark / crystal flash / drained by metroid / damaged by MB's attacks
 
+%anchor($908686)
 Flag_SamusBottomHalfIsDrawn:
     SEC                                                                  ;908686;
     RTS                                                                  ;908687;
 
 
+%anchor($908688)
 Flag_SamusBottomHalfIsNotDrawn:
     STZ.W $0ACA                                                          ;908688;
     CLC                                                                  ;90868B;
     RTS                                                                  ;90868C;
 
 
+%anchor($90868D)
 DetermineIf_SamusBottomHalf_IsDrawn_Standing:
     LDA.W $0A1C                                                          ;90868D;
     CMP.W #$0000                                                         ;908690;
@@ -978,6 +1007,7 @@ DetermineIf_SamusBottomHalf_IsDrawn_Standing:
     BRA .return                                                          ;9086C4;
 
 
+%anchor($9086C6)
 DetermineIf_SamusBottomHalf_IsDrawn_SpinJumping:
     LDA.W $0A1C                                                          ;9086C6;
     CMP.W #$0081                                                         ;9086C9;
@@ -1004,6 +1034,7 @@ DetermineIf_SamusBottomHalf_IsDrawn_SpinJumping:
     RTS                                                                  ;9086ED;
 
 
+%anchor($9086EE)
 DetermineIf_SamusBottomHalf_IsDrawn_Knockback_CFEnding:
     LDA.W $0A1C                                                          ;9086EE;
     CMP.W #$00D7                                                         ;9086F1;
@@ -1029,6 +1060,7 @@ DetermineIf_SamusBottomHalf_IsDrawn_Knockback_CFEnding:
     RTS                                                                  ;90870B;
 
 
+%anchor($90870C)
 DetermineIf_SamusBottomHalf_IsDrawn_TransitionPoses:
     LDA.W $0A1C                                                          ;90870C;
     CMP.W #$00F1                                                         ;90870F;
@@ -1072,6 +1104,7 @@ DetermineIf_SamusBottomHalf_IsDrawn_TransitionPoses:
     BRA .noBottom                                                        ;90874A;
 
 
+%anchor($90874C)
 DetermineIf_SamusBottomHalf_IsDrawn_UnusedMovementTypeD:
     LDA.W $0A1C                                                          ;90874C;
     CMP.W #$0065                                                         ;90874F;
@@ -1094,6 +1127,7 @@ DetermineIf_SamusBottomHalf_IsDrawn_UnusedMovementTypeD:
     RTS                                                                  ;908767;
 
 
+%anchor($908768)
 DetermineIf_SamusBottomHalf_IsDrawn_WallJumping:
     LDA.W $0A96                                                          ;908768;
     CMP.W #$0003                                                         ;90876B;
@@ -1112,6 +1146,7 @@ DetermineIf_SamusBottomHalf_IsDrawn_WallJumping:
     RTS                                                                  ;90877B;
 
 
+%anchor($90877C)
 DetermineIf_SamusBottomHalf_IsDrawn_DamageBoost:
     LDA.W $0A96                                                          ;90877C;
     CMP.W #$0002                                                         ;90877F;
@@ -1130,6 +1165,7 @@ DetermineIf_SamusBottomHalf_IsDrawn_DamageBoost:
     RTS                                                                  ;90878F;
 
 
+%anchor($908790)
 DetermineIf_SamusBottomHalf_IsDrawn_Shinespark_CF_Drained:
     LDA.W $0A1C                                                          ;908790;
     CMP.W #$00CF                                                         ;908793;
@@ -1162,6 +1198,7 @@ DetermineIf_SamusBottomHalf_IsDrawn_Shinespark_CF_Drained:
     RTS                                                                  ;9087BC;
 
 
+%anchor($9087BD)
 DrawSamusEchoes:
     PHP                                                                  ;9087BD;
     REP #$30                                                             ;9087BE;
@@ -1254,6 +1291,7 @@ DrawSamusEchoes:
     RTS                                                                  ;908854;
 
 
+%anchor($908855)
 DrawSamusEcho:
     PHY                                                                  ;908855;
     LDA.W $0A1C                                                          ;908856;
@@ -1313,6 +1351,7 @@ DrawSamusEcho:
     RTS                                                                  ;9088B9;
 
 
+%anchor($9088BA)
 DrawShinesparkCrashEchoCircle:
     PHP                                                                  ;9088BA;
     PHB                                                                  ;9088BB;
@@ -1405,6 +1444,7 @@ DrawShinesparkCrashEchoCircle:
     RTS                                                                  ;908952;
 
 
+%anchor($908953)
 DrawShinesparkCrashEchoProjectiles:
     PHP                                                                  ;908953;
     REP #$30                                                             ;908954;
@@ -1426,6 +1466,7 @@ DrawShinesparkCrashEchoProjectiles:
     RTL                                                                  ;908975;
 
 
+%anchor($908976)
 Draw_Samus_Starting_Death_Animation:
     PHP                                                                  ;908976;
     PHB                                                                  ;908977;
@@ -1450,6 +1491,7 @@ Draw_Samus_Starting_Death_Animation:
     RTL                                                                  ;908997;
 
 
+%anchor($908998)
 Draw_Samus_During_Death_Animation:
     PHP                                                                  ;908998;
     PHB                                                                  ;908999;
@@ -1508,6 +1550,7 @@ Draw_Samus_During_Death_Animation:
     RTL                                                                  ;9089FF;
 
 
+%anchor($908A00)
 Draw_Inanimate_Samus:
     PHP                                                                  ;908A00;
     PHB                                                                  ;908A01;
@@ -1550,6 +1593,7 @@ Draw_Inanimate_Samus:
     RTL                                                                  ;908A4B;
 
 
+%anchor($908A4C)
 Handle_AtmosphericEffects:
     PHP                                                                  ;908A4C;
     REP #$30                                                             ;908A4D;
@@ -1625,6 +1669,7 @@ Handle_AtmosphericEffects:
     dw AtmosphericEffects_6_7_Dust                                       ;908AC1;
     dw AtmosphericEffects_6_7_Dust                                       ;908AC3;
 
+%anchor($908AC5)
 AtmosphericEffects_1_2_FootstepSplashes:
     PHY                                                                  ;908AC5;
     LDA.W $0AEC,Y                                                        ;908AC6;
@@ -1670,6 +1715,7 @@ AtmosphericEffects_1_2_FootstepSplashes:
     RTS                                                                  ;908B15;
 
 
+%anchor($908B16)
 AtmosphericEffects_3_DivingSplash:
     PHY                                                                  ;908B16;
     LDA.W $0AEC,Y                                                        ;908B17;
@@ -1684,6 +1730,7 @@ AtmosphericEffects_3_DivingSplash:
     BRA AddAtmosphericSpritemapToOAM                                     ;908B2C;
 
 
+%anchor($908B2E)
 AtmosphericEffects_4_LavaSurfaceDamage:
     TYA                                                                  ;908B2E;
     BIT.W #$0004                                                         ;908B2F;
@@ -1708,6 +1755,7 @@ AtmosphericEffects_4_LavaSurfaceDamage:
     JMP.W AtmosphericEffects_1_2_FootstepSplashes                        ;908B54;
 
 
+%anchor($908B57)
 AtmosphericEffects_6_7_Dust:
     LDA.W $0AE4,Y                                                        ;908B57;
     SEC                                                                  ;908B5A;
@@ -1716,6 +1764,7 @@ AtmosphericEffects_6_7_Dust:
     JMP.W AtmosphericEffects_1_2_FootstepSplashes                        ;908B61;
 
 
+%anchor($908B64)
 AtmosphericEffects_5_Bubbles:
     PHY                                                                  ;908B64;
     LDA.W $0AEC,Y                                                        ;908B65;
@@ -1726,6 +1775,7 @@ AtmosphericEffects_5_Bubbles:
     ADC.B $12                                                            ;908B71;
     PHA                                                                  ;908B73;
 
+%anchor($908B74)
 AddAtmosphericSpritemapToOAM:
     LDA.W $0ADC,Y                                                        ;908B74;
     SEC                                                                  ;908B77;
@@ -1749,6 +1799,7 @@ AddAtmosphericSpritemapToOAM:
     RTS                                                                  ;908B92;
 
 
+%anchor($908B93)
 AtmosphericGraphics_AnimationTimers:
 ; Indexed by [atmospheric graphics type] * 2
     dw $0000                                                             ;908B93;
@@ -1762,32 +1813,41 @@ AtmosphericGraphics_AnimationTimers:
     dw $0000                                                             ;908BA3;
 
 ; Indexed by [atmospheric graphics animation frame] * 2
+%anchor($908BA5)
 AtmosphericGraphics_1_FootstepSplashes:
     dw $0003,$0003,$0003,$0003                                           ;908BA5;
 
+%anchor($908BAD)
 AtmosphericGraphics_2_FootstepSplashes:
     dw $0003,$0003,$0003,$0003                                           ;908BAD;
 
+%anchor($908BB5)
 AtmosphericGraphics_3_DivingSplash:
     dw $0002,$0002,$0003,$0003,$0003,$0005,$0005,$0006                   ;908BB5;
     dw $0007                                                             ;908BC5;
 
+%anchor($908BC7)
 AtmosphericGraphics_4_LavaSurfaceDamage:
     dw $0002,$0002,$0002,$0002                                           ;908BC7;
 
+%anchor($908BCF)
 AtmosphericGraphics_5_Bubbles:
     dw $0005,$0005,$0005,$0005,$0005,$0005,$0005,$0005                   ;908BCF;
 
+%anchor($908BDF)
 AtmosphericGraphics_6_Dust:
     dw $0003,$0004,$0005,$0006                                           ;908BDF;
 
+%anchor($908BE7)
 AtmosphericGraphics_7_Dust:
     dw $0003,$0004,$0005,$0006                                           ;908BE7;
 
+%anchor($908BEF)
 AtmosphericGraphics_NumberOfAnimationFrames:
 ; Indexed by [atmospheric graphics type] * 2
     dw $0000,$0004,$0004,$0009,$0004,$0008,$0004,$0004                   ;908BEF;
 
+%anchor($908BFF)
 AtmosphericGraphics_SpriteTileNumberAttributes:
 ; Indexed by [atmospheric graphics type] * 2
     dw $0000                                                             ;908BFF;
@@ -1799,13 +1859,16 @@ AtmosphericGraphics_SpriteTileNumberAttributes:
     dw AtmosphericGraphics_SpriteTileNumberAttribute_4_6_7_LavaDust      ;908C0B;
     dw AtmosphericGraphics_SpriteTileNumberAttribute_4_6_7_LavaDust      ;908C0D;
 
+%anchor($908C0F)
 AtmosphericGraphics_SpriteTileNumberAttributes_1_Footstep:
 ; Indexed by [atmospheric graphics animation frame] * 2
     dw $2A2C,$2A2D,$2A2E,$2A2F                                           ;908C0F;
 
+%anchor($908C17)
 AtmosphericGraphics_SpriteTileNumberAttribute_4_6_7_LavaDust:
     dw $2A48,$2A49,$2A4A,$2A4B                                           ;908C17;
 
+%anchor($908C1F)
 Calculate_SamusSpritemapPosition:
     LDA.W $093F                                                          ;908C1F;
     BPL .notCeres                                                        ;908C22;
@@ -1869,6 +1932,7 @@ Calculate_SamusSpritemapPosition:
     dw CalculateUsualSamusSpritemapPosition                              ;908C90;  1Ah: Grabbed by Draygon
     dw CalculateSamusSpritemapPosition_Shinespark_CF_Drained             ;908C92; *1Bh: Shinespark / crystal flash / drained by metroid / damaged by MB's attacks
 
+%anchor($908C94)
 CalculateUsualSamusSpritemapPosition:
     TYA                                                                  ;908C94;
     ASL A                                                                ;908C95;
@@ -1896,6 +1960,7 @@ CalculateUsualSamusSpritemapPosition:
     RTS                                                                  ;908CC2;
 
 
+%anchor($908CC3)
 CalculateSamusSpritemapPosition_Standing:
     PHB                                                                  ;908CC3;
     PHK                                                                  ;908CC4;
@@ -1960,11 +2025,13 @@ CalculateSamusSpritemapPosition_Standing:
     db $03,$03,$06,$00 ; Facing right - landing from spin jump
     db $03,$03,$06,$00 ; Facing left  - landing from spin jump
 
+%anchor($908D38)
 Goto_CalculateUsualSamusSpritemapPosition:
     PLB                                                                  ;908D38;
     JMP.W CalculateUsualSamusSpritemapPosition                           ;908D39;
 
 
+%anchor($908D3C)
 CalculateSamusSpritemapPosition_TransitionPoses:
     PHB                                                                  ;908D3C;
     PHK                                                                  ;908D3D;
@@ -2018,6 +2085,7 @@ CalculateSamusSpritemapPosition_TransitionPoses:
     db $00,$00 ; Unused
     db $00,$00 ; Unused
 
+%anchor($908D98)
 CalculateSamusSpritemapPosition_Shinespark_CF_Drained:
     PHB                                                                  ;908D98;
     PHK                                                                  ;908D99;
@@ -2075,6 +2143,7 @@ CalculateSamusSpritemapPosition_Shinespark_CF_Drained:
     db $07,$05,$F8,$F8,$F8,$F8,$F8,$FB,$04,$04,$04,$04,$00,$00,$04,$FD   ;908DEF;
     db $FB,$00,$00,$04,$FD,$FB,$FD,$04,$00,$00,$04,$00,$00,$04,$00,$00   ;908DFF;
 
+%anchor($908E0F)
 SetLiquidPhysicsType:
     PHP                                                                  ;908E0F;
     PHB                                                                  ;908E10;
@@ -2101,11 +2170,13 @@ SetLiquidPhysicsType:
     dw SetLiquidPhysicsType_Air                                          ;908E32; ; Ch: Fog / 2Ch: Ceres haze
     dw SetLiquidPhysicsType_Air                                          ;908E34;
 
+%anchor($908E36)
 SetLiquidPhysicsType_Air:
     STZ.W $0AD2                                                          ;908E36;
     RTS                                                                  ;908E39;
 
 
+%anchor($908E3A)
 SetLiquidPhysicsType_LavaAcid:
     LDA.W $1962                                                          ;908E3A;
     BMI SetLiquidPhysicsType_Air                                         ;908E3D;
@@ -2116,6 +2187,7 @@ SetLiquidPhysicsType_LavaAcid:
     RTS                                                                  ;908E49;
 
 
+%anchor($908E4A)
 SetLiquidPhysicsType_Water:
     LDA.W $195E                                                          ;908E4A;
     BMI SetLiquidPhysicsType_Air                                         ;908E4D;
@@ -2132,6 +2204,7 @@ SetLiquidPhysicsType_Water:
     RTS                                                                  ;908E63;
 
 
+%anchor($908E64)
 Samus_X_Movement:
     PHP                                                                  ;908E64;
     REP #$30                                                             ;908E65;
@@ -2144,6 +2217,7 @@ Samus_X_Movement:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($908E75)
 UNUSED_SamusMovement_908E75:
     PHP                                                                  ;908E75;
     REP #$30                                                             ;908E76;
@@ -2176,6 +2250,7 @@ UNUSED_SamusMovement_908E75:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($908EA9)
 MoveSamus_Horizontally:
     LDA.W $0B4A                                                          ;908EA9;
     BEQ .notTurning                                                      ;908EAC;
@@ -2214,6 +2289,7 @@ MoveSamus_Horizontally:
     RTS                                                                  ;908EDE;
 
 
+%anchor($908EDF)
 MoveSamus_Horizontally_KnockbackBombJump:
     PHP                                                                  ;908EDF;
     REP #$30                                                             ;908EE0;
@@ -2256,6 +2332,7 @@ MoveSamus_Horizontally_KnockbackBombJump:
     RTS                                                                  ;908F1A;
 
 
+%anchor($908F1B)
 Handle_EndOfBombJump:
     PHP                                                                  ;908F1B;
     REP #$30                                                             ;908F1C;
@@ -2290,6 +2367,7 @@ Handle_EndOfBombJump:
     RTS                                                                  ;908F5E;
 
 
+%anchor($908F5F)
 MoveSamus_Horizontally_PushedByCeresRidley:
     PHP                                                                  ;908F5F;
     REP #$30                                                             ;908F60;
@@ -2319,6 +2397,7 @@ MoveSamus_Horizontally_PushedByCeresRidley:
     RTS                                                                  ;908F85;
 
 
+%anchor($908F86)
 MoveSamus_Vertically_PushedByCeresRidley:
     PHP                                                                  ;908F86;
     REP #$30                                                             ;908F87;
@@ -2342,6 +2421,7 @@ MoveSamus_Vertically_PushedByCeresRidley:
     RTS                                                                  ;908FB2;
 
 
+%anchor($908FB3)
 Samus_Jumping_Movement:
     PHP                                                                  ;908FB3;
     REP #$30                                                             ;908FB4;
@@ -2416,6 +2496,7 @@ Samus_Jumping_Movement:
     RTS                                                                  ;90903F;
 
 
+%anchor($909040)
 Samus_SpinJumping_Movement:
     PHP                                                                  ;909040;
     REP #$30                                                             ;909041;
@@ -2487,6 +2568,7 @@ Samus_SpinJumping_Movement:
     RTS                                                                  ;9090C3;
 
 
+%anchor($9090C4)
 CheckIfSamusHasStartedFalling:
     PHP                                                                  ;9090C4;
     REP #$30                                                             ;9090C5;
@@ -2505,6 +2587,7 @@ CheckIfSamusHasStartedFalling:
     RTS                                                                  ;9090E1;
 
 
+%anchor($9090E2)
 Samus_Y_Movement_WithSpeedCalculations:
     PHP                                                                  ;9090E2;
     REP #$30                                                             ;9090E3;
@@ -2578,6 +2661,7 @@ Samus_Y_Movement_WithSpeedCalculations:
     RTS                                                                  ;909167;
 
 
+%anchor($909168)
 Samus_Falling_Movement:
     PHP                                                                  ;909168;
     REP #$30                                                             ;909169;
@@ -2608,6 +2692,7 @@ Samus_Falling_Movement:
     RTS                                                                  ;90919E;
 
 
+%anchor($90919F)
 Samus_Morphed_Falling_Movement:
     PHP                                                                  ;90919F;
     REP #$30                                                             ;9091A0;
@@ -2634,6 +2719,7 @@ Samus_Morphed_Falling_Movement:
     RTS                                                                  ;9091D0;
 
 
+%anchor($9091D1)
 Samus_Morphed_Bouncing_Movement:
     PHP                                                                  ;9091D1;
     REP #$30                                                             ;9091D2;
@@ -2695,6 +2781,7 @@ Samus_Morphed_Bouncing_Movement:
     RTS                                                                  ;90923E;
 
 
+%anchor($90923F)
 Samus_Y_Movement_NoSpeedCalculations:
     PHP                                                                  ;90923F;
     REP #$30                                                             ;909240;
@@ -2747,6 +2834,7 @@ Samus_Y_Movement_NoSpeedCalculations:
     RTS                                                                  ;909287;
 
 
+%anchor($909288)
 MoveSamus_ByExtraYDisplacement:
     PHP                                                                  ;909288;
     REP #$30                                                             ;909289;
@@ -2782,6 +2870,7 @@ MoveSamus_ByExtraYDisplacement:
     RTS                                                                  ;9092B7;
 
 
+%anchor($9092B8)
 Simple_Samus_Y_Movement:
     LDA.W $0B36                                                          ;9092B8;
     BNE .movingUpDown                                                    ;9092BB;
@@ -2796,6 +2885,7 @@ Simple_Samus_Y_Movement:
     RTS                                                                  ;9092C6;
 
 
+%anchor($9092C7)
 Simple_Samus_Y_Movement_duplicate:
     LDA.W $0B36                                                          ;9092C7;
     BNE .movingUpDown                                                    ;9092CA;
@@ -2811,6 +2901,7 @@ Simple_Samus_Y_Movement_duplicate:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($9092D6)
 UNUSED_MoveSamus_9092D6:
     PHP                                                                  ;9092D6;
     REP #$30                                                             ;9092D7;
@@ -2828,6 +2919,7 @@ UNUSED_MoveSamus_9092D6:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($9092E9)
 RTS_9092E9:
     RTS                                                                  ;9092E9;
 
@@ -2893,6 +2985,7 @@ RTS_9092E9:
     RTS                                                                  ;909347;
 
 
+%anchor($909348)
 MoveSamus_HorizontallyWithZeroBaseXSpeed:
     STZ.B $12                                                            ;909348;
     STZ.B $14                                                            ;90934A;
@@ -2900,6 +2993,7 @@ MoveSamus_HorizontallyWithZeroBaseXSpeed:
     RTS                                                                  ;90934F;
 
 
+%anchor($909350)
 MoveSamus_Left:
     PHP                                                                  ;909350;
     REP #$30                                                             ;909351;
@@ -2953,6 +3047,7 @@ MoveSamus_Left:
     RTS                                                                  ;9093B0;
 
 
+%anchor($9093B1)
 MoveSamus_Right:
     PHP                                                                  ;9093B1;
     REP #$30                                                             ;9093B2;
@@ -2983,6 +3078,7 @@ MoveSamus_Right:
     RTS                                                                  ;9093EB;
 
 
+%anchor($9093EC)
 MoveSamus_Up:
     PHP                                                                  ;9093EC;
     REP #$30                                                             ;9093ED;
@@ -3028,6 +3124,7 @@ MoveSamus_Up:
     RTS                                                                  ;90943F;
 
 
+%anchor($909440)
 MoveSamus_Down:
     PHP                                                                  ;909440;
     REP #$30                                                             ;909441;
@@ -3054,6 +3151,7 @@ MoveSamus_Down:
     RTS                                                                  ;90946D;
 
 
+%anchor($90946E)
 SamusMovementHandler_ReleasedFromGrappleSwing:
     LDA.W $0B36                                                          ;90946E;
     CMP.W #$0001                                                         ;909471;
@@ -3101,6 +3199,7 @@ SamusMovementHandler_ReleasedFromGrappleSwing:
     RTS                                                                  ;9094CA;
 
 
+%anchor($9094CB)
 SamusMovementHandler_SamusDrained_Falling:
     JSR.W Samus_Y_Movement_WithSpeedCalculations                         ;9094CB;
     LDA.W $0DD0                                                          ;9094CE;
@@ -3118,6 +3217,7 @@ SamusMovementHandler_SamusDrained_Falling:
     RTS                                                                  ;9094EB;
 
 
+%anchor($9094EC)
 Main_Scrolling_Routine:
     PHP                                                                  ;9094EC;
     PHB                                                                  ;9094ED;
@@ -3204,6 +3304,7 @@ Main_Scrolling_Routine:
     RTL                                                                  ;909588;
 
 
+%anchor($909589)
 ScrollingFinishedHook_SporeSpawnFight:
     LDA.W #$01D0                                                         ;909589;
     CMP.W $0915                                                          ;90958C;
@@ -3215,6 +3316,7 @@ ScrollingFinishedHook_SporeSpawnFight:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($909595)
 UNUSED_CameraXSpeed_0_909595:
     PHP                                                                  ;909595;
     REP #$30                                                             ;909596;
@@ -3225,6 +3327,7 @@ UNUSED_CameraXSpeed_0_909595:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($9095A0)
 Handle_Horizontal_Scrolling:
     PHP                                                                  ;9095A0;
     REP #$30                                                             ;9095A1;
@@ -3313,6 +3416,7 @@ Handle_Horizontal_Scrolling:
     dw $00A0,$0050,$0020,$00E0                                           ;909647;
 
 
+%anchor($90964F)
 Handle_Vertical_Scrolling:
     PHP                                                                  ;90964F;
     REP #$30                                                             ;909650;
@@ -3371,6 +3475,7 @@ Handle_Vertical_Scrolling:
     RTS                                                                  ;9096BF;
 
 
+%anchor($9096C0)
 Calculate_CameraXSpeed:
     PHP                                                                  ;9096C0;
     REP #$30                                                             ;9096C1;
@@ -3408,6 +3513,7 @@ Calculate_CameraXSpeed:
     RTS                                                                  ;9096FE;
 
 
+%anchor($9096FF)
 CalculateVerticalDistanceSamusMovedLastFrame:
     PHP                                                                  ;9096FF;
     REP #$30                                                             ;909700;
@@ -3445,6 +3551,7 @@ CalculateVerticalDistanceSamusMovedLastFrame:
     RTS                                                                  ;90973D;
 
 
+%anchor($90973E)
 Handle_Samus_XExtraRunSpeed:
     PHP                                                                  ;90973E;
     REP #$30                                                             ;90973F;
@@ -3571,6 +3678,7 @@ Handle_Samus_XExtraRunSpeed:
     RTS                                                                  ;909825;
 
 
+%anchor($909826)
 MoveSamus_Right_NoCollisionDetection:
     LDA.W $0AF8                                                          ;909826;
     CLC                                                                  ;909829;
@@ -3586,6 +3694,7 @@ MoveSamus_Right_NoCollisionDetection:
     RTS                                                                  ;909841;
 
 
+%anchor($909842)
 MoveSamus_Left_NoCollisionDetection:
     LDA.W $0AF8                                                          ;909842;
     SEC                                                                  ;909845;
@@ -3611,6 +3720,7 @@ MoveSamus_Left_NoCollisionDetection:
     RTS                                                                  ;909870;
 
 
+%anchor($909871)
 MoveSamus_Down_NoCollisionDetection:
     LDA.W $0AFC                                                          ;909871;
     CLC                                                                  ;909874;
@@ -3626,6 +3736,7 @@ MoveSamus_Down_NoCollisionDetection:
     RTS                                                                  ;90988C;
 
 
+%anchor($90988D)
 MoveSamus_Up_NoCollisionDetection:
     LDA.W $0AFC                                                          ;90988D;
     SEC                                                                  ;909890;
@@ -3651,6 +3762,7 @@ MoveSamus_Up_NoCollisionDetection:
     RTS                                                                  ;9098BB;
 
 
+%anchor($9098BC)
 Make_Samus_Jump:
     PHP                                                                  ;9098BC;
     PHB                                                                  ;9098BD;
@@ -3731,6 +3843,7 @@ Make_Samus_Jump:
     RTL                                                                  ;909948;
 
 
+%anchor($909949)
 Make_Samus_WallJump:
     PHP                                                                  ;909949;
     PHB                                                                  ;90994A;
@@ -3811,6 +3924,7 @@ Make_Samus_WallJump:
     RTL                                                                  ;9099D5;
 
 
+%anchor($9099D6)
 SetSamusYSpeedForKnockback:
     PHP                                                                  ;9099D6;
     PHB                                                                  ;9099D7;
@@ -3864,6 +3978,7 @@ SetSamusYSpeedForKnockback:
     RTL                                                                  ;909A2B;
 
 
+%anchor($909A2C)
 Make_Samus_BombJump:
     PHP                                                                  ;909A2C;
     REP #$30                                                             ;909A2D;
@@ -3913,6 +4028,7 @@ Make_Samus_BombJump:
     RTS                                                                  ;909A7D;
 
 
+%anchor($909A7E)
 CalculateSamusXBaseSpeed_DecelerationAllowed:
     PHP                                                                  ;909A7E;
     REP #$30                                                             ;909A7F;
@@ -3999,6 +4115,7 @@ CalculateSamusXBaseSpeed_DecelerationAllowed:
     RTS                                                                  ;909B1E;
 
 
+%anchor($909B1F)
 CalculateSamusXBaseSpeed_DecelerationDisallowed:
     PHP                                                                  ;909B1F;
     REP #$30                                                             ;909B20;
@@ -4097,6 +4214,7 @@ CalculateSamusXBaseSpeed_DecelerationDisallowed:
     RTS                                                                  ;909BD0;
 
 
+%anchor($909BD1)
 Determine_SamusXSpeedTable_EntryPointer:
     PHP                                                                  ;909BD1;
     REP #$30                                                             ;909BD2;
@@ -4150,6 +4268,7 @@ Determine_SamusXSpeedTable_EntryPointer:
     RTS                                                                  ;909C20;
 
 
+%anchor($909C21)
 DetermineGrappleSwing_SamusXSpeedTable_EntryPointer:
     PHP                                                                  ;909C21;
     REP #$30                                                             ;909C22;
@@ -4191,6 +4310,7 @@ DetermineGrappleSwing_SamusXSpeedTable_EntryPointer:
     RTS                                                                  ;909C5A;
 
 
+%anchor($909C5B)
 Determine_Samus_YAcceleration:
     LDA.W $09A2                                                          ;909C5B;
     BIT.W #$0020                                                         ;909C5E;
@@ -4238,6 +4358,7 @@ Determine_Samus_YAcceleration:
     RTS                                                                  ;909CAB;
 
 
+%anchor($909CAC)
 Grapple_WallJump_Check:
     PHP                                                                  ;909CAC;
     PHB                                                                  ;909CAD;
@@ -4330,6 +4451,7 @@ Grapple_WallJump_Check:
     RTL                                                                  ;909D34;
 
 
+%anchor($909D35)
 WallJump_Check:
     PHP                                                                  ;909D35;
     REP #$30                                                             ;909D36;
@@ -4530,6 +4652,7 @@ WallJump_Check:
     RTS                                                                  ;909E8A;
 
 
+%anchor($909E8B)
 SamusPhysicsConstants:
   .LavaSubDamagePerFrame:
     dw $8000                                                             ;909E8B;
@@ -4666,6 +4789,7 @@ SamusPhysicsConstants:
   .XAccelSpeeds_DisconnectGrappleInLavaAcid:
     dw $0000,$3000,$000F,$0000,$0000,$1000                               ;909F49;
 
+%anchor($909F55)
 SamusXSpeedTable_Normal:                                                 ;909F55;
 ; Used for Samus X base speed (due to general movement)
 
@@ -4703,6 +4827,7 @@ SamusXSpeedTable_Normal:                                                 ;909F55
     dw $0000,$C000,$0000,$0000,$0000,$8000 ; 18h: Turning around - falling
     dw $0000,$C000,$0005,$0000,$0000,$8000 ; 19h: Damage boost
 
+%anchor($90A08D)
 SamusXSpeedTable_InWater:                                                ;90A08D;
 ; Used for Samus X base speed (due to general movement)
 
@@ -4742,6 +4867,7 @@ SamusXSpeedTable_InWater:                                                ;90A08D
     dw $0000,$C000,$0005,$0000,$0000,$0800 ; 1Ah: Grabbed by Draygon
     dw $0000,$C000,$0005,$0000,$0000,$0800 ; 1Bh: Shinespark / crystal flash / drained by metroid / damaged by MB's attacks
 
+%anchor($90A1DD)
 SamusXSpeedTable_InLavaAcid:                                             ;90A1DD;
 ; Used for Samus X base speed (due to general movement)
 
@@ -4781,6 +4907,7 @@ SamusXSpeedTable_InLavaAcid:                                             ;90A1DD
     dw $0000,$C000,$0005,$0000,$0000,$4000 ; 1Ah: Grabbed by Draygon
     dw $0000,$C000,$0005,$0000,$0000,$4000 ; 1Bh: Shinespark / crystal flash / drained by metroid / damaged by MB's attacks
 
+%anchor($90A32D)
 UNUSED_SamusMovement_7_90A32D:
     PHP                                                                  ;90A32D;
     REP #$30                                                             ;90A32E;
@@ -4790,10 +4917,12 @@ UNUSED_SamusMovement_7_90A32D:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($90A335)
 UNUSED_90A335:
     dw $001E                                                             ;90A335;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($90A337)
 SamusMovementHandler_Normal:
     LDA.W $0A78                                                          ;90A337;
     BNE .return                                                          ;90A33A;
@@ -4838,6 +4967,7 @@ SamusMovementHandler_Normal:
     dw SamusMovement_GrabbedByDraygon                                    ;90A37F; 1Ah: Grabbed by Draygon
     dw SamusMovement_Shinespark_CF_Drained_DamagedByMotherBrain          ;90A381; 1Bh: Shinespark / crystal flash / drained by metroid / damaged by MB's attacks
 
+%anchor($90A383)
 SamusMovement_Standing:
     PHP                                                                  ;90A383;
     REP #$30                                                             ;90A384;
@@ -4893,6 +5023,7 @@ SamusMovement_Standing:
     RTS                                                                  ;90A3E4;
 
 
+%anchor($90A3E5)
 SamusMovement_Running:
     PHP                                                                  ;90A3E5;
     REP #$30                                                             ;90A3E6;
@@ -4927,6 +5058,7 @@ SamusMovement_Running:
 ; Presumably these frames correspond to the points when Samus' foot hits the ground
     db $00,$00,$01,$00,$00,$00,$00,$01,$00,$00                           ;90A424;
 
+%anchor($90A42E)
 SamusMovement_Jumping:
     PHP                                                                  ;90A42E;
     REP #$30                                                             ;90A42F;
@@ -4935,6 +5067,7 @@ SamusMovement_Jumping:
     RTS                                                                  ;90A435;
 
 
+%anchor($90A436)
 SamusMovement_SpinJumping:
     PHP                                                                  ;90A436;
     REP #$30                                                             ;90A437;
@@ -5060,6 +5193,7 @@ SamusMovement_SpinJumping:
 ; Samus animation frames on which to play underwater space jump sound effect
     db $01,$00,$00,$00,$00,$00,$00,$00,$01,$00,$00,$00,$00               ;90A514;
 
+%anchor($90A521)
 SamusMovement_MorphBall_OnGround:
     PHP                                                                  ;90A521;
     REP #$30                                                             ;90A522;
@@ -5105,6 +5239,7 @@ SamusMovement_MorphBall_OnGround:
     RTS                                                                  ;90A572;
 
 
+%anchor($90A573)
 SamusMovement_Crouching:
     PHP                                                                  ;90A573;
     REP #$30                                                             ;90A574;
@@ -5119,6 +5254,7 @@ SamusMovement_Crouching:
     RTS                                                                  ;90A58C;
 
 
+%anchor($90A58D)
 SamusMovement_Falling:
     PHP                                                                  ;90A58D;
     REP #$30                                                             ;90A58E;
@@ -5152,6 +5288,7 @@ SamusMovement_Falling:
     RTS                                                                  ;90A5C9;
 
 
+%anchor($90A5CA)
 SamusMovement_MorphBall_Falling:
     PHP                                                                  ;90A5CA;
     REP #$30                                                             ;90A5CB;
@@ -5182,10 +5319,12 @@ SamusMovement_MorphBall_Falling:
     RTS                                                                  ;90A5FA;
 
 
+%anchor($90A5FB)
 UNUSED_RTS_90A5FB:
     RTS                                                                  ;90A5FB;
 
 
+%anchor($90A5FC)
 SamusMovement_Knockback_CrystalFlashEnding:
     PHP                                                                  ;90A5FC;
     REP #$30                                                             ;90A5FD;
@@ -5195,6 +5334,7 @@ SamusMovement_Knockback_CrystalFlashEnding:
     RTS                                                                  ;90A606;
 
 
+%anchor($90A607)
 UNUSED_SamusMovement_B_90A607:
     PHP                                                                  ;90A607;
     REP #$30                                                             ;90A608;
@@ -5203,6 +5343,7 @@ UNUSED_SamusMovement_B_90A607:
     RTS                                                                  ;90A60E;
 
 
+%anchor($90A60F)
 UNUSED_SamusMovement_C_90A60F:
     PHP                                                                  ;90A60F;
     REP #$30                                                             ;90A610;
@@ -5211,6 +5352,7 @@ UNUSED_SamusMovement_C_90A60F:
     RTS                                                                  ;90A616;
 
 
+%anchor($90A617)
 UNUSED_SamusMovement_D_90A617:
     PHP                                                                  ;90A617;
     REP #$30                                                             ;90A618;
@@ -5218,6 +5360,7 @@ UNUSED_SamusMovement_D_90A617:
     RTS                                                                  ;90A61B;
 
 
+%anchor($90A61C)
 SamusMovement_TransitionPoses:
     PHP                                                                  ;90A61C;
     REP #$30                                                             ;90A61D;
@@ -5267,10 +5410,12 @@ SamusMovement_TransitionPoses:
     dw Enable_Horizontal_Slope_Detection                                 ;90A66D; 3Fh: Unused
     dw Enable_Horizontal_Slope_Detection                                 ;90A66F; 40h: Unused
 
+%anchor($90A671)
 RTS_90A671:
     RTS                                                                  ;90A671;
 
 
+%anchor($90A672)
 Enable_Horizontal_Slope_Detection:
     LDA.W #$0003                                                         ;90A672;
     STA.W $0A46                                                          ;90A675;
@@ -5278,6 +5423,7 @@ Enable_Horizontal_Slope_Detection:
     RTS                                                                  ;90A67B;
 
 
+%anchor($90A67C)
 SamusMovement_TurningAround_OnGround:
     PHP                                                                  ;90A67C;
     REP #$30                                                             ;90A67D;
@@ -5291,6 +5437,7 @@ SamusMovement_TurningAround_OnGround:
     RTS                                                                  ;90A693;
 
 
+%anchor($90A694)
 SamusMovement_Moonwalking:
     PHP                                                                  ;90A694;
     REP #$30                                                             ;90A695;
@@ -5300,6 +5447,7 @@ SamusMovement_Moonwalking:
     RTS                                                                  ;90A69E;
 
 
+%anchor($90A69F)
 SamusMovement_SpringBall_OnGround:
     PHP                                                                  ;90A69F;
     REP #$30                                                             ;90A6A0;
@@ -5344,6 +5492,7 @@ SamusMovement_SpringBall_OnGround:
     RTS                                                                  ;90A6F0;
 
 
+%anchor($90A6F1)
 SamusMovement_SpringBall_InAir:
     PHP                                                                  ;90A6F1;
     REP #$30                                                             ;90A6F2;
@@ -5361,6 +5510,7 @@ SamusMovement_SpringBall_InAir:
     RTS                                                                  ;90A702;
 
 
+%anchor($90A703)
 SamusMovement_SpringBall_Falling:
     PHP                                                                  ;90A703;
     REP #$30                                                             ;90A704;
@@ -5391,6 +5541,7 @@ SamusMovement_SpringBall_Falling:
     RTS                                                                  ;90A733;
 
 
+%anchor($90A734)
 SamusMovement_WallJumping:
     PHP                                                                  ;90A734;
     REP #$30                                                             ;90A735;
@@ -5417,6 +5568,7 @@ SamusMovement_WallJumping:
     RTS                                                                  ;90A75E;
 
 
+%anchor($90A75F)
 SamusMovement_RanIntoAWall:
     PHP                                                                  ;90A75F;
     REP #$30                                                             ;90A760;
@@ -5433,6 +5585,7 @@ SamusMovement_RanIntoAWall:
     RTS                                                                  ;90A77F;
 
 
+%anchor($90A780)
 SamusMovement_Grappling:
     PHP                                                                  ;90A780;
     REP #$30                                                             ;90A781;
@@ -5446,6 +5599,7 @@ SamusMovement_Grappling:
     RTS                                                                  ;90A78F;
 
 
+%anchor($90A790)
 SamusMovement_TurningAround_Jumping:
     PHP                                                                  ;90A790;
     REP #$30                                                             ;90A791;
@@ -5462,6 +5616,7 @@ SamusMovement_TurningAround_Jumping:
     RTS                                                                  ;90A7AC;
 
 
+%anchor($90A7AD)
 SamusMovement_TurningAround_Falling:
     PHP                                                                  ;90A7AD;
     REP #$30                                                             ;90A7AE;
@@ -5478,6 +5633,7 @@ SamusMovement_TurningAround_Falling:
     RTS                                                                  ;90A7C9;
 
 
+%anchor($90A7CA)
 SamusMovement_DamageBoost:
     PHP                                                                  ;90A7CA;
     REP #$30                                                             ;90A7CB;
@@ -5486,6 +5642,7 @@ SamusMovement_DamageBoost:
     RTS                                                                  ;90A7D1;
 
 
+%anchor($90A7D2)
 SamusMovement_GrabbedByDraygon:
     PHP                                                                  ;90A7D2;
     REP #$30                                                             ;90A7D3;
@@ -5494,6 +5651,7 @@ SamusMovement_GrabbedByDraygon:
     RTS                                                                  ;90A7D9;
 
 
+%anchor($90A7DA)
 SamusMovement_Shinespark_CF_Drained_DamagedByMotherBrain:
     PHP                                                                  ;90A7DA;
     REP #$30                                                             ;90A7DB;
@@ -5502,6 +5660,7 @@ SamusMovement_Shinespark_CF_Drained_DamagedByMotherBrain:
     RTS                                                                  ;90A7E1;
 
 
+%anchor($90A7E2)
 DisableMinimap_MarkBossRoomTilesExplored:
     PHP                                                                  ;90A7E2;
     PHB                                                                  ;90A7E3;
@@ -5608,6 +5767,7 @@ DisableMinimap_MarkBossRoomTilesExplored:
     dw $0000,$0100
     dw $FFFF
 
+%anchor($90A8A6)
 MarkMapTilesExplored:
     PHP                                                                  ;90A8A6;
     PHX                                                                  ;90A8A7;
@@ -5654,6 +5814,7 @@ MarkMapTilesExplored:
     RTS                                                                  ;90A8EE;
 
 
+%anchor($90A8EF)
 Initialise_Minimap_broken:
     PHP                                                                  ;90A8EF;
     REP #$30                                                             ;90A8F0;
@@ -5681,6 +5842,7 @@ Initialise_Minimap_broken:
     JMP.W Update_HUD_Minimap_Tilemap                                     ;90A918;
 
 
+%anchor($90A91B)
 Update_Minimap:
     PHP                                                                  ;90A91B;
     REP #$30                                                             ;90A91C;
@@ -5866,6 +6028,7 @@ Update_Minimap:
     BRA .loop                                                            ;90AA41;
 
 
+%anchor($90AA43)
 Update_HUD_Minimap_Tilemap:
     LDA.B $16                                                            ;90AA43;
     CLC                                                                  ;90AA45;
@@ -6024,6 +6187,7 @@ Update_HUD_Minimap_Tilemap:
     RTL                                                                  ;90AB5E;
 
 
+%anchor($90AB5F)
 MarkMapTileAboveSamusExplored:
     PHX                                                                  ;90AB5F;
     PHY                                                                  ;90AB60;
@@ -6039,6 +6203,7 @@ MarkMapTileAboveSamusExplored:
     RTS                                                                  ;90AB74;
 
 
+%anchor($90AB75)
 AdjustMapBitsForMapPageSpill:
     PHP                                                                  ;90AB75;
     REP #$30                                                             ;90AB76;
@@ -6127,15 +6292,18 @@ AdjustMapBitsForMapPageSpill:
     RTS                                                                  ;90AC03;
 
 
+%anchor($90AC04)
 Bitmasks_1bit_90AC04:
     db $80,$40,$20,$10,$08,$04,$02,$01                                   ;90AC04;
 
+%anchor($90AC0C)
 Bitmasks_6bit_90AC0C:
 ; Why are these 6-bits instead of 5?
 ; FC00h >> i
 ; 3Fh << Ah - i
     dw $FC00,$7E00,$3F00,$1F80,$0FC0,$07E0,$03F0,$01F8                   ;90AC0C;
 
+%anchor($90AC1C)
 Handle_Samus_Cooldown:
     LDA.W $0A78                                                          ;90AC1C;
     BNE .timeFrozen                                                      ;90AC1F;
@@ -6159,6 +6327,7 @@ Handle_Samus_Cooldown:
     RTS                                                                  ;90AC38;
 
 
+%anchor($90AC39)
 Check_if_Samus_Can_Fire_Beam:
     LDA.W $0CCE                                                          ;90AC39;
     CMP.W #$0005                                                         ;90AC3C;
@@ -6180,6 +6349,7 @@ Check_if_Samus_Can_Fire_Beam:
     RTS                                                                  ;90AC59;
 
 
+%anchor($90AC5A)
 Check_if_Samus_Can_Fire_Missile:
     LDA.W $09D2                                                          ;90AC5A;
     CMP.W #$0002                                                         ;90AC5D;
@@ -6214,6 +6384,7 @@ Check_if_Samus_Can_Fire_Missile:
     RTS                                                                  ;90AC8C;
 
 
+%anchor($90AC8D)
 Update_Beam_Tiles_and_Palette:
     PHP                                                                  ;90AC8D;
     PHB                                                                  ;90AC8E;
@@ -6246,6 +6417,7 @@ Update_Beam_Tiles_and_Palette:
     JMP.W Load_Beam_Palette_withStackPrepped                             ;90ACBF;
 
 
+%anchor($90ACC2)
 Load_Beam_Palette_Setup:
     PHP                                                                  ;90ACC2;
     PHB                                                                  ;90ACC3;
@@ -6256,6 +6428,7 @@ Load_Beam_Palette_Setup:
     ASL A                                                                ;90ACCB;
     TAY                                                                  ;90ACCC; fallthrough to Load_Beam_Palette
 
+%anchor($90ACCD)
 Load_Beam_Palette_withStackPrepped:
     LDA.W #$0090                                                         ;90ACCD;
     XBA                                                                  ;90ACD0;
@@ -6279,6 +6452,7 @@ Load_Beam_Palette_withStackPrepped:
     RTL                                                                  ;90ACEF;
 
 
+%anchor($90ACF0)
 Load_Beam_Palette_External:
     PHP                                                                  ;90ACF0;
     PHB                                                                  ;90ACF1;
@@ -6291,6 +6465,7 @@ Load_Beam_Palette_External:
     RTL                                                                  ;90ACFB;
 
 
+%anchor($90ACFC)
 Load_Beam_Palette:
     AND.W #$0FFF                                                         ;90ACFC;
     ASL A                                                                ;90ACFF;
@@ -6315,6 +6490,7 @@ Load_Beam_Palette:
     RTS                                                                  ;90AD21;
 
 
+%anchor($90AD22)
 Reset_Projectile_Data:
     PHP                                                                  ;90AD22;
     REP #$30                                                             ;90AD23;
@@ -6379,6 +6555,7 @@ Reset_Projectile_Data:
     RTL                                                                  ;90ADB6;
 
 
+%anchor($90ADB7)
 Clear_Projectile:
     PHP                                                                  ;90ADB7;
     REP #$30                                                             ;90ADB8;
@@ -6416,6 +6593,7 @@ Clear_Projectile:
     RTL                                                                  ;90AE05;
 
 
+%anchor($90AE06)
 Kill_Projectile:
     PHP                                                                  ;90AE06;
     PHB                                                                  ;90AE07;
@@ -6463,6 +6641,7 @@ Kill_Projectile:
     dw KillBeam_UpLeft                                                   ;90AE4A;
     dw KillBeam_Up                                                       ;90AE4C;
 
+%anchor($90AE4E)
 KillBeam_Up:
     LDA.W $0B78,Y                                                        ;90AE4E;
     SEC                                                                  ;90AE51;
@@ -6471,6 +6650,7 @@ KillBeam_Up:
     RTS                                                                  ;90AE58;
 
 
+%anchor($90AE59)
 KillBeam_UpRight:
     LDA.W $0B64,Y                                                        ;90AE59;
     CLC                                                                  ;90AE5C;
@@ -6483,6 +6663,7 @@ KillBeam_UpRight:
     RTS                                                                  ;90AE6D;
 
 
+%anchor($90AE6E)
 KillBeam_Right:
     LDA.W $0B64,Y                                                        ;90AE6E;
     CLC                                                                  ;90AE71;
@@ -6491,6 +6672,7 @@ KillBeam_Right:
     RTS                                                                  ;90AE78;
 
 
+%anchor($90AE79)
 KillBeam_DownRight:
     LDA.W $0B64,Y                                                        ;90AE79;
     CLC                                                                  ;90AE7C;
@@ -6503,6 +6685,7 @@ KillBeam_DownRight:
     RTS                                                                  ;90AE8D;
 
 
+%anchor($90AE8E)
 KillBeam_Down:
     LDA.W $0B78,Y                                                        ;90AE8E;
     CLC                                                                  ;90AE91;
@@ -6511,6 +6694,7 @@ KillBeam_Down:
     RTS                                                                  ;90AE98;
 
 
+%anchor($90AE99)
 KillBeam_DownLeft:
     LDA.W $0B64,Y                                                        ;90AE99;
     SEC                                                                  ;90AE9C;
@@ -6523,6 +6707,7 @@ KillBeam_DownLeft:
     RTS                                                                  ;90AEAD;
 
 
+%anchor($90AEAE)
 KillBeam_Left:
     LDA.W $0B64,Y                                                        ;90AEAE;
     SEC                                                                  ;90AEB1;
@@ -6531,6 +6716,7 @@ KillBeam_Left:
     RTS                                                                  ;90AEB8;
 
 
+%anchor($90AEB9)
 KillBeam_UpLeft:
     LDA.W $0B64,Y                                                        ;90AEB9;
     SEC                                                                  ;90AEBC;
@@ -6543,6 +6729,7 @@ KillBeam_UpLeft:
     RTS                                                                  ;90AECD;
 
 
+%anchor($90AECE)
 Handle_Projectiles:
     PHP                                                                  ;90AECE;
     REP #$30                                                             ;90AECF;
@@ -6567,6 +6754,7 @@ Handle_Projectiles:
     RTS                                                                  ;90AEF2;
 
 
+%anchor($90AEF3)
 Beam_NoWaveBeam:
     LDA.W $0C04,X                                                        ;90AEF3;
     AND.W #$00F0                                                         ;90AEF6;
@@ -6613,12 +6801,14 @@ Beam_NoWaveBeam:
     dw BeamBlockCollision_NoWaveBeam_Diagonal                            ;90AF46; 8: Up-left
     dw BeamBlockCollision_NoWaveBeam_Vertical                            ;90AF48; 9: Up, facing left
 
+%anchor($90AF4A)
 BeamBlockCollision_NoWaveBeam_Vertical:
     LDX.W $0DDE                                                          ;90AF4A;
     JSL.L MoveBeamVertically_NoWaveBeam                                  ;90AF4D;
     RTS                                                                  ;90AF51;
 
 
+%anchor($90AF52)
 BeamBlockCollision_NoWaveBeam_Diagonal:
     LDX.W $0DDE                                                          ;90AF52;
     JSL.L MoveBeamHorizontally_NoWaveBeam                                ;90AF55;
@@ -6629,12 +6819,14 @@ BeamBlockCollision_NoWaveBeam_Diagonal:
     RTS                                                                  ;90AF5F;
 
 
+%anchor($90AF60)
 BeamBlockCollision_NoWaveBeam_Horizontal:
     LDX.W $0DDE                                                          ;90AF60;
     JSL.L MoveBeamHorizontally_NoWaveBeam                                ;90AF63;
     RTS                                                                  ;90AF67;
 
 
+%anchor($90AF68)
 ProjectilePreInstruction_Missile:
     LDA.W $0C04,X                                                        ;90AF68;
     AND.W #$00F0                                                         ;90AF6B;
@@ -6687,12 +6879,14 @@ ProjectilePreInstruction_Missile:
     dw MissileBlockCollision_Diagonal                                    ;90AFC3; 8: Up-left
     dw MissileBlockCollision_Vertical                                    ;90AFC5; 9: Up, facing left
 
+%anchor($90AFC7)
 MissileBlockCollision_Vertical:
     LDX.W $0DDE                                                          ;90AFC7;
     JSL.L MoveMissileVertically                                          ;90AFCA;
     RTS                                                                  ;90AFCE;
 
 
+%anchor($90AFCF)
 MissileBlockCollision_Diagonal:
     LDX.W $0DDE                                                          ;90AFCF;
     JSL.L MoveMissileHorizontally                                        ;90AFD2;
@@ -6703,12 +6897,14 @@ MissileBlockCollision_Diagonal:
     RTS                                                                  ;90AFDC;
 
 
+%anchor($90AFDD)
 MissileBlockCollision_Horizontal:
     LDX.W $0DDE                                                          ;90AFDD;
     JSL.L MoveMissileHorizontally                                        ;90AFE0;
     RTS                                                                  ;90AFE4;
 
 
+%anchor($90AFE5)
 ProjectilePreInstruction_SuperMissile:
     LDA.W $0C04,X                                                        ;90AFE5;
     AND.W #$00F0                                                         ;90AFE8;
@@ -6768,6 +6964,7 @@ ProjectilePreInstruction_SuperMissile:
     dw SuperMissileBlockCollision_Diagonal                               ;90B043; 8: Up-left
     dw SuperMissileBlockCollision_Vertical                               ;90B045; 9: Up, facing left
 
+%anchor($90B047)
 SuperMissileBlockCollision_Vertical:
     LDX.W $0DDE                                                          ;90B047;
     JSL.L MoveMissileVertically                                          ;90B04A;
@@ -6775,6 +6972,7 @@ SuperMissileBlockCollision_Vertical:
     RTS                                                                  ;90B051;
 
 
+%anchor($90B052)
 SuperMissileBlockCollision_Diagonal:
     LDX.W $0DDE                                                          ;90B052;
     JSL.L MoveMissileHorizontally                                        ;90B055;
@@ -6790,6 +6988,7 @@ SuperMissileBlockCollision_Diagonal:
     RTS                                                                  ;90B069;
 
 
+%anchor($90B06A)
 SuperMissileBlockCollision_Horizontal:
     LDX.W $0DDE                                                          ;90B06A;
     JSL.L MoveMissileHorizontally                                        ;90B06D;
@@ -6797,6 +6996,7 @@ SuperMissileBlockCollision_Horizontal:
     RTS                                                                  ;90B074;
 
 
+%anchor($90B075)
 ProjectilePreInstruction_SuperMissileLink:
     LDA.W $0C04,X                                                        ;90B075;
     AND.W #$00F0                                                         ;90B078;
@@ -6821,6 +7021,7 @@ ProjectilePreInstruction_SuperMissileLink:
     RTS                                                                  ;90B098;
 
 
+%anchor($90B099)
 ProjectilePreInstruction_Bomb:
     LDA.W $0C04,X                                                        ;90B099;
     AND.W #$00F0                                                         ;90B09C;
@@ -6835,6 +7036,7 @@ ProjectilePreInstruction_Bomb:
     RTS                                                                  ;90B0AD;
 
 
+%anchor($90B0AE)
 ProjectilePreInstruction_PowerBomb:
     LDA.W $0C04,X                                                        ;90B0AE;
     AND.W #$00F0                                                         ;90B0B1;
@@ -6849,6 +7051,7 @@ ProjectilePreInstruction_PowerBomb:
     RTS                                                                  ;90B0C2;
 
 
+%anchor($90B0C3)
 ProjectilePreInstruction_Beam_WavePlasmaSpazer_ChargeIceWave:
     LDA.W $0C04,X                                                        ;90B0C3;
     AND.W #$00F0                                                         ;90B0C6;
@@ -6867,6 +7070,7 @@ ProjectilePreInstruction_Beam_WavePlasmaSpazer_ChargeIceWave:
     BRA WaveBeamSharedPreInstruction                                     ;90B0E2;
 
 
+%anchor($90B0E4)
 ProjectilePreInstruction_Beam_UnchargedIceWave:
     LDA.W $0C04,X                                                        ;90B0E4;
     AND.W #$00F0                                                         ;90B0E7;
@@ -6883,6 +7087,7 @@ ProjectilePreInstruction_Beam_UnchargedIceWave:
     JSL.L Spawn_ProjectileTrail                                          ;90B0FC;
     LDX.W $0DDE                                                          ;90B100;
 
+%anchor($90B103)
 WaveBeamSharedPreInstruction:
     LDA.W $0C04,X                                                        ;90B103;
     AND.W #$000F                                                         ;90B106;
@@ -6914,12 +7119,14 @@ WaveBeamSharedPreInstruction:
     dw WaveBeamBlockCollision_Diagonal                                   ;90B137;
     dw WaveBeamBlockCollision_Vertical                                   ;90B139;
 
+%anchor($90B13B)
 WaveBeamBlockCollision_Vertical:
     LDX.W $0DDE                                                          ;90B13B;
     JSL.L MoveBeamVertically_WaveBeam                                    ;90B13E;
     RTS                                                                  ;90B142;
 
 
+%anchor($90B143)
 WaveBeamBlockCollision_Diagonal:
     LDX.W $0DDE                                                          ;90B143;
     JSL.L MoveBeamHorizontally_WaveBeam                                  ;90B146;
@@ -6930,12 +7137,14 @@ WaveBeamBlockCollision_Diagonal:
     RTS                                                                  ;90B150;
 
 
+%anchor($90B151)
 WaveBeamBlockCollision_Horizontal:
     LDX.W $0DDE                                                          ;90B151;
     JSL.L MoveBeamHorizontally_WaveBeam                                  ;90B154;
     RTS                                                                  ;90B158;
 
 
+%anchor($90B159)
 ProjectilePreInstruction_HyperBeam:
     LDA.W $0C04,X                                                        ;90B159;
     AND.W #$00F0                                                         ;90B15C;
@@ -6947,10 +7156,12 @@ ProjectilePreInstruction_HyperBeam:
 .gotoShared:
     JMP.W WaveBeamSharedPreInstruction                                   ;90B166;
 
+%anchor($90B169)
 RTS_90B169:
     RTS                                                                  ;90B169;
 
 
+%anchor($90B16A)
 DeleteProjectileIfTooFarOffScreen:
     LDX.W $0DDE                                                          ;90B16A;
     LDA.W $0B64,X                                                        ;90B16D;
@@ -6979,6 +7190,7 @@ DeleteProjectileIfTooFarOffScreen:
     RTS                                                                  ;90B196;
 
 
+%anchor($90B197)
 InitializeBeamVelocities:
     PHP                                                                  ;90B197;
     PHB                                                                  ;90B198;
@@ -7029,6 +7241,7 @@ InitializeBeamVelocities:
     dw .diagonal                                                         ;90B1D9;
     dw .notDiagonal                                                      ;90B1DB;
 
+%anchor($90B1DD)
 InitializeMissileVelocities:
     PHP                                                                  ;90B1DD;
     REP #$30                                                             ;90B1DE;
@@ -7044,6 +7257,7 @@ InitializeMissileVelocities:
     RTS                                                                  ;90B1F2;
 
 
+%anchor($90B1F3)
 InitializeProjectileVelocities:
 ;; Parameters:
 ;;     X: Projectile index
@@ -7088,6 +7302,7 @@ InitializeProjectileVelocities:
     dw InitializeProjectileVelocities_UpLeft                             ;90B214;
     dw InitializeProjectileVelocities_Up                                 ;90B216;
 
+%anchor($90B218)
 InitializeProjectileVelocities_Up:
     LDX.B $12                                                            ;90B218;
     LDA.W $0DB1                                                          ;90B21A;
@@ -7113,6 +7328,7 @@ InitializeProjectileVelocities_Up:
     RTS                                                                  ;90B23C;
 
 
+%anchor($90B23D)
 InitializeProjectileVelocities_UpRight:
     LDX.B $12                                                            ;90B23D;
     LDA.W $0DB1                                                          ;90B23F;
@@ -7141,6 +7357,7 @@ InitializeProjectileVelocities_UpRight:
     RTS                                                                  ;90B267;
 
 
+%anchor($90B268)
 InitializeProjectileVelocities_Right:
     LDX.B $12                                                            ;90B268;
     STZ.W $0BF0,X                                                        ;90B26A;
@@ -7151,6 +7368,7 @@ InitializeProjectileVelocities_Right:
     RTS                                                                  ;90B276;
 
 
+%anchor($90B277)
 InitializeProjectileVelocities_DownRight:
     LDX.B $12                                                            ;90B277;
     LDA.B $16                                                            ;90B279;
@@ -7164,6 +7382,7 @@ InitializeProjectileVelocities_DownRight:
     RTS                                                                  ;90B28B;
 
 
+%anchor($90B28C)
 InitializeProjectileVelocities_Down:
     LDX.B $12                                                            ;90B28C;
     LDA.B $16                                                            ;90B28E;
@@ -7174,6 +7393,7 @@ InitializeProjectileVelocities_Down:
     RTS                                                                  ;90B29A;
 
 
+%anchor($90B29B)
 InitializeProjectileVelocities_DownLeft:
     LDX.B $12                                                            ;90B29B;
     LDA.B $16                                                            ;90B29D;
@@ -7189,6 +7409,7 @@ InitializeProjectileVelocities_DownLeft:
     RTS                                                                  ;90B2B3;
 
 
+%anchor($90B2B4)
 InitializeProjectileVelocities_Left:
     LDX.B $12                                                            ;90B2B4;
     STZ.W $0BF0,X                                                        ;90B2B6;
@@ -7201,6 +7422,7 @@ InitializeProjectileVelocities_Left:
     RTS                                                                  ;90B2C6;
 
 
+%anchor($90B2C7)
 InitializeProjectileVelocities_UpLeft:
     LDX.B $12                                                            ;90B2C7;
     LDA.W $0DB1                                                          ;90B2C9;
@@ -7231,6 +7453,7 @@ InitializeProjectileVelocities_UpLeft:
     RTS                                                                  ;90B2F5;
 
 
+%anchor($90B2F6)
 AccelerateMissile:
     PHP                                                                  ;90B2F6;
     REP #$30                                                             ;90B2F7;
@@ -7295,6 +7518,7 @@ AccelerateMissile:
     RTS                                                                  ;90B365;
 
 
+%anchor($90B366)
 SuperMissileLink:
     LDX.W $0DDE                                                          ;90B366;
     LDA.W $0C18,X                                                        ;90B369;
@@ -7385,6 +7609,7 @@ SuperMissileLink:
     RTS                                                                  ;90B405;
 
 
+%anchor($90B406)
 SuperMissileLink_HorizontalBlockCollisionDetection:
     LDX.W $0DDE                                                          ;90B406;
     LDA.W $0C18,X                                                        ;90B409;
@@ -7476,6 +7701,7 @@ SuperMissileLink_HorizontalBlockCollisionDetection:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($90B4A6)
 UNUSED_ClearLinkedSuperMissileIfSuperMissileExplosion_90B4A6:
     PHP                                                                  ;90B4A6;
     REP #$30                                                             ;90B4A7;
@@ -7502,9 +7728,11 @@ UNUSED_ClearLinkedSuperMissileIfSuperMissileExplosion_90B4A6:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($90B4C9)
 InstList_BeamTrail_Empty:
     dw $0000                                                             ;90B4C9;
 
+%anchor($90B4CB)
 InstList_LeftBeamTrail_IceBeams_ChargedPowerBeam:                        ;90B4CB;
     dw $0001,$2C38
     dw $0001,$2C38
@@ -7535,6 +7763,7 @@ InstList_LeftBeamTrail_IceBeams_ChargedPowerBeam:                        ;90B4CB
     dw $0004,$2C3B
     dw $0000
 
+%anchor($90B525)
 Instruction_MoveLeftProjectileTrailDownOnePixel:
     LDA.W $D778,Y                                                        ;90B525;
     INC A                                                                ;90B528;
@@ -7542,6 +7771,7 @@ Instruction_MoveLeftProjectileTrailDownOnePixel:
     RTS                                                                  ;90B52C;
 
 
+%anchor($90B52D)
 InstList_RightBeamTrail_SomeIceBeams:                                    ;90B52D;
     dw $0001,$2C38
     dw $0001,$2C38
@@ -7572,6 +7802,7 @@ InstList_RightBeamTrail_SomeIceBeams:                                    ;90B52D
     dw $0004,$2C3B
     dw $0000
 
+%anchor($90B587)
 Instruction_MoveRightProjectileTrailDownOnePixel:
     LDA.W $D79C,Y                                                        ;90B587;
     INC A                                                                ;90B58A;
@@ -7579,6 +7810,7 @@ Instruction_MoveRightProjectileTrailDownOnePixel:
     RTS                                                                  ;90B58E;
 
 
+%anchor($90B58F)
 InstList_BeamTrail_WaveBeam:                                             ;90B58F;
     dw $0004,$2A3C
     dw $0004,$2A3D
@@ -7586,6 +7818,7 @@ InstList_BeamTrail_WaveBeam:                                             ;90B58F
     dw $0004,$2A3F
     dw $0000
 
+%anchor($90B5A1)
 InstList_BeamTrail_SuperMissile:                                         ;90B5A1;
     dw $0004,$2A48
     dw $0004,$2A49
@@ -7593,6 +7826,7 @@ InstList_BeamTrail_SuperMissile:                                         ;90B5A1
     dw $0004,$2A4B
     dw $0000
 
+%anchor($90B5B3)
 Instruction_MoveLeftProjectileTrailUpOnePixel:
     LDA.W $D778,Y                                                        ;90B5B3;
     DEC A                                                                ;90B5B6;
@@ -7600,6 +7834,7 @@ Instruction_MoveLeftProjectileTrailUpOnePixel:
     RTS                                                                  ;90B5BA;
 
 
+%anchor($90B5BB)
 ProjectileTrail_InstListPointers_Left:
     dw InstList_BeamTrail_Empty                                          ;90B5BB;  0: Uncharged power
     dw InstList_BeamTrail_WaveBeam                                       ;90B5BD; *1: Uncharged wave
@@ -7641,6 +7876,7 @@ ProjectileTrail_InstListPointers_Left:
     dw InstList_LeftBeamTrail_IceBeams_ChargedPowerBeam                  ;90B605; *25h
     dw InstList_LeftBeamTrail_IceBeams_ChargedPowerBeam                  ;90B607; *26h
 
+%anchor($90B609)
 ProjectileTrail_InstListPointers_Right:
     dw InstList_BeamTrail_Empty                                          ;90B609;  0: Uncharged power
     dw InstList_BeamTrail_Empty                                          ;90B60B;  1: Uncharged wave
@@ -7682,6 +7918,7 @@ ProjectileTrail_InstListPointers_Right:
     dw InstList_RightBeamTrail_SomeIceBeams                              ;90B653; *25h
     dw InstList_LeftBeamTrail_IceBeams_ChargedPowerBeam                  ;90B655; *26h
 
+%anchor($90B657)
 Spawn_ProjectileTrail:
     PHB                                                                  ;90B657;
     LDA.W $0C18,X                                                        ;90B658;
@@ -7734,6 +7971,7 @@ Spawn_ProjectileTrail:
     RTL                                                                  ;90B6A8;
 
 
+%anchor($90B6A9)
 HandleProjectileTrails:
     PHB                                                                  ;90B6A9;
     PEA.W $7E7E                                                          ;90B6AA;
@@ -7925,6 +8163,7 @@ HandleProjectileTrails:
     RTL                                                                  ;90B80C;
 
 
+%anchor($90B80D)
 HUDSelectionHandler_Nothing_PowerBombs:
     PHP                                                                  ;90B80D;
     REP #$30                                                             ;90B80E;
@@ -7994,6 +8233,7 @@ HUDSelectionHandler_Nothing_PowerBombs:
     RTS                                                                  ;90B886;
 
 
+%anchor($90B887)
 Fire_Uncharge_Beam:
     LDA.W $0A76                                                          ;90B887;
     BEQ .notHyper                                                        ;90B88A;
@@ -8132,6 +8372,7 @@ Fire_Uncharge_Beam:
     dw Beam_NoWaveBeam                                                   ;90B982; Ah: Plasma + ice
     dw ProjectilePreInstruction_Beam_WavePlasmaSpazer_ChargeIceWave      ;90B984; Bh: Plasma + ice + wave
 
+%anchor($90B986)
 FireChargeBeam:
     JSR.W Check_if_Samus_Can_Fire_Beam                                   ;90B986;
     BCS .fire                                                            ;90B989;
@@ -8227,6 +8468,7 @@ FireChargeBeam:
     RTS                                                                  ;90BA3D;
 
 
+%anchor($90BA3E)
 SamusBeamPreInstructionPointers:
 ; Projectile pre-instruction pointers
     dw Beam_NoWaveBeam                                                   ;90BA3E; 0: Power
@@ -8242,6 +8484,7 @@ SamusBeamPreInstructionPointers:
     dw Beam_NoWaveBeam                                                   ;90BA52; Ah: Plasma + ice
     dw ProjectilePreInstruction_Beam_WavePlasmaSpazer_ChargeIceWave      ;90BA54; Bh: Plasma + ice + wave
 
+%anchor($90BA56)
 InitializeProjectilePositionDirection:
     LDA.W $0A1C                                                          ;90BA56;
     ASL A                                                                ;90BA59;
@@ -8336,6 +8579,7 @@ InitializeProjectilePositionDirection:
     RTS                                                                  ;90BAFB;
 
 
+%anchor($90BAFC)
 HandleChargingBeamGraphicsAudio:
     PHP                                                                  ;90BAFC;
     REP #$30                                                             ;90BAFD;
@@ -8482,6 +8726,7 @@ HandleChargingBeamGraphicsAudio:
     RTS                                                                  ;90BBE0;
 
 
+%anchor($90BBE1)
 DrawFlareAnimationComponent:
     PHP                                                                  ;90BBE1;
     SEP #$20                                                             ;90BBE2;
@@ -8601,6 +8846,7 @@ DrawFlareAnimationComponent:
     RTS                                                                  ;90BCBD;
 
 
+%anchor($90BCBE)
 ClearFlareAnimationState:
     STZ.W $0CD6                                                          ;90BCBE;
     STZ.W $0CD8                                                          ;90BCC1;
@@ -8611,6 +8857,7 @@ ClearFlareAnimationState:
     RTS                                                                  ;90BCD0;
 
 
+%anchor($90BCD1)
 FireHyperBeam:
     JSR.W Check_if_Samus_Can_Fire_Beam                                   ;90BCD1;
     BCS .canFire                                                         ;90BCD4;
@@ -8681,6 +8928,7 @@ FireHyperBeam:
     RTS                                                                  ;90BD63;
 
 
+%anchor($90BD64)
 InitialBeamBlockCollision_NoWaveBeam:
     PHX                                                                  ;90BD64;
     LDA.W $0C04,X                                                        ;90BD65;
@@ -8704,12 +8952,14 @@ InitialBeamBlockCollision_NoWaveBeam:
     dw InitialBeamBlockCollision_NoWaveBeam_Diagonal                     ;90BD82; 8: Up-left
     dw InitialBeamBlockCollision_NoWaveBeam_Vertical                     ;90BD84; 9: Up, facing left
 
+%anchor($90BD86)
 InitialBeamBlockCollision_NoWaveBeam_Vertical:
     LDX.W $0DDE                                                          ;90BD86;
     JSL.L MoveBeamVertically_NoWaveBeam                                  ;90BD89;
     RTS                                                                  ;90BD8D;
 
 
+%anchor($90BD8E)
 InitialBeamBlockCollision_NoWaveBeam_Diagonal:
     LDX.W $0DDE                                                          ;90BD8E;
     JSL.L MoveBeamHorizontally_NoWaveBeam                                ;90BD91;
@@ -8720,12 +8970,14 @@ InitialBeamBlockCollision_NoWaveBeam_Diagonal:
     RTS                                                                  ;90BD9B;
 
 
+%anchor($90BD9C)
 InitialBeamBlockCollision_NoWaveBeam_Right:
     LDX.W $0DDE                                                          ;90BD9C;
     JSL.L MoveBeamHorizontally_NoWaveBeam                                ;90BD9F;
     RTS                                                                  ;90BDA3;
 
 
+%anchor($90BDA4)
 InitialBeamBlockCollision_NoWaveBeam_Left:
     LDX.W $0DDE                                                          ;90BDA4;
     LDA.W #$FFFF                                                         ;90BDA7;
@@ -8734,6 +8986,7 @@ InitialBeamBlockCollision_NoWaveBeam_Left:
     RTS                                                                  ;90BDB1;
 
 
+%anchor($90BDB2)
 InitialWaveBeamBlockCollision:
     PHX                                                                  ;90BDB2;
     LDA.W $0C04,X                                                        ;90BDB3;
@@ -8757,12 +9010,14 @@ InitialWaveBeamBlockCollision:
     dw InitialWaveBeamBlockCollision_Diagonal                            ;90BDD0; 8: Up-left
     dw InitialWaveBeamBlockCollision_Vertical                            ;90BDD2; 9: Up, facing left
 
+%anchor($90BDD4)
 InitialWaveBeamBlockCollision_Vertical:
     LDX.W $0DDE                                                          ;90BDD4;
     JSL.L MoveBeamVertically_WaveBeam                                    ;90BDD7;
     RTS                                                                  ;90BDDB;
 
 
+%anchor($90BDDC)
 InitialWaveBeamBlockCollision_Diagonal:
     LDX.W $0DDE                                                          ;90BDDC;
     JSL.L MoveBeamHorizontally_WaveBeam                                  ;90BDDF;
@@ -8773,12 +9028,14 @@ InitialWaveBeamBlockCollision_Diagonal:
     RTS                                                                  ;90BDE9;
 
 
+%anchor($90BDEA)
 InitialWaveBeamBlockCollision_Right:
     LDX.W $0DDE                                                          ;90BDEA;
     JSL.L MoveBeamHorizontally_WaveBeam                                  ;90BDED;
     RTS                                                                  ;90BDF1;
 
 
+%anchor($90BDF2)
 InitialWaveBeamBlockCollision_Left:
     LDX.W $0DDE                                                          ;90BDF2;
     LDA.W #$FFFF                                                         ;90BDF5;
@@ -8787,6 +9044,7 @@ InitialWaveBeamBlockCollision_Left:
     RTS                                                                  ;90BDFF;
 
 
+%anchor($90BE00)
 ProjectileReflection:
     PHP                                                                  ;90BE00;
     PHB                                                                  ;90BE01;
@@ -8841,6 +9099,7 @@ ProjectileReflection:
     RTL                                                                  ;90BE61;
 
 
+%anchor($90BE62)
 HUDSelectionHandler_Missiles_SuperMissiles:
     PHP                                                                  ;90BE62;
     REP #$30                                                             ;90BE63;
@@ -8983,6 +9242,7 @@ HUDSelectionHandler_Missiles_SuperMissiles:
     RTS                                                                  ;90BF45;
 
 
+%anchor($90BF46)
 Spawn_SuperMissileLink:
     LDX.W #$0000                                                         ;90BF46;
 
@@ -9027,9 +9287,11 @@ Spawn_SuperMissileLink:
     RTS                                                                  ;90BF9A;
 
 
+%anchor($90BF9B)
 BombTimerResetValue:
     dw $003C                                                             ;90BF9B;
 
+%anchor($90BF9D)
 HUDSelectionHandler_MorphBall:
     PHP                                                                  ;90BF9D;
     REP #$30                                                             ;90BF9E;
@@ -9176,6 +9438,7 @@ HUDSelectionHandler_MorphBall:
     RTS                                                                  ;90C0AA;
 
 
+%anchor($90C0AB)
 FireBombOrBombSpread:
     LDA.W $09A2                                                          ;90C0AB;
     BIT.W #$1000                                                         ;90C0AE;
@@ -9207,6 +9470,7 @@ FireBombOrBombSpread:
     RTS                                                                  ;90C0E6;
 
 
+%anchor($90C0E7)
 FireBomb:
     LDA.B $8F                                                            ;90C0E7;
     BIT.W $09B2                                                          ;90C0E9;
@@ -9243,6 +9507,7 @@ FireBomb:
     RTS                                                                  ;90C127;
 
 
+%anchor($90C128)
 HandleBomb:
     PHP                                                                  ;90C128;
     REP #$30                                                             ;90C129;
@@ -9271,6 +9536,7 @@ HandleBomb:
     RTS                                                                  ;90C156;
 
 
+%anchor($90C157)
 HandlePowerBomb:
     PHP                                                                  ;90C157;
     REP #$30                                                             ;90C158;
@@ -9332,6 +9598,7 @@ HandlePowerBomb:
 ;       |     |     |     |     |     |     |     |     |     |      |      _________ Bh: Turning - neutral aim
 ;       |     |     |     |     |     |     |     |     |     |      |     |      ___ Ch: Turning - aiming down / down-left / down-right
 ;       |     |     |     |     |     |     |     |     |     |      |     |     |
+%anchor($90C1A8)
 ProjectileOriginOffsetsByDirection:
   .FlareX_Default:                                                       ;90C1A8;
     dw $0002,$0012,$000F,$0011,$0003,$FFFC,$FFEF,$FFF1,$FFEE,$FFFE, $FFFC,$FFFC,$FFFC
@@ -9353,6 +9620,7 @@ ProjectileOriginOffsetsByDirection:
   .ProjY_Moonwalk_Running:                                               ;90C240;
     dw $FFF8,$FFF0,$FFFE,$0001,$000D,$000D,$0001,$FFFE,$FFF0,$FFF8
 
+%anchor($90C254)
 ProjectileCooldowns_Uncharged:                                           ;90C254;
     db $0F ; 0: Power
     db $0F ; 1: Wave
@@ -9368,6 +9636,7 @@ ProjectileCooldowns_Uncharged:                                           ;90C254
     db $0F ; Bh: Plasma + ice + wave
     db $00,$00,$00,$00
 
+%anchor($90C264)
 ProjectileCooldowns_Charged:                                             ;90C264;
     db $1E ; 0: Power
     db $1E ; 1: Wave
@@ -9384,11 +9653,13 @@ ProjectileCooldowns_Charged:                                             ;90C264
     db $00,$00,$00,$00
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($90C274)
 UNUSED_Padding_90C274:
 ; Useless padding?
     db $00,$00,$00,$00,$00,$00                                           ;90C274;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($90C27A)
 ProjectileCooldowns_NonBeamProjectiles:                                  ;90C27A;
     db $00
     db $0A ; Missile
@@ -9400,9 +9671,11 @@ ProjectileCooldowns_NonBeamProjectiles:                                  ;90C27A
     db $00
     db $00
 
+%anchor($90C283)
 BeamAutoFireCooldowns:
     db $19,$19,$19,$19,$19,$19,$19,$19,$19,$19,$19,$19                   ;90C283;
 
+%anchor($90C28F)
 ProjectileSFX_Uncharged:                                                 ;90C28F;
     dw $000B ; 0: Power
     dw $000D ; 1: Wave
@@ -9417,6 +9690,7 @@ ProjectileSFX_Uncharged:                                                 ;90C28F
     dw $0014 ; Ah: Plasma + ice
     dw $0015 ; Bh: Plasma + ice + wave
 
+%anchor($90C2A7)
 ProjectileSFX_Charged:                                                   ;90C2A7;
     dw $0017 ; 0: Power
     dw $0019 ; 1: Wave
@@ -9431,6 +9705,7 @@ ProjectileSFX_Charged:                                                   ;90C2A7
     dw $0020 ; Ah: Plasma + ice
     dw $0021 ; Bh: Plasma + ice + wave
 
+%anchor($90C2BF)
 ProjectileSFX_NonBeamProjectiles:
 ;              _________ Missiles
 ;             |      ___ Super missiles
@@ -9440,8 +9715,10 @@ ProjectileSFX_NonBeamProjectiles:
 ;        _________ Speed for horizontal / vertical direction
 ;       |      ___ Speed for diagonal direction
 ;       |     |
+%anchor($90C2D1)
 BeamSpeeds_Horizontal_Vertical:                                          ;90C2D1;
     dw $0400
+%anchor($90C2D3)
 BeamSpeeds_Diagonal:                                                     ;90C2D3;
     dw       $02AB ; 0: Power
     dw $0400,$02AB ; 1: Wave
@@ -9456,10 +9733,12 @@ BeamSpeeds_Diagonal:                                                     ;90C2D3
     dw $0400,$02AB ; Ah: Plasma + ice
     dw $0400,$02AB ; Bh: Plasma + ice + wave
 
+%anchor($90C301)
 MissileInitializedBitset:
 ; This gets added to projectile $0C7C to indicate that it's been initialised
     dw $0100                                                             ;90C301;
 
+%anchor($90C303)
 MissileAccelerations:                                                    ;90C303;
 ;        _________ X acceleration. Unit 1/100h px/frame²
 ;       |      ___ Y acceleration. Unit 1/100h px/frame²
@@ -9475,6 +9754,7 @@ MissileAccelerations:                                                    ;90C303
     dw $FFCA,$FFCA ; 8: Up-left
     dw $0000,$FFC0 ; 9: Up, facing left
 
+%anchor($90C32B)
 SuperMissileAccelerations:                                               ;90C32B;
 ;        _________ X acceleration. Unit 1/100h px/frame²
 ;       |      ___ Y acceleration. Unit 1/100h px/frame²
@@ -9490,6 +9770,7 @@ SuperMissileAccelerations:                                               ;90C32B
     dw $FF4A,$FF4A ; 8: Up-left
     dw $0000,$FF00 ; 9: Up, facing left
 
+%anchor($90C353)
 ProjectileAccelerations_X:                                               ;90C353;
 ; X acceleration. Unit 1/100h px/frame²
     dw $0000 ; 0: Up, facing right
@@ -9503,6 +9784,7 @@ ProjectileAccelerations_X:                                               ;90C353
     dw $FFF0 ; 8: Up-left
     dw $0000 ; 9: Up, facing left
 
+%anchor($90C367)
 ProjectileAccelerations_Y:                                               ;90C367;
 ; Y acceleration. Unit 1/100h px/frame²
     dw $FFF0 ; 0: Up, facing right
@@ -9516,6 +9798,7 @@ ProjectileAccelerations_Y:                                               ;90C367
     dw $FFF0 ; 8: Up-left
     dw $FFF0 ; 9: Up, facing left
 
+%anchor($90C37B)
 ProtoWeaponConstants_Beams:                                              ;90C37B;
 ; Used only by $94:9C73 to set $0DD2 as part of bomb explosion block collision detection
 ; Highly likely that these tables were supposed to be abandoned entirely and that one check was left over
@@ -9536,6 +9819,7 @@ ProtoWeaponConstants_Beams:                                              ;90C37B
     db $1E,$64,$00 ; Ah: Plasma + ice
     db $1E,$64,$01 ; Bh: Plasma + ice + wave
 
+%anchor($90C39F)
 ProtoWeaponConstants_NonBeams:                                           ;90C39F;
 ;        _____ Unused. Damage?
 ;       |    _ Projectile proto type
@@ -9550,6 +9834,7 @@ ProtoWeaponConstants_NonBeams:                                           ;90C39F
     db $00,$FF   
     db $00,$FF
 
+%anchor($90C3B1)
 BeamTilesPointers:
     dw Tiles_PowerBeam                                                   ;90C3B1; 0: Power
     dw Tiles_WaveBeam                                                    ;90C3B3; 1: Wave
@@ -9564,6 +9849,7 @@ BeamTilesPointers:
     dw Tiles_PlasmaBeam                                                  ;90C3C5; Ah: Plasma + ice
     dw Tiles_PlasmaBeam                                                  ;90C3C7; Bh: Plasma + ice + wave
 
+%anchor($90C3C9)
 BeamPalettePointers:
     dw BeamPalettes_Power                                                ;90C3C9; 0: Power
     dw BeamPalettes_Wave                                                 ;90C3CB; 1: Wave
@@ -9578,41 +9864,51 @@ BeamPalettePointers:
     dw BeamPalettes_Ice                                                  ;90C3DD; Ah: Plasma + ice
     dw BeamPalettes_Ice                                                  ;90C3DF; Bh: Plasma + ice + wave
 
+%anchor($90C3E1)
 BeamPalettes_Power:
     dw $3800,$7FFF,$19FF,$1D55,$10AD,$53FF,$039E,$295F                   ;90C3E1;
     dw $18DF,$0000,$0000,$0000,$0000,$0000,$0000,$104A                   ;90C3F1;
 
+%anchor($90C401)
 BeamPalettes_Ice:
     dw $3800,$7FFF,$7EC0,$6DE0,$54E0,$7F6E,$730A,$6665                   ;90C401;
     dw $5E22,$7FA0,$7B60,$7720,$72A0,$6E60,$7F91,$20C0                   ;90C411;
 
+%anchor($90C421)
 BeamPalettes_Wave:
     dw $3800,$7FFF,$7C1F,$5816,$300C,$7EDF,$7DDF,$7CDF                   ;90C421;
     dw $681A,$0000,$0000,$0000,$0000,$0000,$0000,$2409                   ;90C431;
 
+%anchor($90C441)
 BeamPalettes_Plasma:
     dw $3800,$7FFF,$3BE0,$2680,$1580,$6BFA,$4BF2,$2BEA                   ;90C441;
     dw $03E0,$0000,$0000,$0000,$0000,$0000,$0000,$0920                   ;90C451;
 
+%anchor($90C461)
 BeamPalettes_Spazer:
     dw $3800,$7FFF,$03FF,$0216,$00EE,$6BFF,$4BFF,$2BFF                   ;90C461;
     dw $037B,$0000,$0000,$0000,$0000,$0000,$0000,$00AD                   ;90C471;
 
+%anchor($90C481)
 FlareAnimationDelays_Pointers:
     dw FlareAnimationDelays_MainFlare                                    ;90C481;
     dw FlareAnimationDelays_FlareSlowSparks                              ;90C483;
     dw FlareAnimationDelays_FlareFastSparks                              ;90C485;
 
+%anchor($90C487)
 FlareAnimationDelays_MainFlare:
     db $03,$03,$03,$03,$03,$03,$03,$03,$03,$03,$03,$03,$03,$03,$03,$03   ;90C487;
     db $03,$03,$03,$03,$03,$03,$03,$03,$03,$03,$03,$03,$03,$03,$FE,$0E   ;90C497;
 
+%anchor($90C4A7)
 FlareAnimationDelays_FlareSlowSparks:
     db $05,$04,$03,$03,$03,$03,$FF                                       ;90C4A7;
 
+%anchor($90C4AE)
 FlareAnimationDelays_FlareFastSparks:
     db $04,$03,$02,$02,$02,$02,$FF                                       ;90C4AE;
 
+%anchor($90C4B5)
 HandleSwitchingHUDSelection:
     PHP                                                                  ;90C4B5;
     REP #$30                                                             ;90C4B6;
@@ -9709,6 +10005,7 @@ HandleSwitchingHUDSelection:
     dw SwitchedToHUDItemHandler_GrappleBeam                              ;90C541; Grapple
     dw SwitchedToHUDItemHandler_XrayScope                                ;90C543; X-ray
 
+%anchor($90C545)
 SwitchedToHUDItemHandler_Nothing:
     STZ.W $0CD0                                                          ;90C545;
     JSR.W ClearFlareAnimationState                                       ;90C548;
@@ -9717,6 +10014,7 @@ SwitchedToHUDItemHandler_Nothing:
     RTS                                                                  ;90C550;
 
 
+%anchor($90C551)
 SwitchedToHUDItemHandler_Missiles:
     LDA.W $09C6                                                          ;90C551;
     BNE .hasMissiles                                                     ;90C554;
@@ -9732,6 +10030,7 @@ SwitchedToHUDItemHandler_Missiles:
     RTS                                                                  ;90C563;
 
 
+%anchor($90C564)
 SwitchedToHUDItemHandler_SuperMissiles:
     LDA.W $09CA                                                          ;90C564;
     BNE .hasSupers                                                       ;90C567;
@@ -9747,6 +10046,7 @@ SwitchedToHUDItemHandler_SuperMissiles:
     RTS                                                                  ;90C576;
 
 
+%anchor($90C577)
 SwitchedToHUDItemHandler_PowerBombs:
     LDA.W $09CE                                                          ;90C577;
     BNE .hasPowerBombs                                                   ;90C57A;
@@ -9762,6 +10062,7 @@ SwitchedToHUDItemHandler_PowerBombs:
     RTS                                                                  ;90C589;
 
 
+%anchor($90C58A)
 SwitchedToHUDItemHandler_GrappleBeam:
     LDA.W $09A2                                                          ;90C58A;
     BIT.W #$4000                                                         ;90C58D;
@@ -9785,6 +10086,7 @@ SwitchedToHUDItemHandler_GrappleBeam:
     RTS                                                                  ;90C5AD;
 
 
+%anchor($90C5AE)
 SwitchedToHUDItemHandler_XrayScope:
     LDA.W $09A2                                                          ;90C5AE;
     BIT.W #$8000                                                         ;90C5B1;
@@ -9801,6 +10103,7 @@ SwitchedToHUDItemHandler_XrayScope:
     RTS                                                                  ;90C5C3;
 
 
+%anchor($90C5C4)
 HandleArmCannonOpenState:
     PHP                                                                  ;90C5C4;
     REP #$30                                                             ;90C5C5;
@@ -9826,6 +10129,7 @@ HandleArmCannonOpenState:
     RTS                                                                  ;90C5EA;
 
 
+%anchor($90C5EB)
 UpdateArmCannonIsOpenState:
     LDA.W $0AAA                                                          ;90C5EB;
     CMP.W #$0002                                                         ;90C5EE;
@@ -9863,6 +10167,7 @@ UpdateArmCannonIsOpenState:
     RTS                                                                  ;90C626;
 
 
+%anchor($90C627)
 AdvanceArmCannonFrame:
     PHP                                                                  ;90C627;
     REP #$30                                                             ;90C628;
@@ -9905,6 +10210,7 @@ AdvanceArmCannonFrame:
     RTS                                                                  ;90C662;
 
 
+%anchor($90C663)
 DrawArmCannon:
     PHP                                                                  ;90C663;
     REP #$30                                                             ;90C664;
@@ -10114,10 +10420,12 @@ DrawArmCannon:
     dw Tiles_NonClosed_ArmCannon_UpwardsDiagonal_1                       ;90C7D5;
     dw Tiles_NonClosed_ArmCannon_UpwardsDiagonal_2                       ;90C7D7;
 
+%anchor($90C7D9)
 ArmCannonOpenFlags:
 ; Indexed by HUD item index. 1 for open arm cannon
     db $00,$01,$01,$00,$01,$00                                           ;90C7D9;
 
+%anchor($90C7DF)
 ArmCannonDrawingData:
     dw ArmCannonDrawingData_FacingForward                                ;90C7DF;
     dw ArmCannonDrawingData_FacingRight                                  ;90C7E1;
@@ -10401,15 +10709,18 @@ ArmCannonDrawingData:
 ;         2: Samus is facing forward (same as 0?)
 ;     }
 ;     x/y: X/Y offsets, indexed by [Samus animation frame]
+%anchor($90C9D9)
 ArmCannonDrawingData_Default:
 ; All other poses
     db $00,$00                                                           ;90C9D9;
 
+%anchor($90C9DB)
 ArmCannonDrawingData_FacingForward:
 ; 0: Facing forward - power suit
 ; 9Bh: Facing forward - varia/gravity suit
     db $00,$02                                                           ;90C9DB;
 
+%anchor($90C9DD)
 ArmCannonDrawingData_FacingRight:
 ; 1: Facing right - normal
 ; 47h: Unused
@@ -10420,6 +10731,7 @@ ArmCannonDrawingData_FacingRight:
     db $02,$01,$0B,$FD,$0B,$FD,$0B,$FD,$0B,$FD,$0B,$FD,$0B,$FD,$0B,$FD   ;90C9DD;
     db $0B,$FD,$0B,$FD                                                   ;90C9ED;
 
+%anchor($90C9F1)
 ArmCannonDrawingData_FacingLeft:
 ; 2: Facing left  - normal
 ; 48h: Unused
@@ -10430,14 +10742,17 @@ ArmCannonDrawingData_FacingLeft:
     db $07,$01,$ED,$FD,$ED,$FD,$ED,$FD,$ED,$FD,$ED,$FD,$ED,$FD,$ED,$FD   ;90C9F1;
     db $ED,$FD,$ED,$FD                                                   ;90CA01;
 
+%anchor($90CA05)
 ArmCannonDrawingData_FacingRight_AimingUp:
 ; 3: Facing right - aiming up
     db $81,$01,$80,$01,$0E,$EA,$FE,$E1                                   ;90CA05;
 
+%anchor($90CA0D)
 ArmCannonDrawingData_FacingLeft_AimingUp:
 ; 4: Facing left  - aiming up
     db $88,$01,$89,$01,$EA,$E9,$FA,$E1                                   ;90CA0D;
 
+%anchor($90CA15)
 ArmCannonDrawingData_FacingRight_AimingUpRight:
 ; 5: Facing right - aiming up-right
 ; 57h: Facing right - normal jump transition - aiming up-right
@@ -10448,6 +10763,7 @@ ArmCannonDrawingData_FacingRight_AimingUpRight:
 ; F9h: Facing right - standing transition - aiming up-right
     db $01,$01,$0D,$EA                                                   ;90CA15;
 
+%anchor($90CA19)
 ArmCannonDrawingData_FacingLeft_AimingUpLeft:
 ; 6: Facing left  - aiming up-left
 ; 58h: Facing left  - normal jump transition - aiming up-left
@@ -10458,6 +10774,7 @@ ArmCannonDrawingData_FacingLeft_AimingUpLeft:
 ; FAh: Facing left  - standing transition - aiming up-left
     db $08,$01,$EB,$E9                                                   ;90CA19;
 
+%anchor($90CA1D)
 ArmCannonDrawingData_FacingRight_AimingDownRight:
 ; 7: Facing right - aiming down-right
 ; 59h: Facing right - normal jump transition - aiming down-right
@@ -10469,6 +10786,7 @@ ArmCannonDrawingData_FacingRight_AimingDownRight:
 ; FBh: Facing right - standing transition - aiming down-right
     db $03,$01,$0D,$02                                                   ;90CA1D;
 
+%anchor($90CA21)
 ArmCannonDrawingData_FacingLeft_AimingDownLeft:
 ; 8: Facing left  - aiming down-left
 ; 5Ah: Facing left  - normal jump transition - aiming down-left
@@ -10480,203 +10798,249 @@ ArmCannonDrawingData_FacingLeft_AimingDownLeft:
 ; FCh: Facing left  - standing transition - aiming down-left
     db $06,$01,$EB,$02                                                   ;90CA21;
 
+%anchor($90CA25)
 ArmCannonDrawingData_MovingRight_GunExtended:
 ; Bh: Moving right - gun extended
     db $02,$01,$11,$FA,$11,$FA,$11,$F9,$11,$F8,$11,$F9,$11,$FA,$11,$F9   ;90CA25;
     db $11,$F9,$11,$F8,$11,$F9                                           ;90CA35;
 
+%anchor($90CA3B)
 ArmCannonDrawingData_MovingLeft_GunExtended:
 ; Ch: Moving left  - gun extended
     db $07,$01,$E7,$FA,$E7,$FA,$E7,$F8,$E7,$F9,$E7,$F9,$E7,$FA,$E7,$F9   ;90CA3B;
     db $E7,$F8,$E7,$F9,$E7,$F9                                           ;90CA4B;
 
+%anchor($90CA51)
 ArmCannonDrawingData_MovingRight_AimingUpRight:
 ; Fh: Moving right - aiming up-right
     db $01,$01,$0C,$EA,$0C,$EA,$0C,$E9,$0C,$E8,$0C,$E9,$0C,$EA,$0C,$EA   ;90CA51;
     db $0C,$E9,$0C,$E8,$0C,$E9                                           ;90CA61;
 
+%anchor($90CA67)
 ArmCannonDrawingData_MovingLeft_AimingUpLeft:
 ; 10h: Moving left  - aiming up-left
     db $08,$01,$EC,$EA,$EC,$EA,$EC,$E9,$EC,$E8,$EC,$E9,$EC,$EA,$EC,$EA   ;90CA67;
     db $EC,$E9,$EC,$E8,$EC,$E9                                           ;90CA77;
 
+%anchor($90CA7D)
 ArmCannonDrawingData_MovingRight_AimingDownRight:
 ; 11h: Moving right - aiming down-right
     db $03,$01,$0B,$01,$0B,$01,$0B,$00,$0B,$FF,$0B,$00,$0B,$01,$0B,$01   ;90CA7D;
     db $0B,$00,$0B,$FF,$0B,$00                                           ;90CA8D;
 
+%anchor($90CA93)
 ArmCannonDrawingData_MovingLeft_AimingDownLeft:
 ; 12h: Moving left  - aiming down-left
     db $06,$01,$ED,$01,$ED,$01,$ED,$00,$ED,$FF,$ED,$00,$ED,$01,$ED,$01   ;90CA93;
     db $ED,$00,$ED,$FF,$ED,$00                                           ;90CAA3;
 
+%anchor($90CAA9)
 ArmCannonDrawingData_FacingRight_NormalJump_NotMoving_GunExt:
 ; 13h: Facing right - normal jump - not aiming - not moving - gun extended
 ; ACh: Unused
     db $02,$01,$0B,$FD,$0B,$FD                                           ;90CAA9;
 
+%anchor($90CAAF)
 ArmCannonDrawingData_FacingLeft_NormalJump_NotMoving_GunExt:
 ; 14h: Facing left  - normal jump - not aiming - not moving - gun extended
 ; ADh: Unused
     db $07,$01,$ED,$FD,$ED,$FD                                           ;90CAAF;
 
+%anchor($90CAB5)
 ArmCannonDrawingData_FacingRight_NormalJump_AimingUp:
 ; 15h: Facing right - normal jump - aiming up
     db $81,$01,$80,$01,$0E,$E9,$FE,$E0                                   ;90CAB5;
 
+%anchor($90CABD)
 ArmCannonDrawingData_FacingLeft_NormalJump_AimingUp:
 ; 16h: Facing left  - normal jump - aiming up
     db $88,$01,$89,$01,$EA,$E8,$FA,$E0                                   ;90CABD;
 
+%anchor($90CAC5)
 ArmCannonDrawingData_FacingRight_NormalJump_AimingDown:
 ; 17h: Facing right - normal jump - aiming down
 ; AEh: Unused
     db $04,$01,$00,$0D,$00,$0D                                           ;90CAC5;
 
+%anchor($90CACB)
 ArmCannonDrawingData_FacingLeft_NormalJump_AimingDown:
 ; 18h: Facing left  - normal jump - aiming down
 ; AFh: Unused
     db $05,$01,$F7,$0D,$F7,$0D                                           ;90CACB;
 
+%anchor($90CAD1)
 ArmCannonDrawingData_FacingRight_NormalJumpTransition:
 ; 4Bh: Facing right - normal jump transition
     db $03,$01,$FB,$00,$06,$02,$ED,$FE                                   ;90CAD1;
 
+%anchor($90CAD9)
 ArmCannonDrawingData_FacingRight_NormalJump_MovingForward:
 ; 51h: Facing right - normal jump - not aiming - moving forward
     db $02,$01,$0B,$FD,$0B,$FD                                           ;90CAD9;
 
+%anchor($90CADF)
 ArmCannonDrawingData_FacingLeft_NormalJump_MovingForward:
 ; 52h: Facing left  - normal jump - not aiming - moving forward
     db $07,$01,$ED,$FD,$ED,$FD                                           ;90CADF;
 
+%anchor($90CAE5)
 ArmCannonDrawingData_FacingRight_NormalJump_AimingUpRight:
 ; 69h: Facing right - normal jump - aiming up-right
     db $01,$01,$0C,$EA,$0C,$EA                                           ;90CAE5;
 
+%anchor($90CAEB)
 ArmCannonDrawingData_FacingLeft_NormalJump_AimingUpLeft:
 ; 6Ah: Facing left  - normal jump - aiming up-left
     db $08,$01,$EC,$EA,$EC,$EA                                           ;90CAEB;
 
+%anchor($90CAF1)
 ArmCannonDrawingData_FacingRight_NormalJump_AimingDownRight:
 ; 6Bh: Facing right - normal jump - aiming down-right
 ; B0h: Unused
     db $03,$01,$0B,$01,$0B,$01                                           ;90CAF1;
 
+%anchor($90CAF7)
 ArmCannonDrawingData_FacingLeft_NormalJump_AimingDownLeft:
 ; 6Ch: Facing left  - normal jump - aiming down-left
 ; B1h: Unused
     db $06,$01,$ED,$01,$ED,$01                                           ;90CAF7;
 
+%anchor($90CAFD)
 ArmCannonDrawingData_FacingRight_Falling_GunExtended:
 ; 67h: Facing right - falling - gun extended
     db $02,$01,$0B,$FD,$0B,$FD,$0B,$FD,$0B,$FD,$0B,$FD,$0B,$FD,$0B,$FD   ;90CAFD;
 
+%anchor($90CB0D)
 ArmCannonDrawingData_FacingLeft_Falling_GunExtended:
 ; 68h: Facing left  - falling - gun extended
     db $07,$01,$ED,$FD,$ED,$FD,$ED,$FD,$ED,$FD,$ED,$FD,$ED,$FD,$ED,$FD   ;90CB0D;
 
+%anchor($90CB1D)
 ArmCannonDrawingData_FacingRight_Falling_AimingUp:
 ; 2Bh: Facing right - falling - aiming up
     db $81,$01,$80,$01,$0E,$E9,$FE,$E0,$FE,$E0                           ;90CB1D;
 
+%anchor($90CB27)
 ArmCannonDrawingData_FacingLeft_Falling_AimingUp:
 ; 2Ch: Facing left  - falling - aiming up
     db $88,$01,$89,$01,$EA,$E8,$FA,$E4,$FA,$E4                           ;90CB27;
 
+%anchor($90CB31)
 ArmCannonDrawingData_FacingRight_Falling_AimingDown:
 ; 2Dh: Facing right - falling - aiming down
     db $04,$01,$00,$09,$00,$09                                           ;90CB31;
 
+%anchor($90CB37)
 ArmCannonDrawingData_FacingLeft_Falling_AimingDown:
 ; 2Eh: Facing left  - falling - aiming down
     db $05,$01,$F7,$09,$F7,$09                                           ;90CB37;
 
+%anchor($90CB3D)
 ArmCannonDrawingData_FacingRight_Falling_AimingUpRight:
 ; 6Dh: Facing right - falling - aiming up-right
     db $01,$01,$0C,$EA,$0C,$EA,$0C,$EA                                   ;90CB3D;
 
+%anchor($90CB45)
 ArmCannonDrawingData_FacingLeft_Falling_AimingUpLeft:
 ; 6Eh: Facing left  - falling - aiming up-left
     db $08,$01,$EC,$EA,$EC,$EA,$EC,$EA                                   ;90CB45;
 
+%anchor($90CB4D)
 ArmCannonDrawingData_FacingRight_Falling_AimingDownRight:
 ; 6Fh: Facing right - falling - aiming down-right
     db $03,$01,$0B,$01,$0B,$01,$0B,$01                                   ;90CB4D;
 
+%anchor($90CB55)
 ArmCannonDrawingData_FacingLeft_Falling_AimingDownLeft:
 ; 70h: Facing left  - falling - aiming down-left
     db $06,$01,$ED,$01,$ED,$01,$ED,$01                                   ;90CB55;
 
+%anchor($90CB5D)
 ArmCannonDrawingData_FacingRight_Crouching:
 ; 27h: Facing right - crouching
 ; B4h: Unused
     db $02,$01,$0B,$FD,$0B,$FD,$0B,$FD,$0B,$FD,$0B,$FD,$0B,$FD,$0B,$FD   ;90CB5D;
     db $0B,$FD,$0B,$FD                                                   ;90CB6D;
 
+%anchor($90CB71)
 ArmCannonDrawingData_FacingLeft_Crouching:
 ; 28h: Facing left  - crouching
 ; B5h: Unused
     db $07,$01,$ED,$FD,$ED,$FD,$ED,$FD,$ED,$FD,$ED,$FD,$ED,$FD,$ED,$FD   ;90CB71;
     db $ED,$FD,$ED,$FD                                                   ;90CB81;
 
+%anchor($90CB85)
 ArmCannonDrawingData_FacingRight_Crouching_AimingUpRight:
 ; 71h: Facing right - crouching - aiming up-right
     db $01,$01,$0E,$E9                                                   ;90CB85;
 
+%anchor($90CB89)
 ArmCannonDrawingData_FacingLeft_Crouching_AimingUpLeft:
 ; 72h: Facing left  - crouching - aiming up-left
     db $08,$01,$EA,$E8                                                   ;90CB89;
 
+%anchor($90CB8D)
 ArmCannonDrawingData_FacingRight_Crouching_AimingDownRight:
 ; 73h: Facing right - crouching - aiming down-right
     db $03,$01,$0D,$02                                                   ;90CB8D;
 
+%anchor($90CB91)
 ArmCannonDrawingData_FacingLeft_Crouching_AimingDownLeft:
 ; 74h: Facing left  - crouching - aiming down-left
 ; B7h: Unused
     db $06,$01,$EB,$02                                                   ;90CB91;
 
+%anchor($90CB95)
 ArmCannonDrawingData_FacingRight_Crouching_AimingUp:
 ; 85h: Facing right - crouching - aiming up
     db $81,$01,$80,$01,$0E,$E9,$FE,$E0                                   ;90CB95;
 
+%anchor($90CB9D)
 ArmCannonDrawingData_FacingLeft_Crouching_AimingUp:
 ; 86h: Facing left  - crouching - aiming up
     db $88,$01,$89,$01,$EA,$E8,$FA,$E0                                   ;90CB9D;
 
+%anchor($90CBA5)
 ArmCannonDrawingData_FacingLeft_Moonwalk:
 ; 49h: Facing left  - moonwalk
     db $02,$01,$F1,$FD,$F1,$FC,$F1,$FC,$F1,$FD,$F1,$FC,$F1,$FC           ;90CBA5;
 
+%anchor($90CBB3)
 ArmCannonDrawingData_FacingRight_Moonwalk:
 ; 4Ah: Facing right - moonwalk
     db $07,$01,$07,$FD,$07,$FC,$07,$FC,$07,$FD,$07,$FC,$07,$FC           ;90CBB3;
 
+%anchor($90CBC1)
 ArmCannonDrawingData_FacingLeft_Moonwalk_AimingUpLeft:
 ; 75h: Facing left  - moonwalk - aiming up-left
     db $08,$01,$EC,$EA,$EC,$E9,$EC,$E9,$EC,$EA,$EC,$E9,$EC,$E9           ;90CBC1;
 
+%anchor($90CBCF)
 ArmCannonDrawingData_FacingRight_Moonwalk_AimingUpRight:
 ; 76h: Facing right - moonwalk - aiming up-right
     db $01,$01,$0C,$EA,$0C,$E9,$0C,$E9,$0C,$EA,$0C,$E9,$0C,$E9           ;90CBCF;
 
+%anchor($90CBDD)
 ArmCannonDrawingData_FacingLeft_Moonwalk_AimingDownLeft:
 ; 77h: Facing left  - moonwalk - aiming down-left
     db $06,$01,$ED,$01,$ED,$00,$ED,$00,$ED,$01,$ED,$00,$ED,$00           ;90CBDD;
 
+%anchor($90CBEB)
 ArmCannonDrawingData_FacingRight_Moonwalk_AimingDownRight:
 ; 78h: Facing right - moonwalk - aiming down-right
     db $03,$01,$0B,$01,$0B,$00,$0B,$00,$0B,$01,$0B,$00,$0B,$00           ;90CBEB;
 
+%anchor($90CBF9)
 ArmCannonDrawingData_FacingRight_LandingFromNormalJump:
 ; A4h: Facing right - landing from normal jump
     db $03,$01,$FB,$00,$FB,$00,$06,$02,$ED,$FE,$ED,$FE                   ;90CBF9;
 
+%anchor($90CC05)
 ArmCannonDrawingData_FacingRight_LandingFromSpinJump:
 ; A6h: Facing right - landing from spin jump
     db $03,$01,$FB,$00,$FB,$00,$FB,$00,$06,$02,$ED,$FE,$ED,$FE,$ED,$FE   ;90CC05;
 
+%anchor($90CC15)
 ArmCannonDrawingData_FacingRight_Transition_AimingUp:
 ; 55h: Facing right - normal jump transition - aiming up
 ; E0h: Facing right - landing from normal jump - aiming up
@@ -10684,6 +11048,7 @@ ArmCannonDrawingData_FacingRight_Transition_AimingUp:
 ; F7h: Facing right - standing transition - aiming up
     db $00,$01,$FE,$E1,$FE,$E1                                           ;90CC15;
 
+%anchor($90CC1B)
 ArmCannonDrawingData_FacingLeft_Transition_AimingUp:
 ; 56h: Facing left  - normal jump transition - aiming up
 ; E1h: Facing left  - landing from normal jump - aiming up
@@ -10691,6 +11056,7 @@ ArmCannonDrawingData_FacingLeft_Transition_AimingUp:
 ; F8h: Facing left  - standing transition - aiming up
     db $09,$01,$FA,$E1,$FA,$E1                                           ;90CC1B;
 
+%anchor($90CC21)
 CostOfSBAsInPowerBombs:                                                  ;90CC21;
 ; Obviously only the pure beams have non-zero values, and obviously they're all 1
 ; This table sucks
@@ -10707,6 +11073,7 @@ CostOfSBAsInPowerBombs:                                                  ;90CC21
     dw $0000 ; Ah: Plasma + ice
     dw $0000 ; Bh: Plasma + ice + wave
 
+%anchor($90CC39)
 Math_90CC39:
     PHP                                                                  ;90CC39;
     REP #$30                                                             ;90CC3A;
@@ -10761,6 +11128,7 @@ Math_90CC39:
     RTS                                                                  ;90CC89;
 
 
+%anchor($90CC8A)
 Math_90CC8A:
     SEP #$20                                                             ;90CC8A;
     LDA.L SineCosineTables_8bitSine_SignExtended,X                       ;90CC8C;
@@ -10790,6 +11158,7 @@ Math_90CC8A:
     RTS                                                                  ;90CCBF;
 
 
+%anchor($90CCC0)
 FireSBA:
     LDA.W $09D2                                                          ;90CCC0;
     CMP.W #$0003                                                         ;90CCC3;
@@ -10834,6 +11203,7 @@ FireSBA:
     dw CLCRTS_90CD18                                                     ;90CD04; Ah: Plasma + ice
     dw CLCRTS_90CD18                                                     ;90CD06; Bh: Plasma + ice + wave
 
+%anchor($90CD08)
 IcePlasmaSBAProjectileOriginAngles:                                      ;90CD08;
 ; Angle of projectiles from Samus (2pi / 100h radians clockwise, 0 = up) for ice/plasma SBA
     dw $0000
@@ -10845,11 +11215,13 @@ IcePlasmaSBAProjectileOriginAngles:                                      ;90CD08
     dw $00A0 ; Unused
     dw $00E0 ; Unused
 
+%anchor($90CD18)
 CLCRTS_90CD18:
     CLC                                                                  ;90CD18;
     RTS                                                                  ;90CD19;
 
 
+%anchor($90CD1A)
 FireWaveSBA:
     LDX.W #$0006                                                         ;90CD1A;
 
@@ -10905,6 +11277,7 @@ FireWaveSBA:
 ; y offsets from Samus
     dw $0080,$FF80,$FF80,$0080                                           ;90CD93;
 
+%anchor($90CD9B)
 FireIceSBA:
     LDA.W $0C68                                                          ;90CD9B;
     CMP.W #ProjectilePreInstruction_IceSBA_End                           ;90CD9E;
@@ -10966,6 +11339,7 @@ FireIceSBA:
     RTS                                                                  ;90CE13;
 
 
+%anchor($90CE14)
 FireSpazerSBA:
     LDX.W #$0006                                                         ;90CE14;
 
@@ -11024,6 +11398,7 @@ FireSpazerSBA:
 .angleDeltas:
     dw $0004,$FFFC,$0004,$FFFC                                           ;90CE90;
 
+%anchor($90CE98)
 FirePlasmaSBA:
     LDA.W $0C68                                                          ;90CE98;
     CMP.W #ProjectilePreInstruction_PlasmaSBA                            ;90CE9B;
@@ -11079,6 +11454,7 @@ FirePlasmaSBA:
     RTS                                                                  ;90CF08;
 
 
+%anchor($90CF09)
 ProjectilePreInstruction_IceSBA_Main:
     LDA.W $0C04,X                                                        ;90CF09;
     AND.W #$00F0                                                         ;90CF0C;
@@ -11130,6 +11506,7 @@ ProjectilePreInstruction_IceSBA_Main:
     RTS                                                                  ;90CF79;
 
 
+%anchor($90CF7A)
 ProjectilePreInstruction_IceSBA_End:
     LDA.W $0C04,X                                                        ;90CF7A;
     AND.W #$00F0                                                         ;90CF7D;
@@ -11191,6 +11568,7 @@ ProjectilePreInstruction_IceSBA_End:
     RTS                                                                  ;90CFF9;
 
 
+%anchor($90CFFA)
 TriggerShinesparkWindup:
     PHP                                                                  ;90CFFA;
     PHB                                                                  ;90CFFB;
@@ -11240,6 +11618,7 @@ TriggerShinesparkWindup:
     RTL                                                                  ;90D067;
 
 
+%anchor($90D068)
 SamusMovementHandler_ShinesparkWindup:
     DEC.W $0AA2                                                          ;90D068;
     BEQ .timerExpired                                                    ;90D06B;
@@ -11275,6 +11654,7 @@ SamusMovementHandler_ShinesparkWindup:
     RTS                                                                  ;90D0AA;
 
 
+%anchor($90D0AB)
 SamusMovementHandler_VerticalShinespark:
     LDA.W #$0002                                                         ;90D0AB;
     STA.W $0A6E                                                          ;90D0AE;
@@ -11296,6 +11676,7 @@ SamusMovementHandler_VerticalShinespark:
     RTS                                                                  ;90D0D6;
 
 
+%anchor($90D0D7)
 SamusMovementHandler_DiagonalShinespark:
     LDA.W #$0002                                                         ;90D0D7;
     STA.W $0A6E                                                          ;90D0DA;
@@ -11318,6 +11699,7 @@ SamusMovementHandler_DiagonalShinespark:
     RTS                                                                  ;90D105;
 
 
+%anchor($90D106)
 SamusMovementHandler_HorizontalShinespark:
     LDA.W #$0002                                                         ;90D106;
     STA.W $0A6E                                                          ;90D109;
@@ -11339,6 +11721,7 @@ SamusMovementHandler_HorizontalShinespark:
     RTS                                                                  ;90D131;
 
 
+%anchor($90D132)
 Shinespark_Horizontal_Movement:
     LDA.W #$000F                                                         ;90D132;
     STA.W $0A68                                                          ;90D135;
@@ -11448,6 +11831,7 @@ Shinespark_Horizontal_Movement:
     RTS                                                                  ;90D1FE;
 
 
+%anchor($90D1FF)
 Shinespark_Vertical_Movement:
     LDA.W #$000F                                                         ;90D1FF;
     STA.W $0A68                                                          ;90D202;
@@ -11544,6 +11928,7 @@ Shinespark_Vertical_Movement:
     RTS                                                                  ;90D2B9;
 
 
+%anchor($90D2BA)
 EndShinesparkIfCollisionDetectedOrLowEnergy:
     LDA.W $09C2                                                          ;90D2BA;
     CMP.W #$001E                                                         ;90D2BD;
@@ -11604,6 +11989,7 @@ EndShinesparkIfCollisionDetectedOrLowEnergy:
     RTS                                                                  ;90D345;
 
 
+%anchor($90D346)
 SamusMovementHandler_ShinesparkCrash_EchoesCircleSamus:
     LDA.W #$000F                                                         ;90D346;
     STA.W $0A68                                                          ;90D349;
@@ -11638,6 +12024,7 @@ SamusMovementHandler_ShinesparkCrash_EchoesCircleSamus:
     dw ShinesparkCrash_EchoesCircleSamus_Phase1                          ;90D37F;
     dw ShinesparkCrash_EchoesCircleSamus_Phase2                          ;90D381;
 
+%anchor($90D383)
 ShinesparkCrash_EchoesCircleSamus_Phase0:
     LDA.W $0AAE                                                          ;90D383;
     CLC                                                                  ;90D386;
@@ -11650,6 +12037,7 @@ ShinesparkCrash_EchoesCircleSamus_Phase0:
     RTS                                                                  ;90D395;
 
 
+%anchor($90D396)
 ShinesparkCrash_EchoesCircleSamus_Phase1:
     LDA.W $0AC0                                                          ;90D396;
     CLC                                                                  ;90D399;
@@ -11676,6 +12064,7 @@ ShinesparkCrash_EchoesCircleSamus_Phase1:
     RTS                                                                  ;90D3CB;
 
 
+%anchor($90D3CC)
 ShinesparkCrash_EchoesCircleSamus_Phase2:
     LDA.W $0AAE                                                          ;90D3CC;
     SEC                                                                  ;90D3CF;
@@ -11698,6 +12087,7 @@ ShinesparkCrash_EchoesCircleSamus_Phase2:
     RTS                                                                  ;90D3F2;
 
 
+%anchor($90D3F3)
 ShinesparkCrash_EchoesFinishedCirclingSamus:
     LDA.W #$000F                                                         ;90D3F3;
     STA.W $0A68                                                          ;90D3F6;
@@ -11715,6 +12105,7 @@ ShinesparkCrash_EchoesFinishedCirclingSamus:
     RTS                                                                  ;90D40C;
 
 
+%anchor($90D40D)
 ShinesparkCrash_Finish:
     STZ.W $0AAE                                                          ;90D40D;
     LDA.W $0CCE                                                          ;90D410;
@@ -11804,6 +12195,7 @@ ShinesparkCrash_Finish:
     db $20,$A0 ; CEh: Facing left  - shinespark - diagonal
 
 
+%anchor($90D4D2)
 ProjectilePreInstruction_SpeedEcho:
     LDA.W $0BDC,X                                                        ;90D4D2;
     CLC                                                                  ;90D4D5;
@@ -11845,6 +12237,7 @@ ProjectilePreInstruction_SpeedEcho:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($90D525)
 UNUSED_GrappleBeam_90D525:
     LDA.B $8B                                                            ;90D525;
     BIT.W $09B2                                                          ;90D527;
@@ -11909,6 +12302,7 @@ UNUSED_GrappleBeam_90D525:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($90D5A2)
 CrystalFlash:
     PHP                                                                  ;90D5A2;
     REP #$30                                                             ;90D5A3;
@@ -12007,6 +12401,7 @@ CrystalFlash:
     RTL                                                                  ;90D677;
 
 
+%anchor($90D678)
 SamusMovementHandler_CrystalFlash_RaiseSamus_GenerateBubble:
     LDA.W $0AFA                                                          ;90D678;
     DEC A                                                                ;90D67B;
@@ -12048,6 +12443,7 @@ SamusMovementHandler_CrystalFlash_RaiseSamus_GenerateBubble:
     RTS                                                                  ;90D6CD;
 
 
+%anchor($90D6CE)
 SamusMovementHandler_CrystalFlash_DecrementAmmo:
     LDA.W $0DEA                                                          ;90D6CE;
     ASL A                                                                ;90D6D1;
@@ -12063,6 +12459,7 @@ SamusMovementHandler_CrystalFlash_DecrementAmmo:
     dw CrystalFlash_DecrementSuperMissiles                               ;90D6DF;
     dw CrystalFlash_DecrementPowerBombs                                  ;90D6E1;
 
+%anchor($90D6E3)
 CrystalFlash_DecrementMissiles:
     LDA.W $05B6                                                          ;90D6E3;
     BIT.W #$0007                                                         ;90D6E6;
@@ -12083,6 +12480,7 @@ CrystalFlash_DecrementMissiles:
     RTS                                                                  ;90D705;
 
 
+%anchor($90D706)
 CrystalFlash_DecrementSuperMissiles:
     LDA.W $05B6                                                          ;90D706;
     BIT.W #$0007                                                         ;90D709;
@@ -12103,6 +12501,7 @@ CrystalFlash_DecrementSuperMissiles:
     RTS                                                                  ;90D728;
 
 
+%anchor($90D729)
 CrystalFlash_DecrementPowerBombs:
     LDA.W $05B6                                                          ;90D729;
     BIT.W #$0007                                                         ;90D72C;
@@ -12128,6 +12527,7 @@ CrystalFlash_DecrementPowerBombs:
     RTS                                                                  ;90D75A;
 
 
+%anchor($90D75B)
 SamusMovementHandler_CrystalFlash_Finish:
     LDA.W $0AFA                                                          ;90D75B;
     CMP.W $0DF0                                                          ;90D75E;
@@ -12155,6 +12555,7 @@ SamusMovementHandler_CrystalFlash_Finish:
     RTS                                                                  ;90D792;
 
 
+%anchor($90D793)
 ProjectilePreInstruction_PlasmaSBA:
     LDA.W $0C04,X                                                        ;90D793;
     AND.W #$00F0                                                         ;90D796;
@@ -12196,6 +12597,7 @@ ProjectilePreInstruction_PlasmaSBA:
     dw PlasmaSBA_Phase1_Contracting                                      ;90D7DD;
     dw PlasmaSBA_Phase2_Dispersing                                       ;90D7DF;
 
+%anchor($90D7E1)
 PlasmaSBA_Phase0_Expanding:
     LDA.W $0BDC,Y                                                        ;90D7E1;
     CLC                                                                  ;90D7E4;
@@ -12211,6 +12613,7 @@ PlasmaSBA_Phase0_Expanding:
     RTS                                                                  ;90D7F9;
 
 
+%anchor($90D7FA)
 PlasmaSBA_Phase1_Contracting:
     LDA.W $0BDC,Y                                                        ;90D7FA;
     SEC                                                                  ;90D7FD;
@@ -12226,6 +12629,7 @@ PlasmaSBA_Phase1_Contracting:
     RTS                                                                  ;90D812;
 
 
+%anchor($90D813)
 PlasmaSBA_Phase2_Dispersing:
     LDA.W $0B64,Y                                                        ;90D813;
     SEC                                                                  ;90D816;
@@ -12255,6 +12659,7 @@ PlasmaSBA_Phase2_Dispersing:
     RTS                                                                  ;90D848;
 
 
+%anchor($90D849)
 BombSpread:
     LDA.W $0C72                                                          ;90D849;
     CMP.W #ProjectilePreInstruction_BombSpread                           ;90D84C;
@@ -12318,6 +12723,7 @@ BombSpread:
     RTS                                                                  ;90D8CE;
 
 
+%anchor($90D8CF)
 BombSpreadData:
   .timers:
     db $78,$00,$6E,$00,$64,$00,$6E,$00,$78,$00                           ;90D8CF;
@@ -12329,6 +12735,7 @@ BombSpreadData:
   .YSubSpeeds:
     db $00,$00,$00,$00,$00,$80,$00,$00,$00,$00                           ;90D8ED;
 
+%anchor($90D8F7)
 ProjectilePreInstruction_BombSpread:
     LDA.W $0C04,X                                                        ;90D8F7;
     AND.W #$00F0                                                         ;90D8FA;
@@ -12468,6 +12875,7 @@ ProjectilePreInstruction_BombSpread:
     RTS                                                                  ;90DA07;
 
 
+%anchor($90DA08)
 ProjectilePreInstruction_WaveSBA:
     LDA.W $0C04,X                                                        ;90DA08;
     BIT.W #$00F0                                                         ;90DA0B;
@@ -12599,6 +13007,7 @@ ProjectilePreInstruction_WaveSBA:
     RTS                                                                  ;90DB05;
 
 
+%anchor($90DB06)
 ProjectilePreInstruction_SpazerSBA:
     LDA.W $0C04,X                                                        ;90DB06;
     AND.W #$00F0                                                         ;90DB09;
@@ -12646,6 +13055,7 @@ ProjectilePreInstruction_SpazerSBA:
     dw ClearSpazerSBAPair_4                                              ;90DB53;
     dw ClearSpazerSBAPair_6                                              ;90DB55;
 
+%anchor($90DB57)
 ClearSpazerSBAPair_0:
     JSL.L Clear_Projectile                                               ;90DB57;
     LDX.W #$0004                                                         ;90DB5B;
@@ -12654,6 +13064,7 @@ ClearSpazerSBAPair_0:
     RTS                                                                  ;90DB65;
 
 
+%anchor($90DB66)
 ClearSpazerSBAPair_2:
     JSL.L Clear_Projectile                                               ;90DB66;
     LDX.W #$0006                                                         ;90DB6A;
@@ -12662,6 +13073,7 @@ ClearSpazerSBAPair_2:
     RTS                                                                  ;90DB74;
 
 
+%anchor($90DB75)
 ClearSpazerSBAPair_4:
     JSL.L Clear_Projectile                                               ;90DB75;
     LDX.W #$0000                                                         ;90DB79;
@@ -12670,6 +13082,7 @@ ClearSpazerSBAPair_4:
     RTS                                                                  ;90DB83;
 
 
+%anchor($90DB84)
 ClearSpazerSBAPair_6:
     JSL.L Clear_Projectile                                               ;90DB84;
     LDX.W #$0002                                                         ;90DB88;
@@ -12678,6 +13091,7 @@ ClearSpazerSBAPair_6:
     RTS                                                                  ;90DB92;
 
 
+%anchor($90DB93)
 SpazerSBA_Phase0_Circling:
     LDA.W $0AFA                                                          ;90DB93;
     CLC                                                                  ;90DB96;
@@ -12706,6 +13120,7 @@ SpazerSBA_Phase0_Circling:
 .angleDeltas:
     dw $0002,$FFFE,$0002,$FFFE                                           ;90DBC7;
 
+%anchor($90DBCF)
 SpazerSBA_Phase2_FlyingUpTowardsPoint:
     LDA.W $0AFA                                                          ;90DBCF;
     SEC                                                                  ;90DBD2;
@@ -12752,6 +13167,7 @@ SpazerSBA_Phase2_FlyingUpTowardsPoint:
 .angleDeltas:
     dw $FFFE,$0002,$FFFE,$0002                                           ;90DC28;
 
+%anchor($90DC30)
 SpazerSBA_Phase4_FlyingUpAwayFromPoint:
     LDA.W $0AFA                                                          ;90DC30;
     SEC                                                                  ;90DC33;
@@ -12784,6 +13200,7 @@ SpazerSBA_Phase4_FlyingUpAwayFromPoint:
     RTS                                                                  ;90DC66;
 
 
+%anchor($90DC67)
 FireEndOfSpazerSBA:
     LDA.W $0B64,Y                                                        ;90DC67;
     CLC                                                                  ;90DC6A;
@@ -12809,6 +13226,7 @@ FireEndOfSpazerSBA:
 .data:
     dw $0010,$0010,$FFF0,$FFF0                                           ;90DC94;
 
+%anchor($90DC9C)
 ProjectilePreInstruction_EndOfSpazerSBA:
     LDA.W $0C04,X                                                        ;90DC9C;
     AND.W #$00F0                                                         ;90DC9F;
@@ -12844,6 +13262,7 @@ ProjectilePreInstruction_EndOfSpazerSBA:
     RTS                                                                  ;90DCDC;
 
 
+%anchor($90DCDD)
 HandleHUDSpecificBehaviorAndProjectiles:
     PHP                                                                  ;90DCDD;
     REP #$30                                                             ;90DCDE;
@@ -12899,6 +13318,7 @@ HandleHUDSpecificBehaviorAndProjectiles:
     dw HUDSelectionHandler_GrabbedByDraygon                              ;90DD39; 1Ah: Grabbed by Draygon
     dw HUDSelectionHandler_SpinWallJump_Knockback_Shinespark_CF_etc      ;90DD3B; 1Bh: Shinespark / crystal flash / drained by metroid / damaged by MB's attacks
 
+%anchor($90DD3D)
 HUDSelectionHandler_Standard:
     PHP                                                                  ;90DD3D;
     REP #$30                                                             ;90DD3E;
@@ -12936,11 +13356,13 @@ HUDSelectionHandler_Standard:
     dw HUDSelectionHandler_Xray                                          ;90DD6B; X-ray
     dw HUDSelectionHandler_TurningAround                                 ;90DD6D; HUD selection handler for turning, looks like a mistake, would cause stack overflow if Samus shoots in the air, can't be indexed anyway
 
+%anchor($90DD6F)
 HUDSelectionHandler_Grappling:
     JSL.L GrappleBeamHandler                                             ;90DD6F;
     RTS                                                                  ;90DD73;
 
 
+%anchor($90DD74)
 HUDSelectionHandler_TurningAround:
     LDA.W $0B5E                                                          ;90DD74;
     BEQ .notShooting                                                     ;90DD77;
@@ -12959,6 +13381,7 @@ HUDSelectionHandler_TurningAround:
     RTS                                                                  ;90DD8B;
 
 
+%anchor($90DD8C)
 HUDSelectionHandler_TransitionPoses:
     LDA.W $0A1C                                                          ;90DD8C;
     CMP.W #$00F1                                                         ;90DD8F;
@@ -12993,6 +13416,7 @@ HUDSelectionHandler_TransitionPoses:
     db $01 ; Unused
     db $01 ; Unused
 
+%anchor($90DDB6)
 HUDSelectionHandler_SpinWallJump_Knockback_Shinespark_CF_etc:
     LDA.W $0D32                                                          ;90DDB6;
     CMP.W #GrappleBeamFunction_Inactive                                  ;90DDB9;
@@ -13005,6 +13429,7 @@ HUDSelectionHandler_SpinWallJump_Knockback_Shinespark_CF_etc:
     RTS                                                                  ;90DDC7;
 
 
+%anchor($90DDC8)
 HUDSelectionHandler_Xray:
     LDA.B $8B                                                            ;90DDC8;
     BIT.W $09B6                                                          ;90DDCA;
@@ -13018,6 +13443,7 @@ HUDSelectionHandler_Xray:
     RTS                                                                  ;90DDD7;
 
 
+%anchor($90DDD8)
 HUDSelectionHandler_GrabbedByDraygon:
     LDA.W $0A1C                                                          ;90DDD8;
     CMP.W #$00DF                                                         ;90DDDB;
@@ -13033,6 +13459,7 @@ HUDSelectionHandler_GrabbedByDraygon:
     RTS                                                                  ;90DDE8;
 
 
+%anchor($90DDE9)
 SamusIsHit_Interruption:
     PHP                                                                  ;90DDE9;
     REP #$30                                                             ;90DDEA;
@@ -13155,6 +13582,7 @@ SamusIsHit_Interruption:
     dw KnockbackTransition_Ignore_ClearDirection                         ;90DEB6; 1Ah: Grabbed by Draygon
     dw KnockbackTransition_SetSamusDrainedHurtAnimation_OrIgnore         ;90DEB8; 1Bh: Shinespark / crystal flash / drained by metroid / damaged by MB's attacks
 
+%anchor($90DEBA)
 KnockbackTransition_SetSamusDrainedHurtAnimation_OrIgnore:
     LDA.W $0A1C                                                          ;90DEBA;
     CMP.W #$00E8                                                         ;90DEBD;
@@ -13177,12 +13605,14 @@ KnockbackTransition_SetSamusDrainedHurtAnimation_OrIgnore:
     RTS                                                                  ;90DEDC;
 
 
+%anchor($90DEDD)
 KnockbackTransition_Ignore:
     STZ.W $0A30                                                          ;90DEDD;
     CLC                                                                  ;90DEE0;
     RTS                                                                  ;90DEE1;
 
 
+%anchor($90DEE2)
 KnockbackTransition_Ignore_ClearDirection:
     STZ.W $0A30                                                          ;90DEE2;
     STZ.W $0A52                                                          ;90DEE5;
@@ -13190,6 +13620,7 @@ KnockbackTransition_Ignore_ClearDirection:
     RTS                                                                  ;90DEE9;
 
 
+%anchor($90DEEA)
 KnockbackTransition_Normal_Falling:
     LDA.W $0A5A                                                          ;90DEEA;
     CMP.W #UNUSED_SamusTimerHackHandler_SpecialFalling_90E41B            ;90DEED;
@@ -13200,6 +13631,7 @@ KnockbackTransition_Normal_Falling:
     RTS                                                                  ;90DEF9;
 
 
+%anchor($90DEFA)
 KnockbackTransition_Normal:
     LDA.W $0A1E                                                          ;90DEFA;
     AND.W #$00FF                                                         ;90DEFD;
@@ -13219,6 +13651,7 @@ KnockbackTransition_Normal:
     RTS                                                                  ;90DF14;
 
 
+%anchor($90DF15)
 KnockbackTransition_Morphed:
     LDA.W $0A1C                                                          ;90DF15;
     STA.W $0A2A                                                          ;90DF18;
@@ -13226,6 +13659,7 @@ KnockbackTransition_Morphed:
     RTS                                                                  ;90DF1C;
 
 
+%anchor($90DF1D)
 UNUSED_KnockbackTransition_Movement7_90DF1D:
     LDA.W $0A1E                                                          ;90DF1D;
     AND.W #$00FF                                                         ;90DF20;
@@ -13245,6 +13679,7 @@ UNUSED_KnockbackTransition_Movement7_90DF1D:
     RTS                                                                  ;90DF37;
 
 
+%anchor($90DF38)
 SamusMovementHandler_Knockback:
     LDA.W $0A52                                                          ;90DF38;
     ASL A                                                                ;90DF3B;
@@ -13262,12 +13697,14 @@ SamusMovementHandler_Knockback:
     dw KnockbackMoement_Down                                             ;90DF4C; 4: Down left
     dw KnockbackMoement_Down                                             ;90DF4E; 5: Down right
 
+%anchor($90DF50)
 ZeroIndex_Crash:
     BRA ZeroIndex_Crash                                                  ;90DF50;
 
     RTS                                                                  ;90DF52; >.<
 
 
+%anchor($90DF53)
 KnockbackMoement_Up:
     JSR.W MoveSamus_Horizontally_KnockbackBombJump                       ;90DF53;
     JSR.W Samus_Y_Movement_WithSpeedCalculations                         ;90DF56;
@@ -13275,12 +13712,14 @@ KnockbackMoement_Up:
     RTS                                                                  ;90DF5C;
 
 
+%anchor($90DF5D)
 UNUSED_KnockbackMoement_StraightUp_90DF5D:
     JSR.W Samus_Y_Movement_WithSpeedCalculations                         ;90DF5D;
     JSR.W HandleKnockbackVerticalCollision                               ;90DF60;
     RTS                                                                  ;90DF63;
 
 
+%anchor($90DF64)
 KnockbackMoement_Down:
     JSR.W MoveSamus_Horizontally_KnockbackBombJump                       ;90DF64;
     JSR.W Samus_Y_Movement_NoSpeedCalculations                           ;90DF67;
@@ -13288,6 +13727,7 @@ KnockbackMoement_Down:
     RTS                                                                  ;90DF6D;
 
 
+%anchor($90DF6E)
 HandleKnockbackVerticalCollision:
     LDA.W $0DD0                                                          ;90DF6E;
     BEQ .return                                                          ;90DF71;
@@ -13308,6 +13748,7 @@ HandleKnockbackVerticalCollision:
     RTS                                                                  ;90DF98;
 
 
+%anchor($90DF99)
 SerupBombJump:
     LDA.W $0A56                                                          ;90DF99;
     BIT.W #$FF00                                                         ;90DF9C;
@@ -13355,6 +13796,7 @@ SerupBombJump:
     dw SetupBombJump_DraygonGrab_Shinespark_CF_Drained_DamagedMB         ;90DFE9; 1Ah: Grabbed by Draygon
     dw SetupBombJump_DraygonGrab_Shinespark_CF_Drained_DamagedMB         ;90DFEB; 1Bh: Shinespark / crystal flash / drained by metroid / damaged by MB's attacks
 
+%anchor($90DFED)
 SetupBombJump_Standing_Crouching:
     LDA.W $0A78                                                          ;90DFED;
     BEQ SetupBombJump_Run_Fall_Moonwalk_WallJump_RanIntoWall_Grapple     ;90DFF0;
@@ -13363,6 +13805,7 @@ SetupBombJump_Standing_Crouching:
     RTS                                                                  ;90DFF6;
 
 
+%anchor($90DFF7)
 SetupBombJump_Run_Fall_Moonwalk_WallJump_RanIntoWall_Grapple:
     LDA.W $0A1E                                                          ;90DFF7;
     AND.W #$00FF                                                         ;90DFFA;
@@ -13382,6 +13825,7 @@ SetupBombJump_Run_Fall_Moonwalk_WallJump_RanIntoWall_Grapple:
     RTS                                                                  ;90E011;
 
 
+%anchor($90E012)
 SetupBombJump_Morphed_Knockback_CrystalFlashEnding:
     LDA.W $0A1C                                                          ;90E012;
     STA.W $0A2A                                                          ;90E015;
@@ -13389,16 +13833,19 @@ SetupBombJump_Morphed_Knockback_CrystalFlashEnding:
     RTS                                                                  ;90E019;
 
 
+%anchor($90E01A)
 SetupBombJump_Jumping_Turning_DamageBoost_TransitionPoses:
     LDA.W #SamusPoseInputHandler_Normal                                  ;90E01A;
     STA.W $0A60                                                          ;90E01D; fallthrough to SetupBombJump_DraygonGrab_Shinespark_CF_Drained_DamagedMB
 
+%anchor($90E020)
 SetupBombJump_DraygonGrab_Shinespark_CF_Drained_DamagedMB:
     STZ.W $0A56                                                          ;90E020;
     CLC                                                                  ;90E023;
     RTS                                                                  ;90E024;
 
 
+%anchor($90E025)
 SamusMovementHandler_BombJump_Start:
     JSR.W Make_Samus_BombJump                                            ;90E025;
     LDA.W #SamusMovementHandler_BombJump_Main                            ;90E028;
@@ -13407,6 +13854,7 @@ SamusMovementHandler_BombJump_Start:
     RTS                                                                  ;90E031;
 
 
+%anchor($90E032)
 SamusMovementHandler_BombJump_Main:
     LDA.W $0A56                                                          ;90E032;
     BNE .directionAssigned                                               ;90E035;
@@ -13428,6 +13876,7 @@ SamusMovementHandler_BombJump_Main:
     dw SamusMovementHandler_BombJump_Main_Straight                       ;90E048; 2: Straight
     dw SamusMovementHandler_BombJump_Main_Horizontal                     ;90E04A; 3: Right
 
+%anchor($90E04C)
 SamusMovementHandler_BombJump_Main_Horizontal:
     JSR.W MoveSamus_Horizontally_KnockbackBombJump                       ;90E04C;
     JSR.W Handle_EndOfBombJump                                           ;90E04F;
@@ -13445,6 +13894,7 @@ SamusMovementHandler_BombJump_Main_Horizontal:
     RTS                                                                  ;90E065;
 
 
+%anchor($90E066)
 SamusMovementHandler_BombJump_Main_Straight:
     JSR.W Handle_EndOfBombJump                                           ;90E066;
     LDA.W $0B36                                                          ;90E069;
@@ -13461,6 +13911,7 @@ SamusMovementHandler_BombJump_Main_Straight:
     RTS                                                                  ;90E07C;
 
 
+%anchor($90E07D)
 EndBombJump:
     LDA.W #SamusMovementHandler_Normal                                   ;90E07D;
     STA.W $0A58                                                          ;90E080;
@@ -13475,17 +13926,21 @@ EndBombJump:
     RTS                                                                  ;90E094;
 
 
+%anchor($90E095)
 DraygonEscapeButtonCounterTarget:
     dw $003C                                                             ;90E095;
 
+%anchor($90E097)
 SamusTimerHackHandler:
     JMP.W ($0A5A)                                                        ;90E097;
 
 
+%anchor($90E09A)
 RTS_90E09A:
     RTS                                                                  ;90E09A;
 
 
+%anchor($90E09B)
 SamusTimerHackHandler_HandleLettingSamusUpFromBeingDrained:
     LDA.W $0A1C                                                          ;90E09B;
     CMP.W #$00E9                                                         ;90E09E;
@@ -13507,6 +13962,7 @@ SamusTimerHackHandler_HandleLettingSamusUpFromBeingDrained:
     RTS                                                                  ;90E0C4;
 
 
+%anchor($90E0C5)
 SamusTimerHackHandler_LetSamusFailToStandUpFromBeingDrained:
     LDA.W $0A96                                                          ;90E0C5;
     CMP.W #$0008                                                         ;90E0C8;
@@ -13525,6 +13981,7 @@ SamusTimerHackHandler_LetSamusFailToStandUpFromBeingDrained:
     RTS                                                                  ;90E0E5;
 
 
+%anchor($90E0E6)
 SamusTimerHackHandler_HandleTimer:
     JSL.L ProcessTimer                                                   ;90E0E6;
     BCC .timerNotExpired                                                 ;90E0EA;
@@ -13551,11 +14008,13 @@ SamusTimerHackHandler_HandleTimer:
     RTS                                                                  ;90E113;
 
 
+%anchor($90E114)
 SamusTimerHackHandler_DrawTimer:
     JSL.L DrawTimer                                                      ;90E114;
     RTS                                                                  ;90E118;
 
 
+%anchor($90E119)
 SetSamusToBePushedOutOfCeresRidleysWay:
     PHP                                                                  ;90E119;
     PHB                                                                  ;90E11A;
@@ -13571,6 +14030,7 @@ SetSamusToBePushedOutOfCeresRidleysWay:
     RTL                                                                  ;90E12D;
 
 
+%anchor($90E12E)
 SamusTimerHackHandler_PushSamusOutOfCeresRidleysWay:
     LDA.W $0A1E                                                          ;90E12E;
     AND.W #$00FF                                                         ;90E131;
@@ -13639,6 +14099,7 @@ SamusTimerHackHandler_PushSamusOutOfCeresRidleysWay:
     RTS                                                                  ;90E1C7;
 
 
+%anchor($90E1C8)
 SamusTimerHackHandler_PushingSmausOutOfCeresRidleysWay:
     LDA.W $0A28                                                          ;90E1C8;
     CMP.W #$004F                                                         ;90E1CB;
@@ -13671,6 +14132,7 @@ SamusTimerHackHandler_PushingSmausOutOfCeresRidleysWay:
     dw PushingSamusOutOfCeresRidleysWay_Leftwards                        ;90E1F9;
     dw PushingSamusOutOfCeresRidleysWay_Rightwards                       ;90E1FB;
 
+%anchor($90E1FD)
 PushingSamusOutOfCeresRidleysWay_Leftwards:
     JSR.W MoveSamus_Horizontally_PushedByCeresRidley                     ;90E1FD;
     LDA.W $0DD0                                                          ;90E200;
@@ -13689,6 +14151,7 @@ PushingSamusOutOfCeresRidleysWay_Leftwards:
     RTS                                                                  ;90E21B;
 
 
+%anchor($90E21C)
 PushingSamusOutOfCeresRidleysWay_Rightwards:
     JSR.W MoveSamus_Horizontally_PushedByCeresRidley                     ;90E21C;
     LDA.W $0DD0                                                          ;90E21F;
@@ -13707,6 +14170,7 @@ PushingSamusOutOfCeresRidleysWay_Rightwards:
     RTS                                                                  ;90E23A;
 
 
+%anchor($90E23B)
 SetSamusIntoTheGrabbedByDraygonPose:
     PHP                                                                  ;90E23B;
     PHB                                                                  ;90E23C;
@@ -13754,6 +14218,7 @@ SetSamusIntoTheGrabbedByDraygonPose:
     RTL                                                                  ;90E2A0;
 
 
+%anchor($90E2A1)
 SamusTimerHackHandler_GrabbedByDraygon:
     LDA.W $0D32                                                          ;90E2A1;
     CMP.W #GrappleBeamFunction_Connected_LockedInPlace                   ;90E2A4;
@@ -13784,6 +14249,7 @@ SamusTimerHackHandler_GrabbedByDraygon:
     RTS                                                                  ;90E2D3;
 
 
+%anchor($90E2D4)
 ReleaseSamusFromDraygon_external:
     PHP                                                                  ;90E2D4;
     PHB                                                                  ;90E2D5;
@@ -13795,6 +14261,7 @@ ReleaseSamusFromDraygon_external:
     RTL                                                                  ;90E2DD;
 
 
+%anchor($90E2DE)
 ReleaseSamusFromDraygon:
     LDA.W $0A1E                                                          ;90E2DE;
     AND.W #$00FF                                                         ;90E2E1;
@@ -13809,6 +14276,7 @@ ReleaseSamusFromDraygon:
     LDA.W #$0002                                                         ;90E2F1;
     STA.W $0A1C                                                          ;90E2F4;
 
+%anchor($90E2F7)
 Merge:
     JSL.L InitializeSamusPose_1                                          ;90E2F7;
     JSL.L Set_Samus_AnimationFrame_if_PoseChanged                        ;90E2FB;
@@ -13846,6 +14314,7 @@ Merge:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($90E35A)
 UNUSED_90E35A:
     PHP                                                                  ;90E35A;
     PHB                                                                  ;90E35B;
@@ -13866,10 +14335,12 @@ UNUSED_90E35A:
     RTL                                                                  ;90E37D;
 
 
+%anchor($90E37E)
 RTS_90E37E:
     RTS                                                                  ;90E37E;
 
 
+%anchor($90E37F)
 UNUSED_PushMorphBallSamusOutOfCeresRidleysWay_90E37F:
     PHP                                                                  ;90E37F;
     PHB                                                                  ;90E380;
@@ -13890,6 +14361,7 @@ UNUSED_PushMorphBallSamusOutOfCeresRidleysWay_90E37F:
     RTL                                                                  ;90E3A2;
 
 
+%anchor($90E3A3)
 UNUSED_SamusTimerHackHandler_PushMorphBallCeresRidley_90E3A3:
     JSR.W MoveSamus_Horizontally_PushedByCeresRidley                     ;90E3A3;
     LDA.W $0DD0                                                          ;90E3A6;
@@ -13913,6 +14385,7 @@ UNUSED_SamusTimerHackHandler_PushMorphBallCeresRidley_90E3A3:
     RTS                                                                  ;90E3CE;
 
 
+%anchor($90E3CF)
 UNUSED_SetSamusSpecialFalling_90E3CF:
     PHP                                                                  ;90E3CF;
     PHB                                                                  ;90E3D0;
@@ -13942,6 +14415,7 @@ UNUSED_SetSamusSpecialFalling_90E3CF:
     RTL                                                                  ;90E3FF;
 
 
+%anchor($90E400)
 UNUSED_ClearSamusSpecialFalling_90E400:
     PHP                                                                  ;90E400;
     PHB                                                                  ;90E401;
@@ -13960,6 +14434,7 @@ UNUSED_ClearSamusSpecialFalling_90E400:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($90E41B)
 UNUSED_SamusTimerHackHandler_SpecialFalling_90E41B:
 ; Looks like a cut-down version of $A58D (Samus movement - falling)
 ; In particular, this version doesn't do any horizontal movement
@@ -14001,6 +14476,7 @@ UNUSED_SamusTimerHackHandler_SpecialFalling_90E41B:
     RTS                                                                  ;90E463;
 
 
+%anchor($90E464)
 CalculateSamusXDisplacement_ForMovingLeft:
     PHP                                                                  ;90E464;
     REP #$30                                                             ;90E465;
@@ -14051,6 +14527,7 @@ CalculateSamusXDisplacement_ForMovingLeft:
     RTS                                                                  ;90E4AC;
 
 
+%anchor($90E4AD)
 CalculateSamusXDisplacement_ForMovingRight:
     PHP                                                                  ;90E4AD;
     REP #$30                                                             ;90E4AE;
@@ -14092,6 +14569,7 @@ CalculateSamusXDisplacement_ForMovingRight:
     RTS                                                                  ;90E4E5;
 
 
+%anchor($90E4E6)
 CalculateSamusXSpeed:
     LDA.W $0A66                                                          ;90E4E6;
     CMP.W #$0005                                                         ;90E4E9;
@@ -14110,6 +14588,7 @@ CalculateSamusXSpeed:
     dw CalculateSamusXSpeed_Divisor3                                     ;90E4FC;
     dw CalculateSamusXSpeed_Divisor4                                     ;90E4FE;
 
+%anchor($90E500)
 CalculateSamusXSpeed_Divisor0:
     LDA.B $14                                                            ;90E500;
     CLC                                                                  ;90E502;
@@ -14123,6 +14602,7 @@ CalculateSamusXSpeed_Divisor0:
     RTS                                                                  ;90E515;
 
 
+%anchor($90E516)
 CalculateSamusXSpeed_Divisor1:
     LDA.B $14                                                            ;90E516;
     CLC                                                                  ;90E518;
@@ -14149,6 +14629,7 @@ CalculateSamusXSpeed_Divisor1:
     RTS                                                                  ;90E540;
 
 
+%anchor($90E541)
 CalculateSamusXSpeed_Divisor2:
     LDA.B $14                                                            ;90E541;
     CLC                                                                  ;90E543;
@@ -14177,6 +14658,7 @@ CalculateSamusXSpeed_Divisor2:
     RTS                                                                  ;90E56D;
 
 
+%anchor($90E56E)
 CalculateSamusXSpeed_Divisor3:
     LDA.B $14                                                            ;90E56E;
     CLC                                                                  ;90E570;
@@ -14207,6 +14689,7 @@ CalculateSamusXSpeed_Divisor3:
     RTS                                                                  ;90E59C;
 
 
+%anchor($90E59D)
 CalculateSamusXSpeed_Divisor4:
     LDA.B $14                                                            ;90E59D;
     CLC                                                                  ;90E59F;
@@ -14239,6 +14722,7 @@ CalculateSamusXSpeed_Divisor4:
     RTS                                                                  ;90E5CD;
 
 
+%anchor($90E5CE)
 Kill_SamusXSpeed_IfCollisionDetected:
     PHP                                                                  ;90E5CE;
     REP #$30                                                             ;90E5CF;
@@ -14274,6 +14758,7 @@ Kill_SamusXSpeed_IfCollisionDetected:
     RTS                                                                  ;90E605;
 
 
+%anchor($90E606)
 SetSamusSolidVerticalCollisionResult_UpwardsMovement:
     PHP                                                                  ;90E606;
     REP #$30                                                             ;90E607;
@@ -14292,6 +14777,7 @@ SetSamusSolidVerticalCollisionResult_UpwardsMovement:
     RTS                                                                  ;90E61A;
 
 
+%anchor($90E61B)
 SetSamusSolidVerticalCollisionResult_DownwardsMovement:
     PHP                                                                  ;90E61B;
     REP #$30                                                             ;90E61C;
@@ -14387,10 +14873,12 @@ SetSamusSolidVerticalCollisionResult_DownwardsMovement:
     db $04 ; 1Ah: Grabbed by Draygon
     db $04 ; 1Bh: Shinespark / crystal flash / drained by metroid / damaged by MB's attacks
 
+%anchor($90E692)
 SamusCurrentStateHandler:
     JMP.W ($0A42)                                                        ;90E692;
 
 
+%anchor($90E695)
 SamusCurrentStateHandler_Normal:
     PHP                                                                  ;90E695;
     PHB                                                                  ;90E696;
@@ -14416,6 +14904,7 @@ SamusCurrentStateHandler_Normal:
     RTL                                                                  ;90E6C8;
 
 
+%anchor($90E6C9)
 SamusCurrentStateHandler_Demo:
     PHP                                                                  ;90E6C9;
     PHB                                                                  ;90E6CA;
@@ -14449,6 +14938,7 @@ SamusCurrentStateHandler_Demo:
     RTL                                                                  ;90E712;
 
 
+%anchor($90E713)
 SamusCurrentStateHandler_SamusIsLocked:
     PHP                                                                  ;90E713;
     PHB                                                                  ;90E714;
@@ -14462,10 +14952,12 @@ SamusCurrentStateHandler_SamusIsLocked:
     RTL                                                                  ;90E721;
 
 
+%anchor($90E722)
 SamusNewStateHandler:
     JMP.W ($0A44)                                                        ;90E722;
 
 
+%anchor($90E725)
 SamusNewStateHandler_Normal:
     PHP                                                                  ;90E725;
     PHB                                                                  ;90E726;
@@ -14513,6 +15005,7 @@ SamusNewStateHandler_Normal:
     RTL                                                                  ;90E785;
 
 
+%anchor($90E786)
 HandleSamusPlacementModeToggles:
     PHP                                                                  ;90E786;
     REP #$30                                                             ;90E787;
@@ -14554,6 +15047,7 @@ HandleSamusPlacementModeToggles:
     RTS                                                                  ;90E7D1;
 
 
+%anchor($90E7D2)
 SamusNewStateHandler_Debug:
     PHP                                                                  ;90E7D2;
     PHB                                                                  ;90E7D3;
@@ -14576,6 +15070,7 @@ SamusNewStateHandler_Debug:
     RTL                                                                  ;90E7F4;
 
 
+%anchor($90E7F5)
 SamusNewStateHandler_TitleDemo:
     PHP                                                                  ;90E7F5;
     PHB                                                                  ;90E7F6;
@@ -14604,6 +15099,7 @@ SamusNewStateHandler_TitleDemo:
     RTL                                                                  ;90E832;
 
 
+%anchor($90E833)
 SamusNewStateHandler_IntroDemo:
     PHP                                                                  ;90E833;
     PHB                                                                  ;90E834;
@@ -14630,6 +15126,7 @@ SamusNewStateHandler_IntroDemo:
     RTL                                                                  ;90E869;
 
 
+%anchor($90E86A)
 SamusNewStateHandler_SamusAppearance:
     PHP                                                                  ;90E86A;
     PHB                                                                  ;90E86B;
@@ -14666,6 +15163,7 @@ SamusNewStateHandler_SamusAppearance:
     RTL                                                                  ;90E8A9;
 
 
+%anchor($90E8AA)
 SamusNewStateHandler_Ceres:
     PHP                                                                  ;90E8AA;
     PHB                                                                  ;90E8AB;
@@ -14688,6 +15186,7 @@ SamusNewStateHandler_Ceres:
     RTL                                                                  ;90E8CC;
 
 
+%anchor($90E8CD)
 RTL_90E8CD:
     PHP                                                                  ;90E8CD;
     PHB                                                                  ;90E8CE;
@@ -14699,14 +15198,17 @@ RTL_90E8CD:
     RTL                                                                  ;90E8D5;
 
 
+%anchor($90E8D6)
 RTL_90E8D6:
     JMP.W RTL_90E8CD                                                     ;90E8D6;
 
 
+%anchor($90E8D9)
 RTL_90E8D9:
     JMP.W RTL_90E8CD                                                     ;90E8D9;
 
 
+%anchor($90E8DC)
 SamusNewStateHandler_SamusIsLocked:
     PHP                                                                  ;90E8DC;
     PHB                                                                  ;90E8DD;
@@ -14720,6 +15222,7 @@ SamusNewStateHandler_SamusIsLocked:
     RTL                                                                  ;90E8EB;
 
 
+%anchor($90E8EC)
 SamusNewStateHandler_RidingElevator:
     PHP                                                                  ;90E8EC;
     PHB                                                                  ;90E8ED;
@@ -14735,6 +15238,7 @@ SamusNewStateHandler_RidingElevator:
     RTL                                                                  ;90E901;
 
 
+%anchor($90E902)
 SamusNewStateHandler_EnteringExitingGunship:
     PHP                                                                  ;90E902;
     PHB                                                                  ;90E903;
@@ -14747,34 +15251,41 @@ SamusNewStateHandler_EnteringExitingGunship:
     RTL                                                                  ;90E90D;
 
 
+%anchor($90E90E)
 RTS_90E90E:
     RTS                                                                  ;90E90E;
 
 
+%anchor($90E90F)
 SamusPoseInputHandler:
     JMP.W ($0A60)                                                        ;90E90F;
 
 
+%anchor($90E912)
 RTS_90E912:
     RTS                                                                  ;90E912;
 
 
+%anchor($90E913)
 SamusPoseInputHandler_Normal:
     JSL.L NormalSamusPoseInputHandler                                    ;90E913;
     RTS                                                                  ;90E917;
 
 
+%anchor($90E918)
 SamusPoseInputHandler_Xray:
     JSL.L XraySamusPoseInputHandler                                      ;90E918;
     RTS                                                                  ;90E91C;
 
 
+%anchor($90E91D)
 SamusPoseInputHandler_Demo:
     JSL.L DemoInputObjectHandler                                         ;90E91D;
     JSL.L NormalSamusPoseInputHandler                                    ;90E921;
     RTS                                                                  ;90E925;
 
 
+%anchor($90E926)
 SamusPoseInputHandler_AutoJumpHack:
     LDA.B $8F                                                            ;90E926;
     PHA                                                                  ;90E928;
@@ -14796,14 +15307,17 @@ SamusPoseInputHandler_AutoJumpHack:
     RTS                                                                  ;90E94A;
 
 
+%anchor($90E94B)
 Execute_SamusMovementHandler:
     JMP.W ($0A58)                                                        ;90E94B;
 
 
+%anchor($90E94E)
 RTS_90E94E:
     RTS                                                                  ;90E94E;
 
 
+%anchor($90E94F)
 SamusMovementHandler_Xray:
     LDA.W $0A1F                                                          ;90E94F;
     AND.W #$00FF                                                         ;90E952;
@@ -14882,6 +15396,7 @@ SamusMovementHandler_Xray:
     RTS                                                                  ;90E9CD;
 
 
+%anchor($90E9CE)
 HandlePeriodicDamageToSamus:
     PHP                                                                  ;90E9CE;
     REP #$30                                                             ;90E9CF;
@@ -14952,6 +15467,7 @@ HandlePeriodicDamageToSamus:
     RTS                                                                  ;90EA44;
 
 
+%anchor($90EA45)
 PauseCheck:
     PHP                                                                  ;90EA45;
     REP #$30                                                             ;90EA46;
@@ -14981,6 +15497,7 @@ PauseCheck:
     RTS                                                                  ;90EA7E;
 
 
+%anchor($90EA7F)
 LowEnergyCheck:
     LDA.W $09C2                                                          ;90EA7F;
     CMP.W #$001F                                                         ;90EA82;
@@ -15005,6 +15522,7 @@ LowEnergyCheck:
     RTS                                                                  ;90EAAA;
 
 
+%anchor($90EAAB)
 Low_Health_Check_external:
     PHP                                                                  ;90EAAB;
     REP #$30                                                             ;90EAAC;
@@ -15013,6 +15531,7 @@ Low_Health_Check_external:
     RTL                                                                  ;90EAB2;
 
 
+%anchor($90EAB3)
 HandleSamus_AutoJumpTimer_HurtFlashCounter_PrevInputEnergy:
     PHP                                                                  ;90EAB3;
     REP #$30                                                             ;90EAB4;
@@ -15060,6 +15579,7 @@ HandleSamus_AutoJumpTimer_HurtFlashCounter_PrevInputEnergy:
     RTS                                                                  ;90EB01;
 
 
+%anchor($90EB02)
 ResetMovementAndPoseChangeVariables:
     PHP                                                                  ;90EB02;
     REP #$30                                                             ;90EB03;
@@ -15083,6 +15603,7 @@ ResetMovementAndPoseChangeVariables:
     RTS                                                                  ;90EB34;
 
 
+%anchor($90EB35)
 DrawSamusAndProjectiles:
     PHP                                                                  ;90EB35;
     PHB                                                                  ;90EB36;
@@ -15098,18 +15619,22 @@ DrawSamusAndProjectiles:
     RTL                                                                  ;90EB4A;
 
 
+%anchor($90EB4B)
 DrawSamusSprites:
     JSR.W HandleArmCannonOpenState                                       ;90EB4B;
     JMP.W ($0A5C)                                                        ;90EB4E;
 
 
+%anchor($90EB51)
 RTS_90EB51:
     RTS                                                                  ;90EB51;
 
 
+%anchor($90EB52)
 SamusDrawingHandler_Default:
     JSR.W HandleChargingBeamGraphicsAudio                                ;90EB52;
 
+%anchor($90EB55)
 DrawSamus_NoCharge_NoGrapple:
     LDA.W $0AAC                                                          ;90EB55;
     AND.W #$000F                                                         ;90EB58;
@@ -15138,6 +15663,7 @@ DrawSamus_NoCharge_NoGrapple:
     RTS                                                                  ;90EB85;
 
 
+%anchor($90EB86)
 SamusDrawingHandler_FiringGrappleBeam:
     LDA.W $0D32                                                          ;90EB86;
     CMP.W #GrappleBeamFunction_HitNothing_Cancel                         ;90EB89;
@@ -15191,10 +15717,12 @@ SamusDrawingHandler_FiringGrappleBeam:
     RTS                                                                  ;90EBF1;
 
 
+%anchor($90EBF2)
 RTS_90EBF2:
     RTS                                                                  ;90EBF2;
 
 
+%anchor($90EBF3)
 SamusDisplayHandler_ShinesparkCrashCircle:
     JSR.W Draw_Samus                                                     ;90EBF3;
     LDX.W #$0002                                                         ;90EBF6;
@@ -15210,6 +15738,7 @@ SamusDisplayHandler_ShinesparkCrashCircle:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($90EC03)
 UNUSED_SamusDisplayHandler_DrawSamusEchoes_90EC03:
     JSR.W SamusDrawingHandler_Default                                    ;90EC03;
     LDX.W #$0002                                                         ;90EC06;
@@ -15224,11 +15753,13 @@ UNUSED_SamusDisplayHandler_DrawSamusEchoes_90EC03:
     RTS                                                                  ;90EC12;
 
 
+%anchor($90EC13)
 RTS_90EC13:
     RTS                                                                  ;90EC13;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($90EC14)
 SamusDisplayHandler_UsingElevator:
     LDA.W $05B6                                                          ;90EC14;
     BIT.W #$0001                                                         ;90EC17;
@@ -15236,11 +15767,13 @@ SamusDisplayHandler_UsingElevator:
     RTS                                                                  ;90EC1C;
 
 
+%anchor($90EC1D)
 SamusDisplayHandler_InanimateSamus:
     JSL.L Draw_Inanimate_Samus                                           ;90EC1D;
     RTS                                                                  ;90EC21;
 
 
+%anchor($90EC22)
 SetSamusRadius:
     PHP                                                                  ;90EC22;
     REP #$30                                                             ;90EC23;
@@ -15258,6 +15791,7 @@ SetSamusRadius:
     RTS                                                                  ;90EC3D;
 
 
+%anchor($90EC3E)
 Get_Samus_Bottom_Boundary:
     PHP                                                                  ;90EC3E;
     REP #$30                                                             ;90EC3F;
@@ -15276,6 +15810,7 @@ Get_Samus_Bottom_Boundary:
     RTL                                                                  ;90EC57;
 
 
+%anchor($90EC58)
 Get_Samus_BottomTop_Boundary:
     PHP                                                                  ;90EC58;
     REP #$30                                                             ;90EC59;
@@ -15301,6 +15836,7 @@ Get_Samus_BottomTop_Boundary:
     RTL                                                                  ;90EC7D;
 
 
+%anchor($90EC7E)
 AlignSamusBottomPositionWithPreviousPose:
     PHP                                                                  ;90EC7E;
     REP #$30                                                             ;90EC7F;
@@ -15333,6 +15869,7 @@ AlignSamusBottomPositionWithPreviousPose:
     RTL                                                                  ;90ECB5;
 
 
+%anchor($90ECB6)
 Determine_SamusSuitPalette_Index:
     LDA.W $09A2                                                          ;90ECB6;
     BIT.W #$0020                                                         ;90ECB9;
@@ -15355,6 +15892,7 @@ Determine_SamusSuitPalette_Index:
     RTS                                                                  ;90ECD4;
 
 
+%anchor($90ECD5)
 DemoRecorder_MoveSamusWithControlPad:
     PHP                                                                  ;90ECD5;
     REP #$30                                                             ;90ECD6;
@@ -15398,11 +15936,13 @@ DemoRecorder_MoveSamusWithControlPad:
     RTS                                                                  ;90ED1D;
 
 
+%anchor($90ED1E)
 RTS_90ED1E:
     RTS                                                                  ;90ED1E;
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($90ED1F)
 UNUSED_WasteTime_90ED1F:
     LDX.W #$00C8                                                         ;90ED1F;
 
@@ -15413,6 +15953,7 @@ UNUSED_WasteTime_90ED1F:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($90ED26)
 DemoRecorder_DisplaySamusPositionAsAmmoIfMorphed:
     LDA.W $0A1F                                                          ;90ED26;
     AND.W #$00FF                                                         ;90ED29;
@@ -15470,6 +16011,7 @@ DemoRecorder_DisplaySamusPositionAsAmmoIfMorphed:
     db $00 ;  1Bh: Shinespark / crystal flash / drained by metroid / damaged by MB's attacks
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($90ED6C)
 UNUSED_DisplayInGameTimeAsAmmo_90ED6C:
     LDA.W $09E0                                                          ;90ED6C;
     STA.W $09C6                                                          ;90ED6F;
@@ -15484,6 +16026,7 @@ UNUSED_DisplayInGameTimeAsAmmo_90ED6C:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($90ED88)
 FootstepGraphics:
     LDA.W $079F                                                          ;90ED88;
     ASL A                                                                ;90ED8B;
@@ -15502,6 +16045,7 @@ FootstepGraphics:
     dw FootstepGraphics_Common                                           ;90ED9D; Ceres
     dw FootstepGraphics_Common                                           ;90ED9F; Debug
 
+%anchor($90EDA1)
 FootstepGraphics_Crateria:
     LDA.W $1F51                                                          ;90EDA1;
     BEQ .notCinematic                                                    ;90EDA4;
@@ -15555,6 +16099,7 @@ FootstepGraphics_Crateria:
     CMP.W #$000A                                                         ;90EDE7;
     BNE FootstepGraphics_Common                                          ;90EDEA; fallthrough to FootstepGraphics_Maridia
 
+%anchor($90EDEC)
 FootstepGraphics_Maridia:
     JSL.L Get_Samus_Bottom_Boundary                                      ;90EDEC;
     LDA.W $195E                                                          ;90EDF0;
@@ -15617,6 +16162,7 @@ FootstepGraphics_Maridia:
     RTS                                                                  ;90EE63;
 
 
+%anchor($90EE64)
 FootstepGraphics_Common:
     LDA.W $0B3E                                                          ;90EE64;
     AND.W #$FF00                                                         ;90EE67;
@@ -15683,6 +16229,7 @@ FootstepGraphics_Common:
     RTS                                                                  ;90EEE6;
 
 
+%anchor($90EEE7)
 UpdateSamusEchoPosition:
     LDA.W $0B3E                                                          ;90EEE7;
     AND.W #$FF00                                                         ;90EEEA;
@@ -15712,15 +16259,18 @@ UpdateSamusEchoPosition:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($90EF1C)
 UNUSED_PossiblyFootStepGraphicOffsets_90EF1C:
 ; Best guess is footstep graphic offsets from Samus' position
     dw $000C,$0010                                                       ;90EF1C;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($90EF20)
 Unknown_ShinesparkMovementHandler_Unused_90EF20:
 ; Loaded by shinespark Samus movement handlers and then unused >_<;
     dw $0010                                                             ;90EF20;
 
+%anchor($90EF22)
 PostGrappleCollisionDetection:
     PHP                                                                  ;90EF22;
     REP #$30                                                             ;90EF23;
@@ -15753,6 +16303,7 @@ PostGrappleCollisionDetection:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($90EF5E)
 UNUSED_FireUnknownProjectile27_90EF5E:
     LDA.W #RTS_90E90E                                                    ;90EF5E;
     STA.W $0A58                                                          ;90EF61;
@@ -15803,6 +16354,7 @@ UNUSED_FireUnknownProjectile27_90EF5E:
 ; Y offsets from Samus
     dw $FF80,$0080,$0080,$FF80                                           ;90EFCB;
 
+%anchor($90EFD3)
 UNUSED_ProjectilePreInstruction_UnknownProjectile27_90EFD3:
     LDA.W $0B64,X                                                        ;90EFD3;
     CLC                                                                  ;90EFD6;
@@ -15857,6 +16409,7 @@ UNUSED_ProjectilePreInstruction_UnknownProjectile27_90EFD3:
     dw $FF80,$0080,$0080,$FF80                                           ;90F043;
 
 
+%anchor($90F04B)
 UNUSED_SamusMovementHandler_90F04B:
     LDA.W $0A68                                                          ;90F04B;
     BNE .return                                                          ;90F04E;
@@ -15876,6 +16429,7 @@ UNUSED_SamusMovementHandler_90F04B:
     RTS                                                                  ;90F071;
 
 
+%anchor($90F072)
 UNUSED_SamusMovementHandler_90F072:
     LDA.W $0A68                                                          ;90F072;
     BNE .return                                                          ;90F075;
@@ -15889,6 +16443,7 @@ UNUSED_SamusMovementHandler_90F072:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($90F084)
 Run_Samus_Command:
     PHP                                                                  ;90F084;
     PHB                                                                  ;90F085;
@@ -15950,6 +16505,7 @@ Run_Samus_Command:
     dw SamusCommand_1E_ResumeSoundsAfterPowerBombExplosion               ;90F0EA;
     dw SamusCommand_1F_KillGrappleBeam                                   ;90F0EC;
 
+%anchor($90F0EE)
 Update_Samus_PreviousPose:
     LDA.W $0A20                                                          ;90F0EE;
     STA.W $0A24                                                          ;90F0F1;
@@ -15962,11 +16518,13 @@ Update_Samus_PreviousPose:
     RTS                                                                  ;90F106;
 
 
+%anchor($90F107)
 CLCRTS_90F107:
     CLC                                                                  ;90F107;
     RTS                                                                  ;90F108;
 
 
+%anchor($90F109)
 SamusCommand_0_LockSamus:
     LDA.W #SamusCurrentStateHandler_SamusIsLocked                        ;90F109;
     STA.W $0A42                                                          ;90F10C;
@@ -15976,6 +16534,7 @@ SamusCommand_0_LockSamus:
     RTS                                                                  ;90F116;
 
 
+%anchor($90F117)
 SamusCommand_1_UnlockSamus:
     LDA.W #SamusCurrentStateHandler_Normal                               ;90F117;
     STA.W $0A42                                                          ;90F11A;
@@ -15985,6 +16544,7 @@ SamusCommand_1_UnlockSamus:
     RTS                                                                  ;90F124;
 
 
+%anchor($90F125)
 SamusCommand_2_SamusReachedCeresElevator:
     LDA.W $0A1E                                                          ;90F125;
     AND.W #$00FF                                                         ;90F128;
@@ -16007,6 +16567,7 @@ SamusCommand_2_SamusReachedCeresElevator:
     JMP.W SamusCommand_0_LockSamus                                       ;90F14F;
 
 
+%anchor($90F152)
 SamusCommand_3_UnspinSamus:
     LDA.W $0D32                                                          ;90F152;
     CMP.W #GrappleBeamFunction_Inactive                                  ;90F155;
@@ -16049,9 +16610,11 @@ SamusCommand_3_UnspinSamus:
     RTS                                                                  ;90F19A;
 
 
+%anchor($90F19B)
 SamusCommand_4_EndChargeBeam:
     STZ.W $0B62                                                          ;90F19B; fallthrough to EndChargeBeam
 
+%anchor($90F19E)
 EndChargeBeam:
     STZ.W $0CD0                                                          ;90F19E;
     JSR.W ClearFlareAnimationState                                       ;90F1A1;
@@ -16060,6 +16623,7 @@ EndChargeBeam:
     RTS                                                                  ;90F1A9;
 
 
+%anchor($90F1AA)
 SamusCommand_6_LockSamusIntoRefillStation:
     LDA.W #SamusCurrentStateHandler_SamusIsLocked                        ;90F1AA;
     STA.W $0A42                                                          ;90F1AD;
@@ -16075,6 +16639,7 @@ SamusCommand_6_LockSamusIntoRefillStation:
     JMP.W EndChargeBeam                                                  ;90F1C5;
 
 
+%anchor($90F1C8)
 SamusCommand_7_SetupSamusForElevator:
     JSL.L MakeSamusFaceForward                                           ;90F1C8;
     LDA.W #SamusNewStateHandler_RidingElevator                           ;90F1CC;
@@ -16090,6 +16655,7 @@ SamusCommand_7_SetupSamusForElevator:
     RTS                                                                  ;90F1E8;
 
 
+%anchor($90F1E9)
 SamusCommand_8_SetupSamusForCeresStart:
     LDA.W #RTL_90E8CD                                                    ;90F1E9;
     STA.W $0A42                                                          ;90F1EC;
@@ -16120,6 +16686,7 @@ SamusCommand_8_SetupSamusForCeresStart:
     RTS                                                                  ;90F23B;
 
 
+%anchor($90F23C)
 SamusCommand_9_SetupSamusForZebesStart:
     LDA.W $09A2                                                          ;90F23C;
     BIT.W #$0020                                                         ;90F23F;
@@ -16159,6 +16726,7 @@ SamusCommand_9_SetupSamusForZebesStart:
     RTS                                                                  ;90F28C;
 
 
+%anchor($90F28D)
 SamusCommand_A_StopDrawingSamus:
     LDA.W #RTS_90E90E                                                    ;90F28D;
     STA.W $0A5C                                                          ;90F290;
@@ -16166,12 +16734,14 @@ SamusCommand_A_StopDrawingSamus:
     RTS                                                                  ;90F294;
 
 
+%anchor($90F295)
 SamusCommand_B_UnlockSamusFromFacingForward:
     LDA.W #SamusDrawingHandler_Default                                   ;90F295;
     STA.W $0A5C                                                          ;90F298;
     JMP.W SamusCommand_1_UnlockSamus                                     ;90F29B;
 
 
+%anchor($90F29E)
 SamusCommand_C_UpdateSamusDueToUnpause:
     JSL.L UpdateSamusPoseDueToChangeOfEquipment                          ;90F29E;
     LDA.W $0A44                                                          ;90F2A2;
@@ -16187,6 +16757,7 @@ SamusCommand_C_UpdateSamusDueToUnpause:
     RTS                                                                  ;90F2B7;
 
 
+%anchor($90F2B8)
 SamusCommand_D_CheckIfGrappleBeamIsActive:
     LDA.W $0D32                                                          ;90F2B8;
     CMP.W #GrappleBeamFunction_Inactive                                  ;90F2BB;
@@ -16202,6 +16773,7 @@ SamusCommand_D_CheckIfGrappleBeamIsActive:
     RTS                                                                  ;90F2C9;
 
 
+%anchor($90F2CA)
 SamusCommand_E_UnlockSamusFromCeresElevator:
     LDA.W #SamusCurrentStateHandler_Normal                               ;90F2CA;
     STA.W $0A42                                                          ;90F2CD;
@@ -16211,6 +16783,7 @@ SamusCommand_E_UnlockSamusFromCeresElevator:
     RTS                                                                  ;90F2D7;
 
 
+%anchor($90F2D8)
 SamusCommand_F_EnableTimerHandling:
     LDA.W #SamusTimerHackHandler_HandleTimer                             ;90F2D8;
     STA.W $0A5A                                                          ;90F2DB;
@@ -16218,6 +16791,7 @@ SamusCommand_F_EnableTimerHandling:
     RTS                                                                  ;90F2DF;
 
 
+%anchor($90F2E0)
 SamusCommand_10_UnlockSamusFromReserveTank:
     LDA.W $0A44                                                          ;90F2E0;
     CMP.W #RTL_90E8D9                                                    ;90F2E3;
@@ -16235,9 +16809,11 @@ SamusCommand_10_UnlockSamusFromReserveTank:
     RTS                                                                  ;90F2F7;
 
 
+%anchor($90F2F8)
 SamusCommand_11_SetupSamusForDeathSequence:
     JSL.L Disable_PaletteFXObjects                                       ;90F2F8; fallthrough to LockSamus_SetInanimateSamusDrawingHandler
 
+%anchor($90F2FC)
 LockSamus_SetInanimateSamusDrawingHandler:
     LDA.W #SamusCurrentStateHandler_SamusIsLocked                        ;90F2FC;
     STA.W $0A42                                                          ;90F2FF;
@@ -16249,6 +16825,7 @@ LockSamus_SetInanimateSamusDrawingHandler:
     RTS                                                                  ;90F30F;
 
 
+%anchor($90F310)
 SamusCommand_15_LockSamusIntoSuitPickup:
     JSR.W Update_Samus_PreviousPose                                      ;90F310;
     STZ.W $0CD0                                                          ;90F313;
@@ -16257,6 +16834,7 @@ SamusCommand_15_LockSamusIntoSuitPickup:
     JMP.W LockSamus_SetInanimateSamusDrawingHandler                      ;90F31D;
 
 
+%anchor($90F320)
 SamusCommand_12_EnableSamusBlueFlashing:
     LDA.W #$0001                                                         ;90F320;
     STA.W $0A4A                                                          ;90F323;
@@ -16264,6 +16842,7 @@ SamusCommand_12_EnableSamusBlueFlashing:
     RTS                                                                  ;90F327;
 
 
+%anchor($90F328)
 SamusCommand_13_DisableSamusBlueFlashing:
     STZ.W $0A4A                                                          ;90F328;
     JSL.L LoadSamusSuitPalette                                           ;90F32B;
@@ -16271,6 +16850,7 @@ SamusCommand_13_DisableSamusBlueFlashing:
     RTS                                                                  ;90F330;
 
 
+%anchor($90F331)
 SamusCommand_14_QueueLowEnergyAndGrappleSFX:
     LDA.W $09C2                                                          ;90F331;
     CMP.W #$001F                                                         ;90F334;
@@ -16326,10 +16906,12 @@ SamusCommand_14_QueueLowEnergyAndGrappleSFX:
     RTS                                                                  ;90F38D;
 
 
+%anchor($90F38E)
 SamusCommand_5_SetupSamusForBeingDrained_AbleToStand:
     LDA.W #SamusTimerHackHandler_HandleLettingSamusUpFromBeingDrained    ;90F38E; fallthrough to SetupSamusForBeingDrained
     STA.W $0A5A                                                          ;90F391;
 
+%anchor($90F394)
 SetupSamusForBeingDrained:
     LDA.W #$0054                                                         ;90F394;
     STA.W $0A1C                                                          ;90F397;
@@ -16348,12 +16930,14 @@ SetupSamusForBeingDrained:
     RTS                                                                  ;90F3BF;
 
 
+%anchor($90F3C0)
 SamusCommand_18_SetupSamusForBeingDrained_UnableToStand:
     LDA.W #SamusTimerHackHandler_LetSamusFailToStandUpFromBeingDrained   ;90F3C0;
     STA.W $0A5A                                                          ;90F3C3;
     JMP.W SetupSamusForBeingDrained                                      ;90F3C6;
 
 
+%anchor($90F3C9)
 SamusCommand_16_EnableRainbowSamus:
     LDA.W #$8000                                                         ;90F3C9;
     STA.W $0A4A                                                          ;90F3CC;
@@ -16365,6 +16949,7 @@ SamusCommand_16_EnableRainbowSamus:
     RTS                                                                  ;90F3DC;
 
 
+%anchor($90F3DD)
 SamusCommand_17_DisableRainbowSamus_StandHerUp:
     STZ.W $0A4A                                                          ;90F3DD;
     STZ.W $0ACE                                                          ;90F3E0;
@@ -16379,6 +16964,7 @@ SamusCommand_17_DisableRainbowSamus_StandHerUp:
     RTS                                                                  ;90F3FA;
 
 
+%anchor($90F3FB)
 SamusCommand_19_FreezeDrainedSamusAnimation:
     LDA.W #$0001                                                         ;90F3FB;
     STA.W $0A94                                                          ;90F3FE;
@@ -16388,6 +16974,7 @@ SamusCommand_19_FreezeDrainedSamusAnimation:
     RTS                                                                  ;90F408;
 
 
+%anchor($90F409)
 SamusCommand_1A_SamusEntersGunship:
     LDA.W #SamusNewStateHandler_EnteringExitingGunship                   ;90F409;
     STA.W $0A44                                                          ;90F40C;
@@ -16395,6 +16982,7 @@ SamusCommand_1A_SamusEntersGunship:
     RTS                                                                  ;90F410;
 
 
+%anchor($90F411)
 SamusCommand_1B_LockSamusForReserveTank:
     LDA.W $0A44                                                          ;90F411;
     CMP.W #RTL_90E8D9                                                    ;90F414;
@@ -16407,6 +16995,7 @@ SamusCommand_1B_LockSamusForReserveTank:
     RTS                                                                  ;90F41D;
 
 
+%anchor($90F41E)
 SamusCommand_1C_PlaySpinJumpSoundIfSpinJumping:
     LDA.W $0A1F                                                          ;90F41E;
     AND.W #$00FF                                                         ;90F421;
@@ -16459,6 +17048,7 @@ SamusCommand_1C_PlaySpinJumpSoundIfSpinJumping:
     RTS                                                                  ;90F470;
 
 
+%anchor($90F471)
 SamusCommand_1D_ClearSoundsWhenGoingThroughDoor:
     LDA.W $0A1F                                                          ;90F471;
     AND.W #$00FF                                                         ;90F474;
@@ -16489,6 +17079,7 @@ SamusCommand_1D_ClearSoundsWhenGoingThroughDoor:
     RTS                                                                  ;90F4A1;
 
 
+%anchor($90F4A2)
 SamusCommand_1E_ResumeSoundsAfterPowerBombExplosion:
     LDA.W $0998                                                          ;90F4A2;
     CMP.W #$0008                                                         ;90F4A5;
@@ -16518,6 +17109,7 @@ SamusCommand_1E_ResumeSoundsAfterPowerBombExplosion:
     RTS                                                                  ;90F4CF;
 
 
+%anchor($90F4D0)
 SamusCommand_1F_KillGrappleBeam:
     LDA.W $0D32                                                          ;90F4D0;
     CMP.W #GrappleBeamFunction_Inactive                                  ;90F4D3;
@@ -16546,6 +17138,7 @@ SamusCommand_1F_KillGrappleBeam:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($90F507)
 UNUSED_ResumeSounds_90F507:
     LDA.W $0A1F                                                          ;90F507;
     AND.W #$00FF                                                         ;90F50A;
@@ -16568,20 +17161,24 @@ UNUSED_ResumeSounds_90F507:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($90F52F)
 DebugCommandHandler:
     RTS                                                                  ;90F52F;
 
     JMP.W ($0A5E)                                                        ;90F530;
 
 
+%anchor($90F533)
 RTS_90F533:
     RTS                                                                  ;90F533;
 
 
+%anchor($90F534)
 RTS_90F534:
     RTS                                                                  ;90F534;
 
 
+%anchor($90F535)
 DebugCommandHandler_GiveSamusAShinesparkIfYNewlyPressed:
     LDA.B $8F                                                            ;90F535;
     BIT.W #$4000                                                         ;90F537;
@@ -16596,6 +17193,7 @@ DebugCommandHandler_GiveSamusAShinesparkIfYNewlyPressed:
     RTS                                                                  ;90F54B;
 
 
+%anchor($90F54C)
 DebugCommandHandler_DisableRainbowSamus_StandHerUp:
     LDA.B $91                                                            ;90F54C;
     BIT.W #$4000                                                         ;90F54E;
@@ -16609,6 +17207,7 @@ DebugCommandHandler_DisableRainbowSamus_StandHerUp:
     RTS                                                                  ;90F560;
 
 
+%anchor($90F561)
 DebugCommandHandler_ReleaseSamusFromDrainedPoseIfYNewlyPress:
     LDA.B $8F                                                            ;90F561;
     BIT.W #$4000                                                         ;90F563;
@@ -16622,6 +17221,7 @@ DebugCommandHandler_ReleaseSamusFromDrainedPoseIfYNewlyPress:
     RTS                                                                  ;90F575;
 
 
+%anchor($90F576)
 Handle_UnspinSFX_CancellingEchoSound_SettingTimeUpGameState:
     PHP                                                                  ;90F576;
     REP #$30                                                             ;90F577;
@@ -16723,5 +17323,6 @@ Handle_UnspinSFX_CancellingEchoSound_SettingTimeUpGameState:
     RTS                                                                  ;90F639;
 
 
+%anchor($90F63A)
 Freespace_Bank90_F63A:                                                   ;90F63A;
 ; $9C6 bytes

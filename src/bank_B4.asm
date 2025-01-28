@@ -2,10 +2,12 @@
 org $B48000
 
 
+%anchor($B48000)
 EnemySets_Draygon_1_MotherBrain_2:
     dw $FFFF                                                             ;B48000;
     db "SF1_10 "                                                         ;B48002;
 
+%anchor($B48009)
 EnemySets_EastOcean:
     dw EnemyHeaders_Choot                                                ;B48009;
     dw $0001                                                             ;B4800B;
@@ -16,6 +18,7 @@ EnemySets_EastOcean:
     db $00                                                               ;B48017;
     db "sf1_04 "                                                         ;B48018;
 
+%anchor($B4801F)
 EnemySets_CrateriaPowerBombs:
     dw EnemyHeaders_Alcoon                                               ;B4801F;
     dw $0001                                                             ;B48021;
@@ -24,6 +27,7 @@ EnemySets_CrateriaPowerBombs:
     db $00                                                               ;B48029;
     db "sf2_06 "                                                         ;B4802A;
 
+%anchor($B48031)
 EnemySets_Terminator:
     dw EnemyHeaders_Waver                                                ;B48031;
     dw $0001                                                             ;B48033;
@@ -32,6 +36,7 @@ EnemySets_Terminator:
     db $00                                                               ;B4803B;
     db "SF2_12a"                                                         ;B4803C;
 
+%anchor($B48043)
 EnemySets_FinalMissileBombway_1:
     dw EnemyHeaders_FaceBlock                                            ;B48043;
     dw $0007                                                             ;B48045;
@@ -40,6 +45,7 @@ EnemySets_FinalMissileBombway_1:
     db $00                                                               ;B4804D;
     db "SF2_12 "                                                         ;B4804E;
 
+%anchor($B48055)
 EnemySets_FinalMissileBombway_0:
     dw EnemyHeaders_FaceBlock                                            ;B48055;
     dw $0007                                                             ;B48057;
@@ -48,6 +54,7 @@ EnemySets_FinalMissileBombway_0:
     db $00                                                               ;B4805F;
     db "sf1_02A"                                                         ;B48060;
 
+%anchor($B48067)
 EnemySets_Parlor_1:
     dw EnemyHeaders_Zoomer                                               ;B48067;
     dw $0001                                                             ;B48069;
@@ -58,6 +65,7 @@ EnemySets_Parlor_1:
     db $00                                                               ;B48075;
     db "sf2_04 "                                                         ;B48076;
 
+%anchor($B4807D)
 EnemySets_Flyway_0_1:
     dw EnemyHeaders_Waver                                                ;B4807D;
     dw $0001                                                             ;B4807F;
@@ -66,6 +74,7 @@ EnemySets_Flyway_0_1:
     db $00                                                               ;B48087;
     db "sf2_01A"                                                         ;B48088;
 
+%anchor($B4808F)
 EnemySets_Pit_1:
     dw EnemyHeaders_PirateGreyWalking                                    ;B4808F;
     dw $0001                                                             ;B48091;
@@ -74,6 +83,7 @@ EnemySets_Pit_1:
     db $00                                                               ;B48099;
     db "sf1_01 "                                                         ;B4809A;
 
+%anchor($B480A1)
 EnemySets_GauntletEntrance:
     dw EnemyHeaders_YappingMaw                                           ;B480A1;
     dw $0001                                                             ;B480A3;
@@ -82,12 +92,14 @@ EnemySets_GauntletEntrance:
     db $00                                                               ;B480AB;
     db "sf2_03 "                                                         ;B480AC;
 
+%anchor($B480B3)
 EnemySets_BombTorizo_0_1:
     dw EnemyHeaders_BombTorizo                                           ;B480B3;
     dw $0001,$FFFF                                                       ;B480B5;
     db $00                                                               ;B480B9;
     db "sf2_10 "                                                         ;B480BA;
 
+%anchor($B480C1)
 EnemySets_GreenPiratesShaft:
     dw EnemyHeaders_PirateGreenWalking                                   ;B480C1;
     dw $0001                                                             ;B480C3;
@@ -96,17 +108,20 @@ EnemySets_GreenPiratesShaft:
     db $00                                                               ;B480CB;
     db "sf2_07 "                                                         ;B480CC;
 
+%anchor($B480D3)
 EnemySets_GreenBrinstarElev:
     dw $FFFF                                                             ;B480D3;
     db $00                                                               ;B480D5;
     db "SF2_13 "                                                         ;B480D6;
 
+%anchor($B480DD)
 EnemySets_FinalMissile_0:
     dw EnemyHeaders_Eye                                                  ;B480DD;
     dw $0001,$FFFF                                                       ;B480DF;
     db $00                                                               ;B480E3;
     db "sf2_09 "                                                         ;B480E4;
 
+%anchor($B480EB)
 EnemySets_CrateriaMap:
     dw EnemyHeaders_BombTorizo                                           ;B480EB;
     dw $0001,$FFFF                                                       ;B480ED;
@@ -114,6 +129,7 @@ EnemySets_CrateriaMap:
     db "SF2_14 "                                                         ;B480F2;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B480F9)
 UNUSED_EnemySets_B480F9:
     dw EnemyHeaders_FaceBlock                                            ;B480F9;
     dw $0001,$FFFF                                                       ;B480FB;
@@ -121,11 +137,13 @@ UNUSED_EnemySets_B480F9:
     db "SF2_13a"                                                         ;B48100;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B48107)
 EnemySets_FinalMissile_1:
     dw $FFFF                                                             ;B48107;
     db $00                                                               ;B48109;
     db "sf2_00 "                                                         ;B4810A;
 
+%anchor($B48111)
 EnemySets_Climb_2:
     dw EnemyHeaders_PirateSilverNinja                                    ;B48111;
     dw $0002,$FFFF                                                       ;B48113;
@@ -133,29 +151,34 @@ EnemySets_Climb_2:
     db "sf1_03 "                                                         ;B48118;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B4811F)
 UNUSED_EnemySets_B4811F:
     dw $FFFF                                                             ;B4811F;
     db $00                                                               ;B48121;
     db "SF1_05 "                                                         ;B48122;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B48129)
 EnemySets_CrateriaSave:
     dw $FFFF                                                             ;B48129;
     db $00                                                               ;B4812B;
     db "SF1_13 "                                                         ;B4812C;
 
+%anchor($B48133)
 EnemySets_ForgottenHighwayElbow:
     dw EnemyHeaders_FaceBlock                                            ;B48133;
     dw $0001,$FFFF                                                       ;B48135;
     db $00                                                               ;B48139;
     db "SF1_15 "                                                         ;B4813A;
 
+%anchor($B48141)
 EnemySets_Moat:
     dw EnemyHeaders_FaceBlock                                            ;B48141;
     dw $0001,$FFFF                                                       ;B48143;
     db $00                                                               ;B48147;
     db "sf2_00 "                                                         ;B48148;
 
+%anchor($B4814F)
 EnemySets_Climb_0:
     dw EnemyHeaders_Sbug                                                 ;B4814F;
     dw $0007                                                             ;B48151;
@@ -164,6 +187,7 @@ EnemySets_Climb_0:
     db $00                                                               ;B48159;
     db "SF1_06 "                                                         ;B4815A;
 
+%anchor($B48161)
 EnemySets_WestOcean:
     dw EnemyHeaders_Skultera                                             ;B48161;
     dw $0001                                                             ;B48163;
@@ -177,18 +201,21 @@ EnemySets_WestOcean:
     db "SF1_20 "                                                         ;B48174;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B4817B)
 UNUSED_EnemySets_B4817B:
     dw $FFFF                                                             ;B4817B;
     db $00                                                               ;B4817D;
     db "sf1_02 "                                                         ;B4817E;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B48185)
 EnemySets_Parlor_0:
     dw EnemyHeaders_Sbug                                                 ;B48185;
     dw $0007,$FFFF                                                       ;B48187;
     db $00                                                               ;B4818B;
     db "sf1_00 "                                                         ;B4818C;
 
+%anchor($B48193)
 EnemySets_LandingSite_0_1_2:
     dw EnemyHeaders_ShipTop                                              ;B48193;
     dw $0002                                                             ;B48195;
@@ -197,6 +224,7 @@ EnemySets_LandingSite_0_1_2:
     db $00                                                               ;B4819D;
     db "SF2_11 "                                                         ;B4819E;
 
+%anchor($B481A5)
 EnemySets_CrateriaSuper:
     dw EnemyHeaders_Boyon                                                ;B481A5;
     dw $0001                                                             ;B481A7;
@@ -206,12 +234,14 @@ EnemySets_CrateriaSuper:
     db "SF1_19 "                                                         ;B481B0;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B481B7)
 UNUSED_EnemySets_B481B7:
     dw $FFFF                                                             ;B481B7;
     db $00                                                               ;B481B9;
     db "SF1_18 "                                                         ;B481BA;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B481C1)
 EnemySets_PreBowling:
     dw EnemyHeaders_HZoomer                                              ;B481C1;
     dw $0001                                                             ;B481C3;
@@ -220,12 +250,14 @@ EnemySets_PreBowling:
     db $00                                                               ;B481CB;
     db "sf2_00A"                                                         ;B481CC;
 
+%anchor($B481D3)
 EnemySets_Climb_1:
     dw EnemyHeaders_PirateGreyWall                                       ;B481D3;
     dw $0001,$FFFF                                                       ;B481D5;
     db $00                                                               ;B481D9;
     db "SF1_07 "                                                         ;B481DA;
 
+%anchor($B481E1)
 EnemySets_BowlingAlleyPath:
     dw EnemyHeaders_Waver                                                ;B481E1;
     dw $0001                                                             ;B481E3;
@@ -234,11 +266,13 @@ EnemySets_BowlingAlleyPath:
     db $00                                                               ;B481EB;
     db "SF1_16 "                                                         ;B481EC;
 
+%anchor($B481F3)
 EnemySets_RedBinstarElev:
     dw $FFFF                                                             ;B481F3;
     db $00                                                               ;B481F5;
     db "SF1_17 "                                                         ;B481F6;
 
+%anchor($B481FD)
 EnemySets_GauntletETank:
     dw EnemyHeaders_YappingMaw                                           ;B481FD;
     dw $0001                                                             ;B481FF;
@@ -247,6 +281,7 @@ EnemySets_GauntletETank:
     db $00                                                               ;B48207;
     db "sf2_01 "                                                         ;B48208;
 
+%anchor($B4820F)
 EnemySets_Pit_0:
     dw EnemyHeaders_Sbug                                                 ;B4820F;
     dw $0007                                                             ;B48211;
@@ -255,6 +290,7 @@ EnemySets_Pit_0:
     db $00                                                               ;B48219;
     db "SF1_12 "                                                         ;B4821A;
 
+%anchor($B48221)
 EnemySets_CrabMaze:
     dw EnemyHeaders_Sciser                                               ;B48221;
     dw $0007                                                             ;B48223;
@@ -263,27 +299,32 @@ EnemySets_CrabMaze:
     db $00                                                               ;B4822B;
     db "SF1_14 "                                                         ;B4822C;
 
+%anchor($B48233)
 EnemySets_CrateriaTube:
     dw $FFFF                                                             ;B48233;
     db $00                                                               ;B48235;
     db "SF1_11 "                                                         ;B48236;
 
+%anchor($B4823D)
 EnemySets_ForgottenHighwayKagos:
     dw EnemyHeaders_Kago                                                 ;B4823D;
     dw $0001,$FFFF                                                       ;B4823F;
     db $00                                                               ;B48243;
     db "sf2_02 "                                                         ;B48244;
 
+%anchor($B4824B)
 EnemySets_ElevToBlueBrinstar:
     dw $FFFF                                                             ;B4824B;
     db $00                                                               ;B4824D;
     db "SF1_09 "                                                         ;B4824E;
 
+%anchor($B48255)
 EnemySets_ForgottenHighwayElev:
     dw $FFFF                                                             ;B48255;
     db $00                                                               ;B48257;
     db "sf2_05 "                                                         ;B48258;
 
+%anchor($B4825F)
 EnemySets_PreMapFlyway:
     dw EnemyHeaders_Mellow                                               ;B4825F;
     dw $0001                                                             ;B48261;
@@ -292,6 +333,7 @@ EnemySets_PreMapFlyway:
     db $00                                                               ;B48269;
     db "sf2_08 "                                                         ;B4826A;
 
+%anchor($B48271)
 EnemySets_LowerMushrooms:
     dw EnemyHeaders_Kago                                                 ;B48271;
     dw $0002                                                             ;B48273;
@@ -300,6 +342,7 @@ EnemySets_LowerMushrooms:
     db $00                                                               ;B4827B;
     db "sf1_00 "                                                         ;B4827C;
 
+%anchor($B48283)
 EnemySets_LandingSite_3:
     dw EnemyHeaders_ShipTop                                              ;B48283;
     dw $0002                                                             ;B48285;
@@ -308,12 +351,14 @@ EnemySets_LandingSite_3:
     db $00                                                               ;B4828D;
     db "sf1_02 "                                                         ;B4828E;
 
+%anchor($B48295)
 EnemySets_Parlor_2:
     dw EnemyHeaders_Sbug                                                 ;B48295;
     dw $0007,$FFFF                                                       ;B48297;
     db $00                                                               ;B4829B;
     db "sf2_03 "                                                         ;B4829C;
 
+%anchor($B482A3)
 EnemySets_BombTorizo_2:
     dw EnemyHeaders_EtecoonEscape                                        ;B482A3;
     dw $0001                                                             ;B482A5;
@@ -322,11 +367,13 @@ EnemySets_BombTorizo_2:
     db $00                                                               ;B482AD;
     db "sf2_04 "                                                         ;B482AE;
 
+%anchor($B482B5)
 EnemySets_Flyway_2:
     dw $FFFF                                                             ;B482B5;
     db $00                                                               ;B482B7;
     db "SF1_08 "                                                         ;B482B8;
 
+%anchor($B482BF)
 EnemySets_CrateriaKihunter:
     dw EnemyHeaders_KihunterGreen                                        ;B482BF;
     dw $0001                                                             ;B482C1;
@@ -337,6 +384,7 @@ EnemySets_CrateriaKihunter:
     db $00                                                               ;B482CD;
     db "bl1_02 "                                                         ;B482CE;
 
+%anchor($B482D5)
 EnemySets_BrinstarPreMap:
     dw EnemyHeaders_Sidehopper                                           ;B482D5;
     dw $0001                                                             ;B482D7;
@@ -345,33 +393,39 @@ EnemySets_BrinstarPreMap:
     db $00                                                               ;B482DF;
     db "bl1_05 "                                                         ;B482E0;
 
+%anchor($B482E7)
 EnemySets_GreenBrinstarMap:
     dw $FFFF                                                             ;B482E7;
     db $00                                                               ;B482E9;
     db "bl1_07 "                                                         ;B482EA;
 
+%anchor($B482F1)
 EnemySets_GreenBrinstarMissileRefill:
     dw $FFFF                                                             ;B482F1;
     db $00                                                               ;B482F3;
     db "BL1_10 "                                                         ;B482F4;
 
+%anchor($B482FB)
 EnemySets_SporeSpawnKihunters:
     dw EnemyHeaders_KihunterGreen                                        ;B482FB;
     dw $0007,$FFFF                                                       ;B482FD;
     db $00                                                               ;B48301;
     db "BL1_20 "                                                         ;B48302;
 
+%anchor($B48309)
 EnemySets_EtecoonSuper:
     dw $FFFF                                                             ;B48309;
     db $00                                                               ;B4830B;
     db "BL1_21 "                                                         ;B4830C;
 
+%anchor($B48313)
 EnemySets_DachoraEnergyRefill:
     dw EnemyHeaders_FaceBlock                                            ;B48313;
     dw $0001,$FFFF                                                       ;B48315;
     db $00                                                               ;B48319;
     db "BL1_22 "                                                         ;B4831A;
 
+%anchor($B48321)
 EnemySets_SporeSpawnFarming:
     dw EnemyHeaders_Zeb                                                  ;B48321;
     dw $0001                                                             ;B48323;
@@ -380,6 +434,7 @@ EnemySets_SporeSpawnFarming:
     db $00                                                               ;B4832B;
     db "BL2_19 "                                                         ;B4832C;
 
+%anchor($B48333)
 EnemySets_Statues:
     dw EnemyHeaders_TourianStatue                                        ;B48333;
     dw $0001                                                             ;B48335;
@@ -388,11 +443,13 @@ EnemySets_Statues:
     db $00                                                               ;B4833D;
     db "BL1_26 "                                                         ;B4833E;
 
+%anchor($B48345)
 EnemySets_HopperETank:
     dw $FFFF                                                             ;B48345;
     db $00                                                               ;B48347;
     db "BL2_05 "                                                         ;B48348;
 
+%anchor($B4834F)
 EnemySets_BetaPowerBomb:
     dw EnemyHeaders_YappingMaw                                           ;B4834F;
     dw $0001                                                             ;B48351;
@@ -401,6 +458,7 @@ EnemySets_BetaPowerBomb:
     db $00                                                               ;B48359;
     db "BL1_23 "                                                         ;B4835A;
 
+%anchor($B48361)
 EnemySets_WaterwayETank:
     dw EnemyHeaders_Skultera                                             ;B48361;
     dw $0001                                                             ;B48363;
@@ -411,6 +469,7 @@ EnemySets_WaterwayETank:
     db $00                                                               ;B4836F;
     db "BL1_15A"                                                         ;B48370;
 
+%anchor($B48377)
 EnemySets_ConstructionZone_1:
     dw EnemyHeaders_Zoomer                                               ;B48377;
     dw $0001                                                             ;B48379;
@@ -419,6 +478,7 @@ EnemySets_ConstructionZone_1:
     db $00                                                               ;B48381;
     db "BL1_16A"                                                         ;B48382;
 
+%anchor($B48389)
 EnemySets_BlueBrinstarETank_1:
     dw EnemyHeaders_FaceBlock                                            ;B48389;
     dw $0001                                                             ;B4838B;
@@ -431,6 +491,7 @@ EnemySets_BlueBrinstarETank_1:
     db $00                                                               ;B4839B;
     db "BL1_17 "                                                         ;B4839C;
 
+%anchor($B483A3)
 EnemySets_NoobBridge:
     dw EnemyHeaders_Cacatac                                              ;B483A3;
     dw $0001                                                             ;B483A5;
@@ -439,6 +500,7 @@ EnemySets_NoobBridge:
     db $00                                                               ;B483AD;
     db "BL1_14A"                                                         ;B483AE;
 
+%anchor($B483B5)
 EnemySets_MorphBall_1:
     dw EnemyHeaders_SidehopperLarge                                      ;B483B5;
     dw $0002                                                             ;B483B7;
@@ -447,11 +509,13 @@ EnemySets_MorphBall_1:
     db $00                                                               ;B483BF;
     db "BL2_22 "                                                         ;B483C0;
 
+%anchor($B483C7)
 EnemySets_WarehouseSave:
     dw $FFFF                                                             ;B483C7;
     db $00                                                               ;B483C9;
     db "BL1_14 "                                                         ;B483CA;
 
+%anchor($B483D1)
 EnemySets_MorphBall_0:
     dw EnemyHeaders_Eye                                                  ;B483D1;
     dw $0007                                                             ;B483D3;
@@ -460,12 +524,14 @@ EnemySets_MorphBall_0:
     db $00                                                               ;B483DB;
     db "BL2_10 "                                                         ;B483DC;
 
+%anchor($B483E3)
 EnemySets_WarehouseZeela:
     dw EnemyHeaders_Zeela                                                ;B483E3;
     dw $0001,$FFFF                                                       ;B483E5;
     db $00                                                               ;B483E9;
     db "BL2_00 "                                                         ;B483EA;
 
+%anchor($B483F1)
 EnemySets_RedTower:
     dw EnemyHeaders_Ripper                                               ;B483F1;
     dw $0001                                                             ;B483F3;
@@ -476,22 +542,26 @@ EnemySets_RedTower:
     db $00                                                               ;B483FF;
     db "bl1_28 "                                                         ;B48400;
 
+%anchor($B48407)
 EnemySets_BlueBrinstarBoulders:
     dw EnemyHeaders_Boulder                                              ;B48407;
     dw $0001,$FFFF                                                       ;B48409;
     db $00                                                               ;B4840D;
     db "bl1_29 "                                                         ;B4840E;
 
+%anchor($B48415)
 EnemySets_BillyMays:
     dw $FFFF                                                             ;B48415;
     db $00                                                               ;B48417;
     db "bl1_27 "                                                         ;B48418;
 
+%anchor($B4841F)
 EnemySets_BigPinkSaveRoom:
     dw $FFFF                                                             ;B4841F;
     db $00                                                               ;B48421;
     db "BL1_09 "                                                         ;B48422;
 
+%anchor($B48429)
 EnemySets_BigPink:
     dw EnemyHeaders_Rio                                                  ;B48429;
     dw $0001                                                             ;B4842B;
@@ -502,11 +572,13 @@ EnemySets_BigPink:
     db $00                                                               ;B48437;
     db "bl1_31 "                                                         ;B48438;
 
+%anchor($B4843F)
 EnemySets_EtecoonSave:
     dw $FFFF                                                             ;B4843F;
     db $00                                                               ;B48441;
     db "BL2_08 "                                                         ;B48442;
 
+%anchor($B48449)
 EnemySets_BelowSpazer:
     dw EnemyHeaders_YappingMaw                                           ;B48449;
     dw $0001                                                             ;B4844B;
@@ -515,16 +587,19 @@ EnemySets_BelowSpazer:
     db $00                                                               ;B48453;
     db "bl1_30 "                                                         ;B48454;
 
+%anchor($B4845B)
 EnemySets_GreenBrinstarSave:
     dw $FFFF                                                             ;B4845B;
     db $00                                                               ;B4845D;
     db "BL2_09 "                                                         ;B4845E;
 
+%anchor($B48465)
 EnemySets_Spazer:
     dw $FFFF                                                             ;B48465;
     db $00                                                               ;B48467;
     db "BL1_12 "                                                         ;B48468;
 
+%anchor($B4846F)
 EnemySets_PinkBrinstarPowerBombs:
     dw EnemyHeaders_ShutterShootable                                     ;B4846F;
     dw $0001                                                             ;B48471;
@@ -535,33 +610,39 @@ EnemySets_PinkBrinstarPowerBombs:
     db $00                                                               ;B4847D;
     db "BL2_17 "                                                         ;B4847E;
 
+%anchor($B48485)
 EnemySets_RedTowerRefill:
     dw $FFFF                                                             ;B48485;
     db $00                                                               ;B48487;
     db "BL2_18 "                                                         ;B48488;
 
+%anchor($B4848F)
 EnemySets_KraidRefill:
     dw $FFFF                                                             ;B4848F;
     db $00                                                               ;B48491;
     db "BL2_21 "                                                         ;B48492;
 
+%anchor($B48499)
 EnemySets_VariaSuit:
     dw $FFFF                                                             ;B48499;
     db $00                                                               ;B4849B;
     db "BL2_23 "                                                         ;B4849C;
 
+%anchor($B484A3)
 EnemySets_RedBrinstarSave:
     dw $FFFF                                                             ;B484A3;
     db $00                                                               ;B484A5;
     db "BL1_24a"                                                         ;B484A6;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B484AD)
 UNUSED_EnemySets_B484AD:
     dw $FFFF                                                             ;B484AD;
     db $00                                                               ;B484AF;
     db "BL1_16 "                                                         ;B484B0;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B484B7)
 EnemySets_BlueBrinstarETank_0:
     dw EnemyHeaders_Eye                                                  ;B484B7;
     dw $0007                                                             ;B484B9;
@@ -570,18 +651,21 @@ EnemySets_BlueBrinstarETank_0:
     db $00                                                               ;B484C1;
     db "bl1_06 "                                                         ;B484C2;
 
+%anchor($B484C9)
 EnemySets_GreenBrinstarFirefleas:
     dw EnemyHeaders_Fireflea                                             ;B484C9;
     dw $0002,$FFFF                                                       ;B484CB;
     db $00                                                               ;B484CF;
     db "BL1_18 "                                                         ;B484D0;
 
+%anchor($B484D7)
 EnemySets_GreenBrinstarBeetoms:
     dw EnemyHeaders_Beetom                                               ;B484D7;
     dw $0001,$FFFF                                                       ;B484D9;
     db $00                                                               ;B484DD;
     db "BL1_19 "                                                         ;B484DE;
 
+%anchor($B484E5)
 EnemySets_EtecoonETank:
     dw EnemyHeaders_Zebbo                                                ;B484E5;
     dw $0001                                                             ;B484E7;
@@ -590,6 +674,7 @@ EnemySets_EtecoonETank:
     db $00                                                               ;B484EF;
     db "BL1_25 "                                                         ;B484F0;
 
+%anchor($B484F7)
 EnemySets_PinkBrinstarHoppers:
     dw EnemyHeaders_SidehopperLarge                                      ;B484F7;
     dw $0001                                                             ;B484F9;
@@ -600,6 +685,7 @@ EnemySets_PinkBrinstarHoppers:
     db $00                                                               ;B48505;
     db "BL2_11 "                                                         ;B48506;
 
+%anchor($B4850D)
 EnemySets_WarehouseETank:
     dw EnemyHeaders_Reflec                                               ;B4850D;
     dw $0001                                                             ;B4850F;
@@ -609,23 +695,27 @@ EnemySets_WarehouseETank:
     db "BL2_20a"                                                         ;B48518;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B4851F)
 UNUSED_EnemySets_B4851F:
     dw $FFFF                                                             ;B4851F;
     db $00                                                               ;B48521;
     db "BL2_20 "                                                         ;B48522;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B48529)
 EnemySets_WarehouseEntrance:
     dw $FFFF                                                             ;B48529;
     db $00                                                               ;B4852B;
     db "BL2_12 "                                                         ;B4852C;
 
+%anchor($B48533)
 EnemySets_WarehouseKihunter:
     dw EnemyHeaders_KihunterGreen                                        ;B48533;
     dw $0001,$FFFF                                                       ;B48535;
     db $00                                                               ;B48539;
     db "bl1_00 "                                                         ;B4853A;
 
+%anchor($B48541)
 EnemySets_GreenBrinstarMainShaft:
     dw EnemyHeaders_Etecoon                                              ;B48541;
     dw $0001                                                             ;B48543;
@@ -636,12 +726,14 @@ EnemySets_GreenBrinstarMainShaft:
     db $00                                                               ;B4854F;
     db "bl1_01 "                                                         ;B48550;
 
+%anchor($B48557)
 EnemySets_SporeSpawnSuper:
     dw EnemyHeaders_Zeb                                                  ;B48557;
     dw $0001,$FFFF                                                       ;B48559;
     db $00                                                               ;B4855D;
     db "bl1_03 "                                                         ;B4855E;
 
+%anchor($B48565)
 EnemySets_EarlySupers:
     dw EnemyHeaders_Sidehopper                                           ;B48565;
     dw $0001                                                             ;B48567;
@@ -654,6 +746,7 @@ EnemySets_EarlySupers:
     db $00                                                               ;B48577;
     db "BL2_01 "                                                         ;B48578;
 
+%anchor($B4857F)
 EnemySets_RedBrinstarFirefleas:
     dw EnemyHeaders_Fireflea                                             ;B4857F;
     dw $0001                                                             ;B48581;
@@ -664,6 +757,7 @@ EnemySets_RedBrinstarFirefleas:
     db $00                                                               ;B4858D;
     db "BL1_15 "                                                         ;B4858E;
 
+%anchor($B48595)
 EnemySets_ConstructionZone_0:
     dw EnemyHeaders_Sbug                                                 ;B48595;
     dw $0007                                                             ;B48597;
@@ -672,6 +766,7 @@ EnemySets_ConstructionZone_0:
     db $00                                                               ;B4859F;
     db "BL1_13 "                                                         ;B485A0;
 
+%anchor($B485A7)
 EnemySets_GreenHillZone:
     dw EnemyHeaders_Sidehopper                                           ;B485A7;
     dw $0001                                                             ;B485A9;
@@ -680,6 +775,7 @@ EnemySets_GreenHillZone:
     db $00                                                               ;B485B1;
     db "BL1_08 "                                                         ;B485B2;
 
+%anchor($B485B9)
 EnemySets_Dachora:
     dw EnemyHeaders_Zeela                                                ;B485B9;
     dw $0001                                                             ;B485BB;
@@ -692,6 +788,7 @@ EnemySets_Dachora:
     db $00                                                               ;B485CB;
     db "BL2_03 "                                                         ;B485CC;
 
+%anchor($B485D3)
 EnemySets_Hellway:
     dw EnemyHeaders_Zeela                                                ;B485D3;
     dw $0001                                                             ;B485D5;
@@ -700,39 +797,46 @@ EnemySets_Hellway:
     db $00                                                               ;B485DD;
     db "BL1_24 "                                                         ;B485DE;
 
+%anchor($B485E5)
 EnemySets_FirstMissile:
     dw $FFFF                                                             ;B485E5;
     db $00                                                               ;B485E7;
     db "BL2_15 "                                                         ;B485E8;
 
+%anchor($B485EF)
 EnemySets_Kraid:
     dw EnemyHeaders_Kraid                                                ;B485EF;
     dw $0007,$FFFF                                                       ;B485F1;
     db $00                                                               ;B485F5;
     db "bl1_04 "                                                         ;B485F6;
 
+%anchor($B485FD)
 EnemySets_BrinstarReserveTank:
     dw $FFFF                                                             ;B485FD;
     db $00                                                               ;B485FF;
     db "BL2_02 "                                                         ;B48600;
 
+%anchor($B48607)
 EnemySets_XrayScope:
     dw EnemyHeaders_ShutterShootable                                     ;B48607;
     dw $0001,$FFFF                                                       ;B48609;
     db $00                                                               ;B4860D;
     db "BL2_16 "                                                         ;B4860E;
 
+%anchor($B48615)
 EnemySets_StatuesHallway:
     dw $FFFF                                                             ;B48615;
     db $00                                                               ;B48617;
     db "BL2_06 "                                                         ;B48618;
 
+%anchor($B4861F)
 EnemySets_AlphaPowerBomb:
     dw EnemyHeaders_Boyon                                                ;B4861F;
     dw $0001,$FFFF                                                       ;B48621;
     db $00                                                               ;B48625;
     db "BL2_14 "                                                         ;B48626;
 
+%anchor($B4862D)
 EnemySets_KraidEyeDoor:
     dw EnemyHeaders_Zeb                                                  ;B4862D;
     dw $0001                                                             ;B4862F;
@@ -741,6 +845,7 @@ EnemySets_KraidEyeDoor:
     db $00                                                               ;B48637;
     db "BL2_04 "                                                         ;B48638;
 
+%anchor($B4863F)
 EnemySets_Caterpillar:
     dw EnemyHeaders_Zero                                                 ;B4863F;
     dw $0002                                                             ;B48641;
@@ -749,6 +854,7 @@ EnemySets_Caterpillar:
     db $00                                                               ;B48649;
     db "BL2_13 "                                                         ;B4864A;
 
+%anchor($B48651)
 EnemySets_MiniKraid:
     dw EnemyHeaders_PirateGreenWalking                                   ;B48651;
     dw $0001                                                             ;B48653;
@@ -757,12 +863,14 @@ EnemySets_MiniKraid:
     db $00                                                               ;B4865B;
     db "BL1_11 "                                                         ;B4865C;
 
+%anchor($B48663)
 EnemySets_SporeSpawn:
     dw EnemyHeaders_SporeSpawn                                           ;B48663;
     dw $0001,$FFFF                                                       ;B48665;
     db $00                                                               ;B48669;
     db "BL2_07 "                                                         ;B4866A;
 
+%anchor($B48671)
 EnemySets_SkreeBoost:
     dw EnemyHeaders_Skree                                                ;B48671;
     dw $0001                                                             ;B48673;
@@ -771,6 +879,7 @@ EnemySets_SkreeBoost:
     db $00                                                               ;B4867B;
     db "NO1_19 "                                                         ;B4867C;
 
+%anchor($B48683)
 EnemySets_GrappleTutorial3:
     dw EnemyHeaders_Gamet                                                ;B48683;
     dw $0001                                                             ;B48685;
@@ -779,18 +888,21 @@ EnemySets_GrappleTutorial3:
     db $00                                                               ;B4868D;
     db "NO1_17 "                                                         ;B4868E;
 
+%anchor($B48695)
 EnemySets_PostCrocShaft:
     dw EnemyHeaders_Viola                                                ;B48695;
     dw $0001,$FFFF                                                       ;B48697;
     db $00                                                               ;B4869B;
     db "NO2_18 "                                                         ;B4869C;
 
+%anchor($B486A3)
 EnemySets_MetalPirates:
     dw EnemyHeaders_PirateGoldNinja                                      ;B486A3;
     dw $0001,$FFFF                                                       ;B486A5;
     db $00                                                               ;B486A9;
     db "NO2_00 "                                                         ;B486AA;
 
+%anchor($B486B1)
 EnemySets_AcidStatue:
     dw EnemyHeaders_Chozo                                                ;B486B1;
     dw $0001                                                             ;B486B3;
@@ -801,12 +913,14 @@ EnemySets_AcidStatue:
     db $00                                                               ;B486BF;
     db "NO1_44 "                                                         ;B486C0;
 
+%anchor($B486C7)
 EnemySets_PurpleFarming:
     dw EnemyHeaders_Gamet                                                ;B486C7;
     dw $0001,$FFFF                                                       ;B486C9;
     db $00                                                               ;B486CD;
     db "NO1_04 "                                                         ;B486CE;
 
+%anchor($B486D5)
 EnemySets_IceBeamGate:
     dw EnemyHeaders_ShutterGrowing                                       ;B486D5;
     dw $0001                                                             ;B486D7;
@@ -819,12 +933,14 @@ EnemySets_IceBeamGate:
     db $00                                                               ;B486E7;
     db "NO1_42 "                                                         ;B486E8;
 
+%anchor($B486EF)
 EnemySets_SpikyAcidSnakesTunnel:
     dw EnemyHeaders_YappingMaw                                           ;B486EF;
     dw $0001,$FFFF                                                       ;B486F1;
     db $00                                                               ;B486F5;
     db "NO2_16 "                                                         ;B486F6;
 
+%anchor($B486FD)
 EnemySets_RedKihunterShaft:
     dw EnemyHeaders_KihunterRed                                          ;B486FD;
     dw $0001                                                             ;B486FF;
@@ -833,17 +949,20 @@ EnemySets_RedKihunterShaft:
     db $00                                                               ;B48707;
     db "NO2_03 "                                                         ;B48708;
 
+%anchor($B4870F)
 EnemySets_FastRipper:
     dw EnemyHeaders_Ripper2                                              ;B4870F;
     dw $0001,$FFFF                                                       ;B48711;
     db $00                                                               ;B48715;
     db "NO1_31 "                                                         ;B48716;
 
+%anchor($B4871D)
 EnemySets_WaveBeam:
     dw $FFFF                                                             ;B4871D;
     db $00                                                               ;B4871F;
     db "NO2_07 "                                                         ;B48720;
 
+%anchor($B48727)
 EnemySets_FastPillarsSetup:
     dw EnemyHeaders_PirateGoldWall                                       ;B48727;
     dw $0001                                                             ;B48729;
@@ -854,26 +973,31 @@ EnemySets_FastPillarsSetup:
     db $00                                                               ;B48735;
     db "NO1_38 "                                                         ;B48736;
 
+%anchor($B4873D)
 EnemySets_LowerNorfairElev:
     dw $FFFF                                                             ;B4873D;
     db $00                                                               ;B4873F;
     db "NO2_23 "                                                         ;B48740;
 
+%anchor($B48747)
 EnemySets_LNSave:
     dw $FFFF                                                             ;B48747;
     db $00                                                               ;B48749;
     db "NO1_43 "                                                         ;B4874A;
 
+%anchor($B48751)
 EnemySets_UpperNorfairRefill:
     dw $FFFF                                                             ;B48751;
     db $00                                                               ;B48753;
     db "NO1_46 "                                                         ;B48754;
 
+%anchor($B4875B)
 EnemySets_NorfairMap:
     dw $FFFF                                                             ;B4875B;
     db $00                                                               ;B4875D;
     db "NO2_09 "                                                         ;B4875E;
 
+%anchor($B48765)
 EnemySets_MickeyMouse:
     dw EnemyHeaders_DessgeegaLarge                                       ;B48765;
     dw $0001                                                             ;B48767;
@@ -882,11 +1006,13 @@ EnemySets_MickeyMouse:
     db $00                                                               ;B4876F;
     db "NO2_04 "                                                         ;B48770;
 
+%anchor($B48777)
 EnemySets_GTEnergyRefill:
     dw $FFFF                                                             ;B48777;
     db $00                                                               ;B48779;
     db "NO2_05 "                                                         ;B4877A;
 
+%anchor($B48781)
 EnemySets_Ridley:
     dw EnemyHeaders_Ridley                                               ;B48781;
     dw $0001                                                             ;B48783;
@@ -895,32 +1021,38 @@ EnemySets_Ridley:
     db $00                                                               ;B4878B;
     db "NO1_16 "                                                         ;B4878C;
 
+%anchor($B48793)
 EnemySets_PostCrocPowerBombs:
     dw $FFFF                                                             ;B48793;
     db $00                                                               ;B48795;
     db "NO1_06 "                                                         ;B48796;
 
+%anchor($B4879D)
 EnemySets_IceBeam:
     dw $FFFF                                                             ;B4879D;
     db $00                                                               ;B4879F;
     db "NO1_11 "                                                         ;B487A0;
 
+%anchor($B487A7)
 EnemySets_HiJumpBoots:
     dw $FFFF                                                             ;B487A7;
     db $00                                                               ;B487A9;
     db "NO1_15 "                                                         ;B487AA;
 
+%anchor($B487B1)
 EnemySets_PostCrocSave:
     dw $FFFF                                                             ;B487B1;
     db $00                                                               ;B487B3;
     db "NO1_48 "                                                         ;B487B4;
 
+%anchor($B487BB)
 EnemySets_FrogSpeedway:
     dw EnemyHeaders_Beetom                                               ;B487BB;
     dw $0001,$FFFF                                                       ;B487BD;
     db $00                                                               ;B487C1;
     db "NO1_40 "                                                         ;B487C2;
 
+%anchor($B487C9)
 EnemySets_RisingTide:
     dw EnemyHeaders_Squeept                                              ;B487C9;
     dw $0001                                                             ;B487CB;
@@ -931,6 +1063,7 @@ EnemySets_RisingTide:
     db $00                                                               ;B487D7;
     db "NO1_14 "                                                         ;B487D8;
 
+%anchor($B487DF)
 EnemySets_PostCrocFarming:
     dw EnemyHeaders_Gamet                                                ;B487DF;
     dw $0001                                                             ;B487E1;
@@ -941,6 +1074,7 @@ EnemySets_PostCrocFarming:
     db $00                                                               ;B487ED;
     db "NO2_12 "                                                         ;B487EE;
 
+%anchor($B487F5)
 EnemySets_WorstRoomInTheGame:
     dw EnemyHeaders_Namihe                                               ;B487F5;
     dw $0001                                                             ;B487F7;
@@ -951,6 +1085,7 @@ EnemySets_WorstRoomInTheGame:
     db $00                                                               ;B48803;
     db "NO1_30 "                                                         ;B48804;
 
+%anchor($B4880B)
 EnemySets_DoubleChamber:
     dw EnemyHeaders_Fune                                                 ;B4880B;
     dw $0001                                                             ;B4880D;
@@ -963,12 +1098,14 @@ EnemySets_DoubleChamber:
     db $00                                                               ;B4881D;
     db "NO1_23 "                                                         ;B4881E;
 
+%anchor($B48825)
 EnemySets_GrappleBeam:
     dw EnemyHeaders_Multiviola                                           ;B48825;
     dw $0001,$FFFF                                                       ;B48827;
     db $00                                                               ;B4882B;
     db "NO1_49 "                                                         ;B4882C;
 
+%anchor($B48833)
 EnemySets_RedPirateShaft:
     dw EnemyHeaders_PirateRedWalking                                     ;B48833;
     dw $0001                                                             ;B48835;
@@ -977,6 +1114,7 @@ EnemySets_RedPirateShaft:
     db $00                                                               ;B4883D;
     db "NO1_09 "                                                         ;B4883E;
 
+%anchor($B48845)
 EnemySets_CrocomireSpeedway:
     dw EnemyHeaders_PirateRedWalking                                     ;B48845;
     dw $0001                                                             ;B48847;
@@ -989,6 +1127,7 @@ EnemySets_CrocomireSpeedway:
     db $00                                                               ;B48857;
     db "NO2_11 "                                                         ;B48858;
 
+%anchor($B4885F)
 EnemySets_Plowerhouse:
     dw EnemyHeaders_Zebbo                                                ;B4885F;
     dw $0001                                                             ;B48861;
@@ -997,6 +1136,7 @@ EnemySets_Plowerhouse:
     db $00                                                               ;B48869;
     db "NO2_22 "                                                         ;B4886A;
 
+%anchor($B48871)
 EnemySets_LNFireflea:
     dw EnemyHeaders_Fireflea                                             ;B48871;
     dw $0001                                                             ;B48873;
@@ -1007,6 +1147,7 @@ EnemySets_LNFireflea:
     db $00                                                               ;B4887F;
     db "NO1_35 "                                                         ;B48880;
 
+%anchor($B48887)
 EnemySets_MagdolliteTunnel:
     dw EnemyHeaders_Multiviola                                           ;B48887;
     dw $0001                                                             ;B48889;
@@ -1016,24 +1157,28 @@ EnemySets_MagdolliteTunnel:
     db "NO2_08 "                                                         ;B48892;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B48899)
 UNUSED_EnemySets_State8FB3EE_B48899:
     dw $FFFF                                                             ;B48899;
     db $00                                                               ;B4889B;
     db "NO1_37 "                                                         ;B4889C;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B488A3)
 EnemySets_LavaDive:
     dw EnemyHeaders_Namihe                                               ;B488A3;
     dw $0001,$FFFF                                                       ;B488A5;
     db $00                                                               ;B488A9;
     db "NO2_10 "                                                         ;B488AA;
 
+%anchor($B488B1)
 EnemySets_Pillar:
     dw EnemyHeaders_Puromi                                               ;B488B1;
     dw $0007,$FFFF                                                       ;B488B3;
     db $00                                                               ;B488B7;
     db "NO1_12 "                                                         ;B488B8;
 
+%anchor($B488BF)
 EnemySets_CrocomireEscape:
     dw EnemyHeaders_Dragon                                               ;B488BF;
     dw $0001                                                             ;B488C1;
@@ -1042,32 +1187,38 @@ EnemySets_CrocomireEscape:
     db $00                                                               ;B488C9;
     db "NO2_14 "                                                         ;B488CA;
 
+%anchor($B488D1)
 EnemySets_LNSpringBallMaze:
     dw EnemyHeaders_Alcoon                                               ;B488D1;
     dw $0001,$FFFF                                                       ;B488D3;
     db $00                                                               ;B488D7;
     db "NO2_15 "                                                         ;B488D8;
 
+%anchor($B488DF)
 EnemySets_LNEscapePowerBombs:
     dw $FFFF                                                             ;B488DF;
     db $00                                                               ;B488E1;
     db "NO1_36 "                                                         ;B488E2;
 
+%anchor($B488E9)
 EnemySets_PurpleShaft:
     dw $FFFF                                                             ;B488E9;
     db $00                                                               ;B488EB;
     db "NO2_20 "                                                         ;B488EC;
 
+%anchor($B488F3)
 EnemySets_RidleyETank:
     dw $FFFF                                                             ;B488F3;
     db $00                                                               ;B488F5;
     db "NO2_21 "                                                         ;B488F6;
 
+%anchor($B488FD)
 EnemySets_ScrewAttack:
     dw $FFFF                                                             ;B488FD;
     db $00                                                               ;B488FF;
     db "NO1_25 "                                                         ;B48900;
 
+%anchor($B48907)
 EnemySets_GreenBubblesMissiles:
     dw EnemyHeaders_ShutterShootable                                     ;B48907;
     dw $0007                                                             ;B48909;
@@ -1078,12 +1229,14 @@ EnemySets_GreenBubblesMissiles:
     db $00                                                               ;B48915;
     db "NO2_13 "                                                         ;B48916;
 
+%anchor($B4891D)
 EnemySets_Amphitheatre:
     dw EnemyHeaders_PirateGoldWalking                                    ;B4891D;
     dw $0007,$FFFF                                                       ;B4891F;
     db $00                                                               ;B48923;
     db "NO1_02 "                                                         ;B48924;
 
+%anchor($B4892B)
 EnemySets_CathedralEntrance:
     dw EnemyHeaders_Sova                                                 ;B4892B;
     dw $0001                                                             ;B4892D;
@@ -1092,6 +1245,7 @@ EnemySets_CathedralEntrance:
     db $00                                                               ;B48935;
     db "NO2_01 "                                                         ;B48936;
 
+%anchor($B4893D)
 EnemySets_MainHall:
     dw EnemyHeaders_Hibashi                                              ;B4893D;
     dw $0001                                                             ;B4893F;
@@ -1102,6 +1256,7 @@ EnemySets_MainHall:
     db $00                                                               ;B4894B;
     db "NO1_20 "                                                         ;B4894C;
 
+%anchor($B48953)
 EnemySets_PostCrocJump:
     dw EnemyHeaders_Mella                                                ;B48953;
     dw $0001                                                             ;B48955;
@@ -1112,22 +1267,26 @@ EnemySets_PostCrocJump:
     db $00                                                               ;B48961;
     db "NO1_50 "                                                         ;B48962;
 
+%anchor($B48969)
 EnemySets_FrogSave:
     dw $FFFF                                                             ;B48969;
     db $00                                                               ;B4896B;
     db "NO1_51 "                                                         ;B4896C;
 
+%anchor($B48973)
 EnemySets_CrocomireSave:
     dw $FFFF                                                             ;B48973;
     db $00                                                               ;B48975;
     db "NO1_08 "                                                         ;B48976;
 
+%anchor($B4897D)
 EnemySets_CrumbleShaft:
     dw EnemyHeaders_Sova                                                 ;B4897D;
     dw $0001,$FFFF                                                       ;B4897F;
     db $00                                                               ;B48983;
     db "NO2_17 "                                                         ;B48984;
 
+%anchor($B4898B)
 EnemySets_Wasteland:
     dw EnemyHeaders_Hibashi                                              ;B4898B;
     dw $0001                                                             ;B4898D;
@@ -1140,6 +1299,7 @@ EnemySets_Wasteland:
     db $00                                                               ;B4899D;
     db "NO1_41 "                                                         ;B4899E;
 
+%anchor($B489A5)
 EnemySets_AcidSnakesTunnel:
     dw EnemyHeaders_Dragon                                               ;B489A5;
     dw $0001                                                             ;B489A7;
@@ -1148,22 +1308,26 @@ EnemySets_AcidSnakesTunnel:
     db $00                                                               ;B489AF;
     db "NO1_22 "                                                         ;B489B0;
 
+%anchor($B489B7)
 EnemySets_GrappleTutorial1:
     dw $FFFF                                                             ;B489B7;
     db $00                                                               ;B489B9;
     db "NO1_47 "                                                         ;B489BA;
 
+%anchor($B489C1)
 EnemySets_BubbleMountainSave:
     dw $FFFF                                                             ;B489C1;
     db $00                                                               ;B489C3;
     db "NO1_13 "                                                         ;B489C4;
 
+%anchor($B489CB)
 EnemySets_HiJumpETank:
     dw EnemyHeaders_Sova                                                 ;B489CB;
     dw $0001,$FFFF                                                       ;B489CD;
     db $00                                                               ;B489D1;
     db "NO1_26 "                                                         ;B489D2;
 
+%anchor($B489D9)
 EnemySets_BubbleMountain:
     dw EnemyHeaders_Waver                                                ;B489D9;
     dw $0001                                                             ;B489DB;
@@ -1176,12 +1340,14 @@ EnemySets_BubbleMountain:
     db $00                                                               ;B489EB;
     db "NO1_00 "                                                         ;B489EC;
 
+%anchor($B489F3)
 EnemySets_IceBeamAcid:
     dw EnemyHeaders_Tripper                                              ;B489F3;
     dw $0007,$FFFF                                                       ;B489F5;
     db $00                                                               ;B489F9;
     db "NO1_05 "                                                         ;B489FA;
 
+%anchor($B48A01)
 EnemySets_IceBeamTutorial:
     dw EnemyHeaders_Boyon                                                ;B48A01;
     dw $0001                                                             ;B48A03;
@@ -1190,6 +1356,7 @@ EnemySets_IceBeamTutorial:
     db $00                                                               ;B48A0B;
     db "NO1_18 "                                                         ;B48A0C;
 
+%anchor($B48A13)
 EnemySets_PostCrocMissile:
     dw EnemyHeaders_Metaree                                              ;B48A13;
     dw $0001                                                             ;B48A15;
@@ -1198,6 +1365,7 @@ EnemySets_PostCrocMissile:
     db $00                                                               ;B48A1D;
     db "NO1_01 "                                                         ;B48A1E;
 
+%anchor($B48A25)
 EnemySets_Cathedral:
     dw EnemyHeaders_Sova                                                 ;B48A25;
     dw $0001                                                             ;B48A27;
@@ -1206,6 +1374,7 @@ EnemySets_Cathedral:
     db $00                                                               ;B48A2F;
     db "NO1_24 "                                                         ;B48A30;
 
+%anchor($B48A37)
 EnemySets_NorfairReserveTank:
     dw EnemyHeaders_Dragon                                               ;B48A37;
     dw $0001                                                             ;B48A39;
@@ -1214,6 +1383,7 @@ EnemySets_NorfairReserveTank:
     db $00                                                               ;B48A41;
     db "NO1_21 "                                                         ;B48A42;
 
+%anchor($B48A49)
 EnemySets_GrappleTutorial2:
     dw EnemyHeaders_Fune                                                 ;B48A49;
     dw $0001                                                             ;B48A4B;
@@ -1222,6 +1392,7 @@ EnemySets_GrappleTutorial2:
     db $00                                                               ;B48A53;
     db "NO1_07 "                                                         ;B48A54;
 
+%anchor($B48A5B)
 EnemySets_IceBeamSnake:
     dw EnemyHeaders_Sova                                                 ;B48A5B;
     dw $0001                                                             ;B48A5D;
@@ -1230,12 +1401,14 @@ EnemySets_IceBeamSnake:
     db $00                                                               ;B48A65;
     db "NO2_02 "                                                         ;B48A66;
 
+%anchor($B48A6D)
 EnemySets_GoldenTorizo:
     dw EnemyHeaders_GoldenTorizo                                         ;B48A6D;
     dw $0001,$FFFF                                                       ;B48A6F;
     db $00                                                               ;B48A73;
     db "NO1_32 "                                                         ;B48A74;
 
+%anchor($B48A7B)
 EnemySets_SpikyPlatformsTunnel:
     dw EnemyHeaders_Tripper                                              ;B48A7B;
     dw $0007                                                             ;B48A7D;
@@ -1244,11 +1417,13 @@ EnemySets_SpikyPlatformsTunnel:
     db $00                                                               ;B48A85;
     db "NO1_28 "                                                         ;B48A86;
 
+%anchor($B48A8D)
 EnemySets_SpeedBooster:
     dw $FFFF                                                             ;B48A8D;
     db $00                                                               ;B48A8F;
     db "NO2_06 "                                                         ;B48A90;
 
+%anchor($B48A97)
 EnemySets_LNFarming:
     dw EnemyHeaders_Viola                                                ;B48A97;
     dw $0001                                                             ;B48A99;
@@ -1257,6 +1432,7 @@ EnemySets_LNFarming:
     db $00                                                               ;B48AA1;
     db "NO1_29 "                                                         ;B48AA2;
 
+%anchor($B48AA9)
 EnemySets_SingleChamber:
     dw EnemyHeaders_Multiviola                                           ;B48AA9;
     dw $0001                                                             ;B48AAB;
@@ -1265,6 +1441,7 @@ EnemySets_SingleChamber:
     db $00                                                               ;B48AB3;
     db "NO1_27 "                                                         ;B48AB4;
 
+%anchor($B48ABB)
 EnemySets_SpeedBoosterHall:
     dw EnemyHeaders_Geruta                                               ;B48ABB;
     dw $0001                                                             ;B48ABD;
@@ -1273,6 +1450,7 @@ EnemySets_SpeedBoosterHall:
     db $00                                                               ;B48AC5;
     db "NO1_45 "                                                         ;B48AC6;
 
+%anchor($B48ACD)
 EnemySets_BatCave:
     dw EnemyHeaders_Gamet                                                ;B48ACD;
     dw $0001                                                             ;B48ACF;
@@ -1281,18 +1459,21 @@ EnemySets_BatCave:
     db $00                                                               ;B48AD7;
     db "NO1_34 "                                                         ;B48AD8;
 
+%anchor($B48ADF)
 EnemySets_KronicBoost:
     dw EnemyHeaders_Viola                                                ;B48ADF;
     dw $0001,$FFFF                                                       ;B48AE1;
     db $00                                                               ;B48AE5;
     db "NO1_03 "                                                         ;B48AE6;
 
+%anchor($B48AED)
 EnemySets_BusinessCenter:
     dw EnemyHeaders_Sova                                                 ;B48AED;
     dw $0002,$FFFF                                                       ;B48AEF;
     db $00                                                               ;B48AF3;
     db "NO2_19 "                                                         ;B48AF4;
 
+%anchor($B48AFB)
 EnemySets_ThreeMusketeers:
     dw EnemyHeaders_Hibashi                                              ;B48AFB;
     dw $0001                                                             ;B48AFD;
@@ -1303,17 +1484,20 @@ EnemySets_ThreeMusketeers:
     db $00                                                               ;B48B09;
     db "NO1_10 "                                                         ;B48B0A;
 
+%anchor($B48B11)
 EnemySets_Crocomire:
     dw EnemyHeaders_Crocomire                                            ;B48B11;
     dw $D007,$FFFF                                                       ;B48B13;
     db $00                                                               ;B48B17;
     db "NO1_52 "                                                         ;B48B18;
 
+%anchor($B48B1F)
 EnemySets_LNElevSave:
     dw $FFFF                                                             ;B48B1F;
     db $00                                                               ;B48B21;
     db "NO1_33 "                                                         ;B48B22;
 
+%anchor($B48B29)
 EnemySets_Volcano:
     dw EnemyHeaders_Fune                                                 ;B48B29;
     dw $0001                                                             ;B48B2B;
@@ -1322,6 +1506,7 @@ EnemySets_Volcano:
     db $00                                                               ;B48B33;
     db "NO1_39 "                                                         ;B48B34;
 
+%anchor($B48B3B)
 EnemySets_UpperNorfairFarming:
     dw EnemyHeaders_Fune                                                 ;B48B3B;
     dw $0001                                                             ;B48B3D;
@@ -1330,12 +1515,14 @@ EnemySets_UpperNorfairFarming:
     db $00                                                               ;B48B45;
     db "NP1_11a"                                                         ;B48B46;
 
+%anchor($B48B4D)
 EnemySets_SpongeBath_1:
     dw EnemyHeaders_Bull                                                 ;B48B4D;
     dw $0001,$FFFF                                                       ;B48B4F;
     db $00                                                               ;B48B53;
     db "NP1_07a"                                                         ;B48B54;
 
+%anchor($B48B5B)
 EnemySets_WreckedShipETank_1:
     dw EnemyHeaders_Kamer2                                               ;B48B5B;
     dw $0001                                                             ;B48B5D;
@@ -1344,6 +1531,7 @@ EnemySets_WreckedShipETank_1:
     db $00                                                               ;B48B65;
     db "NP1_04 "                                                         ;B48B66;
 
+%anchor($B48B6D)
 EnemySets_WreckedShipMainShaft_0:
     dw EnemyHeaders_Coven                                                ;B48B6D;
     dw $0001                                                             ;B48B6F;
@@ -1356,6 +1544,7 @@ EnemySets_WreckedShipMainShaft_0:
     db $00                                                               ;B48B7F;
     db "NP1_00 "                                                         ;B48B80;
 
+%anchor($B48B87)
 EnemySets_BowlingAlley_0:
     dw EnemyHeaders_Chozo                                                ;B48B87;
     dw $0001                                                             ;B48B89;
@@ -1364,6 +1553,7 @@ EnemySets_BowlingAlley_0:
     db $00                                                               ;B48B91;
     db "NP1_02a"                                                         ;B48B92;
 
+%anchor($B48B99)
 EnemySets_Attic_1:
     dw EnemyHeaders_KihunterYellow                                       ;B48B99;
     dw $0001                                                             ;B48B9B;
@@ -1374,6 +1564,7 @@ EnemySets_Attic_1:
     db $00                                                               ;B48BA7;
     db "NP1_08a"                                                         ;B48BA8;
 
+%anchor($B48BAF)
 EnemySets_Basement_1:
     dw EnemyHeaders_Robot                                                ;B48BAF;
     dw $0001                                                             ;B48BB1;
@@ -1384,36 +1575,43 @@ EnemySets_Basement_1:
     db $00                                                               ;B48BBD;
     db "NP1_09a"                                                         ;B48BBE;
 
+%anchor($B48BC5)
 EnemySets_WreckedShipMap_1:
     dw $FFFF                                                             ;B48BC5;
     db $00                                                               ;B48BC7;
     db "NP1_12 "                                                         ;B48BC8;
 
+%anchor($B48BCF)
 EnemySets_WSWestSuper_0:
     dw $FFFF                                                             ;B48BCF;
     db $00                                                               ;B48BD1;
     db "NP1_05 "                                                         ;B48BD2;
 
+%anchor($B48BD9)
 EnemySets_SpikyDeath_0:
     dw $FFFF                                                             ;B48BD9;
     db $00                                                               ;B48BDB;
     db "NP1_11 "                                                         ;B48BDC;
 
+%anchor($B48BE3)
 EnemySets_SpongeBath_0:
     dw $FFFF                                                             ;B48BE3;
     db $00                                                               ;B48BE5;
     db "NP1_01a"                                                         ;B48BE6;
 
+%anchor($B48BED)
 EnemySets_WreckedShipEntrance_1:
     dw $FFFF                                                             ;B48BED;
     db $00                                                               ;B48BEF;
     db "NP1_06 "                                                         ;B48BF0;
 
+%anchor($B48BF7)
 EnemySets_ElectricDeath_0:
     dw $FFFF                                                             ;B48BF7;
     db $00                                                               ;B48BF9;
     db "NP1_00a"                                                         ;B48BFA;
 
+%anchor($B48C01)
 EnemySets_BowlingAlley_1:
     dw EnemyHeaders_Chozo                                                ;B48C01;
     dw $0001                                                             ;B48C03;
@@ -1422,26 +1620,31 @@ EnemySets_BowlingAlley_1:
     db $00                                                               ;B48C0B;
     db "NP1_03 "                                                         ;B48C0C;
 
+%anchor($B48C13)
 EnemySets_AssemblyLine_0:
     dw $FFFF                                                             ;B48C13;
     db $00                                                               ;B48C15;
     db "NP1_10a"                                                         ;B48C16;
 
+%anchor($B48C1D)
 EnemySets_Phantoon_1:
     dw $FFFF                                                             ;B48C1D;
     db $00                                                               ;B48C1F;
     db "NP1_07 "                                                         ;B48C20;
 
+%anchor($B48C27)
 EnemySets_WreckedShipETank_0:
     dw $FFFF                                                             ;B48C27;
     db $00                                                               ;B48C29;
     db "NP1_14 "                                                         ;B48C2A;
 
+%anchor($B48C31)
 EnemySets_GravitySuit_0:
     dw $FFFF                                                             ;B48C31;
     db $00                                                               ;B48C33;
     db "NP1_09 "                                                         ;B48C34;
 
+%anchor($B48C3B)
 EnemySets_WreckedShipMap_0:
     dw EnemyHeaders_Coven                                                ;B48C3B;
     dw $0001                                                             ;B48C3D;
@@ -1452,11 +1655,13 @@ EnemySets_WreckedShipMap_0:
     db $00                                                               ;B48C49;
     db "NP1_14a"                                                         ;B48C4A;
 
+%anchor($B48C51)
 EnemySets_GravitySuit_1:
     dw $FFFF                                                             ;B48C51;
     db $00                                                               ;B48C53;
     db "NP1_08 "                                                         ;B48C54;
 
+%anchor($B48C5B)
 EnemySets_Basement_0:
     dw EnemyHeaders_RobotNoPower                                         ;B48C5B;
     dw $0007                                                             ;B48C5D;
@@ -1465,12 +1670,14 @@ EnemySets_Basement_0:
     db $00                                                               ;B48C65;
     db "NP1_01 "                                                         ;B48C66;
 
+%anchor($B48C6D)
 EnemySets_WreckedShipEntrance_0:
     dw EnemyHeaders_Sbug                                                 ;B48C6D;
     dw $0001,$FFFF                                                       ;B48C6F;
     db $00                                                               ;B48C73;
     db "NP1_03a"                                                         ;B48C74;
 
+%anchor($B48C7B)
 EnemySets_AssemblyLine_1:
     dw EnemyHeaders_Spark                                                ;B48C7B;
     dw $0001                                                             ;B48C7D;
@@ -1481,17 +1688,20 @@ EnemySets_AssemblyLine_1:
     db $00                                                               ;B48C89;
     db "NP1_15a"                                                         ;B48C8A;
 
+%anchor($B48C91)
 EnemySets_WreckedShipSave_1:
     dw $FFFF                                                             ;B48C91;
     db $00                                                               ;B48C93;
     db "NP1_12a"                                                         ;B48C94;
 
+%anchor($B48C9B)
 EnemySets_WSWestSuper_1:
     dw EnemyHeaders_Spark                                                ;B48C9B;
     dw $0001,$FFFF                                                       ;B48C9D;
     db $00                                                               ;B48CA1;
     db "NP1_02 "                                                         ;B48CA2;
 
+%anchor($B48CA9)
 EnemySets_Attic_0:
     dw EnemyHeaders_Coven                                                ;B48CA9;
     dw $0001                                                             ;B48CAB;
@@ -1502,6 +1712,7 @@ EnemySets_Attic_0:
     db $00                                                               ;B48CB7;
     db "NP1_13 "                                                         ;B48CB8;
 
+%anchor($B48CBF)
 EnemySets_WSEastSuper_0:
     dw EnemyHeaders_Coven                                                ;B48CBF;
     dw $0001                                                             ;B48CC1;
@@ -1514,6 +1725,7 @@ EnemySets_WSEastSuper_0:
     db $00                                                               ;B48CD1;
     db "NP1_15 "                                                         ;B48CD2;
 
+%anchor($B48CD9)
 EnemySets_WreckedShipSave_0:
     dw EnemyHeaders_Coven                                                ;B48CD9;
     dw $0001                                                             ;B48CDB;
@@ -1522,18 +1734,21 @@ EnemySets_WreckedShipSave_0:
     db $00                                                               ;B48CE3;
     db "NP1_06a"                                                         ;B48CE4;
 
+%anchor($B48CEB)
 EnemySets_ElectricDeath_1:
     dw EnemyHeaders_Spark                                                ;B48CEB;
     dw $0001,$FFFF                                                       ;B48CED;
     db $00                                                               ;B48CF1;
     db "NP1_05a"                                                         ;B48CF2;
 
+%anchor($B48CF9)
 EnemySets_SpikyDeath_1:
     dw EnemyHeaders_KzanTop                                              ;B48CF9;
     dw $0007,$FFFF                                                       ;B48CFB;
     db $00                                                               ;B48CFF;
     db "NP1_13a"                                                         ;B48D00;
 
+%anchor($B48D07)
 EnemySets_WSEastSuper_1:
     dw EnemyHeaders_Robot                                                ;B48D07;
     dw $0001                                                             ;B48D09;
@@ -1544,12 +1759,14 @@ EnemySets_WSEastSuper_1:
     db $00                                                               ;B48D15;
     db "NP1_10 "                                                         ;B48D16;
 
+%anchor($B48D1D)
 EnemySets_Phantoon_0:
     dw EnemyHeaders_PhantoonBody                                         ;B48D1D;
     dw $0007,$FFFF                                                       ;B48D1F;
     db $00                                                               ;B48D23;
     db "NP1_04a"                                                         ;B48D24;
 
+%anchor($B48D2B)
 EnemySets_WreckedShipMainShaft_1:
     dw EnemyHeaders_Spark                                                ;B48D2B;
     dw $0001                                                             ;B48D2D;
@@ -1560,6 +1777,7 @@ EnemySets_WreckedShipMainShaft_1:
     db $00                                                               ;B48D39;
     db "ML1_08 "                                                         ;B48D3A;
 
+%anchor($B48D41)
 EnemySets_MtEverest:
     dw EnemyHeaders_Powamp                                               ;B48D41;
     dw $0001                                                             ;B48D43;
@@ -1568,6 +1786,7 @@ EnemySets_MtEverest:
     db $00                                                               ;B48D4B;
     db "ML2_25 "                                                         ;B48D4C;
 
+%anchor($B48D53)
 EnemySets_HalfieClimb:
     dw EnemyHeaders_Oum                                                  ;B48D53;
     dw $0001                                                             ;B48D55;
@@ -1576,6 +1795,7 @@ EnemySets_HalfieClimb:
     db $00                                                               ;B48D5D;
     db "ML1_10 "                                                         ;B48D5E;
 
+%anchor($B48D65)
 EnemySets_WateringHole:
     dw EnemyHeaders_Choot                                                ;B48D65;
     dw $0001                                                             ;B48D67;
@@ -1584,12 +1804,14 @@ EnemySets_WateringHole:
     db $00                                                               ;B48D6F;
     db "ML1_12 "                                                         ;B48D70;
 
+%anchor($B48D77)
 EnemySets_CrabShaft:
     dw EnemyHeaders_Sciser                                               ;B48D77;
     dw $0001,$FFFF                                                       ;B48D79;
     db $00                                                               ;B48D7D;
     db "ML1_19 "                                                         ;B48D7E;
 
+%anchor($B48D85)
 EnemySets_MaridiaElev:
     dw EnemyHeaders_Ripper                                               ;B48D85;
     dw $0003                                                             ;B48D87;
@@ -1598,22 +1820,26 @@ EnemySets_MaridiaElev:
     db $00                                                               ;B48D8F;
     db "ML2_16 "                                                         ;B48D90;
 
+%anchor($B48D97)
 EnemySets_Colosseum:
     dw EnemyHeaders_Mochtroid                                            ;B48D97;
     dw $0001,$FFFF                                                       ;B48D99;
     db $00                                                               ;B48D9D;
     db "ML2_17 "                                                         ;B48D9E;
 
+%anchor($B48DA5)
 EnemySets_AqueductSave:
     dw $FFFF                                                             ;B48DA5;
     db $00                                                               ;B48DA7;
     db "ML2_18 "                                                         ;B48DA8;
 
+%anchor($B48DAF)
 EnemySets_ThePrecious:
     dw $FFFF                                                             ;B48DAF;
     db $00                                                               ;B48DB1;
     db "ML2_19 "                                                         ;B48DB2;
 
+%anchor($B48DB9)
 EnemySets_BotwoonETank:
     dw EnemyHeaders_Puyo                                                 ;B48DB9;
     dw $0001                                                             ;B48DBB;
@@ -1624,28 +1850,33 @@ EnemySets_BotwoonETank:
     db $00                                                               ;B48DC7;
     db "ML2_20 "                                                         ;B48DC8;
 
+%anchor($B48DCF)
 EnemySets_DraygonSave:
     dw $FFFF                                                             ;B48DCF;
     db $00                                                               ;B48DD1;
     db "ML2_21 "                                                         ;B48DD2;
 
+%anchor($B48DD9)
 EnemySets_MaridiaMissileRefill:
     dw $FFFF                                                             ;B48DD9;
     db $00                                                               ;B48DDB;
     db "ML2_22 "                                                         ;B48DDC;
 
+%anchor($B48DE3)
 EnemySets_PlasmaBeachQuicksand:
     dw EnemyHeaders_Bull                                                 ;B48DE3;
     dw $0001,$FFFF                                                       ;B48DE5;
     db $00                                                               ;B48DE9;
     db "ML2_23 "                                                         ;B48DEA;
 
+%anchor($B48DF1)
 EnemySets_BotwoonQuicksand:
     dw EnemyHeaders_Bull                                                 ;B48DF1;
     dw $0001,$FFFF                                                       ;B48DF3;
     db $00                                                               ;B48DF7;
     db "ML2_24 "                                                         ;B48DF8;
 
+%anchor($B48DFF)
 EnemySets_Shaktool:
     dw EnemyHeaders_Shaktool                                             ;B48DFF;
     dw $0001                                                             ;B48E01;
@@ -1654,18 +1885,21 @@ EnemySets_Shaktool:
     db $00                                                               ;B48E09;
     db "MLB_00"                                                          ;B48E0A;
 
+%anchor($B48E10)
 EnemySets_Draygon_0:
     dw EnemyHeaders_DraygonBody                                          ;B48E10;
     dw $0007,$FFFF                                                       ;B48E12;
     db $00                                                               ;B48E16;
     db "ML2_09 "                                                         ;B48E17;
 
+%anchor($B48E1E)
 EnemySets_Aqueduct:
     dw EnemyHeaders_Yard                                                 ;B48E1E;
     dw $0001,$FFFF                                                       ;B48E20;
     db $00                                                               ;B48E24;
     db "ML1_09 "                                                         ;B48E25;
 
+%anchor($B48E2C)
 EnemySets_RedFish:
     dw EnemyHeaders_Skultera                                             ;B48E2C;
     dw $0001                                                             ;B48E2E;
@@ -1676,6 +1910,7 @@ EnemySets_RedFish:
     db $00                                                               ;B48E3A;
     db "ML1_17 "                                                         ;B48E3B;
 
+%anchor($B48E42)
 EnemySets_Plasma:
     dw EnemyHeaders_PirateMagentaWalking                                 ;B48E42;
     dw $0001                                                             ;B48E44;
@@ -1684,11 +1919,13 @@ EnemySets_Plasma:
     db $00                                                               ;B48E4C;
     db "ML2_27 "                                                         ;B48E4D;
 
+%anchor($B48E54)
 EnemySets_SpaceJump:
     dw $FFFF                                                             ;B48E54;
     db $00                                                               ;B48E56;
     db "ML2_12 "                                                         ;B48E57;
 
+%anchor($B48E5E)
 EnemySets_Pants:
     dw EnemyHeaders_Menu                                                 ;B48E5E;
     dw $0001                                                             ;B48E60;
@@ -1699,22 +1936,26 @@ EnemySets_Pants:
     db $00                                                               ;B48E6C;
     db "ML1_00 "                                                         ;B48E6D;
 
+%anchor($B48E74)
 EnemySets_GlassTunnelSave:
     dw $FFFF                                                             ;B48E74;
     db $00                                                               ;B48E76;
     db "ML1_01 "                                                         ;B48E77;
 
+%anchor($B48E7E)
 EnemySets_GlassTunnel:
     dw EnemyHeaders_NoobTubeCrack                                        ;B48E7E;
     dw $0007,$FFFF                                                       ;B48E80;
     db $00                                                               ;B48E84;
     db "ML1_02 "                                                         ;B48E85;
 
+%anchor($B48E8C)
 EnemySets_WestTunnel:
     dw $FFFF                                                             ;B48E8C;
     db $00                                                               ;B48E8E;
     db "ML1_03 "                                                         ;B48E8F;
 
+%anchor($B48E96)
 EnemySets_EastTunnel:
     dw EnemyHeaders_Boyon                                                ;B48E96;
     dw $0001                                                             ;B48E98;
@@ -1723,18 +1964,21 @@ EnemySets_EastTunnel:
     db $00                                                               ;B48EA0;
     db "ML1_06 "                                                         ;B48EA1;
 
+%anchor($B48EA8)
 EnemySets_MamaTurtle:
     dw EnemyHeaders_MamaTurtle                                           ;B48EA8;
     dw $0001,$FFFF                                                       ;B48EAA;
     db $00                                                               ;B48EAE;
     db "ML1_07 "                                                         ;B48EAF;
 
+%anchor($B48EB6)
 EnemySets_CrabTunnel:
     dw EnemyHeaders_Sciser                                               ;B48EB6;
     dw $0001,$FFFF                                                       ;B48EB8;
     db $00                                                               ;B48EBC;
     db "ML1_11 "                                                         ;B48EBD;
 
+%anchor($B48EC4)
 EnemySets_NWestMaridiaBug:
     dw EnemyHeaders_Owtch                                                ;B48EC4;
     dw $0001                                                             ;B48EC6;
@@ -1743,6 +1987,7 @@ EnemySets_NWestMaridiaBug:
     db $00                                                               ;B48ECE;
     db "ML1_13 "                                                         ;B48ECF;
 
+%anchor($B48ED6)
 EnemySets_PseudoPlasmaSpark:
     dw EnemyHeaders_Owtch                                                ;B48ED6;
     dw $0001                                                             ;B48ED8;
@@ -1753,12 +1998,14 @@ EnemySets_PseudoPlasmaSpark:
     db $00                                                               ;B48EE4;
     db "ML1_15 "                                                         ;B48EE5;
 
+%anchor($B48EEC)
 EnemySets_WestSandHallTunnel:
     dw EnemyHeaders_Sciser                                               ;B48EEC;
     dw $0001,$FFFF                                                       ;B48EEE;
     db $00                                                               ;B48EF2;
     db "ML1_16 "                                                         ;B48EF3;
 
+%anchor($B48EFA)
 EnemySets_PlasmaTutorial:
     dw EnemyHeaders_Puyo                                                 ;B48EFA;
     dw $0001                                                             ;B48EFC;
@@ -1767,6 +2014,7 @@ EnemySets_PlasmaTutorial:
     db $00                                                               ;B48F04;
     db "ML1_18 "                                                         ;B48F05;
 
+%anchor($B48F0C)
 EnemySets_ThreadTheNeedle:
     dw EnemyHeaders_Puyo                                                 ;B48F0C;
     dw $0001                                                             ;B48F0E;
@@ -1777,6 +2025,7 @@ EnemySets_ThreadTheNeedle:
     db $00                                                               ;B48F1A;
     db "ML1_20 "                                                         ;B48F1B;
 
+%anchor($B48F22)
 EnemySets_PlasmaSpark:
     dw EnemyHeaders_Owtch                                                ;B48F22;
     dw $0001                                                             ;B48F24;
@@ -1787,6 +2036,7 @@ EnemySets_PlasmaSpark:
     db $00                                                               ;B48F30;
     db "ML2_00 "                                                         ;B48F31;
 
+%anchor($B48F38)
 EnemySets_Toilet:
     dw EnemyHeaders_Mochtroid                                            ;B48F38;
     dw $0001                                                             ;B48F3A;
@@ -1799,41 +2049,48 @@ EnemySets_Toilet:
     db $00                                                               ;B48F4A;
     db "ML2_02 "                                                         ;B48F4B;
 
+%anchor($B48F52)
 EnemySets_WestSandHall:
     dw EnemyHeaders_Evir                                                 ;B48F52;
     dw $0001,$FFFF                                                       ;B48F54;
     db $00                                                               ;B48F58;
     db "ML2_03 "                                                         ;B48F59;
 
+%anchor($B48F60)
 EnemySets_Oasis:
     dw $FFFF                                                             ;B48F60;
     db $00                                                               ;B48F62;
     db "ML2_04 "                                                         ;B48F63;
 
+%anchor($B48F6A)
 EnemySets_EastSandHall:
     dw EnemyHeaders_Evir                                                 ;B48F6A;
     dw $0001,$FFFF                                                       ;B48F6C;
     db $00                                                               ;B48F70;
     db "ML2_07 "                                                         ;B48F71;
 
+%anchor($B48F78)
 EnemySets_WestAqueductQuicksand:
     dw EnemyHeaders_Bull                                                 ;B48F78;
     dw $0001,$FFFF                                                       ;B48F7A;
     db $00                                                               ;B48F7E;
     db "ML2_08 "                                                         ;B48F7F;
 
+%anchor($B48F86)
 EnemySets_EastAqueductQuicksand:
     dw EnemyHeaders_Bull                                                 ;B48F86;
     dw $0001,$FFFF                                                       ;B48F88;
     db $00                                                               ;B48F8C;
     db "ML2_10 "                                                         ;B48F8D;
 
+%anchor($B48F94)
 EnemySets_Butterfly:
     dw EnemyHeaders_Zoa                                                  ;B48F94;
     dw $0001,$FFFF                                                       ;B48F96;
     db $00                                                               ;B48F9A;
     db "ML2_11 "                                                         ;B48F9B;
 
+%anchor($B48FA2)
 EnemySets_BotwoonHallway:
     dw EnemyHeaders_Mochtroid                                            ;B48FA2;
     dw $0001                                                             ;B48FA4;
@@ -1844,6 +2101,7 @@ EnemySets_BotwoonHallway:
     db $00                                                               ;B48FB0;
     db "ML2_13 "                                                         ;B48FB1;
 
+%anchor($B48FB8)
 EnemySets_EastPants:
     dw EnemyHeaders_Puyo                                                 ;B48FB8;
     dw $0001                                                             ;B48FBA;
@@ -1852,11 +2110,13 @@ EnemySets_EastPants:
     db $00                                                               ;B48FC2;
     db "ML2_14 "                                                         ;B48FC3;
 
+%anchor($B48FCA)
 EnemySets_Springball:
     dw $FFFF                                                             ;B48FCA;
     db $00                                                               ;B48FCC;
     db "ML2_15 "                                                         ;B48FCD;
 
+%anchor($B48FD4)
 EnemySets_BelowBotwoonETank:
     dw EnemyHeaders_Zoa                                                  ;B48FD4;
     dw $0001                                                             ;B48FD6;
@@ -1865,6 +2125,7 @@ EnemySets_BelowBotwoonETank:
     db $00                                                               ;B48FDE;
     db "ML1_21 "                                                         ;B48FDF;
 
+%anchor($B48FE6)
 EnemySets_Kassiuz:
     dw EnemyHeaders_Choot                                                ;B48FE6;
     dw $0001                                                             ;B48FE8;
@@ -1875,27 +2136,32 @@ EnemySets_Kassiuz:
     db $00                                                               ;B48FF4;
     db "ML1_23 "                                                         ;B48FF5;
 
+%anchor($B48FFC)
 EnemySets_ForgottenHighwaySave:
     dw $FFFF                                                             ;B48FFC;
     db $00                                                               ;B48FFE;
     db "ML2_28 "                                                         ;B48FFF;
 
+%anchor($B49006)
 EnemySets_MaridiaEnergyRefill:
     dw $FFFF                                                             ;B49006;
     db $00                                                               ;B49008;
     db "ML1_22 "                                                         ;B49009;
 
+%anchor($B49010)
 EnemySets_MaridiaMap:
     dw $FFFF                                                             ;B49010;
     db $00                                                               ;B49012;
     db "ML1_14 "                                                         ;B49013;
 
+%anchor($B4901A)
 EnemySets_CrabHole:
     dw EnemyHeaders_Sciser                                               ;B4901A;
     dw $0001,$FFFF                                                       ;B4901C;
     db $00                                                               ;B49020;
     db "ML2_26 "                                                         ;B49021;
 
+%anchor($B49028)
 EnemySets_Botwoon:
     dw EnemyHeaders_Owtch                                                ;B49028;
     dw $0001                                                             ;B4902A;
@@ -1904,6 +2170,7 @@ EnemySets_Botwoon:
     db $00                                                               ;B49032;
     db "ML1_04 "                                                         ;B49033;
 
+%anchor($B4903A)
 EnemySets_MainStreet:
     dw EnemyHeaders_Skultera                                             ;B4903A;
     dw $0001                                                             ;B4903C;
@@ -1912,6 +2179,7 @@ EnemySets_MainStreet:
     db $00                                                               ;B49044;
     db "ML2_01 "                                                         ;B49045;
 
+%anchor($B4904C)
 EnemySets_BugSandHole:
     dw EnemyHeaders_YappingMaw                                           ;B4904C;
     dw $0001                                                             ;B4904E;
@@ -1920,18 +2188,21 @@ EnemySets_BugSandHole:
     db $00                                                               ;B49056;
     db "ML2_06 "                                                         ;B49057;
 
+%anchor($B4905E)
 EnemySets_EastSandHole:
     dw EnemyHeaders_Boulder                                              ;B4905E;
     dw $0001,$FFFF                                                       ;B49060;
     db $00                                                               ;B49064;
     db "ML2_05 "                                                         ;B49065;
 
+%anchor($B4906C)
 EnemySets_WestSandHole:
     dw EnemyHeaders_Boulder                                              ;B4906C;
     dw $0001,$FFFF                                                       ;B4906E;
     db $00                                                               ;B49072;
     db "ML2_29 "                                                         ;B49073;
 
+%anchor($B4907A)
 EnemySets_WestCactusAlley:
     dw EnemyHeaders_Cacatac                                              ;B4907A;
     dw $0007                                                             ;B4907C;
@@ -1940,6 +2211,7 @@ EnemySets_WestCactusAlley:
     db $00                                                               ;B49084;
     db "ML2_30 "                                                         ;B49085;
 
+%anchor($B4908C)
 EnemySets_EastCactusAlley:
     dw EnemyHeaders_Cacatac                                              ;B4908C;
     dw $0001                                                             ;B4908E;
@@ -1948,6 +2220,7 @@ EnemySets_EastCactusAlley:
     db $00                                                               ;B49096;
     db "ML1_05 "                                                         ;B49097;
 
+%anchor($B4909E)
 EnemySets_FishTank:
     dw EnemyHeaders_Skultera                                             ;B4909E;
     dw $0001                                                             ;B490A0;
@@ -1956,6 +2229,7 @@ EnemySets_FishTank:
     db $00                                                               ;B490A8;
     db "TS1_17 "                                                         ;B490A9;
 
+%anchor($B490B0)
 EnemySets_TourianEscape4:
     dw EnemyHeaders_PirateSilverWall                                     ;B490B0;
     dw $0001                                                             ;B490B2;
@@ -1964,11 +2238,13 @@ EnemySets_TourianEscape4:
     db $00                                                               ;B490BA;
     db "TS1_13 "                                                         ;B490BB;
 
+%anchor($B490C2)
 EnemySets_MotherBrainSave:
     dw $FFFF                                                             ;B490C2;
     db $00                                                               ;B490C4;
     db "TS1_01 "                                                         ;B490C5;
 
+%anchor($B490CC)
 EnemySets_Metroids1_0:
     dw EnemyHeaders_Metroid                                              ;B490CC;
     dw $0001                                                             ;B490CE;
@@ -1977,12 +2253,14 @@ EnemySets_Metroids1_0:
     db $00                                                               ;B490D6;
     db "TS1_06 "                                                         ;B490D7;
 
+%anchor($B490DE)
 EnemySets_DustTorizo:
     dw EnemyHeaders_CorpseTorizo                                         ;B490DE;
     dw $0001,$FFFF                                                       ;B490E0;
     db $00                                                               ;B490E4;
     db "TS1_07 "                                                         ;B490E5;
 
+%anchor($B490EC)
 EnemySets_BigBoy:
     dw EnemyHeaders_CorpseSidehopper                                     ;B490EC;
     dw $0001                                                             ;B490EE;
@@ -1993,6 +2271,7 @@ EnemySets_BigBoy:
     db $00                                                               ;B490FA;
     db "TS1_10 "                                                         ;B490FB;
 
+%anchor($B49102)
 EnemySets_MotherBrain_0_1:
     dw EnemyHeaders_MotherBrainHead                                      ;B49102;
     dw $0001                                                             ;B49104;
@@ -2003,28 +2282,33 @@ EnemySets_MotherBrain_0_1:
     db $00                                                               ;B49110;
     db "TS1_11 "                                                         ;B49111;
 
+%anchor($B49118)
 EnemySets_TourianEyeDoor:
     dw $FFFF                                                             ;B49118;
     db $00                                                               ;B4911A;
     db "TS1_05 "                                                         ;B4911B;
 
+%anchor($B49122)
 EnemySets_BlueHopper:
     dw EnemyHeaders_SidehopperTourian                                    ;B49122;
     dw $0001,$FFFF                                                       ;B49124;
     db $00                                                               ;B49128;
     db "TS1_14 "                                                         ;B49129;
 
+%anchor($B49130)
 EnemySets_TourianEscape1:
     dw EnemyHeaders_ShutterDestroyable                                   ;B49130;
     dw $0001,$FFFF                                                       ;B49132;
     db $00                                                               ;B49136;
     db "TS1_00 "                                                         ;B49137;
 
+%anchor($B4913E)
 EnemySets_TourianFirst:
     dw $FFFF                                                             ;B4913E;
     db $00                                                               ;B49140;
     db "TS1_02 "                                                         ;B49141;
 
+%anchor($B49148)
 EnemySets_Metroids2_0:
     dw EnemyHeaders_Metroid                                              ;B49148;
     dw $0001                                                             ;B4914A;
@@ -2033,6 +2317,7 @@ EnemySets_Metroids2_0:
     db $00                                                               ;B49152;
     db "TS1_04 "                                                         ;B49153;
 
+%anchor($B4915A)
 EnemySets_Metroids4_0:
     dw EnemyHeaders_Metroid                                              ;B4915A;
     dw $0001                                                             ;B4915C;
@@ -2041,36 +2326,42 @@ EnemySets_Metroids4_0:
     db $00                                                               ;B49164;
     db "TS1_01 "                                                         ;B49165;
 
+%anchor($B4916C)
 EnemySets_Metroids1_1:
     dw EnemyHeaders_Rinka                                                ;B4916C;
     dw $0002,$FFFF                                                       ;B4916E;
     db $00                                                               ;B49172;
     db "TS1_02 "                                                         ;B49173;
 
+%anchor($B4917A)
 EnemySets_Metroids2_1:
     dw EnemyHeaders_Rinka                                                ;B4917A;
     dw $0002,$FFFF                                                       ;B4917C;
     db $00                                                               ;B49180;
     db "TS1_15 "                                                         ;B49181;
 
+%anchor($B49188)
 EnemySets_TourianEscape2:
     dw EnemyHeaders_PirateSilverWall                                     ;B49188;
     dw $0001,$FFFF                                                       ;B4918A;
     db $00                                                               ;B4918E;
     db "TS1_03 "                                                         ;B4918F;
 
+%anchor($B49196)
 EnemySets_Metroids3_1:
     dw EnemyHeaders_Rinka                                                ;B49196;
     dw $0002,$FFFF                                                       ;B49198;
     db $00                                                               ;B4919C;
     db "TS1_04 "                                                         ;B4919D;
 
+%anchor($B491A4)
 EnemySets_Metroids4_1:
     dw EnemyHeaders_Rinka                                                ;B491A4;
     dw $0002,$FFFF                                                       ;B491A6;
     db $00                                                               ;B491AA;
     db "TS1_16 "                                                         ;B491AB;
 
+%anchor($B491B2)
 EnemySets_TourianEscape3:
     dw EnemyHeaders_PirateSilverWalking                                  ;B491B2;
     dw $0001                                                             ;B491B4;
@@ -2079,17 +2370,20 @@ EnemySets_TourianEscape3:
     db $00                                                               ;B491BC;
     db "TS1_08 "                                                         ;B491BD;
 
+%anchor($B491C4)
 EnemySets_Seaweed:
     dw $FFFF                                                             ;B491C4;
     db $00                                                               ;B491C6;
     db "TS1_09 "                                                         ;B491C7;
 
+%anchor($B491CE)
 EnemySets_TourianRecharge:
     dw $FFFF                                                             ;B491CE;
     db $00                                                               ;B491D0;
     db "TS1_07 "                                                         ;B491D1;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B491D8)
 UNUSED_EnemySets_B491D8:
     dw EnemyHeaders_CorpseSidehopper                                     ;B491D8;
     dw $0001                                                             ;B491DA;
@@ -2101,11 +2395,13 @@ UNUSED_EnemySets_B491D8:
     db "TS1_18 "                                                         ;B491E7;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B491EE)
 EnemySets_UpperTourianSave:
     dw $FFFF                                                             ;B491EE;
     db $00                                                               ;B491F0;
     db "TS1_03 "                                                         ;B491F1;
 
+%anchor($B491F8)
 EnemySets_Metroids3_0:
     dw EnemyHeaders_Metroid                                              ;B491F8;
     dw $0001                                                             ;B491FA;
@@ -2114,42 +2410,49 @@ EnemySets_Metroids3_0:
     db $00                                                               ;B49202;
     db "TS1_12 "                                                         ;B49203;
 
+%anchor($B4920A)
 EnemySets_RinkaShaft:
     dw EnemyHeaders_Rinka                                                ;B4920A;
     dw $0002,$FFFF                                                       ;B4920C;
     db $00                                                               ;B49210;
     db "cl1_00 "                                                         ;B49211;
 
+%anchor($B49218)
 EnemySets_CeresElev_0:
     dw EnemyHeaders_CeresDoor                                            ;B49218;
     dw $D002,$FFFF                                                       ;B4921A;
     db $00                                                               ;B4921E;
     db "cl1_01 "                                                         ;B4921F;
 
+%anchor($B49226)
 EnemySets_FallingTile_0:
     dw EnemyHeaders_CeresDoor                                            ;B49226;
     dw $D002,$FFFF                                                       ;B49228;
     db $00                                                               ;B4922C;
     db "cl1_02 "                                                         ;B4922D;
 
+%anchor($B49234)
 EnemySets_MagnetStairs_0:
     dw EnemyHeaders_CeresDoor                                            ;B49234;
     dw $D002,$FFFF                                                       ;B49236;
     db $00                                                               ;B4923A;
     db "cl1_03 "                                                         ;B4923B;
 
+%anchor($B49242)
 EnemySets_DeadScientist_0:
     dw EnemyHeaders_CeresDoor                                            ;B49242;
     dw $D002,$FFFF                                                       ;B49244;
     db $00                                                               ;B49248;
     db "cl1_04 "                                                         ;B49249;
 
+%anchor($B49250)
 EnemySets_58Escape_0:
     dw EnemyHeaders_CeresDoor                                            ;B49250;
     dw $D002,$FFFF                                                       ;B49252;
     db $00                                                               ;B49256;
     db "cl1_05 "                                                         ;B49257;
 
+%anchor($B4925E)
 EnemySets_CeresRidley_0:
     dw EnemyHeaders_RidleyCeres                                          ;B4925E;
     dw $0001                                                             ;B49260;
@@ -2158,46 +2461,54 @@ EnemySets_CeresRidley_0:
     db $00                                                               ;B49268;
     db "cl1_00 "                                                         ;B49269;
 
+%anchor($B49270)
 EnemySets_CeresElev_1:
     dw EnemyHeaders_CeresDoor                                            ;B49270;
     dw $D002,$FFFF                                                       ;B49272;
     db $00                                                               ;B49276;
     db "cl1_01 "                                                         ;B49277;
 
+%anchor($B4927E)
 EnemySets_FallingTile_1:
     dw EnemyHeaders_CeresDoor                                            ;B4927E;
     dw $D002,$FFFF                                                       ;B49280;
     db $00                                                               ;B49284;
     db "cl1_02 "                                                         ;B49285;
 
+%anchor($B4928C)
 EnemySets_MagnetStairs_1:
     dw EnemyHeaders_CeresDoor                                            ;B4928C;
     dw $D002,$FFFF                                                       ;B4928E;
     db $00                                                               ;B49292;
     db "cl1_03 "                                                         ;B49293;
 
+%anchor($B4929A)
 EnemySets_DeadScientist_1:
     dw EnemyHeaders_CeresDoor                                            ;B4929A;
     dw $D002,$FFFF                                                       ;B4929C;
     db $00                                                               ;B492A0;
     db "cl1_04 "                                                         ;B492A1;
 
+%anchor($B492A8)
 EnemySets_58Escape_1:
     dw EnemyHeaders_CeresDoor                                            ;B492A8;
     dw $D002,$FFFF                                                       ;B492AA;
     db $00                                                               ;B492AE;
     db "cl1_05 "                                                         ;B492AF;
 
+%anchor($B492B6)
 EnemySets_CeresRidley_1:
     dw EnemyHeaders_CeresDoor                                            ;B492B6;
     dw $D002,$FFFF                                                       ;B492B8;
     db $00                                                               ;B492BC;
     db "TT_00 "                                                          ;B492BD;
 
+%anchor($B492C3)
 EnemySets_Debug:
     dw $FFFF                                                             ;B492C3;
     db $00                                                               ;B492C5;
 
+%anchor($B492C6)
 DebugHandler_7_EnemyDebugger_EnemySpawnDataEditor:
     JSR.W Debug_HandleCursorMovement                                     ;B492C6;
     JSR.W Debug_HandleDigitModification                                  ;B492C9;
@@ -2278,6 +2589,7 @@ DebugHandler_7_EnemyDebugger_EnemySpawnDataEditor:
     RTS                                                                  ;B4936C;
 
 
+%anchor($B4936D)
 Draw_Debug_Enemy_Spawn_Values:
     LDX.W $1846                                                          ;B4936D;
     LDA.L $7E7020,X                                                      ;B49370;
@@ -2338,6 +2650,7 @@ Draw_Debug_Enemy_Spawn_Values:
     RTS                                                                  ;B4941C;
 
 
+%anchor($B4941D)
 Debug_Draw_Enemy_Set_Name:
     PHX                                                                  ;B4941D;
     LDA.W #$0A00                                                         ;B4941E;
@@ -2405,6 +2718,7 @@ Debug_Draw_Enemy_Set_Name:
     RTS                                                                  ;B494B7;
 
 
+%anchor($B494B8)
 DebugHandler_8_EnemyDebugger_RespawnEnemy:
     PHB                                                                  ;B494B8;
     PEA.W $7E7E                                                          ;B494B9;
@@ -2422,6 +2736,7 @@ DebugHandler_8_EnemyDebugger_RespawnEnemy:
     RTS                                                                  ;B494D4;
 
 
+%anchor($B494D5)
 DebugHandler_9_EnemyDebugger_EnemySpawner:
     LDA.W $07D1                                                          ;B494D5;
     TAX                                                                  ;B494D8;
@@ -2595,6 +2910,7 @@ DebugHandler_9_EnemyDebugger_EnemySpawner:
     RTS                                                                  ;B49645;
 
 
+%anchor($B49646)
 Debug_HandleCursorMovement:
     LDA.B $91                                                            ;B49646;
     BIT.W #$0100                                                         ;B49648;
@@ -2655,6 +2971,7 @@ Debug_HandleCursorMovement:
     RTS                                                                  ;B496AA;
 
 
+%anchor($B496AB)
 Debug_HandleDigitModification:
     LDX.W $1846                                                          ;B496AB;
     LDA.L $7E7020,X                                                      ;B496AE;
@@ -2734,6 +3051,7 @@ Debug_HandleDigitModification:
 .data:
     dw $1000,$0100,$0010,$0001                                           ;B49750;
 
+%anchor($B49758)
 DebugHandler_10_EnemyDebugger_EnemyAllocationViewer:
     LDA.B $91                                                            ;B49758;
     BIT.W #$2000                                                         ;B4975A;
@@ -2813,6 +3131,7 @@ DebugHandler_10_EnemyDebugger_EnemyAllocationViewer:
     RTS                                                                  ;B49808;
 
 
+%anchor($B49809)
 DebugHandler:
     PHB                                                                  ;B49809;
     SEP #$20                                                             ;B4980A;
@@ -2848,6 +3167,7 @@ DebugHandler:
     dw DebugHandler_F_EnemyDebugger_RAMViewer_5                          ;B4983D;
     dw DebugHandler_10_EnemyDebugger_EnemyAllocationViewer               ;B4983F;
 
+%anchor($B49841)
 DebugHandler_4_SpriteTilesViewer_FirstHalf:
     LDA.W #$0A00                                                         ;B49841;
     STA.B $26                                                            ;B49844;
@@ -2870,6 +3190,7 @@ DebugHandler_4_SpriteTilesViewer_FirstHalf:
     RTS                                                                  ;B49869;
 
 
+%anchor($B4986A)
 DebugHandler_3_SpriteTilesViewer_SecondHalf:
     LDA.W $05C5                                                          ;B4986A;
     BIT.W #$0080                                                         ;B4986D;
@@ -2932,6 +3253,7 @@ DebugHandler_3_SpriteTilesViewer_SecondHalf:
     RTS                                                                  ;B498D9;
 
 
+%anchor($B498DA)
 DebugHandler_1_PaletteViewer_SpritePalettes:
     LDA.W #$0000                                                         ;B498DA;
     STA.B $26                                                            ;B498DD;
@@ -2969,6 +3291,7 @@ DebugHandler_1_PaletteViewer_SpritePalettes:
     RTS                                                                  ;B49924;
 
 
+%anchor($B49925)
 DebugHandler_2_PaletteViewer_BGPalettes:
     LDA.W #$0000                                                         ;B49925;
     STA.B $26                                                            ;B49928;
@@ -2998,6 +3321,7 @@ DebugHandler_2_PaletteViewer_BGPalettes:
     RTS                                                                  ;B49960;
 
 
+%anchor($B49961)
 DebugHandler_0_Default:
     LDA.B $91                                                            ;B49961;
     BIT.W #$1000                                                         ;B49963;
@@ -3096,6 +3420,7 @@ DebugHandler_0_Default:
     RTS                                                                  ;B49A1C;
 
 
+%anchor($B49A1D)
 DebugHandler_5_EnemyDebugger_Initialize:
     SEP #$20                                                             ;B49A1D;
     LDA.B #$80                                                           ;B49A1F;
@@ -3122,6 +3447,7 @@ DebugHandler_5_EnemyDebugger_Initialize:
     RTS                                                                  ;B49A58;
 
 
+%anchor($B49A59)
 DebugHandler_6_EnemyDebugger_EnemyMover:
     LDA.B $91                                                            ;B49A59;
     BIT.W #$0010                                                         ;B49A5B;
@@ -3291,6 +3617,7 @@ DebugHandler_6_EnemyDebugger_EnemyMover:
     RTS                                                                  ;B49BD4;
 
 
+%anchor($B49BD5)
 DebugHandler_A_EnemyDebugger_RAMViewer_0:
     LDA.B $91                                                            ;B49BD5;
     BIT.W #$0010                                                         ;B49BD7;
@@ -3344,6 +3671,7 @@ DebugHandler_A_EnemyDebugger_RAMViewer_0:
     RTS                                                                  ;B49C5C;
 
 
+%anchor($B49C5D)
 DebugHandler_B_EnemyDebugger_RAMViewer_1:
     LDA.B $91                                                            ;B49C5D;
     BIT.W #$0010                                                         ;B49C5F;
@@ -3397,6 +3725,7 @@ DebugHandler_B_EnemyDebugger_RAMViewer_1:
     RTS                                                                  ;B49CE4;
 
 
+%anchor($B49CE5)
 DebugHandler_C_EnemyDebugger_RAMViewer_2:
     LDA.B $91                                                            ;B49CE5;
     BIT.W #$0010                                                         ;B49CE7;
@@ -3450,6 +3779,7 @@ DebugHandler_C_EnemyDebugger_RAMViewer_2:
     RTS                                                                  ;B49D6C;
 
 
+%anchor($B49D6D)
 DebugHandler_D_EnemyDebugger_RAMViewer_3:
     LDA.B $91                                                            ;B49D6D;
     BIT.W #$0010                                                         ;B49D6F;
@@ -3503,6 +3833,7 @@ DebugHandler_D_EnemyDebugger_RAMViewer_3:
     RTS                                                                  ;B49DF4;
 
 
+%anchor($B49DF5)
 DebugHandler_E_EnemyDebugger_RAMViewer_4:
     LDA.B $91                                                            ;B49DF5;
     BIT.W #$0010                                                         ;B49DF7;
@@ -3556,6 +3887,7 @@ DebugHandler_E_EnemyDebugger_RAMViewer_4:
     RTS                                                                  ;B49E7C;
 
 
+%anchor($B49E7D)
 DebugHandler_F_EnemyDebugger_RAMViewer_5:
     LDA.B $91                                                            ;B49E7D;
     BIT.W #$0010                                                         ;B49E7F;
@@ -3609,6 +3941,7 @@ DebugHandler_F_EnemyDebugger_RAMViewer_5:
     RTS                                                                  ;B49F04;
 
 
+%anchor($B49F05)
 Debug_MoveEnemyWithDpad_QuarterPixelPerFrame:
     LDA.W $05B6                                                          ;B49F05;
     AND.W #$0003                                                         ;B49F08;
@@ -3642,6 +3975,7 @@ Debug_MoveEnemyWithDpad_QuarterPixelPerFrame:
     RTL                                                                  ;B49F35;
 
 
+%anchor($B49F36)
 Debug_MoveEnemyWithDpad_4PixelsPerFrame:
     LDA.B $8D                                                            ;B49F36;
     BIT.W #$0200                                                         ;B49F38;
@@ -3685,6 +4019,7 @@ Debug_MoveEnemyWithDpad_4PixelsPerFrame:
     RTL                                                                  ;B49F7D;
 
 
+%anchor($B49F7E)
 Draw4DigitHexValue:
     LDA.W $0E20                                                          ;B49F7E;
     CLC                                                                  ;B49F81;
@@ -3759,6 +4094,7 @@ Draw4DigitHexValue:
     RTS                                                                  ;B4A01C;
 
 
+%anchor($B4A01D)
 Add_Debug_Spritemap_to_OAM:
     PHP                                                                  ;B4A01D;
     SEP #$20                                                             ;B4A01E;
@@ -3912,6 +4248,7 @@ Add_Debug_Spritemap_to_OAM:
     dw $001C,$001C,$001C,$001C,$001C,$001C,$001C,$001C                   ;B4A1E1;
     dw $001E,$001E,$001E,$001E,$001E,$001E,$001E,$001E                   ;B4A1F1;
 
+%anchor($B4A201)
 Debug_Spritemap_Addresses:
     dw DebugSpritemaps_0_PaletteViewer_LeftHalf                          ;B4A201;
     dw DebugSpritemaps_1_PaletteViewer_RightHalf                         ;B4A203;
@@ -4061,6 +4398,7 @@ Debug_Spritemap_Addresses:
     dw DebugSpritemaps_91_EnemyNames_HATCHI3                             ;B4A323;
     dw DebugSpritemaps_92_EnemyNames_ROBO2                               ;B4A325;
 
+%anchor($B4A327)
 DebugSpritemaps_0_PaletteViewer_LeftHalf:
     dw $0040,$0018                                                       ;B4A327;
     db $18                                                               ;B4A32B;
@@ -4192,6 +4530,7 @@ DebugSpritemaps_0_PaletteViewer_LeftHalf:
     db $E0                                                               ;B4A466;
     dw $3300                                                             ;B4A467;
 
+%anchor($B4A469)
 DebugSpritemaps_1_PaletteViewer_RightHalf:
     dw $0040,$0018                                                       ;B4A469;
     db $18                                                               ;B4A46D;
@@ -4323,6 +4662,7 @@ DebugSpritemaps_1_PaletteViewer_RightHalf:
     db $E0                                                               ;B4A5A8;
     dw $3108                                                             ;B4A5A9;
 
+%anchor($B4A5AB)
 DebugSpritemaps_2_SpriteTilesViewer_2ndHalf:
     dw $0040,$C230                                                       ;B4A5AB;
     db $30                                                               ;B4A5AF;
@@ -4454,6 +4794,7 @@ DebugSpritemaps_2_SpriteTilesViewer_2ndHalf:
     db $C0                                                               ;B4A6EA;
     dw $3300                                                             ;B4A6EB;
 
+%anchor($B4A6ED)
 DebugSpritemaps_3_SpriteTilesViewer_1stHalf:
     dw $0040,$C230                                                       ;B4A6ED;
     db $30                                                               ;B4A6F1;
@@ -4585,168 +4926,201 @@ DebugSpritemaps_3_SpriteTilesViewer_1stHalf:
     db $C0                                                               ;B4A82C;
     dw $3800                                                             ;B4A82D;
 
+%anchor($B4A82F)
 DebugSpritemaps_4_0:
     dw $0001,$01F8                                                       ;B4A82F;
     db $F8                                                               ;B4A833;
     dw $30D0                                                             ;B4A834;
 
+%anchor($B4A836)
 DebugSpritemaps_5_1:
     dw $0001,$01F8                                                       ;B4A836;
     db $F8                                                               ;B4A83A;
     dw $30D1                                                             ;B4A83B;
 
+%anchor($B4A83D)
 DebugSpritemaps_6_2:
     dw $0001,$01F8                                                       ;B4A83D;
     db $F8                                                               ;B4A841;
     dw $30D2                                                             ;B4A842;
 
+%anchor($B4A844)
 DebugSpritemaps_7_3:
     dw $0001,$01F8                                                       ;B4A844;
     db $F8                                                               ;B4A848;
     dw $30D3                                                             ;B4A849;
 
+%anchor($B4A84B)
 DebugSpritemaps_8_4:
     dw $0001,$01F8                                                       ;B4A84B;
     db $F8                                                               ;B4A84F;
     dw $30D4                                                             ;B4A850;
 
+%anchor($B4A852)
 DebugSpritemaps_9_5:
     dw $0001,$01F8                                                       ;B4A852;
     db $F8                                                               ;B4A856;
     dw $30D5                                                             ;B4A857;
 
+%anchor($B4A859)
 DebugSpritemaps_A_6:
     dw $0001,$01F8                                                       ;B4A859;
     db $F8                                                               ;B4A85D;
     dw $30D6                                                             ;B4A85E;
 
+%anchor($B4A860)
 DebugSpritemaps_B_7:
     dw $0001,$01F8                                                       ;B4A860;
     db $F8                                                               ;B4A864;
     dw $30D7                                                             ;B4A865;
 
+%anchor($B4A867)
 DebugSpritemaps_C_8:
     dw $0001,$01F8                                                       ;B4A867;
     db $F8                                                               ;B4A86B;
     dw $30D8                                                             ;B4A86C;
 
+%anchor($B4A86E)
 DebugSpritemaps_D_9:
     dw $0001,$01F8                                                       ;B4A86E;
     db $F8                                                               ;B4A872;
     dw $30D9                                                             ;B4A873;
 
+%anchor($B4A875)
 DebugSpritemaps_E_A:
     dw $0001,$01F8                                                       ;B4A875;
     db $F8                                                               ;B4A879;
     dw $30DA                                                             ;B4A87A;
 
+%anchor($B4A87C)
 DebugSpritemaps_F_B:
     dw $0001,$01F8                                                       ;B4A87C;
     db $F8                                                               ;B4A880;
     dw $30DB                                                             ;B4A881;
 
+%anchor($B4A883)
 DebugSpritemaps_10_C:
     dw $0001,$01F8                                                       ;B4A883;
     db $F8                                                               ;B4A887;
     dw $30DC                                                             ;B4A888;
 
+%anchor($B4A88A)
 DebugSpritemaps_11_D:
     dw $0001,$01F8                                                       ;B4A88A;
     db $F8                                                               ;B4A88E;
     dw $30DD                                                             ;B4A88F;
 
+%anchor($B4A891)
 DebugSpritemaps_12_E:
     dw $0001,$01F8                                                       ;B4A891;
     db $F8                                                               ;B4A895;
     dw $30DE                                                             ;B4A896;
 
+%anchor($B4A898)
 DebugSpritemaps_13_F:
     dw $0001,$01F8                                                       ;B4A898;
     db $F8                                                               ;B4A89C;
     dw $30DF                                                             ;B4A89D;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B4A89F)
 UNUSED_DebugSpritemaps_a_B4A89F:
     dw $0001,$01F8                                                       ;B4A89F;
     db $F8                                                               ;B4A8A3;
     dw $30E0                                                             ;B4A8A4;
 
+%anchor($B4A8A6)
 UNUSED_DebugSpritemaps_b_B4A8A6:
     dw $0001,$01F8                                                       ;B4A8A6;
     db $F8                                                               ;B4A8AA;
     dw $30E1                                                             ;B4A8AB;
 
+%anchor($B4A8AD)
 UNUSED_DebugSpritemaps_c_B4A8AD:
     dw $0001,$01F8                                                       ;B4A8AD;
     db $F8                                                               ;B4A8B1;
     dw $30E2                                                             ;B4A8B2;
 
+%anchor($B4A8B4)
 UNUSED_DebugSpritemaps_d_B4A8B4:
     dw $0001,$01F8                                                       ;B4A8B4;
     db $F8                                                               ;B4A8B8;
     dw $30E3                                                             ;B4A8B9;
 
+%anchor($B4A8BB)
 UNUSED_DebugSpritemaps_e_B4A8BB:
     dw $0001,$01F8                                                       ;B4A8BB;
     db $F8                                                               ;B4A8BF;
     dw $30E4                                                             ;B4A8C0;
 
+%anchor($B4A8C2)
 UNUSED_DebugSpritemaps_f_B4A8C2:
     dw $0001,$01F8                                                       ;B4A8C2;
     db $F8                                                               ;B4A8C6;
     dw $30E5                                                             ;B4A8C7;
 
+%anchor($B4A8C9)
 UNUSED_DebugSpritemaps_g_B4A8C9:
     dw $0001,$01F8                                                       ;B4A8C9;
     db $F8                                                               ;B4A8CD;
     dw $30E6                                                             ;B4A8CE;
 
+%anchor($B4A8D0)
 UNUSED_DebugSpritemaps_h_B4A8D0:
     dw $0001,$01F8                                                       ;B4A8D0;
     db $F8                                                               ;B4A8D4;
     dw $30E7                                                             ;B4A8D5;
 
+%anchor($B4A8D7)
 UNUSED_DebugSpritemaps_i_B4A8D7:
     dw $0001,$01F8                                                       ;B4A8D7;
     db $F8                                                               ;B4A8DB;
     dw $30E8                                                             ;B4A8DC;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B4A8DE)
 DebugSpritemaps_1D_j:
     dw $0001,$01F8                                                       ;B4A8DE;
     db $F8                                                               ;B4A8E2;
     dw $30E9                                                             ;B4A8E3;
 
+%anchor($B4A8E5)
 DebugSpritemaps_1E_k:
     dw $0001,$01F8                                                       ;B4A8E5;
     db $F8                                                               ;B4A8E9;
     dw $30EA                                                             ;B4A8EA;
 
+%anchor($B4A8EC)
 DebugSpritemaps_1F_l:
     dw $0001,$01F8                                                       ;B4A8EC;
     db $F8                                                               ;B4A8F0;
     dw $30EB                                                             ;B4A8F1;
 
+%anchor($B4A8F3)
 DebugSpritemaps_20_m:
     dw $0001,$01F8                                                       ;B4A8F3;
     db $F8                                                               ;B4A8F7;
     dw $30EC                                                             ;B4A8F8;
 
+%anchor($B4A8FA)
 DebugSpritemaps_21_n:
     dw $0001,$01F8                                                       ;B4A8FA;
     db $F8                                                               ;B4A8FE;
     dw $30ED                                                             ;B4A8FF;
 
+%anchor($B4A901)
 DebugSpritemaps_22_o:
     dw $0001,$01F8                                                       ;B4A901;
     db $F8                                                               ;B4A905;
     dw $30EE                                                             ;B4A906;
 
+%anchor($B4A908)
 DebugSpritemaps_23_p:
     dw $0001,$01F8                                                       ;B4A908;
     db $F8                                                               ;B4A90C;
     dw $30EF                                                             ;B4A90D;
 
+%anchor($B4A90F)
 UNUSED_DebugSpritemaps_24_P_UPTM_POSE_OPT0_OPT1_B4A90F:
     dw $001F,$0018                                                       ;B4A90F;
     db $18                                                               ;B4A913;
@@ -4812,6 +5186,7 @@ UNUSED_DebugSpritemaps_24_P_UPTM_POSE_OPT0_OPT1_B4A90F:
     db $F8                                                               ;B4A9A9;
     dw $30C1                                                             ;B4A9AA;
 
+%anchor($B4A9AC)
 UNUSED_DebugSpritemaps_26_PP_X_PYo_itros_neTosKH_B4A90F:
     dw $001F,$0018                                                       ;B4A9AC;
     db $18                                                               ;B4A9B0;
@@ -4877,6 +5252,7 @@ UNUSED_DebugSpritemaps_26_PP_X_PYo_itros_neTosKH_B4A90F:
     db $F8                                                               ;B4AA46;
     dw $30C1                                                             ;B4AA47;
 
+%anchor($B4AA49)
 DebugSpritemaps_25_EnemyDebuggerEnemyIndicator:
     dw $0007,$0010                                                       ;B4AA49;
     db $F8                                                               ;B4AA4D;
@@ -4894,6 +5270,7 @@ DebugSpritemaps_25_EnemyDebuggerEnemyIndicator:
     db $F8                                                               ;B4AA6B;
     dw $30FA                                                             ;B4AA6C;
 
+%anchor($B4AA6E)
 DebugSpritemaps_27_EnemyDebuggerText_PosX_PosY_HP_Pointer:
     dw $001E,$0010                                                       ;B4AA6E;
     db $F8                                                               ;B4AA72;
@@ -4958,6 +5335,7 @@ DebugSpritemaps_27_EnemyDebuggerText_PosX_PosY_HP_Pointer:
     dw $30C5                                                             ;B4AB04;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B4AB06)
 UNUSED_DebugSpritemaps_PosX_PosY_HP_B4AB06:
     dw $001E,$0018                                                       ;B4AB06;
     db $F8                                                               ;B4AB0A;
@@ -5022,6 +5400,7 @@ UNUSED_DebugSpritemaps_PosX_PosY_HP_B4AB06:
     dw $30C1                                                             ;B4AB9C;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B4AB9E)
 UNUSED_DebugSpritemaps_28_EnemyIndicator_B4AB9E:
     dw $0008,$0018                                                       ;B4AB9E;
     db $F8                                                               ;B4ABA2;
@@ -5041,6 +5420,7 @@ UNUSED_DebugSpritemaps_28_EnemyIndicator_B4AB9E:
     db $F8                                                               ;B4ABC5;
     dw $30FA                                                             ;B4ABC6;
 
+%anchor($B4ABC8)
 DebugSpritemaps_29_UPTM_Stat_Num_Bank:
     dw $001F,$0010                                                       ;B4ABC8;
     db $F8                                                               ;B4ABCC;
@@ -5106,6 +5486,7 @@ DebugSpritemaps_29_UPTM_Stat_Num_Bank:
     db $E0                                                               ;B4AC62;
     dw $30C5                                                             ;B4AC63;
 
+%anchor($B4AC65)
 DebugSpritemaps_2A_Switch_Switch2_ColorPa_CharaOf:
     dw $001F,$0010                                                       ;B4AC65;
     db $F8                                                               ;B4AC69;
@@ -5171,6 +5552,7 @@ DebugSpritemaps_2A_Switch_Switch2_ColorPa_CharaOf:
     db $E0                                                               ;B4ACFF;
     dw $30C4                                                             ;B4AD00;
 
+%anchor($B4AD02)
 DebugSpritemaps_2B_PoseAdr_WaitTim_LpCnt_Patern:
     dw $001D,$01F8                                                       ;B4AD02;
     db $F0                                                               ;B4AD06;
@@ -5232,6 +5614,7 @@ DebugSpritemaps_2B_PoseAdr_WaitTim_LpCnt_Patern:
     db $E0                                                               ;B4AD92;
     dw $30C1                                                             ;B4AD93;
 
+%anchor($B4AD95)
 DebugSpritemaps_2C_FlashCo_IceCoun_HitCoun_PlplCou:
     dw $0020,$0010                                                       ;B4AD95;
     db $F8                                                               ;B4AD99;
@@ -5299,6 +5682,7 @@ DebugSpritemaps_2C_FlashCo_IceCoun_HitCoun_PlplCou:
     db $E0                                                               ;B4AE34;
     dw $30CC                                                             ;B4AE35;
 
+%anchor($B4AE37)
 DebugSpritemaps_2D_Pwork0_Pwork1_Pwork2_Pwork3:
     dw $001C,$0018                                                       ;B4AE37;
     db $F8                                                               ;B4AE3B;
@@ -5358,6 +5742,7 @@ DebugSpritemaps_2D_Pwork0_Pwork1_Pwork2_Pwork3:
     db $E0                                                               ;B4AEC2;
     dw $30C1                                                             ;B4AEC3;
 
+%anchor($B4AEC5)
 DebugSpritemaps_2E_Pwork4_Pwork5_InitOP0_InitOP1:
     dw $001E,$0010                                                       ;B4AEC5;
     db $F8                                                               ;B4AEC9;
@@ -5421,6 +5806,7 @@ DebugSpritemaps_2E_Pwork4_Pwork5_InitOP0_InitOP1:
     db $E0                                                               ;B4AF5A;
     dw $30C1                                                             ;B4AF5B;
 
+%anchor($B4AF5D)
 DebugSpritemaps_2F_EnemySpawnDataEditorText:
     dw $0023,$0000                                                       ;B4AF5D;
     db $18                                                               ;B4AF61;
@@ -5494,6 +5880,7 @@ DebugSpritemaps_2F_EnemySpawnDataEditorText:
     db $F8                                                               ;B4B00B;
     dw $30EE                                                             ;B4B00C;
 
+%anchor($B4B00E)
 DebugSpritemaps_31_EnemyNames_ATOMIC:
     dw $0006,$0008                                                       ;B4B00E;
     db $E0                                                               ;B4B012;
@@ -5509,6 +5896,7 @@ DebugSpritemaps_31_EnemyNames_ATOMIC:
     db $E0                                                               ;B4B02B;
     dw $30B0                                                             ;B4B02C;
 
+%anchor($B4B02E)
 DebugSpritemaps_32_EnemyNames_BANG:
     dw $0004,$01F8                                                       ;B4B02E;
     db $E0                                                               ;B4B032;
@@ -5520,6 +5908,7 @@ DebugSpritemaps_32_EnemyNames_BANG:
     db $E0                                                               ;B4B041;
     dw $30B1                                                             ;B4B042;
 
+%anchor($B4B044)
 DebugSpritemaps_33_EnemyNames_BATTA1:
     dw $0006,$0008                                                       ;B4B044;
     db $E0                                                               ;B4B048;
@@ -5535,6 +5924,7 @@ DebugSpritemaps_33_EnemyNames_BATTA1:
     db $E0                                                               ;B4B061;
     dw $30B1                                                             ;B4B062;
 
+%anchor($B4B064)
 DebugSpritemaps_34_EnemyNames_BATTA2:
     dw $0006,$0008                                                       ;B4B064;
     db $E0                                                               ;B4B068;
@@ -5550,6 +5940,7 @@ DebugSpritemaps_34_EnemyNames_BATTA2:
     db $E0                                                               ;B4B081;
     dw $30B1                                                             ;B4B082;
 
+%anchor($B4B084)
 DebugSpritemaps_35_EnemyNames_BATTA3:
     dw $0006,$0008                                                       ;B4B084;
     db $E0                                                               ;B4B088;
@@ -5565,6 +5956,7 @@ DebugSpritemaps_35_EnemyNames_BATTA3:
     db $E0                                                               ;B4B0A1;
     dw $30B1                                                             ;B4B0A2;
 
+%anchor($B4B0A4)
 DebugSpritemaps_36_EnemyNames_BOTOON:
     dw $0006,$0008                                                       ;B4B0A4;
     db $E0                                                               ;B4B0A8;
@@ -5580,6 +5972,7 @@ DebugSpritemaps_36_EnemyNames_BOTOON:
     db $E0                                                               ;B4B0C1;
     dw $30B1                                                             ;B4B0C2;
 
+%anchor($B4B0C4)
 DebugSpritemaps_37_EnemyNames_BOYON:
     dw $0005,$0000                                                       ;B4B0C4;
     db $E0                                                               ;B4B0C8;
@@ -5593,6 +5986,7 @@ DebugSpritemaps_37_EnemyNames_BOYON:
     db $E0                                                               ;B4B0DC;
     dw $30B1                                                             ;B4B0DD;
 
+%anchor($B4B0DF)
 DebugSpritemaps_38_EnemyNames_DESSGEEG:
     dw $0008,$0018                                                       ;B4B0DF;
     db $E0                                                               ;B4B0E3;
@@ -5612,6 +6006,7 @@ DebugSpritemaps_38_EnemyNames_DESSGEEG:
     db $E0                                                               ;B4B106;
     dw $30B3                                                             ;B4B107;
 
+%anchor($B4B109)
 DebugSpritemaps_39_EnemyNames_DORI:
     dw $0004,$01F8                                                       ;B4B109;
     db $E0                                                               ;B4B10D;
@@ -5623,6 +6018,7 @@ DebugSpritemaps_39_EnemyNames_DORI:
     db $E0                                                               ;B4B11C;
     dw $30B3                                                             ;B4B11D;
 
+%anchor($B4B11F)
 DebugSpritemaps_3A_EnemyNames_DRAGON:
     dw $0006,$0008                                                       ;B4B11F;
     db $E0                                                               ;B4B123;
@@ -5638,6 +6034,7 @@ DebugSpritemaps_3A_EnemyNames_DRAGON:
     db $E0                                                               ;B4B13C;
     dw $30B3                                                             ;B4B13D;
 
+%anchor($B4B13F)
 DebugSpritemaps_3B_EnemyNames_EBI:
     dw $0003,$01F0                                                       ;B4B13F;
     db $E0                                                               ;B4B143;
@@ -5647,6 +6044,7 @@ DebugSpritemaps_3B_EnemyNames_EBI:
     db $E0                                                               ;B4B14D;
     dw $30B4                                                             ;B4B14E;
 
+%anchor($B4B150)
 DebugSpritemaps_3C_EnemyNames_EYE:
     dw $0003,$01F0                                                       ;B4B150;
     db $E0                                                               ;B4B154;
@@ -5656,6 +6054,7 @@ DebugSpritemaps_3C_EnemyNames_EYE:
     db $E0                                                               ;B4B15E;
     dw $30B4                                                             ;B4B15F;
 
+%anchor($B4B161)
 DebugSpritemaps_3D_EnemyNames_NAMIHE:
     dw $0007,$0000                                                       ;B4B161;
     db $E0                                                               ;B4B165;
@@ -5673,6 +6072,7 @@ DebugSpritemaps_3D_EnemyNames_NAMIHE:
     db $E0                                                               ;B4B183;
     dw $30BD                                                             ;B4B184;
 
+%anchor($B4B186)
 DebugSpritemaps_3E_EnemyNames_FISH:
     dw $0004,$01F8                                                       ;B4B186;
     db $E0                                                               ;B4B18A;
@@ -5684,6 +6084,7 @@ DebugSpritemaps_3E_EnemyNames_FISH:
     db $E0                                                               ;B4B199;
     dw $30B5                                                             ;B4B19A;
 
+%anchor($B4B19C)
 DebugSpritemaps_3F_EnemyNames_GAI:
     dw $0003,$01F0                                                       ;B4B19C;
     db $E0                                                               ;B4B1A0;
@@ -5693,6 +6094,7 @@ DebugSpritemaps_3F_EnemyNames_GAI:
     db $E0                                                               ;B4B1AA;
     dw $30B6                                                             ;B4B1AB;
 
+%anchor($B4B1AD)
 DebugSpritemaps_40_EnemyNames_GAMET:
     dw $0005,$0000                                                       ;B4B1AD;
     db $E0                                                               ;B4B1B1;
@@ -5706,6 +6108,7 @@ DebugSpritemaps_40_EnemyNames_GAMET:
     db $E0                                                               ;B4B1C5;
     dw $30B6                                                             ;B4B1C6;
 
+%anchor($B4B1C8)
 DebugSpritemaps_41_EnemyNames_GEEGA:
     dw $0005,$01F0                                                       ;B4B1C8;
     db $E0                                                               ;B4B1CC;
@@ -5719,6 +6122,7 @@ DebugSpritemaps_41_EnemyNames_GEEGA:
     db $E0                                                               ;B4B1E0;
     dw $30B6                                                             ;B4B1E1;
 
+%anchor($B4B1E3)
 DebugSpritemaps_42_EnemyNames_GERUDA:
     dw $0006,$0008                                                       ;B4B1E3;
     db $E0                                                               ;B4B1E7;
@@ -5734,6 +6138,7 @@ DebugSpritemaps_42_EnemyNames_GERUDA:
     db $E0                                                               ;B4B200;
     dw $30B6                                                             ;B4B201;
 
+%anchor($B4B203)
 DebugSpritemaps_43_EnemyNames_GRAVY:
     dw $0005,$0000                                                       ;B4B203;
     db $E0                                                               ;B4B207;
@@ -5747,6 +6152,7 @@ DebugSpritemaps_43_EnemyNames_GRAVY:
     db $E0                                                               ;B4B21B;
     dw $30B6                                                             ;B4B21C;
 
+%anchor($B4B21E)
 DebugSpritemaps_44_EnemyNames_HATCHI1:
     dw $0006,$0008                                                       ;B4B21E;
     db $E0                                                               ;B4B222;
@@ -5762,6 +6168,7 @@ DebugSpritemaps_44_EnemyNames_HATCHI1:
     db $E0                                                               ;B4B23B;
     dw $30B7                                                             ;B4B23C;
 
+%anchor($B4B23E)
 DebugSpritemaps_45_EnemyNames_HAND:
     dw $0004,$01F8                                                       ;B4B23E;
     db $E0                                                               ;B4B242;
@@ -5773,6 +6180,7 @@ DebugSpritemaps_45_EnemyNames_HAND:
     db $E0                                                               ;B4B251;
     dw $30B7                                                             ;B4B252;
 
+%anchor($B4B254)
 DebugSpritemaps_46_EnemyNames_HIBASHI:
     dw $0007,$0010                                                       ;B4B254;
     db $E0                                                               ;B4B258;
@@ -5790,6 +6198,7 @@ DebugSpritemaps_46_EnemyNames_HIBASHI:
     db $E0                                                               ;B4B276;
     dw $30B7                                                             ;B4B277;
 
+%anchor($B4B279)
 DebugSpritemaps_47_EnemyNames_HIRU:
     dw $0004,$01F8                                                       ;B4B279;
     db $E0                                                               ;B4B27D;
@@ -5801,6 +6210,7 @@ DebugSpritemaps_47_EnemyNames_HIRU:
     db $E0                                                               ;B4B28C;
     dw $30B7                                                             ;B4B28D;
 
+%anchor($B4B28F)
 DebugSpritemaps_48_EnemyNames_HOLTZ:
     dw $0005,$0000                                                       ;B4B28F;
     db $E0                                                               ;B4B293;
@@ -5814,6 +6224,7 @@ DebugSpritemaps_48_EnemyNames_HOLTZ:
     db $E0                                                               ;B4B2A7;
     dw $30B7                                                             ;B4B2A8;
 
+%anchor($B4B2AA)
 DebugSpritemaps_49_EnemyNames_HOTARY:
     dw $0006,$0008                                                       ;B4B2AA;
     db $E0                                                               ;B4B2AE;
@@ -5829,6 +6240,7 @@ DebugSpritemaps_49_EnemyNames_HOTARY:
     db $E0                                                               ;B4B2C7;
     dw $30B7                                                             ;B4B2C8;
 
+%anchor($B4B2CA)
 DebugSpritemaps_4A_EnemyNames_HZOOMER:
     dw $0007,$0010                                                       ;B4B2CA;
     db $E0                                                               ;B4B2CE;
@@ -5846,6 +6258,7 @@ DebugSpritemaps_4A_EnemyNames_HZOOMER:
     db $E0                                                               ;B4B2EC;
     dw $30B7                                                             ;B4B2ED;
 
+%anchor($B4B2EF)
 DebugSpritemaps_4B_EnemyNames_KAGO:
     dw $0004,$01F8                                                       ;B4B2EF;
     db $E0                                                               ;B4B2F3;
@@ -5857,6 +6270,7 @@ DebugSpritemaps_4B_EnemyNames_KAGO:
     db $E0                                                               ;B4B302;
     dw $30BA                                                             ;B4B303;
 
+%anchor($B4B305)
 DebugSpritemaps_4C_EnemyNames_KAME:
     dw $0004,$01F8                                                       ;B4B305;
     db $E0                                                               ;B4B309;
@@ -5868,6 +6282,7 @@ DebugSpritemaps_4C_EnemyNames_KAME:
     db $E0                                                               ;B4B318;
     dw $30BA                                                             ;B4B319;
 
+%anchor($B4B31B)
 DebugSpritemaps_4D_EnemyNames_KAMER:
     dw $0005,$0000                                                       ;B4B31B;
     db $E0                                                               ;B4B31F;
@@ -5881,6 +6296,7 @@ DebugSpritemaps_4D_EnemyNames_KAMER:
     db $E0                                                               ;B4B333;
     dw $30BA                                                             ;B4B334;
 
+%anchor($B4B336)
 DebugSpritemaps_4E_EnemyNames_KANI:
     dw $0004,$01F8                                                       ;B4B336;
     db $E0                                                               ;B4B33A;
@@ -5892,6 +6308,7 @@ DebugSpritemaps_4E_EnemyNames_KANI:
     db $E0                                                               ;B4B349;
     dw $30BA                                                             ;B4B34A;
 
+%anchor($B4B34C)
 DebugSpritemaps_4F_EnemyNames_KOMA:
     dw $0004,$01F8                                                       ;B4B34C;
     db $E0                                                               ;B4B350;
@@ -5903,6 +6320,7 @@ DebugSpritemaps_4F_EnemyNames_KOMA:
     db $E0                                                               ;B4B35F;
     dw $30BA                                                             ;B4B360;
 
+%anchor($B4B362)
 DebugSpritemaps_50_EnemyNames_KZAN:
     dw $0004,$01F8                                                       ;B4B362;
     db $E0                                                               ;B4B366;
@@ -5914,6 +6332,7 @@ DebugSpritemaps_50_EnemyNames_KZAN:
     db $E0                                                               ;B4B375;
     dw $30BA                                                             ;B4B376;
 
+%anchor($B4B378)
 DebugSpritemaps_51_EnemyNames_LAVAMAN:
     dw $0007,$0010                                                       ;B4B378;
     db $E0                                                               ;B4B37C;
@@ -5931,6 +6350,7 @@ DebugSpritemaps_51_EnemyNames_LAVAMAN:
     db $E0                                                               ;B4B39A;
     dw $30B0                                                             ;B4B39B;
 
+%anchor($B4B39D)
 DebugSpritemaps_52_EnemyNames_MELLA:
     dw $0005,$0000                                                       ;B4B39D;
     db $E0                                                               ;B4B3A1;
@@ -5944,6 +6364,7 @@ DebugSpritemaps_52_EnemyNames_MELLA:
     db $E0                                                               ;B4B3B5;
     dw $30BC                                                             ;B4B3B6;
 
+%anchor($B4B3B8)
 DebugSpritemaps_53_EnemyNames_MEMU:
     dw $0004,$01F8                                                       ;B4B3B8;
     db $E0                                                               ;B4B3BC;
@@ -5955,6 +6376,7 @@ DebugSpritemaps_53_EnemyNames_MEMU:
     db $E0                                                               ;B4B3CB;
     dw $30BC                                                             ;B4B3CC;
 
+%anchor($B4B3CE)
 DebugSpritemaps_54_EnemyNames_MERO:
     dw $0004,$01F8                                                       ;B4B3CE;
     db $E0                                                               ;B4B3D2;
@@ -5966,6 +6388,7 @@ DebugSpritemaps_54_EnemyNames_MERO:
     db $E0                                                               ;B4B3E1;
     dw $30BC                                                             ;B4B3E2;
 
+%anchor($B4B3E4)
 DebugSpritemaps_55_EnemyNames_METALEE:
     dw $0007,$0010                                                       ;B4B3E4;
     db $E0                                                               ;B4B3E8;
@@ -5983,6 +6406,7 @@ DebugSpritemaps_55_EnemyNames_METALEE:
     db $E0                                                               ;B4B406;
     dw $30BC                                                             ;B4B407;
 
+%anchor($B4B409)
 DebugSpritemaps_56_EnemyNames_METMOD:
     dw $0006,$0008                                                       ;B4B409;
     db $E0                                                               ;B4B40D;
@@ -5998,6 +6422,7 @@ DebugSpritemaps_56_EnemyNames_METMOD:
     db $E0                                                               ;B4B426;
     dw $30BC                                                             ;B4B427;
 
+%anchor($B4B429)
 DebugSpritemaps_57_EnemyNames_METROID:
     dw $0007,$0010                                                       ;B4B429;
     db $E0                                                               ;B4B42D;
@@ -6015,6 +6440,7 @@ DebugSpritemaps_57_EnemyNames_METROID:
     db $E0                                                               ;B4B44B;
     dw $30BC                                                             ;B4B44C;
 
+%anchor($B4B44E)
 DebugSpritemaps_58_EnemyNames_MULTI:
     dw $0005,$0000                                                       ;B4B44E;
     db $E0                                                               ;B4B452;
@@ -6028,6 +6454,7 @@ DebugSpritemaps_58_EnemyNames_MULTI:
     db $E0                                                               ;B4B466;
     dw $30BC                                                             ;B4B467;
 
+%anchor($B4B469)
 DebugSpritemaps_59_EnemyNames_MZOOMER:
     dw $0007,$01F8                                                       ;B4B469;
     db $E0                                                               ;B4B46D;
@@ -6045,6 +6472,7 @@ DebugSpritemaps_59_EnemyNames_MZOOMER:
     db $E0                                                               ;B4B48B;
     dw $30BC                                                             ;B4B48C;
 
+%anchor($B4B48E)
 DebugSpritemaps_5A_EnemyNames_NDRA:
     dw $0004,$01F8                                                       ;B4B48E;
     db $E0                                                               ;B4B492;
@@ -6056,6 +6484,7 @@ DebugSpritemaps_5A_EnemyNames_NDRA:
     db $E0                                                               ;B4B4A1;
     dw $30BD                                                             ;B4B4A2;
 
+%anchor($B4B4A4)
 DebugSpritemaps_5B_EnemyNames_NOMI:
     dw $0004,$01F8                                                       ;B4B4A4;
     db $E0                                                               ;B4B4A8;
@@ -6067,6 +6496,7 @@ DebugSpritemaps_5B_EnemyNames_NOMI:
     db $E0                                                               ;B4B4B7;
     dw $30BD                                                             ;B4B4B8;
 
+%anchor($B4B4BA)
 DebugSpritemaps_5C_EnemyNames_NOVA:
     dw $0004,$01F8                                                       ;B4B4BA;
     db $E0                                                               ;B4B4BE;
@@ -6078,6 +6508,7 @@ DebugSpritemaps_5C_EnemyNames_NOVA:
     db $E0                                                               ;B4B4CD;
     dw $30BD                                                             ;B4B4CE;
 
+%anchor($B4B4D0)
 DebugSpritemaps_5D_EnemyNames_OUM:
     dw $0003,$01F0                                                       ;B4B4D0;
     db $E0                                                               ;B4B4D4;
@@ -6087,6 +6518,7 @@ DebugSpritemaps_5D_EnemyNames_OUM:
     db $E0                                                               ;B4B4DE;
     dw $30C0                                                             ;B4B4DF;
 
+%anchor($B4B4E1)
 DebugSpritemaps_5E_EnemyNames_OUMU:
     dw $0004,$01F8                                                       ;B4B4E1;
     db $E0                                                               ;B4B4E5;
@@ -6098,6 +6530,7 @@ DebugSpritemaps_5E_EnemyNames_OUMU:
     db $E0                                                               ;B4B4F4;
     dw $30C0                                                             ;B4B4F5;
 
+%anchor($B4B4F7)
 DebugSpritemaps_5F_EnemyNames_PIPE:
     dw $0004,$01F8                                                       ;B4B4F7;
     db $E0                                                               ;B4B4FB;
@@ -6109,6 +6542,7 @@ DebugSpritemaps_5F_EnemyNames_PIPE:
     db $E0                                                               ;B4B50A;
     dw $30C1                                                             ;B4B50B;
 
+%anchor($B4B50D)
 DebugSpritemaps_60_EnemyNames_POLYP:
     dw $0005,$0000                                                       ;B4B50D;
     db $E0                                                               ;B4B511;
@@ -6122,6 +6556,7 @@ DebugSpritemaps_60_EnemyNames_POLYP:
     db $E0                                                               ;B4B525;
     dw $30C1                                                             ;B4B526;
 
+%anchor($B4B528)
 DebugSpritemaps_61_EnemyNames_PUROMI:
     dw $0006,$0008                                                       ;B4B528;
     db $E0                                                               ;B4B52C;
@@ -6137,6 +6572,7 @@ DebugSpritemaps_61_EnemyNames_PUROMI:
     db $E0                                                               ;B4B545;
     dw $30C1                                                             ;B4B546;
 
+%anchor($B4B548)
 DebugSpritemaps_62_EnemyNames_PUU:
     dw $0003,$01F0                                                       ;B4B548;
     db $E0                                                               ;B4B54C;
@@ -6146,6 +6582,7 @@ DebugSpritemaps_62_EnemyNames_PUU:
     db $E0                                                               ;B4B556;
     dw $30C1                                                             ;B4B557;
 
+%anchor($B4B559)
 DebugSpritemaps_63_EnemyNames_PUYO:
     dw $0004,$01F8                                                       ;B4B559;
     db $E0                                                               ;B4B55D;
@@ -6157,6 +6594,7 @@ DebugSpritemaps_63_EnemyNames_PUYO:
     db $E0                                                               ;B4B56C;
     dw $30C1                                                             ;B4B56D;
 
+%anchor($B4B56F)
 DebugSpritemaps_64_EnemyNames_REFLEC:
     dw $0006,$0008                                                       ;B4B56F;
     db $E0                                                               ;B4B573;
@@ -6172,6 +6610,7 @@ DebugSpritemaps_64_EnemyNames_REFLEC:
     db $E0                                                               ;B4B58C;
     dw $30C3                                                             ;B4B58D;
 
+%anchor($B4B58F)
 DebugSpritemaps_65_EnemyNames_RINKA:
     dw $0005,$0000                                                       ;B4B58F;
     db $E0                                                               ;B4B593;
@@ -6185,6 +6624,7 @@ DebugSpritemaps_65_EnemyNames_RINKA:
     db $E0                                                               ;B4B5A7;
     dw $30C3                                                             ;B4B5A8;
 
+%anchor($B4B5AA)
 DebugSpritemaps_66_EnemyNames_RIO:
     dw $0003,$01F0                                                       ;B4B5AA;
     db $E0                                                               ;B4B5AE;
@@ -6194,6 +6634,7 @@ DebugSpritemaps_66_EnemyNames_RIO:
     db $E0                                                               ;B4B5B8;
     dw $30C3                                                             ;B4B5B9;
 
+%anchor($B4B5BB)
 DebugSpritemaps_67_EnemyNames_RIPPER1:
     dw $0007,$0010                                                       ;B4B5BB;
     db $E0                                                               ;B4B5BF;
@@ -6211,6 +6652,7 @@ DebugSpritemaps_67_EnemyNames_RIPPER1:
     db $E0                                                               ;B4B5DD;
     dw $30C3                                                             ;B4B5DE;
 
+%anchor($B4B5E0)
 DebugSpritemaps_68_EnemyNames_RIPPER2:
     dw $0007,$0010                                                       ;B4B5E0;
     db $E0                                                               ;B4B5E4;
@@ -6228,6 +6670,7 @@ DebugSpritemaps_68_EnemyNames_RIPPER2:
     db $E0                                                               ;B4B602;
     dw $30C3                                                             ;B4B603;
 
+%anchor($B4B605)
 DebugSpritemaps_69_EnemyNames_ROBO:
     dw $0004,$01F8                                                       ;B4B605;
     db $E0                                                               ;B4B609;
@@ -6239,6 +6682,7 @@ DebugSpritemaps_69_EnemyNames_ROBO:
     db $E0                                                               ;B4B618;
     dw $30C3                                                             ;B4B619;
 
+%anchor($B4B61B)
 DebugSpritemaps_6A_EnemyNames_RSTONE:
     dw $0006,$0008                                                       ;B4B61B;
     db $E0                                                               ;B4B61F;
@@ -6254,6 +6698,7 @@ DebugSpritemaps_6A_EnemyNames_RSTONE:
     db $E0                                                               ;B4B638;
     dw $30C3                                                             ;B4B639;
 
+%anchor($B4B63B)
 DebugSpritemaps_6B_EnemyNames_SABOTEN:
     dw $0007,$0010                                                       ;B4B63B;
     db $E0                                                               ;B4B63F;
@@ -6271,6 +6716,7 @@ DebugSpritemaps_6B_EnemyNames_SABOTEN:
     db $E0                                                               ;B4B65D;
     dw $30C4                                                             ;B4B65E;
 
+%anchor($B4B660)
 DebugSpritemaps_6C_EnemyNames_SBUG:
     dw $0004,$01F8                                                       ;B4B660;
     db $E0                                                               ;B4B664;
@@ -6282,6 +6728,7 @@ DebugSpritemaps_6C_EnemyNames_SBUG:
     db $E0                                                               ;B4B673;
     dw $30C4                                                             ;B4B674;
 
+%anchor($B4B676)
 DebugSpritemaps_6D_EnemyNames_SCLAYD:
     dw $0006,$0008                                                       ;B4B676;
     db $E0                                                               ;B4B67A;
@@ -6297,6 +6744,7 @@ DebugSpritemaps_6D_EnemyNames_SCLAYD:
     db $E0                                                               ;B4B693;
     dw $30C4                                                             ;B4B694;
 
+%anchor($B4B696)
 DebugSpritemaps_6E_EnemyNames_SDEATH:
     dw $0006,$0008                                                       ;B4B696;
     db $E0                                                               ;B4B69A;
@@ -6312,6 +6760,7 @@ DebugSpritemaps_6E_EnemyNames_SDEATH:
     db $E0                                                               ;B4B6B3;
     dw $30C4                                                             ;B4B6B4;
 
+%anchor($B4B6B6)
 DebugSpritemaps_6F_EnemyNames_SHUTTER1:
     dw $0008,$0018                                                       ;B4B6B6;
     db $E0                                                               ;B4B6BA;
@@ -6331,6 +6780,7 @@ DebugSpritemaps_6F_EnemyNames_SHUTTER1:
     db $E0                                                               ;B4B6DD;
     dw $30C4                                                             ;B4B6DE;
 
+%anchor($B4B6E0)
 DebugSpritemaps_70_EnemyNames_SHUTTER2:
     dw $0008,$0018                                                       ;B4B6E0;
     db $E0                                                               ;B4B6E4;
@@ -6350,6 +6800,7 @@ DebugSpritemaps_70_EnemyNames_SHUTTER2:
     db $E0                                                               ;B4B707;
     dw $30C4                                                             ;B4B708;
 
+%anchor($B4B70A)
 DebugSpritemaps_71_EnemyNames_SIDE:
     dw $0004,$01F8                                                       ;B4B70A;
     db $E0                                                               ;B4B70E;
@@ -6361,6 +6812,7 @@ DebugSpritemaps_71_EnemyNames_SIDE:
     db $E0                                                               ;B4B71D;
     dw $30C4                                                             ;B4B71E;
 
+%anchor($B4B720)
 DebugSpritemaps_72_EnemyNames_SKREE:
     dw $0005,$0000                                                       ;B4B720;
     db $E0                                                               ;B4B724;
@@ -6374,6 +6826,7 @@ DebugSpritemaps_72_EnemyNames_SKREE:
     db $E0                                                               ;B4B738;
     dw $30C4                                                             ;B4B739;
 
+%anchor($B4B73B)
 DebugSpritemaps_73_EnemyNames_SPA:
     dw $0003,$01F0                                                       ;B4B73B;
     db $E0                                                               ;B4B73F;
@@ -6383,6 +6836,7 @@ DebugSpritemaps_73_EnemyNames_SPA:
     db $E0                                                               ;B4B749;
     dw $30C4                                                             ;B4B74A;
 
+%anchor($B4B74C)
 DebugSpritemaps_74_EnemyNames_SQUEEWPT:
     dw $0008,$0018                                                       ;B4B74C;
     db $E0                                                               ;B4B750;
@@ -6402,6 +6856,7 @@ DebugSpritemaps_74_EnemyNames_SQUEEWPT:
     db $E0                                                               ;B4B773;
     dw $30C4                                                             ;B4B774;
 
+%anchor($B4B776)
 DebugSpritemaps_75_EnemyNames_SSIDE:
     dw $0005,$0000                                                       ;B4B776;
     db $E0                                                               ;B4B77A;
@@ -6415,6 +6870,7 @@ DebugSpritemaps_75_EnemyNames_SSIDE:
     db $E0                                                               ;B4B78E;
     dw $30C4                                                             ;B4B78F;
 
+%anchor($B4B791)
 DebugSpritemaps_76_EnemyNames_STOKE:
     dw $0005,$0000                                                       ;B4B791;
     db $E0                                                               ;B4B795;
@@ -6428,6 +6884,7 @@ DebugSpritemaps_76_EnemyNames_STOKE:
     db $E0                                                               ;B4B7A9;
     dw $30C4                                                             ;B4B7AA;
 
+%anchor($B4B7AC)
 DebugSpritemaps_77_EnemyNames_TOGE:
     dw $0004,$01E0                                                       ;B4B7AC;
     db $E0                                                               ;B4B7B0;
@@ -6439,6 +6896,7 @@ DebugSpritemaps_77_EnemyNames_TOGE:
     db $E0                                                               ;B4B7BF;
     dw $30C0                                                             ;B4B7C0;
 
+%anchor($B4B7C2)
 DebugSpritemaps_78_EnemyNames_VIOLA:
     dw $0005,$01F8                                                       ;B4B7C2;
     db $E0                                                               ;B4B7C6;
@@ -6452,6 +6910,7 @@ DebugSpritemaps_78_EnemyNames_VIOLA:
     db $E0                                                               ;B4B7DA;
     dw $30C7                                                             ;B4B7DB;
 
+%anchor($B4B7DD)
 DebugSpritemaps_79_EnemyNames_WAVER:
     dw $0005,$0000                                                       ;B4B7DD;
     db $E0                                                               ;B4B7E1;
@@ -6465,6 +6924,7 @@ DebugSpritemaps_79_EnemyNames_WAVER:
     db $E0                                                               ;B4B7F5;
     dw $30C8                                                             ;B4B7F6;
 
+%anchor($B4B7F8)
 DebugSpritemaps_7A_EnemyNames_YARD:
     dw $0004,$01F8                                                       ;B4B7F8;
     db $E0                                                               ;B4B7FC;
@@ -6476,6 +6936,7 @@ DebugSpritemaps_7A_EnemyNames_YARD:
     db $E0                                                               ;B4B80B;
     dw $30CA                                                             ;B4B80C;
 
+%anchor($B4B80E)
 DebugSpritemaps_7B_EnemyNames_ZEB:
     dw $0003,$01F0                                                       ;B4B80E;
     db $E0                                                               ;B4B812;
@@ -6485,6 +6946,7 @@ DebugSpritemaps_7B_EnemyNames_ZEB:
     db $E0                                                               ;B4B81C;
     dw $30CB                                                             ;B4B81D;
 
+%anchor($B4B81F)
 DebugSpritemaps_7C_EnemyNames_ZEBBO:
     dw $0005,$0000                                                       ;B4B81F;
     db $E0                                                               ;B4B823;
@@ -6498,6 +6960,7 @@ DebugSpritemaps_7C_EnemyNames_ZEBBO:
     db $E0                                                               ;B4B837;
     dw $30CB                                                             ;B4B838;
 
+%anchor($B4B83A)
 DebugSpritemaps_7D_EnemyNames_ZEELA:
     dw $0005,$0000                                                       ;B4B83A;
     db $E0                                                               ;B4B83E;
@@ -6511,6 +6974,7 @@ DebugSpritemaps_7D_EnemyNames_ZEELA:
     db $E0                                                               ;B4B852;
     dw $30CB                                                             ;B4B853;
 
+%anchor($B4B855)
 DebugSpritemaps_7E_EnemyNames_ZOA:
     dw $0003,$01F0                                                       ;B4B855;
     db $E0                                                               ;B4B859;
@@ -6520,6 +6984,7 @@ DebugSpritemaps_7E_EnemyNames_ZOA:
     db $E0                                                               ;B4B863;
     dw $30CB                                                             ;B4B864;
 
+%anchor($B4B866)
 DebugSpritemaps_7F_EnemyNames_ZOOMER:
     dw $0006,$0008                                                       ;B4B866;
     db $E0                                                               ;B4B86A;
@@ -6535,11 +7000,13 @@ DebugSpritemaps_7F_EnemyNames_ZOOMER:
     db $E0                                                               ;B4B883;
     dw $30CB                                                             ;B4B884;
 
+%anchor($B4B886)
 DebugSpritemaps_1C_TextCursor:
     dw $0001,$0000                                                       ;B4B886;
     db $00                                                               ;B4B88A;
     dw $303E                                                             ;B4B88B;
 
+%anchor($B4B88D)
 DebugSpritemaps_30_EnemyNames_NoDebug:
     dw $0008,$0018                                                       ;B4B88D;
     db $E0                                                               ;B4B891;
@@ -6559,6 +7026,7 @@ DebugSpritemaps_30_EnemyNames_NoDebug:
     db $E0                                                               ;B4B8B4;
     dw $30BD                                                             ;B4B8B5;
 
+%anchor($B4B8B7)
 DebugSpritemaps_80_EnemyNames_BATTA1br:
     dw $0008,$0018                                                       ;B4B8B7;
     db $E0                                                               ;B4B8BB;
@@ -6578,6 +7046,7 @@ DebugSpritemaps_80_EnemyNames_BATTA1br:
     db $E0                                                               ;B4B8DE;
     dw $30B1                                                             ;B4B8DF;
 
+%anchor($B4B8E1)
 DebugSpritemaps_81_EnemyNames_BATTA1NO:
     dw $0008,$0018                                                       ;B4B8E1;
     db $E0                                                               ;B4B8E5;
@@ -6597,6 +7066,7 @@ DebugSpritemaps_81_EnemyNames_BATTA1NO:
     db $E0                                                               ;B4B908;
     dw $30B1                                                             ;B4B909;
 
+%anchor($B4B90B)
 DebugSpritemaps_82_EnemyNames_BATTA1np:
     dw $0008,$0018                                                       ;B4B90B;
     db $E0                                                               ;B4B90F;
@@ -6616,6 +7086,7 @@ DebugSpritemaps_82_EnemyNames_BATTA1np:
     db $E0                                                               ;B4B932;
     dw $30B1                                                             ;B4B933;
 
+%anchor($B4B935)
 DebugSpritemaps_8_EnemyNames_BATTA1ml:
     dw $0008,$0018                                                       ;B4B935;
     db $E0                                                               ;B4B939;
@@ -6635,6 +7106,7 @@ DebugSpritemaps_8_EnemyNames_BATTA1ml:
     db $E0                                                               ;B4B95C;
     dw $30B1                                                             ;B4B95D;
 
+%anchor($B4B95F)
 DebugSpritemaps_84_EnemyNames_BATTA1ts:
     dw $0008,$0018                                                       ;B4B95F;
     db $E0                                                               ;B4B963;
@@ -6654,6 +7126,7 @@ DebugSpritemaps_84_EnemyNames_BATTA1ts:
     db $E0                                                               ;B4B986;
     dw $30B1                                                             ;B4B987;
 
+%anchor($B4B989)
 DebugSpritemaps_85_EnemyNames_BATTA2br:
     dw $0008,$0018                                                       ;B4B989;
     db $E0                                                               ;B4B98D;
@@ -6673,6 +7146,7 @@ DebugSpritemaps_85_EnemyNames_BATTA2br:
     db $E0                                                               ;B4B9B0;
     dw $30B1                                                             ;B4B9B1;
 
+%anchor($B4B9B3)
 DebugSpritemaps_86_EnemyNames_BATTA2no:
     dw $0008,$0008                                                       ;B4B9B3;
     db $E0                                                               ;B4B9B7;
@@ -6692,6 +7166,7 @@ DebugSpritemaps_86_EnemyNames_BATTA2no:
     db $E0                                                               ;B4B9DA;
     dw $30B1                                                             ;B4B9DB;
 
+%anchor($B4B9DD)
 DebugSpritemaps_87_EnemyNames_BATTA2np:
     dw $0008,$0018                                                       ;B4B9DD;
     db $E0                                                               ;B4B9E1;
@@ -6711,6 +7186,7 @@ DebugSpritemaps_87_EnemyNames_BATTA2np:
     db $E0                                                               ;B4BA04;
     dw $30B1                                                             ;B4BA05;
 
+%anchor($B4BA07)
 DebugSpritemaps_88_EnemyNames_BATTA2ml:
     dw $0008,$0018                                                       ;B4BA07;
     db $E0                                                               ;B4BA0B;
@@ -6730,6 +7206,7 @@ DebugSpritemaps_88_EnemyNames_BATTA2ml:
     db $E0                                                               ;B4BA2E;
     dw $30B1                                                             ;B4BA2F;
 
+%anchor($B4BA31)
 DebugSpritemaps_89_EnemyNames_BATTA2ts:
     dw $0008,$0018                                                       ;B4BA31;
     db $E0                                                               ;B4BA35;
@@ -6749,6 +7226,7 @@ DebugSpritemaps_89_EnemyNames_BATTA2ts:
     db $E0                                                               ;B4BA58;
     dw $30B1                                                             ;B4BA59;
 
+%anchor($B4BA5B)
 DebugSpritemaps_8A_EnemyNames_BATTA3br:
     dw $0008,$0018                                                       ;B4BA5B;
     db $E0                                                               ;B4BA5F;
@@ -6768,6 +7246,7 @@ DebugSpritemaps_8A_EnemyNames_BATTA3br:
     db $E0                                                               ;B4BA82;
     dw $30B1                                                             ;B4BA83;
 
+%anchor($B4BA85)
 DebugSpritemaps_8B_EnemyNames_BATTA3no:
     dw $0008,$0018                                                       ;B4BA85;
     db $E0                                                               ;B4BA89;
@@ -6787,6 +7266,7 @@ DebugSpritemaps_8B_EnemyNames_BATTA3no:
     db $E0                                                               ;B4BAAC;
     dw $30B1                                                             ;B4BAAD;
 
+%anchor($B4BAAF)
 DebugSpritemaps_8C_EnemyNames_BATTA3np:
     dw $0008,$0018                                                       ;B4BAAF;
     db $E0                                                               ;B4BAB3;
@@ -6806,6 +7286,7 @@ DebugSpritemaps_8C_EnemyNames_BATTA3np:
     db $E0                                                               ;B4BAD6;
     dw $30B1                                                             ;B4BAD7;
 
+%anchor($B4BAD9)
 DebugSpritemaps_8D_EnemyNames_BATTA3ml:
     dw $0008,$0018                                                       ;B4BAD9;
     db $E0                                                               ;B4BADD;
@@ -6825,6 +7306,7 @@ DebugSpritemaps_8D_EnemyNames_BATTA3ml:
     db $E0                                                               ;B4BB00;
     dw $30B1                                                             ;B4BB01;
 
+%anchor($B4BB03)
 DebugSpritemaps_8E_EnemyNames_BATTA3ts:
     dw $0008,$0018                                                       ;B4BB03;
     db $E0                                                               ;B4BB07;
@@ -6844,6 +7326,7 @@ DebugSpritemaps_8E_EnemyNames_BATTA3ts:
     db $E0                                                               ;B4BB2A;
     dw $30B1                                                             ;B4BB2B;
 
+%anchor($B4BB2D)
 DebugSpritemaps_14_AreaNames_SF_Crateria:
     dw $0003,$01E8                                                       ;B4BB2D;
     db $F8                                                               ;B4BB31;
@@ -6853,6 +7336,7 @@ DebugSpritemaps_14_AreaNames_SF_Crateria:
     db $F8                                                               ;B4BB3B;
     dw $30FD                                                             ;B4BB3C;
 
+%anchor($B4BB3E)
 DebugSpritemaps_15_AreaNames_BL_Brinstar:
     dw $0003,$01E8                                                       ;B4BB3E;
     db $F8                                                               ;B4BB42;
@@ -6862,6 +7346,7 @@ DebugSpritemaps_15_AreaNames_BL_Brinstar:
     db $F8                                                               ;B4BB4C;
     dw $30FD                                                             ;B4BB4D;
 
+%anchor($B4BB4F)
 DebugSpritemaps_16_AreaNames_NO_Norfair:
     dw $0003,$01E8                                                       ;B4BB4F;
     db $F8                                                               ;B4BB53;
@@ -6871,6 +7356,7 @@ DebugSpritemaps_16_AreaNames_NO_Norfair:
     db $F8                                                               ;B4BB5D;
     dw $30FD                                                             ;B4BB5E;
 
+%anchor($B4BB60)
 DebugSpritemaps_17_AreaNames_NP_WreckedShip:
     dw $0003,$01E8                                                       ;B4BB60;
     db $F8                                                               ;B4BB64;
@@ -6880,6 +7366,7 @@ DebugSpritemaps_17_AreaNames_NP_WreckedShip:
     db $F8                                                               ;B4BB6E;
     dw $30FD                                                             ;B4BB6F;
 
+%anchor($B4BB71)
 DebugSpritemaps_18_AreaNames_ML_Maridia:
     dw $0003,$01E8                                                       ;B4BB71;
     db $F8                                                               ;B4BB75;
@@ -6889,6 +7376,7 @@ DebugSpritemaps_18_AreaNames_ML_Maridia:
     db $F8                                                               ;B4BB7F;
     dw $30FD                                                             ;B4BB80;
 
+%anchor($B4BB82)
 DebugSpritemaps_19_AreaNames_TS_Tourian:
     dw $0003,$01E8                                                       ;B4BB82;
     db $F8                                                               ;B4BB86;
@@ -6898,6 +7386,7 @@ DebugSpritemaps_19_AreaNames_TS_Tourian:
     db $F8                                                               ;B4BB90;
     dw $30FD                                                             ;B4BB91;
 
+%anchor($B4BB93)
 DebugSpritemaps_1A_AreaNames_CO_Ceres:
     dw $0003,$01E8                                                       ;B4BB93;
     db $F8                                                               ;B4BB97;
@@ -6907,6 +7396,7 @@ DebugSpritemaps_1A_AreaNames_CO_Ceres:
     db $F8                                                               ;B4BBA1;
     dw $30FD                                                             ;B4BBA2;
 
+%anchor($B4BBA4)
 DebugSpritemaps_1B_AreaNames_TT_Debug:
     dw $0003,$01E8                                                       ;B4BBA4;
     db $F8                                                               ;B4BBA8;
@@ -6916,6 +7406,7 @@ DebugSpritemaps_1B_AreaNames_TT_Debug:
     db $F8                                                               ;B4BBB2;
     dw $30FD                                                             ;B4BBB3;
 
+%anchor($B4BBB5)
 DebugSpritemaps_8F_EnemyNames_FUNE:
     dw $0004,$01F8                                                       ;B4BBB5;
     db $E0                                                               ;B4BBB9;
@@ -6927,6 +7418,7 @@ DebugSpritemaps_8F_EnemyNames_FUNE:
     db $E0                                                               ;B4BBC8;
     dw $30B5                                                             ;B4BBC9;
 
+%anchor($B4BBCB)
 DebugSpritemaps_90_EnemyNames_HATCHI2:
     dw $0006,$0008                                                       ;B4BBCB;
     db $E0                                                               ;B4BBCF;
@@ -6942,6 +7434,7 @@ DebugSpritemaps_90_EnemyNames_HATCHI2:
     db $E0                                                               ;B4BBE8;
     dw $30B7                                                             ;B4BBE9;
 
+%anchor($B4BBEB)
 DebugSpritemaps_91_EnemyNames_HATCHI3:
     dw $0006,$0008                                                       ;B4BBEB;
     db $E0                                                               ;B4BBEF;
@@ -6957,6 +7450,7 @@ DebugSpritemaps_91_EnemyNames_HATCHI3:
     db $E0                                                               ;B4BC08;
     dw $30B7                                                             ;B4BC09;
 
+%anchor($B4BC0B)
 DebugSpritemaps_92_EnemyNames_ROBO2:
     dw $0005,$0000                                                       ;B4BC0B;
     db $E0                                                               ;B4BC0F;
@@ -6970,6 +7464,7 @@ DebugSpritemaps_92_EnemyNames_ROBO2:
     db $E0                                                               ;B4BC23;
     dw $30C3                                                             ;B4BC24;
 
+%anchor($B4BC26)
 Create_Sprite_Object:
     PHX                                                                  ;B4BC26;
     PHY                                                                  ;B4BC27;
@@ -7022,6 +7517,7 @@ Create_Sprite_Object:
     RTL                                                                  ;B4BC81;
 
 
+%anchor($B4BC82)
 HandleSpriteObjects:
     PHX                                                                  ;B4BC82;
     PHY                                                                  ;B4BC83;
@@ -7085,6 +7581,7 @@ HandleSpriteObjects:
     RTL                                                                  ;B4BCEF;
 
 
+%anchor($B4BCF0)
 Instruction_SpriteObject_GoBack4Bytes:
     LDX.W $1844                                                          ;B4BCF0;
     LDA.L $7EEF78,X                                                      ;B4BCF3;
@@ -7098,6 +7595,7 @@ Instruction_SpriteObject_GoBack4Bytes:
     RTS                                                                  ;B4BD06;
 
 
+%anchor($B4BD07)
 Instruction_SpriteObject_Delete:
     LDX.W $1844                                                          ;B4BD07;
     LDA.W #$0000                                                         ;B4BD0A;
@@ -7105,6 +7603,7 @@ Instruction_SpriteObject_Delete:
     RTS                                                                  ;B4BD11;
 
 
+%anchor($B4BD12)
 Instruction_SpriteObject_GotoParameter:
     LDX.W $1844                                                          ;B4BD12;
     LDA.L $7EEF78,X                                                      ;B4BD15;
@@ -7119,6 +7618,7 @@ Instruction_SpriteObject_GotoParameter:
     RTS                                                                  ;B4BD31;
 
 
+%anchor($B4BD32)
 DrawSpriteObjects:
     PHX                                                                  ;B4BD32;
     PHY                                                                  ;B4BD33;
@@ -7174,6 +7674,7 @@ DrawSpriteObjects:
     RTL                                                                  ;B4BD96;
 
 
+%anchor($B4BD97)
 ClearSpriteObjects:
     LDX.W #$03FE                                                         ;B4BD97;
     LDA.W #$0000                                                         ;B4BD9A;
@@ -7186,9 +7687,11 @@ ClearSpriteObjects:
     RTL                                                                  ;B4BDA5;
 
 
+%anchor($B4BDA6)
 SpriteObject_DrawInst_Empty:
     dw $0000                                                             ;B4BDA6;
 
+%anchor($B4BDA8)
 SpriteObject_DrawInst_Pointers:
     dw UNUSED_InstList_SpriteObject_0_BeamCharge_B4BE5A                  ;B4BDA8;
     dw UNUSED_InstList_SpriteObject_1_MBElbowChargeParticles_B4BE6C      ;B4BDAA;
@@ -7253,6 +7756,7 @@ SpriteObject_DrawInst_Pointers:
     dw InstList_SpriteObject_3C_EvirFacingRight                          ;B4BE20;
     dw InstList_SpriteObject_3D_DraygonFoamingAtTheMouth                 ;B4BE22;
 
+%anchor($B4BE24)
 InstList_SpriteObject_3D_DraygonFoamingAtTheMouth:
     dw $0006                                                             ;B4BE24;
     dw SpriteObjectSpritemaps_3D_DraygonFoamingAtTheMouth_0              ;B4BE26;
@@ -7273,6 +7777,7 @@ InstList_SpriteObject_3D_DraygonFoamingAtTheMouth:
     dw Instruction_SpriteObject_Delete                                   ;B4BE44;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B4BE46)
 UNUSED_InstList_SpriteObject_B4BE46:
     dw $0005                                                             ;B4BE46;
     dw UNUSED_SpriteObjectSpritemaps_B4DD3C                              ;B4BE48;
@@ -7283,11 +7788,13 @@ UNUSED_InstList_SpriteObject_B4BE46:
     dw Instruction_SpriteObject_Delete                                   ;B4BE52;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B4BE54)
 UNUSED_InstList_SpriteObject_2F_B4BE54:
     dw $0001                                                             ;B4BE54;
     dw UNUSED_SpriteObjectSpritemaps_2F_B4D594                           ;B4BE56;
     dw Instruction_SpriteObject_GoBack4Bytes                             ;B4BE58;
 
+%anchor($B4BE5A)
 UNUSED_InstList_SpriteObject_0_BeamCharge_B4BE5A:
     dw $0003                                                             ;B4BE5A;
     dw UNUSED_SpriteObjectSpritemaps_0_BeamCharge_0_B4CAC9               ;B4BE5C;
@@ -7299,6 +7806,7 @@ UNUSED_InstList_SpriteObject_0_BeamCharge_B4BE5A:
     dw UNUSED_SpriteObjectSpritemaps_0_BeamCharge_3_B4CADE               ;B4BE68;
     dw Instruction_SpriteObject_Delete                                   ;B4BE6A;
 
+%anchor($B4BE6C)
 UNUSED_InstList_SpriteObject_1_MBElbowChargeParticles_B4BE6C:
     dw $0005                                                             ;B4BE6C;
     dw UNUSED_SpriteObjectSpritemaps_1_MBElbowParticle_0_B4CAF4          ;B4BE6E;
@@ -7314,6 +7822,7 @@ UNUSED_InstList_SpriteObject_1_MBElbowChargeParticles_B4BE6C:
     dw UNUSED_SpriteObjectSpritemaps_1_MBElbowParticle_5_B4CB49          ;B4BE82;
     dw Instruction_SpriteObject_Delete                                   ;B4BE84;
 
+%anchor($B4BE86)
 UNSUED_InstList_SpriteObject_2_MBElbowChargeEnergy_B4BE86:
     dw $0004                                                             ;B4BE86;
     dw UNUSED_SpriteObjectSpritemaps_2_MBElbowEnergy_0_B4CB5A            ;B4BE88;
@@ -7331,6 +7840,7 @@ UNSUED_InstList_SpriteObject_2_MBElbowChargeEnergy_B4BE86:
     dw SpriteObjectSpritemaps_3_SmallExplosion_0                         ;B4BEA0;
     dw Instruction_SpriteObject_Delete                                   ;B4BEA2;
 
+%anchor($B4BEA4)
 InstList_SpriteObject_3_SmallExplosion:
     dw $0004                                                             ;B4BEA4;
     dw SpriteObjectSpritemaps_3_SmallExplosion_0                         ;B4BEA6;
@@ -7346,6 +7856,7 @@ InstList_SpriteObject_3_SmallExplosion:
     dw SpriteObjectSpritemaps_3_SmallExplosion_5                         ;B4BEBA;
     dw Instruction_SpriteObject_Delete                                   ;B4BEBC;
 
+%anchor($B4BEBE)
 UNUSED_InstList_SpriteObject_4_BombExplosion_B4BEBE:
     dw $0003                                                             ;B4BEBE;
     dw UNSUED_SpriteObjectSpritemaps_4_BombExplosion_0_B4CC35            ;B4BEC0;
@@ -7359,6 +7870,7 @@ UNUSED_InstList_SpriteObject_4_BombExplosion_B4BEBE:
     dw UNSUED_SpriteObjectSpritemaps_4_BombExplosion_4_B4CC8D            ;B4BED0;
     dw Instruction_SpriteObject_Delete                                   ;B4BED2;
 
+%anchor($B4BED4)
 UNUSED_InstList_SpriteObject_5_BeamTrail_B4BED4:
     dw $0008                                                             ;B4BED4;
     dw UNSUED_SpriteObjectSpritemaps_5_BeamTrail_0_B4CCB9                ;B4BED6;
@@ -7372,6 +7884,7 @@ UNUSED_InstList_SpriteObject_5_BeamTrail_B4BED4:
     dw UNUSED_SpriteObjectSpritemaps_2_MBElbowEnergy_3_B4CB8D            ;B4BEE6;
     dw Instruction_SpriteObject_Delete                                   ;B4BEE8;
 
+%anchor($B4BEEA)
 InstList_SpriteObject_6_DudShot:
     dw $0004                                                             ;B4BEEA;
     dw SpriteObjectSpritemaps_6_DudShot_0                                ;B4BEEC;
@@ -7387,6 +7900,7 @@ InstList_SpriteObject_6_DudShot:
     dw SpriteObjectSpritemaps_6_DudShot_5                                ;B4BF00;
     dw Instruction_SpriteObject_Delete                                   ;B4BF02;
 
+%anchor($B4BF04)
 UNUSED_InstList_SpriteObject_7_PowerBomb_B4BF04:
     dw $0005                                                             ;B4BF04;
     dw UNSUED_SpriteObjectSpritemaps_7_PowerBomb_0_B4CCD5                ;B4BF06;
@@ -7396,6 +7910,7 @@ UNUSED_InstList_SpriteObject_7_PowerBomb_B4BF04:
     dw UNSUED_SpriteObjectSpritemaps_7_PowerBomb_2_B4CCE3                ;B4BF0E;
     dw Instruction_SpriteObject_Delete                                   ;B4BF10;
 
+%anchor($B4BF12)
 UNUSED_InstList_SpriteObject_8_ElevatorPad_B4BF12:
     dw $0001                                                             ;B4BF12;
     dw UNSUED_SpriteObjectSpritemaps_8_1C_ElevatorPad_0_B4CD57           ;B4BF14;
@@ -7403,6 +7918,7 @@ UNUSED_InstList_SpriteObject_8_ElevatorPad_B4BF12:
     dw UNSUED_SpriteObjectSpritemaps_8_1C_ElevatorPad_1_B4CD6D           ;B4BF18;
     dw Instruction_SpriteObject_Delete                                   ;B4BF1A;
 
+%anchor($B4BF1C)
 InstList_SpriteObject_9_SmallDudShot:
     dw $0005                                                             ;B4BF1C;
     dw SpriteObjectSpritemaps_A_PirateLandingDustCloud_0                 ;B4BF1E;
@@ -7416,6 +7932,7 @@ InstList_SpriteObject_9_SmallDudShot:
     dw SpriteObjectSpritemaps_9_SmallDustCloud_3                         ;B4BF2E;
     dw Instruction_SpriteObject_Delete                                   ;B4BF30;
 
+%anchor($B4BF32)
 InstList_SpriteObject_A_SpacePirateLandingDustCloud:
     dw $0003                                                             ;B4BF32;
     dw SpriteObjectSpritemaps_A_PirateLandingDustCloud_0                 ;B4BF34;
@@ -7427,6 +7944,7 @@ InstList_SpriteObject_A_SpacePirateLandingDustCloud:
     dw SpriteObjectSpritemaps_A_PirateLandingDustCloud_3                 ;B4BF40;
     dw Instruction_SpriteObject_Delete                                   ;B4BF42;
 
+%anchor($B4BF44)
 UNUSED_InstList_SpriteObject_B_EyeDoorSweatDrop_B4BF44:
     dw $0005                                                             ;B4BF44;
     dw UNSUED_SpriteObjectSpritemaps_B_EyeDoorSweatDrop_0_B4CDD1         ;B4BF46;
@@ -7438,6 +7956,7 @@ UNUSED_InstList_SpriteObject_B_EyeDoorSweatDrop_B4BF44:
     dw UNSUED_SpriteObjectSpritemaps_B_EyeDoorSweatDrop_3_B4CDE6         ;B4BF52;
     dw Instruction_SpriteObject_Delete                                   ;B4BF54;
 
+%anchor($B4BF56)
 InstList_SpriteObject_C_Smoke:
     dw $0008                                                             ;B4BF56;
     dw SpriteObjectSpritemaps_C_Smoke_0                                  ;B4BF58;
@@ -7449,6 +7968,7 @@ InstList_SpriteObject_C_Smoke:
     dw SpriteObjectSpritemaps_C_Smoke_3                                  ;B4BF64;
     dw Instruction_SpriteObject_Delete                                   ;B4BF66;
 
+%anchor($B4BF68)
 UNUSED_InstList_SpriteObject_1C_ElevatorPad_B4BF68:
     dw $0001                                                             ;B4BF68;
     dw UNSUED_SpriteObjectSpritemaps_8_1C_ElevatorPad_0_B4CD57           ;B4BF6A;
@@ -7457,6 +7977,7 @@ UNUSED_InstList_SpriteObject_1C_ElevatorPad_B4BF68:
     dw Instruction_SpriteObject_GotoParameter                            ;B4BF70;
     dw UNUSED_InstList_SpriteObject_1C_ElevatorPad_B4BF68                ;B4BF72;
 
+%anchor($B4BF74)
 InstList_SpriteObject_1D_BigExplosion:
     dw $0005                                                             ;B4BF74;
     dw SpriteObjectSpritemaps_1D_BigExplosion_0                          ;B4BF76;
@@ -7472,6 +7993,7 @@ InstList_SpriteObject_1D_BigExplosion:
     dw SpriteObjectSpritemaps_1D_BigExplosion_5                          ;B4BF8A;
     dw Instruction_SpriteObject_Delete                                   ;B4BF8C;
 
+%anchor($B4BF8E)
 UNUSED_InstList_SpriteObject_D_SmallEnergyDrop_B4BF8E:
     dw $0008                                                             ;B4BF8E;
     dw UNUSED_SpriteObjectSpritemaps_D_SmallEnergyDrop_0_B4CE1E          ;B4BF90;
@@ -7483,6 +8005,7 @@ UNUSED_InstList_SpriteObject_D_SmallEnergyDrop_B4BF8E:
     dw UNUSED_SpriteObjectSpritemaps_D_SmallEnergyDrop_3_B4CE33          ;B4BF9C;
     dw Instruction_SpriteObject_Delete                                   ;B4BF9E;
 
+%anchor($B4BFA0)
 UNUSED_InstList_SpriteObject_E_BigEnergyDrop_B4BFA0:
     dw $0008                                                             ;B4BFA0;
     dw UNUSED_SpriteObjectSpritemaps_E_BigEnergyDrop_0_B4CE3A            ;B4BFA2;
@@ -7494,6 +8017,7 @@ UNUSED_InstList_SpriteObject_E_BigEnergyDrop_B4BFA0:
     dw UNUSED_SpriteObjectSpritemaps_E_BigEnergyDrop_3_B4CE7C            ;B4BFAE;
     dw Instruction_SpriteObject_Delete                                   ;B4BFB0;
 
+%anchor($B4BFB2)
 UNUSED_InstList_SpriteObject_F_Bomb_B4BFB2:
     dw $0005                                                             ;B4BFB2;
     dw UNUSED_SpriteObjectSpritemaps_F_Bomb_0_B4CE83                     ;B4BFB4;
@@ -7505,6 +8029,7 @@ UNUSED_InstList_SpriteObject_F_Bomb_B4BFB2:
     dw UNUSED_SpriteObjectSpritemaps_F_Bomb_3_B4CE98                     ;B4BFC0;
     dw Instruction_SpriteObject_Delete                                   ;B4BFC2;
 
+%anchor($B4BFC4)
 UNUSED_InstList_SpriteObject_10_WeirdSmallEnergyDrop_B4BFC4:
     dw $0010                                                             ;B4BFC4;
     dw UNUSED_SpriteObjectSpritemaps_10_SmallEnergyDrop_0_B4CF87         ;B4BFC6;
@@ -7514,6 +8039,7 @@ UNUSED_InstList_SpriteObject_10_WeirdSmallEnergyDrop_B4BFC4:
     dw UNUSED_SpriteObjectSpritemaps_10_SmallEnergyDrop_2_B4CF95         ;B4BFCE;
     dw Instruction_SpriteObject_Delete                                   ;B4BFD0;
 
+%anchor($B4BFD2)
 UNUSED_InstList_SpriteObject_11_RockParticles_B4BFD2:
     dw $0002                                                             ;B4BFD2;
     dw UNUSED_SpriteObjectSpritemaps_11_RockParticles_0_B4C6D8           ;B4BFD4;
@@ -7549,6 +8075,7 @@ UNUSED_InstList_SpriteObject_11_RockParticles_B4BFD2:
     dw UNUSED_SpriteObjectSpritemaps_11_RockParticles_F_B4C822           ;B4C010;
     dw Instruction_SpriteObject_Delete                                   ;B4C012;
 
+%anchor($B4C014)
 InstList_SpriteObject_12_ShortBigDustCloud:
     dw $0002                                                             ;B4C014;
     dw SpriteObjectSpritemaps_12_15_BigDustCloud_0                       ;B4C016;
@@ -7560,6 +8087,7 @@ InstList_SpriteObject_12_ShortBigDustCloud:
     dw SpriteObjectSpritemaps_12_15_BigDustCloud_3                       ;B4C022;
     dw Instruction_SpriteObject_Delete                                   ;B4C024;
 
+%anchor($B4C026)
 UNUSED_InstList_SpriteObject_13_ShortBigDustCloudBeam_B4C026:
     dw $0003                                                             ;B4C026;
     dw SpriteObjectSpritemaps_13_14_15_BigDustCloud_4                    ;B4C028;
@@ -7575,6 +8103,7 @@ UNUSED_InstList_SpriteObject_13_ShortBigDustCloudBeam_B4C026:
     dw UNUSED_SpriteObjectSpritemaps_13_14_16_DustCloud_Beam_B4C8B3      ;B4C03C;
     dw Instruction_SpriteObject_Delete                                   ;B4C03E;
 
+%anchor($B4C040)
 UNUSED_InstList_SpriteObject_14_ShortBigDustCloudBeam_B4C040:
     dw $0003                                                             ;B4C040;
     dw SpriteObjectSpritemaps_13_14_15_BigDustCloud_4                    ;B4C042;
@@ -7592,6 +8121,7 @@ UNUSED_InstList_SpriteObject_14_ShortBigDustCloudBeam_B4C040:
     dw UNUSED_SpriteObjectSpritemaps_14_16_DustCloud_Beam_B4C8BA         ;B4C05A;
     dw Instruction_SpriteObject_Delete                                   ;B4C05C;
 
+%anchor($B4C05E)
 InstList_SpriteObject_15_BigDustCloud:
     dw $0005                                                             ;B4C05E;
     dw SpriteObjectSpritemaps_12_15_BigDustCloud_0                       ;B4C060;
@@ -7611,6 +8141,7 @@ InstList_SpriteObject_15_BigDustCloud:
     dw SpriteObjectSpritemaps_13_14_15_BigDustCloud_7                    ;B4C07C;
     dw Instruction_SpriteObject_Delete                                   ;B4C07E;
 
+%anchor($B4C080)
 UNUSED_InstList_SpriteObject_16_WeirdLongBeam_B4C080:
     dw $0001                                                             ;B4C080;
     dw UNUSED_SpriteObjectSpritemaps_13_14_16_DustCloud_Beam_B4C8AC      ;B4C082;
@@ -7676,6 +8207,7 @@ UNUSED_InstList_SpriteObject_16_WeirdLongBeam_B4C080:
     dw UNUSED_SpriteObjectSpritemaps_16_17_DustCloud_Beam_B4C8F4         ;B4C0FA;
     dw Instruction_SpriteObject_Delete                                   ;B4C0FC;
 
+%anchor($B4C0FE)
 UNUSED_InstList_SpriteObject_17_WeirdLongFlickerBeam_B4C0FE:
     dw $0001                                                             ;B4C0FE;
     dw UNUSED_SpriteObjectSpritemaps_16_17_DustCloud_Beam_B4C8F4         ;B4C100;
@@ -7685,6 +8217,7 @@ UNUSED_InstList_SpriteObject_17_WeirdLongFlickerBeam_B4C0FE:
     dw UNUSED_SpriteObjectSpritemaps_16_17_DustCloud_Beam_B4C8F4         ;B4C108;
     dw Instruction_SpriteObject_Delete                                   ;B4C10A;
 
+%anchor($B4C10C)
 InstList_SpriteObject_18_ShortDraygonBreathBubbles:
     dw $0003                                                             ;B4C10C;
     dw SpriteObjectSpritemaps_18_ShortDraygonBreathBubbles_0             ;B4C10E;
@@ -7706,6 +8239,7 @@ InstList_SpriteObject_18_ShortDraygonBreathBubbles:
     dw SpriteObjectSpritemaps_18_ShortDraygonBreathBubbles_8             ;B4C12E;
     dw Instruction_SpriteObject_Delete                                   ;B4C130;
 
+%anchor($B4C132)
 UNSUED_InstList_SpriteObject_19_SaveStationElectricity:
     dw $0001                                                             ;B4C132;
     dw UNUSED_SpriteObjectSpritemaps_19_SaveStationElect_0_B4C9A0        ;B4C134;
@@ -7725,6 +8259,7 @@ UNSUED_InstList_SpriteObject_19_SaveStationElectricity:
     dw UNUSED_SpriteObjectSpritemaps_19_SaveStationElect_7_B4CA3A        ;B4C150;
     dw Instruction_SpriteObject_Delete                                   ;B4C152;
 
+%anchor($B4C154)
 UNUSED_InstList_SpriteObject_1A_ExpandingVerticalGate_B4C154:
     dw $0010                                                             ;B4C154;
     dw UNUSED_SpriteObjectSpritemaps_1A_1B_VerticalGate_0_B4CA50         ;B4C156;
@@ -7744,6 +8279,7 @@ UNUSED_InstList_SpriteObject_1A_ExpandingVerticalGate_B4C154:
     dw UNUSED_SpriteObjectSpritemaps_1A_1B_VerticalGate_7_B4CAB3         ;B4C172;
     dw Instruction_SpriteObject_Delete                                   ;B4C174;
 
+%anchor($B4C176)
 UNUSED_InstList_SpriteObject_1B_ContractingVerticalGate:
     dw $0004                                                             ;B4C176;
     dw UNUSED_SpriteObjectSpritemaps_1A_1B_VerticalGate_7_B4CAB3         ;B4C178;
@@ -7763,6 +8299,7 @@ UNUSED_InstList_SpriteObject_1B_ContractingVerticalGate:
     dw UNUSED_SpriteObjectSpritemaps_1A_1B_VerticalGate_0_B4CA50         ;B4C194;
     dw Instruction_SpriteObject_Delete                                   ;B4C196;
 
+%anchor($B4C198)
 UNUSED_InstList_SpriteObject_1E_B4C198:
     dw $0005                                                             ;B4C198;
     dw UNUSED_SpriteObjectSpritemaps_1E_0_B4C630                         ;B4C19A;
@@ -7775,6 +8312,7 @@ UNUSED_InstList_SpriteObject_1E_B4C198:
     dw Instruction_SpriteObject_GotoParameter                            ;B4C1A8;
     dw UNUSED_InstList_SpriteObject_1E_B4C198                            ;B4C1AA;
 
+%anchor($B4C1AC)
 UNUSED_InstList_SpriteObject_1F_B4C1AC:
     dw $0005                                                             ;B4C1AC;
     dw UNUSED_SpriteObjectSpritemaps_1F_0_B4C645                         ;B4C1AE;
@@ -7787,6 +8325,7 @@ UNUSED_InstList_SpriteObject_1F_B4C1AC:
     dw Instruction_SpriteObject_GotoParameter                            ;B4C1BC;
     dw UNUSED_InstList_SpriteObject_1F_B4C1AC                            ;B4C1BE;
 
+%anchor($B4C1C0)
 UNUSED_InstList_SpriteObject_20_B4C1C0:
     dw $0005                                                             ;B4C1C0;
     dw UNUSED_SpriteObjectSpritemaps_20_0_B4C65A                         ;B4C1C2;
@@ -7799,6 +8338,7 @@ UNUSED_InstList_SpriteObject_20_B4C1C0:
     dw Instruction_SpriteObject_GotoParameter                            ;B4C1D0;
     dw UNUSED_InstList_SpriteObject_20_B4C1C0                            ;B4C1D2;
 
+%anchor($B4C1D4)
 UNUSED_InstList_SpriteObject_21_B4C1D4:
     dw $0005                                                             ;B4C1D4;
     dw UNUSED_SpriteObjectSpritemaps_21_0_B4C66F                         ;B4C1D6;
@@ -7811,6 +8351,7 @@ UNUSED_InstList_SpriteObject_21_B4C1D4:
     dw Instruction_SpriteObject_GotoParameter                            ;B4C1E4;
     dw UNUSED_InstList_SpriteObject_21_B4C1D4                            ;B4C1E6;
 
+%anchor($B4C1E8)
 UNUSED_InstList_SpriteObject_22_B4C1E8:
     dw $0005                                                             ;B4C1E8;
     dw UNUSED_SpriteObjectSpritemaps_22_0_B4C684                         ;B4C1EA;
@@ -7823,6 +8364,7 @@ UNUSED_InstList_SpriteObject_22_B4C1E8:
     dw Instruction_SpriteObject_GotoParameter                            ;B4C1F8;
     dw UNUSED_InstList_SpriteObject_22_B4C1E8                            ;B4C1FA;
 
+%anchor($B4C1FC)
 UNUSED_InstList_SpriteObject_23_B4C1FC:
     dw $0005                                                             ;B4C1FC;
     dw UNUSED_SpriteObjectSpritemaps_23_0_B4C699                         ;B4C1FE;
@@ -7835,6 +8377,7 @@ UNUSED_InstList_SpriteObject_23_B4C1FC:
     dw Instruction_SpriteObject_GotoParameter                            ;B4C20C;
     dw UNUSED_InstList_SpriteObject_23_B4C1FC                            ;B4C20E;
 
+%anchor($B4C210)
 UNUSED_InstList_SpriteObject_24_B4C210:
     dw $0005                                                             ;B4C210;
     dw UNUSED_SpriteObjectSpritemaps_24_0_B4C6AE                         ;B4C212;
@@ -7847,6 +8390,7 @@ UNUSED_InstList_SpriteObject_24_B4C210:
     dw Instruction_SpriteObject_GotoParameter                            ;B4C220;
     dw UNUSED_InstList_SpriteObject_24_B4C210                            ;B4C222;
 
+%anchor($B4C224)
 UNUSED_InstList_SpriteObject_25_B4C224:
     dw $0005                                                             ;B4C224;
     dw UNUSED_SpriteObjectSpritemaps_25_0_B4C6C3                         ;B4C226;
@@ -7859,6 +8403,7 @@ UNUSED_InstList_SpriteObject_25_B4C224:
     dw Instruction_SpriteObject_GotoParameter                            ;B4C234;
     dw UNUSED_InstList_SpriteObject_25_B4C224                            ;B4C236;
 
+%anchor($B4C238)
 UNUSED_InstList_SpriteObject_26_B4C238:
     dw $000A                                                             ;B4C238;
     dw UNUSED_SpriteObjectSpritemaps_26_0_B4D08B                         ;B4C23A;
@@ -7877,6 +8422,7 @@ UNUSED_InstList_SpriteObject_26_B4C238:
     dw Instruction_SpriteObject_GotoParameter                            ;B4C254;
     dw UNUSED_InstList_SpriteObject_26_B4C238                            ;B4C256;
 
+%anchor($B4C258)
 UNUSED_InstList_SpriteObject_27_B4C258:
     dw $000A                                                             ;B4C258;
     dw UNUSED_SpriteObjectSpritemaps_27_0_B4D1D4                         ;B4C25A;
@@ -7915,6 +8461,7 @@ UNUSED_InstList_SpriteObject_27_B4C258:
     dw Instruction_SpriteObject_GotoParameter                            ;B4C29C;
     dw UNUSED_InstList_SpriteObject_27_B4C258                            ;B4C29E;
 
+%anchor($B4C2A0)
 UNUSED_InstList_SpriteObject_28_B4C2A0:
     dw $000A                                                             ;B4C2A0;
     dw UNUSED_SpriteObjectSpritemaps_28_0_B4D2B3                         ;B4C2A2;
@@ -7931,6 +8478,7 @@ UNUSED_InstList_SpriteObject_28_B4C2A0:
     dw Instruction_SpriteObject_GotoParameter                            ;B4C2B8;
     dw UNUSED_InstList_SpriteObject_28_B4C2A0                            ;B4C2BA;
 
+%anchor($B4C2BC)
 UNUSED_InstList_SpriteObject_29_B4C2BC:
     dw $000A                                                             ;B4C2BC;
     dw UNUSED_SpriteObjectSpritemaps_29_0_B4D3FC                         ;B4C2BE;
@@ -7969,11 +8517,13 @@ UNUSED_InstList_SpriteObject_29_B4C2BC:
     dw Instruction_SpriteObject_GotoParameter                            ;B4C300;
     dw UNUSED_InstList_SpriteObject_29_B4C2BC                            ;B4C302;
 
+%anchor($B4C304)
 UNUSED_InstList_SpriteObject_2A_B4C304:
     dw $0001                                                             ;B4C304;
     dw UNUSED_SpriteObjectSpritemaps_2A_B4D2AC                           ;B4C306;
     dw Instruction_SpriteObject_GoBack4Bytes                             ;B4C308;
 
+%anchor($B4C30A)
 InstList_SpriteObject_2B_PuromiBody:
     dw $0003                                                             ;B4C30A;
     dw SpriteObjectSpritemaps_2B_Puromi_0                                ;B4C30C;
@@ -8002,6 +8552,7 @@ InstList_SpriteObject_2B_PuromiBody:
     dw Instruction_SpriteObject_GotoParameter                            ;B4C33A;
     dw InstList_SpriteObject_2B_PuromiBody                               ;B4C33C;
 
+%anchor($B4C33E)
 InstList_SpriteObject_2C_PuromiRightExplosion:
     dw $0002                                                             ;B4C33E;
     dw SpriteObjectSpritemaps_2C_PuromiRightExplosion_0                  ;B4C340;
@@ -8019,6 +8570,7 @@ InstList_SpriteObject_2C_PuromiRightExplosion:
     dw SpriteObjectSpritemaps_2C_PuromiRightExplosion_6                  ;B4C358;
     dw Instruction_SpriteObject_Delete                                   ;B4C35A;
 
+%anchor($B4C35C)
 InstList_SpriteObject_2D_PuromiLeftExplosion:
     dw $0002                                                             ;B4C35C;
     dw SpriteObjectSpritemaps_2D_PuromiLeftExplosion_0                   ;B4C35E;
@@ -8036,6 +8588,7 @@ InstList_SpriteObject_2D_PuromiLeftExplosion:
     dw SpriteObjectSpritemaps_2D_PuromiLeftExplosion_6                   ;B4C376;
     dw Instruction_SpriteObject_Delete                                   ;B4C378;
 
+%anchor($B4C37A)
 InstList_SpriteObject_2E_PuromiSplash:
     dw $0002                                                             ;B4C37A;
     dw SpriteObjectSpritemaps_2E_PuromiSplash_0                          ;B4C37C;
@@ -8049,6 +8602,7 @@ InstList_SpriteObject_2E_PuromiSplash:
     dw SpriteObjectSpritemaps_2E_PuromiSplash_4                          ;B4C38C;
     dw Instruction_SpriteObject_Delete                                   ;B4C38E;
 
+%anchor($B4C390)
 InstList_SpriteObject_30_FallingSparkTrail:
     dw $0003                                                             ;B4C390;
     dw SpriteObjectSpritemaps_30_FallingSparkTrail_0                     ;B4C392;
@@ -8060,6 +8614,7 @@ InstList_SpriteObject_30_FallingSparkTrail:
     dw SpriteObjectSpritemaps_30_FallingSparkTrail_3                     ;B4C39E;
     dw Instruction_SpriteObject_Delete                                   ;B4C3A0;
 
+%anchor($B4C3A2)
 UNSUED_InstList_SpriteObject_31_MetroidInsides_B4C3A2:
     dw $0010                                                             ;B4C3A2;
     dw UNUSED_SpriteObjectSpritemaps_31_MetroidInsides_0_B4D653          ;B4C3A4;
@@ -8074,6 +8629,7 @@ UNSUED_InstList_SpriteObject_31_MetroidInsides_B4C3A2:
     dw Instruction_SpriteObject_GotoParameter                            ;B4C3B6;
     dw UNSUED_InstList_SpriteObject_31_MetroidInsides_B4C3A2             ;B4C3B8;
 
+%anchor($B4C3BA)
 InstList_SpriteObject_32_MetroidElectricity:
     dw $0002                                                             ;B4C3BA;
     dw SpriteObjectSpritemaps_32_33_MetroidElectricity_0                 ;B4C3BC;
@@ -8138,6 +8694,7 @@ InstList_SpriteObject_32_MetroidElectricity:
     dw $0007                                                             ;B4C432;
     dw SpriteObject_DrawInst_Empty                                       ;B4C434;
 
+%anchor($B4C436)
 UNUSED_InstList_SpriteObject_33_B4C436:
     dw $0002                                                             ;B4C436;
     dw SpriteObjectSpritemaps_32_33_MetroidElectricity_6                 ;B4C438;
@@ -8204,6 +8761,7 @@ UNUSED_InstList_SpriteObject_33_B4C436:
     dw Instruction_SpriteObject_GotoParameter                            ;B4C4B2;
     dw UNUSED_InstList_SpriteObject_33_B4C436                            ;B4C4B4;
 
+%anchor($B4C4B6)
 InstList_SpriteObject_34_MetroidShell:
     dw $0001                                                             ;B4C4B6;
     dw SpriteObjectSpritemaps_34_35_36_MetroidShell_0                    ;B4C4B8;
@@ -8270,6 +8828,7 @@ InstList_SpriteObject_34_MetroidShell:
     dw $0001                                                             ;B4C532;
     dw SpriteObject_DrawInst_Empty                                       ;B4C534;
 
+%anchor($B4C536)
 UNUSED_InstList_SpriteObject_35_B4C536:
     dw $0001                                                             ;B4C536;
     dw SpriteObjectSpritemaps_34_35_36_MetroidShell_0                    ;B4C538;
@@ -8334,6 +8893,7 @@ UNUSED_InstList_SpriteObject_35_B4C536:
     dw Instruction_SpriteObject_GotoParameter                            ;B4C5AE;
     dw UNUSED_InstList_SpriteObject_35_B4C536                            ;B4C5B0;
 
+%anchor($B4C5B2)
 UNUSED_InstList_SpriteObject_36_B4C5B2:
     dw $0010                                                             ;B4C5B2;
     dw SpriteObjectSpritemaps_34_35_36_MetroidShell_0                    ;B4C5B4;
@@ -8346,6 +8906,7 @@ UNUSED_InstList_SpriteObject_36_B4C5B2:
     dw Instruction_SpriteObject_GotoParameter                            ;B4C5C2;
     dw UNUSED_InstList_SpriteObject_36_B4C5B2                            ;B4C5C4;
 
+%anchor($B4C5C6)
 InstList_SpriteObject_37_EnemyShot:
     dw $0002                                                             ;B4C5C6;
     dw SpriteObjectSpritemaps_37_EnemyShot_0                             ;B4C5C8;
@@ -8357,16 +8918,19 @@ InstList_SpriteObject_37_EnemyShot:
     dw SpriteObjectSpritemaps_37_EnemyShot_3                             ;B4C5D4;
     dw Instruction_SpriteObject_Delete                                   ;B4C5D6;
 
+%anchor($B4C5D8)
 InstList_SpriteObject_38_YappingMawBaseFacingDown:
     dw $0001                                                             ;B4C5D8;
     dw SpriteObjectSpritemaps_38_YappingMawBaseFacingDown                ;B4C5DA;
     dw Instruction_SpriteObject_GoBack4Bytes                             ;B4C5DC;
 
+%anchor($B4C5DE)
 InstList_SpriteObject_39_YappingMawBaseFacingUp:
     dw $0001                                                             ;B4C5DE;
     dw SpriteObjectSpritemaps_39_YappingMawBaseFacingUp                  ;B4C5E0;
     dw Instruction_SpriteObject_GoBack4Bytes                             ;B4C5E2;
 
+%anchor($B4C5E4)
 UNUSED_InstList_SpriteObject_3A_B4C5E4:
     dw $000A                                                             ;B4C5E4;
     dw UNUSED_SpriteObjectSpritemaps_3A_0_B4D8BD                         ;B4C5E6;
@@ -8387,6 +8951,7 @@ UNUSED_InstList_SpriteObject_3A_B4C5E4:
     dw Instruction_SpriteObject_GotoParameter                            ;B4C604;
     dw UNUSED_InstList_SpriteObject_3A_B4C5E4                            ;B4C606;
 
+%anchor($B4C608)
 InstList_SpriteObject_3B_EvirFacingLeft:
     dw $000A                                                             ;B4C608;
     dw SpriteObjectSpritemaps_3B_EvirFacingLeft_0                        ;B4C60A;
@@ -8399,6 +8964,7 @@ InstList_SpriteObject_3B_EvirFacingLeft:
     dw Instruction_SpriteObject_GotoParameter                            ;B4C618;
     dw InstList_SpriteObject_3B_EvirFacingLeft                           ;B4C61A;
 
+%anchor($B4C61C)
 InstList_SpriteObject_3C_EvirFacingRight:
     dw $000A                                                             ;B4C61C;
     dw SpriteObjectSpritemaps_3C_EvirFacingRight_0                       ;B4C61E;
@@ -8411,126 +8977,151 @@ InstList_SpriteObject_3C_EvirFacingRight:
     dw Instruction_SpriteObject_GotoParameter                            ;B4C62C;
     dw InstList_SpriteObject_3C_EvirFacingRight                          ;B4C62E;
 
+%anchor($B4C630)
 UNUSED_SpriteObjectSpritemaps_1E_0_B4C630:
     dw $0001,$01FC                                                       ;B4C630;
     db $FC                                                               ;B4C634;
     dw $0100                                                             ;B4C635;
 
+%anchor($B4C637)
 UNUSED_SpriteObjectSpritemaps_1E_1_B4C637:
     dw $0001,$01FC                                                       ;B4C637;
     db $FC                                                               ;B4C63B;
     dw $0101                                                             ;B4C63C;
 
+%anchor($B4C63E)
 UNUSED_SpriteObjectSpritemaps_1E_2_B4C63E:
     dw $0001,$01FC                                                       ;B4C63E;
     db $FC                                                               ;B4C642;
     dw $0102                                                             ;B4C643;
 
+%anchor($B4C645)
 UNUSED_SpriteObjectSpritemaps_1F_0_B4C645:
     dw $0001,$01FC                                                       ;B4C645;
     db $FC                                                               ;B4C649;
     dw $0103                                                             ;B4C64A;
 
+%anchor($B4C64C)
 UNUSED_SpriteObjectSpritemaps_1F_1_B4C645:
     dw $0001,$01FC                                                       ;B4C64C;
     db $FC                                                               ;B4C650;
     dw $0104                                                             ;B4C651;
 
+%anchor($B4C653)
 UNUSED_SpriteObjectSpritemaps_1F_2_B4C653:
     dw $0001,$01FC                                                       ;B4C653;
     db $FC                                                               ;B4C657;
     dw $0105                                                             ;B4C658;
 
+%anchor($B4C65A)
 UNUSED_SpriteObjectSpritemaps_20_0_B4C65A:
     dw $0001,$01FC                                                       ;B4C65A;
     db $FC                                                               ;B4C65E;
     dw $0106                                                             ;B4C65F;
 
+%anchor($B4C661)
 UNUSED_SpriteObjectSpritemaps_20_1_B4C661:
     dw $0001,$01FC                                                       ;B4C661;
     db $FC                                                               ;B4C665;
     dw $0107                                                             ;B4C666;
 
+%anchor($B4C668)
 UNUSED_SpriteObjectSpritemaps_20_2_B4C668:
     dw $0001,$01FC                                                       ;B4C668;
     db $FC                                                               ;B4C66C;
     dw $0108                                                             ;B4C66D;
 
+%anchor($B4C66F)
 UNUSED_SpriteObjectSpritemaps_21_0_B4C66F:
     dw $0001,$01FC                                                       ;B4C66F;
     db $FC                                                               ;B4C673;
     dw $8103                                                             ;B4C674;
 
+%anchor($B4C676)
 UNUSED_SpriteObjectSpritemaps_21_1_B4C676:
     dw $0001,$01FC                                                       ;B4C676;
     db $FC                                                               ;B4C67A;
     dw $8104                                                             ;B4C67B;
 
+%anchor($B4C67D)
 UNUSED_SpriteObjectSpritemaps_21_2_B4C67D:
     dw $0001,$01FC                                                       ;B4C67D;
     db $FC                                                               ;B4C681;
     dw $8105                                                             ;B4C682;
 
+%anchor($B4C684)
 UNUSED_SpriteObjectSpritemaps_22_0_B4C684:
     dw $0001,$01FC                                                       ;B4C684;
     db $FC                                                               ;B4C688;
     dw $8100                                                             ;B4C689;
 
+%anchor($B4C68B)
 UNUSED_SpriteObjectSpritemaps_22_1_B4C68B:
     dw $0001,$01FC                                                       ;B4C68B;
     db $FC                                                               ;B4C68F;
     dw $8101                                                             ;B4C690;
 
+%anchor($B4C692)
 UNUSED_SpriteObjectSpritemaps_22_2_B4C692:
     dw $0001,$01FC                                                       ;B4C692;
     db $FC                                                               ;B4C696;
     dw $8102                                                             ;B4C697;
 
+%anchor($B4C699)
 UNUSED_SpriteObjectSpritemaps_23_0_B4C699:
     dw $0001,$01FC                                                       ;B4C699;
     db $FC                                                               ;B4C69D;
     dw $C103                                                             ;B4C69E;
 
+%anchor($B4C6A0)
 UNUSED_SpriteObjectSpritemaps_23_1_B4C6A0:
     dw $0001,$01FC                                                       ;B4C6A0;
     db $FC                                                               ;B4C6A4;
     dw $C104                                                             ;B4C6A5;
 
+%anchor($B4C6A7)
 UNUSED_SpriteObjectSpritemaps_23_2_B4C6A7:
     dw $0001,$01FC                                                       ;B4C6A7;
     db $FC                                                               ;B4C6AB;
     dw $C105                                                             ;B4C6AC;
 
+%anchor($B4C6AE)
 UNUSED_SpriteObjectSpritemaps_24_0_B4C6AE:
     dw $0001,$01FC                                                       ;B4C6AE;
     db $FC                                                               ;B4C6B2;
     dw $4106                                                             ;B4C6B3;
 
+%anchor($B4C6B5)
 UNUSED_SpriteObjectSpritemaps_24_1_B4C6B5:
     dw $0001,$01FC                                                       ;B4C6B5;
     db $FC                                                               ;B4C6B9;
     dw $4107                                                             ;B4C6BA;
 
+%anchor($B4C6BC)
 UNUSED_SpriteObjectSpritemaps_24_2_B4C6BC:
     dw $0001,$01FC                                                       ;B4C6BC;
     db $FC                                                               ;B4C6C0;
     dw $4108                                                             ;B4C6C1;
 
+%anchor($B4C6C3)
 UNUSED_SpriteObjectSpritemaps_25_0_B4C6C3:
     dw $0001,$01FC                                                       ;B4C6C3;
     db $FC                                                               ;B4C6C7;
     dw $4103                                                             ;B4C6C8;
 
+%anchor($B4C6CA)
 UNUSED_SpriteObjectSpritemaps_25_1_B4C6CA:
     dw $0001,$01FC                                                       ;B4C6CA;
     db $FC                                                               ;B4C6CE;
     dw $4104                                                             ;B4C6CF;
 
+%anchor($B4C6D1)
 UNUSED_SpriteObjectSpritemaps_25_2_B4C6D1:
     dw $0001,$01FC                                                       ;B4C6D1;
     db $FC                                                               ;B4C6D5;
     dw $4105                                                             ;B4C6D6;
 
+%anchor($B4C6D8)
 UNUSED_SpriteObjectSpritemaps_11_RockParticles_0_B4C6D8:
     dw $0004,$0000                                                       ;B4C6D8;
     db $F8                                                               ;B4C6DC;
@@ -8542,6 +9133,7 @@ UNUSED_SpriteObjectSpritemaps_11_RockParticles_0_B4C6D8:
     db $F8                                                               ;B4C6EB;
     dw $3A2B                                                             ;B4C6EC;
 
+%anchor($B4C6EE)
 UNUSED_SpriteObjectSpritemaps_11_RockParticles_1_B4C6EE:
     dw $0004,$0002                                                       ;B4C6EE;
     db $F3                                                               ;B4C6F2;
@@ -8553,6 +9145,7 @@ UNUSED_SpriteObjectSpritemaps_11_RockParticles_1_B4C6EE:
     db $F3                                                               ;B4C701;
     dw $3A2B                                                             ;B4C702;
 
+%anchor($B4C704)
 UNUSED_SpriteObjectSpritemaps_11_RockParticles_2_B4C704:
     dw $0004,$0005                                                       ;B4C704;
     db $EE                                                               ;B4C708;
@@ -8564,6 +9157,7 @@ UNUSED_SpriteObjectSpritemaps_11_RockParticles_2_B4C704:
     db $EE                                                               ;B4C717;
     dw $3A2B                                                             ;B4C718;
 
+%anchor($B4C71A)
 UNUSED_SpriteObjectSpritemaps_11_RockParticles_3_B4C71A:
     dw $0004,$0007                                                       ;B4C71A;
     db $EC                                                               ;B4C71E;
@@ -8575,6 +9169,7 @@ UNUSED_SpriteObjectSpritemaps_11_RockParticles_3_B4C71A:
     db $EC                                                               ;B4C72D;
     dw $3A2B                                                             ;B4C72E;
 
+%anchor($B4C730)
 UNUSED_SpriteObjectSpritemaps_11_RockParticles_4_B4C730:
     dw $0004,$0009                                                       ;B4C730;
     db $EA                                                               ;B4C734;
@@ -8586,6 +9181,7 @@ UNUSED_SpriteObjectSpritemaps_11_RockParticles_4_B4C730:
     db $EA                                                               ;B4C743;
     dw $3A2B                                                             ;B4C744;
 
+%anchor($B4C746)
 UNUSED_SpriteObjectSpritemaps_11_RockParticles_5_B4C746:
     dw $0004,$000A                                                       ;B4C746;
     db $EA                                                               ;B4C74A;
@@ -8597,6 +9193,7 @@ UNUSED_SpriteObjectSpritemaps_11_RockParticles_5_B4C746:
     db $EA                                                               ;B4C759;
     dw $3A2B                                                             ;B4C75A;
 
+%anchor($B4C75C)
 UNUSED_SpriteObjectSpritemaps_11_RockParticles_6_B4C75C:
     dw $0004,$000C                                                       ;B4C75C;
     db $EB                                                               ;B4C760;
@@ -8608,6 +9205,7 @@ UNUSED_SpriteObjectSpritemaps_11_RockParticles_6_B4C75C:
     db $EB                                                               ;B4C76F;
     dw $3A2A                                                             ;B4C770;
 
+%anchor($B4C772)
 UNUSED_SpriteObjectSpritemaps_11_RockParticles_7_B4C772:
     dw $0004,$000E                                                       ;B4C772;
     db $EC                                                               ;B4C776;
@@ -8619,6 +9217,7 @@ UNUSED_SpriteObjectSpritemaps_11_RockParticles_7_B4C772:
     db $EC                                                               ;B4C785;
     dw $3A2A                                                             ;B4C786;
 
+%anchor($B4C788)
 UNUSED_SpriteObjectSpritemaps_11_RockParticles_8_B4C788:
     dw $0004,$0010                                                       ;B4C788;
     db $ED                                                               ;B4C78C;
@@ -8630,6 +9229,7 @@ UNUSED_SpriteObjectSpritemaps_11_RockParticles_8_B4C788:
     db $ED                                                               ;B4C79B;
     dw $3A29                                                             ;B4C79C;
 
+%anchor($B4C79E)
 UNUSED_SpriteObjectSpritemaps_11_RockParticles_9_B4C79E:
     dw $0004,$0012                                                       ;B4C79E;
     db $EE                                                               ;B4C7A2;
@@ -8641,6 +9241,7 @@ UNUSED_SpriteObjectSpritemaps_11_RockParticles_9_B4C79E:
     db $EE                                                               ;B4C7B1;
     dw $3A29                                                             ;B4C7B2;
 
+%anchor($B4C7B4)
 UNUSED_SpriteObjectSpritemaps_11_RockParticles_A_B4C7B4:
     dw $0004,$0013                                                       ;B4C7B4;
     db $F0                                                               ;B4C7B8;
@@ -8652,6 +9253,7 @@ UNUSED_SpriteObjectSpritemaps_11_RockParticles_A_B4C7B4:
     db $02                                                               ;B4C7C7;
     dw $3A28                                                             ;B4C7C8;
 
+%anchor($B4C7CA)
 UNUSED_SpriteObjectSpritemaps_11_RockParticles_B_B4C7CA:
     dw $0004,$0014                                                       ;B4C7CA;
     db $F2                                                               ;B4C7CE;
@@ -8663,6 +9265,7 @@ UNUSED_SpriteObjectSpritemaps_11_RockParticles_B_B4C7CA:
     db $04                                                               ;B4C7DD;
     dw $3A28                                                             ;B4C7DE;
 
+%anchor($B4C7E0)
 UNUSED_SpriteObjectSpritemaps_11_RockParticles_C_B4C7E0:
     dw $0004,$0015                                                       ;B4C7E0;
     db $F5                                                               ;B4C7E4;
@@ -8674,6 +9277,7 @@ UNUSED_SpriteObjectSpritemaps_11_RockParticles_C_B4C7E0:
     db $07                                                               ;B4C7F3;
     dw $3A28                                                             ;B4C7F4;
 
+%anchor($B4C7F6)
 UNUSED_SpriteObjectSpritemaps_11_RockParticles_D_B4C7F6:
     dw $0004,$0016                                                       ;B4C7F6;
     db $F9                                                               ;B4C7FA;
@@ -8685,6 +9289,7 @@ UNUSED_SpriteObjectSpritemaps_11_RockParticles_D_B4C7F6:
     db $0B                                                               ;B4C809;
     dw $3A28                                                             ;B4C80A;
 
+%anchor($B4C80C)
 UNUSED_SpriteObjectSpritemaps_11_RockParticles_E_B4C80C:
     dw $0004,$0017                                                       ;B4C80C;
     db $03                                                               ;B4C810;
@@ -8696,6 +9301,7 @@ UNUSED_SpriteObjectSpritemaps_11_RockParticles_E_B4C80C:
     db $11                                                               ;B4C81F;
     dw $3A28                                                             ;B4C820;
 
+%anchor($B4C822)
 UNUSED_SpriteObjectSpritemaps_11_RockParticles_F_B4C822:
     dw $0004,$0018                                                       ;B4C822;
     db $0A                                                               ;B4C826;
@@ -8707,11 +9313,13 @@ UNUSED_SpriteObjectSpritemaps_11_RockParticles_F_B4C822:
     db $18                                                               ;B4C835;
     dw $3A28                                                             ;B4C836;
 
+%anchor($B4C838)
 SpriteObjectSpritemaps_12_15_BigDustCloud_0:
     dw $0001,$01F7                                                       ;B4C838;
     db $F7                                                               ;B4C83C;
     dw $3A48                                                             ;B4C83D;
 
+%anchor($B4C83F)
 SpriteObjectSpritemaps_12_15_BigDustCloud_1:
     dw $0002,$0001                                                       ;B4C83F;
     db $01                                                               ;B4C843;
@@ -8719,6 +9327,7 @@ SpriteObjectSpritemaps_12_15_BigDustCloud_1:
     db $F3                                                               ;B4C848;
     dw $3A7C                                                             ;B4C849;
 
+%anchor($B4C84B)
 SpriteObjectSpritemaps_12_15_BigDustCloud_2:
     dw $0003,$81FD                                                       ;B4C84B;
     db $FD                                                               ;B4C84F;
@@ -8728,6 +9337,7 @@ SpriteObjectSpritemaps_12_15_BigDustCloud_2:
     db $F3                                                               ;B4C859;
     dw $3A7E                                                             ;B4C85A;
 
+%anchor($B4C85C)
 SpriteObjectSpritemaps_12_15_BigDustCloud_3:
     dw $0004,$0001                                                       ;B4C85C;
     db $F7                                                               ;B4C860;
@@ -8739,6 +9349,7 @@ SpriteObjectSpritemaps_12_15_BigDustCloud_3:
     db $F3                                                               ;B4C86F;
     dw $3A9A                                                             ;B4C870;
 
+%anchor($B4C872)
 SpriteObjectSpritemaps_13_14_15_BigDustCloud_4:
     dw $0004,$81FD                                                       ;B4C872;
     db $F3                                                               ;B4C876;
@@ -8750,6 +9361,7 @@ SpriteObjectSpritemaps_13_14_15_BigDustCloud_4:
     db $F3                                                               ;B4C885;
     dw $3A9C                                                             ;B4C886;
 
+%anchor($B4C888)
 SpriteObjectSpritemaps_13_14_15_BigDustCloud_5:
     dw $0003,$81FD                                                       ;B4C888;
     db $F3                                                               ;B4C88C;
@@ -8759,6 +9371,7 @@ SpriteObjectSpritemaps_13_14_15_BigDustCloud_5:
     db $FD                                                               ;B4C896;
     dw $3A9A                                                             ;B4C897;
 
+%anchor($B4C899)
 SpriteObjectSpritemaps_13_14_15_BigDustCloud_6:
     dw $0002,$81FD                                                       ;B4C899;
     db $F3                                                               ;B4C89D;
@@ -8766,21 +9379,25 @@ SpriteObjectSpritemaps_13_14_15_BigDustCloud_6:
     db $FD                                                               ;B4C8A2;
     dw $3A9C                                                             ;B4C8A3;
 
+%anchor($B4C8A5)
 SpriteObjectSpritemaps_13_14_15_BigDustCloud_7:
     dw $0001,$81FD                                                       ;B4C8A5;
     db $F3                                                               ;B4C8A9;
     dw $3A9C                                                             ;B4C8AA;
 
+%anchor($B4C8AC)
 UNUSED_SpriteObjectSpritemaps_13_14_16_DustCloud_Beam_B4C8AC:
     dw $0001,$01FC                                                       ;B4C8AC;
     db $FC                                                               ;B4C8B0;
     dw $3A6B                                                             ;B4C8B1;
 
+%anchor($B4C8B3)
 UNUSED_SpriteObjectSpritemaps_13_14_16_DustCloud_Beam_B4C8B3:
     dw $0001,$01FC                                                       ;B4C8B3;
     db $FC                                                               ;B4C8B7;
     dw $3A6C                                                             ;B4C8B8;
 
+%anchor($B4C8BA)
 UNUSED_SpriteObjectSpritemaps_14_16_DustCloud_Beam_B4C8BA:
     dw $0002,$01F8                                                       ;B4C8BA;
     db $FC                                                               ;B4C8BE;
@@ -8788,6 +9405,7 @@ UNUSED_SpriteObjectSpritemaps_14_16_DustCloud_Beam_B4C8BA:
     db $FC                                                               ;B4C8C3;
     dw $3A6B                                                             ;B4C8C4;
 
+%anchor($B4C8C6)
 UNUSED_SpriteObjectSpritemaps_16_DustCloud_Beam_B4C8C6:
     dw $0002,$01F8                                                       ;B4C8C6;
     db $FC                                                               ;B4C8CA;
@@ -8795,6 +9413,7 @@ UNUSED_SpriteObjectSpritemaps_16_DustCloud_Beam_B4C8C6:
     db $FC                                                               ;B4C8CF;
     dw $3A6C                                                             ;B4C8D0;
 
+%anchor($B4C8D2)
 UNUSED_SpriteObjectSpritemaps_16_DustCloud_Beam_B4C8D2:
     dw $0003,$01F4                                                       ;B4C8D2;
     db $FC                                                               ;B4C8D6;
@@ -8804,6 +9423,7 @@ UNUSED_SpriteObjectSpritemaps_16_DustCloud_Beam_B4C8D2:
     db $FC                                                               ;B4C8E0;
     dw $3A6C                                                             ;B4C8E1;
 
+%anchor($B4C8E3)
 UNUSED_SpriteObjectSpritemaps_16_DustCloud_Beam_B4C8E2:
     dw $0003,$0004                                                       ;B4C8E3;
     db $FC                                                               ;B4C8E7;
@@ -8813,6 +9433,7 @@ UNUSED_SpriteObjectSpritemaps_16_DustCloud_Beam_B4C8E2:
     db $FC                                                               ;B4C8F1;
     dw $3A6B                                                             ;B4C8F2;
 
+%anchor($B4C8F4)
 UNUSED_SpriteObjectSpritemaps_16_17_DustCloud_Beam_B4C8F4:
     dw $0004,$0008                                                       ;B4C8F4;
     db $FC                                                               ;B4C8F8;
@@ -8824,6 +9445,7 @@ UNUSED_SpriteObjectSpritemaps_16_17_DustCloud_Beam_B4C8F4:
     db $FC                                                               ;B4C907;
     dw $3A6C                                                             ;B4C908;
 
+%anchor($B4C90A)
 UNUSED_SpriteObjectSpritemaps_16_17_DustCloud_Beam_B4C90A:
     dw $0004,$0008                                                       ;B4C90A;
     db $FC                                                               ;B4C90E;
@@ -8835,11 +9457,13 @@ UNUSED_SpriteObjectSpritemaps_16_17_DustCloud_Beam_B4C90A:
     db $FC                                                               ;B4C91D;
     dw $3A6B                                                             ;B4C91E;
 
+%anchor($B4C920)
 SpriteObjectSpritemaps_18_ShortDraygonBreathBubbles_0:
     dw $0001,$01FC                                                       ;B4C920;
     db $FC                                                               ;B4C924;
     dw $3A25                                                             ;B4C925;
 
+%anchor($B4C927)
 SpriteObjectSpritemaps_18_ShortDraygonBreathBubbles_1:
     dw $0003,$0000                                                       ;B4C927;
     db $F8                                                               ;B4C92B;
@@ -8849,6 +9473,7 @@ SpriteObjectSpritemaps_18_ShortDraygonBreathBubbles_1:
     db $FB                                                               ;B4C935;
     dw $3A25                                                             ;B4C936;
 
+%anchor($B4C938)
 SpriteObjectSpritemaps_18_ShortDraygonBreathBubbles_2:
     dw $0003,$0001                                                       ;B4C938;
     db $F7                                                               ;B4C93C;
@@ -8858,6 +9483,7 @@ SpriteObjectSpritemaps_18_ShortDraygonBreathBubbles_2:
     db $FA                                                               ;B4C946;
     dw $3A25                                                             ;B4C947;
 
+%anchor($B4C949)
 SpriteObjectSpritemaps_18_ShortDraygonBreathBubbles_3:
     dw $0003,$0001                                                       ;B4C949;
     db $F5                                                               ;B4C94D;
@@ -8867,6 +9493,7 @@ SpriteObjectSpritemaps_18_ShortDraygonBreathBubbles_3:
     db $F1                                                               ;B4C957;
     dw $3A43                                                             ;B4C958;
 
+%anchor($B4C95A)
 SpriteObjectSpritemaps_18_ShortDraygonBreathBubbles_4:
     dw $0003,$0001                                                       ;B4C95A;
     db $F3                                                               ;B4C95E;
@@ -8876,6 +9503,7 @@ SpriteObjectSpritemaps_18_ShortDraygonBreathBubbles_4:
     db $EE                                                               ;B4C968;
     dw $3A43                                                             ;B4C969;
 
+%anchor($B4C96B)
 SpriteObjectSpritemaps_18_ShortDraygonBreathBubbles_5:
     dw $0003,$0000                                                       ;B4C96B;
     db $F0                                                               ;B4C96F;
@@ -8885,6 +9513,7 @@ SpriteObjectSpritemaps_18_ShortDraygonBreathBubbles_5:
     db $ED                                                               ;B4C979;
     dw $3A40                                                             ;B4C97A;
 
+%anchor($B4C97C)
 SpriteObjectSpritemaps_18_ShortDraygonBreathBubbles_6:
     dw $0003,$0000                                                       ;B4C97C;
     db $EE                                                               ;B4C980;
@@ -8894,6 +9523,7 @@ SpriteObjectSpritemaps_18_ShortDraygonBreathBubbles_6:
     db $EC                                                               ;B4C98A;
     dw $3A40                                                             ;B4C98B;
 
+%anchor($B4C98D)
 SpriteObjectSpritemaps_18_ShortDraygonBreathBubbles_7:
     dw $0002,$0000                                                       ;B4C98D;
     db $EC                                                               ;B4C991;
@@ -8901,11 +9531,13 @@ SpriteObjectSpritemaps_18_ShortDraygonBreathBubbles_7:
     db $F0                                                               ;B4C996;
     dw $3A40                                                             ;B4C997;
 
+%anchor($B4C999)
 SpriteObjectSpritemaps_18_ShortDraygonBreathBubbles_8:
     dw $0001,$01FC                                                       ;B4C999;
     db $EE                                                               ;B4C99D;
     dw $3A40                                                             ;B4C99E;
 
+%anchor($B4C9A0)
 UNUSED_SpriteObjectSpritemaps_19_SaveStationElect_0_B4C9A0:
     dw $0004,$0008                                                       ;B4C9A0;
     db $E0                                                               ;B4C9A4;
@@ -8917,6 +9549,7 @@ UNUSED_SpriteObjectSpritemaps_19_SaveStationElect_0_B4C9A0:
     db $E0                                                               ;B4C9B3;
     dw $3A6F                                                             ;B4C9B4;
 
+%anchor($B4C9B6)
 UNUSED_SpriteObjectSpritemaps_19_SaveStationElect_1_B4C9B6:
     dw $0004,$0008                                                       ;B4C9B6;
     db $E8                                                               ;B4C9BA;
@@ -8928,6 +9561,7 @@ UNUSED_SpriteObjectSpritemaps_19_SaveStationElect_1_B4C9B6:
     db $E8                                                               ;B4C9C9;
     dw $3A6F                                                             ;B4C9CA;
 
+%anchor($B4C9CC)
 UNUSED_SpriteObjectSpritemaps_19_SaveStationElect_2_B4C9CC:
     dw $0004,$0008                                                       ;B4C9CC;
     db $F0                                                               ;B4C9D0;
@@ -8939,6 +9573,7 @@ UNUSED_SpriteObjectSpritemaps_19_SaveStationElect_2_B4C9CC:
     db $F0                                                               ;B4C9DF;
     dw $3A6F                                                             ;B4C9E0;
 
+%anchor($B4C9E2)
 UNUSED_SpriteObjectSpritemaps_19_SaveStationElect_3_B4C9E2:
     dw $0004,$0008                                                       ;B4C9E2;
     db $F8                                                               ;B4C9E6;
@@ -8950,6 +9585,7 @@ UNUSED_SpriteObjectSpritemaps_19_SaveStationElect_3_B4C9E2:
     db $F8                                                               ;B4C9F5;
     dw $3A6F                                                             ;B4C9F6;
 
+%anchor($B4C9F8)
 UNUSED_SpriteObjectSpritemaps_19_SaveStationElect_4_B4C9F8:
     dw $0004,$0008                                                       ;B4C9F8;
     db $00                                                               ;B4C9FC;
@@ -8961,6 +9597,7 @@ UNUSED_SpriteObjectSpritemaps_19_SaveStationElect_4_B4C9F8:
     db $00                                                               ;B4CA0B;
     dw $3A6F                                                             ;B4CA0C;
 
+%anchor($B4CA0E)
 UNUSED_SpriteObjectSpritemaps_19_SaveStationElect_5_B4CA0E:
     dw $0004,$0008                                                       ;B4CA0E;
     db $08                                                               ;B4CA12;
@@ -8972,6 +9609,7 @@ UNUSED_SpriteObjectSpritemaps_19_SaveStationElect_5_B4CA0E:
     db $08                                                               ;B4CA21;
     dw $3A6F                                                             ;B4CA22;
 
+%anchor($B4CA24)
 UNUSED_SpriteObjectSpritemaps_19_SaveStationElect_6_B4CA24:
     dw $0004,$0008                                                       ;B4CA24;
     db $10                                                               ;B4CA28;
@@ -8983,6 +9621,7 @@ UNUSED_SpriteObjectSpritemaps_19_SaveStationElect_6_B4CA24:
     db $10                                                               ;B4CA37;
     dw $3A6F                                                             ;B4CA38;
 
+%anchor($B4CA3A)
 UNUSED_SpriteObjectSpritemaps_19_SaveStationElect_7_B4CA3A:
     dw $0004,$0008                                                       ;B4CA3A;
     db $18                                                               ;B4CA3E;
@@ -8994,6 +9633,7 @@ UNUSED_SpriteObjectSpritemaps_19_SaveStationElect_7_B4CA3A:
     db $18                                                               ;B4CA4D;
     dw $3A6F                                                             ;B4CA4E;
 
+%anchor($B4CA50)
 UNUSED_SpriteObjectSpritemaps_1A_1B_VerticalGate_0_B4CA50:
     dw $0002,$0000                                                       ;B4CA50;
     db $FC                                                               ;B4CA54;
@@ -9001,11 +9641,13 @@ UNUSED_SpriteObjectSpritemaps_1A_1B_VerticalGate_0_B4CA50:
     db $FC                                                               ;B4CA59;
     dw $3ABE                                                             ;B4CA5A;
 
+%anchor($B4CA5C)
 UNUSED_SpriteObjectSpritemaps_1A_1B_VerticalGate_1_B4CA5C:
     dw $0001,$81F8                                                       ;B4CA5C;
     db $F8                                                               ;B4CA60;
     dw $3ABE                                                             ;B4CA61;
 
+%anchor($B4CA63)
 UNUSED_SpriteObjectSpritemaps_1A_1B_VerticalGate_2_B4CA63:
     dw $0002,$81F8                                                       ;B4CA63;
     db $FC                                                               ;B4CA67;
@@ -9013,6 +9655,7 @@ UNUSED_SpriteObjectSpritemaps_1A_1B_VerticalGate_2_B4CA63:
     db $F4                                                               ;B4CA6C;
     dw $3ABE                                                             ;B4CA6D;
 
+%anchor($B4CA6F)
 UNUSED_SpriteObjectSpritemaps_1A_1B_VerticalGate_3_B4CA6F:
     dw $0002,$81F8                                                       ;B4CA6F;
     db $00                                                               ;B4CA73;
@@ -9020,6 +9663,7 @@ UNUSED_SpriteObjectSpritemaps_1A_1B_VerticalGate_3_B4CA6F:
     db $F0                                                               ;B4CA78;
     dw $3ABE                                                             ;B4CA79;
 
+%anchor($B4CA7B)
 UNUSED_SpriteObjectSpritemaps_1A_1B_VerticalGate_4_B4CA7B:
     dw $0003,$81F8                                                       ;B4CA7B;
     db $04                                                               ;B4CA7F;
@@ -9029,6 +9673,7 @@ UNUSED_SpriteObjectSpritemaps_1A_1B_VerticalGate_4_B4CA7B:
     db $EC                                                               ;B4CA89;
     dw $3ABE                                                             ;B4CA8A;
 
+%anchor($B4CA8C)
 UNUSED_SpriteObjectSpritemaps_1A_1B_VerticalGate_5_B4CA8C:
     dw $0003,$81F8                                                       ;B4CA8C;
     db $08                                                               ;B4CA90;
@@ -9038,6 +9683,7 @@ UNUSED_SpriteObjectSpritemaps_1A_1B_VerticalGate_5_B4CA8C:
     db $E8                                                               ;B4CA9A;
     dw $3ABE                                                             ;B4CA9B;
 
+%anchor($B4CA9D)
 UNUSED_SpriteObjectSpritemaps_1A_1B_VerticalGate_6_B4CA9D:
     dw $0004,$81F8                                                       ;B4CA9D;
     db $0C                                                               ;B4CAA1;
@@ -9049,6 +9695,7 @@ UNUSED_SpriteObjectSpritemaps_1A_1B_VerticalGate_6_B4CA9D:
     db $E4                                                               ;B4CAB0;
     dw $3ABE                                                             ;B4CAB1;
 
+%anchor($B4CAB3)
 UNUSED_SpriteObjectSpritemaps_1A_1B_VerticalGate_7_B4CAB3:
     dw $0004,$81F8                                                       ;B4CAB3;
     db $10                                                               ;B4CAB7;
@@ -9060,21 +9707,25 @@ UNUSED_SpriteObjectSpritemaps_1A_1B_VerticalGate_7_B4CAB3:
     db $E0                                                               ;B4CAC6;
     dw $3ABE                                                             ;B4CAC7;
 
+%anchor($B4CAC9)
 UNUSED_SpriteObjectSpritemaps_0_BeamCharge_0_B4CAC9:
     dw $0001,$01FC                                                       ;B4CAC9;
     db $FC                                                               ;B4CACD;
     dw $3C53                                                             ;B4CACE;
 
+%anchor($B4CAD0)
 UNUSED_SpriteObjectSpritemaps_0_BeamCharge_1_B4CAD0:
     dw $0001,$01FC                                                       ;B4CAD0;
     db $FC                                                               ;B4CAD4;
     dw $3C52                                                             ;B4CAD5;
 
+%anchor($B4CAD7)
 UNUSED_SpriteObjectSpritemaps_0_BeamCharge_2_B4CAD7:
     dw $0001,$01FC                                                       ;B4CAD7;
     db $FC                                                               ;B4CADB;
     dw $3C51                                                             ;B4CADC;
 
+%anchor($B4CADE)
 UNUSED_SpriteObjectSpritemaps_0_BeamCharge_3_B4CADE:
     dw $0004,$01F8                                                       ;B4CADE;
     db $00                                                               ;B4CAE2;
@@ -9086,6 +9737,7 @@ UNUSED_SpriteObjectSpritemaps_0_BeamCharge_3_B4CADE:
     db $F8                                                               ;B4CAF1;
     dw $3C50                                                             ;B4CAF2;
 
+%anchor($B4CAF4)
 UNUSED_SpriteObjectSpritemaps_1_MBElbowParticle_0_B4CAF4:
     dw $0003,$0000                                                       ;B4CAF4;
     db $0C                                                               ;B4CAF8;
@@ -9095,6 +9747,7 @@ UNUSED_SpriteObjectSpritemaps_1_MBElbowParticle_0_B4CAF4:
     db $F4                                                               ;B4CB02;
     dw $3A5B                                                             ;B4CB03;
 
+%anchor($B4CB05)
 UNUSED_SpriteObjectSpritemaps_1_MBElbowParticle_1_B4CB05:
     dw $0003,$01FD                                                       ;B4CB05;
     db $0A                                                               ;B4CB09;
@@ -9104,6 +9757,7 @@ UNUSED_SpriteObjectSpritemaps_1_MBElbowParticle_1_B4CB05:
     db $F6                                                               ;B4CB13;
     dw $3A5C                                                             ;B4CB14;
 
+%anchor($B4CB16)
 UNUSED_SpriteObjectSpritemaps_1_MBElbowParticle_2_B4CB16:
     dw $0003,$01FC                                                       ;B4CB16;
     db $08                                                               ;B4CB1A;
@@ -9113,6 +9767,7 @@ UNUSED_SpriteObjectSpritemaps_1_MBElbowParticle_2_B4CB16:
     db $F8                                                               ;B4CB24;
     dw $3A5C                                                             ;B4CB25;
 
+%anchor($B4CB27)
 UNUSED_SpriteObjectSpritemaps_1_MBElbowParticle_3_B4CB27:
     dw $0003,$0002                                                       ;B4CB27;
     db $F2                                                               ;B4CB2B;
@@ -9122,6 +9777,7 @@ UNUSED_SpriteObjectSpritemaps_1_MBElbowParticle_3_B4CB27:
     db $FA                                                               ;B4CB35;
     dw $3A5D                                                             ;B4CB36;
 
+%anchor($B4CB38)
 UNUSED_SpriteObjectSpritemaps_1_MBElbowParticle_4_B4CB38:
     dw $0003,$01FB                                                       ;B4CB38;
     db $04                                                               ;B4CB3C;
@@ -9131,6 +9787,7 @@ UNUSED_SpriteObjectSpritemaps_1_MBElbowParticle_4_B4CB38:
     db $F4                                                               ;B4CB46;
     dw $3A5D                                                             ;B4CB47;
 
+%anchor($B4CB49)
 UNUSED_SpriteObjectSpritemaps_1_MBElbowParticle_5_B4CB49:
     dw $0003,$01FB                                                       ;B4CB49;
     db $02                                                               ;B4CB4D;
@@ -9140,6 +9797,7 @@ UNUSED_SpriteObjectSpritemaps_1_MBElbowParticle_5_B4CB49:
     db $F6                                                               ;B4CB57;
     dw $3A5D                                                             ;B4CB58;
 
+%anchor($B4CB5A)
 UNUSED_SpriteObjectSpritemaps_2_MBElbowEnergy_0_B4CB5A:
     dw $0003,$0000                                                       ;B4CB5A;
     db $EC                                                               ;B4CB5E;
@@ -9149,6 +9807,7 @@ UNUSED_SpriteObjectSpritemaps_2_MBElbowEnergy_0_B4CB5A:
     db $04                                                               ;B4CB68;
     dw $BA5B                                                             ;B4CB69;
 
+%anchor($B4CB6B)
 UNUSED_SpriteObjectSpritemaps_2_MBElbowEnergy_1_B4CB6B:
     dw $0003,$01FE                                                       ;B4CB6B;
     db $EE                                                               ;B4CB6F;
@@ -9158,6 +9817,7 @@ UNUSED_SpriteObjectSpritemaps_2_MBElbowEnergy_1_B4CB6B:
     db $02                                                               ;B4CB79;
     dw $BA5C                                                             ;B4CB7A;
 
+%anchor($B4CB7C)
 UNUSED_SpriteObjectSpritemaps_2_MBElbowEnergy_2_B4CB7C:
     dw $0003,$0004                                                       ;B4CB7C;
     db $08                                                               ;B4CB80;
@@ -9167,6 +9827,7 @@ UNUSED_SpriteObjectSpritemaps_2_MBElbowEnergy_2_B4CB7C:
     db $F0                                                               ;B4CB8A;
     dw $BA5C                                                             ;B4CB8B;
 
+%anchor($B4CB8D)
 UNUSED_SpriteObjectSpritemaps_2_MBElbowEnergy_3_B4CB8D:
     dw $0003,$0002                                                       ;B4CB8D;
     db $06                                                               ;B4CB91;
@@ -9176,6 +9837,7 @@ UNUSED_SpriteObjectSpritemaps_2_MBElbowEnergy_3_B4CB8D:
     db $FE                                                               ;B4CB9B;
     dw $BA5D                                                             ;B4CB9C;
 
+%anchor($B4CB9E)
 UNUSED_SpriteObjectSpritemaps_2_MBElbowEnergy_4_B4CB9E:
     dw $0003,$01FC                                                       ;B4CB9E;
     db $F4                                                               ;B4CBA2;
@@ -9185,6 +9847,7 @@ UNUSED_SpriteObjectSpritemaps_2_MBElbowEnergy_4_B4CB9E:
     db $04                                                               ;B4CBAC;
     dw $BA5D                                                             ;B4CBAD;
 
+%anchor($B4CBAF)
 UNUSED_SpriteObjectSpritemaps_2_MBElbowEnergy_5_B4CBAF:
     dw $0003,$01FC                                                       ;B4CBAF;
     db $F6                                                               ;B4CBB3;
@@ -9194,11 +9857,13 @@ UNUSED_SpriteObjectSpritemaps_2_MBElbowEnergy_5_B4CBAF:
     db $02                                                               ;B4CBBD;
     dw $BA5D                                                             ;B4CBBE;
 
+%anchor($B4CBC0)
 SpriteObjectSpritemaps_3_SmallExplosion_0:
     dw $0001,$01FC                                                       ;B4CBC0;
     db $FC                                                               ;B4CBC4;
     dw $3A5F                                                             ;B4CBC5;
 
+%anchor($B4CBC7)
 SpriteObjectSpritemaps_3_SmallExplosion_1:
     dw $0004,$0000                                                       ;B4CBC7;
     db $00                                                               ;B4CBCB;
@@ -9210,6 +9875,7 @@ SpriteObjectSpritemaps_3_SmallExplosion_1:
     db $F8                                                               ;B4CBDA;
     dw $3A8A                                                             ;B4CBDB;
 
+%anchor($B4CBDD)
 SpriteObjectSpritemaps_3_SmallExplosion_2:
     dw $0004,$8000                                                       ;B4CBDD;
     db $00                                                               ;B4CBE1;
@@ -9221,6 +9887,7 @@ SpriteObjectSpritemaps_3_SmallExplosion_2:
     db $F0                                                               ;B4CBF0;
     dw $3A90                                                             ;B4CBF1;
 
+%anchor($B4CBF3)
 SpriteObjectSpritemaps_3_SmallExplosion_3:
     dw $0004,$8000                                                       ;B4CBF3;
     db $00                                                               ;B4CBF7;
@@ -9232,6 +9899,7 @@ SpriteObjectSpritemaps_3_SmallExplosion_3:
     db $F0                                                               ;B4CC06;
     dw $3A92                                                             ;B4CC07;
 
+%anchor($B4CC09)
 SpriteObjectSpritemaps_3_SmallExplosion_4:
     dw $0004,$8000                                                       ;B4CC09;
     db $00                                                               ;B4CC0D;
@@ -9243,6 +9911,7 @@ SpriteObjectSpritemaps_3_SmallExplosion_4:
     db $F0                                                               ;B4CC1C;
     dw $3A94                                                             ;B4CC1D;
 
+%anchor($B4CC1F)
 SpriteObjectSpritemaps_3_SmallExplosion_5:
     dw $0004,$8000                                                       ;B4CC1F;
     db $00                                                               ;B4CC23;
@@ -9254,6 +9923,7 @@ SpriteObjectSpritemaps_3_SmallExplosion_5:
     db $F0                                                               ;B4CC32;
     dw $3A96                                                             ;B4CC33;
 
+%anchor($B4CC35)
 UNSUED_SpriteObjectSpritemaps_4_BombExplosion_0_B4CC35:
     dw $0004,$0000                                                       ;B4CC35;
     db $00                                                               ;B4CC39;
@@ -9265,6 +9935,7 @@ UNSUED_SpriteObjectSpritemaps_4_BombExplosion_0_B4CC35:
     db $F8                                                               ;B4CC48;
     dw $3A8B                                                             ;B4CC49;
 
+%anchor($B4CC4B)
 UNSUED_SpriteObjectSpritemaps_4_BombExplosion_1_B4CC4B:
     dw $0004,$0000                                                       ;B4CC4B;
     db $00                                                               ;B4CC4F;
@@ -9276,6 +9947,7 @@ UNSUED_SpriteObjectSpritemaps_4_BombExplosion_1_B4CC4B:
     db $F8                                                               ;B4CC5E;
     dw $3A7A                                                             ;B4CC5F;
 
+%anchor($B4CC61)
 UNSUED_SpriteObjectSpritemaps_4_BombExplosion_2_B4CC61:
     dw $0004,$8000                                                       ;B4CC61;
     db $00                                                               ;B4CC65;
@@ -9287,6 +9959,7 @@ UNSUED_SpriteObjectSpritemaps_4_BombExplosion_2_B4CC61:
     db $F0                                                               ;B4CC74;
     dw $3A70                                                             ;B4CC75;
 
+%anchor($B4CC77)
 UNSUED_SpriteObjectSpritemaps_4_BombExplosion_3_B4CC77:
     dw $0004,$8000                                                       ;B4CC77;
     db $00                                                               ;B4CC7B;
@@ -9298,6 +9971,7 @@ UNSUED_SpriteObjectSpritemaps_4_BombExplosion_3_B4CC77:
     db $F0                                                               ;B4CC8A;
     dw $3A72                                                             ;B4CC8B;
 
+%anchor($B4CC8D)
 UNSUED_SpriteObjectSpritemaps_4_BombExplosion_4_B4CC8D:
     dw $0004,$8000                                                       ;B4CC8D;
     db $00                                                               ;B4CC91;
@@ -9309,6 +9983,7 @@ UNSUED_SpriteObjectSpritemaps_4_BombExplosion_4_B4CC8D:
     db $F0                                                               ;B4CCA0;
     dw $3A74                                                             ;B4CCA1;
 
+%anchor($B4CCA3)
 UNSUED_SpriteObjectSpritemaps__B4CCA3:
     dw $0004,$01F8                                                       ;B4CCA3;
     db $00                                                               ;B4CCA7;
@@ -9320,56 +9995,67 @@ UNSUED_SpriteObjectSpritemaps__B4CCA3:
     db $F8                                                               ;B4CCB6;
     dw $3A5E                                                             ;B4CCB7;
 
+%anchor($B4CCB9)
 UNSUED_SpriteObjectSpritemaps_5_BeamTrail_0_B4CCB9:
     dw $0001,$01FC                                                       ;B4CCB9;
     db $FC                                                               ;B4CCBD;
     dw $3C38                                                             ;B4CCBE;
 
+%anchor($B4CCC0)
 UNSUED_SpriteObjectSpritemaps_5_BeamTrail_1_B4CCC0:
     dw $0001,$01FC                                                       ;B4CCC0;
     db $FC                                                               ;B4CCC4;
     dw $3C39                                                             ;B4CCC5;
 
+%anchor($B4CCC7)
 UNSUED_SpriteObjectSpritemaps_5_BeamTrail_2_B4CCC7:
     dw $0001,$01FC                                                       ;B4CCC7;
     db $FC                                                               ;B4CCCB;
     dw $3C3A                                                             ;B4CCCC;
 
+%anchor($B4CCCE)
 UNSUED_SpriteObjectSpritemaps_5_BeamTrail_3_B4CCCE:
     dw $0001,$01FC                                                       ;B4CCCE;
     db $FC                                                               ;B4CCD2;
     dw $3C3B                                                             ;B4CCD3;
 
+%anchor($B4CCD5)
 UNSUED_SpriteObjectSpritemaps_7_PowerBomb_0_B4CCD5:
     dw $0001,$01FC                                                       ;B4CCD5;
     db $FC                                                               ;B4CCD9;
     dw $3A26                                                             ;B4CCDA;
 
+%anchor($B4CCDC)
 UNSUED_SpriteObjectSpritemaps_7_PowerBomb_1_B4CCDC:
     dw $0001,$01FC                                                       ;B4CCDC;
     db $FC                                                               ;B4CCE0;
     dw $3A27                                                             ;B4CCE1;
 
+%anchor($B4CCE3)
 UNSUED_SpriteObjectSpritemaps_7_PowerBomb_2_B4CCE3:
     dw $0001,$01FC                                                       ;B4CCE3;
     db $FC                                                               ;B4CCE7;
     dw $3A7B                                                             ;B4CCE8;
 
+%anchor($B4CCEA)
 UNSUED_SpriteObjectSpritemaps_B4CCEA:
     dw $0001,$01FC                                                       ;B4CCEA;
     db $FC                                                               ;B4CCEE;
     dw $3A5F                                                             ;B4CCEF;
 
+%anchor($B4CCF1)
 SpriteObjectSpritemaps_6_DudShot_0:
     dw $0001,$01FC                                                       ;B4CCF1;
     db $FC                                                               ;B4CCF5;
     dw $3A53                                                             ;B4CCF6;
 
+%anchor($B4CCF8)
 SpriteObjectSpritemaps_6_DudShot_1:
     dw $0001,$01FC                                                       ;B4CCF8;
     db $FC                                                               ;B4CCFC;
     dw $3A51                                                             ;B4CCFD;
 
+%anchor($B4CCFF)
 SpriteObjectSpritemaps_6_DudShot_2:
     dw $0004,$0000                                                       ;B4CCFF;
     db $00                                                               ;B4CD03;
@@ -9381,6 +10067,7 @@ SpriteObjectSpritemaps_6_DudShot_2:
     db $F8                                                               ;B4CD12;
     dw $3A60                                                             ;B4CD13;
 
+%anchor($B4CD15)
 SpriteObjectSpritemaps_6_DudShot_3:
     dw $0004,$0000                                                       ;B4CD15;
     db $00                                                               ;B4CD19;
@@ -9392,6 +10079,7 @@ SpriteObjectSpritemaps_6_DudShot_3:
     db $F8                                                               ;B4CD28;
     dw $3A61                                                             ;B4CD29;
 
+%anchor($B4CD2B)
 SpriteObjectSpritemaps_6_DudShot_4:
     dw $0004,$0000                                                       ;B4CD2B;
     db $00                                                               ;B4CD2F;
@@ -9403,6 +10091,7 @@ SpriteObjectSpritemaps_6_DudShot_4:
     db $F8                                                               ;B4CD3E;
     dw $3A62                                                             ;B4CD3F;
 
+%anchor($B4CD41)
 SpriteObjectSpritemaps_6_DudShot_5:
     dw $0004,$0000                                                       ;B4CD41;
     db $00                                                               ;B4CD45;
@@ -9414,6 +10103,7 @@ SpriteObjectSpritemaps_6_DudShot_5:
     db $F8                                                               ;B4CD54;
     dw $3A63                                                             ;B4CD55;
 
+%anchor($B4CD57)
 UNSUED_SpriteObjectSpritemaps_8_1C_ElevatorPad_0_B4CD57:
     dw $0004,$01F2                                                       ;B4CD57;
     db $FC                                                               ;B4CD5B;
@@ -9425,6 +10115,7 @@ UNSUED_SpriteObjectSpritemaps_8_1C_ElevatorPad_0_B4CD57:
     db $FC                                                               ;B4CD6A;
     dw $3A6C                                                             ;B4CD6B;
 
+%anchor($B4CD6D)
 UNSUED_SpriteObjectSpritemaps_8_1C_ElevatorPad_1_B4CD6D:
     dw $0004,$0000                                                       ;B4CD6D;
     db $FC                                                               ;B4CD71;
@@ -9436,6 +10127,7 @@ UNSUED_SpriteObjectSpritemaps_8_1C_ElevatorPad_1_B4CD6D:
     db $FC                                                               ;B4CD80;
     dw $3A6D                                                             ;B4CD81;
 
+%anchor($B4CD83)
 UNSUED_SpriteObjectSpritemaps_B4CD83:
     dw $0004,$01F0                                                       ;B4CD83;
     db $FE                                                               ;B4CD87;
@@ -9447,123 +10139,147 @@ UNSUED_SpriteObjectSpritemaps_B4CD83:
     db $FE                                                               ;B4CD96;
     dw $3A6F                                                             ;B4CD97;
 
+%anchor($B4CD99)
 SpriteObjectSpritemaps_9_SmallDustCloud_0:
     dw $0001,$81F8                                                       ;B4CD99;
     db $F8                                                               ;B4CD9D;
     dw $3A7C                                                             ;B4CD9E;
 
+%anchor($B4CDA0)
 SpriteObjectSpritemaps_9_SmallDustCloud_1:
     dw $0001,$81F8                                                       ;B4CDA0;
     db $F6                                                               ;B4CDA4;
     dw $3A7E                                                             ;B4CDA5;
 
+%anchor($B4CDA7)
 SpriteObjectSpritemaps_9_SmallDustCloud_2:
     dw $0001,$81F8                                                       ;B4CDA7;
     db $F4                                                               ;B4CDAB;
     dw $3A9A                                                             ;B4CDAC;
 
+%anchor($B4CDAE)
 SpriteObjectSpritemaps_9_SmallDustCloud_3:
     dw $0001,$81F8                                                       ;B4CDAE;
     db $F2                                                               ;B4CDB2;
     dw $3A9C                                                             ;B4CDB3;
 
+%anchor($B4CDB5)
 SpriteObjectSpritemaps_A_PirateLandingDustCloud_0:
     dw $0001,$01FC                                                       ;B4CDB5;
     db $FC                                                               ;B4CDB9;
     dw $3A48                                                             ;B4CDBA;
 
+%anchor($B4CDBC)
 SpriteObjectSpritemaps_A_PirateLandingDustCloud_1:
     dw $0001,$01FC                                                       ;B4CDBC;
     db $FA                                                               ;B4CDC0;
     dw $3A49                                                             ;B4CDC1;
 
+%anchor($B4CDC3)
 SpriteObjectSpritemaps_A_PirateLandingDustCloud_2:
     dw $0001,$01FC                                                       ;B4CDC3;
     db $F8                                                               ;B4CDC7;
     dw $3A4A                                                             ;B4CDC8;
 
+%anchor($B4CDCA)
 SpriteObjectSpritemaps_A_PirateLandingDustCloud_3:
     dw $0001,$01FC                                                       ;B4CDCA;
     db $F6                                                               ;B4CDCE;
     dw $3A4B                                                             ;B4CDCF;
 
+%anchor($B4CDD1)
 UNSUED_SpriteObjectSpritemaps_B_EyeDoorSweatDrop_0_B4CDD1:
     dw $0001,$01FC                                                       ;B4CDD1;
     db $FC                                                               ;B4CDD5;
     dw $3A2C                                                             ;B4CDD6;
 
+%anchor($B4CDD8)
 UNSUED_SpriteObjectSpritemaps_B_EyeDoorSweatDrop_1_B4CDD8:
     dw $0001,$01FC                                                       ;B4CDD8;
     db $FC                                                               ;B4CDDC;
     dw $3A2D                                                             ;B4CDDD;
 
+%anchor($B4CDDF)
 UNSUED_SpriteObjectSpritemaps_B_EyeDoorSweatDrop_2_B4CDDF:
     dw $0001,$01FC                                                       ;B4CDDF;
     db $FC                                                               ;B4CDE3;
     dw $3A2E                                                             ;B4CDE4;
 
+%anchor($B4CDE6)
 UNSUED_SpriteObjectSpritemaps_B_EyeDoorSweatDrop_3_B4CDE6:
     dw $0001,$01FC                                                       ;B4CDE6;
     db $FC                                                               ;B4CDEA;
     dw $3A2F                                                             ;B4CDEB;
 
+%anchor($B4CDED)
 SpriteObjectSpritemaps_C_Smoke_0:
     dw $0001,$81F8                                                       ;B4CDED;
     db $F6                                                               ;B4CDF1;
     dw $3A76                                                             ;B4CDF2;
 
+%anchor($B4CDF4)
 SpriteObjectSpritemaps_C_Smoke_1:
     dw $0001,$81F8                                                       ;B4CDF4;
     db $F4                                                               ;B4CDF8;
     dw $3A78                                                             ;B4CDF9;
 
+%anchor($B4CDFB)
 SpriteObjectSpritemaps_C_Smoke_2:
     dw $0001,$81F8                                                       ;B4CDFB;
     db $F2                                                               ;B4CDFF;
     dw $3A98                                                             ;B4CE00;
 
+%anchor($B4CE02)
 SpriteObjectSpritemaps_C_Smoke_3:
     dw $0001,$81F8                                                       ;B4CE02;
     db $F0                                                               ;B4CE06;
     dw $3A9E                                                             ;B4CE07;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B4CE09)
 UNUSED_SpriteObjectSpritemaps_B4CE09:
     dw $0001,$01FC                                                       ;B4CE09;
     db $FC                                                               ;B4CE0D;
     dw $3A25                                                             ;B4CE0E;
 
+%anchor($B4CE10)
 UNUSED_SpriteObjectSpritemaps_B4CE10:
     dw $0001,$01FC                                                       ;B4CE10;
     db $FC                                                               ;B4CE14;
     dw $3A43                                                             ;B4CE15;
 
+%anchor($B4CE17)
 UNUSED_SpriteObjectSpritemaps_B4CE17:
     dw $0001,$01FC                                                       ;B4CE17;
     db $FC                                                               ;B4CE1B;
     dw $3A40                                                             ;B4CE1C;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B4CE1E)
 UNUSED_SpriteObjectSpritemaps_D_SmallEnergyDrop_0_B4CE1E:
     dw $0001,$01FC                                                       ;B4CE1E;
     db $FC                                                               ;B4CE22;
     dw $3A3E                                                             ;B4CE23;
 
+%anchor($B4CE25)
 UNUSED_SpriteObjectSpritemaps_D_SmallEnergyDrop_1_B4CE25:
     dw $0001,$01FC                                                       ;B4CE25;
     db $FC                                                               ;B4CE29;
     dw $3A3D                                                             ;B4CE2A;
 
+%anchor($B4CE2C)
 UNUSED_SpriteObjectSpritemaps_D_SmallEnergyDrop_2_B4CE2C:
     dw $0001,$01FC                                                       ;B4CE2C;
     db $FC                                                               ;B4CE30;
     dw $3A41                                                             ;B4CE31;
 
+%anchor($B4CE33)
 UNUSED_SpriteObjectSpritemaps_D_SmallEnergyDrop_3_B4CE33:
     dw $0001,$01FC                                                       ;B4CE33;
     db $FC                                                               ;B4CE37;
     dw $3A42                                                             ;B4CE38;
 
+%anchor($B4CE3A)
 UNUSED_SpriteObjectSpritemaps_E_BigEnergyDrop_0_B4CE3A:
     dw $0004,$0000                                                       ;B4CE3A;
     db $00                                                               ;B4CE3E;
@@ -9575,6 +10291,7 @@ UNUSED_SpriteObjectSpritemaps_E_BigEnergyDrop_0_B4CE3A:
     db $F8                                                               ;B4CE4D;
     dw $3A44                                                             ;B4CE4E;
 
+%anchor($B4CE50)
 UNUSED_SpriteObjectSpritemaps_E_BigEnergyDrop_1_B4CE50:
     dw $0004,$0000                                                       ;B4CE50;
     db $00                                                               ;B4CE54;
@@ -9586,6 +10303,7 @@ UNUSED_SpriteObjectSpritemaps_E_BigEnergyDrop_1_B4CE50:
     db $F8                                                               ;B4CE63;
     dw $3A45                                                             ;B4CE64;
 
+%anchor($B4CE66)
 UNUSED_SpriteObjectSpritemaps_E_BigEnergyDrop_2_B4CE66:
     dw $0004,$01F8                                                       ;B4CE66;
     db $00                                                               ;B4CE6A;
@@ -9597,32 +10315,38 @@ UNUSED_SpriteObjectSpritemaps_E_BigEnergyDrop_2_B4CE66:
     db $F8                                                               ;B4CE79;
     dw $3A46                                                             ;B4CE7A;
 
+%anchor($B4CE7C)
 UNUSED_SpriteObjectSpritemaps_E_BigEnergyDrop_3_B4CE7C:
     dw $0001,$01FC                                                       ;B4CE7C;
     db $FC                                                               ;B4CE80;
     dw $3A42                                                             ;B4CE81;
 
+%anchor($B4CE83)
 UNUSED_SpriteObjectSpritemaps_F_Bomb_0_B4CE83:
     dw $0001,$01FC                                                       ;B4CE83;
     db $FC                                                               ;B4CE87;
     dw $3A4C                                                             ;B4CE88;
 
+%anchor($B4CE8A)
 UNUSED_SpriteObjectSpritemaps_F_Bomb_1_B4CE8A:
     dw $0001,$01FC                                                       ;B4CE8A;
     db $FC                                                               ;B4CE8E;
     dw $3A4D                                                             ;B4CE8F;
 
+%anchor($B4CE91)
 UNUSED_SpriteObjectSpritemaps_F_Bomb_2_B4CE91:
     dw $0001,$01FC                                                       ;B4CE91;
     db $FC                                                               ;B4CE95;
     dw $3A4E                                                             ;B4CE96;
 
+%anchor($B4CE98)
 UNUSED_SpriteObjectSpritemaps_F_Bomb_3_B4CE98:
     dw $0001,$01FC                                                       ;B4CE98;
     db $FC                                                               ;B4CE9C;
     dw $3A4F                                                             ;B4CE9D;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B4CE9F)
 UNUSED_SpriteObjectSpritemaps_B4CE9F:
     dw $0002,$01FF                                                       ;B4CE9F;
     db $FC                                                               ;B4CEA3;
@@ -9630,6 +10354,7 @@ UNUSED_SpriteObjectSpritemaps_B4CE9F:
     db $FC                                                               ;B4CEA8;
     dw $3A54                                                             ;B4CEA9;
 
+%anchor($B4CEAB)
 UNUSED_SpriteObjectSpritemaps_B4CEAB:
     dw $0003,$01FA                                                       ;B4CEAB;
     db $F5                                                               ;B4CEAF;
@@ -9639,6 +10364,7 @@ UNUSED_SpriteObjectSpritemaps_B4CEAB:
     db $FD                                                               ;B4CEB9;
     dw $3A57                                                             ;B4CEBA;
 
+%anchor($B4CEBC)
 UNUSED_SpriteObjectSpritemaps_B4CEBC:
     dw $0002,$01FD                                                       ;B4CEBC;
     db $F7                                                               ;B4CEC0;
@@ -9646,6 +10372,7 @@ UNUSED_SpriteObjectSpritemaps_B4CEBC:
     db $FF                                                               ;B4CEC5;
     dw $3A5A                                                             ;B4CEC6;
 
+%anchor($B4CEC8)
 UNUSED_SpriteObjectSpritemaps_B4CEC8:
     dw $0003,$01FE                                                       ;B4CEC8;
     db $F5                                                               ;B4CECC;
@@ -9655,6 +10382,7 @@ UNUSED_SpriteObjectSpritemaps_B4CEC8:
     db $FD                                                               ;B4CED6;
     dw $7A57                                                             ;B4CED7;
 
+%anchor($B4CED9)
 UNUSED_SpriteObjectSpritemaps_B4CED9:
     dw $0002,$01F9                                                       ;B4CED9;
     db $FC                                                               ;B4CEDD;
@@ -9662,6 +10390,7 @@ UNUSED_SpriteObjectSpritemaps_B4CED9:
     db $FC                                                               ;B4CEE2;
     dw $7A54                                                             ;B4CEE3;
 
+%anchor($B4CEE5)
 UNUSED_SpriteObjectSpritemaps_B4CEE5:
     dw $0003,$01FE                                                       ;B4CEE5;
     db $03                                                               ;B4CEE9;
@@ -9671,6 +10400,7 @@ UNUSED_SpriteObjectSpritemaps_B4CEE5:
     db $FB                                                               ;B4CEF3;
     dw $FA57                                                             ;B4CEF4;
 
+%anchor($B4CEF6)
 UNUSED_SpriteObjectSpritemaps_B4CEF6:
     dw $0002,$01FD                                                       ;B4CEF6;
     db $01                                                               ;B4CEFA;
@@ -9678,6 +10408,7 @@ UNUSED_SpriteObjectSpritemaps_B4CEF6:
     db $F9                                                               ;B4CEFF;
     dw $BA5A                                                             ;B4CF00;
 
+%anchor($B4CF02)
 UNUSED_SpriteObjectSpritemaps_B4CF02:
     dw $0003,$01FA                                                       ;B4CF02;
     db $03                                                               ;B4CF06;
@@ -9687,6 +10418,7 @@ UNUSED_SpriteObjectSpritemaps_B4CF02:
     db $FB                                                               ;B4CF10;
     dw $BA57                                                             ;B4CF11;
 
+%anchor($B4CF13)
 UNUSED_SpriteObjectSpritemaps_B4CF13:
     dw $0002,$0000                                                       ;B4CF13;
     db $FC                                                               ;B4CF17;
@@ -9694,6 +10426,7 @@ UNUSED_SpriteObjectSpritemaps_B4CF13:
     db $FC                                                               ;B4CF1C;
     dw $3A64                                                             ;B4CF1D;
 
+%anchor($B4CF1F)
 UNUSED_SpriteObjectSpritemaps_B4CF1F:
     dw $0003,$0002                                                       ;B4CF1F;
     db $FE                                                               ;B4CF23;
@@ -9703,6 +10436,7 @@ UNUSED_SpriteObjectSpritemaps_B4CF1F:
     db $F6                                                               ;B4CF2D;
     dw $3A66                                                             ;B4CF2E;
 
+%anchor($B4CF30)
 UNUSED_SpriteObjectSpritemaps_B4CF30:
     dw $0002,$01FC                                                       ;B4CF30;
     db $F8                                                               ;B4CF34;
@@ -9710,6 +10444,7 @@ UNUSED_SpriteObjectSpritemaps_B4CF30:
     db $00                                                               ;B4CF39;
     dw $3A6A                                                             ;B4CF3A;
 
+%anchor($B4CF3C)
 UNUSED_SpriteObjectSpritemaps_B4CF3C:
     dw $0003,$01F6                                                       ;B4CF3C;
     db $FE                                                               ;B4CF40;
@@ -9719,6 +10454,7 @@ UNUSED_SpriteObjectSpritemaps_B4CF3C:
     db $F6                                                               ;B4CF4A;
     dw $7A66                                                             ;B4CF4B;
 
+%anchor($B4CF4D)
 UNUSED_SpriteObjectSpritemaps_B4CF4D:
     dw $0002,$01F8                                                       ;B4CF4D;
     db $FC                                                               ;B4CF51;
@@ -9726,6 +10462,7 @@ UNUSED_SpriteObjectSpritemaps_B4CF4D:
     db $FC                                                               ;B4CF56;
     dw $7A64                                                             ;B4CF57;
 
+%anchor($B4CF59)
 UNUSED_SpriteObjectSpritemaps_B4CF59:
     dw $0003,$01F6                                                       ;B4CF59;
     db $FA                                                               ;B4CF5D;
@@ -9735,6 +10472,7 @@ UNUSED_SpriteObjectSpritemaps_B4CF59:
     db $02                                                               ;B4CF67;
     dw $FA66                                                             ;B4CF68;
 
+%anchor($B4CF6A)
 UNUSED_SpriteObjectSpritemaps_B4CF6A:
     dw $0002,$01FC                                                       ;B4CF6A;
     db $00                                                               ;B4CF6E;
@@ -9742,6 +10480,7 @@ UNUSED_SpriteObjectSpritemaps_B4CF6A:
     db $F8                                                               ;B4CF73;
     dw $BA6A                                                             ;B4CF74;
 
+%anchor($B4CF76)
 UNUSED_SpriteObjectSpritemaps_B4CF76:
     dw $0003,$0002                                                       ;B4CF76;
     db $FA                                                               ;B4CF7A;
@@ -9752,28 +10491,33 @@ UNUSED_SpriteObjectSpritemaps_B4CF76:
     dw $BA66                                                             ;B4CF85;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B4CF87)
 UNUSED_SpriteObjectSpritemaps_10_SmallEnergyDrop_0_B4CF87:
     dw $0001,$01FC                                                       ;B4CF87;
     db $FC                                                               ;B4CF8B;
     dw $3A3C                                                             ;B4CF8C;
 
+%anchor($B4CF8E)
 UNUSED_SpriteObjectSpritemaps_10_SmallEnergyDrop_1_B4CF8E:
     dw $0001,$01FC                                                       ;B4CF8E;
     db $FC                                                               ;B4CF92;
     dw $3A3D                                                             ;B4CF93;
 
+%anchor($B4CF95)
 UNUSED_SpriteObjectSpritemaps_10_SmallEnergyDrop_2_B4CF95:
     dw $0001,$01FC                                                       ;B4CF95;
     db $FC                                                               ;B4CF99;
     dw $3A3E                                                             ;B4CF9A;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B4CF9C)
 UNUSED_SpriteObjectSpritemaps_B4CF9C:
     dw $0001,$01FC                                                       ;B4CF9C;
     db $FC                                                               ;B4CFA0;
     dw $3A3F                                                             ;B4CFA1;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B4CFA3)
 SpriteObjectSpritemaps_1D_BigExplosion_0:
     dw $0004,$0000                                                       ;B4CFA3;
     db $00                                                               ;B4CFA7;
@@ -9785,6 +10529,7 @@ SpriteObjectSpritemaps_1D_BigExplosion_0:
     db $F8                                                               ;B4CFB6;
     dw $3A8A                                                             ;B4CFB7;
 
+%anchor($B4CFB9)
 SpriteObjectSpritemaps_1D_BigExplosion_1:
     dw $0004,$C200                                                       ;B4CFB9;
     db $00                                                               ;B4CFBD;
@@ -9796,6 +10541,7 @@ SpriteObjectSpritemaps_1D_BigExplosion_1:
     db $F0                                                               ;B4CFCC;
     dw $3A90                                                             ;B4CFCD;
 
+%anchor($B4CFCF)
 SpriteObjectSpritemaps_1D_BigExplosion_2:
     dw $0004,$C200                                                       ;B4CFCF;
     db $00                                                               ;B4CFD3;
@@ -9807,6 +10553,7 @@ SpriteObjectSpritemaps_1D_BigExplosion_2:
     db $F0                                                               ;B4CFE2;
     dw $3A92                                                             ;B4CFE3;
 
+%anchor($B4CFE5)
 SpriteObjectSpritemaps_1D_BigExplosion_3:
     dw $000C,$0010                                                       ;B4CFE5;
     db $00                                                               ;B4CFE9;
@@ -9834,6 +10581,7 @@ SpriteObjectSpritemaps_1D_BigExplosion_3:
     db $F0                                                               ;B4D020;
     dw $3AB0                                                             ;B4D021;
 
+%anchor($B4D023)
 SpriteObjectSpritemaps_1D_BigExplosion_4:
     dw $0008,$C208                                                       ;B4D023;
     db $00                                                               ;B4D027;
@@ -9853,6 +10601,7 @@ SpriteObjectSpritemaps_1D_BigExplosion_4:
     db $E8                                                               ;B4D04A;
     dw $3AB3                                                             ;B4D04B;
 
+%anchor($B4D04D)
 SpriteObjectSpritemaps_1D_BigExplosion_5:
     dw $000C,$0000                                                       ;B4D04D;
     db $10                                                               ;B4D051;
@@ -9880,6 +10629,7 @@ SpriteObjectSpritemaps_1D_BigExplosion_5:
     db $E8                                                               ;B4D088;
     dw $3AB8                                                             ;B4D089;
 
+%anchor($B4D08B)
 UNUSED_SpriteObjectSpritemaps_26_0_B4D08B:
     dw $0009,$81FE                                                       ;B4D08B;
     db $FB                                                               ;B4D08F;
@@ -9901,6 +10651,7 @@ UNUSED_SpriteObjectSpritemaps_26_0_B4D08B:
     db $08                                                               ;B4D0B7;
     dw $20F5                                                             ;B4D0B8;
 
+%anchor($B4D0BA)
 UNUSED_SpriteObjectSpritemaps_26_1_B4D0BA:
     dw $0009,$81FE                                                       ;B4D0BA;
     db $FB                                                               ;B4D0BE;
@@ -9922,6 +10673,7 @@ UNUSED_SpriteObjectSpritemaps_26_1_B4D0BA:
     db $08                                                               ;B4D0E6;
     dw $20F5                                                             ;B4D0E7;
 
+%anchor($B4D0E9)
 UNUSED_SpriteObjectSpritemaps_26_2_B4D0E9:
     dw $0009,$81FE                                                       ;B4D0E9;
     db $FB                                                               ;B4D0ED;
@@ -9943,6 +10695,7 @@ UNUSED_SpriteObjectSpritemaps_26_2_B4D0E9:
     db $09                                                               ;B4D115;
     dw $20F5                                                             ;B4D116;
 
+%anchor($B4D118)
 UNUSED_SpriteObjectSpritemaps_26_3_B4D118:
     dw $0009,$81FE                                                       ;B4D118;
     db $FB                                                               ;B4D11C;
@@ -9964,6 +10717,7 @@ UNUSED_SpriteObjectSpritemaps_26_3_B4D118:
     db $0A                                                               ;B4D144;
     dw $20F5                                                             ;B4D145;
 
+%anchor($B4D147)
 UNUSED_SpriteObjectSpritemaps_26_4_B4D147:
     dw $0009,$81FE                                                       ;B4D147;
     db $FB                                                               ;B4D14B;
@@ -9985,6 +10739,7 @@ UNUSED_SpriteObjectSpritemaps_26_4_B4D147:
     db $09                                                               ;B4D173;
     dw $20F5                                                             ;B4D174;
 
+%anchor($B4D176)
 UNUSED_SpriteObjectSpritemaps_26_5_B4D176:
     dw $0009,$81FE                                                       ;B4D176;
     db $FB                                                               ;B4D17A;
@@ -10007,6 +10762,7 @@ UNUSED_SpriteObjectSpritemaps_26_5_B4D176:
     dw $20F5                                                             ;B4D1A3;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B4D1A5)
 UNUSED_SpriteObjectSpritemaps_B4D1A5:
     dw $0009,$81FE                                                       ;B4D1A5;
     db $FB                                                               ;B4D1A9;
@@ -10029,6 +10785,7 @@ UNUSED_SpriteObjectSpritemaps_B4D1A5:
     dw $20F5                                                             ;B4D1D2;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B4D1D4)
 UNUSED_SpriteObjectSpritemaps_27_0_B4D1D4:
     dw $0005,$0000                                                       ;B4D1D4;
     db $F8                                                               ;B4D1D8;
@@ -10042,6 +10799,7 @@ UNUSED_SpriteObjectSpritemaps_27_0_B4D1D4:
     db $F4                                                               ;B4D1EC;
     dw $20F0                                                             ;B4D1ED;
 
+%anchor($B4D1EF)
 UNUSED_SpriteObjectSpritemaps_27_1_B4D1EF:
     dw $0005,$01FE                                                       ;B4D1EF;
     db $F4                                                               ;B4D1F3;
@@ -10055,6 +10813,7 @@ UNUSED_SpriteObjectSpritemaps_27_1_B4D1EF:
     db $FC                                                               ;B4D207;
     dw $20F2                                                             ;B4D208;
 
+%anchor($B4D20A)
 UNUSED_SpriteObjectSpritemaps_27_2_B4D20A:
     dw $0005,$01FE                                                       ;B4D20A;
     db $F4                                                               ;B4D20E;
@@ -10068,6 +10827,7 @@ UNUSED_SpriteObjectSpritemaps_27_2_B4D20A:
     db $FC                                                               ;B4D222;
     dw $20F0                                                             ;B4D223;
 
+%anchor($B4D225)
 UNUSED_SpriteObjectSpritemaps_27_3_B4D225:
     dw $0006,$01FE                                                       ;B4D225;
     db $F4                                                               ;B4D229;
@@ -10083,6 +10843,7 @@ UNUSED_SpriteObjectSpritemaps_27_3_B4D225:
     db $FC                                                               ;B4D242;
     dw $20F2                                                             ;B4D243;
 
+%anchor($B4D245)
 UNUSED_SpriteObjectSpritemaps_27_4_B4D245:
     dw $0003,$01FE                                                       ;B4D245;
     db $F4                                                               ;B4D249;
@@ -10093,6 +10854,7 @@ UNUSED_SpriteObjectSpritemaps_27_4_B4D245:
     dw $20F4                                                             ;B4D254;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B4D256)
 UNUSED_SpriteObjectSpritemaps_B4D256:
     dw $0006,$01FE                                                       ;B4D256;
     db $F4                                                               ;B4D25A;
@@ -10108,6 +10870,7 @@ UNUSED_SpriteObjectSpritemaps_B4D256:
     db $FC                                                               ;B4D273;
     dw $20F2                                                             ;B4D274;
 
+%anchor($B4D276)
 UNUSED_SpriteObjectSpritemaps_B4D276:
     dw $0006,$01FE                                                       ;B4D276;
     db $F4                                                               ;B4D27A;
@@ -10123,6 +10886,7 @@ UNUSED_SpriteObjectSpritemaps_B4D276:
     db $FC                                                               ;B4D293;
     dw $20F0                                                             ;B4D294;
 
+%anchor($B4D296)
 UNUSED_SpriteObjectSpritemaps_B4D296:
     dw $0004,$0000                                                       ;B4D296;
     db $00                                                               ;B4D29A;
@@ -10135,11 +10899,13 @@ UNUSED_SpriteObjectSpritemaps_B4D296:
     dw $20F7                                                             ;B4D2AA;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B4D2AC)
 UNUSED_SpriteObjectSpritemaps_2A_B4D2AC:
     dw $0001,$81F8                                                       ;B4D2AC;
     db $F8                                                               ;B4D2B0;
     dw $20DE                                                             ;B4D2B1;
 
+%anchor($B4D2B3)
 UNUSED_SpriteObjectSpritemaps_28_0_B4D2B3:
     dw $0009,$81F2                                                       ;B4D2B3;
     db $FB                                                               ;B4D2B7;
@@ -10161,6 +10927,7 @@ UNUSED_SpriteObjectSpritemaps_28_0_B4D2B3:
     db $08                                                               ;B4D2DF;
     dw $60F5                                                             ;B4D2E0;
 
+%anchor($B4D2E2)
 UNUSED_SpriteObjectSpritemaps_28_1_B4D2E2:
     dw $0009,$81F2                                                       ;B4D2E2;
     db $FB                                                               ;B4D2E6;
@@ -10182,6 +10949,7 @@ UNUSED_SpriteObjectSpritemaps_28_1_B4D2E2:
     db $08                                                               ;B4D30E;
     dw $60F5                                                             ;B4D30F;
 
+%anchor($B4D311)
 UNUSED_SpriteObjectSpritemaps_28_2_B4D311:
     dw $0009,$81F2                                                       ;B4D311;
     db $FB                                                               ;B4D315;
@@ -10203,6 +10971,7 @@ UNUSED_SpriteObjectSpritemaps_28_2_B4D311:
     db $09                                                               ;B4D33D;
     dw $60F5                                                             ;B4D33E;
 
+%anchor($B4D340)
 UNUSED_SpriteObjectSpritemaps_28_3_B4D340:
     dw $0009,$81F2                                                       ;B4D340;
     db $FB                                                               ;B4D344;
@@ -10224,6 +10993,7 @@ UNUSED_SpriteObjectSpritemaps_28_3_B4D340:
     db $0A                                                               ;B4D36C;
     dw $60F5                                                             ;B4D36D;
 
+%anchor($B4D36F)
 UNUSED_SpriteObjectSpritemaps_28_4_B4D36F:
     dw $0009,$81F2                                                       ;B4D36F;
     db $FB                                                               ;B4D373;
@@ -10245,6 +11015,7 @@ UNUSED_SpriteObjectSpritemaps_28_4_B4D36F:
     db $09                                                               ;B4D39B;
     dw $60F5                                                             ;B4D39C;
 
+%anchor($B4D39E)
 UNUSED_SpriteObjectSpritemaps_28_5_B4D39E:
     dw $0009,$81F2                                                       ;B4D39E;
     db $FB                                                               ;B4D3A2;
@@ -10267,6 +11038,7 @@ UNUSED_SpriteObjectSpritemaps_28_5_B4D39E:
     dw $60F5                                                             ;B4D3CB;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B4D3CD)
 UNUSED_SpriteObjectSpritemaps_B4D3CD:
     dw $0009,$81F2                                                       ;B4D3CD;
     db $FB                                                               ;B4D3D1;
@@ -10289,6 +11061,7 @@ UNUSED_SpriteObjectSpritemaps_B4D3CD:
     dw $60F5                                                             ;B4D3FA;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B4D3FC)
 UNUSED_SpriteObjectSpritemaps_29_0_B4D3FC:
     dw $0005,$01F8                                                       ;B4D3FC;
     db $F8                                                               ;B4D400;
@@ -10302,6 +11075,7 @@ UNUSED_SpriteObjectSpritemaps_29_0_B4D3FC:
     db $FC                                                               ;B4D414;
     dw $60F4                                                             ;B4D415;
 
+%anchor($B4D417)
 UNUSED_SpriteObjectSpritemaps_29_1_B4D417:
     dw $0005,$01FA                                                       ;B4D417;
     db $F4                                                               ;B4D41B;
@@ -10315,6 +11089,7 @@ UNUSED_SpriteObjectSpritemaps_29_1_B4D417:
     db $FC                                                               ;B4D42F;
     dw $60F2                                                             ;B4D430;
 
+%anchor($B4D432)
 UNUSED_SpriteObjectSpritemaps_29_2_B4D432:
     dw $0005,$01FA                                                       ;B4D432;
     db $F4                                                               ;B4D436;
@@ -10328,6 +11103,7 @@ UNUSED_SpriteObjectSpritemaps_29_2_B4D432:
     db $FC                                                               ;B4D44A;
     dw $60F0                                                             ;B4D44B;
 
+%anchor($B4D44D)
 UNUSED_SpriteObjectSpritemaps_29_3_B4D44D:
     dw $0006,$01FA                                                       ;B4D44D;
     db $F4                                                               ;B4D451;
@@ -10343,6 +11119,7 @@ UNUSED_SpriteObjectSpritemaps_29_3_B4D44D:
     db $FC                                                               ;B4D46A;
     dw $60F2                                                             ;B4D46B;
 
+%anchor($B4D46D)
 UNUSED_SpriteObjectSpritemaps_29_4_B4D46D:
     dw $0003,$01F6                                                       ;B4D46D;
     db $FC                                                               ;B4D471;
@@ -10353,6 +11130,7 @@ UNUSED_SpriteObjectSpritemaps_29_4_B4D46D:
     dw $60F4                                                             ;B4D47C;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B4D47E)
 UNUSED_SpriteObjectSpritemaps_B4D47E:
     dw $0006,$01FA                                                       ;B4D47E;
     db $F4                                                               ;B4D482;
@@ -10368,6 +11146,7 @@ UNUSED_SpriteObjectSpritemaps_B4D47E:
     db $FC                                                               ;B4D49B;
     dw $60F2                                                             ;B4D49C;
 
+%anchor($B4D49E)
 UNUSED_SpriteObjectSpritemaps_B4D49E:
     dw $0006,$01FA                                                       ;B4D49E;
     db $F4                                                               ;B4D4A2;
@@ -10384,116 +11163,139 @@ UNUSED_SpriteObjectSpritemaps_B4D49E:
     dw $60F0                                                             ;B4D4BC;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B4D4BE)
 SpriteObjectSpritemaps_2B_Puromi_0:
     dw $0001,$81F9                                                       ;B4D4BE;
     db $F8                                                               ;B4D4C2;
     dw $230A                                                             ;B4D4C3;
 
+%anchor($B4D4C5)
 SpriteObjectSpritemaps_2B_Puromi_1:
     dw $0001,$81F9                                                       ;B4D4C5;
     db $F8                                                               ;B4D4C9;
     dw $2308                                                             ;B4D4CA;
 
+%anchor($B4D4CC)
 SpriteObjectSpritemaps_2B_Puromi_2:
     dw $0001,$81F8                                                       ;B4D4CC;
     db $F8                                                               ;B4D4D0;
     dw $E30A                                                             ;B4D4D1;
 
+%anchor($B4D4D3)
 SpriteObjectSpritemaps_2B_Puromi_3:
     dw $0001,$81F8                                                       ;B4D4D3;
     db $F8                                                               ;B4D4D7;
     dw $E308                                                             ;B4D4D8;
 
+%anchor($B4D4DA)
 SpriteObjectSpritemaps_2B_Puromi_4:
     dw $0001,$81F9                                                       ;B4D4DA;
     db $F8                                                               ;B4D4DE;
     dw $2306                                                             ;B4D4DF;
 
+%anchor($B4D4E1)
 SpriteObjectSpritemaps_2B_Puromi_5:
     dw $0001,$81F9                                                       ;B4D4E1;
     db $F8                                                               ;B4D4E5;
     dw $2322                                                             ;B4D4E6;
 
+%anchor($B4D4E8)
 SpriteObjectSpritemaps_2B_Puromi_6:
     dw $0001,$81F8                                                       ;B4D4E8;
     db $F8                                                               ;B4D4EC;
     dw $E306                                                             ;B4D4ED;
 
+%anchor($B4D4EF)
 SpriteObjectSpritemaps_2B_Puromi_7:
     dw $0001,$81F8                                                       ;B4D4EF;
     db $F8                                                               ;B4D4F3;
     dw $E322                                                             ;B4D4F4;
 
+%anchor($B4D4F6)
 SpriteObjectSpritemaps_2C_PuromiRightExplosion_0:
     dw $0001,$81F9                                                       ;B4D4F6;
     db $F9                                                               ;B4D4FA;
     dw $230E                                                             ;B4D4FB;
 
+%anchor($B4D4FD)
 SpriteObjectSpritemaps_2C_PuromiRightExplosion_1:
     dw $0001,$81FD                                                       ;B4D4FD;
     db $F5                                                               ;B4D501;
     dw $2320                                                             ;B4D502;
 
+%anchor($B4D504)
 SpriteObjectSpritemaps_2C_PuromiRightExplosion_2:
     dw $0001,$8003                                                       ;B4D504;
     db $EE                                                               ;B4D508;
     dw $2304                                                             ;B4D509;
 
+%anchor($B4D50B)
 SpriteObjectSpritemaps_2C_PuromiRightExplosion_3:
     dw $0001,$8005                                                       ;B4D50B;
     db $EC                                                               ;B4D50F;
     dw $2308                                                             ;B4D510;
 
+%anchor($B4D512)
 SpriteObjectSpritemaps_2C_PuromiRightExplosion_4:
     dw $0001,$8005                                                       ;B4D512;
     db $EC                                                               ;B4D516;
     dw $230C                                                             ;B4D517;
 
+%anchor($B4D519)
 SpriteObjectSpritemaps_2C_PuromiRightExplosion_5:
     dw $0001,$8005                                                       ;B4D519;
     db $EC                                                               ;B4D51D;
     dw $2326                                                             ;B4D51E;
 
+%anchor($B4D520)
 SpriteObjectSpritemaps_2C_PuromiRightExplosion_6:
     dw $0001,$8005                                                       ;B4D520;
     db $EC                                                               ;B4D524;
     dw $232E                                                             ;B4D525;
 
+%anchor($B4D527)
 SpriteObjectSpritemaps_2D_PuromiLeftExplosion_0:
     dw $0001,$81F8                                                       ;B4D527;
     db $F9                                                               ;B4D52B;
     dw $630E                                                             ;B4D52C;
 
+%anchor($B4D52E)
 SpriteObjectSpritemaps_2D_PuromiLeftExplosion_1:
     dw $0001,$81F4                                                       ;B4D52E;
     db $F5                                                               ;B4D532;
     dw $6320                                                             ;B4D533;
 
+%anchor($B4D535)
 SpriteObjectSpritemaps_2D_PuromiLeftExplosion_2:
     dw $0001,$81EE                                                       ;B4D535;
     db $EE                                                               ;B4D539;
     dw $6304                                                             ;B4D53A;
 
+%anchor($B4D53C)
 SpriteObjectSpritemaps_2D_PuromiLeftExplosion_3:
     dw $0001,$81EC                                                       ;B4D53C;
     db $EC                                                               ;B4D540;
     dw $6308                                                             ;B4D541;
 
+%anchor($B4D543)
 SpriteObjectSpritemaps_2D_PuromiLeftExplosion_4:
     dw $0001,$81EC                                                       ;B4D543;
     db $EC                                                               ;B4D547;
     dw $630C                                                             ;B4D548;
 
+%anchor($B4D54A)
 SpriteObjectSpritemaps_2D_PuromiLeftExplosion_5:
     dw $0001,$81EC                                                       ;B4D54A;
     db $EC                                                               ;B4D54E;
     dw $6326                                                             ;B4D54F;
 
+%anchor($B4D551)
 SpriteObjectSpritemaps_2D_PuromiLeftExplosion_6:
     dw $0001,$81EB                                                       ;B4D551;
     db $EC                                                               ;B4D555;
     dw $232E                                                             ;B4D556;
 
+%anchor($B4D558)
 SpriteObjectSpritemaps_2E_PuromiSplash_0:
     dw $0002,$01F1                                                       ;B4D558;
     db $F8                                                               ;B4D55C;
@@ -10501,6 +11303,7 @@ SpriteObjectSpritemaps_2E_PuromiSplash_0:
     db $F8                                                               ;B4D561;
     dw $2334                                                             ;B4D562;
 
+%anchor($B4D564)
 SpriteObjectSpritemaps_2E_PuromiSplash_1:
     dw $0002,$01F1                                                       ;B4D564;
     db $F8                                                               ;B4D568;
@@ -10508,6 +11311,7 @@ SpriteObjectSpritemaps_2E_PuromiSplash_1:
     db $F8                                                               ;B4D56D;
     dw $2324                                                             ;B4D56E;
 
+%anchor($B4D570)
 SpriteObjectSpritemaps_2E_PuromiSplash_2:
     dw $0002,$81E9                                                       ;B4D570;
     db $F0                                                               ;B4D574;
@@ -10515,6 +11319,7 @@ SpriteObjectSpritemaps_2E_PuromiSplash_2:
     db $F0                                                               ;B4D579;
     dw $2328                                                             ;B4D57A;
 
+%anchor($B4D57C)
 SpriteObjectSpritemaps_2E_PuromiSplash_3:
     dw $0002,$81E9                                                       ;B4D57C;
     db $F0                                                               ;B4D580;
@@ -10522,6 +11327,7 @@ SpriteObjectSpritemaps_2E_PuromiSplash_3:
     db $F0                                                               ;B4D585;
     dw $232C                                                             ;B4D586;
 
+%anchor($B4D588)
 SpriteObjectSpritemaps_2E_PuromiSplash_4:
     dw $0002,$81E8                                                       ;B4D588;
     db $F0                                                               ;B4D58C;
@@ -10529,31 +11335,37 @@ SpriteObjectSpritemaps_2E_PuromiSplash_4:
     db $F0                                                               ;B4D591;
     dw $232A                                                             ;B4D592;
 
+%anchor($B4D594)
 UNUSED_SpriteObjectSpritemaps_2F_B4D594:
     dw $0001,$81F8                                                       ;B4D594;
     db $F8                                                               ;B4D598;
     dw $3340                                                             ;B4D599;
 
+%anchor($B4D59B)
 SpriteObjectSpritemaps_30_FallingSparkTrail_0:
     dw $0001,$01FC                                                       ;B4D59B;
     db $FC                                                               ;B4D59F;
     dw $2107                                                             ;B4D5A0;
 
+%anchor($B4D5A2)
 SpriteObjectSpritemaps_30_FallingSparkTrail_1:
     dw $0001,$01FC                                                       ;B4D5A2;
     db $FC                                                               ;B4D5A6;
     dw $2108                                                             ;B4D5A7;
 
+%anchor($B4D5A9)
 SpriteObjectSpritemaps_30_FallingSparkTrail_2:
     dw $0001,$01FC                                                       ;B4D5A9;
     db $FC                                                               ;B4D5AD;
     dw $2109                                                             ;B4D5AE;
 
+%anchor($B4D5B0)
 SpriteObjectSpritemaps_30_FallingSparkTrail_3:
     dw $0001,$01FC                                                       ;B4D5B0;
     db $FC                                                               ;B4D5B4;
     dw $210A                                                             ;B4D5B5;
 
+%anchor($B4D5B7)
 SpriteObjectSpritemaps_34_35_36_MetroidShell_0:
     dw $000A,$0010                                                       ;B4D5B7;
     db $04                                                               ;B4D5BB;
@@ -10577,6 +11389,7 @@ SpriteObjectSpritemaps_34_35_36_MetroidShell_0:
     db $EC                                                               ;B4D5E8;
     dw $2101                                                             ;B4D5E9;
 
+%anchor($B4D5EB)
 SpriteObjectSpritemaps_34_36_MetroidShell_1:
     dw $000A,$0010                                                       ;B4D5EB;
     db $FC                                                               ;B4D5EF;
@@ -10600,6 +11413,7 @@ SpriteObjectSpritemaps_34_36_MetroidShell_1:
     db $EC                                                               ;B4D61C;
     dw $210B                                                             ;B4D61D;
 
+%anchor($B4D61F)
 SpriteObjectSpritemaps_34_35_36_MetroidShell_2:
     dw $000A,$01E8                                                       ;B4D61F;
     db $FC                                                               ;B4D623;
@@ -10623,6 +11437,7 @@ SpriteObjectSpritemaps_34_35_36_MetroidShell_2:
     db $EC                                                               ;B4D650;
     dw $2106                                                             ;B4D651;
 
+%anchor($B4D653)
 UNUSED_SpriteObjectSpritemaps_31_MetroidInsides_0_B4D653:
     dw $0008,$0010                                                       ;B4D653;
     db $00                                                               ;B4D657;
@@ -10642,6 +11457,7 @@ UNUSED_SpriteObjectSpritemaps_31_MetroidInsides_0_B4D653:
     db $F0                                                               ;B4D67A;
     dw $2141                                                             ;B4D67B;
 
+%anchor($B4D67D)
 UNUSED_SpriteObjectSpritemaps_31_MetroidInsides_1_B4D67D:
     dw $0006,$0010                                                       ;B4D67D;
     db $00                                                               ;B4D681;
@@ -10657,6 +11473,7 @@ UNUSED_SpriteObjectSpritemaps_31_MetroidInsides_1_B4D67D:
     db $F0                                                               ;B4D69A;
     dw $2144                                                             ;B4D69B;
 
+%anchor($B4D69D)
 UNUSED_SpriteObjectSpritemaps_31_MetroidInsides_2_B4D69D:
     dw $0008,$0010                                                       ;B4D69D;
     db $00                                                               ;B4D6A1;
@@ -10676,6 +11493,7 @@ UNUSED_SpriteObjectSpritemaps_31_MetroidInsides_2_B4D69D:
     db $F0                                                               ;B4D6C4;
     dw $2147                                                             ;B4D6C5;
 
+%anchor($B4D6C7)
 UNUSED_SpriteObjectSpritemaps_31_MetroidInsides_3_B4D6C7:
     dw $0008,$0010                                                       ;B4D6C7;
     db $00                                                               ;B4D6CB;
@@ -10695,6 +11513,7 @@ UNUSED_SpriteObjectSpritemaps_31_MetroidInsides_3_B4D6C7:
     db $F0                                                               ;B4D6EE;
     dw $214A                                                             ;B4D6EF;
 
+%anchor($B4D6F1)
 SpriteObjectSpritemaps_32_33_MetroidElectricity_0:
     dw $0003,$0000                                                       ;B4D6F1;
     db $EC                                                               ;B4D6F5;
@@ -10704,6 +11523,7 @@ SpriteObjectSpritemaps_32_33_MetroidElectricity_0:
     db $FC                                                               ;B4D6FF;
     dw $214C                                                             ;B4D700;
 
+%anchor($B4D702)
 SpriteObjectSpritemaps_32_33_MetroidElectricity_1:
     dw $0003,$0000                                                       ;B4D702;
     db $EC                                                               ;B4D706;
@@ -10713,6 +11533,7 @@ SpriteObjectSpritemaps_32_33_MetroidElectricity_1:
     db $FC                                                               ;B4D710;
     dw $215C                                                             ;B4D711;
 
+%anchor($B4D713)
 SpriteObjectSpritemaps_32_33_MetroidElectricity_2:
     dw $0003,$0000                                                       ;B4D713;
     db $EC                                                               ;B4D717;
@@ -10722,6 +11543,7 @@ SpriteObjectSpritemaps_32_33_MetroidElectricity_2:
     db $FC                                                               ;B4D721;
     dw $216C                                                             ;B4D722;
 
+%anchor($B4D724)
 SpriteObjectSpritemaps_32_33_MetroidElectricity_3:
     dw $0004,$0008                                                       ;B4D724;
     db $FC                                                               ;B4D728;
@@ -10733,6 +11555,7 @@ SpriteObjectSpritemaps_32_33_MetroidElectricity_3:
     db $EC                                                               ;B4D737;
     dw $212D                                                             ;B4D738;
 
+%anchor($B4D73A)
 SpriteObjectSpritemaps_32_33_MetroidElectricity_4:
     dw $0004,$0008                                                       ;B4D73A;
     db $FC                                                               ;B4D73E;
@@ -10744,6 +11567,7 @@ SpriteObjectSpritemaps_32_33_MetroidElectricity_4:
     db $EC                                                               ;B4D74D;
     dw $212E                                                             ;B4D74E;
 
+%anchor($B4D750)
 SpriteObjectSpritemaps_32_33_MetroidElectricity_5:
     dw $0004,$0008                                                       ;B4D750;
     db $FC                                                               ;B4D754;
@@ -10755,6 +11579,7 @@ SpriteObjectSpritemaps_32_33_MetroidElectricity_5:
     db $EC                                                               ;B4D763;
     dw $212F                                                             ;B4D764;
 
+%anchor($B4D766)
 SpriteObjectSpritemaps_32_33_MetroidElectricity_6:
     dw $0003,$0008                                                       ;B4D766;
     db $FC                                                               ;B4D76A;
@@ -10764,6 +11589,7 @@ SpriteObjectSpritemaps_32_33_MetroidElectricity_6:
     db $EC                                                               ;B4D774;
     dw $617C                                                             ;B4D775;
 
+%anchor($B4D777)
 SpriteObjectSpritemaps_32_33_MetroidElectricity_7:
     dw $0003,$0008                                                       ;B4D777;
     db $FC                                                               ;B4D77B;
@@ -10773,6 +11599,7 @@ SpriteObjectSpritemaps_32_33_MetroidElectricity_7:
     db $EC                                                               ;B4D785;
     dw $617D                                                             ;B4D786;
 
+%anchor($B4D788)
 SpriteObjectSpritemaps_32_33_MetroidElectricity_8:
     dw $0003,$0008                                                       ;B4D788;
     db $FC                                                               ;B4D78C;
@@ -10782,6 +11609,7 @@ SpriteObjectSpritemaps_32_33_MetroidElectricity_8:
     db $EC                                                               ;B4D796;
     dw $617E                                                             ;B4D797;
 
+%anchor($B4D799)
 SpriteObjectSpritemaps_32_33_MetroidElectricity_9:
     dw $0004,$01F8                                                       ;B4D799;
     db $FC                                                               ;B4D79D;
@@ -10793,6 +11621,7 @@ SpriteObjectSpritemaps_32_33_MetroidElectricity_9:
     db $EC                                                               ;B4D7AC;
     dw $612D                                                             ;B4D7AD;
 
+%anchor($B4D7AF)
 SpriteObjectSpritemaps_32_33_MetroidElectricity_A:
     dw $0004,$01F8                                                       ;B4D7AF;
     db $FC                                                               ;B4D7B3;
@@ -10804,6 +11633,7 @@ SpriteObjectSpritemaps_32_33_MetroidElectricity_A:
     db $EC                                                               ;B4D7C2;
     dw $612E                                                             ;B4D7C3;
 
+%anchor($B4D7C5)
 SpriteObjectSpritemaps_32_33_MetroidElectricity_B:
     dw $0004,$01F8                                                       ;B4D7C5;
     db $FC                                                               ;B4D7C9;
@@ -10815,6 +11645,7 @@ SpriteObjectSpritemaps_32_33_MetroidElectricity_B:
     db $EC                                                               ;B4D7D8;
     dw $612F                                                             ;B4D7D9;
 
+%anchor($B4D7DB)
 SpriteObjectSpritemaps_32_MetroidElectricity_C:
     dw $0002,$01F8                                                       ;B4D7DB;
     db $FC                                                               ;B4D7DF;
@@ -10822,11 +11653,13 @@ SpriteObjectSpritemaps_32_MetroidElectricity_C:
     db $FC                                                               ;B4D7E4;
     dw $214C                                                             ;B4D7E5;
 
+%anchor($B4D7E7)
 SpriteObjectSpritemaps_32_MetroidElectricity_D:
     dw $0001,$01F0                                                       ;B4D7E7;
     db $FC                                                               ;B4D7EB;
     dw $215C                                                             ;B4D7EC;
 
+%anchor($B4D7EE)
 SpriteObjectSpritemaps_32_MetroidElectricity_E:
     dw $0002,$01F8                                                       ;B4D7EE;
     db $FC                                                               ;B4D7F2;
@@ -10834,6 +11667,7 @@ SpriteObjectSpritemaps_32_MetroidElectricity_E:
     db $FC                                                               ;B4D7F7;
     dw $216C                                                             ;B4D7F8;
 
+%anchor($B4D7FA)
 SpriteObjectSpritemaps_32_33_MetroidElectricity_F:
     dw $0002,$01F8                                                       ;B4D7FA;
     db $F4                                                               ;B4D7FE;
@@ -10841,6 +11675,7 @@ SpriteObjectSpritemaps_32_33_MetroidElectricity_F:
     db $EC                                                               ;B4D803;
     dw $212D                                                             ;B4D804;
 
+%anchor($B4D806)
 SpriteObjectSpritemaps_32_33_MetroidElectricity_10:
     dw $0002,$01F8                                                       ;B4D806;
     db $F4                                                               ;B4D80A;
@@ -10848,6 +11683,7 @@ SpriteObjectSpritemaps_32_33_MetroidElectricity_10:
     db $EC                                                               ;B4D80F;
     dw $212E                                                             ;B4D810;
 
+%anchor($B4D812)
 SpriteObjectSpritemaps_32_33_MetroidElectricity_11:
     dw $0002,$01F8                                                       ;B4D812;
     db $F4                                                               ;B4D816;
@@ -10855,6 +11691,7 @@ SpriteObjectSpritemaps_32_33_MetroidElectricity_11:
     db $EC                                                               ;B4D81B;
     dw $212F                                                             ;B4D81C;
 
+%anchor($B4D81E)
 SpriteObjectSpritemaps_32_MetroidElectricity_12:
     dw $0002,$0008                                                       ;B4D81E;
     db $FC                                                               ;B4D822;
@@ -10862,6 +11699,7 @@ SpriteObjectSpritemaps_32_MetroidElectricity_12:
     db $FC                                                               ;B4D827;
     dw $214C                                                             ;B4D828;
 
+%anchor($B4D82A)
 SpriteObjectSpritemaps_32_MetroidElectricity_13:
     dw $0002,$0008                                                       ;B4D82A;
     db $FC                                                               ;B4D82E;
@@ -10869,6 +11707,7 @@ SpriteObjectSpritemaps_32_MetroidElectricity_13:
     db $FC                                                               ;B4D833;
     dw $215C                                                             ;B4D834;
 
+%anchor($B4D836)
 SpriteObjectSpritemaps_32_MetroidElectricity_14:
     dw $0002,$0008                                                       ;B4D836;
     db $FC                                                               ;B4D83A;
@@ -10876,21 +11715,25 @@ SpriteObjectSpritemaps_32_MetroidElectricity_14:
     db $FC                                                               ;B4D83F;
     dw $216C                                                             ;B4D840;
 
+%anchor($B4D842)
 SpriteObjectSpritemaps_32_33_MetroidElectricity_15:
     dw $0001,$0000                                                       ;B4D842;
     db $EC                                                               ;B4D846;
     dw $217C                                                             ;B4D847;
 
+%anchor($B4D849)
 SpriteObjectSpritemaps_32_33_MetroidElectricity_16:
     dw $0001,$0000                                                       ;B4D849;
     db $EC                                                               ;B4D84D;
     dw $217D                                                             ;B4D84E;
 
+%anchor($B4D850)
 SpriteObjectSpritemaps_32_33_MetroidElectricity_17:
     dw $0001,$0000                                                       ;B4D850;
     db $EC                                                               ;B4D854;
     dw $217E                                                             ;B4D855;
 
+%anchor($B4D857)
 SpriteObjectSpritemaps_37_EnemyShot_0:
     dw $0004,$0002                                                       ;B4D857;
     db $02                                                               ;B4D85B;
@@ -10902,6 +11745,7 @@ SpriteObjectSpritemaps_37_EnemyShot_0:
     db $F6                                                               ;B4D86A;
     dw $2CBC                                                             ;B4D86B;
 
+%anchor($B4D86D)
 SpriteObjectSpritemaps_37_EnemyShot_1:
     dw $0004,$0004                                                       ;B4D86D;
     db $04                                                               ;B4D871;
@@ -10913,6 +11757,7 @@ SpriteObjectSpritemaps_37_EnemyShot_1:
     db $F4                                                               ;B4D880;
     dw $2CBD                                                             ;B4D881;
 
+%anchor($B4D883)
 SpriteObjectSpritemaps_37_EnemyShot_2:
     dw $0004,$0007                                                       ;B4D883;
     db $07                                                               ;B4D887;
@@ -10924,6 +11769,7 @@ SpriteObjectSpritemaps_37_EnemyShot_2:
     db $F1                                                               ;B4D896;
     dw $2CCB                                                             ;B4D897;
 
+%anchor($B4D899)
 SpriteObjectSpritemaps_37_EnemyShot_3:
     dw $0004,$000B                                                       ;B4D899;
     db $0B                                                               ;B4D89D;
@@ -10935,16 +11781,19 @@ SpriteObjectSpritemaps_37_EnemyShot_3:
     db $ED                                                               ;B4D8AC;
     dw $2CCC                                                             ;B4D8AD;
 
+%anchor($B4D8AF)
 SpriteObjectSpritemaps_38_YappingMawBaseFacingDown:
     dw $0001,$81F8                                                       ;B4D8AF;
     db $F8                                                               ;B4D8B3;
     dw $210A                                                             ;B4D8B4;
 
+%anchor($B4D8B6)
 SpriteObjectSpritemaps_39_YappingMawBaseFacingUp:
     dw $0001,$81F8                                                       ;B4D8B6;
     db $F8                                                               ;B4D8BA;
     dw $A10A                                                             ;B4D8BB;
 
+%anchor($B4D8BD)
 UNUSED_SpriteObjectSpritemaps_3A_0_B4D8BD:
     dw $000E,$01FB                                                       ;B4D8BD;
     db $00                                                               ;B4D8C1;
@@ -10976,6 +11825,7 @@ UNUSED_SpriteObjectSpritemaps_3A_0_B4D8BD:
     db $08                                                               ;B4D902;
     dw $20F5                                                             ;B4D903;
 
+%anchor($B4D905)
 UNUSED_SpriteObjectSpritemaps_3A_1_B4D905:
     dw $0010,$01F9                                                       ;B4D905;
     db $FC                                                               ;B4D909;
@@ -11011,6 +11861,7 @@ UNUSED_SpriteObjectSpritemaps_3A_1_B4D905:
     db $09                                                               ;B4D954;
     dw $20F5                                                             ;B4D955;
 
+%anchor($B4D957)
 UNUSED_SpriteObjectSpritemaps_3A_2_B4D957:
     dw $0010,$01FC                                                       ;B4D957;
     db $04                                                               ;B4D95B;
@@ -11046,6 +11897,7 @@ UNUSED_SpriteObjectSpritemaps_3A_2_B4D957:
     db $0A                                                               ;B4D9A6;
     dw $20F5                                                             ;B4D9A7;
 
+%anchor($B4D9A9)
 UNUSED_SpriteObjectSpritemaps_3A_3_B4D9A9:
     dw $0010,$01FE                                                       ;B4D9A9;
     db $04                                                               ;B4D9AD;
@@ -11081,6 +11933,7 @@ UNUSED_SpriteObjectSpritemaps_3A_3_B4D9A9:
     db $0A                                                               ;B4D9F8;
     dw $20F5                                                             ;B4D9F9;
 
+%anchor($B4D9FB)
 UNUSED_SpriteObjectSpritemaps_3A_4_B4D9FB:
     dw $000F,$01FC                                                       ;B4D9FB;
     db $00                                                               ;B4D9FF;
@@ -11114,6 +11967,7 @@ UNUSED_SpriteObjectSpritemaps_3A_4_B4D9FB:
     db $0A                                                               ;B4DA45;
     dw $20F5                                                             ;B4DA46;
 
+%anchor($B4DA48)
 UNUSED_SpriteObjectSpritemaps_3A_5_B4DA48:
     dw $000E,$01FC                                                       ;B4DA48;
     db $00                                                               ;B4DA4C;
@@ -11145,6 +11999,7 @@ UNUSED_SpriteObjectSpritemaps_3A_5_B4DA48:
     db $09                                                               ;B4DA8D;
     dw $20F5                                                             ;B4DA8E;
 
+%anchor($B4DA90)
 UNUSED_SpriteObjectSpritemaps_3A_6_B4DA90:
     dw $000E,$01FE                                                       ;B4DA90;
     db $04                                                               ;B4DA94;
@@ -11176,6 +12031,7 @@ UNUSED_SpriteObjectSpritemaps_3A_6_B4DA90:
     db $08                                                               ;B4DAD5;
     dw $20F5                                                             ;B4DAD6;
 
+%anchor($B4DAD8)
 UNUSED_SpriteObjectSpritemaps_3A_7_B4DAD8:
     dw $000F,$01FE                                                       ;B4DAD8;
     db $04                                                               ;B4DADC;
@@ -11210,6 +12066,7 @@ UNUSED_SpriteObjectSpritemaps_3A_7_B4DAD8:
     dw $20F5                                                             ;B4DB23;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B4DB25)
 UNUSED_SpriteObjectSpritemaps_B4FB25:
     dw $0004,$0000                                                       ;B4DB25;
     db $00                                                               ;B4DB29;
@@ -11221,12 +12078,14 @@ UNUSED_SpriteObjectSpritemaps_B4FB25:
     db $F8                                                               ;B4DB38;
     dw $20F7                                                             ;B4DB39;
 
+%anchor($B4DB3B)
 UNUSED_SpriteObjectSpritemaps_B4FB3B:
     dw $0001,$81F8                                                       ;B4DB3B;
     db $F8                                                               ;B4DB3F;
     dw $20DE                                                             ;B4DB40;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B4DB42)
 SpriteObjectSpritemaps_3B_EvirFacingLeft_0:
     dw $000C,$0000                                                       ;B4DB42;
     db $02                                                               ;B4DB46;
@@ -11254,6 +12113,7 @@ SpriteObjectSpritemaps_3B_EvirFacingLeft_0:
     db $07                                                               ;B4DB7D;
     dw $20F5                                                             ;B4DB7E;
 
+%anchor($B4DB80)
 SpriteObjectSpritemaps_3B_EvirFacingLeft_1:
     dw $000C,$01F8                                                       ;B4DB80;
     db $F4                                                               ;B4DB84;
@@ -11281,6 +12141,7 @@ SpriteObjectSpritemaps_3B_EvirFacingLeft_1:
     db $06                                                               ;B4DBBB;
     dw $20F5                                                             ;B4DBBC;
 
+%anchor($B4DBBE)
 SpriteObjectSpritemaps_3B_EvirFacingLeft_2:
     dw $000C,$01F8                                                       ;B4DBBE;
     db $F4                                                               ;B4DBC2;
@@ -11308,6 +12169,7 @@ SpriteObjectSpritemaps_3B_EvirFacingLeft_2:
     db $05                                                               ;B4DBF9;
     dw $20F5                                                             ;B4DBFA;
 
+%anchor($B4DBFC)
 SpriteObjectSpritemaps_3B_EvirFacingLeft_3:
     dw $000D,$01FC                                                       ;B4DBFC;
     db $FC                                                               ;B4DC00;
@@ -11337,6 +12199,7 @@ SpriteObjectSpritemaps_3B_EvirFacingLeft_3:
     db $06                                                               ;B4DC3C;
     dw $20F5                                                             ;B4DC3D;
 
+%anchor($B4DC3F)
 SpriteObjectSpritemaps_3C_EvirFacingRight_0:
     dw $000C,$01F8                                                       ;B4DC3F;
     db $02                                                               ;B4DC43;
@@ -11364,6 +12227,7 @@ SpriteObjectSpritemaps_3C_EvirFacingRight_0:
     db $07                                                               ;B4DC7A;
     dw $60F5                                                             ;B4DC7B;
 
+%anchor($B4DC7D)
 SpriteObjectSpritemaps_3C_EvirFacingRight_1:
     dw $000C,$0000                                                       ;B4DC7D;
     db $F4                                                               ;B4DC81;
@@ -11391,6 +12255,7 @@ SpriteObjectSpritemaps_3C_EvirFacingRight_1:
     db $06                                                               ;B4DCB8;
     dw $60F5                                                             ;B4DCB9;
 
+%anchor($B4DCBB)
 SpriteObjectSpritemaps_3C_EvirFacingRight_2:
     dw $000C,$0000                                                       ;B4DCBB;
     db $F4                                                               ;B4DCBF;
@@ -11418,6 +12283,7 @@ SpriteObjectSpritemaps_3C_EvirFacingRight_2:
     db $05                                                               ;B4DCF6;
     dw $60F5                                                             ;B4DCF7;
 
+%anchor($B4DCF9)
 SpriteObjectSpritemaps_3C_EvirFacingRight_3:
     dw $000D,$01FC                                                       ;B4DCF9;
     db $FC                                                               ;B4DCFD;
@@ -11448,566 +12314,679 @@ SpriteObjectSpritemaps_3C_EvirFacingRight_3:
     dw $60F5                                                             ;B4DD3A;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B4DD3C)
 UNUSED_SpriteObjectSpritemaps_B4DD3C:
     dw $0001,$81F8                                                       ;B4DD3C;
     db $F8                                                               ;B4DD40;
     dw $3BCA                                                             ;B4DD41;
 
+%anchor($B4DD43)
 UNUSED_SpriteObjectSpritemaps_B4DD43:
     dw $0001,$81F8                                                       ;B4DD43;
     db $F8                                                               ;B4DD47;
     dw $3BCC                                                             ;B4DD48;
 
+%anchor($B4DD4A)
 UNUSED_SpriteObjectSpritemaps_B4DD4A:
     dw $0001,$81F8                                                       ;B4DD4A;
     db $F8                                                               ;B4DD4E;
     dw $3BCE                                                             ;B4DD4F;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B4DD51)
 SpriteObjectSpritemaps_3D_DraygonFoamingAtTheMouth_0:
     dw $0001,$81F8                                                       ;B4DD51;
     db $F8                                                               ;B4DD55;
     dw $35E0                                                             ;B4DD56;
 
+%anchor($B4DD58)
 SpriteObjectSpritemaps_3D_DraygonFoamingAtTheMouth_1:
     dw $0001,$81F8                                                       ;B4DD58;
     db $F4                                                               ;B4DD5C;
     dw $35E2                                                             ;B4DD5D;
 
+%anchor($B4DD5F)
 SpriteObjectSpritemaps_3D_DraygonFoamingAtTheMouth_2:
     dw $0001,$81F8                                                       ;B4DD5F;
     db $F0                                                               ;B4DD63;
     dw $35E4                                                             ;B4DD64;
 
+%anchor($B4DD66)
 SpriteObjectSpritemaps_3D_DraygonFoamingAtTheMouth_3:
     dw $0001,$81F8                                                       ;B4DD66;
     db $EC                                                               ;B4DD6A;
     dw $35E6                                                             ;B4DD6B;
 
+%anchor($B4DD6D)
 SpriteObjectSpritemaps_3D_DraygonFoamingAtTheMouth_4:
     dw $0001,$81F8                                                       ;B4DD6D;
     db $E8                                                               ;B4DD71;
     dw $35E8                                                             ;B4DD72;
 
+%anchor($B4DD74)
 SpriteObjectSpritemaps_3D_DraygonFoamingAtTheMouth_5:
     dw $0001,$81F8                                                       ;B4DD74;
     db $E4                                                               ;B4DD78;
     dw $35EA                                                             ;B4DD79;
 
+%anchor($B4DD7B)
 SpriteObjectSpritemaps_3D_DraygonFoamingAtTheMouth_6:
     dw $0001,$81F8                                                       ;B4DD7B;
     db $E0                                                               ;B4DD7F;
     dw $35EC                                                             ;B4DD80;
 
+%anchor($B4DD82)
 SpriteObjectSpritemaps_3D_DraygonFoamingAtTheMouth_7:
     dw $0001,$81F8                                                       ;B4DD82;
     db $DC                                                               ;B4DD86;
     dw $35EE                                                             ;B4DD87;
 
+%anchor($B4DD89)
 EnemyName_NoData:
     db "NODATA    "                                                      ;B4DD89;
     dw DebugEnemyPopulationData_NoName                                   ;B4DD93;
     dw $0000                                                             ;B4DD95;
 
+%anchor($B4DD97)
 EnemyName_Atomic:
     db "ATOMIC    "                                                      ;B4DD97;
     dw DebugEnemyPopulationData_Atomic                                   ;B4DDA1;
     dw $0001                                                             ;B4DDA3;
 
+%anchor($B4DDA5)
 EnemyName_Bang:
     db "BANG      "                                                      ;B4DDA5;
     dw DebugEnemyPopulationData_Bang                                     ;B4DDAF;
     dw $0002                                                             ;B4DDB1;
 
+%anchor($B4DDB3)
 EnemyName_PirateGreyWall:
     db "BATTA1    "                                                      ;B4DDB3;
     dw DebugEnemyPopulationData_PirateGreyWall                           ;B4DDBD;
     dw $0003                                                             ;B4DDBF;
 
+%anchor($B4DDC1)
 EnemyName_PirateGreyNinja:
     db "BATTA2    "                                                      ;B4DDC1;
     dw DebugEnemyPopulationData_PirateGreyNinja                          ;B4DDCB;
     dw $0004                                                             ;B4DDCD;
 
+%anchor($B4DDCF)
 EnemyName_PirateGreyWalking:
     db "BATTA3    "                                                      ;B4DDCF;
     dw DebugEnemyPopulationData_PirateGreyWalking                        ;B4DDD9;
     dw $0005                                                             ;B4DDDB;
 
+%anchor($B4DDDD)
 EnemyName_Botwoon:
     db "BOTOON    "                                                      ;B4DDDD;
     dw DebugEnemyPopulationData_Botwoon                                  ;B4DDE7;
     dw $0006                                                             ;B4DDE9;
 
+%anchor($B4DDEB)
 EnemyName_Boyon:
     db "BOYON     "                                                      ;B4DDEB;
     dw DebugEnemyPopulationData_Boyon                                    ;B4DDF5;
     dw $0007                                                             ;B4DDF7;
 
+%anchor($B4DDF9)
 EnemyName_DessgeegaLarge:
     db "DESSGEEGA "                                                      ;B4DDF9;
     dw DebugEnemyPopulationData_DessgeegaLarge                           ;B4DE03;
     dw $0008                                                             ;B4DE05;
 
+%anchor($B4DE07)
 EnemyName_GoldenTorizo:
     db "DORI      "                                                      ;B4DE07;
     dw DebugEnemyPopulationData_Shaktool                                 ;B4DE11;
     dw $0009                                                             ;B4DE13;
 
+%anchor($B4DE15)
 EnemyName_Dragon:
     db "DRAGON    "                                                      ;B4DE15;
     dw DebugEnemyPopulationData_Dragon                                   ;B4DE1F;
     dw $000A                                                             ;B4DE21;
 
+%anchor($B4DE23)
 EnemyName_Evir:
     db "EBI       "                                                      ;B4DE23;
     dw DebugEnemyPopulationData_Evir                                     ;B4DE2D;
     dw $000B                                                             ;B4DE2F;
 
+%anchor($B4DE31)
 EnemyName_Eye:
     db "EYE       "                                                      ;B4DE31;
     dw DebugEnemyPopulationData_Eye                                      ;B4DE3B;
     dw $000C                                                             ;B4DE3D;
 
+%anchor($B4DE3F)
 EnemyName_Namihe:
     db "NAMI      "                                                      ;B4DE3F;
     dw DebugEnemyPopulationData_Namihe                                   ;B4DE49;
     dw $000D                                                             ;B4DE4B;
 
+%anchor($B4DE4D)
 EnemyName_Skultera:
     db "FISH      "                                                      ;B4DE4D;
     dw DebugEnemyPopulationData_Skultera                                 ;B4DE57;
     dw $000E                                                             ;B4DE59;
 
+%anchor($B4DE5B)
 EnemyName_Coven:
     db "GAI       "                                                      ;B4DE5B;
     dw DebugEnemyPopulationData_Coven                                    ;B4DE65;
     dw $000F                                                             ;B4DE67;
 
+%anchor($B4DE69)
 EnemyName_Gamet:
     db "GAMET     "                                                      ;B4DE69;
     dw DebugEnemyPopulationData_Gamet                                    ;B4DE73;
     dw $0010                                                             ;B4DE75;
 
+%anchor($B4DE77)
 EnemyName_Geega:
     db "GEEGA     "                                                      ;B4DE77;
     dw DebugEnemyPopulationData_Geega                                    ;B4DE81;
     dw $0011                                                             ;B4DE83;
 
+%anchor($B4DE85)
 EnemyName_Geruta:
     db "GERUDA    "                                                      ;B4DE85;
     dw DebugEnemyPopulationData_Geruta                                   ;B4DE8F;
     dw $0012                                                             ;B4DE91;
 
+%anchor($B4DE93)
 EnemyName_UnknownGRAVY_B4DE93:
     db "GRAVY     "                                                      ;B4DE93;
     dw UNUSED_DebugEnemyPopulationData_GRAVY_B4E55C                      ;B4DE9D;
     dw $0013                                                             ;B4DE9F;
 
+%anchor($B4DEA1)
 EnemyName_KihunterGreen:
     db "HACHI1    "                                                      ;B4DEA1;
     dw DebugEnemyPopulationData_KihunterGreen                            ;B4DEAB;
     dw $0014                                                             ;B4DEAD;
 
+%anchor($B4DEAF)
 EnemyName_YappingMaw:
     db "HAND      "                                                      ;B4DEAF;
     dw DebugEnemyPopulationData_YappingMaw                               ;B4DEB9;
     dw $0015                                                             ;B4DEBB;
 
+%anchor($B4DEBD)
 EnemyName_Hibashi:
     db "HIBASHI   "                                                      ;B4DEBD;
     dw DebugEnemyPopulationData_Hibashi                                  ;B4DEC7;
     dw $0016                                                             ;B4DEC9;
 
+%anchor($B4DECB)
 EnemyName_Choot:
     db "HIRU      "                                                      ;B4DECB;
     dw DebugEnemyPopulationData_Choot                                    ;B4DED5;
     dw $0017                                                             ;B4DED7;
 
+%anchor($B4DED9)
 EnemyName_Holtz:
     db "HOLTZ     "                                                      ;B4DED9;
     dw DebugEnemyPopulationData_Holtz                                    ;B4DEE3;
     dw $0018                                                             ;B4DEE5;
 
+%anchor($B4DEE7)
 EnemyName_Fireflea:
     db "HOTARY    "                                                      ;B4DEE7;
     dw DebugEnemyPopulationData_Fireflea                                 ;B4DEF1;
     dw $0019                                                             ;B4DEF3;
 
+%anchor($B4DEF5)
 EnemyName_HZoomer:
     db "HZOOMER   "                                                      ;B4DEF5;
     dw DebugEnemyPopulationData_HZoomer                                  ;B4DEFF;
     dw $001A                                                             ;B4DF01;
 
+%anchor($B4DF03)
 EnemyName_Kago:
     db "KAGO      "                                                      ;B4DF03;
     dw DebugEnemyPopulationData_Kago                                     ;B4DF0D;
     dw $001B                                                             ;B4DF0F;
 
+%anchor($B4DF11)
 EnemyName_MamaTurtle:
     db "KAME      "                                                      ;B4DF11;
     dw DebugEnemyPopulationData_MamaTurtle                               ;B4DF1B;
     dw $001C                                                             ;B4DF1D;
 
+%anchor($B4DF1F)
 EnemyName_Tripper:
     db "KAMER     "                                                      ;B4DF1F;
     dw DebugEnemyPopulationData_Tripper_Kamer2                           ;B4DF29;
     dw $001D                                                             ;B4DF2B;
 
+%anchor($B4DF2D)
 EnemyName_Sciser:
     db "KANI      "                                                      ;B4DF2D;
     dw DebugEnemyPopulationData_Sciser                                   ;B4DF37;
     dw $001E                                                             ;B4DF39;
 
+%anchor($B4DF3B)
 EnemyName_FaceBlock:
     db "KOMA      "                                                      ;B4DF3B;
     dw DebugEnemyPopulationData_FaceBlock                                ;B4DF45;
     dw $001F                                                             ;B4DF47;
 
+%anchor($B4DF49)
 EnemyName_KzanTop:
     db "KZAN      "                                                      ;B4DF49;
     dw DebugEnemyPopulationData_KzanTop                                  ;B4DF53;
     dw $0020                                                             ;B4DF55;
 
+%anchor($B4DF57)
 EnemyName_Magdollite:
     db "LAVAMAN   "                                                      ;B4DF57;
     dw DebugEnemyPopulationData_Magdollite                               ;B4DF61;
     dw $0021                                                             ;B4DF63;
 
+%anchor($B4DF65)
 EnemyName_Mella:
     db "MELLA     "                                                      ;B4DF65;
     dw DebugEnemyPopulationData_Mella                                    ;B4DF6F;
     dw $0022                                                             ;B4DF71;
 
+%anchor($B4DF73)
 EnemyName_Menu:
     db "MEMU      "                                                      ;B4DF73;
     dw DebugEnemyPopulationData_Menu                                     ;B4DF7D;
     dw $0023                                                             ;B4DF7F;
 
+%anchor($B4DF81)
 EnemyName_Mellow:
     db "MERO      "                                                      ;B4DF81;
     dw DebugEnemyPopulationData_Mellow                                   ;B4DF8B;
     dw $0024                                                             ;B4DF8D;
 
+%anchor($B4DF8F)
 EnemyName_Metaree:
     db "METALEE   "                                                      ;B4DF8F;
     dw DebugEnemyPopulationData_Metaree                                  ;B4DF99;
     dw $0025                                                             ;B4DF9B;
 
+%anchor($B4DF9D)
 EnemyName_Mochtroid:
     db "METMOD    "                                                      ;B4DF9D;
     dw DebugEnemyPopulationData_Mochtroid                                ;B4DFA7;
     dw $0026                                                             ;B4DFA9;
 
+%anchor($B4DFAB)
 EnemyName_Metroid:
     db "METROID   "                                                      ;B4DFAB;
     dw DebugEnemyPopulationData_Metroid                                  ;B4DFB5;
     dw $0027                                                             ;B4DFB7;
 
+%anchor($B4DFB9)
 EnemyName_Multiviola:
     db "MULTI     "                                                      ;B4DFB9;
     dw DebugEnemyPopulationData_Multiviola                               ;B4DFC3;
     dw $0028                                                             ;B4DFC5;
 
+%anchor($B4DFC7)
 EnemyName_MZoomer:
     db "MZOOMER   "                                                      ;B4DFC7;
     dw DebugEnemyPopulationData_MZoomer                                  ;B4DFD1;
     dw $0029                                                             ;B4DFD3;
 
+%anchor($B4DFD5)
 EnemyName_Alcoon:
     db "NDRA      "                                                      ;B4DFD5;
     dw DebugEnemyPopulationData_Alcoon                                   ;B4DFDF;
     dw $002A                                                             ;B4DFE1;
 
+%anchor($B4DFE3)
 EnemyName_Beetom:
     db "NOMI      "                                                      ;B4DFE3;
     dw DebugEnemyPopulationData_Beetom                                   ;B4DFED;
     dw $002B                                                             ;B4DFEF;
 
+%anchor($B4DFF1)
 EnemyName_Sova:
     db "NOVA      "                                                      ;B4DFF1;
     dw DebugEnemyPopulationData_Sova                                     ;B4DFFB;
     dw $002C                                                             ;B4DFFD;
 
+%anchor($B4DFFF)
 EnemyName_Oum:
     db "OUM       "                                                      ;B4DFFF;
     dw DebugEnemyPopulationData_Oum                                      ;B4E009;
     dw $002D                                                             ;B4E00B;
 
+%anchor($B4E00D)
 EnemyName_Zero:
     db "OUMU      "                                                      ;B4E00D;
     dw DebugEnemyPopulationData_Zero                                     ;B4E017;
     dw $002E                                                             ;B4E019;
 
+%anchor($B4E01B)
 EnemyName_Bull:
     db "PIPE      "                                                      ;B4E01B;
     dw DebugEnemyPopulationData_Bull                                     ;B4E025;
     dw $002F                                                             ;B4E027;
 
+%anchor($B4E029)
 EnemyName_Polyp:
     db "POLYP     "                                                      ;B4E029;
     dw DebugEnemyPopulationData_Polyp                                    ;B4E033;
     dw $0030                                                             ;B4E035;
 
+%anchor($B4E037)
 EnemyName_Puromi:
     db "PUROMI    "                                                      ;B4E037;
     dw DebugEnemyPopulationData_Puromi                                   ;B4E041;
     dw $0031                                                             ;B4E043;
 
+%anchor($B4E045)
 EnemyName_Powamp:
     db "PUU       "                                                      ;B4E045;
     dw DebugEnemyPopulationData_Powamp                                   ;B4E04F;
     dw $0032                                                             ;B4E051;
 
+%anchor($B4E053)
 EnemyName_Puyo:
     db "PUYO      "                                                      ;B4E053;
     dw DebugEnemyPopulationData_Puyo                                     ;B4E05D;
     dw $0033                                                             ;B4E05F;
 
+%anchor($B4E061)
 EnemyName_Reflec:
     db "REFLEC    "                                                      ;B4E061;
     dw DebugEnemyPopulationData_Reflec                                   ;B4E06B;
     dw $0034                                                             ;B4E06D;
 
+%anchor($B4E06F)
 EnemyName_Rinka:
     db "RINKA     "                                                      ;B4E06F;
     dw DebugEnemyPopulationData_Rinka                                    ;B4E079;
     dw $0035                                                             ;B4E07B;
 
+%anchor($B4E07D)
 EnemyName_Rio:
     db "RIO       "                                                      ;B4E07D;
     dw DebugEnemyPopulationData_Rio                                      ;B4E087;
     dw $0036                                                             ;B4E089;
 
+%anchor($B4E08B)
 EnemyName_Ripper:
     db "RIPPER    "                                                      ;B4E08B;
     dw DebugEnemyPopulationData_Ripper                                   ;B4E095;
     dw $0037                                                             ;B4E097;
 
+%anchor($B4E099)
 EnemyName_GRipper_Ripper2:
     db "RIPPER2   "                                                      ;B4E099;
     dw DebugEnemyPopulationData_GRipper_Ripper2                          ;B4E0A3;
     dw $0038                                                             ;B4E0A5;
 
+%anchor($B4E0A7)
 EnemyName_Robot:
     db "ROBO      "                                                      ;B4E0A7;
     dw DebugEnemyPopulationData_Robot                                    ;B4E0B1;
     dw $0039                                                             ;B4E0B3;
 
+%anchor($B4E0B5)
 EnemyName_Boulder:
     db "RSTONE    "                                                      ;B4E0B5;
     dw DebugEnemyPopulationData_Boulder                                  ;B4E0BF;
     dw $003A                                                             ;B4E0C1;
 
+%anchor($B4E0C3)
 EnemyName_Cacatac:
     db "SABOTEN   "                                                      ;B4E0C3;
     dw DebugEnemyPopulationData_Cacatac                                  ;B4E0CD;
     dw $003B                                                             ;B4E0CF;
 
+%anchor($B4E0D1)
 EnemyName_Sbug:
     db "SBUG      "                                                      ;B4E0D1;
     dw DebugEnemyPopulationData_Sbug_Sbug2                               ;B4E0DB;
     dw $003C                                                             ;B4E0DD;
 
+%anchor($B4E0DF)
 EnemyName_MiniKraid:
     db "SCLAYD    "                                                      ;B4E0DF;
     dw DebugEnemyPopulationData_MiniKraid                                ;B4E0E9;
     dw $003D                                                             ;B4E0EB;
 
+%anchor($B4E0ED)
 EnemyName_Dessgeega:
     db "SDEATH    "                                                      ;B4E0ED;
     dw DebugEnemyPopulationData_Dessgeega                                ;B4E0F7;
     dw $003E                                                             ;B4E0F9;
 
+%anchor($B4E0FB)
 EnemyName_ShutterGrowing:
     db "SHUTTER   "                                                      ;B4E0FB;
     dw DebugEnemyPopulationData_ShutterGrowing                           ;B4E105;
     dw $003F                                                             ;B4E107;
 
+%anchor($B4E109)
 EnemyName_Shutter2_Kamer:
     db "SHUTTER2  "                                                      ;B4E109;
     dw DebugEnemyPopulationData_Shutters_Kamer                           ;B4E113;
     dw $0040                                                             ;B4E115;
 
+%anchor($B4E117)
 EnemyName_SidehopperLarge_SidehopperTourian:
     db "SIDE      "                                                      ;B4E117;
     dw DebugEnemyPopulationData_SidehopperLarge_SidehopperTourian        ;B4E121;
     dw $0041                                                             ;B4E123;
 
+%anchor($B4E125)
 EnemyName_Skree:
     db "SKREE     "                                                      ;B4E125;
     dw DebugEnemyPopulationData_Skree                                    ;B4E12F;
     dw $0042                                                             ;B4E131;
 
+%anchor($B4E133)
 EnemyName_Spark:
     db "SPA       "                                                      ;B4E133;
     dw DebugEnemyPopulationData_Spark                                    ;B4E13D;
     dw $0043                                                             ;B4E13F;
 
+%anchor($B4E141)
 EnemyName_Squeept:
     db "SQUEEWPT  "                                                      ;B4E141;
     dw DebugEnemyPopulationData_Squeept                                  ;B4E14B;
     dw $0044                                                             ;B4E14D;
 
+%anchor($B4E14F)
 EnemyName_Sidehopper:
     db "SSIDE     "                                                      ;B4E14F;
     dw DebugEnemyPopulationData_Sidehopper                               ;B4E159;
     dw $0045                                                             ;B4E15B;
 
+%anchor($B4E15D)
 EnemyName_Stoke:
     db "STOKE     "                                                      ;B4E15D;
     dw DebugEnemyPopulationData_Stoke                                    ;B4E167;
     dw $0046                                                             ;B4E169;
 
+%anchor($B4E16B)
 EnemyName_Owtch:
     db "TOGE      "                                                      ;B4E16B;
     dw DebugEnemyPopulationData_Owtch                                    ;B4E175;
     dw $0047                                                             ;B4E177;
 
+%anchor($B4E179)
 EnemyName_Viola:
     db "VIOLA     "                                                      ;B4E179;
     dw DebugEnemyPopulationData_Viola                                    ;B4E183;
     dw $0048                                                             ;B4E185;
 
+%anchor($B4E187)
 EnemyName_Waver:
     db "WAVER     "                                                      ;B4E187;
     dw DebugEnemyPopulationData_Waver                                    ;B4E191;
     dw $0049                                                             ;B4E193;
 
+%anchor($B4E195)
 EnemyName_Yard:
     db "YARD      "                                                      ;B4E195;
     dw DebugEnemyPopulationData_Yard                                     ;B4E19F;
     dw $004A                                                             ;B4E1A1;
 
+%anchor($B4E1A3)
 EnemyName_Zeb:
     db "ZEB       "                                                      ;B4E1A3;
     dw DebugEnemyPopulationData_Zeb                                      ;B4E1AD;
     dw $004B                                                             ;B4E1AF;
 
+%anchor($B4E1B1)
 EnemyName_Zebbo:
     db "ZEBBO     "                                                      ;B4E1B1;
     dw DebugEnemyPopulationData_Zebbo                                    ;B4E1BB;
     dw $004C                                                             ;B4E1BD;
 
+%anchor($B4E1BF)
 EnemyName_Zeela:
     db "ZEELA     "                                                      ;B4E1BF;
     dw DebugEnemyPopulationData_Zeela                                    ;B4E1C9;
     dw $004D                                                             ;B4E1CB;
 
+%anchor($B4E1CD)
 EnemyName_Zoa:
     db "ZOA       "                                                      ;B4E1CD;
     dw DebugEnemyPopulationData_Zoa                                      ;B4E1D7;
     dw $004E                                                             ;B4E1D9;
 
+%anchor($B4E1DB)
 EnemyName_Zoomer:
     db "ZOOMER    "                                                      ;B4E1DB;
     dw DebugEnemyPopulationData_Zoomer                                   ;B4E1E5;
     dw $004F                                                             ;B4E1E7;
 
+%anchor($B4E1E9)
 EnemyName_PirateGreenWall:
     db "BATTA1Br  "                                                      ;B4E1E9;
     dw DebugEnemyPopulationData_PirateGreenWall                          ;B4E1F3;
     dw $0050                                                             ;B4E1F5;
 
+%anchor($B4E1F7)
 EnemyName_PirateRedWall:
     db "BATTA1No  "                                                      ;B4E1F7;
     dw DebugEnemyPopulationData_PirateRedWall                            ;B4E201;
     dw $0051                                                             ;B4E203;
 
+%anchor($B4E205)
 EnemyName_PirateGoldWall:
     db "BATTA1Na  "                                                      ;B4E205;
     dw DebugEnemyPopulationData_PirateGoldWall                           ;B4E20F;
     dw $0052                                                             ;B4E211;
 
+%anchor($B4E213)
 EnemyName_PirateMagentaWall:
     db "BATTA1Ma  "                                                      ;B4E213;
     dw DebugEnemyPopulationData_PirateMagentaWall                        ;B4E21D;
     dw $0053                                                             ;B4E21F;
 
+%anchor($B4E221)
 EnemyName_PirateSilverWall:
     db "BATTA1Tu  "                                                      ;B4E221;
     dw DebugEnemyPopulationData_PirateSilverWall                         ;B4E22B;
     dw $0054                                                             ;B4E22D;
 
+%anchor($B4E22F)
 EnemyName_PirateGreenNinja:
     db "BATTA2Br  "                                                      ;B4E22F;
     dw DebugEnemyPopulationData_PirateGreenNinja                         ;B4E239;
     dw $0055                                                             ;B4E23B;
 
+%anchor($B4E23D)
 EnemyName_PirateRedNinja:
     db "BATTA2No  "                                                      ;B4E23D;
     dw DebugEnemyPopulationData_PirateRedNinja                           ;B4E247;
     dw $0056                                                             ;B4E249;
 
+%anchor($B4E24B)
 EnemyName_PirateGoldNinja:
     db "BATTA2Na  "                                                      ;B4E24B;
     dw DebugEnemyPopulationData_PirateGoldNinja                          ;B4E255;
     dw $0057                                                             ;B4E257;
 
+%anchor($B4E259)
 EnemyName_PirateMagentaNinja:
     db "BATTA2Ma  "                                                      ;B4E259;
     dw DebugEnemyPopulationData_PirateMagentaNinja                       ;B4E263;
     dw $0058                                                             ;B4E265;
 
+%anchor($B4E267)
 EnemyName_PirateSilverNinja:
     db "BATTA2Tu  "                                                      ;B4E267;
     dw DebugEnemyPopulationData_PirateSilverNinja                        ;B4E271;
     dw $0059                                                             ;B4E273;
 
+%anchor($B4E275)
 EnemyName_PirateGreenWalking:
     db "BATTA3Br  "                                                      ;B4E275;
     dw DebugEnemyPopulationData_PirateGreenWalking                       ;B4E27F;
     dw $005A                                                             ;B4E281;
 
+%anchor($B4E283)
 EnemyName_PirateRedWalking:
     db "BATTA3No  "                                                      ;B4E283;
     dw DebugEnemyPopulationData_PirateRedWalking                         ;B4E28D;
     dw $005B                                                             ;B4E28F;
 
+%anchor($B4E291)
 EnemyName_PirateGoldWalking:
     db "BATTA3Na  "                                                      ;B4E291;
     dw DebugEnemyPopulationData_PirateGoldWalking                        ;B4E29B;
     dw $005C                                                             ;B4E29D;
 
+%anchor($B4E29F)
 EnemyName_PirateMagentaWalking:
     db "BATTA3Ma  "                                                      ;B4E29F;
     dw DebugEnemyPopulationData_PirateMagentaWalking                     ;B4E2A9;
     dw $005D                                                             ;B4E2AB;
 
+%anchor($B4E2AD)
 EnemyName_PirateSilverWalking:
     db "BATTA3Tu  "                                                      ;B4E2AD;
     dw DebugEnemyPopulationData_PirateSilverWalking                      ;B4E2B7;
     dw $005E                                                             ;B4E2B9;
 
+%anchor($B4E2BB)
 EnemyName_Fune:
     db "FUNE      "                                                      ;B4E2BB;
     dw DebugEnemyPopulationData_Fune                                     ;B4E2C5;
     dw $005F                                                             ;B4E2C7;
 
+%anchor($B4E2C9)
 EnemyName_KihunterYellow:
     db "HACHI2    "                                                      ;B4E2C9;
     dw DebugEnemyPopulationData_KihunterYellow                           ;B4E2D3;
     dw $0060                                                             ;B4E2D5;
 
+%anchor($B4E2D7)
 EnemyName_KihunterRed:
     db "HACHI3    "                                                      ;B4E2D7;
     dw DebugEnemyPopulationData_KihunterRed                              ;B4E2E1;
     dw $0061                                                             ;B4E2E3;
 
+%anchor($B4E2E5)
 EnemyName_RobotNoPower:
     db "ROBO2     "                                                      ;B4E2E5;
     dw DebugEnemyPopulationData_RobotNoPower                             ;B4E2EF;
     dw $0062                                                             ;B4E2F1;
 
+%anchor($B4E2F3)
 DebugEnemyPopulationData_NoName:
     dw $FFFF                                                             ;B4E2F3;
     db $00                                                               ;B4E2F5;
 
+%anchor($B4E2F6)
 DebugEnemyPopulationData_Atomic:
     dw EnemyHeaders_Atomic                                               ;B4E2F6;
     dw $0100,$0100,$0000,$2000,$0000,$0001,$0001,$FFFF                   ;B4E2F8;
     db $01                                                               ;B4E308;
 
+%anchor($B4E309)
 DebugEnemyPopulationData_Bang:
     dw EnemyHeaders_Bang                                                 ;B4E309;
     dw $0100,$0100,$0000,$2800,$0000,$BB2B,$0000                         ;B4E30B;
@@ -12017,36 +12996,43 @@ DebugEnemyPopulationData_Bang:
     dw $0100,$0100,$0000,$2800,$0000,$BB4A,$0000,$FFFF                   ;B4E32B;
     db $01                                                               ;B4E33B;
 
+%anchor($B4E33C)
 DebugEnemyPopulationData_PirateGreyWall:
     dw EnemyHeaders_PirateGreyWall                                       ;B4E33C;
     dw $002D,$01B8,$0000,$2000,$0004,$0000,$00A0,$FFFF                   ;B4E33E;
     db $01                                                               ;B4E34E;
 
+%anchor($B4E34F)
 DebugEnemyPopulationData_PirateGreyNinja:
     dw EnemyHeaders_PirateGreyNinja                                      ;B4E34F;
     dw $0270,$00A0,$0000,$2800,$0004,$0001,$0030,$FFFF                   ;B4E351;
     db $01                                                               ;B4E361;
 
+%anchor($B4E362)
 DebugEnemyPopulationData_PirateGreyWalking:
     dw EnemyHeaders_PirateGreyWalking                                    ;B4E362;
     dw $00D9,$00A0,$0000,$2000,$0004,$0000,$0050,$FFFF                   ;B4E364;
     db $01                                                               ;B4E374;
 
+%anchor($B4E375)
 DebugEnemyPopulationData_Botwoon:
     dw EnemyHeaders_Botwoon                                              ;B4E375;
     dw $0100,$0100,$0000,$2800,$0000,$0000,$0000,$FFFF                   ;B4E377;
     db $01                                                               ;B4E387;
 
+%anchor($B4E388)
 DebugEnemyPopulationData_Boyon:
     dw EnemyHeaders_Boyon                                                ;B4E388;
     dw $00E8,$00A8,$0000,$2000,$0000,$0103,$0020,$FFFF                   ;B4E38A;
     db $00                                                               ;B4E39A;
 
+%anchor($B4E39B)
 DebugEnemyPopulationData_DessgeegaLarge:
     dw EnemyHeaders_DessgeegaLarge                                       ;B4E39B;
     dw $0100,$0100,$0000,$2000,$0000,$8000,$0000,$FFFF                   ;B4E39D;
     db $01                                                               ;B4E3AD;
 
+%anchor($B4E3AE)
 DebugEnemyPopulationData_Shaktool:
     dw EnemyHeaders_Shaktool                                             ;B4E3AE;
     dw $0110,$035C,$0000,$2000,$0000,$8000,$0000                         ;B4E3B0;
@@ -12064,6 +13050,7 @@ DebugEnemyPopulationData_Shaktool:
     dw $0110,$035C,$0000,$2000,$0000,$8000,$000C,$FFFF                   ;B4E410;
     db $01                                                               ;B4E420;
 
+%anchor($B4E421)
 DebugEnemyPopulationData_Dragon:
     dw EnemyHeaders_Dragon                                               ;B4E421;
     dw $0100,$0100,$0000,$2000,$0000,$0000,$0000                         ;B4E423;
@@ -12071,6 +13058,7 @@ DebugEnemyPopulationData_Dragon:
     dw $0100,$0100,$0002,$2400,$0000,$0001,$0000,$FFFF                   ;B4E433;
     db $01                                                               ;B4E443;
 
+%anchor($B4E444)
 DebugEnemyPopulationData_Evir:
     dw EnemyHeaders_Evir                                                 ;B4E444;
     dw $0100,$0100,$0000,$2000,$0000,$0000,$1010                         ;B4E446;
@@ -12080,6 +13068,7 @@ DebugEnemyPopulationData_Evir:
     dw $0100,$0100,$0000,$2800,$0000,$0002,$0000,$FFFF                   ;B4E466;
     db $01                                                               ;B4E476;
 
+%anchor($B4E477)
 DebugEnemyPopulationData_Eye:
     dw EnemyHeaders_Eye                                                  ;B4E477;
     dw $0228,$0048,$0000,$2C00,$0000,$0000,$8001                         ;B4E479;
@@ -12087,21 +13076,25 @@ DebugEnemyPopulationData_Eye:
     dw $0228,$0048,$0000,$2C00,$0000,$0000,$0000,$FFFF                   ;B4E489;
     db $00                                                               ;B4E499;
 
+%anchor($B4E49A)
 DebugEnemyPopulationData_Namihe:
     dw EnemyHeaders_Namihe                                               ;B4E49A;
     dw $00F0,$04E0,$0000,$A000,$0000,$0111,$0F05,$FFFF                   ;B4E49C;
     db $01                                                               ;B4E4AC;
 
+%anchor($B4E4AD)
 DebugEnemyPopulationData_Skultera:
     dw EnemyHeaders_Skultera                                             ;B4E4AD;
     dw $0090,$00A0,$0000,$2000,$0000,$0102,$0420,$FFFF                   ;B4E4AF;
     db $01                                                               ;B4E4BF;
 
+%anchor($B4E4C0)
 DebugEnemyPopulationData_Coven:
     dw EnemyHeaders_Coven                                                ;B4E4C0;
     dw $0100,$0100,$0000,$6800,$0000,$0000,$0000,$FFFF                   ;B4E4C2;
     db $01                                                               ;B4E4D2;
 
+%anchor($B4E4D3)
 DebugEnemyPopulationData_Gamet:
     dw EnemyHeaders_Gamet                                                ;B4E4D3;
     dw $0100,$00E0,$0000,$6800,$0000,$0000,$4030                         ;B4E4D5;
@@ -12115,11 +13108,13 @@ DebugEnemyPopulationData_Gamet:
     dw $0100,$00E0,$0000,$6800,$0000,$0000,$4000,$FFFF                   ;B4E515;
     db $01                                                               ;B4E525;
 
+%anchor($B4E526)
 DebugEnemyPopulationData_Geega:
     dw EnemyHeaders_Geega                                                ;B4E526;
     dw $0100,$0100,$0000,$6100,$0000,$0001,$0010,$FFFF                   ;B4E528;
     db $01                                                               ;B4E538;
 
+%anchor($B4E539)
 DebugEnemyPopulationData_Geruta:
     dw EnemyHeaders_Geruta                                               ;B4E539;
     dw $0048,$0080,$0000,$2000,$0000,$0000,$0000                         ;B4E53B;
@@ -12127,10 +13122,12 @@ DebugEnemyPopulationData_Geruta:
     dw $0048,$0080,$0005,$2400,$0000,$8000,$0000,$FFFF                   ;B4E54B;
     db $01                                                               ;B4E55B;
 
+%anchor($B4E55C)
 UNUSED_DebugEnemyPopulationData_GRAVY_B4E55C:
     dw $FFFF                                                             ;B4E55C;
     db $00                                                               ;B4E55E;
 
+%anchor($B4E55F)
 DebugEnemyPopulationData_KihunterGreen:
     dw EnemyHeaders_KihunterGreen                                        ;B4E55F;
     dw $0100,$0100,$0000,$2800,$0000,$0001,$0000                         ;B4E561;
@@ -12138,11 +13135,13 @@ DebugEnemyPopulationData_KihunterGreen:
     dw $0100,$0100,$0000,$2C00,$0000,$0020,$0000,$FFFF                   ;B4E571;
     db $01                                                               ;B4E581;
 
+%anchor($B4E582)
 DebugEnemyPopulationData_YappingMaw:
     dw EnemyHeaders_YappingMaw                                           ;B4E582;
     dw $0100,$0100,$0000,$2000,$0000,$0010,$0001,$FFFF                   ;B4E584;
     db $00                                                               ;B4E594;
 
+%anchor($B4E595)
 DebugEnemyPopulationData_Hibashi:
     dw EnemyHeaders_Hibashi                                              ;B4E595;
     dw $0100,$0100,$0000,$2500,$0000,$0025,$0000                         ;B4E597;
@@ -12150,11 +13149,13 @@ DebugEnemyPopulationData_Hibashi:
     dw $0100,$0100,$0000,$2100,$0000,$0000,$0001,$FFFF                   ;B4E5A7;
     db $00                                                               ;B4E5B7;
 
+%anchor($B4E5B8)
 DebugEnemyPopulationData_Choot:
     dw EnemyHeaders_Choot                                                ;B4E5B8;
     dw $0100,$0100,$0000,$2000,$0000,$0204,$0030,$FFFF                   ;B4E5BA;
     db $01                                                               ;B4E5CA;
 
+%anchor($B4E5CB)
 DebugEnemyPopulationData_Holtz:
     dw EnemyHeaders_Holtz                                                ;B4E5CB;
     dw $0100,$0100,$0000,$2000,$0000,$0000,$0000                         ;B4E5CD;
@@ -12162,21 +13163,25 @@ DebugEnemyPopulationData_Holtz:
     dw $0100,$0100,$0006,$2400,$0000,$8000,$0000,$FFFF                   ;B4E5DD;
     db $01                                                               ;B4E5ED;
 
+%anchor($B4E5EE)
 DebugEnemyPopulationData_Fireflea:
     dw EnemyHeaders_Fireflea                                             ;B4E5EE;
     dw $0600,$0060,$0000,$2000,$0000,$0001,$0108,$FFFF                   ;B4E5F0;
     db $01                                                               ;B4E600;
 
+%anchor($B4E601)
 DebugEnemyPopulationData_HZoomer:
     dw EnemyHeaders_HZoomer                                              ;B4E601;
     dw $0360,$0098,$0003,$2001,$0000,$0002,$0000,$FFFF                   ;B4E603;
     db $01                                                               ;B4E613;
 
+%anchor($B4E614)
 DebugEnemyPopulationData_Kago:
     dw EnemyHeaders_Kago                                                 ;B4E614;
     dw $0168,$0090,$0000,$A000,$0000,$0020,$0000,$FFFF                   ;B4E616;
     db $01                                                               ;B4E626;
 
+%anchor($B4E627)
 DebugEnemyPopulationData_MamaTurtle:
     dw EnemyHeaders_MamaTurtle                                           ;B4E627;
     dw $0100,$0100,$0000,$A800,$0000,$0000,$0000                         ;B4E629;
@@ -12190,21 +13195,25 @@ DebugEnemyPopulationData_MamaTurtle:
     dw $0140,$0100,$0000,$A800,$0000,$0001,$0000,$FFFF                   ;B4E669;
     db $01                                                               ;B4E679;
 
+%anchor($B4E67A)
 DebugEnemyPopulationData_Tripper_Kamer2:
     dw EnemyHeaders_Tripper                                              ;B4E67A;
     dw $0868,$00C8,$0000,$A000,$0000,$0000,$2020,$FFFF                   ;B4E67C;
     db $01                                                               ;B4E68C;
 
+%anchor($B4E68D)
 DebugEnemyPopulationData_Sciser:
     dw EnemyHeaders_Sciser                                               ;B4E68D;
     dw $01C0,$0098,$0003,$2000,$0000,$0001,$0000,$FFFF                   ;B4E68F;
     db $01                                                               ;B4E69F;
 
+%anchor($B4E6A0)
 DebugEnemyPopulationData_FaceBlock:
     dw EnemyHeaders_FaceBlock                                            ;B4E6A0;
     dw $0100,$0100,$0000,$A000,$0000,$0025,$0000,$FFFF                   ;B4E6A2;
     db $00                                                               ;B4E6B2;
 
+%anchor($B4E6B3)
 DebugEnemyPopulationData_KzanTop:
     dw EnemyHeaders_KzanTop                                              ;B4E6B3;
     dw $0480,$0400,$0000,$A000,$0000,$0030,$A070                         ;B4E6B5;
@@ -12212,6 +13221,7 @@ DebugEnemyPopulationData_KzanTop:
     dw $0480,$0408,$0000,$0100,$0000,$0000,$0000,$FFFF                   ;B4E6C5;
     db $00                                                               ;B4E6D5;
 
+%anchor($B4E6D6)
 DebugEnemyPopulationData_Magdollite:
     dw EnemyHeaders_Magdollite                                           ;B4E6D6;
     dw $0248,$00B0,$0000,$2800,$0000,$0000,$3A60                         ;B4E6D8;
@@ -12221,86 +13231,103 @@ DebugEnemyPopulationData_Magdollite:
     dw $0248,$00B0,$0000,$2C00,$0000,$0002,$0000,$FFFF                   ;B4E6F8;
     db $01                                                               ;B4E708;
 
+%anchor($B4E709)
 DebugEnemyPopulationData_Mella:
     dw EnemyHeaders_Mella                                                ;B4E709;
     dw $0100,$0100,$0000,$2000,$0000,$0000,$0000,$FFFF                   ;B4E70B;
     db $00                                                               ;B4E71B;
 
+%anchor($B4E71C)
 DebugEnemyPopulationData_Menu:
     dw EnemyHeaders_Menu                                                 ;B4E71C;
     dw $0100,$0100,$0000,$2000,$0000,$0000,$0000,$FFFF                   ;B4E71E;
     db $00                                                               ;B4E72E;
 
+%anchor($B4E72F)
 DebugEnemyPopulationData_Mellow:
     dw EnemyHeaders_Mellow                                               ;B4E72F;
     dw $0100,$0100,$0000,$2000,$0000,$0000,$0000,$FFFF                   ;B4E731;
     db $00                                                               ;B4E741;
 
+%anchor($B4E742)
 DebugEnemyPopulationData_Metaree:
     dw EnemyHeaders_Metaree                                              ;B4E742;
     dw $0100,$0100,$0000,$2000,$0000,$0000,$0000,$FFFF                   ;B4E744;
     db $01                                                               ;B4E754;
 
+%anchor($B4E755)
 DebugEnemyPopulationData_Mochtroid:
     dw EnemyHeaders_Mochtroid                                            ;B4E755;
     dw $0100,$0100,$0000,$2000,$0000,$0000,$0000,$FFFF                   ;B4E757;
     db $01                                                               ;B4E767;
 
+%anchor($B4E768)
 DebugEnemyPopulationData_Metroid:
     dw EnemyHeaders_Metroid                                              ;B4E768;
     dw $0100,$0100,$0000,$2000,$0000,$0000,$0005,$FFFF                   ;B4E76A;
     db $01                                                               ;B4E77A;
 
+%anchor($B4E77B)
 DebugEnemyPopulationData_Multiviola:
     dw EnemyHeaders_Multiviola                                           ;B4E77B;
     dw $0078,$0058,$0000,$2000,$0000,$0060,$0001,$FFFF                   ;B4E77D;
     db $00                                                               ;B4E78D;
 
+%anchor($B4E78E)
 DebugEnemyPopulationData_MZoomer:
     dw EnemyHeaders_MZoomer                                              ;B4E78E;
     dw $0188,$0198,$0003,$2800,$0000,$0001,$0000,$FFFF                   ;B4E790;
     db $01                                                               ;B4E7A0;
 
+%anchor($B4E7A1)
 DebugEnemyPopulationData_Alcoon:
     dw EnemyHeaders_Alcoon                                               ;B4E7A1;
     dw $0100,$0100,$0000,$2800,$0000,$0000,$0000,$FFFF                   ;B4E7A3;
     db $01                                                               ;B4E7B3;
 
+%anchor($B4E7B4)
 DebugEnemyPopulationData_Beetom:
     dw EnemyHeaders_Beetom                                               ;B4E7B4;
     dw $0100,$0100,$0000,$2000,$0000,$0000,$0000,$FFFF                   ;B4E7B6;
     db $01                                                               ;B4E7C6;
 
+%anchor($B4E7C7)
 DebugEnemyPopulationData_Sova:
     dw EnemyHeaders_Sova                                                 ;B4E7C7;
     dw $0880,$02A8,$0003,$2000,$0000,$0001,$0004,$FFFF                   ;B4E7C9;
     db $01                                                               ;B4E7D9;
 
+%anchor($B4E7DA)
 DebugEnemyPopulationData_Oum:
     dw EnemyHeaders_Oum                                                  ;B4E7DA;
     dw $0100,$0100,$0000,$A000,$0004,$0000,$0000,$FFFF                   ;B4E7DC;
     db $01                                                               ;B4E7EC;
 
+%anchor($B4E7ED)
 DebugEnemyPopulationData_Zero:
     dw EnemyHeaders_Zero                                                 ;B4E7ED;
     dw $00A0,$0040,$0002,$2000,$0000,$0001,$0000,$FFFF                   ;B4E7EF;
     db $01                                                               ;B4E7FF;
 
+%anchor($B4E800)
 DebugEnemyPopulationData_Bull:
     dw EnemyHeaders_Bull                                                 ;B4E800;
     dw $0200,$0060,$0000,$2800,$0000,$0008,$0000,$FFFF                   ;B4E802;
     db $01                                                               ;B4E812;
 
+%anchor($B4E813)
 DebugEnemyPopulationData_Polyp:
     dw EnemyHeaders_LavaRocks                                            ;B4E813;
     dw $0100,$0100,$0000,$2500,$0000,$0000,$0000,$FFFF                   ;B4E815;
     db $01                                                               ;B4E825;
 
+%anchor($B4E826)
 DebugEnemyPopulationData_Puromi:
     dw EnemyHeaders_Puromi                                               ;B4E826;
     dw $0100,$0100,$0000,$2000,$0000,$1010,$2001,$FFFF                   ;B4E828;
     db $00                                                               ;B4E838;
 
+%anchor($B4E839)
 DebugEnemyPopulationData_Powamp:
     dw EnemyHeaders_Powamp                                               ;B4E839;
     dw $0100,$0100,$0000,$2C00,$0000,$0001,$0000                         ;B4E83B;
@@ -12308,91 +13335,109 @@ DebugEnemyPopulationData_Powamp:
     dw $0100,$0100,$0000,$2800,$0000,$0000,$0000,$FFFF                   ;B4E84B;
     db $01                                                               ;B4E85B;
 
+%anchor($B4E85C)
 DebugEnemyPopulationData_Puyo:
     dw EnemyHeaders_Puyo                                                 ;B4E85C;
     dw $033D,$00CC,$0000,$2000,$0000,$0003,$000A,$FFFF                   ;B4E85E;
     db $01                                                               ;B4E86E;
 
+%anchor($B4E86F)
 DebugEnemyPopulationData_Reflec:
     dw EnemyHeaders_Reflec                                               ;B4E86F;
     dw $0168,$0048,$0000,$2000,$0000,$0000,$0000,$FFFF                   ;B4E871;
     db $00                                                               ;B4E881;
 
+%anchor($B4E882)
 DebugEnemyPopulationData_Rinka:
     dw EnemyHeaders_Rinka                                                ;B4E882;
     dw $0100,$0100,$0000,$6000,$0000,$0000,$0000,$FFFF                   ;B4E884;
     db $00                                                               ;B4E894;
 
+%anchor($B4E895)
 DebugEnemyPopulationData_Rio:
     dw EnemyHeaders_Rio                                                  ;B4E895;
     dw $0100,$0100,$0000,$2000,$0000,$0000,$0000,$FFFF                   ;B4E897;
     db $01                                                               ;B4E8A7;
 
+%anchor($B4E8A8)
 DebugEnemyPopulationData_Ripper:
     dw EnemyHeaders_Ripper                                               ;B4E8A8;
     dw $0068,$01A0,$0000,$2000,$0000,$0010,$0001,$FFFF                   ;B4E8AA;
     db $01                                                               ;B4E8BA;
 
+%anchor($B4E8BB)
 DebugEnemyPopulationData_GRipper_Ripper2:
     dw EnemyHeaders_Ripper2                                              ;B4E8BB;
     dw $0040,$06A0,$0000,$2800,$0000,$0020,$0001,$FFFF                   ;B4E8BD;
     db $01                                                               ;B4E8CD;
 
+%anchor($B4E8CE)
 DebugEnemyPopulationData_Robot:
     dw EnemyHeaders_Robot                                                ;B4E8CE;
     dw $0050,$00B0,$0000,$2800,$0000,$0001,$0000,$FFFF                   ;B4E8D0;
     db $01                                                               ;B4E8E0;
 
+%anchor($B4E8E1)
 DebugEnemyPopulationData_Boulder:
     dw EnemyHeaders_Boulder                                              ;B4E8E1;
     dw $0400,$01B5,$0060,$2000,$0000,$0101,$20A0,$FFFF                   ;B4E8E3;
     db $00                                                               ;B4E8F3;
 
+%anchor($B4E8F4)
 DebugEnemyPopulationData_Cacatac:
     dw EnemyHeaders_Cacatac                                              ;B4E8F4;
     dw $03D0,$00B3,$0000,$2000,$0000,$0100,$0F01,$FFFF                   ;B4E8F6;
     db $01                                                               ;B4E906;
 
+%anchor($B4E907)
 DebugEnemyPopulationData_Sbug_Sbug2:
     dw EnemyHeaders_Sbug                                                 ;B4E907;
     dw $01AD,$04E8,$0000,$2400,$0000,$E804,$0020,$FFFF                   ;B4E909;
     db $00                                                               ;B4E919;
 
+%anchor($B4E91A)
 DebugEnemyPopulationData_MiniKraid:
     dw EnemyHeaders_MiniKraid                                            ;B4E91A;
     dw $0100,$0100,$0000,$2800,$0000,$0000,$0000,$FFFF                   ;B4E91C;
     db $01                                                               ;B4E92C;
 
+%anchor($B4E92D)
 DebugEnemyPopulationData_Dessgeega:
     dw EnemyHeaders_Dessgeega                                            ;B4E92D;
     dw $0100,$0100,$0000,$2000,$0000,$0001,$0000,$FFFF                   ;B4E92F;
     db $01                                                               ;B4E93F;
 
+%anchor($B4E940)
 DebugEnemyPopulationData_ShutterGrowing:
     dw EnemyHeaders_ShutterGrowing                                       ;B4E940;
     dw $0300,$0088,$0000,$A800,$0000,$004C,$0008,$FFFF                   ;B4E942;
     db $00                                                               ;B4E952;
 
+%anchor($B4E953)
 DebugEnemyPopulationData_Shutters_Kamer:
     dw EnemyHeaders_ShutterShootable                                     ;B4E953;
     dw $0100,$0100,$0020,$A800,$0A0A,$2003,$0000,$FFFF                   ;B4E955;
     db $00                                                               ;B4E965;
 
+%anchor($B4E966)
 DebugEnemyPopulationData_SidehopperLarge_SidehopperTourian:
     dw EnemyHeaders_SidehopperLarge                                      ;B4E966;
     dw $0100,$0100,$0000,$2000,$0000,$0000,$0000,$FFFF                   ;B4E968;
     db $01                                                               ;B4E978;
 
+%anchor($B4E979)
 DebugEnemyPopulationData_Skree:
     dw EnemyHeaders_Skree                                                ;B4E979;
     dw $0100,$0100,$0000,$2000,$0000,$0000,$0000,$FFFF                   ;B4E97B;
     db $01                                                               ;B4E98B;
 
+%anchor($B4E98C)
 DebugEnemyPopulationData_Spark:
     dw EnemyHeaders_Spark                                                ;B4E98C;
     dw $0100,$0100,$0000,$2000,$0000,$0000,$0000,$FFFF                   ;B4E98E;
     db $00                                                               ;B4E99E;
 
+%anchor($B4E99F)
 DebugEnemyPopulationData_Squeept:
     dw EnemyHeaders_Squeept                                              ;B4E99F;
     dw $0060,$00D8,$0000,$2000,$0000,$0000,$0000                         ;B4E9A1;
@@ -12400,141 +13445,169 @@ DebugEnemyPopulationData_Squeept:
     dw $0060,$00D8,$0002,$2400,$0000,$8000,$0000,$FFFF                   ;B4E9B1;
     db $01                                                               ;B4E9C1;
 
+%anchor($B4E9C2)
 DebugEnemyPopulationData_Sidehopper:
     dw EnemyHeaders_Sidehopper                                           ;B4E9C2;
     dw $0100,$0100,$0000,$2000,$0000,$0001,$0000,$FFFF                   ;B4E9C4;
     db $01                                                               ;B4E9D4;
 
+%anchor($B4E9D5)
 DebugEnemyPopulationData_Stoke:
     dw EnemyHeaders_Stoke                                                ;B4E9D5;
     dw $0C30,$01F8,$0000,$2000,$0000,$0000,$0001,$FFFF                   ;B4E9D7;
     db $01                                                               ;B4E9E7;
 
+%anchor($B4E9E8)
 DebugEnemyPopulationData_Owtch:
     dw EnemyHeaders_Owtch                                                ;B4E9E8;
     dw $0060,$01C8,$0000,$2000,$0000,$0301,$0002,$FFFF                   ;B4E9EA;
     db $01                                                               ;B4E9FA;
 
+%anchor($B4E9FB)
 DebugEnemyPopulationData_Viola:
     dw EnemyHeaders_Viola                                                ;B4E9FB;
     dw $00D8,$008A,$0003,$2001,$0000,$0002,$0006,$FFFF                   ;B4E9FD;
     db $01                                                               ;B4EA0D;
 
+%anchor($B4EA0E)
 DebugEnemyPopulationData_Waver:
     dw EnemyHeaders_Waver                                                ;B4EA0E;
     dw $00C9,$005C,$0000,$2000,$0000,$0001,$0000,$FFFF                   ;B4EA10;
     db $01                                                               ;B4EA20;
 
+%anchor($B4EA21)
 DebugEnemyPopulationData_Yard:
     dw EnemyHeaders_Yard                                                 ;B4EA21;
     dw $01D0,$0098,$0003,$A004,$0000,$0001,$0000,$FFFF                   ;B4EA23;
     db $01                                                               ;B4EA33;
 
+%anchor($B4EA34)
 DebugEnemyPopulationData_Zeb:
     dw EnemyHeaders_Zeb                                                  ;B4EA34;
     dw $0100,$0100,$0000,$6900,$0000,$0000,$0000,$FFFF                   ;B4EA36;
     db $01                                                               ;B4EA46;
 
+%anchor($B4EA47)
 DebugEnemyPopulationData_Zebbo:
     dw EnemyHeaders_Zebbo                                                ;B4EA47;
     dw $0100,$0100,$0000,$6900,$0000,$0002,$0000,$FFFF                   ;B4EA49;
     db $01                                                               ;B4EA59;
 
+%anchor($B4EA5A)
 DebugEnemyPopulationData_Zeela:
     dw EnemyHeaders_Zeela                                                ;B4EA5A;
     dw $0180,$008C,$0003,$2000,$0000,$0002,$0002,$FFFF                   ;B4EA5C;
     db $01                                                               ;B4EA6C;
 
+%anchor($B4EA6D)
 DebugEnemyPopulationData_Zoa:
     dw EnemyHeaders_Zoa                                                  ;B4EA6D;
     dw $0100,$0100,$0000,$6100,$0000,$0000,$0000,$FFFF                   ;B4EA6F;
     db $01                                                               ;B4EA7F;
 
+%anchor($B4EA80)
 DebugEnemyPopulationData_Zoomer:
     dw EnemyHeaders_Zoomer                                               ;B4EA80;
     dw $00D8,$00C8,$0003,$2000,$0000,$0002,$0000,$FFFF                   ;B4EA82;
     db $01                                                               ;B4EA92;
 
+%anchor($B4EA93)
 DebugEnemyPopulationData_PirateGreenWall:
     dw EnemyHeaders_PirateGreenWall                                      ;B4EA93;
     dw $0100,$0100,$0000,$2000,$0004,$0001,$0030,$FFFF                   ;B4EA95;
     db $01                                                               ;B4EAA5;
 
+%anchor($B4EAA6)
 DebugEnemyPopulationData_PirateRedWall:
     dw EnemyHeaders_PirateRedWall                                        ;B4EAA6;
     dw $0100,$0100,$0000,$2000,$0004,$0001,$0030,$FFFF                   ;B4EAA8;
     db $01                                                               ;B4EAB8;
 
+%anchor($B4EAB9)
 DebugEnemyPopulationData_PirateGoldWall:
     dw EnemyHeaders_PirateGoldWall                                       ;B4EAB9;
     dw $0100,$0100,$0000,$2000,$0004,$0001,$0030,$FFFF                   ;B4EABB;
     db $01                                                               ;B4EACB;
 
+%anchor($B4EACC)
 DebugEnemyPopulationData_PirateMagentaWall:
     dw EnemyHeaders_PirateMagentaWall                                    ;B4EACC;
     dw $0100,$0100,$0000,$2000,$0004,$0001,$0030,$FFFF                   ;B4EACE;
     db $01                                                               ;B4EADE;
 
+%anchor($B4EADF)
 DebugEnemyPopulationData_PirateSilverWall:
     dw EnemyHeaders_PirateSilverWall                                     ;B4EADF;
     dw $0100,$0100,$0000,$2000,$0004,$0001,$0030,$FFFF                   ;B4EAE1;
     db $01                                                               ;B4EAF1;
 
+%anchor($B4EAF2)
 DebugEnemyPopulationData_PirateGreenNinja:
     dw EnemyHeaders_PirateGreenNinja                                     ;B4EAF2;
     dw $0100,$0100,$0000,$2800,$0004,$0001,$0030,$FFFF                   ;B4EAF4;
     db $01                                                               ;B4EB04;
 
+%anchor($B4EB05)
 DebugEnemyPopulationData_PirateRedNinja:
     dw EnemyHeaders_PirateRedNinja                                       ;B4EB05;
     dw $0100,$0100,$0000,$2800,$0004,$0001,$0030,$FFFF                   ;B4EB07;
     db $01                                                               ;B4EB17;
 
+%anchor($B4EB18)
 DebugEnemyPopulationData_PirateGoldNinja:
     dw EnemyHeaders_PirateGoldNinja                                      ;B4EB18;
     dw $0100,$0100,$0000,$2800,$0004,$0001,$0030,$FFFF                   ;B4EB1A;
     db $01                                                               ;B4EB2A;
 
+%anchor($B4EB2B)
 DebugEnemyPopulationData_PirateMagentaNinja:
     dw EnemyHeaders_PirateMagentaNinja                                   ;B4EB2B;
     dw $0100,$0100,$0000,$2800,$0004,$0001,$0030,$FFFF                   ;B4EB2D;
     db $01                                                               ;B4EB3D;
 
+%anchor($B4EB3E)
 DebugEnemyPopulationData_PirateSilverNinja:
     dw EnemyHeaders_PirateSilverNinja                                    ;B4EB3E;
     dw $0100,$0100,$0000,$2800,$0004,$0001,$0030,$FFFF                   ;B4EB40;
     db $01                                                               ;B4EB50;
 
+%anchor($B4EB51)
 DebugEnemyPopulationData_PirateGreenWalking:
     dw EnemyHeaders_PirateGreenWalking                                   ;B4EB51;
     dw $0100,$0100,$0000,$2000,$0004,$0001,$0030,$FFFF                   ;B4EB53;
     db $01                                                               ;B4EB63;
 
+%anchor($B4EB64)
 DebugEnemyPopulationData_PirateRedWalking:
     dw EnemyHeaders_PirateRedWalking                                     ;B4EB64;
     dw $0100,$0100,$0000,$2000,$0004,$0001,$0030,$FFFF                   ;B4EB66;
     db $01                                                               ;B4EB76;
 
+%anchor($B4EB77)
 DebugEnemyPopulationData_PirateGoldWalking:
     dw EnemyHeaders_PirateGoldWalking                                    ;B4EB77;
     dw $0100,$0100,$0000,$2000,$0004,$0001,$0030,$FFFF                   ;B4EB79;
     db $01                                                               ;B4EB89;
 
+%anchor($B4EB8A)
 DebugEnemyPopulationData_PirateMagentaWalking:
     dw EnemyHeaders_PirateMagentaWalking                                 ;B4EB8A;
     dw $0100,$0100,$0000,$2000,$0004,$0001,$0030,$FFFF                   ;B4EB8C;
     db $01                                                               ;B4EB9C;
 
+%anchor($B4EB9D)
 DebugEnemyPopulationData_PirateSilverWalking:
     dw EnemyHeaders_PirateSilverWalking                                  ;B4EB9D;
     dw $0100,$0100,$0000,$2000,$0004,$0001,$0030,$FFFF                   ;B4EB9F;
     db $01                                                               ;B4EBAF;
 
+%anchor($B4EBB0)
 DebugEnemyPopulationData_Fune:
     dw EnemyHeaders_Fune                                                 ;B4EBB0;
     dw $00F0,$04E0,$0000,$A000,$0000,$0110,$0F05,$FFFF                   ;B4EBB2;
     db $01                                                               ;B4EBC2;
 
+%anchor($B4EBC3)
 DebugEnemyPopulationData_KihunterYellow:
     dw EnemyHeaders_KihunterYellow                                       ;B4EBC3;
     dw $0100,$0100,$0000,$2800,$0000,$0001,$0000                         ;B4EBC5;
@@ -12542,6 +13615,7 @@ DebugEnemyPopulationData_KihunterYellow:
     dw $0100,$0100,$0000,$2C00,$0000,$0020,$0000,$FFFF                   ;B4EBD5;
     db $01                                                               ;B4EBE5;
 
+%anchor($B4EBE6)
 DebugEnemyPopulationData_KihunterRed:
     dw EnemyHeaders_KihunterRed                                          ;B4EBE6;
     dw $0100,$0100,$0000,$2800,$0000,$0001,$0000                         ;B4EBE8;
@@ -12549,291 +13623,363 @@ DebugEnemyPopulationData_KihunterRed:
     dw $0100,$0100,$0000,$2C00,$0000,$0020,$0000,$FFFF                   ;B4EBF8;
     db $01                                                               ;B4EC08;
 
+%anchor($B4EC09)
 DebugEnemyPopulationData_RobotNoPower:
     dw EnemyHeaders_RobotNoPower                                         ;B4EC09;
     dw $0050,$00B0,$0000,$A800,$0000,$0001,$0000,$FFFF                   ;B4EC0B;
     db $01                                                               ;B4EC1B;
 
 
+%anchor($B4EC1C)
 EnemyVulnerabilities:
+%anchor($B4EC1C)
 EnemyVulnerabilities_Default:
     db $02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02   ;B4EC1C;
     db $02,$02,$02,$02,$02,$02                                           ;B4EC2C;
 
+%anchor($B4EC32)
 EnemyVulnerabilities_DessgeegaLarge:
     db $00,$00,$00,$00,$01,$01,$01,$01,$02,$02,$02,$02,$02,$02,$02,$02   ;B4EC32;
     db $02,$02,$02,$02,$02,$02                                           ;B4EC42;
 
+%anchor($B4EC48)
 EnemyVulnerabilities_Viola_Yard_HZoomer_Zeela_Sova_Zoomer:
     db $02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$04,$04   ;B4EC48;
     db $02,$02,$02,$02,$02,$02                                           ;B4EC58;
 
+%anchor($B4EC5E)
 EnemyVulnerabilities_PirateNinja_Grey_Green_Red_Magenta:
     db $82,$82,$82,$82,$82,$82,$82,$82,$82,$82,$82,$82,$02,$02,$00,$02   ;B4EC5E;
     db $02,$02,$02,$02,$80,$00                                           ;B4EC6E;
 
+%anchor($B4EC74)
 EnemyVulnerabilities_PirateGoldNinja:
     db $80,$80,$80,$80,$81,$81,$81,$81,$82,$82,$82,$82,$02,$04,$00,$00   ;B4EC74;
     db $00,$00,$00,$02,$80,$00                                           ;B4EC84;
 
+%anchor($B4EC8A)
 EnemyVulnerabilities_PirateSilverWall_PirateSilverWalking:
     db $02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$04,$04,$00,$02   ;B4EC8A;
     db $02,$02,$02,$02,$02,$02                                           ;B4EC9A;
 
+%anchor($B4ECA0)
 EnemyVulnerabilities_PirateSilverNinja:
     db $84,$84,$84,$84,$84,$84,$84,$84,$84,$84,$84,$84,$84,$84,$84,$84   ;B4ECA0;
     db $84,$84,$84,$04,$84,$84                                           ;B4ECB0;
 
+%anchor($B4ECB6)
 EnemyVulnerabilities_PirateRedWall:
     db $00,$02,$04,$04,$02,$02,$04,$04,$02,$02,$04,$04,$04,$04,$02,$02   ;B4ECB6;
     db $02,$02,$02,$02,$02,$02                                           ;B4ECC6;
 
+%anchor($B4ECCC)
 EnemyVulnerabilities_PirateGreyWall:
     db $02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$04,$04,$00,$02   ;B4ECCC;
     db $02,$02,$02,$02,$02,$02                                           ;B4ECDC;
 
+%anchor($B4ECE2)
 EnemyVulnerabilities_PirateMagentaWall:
     db $02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$04,$04,$00,$02   ;B4ECE2;
     db $02,$02,$02,$02,$02,$02                                           ;B4ECF2;
 
+%anchor($B4ECF8)
 EnemyVulnerabilities_PirateGreyWalking:
     db $02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$04,$04,$00,$02   ;B4ECF8;
     db $02,$02,$02,$02,$02,$02                                           ;B4ED08;
 
+%anchor($B4ED0E)
 EnemyVulnerabilities_PirateGreenWalking:
     db $00,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$04,$04,$04,$02   ;B4ED0E;
     db $02,$02,$02,$02,$02,$02                                           ;B4ED1E;
 
+%anchor($B4ED24)
 EnemyVulnerabilities_PirateRedWalking:
     db $00,$02,$04,$04,$02,$02,$04,$04,$02,$02,$04,$04,$04,$04,$00,$02   ;B4ED24;
     db $02,$02,$02,$02,$02,$02                                           ;B4ED34;
 
+%anchor($B4ED3A)
 EnemyVulnerabilities_PirateMagentaWalking:
     db $00,$00,$00,$00,$00,$00,$00,$00,$02,$02,$02,$02,$00,$00,$00,$00   ;B4ED3A;
     db $02,$02,$02,$00,$02,$02                                           ;B4ED4A;
 
+%anchor($B4ED50)
 EnemyVulnerabilities_PirateGoldWall_PirateGoldWalking:
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$02,$02,$02,$02   ;B4ED50;
     db $02,$02,$02,$02,$02,$02                                           ;B4ED60;
 
+%anchor($B4ED66)
 EnemyVulnerabilities_KihunterGreen_KihunterGreenWings:
     db $01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$04,$04,$00,$02   ;B4ED66;
     db $02,$02,$02,$02,$02,$02                                           ;B4ED76;
 
+%anchor($B4ED7C)
 EnemyVulnerabilities_KihunterYellow_KihunterYellowWings:
     db $02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$00,$02   ;B4ED7C;
     db $02,$02,$02,$02,$02,$02                                           ;B4ED8C;
 
+%anchor($B4ED92)
 EnemyVulnerabilities_KihunterRed_KihunterRedWings:
     db $00,$00,$81,$81,$81,$82,$82,$82,$82,$82,$82,$82,$00,$02,$00,$00   ;B4ED92;
     db $02,$02,$04,$82,$00,$02                                           ;B4EDA2;
 
+%anchor($B4EDA8)
 EnemyVulnerabilities_Boyon:
     db $00,$00,$FF,$FF,$00,$00,$FF,$FF,$00,$00,$FF,$FF,$00,$02,$02,$02   ;B4EDA8;
     db $00,$00,$00,$00,$02,$02                                           ;B4EDB8;
 
+%anchor($B4EDBE)
 EnemyVulnerabilities_Metaree:
     db $00,$00,$FF,$FF,$00,$00,$FF,$FF,$00,$00,$FF,$FF,$00,$02,$02,$02   ;B4EDBE;
     db $00,$00,$02,$00,$02,$02                                           ;B4EDCE;
 
+%anchor($B4EDD4)
 EnemyVulnerabilities_MZoomer:
     db $00,$00,$00,$00,$00,$00,$00,$00,$02,$02,$02,$02,$00,$00,$02,$02   ;B4EDD4;
     db $00,$00,$02,$00,$00,$00                                           ;B4EDE4;
 
+%anchor($B4EDEA)
 EnemyVulnerabilities_Squeept_Ripper2_Ripper_Tripper:
     db $00,$00,$FF,$FF,$00,$00,$FF,$FF,$00,$00,$FF,$FF,$00,$02,$00,$02   ;B4EDEA;
     db $00,$00,$02,$00,$00,$02                                           ;B4EDFA;
 
+%anchor($B4EE00)
 EnemyVulnerabilities_Mella:
     db $02,$02,$04,$04,$02,$02,$04,$04,$02,$02,$04,$04,$02,$02,$02,$02   ;B4EE00;
     db $02,$02,$02,$02,$02,$02                                           ;B4EE10;
 
+%anchor($B4EE16)
 EnemyVulnerabilities_Dragon:
     db $00,$00,$FF,$FF,$00,$00,$FF,$FF,$02,$02,$02,$02,$02,$02,$02,$02   ;B4EE16;
     db $02,$02,$02,$02,$02,$02                                           ;B4EE26;
 
+%anchor($B4EE2C)
 EnemyVulnerabilities_Alcoon:
     db $02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$04,$04,$02,$02   ;B4EE2C;
     db $02,$02,$02,$02,$02,$02                                           ;B4EE3C;
 
+%anchor($B4EE42)
 EnemyVulnerabilities_Geruta:
     db $02,$02,$04,$04,$02,$02,$04,$04,$02,$02,$04,$04,$02,$02,$00,$02   ;B4EE42;
     db $02,$02,$02,$02,$02,$02                                           ;B4EE52;
 
+%anchor($B4EE58)
 EnemyVulnerabilities_Holtz:
     db $02,$02,$04,$04,$02,$02,$04,$04,$02,$02,$04,$04,$00,$02,$00,$02   ;B4EE58;
     db $02,$02,$02,$02,$02,$02                                           ;B4EE68;
 
+%anchor($B4EE6E)
 EnemyVulnerabilities_Multiviola:
     db $02,$02,$04,$04,$02,$02,$04,$04,$02,$02,$04,$04,$02,$02,$02,$02   ;B4EE6E;
     db $02,$02,$02,$02,$02,$02                                           ;B4EE7E;
 
+%anchor($B4EE84)
 EnemyVulnerabilities_Owtch:
     db $00,$00,$00,$00,$00,$00,$00,$00,$02,$02,$02,$02,$00,$02,$00,$02   ;B4EE84;
     db $02,$02,$02,$02,$02,$02                                           ;B4EE94;
 
+%anchor($B4EE9A)
 EnemyVulnerabilities_YappingMaw:
     db $00,$00,$FF,$FF,$00,$00,$FF,$FF,$00,$00,$FF,$FF,$00,$02,$00,$00   ;B4EE9A;
     db $02,$02,$00,$00,$00,$02                                           ;B4EEAA;
 
+%anchor($B4EEB0)
 EnemyVulnerabilities_Fune_Magdollite:
     db $00,$00,$FF,$FF,$00,$00,$FF,$FF,$00,$00,$FF,$FF,$00,$02,$00,$02   ;B4EEB0;
     db $02,$02,$00,$00,$00,$02                                           ;B4EEC0;
 
+%anchor($B4EEC6)
 EnemyVulnerabilities_Indestructible:
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00   ;B4EEC6;
     db $00,$00,$00,$00,$00,$00                                           ;B4EED6;
 
+%anchor($B4EEDC)
 EnemyVulnerabilities_Boulder:
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$02,$00,$00   ;B4EEDC;
     db $00,$00,$00,$00,$02,$02                                           ;B4EEEC;
 
+%anchor($B4EEF2)
 EnemyVulnerabilities_Namihe:
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$FF,$FF,$00,$00,$00,$00   ;B4EEF2;
     db $00,$00,$02,$00,$02,$02                                           ;B4EF02;
 
+%anchor($B4EF08)
 EnemyVulnerabilities_NonDestructibleShutter:
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$82   ;B4EF08;
     db $00,$00,$00,$00,$00,$00                                           ;B4EF18;
 
+%anchor($B4EF1E)
 EnemyVulnerabilities_Shaktool:
     db $82,$82,$82,$82,$82,$82,$82,$82,$82,$82,$82,$82,$82,$82,$82,$00   ;B4EF1E;
     db $00,$00,$00,$00,$00,$00                                           ;B4EF2E;
 
+%anchor($B4EF34)
 EnemyVulnerabilities_Powamp:
     db $82,$82,$82,$82,$82,$82,$82,$82,$82,$82,$82,$82,$82,$82,$82,$82   ;B4EF34;
     db $82,$82,$82,$02,$82,$82                                           ;B4EF44;
 
+%anchor($B4EF4A)
 EnemyVulnerabilities_GRipper:
     db $00,$00,$00,$00,$00,$00,$80,$00,$00,$00,$00,$00,$02,$02,$00,$02   ;B4EF4A;
     db $00,$02,$02,$00,$00,$02                                           ;B4EF5A;
 
+%anchor($B4EF60)
 EnemyVulnerabilities_Metroid:
     db $00,$00,$FF,$FF,$00,$00,$FF,$FF,$00,$00,$FF,$FF,$02,$04,$00,$01   ;B4EF60;
     db $02,$02,$02,$00,$02,$02                                           ;B4EF70;
 
+%anchor($B4EF76)
 EnemyVulnerabilities_Sciser_Zero:
     db $02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$04,$04   ;B4EF76;
     db $02,$02,$02,$02,$02,$02                                           ;B4EF86;
 
+%anchor($B4EF8C)
 EnemyVulnerabilities_Beetom:
     db $00,$00,$FF,$FF,$00,$00,$FF,$FF,$00,$00,$FF,$FF,$02,$02,$04,$04   ;B4EF8C;
     db $02,$02,$02,$00,$00,$02                                           ;B4EF9C;
 
+%anchor($B4EFA2)
 EnemyVulnerabilities_Bull:
     db $80,$80,$80,$80,$80,$80,$80,$80,$02,$02,$82,$82,$02,$02,$02,$02   ;B4EFA2;
     db $02,$02,$02,$02,$02,$02                                           ;B4EFB2;
 
+%anchor($B4EFB8)
 EnemyVulnerabilities_ShutterDestroyable:
     db $02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$82,$82,$00,$00,$00,$00   ;B4EFB8;
     db $00,$00,$00,$02,$00,$00                                           ;B4EFC8;
 
+%anchor($B4EFCE)
 EnemyVulnerabilities_Evir:
     db $02,$02,$FF,$FF,$02,$02,$FF,$FF,$02,$02,$82,$82,$02,$02,$02,$02   ;B4EFCE;
     db $02,$02,$02,$02,$02,$02                                           ;B4EFDE;
 
+%anchor($B4EFE4)
 EnemyVulnerabilities_EvirProjectile:
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00   ;B4EFE4;
     db $00,$00,$00,$00,$00,$00                                           ;B4EFF4;
 
+%anchor($B4EFFA)
 EnemyVulnerabilities_MiniKraid:
     db $82,$82,$82,$82,$82,$82,$82,$82,$82,$82,$82,$82,$84,$84,$82,$82   ;B4EFFA;
     db $82,$82,$82,$02,$80,$80                                           ;B4F00A;
 
+%anchor($B4F010)
 EnemyVulnerabilities_Bang:
     db $02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$00,$00,$00,$00   ;B4F010;
     db $00,$00,$00,$02,$00,$00                                           ;B4F020;
 
+%anchor($B4F026)
 EnemyVulnerabilities_Kago:
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$02   ;B4F026;
     db $00,$00,$00,$00,$00,$00                                           ;B4F036;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B4F03C)
 UNUSED_EnemyVulnerabilities_B4F03C:
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$02   ;B4F03C;
     db $00,$00,$00,$02,$00,$00                                           ;B4F04C;
 
+%anchor($B4F052)
 UNUSED_EnemyVulnerabilities_B4F052:
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$04   ;B4F052;
     db $00,$00,$00,$02,$00,$00                                           ;B4F062;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B4F068)
 EnemyVulnerabilities_Zebetite:
     db $80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$82,$82,$80,$80   ;B4F068;
     db $80,$80,$80,$00,$80,$80                                           ;B4F078;
 
+%anchor($B4F07E)
 EnemyVulnerabilities_SidehopperTourian:
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$02,$00,$00   ;B4F07E;
     db $00,$00,$00,$00,$00,$00                                           ;B4F08E;
 
+%anchor($B4F094)
 EnemyVulnerabilities_SporeSpawn:
     db $80,$82,$82,$82,$80,$82,$82,$82,$82,$82,$82,$82,$82,$82,$80,$80   ;B4F094;
     db $80,$80,$80,$04,$80,$80                                           ;B4F0A4;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B4F0AA)
 UNUSED_EnemyVulnerabilities_B4F0AA:
     db $82,$82,$82,$82,$82,$82,$82,$82,$82,$82,$82,$82,$82,$82,$82,$82   ;B4F0AA;
     db $82,$82,$82,$02,$82,$82                                           ;B4F0BA;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B4F0C0)
 EnemyVulnerabilities_BombTorizo_BombTorizoOrb:
     db $02,$02,$82,$82,$02,$02,$82,$82,$02,$02,$82,$82,$02,$04,$00,$00   ;B4F0C0;
     db $00,$00,$00,$02,$00,$00                                           ;B4F0D0;
 
+%anchor($B4F0D6)
 EnemyVulnerabilities_GoldenTorizo_GoldenTorizoOrb:
     db $80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$82,$84,$80,$00   ;B4F0D6;
     db $00,$00,$00,$02,$02,$00                                           ;B4F0E6;
 
+%anchor($B4F0EC)
 EnemyVulnerabilities_Phantoon_Body_Eye_Tentacles_Mouth:
     db $80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$82,$84,$00,$00   ;B4F0EC;
     db $00,$00,$00,$02,$80,$80                                           ;B4F0FC;
 
+%anchor($B4F102)
 EnemyVulnerabilities_Crocomire_CrocomireTongue:
     db $80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$82   ;B4F102;
     db $80,$80,$80,$00,$80,$80                                           ;B4F112;
 
+%anchor($B4F118)
 EnemyVulnerabilities_Botwoon:
     db $80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$82,$82,$80,$80   ;B4F118;
     db $80,$80,$80,$02,$80,$80                                           ;B4F128;
 
+%anchor($B4F12E)
 EnemyVulnerabilities_Corpse_BabyMetroid:
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00   ;B4F12E;
     db $00,$00,$00,$00,$00,$00                                           ;B4F13E;
 
+%anchor($B4F144)
 EnemyVulnerabilities_Draygon_Body_Eye_Tail_Arms:
     db $80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$82,$82,$80,$80   ;B4F144;
     db $80,$81,$80,$82,$82,$80                                           ;B4F154;
 
+%anchor($B4F15A)
 EnemyVulnerabilities_Kraid:
     db $82,$82,$82,$82,$82,$82,$82,$82,$82,$82,$82,$82,$82,$82,$80,$80   ;B4F15A;
     db $80,$80,$80,$02,$80,$80                                           ;B4F16A;
 
+%anchor($B4F170)
 EnemyVulnerabilities_KraidArm_KraidFoot:
     db $80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80   ;B4F170;
     db $80,$80,$80,$00,$80,$80                                           ;B4F180;
 
+%anchor($B4F186)
 EnemyVulnerabilities_Kraid_LintTop_LintMiddle_LintBottom:
     db $80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80   ;B4F186;
     db $80,$80,$80,$00,$80,$80                                           ;B4F196;
 
+%anchor($B4F19C)
 EnemyVulnerabilities_KraidNail_KraidNailBad:
     db $82,$82,$82,$82,$82,$82,$82,$82,$82,$82,$82,$82,$82,$82,$82,$82   ;B4F19C;
     db $82,$00,$82,$02,$82,$82                                           ;B4F1AC;
 
+%anchor($B4F1B2)
 EnemyVulnerabilities_Ridley_RidleyCeres:
     db $80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$82,$84,$80,$82   ;B4F1B2;
     db $80,$80,$80,$82,$80,$80                                           ;B4F1C2;
 
+%anchor($B4F1C8)
 EnemyVulnerabilities_MotherBrainHead:
     db $80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$82,$82,$80,$80   ;B4F1C8;
     db $80,$80,$80,$02,$80,$80                                           ;B4F1D8;
 
+%anchor($B4F1DE)
 EnemyVulnerabilities_MotherBrainBody:
     db $80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80   ;B4F1DE;
     db $80,$80,$80,$00,$80,$80                                           ;B4F1EE;
 
 
+%anchor($B4F1F4)
 EnemyDropChances_Geruta:
+%anchor($B4F1F4)
 EnemyDropChances:
   .smallEnergy:
     db $3C                                                               ;B4F1F4;
@@ -12853,360 +13999,478 @@ EnemyDropChances:
   .powerBombs:
     db $0A                                                               ;B4F1F9;
 
+%anchor($B4F1FA)
 EnemyDropChances_Rio:
     db $1E,$50,$55,$28,$0A,$0A                                           ;B4F1FA;
 
+%anchor($B4F200)
 EnemyDropChances_Waver:
     db $3C,$3C,$3C,$05,$3C,$0A                                           ;B4F200;
 
+%anchor($B4F206)
 EnemyDropChances_Skree:
     db $14,$03,$55,$89,$05,$05                                           ;B4F206;
 
+%anchor($B4F20C)
 EnemyDropChances_Puyo:
     db $3C,$3C,$3C,$05,$0A,$3C                                           ;B4F20C;
 
+%anchor($B4F212)
 EnemyDropChances_Atomic:
     db $00,$A5,$50,$00,$05,$05                                           ;B4F212;
 
+%anchor($B4F218)
 EnemyDropChances_Mochtroid:
     db $3C,$3C,$3C,$05,$3C,$0A                                           ;B4F218;
 
+%anchor($B4F21E)
 EnemyDropChances_Choot:
     db $3C,$3C,$3C,$05,$3C,$0A                                           ;B4F21E;
 
+%anchor($B4F224)
 EnemyDropChances_Zoomer:
     db $37,$19,$AA,$00,$05,$00                                           ;B4F224;
 
+%anchor($B4F22A)
 EnemyDropChances_Zeela:
     db $37,$19,$7D,$00,$32,$00                                           ;B4F22A;
 
+%anchor($B4F230)
 EnemyDropChances_Sova:
     db $50,$46,$1E,$19,$32,$00                                           ;B4F230;
 
+%anchor($B4F236)
 EnemyDropChances_Mellow:
     db $1E,$46,$50,$46,$05,$00                                           ;B4F236;
 
+%anchor($B4F23C)
 EnemyDropChances_Mella:
     db $46,$1E,$50,$46,$05,$00                                           ;B4F23C;
 
+%anchor($B4F242)
 EnemyDropChances_Menu:
     db $46,$14,$50,$50,$05,$00                                           ;B4F242;
 
+%anchor($B4F248)
 EnemyDropChances_Zeb:
     db $3C,$3C,$3C,$05,$3C,$0A                                           ;B4F248;
 
+%anchor($B4F24E)
 EnemyDropChances_Geega:
     db $3C,$3C,$3C,$05,$3C,$0A                                           ;B4F24E;
 
+%anchor($B4F254)
 EnemyDropChances_Zebbo:
     db $00,$8C,$0A,$00,$64,$05                                           ;B4F254;
 
+%anchor($B4F25A)
 EnemyDropChances_Gamet:
     db $3C,$3C,$3C,$05,$3C,$0A                                           ;B4F25A;
 
+%anchor($B4F260)
 EnemyDropChances_Zoa:
     db $00,$64,$46,$05,$46,$0A                                           ;B4F260;
 
+%anchor($B4F266)
 EnemyDropChances_Coven:
     db $32,$5F,$46,$00,$14,$14                                           ;B4F266;
 
+%anchor($B4F26C)
 EnemyDropChances_Kago:
     db $32,$5A,$46,$05,$14,$14                                           ;B4F26C;
 
+%anchor($B4F272)
 EnemyDropChances_KihunterGreen_KihunterGreenWings:
     db $32,$1E,$50,$4B,$0A,$0A                                           ;B4F272;
 
+%anchor($B4F278)
 EnemyDropChances_KihunterYellow_KihunterYellowWings:
     db $37,$50,$0A,$28,$3C,$0A                                           ;B4F278;
 
+%anchor($B4F27E)
 EnemyDropChances_KihunterRed_KihunterRedWings:
     db $23,$78,$0A,$14,$3C,$0A                                           ;B4F27E;
 
+%anchor($B4F284)
 EnemyDropChances_PirateGoldNinja:
     db $00,$96,$05,$00,$64,$00                                           ;B4F284;
 
+%anchor($B4F28A)
 EnemyDropChances_DessgeegaLarge:
     db $50,$14,$32,$5F,$05,$05                                           ;B4F28A;
 
+%anchor($B4F290)
 EnemyDropChances_PirateRedWall:
     db $0A,$14,$14,$C3,$05,$05                                           ;B4F290;
 
+%anchor($B4F296)
 EnemyDropChances_PirateRedNinja:
     db $0A,$14,$14,$C3,$05,$05                                           ;B4F296;
 
+%anchor($B4F29C)
 EnemyDropChances_PirateRedWalking:
     db $0A,$14,$14,$C3,$05,$05                                           ;B4F29C;
 
+%anchor($B4F2A2)
 EnemyDropChances_PirateGoldWall:
     db $0A,$14,$14,$C3,$05,$05                                           ;B4F2A2;
 
+%anchor($B4F2A8)
 EnemyDropChances_PirateGreyWall:
     db $0A,$2D,$C5,$01,$01,$01                                           ;B4F2A8;
 
+%anchor($B4F2AE)
 EnemyDropChances_PirateGreenWall:
     db $05,$1E,$78,$00,$64,$00                                           ;B4F2AE;
 
+%anchor($B4F2B4)
 EnemyDropChances_Powamp:
     db $01,$00,$00,$00,$FE,$00                                           ;B4F2B4;
 
+%anchor($B4F2BA)
 EnemyDropChances_Cacatac:
     db $00,$01,$00,$00,$FE,$00                                           ;B4F2BA;
 
+%anchor($B4F2C0)
 EnemyDropChances_MiniKraid:
     db $00,$01,$00,$00,$FE,$00                                           ;B4F2C0;
 
+%anchor($B4F2C6)
 EnemyDropChances_GRipper_Ripper2:
     db $00,$01,$00,$00,$FE,$00                                           ;B4F2C6;
 
+%anchor($B4F2CC)
 EnemyDropChances_Viola:
     db $01,$00,$00,$00,$00,$FE                                           ;B4F2CC;
 
+%anchor($B4F2D2)
 EnemyDropChances_Bull:
     db $00,$05,$00,$00,$00,$FA                                           ;B4F2D2;
 
+%anchor($B4F2D8)
 EnemyDropChances_Sciser:
     db $01,$64,$00,$00,$00,$9A                                           ;B4F2D8;
 
+%anchor($B4F2DE)
 EnemyDropChances_Dessgeega:
     db $01,$00,$00,$00,$00,$FE                                           ;B4F2DE;
 
+%anchor($B4F2E4)
 EnemyDropChances_Fireflea:
     db $00,$01,$00,$00,$00,$FE                                           ;B4F2E4;
 
+%anchor($B4F2EA)
 EnemyDropChances_Alcoon:
     db $01,$00,$00,$00,$00,$FE                                           ;B4F2EA;
 
+%anchor($B4F2F0)
 EnemyDropChances_Zero:
     db $01,$00,$00,$00,$00,$FE                                           ;B4F2F0;
 
+%anchor($B4F2F6)
 EnemyDropChances_Beetom:
     db $01,$00,$00,$00,$00,$FE                                           ;B4F2F6;
 
+%anchor($B4F2FC)
 EnemyDropChances_HZoomer:
     db $82,$14,$00,$64,$00,$05                                           ;B4F2FC;
 
+%anchor($B4F302)
 EnemyDropChances_MZoomer:
     db $82,$14,$00,$64,$00,$05                                           ;B4F302;
 
+%anchor($B4F308)
 EnemyDropChances_Ripper:
     db $50,$14,$50,$41,$05,$05                                           ;B4F308;
 
+%anchor($B4F30E)
 EnemyDropChances_Tripper_Kamer2:
     db $50,$50,$50,$05,$05,$05                                           ;B4F30E;
 
+%anchor($B4F314)
 EnemyDropChances_Metaree:
     db $50,$19,$50,$3C,$05,$05                                           ;B4F314;
 
+%anchor($B4F31A)
 EnemyDropChances_Reflec:
     db $3C,$3C,$3C,$3C,$0F,$00                                           ;B4F31A;
 
+%anchor($B4F320)
 EnemyDropChances_Boyon:
     db $14,$0A,$55,$82,$05,$05                                           ;B4F320;
 
+%anchor($B4F326)
 EnemyDropChances_Sidehopper:
     db $14,$28,$55,$64,$05,$05                                           ;B4F326;
 
+%anchor($B4F32C)
 EnemyDropChances_SidehopperLarge_SidehopperTourian:
     db $14,$14,$37,$64,$37,$05                                           ;B4F32C;
 
+%anchor($B4F332)
 EnemyDropChances_Skultera:
     db $50,$1E,$46,$46,$05,$00                                           ;B4F332;
 
+%anchor($B4F338)
 EnemyDropChances_Oum:
     db $46,$1E,$46,$4B,$05,$05                                           ;B4F338;
 
+%anchor($B4F33E)
 EnemyDropChances_Yard:
     db $55,$50,$00,$50,$00,$0A                                           ;B4F33E;
 
+%anchor($B4F344)
 EnemyDropChances_Botwoon:
     db $00,$82,$3C,$05,$1E,$1E                                           ;B4F344;
 
+%anchor($B4F34A)
 EnemyDropChances_Owtch:
     db $50,$50,$50,$05,$05,$05                                           ;B4F34A;
 
+%anchor($B4F350)
 EnemyDropChances_Evir_EvirProjectile:
     db $50,$50,$50,$05,$05,$05                                           ;B4F350;
 
+%anchor($B4F356)
 EnemyDropChances_Holtz:
     db $00,$78,$32,$00,$32,$23                                           ;B4F356;
 
+%anchor($B4F35C)
 EnemyDropChances_Squeept:
     db $32,$32,$32,$05,$32,$32                                           ;B4F35C;
 
+%anchor($B4F362)
 EnemyDropChances_Multiviola:
     db $46,$1E,$4B,$46,$05,$05                                           ;B4F362;
 
+%anchor($B4F368)
 EnemyDropChances_Dragon:
     db $32,$32,$46,$4B,$05,$05                                           ;B4F368;
 
+%anchor($B4F36E)
 EnemyDropChances_Metroid:
     db $19,$32,$5A,$0A,$32,$1E                                           ;B4F36E;
 
+%anchor($B4F374)
 EnemyDropChances_Rinka:
     db $00,$00,$00,$FF,$00,$00                                           ;B4F374;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B4F37A)
 UNUSED_EnemyDropChances_B4F37A:
     db $00,$82,$3C,$05,$1E,$1E                                           ;B4F37A;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B4F380)
 EnemyDropChances_Bang:
     db $2D,$50,$50,$1E,$0A,$0A                                           ;B4F380;
 
+%anchor($B4F386)
 EnemyDropChances_PirateGreyNinja:
     db $32,$78,$50,$00,$05,$00                                           ;B4F386;
 
+%anchor($B4F38C)
 EnemyDropChances_PirateGreyWalking:
     db $32,$78,$50,$00,$05,$00                                           ;B4F38C;
 
+%anchor($B4F392)
 EnemyDropChances_PirateGreenNinja:
     db $32,$19,$00,$19,$9B,$00                                           ;B4F392;
 
+%anchor($B4F398)
 EnemyDropChances_PirateGreenWalking:
     db $32,$1E,$64,$2D,$14,$0A                                           ;B4F398;
 
+%anchor($B4F39E)
 EnemyDropChances_PirateGoldWalking:
     db $32,$78,$50,$00,$05,$00                                           ;B4F39E;
 
+%anchor($B4F3A4)
 EnemyDropChances_PirateMagentaWall:
     db $1E,$46,$50,$46,$05,$00                                           ;B4F3A4;
 
+%anchor($B4F3AA)
 EnemyDropChances_PirateMagentaNinja:
     db $32,$78,$50,$00,$05,$00                                           ;B4F3AA;
 
+%anchor($B4F3B0)
 EnemyDropChances_PirateMagentaWalking:
     db $32,$78,$50,$00,$05,$00                                           ;B4F3B0;
 
+%anchor($B4F3B6)
 EnemyDropChances_Stoke:
     db $50,$50,$50,$05,$05,$05                                           ;B4F3B6;
 
+%anchor($B4F3BC)
 EnemyDropChances_MamaTurtle_BabyTurtle:
     db $50,$50,$50,$05,$05,$05                                           ;B4F3BC;
 
+%anchor($B4F3C2)
 EnemyDropChances_ShipTop_ShipBottomEntrance:
     db $00,$00,$00,$FF,$00,$00                                           ;B4F3C2;
 
+%anchor($B4F3C8)
 EnemyDropChances_Shaktool:
     db $50,$50,$50,$05,$05,$05                                           ;B4F3C8;
 
+%anchor($B4F3CE)
 EnemyDropChances_Eye:
     db $50,$50,$50,$05,$05,$05                                           ;B4F3CE;
 
+%anchor($B4F3D4)
 EnemyDropChances_Fune:
     db $50,$50,$50,$05,$05,$05                                           ;B4F3D4;
 
+%anchor($B4F3DA)
 EnemyDropChances_Namihe:
     db $50,$50,$50,$05,$05,$05                                           ;B4F3DA;
 
+%anchor($B4F3E0)
 EnemyDropChances_YappingMaw:
     db $50,$50,$50,$05,$05,$05                                           ;B4F3E0;
 
+%anchor($B4F3E6)
 EnemyDropChances_Magdollite:
     db $50,$50,$50,$05,$05,$05                                           ;B4F3E6;
 
+%anchor($B4F3EC)
 EnemyDropChances_Robot:
     db $50,$50,$50,$05,$05,$05                                           ;B4F3EC;
 
+%anchor($B4F3F2)
 EnemyDropChances_RobotNoPower:
     db $50,$50,$50,$05,$05,$05                                           ;B4F3F2;
 
+%anchor($B4F3F8)
 EnemyDropChances_MotherBrainBody_BombTorizo:
     db $32,$32,$32,$00,$32,$37                                           ;B4F3F8;
 
+%anchor($B4F3FE)
 EnemyDropChances_BombTorizoOrb:
     db $74,$14,$41,$36,$00,$00                                           ;B4F3FE;
 
+%anchor($B4F404)
 EnemyDropChances_GoldenTorizo:
     db $32,$32,$32,$00,$32,$37                                           ;B4F404;
 
+%anchor($B4F40A)
 EnemyDropChances_GoldenTorizoOrb:
     db $1E,$1E,$32,$3C,$55,$00                                           ;B4F40A;
 
+%anchor($B4F410)
 EnemyDropChances_SporeSpawn:
     db $32,$32,$32,$00,$32,$37                                           ;B4F410;
 
+%anchor($B4F416)
 EnemyDropChances_SporeSpawnStalk:
     db $0A,$14,$C8,$19,$00,$00                                           ;B4F416;
 
+%anchor($B4F41C)
 EnemyDropChances_Kraid:
     db $32,$32,$32,$00,$32,$37                                           ;B4F41C;
 
+%anchor($B4F422)
 EnemyDropChances_KraidNail_KraidFoot:
     db $0A,$23,$C8,$00,$0A,$00                                           ;B4F422;
 
+%anchor($B4F428)
 EnemyDropChances_CrocomireTongue:
     db $00,$0A,$DC,$05,$14,$00                                           ;B4F428;
 
+%anchor($B4F42E)
 EnemyDropChances_Crocomire:
     db $00,$78,$64,$05,$14,$0A                                           ;B4F42E;
 
+%anchor($B4F434)
 EnemyDropChances_Phantoon_Body_Tentacles_Mouth:
     db $32,$32,$32,$00,$32,$37                                           ;B4F434;
 
+%anchor($B4F43A)
 EnemyDropChances_PhantoonEye:
     db $14,$14,$64,$69,$0A,$00                                           ;B4F43A;
 
+%anchor($B4F440)
 EnemyDropChances_DraygonBody_DraygonTail_DraygonArms:
     db $32,$32,$32,$00,$32,$37                                           ;B4F440;
 
+%anchor($B4F446)
 EnemyDropChances_DraygonEye:
     db $05,$1E,$6E,$64,$05,$05                                           ;B4F446;
 
+%anchor($B4F44C)
 EnemyDropChances_Ridley_RidleyCeres:
     db $32,$32,$32,$00,$32,$37                                           ;B4F44C;
 
+%anchor($B4F452)
 EnemyDropChances_NoobTubeCrack_Chozo:
     db $00,$00,$00,$FF,$00,$00                                           ;B4F452;
 
+%anchor($B4F458)
 EnemyDropChances_Spark:
     db $00,$00,$00,$FF,$00,$00                                           ;B4F458;
 
+%anchor($B4F45E)
 EnemyDropChances_FaceBlock:
     db $00,$00,$00,$FF,$00,$00                                           ;B4F45E;
 
+%anchor($B4F464)
 EnemyDropChances_Puromi:
     db $00,$00,$00,$FF,$00,$00                                           ;B4F464;
 
+%anchor($B4F46A)
 EnemyDropChances_Boulder:
     db $00,$00,$00,$FF,$00,$00                                           ;B4F46A;
 
+%anchor($B4F470)
 EnemyDropChances_KzanTop_KzanBottom:
     db $00,$00,$00,$FF,$00,$00                                           ;B4F470;
 
+%anchor($B4F476)
 EnemyDropChances_Hibashi:
     db $00,$00,$00,$FF,$00,$00                                           ;B4F476;
 
+%anchor($B4F47C)
 EnemyDropChances_Sbug_Sbug2:
     db $00,$00,$00,$FF,$00,$00                                           ;B4F47C;
 
+%anchor($B4F482)
 EnemyDropChances_Etecoon_EtecoonEscape:
     db $00,$00,$00,$FF,$00,$00                                           ;B4F482;
 
+%anchor($B4F488)
 EnemyDropChances_Steam_Dachora_DachoraEscape:
     db $00,$00,$00,$FF,$00,$00                                           ;B4F488;
 
+%anchor($B4F48E)
 EnemyDropChances_Polyp:
     db $00,$00,$00,$FF,$00,$00                                           ;B4F48E;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B4F494)
 UNUSED_EnemyDropChances_B4F494:
     db $00,$00,$00,$FF,$00,$00                                           ;B4F494;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B4F49A)
 EnemyDropChances_MotherBrainHead:
     db $00,$00,$00,$FF,$00,$00                                           ;B4F49A;
 
+%anchor($B4F4A0)
 EnemyDropChances_Shutter_Kamer_BabyMetroidCutscene:
     db $00,$00,$00,$FF,$00,$00                                           ;B4F4A0;
 
+%anchor($B4F4A6)
 EnemyDropChances_PirateSilverWall:
     db $00,$00,$00,$FF,$00,$00                                           ;B4F4A6;
 
+%anchor($B4F4AC)
 EnemyDropChances_PirateSilverNinja:
     db $00,$00,$00,$FF,$00,$00                                           ;B4F4AC;
 
+%anchor($B4F4B2)
 EnemyDropChances_PirateSilverWalking:
     db $00,$00,$00,$FF,$00,$00                                           ;B4F4B2;
 
+%anchor($B4F4B8)
 Freespace_BankB4_F4B8:                                                   ;B4F4B8;
 ; $B48 bytes

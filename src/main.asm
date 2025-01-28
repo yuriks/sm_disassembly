@@ -16,6 +16,11 @@ else
     print "REMOVE UNREFERENCED ASSEMBLY"
 endif
 
+; Fixes labels to their vanilla asm locations using the %anchor macros. Useful
+; to prevent unrelated things from moving around, which would bloat IPS patches
+; or break pointers in SMART for example.
+!ANCHOR_LABELS ?= 1
+
 incsrc "macros.asm"
 incsrc "bank_80.asm"
 incsrc "bank_81.asm"

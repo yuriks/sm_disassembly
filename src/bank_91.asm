@@ -2,6 +2,7 @@
 org $918000
 
 
+%anchor($918000)
 NormalSamusPoseInputHandler:
     PHP                                                                  ;918000;
     PHB                                                                  ;918001;
@@ -48,10 +49,12 @@ NormalSamusPoseInputHandler:
     dw NormalSamusPoseInputHandler_GrabbedByDraygon                      ;918048; 1Ah: Grabbed by Draygon
     dw NormalSamusPoseInputHandler_Shinespark_CF_Drained_DamagedMB       ;91804A; 1Bh: Shinespark / crystal flash / drained by metroid / damaged by MB's attacks
 
+%anchor($91804C)
 RTS_91804C:
     RTS                                                                  ;91804C;
 
 
+%anchor($91804D)
 NormalSamusPoseInputHandler_Standing:
     PHP                                                                  ;91804D;
     REP #$30                                                             ;91804E;
@@ -74,6 +77,7 @@ NormalSamusPoseInputHandler_Standing:
     RTS                                                                  ;918065;
 
 
+%anchor($918066)
 NormalSamusPoseInputHandler_1_Running:
     PHP                                                                  ;918066;
     REP #$30                                                             ;918067;
@@ -82,6 +86,7 @@ NormalSamusPoseInputHandler_1_Running:
     RTS                                                                  ;91806D;
 
 
+%anchor($91806E)
 NormalSamusPoseInputHandler_NormalJumping:
     PHP                                                                  ;91806E;
     REP #$30                                                             ;91806F;
@@ -90,6 +95,7 @@ NormalSamusPoseInputHandler_NormalJumping:
     RTS                                                                  ;918075;
 
 
+%anchor($918076)
 NormalSamusPoseInputHandler_SpinJumping:
     PHP                                                                  ;918076;
     REP #$30                                                             ;918077;
@@ -98,6 +104,7 @@ NormalSamusPoseInputHandler_SpinJumping:
     RTS                                                                  ;91807D;
 
 
+%anchor($91807E)
 NormalSamusPoseInputHandler_MorphBall_OnGround:
     PHP                                                                  ;91807E;
     REP #$30                                                             ;91807F;
@@ -106,10 +113,12 @@ NormalSamusPoseInputHandler_MorphBall_OnGround:
     RTS                                                                  ;918085;
 
 
+%anchor($918086)
 RTS_918086:
     RTS                                                                  ;918086;
 
 
+%anchor($918087)
 NormalSamusPoseInputHandler_Crouching:
     PHP                                                                  ;918087;
     REP #$30                                                             ;918088;
@@ -138,6 +147,7 @@ NormalSamusPoseInputHandler_Crouching:
     RTS                                                                  ;9180B5;
 
 
+%anchor($9180B6)
 NormalSamusPoseInputHandler_Falling:
     PHP                                                                  ;9180B6;
     REP #$30                                                             ;9180B7;
@@ -147,6 +157,7 @@ NormalSamusPoseInputHandler_Falling:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($9180BE)
 UNUSED_AutoJumpFromCrouchFall_9180BE:
     LDA.W $0A1C                                                          ;9180BE;
     CMP.W #$0029                                                         ;9180C1;
@@ -190,6 +201,7 @@ UNUSED_AutoJumpFromCrouchFall_9180BE:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($91810A)
 NormalSamusPoseInputHandler_MorphBall_Falling:
     PHP                                                                  ;91810A;
     REP #$30                                                             ;91810B;
@@ -198,10 +210,12 @@ NormalSamusPoseInputHandler_MorphBall_Falling:
     RTS                                                                  ;918111;
 
 
+%anchor($918112)
 RTS_918112:
     RTS                                                                  ;918112;
 
 
+%anchor($918113)
 NormalSamusPoseInputHandler_Knockback_CrystalFlashEnding:
     PHP                                                                  ;918113;
     REP #$30                                                             ;918114;
@@ -218,6 +232,7 @@ NormalSamusPoseInputHandler_Knockback_CrystalFlashEnding:
     RTS                                                                  ;91812C;
 
 
+%anchor($91812D)
 RTS_91812D:
     PHP                                                                  ;91812D;
     REP #$30                                                             ;91812E;
@@ -225,6 +240,7 @@ RTS_91812D:
     RTS                                                                  ;918131;
 
 
+%anchor($918132)
 NormalSamusPoseInputHandler_C_DetermineProspectivePose:
     PHP                                                                  ;918132;
     REP #$30                                                             ;918133;
@@ -233,6 +249,7 @@ NormalSamusPoseInputHandler_C_DetermineProspectivePose:
     RTS                                                                  ;918139;
 
 
+%anchor($91813A)
 NormalSamusPoseInputHandler_D_DetermineProspectivePose:
     PHP                                                                  ;91813A;
     REP #$30                                                             ;91813B;
@@ -241,15 +258,18 @@ NormalSamusPoseInputHandler_D_DetermineProspectivePose:
     RTS                                                                  ;918141;
 
 
+%anchor($918142)
 NormalSamusPoseInputHandler_TurningAround_OnGround:
     JSR.W DetermineProspectivePoseFromTransitionTable                    ;918142;
     RTS                                                                  ;918145;
 
 
+%anchor($918146)
 RTS_918146:
     RTS                                                                  ;918146;
 
 
+%anchor($918147)
 NormalSamusPoseInputHandler_Moonwalking:
     PHP                                                                  ;918147;
     REP #$30                                                             ;918148;
@@ -258,6 +278,7 @@ NormalSamusPoseInputHandler_Moonwalking:
     RTS                                                                  ;91814E;
 
 
+%anchor($91814F)
 NormalSamusPoseInputHandler_SpringBall_OnGround:
     PHP                                                                  ;91814F;
     REP #$30                                                             ;918150;
@@ -266,6 +287,7 @@ NormalSamusPoseInputHandler_SpringBall_OnGround:
     RTS                                                                  ;918156;
 
 
+%anchor($918157)
 NormalSamusPoseInputHandler_SpringBall_InAir:
     PHP                                                                  ;918157;
     REP #$30                                                             ;918158;
@@ -274,6 +296,7 @@ NormalSamusPoseInputHandler_SpringBall_InAir:
     RTS                                                                  ;91815E;
 
 
+%anchor($91815F)
 NormalSamusPoseInputHandler_SpringBall_Falling:
     PHP                                                                  ;91815F;
     REP #$30                                                             ;918160;
@@ -282,6 +305,7 @@ NormalSamusPoseInputHandler_SpringBall_Falling:
     RTS                                                                  ;918166;
 
 
+%anchor($918167)
 NormalSamusPoseInputHandler_WallJumping:
     PHP                                                                  ;918167;
     REP #$30                                                             ;918168;
@@ -290,6 +314,7 @@ NormalSamusPoseInputHandler_WallJumping:
     RTS                                                                  ;91816E;
 
 
+%anchor($91816F)
 NormalSamusPoseInputHandler_RanIntoAWall:
     PHP                                                                  ;91816F;
     REP #$30                                                             ;918170;
@@ -307,6 +332,7 @@ NormalSamusPoseInputHandler_RanIntoAWall:
     RTS                                                                  ;918180;
 
 
+%anchor($918181)
 NormalSamusPoseInputHandler_Grappling:
     PHP                                                                  ;918181;
     REP #$30                                                             ;918182;
@@ -315,16 +341,19 @@ NormalSamusPoseInputHandler_Grappling:
     RTS                                                                  ;918188;
 
 
+%anchor($918189)
 NormalSamusPoseInputHandler_TurningAround_Jumping:
     JSR.W DetermineProspectivePoseFromTransitionTable                    ;918189;
     RTS                                                                  ;91818C;
 
 
+%anchor($91818D)
 NormalSamusPoseInputHandler_TurningAround_Falling:
     JSR.W DetermineProspectivePoseFromTransitionTable                    ;91818D;
     RTS                                                                  ;918190;
 
 
+%anchor($918191)
 NormalSamusPoseInputHandler_DamageBoost:
     PHP                                                                  ;918191;
     REP #$30                                                             ;918192;
@@ -333,6 +362,7 @@ NormalSamusPoseInputHandler_DamageBoost:
     RTS                                                                  ;918198;
 
 
+%anchor($918199)
 NormalSamusPoseInputHandler_GrabbedByDraygon:
     PHP                                                                  ;918199;
     REP #$30                                                             ;91819A;
@@ -341,6 +371,7 @@ NormalSamusPoseInputHandler_GrabbedByDraygon:
     RTS                                                                  ;9181A0;
 
 
+%anchor($9181A1)
 NormalSamusPoseInputHandler_Shinespark_CF_Drained_DamagedMB:
     PHP                                                                  ;9181A1;
     REP #$30                                                             ;9181A2;
@@ -349,6 +380,7 @@ NormalSamusPoseInputHandler_Shinespark_CF_Drained_DamagedMB:
     RTS                                                                  ;9181A8;
 
 
+%anchor($9181A9)
 DetermineProspectivePoseFromTransitionTable:
     LDA.B $8B                                                            ;9181A9;
     BEQ .noInput                                                         ;9181AB;
@@ -402,6 +434,7 @@ DetermineProspectivePoseFromTransitionTable:
     RTS                                                                  ;9181F3;
 
 
+%anchor($9181F4)
 TranslateCustomControllerBindingsToDefaultBindings:
     LDA.B $8F                                                            ;9181F4;
     AND.W #$0F00                                                         ;9181F6;
@@ -530,6 +563,7 @@ TranslateCustomControllerBindingsToDefaultBindings:
     RTS                                                                  ;9182D8;
 
 
+%anchor($9182D9)
 HandleTransitionTableLookupFailure:
     PHP                                                                  ;9182D9;
     PHB                                                                  ;9182DA;
@@ -563,6 +597,7 @@ HandleTransitionTableLookupFailure:
     RTL                                                                  ;918303;
 
 
+%anchor($918304)
 Set_ProspectivePoseChangeCommand:
     LDA.W $0A1F                                                          ;918304;
     AND.W #$00FF                                                         ;918307;
@@ -625,6 +660,7 @@ Set_ProspectivePoseChangeCommand:
     db $02 ; 1Ah: Grabbed by Draygon
     db $02 ; 1Bh: Shinespark / crystal flash / drained by metroid / damaged by MB's attacks
 
+%anchor($91834E)
 Enable_DemoInput:
     PHP                                                                  ;91834E;
     REP #$30                                                             ;91834F;
@@ -636,6 +672,7 @@ Enable_DemoInput:
     RTL                                                                  ;91835E;
 
 
+%anchor($91835F)
 Disable_DemoInput:
     PHP                                                                  ;91835F;
     REP #$30                                                             ;918360;
@@ -647,6 +684,7 @@ Disable_DemoInput:
     RTL                                                                  ;91836F;
 
 
+%anchor($918370)
 Clear_DemoInput_RAM:
     PHP                                                                  ;918370;
     REP #$30                                                             ;918371;
@@ -666,6 +704,7 @@ Clear_DemoInput_RAM:
     RTL                                                                  ;918394;
 
 
+%anchor($918395)
 Load_DemoInputObject:
     PHP                                                                  ;918395;
     PHB                                                                  ;918396;
@@ -690,10 +729,12 @@ Load_DemoInputObject:
     RTL                                                                  ;9183BE;
 
 
+%anchor($9183BF)
 RTS_9183BF:
     RTS                                                                  ;9183BF;
 
 
+%anchor($9183C0)
 DemoInputObjectHandler:
     PHP                                                                  ;9183C0;
     PHB                                                                  ;9183C1;
@@ -722,6 +763,7 @@ DemoInputObjectHandler:
     RTL                                                                  ;9183F1;
 
 
+%anchor($9183F2)
 ProcessDemoInputObject:
     LDX.W #$0000                                                         ;9183F2;
     JSR.W ($0A7A,X)                                                      ;9183F5;
@@ -754,6 +796,7 @@ ProcessDemoInputObject:
     RTS                                                                  ;918426;
 
 
+%anchor($918427)
 Instruction_DemoInputObject_Delete:
     REP #$30                                                             ;918427;
     STZ.W $0A7E                                                          ;918429;
@@ -763,6 +806,7 @@ Instruction_DemoInputObject_Delete:
     RTS                                                                  ;918433;
 
 
+%anchor($918434)
 Instruction_DemoInputObject_PreInstructionInY:
     REP #$30                                                             ;918434;
     LDA.W $0000,Y                                                        ;918436;
@@ -772,15 +816,18 @@ Instruction_DemoInputObject_PreInstructionInY:
     RTS                                                                  ;91843E;
 
 
+%anchor($91843F)
 Instruction_DemoInputObject_ClearPreInstruction:
     REP #$30                                                             ;91843F;
     LDA.W #RTS_918447                                                    ;918441;
     STA.W $0A7A                                                          ;918444; fallthrough to RTS_918447
 
+%anchor($918447)
 RTS_918447:
     RTS                                                                  ;918447;
 
 
+%anchor($918448)
 Instruction_DemoInputObject_GotoY:
     REP #$30                                                             ;918448;
     LDA.W $0000,Y                                                        ;91844A;
@@ -788,6 +835,7 @@ Instruction_DemoInputObject_GotoY:
     RTS                                                                  ;91844E;
 
 
+%anchor($91844F)
 Instruction_DemoInputObject_DecrementTimer_GotoYIfNonZero:
     REP #$30                                                             ;91844F;
     DEC.W $0A80                                                          ;918451;
@@ -797,6 +845,7 @@ Instruction_DemoInputObject_DecrementTimer_GotoYIfNonZero:
     RTS                                                                  ;918458;
 
 
+%anchor($918459)
 Instruction_DemoInputObject_TimerInY:
     REP #$30                                                             ;918459;
     LDA.W $0000,Y                                                        ;91845B;
@@ -806,6 +855,7 @@ Instruction_DemoInputObject_TimerInY:
     RTS                                                                  ;918463;
 
 
+%anchor($918464)
 RecordDemoInputFrame:
     PHP                                                                  ;918464;
     PHB                                                                  ;918465;
@@ -862,6 +912,7 @@ RecordDemoInputFrame:
     RTL                                                                  ;9184D4;
 
 
+%anchor($9184D5)
 Pause_Terminate_Reset_DemoRecorder:
     PHP                                                                  ;9184D5;
     PHB                                                                  ;9184D6;
@@ -906,6 +957,7 @@ Pause_Terminate_Reset_DemoRecorder:
     RTL                                                                  ;91852E;
 
 
+%anchor($91852F)
 Draw_RecordedDemoDuration:
     LDA.W $0E20                                                          ;91852F;
     CLC                                                                  ;918532;
@@ -981,6 +1033,7 @@ Draw_RecordedDemoDuration:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($9185CE)
 UNUSED_InstList_DemoInput_JumpLeft_GiveControlBack_9185CE:               ;9185CE;
 ; For UNUSED_DemoInputObject_Intro_JumpLeft_GiveControlBack_918778
     dw $001E,$0000,$0000 ;
@@ -993,6 +1046,7 @@ UNUSED_InstList_DemoInput_JumpLeft_GiveControlBack_9185CE:               ;9185CE
     dw Instruction_EndDemoInput_GiveControlBackToPlayer
     dw Instruction_DemoInputObject_Delete
 
+%anchor($9185FC)
 Instruction_EndDemoInput_GiveControlBackToPlayer:
     LDA.W #SamusCurrentStateHandler_Normal                               ;9185FC;
     STA.W $0A42                                                          ;9185FF;
@@ -1003,15 +1057,18 @@ Instruction_EndDemoInput_GiveControlBackToPlayer:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($91860D)
 InstList_DemoInput_BabyMetroidDiscovery_RunningLeft_0:                   ;91860D;
     dw $005A,$0000,$0000 ;
     dw $0001,$0200,$0200 ;       <
 
+%anchor($918619)
 InstList_DemoInput_BabyMetroidDiscovery_RunningLeft_1:                   ;918619;
     dw $0001,$0200,$0000 ;       <
     dw Instruction_DemoInputObject_GotoY
     dw InstList_DemoInput_BabyMetroidDiscovery_RunningLeft_1
 
+%anchor($918623)
 InstList_DemoInput_BabyMetroidDiscovery_StopAndLook_0:                   ;918623;
     dw $012C,$0000,$0000 ;
     dw $0001,$0010,$0010 ;            R
@@ -1019,15 +1076,18 @@ InstList_DemoInput_BabyMetroidDiscovery_StopAndLook_0:                   ;918623
     dw $00F0,$0000,$0000 ;
     dw $0001,$0200,$0200 ;       <
 
+%anchor($918641)
 InstList_DemoInput_BabyMetroidDiscovery_StopAndLook_1:                   ;918641;
     dw $0001,$0200,$0000 ;       <
     dw Instruction_DemoInputObject_GotoY
     dw InstList_DemoInput_BabyMetroidDiscovery_StopAndLook_1
 
+%anchor($91864B)
 InstList_DemoInput_BabyMetroidDiscovery_End:                             ;91864B;
     dw Instruction_EndDemoInput
     dw Instruction_DemoInputObject_Delete
 
+%anchor($91864F)
 PreInstruction_DemoInput_BabyMetroidDiscovery_RunningLeft:
     LDA.W $0AF6                                                          ;91864F;
     CMP.W #$00B2                                                         ;918652;
@@ -1043,6 +1103,7 @@ PreInstruction_DemoInput_BabyMetroidDiscovery_RunningLeft:
     RTS                                                                  ;918669;
 
 
+%anchor($91866A)
 PreInstruction_DemoInput_BabyMetroidDiscovery_StopAndLook:
     LDA.W $1A4B                                                          ;91866A;
     BNE .return                                                          ;91866D;
@@ -1057,6 +1118,7 @@ PreInstruction_DemoInput_BabyMetroidDiscovery_StopAndLook:
     RTS                                                                  ;918681;
 
 
+%anchor($918682)
 Instruction_EndDemoInput:
     PHX                                                                  ;918682;
     PHY                                                                  ;918683;
@@ -1069,6 +1131,7 @@ Instruction_EndDemoInput:
     RTS                                                                  ;918693;
 
 
+%anchor($918694)
 InstList_DemoInput_OldMotherBrainFight:                                  ;918694;
     dw $005A,$0000,$0000 ;
     dw $0001,$0040,$0040 ;          X
@@ -1078,6 +1141,7 @@ InstList_DemoInput_OldMotherBrainFight:                                  ;918694
     dw $0046,$0000,$0000 ;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($9186B8)
 UNUSED_InstList_DemoInput_OldMotherBrainFight_9186B8:                    ;9186B8;
     dw $0014,$0000,$0000 ;
     dw $0001,$0200,$0200 ;       <
@@ -1093,6 +1157,7 @@ UNUSED_InstList_DemoInput_OldMotherBrainFight_9186B8:                    ;9186B8
     dw Instruction_EndDemoInputWithSamusFacingLeft
     dw Instruction_DemoInputObject_Delete
 
+%anchor($9186FE)
 UNUSED_Instruction_EndDemoInputWithSamusFacingLeft_9186FE:
     PHX                                                                  ;9186FE;
     PHY                                                                  ;9186FF;
@@ -1119,6 +1184,7 @@ UNUSED_Instruction_EndDemoInputWithSamusFacingLeft_9186FE:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($918739)
 Instruction_EndDemoInputWithSamusFacingLeft:
     PHX                                                                  ;918739;
     PHY                                                                  ;91873A;
@@ -1145,37 +1211,44 @@ Instruction_EndDemoInputWithSamusFacingLeft:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($918774)
 UNUSED_InstList_DemoInput_Delete_918774:
     dw Instruction_DemoInputObject_Delete                                ;918774;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($918776)
 InstList_DemoInput_Delete:
     dw Instruction_DemoInputObject_Delete                                ;918776;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($918778)
 UNUSED_DemoInputObject_Intro_JumpLeft_GiveControlBack_918778:
     dw RTS_9183BF                                                        ;918778;
     dw RTS_9183BF                                                        ;91877A;
     dw UNUSED_InstList_DemoInput_JumpLeft_GiveControlBack_9185CE         ;91877C;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($91877E)
 DemoInputObjects_Intro_BabyMetroidDiscovery:
     dw RTS_9183BF                                                        ;91877E;
     dw PreInstruction_DemoInput_BabyMetroidDiscovery_RunningLeft         ;918780;
     dw InstList_DemoInput_BabyMetroidDiscovery_RunningLeft_0             ;918782;
 
+%anchor($918784)
 DemoInputObjects_Intro_OldMotherBrainFight:
     dw RTS_9183BF                                                        ;918784;
     dw RTS_9183BF                                                        ;918786;
     dw InstList_DemoInput_OldMotherBrainFight                            ;918788;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($91878A)
 UNUSED_DemoInputObjects_Intro_OldMotherBrainFight_91878A:
     dw RTS_9183BF                                                        ;91878A;
     dw RTS_9183BF                                                        ;91878C;
     dw UNUSED_InstList_DemoInput_OldMotherBrainFight_9186B8              ;91878E;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($918790)
 LoadDemoData:
     LDA.W $1F57                                                          ;918790;
     ASL A                                                                ;918793;
@@ -1275,6 +1348,7 @@ LoadDemoData:
     RTS                                                                  ;918884;
 
 
+%anchor($918885)
 DemoData_Pointers:
     dw DemoData_Set0                                                     ;918885;
     dw DemoData_Set1                                                     ;918887;
@@ -1289,6 +1363,7 @@ DemoData_Pointers:
 ;       |     |     |     |     |      ______________ Collected beams
 ;       |     |     |     |     |     |      ________ Equipped beams
 ;       |     |     |     |     |     |     |
+%anchor($91888D)
 DemoData_Set0:
     dw $0000,$0000,$0000,$0000,$0063,$0000,$0000                         ;91888D;
     dw DemoInputObjects_Title_LandingSite                                ;91889B;
@@ -1308,6 +1383,7 @@ DemoData_Set0:
     dw $0004,$0014,$0000,$0000,$00C7,$1000,$1000                         ;9188DD;
     dw DemoInputObjects_Title_PseudoScrewAttack                          ;9188EB;
 
+%anchor($9188ED)
 DemoData_Set1:
     dw $2105,$001E,$0005,$0000,$012B,$1006,$1006                         ;9188ED;
     dw DemoInputObjects_Title_IceBeam                                    ;9188FB;
@@ -1327,6 +1403,7 @@ DemoData_Set1:
     dw $E105,$002D,$0005,$0005,$018F,$1000,$1000                         ;91893D;
     dw DemoInputObjects_Title_Dachora                                    ;91894B;
 
+%anchor($91894D)
 DemoData_Set2:
     dw $E105,$0037,$0005,$0005,$018F,$1000,$1000                         ;91894D;
     dw DemoInputObjects_Title_WreckedShipBasement                        ;91895B;
@@ -1346,6 +1423,7 @@ DemoData_Set2:
     dw $2105,$001E,$0005,$0005,$012B,$1008,$1008                         ;91899D;
     dw DemoInputObjects_Title_TourianEntrance                            ;9189AB;
 
+%anchor($9189AD)
 DemoData_Set3:
     dw $F32D,$0055,$000F,$000A,$03E7,$1000,$1000                         ;9189AD;
     dw DemoInputObjects_Title_GauntletEntrance                           ;9189BB;
@@ -1362,12 +1440,14 @@ DemoData_Set3:
     dw $F32D,$0055,$0014,$0014,$03E7,$1000,$1000                         ;9189ED;
     dw DemoInputObjects_Title_CrystalFlash                               ;9189FB;
 
+%anchor($9189FD)
 DemoSamusSetup_Pointers:
     dw DemoSamusSetup_Set0                                               ;9189FD;
     dw DemoSamusSetup_Set1                                               ;9189FF;
     dw DemoSamusSetup_Set2                                               ;918A01;
     dw DemoSamusSetup_Set3                                               ;918A03;
 
+%anchor($918A05)
 DemoSamusSetup_Set0:
     dw DemoSamusSetup_LandingSite                                        ;918A05;
     dw DemoSamusSetup_StandingFacingRight                                ;918A07;
@@ -1376,6 +1456,7 @@ DemoSamusSetup_Set0:
     dw DemoSamusSetup_StandingFacingRight                                ;918A0D;
     dw DemoSamusSetup_MorphBallFacingLeft                                ;918A0F;
 
+%anchor($918A11)
 DemoSamusSetup_Set1:
     dw DemoSamusSetup_StandingFacingLeft                                 ;918A11;
     dw DemoSamusSetup_StandingFacingLeft                                 ;918A13;
@@ -1384,6 +1465,7 @@ DemoSamusSetup_Set1:
     dw DemoSamusSetup_StandingFacingRight                                ;918A19;
     dw DemoSamusSetup_FallingFacingLeft                                  ;918A1B;
 
+%anchor($918A1D)
 DemoSamusSetup_Set2:
     dw DemoSamusSetup_StandingFacingLeft                                 ;918A1D;
     dw DemoSamusSetup_Shinespark                                         ;918A1F;
@@ -1392,6 +1474,7 @@ DemoSamusSetup_Set2:
     dw DemoSamusSetup_StandingFacingRight                                ;918A25;
     dw DemoSamusSetup_StandingFacingRight                                ;918A27;
 
+%anchor($918A29)
 DemoSamusSetup_Set3:
     dw DemoSamusSetup_GauntletEntrance                                   ;918A29;
     dw DemoSamusSetup_StandingFacingLeft                                 ;918A2B;
@@ -1399,6 +1482,7 @@ DemoSamusSetup_Set3:
     dw DemoSamusSetup_StandingFacingRight                                ;918A2F;
     dw DemoSamusSetup_StandingFacingLeft_LowEnergy                       ;918A31;
 
+%anchor($918A33)
 DemoSamusSetup_LandingSite:
     JSL.L MakeSamusFaceForward                                           ;918A33;
     LDA.W #SamusDrawingHandler_Default                                   ;918A37;
@@ -1406,28 +1490,34 @@ DemoSamusSetup_LandingSite:
     RTS                                                                  ;918A3D;
 
 
+%anchor($918A3E)
 DemoSamusSetup_MorphBallFacingLeft:
     LDA.W #$001F                                                         ;918A3E;
     BRA InitializeSamusWithPoseInA                                       ;918A41;
 
 
+%anchor($918A43)
 DemoSamusSetup_StandingFacingLeft_LowEnergy:
     LDA.W #$0014                                                         ;918A43;
     STA.W $09C2                                                          ;918A46;
 
+%anchor($918A49)
 DemoSamusSetup_StandingFacingLeft:
     LDA.W #$0002                                                         ;918A49;
     BRA InitializeSamusWithPoseInA                                       ;918A4C;
 
 
+%anchor($918A4E)
 DemoSamusSetup_FallingFacingLeft:
     LDA.W #$002A                                                         ;918A4E;
     BRA InitializeSamusWithPoseInA                                       ;918A51;
 
 
+%anchor($918A53)
 DemoSamusSetup_StandingFacingRight:
     LDA.W #$0001                                                         ;918A53;
 
+%anchor($918A56)
 InitializeSamusWithPoseInA:
     STA.W $0A1C                                                          ;918A56;
     JSL.L InitializeSamusPose_1                                          ;918A59;
@@ -1437,6 +1527,7 @@ InitializeSamusWithPoseInA:
     RTS                                                                  ;918A67;
 
 
+%anchor($918A68)
 DemoSamusSetup_Shinespark:
     LDA.W #SamusDrawingHandler_Default                                   ;918A68;
     STA.W $0A5C                                                          ;918A6B;
@@ -1448,6 +1539,7 @@ DemoSamusSetup_Shinespark:
     RTS                                                                  ;918A80;
 
 
+%anchor($918A81)
 DemoSamusSetup_GauntletEntrance:
     LDA.W #SamusDrawingHandler_Default                                   ;918A81;
     STA.W $0A5C                                                          ;918A84;
@@ -1459,10 +1551,12 @@ DemoSamusSetup_GauntletEntrance:
     RTS                                                                  ;918A99;
 
 
+%anchor($918A9A)
 RTS_918A9A:
     RTS                                                                  ;918A9A;
 
 
+%anchor($918A9B)
 PreInstruction_DemoInput_Normal:
     LDA.W $0998                                                          ;918A9B;
     CMP.W #$002C                                                         ;918A9E;
@@ -1476,6 +1570,7 @@ PreInstruction_DemoInput_Normal:
     RTS                                                                  ;918AAF;
 
 
+%anchor($918AB0)
 PreInstruction_DemoInput_Shinespark:
     LDA.W $0A1F                                                          ;918AB0;
     AND.W #$00FF                                                         ;918AB3;
@@ -1492,6 +1587,7 @@ PreInstruction_DemoInput_Shinespark:
     RTS                                                                  ;918ACD;
 
 
+%anchor($918ACE)
 InstList_DemoInput_LandingSite:                                          ;918ACE;
     dw $0121,$0000,$0000 ;
     dw $0001,$0200,$0200 ;       <
@@ -1556,6 +1652,7 @@ InstList_DemoInput_LandingSite:                                          ;918ACE
     dw $0003,$0140,$0000 ;        > X
     dw Instruction_DemoInputObject_Delete
 
+%anchor($918C3E)
 InstList_DemoInput_PseudoScrewAttack:                                    ;918C3E;
     dw $0016,$0000,$0000 ;
     dw $0001,$0800,$0800 ;     ^
@@ -1631,6 +1728,7 @@ InstList_DemoInput_PseudoScrewAttack:                                    ;918C3E
     dw $0065,$0000,$0000 ;
     dw Instruction_DemoInputObject_Delete
 
+%anchor($918DF0)
 InstList_DemoInput_SpeedBooster:                                         ;918DF0;
     dw $0020,$0000,$0000 ;
     dw $0001,$0200,$0200 ;       <
@@ -1653,6 +1751,7 @@ InstList_DemoInput_SpeedBooster:                                         ;918DF0
     dw $0063,$0000,$0000 ;
     dw Instruction_DemoInputObject_Delete
 
+%anchor($918E64)
 InstList_DemoInput_Dachora:                                              ;918E64;
     dw $0008,$0000,$0000 ;
     dw $0001,$0200,$0200 ;       <
@@ -1669,6 +1768,7 @@ InstList_DemoInput_Dachora:                                              ;918E64
     dw $011E,$0000,$0000 ;
     dw Instruction_DemoInputObject_Delete
 
+%anchor($918EB4)
 InstList_DemoInput_RedBrinstarElevator:                                  ;918EB4;
     dw $005A,$0000,$0000 ;
     dw $0001,$0100,$0100 ;        >
@@ -1694,6 +1794,7 @@ InstList_DemoInput_RedBrinstarElevator:                                  ;918EB4
     dw $0200,$0000,$0000 ;
     dw Instruction_DemoInputObject_Delete
 
+%anchor($918F3A)
 InstList_DemoInput_WreckedShipBasement:                                  ;918F3A;
     dw $003D,$0000,$0000 ;
     dw $0001,$0100,$0100 ;        >
@@ -1725,6 +1826,7 @@ InstList_DemoInput_WreckedShipBasement:                                  ;918F3A
     dw $00A9,$0000,$0000 ;
     dw Instruction_DemoInputObject_Delete
 
+%anchor($918FE4)
 InstList_DemoInput_LowerNorfairEntrance:                                 ;918FE4;
     dw $0013,$0000,$0000 ;
     dw $0001,$0200,$0200 ;       <
@@ -1789,6 +1891,7 @@ InstList_DemoInput_LowerNorfairEntrance:                                 ;918FE4
     dw $002D,$0000,$0000 ;
     dw Instruction_DemoInputObject_Delete
 
+%anchor($919154)
 InstList_DemoInput_EyeDoor:                                              ;919154;
     dw $000B,$0100,$0000 ;        >
     dw $0017,$0000,$0000 ;
@@ -1873,11 +1976,13 @@ InstList_DemoInput_EyeDoor:                                              ;919154
     dw $0004,$0100,$0000 ;        >
     dw Instruction_DemoInputObject_Delete
 
+%anchor($91933C)
 InstList_DemoInput_Shinespark:                                           ;91933C;
     dw $00A5,$0000,$0000 ;
     dw Instruction_DemoInputObject_GotoY
     dw InstList_DemoInput_Shinespark
 
+%anchor($919346)
 UNUSED_InstList_DemoInput_Shinespark_Unseen_919346:                      ;919346;
 ; The demo timer expires before these inputs are used
     dw $0096,$0000,$0000 ;
@@ -1904,6 +2009,7 @@ UNUSED_InstList_DemoInput_Shinespark_Unseen_919346:                      ;919346
     dw $00F0,$0000,$0000 ;
     dw Instruction_DemoInputObject_Delete
 
+%anchor($9193CC)
 InstList_DemoInput_MissileDoor:                                          ;9193CC;
     dw $0029,$0000,$0000 ;
     dw $0001,$0100,$0100 ;        >
@@ -1932,10 +2038,12 @@ InstList_DemoInput_MissileDoor:                                          ;9193CC
     dw $001A,$0000,$0000 ;
     dw Instruction_DemoInputObject_Delete
 
+%anchor($919464)
 InstList_DemoInput_Kraid:                                                ;919464;
     dw $0200,$0000,$0000 ;
     dw Instruction_DemoInputObject_Delete
 
+%anchor($91946C)
 InstList_DemoInput_FireFleaRoom:                                         ;91946C;
     dw $002B,$0000,$0000 ;
     dw $0001,$0200,$0200 ;       <
@@ -1965,6 +2073,7 @@ InstList_DemoInput_FireFleaRoom:                                         ;91946C
     dw $00C4,$0020,$0000 ;           L
     dw Instruction_DemoInputObject_Delete
 
+%anchor($91950A)
 InstList_DemoInput_ScrewAttack:                                          ;91950A;
     dw $0030,$0000,$0000 ;
     dw $0001,$8100,$8100 ; B      >
@@ -1982,6 +2091,7 @@ InstList_DemoInput_ScrewAttack:                                          ;91950A
     dw $009D,$0010,$0000 ;            R
     dw Instruction_DemoInputObject_Delete
 
+%anchor($919560)
 InstList_DemoInput_BrinstarDiagonalRoom:                                 ;919560;
     dw $0029,$0000,$0000 ;
     dw $0001,$0100,$0100 ;        >
@@ -2001,6 +2111,7 @@ InstList_DemoInput_BrinstarDiagonalRoom:                                 ;919560
     dw Instruction_DemoInputObject_Delete
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($9195BC)
 UNUSED_InstList_DemoInput_9195BC:                                        ;9195BC;
     dw $0029,$0000,$0000 ;
     dw $0001,$0200,$0200 ;       <
@@ -2031,6 +2142,7 @@ UNUSED_InstList_DemoInput_9195BC:                                        ;9195BC
     dw Instruction_DemoInputObject_Delete
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($91965A)
 InstList_DemoInput_PreSporeSpawnHall:                                    ;91965A;
     dw $001B,$0000,$0000 ;
     dw $0001,$0200,$0200 ;       <
@@ -2071,6 +2183,7 @@ InstList_DemoInput_PreSporeSpawnHall:                                    ;91965A
     dw $0084,$0010,$0000 ;            R
     dw Instruction_DemoInputObject_Delete
 
+%anchor($91973A)
 InstList_DemoInput_GrappleBeam:                                          ;91973A;
     dw $0010,$0000,$0000 ;
     dw $0001,$2000,$2000 ;   s
@@ -2133,6 +2246,7 @@ InstList_DemoInput_GrappleBeam:                                          ;91973A
     dw $0028,$0000,$0000 ;
     dw Instruction_DemoInputObject_Delete
 
+%anchor($91989E)
 InstList_DemoInput_IceBeam:                                              ;91989E;
     dw $0021,$0000,$0000 ;
     dw $0001,$0040,$0040 ;          X
@@ -2181,6 +2295,7 @@ InstList_DemoInput_IceBeam:                                              ;91989E
     dw $005D,$0000,$0000 ;
     dw Instruction_DemoInputObject_Delete
 
+%anchor($9199AE)
 InstList_DemoInput_GauntletEntrance:                                     ;9199AE;
     dw $0016,$0000,$0000 ;
     dw $0001,$0100,$0100 ;        >
@@ -2188,6 +2303,7 @@ InstList_DemoInput_GauntletEntrance:                                     ;9199AE
     dw $0100,$0000,$0000 ;
     dw Instruction_DemoInputObject_Delete
 
+%anchor($9199C8)
 InstList_DemoInput_AdvancedGrappleBeam:                                  ;9199C8;
     dw $003F,$0000,$0000 ;
     dw $0001,$0100,$0100 ;        >
@@ -2240,6 +2356,7 @@ InstList_DemoInput_AdvancedGrappleBeam:                                  ;9199C8
     dw $0046,$0000,$0000 ;
     dw Instruction_DemoInputObject_Delete
 
+%anchor($919AF0)
 InstList_DemoInput_IBJ:                                                  ;919AF0;
     dw $0019,$0000,$0000 ;
     dw $0001,$0100,$0100 ;        >
@@ -2324,6 +2441,7 @@ InstList_DemoInput_IBJ:                                                  ;919AF0
     dw $00C4,$0000,$0000 ;
     dw Instruction_DemoInputObject_Delete
 
+%anchor($919CD8)
 InstList_DemoInput_SBA:                                                  ;919CD8;
     dw $001A,$0000,$0000 ;
     dw $0001,$2000,$2000 ;   s
@@ -2361,10 +2479,12 @@ InstList_DemoInput_SBA:                                                  ;919CD8
     dw $0034,$0000,$0000 ;
     dw Instruction_DemoInputObject_Delete
 
+%anchor($919DA6)
 InstList_DemoInput_TourianEntrance:                                      ;919DA6;
     dw $0195,$0000,$0000 ;
     dw Instruction_DemoInputObject_Delete
 
+%anchor($919DAE)
 InstList_DemoInput_CrystalFlash:                                         ;919DAE;
     dw $001B,$0000,$0000 ;
     dw $0001,$0400,$0400 ;      v
@@ -2395,123 +2515,147 @@ InstList_DemoInput_CrystalFlash:                                         ;919DAE
     dw $013C,$0000,$0000 ;
     dw Instruction_DemoInputObject_Delete
 
+%anchor($919E52)
 DemoInputObjects_Title_LandingSite:
     dw RTS_9183BF                                                        ;919E52;
     dw PreInstruction_DemoInput_Normal                                   ;919E54;
     dw InstList_DemoInput_LandingSite                                    ;919E56;
 
+%anchor($919E58)
 DemoInputObjects_Title_PseudoScrewAttack:
     dw RTS_9183BF                                                        ;919E58;
     dw PreInstruction_DemoInput_Normal                                   ;919E5A;
     dw InstList_DemoInput_PseudoScrewAttack                              ;919E5C;
 
+%anchor($919E5E)
 DemoInputObjects_Title_SpeedBooster:
     dw RTS_9183BF                                                        ;919E5E;
     dw PreInstruction_DemoInput_Normal                                   ;919E60;
     dw InstList_DemoInput_SpeedBooster                                   ;919E62;
 
+%anchor($919E64)
 DemoInputObjects_Title_Dachora:
     dw RTS_9183BF                                                        ;919E64;
     dw PreInstruction_DemoInput_Normal                                   ;919E66;
     dw InstList_DemoInput_Dachora                                        ;919E68;
 
+%anchor($919E6A)
 DemoInputObjects_Title_RedBrinstarElevator:
     dw RTS_9183BF                                                        ;919E6A;
     dw PreInstruction_DemoInput_Normal                                   ;919E6C;
     dw InstList_DemoInput_RedBrinstarElevator                            ;919E6E;
 
+%anchor($919E70)
 DemoInputObjects_Title_WreckedShipBasement:
     dw RTS_9183BF                                                        ;919E70;
     dw PreInstruction_DemoInput_Normal                                   ;919E72;
     dw InstList_DemoInput_WreckedShipBasement                            ;919E74;
 
+%anchor($919E76)
 DemoInputObjects_Title_LowerNorfairEntrance:
     dw RTS_9183BF                                                        ;919E76;
     dw PreInstruction_DemoInput_Normal                                   ;919E78;
     dw InstList_DemoInput_LowerNorfairEntrance                           ;919E7A;
 
+%anchor($919E7C)
 DemoInputObjects_Title_EyeDoor:
     dw RTS_9183BF                                                        ;919E7C;
     dw PreInstruction_DemoInput_Normal                                   ;919E7E;
     dw InstList_DemoInput_EyeDoor                                        ;919E80;
 
+%anchor($919E82)
 DemoInputObjects_Title_Shinespark:
     dw RTS_9183BF                                                        ;919E82;
     dw PreInstruction_DemoInput_Shinespark                               ;919E84;
     dw InstList_DemoInput_Shinespark                                     ;919E86;
 
+%anchor($919E88)
 DemoInputObjects_Title_MissileDoor:
     dw RTS_9183BF                                                        ;919E88;
     dw PreInstruction_DemoInput_Normal                                   ;919E8A;
     dw InstList_DemoInput_MissileDoor                                    ;919E8C;
 
+%anchor($919E8E)
 DemoInputObjects_Title_Kraid:
     dw RTS_9183BF                                                        ;919E8E;
     dw PreInstruction_DemoInput_Normal                                   ;919E90;
     dw InstList_DemoInput_Kraid                                          ;919E92;
 
+%anchor($919E94)
 DemoInputObjects_Title_FireFleaRoom:
     dw RTS_9183BF                                                        ;919E94;
     dw PreInstruction_DemoInput_Normal                                   ;919E96;
     dw InstList_DemoInput_FireFleaRoom                                   ;919E98;
 
+%anchor($919E9A)
 DemoInputObjects_Title_ScrewAttack:
     dw RTS_9183BF                                                        ;919E9A;
     dw PreInstruction_DemoInput_Normal                                   ;919E9C;
     dw InstList_DemoInput_ScrewAttack                                    ;919E9E;
 
+%anchor($919EA0)
 DemoInputObjects_Title_BrinstarDiagonalRoom:
     dw RTS_9183BF                                                        ;919EA0;
     dw PreInstruction_DemoInput_Normal                                   ;919EA2;
     dw InstList_DemoInput_BrinstarDiagonalRoom                           ;919EA4;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($919EA6)
 UNUSED_DemoInputObjects_Title_919EA6:
     dw RTS_9183BF                                                        ;919EA6;
     dw PreInstruction_DemoInput_Normal                                   ;919EA8;
     dw UNUSED_InstList_DemoInput_9195BC                                  ;919EAA;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($919EAC)
 DemoInputObjects_Title_PreSporeSpawnHall:
     dw RTS_9183BF                                                        ;919EAC;
     dw PreInstruction_DemoInput_Normal                                   ;919EAE;
     dw InstList_DemoInput_PreSporeSpawnHall                              ;919EB0;
 
+%anchor($919EB2)
 DemoInputObjects_Title_GrappleBeam:
     dw RTS_9183BF                                                        ;919EB2;
     dw PreInstruction_DemoInput_Normal                                   ;919EB4;
     dw InstList_DemoInput_GrappleBeam                                    ;919EB6;
 
+%anchor($919EB8)
 DemoInputObjects_Title_IceBeam:
     dw RTS_9183BF                                                        ;919EB8;
     dw PreInstruction_DemoInput_Normal                                   ;919EBA;
     dw InstList_DemoInput_IceBeam                                        ;919EBC;
 
+%anchor($919EBE)
 DemoInputObjects_Title_GauntletEntrance:
     dw RTS_9183BF                                                        ;919EBE;
     dw PreInstruction_DemoInput_Normal                                   ;919EC0;
     dw InstList_DemoInput_GauntletEntrance                               ;919EC2;
 
+%anchor($919EC4)
 DemoInputObjects_Title_AdvancedGrappleBeam:
     dw RTS_9183BF                                                        ;919EC4;
     dw PreInstruction_DemoInput_Normal                                   ;919EC6;
     dw InstList_DemoInput_AdvancedGrappleBeam                            ;919EC8;
 
+%anchor($919ECA)
 DemoInputObjects_Title_IBJ:
     dw RTS_9183BF                                                        ;919ECA;
     dw PreInstruction_DemoInput_Normal                                   ;919ECC;
     dw InstList_DemoInput_IBJ                                            ;919ECE;
 
+%anchor($919ED0)
 DemoInputObjects_Title_SBA:
     dw RTS_9183BF                                                        ;919ED0;
     dw PreInstruction_DemoInput_Normal                                   ;919ED2;
     dw InstList_DemoInput_SBA                                            ;919ED4;
 
+%anchor($919ED6)
 DemoInputObjects_Title_TourianEntrance:
     dw RTS_9183BF                                                        ;919ED6;
     dw PreInstruction_DemoInput_Normal                                   ;919ED8;
     dw InstList_DemoInput_TourianEntrance                                ;919EDA;
 
+%anchor($919EDC)
 DemoInputObjects_Title_CrystalFlash:
     dw RTS_9183BF                                                        ;919EDC;
     dw PreInstruction_DemoInput_Normal                                   ;919EDE;
@@ -2541,6 +2685,7 @@ DemoInputObjects_Title_CrystalFlash:
 ;     0040: Shoot
 ;     0020: Aim diagonally down
 ;     0010: Aim diagonally up
+%anchor($919EE2)
 TransitionTable:
     dw TransitionTable_00_9B_FacingForward                               ;919EE2;
     dw TransitionTable_01_03_05_07_A4_A6_E0_E2_E4_E6_FacingRight         ;919EE4;
@@ -2797,9 +2942,11 @@ TransitionTable:
     dw TransitionTable_Terminator_91A0DE                                 ;91A0DA;
 
 ; entry 2F/30/35/36/37/38/39/3A/3B/3C/3F/40/43/44/5D/5E/5F/60/61/62/87/88/8F/90/91/92/93/94/95/96/97/98/99/9A/9C/9D/9E/9F/A0/A1/A2/A3/A8/A9/AA/AB/AC/AD/AE/AF/B0/B1/B2/B3/B4/B5/B6/B7/B8/B9/C5/C6/C9/CA/CB/CC/CD/CE/D3/D4/D5/D6/D7/D8/D9/DA/DB/DC/DD/DE/E8/E9/EA/EB/F1/F2/F3/F4/F5/F6/F7/F8/F9/FA/FB/FC
+%anchor($91A0DC)
 TransitionTable_Terminator_91A0DE:
     dw $FFFF                                                             ;91A0DC;
 
+%anchor($91A0DE)
 TransitionTable_00_9B_FacingForward:                                     ;91A0DE;
 ; 00: Facing forward - power suit
 ; 9B: Facing forward - varia/gravity suit
@@ -2807,6 +2954,7 @@ TransitionTable_00_9B_FacingForward:                                     ;91A0DE
     dw $0000,$0200,$0025
     dw $FFFF
 
+%anchor($91A0EC)
 TransitionTable_01_03_05_07_A4_A6_E0_E2_E4_E6_FacingRight:               ;91A0EC;
 ; 01: Facing right - normal
 ; 03: Facing right - aiming up
@@ -2842,6 +2990,7 @@ TransitionTable_01_03_05_07_A4_A6_E0_E2_E4_E6_FacingRight:               ;91A0EC
     dw $0000,$0100,$0009
     dw $FFFF
 
+%anchor($91A172)
 TransitionTable_02_04_06_08_A5_A7_E1_E3_E5_E7_FacingLeft:                ;91A172;
 ; 02: Facing left - normal
 ; 04: Facing left - aiming up
@@ -2877,6 +3026,7 @@ TransitionTable_02_04_06_08_A5_A7_E1_E3_E5_E7_FacingLeft:                ;91A172
     dw $0000,$0200,$000A
     dw $FFFF
 
+%anchor($91A1F8)
 TransitionTable_09_0D_0F_11_MovingRight:                                 ;91A1F8;
 ; 09: Moving right - not aiming
 ; 0D: Moving right - aiming up (unused)
@@ -2896,6 +3046,7 @@ TransitionTable_09_0D_0F_11_MovingRight:                                 ;91A1F8
     dw $0000,$0020,$0007
     dw $FFFF
 
+%anchor($91A242)
 TransitionTable_0A_0E_10_12_MovingLeft:                                  ;91A242;
 ; 0A: Moving left - not aiming
 ; 0E: Moving left - aiming up (unused)
@@ -2915,6 +3066,7 @@ TransitionTable_0A_0E_10_12_MovingLeft:                                  ;91A242
     dw $0000,$0020,$0008
     dw $FFFF
 
+%anchor($91A28C)
 TransitionTable_4B_55_57_59_FacingRight_NormalJumpTransition:            ;91A28C;
 ; 4B: Facing right - normal jump transition
 ; 55: Facing right - normal jump transition - aiming up
@@ -2930,6 +3082,7 @@ TransitionTable_4B_55_57_59_FacingRight_NormalJumpTransition:            ;91A28C
     dw $0000,$0040,$0013
     dw $FFFF
 
+%anchor($91A2BE)
 TransitionTable_4C_56_58_5A_FacingLeft_NormalJumpTransition:             ;91A2BE;
 ; 4C: Facing left - normal jump transition
 ; 56: Facing left - normal jump transition - aiming up
@@ -2946,6 +3099,7 @@ TransitionTable_4C_56_58_5A_FacingLeft_NormalJumpTransition:             ;91A2BE
     dw $0000,$0040,$0014
     dw $FFFF
 
+%anchor($91A2F6)
 TransitionTable_15_4D_51_69_6B_FacingRight_NormalJump:                   ;91A2F6;
 ; 15: Facing right - normal jump - aiming up
 ; 4D: Facing right - normal jump - not aiming - not moving - gun not extended
@@ -2975,6 +3129,7 @@ TransitionTable_15_4D_51_69_6B_FacingRight_NormalJump:                   ;91A2F6
     dw $0000,$0040,$0013
     dw $FFFF
 
+%anchor($91A376)
 TransitionTable_16_4E_52_6A_6C_FacingLeft_NormalJump:                    ;91A376;
 ; 16: Facing left - normal jump - aiming up
 ; 4E: Facing left - normal jump - not aiming - not moving - gun not extended
@@ -3004,6 +3159,7 @@ TransitionTable_16_4E_52_6A_6C_FacingLeft_NormalJump:                    ;91A376
     dw $0000,$0040,$0014
     dw $FFFF
 
+%anchor($91A3F6)
 TransitionTable_4F_FacingLeft_DamageBoost:                               ;91A3F6;
 ; 4F: Facing left - damage boost
     dw $0000,$0280,$0052
@@ -3012,6 +3168,7 @@ TransitionTable_4F_FacingLeft_DamageBoost:                               ;91A3F6
     dw $004E
     dw $FFFF
 
+%anchor($91A40A)
 TransitionTable_50_FacingRight_DamageBoost:                              ;91A40A;
 ; 50: Facing right - damage boost
     dw $0000,$0280,$0050
@@ -3020,6 +3177,7 @@ TransitionTable_50_FacingRight_DamageBoost:                              ;91A40A
     dw $004D
     dw $FFFF
 
+%anchor($91A41E)
 TransitionTable_19_FacingRIght_SpinJump:                                 ;91A41E;
 ; 19: Facing right - spin jump
     dw $0040,$0000,$0013
@@ -3037,6 +3195,7 @@ TransitionTable_19_FacingRIght_SpinJump:                                 ;91A41E
     dw $0000,$0200,$001A
     dw $FFFF
 
+%anchor($91A46E)
 TransitionTable_1A_FacingLeft_SpinJump:                                  ;91A46E;
 ; 1A: Facing left - spin jump
     dw $0040,$0000,$0014
@@ -3054,6 +3213,7 @@ TransitionTable_1A_FacingLeft_SpinJump:                                  ;91A46E
     dw $0000,$0100,$0019
     dw $FFFF
 
+%anchor($91A4BE)
 TransitionTable_1B_FacingRight_SpaceJump:                                ;91A4BE;
 ; 1B: Facing right - space jump
     dw $0040,$0000,$0013
@@ -3071,6 +3231,7 @@ TransitionTable_1B_FacingRight_SpaceJump:                                ;91A4BE
     dw $0000,$0200,$001C
     dw $FFFF
 
+%anchor($91A50E)
 TransitionTable_1C_FacingLeft_SpaceJump:                                 ;91A50E;
 ; 1C: Facing left - space jump
     dw $0040,$0000,$0014
@@ -3088,6 +3249,7 @@ TransitionTable_1C_FacingLeft_SpaceJump:                                 ;91A50E
     dw $0000,$0100,$001B
     dw $FFFF
 
+%anchor($91A55E)
 TransitionTable_81_ScrewAttack:                                          ;91A55E;
 ; 81: Facing right - screw attack
     dw $0040,$0000,$0013
@@ -3105,6 +3267,7 @@ TransitionTable_81_ScrewAttack:                                          ;91A55E
     dw $0000,$0200,$0082
     dw $FFFF
 
+%anchor($91A5AE)
 TransitionTable_82_FacingLeft_ScrewAttack:                               ;91A5AE;
 ; 82: Facing left - screw attack
     dw $0040,$0000,$0014
@@ -3122,6 +3285,7 @@ TransitionTable_82_FacingLeft_ScrewAttack:                               ;91A5AE
     dw $0000,$0100,$0081
     dw $FFFF
 
+%anchor($91A5FE)
 TransitionTable_1D_FaceRight_MorphBall_NoSpringBall_OnGround:            ;91A5FE;
 ; 1D: Facing right - morph ball - no springball - on ground
     dw $0800,$0000,$003D
@@ -3130,6 +3294,7 @@ TransitionTable_1D_FaceRight_MorphBall_NoSpringBall_OnGround:            ;91A5FE
     dw $0000,$0200,$001F
     dw $FFFF
 
+%anchor($91A618)
 TransitionTable_1E_MoveRight_MorphBall_NoSpringBall_OnGround:            ;91A618;
 ; 1E: Moving right - morph ball - no springball - on ground
     dw $0800,$0000,$003D
@@ -3138,6 +3303,7 @@ TransitionTable_1E_MoveRight_MorphBall_NoSpringBall_OnGround:            ;91A618
     dw $0000,$0200,$001F
     dw $FFFF
 
+%anchor($91A632)
 TransitionTable_1F_MoveLeft_MorphBall_NoSpringBall_OnGround:             ;91A632;
 ; 1F: Moving left - morph ball - no springball - on ground
     dw $0800,$0000,$003E
@@ -3146,6 +3312,7 @@ TransitionTable_1F_MoveLeft_MorphBall_NoSpringBall_OnGround:             ;91A632
     dw $0000,$0200,$001F
     dw $FFFF
 
+%anchor($91A64C)
 TransitionTable_1D_FaceLeft_MorphBall_NoSpringBall_OnGround:             ;91A64C;
 ; 41: Facing left - morph ball - no springball - on ground
     dw $0800,$0000,$003E
@@ -3154,15 +3321,19 @@ TransitionTable_1D_FaceLeft_MorphBall_NoSpringBall_OnGround:             ;91A64C
     dw $0000,$0200,$001F
     dw $FFFF
 
+%anchor($91A666)
 UNUSED_TransitionTable_20_21_22_24_91A666:
     dw $FFFF                                                             ;91A666;
 
+%anchor($91A668)
 UNUSED_TransitionTable_23_91A668:
     dw $FFFF                                                             ;91A668;
 
+%anchor($91A66A)
 UNUSED_TransitionTable_42_91A66A:
     dw $FFFF                                                             ;91A66A;
 
+%anchor($91A66C)
 TransitionTable_27_71_73_85_FacingRight_Crouching:                       ;91A66C;
 ; 27: Facing right - crouching
 ; 71: Facing right - crouching transition - aiming up-right
@@ -3183,6 +3354,7 @@ TransitionTable_27_71_73_85_FacingRight_Crouching:                       ;91A66C
     dw $0000,$0100,$0001
     dw $FFFF
 
+%anchor($91A6BC)
 TransitionTable_28_72_74_86_Crouching:                                   ;91A6BC;
 ; 28: Facing left - crouching
 ; 72: Facing left - crouching transition - aiming up-left
@@ -3203,6 +3375,7 @@ TransitionTable_28_72_74_86_Crouching:                                   ;91A6BC
     dw $0000,$0200,$0002
     dw $FFFF
 
+%anchor($91A70C)
 TransitionTable_29_2B_6D_6F_FacingRight_Falling:                         ;91A70C;
 ; 29: Facing right - falling
 ; 2B: Facing right - falling - aiming up
@@ -3221,6 +3394,7 @@ TransitionTable_29_2B_6D_6F_FacingRight_Falling:                         ;91A70C
     dw $0000,$0100,$0029
     dw $FFFF
 
+%anchor($91A750)
 TransitionTable_2A_2C_6E_70_FacingLeft_Falling:                          ;91A750;
 ; 2A: Facing left - falling
 ; 2C: Facing left - falling - aiming up
@@ -3239,6 +3413,7 @@ TransitionTable_2A_2C_6E_70_FacingLeft_Falling:                          ;91A750
     dw $0000,$0200,$002A
     dw $FFFF
 
+%anchor($91A794)
 TransitionTable_31_FacingRight_MorphBall_NoSpringBall_InAir:             ;91A794;
 ; 31: Facing right - morph ball - no springball - in air
     dw $0800,$0000,$003D
@@ -3247,6 +3422,7 @@ TransitionTable_31_FacingRight_MorphBall_NoSpringBall_InAir:             ;91A794
     dw $0000,$0200,$0032
     dw $FFFF
 
+%anchor($91A7AE)
 TransitionTable_32_FacingLeft_MorphBall_NoSpringBall_InAir:              ;91A7AE;
 ; 32: Facing left - morph ball - no springball - in air
     dw $0800,$0000,$003E
@@ -3255,28 +3431,34 @@ TransitionTable_32_FacingLeft_MorphBall_NoSpringBall_InAir:              ;91A7AE
     dw $0000,$0100,$0031
     dw $FFFF
 
+%anchor($91A7C8)
 UNUSED_TransitionTable_33_91A7C8:
     dw $FFFF                                                             ;91A7C8;
 
+%anchor($91A7CA)
 UNUSED_TransitionTable_34_91A7CA:
     dw $FFFF                                                             ;91A7CA;
 
+%anchor($91A7CC)
 UNUSED_TransitionTable_45_91A7CC:                                        ;91A7CC;
     dw $0000,$0240,$0045
     dw $0000,$0100,$0009
     dw $0000,$0200,$0025
     dw $FFFF
 
+%anchor($91A7E0)
 UNUSED_TransitionTable_46_91A7E0:                                        ;91A7E0;
     dw $0000,$0140,$0046
     dw $0000,$0200,$000A
     dw $0000,$0100,$0026
     dw $FFFF
 
+%anchor($91A7F4)
 UNUSED_TransitionTable_47_91A7F4:
     dw $FFFF                                                             ;91A7F4;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($91A7F6)
 UNUSED_TransitionTable_PossiblyPartOfAbove_91A7F6:                       ;91A7F6;
 ; Possibly no-op'd sections of the above?
     dw $0080,$0000,$004B
@@ -3292,10 +3474,12 @@ UNUSED_TransitionTable_PossiblyPartOfAbove_91A7F6:                       ;91A7F6
     dw $FFFF
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($91A834)
 UNUSED_TransitionTable_48_91A834:
     dw $FFFF                                                             ;91A834;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($91A836)
 UNUSED_TransitionTable_PossiblyPartOfAbove_91A836:                       ;91A836;
 ; Possibly no-op'd sections of the above?
     dw $0080,$0000,$004C
@@ -3311,6 +3495,7 @@ UNUSED_TransitionTable_PossiblyPartOfAbove_91A836:                       ;91A836
     dw $FFFF
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($91A874)
 TransitionTable_49_75_77_FacingLeft_Moonwalk:                            ;91A874;
 ; 49: Facing left - moonwalk
 ; 75: Facing left - moonwalk - aiming up-left
@@ -3326,6 +3511,7 @@ TransitionTable_49_75_77_FacingLeft_Moonwalk:                            ;91A874
     dw $0000,$0100,$0026
     dw $FFFF
 
+%anchor($91A8AC)
 TransitionTable_4A_76_78_FacingRight_Moonwalk:                           ;91A8AC;
 ; 4A: Facing right - moonwalk
 ; 76: Facing right - moonwalk - aiming up-right
@@ -3341,38 +3527,47 @@ TransitionTable_4A_76_78_FacingRight_Moonwalk:                           ;91A8AC
     dw $0000,$0200,$0025
     dw $FFFF
 
+%anchor($91A8E4)
 TransitionTable_53_FacingRight_Knockback:                                ;91A8E4;
 ; 53: Facing right - knockback
     dw $0000,$0280,$0050
     dw $FFFF
 
+%anchor($91A8EC)
 TransitionTable_54_FacingLeft_Knockback:                                 ;91A8EC;
 ; 54: Facing left - knockback
     dw $0000,$0180,$004F
     dw $FFFF
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($91A8F4)
 UNUSED_TransitionTable_91A8F4:
     dw $FFFF                                                             ;91A8F4;
 
+%anchor($91A8F6)
 UNUSED_TransitionTable_91A8F6:
     dw $FFFF                                                             ;91A8F6;
 
+%anchor($91A8F8)
 UNUSED_TransitionTable_91A8F8:
     dw $FFFF                                                             ;91A8F8;
 
+%anchor($91A8FA)
 UNUSED_TransitionTable_91A8FA:
     dw $FFFF                                                             ;91A8FA;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($91A8FC)
 UNUSED_TransitionTable_5B_91A8FC:                                        ;91A8FC;
     dw $0000,$0280,$0066
     dw $FFFF
 
+%anchor($91A904)
 UNUSED_TransitionTable_5C_91A904:                                        ;91A904;
     dw $0000,$0180,$0065
     dw $FFFF
 
+%anchor($91A90C)
 TransitionTable_79_7B_FacingRight_MorphBall_Spring_OnGround:             ;91A90C;
 ; 79: Facing right - morph ball - spring ball - on ground
 ; 7B: Moving right - morph ball - spring ball - on ground
@@ -3382,6 +3577,7 @@ TransitionTable_79_7B_FacingRight_MorphBall_Spring_OnGround:             ;91A90C
     dw $0000,$0200,$007C
     dw $FFFF
 
+%anchor($91A926)
 TransitionTable_7A_7C_FacingLeft_MorphBall_Spring_OnGround:              ;91A926;
 ; 7A: Facing left - morph ball - spring ball - on ground
 ; 7C: Moving left - morph ball - spring ball - on ground
@@ -3391,6 +3587,7 @@ TransitionTable_7A_7C_FacingLeft_MorphBall_Spring_OnGround:              ;91A926
     dw $0000,$0200,$007C
     dw $FFFF
 
+%anchor($91A940)
 TransitionTable_7D_FacingRight_MorphBall_SpringBall_Falling:             ;91A940;
 ; 7D: Facing right - morph ball - spring ball - falling
     dw $0800,$0000,$003D
@@ -3398,6 +3595,7 @@ TransitionTable_7D_FacingRight_MorphBall_SpringBall_Falling:             ;91A940
     dw $0000,$0100,$007D
     dw $FFFF
 
+%anchor($91A954)
 TransitionTable_7E_FacingLeft_MorphBall_SpringBall_Falling:              ;91A954;
 ; 7E: Facing left - morph ball - spring ball - falling
     dw $0800,$0000,$003E
@@ -3405,6 +3603,7 @@ TransitionTable_7E_FacingLeft_MorphBall_SpringBall_Falling:              ;91A954
     dw $0000,$0200,$007E
     dw $FFFF
 
+%anchor($91A968)
 TransitionTable_7F_FacingRight_MorphBall_SpringBall_InAir:               ;91A968;
 ; 7F: Facing right - morph ball - spring ball - in air
     dw $0800,$0000,$003D
@@ -3412,6 +3611,7 @@ TransitionTable_7F_FacingRight_MorphBall_SpringBall_InAir:               ;91A968
     dw $0000,$0200,$0080
     dw $FFFF
 
+%anchor($91A97C)
 TransitionTable_80_FacingLeft_MorphBall_SpringBall_InAir:                ;91A97C;
 ; 80: Facing left - morph ball - spring ball - in air
     dw $0800,$0000,$003E
@@ -3419,14 +3619,17 @@ TransitionTable_80_FacingLeft_MorphBall_SpringBall_InAir:                ;91A97C
     dw $0000,$0200,$0080
     dw $FFFF
 
+%anchor($91A990)
 UNUSED_TransitionTable_63_91A990:                                        ;91A990;
     dw $0000,$0280,$0066
     dw $FFFF
 
+%anchor($91A998)
 UNUSED_TransitionTable_64_91A998:                                        ;91A998;
     dw $0000,$0180,$0065
     dw $FFFF
 
+%anchor($91A9A0)
 UNUSED_TransitionTable_65_91A9A0:                                        ;91A9A0;
     dw $0000,$0180,$0065
     dw $0000,$0010,$0069
@@ -3436,6 +3639,7 @@ UNUSED_TransitionTable_65_91A9A0:                                        ;91A9A0
     dw $0000,$0100,$0065
     dw $FFFF
 
+%anchor($91A9C6)
 UNUSED_TransitionTable_66_91A9C6:                                        ;91A9C6;
     dw $0000,$0280,$0066
     dw $0000,$0010,$006A
@@ -3445,6 +3649,7 @@ UNUSED_TransitionTable_66_91A9C6:                                        ;91A9C6
     dw $0000,$0200,$0066
     dw $FFFF
 
+%anchor($91A9EC)
 TransitionTable_83_FacingRight_WallJump:                                 ;91A9EC;
 ; 83: Facing right - wall jump
     dw $0400,$0000,$0037
@@ -3455,6 +3660,7 @@ TransitionTable_83_FacingRight_WallJump:                                 ;91A9EC
     dw $0000,$0080,$0083
     dw $FFFF
 
+%anchor($91AA12)
 TransitionTable_84_FacingLeft_WallJump:                                  ;91AA12;
 ; 84: Facing left - wall jump
     dw $0400,$0000,$0038
@@ -3465,6 +3671,7 @@ TransitionTable_84_FacingLeft_WallJump:                                  ;91AA12
     dw $0000,$0080,$0084
     dw $FFFF
 
+%anchor($91AA38)
 TransitionTable_89_CF_D1_FacingRight_RanIntoAWall:                       ;91AA38;
 ; 89: Facing right - ran into a wall
 ; CF: Facing right - ran into a wall - aiming up-right
@@ -3482,6 +3689,7 @@ TransitionTable_89_CF_D1_FacingRight_RanIntoAWall:                       ;91AA38
     dw $0000,$0100,$0009
     dw $FFFF
 
+%anchor($91AA7C)
 TransitionTable_8A_D0_D2_FacingLeft_RanIntoAWall:                        ;91AA7C;
 ; 8A: Facing left - ran into a wall
 ; D0: Facing left - ran into a wall - aiming up-left
@@ -3499,6 +3707,7 @@ TransitionTable_8A_D0_D2_FacingLeft_RanIntoAWall:                        ;91AA7C
     dw $0000,$0200,$000A
     dw $FFFF
 
+%anchor($91AAC0)
 TransitionTable_13_FaceRight_NormalJump_NotMoving_GunExtend:             ;91AAC0;
 ; 13: Facing right - normal jump - not aiming - not moving - gun extended
     dw $0000,$0980,$0069
@@ -3523,6 +3732,7 @@ TransitionTable_13_FaceRight_NormalJump_NotMoving_GunExtend:             ;91AAC0
     dw $0000,$0040,$0013
     dw $FFFF
 
+%anchor($91AB3A)
 TransitionTable_14_FacingLeft_NormalJump_NotMoving_GunExtend:            ;91AB3A;
 ; 14: Facing left - normal jump - not aiming - not moving - gun extended
     dw $0000,$0A80,$006A
@@ -3547,6 +3757,7 @@ TransitionTable_14_FacingLeft_NormalJump_NotMoving_GunExtend:            ;91AB3A
     dw $0000,$0040,$0014
     dw $FFFF
 
+%anchor($91ABB4)
 TransitionTable_17_FacingRight_NormalJump_AimingDown:                    ;91ABB4;
 ; 17: Facing right - normal jump - aiming down
     dw $0400,$0000,$0037
@@ -3574,6 +3785,7 @@ TransitionTable_17_FacingRight_NormalJump_AimingDown:                    ;91ABB4
     dw $0000,$0040,$0013
     dw $FFFF
 
+%anchor($91AC40)
 TransitionTable_18_FacingLeft_NormalJump_AimingDown:                     ;91AC40;
 ; 18: Facing left - normal jump - aiming down
     dw $0400,$0000,$0038
@@ -3601,6 +3813,7 @@ TransitionTable_18_FacingLeft_NormalJump_AimingDown:                     ;91AC40
     dw $0000,$0040,$0014
     dw $FFFF
 
+%anchor($91ACCC)
 TransitionTable_3D_FacingRight_Unmorphing:                               ;91ACCC;
 ; 3D: Facing right - unmorphing
     dw $0000,$0140,$0067
@@ -3608,6 +3821,7 @@ TransitionTable_3D_FacingRight_Unmorphing:                               ;91ACCC
     dw $0000,$0440,$002D
     dw $FFFF
 
+%anchor($91ACE0)
 TransitionTable_3E_FacingLeft_Unmorphing:                                ;91ACE0;
 ; 3E: Facing left - unmorphing
     dw $0000,$0240,$0068
@@ -3615,6 +3829,7 @@ TransitionTable_3E_FacingLeft_Unmorphing:                                ;91ACE0
     dw $0000,$0440,$002E
     dw $FFFF
 
+%anchor($91ACF4)
 TransitionTable_25_FacingRight_Turning_Standing:                         ;91ACF4;
 ; 25: Facing right - turning - standing
     dw $0000,$0280,$001A
@@ -3622,6 +3837,7 @@ TransitionTable_25_FacingRight_Turning_Standing:                         ;91ACF4
     dw $0000,$0200,$0025
     dw $FFFF
 
+%anchor($91AD08)
 TransitionTable_26_FacingLeft_Turning_Standing:                          ;91AD08;
 ; 26: Facing left - turning - standing
     dw $0000,$0180,$0019
@@ -3629,6 +3845,7 @@ TransitionTable_26_FacingLeft_Turning_Standing:                          ;91AD08
     dw $0000,$0100,$0026
     dw $FFFF
 
+%anchor($91AD1C)
 TransitionTable_8B_FacingRight_Turning_Standing_AimingUp:                ;91AD1C;
 ; 8B: Facing right - turning - standing - aiming up
     dw $0080,$0200,$001A
@@ -3636,6 +3853,7 @@ TransitionTable_8B_FacingRight_Turning_Standing_AimingUp:                ;91AD1C
     dw $0000,$0200,$008B
     dw $FFFF
 
+%anchor($91AD30)
 TransitionTable_8C_FacingLeft_Turning_Standing_AimingUp:                 ;91AD30;
 ; 8C: Facing left - turning - standing - aiming up
     dw $0080,$0100,$0019
@@ -3643,6 +3861,7 @@ TransitionTable_8C_FacingLeft_Turning_Standing_AimingUp:                 ;91AD30
     dw $0000,$0100,$008C
     dw $FFFF
 
+%anchor($91AD44)
 TransitionTable_8D_FacingRight_Turning_Standing_AimDownRight:            ;91AD44;
 ; 8D: Facing right - turning - standing - aiming down-right
     dw $0080,$0200,$001A
@@ -3650,6 +3869,7 @@ TransitionTable_8D_FacingRight_Turning_Standing_AimDownRight:            ;91AD44
     dw $0000,$0200,$008D
     dw $FFFF
 
+%anchor($91AD58)
 TransitionTable_8E_FacingLeft_Turning_Standing_AimDownLeft:              ;91AD58;
 ; 8E: Facing left - turning - standing - aiming down-left
     dw $0080,$0100,$0019
@@ -3657,6 +3877,7 @@ TransitionTable_8E_FacingLeft_Turning_Standing_AimDownLeft:              ;91AD58
     dw $0000,$0100,$008E
     dw $FFFF
 
+%anchor($91AD6C)
 TransitionTable_C7_FacingRight_VerticalShinesparkWindup:                 ;91AD6C;
 ; C7: Facing right - vertical shinespark windup
     dw $0000,$0880,$00CB
@@ -3664,6 +3885,7 @@ TransitionTable_C7_FacingRight_VerticalShinesparkWindup:                 ;91AD6C
     dw $0000,$0180,$00C9
     dw $FFFF
 
+%anchor($91AD80)
 TransitionTable_C8_FacingLeft_VerticalShinesparkWindup:                  ;91AD80;
 ; C8: Facing left - vertical shinespark windup
     dw $0000,$0880,$00CC
@@ -3671,6 +3893,7 @@ TransitionTable_C8_FacingLeft_VerticalShinesparkWindup:                  ;91AD80
     dw $0000,$0280,$00CA
     dw $FFFF
 
+%anchor($91AD94)
 TransitionTable_2D_FacingRight_Falling_AimingDown:                       ;91AD94;
 ; 2D: Facing right - falling - aiming down
     dw $0400,$0000,$0037
@@ -3685,6 +3908,7 @@ TransitionTable_2D_FacingRight_Falling_AimingDown:                       ;91AD94
     dw $0000,$0100,$0029
     dw $FFFF
 
+%anchor($91ADD2)
 TransitionTable_2E_FacingLeft_Falling_AimingDown:                        ;91ADD2;
 ; 2E: Facing left - falling - aiming down
     dw $0400,$0000,$0038
@@ -3699,10 +3923,12 @@ TransitionTable_2E_FacingLeft_Falling_AimingDown:                        ;91ADD2
     dw $0000,$0200,$002A
     dw $FFFF
 
+%anchor($91AE10)
 UNUSED_TransitionTable_DF_91AE10:                                        ;91AE10;
     dw $0800,$0000,$00DE
     dw $FFFF
 
+%anchor($91AE18)
 TransitionTable_BA_BB_BC_BD_BE_FacingLeft_GrabbedByDraygon:              ;91AE18;
 ; BA: Facing left - grabbed by Draygon - not moving - not aiming
 ; BB: Facing left - grabbed by Draygon - not moving - aiming up-left
@@ -3721,6 +3947,7 @@ TransitionTable_BA_BB_BC_BD_BE_FacingLeft_GrabbedByDraygon:              ;91AE18
     dw $0000,$0400,$00BE
     dw $FFFF
 
+%anchor($91AE56)
 TransitionTable_EC_ED_EE_EF_F0_FacingRight_GrabbedByDraygon:             ;91AE56;
 ; EC: Facing right - grabbed by Draygon - not moving - not aiming
 ; ED: Facing right - grabbed by Draygon - not moving - aiming up-right
@@ -3739,6 +3966,7 @@ TransitionTable_EC_ED_EE_EF_F0_FacingRight_GrabbedByDraygon:             ;91AE56
     dw $0000,$0400,$00F0
     dw $FFFF
 
+%anchor($91AE94)
 TransitionTable_0B_MovingRight_GunExtended:                              ;91AE94;
 ; 0B: Moving right - gun extended
     dw $0400,$0000,$0035
@@ -3755,6 +3983,7 @@ TransitionTable_0B_MovingRight_GunExtended:                              ;91AE94
     dw $0000,$0020,$0007
     dw $FFFF
 
+%anchor($91AEDE)
 TransitionTable_0C_MovingLeft_GunExtended:                               ;91AEDE;
 ; 0C: Moving left - gun extended
     dw $0400,$0000,$0036
@@ -3771,6 +4000,7 @@ TransitionTable_0C_MovingLeft_GunExtended:                               ;91AEDE
     dw $0000,$0020,$0008
     dw $FFFF
 
+%anchor($91AF28)
 TransitionTable_67_FacingRight_Falling_GunExtended:                      ;91AF28;
 ; 67: Facing right - falling - gun extended
     dw $0000,$0900,$006D
@@ -3784,6 +4014,7 @@ TransitionTable_67_FacingRight_Falling_GunExtended:                      ;91AF28
     dw $0000,$0100,$0067
     dw $FFFF
 
+%anchor($91AF60)
 TransitionTable_68_FacingLeft_Falling_GunExtended:                       ;91AF60;
 ; 68: Facing left - falling - gun extended
     dw $0000,$0A00,$006E
@@ -3797,6 +4028,7 @@ TransitionTable_68_FacingLeft_Falling_GunExtended:                       ;91AF60
     dw $0000,$0200,$0068
     dw $FFFF
 
+%anchor($91AF98)
 TransitionTable_BF_FacingRight_Moonwalking_TurnJumpLeft:                 ;91AF98;
 ; BF: Facing right - moonwalking - turn/jump left
     dw $0000,$0280,$001A
@@ -3804,6 +4036,7 @@ TransitionTable_BF_FacingRight_Moonwalking_TurnJumpLeft:                 ;91AF98
     dw $0000,$0200,$00BF
     dw $FFFF
 
+%anchor($91AFAC)
 TransitionTable_C0_FacingLeft_Moonwalking_TurnJumpRight:                 ;91AFAC;
 ; C0: Facing left - moonwalking - turn/jump right
     dw $0000,$0180,$0019
@@ -3811,6 +4044,7 @@ TransitionTable_C0_FacingLeft_Moonwalking_TurnJumpRight:                 ;91AFAC
     dw $0000,$0100,$00C0
     dw $FFFF
 
+%anchor($91AFC0)
 TransitionTable_C1_FaceRight_Moonwalk_TurnJumpLeft_AimUpRight:           ;91AFC0;
 ; C1: Facing right - moonwalking - turn/jump left - aiming up-right
     dw $0080,$0200,$001A
@@ -3818,6 +4052,7 @@ TransitionTable_C1_FaceRight_Moonwalk_TurnJumpLeft_AimUpRight:           ;91AFC0
     dw $0000,$0200,$00C1
     dw $FFFF
 
+%anchor($91AFD4)
 TransitionTable_C2_FaceLeft_Moonwalk_TurnJumpRight_AimUpLeft:            ;91AFD4;
 ; C2: Facing left - moonwalking - turn/jump right - aiming up-left
     dw $0080,$0100,$0019
@@ -3825,6 +4060,7 @@ TransitionTable_C2_FaceLeft_Moonwalk_TurnJumpRight_AimUpLeft:            ;91AFD4
     dw $0000,$0100,$00C2
     dw $FFFF
 
+%anchor($91AFE8)
 TransitionTable_C3_FaceRight_Moonwalk_TurnJumpLeft_AimDownRight:         ;91AFE8;
 ; C3: Facing right - moonwalking - turn/jump left - aiming down-right
     dw $0080,$0200,$001A
@@ -3832,6 +4068,7 @@ TransitionTable_C3_FaceRight_Moonwalk_TurnJumpLeft_AimDownRight:         ;91AFE8
     dw $0000,$0200,$00C3
     dw $FFFF
 
+%anchor($91AFFC)
 TransitionTable_C4_FaceLeft_Moonwalk_TurnJumpRight_AimDownLeft:          ;91AFFC;
 ; C4: Facing left - moonwalking - turn/jump right - aiming down-left
     dw $0080,$0100,$0019
@@ -3839,6 +4076,7 @@ TransitionTable_C4_FaceLeft_Moonwalk_TurnJumpRight_AimDownLeft:          ;91AFFC
     dw $0000,$0100,$00C4
     dw $FFFF
 
+%anchor($91B010)
 AnimationDelayTable:
 ; Indexed by [Samus pose] * 2
     dw AnimationDelays_0_9B                                              ;91B010;
@@ -4107,6 +4345,7 @@ AnimationDelayTable:
 ;     FE nn:               Go back n bytes
 ;     FF:                  Go to beginning
 
+%anchor($91B20A)
 AnimationDelays_09_0A_0B_0C_0D_0E_0F_10_11_12_45_46:; 9: Moving right - not aiming
 ; Ah: Moving left  - not aiming
 ; Bh: Moving right - gun extended
@@ -4122,12 +4361,14 @@ AnimationDelays_09_0A_0B_0C_0D_0E_0F_10_11_12_45_46:; 9: Moving right - not aimi
     db $02,$03,$02,$03,$02,$03,$02,$03,$02,$03,$FF                       ;91B20A;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($91B215)
 UNUSED_AnimationDelays_91B215:                                           ;91B215;
 ; Unused. Not a subanimation of the above, just looks like a slower version
     db $04,$04,$04,$04,$04,$04,$03,$04,$04,$03,$FF
     db $0A,$FF
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($91B222)
 AnimationDelays_03_04_85_86:                                             ;91B222;
 ; 3: Facing right - aiming up
 ; 4: Facing left  - aiming up
@@ -4136,6 +4377,7 @@ AnimationDelays_03_04_85_86:                                             ;91B222
     db $02
     db $10, $FE,$01
 
+%anchor($91B226)
 AnimationDelays_49_4A_75_76_77_78:
 ; 49h: Facing left  - moonwalk
 ; 4Ah: Facing right - moonwalk
@@ -4145,48 +4387,59 @@ AnimationDelays_49_4A_75_76_77_78:
 ; 78h: Facing right - moonwalk - aiming down-right
     db $10,$10,$10,$10,$10,$10,$FF                                       ;91B226;
 
+%anchor($91B22D)
 AnimationDelays_A4_E6:
 ; A4h: Facing right - landing from normal jump
 ; E6h: Facing right - landing from normal jump - firing
     db $05,$02,$F8,$01                                                   ;91B22D;
 
+%anchor($91B231)
 AnimationDelays_A5_E7:
 ; A5h: Facing left  - landing from normal jump
 ; E7h: Facing left  - landing from normal jump - firing
     db $05,$02,$F8,$02                                                   ;91B231;
 
+%anchor($91B235)
 AnimationDelays_A6:
 ; A6h: Facing right - landing from spin jump
     db $03,$05,$02,$F8,$01                                               ;91B235;
 
+%anchor($91B23A)
 AnimationDelays_A7:
 ; A7h: Facing left  - landing from spin jump
     db $03,$05,$02,$F8,$02                                               ;91B23A;
 
+%anchor($91B23F)
 AnimationDelays_E0:
 ; E0h: Facing right - landing from normal jump - aiming up
     db $05,$02,$F8,$03                                                   ;91B23F;
 
+%anchor($91B243)
 AnimationDelays_E1:
 ; E1h: Facing left  - landing from normal jump - aiming up
     db $05,$02,$F8,$04                                                   ;91B243;
 
+%anchor($91B247)
 AnimationDelays_E2:
 ; E2h: Facing right - landing from normal jump - aiming up-right
     db $05,$02,$F8,$05                                                   ;91B247;
 
+%anchor($91B24B)
 AnimationDelays_E3:
 ; E3h: Facing left  - landing from normal jump - aiming up-left
     db $05,$02,$F8,$06                                                   ;91B24B;
 
+%anchor($91B24F)
 AnimationDelays_E4:
 ; E4h: Facing right - landing from normal jump - aiming down-right
     db $05,$02,$F8,$07                                                   ;91B24F;
 
+%anchor($91B253)
 AnimationDelays_E5:
 ; E5h: Facing left  - landing from normal jump - aiming down-left
     db $05,$02,$F8,$08                                                   ;91B253;
 
+%anchor($91B257)
 AnimationDelays_E8:                                                      ;91B257;
 ; E8h: Facing right - Samus drained - crouching/falling
     db $02,$02,$02,$10,$F7
@@ -4194,6 +4447,7 @@ AnimationDelays_E8:                                                      ;91B257
     db $10,$10,$10,$10, $FE,$04
     db $03,$FD,$01
 
+%anchor($91B268)
 AnimationDelays_E9:                                                      ;91B268;
 ; E9h: Facing left  - Samus drained - crouching/falling
     ; Falling
@@ -4211,30 +4465,35 @@ AnimationDelays_E9:                                                      ;91B268
     ; Samus is frozen (receiving hyper beam)
     db $10, $FE,$01
 
+%anchor($91B288)
 AnimationDelays_EA:                                                      ;91B288;
 ; EAh: Facing right - Samus drained - standing
     db $10,$10,$10,$10,$FF
     ; Samus is let up
     db $03, $FD,$01
 
+%anchor($91B290)
 AnimationDelays_EB:                                                      ;91B290;
 ; EBh: Facing left  - Samus drained - standing
     db $10,$10,$10,$10,$FF
     ; Samus is let up
     db $03, $FD,$02
 
+%anchor($91B298)
 AnimationDelays_01_02:                                                   ;91B298;
 ; 1: Facing right - normal
 ; 2: Facing left  - normal
     db $0A,$0A,$0A,$0A,$F6
     db $08,$08,$08,$08, $FE,$04
 
+%anchor($91B2A3)
 AnimationDelays_27_28:                                                   ;91B2A3;
 ; 27h: Facing right - crouching
 ; 28h: Facing left  - crouching
     db $0A,$0A,$0A,$0A,$F6
     db $08,$08,$08,$08, $FE,$04
 
+%anchor($91B2AE)
 AnimationDelays_D5_D6_D9_DA:                                             ;91B2AE;
 ; D5h: Facing right - x-ray - standing
 ; D6h: Facing left  - x-ray - standing
@@ -4248,6 +4507,7 @@ AnimationDelays_D5_D6_D9_DA:                                             ;91B2AE
     db $0F ; Looking down
     db $FF
 
+%anchor($91B2B4)
 AnimationDelays_Various_91B2B4:
 ; 5: Facing right - aiming up-right
 ; 6: Facing left  - aiming up-left
@@ -4281,6 +4541,7 @@ AnimationDelays_Various_91B2B4:
 ; EFh: Facing right - grabbed by Draygon - not moving - aiming down-right
     db $10,$FF                                                           ;91B2B4;
 
+%anchor($91B2B6)
 AnimationDelays_A8_A9_AA_AB:
 ; A8h: Facing right - grappling
 ; A9h: Facing left  - grappling
@@ -4288,24 +4549,28 @@ AnimationDelays_A8_A9_AA_AB:
 ; ABh: Facing left  - grappling - aiming down-left
     db $10,$FF                                                           ;91B2B6;
 
+%anchor($91B2B8)
 AnimationDelays_AC_AD:                                                   ;91B2B8;
 ; ACh: Unused. Facing right - grappling - in air
 ; ADh: Unused. Facing left  - grappling - in air
     db $02
     db $10, $FE,$01
 
+%anchor($91B2BC)
 AnimationDelays_AE_AF:                                                   ;91B2BC;
 ; AEh: Unused. Facing right - grappling - in air - aiming down
 ; AFh: Unused. Facing left  - grappling - in air - aiming down
     db $02
     db $10, $FE,$01
 
+%anchor($91B2C0)
 AnimationDelays_B0_B1:                                                   ;91B2C0;
 ; B0h: Unused. Facing right - grappling - in air - aiming down-right
 ; B1h: Unused. Facing left  - grappling - in air - aiming down-left
     db $02
     db $10, $FE,$01
 
+%anchor($91B2C4)
 AnimationDelays_B2_B3:                                                   ;91B2C4;
 ; B2h: Facing clockwise     - grapple - in air
 ; B3h: Facing anticlockwise - grapple - in air
@@ -4320,38 +4585,47 @@ AnimationDelays_B2_B3:                                                   ;91B2C4
     db $08
     db $08, $FE,$01
 
+%anchor($91B308)
 AnimationDelays_4B:
 ; 4Bh: Facing right - normal jump transition
     db $01, $FD,$4D                                                      ;91B308;
 
+%anchor($91B30B)
 AnimationDelays_4C:
 ; 4Ch: Facing left  - normal jump transition
     db $01, $FD,$4E                                                      ;91B30B;
 
+%anchor($91B30E)
 AnimationDelays_55:
 ; 55h: Facing right - normal jump transition - aiming up
     db $01, $FD,$15, $00                                                 ;91B30E;
 
+%anchor($91B312)
 AnimationDelays_56:
 ; 56h: Facing left  - normal jump transition - aiming up
     db $01, $FD,$16, $00                                                 ;91B312;
 
+%anchor($91B316)
 AnimationDelays_57:
 ; 57h: Facing right - normal jump transition - aiming up-right
     db $01, $FD,$69, $00                                                 ;91B316;
 
+%anchor($91B31A)
 AnimationDelays_58:
 ; 58h: Facing left  - normal jump transition - aiming up-left
     db $01, $FD,$6A, $00                                                 ;91B31A;
 
+%anchor($91B31E)
 AnimationDelays_59:
 ; 59h: Facing right - normal jump transition - aiming down-right
     db $01, $FD,$6B, $00                                                 ;91B31E;
 
+%anchor($91B322)
 AnimationDelays_5A:
 ; 5Ah: Facing left  - normal jump transition - aiming down-left
     db $01, $FD,$6C, $00                                                 ;91B322;
 
+%anchor($91B326)
 AnimationDelays_4D_4E_C7_C8:                                             ;91B326;
 ; 4Dh: Facing right - normal jump - not aiming - not moving - gun not extended
 ; 4Eh: Facing left  - normal jump - not aiming - not moving - gun not extended
@@ -4360,30 +4634,35 @@ AnimationDelays_4D_4E_C7_C8:                                             ;91B326
     db $03,$04,$04,$04,$04
     db $50, $FE,$01
 
+%anchor($91B32E)
 AnimationDelays_4F_50:                                                   ;91B32E;
 ; 4Fh: Facing left  - damage boost
 ; 50h: Facing right - damage boost
     db $08,$02,$02,$02,$02,$02,$02,$02,$02
     db $02, $FE,$01
 
+%anchor($91B33A)
 AnimationDelays_15_16:                                                   ;91B33A;
 ; 15h: Facing right - normal jump - aiming up
 ; 16h: Facing left  - normal jump - aiming up
     db $02
     db $10, $FE,$01
 
+%anchor($91B33E)
 AnimationDelays_17_18:                                                   ;91B33E;
 ; 17h: Facing right - normal jump - aiming down
 ; 18h: Facing left  - normal jump - aiming down
     db $02
     db $10, $FE,$01
 
+%anchor($91B342)
 AnimationDelays_51_52:                                                   ;91B342;
 ; 51h: Facing right - normal jump - not aiming - moving forward
 ; 52h: Facing left  - normal jump - not aiming - moving forward
     db $02
     db $03, $FE,$01
 
+%anchor($91B346)
 AnimationDelays_13_14_69_6A_6B_6C:                                       ;91B346;
 ; 13h: Facing right - normal jump - not aiming - not moving - gun extended
 ; 14h: Facing left  - normal jump - not aiming - not moving - gun extended
@@ -4394,6 +4673,7 @@ AnimationDelays_13_14_69_6A_6B_6C:                                       ;91B346
     db $02
     db $10, $FE,$01
 
+%anchor($91B34A)
 AnimationDelays_29_2A:                                                   ;91B34A;
 ; 29h: Facing right - falling
 ; 2Ah: Facing left  - falling
@@ -4403,6 +4683,7 @@ AnimationDelays_29_2A:                                                   ;91B34A
     db $08
     db $10, $FE,$01
 
+%anchor($91B353)
 AnimationDelays_67_68:                                                   ;91B353;
 ; 67h: Facing right - falling - gun extended
 ; 68h: Facing left  - falling - gun extended
@@ -4412,12 +4693,14 @@ AnimationDelays_67_68:                                                   ;91B353
     db $08
     db $10, $FE,$01
 
+%anchor($91B35C)
 AnimationDelays_2B_2C:                                                   ;91B35C;
 ; 2Bh: Facing right - falling - aiming up
 ; 2Ch: Facing left  - falling - aiming up
     db $02,$10
     db $10, $FE,$01
 
+%anchor($91B361)
 AnimationDelays_6D_6E_6F_70:                                             ;91B361;
 ; 6Dh: Facing right - falling - aiming up-right
 ; 6Eh: Facing left  - falling - aiming up-left
@@ -4426,12 +4709,14 @@ AnimationDelays_6D_6E_6F_70:                                             ;91B361
     db $02,$F0
     db $10, $FE,$01
 
+%anchor($91B366)
 AnimationDelays_2D_2E:                                                   ;91B366;
 ; 2Dh: Facing right - falling - aiming down
 ; 2Eh: Facing left  - falling - aiming down
     db $02
     db $10, $FE,$01
 
+%anchor($91B36A)
 AnimationDelays_53_54:                                                   ;91B36A;
 ; 53h: Facing right - knockback
 ; 54h: Facing left  - knockback
@@ -4439,6 +4724,7 @@ AnimationDelays_53_54:                                                   ;91B36A
     db $10, $FE,$01
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($91B36E)
 UNUSED_AnimationDelays_91B36E:                                           ;91B36E;
 ; Unused. Not a subanimation of the above
     db $06,$06,$06,$08,$FF
@@ -4446,6 +4732,7 @@ UNUSED_AnimationDelays_91B36E:                                           ;91B36E
     db $0A,$FF
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($91B378)
 AnimationDelays_Various_91B378:                                          ;91B378;
 ; 1Dh: Facing right - morph ball - no springball - on ground
 ; 1Eh: Moving right - morph ball - no springball - on ground
@@ -4483,6 +4770,7 @@ AnimationDelays_Various_91B378:                                          ;91B378
     ; Unused. Squished morph ball
     db $03, $FE,$0A
 
+%anchor($91B384)
 AnimationDelays_19_1A:                                                   ;91B384;
 ; 19h: Facing right - spin jump
 ; 1Ah: Facing left  - spin jump
@@ -4491,6 +4779,7 @@ AnimationDelays_19_1A:                                                   ;91B384
     ; Wall jump eligible
     db $08,$FF
 
+%anchor($91B391)
 AnimationDelays_1B_1C:                                                   ;91B391;
 ; 1Bh: Facing right - space jump
 ; 1Ch: Facing left  - space jump
@@ -4499,6 +4788,7 @@ AnimationDelays_1B_1C:                                                   ;91B391
     ; Wall jump eligible
     db $08,$FF
 
+%anchor($91B39E)
 AnimationDelays_81_82:                                                   ;91B39E;
 ; 81h: Facing right - screw attack
 ; 82h: Facing left  - screw attack
@@ -4507,175 +4797,218 @@ AnimationDelays_81_82:                                                   ;91B39E
     ; Wall jump eligible
     db $08,$FF
 
+%anchor($91B3BB)
 AnimationDelays_25:
 ; 25h: Facing right - turning - standing
     db $02,$02,$02, $F8,$02                                              ;91B3BB;
 
+%anchor($91B3C0)
 AnimationDelays_26:
 ; 26h: Facing left  - turning - standing
     db $02,$02,$02, $F8,$01                                              ;91B3C0;
 
+%anchor($91B3C5)
 AnimationDelays_2F:
 ; 2Fh: Facing right - turning - jumping
     db $02,$02,$02, $F8,$52                                              ;91B3C5;
 
+%anchor($91B3CA)
 AnimationDelays_30:
 ; 30h: Facing left  - turning - jumping
     db $02,$02,$02, $F8,$51                                              ;91B3CA;
 
+%anchor($91B3CF)
 AnimationDelays_43:
 ; 43h: Facing right - turning - crouching
     db $02,$02,$02, $F8,$28                                              ;91B3CF;
 
+%anchor($91B3D4)
 AnimationDelays_44:
 ; 44h: Facing left  - turning - crouching
     db $02,$02,$02, $F8,$27                                              ;91B3D4;
 
+%anchor($91B3D9)
 AnimationDelays_87:
 ; 87h: Facing right - turning - falling
     db $02,$02,$02, $F8,$2A                                              ;91B3D9;
 
+%anchor($91B3DE)
 AnimationDelays_88:
 ; 88h: Facing left  - turning - falling
     db $02,$02,$02, $F8,$29                                              ;91B3DE;
 
+%anchor($91B3E3)
 AnimationDelays_8B:
 ; 8Bh: Facing right - turning - standing - aiming up
     db $02,$02,$02, $F8,$04                                              ;91B3E3;
 
+%anchor($91B3E8)
 AnimationDelays_8C:
 ; 8Ch: Facing left  - turning - standing - aiming up
     db $02,$02,$02, $F8,$03                                              ;91B3E8;
 
+%anchor($91B3ED)
 AnimationDelays_8D:
 ; 8Dh: Facing right - turning - standing - aiming down-right
     db $02,$02,$02, $F8,$08                                              ;91B3ED;
 
+%anchor($91B3F2)
 AnimationDelays_8E:
 ; 8Eh: Facing left  - turning - standing - aiming down-left
     db $02,$02,$02, $F8,$07                                              ;91B3F2;
 
+%anchor($91B3F7)
 AnimationDelays_8F:
 ; 8Fh: Facing right - turning - in air - aiming up
     db $02,$02,$02, $F8,$16                                              ;91B3F7;
 
+%anchor($91B3FC)
 AnimationDelays_90:
 ; 90h: Facing left  - turning - in air - aiming up
     db $02,$02,$02, $F8,$15                                              ;91B3FC;
 
+%anchor($91B401)
 AnimationDelays_91:
 ; 91h: Facing right - turning - in air - aiming down/down-right
     db $02,$02,$02, $F8,$18                                              ;91B401;
 
+%anchor($91B406)
 AnimationDelays_92:
 ; 92h: Facing left  - turning - in air - aiming down/down-left
     db $02,$02,$02, $F8,$17                                              ;91B406;
 
+%anchor($91B40B)
 AnimationDelays_93:
 ; 93h: Facing right - turning - falling - aiming up
     db $02,$02,$02, $F8,$2C                                              ;91B40B;
 
+%anchor($91B410)
 AnimationDelays_94:
 ; 94h: Facing left  - turning - falling - aiming up
     db $02,$02,$02, $F8,$2B                                              ;91B410;
 
+%anchor($91B415)
 AnimationDelays_95:
 ; 95h: Facing right - turning - falling - aiming down/down-right
     db $02,$02,$02, $F8,$2E                                              ;91B415;
 
+%anchor($91B41A)
 AnimationDelays_96:
 ; 96h: Facing left  - turning - falling - aiming down/down-left
     db $02,$02,$02, $F8,$2D                                              ;91B41A;
 
+%anchor($91B41F)
 AnimationDelays_97:
 ; 97h: Facing right - turning - crouching - aiming up
     db $02,$02,$02, $F8,$86                                              ;91B41F;
 
+%anchor($91B424)
 AnimationDelays_98:
 ; 98h: Facing left  - turning - crouching - aiming up
     db $02,$02,$02, $F8,$85                                              ;91B424;
 
+%anchor($91B429)
 AnimationDelays_99:
 ; 99h: Facing right - turning - crouching - aiming down/down-right
     db $02,$02,$02, $F8,$74                                              ;91B429;
 
+%anchor($91B42E)
 AnimationDelays_9A:
 ; 9Ah: Facing left  - turning - crouching - aiming down/down-left
     db $02,$02,$02, $F8,$73                                              ;91B42E;
 
+%anchor($91B433)
 AnimationDelays_9C:
 ; 9Ch: Facing right - turning - standing - aiming up-right
     db $02,$02,$02, $F8,$06                                              ;91B433;
 
+%anchor($91B438)
 AnimationDelays_9D:
 ; 9Dh: Facing left  - turning - standing - aiming up-left
     db $02,$02,$02, $F8,$05                                              ;91B438;
 
+%anchor($91B43D)
 AnimationDelays_9E:
 ; 9Eh: Facing right - turning - in air - aiming up-right
     db $02,$02,$02, $F8,$6A                                              ;91B43D;
 
+%anchor($91B442)
 AnimationDelays_9F:
 ; 9Fh: Facing left  - turning - in air - aiming up-left
     db $02,$02,$02, $F8,$69                                              ;91B442;
 
+%anchor($91B447)
 AnimationDelays_A0:
 ; A0h: Facing right - turning - falling - aiming up-right
     db $02,$02,$02, $F8,$6E                                              ;91B447;
 
+%anchor($91B44C)
 AnimationDelays_A1:
 ; A1h: Facing left  - turning - falling - aiming up-left
     db $02,$02,$02, $F8,$6D                                              ;91B44C;
 
+%anchor($91B451)
 AnimationDelays_A2:
 ; A2h: Facing right - turning - crouching - aiming up-right
     db $02,$02,$02, $F8,$72                                              ;91B451;
 
+%anchor($91B456)
 AnimationDelays_A3:
 ; A3h: Facing left  - turning - crouching - aiming up-left
     db $02,$02,$02, $F8,$71                                              ;91B456;
 
+%anchor($91B45B)
 AnimationDelays_BF:
 ; BFh: Facing right - moonwalking - turn/jump left
     db $02,$02,$02, $F8,$1A                                              ;91B45B;
 
+%anchor($91B460)
 AnimationDelays_C0:
 ; C0h: Facing left  - moonwalking - turn/jump right
     db $02,$02,$02, $F8,$19                                              ;91B460;
 
+%anchor($91B465)
 AnimationDelays_C1:
 ; C1h: Facing right - moonwalking - turn/jump left  - aiming up-right
     db $02,$02,$02, $F8,$1A                                              ;91B465;
 
+%anchor($91B46A)
 AnimationDelays_C2:
 ; C2h: Facing left  - moonwalking - turn/jump right - aiming up-left
     db $02,$02,$02, $F8,$19                                              ;91B46A;
 
+%anchor($91B46F)
 AnimationDelays_C3:
 ; C3h: Facing right - moonwalking - turn/jump left  - aiming down-right
     db $02,$02,$02, $F8,$1A                                              ;91B46F;
 
+%anchor($91B474)
 AnimationDelays_C4:
 ; C4h: Facing left  - moonwalking - turn/jump right - aiming down-left
     db $02,$02,$02, $F8,$19                                              ;91B474;
 
+%anchor($91B479)
 UNUSED_AnimationDelays_C6_91B479:
     db $02,$02,$02, $FD,$BA                                              ;91B479;
 
+%anchor($91B47E)
 UNUSED_AnimationDelays_63_91B47E:                                        ;91B47E;
     db $04
     db $03, $FE,$01
 
+%anchor($91B482)
 UNUSED_AnimationDelays_64_91B482:                                        ;91B482;
     db $04
     db $03, $FE,$01
 
+%anchor($91B486)
 UNUSED_AnimationDelays_65_66_91B486:                                     ;91B486;
 ; 65h: Unused. Related to movement type Dh
 ; 66h: Unused. Related to movement type Dh
     db $03
     db $02,$02,$02,$02,$02,$02,$02,$02, $FE,$08
 
+%anchor($91B491)
 AnimationDelays_83_84:                                                   ;91B491;
 ; 83h: Facing right - wall jump
 ; 84h: Facing left  - wall jump
@@ -4688,115 +5021,145 @@ AnimationDelays_83_84:                                                   ;91B491
     ; Screw attack
     db $01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$01, $FE,$18
 
+%anchor($91B4C2)
 AnimationDelays_35:
 ; 35h: Facing right - crouching transition
     db $03, $FD,$27                                                      ;91B4C2;
 
+%anchor($91B4C5)
 AnimationDelays_36:
 ; 36h: Facing left  - crouching transition
     db $03, $FD,$28                                                      ;91B4C5;
 
+%anchor($91B4C8)
 AnimationDelays_37:                                                      ;91B4C8;
 ; 37h: Facing right - morphing transition
     db $03,$03, $F9 : dw $0002 : db $1D,$31,$79,$7D
 
+%anchor($91B4D1)
 AnimationDelays_38:                                                      ;91B4D1;
 ; 38h: Facing left  - morphing transition
     db $03,$03, $F9 : dw $0002 : db $41,$32,$7A,$7E
 
+%anchor($91B4DA)
 UNUSED_AnimationDelays_39_91B4DA:
     db $00, $FD,$20                                                      ;91B4DA;
 
+%anchor($91B4DD)
 UNUSED_AnimationDelays_3A_91B4DD:
     db $00, $FD,$42                                                      ;91B4DD;
 
+%anchor($91B4E0)
 AnimationDelays_3B:
 ; 3Bh: Facing right - standing transition
     db $03, $FD,$01                                                      ;91B4E0;
 
+%anchor($91B4E3)
 AnimationDelays_3C:
 ; 3Ch: Facing left  - standing transition
     db $03, $FD,$02                                                      ;91B4E3;
 
+%anchor($91B4E6)
 AnimationDelays_3D:
 ; 3Dh: Facing right - unmorphing transition
     db $03,$03, $FD,$27                                                  ;91B4E6;
 
+%anchor($91B4EA)
 AnimationDelays_3E:
 ; 3Eh: Facing left  - unmorphing transition
     db $03,$03, $FD,$28                                                  ;91B4EA;
 
+%anchor($91B4EE)
 UNUSED_AnimationDelays_3F_91B4EE:                                        ;91B4EE;
     db $00, $FC : dw $0002 : db $1D,$79
 
+%anchor($91B4F4)
 UNUSED_AnimationDelays_40_91B4F4:                                        ;91B4F4;
     db $00, $FC : dw $0002 : db $41,$7A
 
+%anchor($91B4FA)
 UNUSED_AnimationDelays_DB_91B4FA:                                        ;91B4FA;
     db $03,$03,$03, $F9 : dw $0002 : db $1D,$31,$79,$7D
 
+%anchor($91B504)
 UNUSED_AnimationDelays_DC_91B504:                                        ;91B504;
     db $03,$03,$03, $F9 : dw $0002 : db $DF,$DF,$DF,$DF
 
+%anchor($91B50E)
 UNUSED_AnimationDelays_DD_91B50E:
     db $03,$03,$03, $FD,$01                                              ;91B50E;
 
+%anchor($91B513)
 UNUSED_AnimationDelays_DE_91B513:
     db $03,$03,$03, $FD,$BA                                              ;91B513;
 
+%anchor($91B518)
 AnimationDelays_F1:
 ; F1h: Facing right - crouching transition - aiming up
     db $03, $FD,$85                                                      ;91B518;
 
+%anchor($91B51B)
 AnimationDelays_F2:
 ; F2h: Facing left  - crouching transition - aiming up
     db $03, $FD,$86                                                      ;91B51B;
 
+%anchor($91B51E)
 AnimationDelays_F3:
 ; F3h: Facing right - crouching transition - aiming up-right
     db $03, $FD,$71                                                      ;91B51E;
 
+%anchor($91B521)
 AnimationDelays_F4:
 ; F4h: Facing left  - crouching transition - aiming up-left
     db $03, $FD,$72                                                      ;91B521;
 
+%anchor($91B524)
 AnimationDelays_F5:
 ; F5h: Facing right - crouching transition - aiming down-right
     db $03, $FD,$73                                                      ;91B524;
 
+%anchor($91B527)
 AnimationDelays_F6:
 ; F6h: Facing left  - crouching transition - aiming down-left
     db $03, $FD,$74                                                      ;91B527;
 
+%anchor($91B52A)
 AnimationDelays_F7:
 ; F7h: Facing right - standing transition - aiming up
     db $03, $FD,$03                                                      ;91B52A;
 
+%anchor($91B52D)
 AnimationDelays_F8:
 ; F8h: Facing left  - standing transition - aiming up
     db $03, $FD,$04                                                      ;91B52D;
 
+%anchor($91B530)
 AnimationDelays_F9:
 ; F9h: Facing right - standing transition - aiming up-right
     db $03, $FD,$05                                                      ;91B530;
 
+%anchor($91B533)
 AnimationDelays_FA:
 ; FAh: Facing left  - standing transition - aiming up-left
     db $03, $FD,$06                                                      ;91B533;
 
+%anchor($91B536)
 AnimationDelays_FB:
 ; FBh: Facing right - standing transition - aiming down-right
     db $03, $FD,$07                                                      ;91B536;
 
+%anchor($91B539)
 AnimationDelays_FC:
 ; FCh: Facing left  - standing transition - aiming down-left
     db $03, $FD,$08                                                      ;91B539;
 
+%anchor($91B53C)
 AnimationDelays_BE_F0:
 ; BEh: Facing left  - grabbed by Draygon - moving
 ; F0h: Facing right - grabbed by Draygon - moving
     db $06,$06,$06,$06,$06,$06,$FF                                       ;91B53C;
 
+%anchor($91B543)
 AnimationDelays_C9_CA_CB_CC_CD_CE:
 ; C9h: Facing right - shinespark - horizontal
 ; CAh: Facing left  - shinespark - horizontal
@@ -4806,6 +5169,7 @@ AnimationDelays_C9_CA_CB_CC_CD_CE:
 ; CEh: Facing left  - shinespark - diagonal
     db $08,$FF                                                           ;91B543;
 
+%anchor($91B545)
 AnimationDelays_D3:                                                      ;91B545;
 ; D3h: Facing right - crystal flash
     ; Raise Samus and generate bubble
@@ -4816,6 +5180,7 @@ AnimationDelays_D3:                                                      ;91B545
     ; Finish
     db $03,$03,$03, $FD,$01
 
+%anchor($91B556)
 AnimationDelays_D4:                                                      ;91B556;
 ; D4h: Facing left  - crystal flash
     ; Raise Samus and generate bubble
@@ -4826,6 +5191,7 @@ AnimationDelays_D4:                                                      ;91B556
     ; Finish
     db $03,$03,$03, $FD,$02
 
+%anchor($91B567)
 AnimationDelays_D7_D8:                                                   ;91B567;
 ; D7h: Facing right - crystal flash ending
 ; D8h: Facing left  - crystal flash ending
@@ -4834,6 +5200,7 @@ AnimationDelays_D7_D8:                                                   ;91B567
     ; Unmorphed
     db $02, $FE,$01
 
+%anchor($91B56F)
 AnimationDelays_0_9B:                                                    ;91B56F;
 ; 0: Facing forward - power suit
 ; 9Bh: Facing forward - varia/gravity suit
@@ -4847,12 +5214,15 @@ AnimationDelays_0_9B:                                                    ;91B56F
     db $03,$03,$03,$03,$03,$03,$03,$03,$03,$33,$02,$02,$02
     db $30, $FE,$01
 
+%anchor($91B5D1)
 AnimationDelayTable_Running_NoSpeedBooster_pointer:
     dw AnimationDelayTable_Running_NoSpeedBooster                        ;91B5D1;
 
+%anchor($91B5D3)
 AnimationDelayTable_Running_NoSpeedBooster:
     db $02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$FF                       ;91B5D3;
 
+%anchor($91B5DE)
 AnimationDelayTable_Running_SpeedBooster_pointers:
 ; Indexed by [speed boost counter] * 2
     dw AnimationDelayTable_Running_SpeedBooster_0                        ;91B5DE;
@@ -4861,25 +5231,32 @@ AnimationDelayTable_Running_SpeedBooster_pointers:
     dw AnimationDelayTable_Running_SpeedBooster_3                        ;91B5E4;
     dw AnimationDelayTable_Running_SpeedBooster_4                        ;91B5E6;
 
+%anchor($91B5E8)
 AnimationDelayTable_Running_SpeedBooster_0:
     db $03,$03,$03,$03,$03,$03,$03,$03,$03,$03,$FF                       ;91B5E8;
 
+%anchor($91B5F3)
 AnimationDelayTable_Running_SpeedBooster_1:
     db $02,$03,$02,$03,$02,$03,$02,$03,$02,$03,$FF                       ;91B5F3;
 
+%anchor($91B5FE)
 AnimationDelayTable_Running_SpeedBooster_2:
     db $02,$02,$02,$02,$02,$02,$02,$02,$02,$02,$FF                       ;91B5FE;
 
+%anchor($91B609)
 AnimationDelayTable_Running_SpeedBooster_3:
     db $01,$02,$01,$02,$01,$02,$01,$02,$01,$02,$FF                       ;91B609;
 
+%anchor($91B614)
 AnimationDelayTable_Running_SpeedBooster_4:
     db $01,$01,$01,$01,$01,$01,$01,$01,$01,$01,$FF                       ;91B614;
 
+%anchor($91B61F)
 SpeedBoostTimerResetValues:
 ; Indexed by [speed boost counter] * 2
     dw $0001,$0001,$0001,$0001,$0002                                     ;91B61F;
 
+%anchor($91B629)
 PoseDefinitions:
 ;        _____________________________ $B629: Pose X direction
 ;       |    _________________________ $B62A: Movement type
@@ -4904,965 +5281,1218 @@ PoseDefinitions:
   .YRadius:                                                              ;91B62F;
     db                         $18,$00                                                           
 
+%anchor($91B631)
 PoseDefinitions_01:
 ; 1: Facing right - normal
     db $08,$00,$FF,$02,$06,$00,$15,$00                                   ;91B631;
 
+%anchor($91B639)
 PoseDefinitions_02:
 ; 2: Facing left  - normal
     db $04,$00,$FF,$07,$06,$00,$15,$00                                   ;91B639;
 
+%anchor($91B641)
 PoseDefinitions_03:
 ; 3: Facing right - aiming up
     db $08,$00,$01,$00,$06,$00,$15,$00                                   ;91B641;
 
+%anchor($91B649)
 PoseDefinitions_04:
 ; 4: Facing left  - aiming up
     db $04,$00,$02,$09,$06,$00,$15,$00                                   ;91B649;
 
+%anchor($91B651)
 PoseDefinitions_05:
 ; 5: Facing right - aiming up-right
     db $08,$00,$01,$01,$06,$00,$15,$00                                   ;91B651;
 
+%anchor($91B659)
 PoseDefinitions_06:
 ; 6: Facing left  - aiming up-left
     db $04,$00,$02,$08,$06,$00,$15,$00                                   ;91B659;
 
+%anchor($91B661)
 PoseDefinitions_07:
 ; 7: Facing right - aiming down-right
     db $08,$00,$01,$03,$06,$00,$15,$00                                   ;91B661;
 
+%anchor($91B669)
 PoseDefinitions_08:
 ; 8: Facing left  - aiming down-left
     db $04,$00,$02,$06,$06,$00,$15,$00                                   ;91B669;
 
+%anchor($91B671)
 PoseDefinitions_09:
 ; 9: Moving right - not aiming
     db $08,$01,$01,$02,$06,$00,$15,$00                                   ;91B671;
 
+%anchor($91B679)
 PoseDefinitions_0A:
 ; Ah: Moving left  - not aiming
     db $04,$01,$02,$07,$06,$00,$15,$00                                   ;91B679;
 
+%anchor($91B681)
 PoseDefinitions_0B:
 ; Bh: Moving right - gun extended
     db $08,$01,$01,$02,$06,$00,$15,$00                                   ;91B681;
 
+%anchor($91B689)
 PoseDefinitions_0C:
 ; Ch: Moving left  - gun extended
     db $04,$01,$02,$07,$06,$00,$15,$00                                   ;91B689;
 
+%anchor($91B691)
 PoseDefinitions_0D:
 ; Dh: Moving right - aiming up (unused)
     db $08,$01,$01,$00,$06,$00,$15,$00                                   ;91B691;
 
+%anchor($91B699)
 PoseDefinitions_0E:
 ; Eh: Moving left  - aiming up (unused)
     db $04,$01,$02,$09,$06,$00,$15,$00                                   ;91B699;
 
+%anchor($91B6A1)
 PoseDefinitions_0F:
 ; Fh: Moving right - aiming up-right
     db $08,$01,$01,$01,$06,$00,$15,$00                                   ;91B6A1;
 
+%anchor($91B6A9)
 PoseDefinitions_10:
 ; 10h: Moving left  - aiming up-left
     db $04,$01,$02,$08,$06,$00,$15,$00                                   ;91B6A9;
 
+%anchor($91B6B1)
 PoseDefinitions_11:
 ; 11h: Moving right - aiming down-right
     db $08,$01,$01,$03,$06,$00,$15,$00                                   ;91B6B1;
 
+%anchor($91B6B9)
 PoseDefinitions_12:
 ; 12h: Moving left  - aiming down-left
     db $04,$01,$02,$06,$06,$00,$15,$00                                   ;91B6B9;
 
+%anchor($91B6C1)
 PoseDefinitions_13:
 ; 13h: Facing right - normal jump - not aiming - not moving - gun extended
     db $08,$02,$FF,$02,$08,$00,$13,$00                                   ;91B6C1;
 
+%anchor($91B6C9)
 PoseDefinitions_14:
 ; 14h: Facing left  - normal jump - not aiming - not moving - gun extended
     db $04,$02,$FF,$07,$08,$00,$13,$00                                   ;91B6C9;
 
+%anchor($91B6D1)
 PoseDefinitions_15:
 ; 15h: Facing right - normal jump - aiming up
     db $08,$02,$51,$00,$08,$00,$13,$00                                   ;91B6D1;
 
+%anchor($91B6D9)
 PoseDefinitions_16:
 ; 16h: Facing left  - normal jump - aiming up
     db $04,$02,$52,$09,$08,$00,$13,$00                                   ;91B6D9;
 
+%anchor($91B6E1)
 PoseDefinitions_17:
 ; 17h: Facing right - normal jump - aiming down
     db $08,$02,$FF,$04,$06,$00,$0A,$00                                   ;91B6E1;
 
+%anchor($91B6E9)
 PoseDefinitions_18:
 ; 18h: Facing left  - normal jump - aiming down
     db $04,$02,$FF,$05,$06,$00,$0A,$00                                   ;91B6E9;
 
+%anchor($91B6F1)
 PoseDefinitions_19:
 ; 19h: Facing right - spin jump
     db $08,$03,$FF,$FF,$00,$00,$0C,$00                                   ;91B6F1;
 
+%anchor($91B6F9)
 PoseDefinitions_1A:
 ; 1Ah: Facing left  - spin jump
     db $04,$03,$FF,$FF,$00,$00,$0C,$00                                   ;91B6F9;
 
+%anchor($91B701)
 PoseDefinitions_1B:
 ; 1Bh: Facing right - space jump
     db $08,$03,$FF,$FF,$00,$00,$0C,$00                                   ;91B701;
 
+%anchor($91B709)
 PoseDefinitions_1C:
 ; 1Ch: Facing left  - space jump
     db $04,$03,$FF,$FF,$00,$00,$0C,$00                                   ;91B709;
 
+%anchor($91B711)
 PoseDefinitions_1D:
 ; 1Dh: Facing right - morph ball - no springball - on ground
     db $08,$04,$FF,$FF,$00,$00,$07,$00                                   ;91B711;
 
+%anchor($91B719)
 PoseDefinitions_1E:
 ; 1Eh: Moving right - morph ball - no springball - on ground
     db $08,$04,$1D,$FF,$00,$00,$07,$00                                   ;91B719;
 
+%anchor($91B721)
 PoseDefinitions_1F:
 ; 1Fh: Moving left  - morph ball - no springball - on ground
     db $04,$04,$41,$FF,$00,$00,$07,$00                                   ;91B721;
 
+%anchor($91B729)
 UNUSED_PoseDefinitions_20_91B729:
     db $08,$07,$FF,$FF,$00,$00,$07,$00                                   ;91B729;
 
+%anchor($91B731)
 UNUSED_PoseDefinitions_21_91B731:
     db $01,$07,$20,$FF,$00,$00,$07,$00                                   ;91B731;
 
+%anchor($91B739)
 UNUSED_PoseDefinitions_22_91B739:
     db $02,$07,$20,$FF,$00,$00,$07,$00                                   ;91B739;
 
+%anchor($91B741)
 UNUSED_PoseDefinitions_23_91B741:
     db $04,$07,$42,$FF,$00,$00,$07,$00                                   ;91B741;
 
+%anchor($91B749)
 UNUSED_PoseDefinitions_24_91B749:
     db $08,$07,$20,$FF,$00,$00,$07,$00                                   ;91B749;
 
+%anchor($91B751)
 PoseDefinitions_25:
 ; 25h: Facing right - turning - standing
     db $04,$0E,$FF,$FB,$06,$00,$15,$00                                   ;91B751;
 
+%anchor($91B759)
 PoseDefinitions_26:
 ; 26h: Facing left  - turning - standing
     db $08,$0E,$FF,$FB,$06,$00,$15,$00                                   ;91B759;
 
+%anchor($91B761)
 PoseDefinitions_27:
 ; 27h: Facing right - crouching
     db $08,$05,$27,$02,$00,$00,$10,$00                                   ;91B761;
 
+%anchor($91B769)
 PoseDefinitions_28:
 ; 28h: Facing left  - crouching
     db $04,$05,$28,$07,$00,$00,$10,$00                                   ;91B769;
 
+%anchor($91B771)
 PoseDefinitions_29:
 ; 29h: Facing right - falling
     db $08,$06,$FF,$02,$08,$00,$13,$00                                   ;91B771;
 
+%anchor($91B779)
 PoseDefinitions_2A:
 ; 2Ah: Facing left  - falling
     db $04,$06,$FF,$07,$08,$00,$13,$00                                   ;91B779;
 
+%anchor($91B781)
 PoseDefinitions_2B:
 ; 2Bh: Facing right - falling - aiming up
     db $08,$06,$29,$00,$08,$00,$13,$00                                   ;91B781;
 
+%anchor($91B789)
 PoseDefinitions_2C:
 ; 2Ch: Facing left  - falling - aiming up
     db $04,$06,$2A,$09,$08,$00,$13,$00                                   ;91B789;
 
+%anchor($91B791)
 PoseDefinitions_2D:
 ; 2Dh: Facing right - falling - aiming down
     db $08,$06,$FF,$04,$06,$00,$0A,$00                                   ;91B791;
 
+%anchor($91B799)
 PoseDefinitions_2E:
 ; 2Eh: Facing left  - falling - aiming down
     db $04,$06,$FF,$05,$06,$00,$0A,$00                                   ;91B799;
 
+%anchor($91B7A1)
 PoseDefinitions_2F:
 ; 2Fh: Facing right - turning - jumping
     db $04,$17,$FF,$FB,$08,$00,$13,$00                                   ;91B7A1;
 
+%anchor($91B7A9)
 PoseDefinitions_30:
 ; 30h: Facing left  - turning - jumping
     db $08,$17,$FF,$FB,$08,$00,$13,$00                                   ;91B7A9;
 
+%anchor($91B7B1)
 PoseDefinitions_31:
 ; 31h: Facing right - morph ball - no springball - in air
     db $08,$08,$FF,$FF,$00,$00,$07,$00                                   ;91B7B1;
 
+%anchor($91B7B9)
 PoseDefinitions_32:
 ; 32h: Facing left  - morph ball - no springball - in air
     db $04,$08,$FF,$FF,$00,$00,$07,$00                                   ;91B7B9;
 
+%anchor($91B7C1)
 UNUSED_PoseDefinitions_33_91B7C1:
     db $08,$09,$FF,$FF,$00,$00,$07,$00                                   ;91B7C1;
 
+%anchor($91B7C9)
 UNUSED_PoseDefinitions_34_91B7C9:
     db $04,$09,$FF,$FF,$00,$00,$07,$00                                   ;91B7C9;
 
+%anchor($91B7D1)
 PoseDefinitions_35:
 ; 35h: Facing right - crouching transition
     db $08,$0F,$FF,$02,$00,$00,$10,$00                                   ;91B7D1;
 
+%anchor($91B7D9)
 PoseDefinitions_36:
 ; 36h: Facing left  - crouching transition
     db $04,$0F,$FF,$07,$00,$00,$10,$00                                   ;91B7D9;
 
+%anchor($91B7E1)
 PoseDefinitions_37:
 ; 37h: Facing right - morphing transition
     db $08,$0F,$FF,$FF,$00,$00,$07,$00                                   ;91B7E1;
 
+%anchor($91B7E9)
 PoseDefinitions_38:
 ; 38h: Facing left  - morphing transition
     db $04,$0F,$FF,$FF,$00,$00,$07,$00                                   ;91B7E9;
 
+%anchor($91B7F1)
 UNUSED_PoseDefinitions_39_91B7F1:
     db $08,$0F,$FF,$FF,$00,$00,$07,$00                                   ;91B7F1;
 
+%anchor($91B7F9)
 UNUSED_PoseDefinitions_3A_91B7F9:
     db $04,$0F,$FF,$FF,$00,$00,$07,$00                                   ;91B7F9;
 
+%anchor($91B801)
 PoseDefinitions_3B:
 ; 3Bh: Facing right - standing transition
     db $08,$0F,$FF,$02,$06,$00,$15,$00                                   ;91B801;
 
+%anchor($91B809)
 PoseDefinitions_3C:
 ; 3Ch: Facing left  - standing transition
     db $04,$0F,$FF,$07,$06,$00,$15,$00                                   ;91B809;
 
+%anchor($91B811)
 PoseDefinitions_3D:
 ; 3Dh: Facing right - unmorphing transition
     db $08,$0F,$FF,$FF,$00,$00,$10,$00                                   ;91B811;
 
+%anchor($91B819)
 PoseDefinitions_3E:
 ; 3Eh: Facing left  - unmorphing transition
     db $04,$0F,$FF,$FF,$00,$00,$10,$00                                   ;91B819;
 
+%anchor($91B821)
 UNUSED_PoseDefinitions_3F_91B821:
     db $08,$0F,$FF,$FF,$00,$00,$07,$00                                   ;91B821;
 
+%anchor($91B829)
 UNUSED_PoseDefinitions_40_91B829:
     db $04,$0F,$FF,$FF,$00,$00,$07,$00                                   ;91B829;
 
+%anchor($91B831)
 PoseDefinitions_41:
 ; 41h: Facing left  - morph ball - no springball - on ground
     db $04,$04,$FF,$FF,$00,$00,$07,$00                                   ;91B831;
 
+%anchor($91B839)
 UNUSED_PoseDefinitions_42_91B839:
     db $04,$07,$FF,$FF,$00,$00,$07,$00                                   ;91B839;
 
+%anchor($91B841)
 PoseDefinitions_43:
 ; 43h: Facing right - turning - crouching
     db $04,$0E,$FF,$FB,$00,$00,$10,$00                                   ;91B841;
 
+%anchor($91B849)
 PoseDefinitions_44:
 ; 44h: Facing left  - turning - crouching
     db $08,$0E,$FF,$FB,$00,$00,$10,$00                                   ;91B849;
 
+%anchor($91B851)
 UNUSED_PoseDefinitions_45_91B851:
     db $08,$01,$01,$07,$06,$00,$15,$00                                   ;91B851;
 
+%anchor($91B859)
 UNUSED_PoseDefinitions_46_91B859:
     db $04,$01,$02,$02,$06,$00,$15,$00                                   ;91B859;
 
+%anchor($91B861)
 UNUSED_PoseDefinitions_47_91B861:
     db $08,$00,$FF,$02,$06,$00,$15,$00                                   ;91B861;
 
+%anchor($91B869)
 UNUSED_PoseDefinitions_48_91B869:
     db $04,$00,$FF,$07,$06,$00,$15,$00                                   ;91B869;
 
+%anchor($91B871)
 PoseDefinitions_49:
 ; 49h: Facing left  - moonwalk
     db $08,$10,$02,$07,$06,$00,$15,$00                                   ;91B871;
 
+%anchor($91B879)
 PoseDefinitions_4A:
 ; 4Ah: Facing right - moonwalk
     db $04,$10,$01,$02,$06,$00,$15,$00                                   ;91B879;
 
+%anchor($91B881)
 PoseDefinitions_4B:
 ; 4Bh: Facing right - normal jump transition
     db $08,$02,$FF,$02,$03,$00,$13,$00                                   ;91B881;
 
+%anchor($91B889)
 PoseDefinitions_4C:
 ; 4Ch: Facing left  - normal jump transition
     db $04,$02,$FF,$07,$03,$00,$13,$00                                   ;91B889;
 
+%anchor($91B891)
 PoseDefinitions_4D:
 ; 4Dh: Facing right - normal jump - not aiming - not moving - gun not extended
     db $08,$02,$FF,$02,$08,$00,$13,$00                                   ;91B891;
 
+%anchor($91B899)
 PoseDefinitions_4E:
 ; 4Eh: Facing left  - normal jump - not aiming - not moving - gun not extended
     db $04,$02,$FF,$07,$08,$00,$13,$00                                   ;91B899;
 
+%anchor($91B8A1)
 PoseDefinitions_4F:
 ; 4Fh: Facing left  - damage boost
     db $08,$19,$4E,$FF,$08,$00,$13,$00                                   ;91B8A1;
 
+%anchor($91B8A9)
 PoseDefinitions_50:
 ; 50h: Facing right - damage boost
     db $04,$19,$4D,$FF,$08,$00,$13,$00                                   ;91B8A9;
 
+%anchor($91B8B1)
 PoseDefinitions_51:
 ; 51h: Facing right - normal jump - not aiming - moving forward
     db $08,$02,$FF,$02,$08,$00,$13,$00                                   ;91B8B1;
 
+%anchor($91B8B9)
 PoseDefinitions_52:
 ; 52h: Facing left  - normal jump - not aiming - moving forward
     db $04,$02,$FF,$07,$08,$00,$13,$00                                   ;91B8B9;
 
+%anchor($91B8C1)
 PoseDefinitions_53:
 ; 53h: Facing right - knockback
     db $08,$0A,$FF,$FF,$06,$00,$15,$00                                   ;91B8C1;
 
+%anchor($91B8C9)
 PoseDefinitions_54:
 ; 54h: Facing left  - knockback
     db $04,$0A,$FF,$FF,$06,$00,$15,$00                                   ;91B8C9;
 
+%anchor($91B8D1)
 PoseDefinitions_55:
 ; 55h: Facing right - normal jump transition - aiming up
     db $08,$02,$FF,$00,$03,$00,$13,$00                                   ;91B8D1;
 
+%anchor($91B8D9)
 PoseDefinitions_56:
 ; 56h: Facing left  - normal jump transition - aiming up
     db $04,$02,$FF,$09,$03,$00,$13,$00                                   ;91B8D9;
 
+%anchor($91B8E1)
 PoseDefinitions_57:
 ; 57h: Facing right - normal jump transition - aiming up-right
     db $08,$02,$FF,$01,$03,$00,$13,$00                                   ;91B8E1;
 
+%anchor($91B8E9)
 PoseDefinitions_58:
 ; 58h: Facing left  - normal jump transition - aiming up-left
     db $04,$02,$FF,$08,$03,$00,$13,$00                                   ;91B8E9;
 
+%anchor($91B8F1)
 PoseDefinitions_59:
 ; 59h: Facing right - normal jump transition - aiming down-right
     db $08,$02,$FF,$03,$03,$00,$13,$00                                   ;91B8F1;
 
+%anchor($91B8F9)
 PoseDefinitions_5A:
 ; 5Ah: Facing left  - normal jump transition - aiming down-left
     db $04,$02,$FF,$06,$03,$00,$13,$00                                   ;91B8F9;
 
+%anchor($91B901)
 UNUSED_PoseDefinitions_5B_91B901:
     db $08,$16,$FF,$FF,$10,$00,$10,$00                                   ;91B901;
 
+%anchor($91B909)
 UNUSED_PoseDefinitions_5C_91B909:
     db $04,$16,$FF,$FF,$10,$00,$10,$00                                   ;91B909;
 
+%anchor($91B911)
 UNUSED_PoseDefinitions_5D_91B911:
     db $08,$0B,$5D,$FF,$10,$00,$10,$00                                   ;91B911;
 
+%anchor($91B919)
 UNUSED_PoseDefinitions_5E_91B919:
     db $04,$0B,$5E,$FF,$10,$00,$10,$00                                   ;91B919;
 
+%anchor($91B921)
 UNUSED_PoseDefinitions_5F_91B921:
     db $08,$0B,$5F,$FF,$10,$00,$10,$00                                   ;91B921;
 
+%anchor($91B929)
 UNUSED_PoseDefinitions_60_91B929:
     db $04,$0B,$60,$FF,$10,$00,$10,$00                                   ;91B929;
 
+%anchor($91B931)
 UNUSED_PoseDefinitions_61_91B931:
     db $08,$16,$B2,$FF,$10,$00,$10,$00                                   ;91B931;
 
+%anchor($91B939)
 UNUSED_PoseDefinitions_62_91B939:
     db $04,$16,$B3,$FF,$10,$00,$10,$00                                   ;91B939;
 
+%anchor($91B941)
 UNUSED_PoseDefinitions_63_91B941:
     db $08,$0D,$FF,$FF,$0C,$00,$0C,$00                                   ;91B941;
 
+%anchor($91B949)
 UNUSED_PoseDefinitions_64_91B949:
     db $04,$0D,$FF,$FF,$0C,$00,$0C,$00                                   ;91B949;
 
+%anchor($91B951)
 UNUSED_PoseDefinitions_65_91B951:
     db $08,$0D,$29,$FF,$0C,$00,$0C,$00                                   ;91B951;
 
+%anchor($91B959)
 UNUSED_PoseDefinitions_66_91B959:
     db $04,$0D,$2A,$FF,$0C,$00,$0C,$00                                   ;91B959;
 
+%anchor($91B961)
 PoseDefinitions_67:
 ; 67h: Facing right - falling - gun extended
     db $08,$06,$FF,$02,$08,$00,$13,$00                                   ;91B961;
 
+%anchor($91B969)
 PoseDefinitions_68:
 ; 68h: Facing left  - falling - gun extended
     db $04,$06,$FF,$07,$08,$00,$13,$00                                   ;91B969;
 
+%anchor($91B971)
 PoseDefinitions_69:
 ; 69h: Facing right - normal jump - aiming up-right
     db $08,$02,$51,$01,$08,$00,$13,$00                                   ;91B971;
 
+%anchor($91B979)
 PoseDefinitions_6A:
 ; 6Ah: Facing left  - normal jump - aiming up-left
     db $04,$02,$52,$08,$08,$00,$13,$00                                   ;91B979;
 
+%anchor($91B981)
 PoseDefinitions_6B:
 ; 6Bh: Facing right - normal jump - aiming down-right
     db $08,$02,$51,$03,$08,$00,$13,$00                                   ;91B981;
 
+%anchor($91B989)
 PoseDefinitions_6C:
 ; 6Ch: Facing left  - normal jump - aiming down-left
     db $04,$02,$52,$06,$08,$00,$13,$00                                   ;91B989;
 
+%anchor($91B991)
 PoseDefinitions_6D:
 ; 6Dh: Facing right - falling - aiming up-right
     db $08,$06,$29,$01,$08,$00,$13,$00                                   ;91B991;
 
+%anchor($91B999)
 PoseDefinitions_6E:
 ; 6Eh: Facing left  - falling - aiming up-left
     db $04,$06,$2A,$08,$08,$00,$13,$00                                   ;91B999;
 
+%anchor($91B9A1)
 PoseDefinitions_6F:
 ; 6Fh: Facing right - falling - aiming down-right
     db $08,$06,$29,$03,$08,$00,$13,$00                                   ;91B9A1;
 
+%anchor($91B9A9)
 PoseDefinitions_70:
 ; 70h: Facing left  - falling - aiming down-left
     db $04,$06,$2A,$06,$08,$00,$13,$00                                   ;91B9A9;
 
+%anchor($91B9B1)
 PoseDefinitions_71:
 ; 71h: Facing right - crouching - aiming up-right
     db $08,$05,$27,$01,$00,$00,$10,$00                                   ;91B9B1;
 
+%anchor($91B9B9)
 PoseDefinitions_72:
 ; 72h: Facing left  - crouching - aiming up-left
     db $04,$05,$28,$08,$00,$00,$10,$00                                   ;91B9B9;
 
+%anchor($91B9C1)
 PoseDefinitions_73:
 ; 73h: Facing right - crouching - aiming down-right
     db $08,$05,$27,$03,$00,$00,$10,$00                                   ;91B9C1;
 
+%anchor($91B9C9)
 PoseDefinitions_74:
 ; 74h: Facing left  - crouching - aiming down-left
     db $04,$05,$28,$06,$00,$00,$10,$00                                   ;91B9C9;
 
+%anchor($91B9D1)
 PoseDefinitions_75:
 ; 75h: Facing left  - moonwalk - aiming up-left
     db $08,$10,$06,$08,$06,$00,$15,$00                                   ;91B9D1;
 
+%anchor($91B9D9)
 PoseDefinitions_76:
 ; 76h: Facing right - moonwalk - aiming up-right
     db $04,$10,$05,$01,$06,$00,$15,$00                                   ;91B9D9;
 
+%anchor($91B9E1)
 PoseDefinitions_77:
 ; 77h: Facing left  - moonwalk - aiming down-left
     db $08,$10,$08,$06,$06,$00,$15,$00                                   ;91B9E1;
 
+%anchor($91B9E9)
 PoseDefinitions_78:
 ; 78h: Facing right - moonwalk - aiming down-right
     db $04,$10,$07,$03,$06,$00,$15,$00                                   ;91B9E9;
 
+%anchor($91B9F1)
 PoseDefinitions_79:
 ; 79h: Facing right - morph ball - spring ball - on ground
     db $08,$11,$FF,$FF,$00,$00,$07,$00                                   ;91B9F1;
 
+%anchor($91B9F9)
 PoseDefinitions_7A:
 ; 7Ah: Facing left  - morph ball - spring ball - on ground
     db $04,$11,$FF,$FF,$00,$00,$07,$00                                   ;91B9F9;
 
+%anchor($91BA01)
 PoseDefinitions_7B:
 ; 7Bh: Moving right - morph ball - spring ball - on ground
     db $08,$11,$79,$FF,$00,$00,$07,$00                                   ;91BA01;
 
+%anchor($91BA09)
 PoseDefinitions_7C:
 ; 7Ch: Moving left  - morph ball - spring ball - on ground
     db $04,$11,$7A,$FF,$00,$00,$07,$00                                   ;91BA09;
 
+%anchor($91BA11)
 PoseDefinitions_7D:
 ; 7Dh: Facing right - morph ball - spring ball - falling
     db $08,$13,$FF,$FF,$00,$00,$07,$00                                   ;91BA11;
 
+%anchor($91BA19)
 PoseDefinitions_7E:
 ; 7Eh: Facing left  - morph ball - spring ball - falling
     db $04,$13,$FF,$FF,$00,$00,$07,$00                                   ;91BA19;
 
+%anchor($91BA21)
 PoseDefinitions_7F:
 ; 7Fh: Facing right - morph ball - spring ball - in air
     db $08,$12,$FF,$FF,$00,$00,$07,$00                                   ;91BA21;
 
+%anchor($91BA29)
 PoseDefinitions_80:
 ; 80h: Facing left  - morph ball - spring ball - in air
     db $04,$12,$FF,$FF,$00,$00,$07,$00                                   ;91BA29;
 
+%anchor($91BA31)
 PoseDefinitions_81:
 ; 81h: Facing right - screw attack
     db $08,$03,$FF,$FF,$00,$00,$0C,$00                                   ;91BA31;
 
+%anchor($91BA39)
 PoseDefinitions_82:
 ; 82h: Facing left  - screw attack
     db $04,$03,$FF,$FF,$00,$00,$0C,$00                                   ;91BA39;
 
+%anchor($91BA41)
 PoseDefinitions_83:
 ; 83h: Facing right - wall jump
     db $08,$14,$19,$FF,$08,$00,$13,$00                                   ;91BA41;
 
+%anchor($91BA49)
 PoseDefinitions_84:
 ; 84h: Facing left  - wall jump
     db $04,$14,$1A,$FF,$08,$00,$13,$00                                   ;91BA49;
 
+%anchor($91BA51)
 PoseDefinitions_85:
 ; 85h: Facing right - crouching - aiming up
     db $08,$05,$27,$00,$00,$00,$10,$00                                   ;91BA51;
 
+%anchor($91BA59)
 PoseDefinitions_86:
 ; 86h: Facing left  - crouching - aiming up
     db $04,$05,$28,$09,$00,$00,$10,$00                                   ;91BA59;
 
+%anchor($91BA61)
 PoseDefinitions_87:
 ; 87h: Facing right - turning - falling
     db $04,$18,$FF,$FB,$08,$00,$13,$00                                   ;91BA61;
 
+%anchor($91BA69)
 PoseDefinitions_88:
 ; 88h: Facing left  - turning - falling
     db $08,$18,$FF,$FB,$08,$00,$13,$00                                   ;91BA69;
 
+%anchor($91BA71)
 PoseDefinitions_89:
 ; 89h: Facing right - ran into a wall
     db $08,$15,$FF,$02,$06,$00,$15,$00                                   ;91BA71;
 
+%anchor($91BA79)
 PoseDefinitions_8A:
 ; 8Ah: Facing left  - ran into a wall
     db $04,$15,$FF,$07,$06,$00,$15,$00                                   ;91BA79;
 
+%anchor($91BA81)
 PoseDefinitions_8B:
 ; 8Bh: Facing right - turning - standing - aiming up
     db $04,$0E,$FF,$FA,$06,$00,$15,$00                                   ;91BA81;
 
+%anchor($91BA89)
 PoseDefinitions_8C:
 ; 8Ch: Facing left  - turning - standing - aiming up
     db $08,$0E,$FF,$FA,$06,$00,$15,$00                                   ;91BA89;
 
+%anchor($91BA91)
 PoseDefinitions_8D:
 ; 8Dh: Facing right - turning - standing - aiming down-right
     db $04,$0E,$FF,$FC,$06,$00,$15,$00                                   ;91BA91;
 
+%anchor($91BA99)
 PoseDefinitions_8E:
 ; 8Eh: Facing left  - turning - standing - aiming down-left
     db $08,$0E,$FF,$FC,$06,$00,$15,$00                                   ;91BA99;
 
+%anchor($91BAA1)
 PoseDefinitions_8F:
 ; 8Fh: Facing right - turning - in air - aiming up
     db $04,$17,$FF,$FA,$08,$00,$13,$00                                   ;91BAA1;
 
+%anchor($91BAA9)
 PoseDefinitions_90:
 ; 90h: Facing left  - turning - in air - aiming up
     db $08,$17,$FF,$FA,$08,$00,$13,$00                                   ;91BAA9;
 
+%anchor($91BAB1)
 PoseDefinitions_91:
 ; 91h: Facing right - turning - in air - aiming down/down-right
     db $04,$17,$FF,$FC,$08,$00,$13,$00                                   ;91BAB1;
 
+%anchor($91BAB9)
 PoseDefinitions_92:
 ; 92h: Facing left  - turning - in air - aiming down/down-left
     db $08,$17,$FF,$FC,$08,$00,$13,$00                                   ;91BAB9;
 
+%anchor($91BAC1)
 PoseDefinitions_93:
 ; 93h: Facing right - turning - falling - aiming up
     db $04,$18,$FF,$FA,$08,$00,$13,$00                                   ;91BAC1;
 
+%anchor($91BAC9)
 PoseDefinitions_94:
 ; 94h: Facing left  - turning - falling - aiming up
     db $08,$18,$FF,$FA,$08,$00,$13,$00                                   ;91BAC9;
 
+%anchor($91BAD1)
 PoseDefinitions_95:
 ; 95h: Facing right - turning - falling - aiming down/down-right
     db $04,$18,$FF,$FC,$08,$00,$13,$00                                   ;91BAD1;
 
+%anchor($91BAD9)
 PoseDefinitions_96:
 ; 96h: Facing left  - turning - falling - aiming down/down-left
     db $08,$18,$FF,$FC,$08,$00,$13,$00                                   ;91BAD9;
 
+%anchor($91BAE1)
 PoseDefinitions_97:
 ; 97h: Facing right - turning - crouching - aiming up
     db $04,$17,$28,$FA,$00,$00,$10,$00                                   ;91BAE1;
 
+%anchor($91BAE9)
 PoseDefinitions_98:
 ; 98h: Facing left  - turning - crouching - aiming up
     db $08,$17,$28,$FA,$00,$00,$10,$00                                   ;91BAE9;
 
+%anchor($91BAF1)
 PoseDefinitions_99:
 ; 99h: Facing right - turning - crouching - aiming down/down-right
     db $04,$17,$28,$FC,$00,$00,$10,$00                                   ;91BAF1;
 
+%anchor($91BAF9)
 PoseDefinitions_9A:
 ; 9Ah: Facing left  - turning - crouching - aiming down/down-left
     db $08,$17,$28,$FC,$00,$00,$10,$00                                   ;91BAF9;
 
+%anchor($91BB01)
 PoseDefinitions_9B:
 ; 9Bh: Facing forward - varia/gravity suit
     db $00,$00,$FF,$FF,$08,$00,$18,$00                                   ;91BB01;
 
+%anchor($91BB09)
 PoseDefinitions_9C:
 ; 9Ch: Facing right - turning - standing - aiming up-right
     db $04,$0E,$FF,$FA,$06,$00,$15,$00                                   ;91BB09;
 
+%anchor($91BB11)
 PoseDefinitions_9D:
 ; 9Dh: Facing left  - turning - standing - aiming up-left
     db $08,$0E,$FF,$FA,$06,$00,$15,$00                                   ;91BB11;
 
+%anchor($91BB19)
 PoseDefinitions_9E:
 ; 9Eh: Facing right - turning - in air - aiming up-right
     db $04,$17,$FF,$FA,$08,$00,$13,$00                                   ;91BB19;
 
+%anchor($91BB21)
 PoseDefinitions_9F:
 ; 9Fh: Facing left  - turning - in air - aiming up-left
     db $08,$17,$FF,$FA,$08,$00,$13,$00                                   ;91BB21;
 
+%anchor($91BB29)
 PoseDefinitions_A0:
 ; A0h: Facing right - turning - falling - aiming up-right
     db $04,$18,$FF,$FA,$08,$00,$13,$00                                   ;91BB29;
 
+%anchor($91BB31)
 PoseDefinitions_A1:
 ; A1h: Facing left  - turning - falling - aiming up-left
     db $08,$18,$FF,$FA,$08,$00,$13,$00                                   ;91BB31;
 
+%anchor($91BB39)
 PoseDefinitions_A2:
 ; A2h: Facing right - turning - crouching - aiming up-right
     db $04,$17,$28,$FA,$00,$00,$10,$00                                   ;91BB39;
 
+%anchor($91BB41)
 PoseDefinitions_A3:
 ; A3h: Facing left  - turning - crouching - aiming up-left
     db $08,$17,$28,$FA,$00,$00,$10,$00                                   ;91BB41;
 
+%anchor($91BB49)
 PoseDefinitions_A4:
 ; A4h: Facing right - landing from normal jump
     db $08,$00,$FF,$02,$03,$00,$15,$00                                   ;91BB49;
 
+%anchor($91BB51)
 PoseDefinitions_A5:
 ; A5h: Facing left  - landing from normal jump
     db $04,$00,$FF,$07,$03,$00,$15,$00                                   ;91BB51;
 
+%anchor($91BB59)
 PoseDefinitions_A6:
 ; A6h: Facing right - landing from spin jump
     db $08,$00,$FF,$02,$03,$00,$15,$00                                   ;91BB59;
 
+%anchor($91BB61)
 PoseDefinitions_A7:
 ; A7h: Facing left  - landing from spin jump
     db $04,$00,$FF,$07,$03,$00,$15,$00                                   ;91BB61;
 
+%anchor($91BB69)
 UNUSED_PoseDefinitions_A8_91BB69:
     db $08,$16,$01,$02,$06,$00,$15,$00                                   ;91BB69;
 
+%anchor($91BB71)
 UNUSED_PoseDefinitions_A9_91BB71:
     db $04,$16,$02,$07,$06,$00,$15,$00                                   ;91BB71;
 
+%anchor($91BB79)
 UNUSED_PoseDefinitions_AA_91BB79:
     db $08,$16,$07,$03,$06,$00,$15,$00                                   ;91BB79;
 
+%anchor($91BB81)
 UNUSED_PoseDefinitions_AB_91BB81:
     db $04,$16,$08,$06,$06,$00,$15,$00                                   ;91BB81;
 
+%anchor($91BB89)
 UNUSED_PoseDefinitions_AC_91BB89:
     db $08,$16,$67,$02,$08,$00,$13,$00                                   ;91BB89;
 
+%anchor($91BB91)
 UNUSED_PoseDefinitions_AD_91BB91:
     db $04,$16,$68,$07,$08,$00,$13,$00                                   ;91BB91;
 
+%anchor($91BB99)
 UNUSED_PoseDefinitions_AE_91BB99:
     db $08,$16,$2D,$04,$06,$00,$0A,$00                                   ;91BB99;
 
+%anchor($91BBA1)
 UNUSED_PoseDefinitions_AF_91BBA1:
     db $04,$16,$2E,$05,$06,$00,$0A,$00                                   ;91BBA1;
 
+%anchor($91BBA9)
 UNUSED_PoseDefinitions_B0_91BBA9:
     db $08,$16,$6F,$03,$08,$00,$13,$00                                   ;91BBA9;
 
+%anchor($91BBB1)
 UNUSED_PoseDefinitions_B1_91BBB1:
     db $04,$16,$70,$06,$08,$00,$13,$00                                   ;91BBB1;
 
+%anchor($91BBB9)
 PoseDefinitions_B2:
 ; B2h: Facing clockwise     - grapple
     db $08,$16,$B2,$FF,$10,$00,$11,$00                                   ;91BBB9;
 
+%anchor($91BBC1)
 PoseDefinitions_B3:
 ; B3h: Facing anticlockwise - grapple
     db $04,$16,$B3,$FF,$10,$00,$11,$00                                   ;91BBC1;
 
+%anchor($91BBC9)
 UNUSED_PoseDefinitions_B4_91BBC9:
     db $08,$16,$27,$02,$00,$00,$10,$00                                   ;91BBC9;
 
+%anchor($91BBD1)
 UNUSED_PoseDefinitions_B5_91BBD1:
     db $04,$16,$28,$07,$00,$00,$10,$00                                   ;91BBD1;
 
+%anchor($91BBD9)
 UNUSED_PoseDefinitions_B6_91BBD9:
     db $08,$16,$27,$03,$00,$00,$10,$00                                   ;91BBD9;
 
+%anchor($91BBE1)
 UNUSED_PoseDefinitions_B7_91BBE1:
     db $04,$16,$28,$06,$00,$00,$10,$00                                   ;91BBE1;
 
+%anchor($91BBE9)
 PoseDefinitions_B8:
 ; B8h: Facing left  - grapple wall jump pose
     db $08,$16,$FF,$03,$00,$00,$10,$00                                   ;91BBE9;
 
+%anchor($91BBF1)
 PoseDefinitions_B9:
 ; B9h: Facing right - grapple wall jump pose
     db $04,$16,$FF,$06,$00,$00,$10,$00                                   ;91BBF1;
 
+%anchor($91BBF9)
 PoseDefinitions_BA:
 ; BAh: Facing left  - grabbed by Draygon - not moving - not aiming
     db $04,$1A,$FF,$07,$06,$00,$15,$00                                   ;91BBF9;
 
+%anchor($91BC01)
 PoseDefinitions_BB:
 ; BBh: Facing left  - grabbed by Draygon - not moving - aiming up-left
     db $04,$1A,$BA,$08,$06,$00,$15,$00                                   ;91BC01;
 
+%anchor($91BC09)
 PoseDefinitions_BC:
 ; BCh: Facing left  - grabbed by Draygon - firing
     db $04,$1A,$BA,$07,$06,$00,$15,$00                                   ;91BC09;
 
+%anchor($91BC11)
 PoseDefinitions_BD:
 ; BDh: Facing left  - grabbed by Draygon - not moving - aiming down-left
     db $04,$1A,$BA,$06,$06,$00,$15,$00                                   ;91BC11;
 
+%anchor($91BC19)
 PoseDefinitions_BE:
 ; BEh: Facing left  - grabbed by Draygon - moving
     db $04,$1A,$BA,$FF,$06,$00,$15,$00                                   ;91BC19;
 
+%anchor($91BC21)
 PoseDefinitions_BF:
 ; BFh: Facing right - moonwalking - turn/jump left
     db $04,$0E,$FF,$FB,$06,$00,$15,$00                                   ;91BC21;
 
+%anchor($91BC29)
 PoseDefinitions_C0:
 ; C0h: Facing left  - moonwalking - turn/jump right
     db $08,$0E,$FF,$FB,$06,$00,$15,$00                                   ;91BC29;
 
+%anchor($91BC31)
 PoseDefinitions_C1:
 ; C1h: Facing right - moonwalking - turn/jump left  - aiming up-right
     db $04,$0E,$FF,$FA,$08,$00,$15,$00                                   ;91BC31;
 
+%anchor($91BC39)
 PoseDefinitions_C2:
 ; C2h: Facing left  - moonwalking - turn/jump right - aiming up-left
     db $08,$0E,$FF,$FA,$08,$00,$15,$00                                   ;91BC39;
 
+%anchor($91BC41)
 PoseDefinitions_C3:
 ; C3h: Facing right - moonwalking - turn/jump left  - aiming down-right
     db $04,$0E,$FF,$FC,$08,$00,$15,$00                                   ;91BC41;
 
+%anchor($91BC49)
 PoseDefinitions_C4:
 ; C4h: Facing left  - moonwalking - turn/jump right - aiming down-left
     db $08,$0E,$FF,$FC,$08,$00,$15,$00                                   ;91BC49;
 
+%anchor($91BC51)
 UNUSED_PoseDefinitions_C5_91BC51:
     db $04,$1A,$FF,$FF,$00,$00,$07,$00                                   ;91BC51;
 
+%anchor($91BC59)
 UNUSED_PoseDefinitions_C6_91BC59:
     db $04,$1A,$FF,$FB,$06,$00,$15,$00                                   ;91BC59;
 
+%anchor($91BC61)
 PoseDefinitions_C7:
 ; C7h: Facing right - vertical shinespark windup
     db $08,$1B,$FF,$FF,$08,$00,$13,$00                                   ;91BC61;
 
+%anchor($91BC69)
 PoseDefinitions_C8:
 ; C8h: Facing left  - vertical shinespark windup
     db $04,$1B,$FF,$FF,$08,$00,$13,$00                                   ;91BC69;
 
+%anchor($91BC71)
 PoseDefinitions_C9:
 ; C9h: Facing right - shinespark - horizontal
     db $08,$1B,$FF,$02,$08,$00,$13,$00                                   ;91BC71;
 
+%anchor($91BC79)
 PoseDefinitions_CA:
 ; CAh: Facing left  - shinespark - horizontal
     db $04,$1B,$FF,$07,$08,$00,$13,$00                                   ;91BC79;
 
+%anchor($91BC81)
 PoseDefinitions_CB:
 ; CBh: Facing right - shinespark - vertical
     db $08,$1B,$FF,$00,$08,$00,$13,$00                                   ;91BC81;
 
+%anchor($91BC89)
 PoseDefinitions_CC:
 ; CCh: Facing left  - shinespark - vertical
     db $04,$1B,$FF,$09,$08,$00,$13,$00                                   ;91BC89;
 
+%anchor($91BC91)
 PoseDefinitions_CD:
 ; CDh: Facing right - shinespark - diagonal
     db $08,$1B,$FF,$01,$08,$00,$13,$00                                   ;91BC91;
 
+%anchor($91BC99)
 PoseDefinitions_CE:
 ; CEh: Facing left  - shinespark - diagonal
     db $04,$1B,$FF,$08,$08,$00,$13,$00                                   ;91BC99;
 
+%anchor($91BCA1)
 PoseDefinitions_CF:
 ; CFh: Facing right - ran into a wall - aiming up-right
     db $08,$15,$89,$01,$06,$00,$15,$00                                   ;91BCA1;
 
+%anchor($91BCA9)
 PoseDefinitions_D0:
 ; D0h: Facing left  - ran into a wall - aiming up-left
     db $04,$15,$8A,$08,$06,$00,$15,$00                                   ;91BCA9;
 
+%anchor($91BCB1)
 PoseDefinitions_D1:
 ; D1h: Facing right - ran into a wall - aiming down-right
     db $08,$15,$89,$03,$06,$00,$15,$00                                   ;91BCB1;
 
+%anchor($91BCB9)
 PoseDefinitions_D2:
 ; D2h: Facing left  - ran into a wall - aiming down-left
     db $04,$15,$8A,$06,$06,$00,$15,$00                                   ;91BCB9;
 
+%anchor($91BCC1)
 PoseDefinitions_D3:
 ; D3h: Facing right - crystal flash
     db $08,$1B,$FF,$FF,$06,$00,$15,$00                                   ;91BCC1;
 
+%anchor($91BCC9)
 PoseDefinitions_D4:
 ; D4h: Facing left  - crystal flash
     db $04,$1B,$FF,$FF,$06,$00,$15,$00                                   ;91BCC9;
 
+%anchor($91BCD1)
 PoseDefinitions_D5:
 ; D5h: Facing right - x-ray - standing
     db $08,$00,$FF,$02,$06,$00,$15,$00                                   ;91BCD1;
 
+%anchor($91BCD9)
 PoseDefinitions_D6:
 ; D6h: Facing left  - x-ray - standing
     db $04,$00,$FF,$07,$06,$00,$15,$00                                   ;91BCD9;
 
+%anchor($91BCE1)
 PoseDefinitions_D7:
 ; D7h: Facing right - crystal flash ending
     db $08,$0A,$FF,$02,$06,$00,$15,$00                                   ;91BCE1;
 
+%anchor($91BCE9)
 PoseDefinitions_D8:
 ; D8h: Facing left  - crystal flash ending
     db $04,$0A,$FF,$07,$06,$00,$15,$00                                   ;91BCE9;
 
+%anchor($91BCF1)
 PoseDefinitions_D9:
 ; D9h: Facing right - x-ray - crouching
     db $08,$05,$FF,$02,$00,$00,$10,$00                                   ;91BCF1;
 
+%anchor($91BCF9)
 PoseDefinitions_DA:
 ; DAh: Facing left  - x-ray - crouching
     db $04,$05,$FF,$07,$00,$00,$10,$00                                   ;91BCF9;
 
+%anchor($91BD01)
 UNUSED_PoseDefinitions_DB_91BD01:
     db $08,$0F,$FF,$FF,$00,$00,$07,$00                                   ;91BD01;
 
+%anchor($91BD09)
 UNUSED_PoseDefinitions_DC_91BD09:
     db $04,$0F,$FF,$FF,$00,$00,$07,$00                                   ;91BD09;
 
+%anchor($91BD11)
 UNUSED_PoseDefinitions_DD_91BD11:
     db $08,$0F,$FF,$FF,$06,$00,$15,$00                                   ;91BD11;
 
+%anchor($91BD19)
 UNUSED_PoseDefinitions_DE_91BD19:
     db $04,$0F,$FF,$FF,$06,$00,$15,$00                                   ;91BD19;
 
+%anchor($91BD21)
 UNUSED_PoseDefinitions_DF_91BD21:
     db $04,$1A,$FF,$FF,$00,$00,$07,$00                                   ;91BD21;
 
+%anchor($91BD29)
 PoseDefinitions_E0:
 ; E0h: Facing right - landing from normal jump - aiming up
     db $08,$00,$FF,$00,$03,$00,$15,$00                                   ;91BD29;
 
+%anchor($91BD31)
 PoseDefinitions_E1:
 ; E1h: Facing left  - landing from normal jump - aiming up
     db $04,$00,$FF,$09,$03,$00,$15,$00                                   ;91BD31;
 
+%anchor($91BD39)
 PoseDefinitions_E2:
 ; E2h: Facing right - landing from normal jump - aiming up-right
     db $08,$00,$FF,$01,$03,$00,$15,$00                                   ;91BD39;
 
+%anchor($91BD41)
 PoseDefinitions_E3:
 ; E3h: Facing left  - landing from normal jump - aiming up-left
     db $04,$00,$FF,$08,$03,$00,$15,$00                                   ;91BD41;
 
+%anchor($91BD49)
 PoseDefinitions_E4:
 ; E4h: Facing right - landing from normal jump - aiming down-right
     db $08,$00,$FF,$03,$03,$00,$15,$00                                   ;91BD49;
 
+%anchor($91BD51)
 PoseDefinitions_E5:
 ; E5h: Facing left  - landing from normal jump - aiming down-left
     db $04,$00,$FF,$06,$03,$00,$15,$00                                   ;91BD51;
 
+%anchor($91BD59)
 PoseDefinitions_E6:
 ; E6h: Facing right - landing from normal jump - firing
     db $08,$00,$FF,$02,$03,$00,$15,$00                                   ;91BD59;
 
+%anchor($91BD61)
 PoseDefinitions_E7:
 ; E7h: Facing left  - landing from normal jump - firing
     db $04,$00,$FF,$07,$03,$00,$15,$00                                   ;91BD61;
 
+%anchor($91BD69)
 PoseDefinitions_E8:
 ; E8h: Facing right - Samus drained - crouching
     db $08,$1B,$FF,$FF,$FC,$00,$15,$00                                   ;91BD69;
 
+%anchor($91BD71)
 PoseDefinitions_E9:
 ; E9h: Facing left  - Samus drained - crouching
     db $04,$1B,$FF,$FF,$FC,$00,$15,$00                                   ;91BD71;
 
+%anchor($91BD79)
 PoseDefinitions_EA:
 ; EAh: Facing right - Samus drained - standing
     db $08,$1B,$FF,$FF,$FC,$00,$15,$00                                   ;91BD79;
 
+%anchor($91BD81)
 PoseDefinitions_EB:
 ; EBh: Facing left  - Samus drained - standing
     db $04,$1B,$FF,$FF,$FC,$00,$15,$00                                   ;91BD81;
 
+%anchor($91BD89)
 PoseDefinitions_EC:
 ; ECh: Facing right - grabbed by Draygon - not moving - not aiming
     db $08,$1A,$FF,$02,$06,$00,$15,$00                                   ;91BD89;
 
+%anchor($91BD91)
 PoseDefinitions_ED:
 ; EDh: Facing right - grabbed by Draygon - not moving - aiming up-right
     db $08,$1A,$EC,$01,$06,$00,$15,$00                                   ;91BD91;
 
+%anchor($91BD99)
 PoseDefinitions_EE:
 ; EEh: Facing right - grabbed by Draygon - firing
     db $08,$1A,$EC,$02,$06,$00,$15,$00                                   ;91BD99;
 
+%anchor($91BDA1)
 PoseDefinitionse_EF:
 ; EFh: Facing right - grabbed by Draygon - not moving - aiming down-right
     db $08,$1A,$EC,$03,$06,$00,$15,$00                                   ;91BDA1;
 
+%anchor($91BDA9)
 PoseDefinitions_F0:
 ; F0h: Facing right - grabbed by Draygon - moving
     db $08,$1A,$EC,$FF,$06,$00,$15,$00                                   ;91BDA9;
 
+%anchor($91BDB1)
 PoseDefinitions_F1:
 ; F1h: Facing right - crouching transition - aiming up
     db $08,$0F,$FF,$00,$08,$00,$10,$00                                   ;91BDB1;
 
+%anchor($91BDB9)
 PoseDefinitions_F2:
 ; F2h: Facing left  - crouching transition - aiming up
     db $04,$0F,$FF,$09,$08,$00,$10,$00                                   ;91BDB9;
 
+%anchor($91BDC1)
 PoseDefinitions_F3:
 ; F3h: Facing right - crouching transition - aiming up-right
     db $08,$0F,$FF,$01,$08,$00,$10,$00                                   ;91BDC1;
 
+%anchor($91BDC9)
 PoseDefinitions_F4:
 ; F4h: Facing left  - crouching transition - aiming up-left
     db $04,$0F,$FF,$08,$08,$00,$10,$00                                   ;91BDC9;
 
+%anchor($91BDD1)
 PoseDefinitions_F5:
 ; F5h: Facing right - crouching transition - aiming down-right
     db $08,$0F,$FF,$03,$08,$00,$10,$00                                   ;91BDD1;
 
+%anchor($91BDD9)
 PoseDefinitions_F6:
 ; F6h: Facing left  - crouching transition - aiming down-left
     db $04,$0F,$FF,$06,$08,$00,$10,$00                                   ;91BDD9;
 
+%anchor($91BDE1)
 PoseDefinitions_F7:
 ; F7h: Facing right - standing transition - aiming up
     db $08,$0F,$FF,$00,$03,$00,$15,$00                                   ;91BDE1;
 
+%anchor($91BDE9)
 PoseDefinitions_F8:
 ; F8h: Facing left  - standing transition - aiming up
     db $04,$0F,$FF,$09,$03,$00,$15,$00                                   ;91BDE9;
 
+%anchor($91BDF1)
 PoseDefinitions_F9:
 ; F9h: Facing right - standing transition - aiming up-right
     db $08,$0F,$FF,$01,$03,$00,$15,$00                                   ;91BDF1;
 
+%anchor($91BDF9)
 PoseDefinitions_FA:
 ; FAh: Facing left  - standing transition - aiming up-left
     db $04,$0F,$FF,$08,$03,$00,$15,$00                                   ;91BDF9;
 
+%anchor($91BE01)
 PoseDefinitions_FB:
 ; FBh: Facing right - standing transition - aiming down-right
     db $08,$0F,$FF,$03,$03,$00,$15,$00                                   ;91BE01;
 
+%anchor($91BE09)
 PoseDefinitions_FC:
 ; FCh: Facing left  - standing transition - aiming down-left
     db $04,$0F,$FF,$06,$03,$00,$15,$00                                   ;91BE09;
 
+%anchor($91BE11)
 Calc_Xray_HDMADataTable_OffScreen:
     PHP                                                                  ;91BE11;
     PHB                                                                  ;91BE12;
@@ -5979,6 +6609,7 @@ Calc_Xray_HDMADataTable_OffScreen:
     dw Calc_Xray_HDMADataTable_OffScreen_AimedLeft                       ;91BEBE;
     dw Calc_Xray_HDMADataTable_OffScreen_HorizontalLine                  ;91BEC0;
 
+%anchor($91BEC2)
 Calc_Xray_HDMADataTable_OffScreen_AimedRight:
     PHP                                                                  ;91BEC2;
     REP #$30                                                             ;91BEC3;
@@ -6105,6 +6736,7 @@ Calc_Xray_HDMADataTable_OffScreen_AimedRight:
     RTS                                                                  ;91BF71;
 
 
+%anchor($91BF72)
 Calc_Xray_HDMADataTable_OffScreen_AimedLeft:
     PHP                                                                  ;91BF72;
     REP #$30                                                             ;91BF73;
@@ -6231,6 +6863,7 @@ Calc_Xray_HDMADataTable_OffScreen_AimedLeft:
     RTS                                                                  ;91C021;
 
 
+%anchor($91C022)
 Calc_Xray_HDMADataTable_OffScreen_AimedUpwards:
     PHP                                                                  ;91C022;
     REP #$30                                                             ;91C023;
@@ -6280,6 +6913,7 @@ Calc_Xray_HDMADataTable_OffScreen_AimedUpwards:
     dw Calc_Xray_HDMADataTable_OffScreen_AimedUpwards_Up                 ;91C065;
     dw Calc_Xray_HDMADataTable_OffScreen_AimedUpwards_UpLeft             ;91C067;
 
+%anchor($91C069)
 Calc_Xray_HDMADataTable_OffScreen_AimedUpwards_UpRight:
     PHP                                                                  ;91C069;
     REP #$30                                                             ;91C06A;
@@ -6422,6 +7056,7 @@ Calc_Xray_HDMADataTable_OffScreen_AimedUpwards_UpRight:
     RTS                                                                  ;91C122;
 
 
+%anchor($91C123)
 Calc_Xray_HDMADataTable_OffScreen_AimedUpwards_Up:
     PHP                                                                  ;91C123;
     REP #$30                                                             ;91C124;
@@ -6549,6 +7184,7 @@ Calc_Xray_HDMADataTable_OffScreen_AimedUpwards_Up:
     RTS                                                                  ;91C1C9;
 
 
+%anchor($91C1CA)
 Calc_Xray_HDMADataTable_OffScreen_AimedUpwards_UpLeft:
     PHP                                                                  ;91C1CA;
     REP #$30                                                             ;91C1CB;
@@ -6686,6 +7322,7 @@ Calc_Xray_HDMADataTable_OffScreen_AimedUpwards_UpLeft:
     RTS                                                                  ;91C27E;
 
 
+%anchor($91C27F)
 Calc_Xray_HDMADataTable_OffScreen_AimedDownwards:
     PHP                                                                  ;91C27F;
     REP #$30                                                             ;91C280;
@@ -6731,6 +7368,7 @@ Calc_Xray_HDMADataTable_OffScreen_AimedDownwards:
     dw Calc_Xray_HDMADataTable_OffScreen_AimedDownwards_Down             ;91C2B9;
     dw Calc_Xray_HDMADataTable_OffScreen_AimedDownwards_DownLeft         ;91C2BB;
 
+%anchor($91C2BD)
 Calc_Xray_HDMADataTable_OffScreen_AimedDownwards_DownRight:
     PHP                                                                  ;91C2BD;
     REP #$30                                                             ;91C2BE;
@@ -6871,6 +7509,7 @@ Calc_Xray_HDMADataTable_OffScreen_AimedDownwards_DownRight:
     RTS                                                                  ;91C380;
 
 
+%anchor($91C381)
 Calc_Xray_HDMADataTable_OffScreen_AimedDownwards_Down:
     PHP                                                                  ;91C381;
     REP #$30                                                             ;91C382;
@@ -7011,6 +7650,7 @@ Calc_Xray_HDMADataTable_OffScreen_AimedDownwards_Down:
     RTS                                                                  ;91C445;
 
 
+%anchor($91C446)
 Calc_Xray_HDMADataTable_OffScreen_AimedDownwards_DownLeft:
     PHP                                                                  ;91C446;
     REP #$30                                                             ;91C447;
@@ -7148,6 +7788,7 @@ Calc_Xray_HDMADataTable_OffScreen_AimedDownwards_DownLeft:
     RTS                                                                  ;91C504;
 
 
+%anchor($91C505)
 Calc_Xray_HDMADataTable_OffScreen_HorizontalLine:
     PHP                                                                  ;91C505;
     REP #$30                                                             ;91C506;
@@ -7201,6 +7842,7 @@ Calc_Xray_HDMADataTable_OffScreen_HorizontalLine:
     RTS                                                                  ;91C54A;
 
 
+%anchor($91C54B)
 Calc_Xray_HDMADataTable_OnScreen:
     PHP                                                                  ;91C54B;
     PHB                                                                  ;91C54C;
@@ -7318,6 +7960,7 @@ Calc_Xray_HDMADataTable_OnScreen:
     dw Calc_Xray_HDMADataTable_OnScreen_AimedLeft                        ;91C5FB;
     dw Calc_Xray_HDMADataTable_OnScreen_HorizontalLine                   ;91C5FD;
 
+%anchor($91C5FF)
 Calc_Xray_HDMADataTable_OnScreen_AimedRight:
     PHP                                                                  ;91C5FF;
     REP #$30                                                             ;91C600;
@@ -7390,6 +8033,7 @@ Calc_Xray_HDMADataTable_OnScreen_AimedRight:
     RTS                                                                  ;91C65F;
 
 
+%anchor($91C660)
 Calc_Xray_HDMADataTable_OnScreen_AimedLeft:
     PHP                                                                  ;91C660;
     REP #$30                                                             ;91C661;
@@ -7462,6 +8106,7 @@ Calc_Xray_HDMADataTable_OnScreen_AimedLeft:
     RTS                                                                  ;91C6C0;
 
 
+%anchor($91C6C1)
 Calc_Xray_HDMADataTable_OnScreen_AimedUpwards:
     PHP                                                                  ;91C6C1;
     REP #$30                                                             ;91C6C2;
@@ -7525,6 +8170,7 @@ Calc_Xray_HDMADataTable_OnScreen_AimedUpwards:
     dw Calc_Xray_HDMADataTable_OnScreen_AimedUpwards_Up                  ;91C718;
     dw Calc_Xray_HDMADataTable_OnScreen_AimedUpwards_UpLeft              ;91C71A;
 
+%anchor($91C71C)
 Calc_Xray_HDMADataTable_OnScreen_AimedUpwards_UpRight:
     PHP                                                                  ;91C71C;
     REP #$30                                                             ;91C71D;
@@ -7604,6 +8250,7 @@ Calc_Xray_HDMADataTable_OnScreen_AimedUpwards_UpRight:
     RTS                                                                  ;91C77E;
 
 
+%anchor($91C77F)
 Calc_Xray_HDMADataTable_OnScreen_AimedUpwards_Up:
     PHP                                                                  ;91C77F;
     REP #$30                                                             ;91C780;
@@ -7669,6 +8316,7 @@ Calc_Xray_HDMADataTable_OnScreen_AimedUpwards_Up:
     RTS                                                                  ;91C7CA;
 
 
+%anchor($91C7CB)
 Calc_Xray_HDMADataTable_OnScreen_AimedUpwards_UpLeft:
     PHP                                                                  ;91C7CB;
     REP #$30                                                             ;91C7CC;
@@ -7744,6 +8392,7 @@ Calc_Xray_HDMADataTable_OnScreen_AimedUpwards_UpLeft:
     RTS                                                                  ;91C821;
 
 
+%anchor($91C822)
 Calc_Xray_HDMADataTable_OnScreen_AimedDownwards:
     PHP                                                                  ;91C822;
     REP #$30                                                             ;91C823;
@@ -7806,6 +8455,7 @@ Calc_Xray_HDMADataTable_OnScreen_AimedDownwards:
     dw Calc_Xray_HDMADataTable_OnScreen_AimedDownwards_Down              ;91C876;
     dw Calc_Xray_HDMADataTable_OnScreen_AimedDownwards_DownLeft          ;91C878;
 
+%anchor($91C87A)
 Calc_Xray_HDMADataTable_OnScreen_AimedDownwards_DownRight:
     PHP                                                                  ;91C87A;
     REP #$30                                                             ;91C87B;
@@ -7887,6 +8537,7 @@ Calc_Xray_HDMADataTable_OnScreen_AimedDownwards_DownRight:
     RTS                                                                  ;91C8E7;
 
 
+%anchor($91C8E8)
 Calc_Xray_HDMADataTable_OnScreen_AimedDownwards_Down:
     PHP                                                                  ;91C8E8;
     REP #$30                                                             ;91C8E9;
@@ -7951,6 +8602,7 @@ Calc_Xray_HDMADataTable_OnScreen_AimedDownwards_Down:
     RTS                                                                  ;91C938;
 
 
+%anchor($91C939)
 Calc_Xray_HDMADataTable_OnScreen_AimedDownwards_DownLeft:
     PHP                                                                  ;91C939;
     REP #$30                                                             ;91C93A;
@@ -8026,6 +8678,7 @@ Calc_Xray_HDMADataTable_OnScreen_AimedDownwards_DownLeft:
     RTS                                                                  ;91C997;
 
 
+%anchor($91C998)
 Calc_Xray_HDMADataTable_OnScreen_HorizontalLine:
     PHP                                                                  ;91C998;
     REP #$30                                                             ;91C999;
@@ -8071,6 +8724,7 @@ Calc_Xray_HDMADataTable_OnScreen_HorizontalLine:
     RTS                                                                  ;91C9D3;
 
 
+%anchor($91C9D4)
 AbsoluteTangentTable:
 ; |tan(t * pi / 80h)| * 100h
 ; Recall that SM angles are measured clockwise with 0 = up
@@ -8093,6 +8747,7 @@ AbsoluteTangentTable:
     dw $0032,$002C,$0025,$001F,$0019,$0012,$000C,$0006                   ;91CAC4;
     dw $0000                                                             ;91CAD4;
 
+%anchor($91CAD6)
 XrayHandler:
     PHP                                                                  ;91CAD6;
     PHB                                                                  ;91CAD7;
@@ -8116,6 +8771,7 @@ XrayHandler:
     RTL                                                                  ;91CAF8;
 
 
+%anchor($91CAF9)
 XraySetup_1_FreezeTime_BackupBG2Registers:
     PHP                                                                  ;91CAF9;
     SEP #$30                                                             ;91CAFA;
@@ -8135,6 +8791,7 @@ XraySetup_1_FreezeTime_BackupBG2Registers:
     RTL                                                                  ;91CB1B;
 
 
+%anchor($91CB1C)
 XraySetup_2_ReadBG1Tilemap_2ndScreen:
     PHP                                                                  ;91CB1C;
     REP #$30                                                             ;91CB1D;
@@ -8163,6 +8820,7 @@ XraySetup_2_ReadBG1Tilemap_2ndScreen:
     RTL                                                                  ;91CB56;
 
 
+%anchor($91CB57)
 XraySetup_3_ReadBG1Tilemap_1stScreen:
     PHP                                                                  ;91CB57;
     REP #$30                                                             ;91CB58;
@@ -8189,6 +8847,7 @@ XraySetup_3_ReadBG1Tilemap_1stScreen:
     RTL                                                                  ;91CB8D;
 
 
+%anchor($91CB8E)
 XraySetup_4_BuildBG2Tilemap_ReadBG2Tilemap_1stScreen:
     PHP                                                                  ;91CB8E;
     REP #$30                                                             ;91CB8F;
@@ -8369,6 +9028,7 @@ XraySetup_4_BuildBG2Tilemap_ReadBG2Tilemap_1stScreen:
     RTL                                                                  ;91CCF0;
 
 
+%anchor($91CCF1)
 CopyLastBG1BlockOfRowToXrayBG2Tilemap:
     LDA.B $1A                                                            ;91CCF1;
     STA.B $20                                                            ;91CCF3;
@@ -8411,6 +9071,7 @@ CopyLastBG1BlockOfRowToXrayBG2Tilemap:
     RTS                                                                  ;91CD41;
 
 
+%anchor($91CD42)
 LoadRightHalfOfRevealed2xNBlock:
     LDX.B $22                                                            ;91CD42;
     DEX                                                                  ;91CD44;
@@ -8478,6 +9139,7 @@ LoadRightHalfOfRevealed2xNBlock:
     RTS                                                                  ;91CDBD;
 
 
+%anchor($91CDBE)
 LoadRevealedBlock:
     LDX.B $24                                                            ;91CDBE;
     JSR.W LoadRevealedBlockCommand                                       ;91CDC0;
@@ -8486,6 +9148,7 @@ LoadRevealedBlock:
     JMP.W ($0000)                                                        ;91CDC8;
 
 
+%anchor($91CDCB)
 LoadRevealedBlock_Done:
     LDA.B $16                                                            ;91CDCB;
     CLC                                                                  ;91CDCD;
@@ -8495,6 +9158,7 @@ LoadRevealedBlock_Done:
     RTS                                                                  ;91CDD5;
 
 
+%anchor($91CDD6)
 LoadRevealedBlockCommand:
     LDA.L $7F6402,X                                                      ;91CDD6;
     AND.W #$00FF                                                         ;91CDDA;
@@ -8551,6 +9215,7 @@ LoadRevealedBlockCommand:
     RTS                                                                  ;91CE2B;
 
 
+%anchor($91CE2C)
 CalculateBlockCoordinates:
     SEP #$20                                                             ;91CE2C;
     LDA.B $24                                                            ;91CE2E;
@@ -8573,6 +9238,7 @@ CalculateBlockCoordinates:
     RTS                                                                  ;91CE50;
 
 
+%anchor($91CE51)
 GetBlockTypeAndBTS:
     LDA.B $2C                                                            ;91CE51;
     XBA                                                                  ;91CE53;
@@ -8596,6 +9262,7 @@ GetBlockTypeAndBTS:
     RTS                                                                  ;91CE78;
 
 
+%anchor($91CE79)
 RevealedBlockCommand_VerticalExtension:
     JSR.W CalculateBlockCoordinates                                      ;91CE79;
     LDA.B $28                                                            ;91CE7C;
@@ -8608,6 +9275,7 @@ RevealedBlockCommand_VerticalExtension:
 
   + STA.B $2E                                                            ;91CE8C;
 
+%anchor($91CE8E)
 RevealedBlockExtensionLoop_Vertical:
     LDA.B $2C                                                            ;91CE8E;
     CLC                                                                  ;91CE90;
@@ -8632,6 +9300,7 @@ RevealedBlockExtensionLoop_Vertical:
     BRA RevealedBlockExtensionLoop_Horizontal                            ;91CEB9;
 
 
+%anchor($91CEBB)
 RevealedBlockCommand_HorizontalExtension:
     JSR.W CalculateBlockCoordinates                                      ;91CEBB;
     LDA.B $28                                                            ;91CEBE;
@@ -8644,6 +9313,7 @@ RevealedBlockCommand_HorizontalExtension:
 
   + STA.B $2E                                                            ;91CECE;
 
+%anchor($91CED0)
 RevealedBlockExtensionLoop_Horizontal:
     LDA.B $2A                                                            ;91CED0;
     CLC                                                                  ;91CED2;
@@ -8668,6 +9338,7 @@ RevealedBlockExtensionLoop_Horizontal:
     BRA RevealedBlockExtensionLoop_Horizontal                            ;91CEFB;
 
 
+%anchor($91CEFD)
 Copy1x1BlockToXrayBG2TilemapIfScrollPLMTrigger:
     LDA.W RevealedBlockTable_1_blockType                                 ;91CEFD;
     CMP.B $30                                                            ;91CF00;
@@ -8706,6 +9377,7 @@ Copy1x1BlockToXrayBG2TilemapIfScrollPLMTrigger:
     JMP.W LoadRevealedBlock_Done                                         ;91CF33;
 
 
+%anchor($91CF36)
 RevealedBlockCommand_Copy1x1BlockToXrayBG2Tilemap:
     INY                                                                  ;91CF36;
     INY                                                                  ;91CF37;
@@ -8713,6 +9385,7 @@ RevealedBlockCommand_Copy1x1BlockToXrayBG2Tilemap:
     JMP.W LoadRevealedBlock_Done                                         ;91CF3B;
 
 
+%anchor($91CF3E)
 RevealedBlockCommand_Copy1x1BlockToXrayBG2TilemapIfBrinstar:
     INY                                                                  ;91CF3E;
     INY                                                                  ;91CF3F;
@@ -8725,6 +9398,7 @@ RevealedBlockCommand_Copy1x1BlockToXrayBG2TilemapIfBrinstar:
     JMP.W LoadRevealedBlock_Done                                         ;91CF4B;
 
 
+%anchor($91CF4E)
 RevealedBlockCommand_Copy2x1BlockToXrayBG2Tilemap:
     INY                                                                  ;91CF4E;
     INY                                                                  ;91CF4F;
@@ -8740,6 +9414,7 @@ RevealedBlockCommand_Copy2x1BlockToXrayBG2Tilemap:
     JMP.W LoadRevealedBlock_Done                                         ;91CF5F;
 
 
+%anchor($91CF62)
 RevealedBlockCommand_Copy1x2BlockToXrayBG2Tilemap:
     INY                                                                  ;91CF62;
     INY                                                                  ;91CF63;
@@ -8750,6 +9425,7 @@ RevealedBlockCommand_Copy1x2BlockToXrayBG2Tilemap:
     JMP.W LoadRevealedBlock_Done                                         ;91CF6C;
 
 
+%anchor($91CF6F)
 RevealedBlockCommand_Copy2x2BlockToXrayBG2Tilemap:
     INY                                                                  ;91CF6F;
     INY                                                                  ;91CF70;
@@ -8794,9 +9470,11 @@ RevealedBlockCommand_Copy2x2BlockToXrayBG2Tilemap:
     JMP.W LoadRevealedBlock_Done                                         ;91CFBC;
 
 
+%anchor($91CFBF)
 CopyRevealedBlockCommandArgumentToXrayBG2Tilemap:
     LDA.B ($03),Y                                                        ;91CFBF;
 
+%anchor($91CFC1)
 CopyBlockToXrayBG2Tilemap:
     ASL A                                                                ;91CFC1;
     ASL A                                                                ;91CFC2;
@@ -8820,6 +9498,7 @@ CopyBlockToXrayBG2Tilemap:
     RTS                                                                  ;91CFED;
 
 
+%anchor($91CFEE)
 CopyRevealedBlockCommandArgumentToXrayBG2Tilemap_1BlockRight:
     LDA.B ($03),Y                                                        ;91CFEE;
     ASL A                                                                ;91CFF0;
@@ -8844,6 +9523,7 @@ CopyRevealedBlockCommandArgumentToXrayBG2Tilemap_1BlockRight:
     RTS                                                                  ;91D01C;
 
 
+%anchor($91D01D)
 CopyRevealedBlockCommandArgumentToXrayBG2Tilemap_1BlockDown:
     LDA.B ($03),Y                                                        ;91D01D;
     ASL A                                                                ;91D01F;
@@ -8868,6 +9548,7 @@ CopyRevealedBlockCommandArgumentToXrayBG2Tilemap_1BlockDown:
     RTS                                                                  ;91D04B;
 
 
+%anchor($91D04C)
 LoadBlockToXrayBG2Tilemap:
     PHP                                                                  ;91D04C;
     PHX                                                                  ;91D04D;
@@ -8930,6 +9611,7 @@ LoadBlockToXrayBG2Tilemap:
     RTL                                                                  ;91D0A5;
 
 
+%anchor($91D0A6)
 CopyYFlippedBlockToXrayBG2Tilemap:
     ASL A                                                                ;91D0A6;
     ASL A                                                                ;91D0A7;
@@ -8953,6 +9635,7 @@ CopyYFlippedBlockToXrayBG2Tilemap:
     RTS                                                                  ;91D0D2;
 
 
+%anchor($91D0D3)
 XraySetup_5_ReadBG2Tilemap_2ndScreen:
     PHP                                                                  ;91D0D3;
     REP #$30                                                             ;91D0D4;
@@ -9006,9 +9689,11 @@ XraySetup_5_ReadBG2Tilemap_2ndScreen:
     RTL                                                                  ;91D140;
 
 
+%anchor($91D141)
 REP30_91D141:
     REP #$30                                                             ;91D141;
 
+%anchor($91D143)
 CheckIfXrayShouldShowAnyBlocks:
     LDA.W $079B                                                          ;91D143;
     CMP.W #RoomHeader_Statues                                            ;91D146;
@@ -9033,6 +9718,7 @@ CheckIfXrayShouldShowAnyBlocks:
     RTL                                                                  ;91D172;
 
 
+%anchor($91D173)
 XraySetup_6_TransferXrayTilemap_1stScreen:
     PHP                                                                  ;91D173;
     REP #$30                                                             ;91D174;
@@ -9059,6 +9745,7 @@ XraySetup_6_TransferXrayTilemap_1stScreen:
     RTL                                                                  ;91D19F;
 
 
+%anchor($91D1A0)
 XraySetup_7_InitializeXray_TransferXrayTilemap_2ndScreen:
     PHP                                                                  ;91D1A0;
     REP #$30                                                             ;91D1A1;
@@ -9120,6 +9807,7 @@ XraySetup_7_InitializeXray_TransferXrayTilemap_2ndScreen:
     RTL                                                                  ;91D222;
 
 
+%anchor($91D223)
 InstList_HDMAObject_Xray_0:
     dw Instruction_HDMAObject_HDMATableBank : db $00                     ;91D223;
     dw Instruction_HDMAObject_IndirectHDMATableBank : db $7E             ;91D226;
@@ -9151,11 +9839,13 @@ InstList_HDMAObject_Xray_0:
     dw Instruction_HDMAObject_PreInstructionInY                          ;91D272;
     dl PreInstruction_Xray_Main                                          ;91D274;
 
+%anchor($91D277)
 InstList_HDMAObject_Xray_1:
     dw $0001,$0A88                                                       ;91D277;
     dw Instruction_HDMAObject_GotoY                                      ;91D27B;
     dw InstList_HDMAObject_Xray_1                                        ;91D27D;
 
+%anchor($91D27F)
 PreInstruction_HDMAObject_XraySetup:
     PHP                                                                  ;91D27F;
     REP #$30                                                             ;91D280;
@@ -9193,6 +9883,7 @@ PreInstruction_HDMAObject_XraySetup:
     BRA .setBackdropColor                                                ;91D2BA;
 
 
+%anchor($91D2BC)
 XraySetup_8_BackdropColor:
     PHP                                                                  ;91D2BC;
     PHX                                                                  ;91D2BD;
@@ -9208,6 +9899,7 @@ XraySetup_8_BackdropColor:
     RTL                                                                  ;91D2D0;
 
 
+%anchor($91D2D1)
 RTS_91D2D1:
     PHP                                                                  ;91D2D1;
     REP #$30                                                             ;91D2D2;
@@ -9215,11 +9907,13 @@ RTS_91D2D1:
     RTS                                                                  ;91D2D5;
 
 
+%anchor($91D2D6)
 RevealedBlockTable_0:
   .blockType:
     dw $0000                                                             ;91D2D6;
   .pointers:
     dw       RevealedBlockTable_Air_0                                    ;91D2D8;
+%anchor($91D2DA)
 RevealedBlockTable_1:
   .blockType:
     dw $3000                                                             ;91D2DA;
@@ -9234,34 +9928,43 @@ RevealedBlockTable_1:
     dw $F000,RevealedBlockTable_BombableBlock                            ;91D2F6;
     dw $FFFF                                                             ;91D2FA;
 
+%anchor($91D2FC)
 RevealedBlockTable_Air_0:
     dw $FF00,RevealedBlockTable_Air_1                                    ;91D2FC;
     dw $FFFF                                                             ;91D300;
 
+%anchor($91D302)
 RevealedBlockTable_Air_1:
     dw RevealedBlockCommand_Copy1x1BlockToXrayBG2Tilemap,$00FF           ;91D302;
 
+%anchor($91D306)
 RevealedBlockTable_SpecialAir_0:
     dw $0046,RevealedBlockTable_SpecialAir_1                             ;91D306;
     dw $FFFF                                                             ;91D30A;
 
+%anchor($91D30C)
 RevealedBlockTable_SpecialAir_1:
     dw RevealedBlockCommand_Copy1x1BlockToXrayBG2Tilemap,$00FF           ;91D30C;
 
+%anchor($91D310)
 RevealedBlockTable_HorizontalExtension_0:
     dw $FF00,RevealedBlockTable_HorizontalExtension_1                    ;91D310;
     dw $FFFF                                                             ;91D314;
 
+%anchor($91D316)
 RevealedBlockTable_HorizontalExtension_1:
     dw RevealedBlockCommand_HorizontalExtension                          ;91D316;
 
+%anchor($91D318)
 RevealedBlockTable_SpikeBlock_0:
     dw $000E,RevealedBlockTable_SpikeBlock_1                             ;91D318;
     dw $FFFF                                                             ;91D31C;
 
+%anchor($91D31E)
 RevealedBlockTable_SpikeBlock_1:
     dw RevealedBlockCommand_Copy1x1BlockToXrayBG2Tilemap,$005F           ;91D31E;
 
+%anchor($91D322)
 RevealedBlockTable_SpecialBlock:
     dw $0000,RevealedBlockTable_SpecialBlock_0                           ;91D322;
     dw $0001,RevealedBlockTable_SpecialBlock_1                           ;91D326;
@@ -9285,59 +9988,77 @@ RevealedBlockTable_SpecialBlock:
     dw $0085,RevealedBlockTable_SpecialBlock_Brinstar                    ;91D36E;
     dw $FFFF                                                             ;91D372;
 
+%anchor($91D374)
 RevealedBlockTable_SpecialBlock_0:
     dw RevealedBlockCommand_Copy1x1BlockToXrayBG2Tilemap,$00BC           ;91D374;
 
+%anchor($91D378)
 RevealedBlockTable_SpecialBlock_1:
     dw RevealedBlockCommand_Copy2x1BlockToXrayBG2Tilemap,$00BC,$00BC     ;91D378;
 
+%anchor($91D37E)
 RevealedBlockTable_SpecialBlock_2:
     dw RevealedBlockCommand_Copy1x2BlockToXrayBG2Tilemap,$00BC,$00BC     ;91D37E;
 
+%anchor($91D384)
 RevealedBlockTable_SpecialBlock_3:
     dw RevealedBlockCommand_Copy2x2BlockToXrayBG2Tilemap                 ;91D384;
     dw $00BC,$00BC,$00BC,$00BC                                           ;91D386;
 
+%anchor($91D38E)
 RevealedBlockTable_SpecialBlock_4:
     dw RevealedBlockCommand_Copy1x1BlockToXrayBG2Tilemap,$00BC           ;91D38E;
 
+%anchor($91D392)
 RevealedBlockTable_SpecialBlock_5:
     dw RevealedBlockCommand_Copy2x1BlockToXrayBG2Tilemap,$00BC,$00BC     ;91D392;
 
+%anchor($91D398)
 RevealedBlockTable_SpecialBlock_6:
     dw RevealedBlockCommand_Copy1x2BlockToXrayBG2Tilemap,$00BC,$00BC     ;91D398;
 
+%anchor($91D39E)
 RevealedBlockTable_SpecialBlock_7:
     dw RevealedBlockCommand_Copy2x2BlockToXrayBG2Tilemap                 ;91D39E;
     dw $00BC,$00BC,$00BC,$00BC                                           ;91D3A0;
 
+%anchor($91D3A8)
 RevealedBlockTable_SpecialBlock_8:
     dw RevealedBlockCommand_Copy1x1BlockToXrayBG2Tilemap,$00BC           ;91D3A8;
 
+%anchor($91D3AC)
 RevealedBlockTable_SpecialBlock_9:
     dw RevealedBlockCommand_Copy1x1BlockToXrayBG2Tilemap,$00BC           ;91D3AC;
 
+%anchor($91D3B0)
 RevealedBlockTable_SpecialBlock_A:
     dw RevealedBlockCommand_Copy1x1BlockToXrayBG2Tilemap,$00BC           ;91D3B0;
 
+%anchor($91D3B4)
 RevealedBlockTable_SpecialBlock_B:
     dw RevealedBlockCommand_Copy1x1BlockToXrayBG2Tilemap,$00BC           ;91D3B4;
 
+%anchor($91D3B8)
 RevealedBlockTable_SpecialBlock_C:
     dw RevealedBlockCommand_Copy1x1BlockToXrayBG2Tilemap,$00BC           ;91D3B8;
 
+%anchor($91D3BC)
 RevealedBlockTable_SpecialBlock_D:
     dw RevealedBlockCommand_Copy1x1BlockToXrayBG2Tilemap,$00BC           ;91D3BC;
 
+%anchor($91D3C0)
 RevealedBlockTable_SpecialBlock_E:
     dw RevealedBlockCommand_Copy1x1BlockToXrayBG2Tilemap,$00B6           ;91D3C0;
 
+%anchor($91D3C4)
 RevealedBlockTable_SpecialBlock_F:
     dw RevealedBlockCommand_Copy1x1BlockToXrayBG2Tilemap,$00B6           ;91D3C4;
 
+%anchor($91D3C8)
 RevealedBlockTable_SpecialBlock_Brinstar:
     dw RevealedBlockCommand_Copy1x1BlockToXrayBG2TilemapIfBrinstar,$00B6 ;91D3C8;
 
+%anchor($91D3CC)
 RevealedBlockTable_ShootableBlock:
     dw $0000,RevealedBlockTable_ShootableBlock_0                         ;91D3CC;
     dw $0001,RevealedBlockTable_ShootableBlock_1                         ;91D3D0;
@@ -9357,78 +10078,101 @@ RevealedBlockTable_ShootableBlock:
     dw $000F,RevealedBlockTable_ShootableBlock_F                         ;91D408;
     dw $FFFF                                                             ;91D40C;
 
+%anchor($91D40E)
 RevealedBlockTable_ShootableBlock_0:
     dw RevealedBlockCommand_Copy1x1BlockToXrayBG2Tilemap,$0052           ;91D40E;
 
+%anchor($91D412)
 RevealedBlockTable_ShootableBlock_1:
     dw RevealedBlockCommand_Copy2x1BlockToXrayBG2Tilemap,$0096,$0097     ;91D412;
 
+%anchor($91D418)
 RevealedBlockTable_ShootableBlock_2:
     dw RevealedBlockCommand_Copy1x2BlockToXrayBG2Tilemap,$0098,$00B8     ;91D418;
 
+%anchor($91D41E)
 RevealedBlockTable_ShootableBlock_3:
     dw RevealedBlockCommand_Copy2x2BlockToXrayBG2Tilemap                 ;91D41E;
     dw $0099,$009A,$00B9,$00BA                                           ;91D420;
 
+%anchor($91D428)
 RevealedBlockTable_ShootableBlock_4:
     dw RevealedBlockCommand_Copy1x1BlockToXrayBG2Tilemap,$0052           ;91D428;
 
+%anchor($91D42C)
 RevealedBlockTable_ShootableBlock_5:
     dw RevealedBlockCommand_Copy2x1BlockToXrayBG2Tilemap,$0096,$0097    ;91D42C;
 
+%anchor($91D432)
 RevealedBlockTable_ShootableBlock_6:
     dw RevealedBlockCommand_Copy1x2BlockToXrayBG2Tilemap,$0098,$00B8     ;91D432;
 
+%anchor($91D438)
 RevealedBlockTable_ShootableBlock_7:
     dw RevealedBlockCommand_Copy2x2BlockToXrayBG2Tilemap                 ;91D438;
     dw $0099,$009A,$00B9,$00BA                                           ;91D43A;
 
+%anchor($91D442)
 RevealedBlockTable_ShootableBlock_8:
     dw RevealedBlockCommand_Copy1x1BlockToXrayBG2Tilemap,$0057           ;91D442;
 
+%anchor($91D446)
 RevealedBlockTable_ShootableBlock_9:
     dw RevealedBlockCommand_Copy1x1BlockToXrayBG2Tilemap,$0057           ;91D446;
 
+%anchor($91D44A)
 RevealedBlockTable_ShootableBlock_A:
     dw RevealedBlockCommand_Copy1x1BlockToXrayBG2Tilemap,$009F           ;91D44A;
 
+%anchor($91D44E)
 RevealedBlockTable_ShootableBlock_B:
     dw RevealedBlockCommand_Copy1x1BlockToXrayBG2Tilemap,$009F           ;91D44E;
 
+%anchor($91D452)
 RevealedBlockTable_ShootableBlock_C:
     dw RevealedBlockCommand_Copy1x1BlockToXrayBG2Tilemap,$009F           ;91D452;
 
+%anchor($91D456)
 RevealedBlockTable_ShootableBlock_D:
     dw RevealedBlockCommand_Copy1x1BlockToXrayBG2Tilemap,$009F           ;91D456;
 
+%anchor($91D45A)
 RevealedBlockTable_ShootableBlock_E:
     dw RevealedBlockCommand_Copy1x1BlockToXrayBG2Tilemap,$009F           ;91D45A;
 
+%anchor($91D45E)
 RevealedBlockTable_ShootableBlock_F:
     dw RevealedBlockCommand_Copy1x1BlockToXrayBG2Tilemap,$009F           ;91D45E;
 
+%anchor($91D462)
 RevealedBlockTable_VerticalExtension_0:
     dw $FF00,RevealedBlockTable_VerticalExtension_1                      ;91D462;
     dw $FFFF                                                             ;91D466;
 
+%anchor($91D468)
 RevealedBlockTable_VerticalExtension_1:
     dw RevealedBlockCommand_VerticalExtension                            ;91D468;
 
+%anchor($91D46A)
 RevealedBlockTable_GrappleBlock:
     dw $0000,RevealedBlockTable_GrappleBlock_0                           ;91D46A;
     dw $0001,RevealedBlockTable_GrappleBlock_1                           ;91D46E;
     dw $0002,RevealedBlockTable_GrappleBlock_2                           ;91D472;
     dw $FFFF                                                             ;91D476;
 
+%anchor($91D478)
 RevealedBlockTable_GrappleBlock_0:
     dw RevealedBlockCommand_Copy1x1BlockToXrayBG2Tilemap,$009B           ;91D478;
 
+%anchor($91D47C)
 RevealedBlockTable_GrappleBlock_1:
     dw RevealedBlockCommand_Copy1x1BlockToXrayBG2Tilemap,$00B7           ;91D47C;
 
+%anchor($91D480)
 RevealedBlockTable_GrappleBlock_2:
     dw RevealedBlockCommand_Copy1x1BlockToXrayBG2Tilemap,$00B7           ;91D480;
 
+%anchor($91D484)
 RevealedBlockTable_BombableBlock:
     dw $0000,RevealedBlockTable_BombableBlock_0                          ;91D484;
     dw $0001,RevealedBlockTable_BombableBlock_1                          ;91D488;
@@ -9440,48 +10184,60 @@ RevealedBlockTable_BombableBlock:
     dw $0007,RevealedBlockTable_BombableBlock_7                          ;91D4A0;
     dw $FFFF                                                             ;91D4A4;
 
+%anchor($91D4A6)
 RevealedBlockTable_BombableBlock_0:
     dw RevealedBlockCommand_Copy1x1BlockToXrayBG2Tilemap,$0058           ;91D4A6;
 
+%anchor($91D4AA)
 RevealedBlockTable_BombableBlock_1:
     dw RevealedBlockCommand_Copy2x1BlockToXrayBG2Tilemap,$0058,$0058     ;91D4AA;
 
+%anchor($91D4B0)
 RevealedBlockTable_BombableBlock_2:
     dw RevealedBlockCommand_Copy1x2BlockToXrayBG2Tilemap,$0058,$0058     ;91D4B0;
 
+%anchor($91D4B6)
 RevealedBlockTable_BombableBlock_3:
     dw RevealedBlockCommand_Copy2x2BlockToXrayBG2Tilemap                 ;91D4B6;
     dw $0058,$0058,$0058,$0058                                           ;91D4B8;
 
+%anchor($91D4C0)
 RevealedBlockTable_BombableBlock_4:
     dw RevealedBlockCommand_Copy1x1BlockToXrayBG2Tilemap,$0058           ;91D4C0;
 
+%anchor($91D4C4)
 RevealedBlockTable_BombableBlock_5:
     dw RevealedBlockCommand_Copy2x1BlockToXrayBG2Tilemap,$0058,$0058     ;91D4C4;
 
+%anchor($91D4CA)
 RevealedBlockTable_BombableBlock_6:
     dw RevealedBlockCommand_Copy1x2BlockToXrayBG2Tilemap,$0058,$0058     ;91D4CA;
 
+%anchor($91D4D0)
 RevealedBlockTable_BombableBlock_7:
     dw RevealedBlockCommand_Copy2x2BlockToXrayBG2Tilemap                 ;91D4D0;
     dw $0058,$0058,$0058,$0058                                           ;91D4D2;
 
+%anchor($91D4DA)
 UNUSED_GameState1C_91D4DA:
     PHP                                                                  ;91D4DA;
     REP #$30                                                             ;91D4DB;
     JMP.W ($0DEA)                                                        ;91D4DD;
 
 
+%anchor($91D4E0)
 PLPRTL_91D4E0:
     PLP                                                                  ;91D4E0;
     RTL                                                                  ;91D4E1;
 
 
+%anchor($91D4E2)
 PLPRTL_91D4E2:
     PLP                                                                  ;91D4E2;
     RTL                                                                  ;91D4E3;
 
 
+%anchor($91D4E4)
 VariaSuit_Pickup:
     PHP                                                                  ;91D4E4;
     PHB                                                                  ;91D4E5;
@@ -9530,6 +10286,7 @@ VariaSuit_Pickup:
     LDA.W #$0032                                                         ;91D54A;
     JSL.L QueueSound_Lib1_Max9                                           ;91D54D;
 
+%anchor($91D551)
 notSpinning:
     LDA.W $09A2                                                          ;91D551;
     BIT.W #$0020                                                         ;91D554;
@@ -9568,6 +10325,7 @@ notSpinning:
     RTL                                                                  ;91D5A1;
 
 
+%anchor($91D5A2)
 InstList_HDMAObject_Window1Position_VariaSuitPickup:
     dw Instruction_HDMAObject_HDMATableBank : db $00                     ;91D5A2;
     dw Instruction_HDMAObject_IndirectHDMATableBank : db $7E             ;91D5A5;
@@ -9579,6 +10337,7 @@ InstList_HDMAObject_Window1Position_VariaSuitPickup:
     dw Instruction_HDMAObject_Sleep                                      ;91D5B6;
     dw Instruction_HDMAObject_Delete                                     ;91D5B8;
 
+%anchor($91D5BA)
 GravitySuit_Pickup:
     PHP                                                                  ;91D5BA;
     PHB                                                                  ;91D5BB;
@@ -9666,6 +10425,7 @@ GravitySuit_Pickup:
     RTL                                                                  ;91D679;
 
 
+%anchor($91D67A)
 InstList_HDMAObject_Window1Position_GravitySuitPickup:
     dw Instruction_HDMAObject_HDMATableBank : db $00                     ;91D67A;
     dw Instruction_HDMAObject_IndirectHDMATableBank : db $7E             ;91D67D;
@@ -9677,6 +10437,7 @@ InstList_HDMAObject_Window1Position_GravitySuitPickup:
     dw Instruction_HDMAObject_Sleep                                      ;91D68E;
     dw Instruction_HDMAObject_Delete                                     ;91D690;
 
+%anchor($91D692)
 InitializeSuitPickupHDMA:
     PHP                                                                  ;91D692;
     PHB                                                                  ;91D693;
@@ -9726,6 +10487,7 @@ InitializeSuitPickupHDMA:
     RTL                                                                  ;91D6F6;
 
 
+%anchor($91D6F7)
 HandleSamusPalette:
     PHP                                                                  ;91D6F7;
     PHB                                                                  ;91D6F8;
@@ -9780,6 +10542,7 @@ HandleSamusPalette:
     dw HandleVisorPalette                                                ;91D73F; 9: Unused
     dw RTS_91DD31                                                        ;91D741; Ah: RTS. Unused
 
+%anchor($91D743)
 HandleBeamChargePalettes:
     LDA.W $0B18                                                          ;91D743;
     BNE .chargedShotGlow                                                 ;91D746;
@@ -9874,11 +10637,13 @@ HandleBeamChargePalettes:
     RTS                                                                  ;91D7D4;
 
 
+%anchor($91D7D5)
 SamusPaletteTable_BeamCharge_pointers:
     dw SamusPaletteTable_BeamCharge_powerSuit                            ;91D7D5;
     dw SamusPaletteTable_BeamCharge_variaSuit                            ;91D7D7;
     dw SamusPaletteTable_BeamCharge_gravitySuit                          ;91D7D9;
 
+%anchor($91D7DB)
 SamusPaletteTable_BeamCharge_powerSuit:
     dw SamusPalettes_PowerSuit_DeathSequence_BeamCharging_0              ;91D7DB;
     dw SamusPalettes_PowerSuit_DeathSequence_BeamCharging_1              ;91D7DD;
@@ -9887,6 +10652,7 @@ SamusPaletteTable_BeamCharge_powerSuit:
     dw SamusPalettes_PowerSuit_DeathSequence_BeamCharging_2              ;91D7E3;
     dw SamusPalettes_PowerSuit_DeathSequence_BeamCharging_1              ;91D7E5;
 
+%anchor($91D7E7)
 SamusPaletteTable_BeamCharge_variaSuit:
     dw SamusPalettes_VariaSuit_DeathSequence_BeamCharging_0              ;91D7E7;
     dw SamusPalettes_VariaSuit_DeathSequence_BeamCharging_1              ;91D7E9;
@@ -9895,6 +10661,7 @@ SamusPaletteTable_BeamCharge_variaSuit:
     dw SamusPalettes_VariaSuit_DeathSequence_BeamCharging_2              ;91D7EF;
     dw SamusPalettes_VariaSuit_DeathSequence_BeamCharging_1              ;91D7F1;
 
+%anchor($91D7F3)
 SamusPaletteTable_BeamCharge_gravitySuit:
     dw SamusPalettes_GravitySuit_DeathSequence_BeamCharging_0            ;91D7F3;
     dw SamusPalettes_GravitySuit_DeathSequence_BeamCharging_1            ;91D7F5;
@@ -9903,11 +10670,13 @@ SamusPaletteTable_BeamCharge_gravitySuit:
     dw SamusPalettes_GravitySuit_DeathSequence_BeamCharging_2            ;91D7FB;
     dw SamusPalettes_GravitySuit_DeathSequence_BeamCharging_1            ;91D7FD;
 
+%anchor($91D7FF)
 SamusPaletteTable_PseudoScrewAttack_pointers:
     dw SamusPaletteTable_PseudoScrewAttack_powerSuit                     ;91D7FF;
     dw SamusPaletteTable_PseudoScrewAttack_variaSuit                     ;91D801;
     dw SamusPaletteTable_PseudoScrewAttack_gravitySuit                   ;91D803;
 
+%anchor($91D805)
 SamusPaletteTable_PseudoScrewAttack_powerSuit:
     dw SamusPalettes_PowerSuit_Shinespark_PseudoScrewAttack_3            ;91D805;
     dw SamusPalettes_PowerSuit_Shinespark_PseudoScrewAttack_3            ;91D807;
@@ -9916,6 +10685,7 @@ SamusPaletteTable_PseudoScrewAttack_powerSuit:
     dw SamusPalettes_PowerSuit                                           ;91D80D;
     dw SamusPalettes_PowerSuit                                           ;91D80F;
 
+%anchor($91D811)
 SamusPaletteTable_PseudoScrewAttack_variaSuit:
     dw SamusPalettes_VariaSuit_Shinespark_PseudoScrewAttack_3            ;91D811;
     dw SamusPalettes_VariaSuit_Shinespark_PseudoScrewAttack_3            ;91D813;
@@ -9924,6 +10694,7 @@ SamusPaletteTable_PseudoScrewAttack_variaSuit:
     dw SamusPalettes_VariaSuit                                           ;91D819;
     dw SamusPalettes_VariaSuit                                           ;91D81B;
 
+%anchor($91D81D)
 SamusPaletteTable_PseudoScrewAttack_gravitySuit:
     dw SamusPalettes_GravitySuit_Shinespark_3                            ;91D81D;
     dw SamusPalettes_GravitySuit_Shinespark_3                            ;91D81F;
@@ -9932,6 +10703,7 @@ SamusPaletteTable_PseudoScrewAttack_gravitySuit:
     dw SamusPalettes_GravitySuit                                         ;91D825;
     dw SamusPalettes_GravitySuit                                         ;91D827;
 
+%anchor($91D829)
 SamusPaletteTable_HyperBeam:
     dw $0000                                                             ;91D829;
     dw SamusPalettes_HyperBeam_9                                         ;91D82B;
@@ -9945,6 +10717,7 @@ SamusPaletteTable_HyperBeam:
     dw SamusPalettes_HyperBeam_1                                         ;91D83B;
     dw SamusPalettes_HyperBeam_0                                         ;91D83D;
 
+%anchor($91D83F)
 HandleVisorPalette:
     LDA.W $0ACC                                                          ;91D83F;
     CMP.W #$0008                                                         ;91D842;
@@ -10004,6 +10777,7 @@ HandleVisorPalette:
     RTS                                                                  ;91D8A4;
 
 
+%anchor($91D8A5)
 HandleMiscSamusPalette:
     LDA.W $0A4A                                                          ;91D8A5;
     BNE .gotoSuperSpecial                                                ;91D8A8;
@@ -10170,6 +10944,7 @@ HandleMiscSamusPalette:
     dw SamusPalettes_HyperBeam_1                                         ;91D9AE;
     dw SamusPalettes_HyperBeam_0                                         ;91D9B0;
 
+%anchor($91D9B2)
 Handle_ScrewAttack_SpeedBoosting_Palette:
     LDA.W $0A74                                                          ;91D9B2;
     BIT.W #$0004                                                         ;91D9B5;
@@ -10353,6 +11128,7 @@ Handle_ScrewAttack_SpeedBoosting_Palette:
     dw SamusPalettes_GravitySuit_SpeedBoosting_BabyMetroidDrain_2        ;91DAC3;
     dw SamusPalettes_GravitySuit_SpeedBoosting_BabyMetroidDrain_3        ;91DAC5;
 
+%anchor($91DAC7)
 HandleSpeedBoosterShinePalette:
     LDA.W $0A68                                                          ;91DAC7;
     CMP.W #$00AA                                                         ;91DACA;
@@ -10427,6 +11203,7 @@ HandleSpeedBoosterShinePalette:
     dw SamusPalettes_GravitySuit_SpeedBoosterShine_2                     ;91DB36;
     dw SamusPalettes_GravitySuit_SpeedBoosterShine_1                     ;91DB38;
 
+%anchor($91DB3A)
 HandleShinesparkingPalette:
     LDA.W $0A68                                                          ;91DB3A;
     DEC A                                                                ;91DB3D;
@@ -10488,6 +11265,7 @@ HandleShinesparkingPalette:
     dw SamusPalettes_GravitySuit_Shinespark_2                            ;91DB8F;
     dw SamusPalettes_GravitySuit_Shinespark_3                            ;91DB91;
 
+%anchor($91DB93)
 HandleCrystalFlashPalette:
     LDA.W $0A68                                                          ;91DB93;
     BMI .finish                                                          ;91DB96;
@@ -10575,6 +11353,7 @@ HandleCrystalFlashPalette:
     dw SamusPalettes_CrystalFlash_4_bubble                               ;91DC30;
     dw SamusPalettes_CrystalFlash_5_bubble                               ;91DC32;
 
+%anchor($91DC34)
 SetCrystalFlashSamusColors:
     PHB                                                                  ;91DC34;
     PEA.W $9B00                                                          ;91DC35;
@@ -10604,6 +11383,7 @@ SetCrystalFlashSamusColors:
     RTS                                                                  ;91DC81;
 
 
+%anchor($91DC82)
 SetCrystalFlashBubbleColors:
     PHB                                                                  ;91DC82;
     PEA.W $9B00                                                          ;91DC83;
@@ -10625,6 +11405,7 @@ SetCrystalFlashBubbleColors:
     RTS                                                                  ;91DCB3;
 
 
+%anchor($91DCB4)
 HandleXrayPalette:
     LDA.W $0A80                                                          ;91DCB4;
     BMI .finish                                                          ;91DCB7;
@@ -10694,16 +11475,19 @@ HandleXrayPalette:
     RTS                                                                  ;91DD30;
 
 
+%anchor($91DD31)
 RTS_91DD31:
     RTS                                                                  ;91DD31;
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($91DD32)
 UNUSED_91DD32:
 ; Seemingly completely unreferenced
     db $01,$00,$00,$01,$00,$00,$01,$00,$00,$01,$01,$00,$01,$00,$01,$00   ;91DD32;
     db $01,$00,$01,$00,$01,$00,$01,$00,$01,$00                           ;91DD42;
 
+%anchor($91DD4C)
 UNUSED_SetSamusPaletteToSolidWhite_91DD4C:
     PHP                                                                  ;91DD4C;
     PHB                                                                  ;91DD4D;
@@ -10718,6 +11502,7 @@ UNUSED_SetSamusPaletteToSolidWhite_91DD4C:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($91DD5B)
 Load20BytesOfSamusPaletteInX:
     PHP                                                                  ;91DD5B;
     REP #$30                                                             ;91DD5C;
@@ -10762,6 +11547,7 @@ Load20BytesOfSamusPaletteInX:
     RTS                                                                  ;91DDD6;
 
 
+%anchor($91DDD7)
 Load20BytesOfSamusTargetPaletteInX:
     PHP                                                                  ;91DDD7;
     REP #$30                                                             ;91DDD8;
@@ -10806,6 +11592,7 @@ Load20BytesOfSamusTargetPaletteInX:
     RTS                                                                  ;91DE52;
 
 
+%anchor($91DE53)
 Cancel_SpeedBoosting:
     PHP                                                                  ;91DE53;
     PHB                                                                  ;91DE54;
@@ -10864,6 +11651,7 @@ Cancel_SpeedBoosting:
     RTL                                                                  ;91DEB9;
 
 
+%anchor($91DEBA)
 LoadSamusSuitPalette:
     PHP                                                                  ;91DEBA;
     PHB                                                                  ;91DEBB;
@@ -10896,6 +11684,7 @@ LoadSamusSuitPalette:
     RTL                                                                  ;91DEE5;
 
 
+%anchor($91DEE6)
 LoadSamusSuitTargetPalette:
     PHP                                                                  ;91DEE6;
     PHB                                                                  ;91DEE7;
@@ -10928,6 +11717,7 @@ LoadSamusSuitTargetPalette:
     RTL                                                                  ;91DF11;
 
 
+%anchor($91DF12)
 Restore_A_Energy_ToSamus:
     PHP                                                                  ;91DF12;
     PHB                                                                  ;91DF13;
@@ -10967,6 +11757,7 @@ Restore_A_Energy_ToSamus:
     RTL                                                                  ;91DF50;
 
 
+%anchor($91DF51)
 Deal_A_Damage_to_Samus:
     PHP                                                                  ;91DF51;
     PHB                                                                  ;91DF52;
@@ -11004,6 +11795,7 @@ Deal_A_Damage_to_Samus:
     BRA .return                                                          ;91DF7E;
 
 
+%anchor($91DF80)
 Restore_A_Missiles_ToSamus:
     PHP                                                                  ;91DF80;
     PHB                                                                  ;91DF81;
@@ -11052,6 +11844,7 @@ Restore_A_Missiles_ToSamus:
     RTL                                                                  ;91DFD2;
 
 
+%anchor($91DFD3)
 Restore_A_SuperMissiles_ToSamus:
     PHP                                                                  ;91DFD3;
     PHB                                                                  ;91DFD4;
@@ -11073,6 +11866,7 @@ Restore_A_SuperMissiles_ToSamus:
     RTL                                                                  ;91DFEF;
 
 
+%anchor($91DFF0)
 Restore_A_PowerBombs_ToSamus:
     PHP                                                                  ;91DFF0;
     PHB                                                                  ;91DFF1;
@@ -11094,6 +11888,7 @@ Restore_A_PowerBombs_ToSamus:
     RTL                                                                  ;91E00C;
 
 
+%anchor($91E00D)
 InitializeSamus:
     PHP                                                                  ;91E00D;
     PHB                                                                  ;91E00E;
@@ -11241,6 +12036,7 @@ InitializeSamus:
     RTL                                                                  ;91E16C;
 
 
+%anchor($91E16D)
 XraySetup:
     PHP                                                                  ;91E16D;
     PHB                                                                  ;91E16E;
@@ -11415,6 +12211,7 @@ XraySetup:
     db $00 ; 1Ah: Grabbed by Draygon
     db $00 ; 1Bh: Shinespark / crystal flash / drained by metroid / damaged by MB's attacks
 
+%anchor($91E2AD)
 Set_NonXray_SamusPose:
     PHP                                                                  ;91E2AD;
     REP #$30                                                             ;91E2AE;
@@ -11494,6 +12291,7 @@ Set_NonXray_SamusPose:
     RTL                                                                  ;91E354;
 
 
+%anchor($91E355)
 Debug_HandleSelectL_B:
     PHP                                                                  ;91E355;
     REP #$30                                                             ;91E356;
@@ -11567,6 +12365,7 @@ Debug_HandleSelectL_B:
     RTL                                                                  ;91E3F5;
 
 
+%anchor($91E3F6)
 MakeSamusFaceForward:
     PHP                                                                  ;91E3F6;
     PHB                                                                  ;91E3F7;
@@ -11645,6 +12444,7 @@ MakeSamusFaceForward:
     RTL                                                                  ;91E4AC;
 
 
+%anchor($91E4AD)
 DrainedSamusController:
     PHP                                                                  ;91E4AD;
     PHB                                                                  ;91E4AE;
@@ -11688,6 +12488,7 @@ DrainedSamusController:
     dw DrainedSamusController_3_EnableHyperBeam                          ;91E4F4;
     dw DrainedSamusController_4_SetSamusCrouchingFallingDrainedPose      ;91E4F6;
 
+%anchor($91E4F8)
 DrainedSamusController_0_LetDrainedSamusFall:
     LDA.W #$0015                                                         ;91E4F8;
     SEC                                                                  ;91E4FB;
@@ -11741,6 +12542,7 @@ DrainedSamusController_0_LetDrainedSamusFall:
     RTS                                                                  ;91E570;
 
 
+%anchor($91E571)
 DrainedSamusController_1_PutSamusIntoStandingDrainedPose:
     LDA.W #$0010                                                         ;91E571;
     STA.W $0A94                                                          ;91E574;
@@ -11764,6 +12566,7 @@ DrainedSamusController_1_PutSamusIntoStandingDrainedPose:
     RTS                                                                  ;91E59A;
 
 
+%anchor($91E59B)
 DrainedSamusController_2_ReleaseSamusFromDrainedPose:
     LDA.W $0A1C                                                          ;91E59B;
     CMP.W #$00E8                                                         ;91E59E;
@@ -11808,6 +12611,7 @@ DrainedSamusController_2_ReleaseSamusFromDrainedPose:
     RTS                                                                  ;91E5EF;
 
 
+%anchor($91E5F0)
 DrainedSamusController_3_EnableHyperBeam:
     LDA.W #$1009                                                         ;91E5F0;
     STA.W $09A6                                                          ;91E5F3;
@@ -11821,6 +12625,7 @@ DrainedSamusController_3_EnableHyperBeam:
     RTS                                                                  ;91E60B;
 
 
+%anchor($91E60C)
 DrainedSamusController_4_SetSamusCrouchingFallingDrainedPose:
     LDA.W #$0010                                                         ;91E60C;
     STA.W $0A94                                                          ;91E60F;
@@ -11843,6 +12648,7 @@ DrainedSamusController_4_SetSamusCrouchingFallingDrainedPose:
     RTS                                                                  ;91E632;
 
 
+%anchor($91E633)
 UpdateSamusPoseDueToChangeOfEquipment:
     PHP                                                                  ;91E633;
     PHB                                                                  ;91E634;
@@ -11956,6 +12762,7 @@ UpdateSamusPoseDueToChangeOfEquipment:
     dw RTS_91E732                                                        ;91E715;  1Ah: Grabbed by Draygon
     dw RTS_91E732                                                        ;91E717;  1Bh: Shinespark / crystal flash / drained by metroid / damaged by MB's attacks
 
+%anchor($91E719)
 UpdateSamusPreviousPose:
     LDA.W $0A20                                                          ;91E719;
     STA.W $0A24                                                          ;91E71C;
@@ -11968,10 +12775,12 @@ UpdateSamusPreviousPose:
     RTS                                                                  ;91E731;
 
 
+%anchor($91E732)
 RTS_91E732:
     RTS                                                                  ;91E732;
 
 
+%anchor($91E733)
 UpdateSamusPoseEquipment_Standing:
     LDA.W $0A1C                                                          ;91E733;
     CMP.W #$0000                                                         ;91E736; >.<
@@ -12014,6 +12823,7 @@ UpdateSamusPoseEquipment_Standing:
     RTS                                                                  ;91E775;
 
 
+%anchor($91E776)
 UpdateSamusPoseEquipment_SpinJumping:
     LDA.W $0A1E                                                          ;91E776;
     AND.W #$00FF                                                         ;91E779;
@@ -12125,6 +12935,7 @@ UpdateSamusPoseEquipment_SpinJumping:
     RTS                                                                  ;91E839;
 
 
+%anchor($91E83A)
 UpdateSamusPoseEquipment_MorphBall:
     LDA.W $09A2                                                          ;91E83A;
     BIT.W #$0002                                                         ;91E83D;
@@ -12150,6 +12961,7 @@ UpdateSamusPoseEquipment_MorphBall:
     RTS                                                                  ;91E866;
 
 
+%anchor($91E867)
 UpdateSamusPoseEquipment_SpringBall:
     LDA.W $09A2                                                          ;91E867;
     BIT.W #$0002                                                         ;91E86A;
@@ -12175,6 +12987,7 @@ UpdateSamusPoseEquipment_SpringBall:
     RTS                                                                  ;91E893;
 
 
+%anchor($91E894)
 UpdateSamusPoseEquipment_WallJumping:
     LDA.W $09A2                                                          ;91E894;
     BIT.W #$0008                                                         ;91E897;
@@ -12198,6 +13011,7 @@ UpdateSamusPoseEquipment_WallJumping:
     RTS                                                                  ;91E8B5;
 
 
+%anchor($91E8B6)
 SetProspectiveSamusPoseAccordingToSolidVerticalCollision_PSP:
     PHP                                                                  ;91E8B6;
     PHB                                                                  ;91E8B7;
@@ -12225,6 +13039,7 @@ SetProspectiveSamusPoseAccordingToSolidVerticalCollision_PSP:
     dw PSP_HitCeiling                                                    ;91E8D4;
     dw PSP_WallJumpTriggered                                             ;91E8D6;
 
+%anchor($91E8D8)
 UNUSED_PSP_91E8D8:
 ; Set pose for unwritten Samus movement
 ; Clone of PSP_HitCeiling
@@ -12235,6 +13050,7 @@ UNUSED_PSP_91E8D8:
     RTS                                                                  ;91E8E4;
 
 
+%anchor($91E8E5)
 PSP_HitCeiling:
     LDA.W $0A1C                                                          ;91E8E5;
     STA.W $0A28                                                          ;91E8E8;
@@ -12243,6 +13059,7 @@ PSP_HitCeiling:
     RTS                                                                  ;91E8F1;
 
 
+%anchor($91E8F2)
 PSP_Falling:
     LDA.W $0DC7                                                          ;91E8F2;
     AND.W #$00FF                                                         ;91E8F5;
@@ -12283,6 +13100,7 @@ PSP_Falling:
     dw $0033,$0034 ; Unused
     dw $007D,$007E ; Morph ball - spring ball - falling                         
 
+%anchor($91E931)
 PSP_Landed:
     LDA.W $0DC7                                                          ;91E931;
     AND.W #$00FF                                                         ;91E934;
@@ -12313,6 +13131,7 @@ PSP_Landed:
     dw RTS_91EFC3                                                        ;91E959;
     dw UNUSED_PSP_Landed_5_91EAB6                                        ;91E95B;
 
+%anchor($91E95D)
 PSP_Landed_Grounded:
     LDA.W $0A23                                                          ;91E95D;
     AND.W #$00FF                                                         ;91E960;
@@ -12418,6 +13237,7 @@ PSP_Landed_Grounded:
     dw $00E3 ; 8: Up-left:            Facing left  - landing from normal jump - aiming up-left
     dw $00E1 ; 9: Up, facing left:    Facing left  - landing from normal jump - aiming up
 
+%anchor($91EA07)
 PSP_Landed_MorphBallGrounded:
 ;; Returns:
 ;;     Carry: clear
@@ -12435,6 +13255,7 @@ PSP_Landed_MorphBallGrounded:
     dw PSP_Landed_MorphBallGrounded_FirstBounce                          ;91EA11;
     dw PSP_Landed_MorphBallGrounded_SecondBounce                         ;91EA13;
 
+%anchor($91EA15)
 PSP_Landed_MorphBallGrounded_NotBouncing:
     LDA.W $0B2E                                                          ;91EA15;
     CMP.W #$0003                                                         ;91EA18;
@@ -12445,6 +13266,7 @@ PSP_Landed_MorphBallGrounded_NotBouncing:
     RTS                                                                  ;91EA24;
 
 
+%anchor($91EA25)
 PSP_Landed_MorphBallGrounded_FirstBounce:
     LDA.W $0A1C                                                          ;91EA25;
     STA.W $0A28                                                          ;91EA28;
@@ -12452,6 +13274,7 @@ PSP_Landed_MorphBallGrounded_FirstBounce:
     RTS                                                                  ;91EA2C;
 
 
+%anchor($91EA2D)
 PSP_Landed_MorphBallGrounded_SecondBounce:
     LDA.W $0A1E                                                          ;91EA2D;
     AND.W #$00FF                                                         ;91EA30;
@@ -12471,6 +13294,7 @@ PSP_Landed_MorphBallGrounded_SecondBounce:
     RTS                                                                  ;91EA47;
 
 
+%anchor($91EA48)
 UNUSED_PSP_Landed_91EA48:
     LDA.W $0A1E                                                          ;91EA48;
     AND.W #$00FF                                                         ;91EA4B;
@@ -12490,6 +13314,7 @@ UNUSED_PSP_Landed_91EA48:
     RTS                                                                  ;91EA62;
 
 
+%anchor($91EA63)
 PSP_Landed_SpringBallGrounded:
     LDA.B $8B                                                            ;91EA63;
     BIT.W $09B4                                                          ;91EA65;
@@ -12513,6 +13338,7 @@ PSP_Landed_SpringBallGrounded:
     dw PSP_Landed_SpringBallGrounded_FirstBounce                         ;91EA7F;
     dw PSP_Landed_SpringBallGrounded_SecondBounce                        ;91EA81;
 
+%anchor($91EA83)
 PSP_Landed_SpringBallGrounded_NotBouncing:
     LDA.W $0B2E                                                          ;91EA83;
     CMP.W #$0003                                                         ;91EA86;
@@ -12523,6 +13349,7 @@ PSP_Landed_SpringBallGrounded_NotBouncing:
     RTS                                                                  ;91EA92;
 
 
+%anchor($91EA93)
 PSP_Landed_SpringBallGrounded_FirstBounce:
     LDA.W $0A1C                                                          ;91EA93;
     STA.W $0A28                                                          ;91EA96;
@@ -12530,6 +13357,7 @@ PSP_Landed_SpringBallGrounded_FirstBounce:
     RTS                                                                  ;91EA9A;
 
 
+%anchor($91EA9B)
 PSP_Landed_SpringBallGrounded_SecondBounce:
     LDA.W $0A1E                                                          ;91EA9B;
     AND.W #$00FF                                                         ;91EA9E;
@@ -12549,6 +13377,7 @@ PSP_Landed_SpringBallGrounded_SecondBounce:
     RTS                                                                  ;91EAB5;
 
 
+%anchor($91EAB6)
 UNUSED_PSP_Landed_5_91EAB6:
     LDA.W $0A1C                                                          ;91EAB6;
     STA.W $0A28                                                          ;91EAB9;
@@ -12556,6 +13385,7 @@ UNUSED_PSP_Landed_5_91EAB6:
     RTS                                                                  ;91EABD;
 
 
+%anchor($91EABE)
 PSP_WallJumpTriggered:
     LDA.W $0A1E                                                          ;91EABE;
     AND.W #$00FF                                                         ;91EAC1;
@@ -12575,6 +13405,7 @@ PSP_WallJumpTriggered:
     RTS                                                                  ;91EADD;
 
 
+%anchor($91EADE)
 CheckIfProspectivePoseRunsIntoAWall:
     LDA.W $0DCE                                                          ;91EADE;
     BEQ .notKilledBySolidCollision                                       ;91EAE1;
@@ -12676,6 +13507,7 @@ CheckIfProspectivePoseRunsIntoAWall:
     dw $00D0 ; 8: Up-left:            Facing left  - ran into a wall - aiming up-left
     dw $0004 ; 9: Up, facing left:    Facing left  - aiming up
 
+%anchor($91EB88)
 UpdateSamusPose:
     PHP                                                                  ;91EB88;
     PHB                                                                  ;91EB89;
@@ -12800,6 +13632,7 @@ UpdateSamusPose:
     dw SuperSpecialProspectivePoseCmd_7_StartReleaseGrappleSwing         ;91EC4C;
     dw SuperSpecialProspectivePoseCmd_8_KnockbackAndTransAnimFinish      ;91EC4E;
 
+%anchor($91EC50)
 ProspectivePoseCmd_1_Decelerate:
     LDA.W $0B46                                                          ;91EC50;
     BNE .nonZeroXSpeed                                                   ;91EC53;
@@ -12825,11 +13658,13 @@ ProspectivePoseCmd_1_Decelerate:
     RTS                                                                  ;91EC84;
 
 
+%anchor($91EC85)
 ProspectivePoseCmd_6_KillXSpeed:
     STZ.W $0B4A                                                          ;91EC85;
     STZ.W $0B46                                                          ;91EC88;
     STZ.W $0B48                                                          ;91EC8B; fallthrough to ProspectivePoseCmd_8_KillRunSpeed
 
+%anchor($91EC8E)
 ProspectivePoseCmd_8_KillRunSpeed:
     JSL.L Cancel_SpeedBoosting                                           ;91EC8E;
     STZ.W $0B44                                                          ;91EC92;
@@ -12839,6 +13674,7 @@ ProspectivePoseCmd_8_KillRunSpeed:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($91EC9D)
 UNUSED_91EC9D:
     LDA.W $0A1F                                                          ;91EC9D;
     AND.W #$00FF                                                         ;91ECA0;
@@ -12859,20 +13695,24 @@ UNUSED_91EC9D:
     db $00,$00,$00,$00,$00,$00,$00,$00,$00,$02,$00,$00                   ;91ECC4;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($91ECD0)
 ProspectivePoseCmd_2_Stop:
     STZ.W $0B4A                                                          ;91ECD0;
     JSL.L Cancel_SpeedBoosting                                           ;91ECD3;
     RTS                                                                  ;91ECD7;
 
 
+%anchor($91ECD8)
 RTS_91ECD8:
     RTS                                                                  ;91ECD8;
 
 
+%anchor($91ECD9)
 RTS_91ECD9:
     RTS                                                                  ;91ECD9;
 
 
+%anchor($91ECDA)
 ProspectivePoseCmd_7_StartTransitionAnimation:
     LDA.W $0A1C                                                          ;91ECDA;
     CMP.W #$00DB                                                         ;91ECDD;
@@ -12939,6 +13779,7 @@ ProspectivePoseCmd_7_StartTransitionAnimation:
     dw $0000 ;  3Fh: Unused
     dw $0000 ;  40h: Unused
 
+%anchor($91ED4E)
 SpecialProspectivePoseCmd_1_StartKnockback:
     LDA.W $0A23                                                          ;91ED4E;
     AND.W #$00FF                                                         ;91ED51;
@@ -12982,16 +13823,19 @@ SpecialProspectivePoseCmd_1_StartKnockback:
     dw CLCRTS_91EDA4                                                     ;91ED9E;  1Ah: Grabbed by Draygon
     dw CLCRTS_91EDA4                                                     ;91EDA0;  1Bh: Shinespark / crystal flash / drained by metroid / damaged by MB's attacks
 
+%anchor($91EDA2)
 CLCRTS_91EDA2:
     CLC                                                                  ;91EDA2;
     RTS                                                                  ;91EDA3;
 
 
+%anchor($91EDA4)
 CLCRTS_91EDA4:
     CLC                                                                  ;91EDA4;
     RTS                                                                  ;91EDA5;
 
 
+%anchor($91EDA6)
 DetermineKnockbackDirection_Falling:
     LDA.W $0A5A                                                          ;91EDA6;
     CMP.W #UNUSED_SamusTimerHackHandler_SpecialFalling_90E41B            ;91EDA9;
@@ -13000,6 +13844,7 @@ DetermineKnockbackDirection_Falling:
     RTS                                                                  ;91EDAF;
 
 
+%anchor($91EDB0)
 DetermineKnockbackDirection_Normal:
     LDA.W $0A1E                                                          ;91EDB0;
     AND.W #$00FF                                                         ;91EDB3;
@@ -13072,6 +13917,7 @@ DetermineKnockbackDirection_Normal:
     RTS                                                                  ;91EE26;
 
 
+%anchor($91EE27)
 DetermineKnockbackDirection_Morphed:
     LDA.W $0A1E                                                          ;91EE27;
     AND.W #$00FF                                                         ;91EE2A;
@@ -13092,6 +13938,7 @@ DetermineKnockbackDirection_Morphed:
     RTS                                                                  ;91EE47;
 
 
+%anchor($91EE48)
 UNUSED_DetermineKnockbackDirection_MovementType7_91EE48:
     LDA.W $0A1E                                                          ;91EE48;
     AND.W #$00FF                                                         ;91EE4B;
@@ -13112,6 +13959,7 @@ UNUSED_DetermineKnockbackDirection_MovementType7_91EE48:
     RTS                                                                  ;91EE68;
 
 
+%anchor($91EE69)
 UNUSED_SpecialProspectivePoseCmd_2_91EE69:
     STZ.W $0A52                                                          ;91EE69;
     LDA.W #SamusMovementHandler_Normal                                   ;91EE6C;
@@ -13123,6 +13971,7 @@ UNUSED_SpecialProspectivePoseCmd_2_91EE69:
     RTS                                                                  ;91EE7F;
 
 
+%anchor($91EE80)
 SpecialProspectivePoseCmd_3_StartBombJump:
     LDA.W $0A56                                                          ;91EE80;
     AND.W #$00FF                                                         ;91EE83;
@@ -13140,11 +13989,13 @@ SpecialProspectivePoseCmd_3_StartBombJump:
     RTS                                                                  ;91EEA0;
 
 
+%anchor($91EEA1)
 UNUSED_SpecialProspectivePoseCmd_4_91EEA1:
     JSL.L Make_Samus_Jump                                                ;91EEA1;
     RTS                                                                  ;91EEA5;
 
 
+%anchor($91EEA6)
 SpecialProspectivePoseCmd_5_Xray:
     LDA.W $0A1F                                                          ;91EEA6;
     AND.W #$00FF                                                         ;91EEA9;
@@ -13215,14 +14066,17 @@ SpecialProspectivePoseCmd_5_Xray:
     RTS                                                                  ;91EF38;
 
 
+%anchor($91EF39)
 RTS_91EF39:
     RTS                                                                  ;91EF39;
 
 
+%anchor($91EF3A)
 RTS_91EF3A:
     RTS                                                                  ;91EF3A;
 
 
+%anchor($91EF3B)
 UNUSED_SpecialProspectivePoseCmd_8_91EF3B:
     LDA.W $0AFA                                                          ;91EF3B;
     SEC                                                                  ;91EF3E;
@@ -13234,9 +14088,11 @@ UNUSED_SpecialProspectivePoseCmd_8_91EF3B:
     RTS                                                                  ;91EF4E;
 
 
+%anchor($91EF4F)
 SpecialProspectivePoseCmd_9_ConnectingGrapple_Swinging:
     JSL.L SetSamusAnimationFrameAndPositionDuringGrappleSwinging         ;91EF4F;
 
+%anchor($91EF53)
 ConnectingGrapple_KillSpeed_ClampScrollingSpeed:
     LDA.W $0AF6                                                          ;91EF53;
     SEC                                                                  ;91EF56;
@@ -13290,15 +14146,18 @@ ConnectingGrapple_KillSpeed_ClampScrollingSpeed:
     RTS                                                                  ;91EFBB;
 
 
+%anchor($91EFBC)
 SpecialProspectivePoseCmd_A_ConnectingGrapple_StuckInPlace:
     JSL.L SetSamusAnimationFrameAndPositionForConnectingGrapple_Stuck    ;91EFBC;
     JMP.W ConnectingGrapple_KillSpeed_ClampScrollingSpeed                ;91EFC0;
 
 
+%anchor($91EFC3)
 RTS_91EFC3:
     RTS                                                                  ;91EFC3;
 
 
+%anchor($91EFC4)
 SpecialProspectivePoseCmd_5_SolidVerticalCollision:
     LDA.W $0DC6                                                          ;91EFC4;
     AND.W #$00FF                                                         ;91EFC7;
@@ -13317,10 +14176,12 @@ SpecialProspectivePoseCmd_5_SolidVerticalCollision:
     dw SolidVerticalCollision_WallJumpTriggered                          ;91EFDA;
     dw SolidVerticalCollision_6                                          ;91EFDC;
 
+%anchor($91EFDE)
 RTS_91EFDE:
     RTS                                                                  ;91EFDE;
 
 
+%anchor($91EFDF)
 SolidVerticalCollision_HitCeiling:
     STZ.W $0B2C                                                          ;91EFDF;
     STZ.W $0B2E                                                          ;91EFE2;
@@ -13330,6 +14191,7 @@ SolidVerticalCollision_HitCeiling:
     RTS                                                                  ;91EFEE;
 
 
+%anchor($91EFEF)
 SolidVerticalCollision_Falling:
     LDA.W $0B36                                                          ;91EFEF;
     CMP.W #$0001                                                         ;91EFF2;
@@ -13347,6 +14209,7 @@ SolidVerticalCollision_Falling:
     RTS                                                                  ;91F00F;
 
 
+%anchor($91F010)
 SolidVerticalCollision_Landed:
     JSR.W HandleLandingSoundEffectsAndGraphics                           ;91F010;
     LDA.W $0DC7                                                          ;91F013;
@@ -13382,6 +14245,7 @@ SolidVerticalCollision_Landed:
     dw RTS_91EFC3                                                        ;91F042;
     dw SolidVerticalCollision_5                                          ;91F044;
 
+%anchor($91F046)
 HandleLandingSoundEffectsAndGraphics:
     LDA.W $0A23                                                          ;91F046;
     AND.W #$00FF                                                         ;91F049;
@@ -13436,6 +14300,7 @@ HandleLandingSoundEffectsAndGraphics:
     RTS                                                                  ;91F0A4;
 
 
+%anchor($91F0A5)
 HandleLandingGraphics:
     LDA.W $079F                                                          ;91F0A5;
     ASL A                                                                ;91F0A8;
@@ -13454,12 +14319,14 @@ HandleLandingGraphics:
     dw DeleteLandingAtmosphericGraphics                                  ;91F0BA; Ceres
     dw DeleteLandingAtmosphericGraphics                                  ;91F0BC; Debug
 
+%anchor($91F0BE)
 DeleteLandingAtmosphericGraphics:
     STZ.W $0AF0                                                          ;91F0BE;
     STZ.W $0AF2                                                          ;91F0C1;
     RTS                                                                  ;91F0C4;
 
 
+%anchor($91F0C5)
 HandleLandingGraphics_Crateria:
     LDA.W $1F51                                                          ;91F0C5;
     BNE DeleteLandingAtmosphericGraphics                                 ;91F0C8;
@@ -13517,6 +14384,7 @@ HandleLandingGraphics_Crateria:
     CMP.W #$000A                                                         ;91F111;
     BNE DeleteLandingAtmosphericGraphics                                 ;91F114;
 
+%anchor($91F116)
 HandleLandingGraphics_Maridia_HandleLandingFootstepSplashes:
     JSL.L Get_Samus_Bottom_Boundary                                      ;91F116;
     LDA.W $195E                                                          ;91F11A;
@@ -13559,6 +14427,7 @@ HandleLandingGraphics_Maridia_HandleLandingFootstepSplashes:
     RTS                                                                  ;91F165;
 
 
+%anchor($91F166)
 HandleLandingGraphics_Norfair_WreckedShip_HandleLandingDust:
     JSL.L Get_Samus_Bottom_Boundary                                      ;91F166;
     LDA.W $195E                                                          ;91F16A;
@@ -13599,11 +14468,13 @@ HandleLandingGraphics_Norfair_WreckedShip_HandleLandingDust:
     RTS                                                                  ;91F1B1;
 
 
+%anchor($91F1B2)
 HandleLandingGraphics_Brinstar:
     LDA.W $079D                                                          ;91F1B2;
     CMP.W #$0008                                                         ;91F1B5;
     BEQ HandleLandingGraphics_Norfair_WreckedShip_HandleLandingDust      ;91F1B8; fallthrough to HandleLandingGraphics_Tourian
 
+%anchor($91F1BA)
 HandleLandingGraphics_Tourian:
     LDA.W $079D                                                          ;91F1BA;
     CMP.W #$0005                                                         ;91F1BD;
@@ -13619,6 +14490,7 @@ HandleLandingGraphics_Tourian:
     RTS                                                                  ;91F1D2;
 
 
+%anchor($91F1D3)
 SolidVerticalCollision_Landed_SetSamusAsNotBouncing:
     STZ.W $0B22                                                          ;91F1D3;
     STZ.W $0B1A                                                          ;91F1D6;
@@ -13631,6 +14503,7 @@ SolidVerticalCollision_Landed_SetSamusAsNotBouncing:
     RTS                                                                  ;91F1EB;
 
 
+%anchor($91F1EC)
 SolidVerticalCollision_Landed_Grounded:
     LDA.W $0A60                                                          ;91F1EC;
     CMP.W #SamusPoseInputHandler_Demo                                    ;91F1EF;
@@ -13643,6 +14516,7 @@ SolidVerticalCollision_Landed_Grounded:
     RTS                                                                  ;91F1FB;
 
 
+%anchor($91F1FC)
 SolidVerticalCollision_Landed_MorphBallGrounded:
     LDA.W $0B20                                                          ;91F1FC;
     ASL A                                                                ;91F1FF;
@@ -13655,6 +14529,7 @@ SolidVerticalCollision_Landed_MorphBallGrounded:
     dw MorphBallBounce_MorphBall_FirstBounce                             ;91F206;
     dw MorphBallBounce_MorphBall_SecondBounce                            ;91F208;
 
+%anchor($91F20A)
 MorphBallBounce_MorphBall_NotBouncing:
     LDA.W $0B2E                                                          ;91F20A;
     CMP.W #$0003                                                         ;91F20D;
@@ -13670,6 +14545,7 @@ MorphBallBounce_MorphBall_NotBouncing:
     RTS                                                                  ;91F22A;
 
 
+%anchor($91F22B)
 MorphBallBounce_MorphBall_FirstBounce:
     INC.W $0B20                                                          ;91F22B;
     LDA.W #$0001                                                         ;91F22E;
@@ -13683,6 +14559,7 @@ MorphBallBounce_MorphBall_FirstBounce:
     RTS                                                                  ;91F244;
 
 
+%anchor($91F245)
 MorphBallBounce_MorphBall_SecondBounce:
     STZ.W $0B20                                                          ;91F245;
     STZ.W $0B36                                                          ;91F248;
@@ -13692,6 +14569,7 @@ MorphBallBounce_MorphBall_SecondBounce:
     RTS                                                                  ;91F252;
 
 
+%anchor($91F253)
 SolidVerticalCollision_Landed_2:
     STZ.W $0B20                                                          ;91F253;
     LDA.W #$0003                                                         ;91F256;
@@ -13700,6 +14578,7 @@ SolidVerticalCollision_Landed_2:
     RTS                                                                  ;91F25D;
 
 
+%anchor($91F25E)
 SolidVerticalCollision_Landed_SpringBallGrounded:
     LDA.B $8B                                                            ;91F25E;
     BIT.W $09B4                                                          ;91F260;
@@ -13723,6 +14602,7 @@ SolidVerticalCollision_Landed_SpringBallGrounded:
     dw MorphBallBounce_SpringBall_FirstBounce                            ;91F27B;
     dw MorphBallBounce_SpringBall_SecondBounce                           ;91F27D;
 
+%anchor($91F27F)
 MorphBallBounce_SpringBall_NotBouncing:
     LDA.W $0B2E                                                          ;91F27F;
     CMP.W #$0003                                                         ;91F282;
@@ -13739,6 +14619,7 @@ MorphBallBounce_SpringBall_NotBouncing:
     RTS                                                                  ;91F2A2;
 
 
+%anchor($91F2A3)
 MorphBallBounce_SpringBall_FirstBounce:
     LDA.W #$0602                                                         ;91F2A3;
     STA.W $0B20                                                          ;91F2A6;
@@ -13753,6 +14634,7 @@ MorphBallBounce_SpringBall_FirstBounce:
     RTS                                                                  ;91F2BF;
 
 
+%anchor($91F2C0)
 MorphBallBounce_SpringBall_SecondBounce:
     STZ.W $0B20                                                          ;91F2C0;
     STZ.W $0B36                                                          ;91F2C3;
@@ -13762,12 +14644,14 @@ MorphBallBounce_SpringBall_SecondBounce:
     RTS                                                                  ;91F2CD;
 
 
+%anchor($91F2CE)
 SolidVerticalCollision_5:
     STZ.W $0B20                                                          ;91F2CE;
     CLC                                                                  ;91F2D1;
     RTS                                                                  ;91F2D2;
 
 
+%anchor($91F2D3)
 SolidVerticalCollision_WallJumpTriggered:
     STZ.W $0B4A                                                          ;91F2D3;
     STZ.W $0DCE                                                          ;91F2D6;
@@ -13781,6 +14665,7 @@ SolidVerticalCollision_WallJumpTriggered:
     RTS                                                                  ;91F2EF;
 
 
+%anchor($91F2F0)
 SolidVerticalCollision_6:
     LDA.W $0DCE                                                          ;91F2F0;
     BEQ .return                                                          ;91F2F3;
@@ -13811,6 +14696,7 @@ SolidVerticalCollision_6:
     RTS                                                                  ;91F31C;
 
 
+%anchor($91F31D)
 SuperSpecialProspectivePoseCmd_1_KnockbackFinished:
     STZ.W $0A52                                                          ;91F31D;
     LDA.W #SamusMovementHandler_Normal                                   ;91F320;
@@ -13833,6 +14719,7 @@ SuperSpecialProspectivePoseCmd_1_KnockbackFinished:
     RTS                                                                  ;91F34D;
 
 
+%anchor($91F34E)
 SuperSpecialProspectivePoseCmd_2_ShinesparkFinished:
     JSL.L AlignSamusBottomPositionWithPreviousPose                       ;91F34E;
     LDA.W #SamusMovementHandler_Normal                                   ;91F352;
@@ -13851,6 +14738,7 @@ SuperSpecialProspectivePoseCmd_2_ShinesparkFinished:
     RTS                                                                  ;91F36D;
 
 
+%anchor($91F36E)
 SuperSpecialProspectivePoseCmd_3_TransitionAnimationFinished:
     STZ.W $0B20                                                          ;91F36E;
     LDA.W $0A94                                                          ;91F371;
@@ -13860,6 +14748,7 @@ SuperSpecialProspectivePoseCmd_3_TransitionAnimationFinished:
     RTS                                                                  ;91F37B;
 
 
+%anchor($91F37C)
 SuperSpecialProspectivePoseCmd_4:
     LDA.W $0911                                                          ;91F37C;
     CLC                                                                  ;91F37F;
@@ -13874,6 +14763,7 @@ SuperSpecialProspectivePoseCmd_4:
     RTS                                                                  ;91F396;
 
 
+%anchor($91F397)
 SuperSpecialProspectivePoseCmd_5:
     LDA.W $0AFA                                                          ;91F397;
     CLC                                                                  ;91F39A;
@@ -13883,11 +14773,13 @@ SuperSpecialProspectivePoseCmd_5:
     RTS                                                                  ;91F3A4;
 
 
+%anchor($91F3A5)
 SuperSpecialProspectivePoseCmd_6_StartGrappleWallJump:
     JSL.L HandleJumpTransition                                           ;91F3A5;
     RTS                                                                  ;91F3A9;
 
 
+%anchor($91F3AA)
 SuperSpecialProspectivePoseCmd_7_StartReleaseGrappleSwing:
     LDA.W $0AF6                                                          ;91F3AA;
     SEC                                                                  ;91F3AD;
@@ -13934,12 +14826,14 @@ SuperSpecialProspectivePoseCmd_7_StartReleaseGrappleSwing:
     RTS                                                                  ;91F3FC;
 
 
+%anchor($91F3FD)
 SuperSpecialProspectivePoseCmd_8_KnockbackAndTransAnimFinish:
     JSR.W SuperSpecialProspectivePoseCmd_1_KnockbackFinished             ;91F3FD;
     JSR.W SuperSpecialProspectivePoseCmd_3_TransitionAnimationFinished   ;91F400;
     RTS                                                                  ;91F403;
 
 
+%anchor($91F404)
 HandleSamusPoseChange:
     PHP                                                                  ;91F404;
     PHB                                                                  ;91F405;
@@ -13973,6 +14867,7 @@ HandleSamusPoseChange:
     RTL                                                                  ;91F432;
 
 
+%anchor($91F433)
 InitializeSamusPose_1:
     PHP                                                                  ;91F433;
     PHB                                                                  ;91F434;
@@ -14006,6 +14901,7 @@ InitializeSamusPose_1:
     RTL                                                                  ;91F467;
 
 
+%anchor($91F468)
 InitializeSamusPose_2:
     PHP                                                                  ;91F468;
     REP #$30                                                             ;91F469;
@@ -14072,11 +14968,13 @@ InitializeSamusPose_2:
     dw CLCRTS_91F4DA                                                     ;91F4D6;  1Ah: Grabbed by Draygon
     dw InitializeSamusPose_Shinespark_CF_Drained_DamagedMB               ;91F4D8; *1Bh: Shinespark / crystal flash / drained by metroid / damaged by MB's attacks
 
+%anchor($91F4DA)
 CLCRTS_91F4DA:
     CLC                                                                  ;91F4DA;
     RTS                                                                  ;91F4DB;
 
 
+%anchor($91F4DC)
 InitializeSamusPose_Standing:
     LDA.W $0A1C                                                          ;91F4DC;
     ASL A                                                                ;91F4DF;
@@ -14109,6 +15007,7 @@ InitializeSamusPose_Standing:
     RTS                                                                  ;91F50B;
 
 
+%anchor($91F50C)
 InitializeSamusPose_Running:
     LDA.W $0A23                                                          ;91F50C;
     AND.W #$00FF                                                         ;91F50F;
@@ -14148,6 +15047,7 @@ InitializeSamusPose_Running:
     RTS                                                                  ;91F542;
 
 
+%anchor($91F543)
 InitializeSamusPose_NormalJumping:
     LDA.W $0A1C                                                          ;91F543;
     CMP.W #$004E                                                         ;91F546;
@@ -14243,6 +15143,7 @@ InitializeSamusPose_NormalJumping:
     RTS                                                                  ;91F5EA;
 
 
+%anchor($91F5EB)
 InitializeSamusPose_Crouching:
     LDA.W $0A1C                                                          ;91F5EB;
     CMP.W #$0085                                                         ;91F5EE;
@@ -14266,6 +15167,7 @@ InitializeSamusPose_Crouching:
     RTS                                                                  ;91F60C;
 
 
+%anchor($91F60D)
 InitializeSamusPose_Falling:
     LDA.W $0B42                                                          ;91F60D;
     BNE .nonZeroExtraRunSpeed                                            ;91F610;
@@ -14284,6 +15186,7 @@ InitializeSamusPose_Falling:
     RTS                                                                  ;91F623;
 
 
+%anchor($91F624)
 InitializeSamusPose_SpinJumping:
     LDA.W $0A23                                                          ;91F624;
     AND.W #$00FF                                                         ;91F627;
@@ -14456,6 +15359,7 @@ InitializeSamusPose_SpinJumping:
     RTS                                                                  ;91F757;
 
 
+%anchor($91F758)
 InitializeSamusPose_TransitionPoses:
     LDA.W $0A1C                                                          ;91F758;
     CMP.W #$00F1                                                         ;91F75B;
@@ -14516,6 +15420,7 @@ InitializeSamusPose_TransitionPoses:
     dw CLCRTS_91F7CC                                                     ;91F7AC;
     dw CLCRTS_91F7CC                                                     ;91F7AE;
 
+%anchor($91F7B0)
 InitializeSamusPose_CrouchingTransition:
     LDA.W $0B3E                                                          ;91F7B0;
     AND.W #$FF00                                                         ;91F7B3;
@@ -14532,11 +15437,13 @@ InitializeSamusPose_CrouchingTransition:
     RTS                                                                  ;91F7CB;
 
 
+%anchor($91F7CC)
 CLCRTS_91F7CC:
     CLC                                                                  ;91F7CC;
     RTS                                                                  ;91F7CD;
 
 
+%anchor($91F7CE)
 InitializeSamusPose_MorphingTransition:
     LDA.W $09A2                                                          ;91F7CE;
     BIT.W #$0004                                                         ;91F7D1;
@@ -14561,6 +15468,7 @@ InitializeSamusPose_MorphingTransition:
     RTS                                                                  ;91F7F3;
 
 
+%anchor($91F7F4)
 UNUSED_InitializeSamusPose_UnusedPose39_91F7F4:
     LDA.W $0A23                                                          ;91F7F4;
     AND.W #$00FF                                                         ;91F7F7;
@@ -14609,6 +15517,7 @@ UNUSED_InitializeSamusPose_UnusedPose39_91F7F4:
     RTS                                                                  ;91F83F;
 
 
+%anchor($91F840)
 UNUSED_InitializeSamusPose_UnusedPose3A_91F840:
     LDA.W $0A23                                                          ;91F840;
     AND.W #$00FF                                                         ;91F843;
@@ -14657,6 +15566,7 @@ UNUSED_InitializeSamusPose_UnusedPose3A_91F840:
     RTS                                                                  ;91F88B;
 
 
+%anchor($91F88C)
 InitializeSamusPose_Moonwalking:
     LDA.W $09E4                                                          ;91F88C;
     BEQ .enabled                                                         ;91F88F;
@@ -14683,6 +15593,7 @@ InitializeSamusPose_Moonwalking:
     RTS                                                                  ;91F8AD;
 
 
+%anchor($91F8AE)
 InitializeSamusPose_DamageBoost:
     BRA .nonDeadCode                                                     ;91F8AE;
 
@@ -14711,6 +15622,7 @@ InitializeSamusPose_DamageBoost:
     RTS                                                                  ;91F8D2;
 
 
+%anchor($91F8D3)
 InitializeSamusPose_TurningAround_OnGround:
     LDA.W $0A20                                                          ;91F8D3;
     BEQ .done                                                            ;91F8D6;
@@ -14777,6 +15689,7 @@ InitializeSamusPose_TurningAround_OnGround:
     RTS                                                                  ;91F951;
 
 
+%anchor($91F952)
 InitializeSamusPose_TurningAround_Jumping:
     LDA.W $0A20                                                          ;91F952;
     ASL A                                                                ;91F955;
@@ -14804,6 +15717,7 @@ InitializeSamusPose_TurningAround_Jumping:
     RTS                                                                  ;91F989;
 
 
+%anchor($91F98A)
 InitializeSamusPose_TurningAround_Falling:
     LDA.W $0A20                                                          ;91F98A;
     ASL A                                                                ;91F98D;
@@ -14830,6 +15744,7 @@ InitializeSamusPose_TurningAround_Falling:
     SEC                                                                  ;91F9C0;
     RTS                                                                  ;91F9C1;
 
+%anchor($91F9C2)
 TurningSamusPoses:
 ;        _____________________________________ Up, facing right
 ;       |    _________________________________ Up-right
@@ -14854,6 +15769,7 @@ TurningSamusPoses:
     db $C1,$C1,$BF,$C3,$8D,$8E,$C4,$C0,$C2,$C2                           ;91F9EA;
 
 
+%anchor($91F9F4)
 InitializeSamusPose_MorphBall:
     LDA.W $0A23                                                          ;91F9F4;
     AND.W #$00FF                                                         ;91F9F7;
@@ -14872,6 +15788,7 @@ InitializeSamusPose_MorphBall:
     RTS                                                                  ;91FA0E;
 
 
+%anchor($91FA0F)
 ApplyMomentumIfTurningInMorphBall:
     LDA.W $0A22                                                          ;91FA0F;
     AND.W #$00FF                                                         ;91FA12;
@@ -14908,6 +15825,7 @@ ApplyMomentumIfTurningInMorphBall:
     RTS                                                                  ;91FA55;
 
 
+%anchor($91FA56)
 InitializeSamusPose_SpringBall:
     LDA.W $0A23                                                          ;91FA56;
     AND.W #$00FF                                                         ;91FA59;
@@ -14928,6 +15846,7 @@ InitializeSamusPose_SpringBall:
     RTS                                                                  ;91FA75;
 
 
+%anchor($91FA76)
 InitializeSamusPose_WallJumping:
     JSL.L Get_Samus_Bottom_Boundary                                      ;91FA76;
     LDA.W $195E                                                          ;91FA7A;
@@ -14976,6 +15895,7 @@ InitializeSamusPose_WallJumping:
     RTS                                                                  ;91FAC9;
 
 
+%anchor($91FACA)
 InitializeSamusPose_Shinespark_CF_Drained_DamagedMB:
     LDA.W $0A1C                                                          ;91FACA;
     CMP.W #$00CF                                                         ;91FACD;
@@ -15009,6 +15929,7 @@ InitializeSamusPose_Shinespark_CF_Drained_DamagedMB:
     dw SamusMovementHandler_DiagonalShinespark                           ;91FB04; CDh: Facing right - shinespark - diagonal
     dw SamusMovementHandler_DiagonalShinespark                           ;91FB06; CEh: Facing left  - shinespark - diagonal
 
+%anchor($91FB08)
 Set_Samus_AnimationFrame_if_PoseChanged:
     PHP                                                                  ;91FB08;
     PHB                                                                  ;91FB09;
@@ -15091,6 +16012,7 @@ Set_Samus_AnimationFrame_if_PoseChanged:
     RTL                                                                  ;91FB8D;
 
 
+%anchor($91FB8E)
 PossiblyNoPurpose_91FB8E:
     PHP                                                                  ;91FB8E;
     PHB                                                                  ;91FB8F;
@@ -15120,6 +16042,7 @@ PossiblyNoPurpose_91FB8E:
     RTL                                                                  ;91FBBA;
 
 
+%anchor($91FBBB)
 HandleJumpTransition:
     PHP                                                                  ;91FBBB;
     PHB                                                                  ;91FBBC;
@@ -15166,10 +16089,12 @@ HandleJumpTransition:
     dw RTS_91FC07                                                        ;91FC03;  1Ah: Grabbed by Draygon
     dw RTS_91FC07                                                        ;91FC05;  1Bh: Shinespark / crystal flash / drained by metroid / damaged by MB's attacks
 
+%anchor($91FC07)
 RTS_91FC07:
     RTS                                                                  ;91FC07;
 
 
+%anchor($91FC08)
 HandleJumpTransition_WallJumping:
     LDA.W $0A23                                                          ;91FC08;
     AND.W #$00FF                                                         ;91FC0B;
@@ -15181,6 +16106,7 @@ HandleJumpTransition_WallJumping:
     RTS                                                                  ;91FC17;
 
 
+%anchor($91FC18)
 HandleJumpTransition_SpringBall_InAir:
     LDA.W $0A1C                                                          ;91FC18;
     CMP.W #$007F                                                         ;91FC1B;
@@ -15207,6 +16133,7 @@ HandleJumpTransition_SpringBall_InAir:
     RTS                                                                  ;91FC41;
 
 
+%anchor($91FC42)
 UNUSED_HandleJumpTransition_MovementTypeD_91FC42:
     LDA.W $0A1C                                                          ;91FC42;
     CMP.W #$0065                                                         ;91FC45;
@@ -15231,6 +16158,7 @@ UNUSED_HandleJumpTransition_MovementTypeD_91FC42:
     RTS                                                                  ;91FC65;
 
 
+%anchor($91FC66)
 HandleJumpTransition_NormalJumping:
     LDA.W $0A1C                                                          ;91FC66;
     CMP.W #$004B                                                         ;91FC69;
@@ -15262,6 +16190,7 @@ HandleJumpTransition_NormalJumping:
     RTS                                                                  ;91FC98;
 
 
+%anchor($91FC99)
 HandleJumpTransition_SpinJumping:
     LDA.W $0A23                                                          ;91FC99;
     AND.W #$00FF                                                         ;91FC9C;
@@ -15275,10 +16204,12 @@ HandleJumpTransition_SpinJumping:
     RTS                                                                  ;91FCAD;
 
 
+%anchor($91FCAE)
 RTS_91FCAE:
     RTS                                                                  ;91FCAE;
 
 
+%anchor($91FCAF)
 XraySamusPoseInputHandler:
     PHP                                                                  ;91FCAF;
     REP #$30                                                             ;91FCB0;
@@ -15409,6 +16340,7 @@ XraySamusPoseInputHandler:
     RTL                                                                  ;91FDAD;
 
 
+%anchor($91FDAE)
 HandlePoseChangeCollision:
     PHP                                                                  ;91FDAE;
     REP #$30                                                             ;91FDAF;
@@ -15539,16 +16471,19 @@ HandlePoseChangeCollision:
     dw PoseChangeCollision_Block_FromBelow                               ;91FE96;
     dw HandleCollisionFromBothSidesDueToPoseChange                       ;91FE98;
 
+%anchor($91FE9A)
 CLCRTS_91FE9A:
     CLC                                                                  ;91FE9A;
     RTS                                                                  ;91FE9B;
 
 
+%anchor($91FE9C)
 CLCRTS_91FE9C:
     CLC                                                                  ;91FE9C;
     RTS                                                                  ;91FE9D;
 
 
+%anchor($91FE9E)
 PoseChangeCollision_SolidEnemy_FromAbove:
     LDA.W $0A3A                                                          ;91FE9E;
     SEC                                                                  ;91FEA1;
@@ -15586,6 +16521,7 @@ PoseChangeCollision_SolidEnemy_FromAbove:
     RTS                                                                  ;91FEDE;
 
 
+%anchor($91FEDF)
 PoseChangeCollision_SolidEnemy_FromBelow:
     LDA.W $0A3A                                                          ;91FEDF;
     SEC                                                                  ;91FEE2;
@@ -15623,6 +16559,7 @@ PoseChangeCollision_SolidEnemy_FromBelow:
     RTS                                                                  ;91FF1F;
 
 
+%anchor($91FF20)
 PoseChangeCollision_Block_FromAbove:
     LDA.W $0A3A                                                          ;91FF20;
     SEC                                                                  ;91FF23;
@@ -15648,6 +16585,7 @@ PoseChangeCollision_Block_FromAbove:
     RTS                                                                  ;91FF48;
 
 
+%anchor($91FF49)
 PoseChangeCollision_Block_FromBelow:
     LDA.W $0A3A                                                          ;91FF49;
     SEC                                                                  ;91FF4C;
@@ -15675,6 +16613,7 @@ PoseChangeCollision_Block_FromBelow:
     RTS                                                                  ;91FF75;
 
 
+%anchor($91FF76)
 PoseChangeCollision_NoCollision:
     LDA.W $0A34                                                          ;91FF76;
     ASL A                                                                ;91FF79;
@@ -15690,11 +16629,13 @@ PoseChangeCollision_NoCollision:
     dw HandleBlockCollisionToPoseChange_NoCollision_Enemy_FromBelow      ;91FF83;
     dw HandleCollisionFromBothSidesDueToPoseChange                       ;91FF85;
 
+%anchor($91FF87)
 CLCRTS_91FF87:
     CLC                                                                  ;91FF87;
     RTS                                                                  ;91FF88;
 
 
+%anchor($91FF89)
 HandleBlockCollisionToPoseChange_NoCollision_Enemy_FromAbove:
     LDA.W $0AFA                                                          ;91FF89;
     CLC                                                                  ;91FF8C;
@@ -15705,6 +16646,7 @@ HandleBlockCollisionToPoseChange_NoCollision_Enemy_FromAbove:
     RTS                                                                  ;91FF97;
 
 
+%anchor($91FF98)
 HandleBlockCollisionToPoseChange_NoCollision_Enemy_FromBelow:
     LDA.W $0AFA                                                          ;91FF98;
     SEC                                                                  ;91FF9B;
@@ -15715,6 +16657,7 @@ HandleBlockCollisionToPoseChange_NoCollision_Enemy_FromBelow:
     RTS                                                                  ;91FFA6;
 
 
+%anchor($91FFA7)
 HandleCollisionFromBothSidesDueToPoseChange:
     LDA.W $0B00                                                          ;91FFA7;
     CMP.W #$0008                                                         ;91FFAA;
@@ -15760,5 +16703,6 @@ HandleCollisionFromBothSidesDueToPoseChange:
     RTS                                                                  ;91FFED;
 
 
+%anchor($91FFEE)
 Freespace_Bank91_FFEE:                                                   ;91FFEE;
 ; $12 bytes

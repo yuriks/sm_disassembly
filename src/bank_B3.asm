@@ -2,109 +2,132 @@
 org $B38000
 
 
+%anchor($B38000)
 CommonB3_GrappleAI_NoInteraction:
     JSL.L GrappleAI_SwitchEnemyAIToMainAI                                ;B38000;
     RTL                                                                  ;B38004;
 
 
+%anchor($B38005)
 CommonB3_GrappleAI_SamusLatchesOn:
     JSL.L GrappleAI_SamusLatchesOnWithGrapple                            ;B38005;
     RTL                                                                  ;B38009;
 
 
+%anchor($B3800A)
 CommonB3_GrappleAI_KillEnemy:
     JSL.L GrappleAI_EnemyGrappleDeath                                    ;B3800A;
     RTL                                                                  ;B3800E;
 
 
+%anchor($B3800F)
 CommonB3_GrappleAI_CancelGrappleBeam:
     JSL.L GrappleAI_SwitchToFrozenAI                                     ;B3800F;
     RTL                                                                  ;B38013;
 
 
+%anchor($B38014)
 CommonB3_GrappleAI_SamusLatchesOn_NoInvincibility:
     JSL.L GrappleAI_SamusLatchesOnWithGrapple_NoInvincibility            ;B38014;
     RTL                                                                  ;B38018;
 
 
+%anchor($B38019)
 UNUSED_CommonB3_GrappleAI_SamusLatchesOn_ParalyzeEnemy_B38019:
     JSL.L GrappleAI_SamusLatchesOnWithGrapple_ParalyzeEnemy              ;B38019;
     RTL                                                                  ;B3801D;
 
 
+%anchor($B3801E)
 CommonB3_GrappleAI_HurtSamus:
     JSL.L GrappleAI_SwitchToFrozenAI_duplicate                           ;B3801E;
     RTL                                                                  ;B38022;
 
 
+%anchor($B38023)
 CommonB3_NormalEnemyTouchAI:
     JSL.L NormalEnemyTouchAI                                             ;B38023;
     RTL                                                                  ;B38027;
 
 
+%anchor($B38028)
 CommonB3_NormalTouchAI_NoDeathCheck:
     JSL.L NormalEnemyTouchAI_NoDeathCheck_External                       ;B38028;
     RTL                                                                  ;B3802C;
 
 
+%anchor($B3802D)
 CommonB3_NormalEnemyShotAI:
     JSL.L NormalEnemyShotAI                                              ;B3802D;
     RTL                                                                  ;B38031;
 
 
+%anchor($B38032)
 CommonB3_NormalEnemyShotAI_NoDeathCheck_NoEnemyShotGraphic:
     JSL.L NormalEnemyShotAI_NoDeathCheck_NoEnemyShotGraphic_External     ;B38032;
     RTL                                                                  ;B38036;
 
 
+%anchor($B38037)
 CommonB3_NormalEnemyPowerBombAI:
     JSL.L NormalEnemyPowerBombAI                                         ;B38037;
     RTL                                                                  ;B3803B;
 
 
+%anchor($B3803C)
 CommonB3_NormalEnemyPowerBombAI_NoDeathCheck:
     JSL.L NormalEnemyPowerBombAI_NoDeathCheck_External                   ;B3803C;
     RTL                                                                  ;B38040;
 
 
+%anchor($B38041)
 CommonB3_NormalEnemyFrozenAI:
     JSL.L NormalEnemyFrozenAI                                            ;B38041;
     RTL                                                                  ;B38045;
 
 
+%anchor($B38046)
 CommonB3_CreateADudShot_JSL:
     JSL.L CreateADudShot                                                 ;B38046;
     RTL                                                                  ;B3804A;
 
 
+%anchor($B3804B)
 RTS_B3804B:
     RTS                                                                  ;B3804B;
 
 
+%anchor($B3804C)
 CommonB3_RTL_B3804C:
     RTL                                                                  ;B3804C;
 
 
+%anchor($B3804D)
 Spritemap_CommonB3_Nothing:
     dw $0000                                                             ;B3804D;
 
+%anchor($B3804F)
 ExtendedSpritemap_CommonB3_Nothing:
     dw $0001,$0000,$0000                                                 ;B3804F;
     dw Spritemap_CommonB3_Nothing                                        ;B38055;
     dw Hitbox_CommonB3_Nothing                                           ;B38057;
 
+%anchor($B38059)
 Hitbox_CommonB3_Nothing:
     dw $0001,$0000,$0000,$0000,$0000                                     ;B38059;
     dw CommonB3_NormalEnemyTouchAI                                       ;B38063;
     dw CommonB3_NormalEnemyShotAI                                        ;B38065;
 
+%anchor($B38067)
 InstList_CommonB3_DeleteEnemy:
     dw Instruction_CommonB3_DeleteEnemy                                  ;B38067;
 
+%anchor($B38069)
 NOPNOP_B38069:
     NOP                                                                  ;B38069;
     NOP                                                                  ;B3806A;
 
+%anchor($B3806B)
 Instruction_CommonB3_Enemy0FB2_InY:
     LDA.W $0000,Y                                                        ;B3806B;
     STA.W $0FB2,X                                                        ;B3806E;
@@ -113,16 +136,19 @@ Instruction_CommonB3_Enemy0FB2_InY:
     RTL                                                                  ;B38073;
 
 
+%anchor($B38074)
 Instruction_CommonB3_SetEnemy0FB2ToRTS:
     LDA.W #RTS_B3807B                                                    ;B38074;
     STA.W $0FB2,X                                                        ;B38077;
     RTL                                                                  ;B3807A;
 
 
+%anchor($B3807B)
 RTS_B3807B:
     RTS                                                                  ;B3807B;
 
 
+%anchor($B3807C)
 Instruction_CommonB3_DeleteEnemy:
     LDA.W $0F86,X                                                        ;B3807C;
     ORA.W #$0200                                                         ;B3807F;
@@ -132,6 +158,7 @@ Instruction_CommonB3_DeleteEnemy:
     RTL                                                                  ;B38089;
 
 
+%anchor($B3808A)
 Instruction_CommonB3_CallFunctionInY:
     LDA.W $0000,Y                                                        ;B3808A;
     STA.B $12                                                            ;B3808D;
@@ -149,6 +176,7 @@ Instruction_CommonB3_CallFunctionInY:
     RTL                                                                  ;B3809B;
 
 
+%anchor($B3809C)
 Instruction_CommonB3_CallFunctionInY_WithA:
     LDA.W $0000,Y                                                        ;B3809C;
     STA.B $12                                                            ;B3809F;
@@ -170,6 +198,7 @@ Instruction_CommonB3_CallFunctionInY_WithA:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B380B5)
 UNUSED_Instruction_CommonB3_CallExternalFunctionInY_B380B5:
     LDA.W $0000,Y                                                        ;B380B5;
     STA.B $12                                                            ;B380B8;
@@ -190,6 +219,7 @@ UNUSED_Instruction_CommonB3_CallExternalFunctionInY_B380B5:
     JML.W [$0012]                                                        ;B380CB;
 
 
+%anchor($B380CE)
 UNUSED_Inst_CommonB3_CallExternalFunctionInY_WithA_B380CE:
     LDA.W $0000,Y                                                        ;B380CE;
     STA.B $12                                                            ;B380D1;
@@ -213,12 +243,14 @@ UNUSED_Inst_CommonB3_CallExternalFunctionInY_WithA_B380CE:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($B380ED)
 Instruction_CommonB3_GotoY:
     LDA.W $0000,Y                                                        ;B380ED;
     TAY                                                                  ;B380F0;
     RTL                                                                  ;B380F1;
 
 
+%anchor($B380F2)
 Instruction_CommonB3_GotoY_PlusY:
     STY.B $12                                                            ;B380F2;
     DEY                                                                  ;B380F4;
@@ -238,6 +270,7 @@ Instruction_CommonB3_GotoY_PlusY:
     RTL                                                                  ;B38107;
 
 
+%anchor($B38108)
 Instruction_CommonB3_DecrementTimer_GotoYIfNonZero:
     DEC.W $0F90,X                                                        ;B38108;
     BNE Instruction_CommonB3_GotoY                                       ;B3810B;
@@ -246,6 +279,7 @@ Instruction_CommonB3_DecrementTimer_GotoYIfNonZero:
     RTL                                                                  ;B3810F;
 
 
+%anchor($B38110)
 Instruction_CommonB3_DecrementTimer_GotoYIfNonZero_duplicate:
     DEC.W $0F90,X                                                        ;B38110;
     BNE Instruction_CommonB3_GotoY                                       ;B38113;
@@ -254,6 +288,7 @@ Instruction_CommonB3_DecrementTimer_GotoYIfNonZero_duplicate:
     RTL                                                                  ;B38117;
 
 
+%anchor($B38118)
 Instruction_CommonB3_DecrementTimer_GotoY_PlusY_IfNonZero:
     SEP #$20                                                             ;B38118;
     DEC.W $0F90,X                                                        ;B3811A;
@@ -263,6 +298,7 @@ Instruction_CommonB3_DecrementTimer_GotoY_PlusY_IfNonZero:
     RTL                                                                  ;B38122;
 
 
+%anchor($B38123)
 Instruction_CommonB3_TimerInY:
     LDA.W $0000,Y                                                        ;B38123;
     STA.W $0F90,X                                                        ;B38126;
@@ -271,12 +307,14 @@ Instruction_CommonB3_TimerInY:
     RTL                                                                  ;B3812B;
 
 
+%anchor($B3812C)
 Instruction_CommonB3_SkipNextInstruction:
     INY                                                                  ;B3812C;
     INY                                                                  ;B3812D;
     RTL                                                                  ;B3812E;
 
 
+%anchor($B3812F)
 Instruction_CommonB3_Sleep:
     DEY                                                                  ;B3812F;
     DEY                                                                  ;B38130;
@@ -287,6 +325,7 @@ Instruction_CommonB3_Sleep:
     RTL                                                                  ;B38139;
 
 
+%anchor($B3813A)
 Instruction_CommonB3_WaitYFrames:
     LDA.W $0000,Y                                                        ;B3813A;
     STA.W $0F94,X                                                        ;B3813D;
@@ -299,6 +338,7 @@ Instruction_CommonB3_WaitYFrames:
     RTL                                                                  ;B3814A;
 
 
+%anchor($B3814B)
 Instruction_CommonB3_TransferYBytesInYToVRAM:
     PHX                                                                  ;B3814B;
     LDX.W $0330                                                          ;B3814C;
@@ -322,6 +362,7 @@ Instruction_CommonB3_TransferYBytesInYToVRAM:
     RTL                                                                  ;B38172;
 
 
+%anchor($B38173)
 Instruction_CommonB3_EnableOffScreenProcessing:
     LDA.W $0F86,X                                                        ;B38173;
     ORA.W #$0800                                                         ;B38176;
@@ -329,6 +370,7 @@ Instruction_CommonB3_EnableOffScreenProcessing:
     RTL                                                                  ;B3817C;
 
 
+%anchor($B3817D)
 Instruction_CommonB3_DisableOffScreenProcessing:
     LDA.W $0F86,X                                                        ;B3817D;
     AND.W #$F7FF                                                         ;B38180;
@@ -341,6 +383,7 @@ Instruction_CommonB3_DisableOffScreenProcessing:
 ;       |     |      _________ Negated speed
 ;       |     |     |      ___ Negated subspeed
 ;       |     |     |     |
+%anchor($B38187)
 CommonB3EnemySpeeds_LinearlyIncreasing:
   .speed:
     dw $0000                                                             ;B38187;
@@ -421,6 +464,7 @@ CommonB3EnemySpeeds_LinearlyIncreasing:
 ;       |     |      _________ Negated subspeed
 ;       |     |     |      ___ Negated speed
 ;       |     |     |     |
+%anchor($B3838F)
 CommonB3EnemySpeeds_QuadraticallyIncreasing:
 ; I.e. gravity
 ; Used by e.g. Botwoon when dying and falling to the floor
@@ -528,10 +572,12 @@ CommonB3EnemySpeeds_QuadraticallyIncreasing:
     dw $74F9,$0011,$8B07,$FFEE
 
 
+%anchor($B38687)
 UNUSED_Palette_SpinningTurtleEye_B38687:
     dw $3800,$4FE9,$4266,$3D85,$20A3,$52FC,$41F7,$30D2                   ;B38687;
     dw $240E,$325F,$31DB,$3156,$30D2,$302C,$7FBD,$0C05                   ;B38697;
 
+%anchor($B386A7)
 UNUSED_InstList_SpinningTurtleEye_Initial_B386A7:
     dw $000A                                                             ;B386A7;
     dw UNUSED_Spritemaps_SpinningTurtleEye_0_B38714                      ;B386A9;
@@ -553,6 +599,7 @@ UNUSED_InstList_SpinningTurtleEye_Initial_B386A7:
     dw UNUSED_InstList_SpinningTurtleEye_Initial_B386A7                  ;B386C9;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B386CB)
 UNUSED_InstList_SpinningTurtleEye_B386CB:
     dw $0008                                                             ;B386CB;
     dw UNUSED_Spritemaps_SpinningTurtleEye_8_B3874C                      ;B386CD;
@@ -563,6 +610,7 @@ UNUSED_InstList_SpinningTurtleEye_B386CB:
     dw Instruction_Common_GotoY                                          ;B386D7;
     dw UNUSED_InstList_SpinningTurtleEye_B386CB                          ;B386D9;
 
+%anchor($B386DB)
 UNUSED_InstList_SpinningTurtleEye_B386DB:
     dw $0008                                                             ;B386DB;
     dw UNUSED_Spritemaps_SpinningTurtleEye_B_B38761                      ;B386DD;
@@ -573,6 +621,7 @@ UNUSED_InstList_SpinningTurtleEye_B386DB:
     dw Instruction_Common_GotoY                                          ;B386E7;
     dw UNUSED_InstList_SpinningTurtleEye_B386DB                          ;B386E9;
 
+%anchor($B386EB)
 UNUSED_InstList_SpinningTurtleEye_B386EB:
     dw $0008                                                             ;B386EB;
     dw UNUSED_Spritemaps_SpinningTurtleEye_E_B38776                      ;B386ED;
@@ -584,6 +633,7 @@ UNUSED_InstList_SpinningTurtleEye_B386EB:
     dw UNUSED_InstList_SpinningTurtleEye_B386EB                          ;B386F9;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B386FB)
 UNUSED_InitAI_SpinningTurtleEye_B386FB:
     LDX.W $0E54                                                          ;B386FB;
     LDA.W $0F86,X                                                        ;B386FE;
@@ -594,110 +644,132 @@ UNUSED_InitAI_SpinningTurtleEye_B386FB:
     RTL                                                                  ;B3870D;
 
 
+%anchor($B3870E)
 UNUSED_MainAI_SpinningTurtleEye_B3870E:
     LDX.W $0E54                                                          ;B3870E;
     RTL                                                                  ;B38711;
 
 
+%anchor($B38712)
 RTL_B38712:
     RTL                                                                  ;B38712;
 
 
+%anchor($B38713)
 RTL_B38713:
     RTL                                                                  ;B38713;
 
 
+%anchor($B38714)
 UNUSED_Spritemaps_SpinningTurtleEye_0_B38714:
     dw $0001,$01F8                                                       ;B38714;
     db $F8                                                               ;B38718;
     dw $3300                                                             ;B38719;
 
+%anchor($B3871B)
 UNUSED_Spritemaps_SpinningTurtleEye_1_B3871B:
     dw $0001,$01F8                                                       ;B3871B;
     db $F8                                                               ;B3871F;
     dw $3301                                                             ;B38720;
 
+%anchor($B38722)
 UNUSED_Spritemaps_SpinningTurtleEye_2_B38722:
     dw $0001,$01F8                                                       ;B38722;
     db $F8                                                               ;B38726;
     dw $3302                                                             ;B38727;
 
+%anchor($B38729)
 UNUSED_Spritemaps_SpinningTurtleEye_3_B38729:
     dw $0001,$01F8                                                       ;B38729;
     db $F8                                                               ;B3872D;
     dw $3303                                                             ;B3872E;
 
+%anchor($B38730)
 UNUSED_Spritemaps_SpinningTurtleEye_4_B38730:
     dw $0001,$01F8                                                       ;B38730;
     db $F8                                                               ;B38734;
     dw $F300                                                             ;B38735;
 
+%anchor($B38737)
 UNUSED_Spritemaps_SpinningTurtleEye_5_B38737:
     dw $0001,$01F8                                                       ;B38737;
     db $F8                                                               ;B3873B;
     dw $F301                                                             ;B3873C;
 
+%anchor($B3873E)
 UNUSED_Spritemaps_SpinningTurtleEye_6_B3873E:
     dw $0001,$01F8                                                       ;B3873E;
     db $F8                                                               ;B38742;
     dw $F302                                                             ;B38743;
 
+%anchor($B38745)
 UNUSED_Spritemaps_SpinningTurtleEye_7_B38745:
     dw $0001,$01F8                                                       ;B38745;
     db $F8                                                               ;B38749;
     dw $F303                                                             ;B3874A;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B3874C)
 UNUSED_Spritemaps_SpinningTurtleEye_8_B3874C:
     dw $0001,$01F8                                                       ;B3874C;
     db $F8                                                               ;B38750;
     dw $3304                                                             ;B38751;
 
+%anchor($B38753)
 UNUSED_Spritemaps_SpinningTurtleEye_9_B38753:
     dw $0001,$01F8                                                       ;B38753;
     db $F8                                                               ;B38757;
     dw $3305                                                             ;B38758;
 
+%anchor($B3875A)
 UNUSED_Spritemaps_SpinningTurtleEye_A_B3875A:
     dw $0001,$01F8                                                       ;B3875A;
     db $F8                                                               ;B3875E;
     dw $3306                                                             ;B3875F;
 
+%anchor($B38761)
 UNUSED_Spritemaps_SpinningTurtleEye_B_B38761:
     dw $0001,$01F8                                                       ;B38761;
     db $F8                                                               ;B38765;
     dw $3307                                                             ;B38766;
 
+%anchor($B38768)
 UNUSED_Spritemaps_SpinningTurtleEye_C_B38768:
     dw $0001,$01F8                                                       ;B38768;
     db $F8                                                               ;B3876C;
     dw $3308                                                             ;B3876D;
 
+%anchor($B3876F)
 UNUSED_Spritemaps_SpinningTurtleEye_D_B3876F:
     dw $0001,$01F8                                                       ;B3876F;
     db $F8                                                               ;B38773;
     dw $3309                                                             ;B38774;
 
+%anchor($B38776)
 UNUSED_Spritemaps_SpinningTurtleEye_E_B38776:
     dw $0001,$01F8                                                       ;B38776;
     db $F8                                                               ;B3877A;
     dw $330A                                                             ;B3877B;
 
+%anchor($B3877D)
 UNUSED_Spritemaps_SpinningTurtleEye_F_B3877D:
     dw $0001,$01F8                                                       ;B3877D;
     db $F8                                                               ;B38781;
     dw $330B                                                             ;B38782;
 
+%anchor($B38784)
 UNUSED_Spritemaps_SpinningTurtleEye_10_B38784:
     dw $0001,$01F8                                                       ;B38784;
     db $F8                                                               ;B38788;
     dw $330C                                                             ;B38789;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B3878B)
 Palette_Zeb:
     dw $3800,$021D,$0015,$0008,$0003,$00BD,$0013,$000E                   ;B3878B;
     dw $000B,$7F5A,$7EC0,$6DE0,$54E0,$03E0,$02A0,$0140                   ;B3879B;
 
+%anchor($B387AB)
 InstList_Zeb_FacingLeft_Rising:
     dw $0002                                                             ;B387AB;
     dw Spritemaps_Zeb_0                                                  ;B387AD;
@@ -718,6 +790,7 @@ InstList_Zeb_FacingLeft_Rising:
     dw Instruction_Common_GotoY                                          ;B387CB;
     dw InstList_Zeb_FacingLeft_Rising                                    ;B387CD;
 
+%anchor($B387CF)
 InstList_Zeb_FacingLeft_Shooting:
     dw $0001                                                             ;B387CF;
     dw Spritemaps_Zeb_0                                                  ;B387D1;
@@ -734,6 +807,7 @@ InstList_Zeb_FacingLeft_Shooting:
     dw Instruction_Common_GotoY                                          ;B387E7;
     dw InstList_Zeb_FacingLeft_Shooting                                  ;B387E9;
 
+%anchor($B387EB)
 InstList_Zeb_FacingRight_Rising:
     dw $0002                                                             ;B387EB;
     dw Spritemaps_Zeb_5                                                  ;B387ED;
@@ -754,6 +828,7 @@ InstList_Zeb_FacingRight_Rising:
     dw Instruction_Common_GotoY                                          ;B3880B;
     dw InstList_Zeb_FacingRight_Rising                                   ;B3880D;
 
+%anchor($B3880F)
 InstList_Zeb_FacingRight_Shooting:
     dw $0001                                                             ;B3880F;
     dw Spritemaps_Zeb_5                                                  ;B38811;
@@ -770,18 +845,21 @@ InstList_Zeb_FacingRight_Shooting:
     dw Instruction_Common_GotoY                                          ;B38827;
     dw InstList_Zeb_FacingRight_Shooting                                 ;B38829;
 
+%anchor($B3882B)
 InstListPointers_Zeb:
     dw InstList_Zeb_FacingLeft_Rising                                    ;B3882B;
     dw InstList_Zeb_FacingLeft_Shooting                                  ;B3882D;
     dw InstList_Zeb_FacingRight_Rising                                   ;B3882F;
     dw InstList_Zeb_FacingRight_Shooting                                 ;B38831;
 
+%anchor($B38833)
 InstListPointers_Zebbo:
     dw InstList_Zebbo_FacingLeft_Rising                                  ;B38833;
     dw InstList_Zebbo_FacingLeft_Shooting                                ;B38835;
     dw InstList_Zebbo_FacingRight_Rising                                 ;B38837;
     dw InstList_Zebbo_FacingRight_Shooting                               ;B38839;
 
+%anchor($B3883B)
 InitAI_Zeb_Zebbo:
     LDX.W $0E54                                                          ;B3883B;
     LDA.W $0F7A,X                                                        ;B3883E;
@@ -809,11 +887,13 @@ InitAI_Zeb_Zebbo:
     RTL                                                                  ;B38879;
 
 
+%anchor($B3887A)
 MainAI_Zeb_Zebbo:
     LDX.W $0E54                                                          ;B3887A;
     JMP.W ($0FB2,X)                                                      ;B3887D;
 
 
+%anchor($B38880)
 Function_Zeb_Zebbo_WaitUntilOnScreen:
     LDX.W $0E54                                                          ;B38880;
     JSL.L CheckIfEnemyCenterIsOnScreen                                   ;B38883;
@@ -825,6 +905,7 @@ Function_Zeb_Zebbo_WaitUntilOnScreen:
     RTL                                                                  ;B3888F;
 
 
+%anchor($B38890)
 Function_Zeb_Zebbo_WaitForSamusToGetNear:
     JSL.L Get_SamusY_minus_EnemyY                                        ;B38890;
     BPL .return                                                          ;B38894;
@@ -871,6 +952,7 @@ Function_Zeb_Zebbo_WaitForSamusToGetNear:
     RTL                                                                  ;B388E2;
 
 
+%anchor($B388E3)
 Function_Zeb_Zebbo_Rising:
     LDA.W #$FFFF                                                         ;B388E3;
     CLC                                                                  ;B388E6;
@@ -900,6 +982,7 @@ Function_Zeb_Zebbo_Rising:
     RTL                                                                  ;B3891B;
 
 
+%anchor($B3891C)
 Function_Zeb_Zebbo_Shooting:
     BIT.W $0FA8,X                                                        ;B3891C;
     BPL .right                                                           ;B3891F;
@@ -947,6 +1030,7 @@ Function_Zeb_Zebbo_Shooting:
     RTL                                                                  ;B3897D;
 
 
+%anchor($B3897E)
 Function_Zeb_Zebbo_SpawnDelay:
     DEC.W $0FAE,X                                                        ;B3897E;
     BEQ .doneWaiting                                                     ;B38981;
@@ -959,6 +1043,7 @@ Function_Zeb_Zebbo_SpawnDelay:
     RTL                                                                  ;B3898A;
 
 
+%anchor($B3898B)
 Set_Zeb_Zebbo_InstList:
     LDX.W $0E54                                                          ;B3898B;
     LDA.W $0FB0,X                                                        ;B3898E;
@@ -985,60 +1070,72 @@ Set_Zeb_Zebbo_InstList:
     RTS                                                                  ;B389B6;
 
 
+%anchor($B389B7)
 Spritemaps_Zeb_0:
     dw $0001,$81F8                                                       ;B389B7;
     db $F8                                                               ;B389BB;
     dw $2100                                                             ;B389BC;
 
+%anchor($B389BE)
 Spritemaps_Zeb_1:
     dw $0001,$81F8                                                       ;B389BE;
     db $F8                                                               ;B389C2;
     dw $2102                                                             ;B389C3;
 
+%anchor($B389C5)
 Spritemaps_Zeb_2:
     dw $0001,$81F8                                                       ;B389C5;
     db $F8                                                               ;B389C9;
     dw $2104                                                             ;B389CA;
 
+%anchor($B389CC)
 Spritemaps_Zeb_3:
     dw $0001,$81F8                                                       ;B389CC;
     db $F8                                                               ;B389D0;
     dw $2106                                                             ;B389D1;
 
+%anchor($B389D3)
 Spritemaps_Zeb_4:
     dw $0001,$81F8                                                       ;B389D3;
     db $F8                                                               ;B389D7;
     dw $2108                                                             ;B389D8;
 
+%anchor($B389DA)
 Spritemaps_Zeb_5:
     dw $0001,$81F8                                                       ;B389DA;
     db $F8                                                               ;B389DE;
     dw $6100                                                             ;B389DF;
 
+%anchor($B389E1)
 Spritemaps_Zeb_6:
     dw $0001,$81F8                                                       ;B389E1;
     db $F8                                                               ;B389E5;
     dw $6102                                                             ;B389E6;
 
+%anchor($B389E8)
 Spritemaps_Zeb_7:
     dw $0001,$81F8                                                       ;B389E8;
     db $F8                                                               ;B389EC;
     dw $6104                                                             ;B389ED;
 
+%anchor($B389EF)
 Spritemaps_Zeb_8:
     dw $0001,$81F8                                                       ;B389EF;
     db $F8                                                               ;B389F3;
     dw $6106                                                             ;B389F4;
 
+%anchor($B389F6)
 Spritemaps_Zeb_9:
     dw $0001,$81F8                                                       ;B389F6;
     db $F8                                                               ;B389FA;
     dw $6108                                                             ;B389FB;
 
+%anchor($B389FD)
 Palette_Zebbo:
     dw $3800,$3F95,$2E8B,$0120,$0060,$3AEE,$2249,$11A4                   ;B389FD;
     dw $0962,$39BB,$30F5,$2C6E,$2827,$7F93,$6ECE,$6229                   ;B38A0D;
 
+%anchor($B38A1D)
 InstList_Zebbo_FacingLeft_Rising:
     dw $0002                                                             ;B38A1D;
     dw Spritemaps_Zebbo_3                                                ;B38A1F;
@@ -1051,6 +1148,7 @@ InstList_Zebbo_FacingLeft_Rising:
     dw Instruction_Common_GotoY                                          ;B38A2D;
     dw InstList_Zebbo_FacingLeft_Rising                                  ;B38A2F;
 
+%anchor($B38A31)
 InstList_Zebbo_FacingLeft_Shooting:
     dw $0003                                                             ;B38A31;
     dw Spritemaps_Zebbo_0                                                ;B38A33;
@@ -1063,6 +1161,7 @@ InstList_Zebbo_FacingLeft_Shooting:
     dw Instruction_Common_GotoY                                          ;B38A41;
     dw InstList_Zebbo_FacingLeft_Shooting                                ;B38A43;
 
+%anchor($B38A45)
 InstList_Zebbo_FacingRight_Rising:
     dw $0002                                                             ;B38A45;
     dw Spritemaps_Zebbo_9                                                ;B38A47;
@@ -1075,6 +1174,7 @@ InstList_Zebbo_FacingRight_Rising:
     dw Instruction_Common_GotoY                                          ;B38A55;
     dw InstList_Zebbo_FacingRight_Rising                                 ;B38A57;
 
+%anchor($B38A59)
 InstList_Zebbo_FacingRight_Shooting:
     dw $0003                                                             ;B38A59;
     dw Spritemaps_Zebbo_6                                                ;B38A5B;
@@ -1087,70 +1187,84 @@ InstList_Zebbo_FacingRight_Shooting:
     dw Instruction_Common_GotoY                                          ;B38A69;
     dw InstList_Zebbo_FacingRight_Shooting                               ;B38A6B;
 
+%anchor($B38A6D)
 Spritemaps_Zebbo_0:
     dw $0001,$81F8                                                       ;B38A6D;
     db $F8                                                               ;B38A71;
     dw $2100                                                             ;B38A72;
 
+%anchor($B38A74)
 Spritemaps_Zebbo_1:
     dw $0001,$81F8                                                       ;B38A74;
     db $F8                                                               ;B38A78;
     dw $2102                                                             ;B38A79;
 
+%anchor($B38A7B)
 Spritemaps_Zebbo_2:
     dw $0001,$81F8                                                       ;B38A7B;
     db $F8                                                               ;B38A7F;
     dw $2104                                                             ;B38A80;
 
+%anchor($B38A82)
 Spritemaps_Zebbo_3:
     dw $0001,$81F8                                                       ;B38A82;
     db $F8                                                               ;B38A86;
     dw $2106                                                             ;B38A87;
 
+%anchor($B38A89)
 Spritemaps_Zebbo_4:
     dw $0001,$81F8                                                       ;B38A89;
     db $F8                                                               ;B38A8D;
     dw $2108                                                             ;B38A8E;
 
+%anchor($B38A90)
 Spritemaps_Zebbo_5:
     dw $0001,$81F8                                                       ;B38A90;
     db $F8                                                               ;B38A94;
     dw $210A                                                             ;B38A95;
 
+%anchor($B38A97)
 Spritemaps_Zebbo_6:
     dw $0001,$81F8                                                       ;B38A97;
     db $F8                                                               ;B38A9B;
     dw $6100                                                             ;B38A9C;
 
+%anchor($B38A9E)
 Spritemaps_Zebbo_7:
     dw $0001,$81F8                                                       ;B38A9E;
     db $F8                                                               ;B38AA2;
     dw $6102                                                             ;B38AA3;
 
+%anchor($B38AA5)
 Spritemaps_Zebbo_8:
     dw $0001,$81F8                                                       ;B38AA5;
     db $F8                                                               ;B38AA9;
     dw $6104                                                             ;B38AAA;
 
+%anchor($B38AAC)
 Spritemaps_Zebbo_9:
     dw $0001,$81F8                                                       ;B38AAC;
     db $F8                                                               ;B38AB0;
     dw $6106                                                             ;B38AB1;
 
+%anchor($B38AB3)
 Spritemaps_Zebbo_A:
     dw $0001,$81F8                                                       ;B38AB3;
     db $F8                                                               ;B38AB7;
     dw $6108                                                             ;B38AB8;
 
+%anchor($B38ABA)
 Spritemaps_Zebbo_B:
     dw $0001,$81F8                                                       ;B38ABA;
     db $F8                                                               ;B38ABE;
     dw $610A                                                             ;B38ABF;
 
+%anchor($B38AC1)
 Palette_Gamet:
     dw $3800,$021D,$0015,$0008,$0003,$015F,$0076,$0050                   ;B38AC1;
     dw $000B,$7FFF,$56E0,$3180,$18C0,$43FF,$42DC,$4176                   ;B38AD1;
 
+%anchor($B38AE1)
 InstList_Gamet_FacingLeft_Rising:
     dw $0002                                                             ;B38AE1;
     dw Spritemaps_Gamet_0                                                ;B38AE3;
@@ -1171,6 +1285,7 @@ InstList_Gamet_FacingLeft_Rising:
     dw Instruction_Common_GotoY                                          ;B38B01;
     dw InstList_Gamet_FacingLeft_Rising                                  ;B38B03;
 
+%anchor($B38B05)
 InstList_Gamet_FacingLeft_Shooting:
     dw $0001                                                             ;B38B05;
     dw Spritemaps_Gamet_0                                                ;B38B07;
@@ -1187,6 +1302,7 @@ InstList_Gamet_FacingLeft_Shooting:
     dw Instruction_Common_GotoY                                          ;B38B1D;
     dw InstList_Gamet_FacingLeft_Shooting                                ;B38B1F;
 
+%anchor($B38B21)
 InstList_Gamet_FacingRight_Rising:
     dw $0002                                                             ;B38B21;
     dw Spritemaps_Gamet_5                                                ;B38B23;
@@ -1207,6 +1323,7 @@ InstList_Gamet_FacingRight_Rising:
     dw Instruction_Common_GotoY                                          ;B38B41;
     dw InstList_Gamet_FacingRight_Rising                                 ;B38B43;
 
+%anchor($B38B45)
 InstList_Gamet_FacingRight_Shooting:
     dw $0001                                                             ;B38B45;
     dw Spritemaps_Gamet_5                                                ;B38B47;
@@ -1223,6 +1340,7 @@ InstList_Gamet_FacingRight_Shooting:
     dw Instruction_Common_GotoY                                          ;B38B5D;
     dw InstList_Gamet_FacingRight_Shooting                               ;B38B5F;
 
+%anchor($B38B61)
 InitAI_Gamet:
     LDX.W $0E54                                                          ;B38B61;
     LDA.W $0F7A,X                                                        ;B38B64;
@@ -1249,6 +1367,7 @@ InitAI_Gamet:
     RTL                                                                  ;B38B9D;
 
 
+%anchor($B38B9E)
 MainAI_Gamet:
     LDX.W $0E54                                                          ;B38B9E;
     JSR.W ($0FA8,X)                                                      ;B38BA1;
@@ -1256,6 +1375,7 @@ MainAI_Gamet:
     RTL                                                                  ;B38BA7;
 
 
+%anchor($B38BA8)
 ResetEnemyIfOffScreen:
     LDX.W $0E54                                                          ;B38BA8;
     JSL.L CheckIfEnemyCenterIsOnScreen                                   ;B38BAB;
@@ -1274,6 +1394,7 @@ ResetEnemyIfOffScreen:
     RTS                                                                  ;B38BCC;
 
 
+%anchor($B38BCD)
 Function_Gamet_WaitUntilAllReady:
     LDX.W $0E54                                                          ;B38BCD;
     LDA.W $0FB6,X                                                        ;B38BD0;
@@ -1298,6 +1419,7 @@ Function_Gamet_WaitUntilAllReady:
     RTS                                                                  ;B38BFE;
 
 
+%anchor($B38BFF)
 Function_Gamet_WaitForSamusToGetNear:
     LDX.W $0E54                                                          ;B38BFF;
     LDA.W $0FB6,X                                                        ;B38C02;
@@ -1337,6 +1459,7 @@ Function_Gamet_WaitForSamusToGetNear:
     RTS                                                                  ;B38C51;
 
 
+%anchor($B38C52)
 SetupGametFormation:
     LDA.W #Function_Gamet_Rising                                         ;B38C52;
     STA.W $0FA8,X                                                        ;B38C55;
@@ -1367,6 +1490,7 @@ SetupGametFormation:
     RTS                                                                  ;B38CA5;
 
 
+%anchor($B38CA6)
 Function_Gamet_Rising:
     LDX.W $0E54                                                          ;B38CA6;
     LDA.W $0F86,X                                                        ;B38CA9;
@@ -1409,6 +1533,7 @@ Function_Gamet_Rising:
     RTS                                                                  ;B38CFE;
 
 
+%anchor($B38CFF)
 Function_Gamet_MoveToFormation_Center:
     LDX.W $0E54                                                          ;B38CFF;
     INC.W $0FAC,X                                                        ;B38D02;
@@ -1417,6 +1542,7 @@ Function_Gamet_MoveToFormation_Center:
     RTS                                                                  ;B38D0B;
 
 
+%anchor($B38D0C)
 Function_Gamet_MoveToFormation_UpperMiddle:
     LDX.W $0E54                                                          ;B38D0C;
     INC.W $0FAC,X                                                        ;B38D0F;
@@ -1449,6 +1575,7 @@ Function_Gamet_MoveToFormation_UpperMiddle:
     RTS                                                                  ;B38D4D;
 
 
+%anchor($B38D4E)
 Function_Gamet_MoveToFormation_Top:
     LDX.W $0E54                                                          ;B38D4E;
     INC.W $0FAC,X                                                        ;B38D51;
@@ -1481,6 +1608,7 @@ Function_Gamet_MoveToFormation_Top:
     RTS                                                                  ;B38D8F;
 
 
+%anchor($B38D90)
 Function_Gamet_MoveToFormation_LowerMiddle:
     LDX.W $0E54                                                          ;B38D90;
     INC.W $0FAC,X                                                        ;B38D93;
@@ -1513,6 +1641,7 @@ Function_Gamet_MoveToFormation_LowerMiddle:
     RTS                                                                  ;B38DD1;
 
 
+%anchor($B38DD2)
 Function_Gamet_MoveToFormation_Bottom:
     LDX.W $0E54                                                          ;B38DD2;
     INC.W $0FAC,X                                                        ;B38DD5;
@@ -1545,6 +1674,7 @@ Function_Gamet_MoveToFormation_Bottom:
     RTS                                                                  ;B38E13;
 
 
+%anchor($B38E14)
 Function_Gamet_ShootingLeft:
     LDX.W $0E54                                                          ;B38E14;
     LDA.W $0FAA,X                                                        ;B38E17;
@@ -1563,6 +1693,7 @@ Function_Gamet_ShootingLeft:
     RTS                                                                  ;B38E34;
 
 
+%anchor($B38E35)
 Function_Gamet_ShootingRight:
     LDX.W $0E54                                                          ;B38E35;
     LDA.W $0FAA,X                                                        ;B38E38;
@@ -1582,12 +1713,14 @@ Function_Gamet_ShootingRight:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B38E56)
 UNUSED_LoadEnemyIndex_B38E56:
     LDX.W $0E54                                                          ;B38E56;
     RTS                                                                  ;B38E59;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($B38E5A)
 Function_Gamet_ShootDelay:
     LDX.W $0E54                                                          ;B38E5A;
     INC.W $0FAC,X                                                        ;B38E5D;
@@ -1613,68 +1746,82 @@ Function_Gamet_ShootDelay:
     RTS                                                                  ;B38E93;
 
 
+%anchor($B38E94)
 RTL_B38E94:
     RTL                                                                  ;B38E94;
 
 
+%anchor($B38E95)
 RTL_B38E95:
     RTL                                                                  ;B38E95;
 
 
+%anchor($B38E96)
 Spritemaps_Gamet_0:
     dw $0001,$81F8                                                       ;B38E96;
     db $F8                                                               ;B38E9A;
     dw $2100                                                             ;B38E9B;
 
+%anchor($B38E9D)
 Spritemaps_Gamet_1:
     dw $0001,$81F8                                                       ;B38E9D;
     db $F8                                                               ;B38EA1;
     dw $2102                                                             ;B38EA2;
 
+%anchor($B38EA4)
 Spritemaps_Gamet_2:
     dw $0001,$81F8                                                       ;B38EA4;
     db $F8                                                               ;B38EA8;
     dw $2104                                                             ;B38EA9;
 
+%anchor($B38EAB)
 Spritemaps_Gamet_3:
     dw $0001,$81F8                                                       ;B38EAB;
     db $F8                                                               ;B38EAF;
     dw $2106                                                             ;B38EB0;
 
+%anchor($B38EB2)
 Spritemaps_Gamet_4:
     dw $0001,$81F8                                                       ;B38EB2;
     db $F8                                                               ;B38EB6;
     dw $2108                                                             ;B38EB7;
 
+%anchor($B38EB9)
 Spritemaps_Gamet_5:
     dw $0001,$81F8                                                       ;B38EB9;
     db $F8                                                               ;B38EBD;
     dw $6100                                                             ;B38EBE;
 
+%anchor($B38EC0)
 Spritemaps_Gamet_6:
     dw $0001,$81F8                                                       ;B38EC0;
     db $F8                                                               ;B38EC4;
     dw $6102                                                             ;B38EC5;
 
+%anchor($B38EC7)
 Spritemaps_Gamet_7:
     dw $0001,$81F8                                                       ;B38EC7;
     db $F8                                                               ;B38ECB;
     dw $6104                                                             ;B38ECC;
 
+%anchor($B38ECE)
 Spritemaps_Gamet_8:
     dw $0001,$81F8                                                       ;B38ECE;
     db $F8                                                               ;B38ED2;
     dw $6106                                                             ;B38ED3;
 
+%anchor($B38ED5)
 Spritemaps_Gamet_9:
     dw $0001,$81F8                                                       ;B38ED5;
     db $F8                                                               ;B38ED9;
     dw $6108                                                             ;B38EDA;
 
+%anchor($B38EDC)
 Palette_Geega:
     dw $3800,$57FF,$42F7,$158C,$00A5,$4F5A,$36B5,$2610                   ;B38EDC;
     dw $1DCE,$3FE0,$2EE0,$2200,$1100,$7E5B,$552F,$2887                   ;B38EEC;
 
+%anchor($B38EFC)
 InstList_Geega_FacingLeft_Rising:
     dw $0004                                                             ;B38EFC;
     dw Spritemaps_Geega_0                                                ;B38EFE;
@@ -1687,6 +1834,7 @@ InstList_Geega_FacingLeft_Rising:
     dw Instruction_Common_GotoY                                          ;B38F0C;
     dw InstList_Geega_FacingLeft_Rising                                  ;B38F0E;
 
+%anchor($B38F10)
 InstList_Geega_FacingLeft_Shooting:
     dw $0001                                                             ;B38F10;
     dw Spritemaps_Geega_3                                                ;B38F12;
@@ -1699,6 +1847,7 @@ InstList_Geega_FacingLeft_Shooting:
     dw Instruction_Common_GotoY                                          ;B38F20;
     dw InstList_Geega_FacingLeft_Shooting                                ;B38F22;
 
+%anchor($B38F24)
 InstList_Geega_FacingRight_Rising:
     dw $0004                                                             ;B38F24;
     dw Spritemaps_Geega_6                                                ;B38F26;
@@ -1711,6 +1860,7 @@ InstList_Geega_FacingRight_Rising:
     dw Instruction_Common_GotoY                                          ;B38F34;
     dw InstList_Geega_FacingRight_Rising                                 ;B38F36;
 
+%anchor($B38F38)
 InstList_Geega_FacingRight_Shooting:
     dw $0001                                                             ;B38F38;
     dw Spritemaps_Geega_9                                                ;B38F3A;
@@ -1723,6 +1873,7 @@ InstList_Geega_FacingRight_Shooting:
     dw Instruction_Common_GotoY                                          ;B38F48;
     dw InstList_Geega_FacingRight_Shooting                               ;B38F4A;
 
+%anchor($B38F4C)
 InitAI_Geega:
     LDX.W $0E54                                                          ;B38F4C;
     LDA.W $0F7A,X                                                        ;B38F4F;
@@ -1761,12 +1912,14 @@ InitAI_Geega:
     RTL                                                                  ;B38FAD;
 
 
+%anchor($B38FAE)
 MainAI_Geega:
     LDX.W $0E54                                                          ;B38FAE;
     JSR.W ($0FA8,X)                                                      ;B38FB1;
     RTL                                                                  ;B38FB4;
 
 
+%anchor($B38FB5)
 Function_Geega_WaitForSamusToGetNear:
     LDX.W $0E54                                                          ;B38FB5;
     LDA.W $0FB4,X                                                        ;B38FB8;
@@ -1799,6 +1952,7 @@ Function_Geega_WaitForSamusToGetNear:
     RTS                                                                  ;B38FF4;
 
 
+%anchor($B38FF5)
 Function_Geega_ShootDelay:
     LDA.L $7E8000,X                                                      ;B38FF5;
     DEC A                                                                ;B38FF9;
@@ -1826,6 +1980,7 @@ Function_Geega_ShootDelay:
     RTS                                                                  ;B39027;
 
 
+%anchor($B39028)
 Function_Geega_ShootingLeft:
     LDX.W $0E54                                                          ;B39028;
     JSR.W MoveGeegaLeft                                                  ;B3902B;
@@ -1875,6 +2030,7 @@ Function_Geega_ShootingLeft:
     RTS                                                                  ;B390A0;
 
 
+%anchor($B390A1)
 MoveGeegaLeft:
     LDA.W $0F7C,X                                                        ;B390A1;
     CLC                                                                  ;B390A4;
@@ -1890,6 +2046,7 @@ MoveGeegaLeft:
     RTS                                                                  ;B390BC;
 
 
+%anchor($B390BD)
 Function_Geega_ShootingRight:
     LDX.W $0E54                                                          ;B390BD;
     JSR.W MoveGeegaRight                                                 ;B390C0;
@@ -1941,6 +2098,7 @@ Function_Geega_ShootingRight:
     RTS                                                                  ;B39139;
 
 
+%anchor($B3913A)
 MoveGeegaRight:
     LDA.W $0FAA,X                                                        ;B3913A;
     TAY                                                                  ;B3913D;
@@ -1958,6 +2116,7 @@ MoveGeegaRight:
     RTS                                                                  ;B39159;
 
 
+%anchor($B3915A)
 Function_Geega_DippingLeft:
     LDX.W $0E54                                                          ;B3915A;
     JSL.L CheckIfEnemyCenterIsOnScreen                                   ;B3915D;
@@ -2011,6 +2170,7 @@ Function_Geega_DippingLeft:
     RTS                                                                  ;B391D7;
 
 
+%anchor($B391D8)
 Function_Geega_DippingRight:
     LDX.W $0E54                                                          ;B391D8;
     JSL.L CheckIfEnemyCenterIsOnScreen                                   ;B391DB;
@@ -2064,6 +2224,7 @@ Function_Geega_DippingRight:
     RTS                                                                  ;B39255;
 
 
+%anchor($B39256)
 MoveGeegaUp:
     INC.W $0FB0,X                                                        ;B39256;
     LDA.W $0FB0,X                                                        ;B39259;
@@ -2085,6 +2246,7 @@ MoveGeegaUp:
     RTS                                                                  ;B39279;
 
 
+%anchor($B3927A)
 MoveGeegaDown:
     DEC.W $0FB0,X                                                        ;B3927A;
     BPL +                                                                ;B3927D;
@@ -2115,51 +2277,66 @@ MoveGeegaDown:
     RTS                                                                  ;B392AA;
 
 
+%anchor($B392AB)
 RTL_B392AB:
     RTL                                                                  ;B392AB;
 
 
+%anchor($B392AC)
 RTL_B392AC:
     RTL                                                                  ;B392AC;
 
 
+%anchor($B392AD)
 Spritemaps_Geega_0:
     db $01,$00,$F8,$C3,$F8,$00,$21                                       ;B392AD;
 
+%anchor($B392B4)
 Spritemaps_Geega_1:
     db $01,$00,$F8,$C3,$F8,$02,$21                                       ;B392B4;
 
+%anchor($B392BB)
 Spritemaps_Geega_2:
     db $01,$00,$F8,$C3,$F8,$04,$21                                       ;B392BB;
 
+%anchor($B392C2)
 Spritemaps_Geega_3:
     db $01,$00,$F8,$C3,$F8,$06,$21                                       ;B392C2;
 
+%anchor($B392C9)
 Spritemaps_Geega_4:
     db $01,$00,$F8,$C3,$F8,$08,$21                                       ;B392C9;
 
+%anchor($B392D0)
 Spritemaps_Geega_5:
     db $01,$00,$F8,$C3,$F8,$0A,$21                                       ;B392D0;
 
+%anchor($B392D7)
 Spritemaps_Geega_6:
     db $01,$00,$F8,$C3,$F8,$00,$61                                       ;B392D7;
 
+%anchor($B392DE)
 Spritemaps_Geega_7:
     db $01,$00,$F8,$C3,$F8,$02,$61                                       ;B392DE;
 
+%anchor($B392E5)
 Spritemaps_Geega_8:
     db $01,$00,$F8,$C3,$F8,$04,$61                                       ;B392E5;
 
+%anchor($B392EC)
 Spritemaps_Geega_9:
     db $01,$00,$F8,$C3,$F8,$06,$61                                       ;B392EC;
 
+%anchor($B392F3)
 Spritemaps_Geega_A:
     db $01,$00,$F8,$C3,$F8,$08,$61                                       ;B392F3;
 
+%anchor($B392FA)
 Spritemaps_Geega_B:
     db $01,$00,$F8,$C3,$F8,$0A,$61                                       ;B392FA;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B39301)
 UNUSED_SpritemapPointers_Geega_B39301:
     dw Spritemaps_Geega_0                                                ;B39301;
     dw Spritemaps_Geega_1                                                ;B39303;
@@ -2175,75 +2352,88 @@ UNUSED_SpritemapPointers_Geega_B39301:
     dw Spritemaps_Geega_B                                                ;B39317;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B39319)
 Palette_Botwoon:
     dw $0000,$27E9,$1A66,$1585,$0CA3,$3F9C,$2E97,$1D72                   ;B39319;
     dw $108E,$0A5F,$09DB,$0956,$08D2,$082C,$7FBD,$0C05                   ;B39329;
 
+%anchor($B39339)
 InstList_Botwoon_MouthClosed_AimingUp_FacingLeft:
     dw Instruction_Botwoon_EnemyRadius_8x10                              ;B39339;
     dw $0001                                                             ;B3933B;
     dw Spritemaps_Botwoon_MouthClosed_Priority2_AimingUp_FacingLeft      ;B3933D;
     dw Instruction_Common_Sleep                                          ;B3933F;
 
+%anchor($B39341)
 InstList_Botwoon_MouthClosed_AimingUpLeft:
     dw Instruction_Botwoon_EnemyRadius_CxC                               ;B39341;
     dw $0001                                                             ;B39343;
     dw Spritemaps_Botwoon_MouthClosed_Priority2_AimingUpLeft             ;B39345;
     dw Instruction_Common_Sleep                                          ;B39347;
 
+%anchor($B39349)
 InstList_Botwoon_MouthClosed_AimingLeft:
     dw Instruction_Botwoon_EnemyRadius_10x8                              ;B39349;
     dw $0001                                                             ;B3934B;
     dw Spritemaps_Botwoon_MouthClosed_Priority2_AimingLeft               ;B3934D;
     dw Instruction_Common_Sleep                                          ;B3934F;
 
+%anchor($B39351)
 InstList_Botwoon_MouthClosed_AimingDownLeft:
     dw Instruction_Botwoon_EnemyRadius_CxC_duplicate                     ;B39351;
     dw $0001                                                             ;B39353;
     dw Spritemaps_Botwoon_MouthClosed_Priority2_AimingDownLeft           ;B39355;
     dw Instruction_Common_Sleep                                          ;B39357;
 
+%anchor($B39359)
 UNSUED_InstList_Botwoon_MouthClosed_AimDown_FaceLeft_B39359:
     dw Instruction_Botwoon_EnemyRadius_8x10_duplicate                    ;B39359;
     dw $0001                                                             ;B3935B;
     dw Spritemaps_Botwoon_MouthClosed_Priority2_AimDown_FacingLeft       ;B3935D;
     dw Instruction_Common_Sleep                                          ;B3935F;
 
+%anchor($B39361)
 InstList_Botwoon_MouthClosed_AimingDown_FacingRight:
     dw Instruction_Botwoon_EnemyRadius_8x10_duplicate_again              ;B39361;
     dw $0001                                                             ;B39363;
     dw Spritemaps_Botwoon_MouthClosed_Priority2_AimDown_FacingRight      ;B39365;
     dw Instruction_Common_Sleep                                          ;B39367;
 
+%anchor($B39369)
 InstList_Botwoon_MouthClosed_AimingDownRight:
     dw Instruction_Botwoon_EnemyRadius_CxC_duplicate_again               ;B39369;
     dw $0001                                                             ;B3936B;
     dw Spritemaps_Botwoon_MouthClosed_Priority2_AimingDownRight          ;B3936D;
     dw Instruction_Common_Sleep                                          ;B3936F;
 
+%anchor($B39371)
 InstList_Botwoon_MouthClosed_AimingRight:
     dw Instruction_Botwoon_EnemyRadius_10x8_duplicate                    ;B39371;
     dw $0001                                                             ;B39373;
     dw Spritemaps_Botwoon_MouthClosed_Priority2_AimingRight              ;B39375;
     dw Instruction_Common_Sleep                                          ;B39377;
 
+%anchor($B39379)
 InstList_Botwoon_MouthClosed_AimingUpRight:
     dw Instruction_Botwoon_EnemyRadius_CxC_duplicate_again2              ;B39379;
     dw $0001                                                             ;B3937B;
     dw Spritemaps_Botwoon_MouthClosed_Priority2_AimingUpRight            ;B3937D;
     dw Instruction_Common_Sleep                                          ;B3937F;
 
+%anchor($B39381)
 InstList_Botwoon_MouthClosed_AimingUp_FacingRight:
     dw Instruction_Botwoon_EnemyRadius_8x10_duplicate_again2             ;B39381;
     dw $0001                                                             ;B39383;
     dw Spritemaps_Botwoon_MouthClosed_Priority2_AimUp_FacingRight        ;B39385;
     dw Instruction_Common_Sleep                                          ;B39387;
 
+%anchor($B39389)
 InstList_Botwoon_Hide:
     dw $0001                                                             ;B39389;
     dw Spritemap_Common_Nothing                                          ;B3938B;
     dw Instruction_Common_Sleep                                          ;B3938D;
 
+%anchor($B3938F)
 UNSUED_InstList_Botwoon_Spit_AimingUp_FacingLeft:
     dw $0020                                                             ;B3938F;
     dw Spritemaps_Botwoon_MouthClosed_Priority2_AimingUp_FacingLeft      ;B39391;
@@ -2254,6 +2444,7 @@ UNSUED_InstList_Botwoon_Spit_AimingUp_FacingLeft:
     dw Spritemaps_Botwoon_MouthOpen_Priority2_AimingUp_FacingLeft        ;B3939B;
     dw Instruction_Common_Sleep                                          ;B3939D;
 
+%anchor($B3939F)
 InstList_Botwoon_Spit_AimingUpLeft:
     dw $0020                                                             ;B3939F;
     dw Spritemaps_Botwoon_MouthClosed_Priority2_AimingUpLeft             ;B393A1;
@@ -2264,6 +2455,7 @@ InstList_Botwoon_Spit_AimingUpLeft:
     dw Spritemaps_Botwoon_MouthOpen_Priority2_AimingUpLeft               ;B393AB;
     dw Instruction_Common_Sleep                                          ;B393AD;
 
+%anchor($B393AF)
 InstList_Botwoon_Spit_AimingLeft:
     dw $0020                                                             ;B393AF;
     dw Spritemaps_Botwoon_MouthClosed_Priority2_AimingLeft               ;B393B1;
@@ -2274,6 +2466,7 @@ InstList_Botwoon_Spit_AimingLeft:
     dw Spritemaps_Botwoon_MouthOpen_Priority2_AimingLeft                 ;B393BB;
     dw Instruction_Common_Sleep                                          ;B393BD;
 
+%anchor($B393BF)
 InstList_Botwoon_Spit_AimingDownLeft:
     dw $0020                                                             ;B393BF;
     dw Spritemaps_Botwoon_MouthClosed_Priority2_AimingDownLeft           ;B393C1;
@@ -2285,6 +2478,7 @@ InstList_Botwoon_Spit_AimingDownLeft:
     dw Instruction_Common_Sleep                                          ;B393CD;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B393CF)
 UNUSED_InstList_Botwoon_Spit_AimingDown_FacingLeft_B393CF:
     dw $0020                                                             ;B393CF;
     dw Spritemaps_Botwoon_MouthClosed_Priority2_AimDown_FacingLeft       ;B393D1;
@@ -2296,6 +2490,7 @@ UNUSED_InstList_Botwoon_Spit_AimingDown_FacingLeft_B393CF:
     dw Instruction_Common_Sleep                                          ;B393DD;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B393DF)
 InstList_Botwoon_Spit_AimingDown_FacingRight:
     dw $0020                                                             ;B393DF;
     dw Spritemaps_Botwoon_MouthClosed_Priority2_AimDown_FacingRight      ;B393E1;
@@ -2306,6 +2501,7 @@ InstList_Botwoon_Spit_AimingDown_FacingRight:
     dw Spritemaps_Botwoon_MouthOpen_Priority2_AimDown_FacingRight        ;B393EB;
     dw Instruction_Common_Sleep                                          ;B393ED;
 
+%anchor($B393EF)
 InstList_Botwoon_Spit_AimingDownRight:
     dw $0020                                                             ;B393EF;
     dw Spritemaps_Botwoon_MouthClosed_Priority2_AimingDownRight          ;B393F1;
@@ -2316,6 +2512,7 @@ InstList_Botwoon_Spit_AimingDownRight:
     dw Spritemaps_Botwoon_MouthOpen_Priority2_AimingDownRight            ;B393FB;
     dw Instruction_Common_Sleep                                          ;B393FD;
 
+%anchor($B393FF)
 InstList_Botwoon_Spit_AimingRight:
     dw $0020                                                             ;B393FF;
     dw Spritemaps_Botwoon_MouthClosed_Priority2_AimingRight              ;B39401;
@@ -2326,6 +2523,7 @@ InstList_Botwoon_Spit_AimingRight:
     dw Spritemaps_Botwoon_MouthOpen_Priority2_AimingRight                ;B3940B;
     dw Instruction_Common_Sleep                                          ;B3940D;
 
+%anchor($B3940F)
 InstList_Botwoon_Spit_AimingUpRight:
     dw $0020                                                             ;B3940F;
     dw Spritemaps_Botwoon_MouthClosed_Priority2_AimingUpRight            ;B39411;
@@ -2336,6 +2534,7 @@ InstList_Botwoon_Spit_AimingUpRight:
     dw Spritemaps_Botwoon_MouthOpen_Priority2_AimingUpRight              ;B3941B;
     dw Instruction_Common_Sleep                                          ;B3941D;
 
+%anchor($B3941F)
 InstList_Botwoon_Spit_AimingUp_FacingRight:
     dw $0020                                                             ;B3941F;
     dw Spritemaps_Botwoon_MouthClosed_Priority2_AimUp_FacingRight        ;B39421;
@@ -2347,59 +2546,70 @@ InstList_Botwoon_Spit_AimingUp_FacingRight:
     dw Instruction_Common_Sleep                                          ;B3942D;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B3942F)
 UNUSED_InstList_Botwoon_Hidden_AimingUp_FacingLeft_B3942F:
     dw $0001                                                             ;B3942F;
     dw Spritemaps_Botwoon_MouthClosed_Priority0_AimingUp_FacingLeft      ;B39431;
     dw Instruction_Common_Sleep                                          ;B39433;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B39435)
 InstList_Botwoon_Hidden_AimingUpLeft:
     dw $0001                                                             ;B39435;
     dw Spritemaps_Botwoon_MouthClosed_Priority0_AimingUpLeft             ;B39437;
     dw Instruction_Common_Sleep                                          ;B39439;
 
+%anchor($B3943B)
 InstList_Botwoon_Hidden_AimingLeft:
     dw $0001                                                             ;B3943B;
     dw Spritemaps_Botwoon_MouthClosed_Priority0_AimingLeft               ;B3943D;
     dw Instruction_Common_Sleep                                          ;B3943F;
 
+%anchor($B39441)
 InstList_Botwoon_Hidden_AimingDownLeft:
     dw $0001                                                             ;B39441;
     dw Spritemaps_Botwoon_MouthClosed_Priority0_AimingDownLeft           ;B39443;
     dw Instruction_Common_Sleep                                          ;B39445;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B39447)
 UNUSED_InstList_Botwoon_Hidden_AimingDown_FacingLeft_B39447:
     dw $0001                                                             ;B39447;
     dw Spritemaps_Botwoon_MouthClosed_Priority0_AimDown_FacingLeft       ;B39449;
     dw Instruction_Common_Sleep                                          ;B3944B;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B3944D)
 InstList_Botwoon_Hidden_AimingDown_FacingRight:
     dw $0001                                                             ;B3944D;
     dw Spritemaps_Botwoon_MouthClosed_Priority0_AimDown_FacingRight      ;B3944F;
     dw Instruction_Common_Sleep                                          ;B39451;
 
+%anchor($B39453)
 InstList_Botwoon_Hidden_AimingDownRight:
     dw $0001                                                             ;B39453;
     dw Spritemaps_Botwoon_MouthClosed_Priority0_AimingDownRight          ;B39455;
     dw Instruction_Common_Sleep                                          ;B39457;
 
+%anchor($B39459)
 InstList_Botwoon_Hidden_AimingRight:
     dw $0001                                                             ;B39459;
     dw Spritemaps_Botwoon_MouthClosed_Priority0_AimingRight              ;B3945B;
     dw Instruction_Common_Sleep                                          ;B3945D;
 
+%anchor($B3945F)
 InstList_Botwoon_Hidden_AimingUpRight:
     dw $0001                                                             ;B3945F;
     dw Spritemaps_Botwoon_MouthClosed_Priority0_AimingUpRight            ;B39461;
     dw Instruction_Common_Sleep                                          ;B39463;
 
+%anchor($B39465)
 InstList_Botwoon_Hidden_AimingUp_FacingRIght:
     dw $0001                                                             ;B39465;
     dw Spritemaps_Botwoon_MouthClosed_Priority0_AimUp_FacingRight        ;B39467;
     dw Instruction_Common_Sleep                                          ;B39469;
 
+%anchor($B3946B)
 InstListPointers_Botwoon:
     dw InstList_Botwoon_MouthClosed_AimingUp_FacingRight                 ;B3946B;
     dw InstList_Botwoon_MouthClosed_AimingUpRight                        ;B3946D;
@@ -2418,6 +2628,7 @@ InstListPointers_Botwoon:
     dw InstList_Botwoon_Hide                                             ;B39487;
     dw InstList_Botwoon_Hide                                             ;B39489;
 
+%anchor($B3948B)
 InstListPointers_Botwoon_spit:
     dw InstList_Botwoon_Spit_AimingUp_FacingRight                        ;B3948B;
     dw InstList_Botwoon_Spit_AimingUpRight                               ;B3948D;
@@ -2428,25 +2639,32 @@ InstListPointers_Botwoon_spit:
     dw InstList_Botwoon_Spit_AimingLeft                                  ;B39497;
     dw InstList_Botwoon_Spit_AimingUpLeft                                ;B39499;
 
+%anchor($B3949B)
 BotwoonHoleHitboxes_leftBoundary:
     dw $003C                                                             ;B3949B;
 
+%anchor($B3949D)
 BotwoonHoleHitboxes_rightBoundary:
     dw $0044                                                             ;B3949D;
 
+%anchor($B3949F)
 BotwoonHoleHitboxes_topBoundary:
     dw $006C                                                             ;B3949F;
 
+%anchor($B394A1)
 BotwoonHoleHitboxes_bottomBoundary:
     dw $0074,$007C,$0084,$00AC,$00B4,$009C,$00A4,$005C                   ;B394A1;
     dw $0064,$00DC,$00E4,$008C,$0094                                     ;B394B1;
 
+%anchor($B394BB)
 BotwoonSpeedTable_speed:
     dw $0002                                                             ;B394BB;
 
+%anchor($B394BD)
 BotwoonSpeedTable_bodyTravelTime:
     dw $0018,$0003,$0010,$0004,$000C                                     ;B394BD;
 
+%anchor($B394C7)
 Instruction_Botwoon_EnemyRadius_8x10:
     LDX.W $0E54                                                          ;B394C7;
     LDA.W #$0008                                                         ;B394CA;
@@ -2456,6 +2674,7 @@ Instruction_Botwoon_EnemyRadius_8x10:
     RTL                                                                  ;B394D6;
 
 
+%anchor($B394D7)
 Instruction_Botwoon_EnemyRadius_CxC:
     LDX.W $0E54                                                          ;B394D7;
     LDA.W #$000C                                                         ;B394DA;
@@ -2465,6 +2684,7 @@ Instruction_Botwoon_EnemyRadius_CxC:
     RTL                                                                  ;B394E6;
 
 
+%anchor($B394E7)
 Instruction_Botwoon_EnemyRadius_10x8:
     LDX.W $0E54                                                          ;B394E7;
     LDA.W #$0010                                                         ;B394EA;
@@ -2474,6 +2694,7 @@ Instruction_Botwoon_EnemyRadius_10x8:
     RTL                                                                  ;B394F6;
 
 
+%anchor($B394F7)
 Instruction_Botwoon_EnemyRadius_CxC_duplicate:
     LDX.W $0E54                                                          ;B394F7;
     LDA.W #$000C                                                         ;B394FA;
@@ -2483,6 +2704,7 @@ Instruction_Botwoon_EnemyRadius_CxC_duplicate:
     RTL                                                                  ;B39506;
 
 
+%anchor($B39507)
 Instruction_Botwoon_EnemyRadius_8x10_duplicate:
     LDX.W $0E54                                                          ;B39507;
     LDA.W #$0008                                                         ;B3950A;
@@ -2492,6 +2714,7 @@ Instruction_Botwoon_EnemyRadius_8x10_duplicate:
     RTL                                                                  ;B39516;
 
 
+%anchor($B39517)
 Instruction_Botwoon_EnemyRadius_8x10_duplicate_again:
     LDX.W $0E54                                                          ;B39517;
     LDA.W #$0008                                                         ;B3951A;
@@ -2501,6 +2724,7 @@ Instruction_Botwoon_EnemyRadius_8x10_duplicate_again:
     RTL                                                                  ;B39526;
 
 
+%anchor($B39527)
 Instruction_Botwoon_EnemyRadius_CxC_duplicate_again:
     LDX.W $0E54                                                          ;B39527;
     LDA.W #$000C                                                         ;B3952A;
@@ -2510,6 +2734,7 @@ Instruction_Botwoon_EnemyRadius_CxC_duplicate_again:
     RTL                                                                  ;B39536;
 
 
+%anchor($B39537)
 Instruction_Botwoon_EnemyRadius_10x8_duplicate:
     LDX.W $0E54                                                          ;B39537;
     LDA.W #$0010                                                         ;B3953A;
@@ -2519,6 +2744,7 @@ Instruction_Botwoon_EnemyRadius_10x8_duplicate:
     RTL                                                                  ;B39546;
 
 
+%anchor($B39547)
 Instruction_Botwoon_EnemyRadius_CxC_duplicate_again2:
     LDX.W $0E54                                                          ;B39547;
     LDA.W #$000C                                                         ;B3954A;
@@ -2528,6 +2754,7 @@ Instruction_Botwoon_EnemyRadius_CxC_duplicate_again2:
     RTL                                                                  ;B39556;
 
 
+%anchor($B39557)
 Instruction_Botwoon_EnemyRadius_8x10_duplicate_again2:
     LDX.W $0E54                                                          ;B39557;
     LDA.W #$0008                                                         ;B3955A;
@@ -2537,6 +2764,7 @@ Instruction_Botwoon_EnemyRadius_8x10_duplicate_again2:
     RTL                                                                  ;B39566;
 
 
+%anchor($B39567)
 Instruction_Botwoon_SetSpittingFlag:
     LDX.W $0E54                                                          ;B39567;
     LDA.W #$0001                                                         ;B3956A;
@@ -2544,22 +2772,26 @@ Instruction_Botwoon_SetSpittingFlag:
     RTL                                                                  ;B39571;
 
 
+%anchor($B39572)
 Instruction_Botwoon_QueueSpitSFX:
     LDA.W #$007C                                                         ;B39572;
     JSL.L QueueSound_Lib2_Max6                                           ;B39575;
     RTL                                                                  ;B39579;
 
 
+%anchor($B3957A)
 RTL_B3957A:
     RTL                                                                  ;B3957A;
 
 
+%anchor($B3957B)
 QueueSmallExplosionSFX:
     LDA.W #$0024                                                         ;B3957B;
     JSL.L QueueSound_Lib2_Max6                                           ;B3957E;
     RTL                                                                  ;B39582;
 
 
+%anchor($B39583)
 InitAI_Botwoon:
     LDA.L $7ED82C                                                        ;B39583;
     AND.W #$0002                                                         ;B39587;
@@ -2645,6 +2877,7 @@ InitAI_Botwoon:
     RTL                                                                  ;B39667;
 
 
+%anchor($B39668)
 MainAI_Botwoon:
     LDX.W $0E54                                                          ;B39668;
     JSR.W BotwoonDeathCheck                                              ;B3966B;
@@ -2654,9 +2887,11 @@ MainAI_Botwoon:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B39675)
 UNUSED_Data_B39675:
     dw $FFFF,$00FF,$01FF                                                 ;B39675;
 
+%anchor($B3967B)
 UNUSED_SpeedTable_Random_B3967B:
     LDA.L $7E803E,X                                                      ;B3967B;
     ASL A                                                                ;B3967F;
@@ -2673,6 +2908,7 @@ UNUSED_SpeedTable_Random_B3967B:
     RTS                                                                  ;B39695;
 
 
+%anchor($B39696)
 UNUSED_Botwoon_MaybeSpitting_B39396:
     LDX.W $0E54                                                          ;B39696;
     LDA.L $7E801E,X                                                      ;B39699;
@@ -2694,6 +2930,7 @@ UNUSED_Botwoon_MaybeSpitting_B39396:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($B396C6)
 BotwoonDeathCheck:
     LDX.W $0E54                                                          ;B396C6;
     LDA.L $7E801E,X                                                      ;B396C9;
@@ -2714,6 +2951,7 @@ BotwoonDeathCheck:
     RTS                                                                  ;B396F4;
 
 
+%anchor($B396F5)
 SetBotwoonAsIntangible:
     LDA.W $0F86                                                          ;B396F5;
     ORA.W #$0400                                                         ;B396F8;
@@ -2722,6 +2960,7 @@ SetBotwoonAsIntangible:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B396FF)
 UNUSED_SetBotwoonBodyProjectilesAsIntangible_B396FF:
     LDY.W #$0022                                                         ;B396FF;
 
@@ -2740,6 +2979,7 @@ UNUSED_SetBotwoonBodyProjectilesAsIntangible_B396FF:
 endif ; !FEATURE_KEEP_UNREFERENCED
 
 
+%anchor($B3971B)
 BotwoonHealthBasedPalettes:
     dw $0000,$27E9,$1A66,$1585,$0CA3,$3F9C,$2E97,$1D72                   ;B3971B;
     dw $108E,$0A5F,$09DB,$0956,$08D2,$082C,$7FBD,$0C05                   ;B3972B;
@@ -2758,9 +2998,11 @@ BotwoonHealthBasedPalettes:
     dw $0000,$1FF8,$0F15,$0E51,$056B,$299E,$211B,$1879                   ;B397FB;
     dw $1417,$193F,$18FC,$18B7,$1874,$182F,$47FF,$000B                   ;B3980B;
 
+%anchor($B3981B)
 BotwoonHealthThresholdsForPaletteChange:
     dw $0BB8,$0A41,$08CA,$0753,$05DC,$0465,$02EE,$0177                   ;B3981B;
 
+%anchor($B3982B)
 BotwoonHealthBasedPaletteHandling:
     LDX.W $0E54                                                          ;B3982B;
     LDA.L $7E881E,X                                                      ;B3982E;
@@ -2801,6 +3043,7 @@ BotwoonHealthBasedPaletteHandling:
     RTS                                                                  ;B39877;
 
 
+%anchor($B39878)
 Function_Botwoon_Initial:
     LDX.W $0E54                                                          ;B39878;
     LDA.L $7E8000,X                                                      ;B3987B;
@@ -2814,6 +3057,7 @@ Function_Botwoon_Initial:
     RTS                                                                  ;B3988C;
 
 
+%anchor($B3988D)
 BotwoonLeaveHoleAction_JumpTable:
     dw SetupBotwoonMovingAround                                          ;B3988D;
     dw SetupBotwoonMovingAround                                          ;B3988F;
@@ -2824,6 +3068,7 @@ BotwoonLeaveHoleAction_JumpTable:
     dw SetupBotwoonSpitting                                              ;B39899;
     dw SetupBotwoonSpitting                                              ;B3989B;
 
+%anchor($B3989D)
 Function_Botwoon_GoThroughHole:
     LDX.W $0E54                                                          ;B3989D;
     LDA.L $7E8038,X                                                      ;B398A0;
@@ -2859,6 +3104,7 @@ Function_Botwoon_GoThroughHole:
     RTS                                                                  ;B398EB;
 
 
+%anchor($B398EC)
 SetupBotwoonMovingAround:
     LDX.W $0E54                                                          ;B398EC;
     LDA.W #Function_Botwoon_MovingAround                                 ;B398EF;
@@ -2875,6 +3121,7 @@ SetupBotwoonMovingAround:
     RTS                                                                  ;B39912;
 
 
+%anchor($B39913)
 SetupBotwoonSpitting:
     LDX.W $0E54                                                          ;B39913;
     LDA.W #Function_Botwoon_Spitting                                     ;B39916;
@@ -2889,6 +3136,7 @@ SetupBotwoonSpitting:
     RTS                                                                  ;B39932;
 
 
+%anchor($B39933)
 ChooseBotwoonMovementPath:
     JSR.W SetBotwoonSpeed                                                ;B39933;
     STZ.B $12                                                            ;B39936;
@@ -2912,6 +3160,7 @@ ChooseBotwoonMovementPath:
     RTS                                                                  ;B3995C;
 
 
+%anchor($B3995D)
 SetBotwoonSpeed:
     LDA.L $7E8026,X                                                      ;B3995D;
     BNE .return                                                          ;B39961;
@@ -2951,6 +3200,7 @@ SetBotwoonSpeed:
     RTS                                                                  ;B399A3;
 
 
+%anchor($B399A4)
 Function_Botwoon_MovingAround:
     LDX.W $0E54                                                          ;B399A4;
     LDA.L $7E8038,X                                                      ;B399A7;
@@ -2983,6 +3233,7 @@ Function_Botwoon_MovingAround:
     RTS                                                                  ;B399E3;
 
 
+%anchor($B399E4)
 Function_Botwoon_Spitting:
     LDX.W $0E54                                                          ;B399E4;
     LDA.L $7E8002,X                                                      ;B399E7;
@@ -3028,6 +3279,7 @@ Function_Botwoon_Spitting:
     RTS                                                                  ;B39A45;
 
 
+%anchor($B39A46)
 Function_Botwoon_DeathSequence_PreDeathDelay:
     LDX.W $0E54                                                          ;B39A46;
     LDA.L $7E8004,X                                                      ;B39A49;
@@ -3042,6 +3294,7 @@ Function_Botwoon_DeathSequence_PreDeathDelay:
     RTS                                                                  ;B39A5D;
 
 
+%anchor($B39A5E)
 Function_Botwoon_DeathSequence_FallingToGround:
     LDX.W $0E54                                                          ;B39A5E;
     LDA.L $7E8010,X                                                      ;B39A61;
@@ -3093,6 +3346,7 @@ Function_Botwoon_DeathSequence_FallingToGround:
     RTS                                                                  ;B39AC9;
 
 
+%anchor($B39ACA)
 Function_Botwoon_DeathSequence_WaitForBodyToFallToGround:
     LDX.W $0E54                                                          ;B39ACA;
     LDA.L $7E883E,X                                                      ;B39ACD;
@@ -3105,6 +3359,7 @@ Function_Botwoon_DeathSequence_WaitForBodyToFallToGround:
     RTS                                                                  ;B39ADC;
 
 
+%anchor($B39ADD)
 SpawnBotwoonItemDrops_StartCrumblingWall:
     JSL.L Spawn_Hardcoded_PLM                                            ;B39ADD;
     db $0F,$04                                                           ;B39AE1;
@@ -3117,6 +3372,7 @@ SpawnBotwoonItemDrops_StartCrumblingWall:
     RTS                                                                  ;B39AF8;
 
 
+%anchor($B39AF9)
 Function_Botwoon_DeathSequence_CrumblingWall:
     LDA.L $7E8006,X                                                      ;B39AF9;
     CMP.W #$00C0                                                         ;B39AFD;
@@ -3201,6 +3457,7 @@ Function_Botwoon_DeathSequence_CrumblingWall:
     RTS                                                                  ;B39BB6;
 
 
+%anchor($B39BB7)
 Function_Botwoon_Movement_DirectlyTowardTargetHole:
     LDX.W $0E54                                                          ;B39BB7;
     JSR.W CalculateXYOffsetsToTargetHole                                 ;B39BBA;
@@ -3231,6 +3488,7 @@ Function_Botwoon_Movement_DirectlyTowardTargetHole:
     RTS                                                                  ;B39BF7;
 
 
+%anchor($B39BF8)
 CalculateXYOffsetsToTargetHole:
     LDA.L $7E802E,X                                                      ;B39BF8;
     TAY                                                                  ;B39BFC;
@@ -3285,6 +3543,7 @@ CalculateXYOffsetsToTargetHole:
     RTS                                                                  ;B39C47;
 
 
+%anchor($B39C48)
 MoveBotwoonAccordingToSpeedAndAngleToTargetHole:
     LDX.W $0E54                                                          ;B39C48;
     LDA.L $7E8034,X                                                      ;B39C4B;
@@ -3306,6 +3565,7 @@ MoveBotwoonAccordingToSpeedAndAngleToTargetHole:
     RTS                                                                  ;B39C7A;
 
 
+%anchor($B39C7B)
 UpdateBotwoonPositionHistory:
     LDY.W $0E54                                                          ;B39C7B;
     LDX.W $0FAA,Y                                                        ;B39C7E;
@@ -3316,6 +3576,7 @@ UpdateBotwoonPositionHistory:
     RTS                                                                  ;B39C8F;
 
 
+%anchor($B39C90)
 UpdateBotwonBodyProjectilePositions:
     LDX.W $0E54                                                          ;B39C90;
     LDA.W $0FAA,X                                                        ;B39C93;
@@ -3395,6 +3656,7 @@ UpdateBotwonBodyProjectilePositions:
     RTS                                                                  ;B39D3B;
 
 
+%anchor($B39D3C)
 UpdateBotwoonPositionHistoryIndex:
     LDX.W $0E54                                                          ;B39D3C;
     LDA.W $0FAA,X                                                        ;B39D3F;
@@ -3405,6 +3667,7 @@ UpdateBotwoonPositionHistoryIndex:
     RTS                                                                  ;B39D4C;
 
 
+%anchor($B39D4D)
 SetBotwoonInstListTableIndices:
     LDX.W $0E54                                                          ;B39D4D;
     LDA.W #$0018                                                         ;B39D50;
@@ -3475,6 +3738,7 @@ SetBotwoonInstListTableIndices:
     RTS                                                                  ;B39DBF;
 
 
+%anchor($B39DC0)
 Function_Botwoon_Head_MovingAround:
     LDX.W $0E54                                                          ;B39DC0;
     LDA.W $0F7A,X                                                        ;B39DC3;
@@ -3553,9 +3817,11 @@ Function_Botwoon_Head_MovingAround:
     RTS                                                                  ;B39E76;
 
 
+%anchor($B39E77)
 BotwoonSpitSpeeds:
     dw $0002,$0003,$0004                                                 ;B39E77;
 
+%anchor($B39E7D)
 Function_Botwoon_Head_Spitting_SetAngleAndShow:
     LDX.W $0E54                                                          ;B39E7D;
     LDA.W #$0002                                                         ;B39E80;
@@ -3600,6 +3866,7 @@ Function_Botwoon_Head_Spitting_SetAngleAndShow:
     JMP.W ($0FB2,X)                                                      ;B39EDD;
 
 
+%anchor($B39EE0)
 Function_Botwoon_Head_Spitting_Spawn5SpitProjectiles:
     LDX.W $0E54                                                          ;B39EE0;
     LDA.L $7E8834,X                                                      ;B39EE3;
@@ -3639,6 +3906,7 @@ Function_Botwoon_Head_Spitting_Spawn5SpitProjectiles:
     RTS                                                                  ;B39F33;
 
 
+%anchor($B39F34)
 Function_Botwoon_Head_Spitting_Spawn3SpitProjectiles:
     LDX.W $0E54                                                          ;B39F34;
     LDA.L $7E803A,X                                                      ;B39F37;
@@ -3670,6 +3938,7 @@ Function_Botwoon_Head_Spitting_Spawn3SpitProjectiles:
     RTS                                                                  ;B39F79;
 
 
+%anchor($B39F7A)
 Function_Botwoon_Head_Spitting_Cooldown:
     LDA.L $7E8002,X                                                      ;B39F7A;
     DEC A                                                                ;B39F7E;
@@ -3684,6 +3953,7 @@ Function_Botwoon_Head_Spitting_Cooldown:
     RTS                                                                  ;B39F92;
 
 
+%anchor($B39F93)
 Botwoon_vs_Hole_CollisionDetection:
     LDA.L $7E802A,X                                                      ;B39F93;
     BEQ .collisionNotDisabled                                            ;B39F97;
@@ -3737,6 +4007,7 @@ Botwoon_vs_Hole_CollisionDetection:
     RTS                                                                  ;B39FFE;
 
 
+%anchor($B39FFF)
 EnemyTouch_Botwoon:
     JSL.L CommonB3_NormalTouchAI_NoDeathCheck                            ;B39FFF;
     LDX.W $0E54                                                          ;B3A003;
@@ -3750,6 +4021,7 @@ EnemyTouch_Botwoon:
     RTL                                                                  ;B3A015;
 
 
+%anchor($B3A016)
 EnemyShot_Botwoon:
     LDX.W $0E54                                                          ;B3A016;
     LDA.W $0F8C,X                                                        ;B3A019;
@@ -3771,6 +4043,7 @@ EnemyShot_Botwoon:
     RTL                                                                  ;B3A040;
 
 
+%anchor($B3A041)
 PowerBombReaction_Botwoon:
     JSL.L CommonB3_NormalEnemyPowerBombAI_NoDeathCheck                   ;B3A041;
     LDX.W $0E54                                                          ;B3A045;
@@ -3784,9 +4057,11 @@ PowerBombReaction_Botwoon:
     RTL                                                                  ;B3A057;
 
 
+%anchor($B3A058)
 BotwoonMovementData_Terminator:
     db $80,$00                                                           ;B3A058;
 
+%anchor($B3A05A)
 BotwoonMovementData_Visible_LeftToBottom:
     db $01,$00,$01,$00,$00,$FF,$01,$00,$01,$00,$01,$00,$01,$00,$01,$00   ;B3A05A;
     db $00,$FF,$01,$00,$01,$00,$01,$00,$01,$00,$01,$00,$00,$FF,$01,$00   ;B3A06A;
@@ -3834,6 +4109,7 @@ BotwoonMovementData_Visible_LeftToBottom:
     db $00,$01,$FF,$00,$00,$01,$00,$01,$FF,$01,$00,$01,$00,$01,$00,$01   ;B3A30A;
     db $FF,$00,$00,$01,$00,$01,$00,$01,$00,$01,$00,$01,$00,$01,$80,$00   ;B3A31A;
 
+%anchor($B3A32A)
 BotwoonMovementData_Visible_LeftToTop:
     db $01,$00,$00,$01,$01,$00,$01,$00,$00,$01,$01,$00,$00,$01,$01,$00   ;B3A32A;
     db $01,$00,$00,$01,$01,$00,$00,$01,$01,$00,$01,$01,$01,$00,$00,$01   ;B3A33A;
@@ -3894,6 +4170,7 @@ BotwoonMovementData_Visible_LeftToTop:
     db $01,$00,$01,$00,$01,$00,$01,$00,$01,$00,$80,$F0,$00,$00,$00,$00   ;B3A6AA;
     db $80,$00                                                           ;B3A6BA;
 
+%anchor($B3A6BC)
 BotwoonMovementData_Visible_LeftToRight:
     db $00,$01,$01,$00,$00,$01,$00,$01,$01,$00,$00,$01,$00,$01,$01,$00   ;B3A6BC;
     db $00,$01,$00,$01,$01,$00,$00,$01,$00,$01,$01,$00,$00,$01,$00,$01   ;B3A6CC;
@@ -3951,6 +4228,7 @@ BotwoonMovementData_Visible_LeftToRight:
     db $01,$00,$00,$01,$01,$00,$01,$01,$01,$00,$00,$01,$01,$00,$00,$01   ;B3AA0C;
     db $01,$00,$00,$01,$01,$00,$80,$00                                   ;B3AA1C;
 
+%anchor($B3AA24)
 BotwoonMovementData_Visible_LeftToLeft:
     db $01,$00,$01,$00,$01,$00,$00,$01,$01,$00,$01,$00,$01,$00,$01,$00   ;B3AA24;
     db $01,$00,$00,$01,$01,$00,$01,$00,$01,$00,$01,$01,$01,$00,$01,$00   ;B3AA34;
@@ -4015,6 +4293,7 @@ BotwoonMovementData_Visible_LeftToLeft:
     db $00,$FF,$00,$FF,$00,$FF,$01,$00,$00,$FF,$00,$FF,$00,$FF,$01,$00   ;B3ADE4;
     db $00,$FF,$00,$FF,$01,$00,$00,$FF,$80,$00                           ;B3ADF4;
 
+%anchor($B3ADFE)
 BotwoonMovementData_Visible_BottomToLeft:
     db $01,$00,$01,$00,$01,$00,$01,$00,$00,$FF,$01,$00,$01,$00,$01,$00   ;B3ADFE;
     db $01,$00,$01,$00,$01,$00,$01,$00,$00,$FF,$01,$00,$01,$00,$01,$00   ;B3AE0E;
@@ -4072,6 +4351,7 @@ BotwoonMovementData_Visible_BottomToLeft:
     db $FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$00,$01   ;B3B14E;
     db $FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$80,$00                   ;B3B15E;
 
+%anchor($B3B16A)
 BotwoonMovementData_Visible_BottomToTop:
     db $01,$FF,$00,$FF,$01,$00,$00,$FF,$01,$00,$00,$FF,$01,$00,$00,$FF   ;B3B16A;
     db $01,$00,$00,$FF,$01,$00,$00,$FF,$01,$00,$00,$FF,$01,$00,$00,$FF   ;B3B17A;
@@ -4137,6 +4417,7 @@ BotwoonMovementData_Visible_BottomToTop:
     db $FF,$01,$00,$01,$FF,$00,$00,$01,$00,$01,$FF,$00,$00,$01,$00,$01   ;B3B53A;
     db $FF,$00,$00,$01,$00,$01,$FF,$01,$00,$01,$80,$00                   ;B3B54A;
 
+%anchor($B3B556)
 BotwoonMovementData_Visible_BottomToRight:
     db $01,$00,$00,$FF,$01,$00,$00,$FF,$01,$FF,$01,$FF,$01,$FF,$01,$FF   ;B3B556;
     db $00,$FF,$01,$00,$00,$FF,$01,$00,$00,$FF,$01,$00,$00,$FF,$01,$00   ;B3B566;
@@ -4203,6 +4484,7 @@ BotwoonMovementData_Visible_BottomToRight:
     db $FF,$00,$00,$01,$FF,$00,$00,$01,$FF,$00,$00,$01,$FF,$00,$FF,$00   ;B3B936;
     db $FF,$00,$FF,$00,$FF,$00,$FF,$00,$00,$FF,$FF,$00,$FF,$00,$80,$00   ;B3B946;
 
+%anchor($B3B956)
 BotwoonMovementData_Visible_BottomToBottom:
     db $FF,$00,$00,$FF,$FF,$00,$FF,$00,$FF,$00,$00,$FF,$FF,$00,$FF,$00   ;B3B956;
     db $00,$FF,$FF,$00,$FF,$00,$FF,$FF,$FF,$00,$FF,$FF,$FF,$00,$FF,$FF   ;B3B966;
@@ -4256,6 +4538,7 @@ BotwoonMovementData_Visible_BottomToBottom:
     db $FF,$00,$00,$01,$FF,$00,$00,$01,$FF,$00,$00,$01,$FF,$00,$FF,$01   ;B3BC66;
     db $FF,$00,$00,$01,$FF,$00,$FF,$01,$FF,$00,$00,$01,$FF,$00,$80,$00   ;B3BC76;
 
+%anchor($B3BC86)
 BotwoonMovementData_Visible_TopToLeft:
     db $00,$01,$00,$01,$00,$01,$00,$01,$00,$01,$00,$01,$FF,$00,$00,$01   ;B3BC86;
     db $00,$01,$00,$01,$00,$01,$00,$01,$00,$01,$00,$01,$00,$01,$FF,$00   ;B3BC96;
@@ -4322,6 +4605,7 @@ BotwoonMovementData_Visible_TopToLeft:
     db $FF,$00,$00,$FF,$FF,$00,$00,$FF,$FF,$FF,$FF,$FF,$00,$FF,$FF,$00   ;B3C066;
     db $00,$FF,$00,$FF,$FF,$00,$00,$FF,$FF,$FF,$00,$FF,$FF,$00,$80,$00   ;B3C076;
 
+%anchor($B3C086)
 BotwoonMovementData_Visible_TopToBottom:
     db $00,$01,$00,$01,$00,$01,$FF,$00,$00,$01,$00,$01,$00,$01,$00,$01   ;B3C086;
     db $FF,$00,$00,$01,$00,$01,$00,$01,$FF,$00,$00,$01,$00,$01,$FF,$00   ;B3C096;
@@ -4357,6 +4641,7 @@ BotwoonMovementData_Visible_TopToBottom:
     db $01,$00,$00,$01,$01,$00,$01,$00,$00,$01,$01,$00,$00,$01,$01,$00   ;B3C276;
     db $00,$01,$01,$00,$00,$01,$01,$00,$80,$00                           ;B3C286;
 
+%anchor($B3C290)
 BotwoonMovementData_Visible_TopToRight:
     db $01,$00,$00,$01,$01,$00,$00,$01,$01,$00,$01,$00,$00,$01,$01,$00   ;B3C290;
     db $00,$01,$01,$00,$01,$00,$00,$01,$01,$00,$00,$01,$01,$00,$00,$01   ;B3C2A0;
@@ -4423,6 +4708,7 @@ BotwoonMovementData_Visible_TopToRight:
     db $00,$FF,$01,$00,$00,$FF,$01,$00,$00,$FF,$01,$00,$00,$FF,$01,$00   ;B3C670;
     db $00,$FF,$01,$00,$00,$FF,$01,$00,$00,$FF,$01,$00,$00,$FF,$80,$00   ;B3C680;
 
+%anchor($B3C690)
 BotwoonMovementData_Visible_TopToTop:
     db $01,$00,$01,$00,$01,$00,$01,$00,$00,$01,$01,$00,$01,$00,$01,$00   ;B3C690;
     db $01,$00,$01,$00,$01,$00,$01,$00,$00,$01,$01,$00,$01,$00,$01,$00   ;B3C6A0;
@@ -4477,6 +4763,7 @@ BotwoonMovementData_Visible_TopToTop:
     db $01,$00,$01,$00,$01,$00,$01,$00,$01,$00,$01,$00,$01,$00,$01,$00   ;B3C9B0;
     db $01,$00,$00,$01,$01,$00,$01,$00,$01,$00,$80,$00                   ;B3C9C0;
 
+%anchor($B3C9CC)
 BotwoonMovementData_Visible_RightToLeft:
     db $FF,$00,$00,$FF,$FF,$00,$00,$FF,$FF,$00,$FF,$FF,$FF,$00,$00,$FF   ;B3C9CC;
     db $FF,$00,$00,$FF,$FF,$00,$FF,$00,$00,$FF,$FF,$00,$00,$FF,$FF,$00   ;B3C9DC;
@@ -4543,6 +4830,7 @@ BotwoonMovementData_Visible_RightToLeft:
     db $00,$FF,$FF,$00,$FF,$00,$00,$FF,$FF,$00,$FF,$00,$FF,$00,$00,$FF   ;B3CDAC;
     db $FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$80,$00   ;B3CDBC;
 
+%anchor($B3CDCC)
 BotwoonMovementData_Visible_RightToBottom:
     db $FF,$00,$00,$FF,$FF,$00,$FF,$00,$FF,$00,$00,$FF,$FF,$00,$FF,$00   ;B3CDCC;
     db $FF,$00,$00,$FF,$FF,$00,$FF,$00,$FF,$00,$00,$FF,$FF,$00,$FF,$00   ;B3CDDC;
@@ -4601,6 +4889,7 @@ BotwoonMovementData_Visible_RightToBottom:
     db $FF,$00,$00,$FF,$FF,$00,$FF,$00,$00,$FF,$FF,$00,$FF,$00,$00,$FF   ;B3D12C;
     db $FF,$00,$80,$00                                                   ;B3D13C;
 
+%anchor($B3D140)
 BotwoonMovementData_Visible_RightToTop:
     db $FF,$00,$00,$01,$FF,$00,$00,$01,$FF,$00,$FF,$00,$00,$01,$FF,$00   ;B3D140;
     db $FF,$00,$00,$01,$FF,$00,$00,$01,$FF,$00,$FF,$00,$00,$01,$FF,$00   ;B3D150;
@@ -4658,6 +4947,7 @@ BotwoonMovementData_Visible_RightToTop:
     db $FF,$00,$00,$FF,$00,$FF,$FF,$FF,$00,$FF,$00,$FF,$FF,$00,$00,$FF   ;B3D490;
     db $80,$00                                                           ;B3D4A0;
 
+%anchor($B3D4A2)
 BotwoonMovementData_Visible_RightToRight:
     db $FF,$00,$00,$FF,$FF,$00,$00,$FF,$FF,$00,$FF,$FF,$FF,$00,$00,$FF   ;B3D4A2;
     db $FF,$00,$FF,$FF,$FF,$00,$00,$FF,$FF,$00,$00,$FF,$FF,$00,$FF,$00   ;B3D4B2;
@@ -4722,6 +5012,7 @@ BotwoonMovementData_Visible_RightToRight:
     db $00,$FF,$01,$00,$00,$FF,$00,$FF,$01,$00,$00,$FF,$00,$FF,$00,$FF   ;B3D862;
     db $00,$FF,$01,$00,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$80,$00           ;B3D872;
 
+%anchor($B3D880)
 BotwoonMovementData_Hidden_LeftToFromBottom:
     db $01,$00,$00,$01,$01,$00,$01,$00,$01,$00,$00,$01,$01,$00,$01,$00   ;B3D880;
     db $00,$01,$01,$00,$01,$00,$00,$01,$01,$00,$00,$01,$01,$00,$01,$00   ;B3D890;
@@ -4748,9 +5039,11 @@ BotwoonMovementData_Hidden_LeftToFromBottom:
     db $00,$FF,$01,$00,$00,$FF,$01,$00,$01,$00,$01,$00,$01,$00,$00,$01   ;B3D9E0;
     db $01,$00,$00,$01,$01,$00,$00,$01,$01,$00,$00,$01,$01,$00,$00,$01   ;B3D9F0;
 
+%anchor($B3DA00)
 BotwoonMovementData_Hidden_LeftToFromBottom_End:
     db $80,$00                                                           ;B3DA00;
 
+%anchor($B3DA02)
 BotwoonMovementData_Hidden_LeftToFromTop:
     db $01,$00,$00,$FF,$01,$00,$01,$00,$01,$00,$00,$FF,$01,$00,$01,$00   ;B3DA02;
     db $01,$00,$00,$FF,$01,$00,$01,$00,$01,$FF,$01,$00,$01,$00,$01,$00   ;B3DA12;
@@ -4779,9 +5072,11 @@ BotwoonMovementData_Hidden_LeftToFromTop:
     db $01,$00,$01,$00,$01,$00,$01,$00,$00,$01,$01,$00,$01,$00,$01,$01   ;B3DB82;
     db $01,$00,$01,$00,$00,$01,$01,$00                                   ;B3DB92;
 
+%anchor($B3DB9A)
 BotwoonMovementData_Hidden_LeftToFromTop_End:
     db $80,$00                                                           ;B3DB9A;
 
+%anchor($B3DB9C)
 BotwoonMovementData_Hidden_LeftToFromRight:
     db $00,$01,$01,$00,$01,$00,$01,$00,$00,$01,$01,$00,$01,$00,$01,$00   ;B3DB9C;
     db $00,$01,$01,$00,$01,$00,$00,$01,$01,$00,$01,$00,$00,$01,$01,$00   ;B3DBAC;
@@ -4811,9 +5106,11 @@ BotwoonMovementData_Hidden_LeftToFromRight:
     db $01,$00,$01,$00,$01,$00,$01,$00,$01,$00,$01,$00,$00,$FF,$01,$00   ;B3DD2C;
     db $01,$00,$01,$00                                                   ;B3DD3C;
 
+%anchor($B3DD40)
 BotwoonMovementData_Hidden_LeftToFromRight_End:
     db $80,$00                                                           ;B3DD40;
 
+%anchor($B3DD42)
 BotwoonMovementData_Hidden_BottomToFromTop:
     db $01,$00,$00,$FF,$01,$00,$00,$FF,$01,$00,$01,$00,$00,$FF,$01,$00   ;B3DD42;
     db $00,$FF,$01,$00,$01,$00,$00,$FF,$01,$00,$00,$FF,$01,$00,$00,$FF   ;B3DD52;
@@ -4836,9 +5133,11 @@ BotwoonMovementData_Hidden_BottomToFromTop:
     db $00,$FF,$00,$FF,$01,$00,$00,$FF,$01,$00,$00,$FF,$01,$00,$00,$FF   ;B3DE62;
     db $00,$FF,$01,$00,$00,$FF,$01,$00,$00,$FF                           ;B3DE72;
 
+%anchor($B3DE7C)
 BotwoonMovementData_Hidden_BottomToFromTop_End:
     db $80,$00                                                           ;B3DE7C;
 
+%anchor($B3DE7E)
 BotwoonMovementData_Hidden_BottomToFromRight:
     db $01,$00,$00,$FF,$01,$00,$01,$00,$00,$FF,$01,$00,$01,$00,$00,$FF   ;B3DE7E;
     db $01,$00,$00,$FF,$01,$00,$01,$00,$00,$FF,$01,$00,$01,$00,$00,$FF   ;B3DE8E;
@@ -4863,9 +5162,11 @@ BotwoonMovementData_Hidden_BottomToFromRight:
     db $01,$00,$00,$FF,$01,$00,$00,$FF,$01,$00,$00,$FF,$01,$00,$00,$FF   ;B3DFBE;
     db $01,$00,$00,$FF,$01,$00,$00,$FF,$01,$00,$00,$FF,$01,$00,$00,$FF   ;B3DFCE;
 
+%anchor($B3DFDE)
 BotwoonMovementData_Hidden_BottomToFromRight_End:
     db $80,$00                                                           ;B3DFDE;
 
+%anchor($B3DFE0)
 BotwoonMovementData_Hidden_TopToFromRight:
     db $00,$01,$FF,$00,$00,$01,$FF,$00,$00,$01,$FF,$00,$00,$01,$00,$01   ;B3DFE0;
     db $FF,$00,$00,$01,$FF,$00,$00,$01,$00,$01,$FF,$00,$00,$01,$00,$01   ;B3DFF0;
@@ -4891,9 +5192,11 @@ BotwoonMovementData_Hidden_TopToFromRight:
     db $00,$FF,$01,$00,$01,$00,$00,$FF,$00,$FF,$01,$00,$00,$FF,$00,$FF   ;B3E130;
     db $01,$00,$00,$FF,$00,$FF,$00,$FF,$01,$FF,$00,$FF,$00,$FF           ;B3E140;
 
+%anchor($B3E14E)
 BotwoonMovementData_Hidden_TopToFromRight_End:
     db $80,$00                                                           ;B3E14E;
 
+%anchor($B3E150)
 BotwoonMovementTable:
     dw BotwoonMovementData_Visible_LeftToBottom                          ;B3E150;
     dw $0000,$0008,$0000                                                 ;B3E152;
@@ -4960,6 +5263,7 @@ BotwoonMovementTable:
     dw BotwoonMovementData_Hidden_TopToFromRight_End                     ;B3E248;
     dw $FFFF,$0010,$0000                                                 ;B3E24A;
 
+%anchor($B3E250)
 Function_Botwoon_Movement_StartMovingAccordingToMovementData:
     LDX.W $0E54                                                          ;B3E250;
     LDA.W #Function_Botwoon_Movement_MoveAccordingToMovementData         ;B3E253;
@@ -4982,6 +5286,7 @@ Function_Botwoon_Movement_StartMovingAccordingToMovementData:
     SBC.W #$0004                                                         ;B3E285;
     STA.L $7E8804,X                                                      ;B3E288;
 
+%anchor($B3E28C)
 Function_Botwoon_Movement_MoveAccordingToMovementData:
     LDX.W $0E54                                                          ;B3E28C;
     STZ.B $12                                                            ;B3E28F;
@@ -5051,6 +5356,7 @@ Function_Botwoon_Movement_MoveAccordingToMovementData:
     RTS                                                                  ;B3E31C;
 
 
+%anchor($B3E31D)
 Spritemaps_Botwoon_MouthClosed_Priority2_AimingUp_FacingLeft:
     dw $0002,$81F8                                                       ;B3E31D;
     db $F7                                                               ;B3E321;
@@ -5058,6 +5364,7 @@ Spritemaps_Botwoon_MouthClosed_Priority2_AimingUp_FacingLeft:
     db $E7                                                               ;B3E326;
     dw $2120                                                             ;B3E327;
 
+%anchor($B3E329)
 Spritemaps_Botwoon_MouthClosed_Priority2_AimingUpLeft:
     dw $0002,$81F8                                                       ;B3E329;
     db $F6                                                               ;B3E32D;
@@ -5065,6 +5372,7 @@ Spritemaps_Botwoon_MouthClosed_Priority2_AimingUpLeft:
     db $EE                                                               ;B3E332;
     dw $2104                                                             ;B3E333;
 
+%anchor($B3E335)
 Spritemaps_Botwoon_MouthClosed_Priority2_AimingLeft:
     dw $0002,$81FC                                                       ;B3E335;
     db $F8                                                               ;B3E339;
@@ -5072,6 +5380,7 @@ Spritemaps_Botwoon_MouthClosed_Priority2_AimingLeft:
     db $F8                                                               ;B3E33E;
     dw $2100                                                             ;B3E33F;
 
+%anchor($B3E341)
 Spritemaps_Botwoon_MouthClosed_Priority2_AimingDownLeft:
     dw $0002,$81F8                                                       ;B3E341;
     db $F9                                                               ;B3E345;
@@ -5079,6 +5388,7 @@ Spritemaps_Botwoon_MouthClosed_Priority2_AimingDownLeft:
     db $01                                                               ;B3E34A;
     dw $2108                                                             ;B3E34B;
 
+%anchor($B3E34D)
 Spritemaps_Botwoon_MouthClosed_Priority2_AimDown_FacingLeft:
     dw $0002,$81F8                                                       ;B3E34D;
     db $09                                                               ;B3E351;
@@ -5086,6 +5396,7 @@ Spritemaps_Botwoon_MouthClosed_Priority2_AimDown_FacingLeft:
     db $F9                                                               ;B3E356;
     dw $210C                                                             ;B3E357;
 
+%anchor($B3E359)
 Spritemaps_Botwoon_MouthClosed_Priority2_AimDown_FacingRight:
     dw $0002,$81F8                                                       ;B3E359;
     db $09                                                               ;B3E35D;
@@ -5093,6 +5404,7 @@ Spritemaps_Botwoon_MouthClosed_Priority2_AimDown_FacingRight:
     db $F9                                                               ;B3E362;
     dw $610C                                                             ;B3E363;
 
+%anchor($B3E365)
 Spritemaps_Botwoon_MouthClosed_Priority2_AimingDownRight:
     dw $0002,$8000                                                       ;B3E365;
     db $01                                                               ;B3E369;
@@ -5100,6 +5412,7 @@ Spritemaps_Botwoon_MouthClosed_Priority2_AimingDownRight:
     db $F9                                                               ;B3E36E;
     dw $610A                                                             ;B3E36F;
 
+%anchor($B3E371)
 Spritemaps_Botwoon_MouthClosed_Priority2_AimingRight:
     dw $0002,$81F4                                                       ;B3E371;
     db $F8                                                               ;B3E375;
@@ -5107,6 +5420,7 @@ Spritemaps_Botwoon_MouthClosed_Priority2_AimingRight:
     db $F8                                                               ;B3E37A;
     dw $6100                                                             ;B3E37B;
 
+%anchor($B3E37D)
 Spritemaps_Botwoon_MouthClosed_Priority2_AimingUpRight:
     dw $0002,$8000                                                       ;B3E37D;
     db $EE                                                               ;B3E381;
@@ -5114,6 +5428,7 @@ Spritemaps_Botwoon_MouthClosed_Priority2_AimingUpRight:
     db $F6                                                               ;B3E386;
     dw $6106                                                             ;B3E387;
 
+%anchor($B3E389)
 Spritemaps_Botwoon_MouthClosed_Priority2_AimUp_FacingRight:
     dw $0002,$81F8                                                       ;B3E389;
     db $F7                                                               ;B3E38D;
@@ -5121,6 +5436,7 @@ Spritemaps_Botwoon_MouthClosed_Priority2_AimUp_FacingRight:
     db $E7                                                               ;B3E392;
     dw $6120                                                             ;B3E393;
 
+%anchor($B3E395)
 Spritemaps_Botwoon_MouthOpen_Priority2_AimingUp_FacingLeft:
     dw $0002,$81F8                                                       ;B3E395;
     db $F8                                                               ;B3E399;
@@ -5128,6 +5444,7 @@ Spritemaps_Botwoon_MouthOpen_Priority2_AimingUp_FacingLeft:
     db $E8                                                               ;B3E39E;
     dw $2124                                                             ;B3E39F;
 
+%anchor($B3E3A1)
 Spritemaps_Botwoon_MouthOpen_Priority2_AimingUpLeft:
     dw $0003,$01F0                                                       ;B3E3A1;
     db $00                                                               ;B3E3A5;
@@ -5137,6 +5454,7 @@ Spritemaps_Botwoon_MouthOpen_Priority2_AimingUpLeft:
     db $F0                                                               ;B3E3AF;
     dw $2184                                                             ;B3E3B0;
 
+%anchor($B3E3B2)
 Spritemaps_Botwoon_MouthOpen_Priority2_AimingLeft:
     dw $0002,$81FC                                                       ;B3E3B2;
     db $F8                                                               ;B3E3B6;
@@ -5144,6 +5462,7 @@ Spritemaps_Botwoon_MouthOpen_Priority2_AimingLeft:
     db $F8                                                               ;B3E3BB;
     dw $2180                                                             ;B3E3BC;
 
+%anchor($B3E3BE)
 Spritemaps_Botwoon_MouthOpen_Priority2_AimingDownLeft:
     dw $0003,$0000                                                       ;B3E3BE;
     db $09                                                               ;B3E3C2;
@@ -5153,6 +5472,7 @@ Spritemaps_Botwoon_MouthOpen_Priority2_AimingDownLeft:
     db $01                                                               ;B3E3CC;
     dw $2188                                                             ;B3E3CD;
 
+%anchor($B3E3CF)
 Spritemaps_Botwoon_MouthOpen_Priority2_AimingDown_FacingLeft:
     dw $0002,$81F8                                                       ;B3E3CF;
     db $09                                                               ;B3E3D3;
@@ -5160,6 +5480,7 @@ Spritemaps_Botwoon_MouthOpen_Priority2_AimingDown_FacingLeft:
     db $F9                                                               ;B3E3D8;
     dw $218C                                                             ;B3E3D9;
 
+%anchor($B3E3DB)
 Spritemaps_Botwoon_MouthOpen_Priority2_AimDown_FacingRight:
     dw $0002,$81F8                                                       ;B3E3DB;
     db $09                                                               ;B3E3DF;
@@ -5167,6 +5488,7 @@ Spritemaps_Botwoon_MouthOpen_Priority2_AimDown_FacingRight:
     db $F9                                                               ;B3E3E4;
     dw $618C                                                             ;B3E3E5;
 
+%anchor($B3E3E7)
 Spritemaps_Botwoon_MouthOpen_Priority2_AimingDownRight:
     dw $0003,$01F8                                                       ;B3E3E7;
     db $09                                                               ;B3E3EB;
@@ -5176,6 +5498,7 @@ Spritemaps_Botwoon_MouthOpen_Priority2_AimingDownRight:
     db $01                                                               ;B3E3F5;
     dw $6188                                                             ;B3E3F6;
 
+%anchor($B3E3F8)
 Spritemaps_Botwoon_MouthOpen_Priority2_AimingRight:
     dw $0002,$81F4                                                       ;B3E3F8;
     db $F8                                                               ;B3E3FC;
@@ -5183,6 +5506,7 @@ Spritemaps_Botwoon_MouthOpen_Priority2_AimingRight:
     db $F8                                                               ;B3E401;
     dw $6180                                                             ;B3E402;
 
+%anchor($B3E404)
 Spritemaps_Botwoon_MouthOpen_Priority2_AimingUpRight:
     dw $0003,$0008                                                       ;B3E404;
     db $00                                                               ;B3E408;
@@ -5192,6 +5516,7 @@ Spritemaps_Botwoon_MouthOpen_Priority2_AimingUpRight:
     db $F0                                                               ;B3E412;
     dw $6184                                                             ;B3E413;
 
+%anchor($B3E415)
 Spritemaps_Botwoon_MouthOpen_Priority2_AimingUp_FacingRight:
     dw $0002,$81F8                                                       ;B3E415;
     db $F8                                                               ;B3E419;
@@ -5199,6 +5524,7 @@ Spritemaps_Botwoon_MouthOpen_Priority2_AimingUp_FacingRight:
     db $E8                                                               ;B3E41E;
     dw $6124                                                             ;B3E41F;
 
+%anchor($B3E421)
 Spritemaps_Botwoon_MouthClosed_Priority0_AimingUp_FacingLeft:
     dw $0002,$81F8                                                       ;B3E421;
     db $F7                                                               ;B3E425;
@@ -5206,6 +5532,7 @@ Spritemaps_Botwoon_MouthClosed_Priority0_AimingUp_FacingLeft:
     db $E7                                                               ;B3E42A;
     dw $0120                                                             ;B3E42B;
 
+%anchor($B3E42D)
 Spritemaps_Botwoon_MouthClosed_Priority0_AimingUpLeft:
     dw $0002,$81F8                                                       ;B3E42D;
     db $F6                                                               ;B3E431;
@@ -5213,6 +5540,7 @@ Spritemaps_Botwoon_MouthClosed_Priority0_AimingUpLeft:
     db $EE                                                               ;B3E436;
     dw $0104                                                             ;B3E437;
 
+%anchor($B3E439)
 Spritemaps_Botwoon_MouthClosed_Priority0_AimingLeft:
     dw $0002,$81FC                                                       ;B3E439;
     db $F8                                                               ;B3E43D;
@@ -5220,6 +5548,7 @@ Spritemaps_Botwoon_MouthClosed_Priority0_AimingLeft:
     db $F8                                                               ;B3E442;
     dw $0100                                                             ;B3E443;
 
+%anchor($B3E445)
 Spritemaps_Botwoon_MouthClosed_Priority0_AimingDownLeft:
     dw $0002,$81F8                                                       ;B3E445;
     db $F9                                                               ;B3E449;
@@ -5227,6 +5556,7 @@ Spritemaps_Botwoon_MouthClosed_Priority0_AimingDownLeft:
     db $01                                                               ;B3E44E;
     dw $0108                                                             ;B3E44F;
 
+%anchor($B3E451)
 Spritemaps_Botwoon_MouthClosed_Priority0_AimDown_FacingLeft:
     dw $0002,$81F8                                                       ;B3E451;
     db $09                                                               ;B3E455;
@@ -5234,6 +5564,7 @@ Spritemaps_Botwoon_MouthClosed_Priority0_AimDown_FacingLeft:
     db $F9                                                               ;B3E45A;
     dw $010C                                                             ;B3E45B;
 
+%anchor($B3E45D)
 Spritemaps_Botwoon_MouthClosed_Priority0_AimDown_FacingRight:
     dw $0002,$81F8                                                       ;B3E45D;
     db $09                                                               ;B3E461;
@@ -5241,6 +5572,7 @@ Spritemaps_Botwoon_MouthClosed_Priority0_AimDown_FacingRight:
     db $F9                                                               ;B3E466;
     dw $410C                                                             ;B3E467;
 
+%anchor($B3E469)
 Spritemaps_Botwoon_MouthClosed_Priority0_AimingDownRight:
     dw $0002,$8000                                                       ;B3E469;
     db $01                                                               ;B3E46D;
@@ -5248,6 +5580,7 @@ Spritemaps_Botwoon_MouthClosed_Priority0_AimingDownRight:
     db $F9                                                               ;B3E472;
     dw $410A                                                             ;B3E473;
 
+%anchor($B3E475)
 Spritemaps_Botwoon_MouthClosed_Priority0_AimingRight:
     dw $0002,$81F4                                                       ;B3E475;
     db $F8                                                               ;B3E479;
@@ -5255,6 +5588,7 @@ Spritemaps_Botwoon_MouthClosed_Priority0_AimingRight:
     db $F8                                                               ;B3E47E;
     dw $4100                                                             ;B3E47F;
 
+%anchor($B3E481)
 Spritemaps_Botwoon_MouthClosed_Priority0_AimingUpRight:
     dw $0002,$8000                                                       ;B3E481;
     db $EE                                                               ;B3E485;
@@ -5262,6 +5596,7 @@ Spritemaps_Botwoon_MouthClosed_Priority0_AimingUpRight:
     db $F6                                                               ;B3E48A;
     dw $4106                                                             ;B3E48B;
 
+%anchor($B3E48D)
 Spritemaps_Botwoon_MouthClosed_Priority0_AimUp_FacingRight:
     dw $0002,$81F8                                                       ;B3E48D;
     db $F7                                                               ;B3E491;
@@ -5270,6 +5605,7 @@ Spritemaps_Botwoon_MouthClosed_Priority0_AimUp_FacingRight:
     dw $4120                                                             ;B3E497;
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B3E499)
 UNUSED_Spritemaps_Botwoon_MouthOpen_Prio0_UpFaceLeft_B3E499:
     dw $0002,$81F8                                                       ;B3E499;
     db $F8                                                               ;B3E49D;
@@ -5277,6 +5613,7 @@ UNUSED_Spritemaps_Botwoon_MouthOpen_Prio0_UpFaceLeft_B3E499:
     db $E8                                                               ;B3E4A2;
     dw $0124                                                             ;B3E4A3;
 
+%anchor($B3E4A5)
 UNUSED_Spritemaps_Botwoon_MouthOpen_Prio0_UpLeft_B3E4A5:
     dw $0003,$01F0                                                       ;B3E4A5;
     db $00                                                               ;B3E4A9;
@@ -5286,6 +5623,7 @@ UNUSED_Spritemaps_Botwoon_MouthOpen_Prio0_UpLeft_B3E4A5:
     db $F0                                                               ;B3E4B3;
     dw $0184                                                             ;B3E4B4;
 
+%anchor($B3E4B6)
 UNUSED_Spritemaps_Botwoon_MouthOpen_Prio0_Left_B3E4B6:
     dw $0002,$81FC                                                       ;B3E4B6;
     db $F8                                                               ;B3E4BA;
@@ -5293,6 +5631,7 @@ UNUSED_Spritemaps_Botwoon_MouthOpen_Prio0_Left_B3E4B6:
     db $F8                                                               ;B3E4BF;
     dw $0180                                                             ;B3E4C0;
 
+%anchor($B3E4C2)
 UNUSED_Spritemaps_Botwoon_MouthOpen_Prio0_DownLeft_B3E4C2:
     dw $0003,$0000                                                       ;B3E4C2;
     db $09                                                               ;B3E4C6;
@@ -5302,6 +5641,7 @@ UNUSED_Spritemaps_Botwoon_MouthOpen_Prio0_DownLeft_B3E4C2:
     db $01                                                               ;B3E4D0;
     dw $0188                                                             ;B3E4D1;
 
+%anchor($B3E4D3)
 UNUSED_Spritemap_Botwoon_MouthOpen_Prio0_DownFaceLeft_B3E4D3:
     dw $0002,$81F8                                                       ;B3E4D3;
     db $09                                                               ;B3E4D7;
@@ -5309,6 +5649,7 @@ UNUSED_Spritemap_Botwoon_MouthOpen_Prio0_DownFaceLeft_B3E4D3:
     db $F9                                                               ;B3E4DC;
     dw $018C                                                             ;B3E4DD;
 
+%anchor($B3E4DF)
 UNUSED_Spritemap_Botwoon_MouthOpen_Pri0_DownFaceRight_B3E4DF:
     dw $0002,$81F8                                                       ;B3E4DF;
     db $09                                                               ;B3E4E3;
@@ -5316,6 +5657,7 @@ UNUSED_Spritemap_Botwoon_MouthOpen_Pri0_DownFaceRight_B3E4DF:
     db $F9                                                               ;B3E4E8;
     dw $418C                                                             ;B3E4E9;
 
+%anchor($B3E4EB)
 UNUSED_Spritemaps_Botwoon_MouthOpen_Prio0_DownRight_B3E4EB:
     dw $0003,$01F8                                                       ;B3E4EB;
     db $09                                                               ;B3E4EF;
@@ -5325,6 +5667,7 @@ UNUSED_Spritemaps_Botwoon_MouthOpen_Prio0_DownRight_B3E4EB:
     db $01                                                               ;B3E4F9;
     dw $4188                                                             ;B3E4FA;
 
+%anchor($B3E4FC)
 UNUSED_Spritemaps_Botwoon_MouthOpen_Prio0_Right_B3E4FC:
     dw $0002,$81F4                                                       ;B3E4FC;
     db $F8                                                               ;B3E500;
@@ -5332,6 +5675,7 @@ UNUSED_Spritemaps_Botwoon_MouthOpen_Prio0_Right_B3E4FC:
     db $F8                                                               ;B3E505;
     dw $4180                                                             ;B3E506;
 
+%anchor($B3E508)
 UNUSED_Spritemaps_Botwoon_MouthOpen_Prio0_UpRight_B3E508:
     dw $0003,$0008                                                       ;B3E508;
     db $00                                                               ;B3E50C;
@@ -5341,6 +5685,7 @@ UNUSED_Spritemaps_Botwoon_MouthOpen_Prio0_UpRight_B3E508:
     db $F0                                                               ;B3E516;
     dw $4184                                                             ;B3E517;
 
+%anchor($B3E519)
 UNUSED_Spritemaps_Botwoon_MouthOpen_Prio0_UpFaceRight_B3E519:
     dw $0002,$81F8                                                       ;B3E519;
     db $F8                                                               ;B3E51D;
@@ -5349,10 +5694,12 @@ UNUSED_Spritemaps_Botwoon_MouthOpen_Prio0_UpFaceRight_B3E519:
     dw $4124                                                             ;B3E523;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B3E525)
 Palette_EtecoonEscape:
     dw $3800,$5F97,$56F2,$2987,$00A0,$6355,$4AB0,$3A0B                   ;B3E525;
     dw $31C9,$57FF,$42F7,$2610,$158C,$03FF,$0279,$0029                   ;B3E535;
 
+%anchor($B3E545)
 Instruction_EtecoonEscape_GotoY_IfAcidPositionLessThanCE:
     LDA.W $1962                                                          ;B3E545;
     CMP.W #$00CE                                                         ;B3E548;
@@ -5368,14 +5715,17 @@ Instruction_EtecoonEscape_GotoY_IfAcidPositionLessThanCE:
     RTL                                                                  ;B3E554;
 
 
+%anchor($B3E555)
 RTS_B3E555:
     RTS                                                                  ;B3E555;
 
 
+%anchor($B3E556)
 InstList_EtecoonEscape_RunningLeft_LowTide_0:
     dw Instruction_EtecoonEscape_GotoY_IfAcidPositionLessThanCE          ;B3E556;
     dw InstList_EtecoonEscape_RunningLeft_HighTide                       ;B3E558;
 
+%anchor($B3E55A)
 InstList_EtecoonEscape_RunningLeft_LowTide_1:
     dw $0005                                                             ;B3E55A;
     dw Spritemaps_EtecoonEscape_0                                        ;B3E55C;
@@ -5388,6 +5738,7 @@ InstList_EtecoonEscape_RunningLeft_LowTide_1:
     dw Instruction_Common_GotoY                                          ;B3E56A;
     dw InstList_EtecoonEscape_RunningLeft_LowTide_1                      ;B3E56C;
 
+%anchor($B3E56E)
 InstList_EtecoonEscape_RunningLeft_HighTide:
     dw $0003                                                             ;B3E56E;
     dw Spritemaps_EtecoonEscape_0                                        ;B3E570;
@@ -5400,10 +5751,12 @@ InstList_EtecoonEscape_RunningLeft_HighTide:
     dw Instruction_Common_GotoY                                          ;B3E57E;
     dw InstList_EtecoonEscape_RunningLeft_HighTide                       ;B3E580;
 
+%anchor($B3E582)
 InstList_EtecoonEscape_RunningRight_LowTide_0:
     dw Instruction_EtecoonEscape_GotoY_IfAcidPositionLessThanCE          ;B3E582;
     dw InstList_EtecoonEscape_RunningRight_HighTide                      ;B3E584;
 
+%anchor($B3E586)
 InstList_EtecoonEscape_RunningRight_LowTide_1:
     dw $0006                                                             ;B3E586;
     dw Spritemaps_EtecoonEscape_3                                        ;B3E588;
@@ -5416,6 +5769,7 @@ InstList_EtecoonEscape_RunningRight_LowTide_1:
     dw Instruction_Common_GotoY                                          ;B3E596;
     dw InstList_EtecoonEscape_RunningRight_LowTide_1                     ;B3E598;
 
+%anchor($B3E59A)
 InstList_EtecoonEscape_RunningRight_HighTide:
     dw $0003                                                             ;B3E59A;
     dw Spritemaps_EtecoonEscape_3                                        ;B3E59C;
@@ -5428,10 +5782,12 @@ InstList_EtecoonEscape_RunningRight_HighTide:
     dw Instruction_Common_GotoY                                          ;B3E5AA;
     dw InstList_EtecoonEscape_RunningRight_HighTide                      ;B3E5AC;
 
+%anchor($B3E5AE)
 InstList_EtecoonEscape_RunningForEscape_0:
     dw Instruction_Common_Enemy0FB2_InY                                  ;B3E5AE;
     dw Function_EtecoonEscape_RunningForEscape                           ;B3E5B0;
 
+%anchor($B3E5B2)
 InstList_EtecoonEscape_RunningForEscape_1:
     dw $0003                                                             ;B3E5B2;
     dw Spritemaps_EtecoonEscape_3                                        ;B3E5B4;
@@ -5444,6 +5800,7 @@ InstList_EtecoonEscape_RunningForEscape_1:
     dw Instruction_Common_GotoY                                          ;B3E5C2;
     dw InstList_EtecoonEscape_RunningForEscape_1                         ;B3E5C4;
 
+%anchor($B3E5C6)
 InstList_EtecoonEscape_Stationary:
     dw $0040                                                             ;B3E5C6;
     dw Spritemaps_EtecoonEscape_E                                        ;B3E5C8;
@@ -5456,11 +5813,13 @@ InstList_EtecoonEscape_Stationary:
     dw Instruction_Common_GotoY                                          ;B3E5D6;
     dw InstList_EtecoonEscape_Stationary                                 ;B3E5D8;
 
+%anchor($B3E5DA)
 InstList_EtecoonEscape_ExpressGratitudeThenEscape_0:
     dw Instruction_Common_SetEnemy0FB2ToRTS                              ;B3E5DA;
     dw Instruction_Common_TimerInY                                       ;B3E5DC;
     dw $0008                                                             ;B3E5DE;
 
+%anchor($B3E5E0)
 InstList_EtecoonEscape_ExpressGratitudeThenEscape_1:
     dw $0008                                                             ;B3E5E0;
     dw Spritemaps_EtecoonEscape_0                                        ;B3E5E2;
@@ -5484,6 +5843,7 @@ InstList_EtecoonEscape_ExpressGratitudeThenEscape_1:
     dw Instruction_Common_GotoY                                          ;B3E60C;
     dw InstList_EtecoonEscape_RunningForEscape_0                         ;B3E60E;
 
+%anchor($B3E610)
 Instruction_EtecoonEscape_XPositionPlusY:
     LDA.W $0F7A,X                                                        ;B3E610;
     CLC                                                                  ;B3E613;
@@ -5495,11 +5855,13 @@ Instruction_EtecoonEscape_XPositionPlusY:
 
 
 if !FEATURE_KEEP_UNREFERENCED
+%anchor($B3E61D)
 UNUSED_InstList_EtecoonEscape_B3E61D:
     dw $0001                                                             ;B3E61D;
     dw Spritemaps_EtecoonEscape_6                                        ;B3E61F;
     dw Instruction_Common_Sleep                                          ;B3E621;
 
+%anchor($B3E623)
 UNUSED_InstList_EtecoonEscape_B3E623:
     dw $000C                                                             ;B3E623;
     dw Spritemaps_EtecoonEscape_7                                        ;B3E625;
@@ -5513,11 +5875,13 @@ UNUSED_InstList_EtecoonEscape_B3E623:
     dw Spritemaps_EtecoonEscape_7                                        ;B3E635;
     dw Instruction_Common_Sleep                                          ;B3E637;
 
+%anchor($B3E639)
 UNUSED_InstList_EtecoonEscape_B3E639:
     dw $0001                                                             ;B3E639;
     dw Spritemaps_EtecoonEscape_A                                        ;B3E63B;
     dw Instruction_Common_Sleep                                          ;B3E63D;
 
+%anchor($B3E63F)
 UNUSED_InstList_EtecoonEscape_B3E63F:
     dw $000C                                                             ;B3E63F;
     dw Spritemaps_EtecoonEscape_B                                        ;B3E641;
@@ -5532,12 +5896,14 @@ UNUSED_InstList_EtecoonEscape_B3E63F:
     dw Instruction_Common_Sleep                                          ;B3E653;
 endif ; !FEATURE_KEEP_UNREFERENCED
 
+%anchor($B3E655)
 MainAI_EtecoonEscape:
     LDX.W $0E54                                                          ;B3E655;
     JSR.W ($0FB2,X)                                                      ;B3E658;
     RTL                                                                  ;B3E65B;
 
 
+%anchor($B3E65C)
 Function_EtecoonEscape_RunningForEscape:
     LDA.W $0F7C,X                                                        ;B3E65C;
     CLC                                                                  ;B3E65F;
@@ -5549,6 +5915,7 @@ Function_EtecoonEscape_RunningForEscape:
     RTS                                                                  ;B3E66F;
 
 
+%anchor($B3E670)
 Function_EtecoonEscape_StationaryWaitingToExpressGratitude:
     LDA.W #$000F                                                         ;B3E670;
     JSL.L CheckIfEvent_inA_HasHappened                                   ;B3E673;
@@ -5560,6 +5927,7 @@ Function_EtecoonEscape_StationaryWaitingToExpressGratitude:
     RTS                                                                  ;B3E67F;
 
 
+%anchor($B3E680)
 Function_EtecoonEscape_RunningAroundAimlessly:
     STZ.B $12                                                            ;B3E680;
     STZ.B $14                                                            ;B3E682;
@@ -5599,6 +5967,7 @@ Function_EtecoonEscape_RunningAroundAimlessly:
     RTS                                                                  ;B3E6CA;
 
 
+%anchor($B3E6CB)
 InitAI_EtecoonEscape:
     LDX.W $0E54                                                          ;B3E6CB;
     LDA.W #$000F                                                         ;B3E6CE;
@@ -5651,6 +6020,7 @@ InitAI_EtecoonEscape:
 .XVelocity:
     dw $FE00,$0280,$0000                                                 ;B3E730;
 
+%anchor($B3E736)
 Spritemaps_EtecoonEscape_0:
     dw $0003,$01F2                                                       ;B3E736;
     db $FF                                                               ;B3E73A;
@@ -5660,6 +6030,7 @@ Spritemaps_EtecoonEscape_0:
     db $F7                                                               ;B3E744;
     dw $3302                                                             ;B3E745;
 
+%anchor($B3E747)
 Spritemaps_EtecoonEscape_1:
     dw $0002,$C3F5                                                       ;B3E747;
     db $F0                                                               ;B3E74B;
@@ -5667,6 +6038,7 @@ Spritemaps_EtecoonEscape_1:
     db $F8                                                               ;B3E750;
     dw $3304                                                             ;B3E751;
 
+%anchor($B3E753)
 Spritemaps_EtecoonEscape_2:
     dw $0002,$C3F5                                                       ;B3E753;
     db $F1                                                               ;B3E757;
@@ -5674,6 +6046,7 @@ Spritemaps_EtecoonEscape_2:
     db $F9                                                               ;B3E75C;
     dw $3306                                                             ;B3E75D;
 
+%anchor($B3E75F)
 Spritemaps_EtecoonEscape_3:
     dw $0003,$0006                                                       ;B3E75F;
     db $FF                                                               ;B3E763;
@@ -5683,6 +6056,7 @@ Spritemaps_EtecoonEscape_3:
     db $F7                                                               ;B3E76D;
     dw $7302                                                             ;B3E76E;
 
+%anchor($B3E770)
 Spritemaps_EtecoonEscape_4:
     dw $0002,$C3FB                                                       ;B3E770;
     db $F0                                                               ;B3E774;
@@ -5690,6 +6064,7 @@ Spritemaps_EtecoonEscape_4:
     db $F8                                                               ;B3E779;
     dw $7304                                                             ;B3E77A;
 
+%anchor($B3E77C)
 Spritemaps_EtecoonEscape_5:
     dw $0002,$C3FB                                                       ;B3E77C;
     db $F1                                                               ;B3E780;
@@ -5697,6 +6072,7 @@ Spritemaps_EtecoonEscape_5:
     db $F9                                                               ;B3E785;
     dw $7306                                                             ;B3E786;
 
+%anchor($B3E788)
 Spritemaps_EtecoonEscape_6:
     dw $0007,$0001                                                       ;B3E788;
     db $FE                                                               ;B3E78C;
@@ -5714,6 +6090,7 @@ Spritemaps_EtecoonEscape_6:
     db $FA                                                               ;B3E7AA;
     dw $7320                                                             ;B3E7AB;
 
+%anchor($B3E7AD)
 Spritemaps_EtecoonEscape_7:
     dw $0007,$01F7                                                       ;B3E7AD;
     db $FC                                                               ;B3E7B1;
@@ -5731,6 +6108,7 @@ Spritemaps_EtecoonEscape_7:
     db $FA                                                               ;B3E7CF;
     dw $7320                                                             ;B3E7D0;
 
+%anchor($B3E7D2)
 Spritemaps_EtecoonEscape_8:
     dw $0007,$01F9                                                       ;B3E7D2;
     db $01                                                               ;B3E7D6;
@@ -5748,6 +6126,7 @@ Spritemaps_EtecoonEscape_8:
     db $F9                                                               ;B3E7F4;
     dw $7321                                                             ;B3E7F5;
 
+%anchor($B3E7F7)
 Spritemaps_EtecoonEscape_9:
     dw $0007,$01F9                                                       ;B3E7F7;
     db $01                                                               ;B3E7FB;
@@ -5765,6 +6144,7 @@ Spritemaps_EtecoonEscape_9:
     db $F7                                                               ;B3E819;
     dw $7321                                                             ;B3E81A;
 
+%anchor($B3E81C)
 Spritemaps_EtecoonEscape_A:
     dw $0007,$01F7                                                       ;B3E81C;
     db $FE                                                               ;B3E820;
@@ -5782,6 +6162,7 @@ Spritemaps_EtecoonEscape_A:
     db $FA                                                               ;B3E83E;
     dw $3320                                                             ;B3E83F;
 
+%anchor($B3E841)
 Spritemaps_EtecoonEscape_B:
     dw $0007,$0001                                                       ;B3E841;
     db $FC                                                               ;B3E845;
@@ -5799,6 +6180,7 @@ Spritemaps_EtecoonEscape_B:
     db $FA                                                               ;B3E863;
     dw $3320                                                             ;B3E864;
 
+%anchor($B3E866)
 Spritemaps_EtecoonEscape_C:
     dw $0007,$01FF                                                       ;B3E866;
     db $01                                                               ;B3E86A;
@@ -5816,6 +6198,7 @@ Spritemaps_EtecoonEscape_C:
     db $F9                                                               ;B3E888;
     dw $3321                                                             ;B3E889;
 
+%anchor($B3E88B)
 Spritemaps_EtecoonEscape_D:
     dw $0007,$01FF                                                       ;B3E88B;
     db $01                                                               ;B3E88F;
@@ -5833,6 +6216,7 @@ Spritemaps_EtecoonEscape_D:
     db $F7                                                               ;B3E8AD;
     dw $3321                                                             ;B3E8AE;
 
+%anchor($B3E8B0)
 Spritemaps_EtecoonEscape_E:
     dw $0007,$C3F8                                                       ;B3E8B0;
     db $ED                                                               ;B3E8B4;
@@ -5850,6 +6234,7 @@ Spritemaps_EtecoonEscape_E:
     db $F7                                                               ;B3E8D2;
     dw $7320                                                             ;B3E8D3;
 
+%anchor($B3E8D5)
 Spritemaps_EtecoonEscape_F:
     dw $0007,$0002                                                       ;B3E8D5;
     db $F9                                                               ;B3E8D9;
@@ -5867,6 +6252,7 @@ Spritemaps_EtecoonEscape_F:
     db $F7                                                               ;B3E8F7;
     dw $7320                                                             ;B3E8F8;
 
+%anchor($B3E8FA)
 Spritemaps_EtecoonEscape_10:
     dw $0007,$01F6                                                       ;B3E8FA;
     db $F9                                                               ;B3E8FE;
@@ -5884,6 +6270,7 @@ Spritemaps_EtecoonEscape_10:
     db $F7                                                               ;B3E91C;
     dw $3320                                                             ;B3E91D;
 
+%anchor($B3E91F)
 Spritemaps_EtecoonEscape_11:
     dw $0007,$C3F8                                                       ;B3E91F;
     db $ED                                                               ;B3E923;
@@ -5901,14 +6288,17 @@ Spritemaps_EtecoonEscape_11:
     db $F7                                                               ;B3E941;
     dw $3320                                                             ;B3E942;
 
+%anchor($B3E944)
 Palette_DachoraEscape:
     dw $3800,$3F57,$2E4D,$00E2,$0060,$3AB0,$220B,$1166                   ;B3E944;
     dw $0924,$57FF,$42F7,$2610,$158C,$7C1F,$6018,$300A                   ;B3E954;
 
+%anchor($B3E964)
 InstList_DachoraEscape_RunningAroundAimlessly_LowTide_0:
     dw Instruction_Common_TimerInY                                       ;B3E964;
     dw $0005                                                             ;B3E966;
 
+%anchor($B3E968)
 InstList_DachoraEscape_RunningAroundAimlessly_LowTide_1:
     dw $0003                                                             ;B3E968;
     dw Spritemaps_DachoraEscape_0                                        ;B3E96A;
@@ -5937,6 +6327,7 @@ InstList_DachoraEscape_RunningAroundAimlessly_LowTide_1:
     dw Instruction_Common_TimerInY                                       ;B3E998;
     dw $0005                                                             ;B3E99A;
 
+%anchor($B3E99C)
 InstList_DachoraEscape_RunningAroundAimlessly_LowTide_2:
     dw $0003                                                             ;B3E99C;
     dw Spritemaps_DachoraEscape_6                                        ;B3E99E;
@@ -5965,10 +6356,12 @@ InstList_DachoraEscape_RunningAroundAimlessly_LowTide_2:
     dw Instruction_Common_GotoY                                          ;B3E9CC;
     dw InstList_DachoraEscape_RunningAroundAimlessly_LowTide_0           ;B3E9CE;
 
+%anchor($B3E9D0)
 InstList_DachoraEscape_RunningAroundAimlessly_HighTide_0:
     dw Instruction_Common_TimerInY                                       ;B3E9D0;
     dw $0005                                                             ;B3E9D2;
 
+%anchor($B3E9D4)
 InstList_DachoraEscape_RunningAroundAimlessly_HighTide_1:
     dw $0002                                                             ;B3E9D4;
     dw Spritemaps_DachoraEscape_0                                        ;B3E9D6;
@@ -5991,12 +6384,14 @@ InstList_DachoraEscape_RunningAroundAimlessly_HighTide_1:
     dw InstList_DachoraEscape_GotoY_IfCrittersEscaped                    ;B3E9F8;
     dw InstList_DachoraEscape_RunningForEscape_0                         ;B3E9FA;
 
+%anchor($B3E9FC)
 InstList_DachoraEscape_RunningAroundAimlessly_HighTide_2:
     dw Instruction_Common_DecrementTimer_GotoYIfNonZero_duplicate        ;B3E9FC;
     dw InstList_DachoraEscape_RunningAroundAimlessly_HighTide_1          ;B3E9FE;
     dw Instruction_Common_TimerInY                                       ;B3EA00;
     dw $0005                                                             ;B3EA02;
 
+%anchor($B3EA04)
 InstList_DachoraEscape_RunningAroundAimlessly_HighTide_3:
     dw $0002                                                             ;B3EA04;
     dw Spritemaps_DachoraEscape_6                                        ;B3EA06;
@@ -6019,16 +6414,19 @@ InstList_DachoraEscape_RunningAroundAimlessly_HighTide_3:
     dw InstList_DachoraEscape_GotoY_IfCrittersEscaped                    ;B3EA28;
     dw InstList_DachoraEscape_RunningForEscape_1                         ;B3EA2A;
 
+%anchor($B3EA2C)
 InstList_DachoraEscape_RunningAroundAimlessly_HighTide_4:
     dw Instruction_Common_DecrementTimer_GotoYIfNonZero_duplicate        ;B3EA2C;
     dw InstList_DachoraEscape_RunningAroundAimlessly_HighTide_3          ;B3EA2E;
     dw Instruction_Common_GotoY                                          ;B3EA30;
     dw InstList_DachoraEscape_RunningAroundAimlessly_HighTide_0          ;B3EA32;
 
+%anchor($B3EA34)
 InstList_DachoraEscape_RunningForEscape_0:
     dw $001E                                                             ;B3EA34;
     dw Spritemaps_DachoraEscape_0                                        ;B3EA36;
 
+%anchor($B3EA38)
 InstList_DachoraEscape_RunningForEscape_1:
     dw $005A                                                             ;B3EA38;
     dw Spritemaps_DachoraEscape_6                                        ;B3EA3A;
@@ -6067,6 +6465,7 @@ InstList_DachoraEscape_RunningForEscape_1:
     dw Spritemaps_DachoraEscape_B                                        ;B3EA7C;
     dw InstList_DachoraEscape_XPositionPlus6                             ;B3EA7E;
 
+%anchor($B3EA80)
 InstList_DachoraEscape_RunningForEscape_2:
     dw $0001                                                             ;B3EA80;
     dw Spritemaps_DachoraEscape_6                                        ;B3EA82;
@@ -6089,6 +6488,7 @@ InstList_DachoraEscape_RunningForEscape_2:
     dw Instruction_Common_GotoY                                          ;B3EAA4;
     dw InstList_DachoraEscape_RunningForEscape_2                         ;B3EAA6;
 
+%anchor($B3EAA8)
 InstList_DachoraEscape_GotoY_IfAcidLessThanCE:
     LDA.W $1962                                                          ;B3EAA8;
     CMP.W #$00CE                                                         ;B3EAAB;
@@ -6104,6 +6504,7 @@ InstList_DachoraEscape_GotoY_IfAcidLessThanCE:
     RTL                                                                  ;B3EAB7;
 
 
+%anchor($B3EAB8)
 InstList_DachoraEscape_GotoY_IfCrittersEscaped:
     LDA.W #$000F                                                         ;B3EAB8;
     JSL.L CheckIfEvent_inA_HasHappened                                   ;B3EABB;
@@ -6119,6 +6520,7 @@ InstList_DachoraEscape_GotoY_IfCrittersEscaped:
     RTL                                                                  ;B3EAC8;
 
 
+%anchor($B3EAC9)
 InstList_DachoraEscape_XPositionMinus6:
     LDX.W $0E54                                                          ;B3EAC9;
     LDA.W $0F7A,X                                                        ;B3EACC;
@@ -6128,6 +6530,7 @@ InstList_DachoraEscape_XPositionMinus6:
     RTL                                                                  ;B3EAD6;
 
 
+%anchor($B3EAD7)
 InstList_DachoraEscape_XPositionPlus6:
     LDX.W $0E54                                                          ;B3EAD7;
     LDA.W $0F7A,X                                                        ;B3EADA;
@@ -6137,6 +6540,7 @@ InstList_DachoraEscape_XPositionPlus6:
     RTL                                                                  ;B3EAE4;
 
 
+%anchor($B3EAE5)
 InitAI_DachoraEscape:
     LDX.W $0E54                                                          ;B3EAE5;
     LDA.W #$000F                                                         ;B3EAE8;
@@ -6162,10 +6566,12 @@ InitAI_DachoraEscape:
     RTL                                                                  ;B3EB19;
 
 
+%anchor($B3EB1A)
 RTL_B3EB1A:
     RTL                                                                  ;B3EB1A;
 
 
+%anchor($B3EB1B)
 Spritemaps_DachoraEscape_0:
     dw $0009,$01F0                                                       ;B3EB1B;
     db $F2                                                               ;B3EB1F;
@@ -6187,6 +6593,7 @@ Spritemaps_DachoraEscape_0:
     db $FF                                                               ;B3EB47;
     dw $3303                                                             ;B3EB48;
 
+%anchor($B3EB4A)
 Spritemaps_DachoraEscape_1:
     dw $0009,$01EF                                                       ;B3EB4A;
     db $F3                                                               ;B3EB4E;
@@ -6208,6 +6615,7 @@ Spritemaps_DachoraEscape_1:
     db $00                                                               ;B3EB76;
     dw $3306                                                             ;B3EB77;
 
+%anchor($B3EB79)
 Spritemaps_DachoraEscape_2:
     dw $000B,$01EE                                                       ;B3EB79;
     db $F1                                                               ;B3EB7D;
@@ -6233,6 +6641,7 @@ Spritemaps_DachoraEscape_2:
     db $06                                                               ;B3EBAF;
     dw $3318                                                             ;B3EBB0;
 
+%anchor($B3EBB2)
 Spritemaps_DachoraEscape_3:
     dw $0009,$01F0                                                       ;B3EBB2;
     db $F2                                                               ;B3EBB6;
@@ -6254,6 +6663,7 @@ Spritemaps_DachoraEscape_3:
     db $FF                                                               ;B3EBDE;
     dw $3333                                                             ;B3EBDF;
 
+%anchor($B3EBE1)
 Spritemaps_DachoraEscape_4:
     dw $0009,$01EF                                                       ;B3EBE1;
     db $F3                                                               ;B3EBE5;
@@ -6275,6 +6685,7 @@ Spritemaps_DachoraEscape_4:
     db $00                                                               ;B3EC0D;
     dw $3336                                                             ;B3EC0E;
 
+%anchor($B3EC10)
 Spritemaps_DachoraEscape_5:
     dw $000B,$01EE                                                       ;B3EC10;
     db $F1                                                               ;B3EC14;
@@ -6300,6 +6711,7 @@ Spritemaps_DachoraEscape_5:
     db $FE                                                               ;B3EC46;
     dw $3338                                                             ;B3EC47;
 
+%anchor($B3EC49)
 Spritemaps_DachoraEscape_6:
     dw $0009,$0008                                                       ;B3EC49;
     db $F2                                                               ;B3EC4D;
@@ -6321,6 +6733,7 @@ Spritemaps_DachoraEscape_6:
     db $FF                                                               ;B3EC75;
     dw $7303                                                             ;B3EC76;
 
+%anchor($B3EC78)
 Spritemaps_DachoraEscape_7:
     dw $0009,$0009                                                       ;B3EC78;
     db $F3                                                               ;B3EC7C;
@@ -6342,6 +6755,7 @@ Spritemaps_DachoraEscape_7:
     db $00                                                               ;B3ECA4;
     dw $7306                                                             ;B3ECA5;
 
+%anchor($B3ECA7)
 Spritemaps_DachoraEscape_8:
     dw $000B,$000A                                                       ;B3ECA7;
     db $F1                                                               ;B3ECAB;
@@ -6367,6 +6781,7 @@ Spritemaps_DachoraEscape_8:
     db $06                                                               ;B3ECDD;
     dw $7318                                                             ;B3ECDE;
 
+%anchor($B3ECE0)
 Spritemaps_DachoraEscape_9:
     dw $0009,$0008                                                       ;B3ECE0;
     db $F2                                                               ;B3ECE4;
@@ -6388,6 +6803,7 @@ Spritemaps_DachoraEscape_9:
     db $FF                                                               ;B3ED0C;
     dw $7333                                                             ;B3ED0D;
 
+%anchor($B3ED0F)
 Spritemaps_DachoraEscape_A:
     dw $0009,$0009                                                       ;B3ED0F;
     db $F3                                                               ;B3ED13;
@@ -6409,6 +6825,7 @@ Spritemaps_DachoraEscape_A:
     db $00                                                               ;B3ED3B;
     dw $7336                                                             ;B3ED3C;
 
+%anchor($B3ED3E)
 Spritemaps_DachoraEscape_B:
     dw $000B,$000A                                                       ;B3ED3E;
     db $F1                                                               ;B3ED42;
@@ -6434,5 +6851,6 @@ Spritemaps_DachoraEscape_B:
     db $FE                                                               ;B3ED74;
     dw $7338                                                             ;B3ED75;
 
+%anchor($B3ED77)
 Freespace_BankB3_ED77:                                                   ;B3ED77;
 ; $1289 bytes
