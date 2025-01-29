@@ -1,10 +1,14 @@
-
 @echo off
 
 echo Creating FF file
-python tools/ff_file.py ../SM.sfc
+"tools/ff_file.py" SM.sfc || goto :error
 
 echo Patching FF file with asar
-"tools/asar" --no-title-check --symbols=wla --symbols-path=symbols.sym %* src/main.asm SM.sfc && echo Success!
+"tools/asar" --no-title-check --symbols=wla --symbols-path=symbols.sym %* src/main.asm SM.sfc || goto :error
 
-PAUSE
+echo Success
+goto :EOF
+
+:error
+echo Failed with code %errorlevel%
+exit /b 1
