@@ -2480,8 +2480,9 @@ UNUSED_ExecuteEnemyAI_A095AD:
     PLB                                                                  ;A095EC;
     PLB                                                                  ;A095ED;
     JML.W [$1784]                                                        ;A095EE;
+endif ; !FEATURE_KEEP_UNREFERENCED
 
-
+if !FEATURE_KEEP_UNREFERENCED || !KEEP_SMART_DEPS
 %anchor($A095F1)
 UNUSED_RespawnEnemy_A095F1:
     PHB                                                                  ;A095F1;
@@ -2568,7 +2569,7 @@ UNUSED_RespawnEnemy_A095F1:
     PLB                                                                  ;A096C5;
     PLB                                                                  ;A096C6;
     JML.W [$1784]                                                        ;A096C7;
-endif ; !FEATURE_KEEP_UNREFERENCED
+endif ; !FEATURE_KEEP_UNREFERENCED || !KEEP_SMART_DEPS
 
 
 %anchor($A096CA)

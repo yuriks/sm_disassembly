@@ -18,6 +18,22 @@
  Feel free to contribute to the project by creating an issue, opening a pull request, or contacting me directly.
 
 
+## Using with SMART
+This can be used to build a base ROM containing all of your ASM modifications, and use SMART to
+edit and manage data for you.
+
+1. In SMART, use `smart_project/` as the project directory. "Load from ROM" from a vanilla ROM
+   and save to XML. Alternatively, bring your own project and rename it to match.
+2. Edit `main.asm` and make sure options `ANCHOR_LABELS` and `KEEP_SMART_DEPS` are enabled.
+3. Run `build_smart.cmd`. This will also automatically update your `project.xml` freespace
+   configuration. (Existing ranges will be replaced!)
+4. Open or restart SMART so it will pick up the new `project.xml`.
+5. Run "Tools -> Scan ROM for freespace". This ensures space used by data imported by SMART is
+   made available for exporting too. (It is normal to get allocation failure errors or messages
+   before this step.)
+6. "Load from XML", and edit. To export to ROM just use "Save to ROM" as normal.
+
+
 ## Special Thanks
  This project relies heavily on P.JBoy's bank logs: https://patrickjohnston.org/bank/index.html
 

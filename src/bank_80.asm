@@ -7599,6 +7599,20 @@ LoadStationListPointers:
     dw LoadStations_Ceres                                                ;80C4C1;
     dw LoadStations_Debug                                                ;80C4C3;
 
+if not(!INCLUDE_BUILTIN_DATA)
+LoadStations_Crateria:
+LoadStations_Brinstar:
+LoadStations_Norfair:
+LoadStations_WreckedShip:
+LoadStations_Maridia:
+LoadStations_Tourian:
+LoadStations_Ceres:
+LoadStations_Debug:
+    dw $FFFF
+    dw $FFFF
+    dw $FFFF,$FFFF,$FFFF,$FFFF,$FFFF
+else
+
 %anchor($80C4C5)
 LoadStations_Crateria:
     dw RoomHeader_LandingSite                                            ;80C4C5;
@@ -8226,6 +8240,7 @@ LoadStations_Debug:
     dw UNUSED_Door_Debug_0_83ABC4                                        ;80CCFB;
     dw $0000,$0000,$0000,$00B0,$0000                                     ;80CCFD;
 
+endif ; !INCLUDE_BUILTIN_DATA
 
 %anchor($80CD07)
 SetDebugElevatorAsUsed:

@@ -2,6 +2,8 @@
 org $B48000
 
 
+if !INCLUDE_BUILTIN_DATA
+
 %anchor($B48000)
 EnemySets_Draygon_1_MotherBrain_2:
     dw $FFFF                                                             ;B48000;
@@ -2507,6 +2509,7 @@ EnemySets_CeresRidley_1:
 EnemySets_Debug:
     dw $FFFF                                                             ;B492C3;
     db $00                                                               ;B492C5;
+endif ; !INCLUDE_BUILTIN_DATA
 
 %anchor($B492C6)
 DebugHandler_7_EnemyDebugger_EnemySpawnDataEditor:

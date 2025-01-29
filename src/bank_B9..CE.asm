@@ -11,6 +11,8 @@ incbin "../data/CRE_Tiles_Compressed.bin" ; $209D bytes
 CRE_TileTable_Compressed:
 incbin "../data/CRE_TileTable_Compressed.bin" ; $597 bytes
 
+if !INCLUDE_BUILTIN_DATA
+
 %anchor($B9A634)
 Background_Norfair_9_A_SmallPatternBrownPurple_Bright:
 incbin "../data/Background_Norfair_9_A_SmallPatternBrownPurple_Bright.bin" ; $E0 bytes
@@ -166,6 +168,7 @@ incbin "../data/Background_Brinstar_8_NarrowVerticalTower_Brick_Grey_2.bin" ; $2
 %anchor($B9F94F)
 Background_Brinstar_7_BlueGridBlocks:
 incbin "../data/Background_Brinstar_7_BlueGridBlocks.bin" ; $E9 bytes
+endif ; !INCLUDE_BUILTIN_DATA
 
 %anchor($B9FA38)
 Background_Brinstar_1A_Kraid_Upper:
@@ -178,6 +181,8 @@ incbin "../data/Background_Brinstar_1A_Kraid_Lower_0.bin" ; $110 bytes
 %anchor($B9FF4E)
 Background_Brinstar_1A_Kraid_Lower_1:
 incbin "../data/Background_Brinstar_1A_Kraid_Lower_1.bin" ; $12F bytes
+
+if !INCLUDE_BUILTIN_DATA
 
 %anchor($BA807E)
 Background_Crateria_0_VerticalPatternRocks:
@@ -290,6 +295,7 @@ incbin "../data/Background_Tourian_15_Statues.bin" ; $164 bytes
 %anchor($BAC620)
 Background_Blank:
 incbin "../data/Background_Blank.bin" ; $9 bytes
+endif ; !INCLUDE_BUILTIN_DATA
 
 %anchor($BAC629)
 Tiles_0_1_UpperCrateria:
@@ -510,6 +516,8 @@ incbin "../data/Palettes_F_11_13_BlueCeres.bin" ; $DF bytes
 %anchor($C2C1E3)
 Palettes_10_12_14_WhiteCeres:
 incbin "../data/Palettes_10_12_14_WhiteCeres.bin" ; $D8 bytes
+
+if !INCLUDE_BUILTIN_DATA
 
 %anchor($C2C2BB)
 LevelData_LandingSite:
@@ -1518,6 +1526,7 @@ incbin "../data/LevelData_MissileRefill_LeftSideDoor.bin" ; $30D bytes
 %anchor($CEAE3E)
 LevelData_DebugRoom:
 incbin "../data/LevelData_DebugRoom.bin" ; $3F0 bytes
+endif ; !INCLUDE_BUILTIN_DATA
 check bankcross on
 
 %anchor($CEB22E)

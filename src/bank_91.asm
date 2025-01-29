@@ -1348,6 +1348,15 @@ LoadDemoData:
     RTS                                                                  ;918884;
 
 
+if not(!INCLUDE_BUILTIN_DATA)
+%anchor($918885)
+DemoData_Pointers:
+    dw $0000,$0000,$0000,$0000
+%anchor($9189FD)
+DemoSamusSetup_Pointers:
+    dw $0000,$0000,$0000,$0000
+else
+
 %anchor($918885)
 DemoData_Pointers:
     dw DemoData_Set0                                                     ;918885;
@@ -1482,6 +1491,8 @@ DemoSamusSetup_Set3:
     dw DemoSamusSetup_StandingFacingRight                                ;918A2F;
     dw DemoSamusSetup_StandingFacingLeft_LowEnergy                       ;918A31;
 
+endif ; !INCLUDE_BUILTIN_DATA
+
 %anchor($918A33)
 DemoSamusSetup_LandingSite:
     JSL.L MakeSamusFaceForward                                           ;918A33;
@@ -1578,7 +1589,11 @@ PreInstruction_DemoInput_Shinespark:
     BEQ .return                                                          ;918AB9;
     LDA.W #PreInstruction_DemoInput_Normal                               ;918ABB;
     STA.W $0A7A                                                          ;918ABE;
+if !INCLUDE_BUILTIN_DATA
     LDA.W #UNUSED_InstList_DemoInput_Shinespark_Unseen_919346            ;918AC1;
+else
+    LDA.W #$0000
+endif
     STA.W $0A7E                                                          ;918AC4;
     LDA.W #$0001                                                         ;918AC7;
     STA.W $0A7C                                                          ;918ACA;
@@ -1586,6 +1601,7 @@ PreInstruction_DemoInput_Shinespark:
 .return:
     RTS                                                                  ;918ACD;
 
+if !INCLUDE_BUILTIN_DATA
 
 %anchor($918ACE)
 InstList_DemoInput_LandingSite:                                          ;918ACE;
@@ -2660,6 +2676,8 @@ DemoInputObjects_Title_CrystalFlash:
     dw RTS_9183BF                                                        ;919EDC;
     dw PreInstruction_DemoInput_Normal                                   ;919EDE;
     dw InstList_DemoInput_CrystalFlash                                   ;919EE0;
+
+endif ; !INCLUDE_BUILTIN_DATA
 
 
 ; Transition table entries have the format:
@@ -9696,9 +9714,13 @@ REP30_91D141:
 %anchor($91D143)
 CheckIfXrayShouldShowAnyBlocks:
     LDA.W $079B                                                          ;91D143;
+if !INCLUDE_BUILTIN_DATA
     CMP.W #RoomHeader_Statues                                            ;91D146;
     BEQ .return                                                          ;91D149;
     CMP.W #RoomHeader_GlassTunnel                                        ;91D14B;
+else
+    CMP.W #$0000
+endif
     BEQ .return                                                          ;91D14E;
     LDA.W $196E                                                          ;91D150;
     CMP.W #$0024                                                         ;91D153;

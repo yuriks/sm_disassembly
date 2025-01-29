@@ -16,10 +16,16 @@ else
     print "REMOVE UNREFERENCED ASSEMBLY"
 endif
 
-; Fixes labels to their vanilla asm locations using the %anchor macros. Useful
-; to prevent unrelated things from moving around, which would bloat IPS patches
-; or break pointers in SMART for example.
+
+; Fixes labels to their vanilla asm locations using the %anchor macros. Useful to prevent unrelated
+; things from moving around, which would bloat IPS patches or break pointers in SMART for example.
 !ANCHOR_LABELS ?= 1
+
+; Overrides FEATURE_KEEP_UNREFERENCED for a few unused routines SMART attemps to patch.
+!KEEP_SMART_DEPS ?= 0
+; Removes built-in game data that can otherwise be managed by SMART. Potentially assembles faster
+; and frees up space.
+!INCLUDE_BUILTIN_DATA ?= 1
 
 incsrc "macros.asm"
 incsrc "bank_80.asm"

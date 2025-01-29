@@ -21,6 +21,9 @@ org $A18000
 
 %anchor($A18000)
 EnemyPopulations:
+
+if !INCLUDE_BUILTIN_DATA
+
 %anchor($A18000)
 EnemyPopulations_Draygon_State1_MotherBrain_State2:
     dw $FFFF                                                             ;A18000; No death quota byte (off to a good start)
@@ -4610,6 +4613,7 @@ EnemyPopulations_CeresRidley_1:
 %anchor($A1EBCE)
 EnemyPopulations_Debug:
     dw #$FFFF : db $00                                                   ;A1EBCE;
+endif ; !INCLUDE_BUILTIN_DATA
 
 %anchor($A1EBD1)
 Freespace_BankA1_EBD1:                                                   ;A1EBD1;

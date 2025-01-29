@@ -941,6 +941,9 @@ LoadDemoRoomData:
 
 %anchor($82876C)
 DemoRoomData_pointers:
+if not(!INCLUDE_BUILTIN_DATA)
+    dw $FFFF,$FFFF,$FFFF,$FFFF
+else
     dw DemoRoomData_set0                                                 ;82876C;
     dw DemoRoomData_set1                                                 ;82876E;
     dw DemoRoomData_set2                                                 ;828770;
@@ -1076,6 +1079,7 @@ DemoRoomData_set3:
     dw DemoRoomCode_LandingSite_BG2Tilemap                               ;828916;
 
     dw $FFFF                                                             ;828918;
+endif ; !INCLUDE_BUILTIN_DATA
 
 %anchor($82891A)
 DemoRoomCode_ChargeBeamRoom_Scroll21hRed:
@@ -11467,7 +11471,11 @@ DoorTransitionFunction_PlaceSamus_LoadTiles:
     BIT.W #$0002                                                         ;82E406;
     BEQ .decompress                                                      ;82E409;
     LDA.W $078D                                                          ;82E40B;
+if !INCLUDE_BUILTIN_DATA
     CMP.W #Door_PostCrocShaft_0                                          ;82E40E;
+else
+    CMP.W #$0000
+endif
     BEQ .decompress                                                      ;82E411;
     LDA.W #CRE_Tiles_Compressed>>8&$FF00                                 ;82E413;
     STA.B $48                                                            ;82E416;
@@ -11502,7 +11510,11 @@ DoorTransitionFunction_PlaceSamus_LoadTiles:
     BIT.W #$0006                                                         ;82E467;
     BEQ .checkUp                                                         ;82E46A;
     LDA.W $078D                                                          ;82E46C;
+if !INCLUDE_BUILTIN_DATA
     CMP.W #Door_PostCrocShaft_0                                          ;82E46F;
+else
+    CMP.W #$0000
+endif
     BEQ .checkUp                                                         ;82E472;
     JSR.W Perform_Door_Transition_VRAM_Update                            ;82E474;
     dl $7E7000                                                           ;82E477;
