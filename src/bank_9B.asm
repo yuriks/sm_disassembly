@@ -4559,7 +4559,7 @@ Freespace_Bank9B_CBFB:                                                   ;9BCBFB
 ; $1405 bytes
 
 
-warnpc $9BE000
+%warnpc($9BE000)
 ORG $9BE000
 
 

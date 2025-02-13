@@ -1,7 +1,10 @@
+macro warnpc(limit)
+    assert pc() <= <limit>
+endmacro
 
 macro anchor(desired)
     if !ANCHOR_LABELS
-        warnpc <desired>
+        %warnpc(<desired>)
         org <desired>
     endif
 endmacro

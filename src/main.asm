@@ -1,6 +1,5 @@
-
+asar 2.0.0
 lorom
-math pri on
 
 ; -------------
 ; Build options

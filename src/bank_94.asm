@@ -7679,7 +7679,7 @@ Freespace_Bank94_B19F:                                                   ;94B19F
 ; $1661 bytes
 
 
-warnpc $94C800
+%warnpc($94C800)
 org $94C800
 
 
@@ -7691,5 +7691,5 @@ incbin "../data/Tiles_GunshipLiftoffDustClouds.bin" ; $1400 bytes
 Freespace_Bank94_DC00:                                                   ;94DC00;
 ; $1400 bytes
 
-warnpc $94E000
+%warnpc($94E000)
 ; see bank_94..99.asm
